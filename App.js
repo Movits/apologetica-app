@@ -3,6 +3,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import HomeScreen from './src/screens/HomeScreen';
 import ArticlesScreen from './src/screens/ArticlesScreen';
@@ -24,6 +25,7 @@ const ICONS = {
 
 function AppShell() {
   const { colors, darkMode } = useTheme();
+  const insets = useSafeAreaInsets();
 
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
@@ -50,9 +52,9 @@ function AppShell() {
           tabBarStyle: {
             backgroundColor: colors.card,
             borderTopColor: colors.divider,
-            height: 60,
-            paddingBottom: 6,
             paddingTop: 6,
+            paddingBottom: Math.max(insets.bottom, 8),
+            height: 56 + Math.max(insets.bottom, 8),
           },
           tabBarLabelStyle: { fontSize: 11 },
           tabBarIcon: ({ focused, color, size }) => {
@@ -74,8 +76,10 @@ function AppShell() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AppShell />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <AppShell />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
