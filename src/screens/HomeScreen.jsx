@@ -1,16 +1,18 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
-const COLORS = { primary: '#1a3a5c', accent: '#c9a84c', bg: '#f5f0e8' };
+import { useTheme } from '../context/ThemeContext';
 
 const HIGHLIGHTS = [
-  { icon: 'book-outline', label: 'Artigos de Apologética', tab: 'Artigos' },
-  { icon: 'library-outline', label: 'Versículos e Referências', tab: 'Referências' },
+  { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas comuns', tab: 'Artigos' },
+  { icon: 'library-outline', label: 'Versículos e Referências', sub: 'Bíblia, Catecismo, documentos', tab: 'Referências' },
+  { icon: 'bookmark-outline', label: 'Bíblia Sagrada', sub: 'Leia as Escrituras no app', tab: 'Bíblia' },
 ];
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+  const { colors, fs } = useTheme();
+  const styles = makeStyles(colors, fs);
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -20,7 +22,7 @@ export default function HomeScreen() {
         <Text style={styles.heroSub}>
           Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós.
         </Text>
-        <Text style={styles.heroRef}>— 1 Pedro 3,15</Text>
+        <Text style={styles.heroRef}>1 Pedro 3,15</Text>
       </View>
 
       <Text style={styles.sectionTitle}>Explorar</Text>
@@ -30,42 +32,53 @@ export default function HomeScreen() {
           style={styles.card}
           onPress={() => navigation.navigate(item.tab)}
         >
-          <Ionicons name={item.icon} size={28} color={COLORS.primary} />
-          <Text style={styles.cardLabel}>{item.label}</Text>
-          <Ionicons name="chevron-forward" size={20} color="#aaa" />
+          <View style={styles.cardIcon}>
+            <Ionicons name={item.icon} size={26} color={colors.primary} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.cardLabel}>{item.label}</Text>
+            <Text style={styles.cardSub}>{item.sub}</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
         </TouchableOpacity>
       ))}
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.bg },
-  content: { padding: 20, paddingBottom: 40 },
-  hero: {
-    alignItems: 'center',
-    backgroundColor: COLORS.primary,
-    borderRadius: 16,
-    padding: 28,
-    marginBottom: 28,
-  },
-  heroIcon: { fontSize: 40, color: '#c9a84c' },
-  heroTitle: { color: '#fff', fontSize: 22, fontWeight: 'bold', marginTop: 10 },
-  heroSub: { color: '#ccd9e8', fontSize: 14, textAlign: 'center', marginTop: 10, lineHeight: 20 },
-  heroRef: { color: COLORS.accent, fontSize: 13, marginTop: 8, fontStyle: 'italic' },
-  sectionTitle: { fontSize: 18, fontWeight: 'bold', color: COLORS.primary, marginBottom: 12 },
-  card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowRadius: 6,
-    elevation: 2,
-    gap: 14,
-  },
-  cardLabel: { flex: 1, fontSize: 16, color: '#222' },
-});
+const makeStyles = (c, fs) =>
+  StyleSheet.create({
+    container: { flex: 1, backgroundColor: c.bg },
+    content: { padding: 20, paddingBottom: 40 },
+    hero: {
+      alignItems: 'center',
+      backgroundColor: c.primary,
+      borderRadius: 16,
+      padding: 28,
+      marginBottom: 28,
+    },
+    heroIcon: { fontSize: fs(40), color: c.accent },
+    heroTitle: { color: '#fff', fontSize: fs(22), fontWeight: 'bold', marginTop: 10 },
+    heroSub: { color: c.heroSub, fontSize: fs(14), textAlign: 'center', marginTop: 10, lineHeight: fs(20) },
+    heroRef: { color: c.accent, fontSize: fs(13), marginTop: 10, fontStyle: 'italic', fontWeight: 'bold' },
+    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primary, marginBottom: 12 },
+    card: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: c.card,
+      borderRadius: 12,
+      padding: 16,
+      marginBottom: 12,
+      gap: 14,
+    },
+    cardIcon: {
+      width: 44,
+      height: 44,
+      borderRadius: 10,
+      backgroundColor: c.badgeBg,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    cardLabel: { fontSize: fs(16), color: c.text, fontWeight: '600' },
+    cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
+  });

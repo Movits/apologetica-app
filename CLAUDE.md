@@ -5,34 +5,48 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm install          # instalar dependências
-npm start            # iniciar Expo DevTools
-npm run android      # abrir no emulador Android
-npm run ios          # abrir no simulador iOS
-npm run lint         # ESLint em src/
+npm install                    # instalar dependências
+npx expo start --lan           # iniciar (celular no mesmo Wi-Fi)
+npm run android                # abrir no emulador Android
+npm run ios                    # abrir no simulador iOS
 ```
 
 ## Architecture
 
-**React Native + Expo** app with bottom tab navigation (3 tabs).
+**React Native + Expo SDK 54** com 5 tabs no bottom navigator.
 
-### Navigation
-`App.js` → `NavigationContainer` → `createBottomTabNavigator` com 3 tabs:
-- `HomeScreen` — hero + atalhos de navegação
-- `ArticlesScreen` — lista filtrável + modal de detalhe
-- `ReferencesScreen` — lista filtrável com accordion
+### Tabs
+1. **Início** — `HomeScreen` — hero + atalhos
+2. **Artigos** — `ArticlesScreen` — lista filtrável de textos de apologética
+3. **Referências** — `ReferencesScreen` — Bíblia, Catecismo, documentos
+4. **Bíblia** — `BibleScreen` — Livros → capítulos → versículos
+5. **Ajustes** — `SettingsScreen` — modo escuro, tamanho de letra, etc
 
-### Data layer
-All content is static data in `src/data/`:
-- `articles.js` — array de objetos `{ id, title, category, summary, body, references[] }`
-- `references.js` — array de objetos `{ ref, source, topic, text }` — sources: `'Bíblia' | 'CIC' | 'Documentos'`
+### Estado global
+`src/context/ThemeContext.jsx` provê:
+- `colors` (paleta light/dark)
+- `darkMode`, `setDarkMode`
+- `fontSize`, `setFontSize` (pequeno/normal/grande/enorme)
+- `fs(n)` — função para escalar qualquer fontSize
 
-To add new content, append to these arrays — no backend required.
+Todas as telas usam `useTheme()` e fazem `styles` via `makeStyles(colors, fs)`.
 
-### Styling
-No external UI library. All styles via `StyleSheet.create`. Color palette:
-- `primary: '#1a3a5c'` (azul marinho)
-- `accent: '#c9a84c'` (dourado)
-- `bg: '#f5f0e8'` (creme)
+### Navegação entre telas
+- `ArticlesScreen` → tap em referência → `navigate('Referências', { highlightId })` → `ReferencesScreen` expande e scrolla até ela.
+- `BibleScreen` aceita `route.params.bookId/chapter/highlightVerse` para deep linking.
+
+### Dados (estáticos em `src/data/`)
+- `articles.js` — array de artigos. Campo `references[]` contém IDs que apontam para `references.js`.
+- `references.js` — versículos, CIC, documentos. Cada item tem `id`, `ref`, `fullSource`, `author`, `year`, `topic`, `text`, `url`, opcional `urlStrongs`.
+- `bible.js` — `BIBLE_BOOKS[]` com livros, e cada livro tem `chapters: { [n]: [versículo1, ...] }`. Inclui apenas os capítulos referenciados nos artigos por enquanto.
+
+### Convenções de conteúdo
+- **Sem travessões (—)** nos textos. Usar vírgula, ponto ou parênteses.
+- **Linguagem natural** em português brasileiro, não "AI-like".
+- **Citações completas**: expandir siglas (Catecismo em vez de CIC) e incluir autor + ano.
+
+### Paleta
+- `primary: #1a3a5c` (azul marinho), `accent: #c9a84c` (dourado), `bg: #f5f0e8` (creme).
+- Versão dark equivalente em `ThemeContext`.
 
 Icons via `@expo/vector-icons` (Ionicons).
