@@ -2,7 +2,8 @@ import { createContext, useContext, useMemo, useState } from 'react';
 
 const LIGHT = {
   mode: 'light',
-  primary: '#1a3a5c',
+  primary: '#1a3a5c',        // background de hero/header
+  primaryText: '#1a3a5c',    // títulos e texto enfatizado em cards
   accent: '#c9a84c',
   bg: '#f5f0e8',
   card: '#ffffff',
@@ -13,12 +14,14 @@ const LIGHT = {
   divider: '#dddddd',
   inputBg: '#ffffff',
   badgeBg: '#eef2f7',
+  badgeText: '#1a3a5c',
   heroSub: '#ccd9e8',
 };
 
 const DARK = {
   mode: 'dark',
-  primary: '#0f1f33',
+  primary: '#0f1f33',        // background de hero/header
+  primaryText: '#e6c878',    // títulos dourados claros (legível em dark)
   accent: '#d4b86a',
   bg: '#121212',
   card: '#1e1e1e',
@@ -28,7 +31,8 @@ const DARK = {
   textSubtle: '#909090',
   divider: '#333333',
   inputBg: '#1e1e1e',
-  badgeBg: '#243447',
+  badgeBg: '#2a3a4f',
+  badgeText: '#e6c878',
   heroSub: '#a8b8cc',
 };
 

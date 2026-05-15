@@ -1,19 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { references } from '../data/references';
 import { useTheme } from '../context/ThemeContext';
 
 const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos'];
 
 export default function ReferencesScreen({ route }) {
+  const navigation = useNavigation();
   const { colors, fs } = useTheme();
   const [search, setSearch] = useState('');
   const [source, setSource] = useState('Todos');
   const [expanded, setExpanded] = useState(null);
   const listRef = useRef(null);
 
-  // Deep link: vindo de um artigo, abrir e expandir a referência específica.
   useEffect(() => {
     if (route?.params?.highlightId) {
       const id = route.params.highlightId;
@@ -42,6 +43,15 @@ export default function ReferencesScreen({ route }) {
   const openUrl = (url) => {
     if (!url) return;
     Linking.openURL(url).catch(() => {});
+  };
+
+  const openInBible = (nav) => {
+    if (!nav) return;
+    navigation.navigate('Bíblia', {
+      bookId: nav.bookId,
+      chapter: nav.chapter,
+      highlightVerse: nav.verse,
+    });
   };
 
   const styles = makeStyles(colors, fs);
@@ -112,6 +122,15 @@ export default function ReferencesScreen({ route }) {
                 <View style={styles.expanded}>
                   <Text style={styles.cardText}>{item.text}</Text>
                   <View style={styles.actions}>
+                    {item.bibleNav && (
+                      <TouchableOpacity
+                        style={[styles.actionBtn, styles.actionBtnPrimary]}
+                        onPress={() => openInBible(item.bibleNav)}
+                      >
+                        <Ionicons name="bookmark-outline" size={16} color="#fff" />
+                        <Text style={styles.actionTextPrimary}>Ler no app</Text>
+                      </TouchableOpacity>
+                    )}
                     {item.url && (
                       <TouchableOpacity style={styles.actionBtn} onPress={() => openUrl(item.url)}>
                         <Ionicons name="open-outline" size={16} color={colors.accent} />
@@ -174,8 +193,8 @@ const makeStyles = (c, fs) =>
     cardOpen: { borderWidth: 1, borderColor: c.accent },
     cardTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
     badge: { backgroundColor: c.badgeBg, borderRadius: 6, paddingHorizontal: 8, paddingVertical: 2 },
-    badgeText: { fontSize: fs(11), color: c.primary, fontWeight: 'bold' },
-    cardRef: { fontSize: fs(15), fontWeight: 'bold', color: c.primary },
+    badgeText: { fontSize: fs(11), color: c.badgeText, fontWeight: 'bold' },
+    cardRef: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText },
     cardFullSource: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
     cardMeta: { fontSize: fs(11), color: c.textSubtle, marginTop: 2, fontStyle: 'italic' },
     cardTopic: { fontSize: fs(12), color: c.textSubtle, marginTop: 4 },
@@ -187,12 +206,14 @@ const makeStyles = (c, fs) =>
       alignItems: 'center',
       gap: 6,
       paddingHorizontal: 12,
-      paddingVertical: 8,
+      paddingVertical: 9,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: c.accent,
       alignSelf: 'flex-start',
     },
+    actionBtnPrimary: { backgroundColor: c.accent, borderColor: c.accent },
     actionText: { color: c.accent, fontSize: fs(13), fontWeight: '600' },
+    actionTextPrimary: { color: '#fff', fontSize: fs(13), fontWeight: '600' },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
   });

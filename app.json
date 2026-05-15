@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Apologética",
+    "name": "APPologética",
     "slug": "apologetica-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.apologetica.app"
+      "bundleIdentifier": "com.appologetica.app"
     },
     "android": {
-      "package": "com.apologetica.app"
+      "package": "com.appologetica.app"
     }
   }
 }

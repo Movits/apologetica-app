@@ -1,4 +1,4 @@
-# Apologética Católica
+# APPologética
 
 App mobile de evangelização e apologética católica, desenvolvido com React Native (Expo).
 

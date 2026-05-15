@@ -18,7 +18,7 @@ export default function HomeScreen() {
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.hero}>
         <Text style={styles.heroIcon}>✝</Text>
-        <Text style={styles.heroTitle}>Apologética Católica</Text>
+        <Text style={styles.heroTitle}>APPologética</Text>
         <Text style={styles.heroSub}>
           Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós.
         </Text>
@@ -33,7 +33,7 @@ export default function HomeScreen() {
           onPress={() => navigation.navigate(item.tab)}
         >
           <View style={styles.cardIcon}>
-            <Ionicons name={item.icon} size={26} color={colors.primary} />
+            <Ionicons name={item.icon} size={26} color={colors.primaryText} />
           </View>
           <View style={{ flex: 1 }}>
             <Text style={styles.cardLabel}>{item.label}</Text>
@@ -58,10 +58,10 @@ const makeStyles = (c, fs) =>
       marginBottom: 28,
     },
     heroIcon: { fontSize: fs(40), color: c.accent },
-    heroTitle: { color: '#fff', fontSize: fs(22), fontWeight: 'bold', marginTop: 10 },
+    heroTitle: { color: '#fff', fontSize: fs(24), fontWeight: 'bold', marginTop: 10 },
     heroSub: { color: c.heroSub, fontSize: fs(14), textAlign: 'center', marginTop: 10, lineHeight: fs(20) },
     heroRef: { color: c.accent, fontSize: fs(13), marginTop: 10, fontStyle: 'italic', fontWeight: 'bold' },
-    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primary, marginBottom: 12 },
+    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 12 },
     card: {
       flexDirection: 'row',
       alignItems: 'center',

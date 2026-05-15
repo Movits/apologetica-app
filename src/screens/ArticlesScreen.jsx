@@ -82,7 +82,7 @@ export default function ArticlesScreen() {
       <Modal visible={!!selected} animationType="slide" onRequestClose={() => setSelected(null)}>
         <View style={styles.modal}>
           <TouchableOpacity style={styles.modalClose} onPress={() => setSelected(null)}>
-            <Ionicons name="arrow-back" size={24} color={colors.primary} />
+            <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
             <Text style={styles.modalCloseText}>Voltar</Text>
           </TouchableOpacity>
           {selected && (
@@ -159,18 +159,18 @@ const makeStyles = (c, fs) =>
     },
     cardHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 },
     cardCat: { fontSize: fs(11), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase' },
-    cardTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primary, marginBottom: 4 },
+    cardTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
     cardSummary: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18) },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
     modal: { flex: 1, backgroundColor: c.bg },
     modalClose: { flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 50, gap: 8 },
-    modalCloseText: { fontSize: fs(16), color: c.primary },
+    modalCloseText: { fontSize: fs(16), color: c.primaryText },
     modalContent: { padding: 20, paddingBottom: 60 },
     modalCat: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', marginBottom: 6 },
-    modalTitle: { fontSize: fs(22), fontWeight: 'bold', color: c.primary, marginBottom: 16 },
+    modalTitle: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, marginBottom: 16 },
     modalBody: { fontSize: fs(16), color: c.text, lineHeight: fs(26) },
     refBox: { marginTop: 28, backgroundColor: c.card, borderRadius: 12, padding: 16 },
-    refTitle: { fontWeight: 'bold', color: c.primary, marginBottom: 4, fontSize: fs(15) },
+    refTitle: { fontWeight: 'bold', color: c.primaryText, marginBottom: 4, fontSize: fs(15) },
     refHint: { fontSize: fs(11), color: c.textSubtle, marginBottom: 10, fontStyle: 'italic' },
     refItem: {
       flexDirection: 'row',
@@ -180,6 +180,6 @@ const makeStyles = (c, fs) =>
       borderTopColor: c.divider,
       gap: 8,
     },
-    refItemRef: { fontSize: fs(14), color: c.primary, fontWeight: '600' },
+    refItemRef: { fontSize: fs(14), color: c.primaryText, fontWeight: '600' },
     refItemSource: { fontSize: fs(11), color: c.textMuted, marginTop: 2 },
   });

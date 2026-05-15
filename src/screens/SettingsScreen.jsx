@@ -23,7 +23,7 @@ export default function SettingsScreen() {
 
       <View style={styles.row}>
         <View style={styles.rowLeft}>
-          <Ionicons name="moon-outline" size={22} color={colors.primary} />
+          <Ionicons name="moon-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>Modo escuro</Text>
         </View>
         <Switch
@@ -36,7 +36,7 @@ export default function SettingsScreen() {
 
       <View style={[styles.row, { flexDirection: 'column', alignItems: 'flex-start' }]}>
         <View style={styles.rowLeft}>
-          <Ionicons name="text-outline" size={22} color={colors.primary} />
+          <Ionicons name="text-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>Tamanho da letra</Text>
         </View>
         <View style={styles.fontGrid}>
@@ -64,7 +64,7 @@ export default function SettingsScreen() {
 
       <TouchableOpacity style={styles.row} onPress={() => emBreve('Fazer login')}>
         <View style={styles.rowLeft}>
-          <Ionicons name="person-outline" size={22} color={colors.primary} />
+          <Ionicons name="person-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>Fazer login</Text>
         </View>
         <View style={styles.soonBadge}>
@@ -74,7 +74,7 @@ export default function SettingsScreen() {
 
       <TouchableOpacity style={styles.row} onPress={() => emBreve('Idioma')}>
         <View style={styles.rowLeft}>
-          <Ionicons name="language-outline" size={22} color={colors.primary} />
+          <Ionicons name="language-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>Idioma (Português)</Text>
         </View>
         <View style={styles.soonBadge}>
@@ -85,7 +85,7 @@ export default function SettingsScreen() {
       <Text style={styles.section}>Sobre</Text>
 
       <View style={styles.aboutBox}>
-        <Text style={styles.aboutTitle}>Apologética Católica</Text>
+        <Text style={styles.aboutTitle}>APPologética</Text>
         <Text style={styles.aboutVersion}>Versão 1.0.0</Text>
         <Text style={styles.aboutText}>
           App de estudo e evangelização, com artigos de apologética, referências bíblicas e textos do Magistério.
@@ -148,14 +148,14 @@ const makeStyles = (c, fs) =>
       paddingVertical: 3,
       borderRadius: 6,
     },
-    soonText: { fontSize: fs(11), color: c.primary, fontWeight: 'bold' },
+    soonText: { fontSize: fs(11), color: c.primaryText, fontWeight: 'bold' },
     aboutBox: {
       backgroundColor: c.card,
       borderRadius: 12,
       padding: 18,
       marginTop: 4,
     },
-    aboutTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primary },
+    aboutTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
     aboutVersion: { fontSize: fs(12), color: c.textSubtle, marginTop: 2 },
     aboutText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginTop: 12 },
     aboutQuote: {

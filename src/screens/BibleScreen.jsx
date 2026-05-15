@@ -4,34 +4,52 @@ import { Ionicons } from '@expo/vector-icons';
 import { BIBLE_BOOKS } from '../data/bible';
 import { useTheme } from '../context/ThemeContext';
 
-export default function BibleScreen({ route }) {
+export default function BibleScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
-  const [view, setView] = useState('books'); // 'books' | 'chapters' | 'verses'
+  const [view, setView] = useState('books');
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
-  const highlightVerse = route?.params?.highlightVerse;
+  const [highlightVerse, setHighlightVerse] = useState(null);
   const verseListRef = useRef(null);
 
-  // Deep link: ao receber bookId/chapter/verse pelos params, navegar até o versículo
+  // Deep link: route.params.bookId/chapter/highlightVerse -> abre a tela de versículos
   useEffect(() => {
-    if (route?.params?.bookId && route?.params?.chapter) {
-      const b = BIBLE_BOOKS.find((x) => x.id === route.params.bookId);
-      if (b && b.chapters[route.params.chapter]) {
+    const params = route?.params;
+    if (params?.bookId) {
+      const b = BIBLE_BOOKS.find((x) => x.id === params.bookId);
+      if (b) {
         setBook(b);
-        setChapter(route.params.chapter);
-        setView('verses');
+        if (params.chapter && b.chapters[params.chapter]) {
+          setChapter(params.chapter);
+          setHighlightVerse(params.highlightVerse ?? null);
+          setView('verses');
+        } else {
+          setView('chapters');
+        }
+        navigation?.setParams?.({ bookId: undefined, chapter: undefined, highlightVerse: undefined });
       }
     }
-  }, [route?.params]);
+  }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse]);
+
+  // Quando entra na tela de versículos com highlightVerse, scrolla até ele
+  useEffect(() => {
+    if (view !== 'verses' || !highlightVerse || !chapter || !book) return;
+    const verses = book.chapters[chapter]?.verses || [];
+    const idx = verses.findIndex((v) => v.n === highlightVerse);
+    if (idx >= 0 && verseListRef.current) {
+      setTimeout(() => {
+        verseListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.2 });
+      }, 350);
+    }
+  }, [view, highlightVerse, chapter, book]);
 
   const styles = makeStyles(colors, fs);
 
-  // ===== TELA DE LIVROS =====
+  // ===== LIVROS =====
   if (view === 'books') {
     const grouped = BIBLE_BOOKS.reduce((acc, b) => {
       const key = b.testament === 'AT' ? 'Antigo Testamento' : 'Novo Testamento';
-      if (!acc[key]) acc[key] = [];
-      acc[key].push(b);
+      (acc[key] = acc[key] || []).push(b);
       return acc;
     }, {});
 
@@ -40,7 +58,7 @@ export default function BibleScreen({ route }) {
         <View style={styles.intro}>
           <Text style={styles.introTitle}>Bíblia Sagrada</Text>
           <Text style={styles.introSub}>
-            Tradução baseada na Bíblia Ave Maria. Capítulos disponíveis: principalmente os referenciados nos artigos. Mais conteúdo será adicionado.
+            Tradução baseada na Bíblia Ave Maria. Mostrando capítulos referenciados nos artigos. Mais conteúdo será adicionado.
           </Text>
         </View>
 
@@ -77,21 +95,25 @@ export default function BibleScreen({ route }) {
     );
   }
 
-  // ===== TELA DE CAPÍTULOS =====
+  // ===== CAPÍTULOS =====
   if (view === 'chapters' && book) {
-    const available = Object.keys(book.chapters).map(Number).sort((a, b) => a - b);
+    const available = Object.keys(book.chapters).map(Number);
     const allChapters = Array.from({ length: book.totalChapters }, (_, i) => i + 1);
 
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.backRow} onPress={() => setView('books')}>
-          <Ionicons name="arrow-back" size={20} color={colors.primary} />
+          <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
           <Text style={styles.backText}>Livros</Text>
         </TouchableOpacity>
 
         <Text style={styles.bookHeader}>{book.name}</Text>
+        <Text style={styles.chaptersHint}>
+          Toque em um capítulo destacado para lê-lo. Capítulos em cinza ainda não estão disponíveis.
+        </Text>
 
         <FlatList
+          key="chapters-grid"
           data={allChapters}
           keyExtractor={(c) => String(c)}
           numColumns={5}
@@ -104,6 +126,7 @@ export default function BibleScreen({ route }) {
                 disabled={!has}
                 onPress={() => {
                   setChapter(item);
+                  setHighlightVerse(null);
                   setView('verses');
                 }}
               >
@@ -118,10 +141,15 @@ export default function BibleScreen({ route }) {
     );
   }
 
-  // ===== TELA DE VERSÍCULOS =====
+  // ===== VERSÍCULOS =====
   if (view === 'verses' && book && chapter) {
-    const verses = book.chapters[chapter] || [];
-    const externalUrl = `https://www.bibliacatolica.com.br/biblia-ave-maria/${book.name.toLowerCase().replace(/ /g, '-')}/${chapter}/`;
+    const chapterData = book.chapters[chapter];
+    const verses = chapterData?.verses || [];
+    const total = chapterData?.total || verses.length;
+    const externalUrl = `https://www.bibliacatolica.com.br/biblia-ave-maria/${book.name
+      .toLowerCase()
+      .replace(/ /g, '-')}/${chapter}/`;
+    const partial = verses.length < total;
 
     return (
       <View style={styles.container}>
@@ -129,13 +157,12 @@ export default function BibleScreen({ route }) {
           style={styles.backRow}
           onPress={() => {
             setChapter(null);
+            setHighlightVerse(null);
             setView('chapters');
           }}
         >
-          <Ionicons name="arrow-back" size={20} color={colors.primary} />
-          <Text style={styles.backText}>
-            {book.name}
-          </Text>
+          <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
+          <Text style={styles.backText}>{book.name}</Text>
         </TouchableOpacity>
 
         <View style={styles.verseHeader}>
@@ -147,32 +174,35 @@ export default function BibleScreen({ route }) {
             onPress={() => Linking.openURL(externalUrl).catch(() => {})}
           >
             <Ionicons name="open-outline" size={16} color={colors.accent} />
-            <Text style={styles.externalBtnText}>Ver completo</Text>
+            <Text style={styles.externalBtnText}>Ver online</Text>
           </TouchableOpacity>
         </View>
 
+        {partial && (
+          <View style={styles.partialBanner}>
+            <Ionicons name="information-circle-outline" size={16} color={colors.textMuted} />
+            <Text style={styles.partialText}>
+              Capítulo parcial: {verses.length} de {total} versículos. Mais virão.
+            </Text>
+          </View>
+        )}
+
         <FlatList
+          key="verses-list"
           ref={verseListRef}
           data={verses}
-          keyExtractor={(_, i) => String(i + 1)}
+          keyExtractor={(v) => String(v.n)}
           contentContainerStyle={styles.verseList}
-          renderItem={({ item, index }) => {
-            const verseNum = index + 1;
-            const isHighlight = highlightVerse && verseNum === highlightVerse;
-            const isPlaceholder = item.startsWith('[versículo disponível em breve');
+          onScrollToIndexFailed={() => {}}
+          renderItem={({ item }) => {
+            const isHighlight = highlightVerse && item.n === highlightVerse;
             return (
               <View style={[styles.verseRow, isHighlight && styles.verseRowHighlight]}>
                 <Text style={[styles.verseNum, isHighlight && styles.verseNumHighlight]}>
-                  {verseNum}
+                  {item.n}
                 </Text>
-                <Text
-                  style={[
-                    styles.verseText,
-                    isHighlight && styles.verseTextHighlight,
-                    isPlaceholder && styles.versePlaceholder,
-                  ]}
-                >
-                  {item}
+                <Text style={[styles.verseText, isHighlight && styles.verseTextHighlight]}>
+                  {item.t}
                 </Text>
               </View>
             );
@@ -190,7 +220,7 @@ const makeStyles = (c, fs) =>
     container: { flex: 1, backgroundColor: c.bg },
     content: { padding: 16, paddingBottom: 40 },
     intro: { marginBottom: 16, padding: 14, backgroundColor: c.card, borderRadius: 12 },
-    introTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primary },
+    introTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText },
     introSub: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(19), marginTop: 6 },
     groupHeader: {
       fontSize: fs(13),
@@ -227,13 +257,20 @@ const makeStyles = (c, fs) =>
       padding: 12,
       gap: 6,
     },
-    backText: { fontSize: fs(15), color: c.primary },
+    backText: { fontSize: fs(15), color: c.primaryText },
     bookHeader: {
       fontSize: fs(22),
       fontWeight: 'bold',
-      color: c.primary,
+      color: c.primaryText,
+      paddingHorizontal: 16,
+      marginBottom: 4,
+    },
+    chaptersHint: {
+      fontSize: fs(12),
+      color: c.textMuted,
       paddingHorizontal: 16,
       marginBottom: 12,
+      fontStyle: 'italic',
     },
     chapterGrid: { padding: 12 },
     chapterCell: {
@@ -245,10 +282,14 @@ const makeStyles = (c, fs) =>
       justifyContent: 'center',
       alignItems: 'center',
       borderWidth: 1,
-      borderColor: c.divider,
+      borderColor: c.accent,
     },
-    chapterCellDisabled: { backgroundColor: c.bg, opacity: 0.4 },
-    chapterCellText: { color: c.primary, fontWeight: 'bold', fontSize: fs(15) },
+    chapterCellDisabled: {
+      backgroundColor: c.bg,
+      borderColor: c.divider,
+      opacity: 0.45,
+    },
+    chapterCellText: { color: c.primaryText, fontWeight: 'bold', fontSize: fs(15) },
     chapterCellTextDisabled: { color: c.textSubtle },
     verseHeader: {
       flexDirection: 'row',
@@ -257,7 +298,7 @@ const makeStyles = (c, fs) =>
       paddingHorizontal: 16,
       paddingBottom: 8,
     },
-    verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primary },
+    verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText },
     externalBtn: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -269,6 +310,17 @@ const makeStyles = (c, fs) =>
       borderColor: c.accent,
     },
     externalBtnText: { color: c.accent, fontSize: fs(12), fontWeight: 'bold' },
+    partialBanner: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      backgroundColor: c.badgeBg,
+      marginHorizontal: 16,
+      marginBottom: 4,
+      padding: 10,
+      borderRadius: 8,
+    },
+    partialText: { fontSize: fs(12), color: c.textMuted, flex: 1 },
     verseList: { padding: 16, paddingBottom: 40 },
     verseRow: {
       flexDirection: 'row',
@@ -285,8 +337,7 @@ const makeStyles = (c, fs) =>
       minWidth: 24,
       paddingTop: 3,
     },
-    verseNumHighlight: { color: c.primary },
+    verseNumHighlight: { color: c.primaryText },
     verseText: { flex: 1, fontSize: fs(15), color: c.text, lineHeight: fs(23) },
     verseTextHighlight: { fontWeight: '600' },
-    versePlaceholder: { color: c.textSubtle, fontStyle: 'italic' },
   });

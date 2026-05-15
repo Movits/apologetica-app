@@ -1,6 +1,7 @@
-// Cada referência tem id único para link interno (artigo -> referência)
-// Campo `url` aponta para a fonte oficial em português quando disponível.
-// Campo `urlStrongs` (opcional) liga para concordância grega/hebraica no Bible Hub.
+// Cada referência tem id único para link interno (artigo -> referência).
+// Campo `bibleNav` (apenas refs bíblicas) abre o capítulo dentro do App.
+// Campo `url` aponta para fonte oficial (Vatican, etc.) para refs não-bíblicas.
+// Campo `urlStrongs` (refs bíblicas) liga para concordância grega/hebraica no Bible Hub.
 
 export const references = [
   // ============ BÍBLIA ============
@@ -13,7 +14,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Primado de Pedro / fundação da Igreja',
     text: 'E eu te digo que tu és Pedro, e sobre esta pedra edificarei a minha Igreja, e as portas do inferno não prevalecerão contra ela. Dar-te-ei as chaves do Reino dos Céus; e o que ligares na terra será ligado nos céus, e o que desligares na terra será desligado nos céus.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-mateus/16/',
+    bibleNav: { bookId: 'mt', chapter: 16, verse: 18 },
     urlStrongs: 'https://biblehub.com/interlinear/matthew/16-18.htm',
   },
   {
@@ -25,7 +26,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Apologética / dever de evangelizar',
     text: 'Santificai a Cristo, como Senhor, em vossos corações, estando sempre prontos para responder a qualquer pessoa que vos pedir razão da esperança que há em vós, mas com mansidão e reverência.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/i-pedro/3/',
+    bibleNav: { bookId: '1pd', chapter: 3, verse: 15 },
     urlStrongs: 'https://biblehub.com/interlinear/1_peter/3-15.htm',
   },
   {
@@ -37,7 +38,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Eucaristia / presença real',
     text: 'Em verdade, em verdade vos digo: se não comerdes a carne do Filho do Homem e não beberdes o seu sangue, não tereis a vida em vós. Quem come a minha carne e bebe o meu sangue tem a vida eterna, e eu o ressuscitarei no último dia. Pois a minha carne é verdadeira comida, e o meu sangue é verdadeira bebida.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-joao/6/',
+    bibleNav: { bookId: 'jo', chapter: 6, verse: 53 },
     urlStrongs: 'https://biblehub.com/interlinear/john/6-53.htm',
   },
   {
@@ -49,7 +50,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Existência de Deus pela razão / lei natural',
     text: 'As perfeições invisíveis de Deus, desde a criação do mundo, são entendidas e vistas por meio das coisas criadas, assim como o seu eterno poder e divindade, de modo que os homens são indesculpáveis.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/romanos/1/',
+    bibleNav: { bookId: 'rm', chapter: 1, verse: 20 },
     urlStrongs: 'https://biblehub.com/interlinear/romans/1-20.htm',
   },
   {
@@ -61,7 +62,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Ressurreição de Cristo / testemunhas oculares',
     text: 'Pois eu vos transmiti, em primeiro lugar, o que também recebi: que Cristo morreu por nossos pecados, segundo as Escrituras; que foi sepultado e que ressuscitou ao terceiro dia, segundo as Escrituras; que apareceu a Cefas e depois aos Doze; em seguida apareceu a mais de quinhentos irmãos de uma só vez, dos quais a maior parte é ainda viva e outros morreram.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/i-corintios/15/',
+    bibleNav: { bookId: '1cor', chapter: 15, verse: 3 },
     urlStrongs: 'https://biblehub.com/interlinear/1_corinthians/15-3.htm',
   },
   {
@@ -73,7 +74,7 @@ export const references = [
     year: 'c. 51-52 d.C.',
     topic: 'Tradição apostólica',
     text: 'Portanto, irmãos, permanecei firmes e conservai as tradições que aprendestes, seja por palavra, seja por carta nossa.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/ii-tessalonicenses/2/',
+    bibleNav: { bookId: '2ts', chapter: 2, verse: 15 },
     urlStrongs: 'https://biblehub.com/interlinear/2_thessalonians/2-15.htm',
   },
   {
@@ -85,7 +86,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Bodas de Caná / intercessão de Maria',
     text: 'No terceiro dia, houve uma festa de casamento em Caná da Galileia, e a mãe de Jesus estava lá. A mãe de Jesus disse aos serventes: Fazei o que ele vos disser.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-joao/2/',
+    bibleNav: { bookId: 'jo', chapter: 2, verse: 1 },
     urlStrongs: 'https://biblehub.com/interlinear/john/2-1.htm',
   },
   {
@@ -97,7 +98,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Comunhão dos santos / vida após a morte',
     text: 'Eu sou o Deus de Abraão, o Deus de Isaque e o Deus de Jacó? Deus não é Deus dos mortos, mas dos vivos.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-mateus/22/',
+    bibleNav: { bookId: 'mt', chapter: 22, verse: 32 },
     urlStrongs: 'https://biblehub.com/interlinear/matthew/22-32.htm',
   },
   {
@@ -109,7 +110,7 @@ export const references = [
     year: 'c. 95 d.C.',
     topic: 'Intercessão dos santos no céu',
     text: 'E quando tomou o livro, os quatro animais e os vinte e quatro anciãos prostraram-se diante do Cordeiro, tendo cada um deles harpas e taças de ouro cheias de incenso, que são as orações dos santos.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/apocalipse/5/',
+    bibleNav: { bookId: 'ap', chapter: 5, verse: 8 },
     urlStrongs: 'https://biblehub.com/interlinear/revelation/5-8.htm',
   },
   {
@@ -121,7 +122,7 @@ export const references = [
     year: 'c. 62-65 d.C.',
     topic: 'Mediação única de Cristo',
     text: 'Pois há um só Deus, e um só Mediador entre Deus e os homens: o homem Cristo Jesus.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/i-timoteo/2/',
+    bibleNav: { bookId: '1tm', chapter: 2, verse: 5 },
     urlStrongs: 'https://biblehub.com/interlinear/1_timothy/2-5.htm',
   },
   {
@@ -133,7 +134,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Problema do mal / providência divina',
     text: 'Sabemos que todas as coisas cooperam para o bem daqueles que amam a Deus, daqueles que são chamados segundo o seu propósito.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/romanos/8/',
+    bibleNav: { bookId: 'rm', chapter: 8, verse: 28 },
     urlStrongs: 'https://biblehub.com/interlinear/romans/8-28.htm',
   },
   {
@@ -145,7 +146,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Grande Mandato / evangelização',
     text: 'Ide, pois, fazei discípulos de todas as nações, batizando-os em nome do Pai e do Filho e do Espírito Santo; ensinando-os a observar tudo o que vos tenho mandado. E eis que estou convosco todos os dias até a consumação dos séculos.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-mateus/28/',
+    bibleNav: { bookId: 'mt', chapter: 28, verse: 19 },
     urlStrongs: 'https://biblehub.com/interlinear/matthew/28-19.htm',
   },
   {
@@ -157,7 +158,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Instituição da Eucaristia',
     text: 'Enquanto eles ceavam, Jesus tomou o pão, abençoou-o, partiu-o e o deu aos seus discípulos, dizendo: Tomai e comei, isto é o meu corpo. Tomando depois o cálice, deu graças e o entregou aos seus discípulos, dizendo: Bebei dele todos, porque isto é o meu sangue, o sangue da Aliança, que vai ser derramado por uma multidão em remissão dos pecados.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-mateus/26/',
+    bibleNav: { bookId: 'mt', chapter: 26, verse: 26 },
     urlStrongs: 'https://biblehub.com/interlinear/matthew/26-26.htm',
   },
   {
@@ -169,7 +170,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Eucaristia / comunhão indigna',
     text: 'Portanto, todo aquele que comer do pão ou beber do cálice do Senhor indignamente, será réu do corpo e do sangue do Senhor. Examine-se, pois, cada um a si mesmo, e assim coma deste pão e beba deste cálice.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/i-corintios/11/',
+    bibleNav: { bookId: '1cor', chapter: 11, verse: 27 },
     urlStrongs: 'https://biblehub.com/interlinear/1_corinthians/11-27.htm',
   },
   {
@@ -181,7 +182,7 @@ export const references = [
     year: 'redação final c. séc. VI a.C.',
     topic: 'Criação do homem / sexualidade',
     text: 'Deus criou o homem à sua imagem; criou-o à imagem de Deus, criou o homem e a mulher. Deus os abençoou: Sede fecundos, disse ele, multiplicai-vos, enchei a terra e submetei-a.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/genesis/1/',
+    bibleNav: { bookId: 'gn', chapter: 1, verse: 27 },
     urlStrongs: 'https://biblehub.com/interlinear/genesis/1-27.htm',
   },
   {
@@ -193,7 +194,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Sexualidade desordenada',
     text: 'Por isso, Deus os entregou a paixões vergonhosas: as suas mulheres mudaram as relações naturais por outras contrárias à natureza; do mesmo modo também os homens, deixando o uso natural da mulher, se inflamaram de desejos uns para com os outros, cometendo torpezas homens com homens.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/romanos/1/',
+    bibleNav: { bookId: 'rm', chapter: 1, verse: 26 },
     urlStrongs: 'https://biblehub.com/interlinear/romans/1-26.htm',
   },
   {
@@ -205,7 +206,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Inspiração e interpretação da Escritura',
     text: 'Antes de tudo, sabei isto: nenhuma profecia da Escritura é de interpretação particular. Pois a profecia jamais foi dada por vontade humana, mas homens, movidos pelo Espírito Santo, falaram da parte de Deus.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/ii-pedro/1/',
+    bibleNav: { bookId: '2pd', chapter: 1, verse: 20 },
     urlStrongs: 'https://biblehub.com/interlinear/2_peter/1-20.htm',
   },
   {
@@ -217,7 +218,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Ressurreição de Cristo / túmulo vazio',
     text: 'Depois do sábado, ao alvorecer do primeiro dia da semana, Maria Madalena e a outra Maria foram ver o sepulcro. E eis que houve um grande terremoto: um anjo do Senhor desceu do céu e, aproximando-se, removeu a pedra e sentou-se sobre ela.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-mateus/28/',
+    bibleNav: { bookId: 'mt', chapter: 28, verse: 1 },
     urlStrongs: 'https://biblehub.com/interlinear/matthew/28-1.htm',
   },
   {
@@ -229,7 +230,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Oração pela unidade da Igreja',
     text: 'Não rogo, porém, somente por eles, mas também por aqueles que, por meio de sua palavra, hão de crer em mim. Para que todos sejam um, assim como tu, Pai, estás em mim e eu em ti; para que também eles estejam em nós e o mundo creia que tu me enviaste.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-joao/17/',
+    bibleNav: { bookId: 'jo', chapter: 17, verse: 20 },
     urlStrongs: 'https://biblehub.com/interlinear/john/17-20.htm',
   },
   {
@@ -241,7 +242,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Eucaristia / confissão de Pedro',
     text: 'Disse Jesus aos doze: Quereis vós também retirar-vos? Respondeu-lhe Simão Pedro: Senhor, a quem iríamos nós? Tu tens as palavras da vida eterna; nós cremos e sabemos que tu és o Santo de Deus.',
-    url: 'https://www.bibliacatolica.com.br/biblia-ave-maria/sao-joao/6/',
+    bibleNav: { bookId: 'jo', chapter: 6, verse: 67 },
     urlStrongs: 'https://biblehub.com/interlinear/john/6-67.htm',
   },
 
