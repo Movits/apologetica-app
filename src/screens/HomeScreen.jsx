@@ -15,7 +15,7 @@ export default function HomeScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.hero}>
-        <Ionicons name="cross" size={48} color={COLORS.accent} />
+        <Text style={styles.heroIcon}>✝</Text>
         <Text style={styles.heroTitle}>Apologética Católica</Text>
         <Text style={styles.heroSub}>
           Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós.
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     padding: 28,
     marginBottom: 28,
   },
+  heroIcon: { fontSize: 40, color: '#c9a84c' },
   heroTitle: { color: '#fff', fontSize: 22, fontWeight: 'bold', marginTop: 10 },
   heroSub: { color: '#ccd9e8', fontSize: 14, textAlign: 'center', marginTop: 10, lineHeight: 20 },
   heroRef: { color: COLORS.accent, fontSize: 13, marginTop: 8, fontStyle: 'italic' },
