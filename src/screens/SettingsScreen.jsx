@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
+import { clearBibleCache, listCachedChapters } from '../services/bibleApi';
 
 const FONT_OPTIONS = [
   { key: 'pequeno', label: 'Pequeno', sample: 14 },
@@ -11,9 +13,38 @@ const FONT_OPTIONS = [
 
 export default function SettingsScreen() {
   const { colors, darkMode, setDarkMode, fontSize, setFontSize, fs } = useTheme();
+  const [cacheCount, setCacheCount] = useState(0);
+
+  const refreshCache = async () => {
+    const list = await listCachedChapters().catch(() => []);
+    setCacheCount(list.length);
+  };
+
+  useEffect(() => {
+    refreshCache();
+  }, []);
 
   const emBreve = (label) =>
     Alert.alert('Em breve', `O recurso "${label}" ainda está em desenvolvimento.`);
+
+  const handleClearCache = () => {
+    Alert.alert(
+      'Limpar cache da Bíblia?',
+      `${cacheCount} capítulo${cacheCount === 1 ? '' : 's'} salvos serão removidos. Eles precisarão ser baixados de novo quando você abrir.`,
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Limpar',
+          style: 'destructive',
+          onPress: async () => {
+            const n = await clearBibleCache().catch(() => 0);
+            await refreshCache();
+            Alert.alert('Cache limpo', `${n} capítulo${n === 1 ? '' : 's'} removidos.`);
+          },
+        },
+      ]
+    );
+  };
 
   const styles = makeStyles(colors, fs);
 
@@ -60,6 +91,31 @@ export default function SettingsScreen() {
         </View>
       </View>
 
+      <Text style={styles.section}>Bíblia</Text>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="cloud-done-outline" size={22} color={colors.primaryText} />
+          <View>
+            <Text style={styles.rowLabel}>Capítulos salvos offline</Text>
+            <Text style={styles.rowSub}>
+              {cacheCount === 0
+                ? 'Nenhum capítulo baixado ainda'
+                : `${cacheCount} capítulo${cacheCount === 1 ? '' : 's'} disponíveis offline`}
+            </Text>
+          </View>
+        </View>
+      </View>
+
+      <TouchableOpacity style={styles.row} onPress={handleClearCache} disabled={cacheCount === 0}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="trash-outline" size={22} color={colors.primaryText} />
+          <Text style={[styles.rowLabel, cacheCount === 0 && { opacity: 0.4 }]}>
+            Limpar cache da Bíblia
+          </Text>
+        </View>
+      </TouchableOpacity>
+
       <Text style={styles.section}>Conta</Text>
 
       <TouchableOpacity style={styles.row} onPress={() => emBreve('Fazer login')}>
@@ -86,9 +142,12 @@ export default function SettingsScreen() {
 
       <View style={styles.aboutBox}>
         <Text style={styles.aboutTitle}>APPologética</Text>
-        <Text style={styles.aboutVersion}>Versão 1.0.0</Text>
+        <Text style={styles.aboutVersion}>Versão 1.1.0</Text>
         <Text style={styles.aboutText}>
-          App de estudo e evangelização, com artigos de apologética, referências bíblicas e textos do Magistério.
+          App de estudo e evangelização, com artigos de apologética, referências bíblicas, Bíblia católica completa (73 livros) e textos do Magistério.
+        </Text>
+        <Text style={styles.aboutText}>
+          Tradução bíblica: Almeida (livros canônicos) + textos curados (deuterocanônicos).
         </Text>
         <Text style={styles.aboutQuote}>
           "Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."
@@ -122,8 +181,9 @@ const makeStyles = (c, fs) =>
       borderRadius: 12,
       marginBottom: 8,
     },
-    rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flex: 1 },
     rowLabel: { fontSize: fs(15), color: c.text },
+    rowSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
     fontGrid: {
       flexDirection: 'row',
       flexWrap: 'wrap',

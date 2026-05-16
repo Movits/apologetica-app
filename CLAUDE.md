@@ -19,34 +19,46 @@ npm run ios                    # abrir no simulador iOS
 1. **Início** — `HomeScreen` — hero + atalhos
 2. **Artigos** — `ArticlesScreen` — lista filtrável de textos de apologética
 3. **Referências** — `ReferencesScreen` — Bíblia, Catecismo, documentos
-4. **Bíblia** — `BibleScreen` — Livros → capítulos → versículos
-5. **Ajustes** — `SettingsScreen` — modo escuro, tamanho de letra, etc
+4. **Bíblia** — `BibleScreen` — 73 livros do cânon católico, fetch online + cache
+5. **Ajustes** — `SettingsScreen` — modo escuro, fonte, cache da Bíblia
 
 ### Estado global
 `src/context/ThemeContext.jsx` provê:
-- `colors` (paleta light/dark)
-- `darkMode`, `setDarkMode`
-- `fontSize`, `setFontSize` (pequeno/normal/grande/enorme)
-- `fs(n)` — função para escalar qualquer fontSize
+- `colors` (paleta light/dark, com `primary` para bg e `primaryText` para texto)
+- `darkMode`, `setDarkMode` (persistido em AsyncStorage)
+- `fontSize`, `setFontSize` (persistido)
+- `fs(n)` — função para escalar fontSize
 
 Todas as telas usam `useTheme()` e fazem `styles` via `makeStyles(colors, fs)`.
 
+### Bíblia: API + Cache
+`src/services/bibleApi.js` orquestra três camadas:
+1. **Conteúdo local curado** (`src/data/bibleContent.js`): capítulos referenciados nos artigos + 7 deuterocanônicos (Tb, Jt, 1-2 Mc, Sb, Eclo, Br).
+2. **AsyncStorage cache**: capítulos baixados ficam offline para sempre.
+3. **bible-api.com** (Almeida, gratuita): fallback para os 66 livros canônicos quando não está em cache.
+
+Função principal: `fetchChapter(bookId, chapter)` retorna `{ total, verses: [{n, t}], source }`.
+
+`source` indica origem (`local` | `cache` | `api` | `unavailable`).
+
 ### Navegação entre telas
-- `ArticlesScreen` → tap em referência → `navigate('Referências', { highlightId })` → `ReferencesScreen` expande e scrolla até ela.
-- `BibleScreen` aceita `route.params.bookId/chapter/highlightVerse` para deep linking.
+- `ArticlesScreen` → tap em referência → `navigate('Referências', { highlightId })`.
+- `ReferencesScreen` → botão "Ler no app" para refs bíblicas → `navigate('Bíblia', { bookId, chapter, highlightVerse })`.
+- `BibleScreen` aceita esses params via `route.params`.
 
 ### Dados (estáticos em `src/data/`)
-- `articles.js` — array de artigos. Campo `references[]` contém IDs que apontam para `references.js`.
-- `references.js` — versículos, CIC, documentos. Cada item tem `id`, `ref`, `fullSource`, `author`, `year`, `topic`, `text`, `url`, opcional `urlStrongs`.
-- `bible.js` — `BIBLE_BOOKS[]` com livros, e cada livro tem `chapters: { [n]: [versículo1, ...] }`. Inclui apenas os capítulos referenciados nos artigos por enquanto.
+- `articles.js` — array de artigos. `references[]` contém IDs de `references.js`.
+- `references.js` — versículos, CIC, documentos. Refs bíblicas têm `bibleNav: { bookId, chapter, verse }`.
+- `bible.js` — metadados dos 73 livros (id, apiId, nome, total de capítulos, deuterocanônico ou não).
+- `bibleContent.js` — capítulos com texto local: curados (Gn 1, Sl 23, etc.) + deuterocanônicos.
 
 ### Convenções de conteúdo
-- **Sem travessões (—)** nos textos. Usar vírgula, ponto ou parênteses.
-- **Linguagem natural** em português brasileiro, não "AI-like".
+- **Sem travessões (—)** nos textos.
+- **Linguagem natural** em português, não "AI-like".
 - **Citações completas**: expandir siglas (Catecismo em vez de CIC) e incluir autor + ano.
 
 ### Paleta
 - `primary: #1a3a5c` (azul marinho), `accent: #c9a84c` (dourado), `bg: #f5f0e8` (creme).
-- Versão dark equivalente em `ThemeContext`.
+- Dark mode: primaryText vira dourado claro (#e6c878) para legibilidade.
 
 Icons via `@expo/vector-icons` (Ionicons).
