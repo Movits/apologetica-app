@@ -1,11 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import {
-  View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView,
-  Linking, ActivityIndicator, TextInput,
-} from 'react-native';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BIBLE_BOOKS } from '../data/bible';
-import { fetchChapter } from '../services/bibleApi';
+import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
 
 export default function BibleScreen({ route, navigation }) {
@@ -14,13 +11,10 @@ export default function BibleScreen({ route, navigation }) {
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
   const [highlightVerse, setHighlightVerse] = useState(null);
-  const [chapterData, setChapterData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [filterText, setFilterText] = useState('');
   const verseListRef = useRef(null);
 
-  // Deep link a partir de uma referência clicada
+  // Deep link de uma referência clicada (rota tem bookId/chapter/highlightVerse)
   useEffect(() => {
     const params = route?.params;
     if (params?.bookId) {
@@ -39,40 +33,22 @@ export default function BibleScreen({ route, navigation }) {
     }
   }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse]);
 
-  // Busca capítulo quando entra na tela de versículos
-  useEffect(() => {
-    if (view !== 'verses' || !book || !chapter) return;
-    let active = true;
-    setLoading(true);
-    setError(null);
-    setChapterData(null);
-    fetchChapter(book.id, chapter)
-      .then((data) => {
-        if (!active) return;
-        setChapterData(data);
-      })
-      .catch((err) => {
-        if (!active) return;
-        setError(err.message || 'Erro ao carregar capítulo');
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
-    return () => {
-      active = false;
-    };
+  // Dados do capítulo atual (sync, vem do bundle local)
+  const chapterData = useMemo(() => {
+    if (view !== 'verses' || !book || !chapter) return null;
+    return getChapter(book.id, chapter);
   }, [view, book?.id, chapter]);
 
-  // Scroll até o versículo destacado
+  // Scroll até versículo destacado
   useEffect(() => {
-    if (view !== 'verses' || !highlightVerse || !chapterData?.verses?.length) return;
+    if (!chapterData?.verses?.length || !highlightVerse) return;
     const idx = chapterData.verses.findIndex((v) => v.n === highlightVerse);
     if (idx >= 0 && verseListRef.current) {
       setTimeout(() => {
         verseListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.2 });
       }, 350);
     }
-  }, [view, highlightVerse, chapterData]);
+  }, [chapterData, highlightVerse]);
 
   const styles = makeStyles(colors, fs);
 
@@ -81,9 +57,7 @@ export default function BibleScreen({ route, navigation }) {
     const q = filterText.trim().toLowerCase();
     const filtered = q
       ? BIBLE_BOOKS.filter(
-          (b) =>
-            b.name.toLowerCase().includes(q) ||
-            b.short.toLowerCase().includes(q)
+          (b) => b.name.toLowerCase().includes(q) || b.short.toLowerCase().includes(q)
         )
       : BIBLE_BOOKS;
 
@@ -98,7 +72,7 @@ export default function BibleScreen({ route, navigation }) {
         <View style={styles.intro}>
           <Text style={styles.introTitle}>Bíblia Sagrada</Text>
           <Text style={styles.introSub}>
-            73 livros do cânon católico. Capítulos canônicos vêm da tradução Almeida (online, com cache). Deuterocanônicos têm conteúdo curado no app.
+            73 livros do cânon católico. Tradução Almeida Atualizada para os livros canônicos, com conteúdo curado para os deuterocanônicos. Tudo offline.
           </Text>
         </View>
 
@@ -126,7 +100,7 @@ export default function BibleScreen({ route, navigation }) {
                     setView('chapters');
                   }}
                 >
-                  <View style={[styles.bookAbbrev, b.deutero && styles.bookAbbrevDeutero]}>
+                  <View style={styles.bookAbbrev}>
                     <Text style={styles.bookAbbrevText}>{b.short}</Text>
                   </View>
                   <View style={{ flex: 1 }}>
@@ -158,11 +132,6 @@ export default function BibleScreen({ route, navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.bookHeader}>{book.name}</Text>
-        <Text style={styles.chaptersHint}>
-          {book.deutero
-            ? 'Livro deuterocanônico. Alguns capítulos têm conteúdo no app, outros virão.'
-            : 'Toque em um capítulo para abrir. Carrega online na primeira vez (e fica salvo para uso offline depois).'}
-        </Text>
 
         <FlatList
           key="chapters-grid"
@@ -189,15 +158,20 @@ export default function BibleScreen({ route, navigation }) {
 
   // ===== VERSÍCULOS =====
   if (view === 'verses' && book && chapter) {
-    const externalUrl = `https://www.bibliacatolica.com.br/biblia-ave-maria/${book.name
-      .toLowerCase()
-      .replace(/ /g, '-')
-      .replace(/[áàâãä]/g, 'a')
-      .replace(/[éèê]/g, 'e')
-      .replace(/[íì]/g, 'i')
-      .replace(/[óòôõö]/g, 'o')
-      .replace(/[úùû]/g, 'u')
-      .replace(/[ç]/g, 'c')}/${chapter}/`;
+    const hasPrev = chapter > 1;
+    const hasNext = chapter < book.totalChapters;
+    const isEmpty = !chapterData?.verses?.length;
+
+    const goPrev = () => {
+      if (!hasPrev) return;
+      setHighlightVerse(null);
+      setChapter(chapter - 1);
+    };
+    const goNext = () => {
+      if (!hasNext) return;
+      setHighlightVerse(null);
+      setChapter(chapter + 1);
+    };
 
     return (
       <View style={styles.container}>
@@ -206,8 +180,6 @@ export default function BibleScreen({ route, navigation }) {
           onPress={() => {
             setChapter(null);
             setHighlightVerse(null);
-            setChapterData(null);
-            setError(null);
             setView('chapters');
           }}
         >
@@ -219,68 +191,17 @@ export default function BibleScreen({ route, navigation }) {
           <Text style={styles.verseHeaderTitle}>
             {book.name} {chapter}
           </Text>
-          <TouchableOpacity
-            style={styles.externalBtn}
-            onPress={() => Linking.openURL(externalUrl).catch(() => {})}
-          >
-            <Ionicons name="open-outline" size={16} color={colors.accent} />
-            <Text style={styles.externalBtnText}>Ave Maria</Text>
-          </TouchableOpacity>
         </View>
 
-        {chapterData?.source === 'cache' && (
-          <View style={styles.sourceBanner}>
-            <Ionicons name="cloud-done-outline" size={14} color={colors.textMuted} />
-            <Text style={styles.sourceText}>Salvo offline</Text>
-          </View>
-        )}
-        {chapterData?.source === 'local' && (
-          <View style={styles.sourceBanner}>
-            <Ionicons name="bookmark-outline" size={14} color={colors.textMuted} />
-            <Text style={styles.sourceText}>Conteúdo do app</Text>
-          </View>
-        )}
-
-        {loading && (
-          <View style={styles.center}>
-            <ActivityIndicator size="large" color={colors.accent} />
-            <Text style={styles.loadingText}>Carregando capítulo...</Text>
-          </View>
-        )}
-
-        {error && !loading && (
-          <View style={styles.center}>
-            <Ionicons name="cloud-offline-outline" size={48} color={colors.textSubtle} />
-            <Text style={styles.errorText}>Não foi possível carregar.</Text>
-            <Text style={styles.errorSub}>{error}</Text>
-            <Text style={styles.errorSub}>Verifique sua conexão e tente de novo.</Text>
-            <TouchableOpacity
-              style={styles.retryBtn}
-              onPress={() => {
-                setChapter(null);
-                setTimeout(() => setChapter(chapter), 10);
-              }}
-            >
-              <Text style={styles.retryText}>Tentar novamente</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-
-        {!loading && !error && chapterData?.source === 'unavailable' && (
+        {isEmpty ? (
           <View style={styles.center}>
             <Ionicons name="time-outline" size={48} color={colors.textSubtle} />
             <Text style={styles.errorText}>Capítulo em preparação</Text>
-            <Text style={styles.errorSub}>{chapterData.message}</Text>
-            <TouchableOpacity
-              style={styles.retryBtn}
-              onPress={() => Linking.openURL(externalUrl).catch(() => {})}
-            >
-              <Text style={styles.retryText}>Ler na Bíblia Católica online</Text>
-            </TouchableOpacity>
+            <Text style={styles.errorSub}>
+              Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app. Será incluído em uma próxima atualização.
+            </Text>
           </View>
-        )}
-
-        {!loading && !error && chapterData?.verses?.length > 0 && (
+        ) : (
           <FlatList
             key="verses-list"
             ref={verseListRef}
@@ -303,6 +224,33 @@ export default function BibleScreen({ route, navigation }) {
             }}
           />
         )}
+
+        {/* Barra de navegação inferior */}
+        <View style={styles.navBar}>
+          <TouchableOpacity
+            style={[styles.navBtn, !hasPrev && styles.navBtnDisabled]}
+            onPress={goPrev}
+            disabled={!hasPrev}
+          >
+            <Ionicons name="chevron-back" size={20} color={hasPrev ? colors.primaryText : colors.textSubtle} />
+            <Text style={[styles.navBtnText, !hasPrev && styles.navBtnTextDisabled]}>
+              {hasPrev ? `${book.short} ${chapter - 1}` : ''}
+            </Text>
+          </TouchableOpacity>
+
+          <Text style={styles.navCurrent}>{chapter}/{book.totalChapters}</Text>
+
+          <TouchableOpacity
+            style={[styles.navBtn, !hasNext && styles.navBtnDisabled, { justifyContent: 'flex-end' }]}
+            onPress={goNext}
+            disabled={!hasNext}
+          >
+            <Text style={[styles.navBtnText, !hasNext && styles.navBtnTextDisabled]}>
+              {hasNext ? `${book.short} ${chapter + 1}` : ''}
+            </Text>
+            <Ionicons name="chevron-forward" size={20} color={hasNext ? colors.primaryText : colors.textSubtle} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -353,7 +301,6 @@ const makeStyles = (c, fs) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
-    bookAbbrevDeutero: { backgroundColor: c.accent },
     bookAbbrevText: { color: '#fff', fontWeight: 'bold', fontSize: fs(13) },
     bookName: { fontSize: fs(15), color: c.text, fontWeight: '600' },
     bookMeta: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
@@ -364,14 +311,7 @@ const makeStyles = (c, fs) =>
       fontWeight: 'bold',
       color: c.primaryText,
       paddingHorizontal: 16,
-      marginBottom: 4,
-    },
-    chaptersHint: {
-      fontSize: fs(12),
-      color: c.textMuted,
-      paddingHorizontal: 16,
       marginBottom: 12,
-      fontStyle: 'italic',
     },
     chapterGrid: { padding: 12 },
     chapterCell: {
@@ -394,26 +334,7 @@ const makeStyles = (c, fs) =>
       paddingBottom: 8,
     },
     verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText },
-    externalBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: c.accent,
-    },
-    externalBtnText: { color: c.accent, fontSize: fs(12), fontWeight: 'bold' },
-    sourceBanner: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 6,
-      paddingHorizontal: 16,
-      paddingVertical: 4,
-    },
-    sourceText: { fontSize: fs(11), color: c.textMuted },
-    verseList: { padding: 16, paddingBottom: 40 },
+    verseList: { padding: 16, paddingBottom: 24 },
     verseRow: { flexDirection: 'row', marginBottom: 10, padding: 8, borderRadius: 8 },
     verseRowHighlight: { backgroundColor: c.badgeBg },
     verseNum: {
@@ -428,15 +349,28 @@ const makeStyles = (c, fs) =>
     verseText: { flex: 1, fontSize: fs(15), color: c.text, lineHeight: fs(23) },
     verseTextHighlight: { fontWeight: '600' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, gap: 8 },
-    loadingText: { fontSize: fs(14), color: c.textMuted, marginTop: 12 },
     errorText: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },
-    errorSub: { fontSize: fs(13), color: c.textMuted, textAlign: 'center' },
-    retryBtn: {
-      marginTop: 16,
-      paddingHorizontal: 18,
+    errorSub: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(19) },
+    navBar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingHorizontal: 12,
       paddingVertical: 10,
-      borderRadius: 10,
-      backgroundColor: c.accent,
+      borderTopWidth: 1,
+      borderTopColor: c.divider,
+      backgroundColor: c.card,
     },
-    retryText: { color: '#fff', fontWeight: 'bold', fontSize: fs(14) },
+    navBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      flex: 1,
+      paddingVertical: 6,
+      paddingHorizontal: 8,
+    },
+    navBtnDisabled: { opacity: 0.3 },
+    navBtnText: { fontSize: fs(13), color: c.primaryText, fontWeight: '600' },
+    navBtnTextDisabled: { color: c.textSubtle },
+    navCurrent: { fontSize: fs(12), color: c.textMuted, fontWeight: '600', minWidth: 60, textAlign: 'center' },
   });

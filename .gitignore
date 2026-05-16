@@ -1,4 +1,5 @@
 node_modules/
+src/data/_almeida_raw.json
 .expo/
 dist/
 web-build/
