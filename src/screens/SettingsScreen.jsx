@@ -76,12 +76,12 @@ export default function SettingsScreen() {
 
       <View style={styles.aboutBox}>
         <Text style={styles.aboutTitle}>APPologética</Text>
-        <Text style={styles.aboutVersion}>Versão 1.2.0</Text>
+        <Text style={styles.aboutVersion}>Versão 1.3.0</Text>
         <Text style={styles.aboutText}>
-          App de estudo e evangelização. Funciona 100% offline: artigos de apologética, referências bíblicas, Bíblia católica e textos do Magistério.
+          App de estudo e evangelização. Funciona 100% offline: artigos de apologética, referências bíblicas, Bíblia católica completa e textos do Magistério.
         </Text>
         <Text style={styles.aboutText}>
-          Tradução bíblica: Almeida Atualizada para os 66 livros canônicos, conteúdo curado para os deuterocanônicos.
+          Tradução bíblica: Bíblia Ave Maria (73 livros do cânon católico).
         </Text>
         <Text style={styles.aboutQuote}>
           "Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."

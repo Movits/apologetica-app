@@ -72,7 +72,7 @@ export default function BibleScreen({ route, navigation }) {
         <View style={styles.intro}>
           <Text style={styles.introTitle}>Bíblia Sagrada</Text>
           <Text style={styles.introSub}>
-            73 livros do cânon católico. Tradução Almeida Atualizada para os livros canônicos, com conteúdo curado para os deuterocanônicos. Tudo offline.
+            73 livros do cânon católico, tradução Ave Maria completa. Funciona 100% offline.
           </Text>
         </View>
 

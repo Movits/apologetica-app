@@ -25,7 +25,7 @@ export const BIBLE_BOOKS = [
   { id: 'ne', apiId: 'nehemiah', name: 'Neemias', short: 'Ne', testament: 'AT', group: 'Históricos', totalChapters: 13, deutero: false },
   { id: 'tb', apiId: null, name: 'Tobias', short: 'Tb', testament: 'AT', group: 'Históricos', totalChapters: 14, deutero: true },
   { id: 'jt', apiId: null, name: 'Judite', short: 'Jt', testament: 'AT', group: 'Históricos', totalChapters: 16, deutero: true },
-  { id: 'est', apiId: 'esther', name: 'Ester', short: 'Est', testament: 'AT', group: 'Históricos', totalChapters: 10, deutero: false },
+  { id: 'est', apiId: 'esther', name: 'Ester', short: 'Est', testament: 'AT', group: 'Históricos', totalChapters: 16, deutero: false },
   { id: '1mc', apiId: null, name: '1 Macabeus', short: '1Mc', testament: 'AT', group: 'Históricos', totalChapters: 16, deutero: true },
   { id: '2mc', apiId: null, name: '2 Macabeus', short: '2Mc', testament: 'AT', group: 'Históricos', totalChapters: 15, deutero: true },
 
@@ -44,9 +44,9 @@ export const BIBLE_BOOKS = [
   { id: 'lm', apiId: 'lamentations', name: 'Lamentações', short: 'Lm', testament: 'AT', group: 'Proféticos', totalChapters: 5, deutero: false },
   { id: 'br', apiId: null, name: 'Baruque', short: 'Br', testament: 'AT', group: 'Proféticos', totalChapters: 6, deutero: true },
   { id: 'ez', apiId: 'ezekiel', name: 'Ezequiel', short: 'Ez', testament: 'AT', group: 'Proféticos', totalChapters: 48, deutero: false },
-  { id: 'dn', apiId: 'daniel', name: 'Daniel', short: 'Dn', testament: 'AT', group: 'Proféticos', totalChapters: 12, deutero: false },
+  { id: 'dn', apiId: 'daniel', name: 'Daniel', short: 'Dn', testament: 'AT', group: 'Proféticos', totalChapters: 14, deutero: false },
   { id: 'os', apiId: 'hosea', name: 'Oséias', short: 'Os', testament: 'AT', group: 'Proféticos', totalChapters: 14, deutero: false },
-  { id: 'jl', apiId: 'joel', name: 'Joel', short: 'Jl', testament: 'AT', group: 'Proféticos', totalChapters: 3, deutero: false },
+  { id: 'jl', apiId: 'joel', name: 'Joel', short: 'Jl', testament: 'AT', group: 'Proféticos', totalChapters: 4, deutero: false },
   { id: 'am', apiId: 'amos', name: 'Amós', short: 'Am', testament: 'AT', group: 'Proféticos', totalChapters: 9, deutero: false },
   { id: 'ab', apiId: 'obadiah', name: 'Abdias', short: 'Ab', testament: 'AT', group: 'Proféticos', totalChapters: 1, deutero: false },
   { id: 'jn_at', apiId: 'jonah', name: 'Jonas', short: 'Jn', testament: 'AT', group: 'Proféticos', totalChapters: 4, deutero: false },
@@ -56,7 +56,7 @@ export const BIBLE_BOOKS = [
   { id: 'sf', apiId: 'zephaniah', name: 'Sofonias', short: 'Sf', testament: 'AT', group: 'Proféticos', totalChapters: 3, deutero: false },
   { id: 'ag', apiId: 'haggai', name: 'Ageu', short: 'Ag', testament: 'AT', group: 'Proféticos', totalChapters: 2, deutero: false },
   { id: 'zc', apiId: 'zechariah', name: 'Zacarias', short: 'Zc', testament: 'AT', group: 'Proféticos', totalChapters: 14, deutero: false },
-  { id: 'ml', apiId: 'malachi', name: 'Malaquias', short: 'Ml', testament: 'AT', group: 'Proféticos', totalChapters: 4, deutero: false },
+  { id: 'ml', apiId: 'malachi', name: 'Malaquias', short: 'Ml', testament: 'AT', group: 'Proféticos', totalChapters: 3, deutero: false },
 
   // ========== EVANGELHOS ==========
   { id: 'mt', apiId: 'matthew', name: 'Mateus', short: 'Mt', testament: 'NT', group: 'Evangelhos', totalChapters: 28, deutero: false },
