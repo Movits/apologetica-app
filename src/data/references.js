@@ -256,7 +256,7 @@ export const references = [
     year: '1992',
     topic: 'Conhecimento natural de Deus pela razão',
     text: 'Criado à imagem de Deus, chamado a conhecê-lo e a amá-lo, o homem que procura Deus descobre certas vias para chegar ao conhecimento dele. Tomando como ponto de partida o movimento e o devir, a contingência, a ordem e a beleza do mundo, pode-se conhecer a Deus como origem e fim do universo.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s1c1_26-49_po.html',
   },
   {
     id: 'cic-80-83',
@@ -267,7 +267,7 @@ export const references = [
     year: '1992',
     topic: 'Sagrada Escritura e Sagrada Tradição',
     text: 'A Sagrada Tradição e a Sagrada Escritura constituem um único sagrado depósito da Palavra de Deus, confiado à Igreja. Apenas o Magistério vivo da Igreja pode autenticamente interpretar a Palavra de Deus.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s1c2_50-141_po.html',
   },
   {
     id: 'cic-816',
@@ -278,7 +278,7 @@ export const references = [
     year: '1992',
     topic: 'Unidade da Igreja / subsistit in',
     text: 'A única Igreja de Cristo, que no Símbolo confessamos una, santa, católica e apostólica, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos bispos em comunhão com ele.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s2cap3_683-1065_po.html',
   },
   {
     id: 'cic-966',
@@ -289,7 +289,7 @@ export const references = [
     year: '1992',
     topic: 'Maria / Assunção / mediação',
     text: 'A Virgem imaculada, preservada imune de toda a mancha do pecado original, terminado o curso da vida terrena, foi elevada à glória celeste em corpo e alma, e exaltada pelo Senhor como Rainha do universo.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s2cap3_683-1065_po.html',
   },
   {
     id: 'cic-1373',
@@ -300,7 +300,7 @@ export const references = [
     year: '1992',
     topic: 'Eucaristia / transubstanciação',
     text: 'O modo da presença de Cristo sob as espécies eucarísticas é único. Nesta presença, Cristo se faz presente de modo substancial: toda a substância do pão se converte na substância do Corpo de Cristo, e toda a substância do vinho na substância do Sangue de Cristo, o que a Igreja chama transubstanciação.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap1_1210-1419_po.html',
   },
   {
     id: 'cic-2357',
@@ -311,7 +311,7 @@ export const references = [
     year: '1992',
     topic: 'Homossexualidade / castidade',
     text: 'As pessoas homossexuais devem ser acolhidas com respeito, compaixão e delicadeza. Evitar-se-á para com elas qualquer sinal de discriminação injusta. Estas pessoas são chamadas a realizar a vontade de Deus em sua vida.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p3s2cap2_2196-2557_po.html',
   },
   {
     id: 'cic-309',
@@ -322,7 +322,7 @@ export const references = [
     year: '1992',
     topic: 'Problema do mal / providência',
     text: 'Deus, que é onipotente e soberanamente bom, por que permitiu o mal? A esta pergunta tão premente quanto inevitável só a fé cristã dá a resposta cabal: bondade de Deus e soberania são compatíveis com o mal porque Deus permite o mal a fim de extrair dele um bem maior.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s2c1_198-421_po.html',
   },
   {
     id: 'cic-638',
@@ -333,7 +333,7 @@ export const references = [
     year: '1992',
     topic: 'Ressurreição de Cristo',
     text: 'A Ressurreição de Cristo é a verdade culminante da nossa fé em Cristo. A Ressurreição de Jesus é objeto de fé enquanto intervenção transcendente de Deus na criação e na história.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p1s2cap2_422-682_po.html',
   },
 
   // ============ DOCUMENTOS DO MAGISTÉRIO ============
@@ -403,7 +403,7 @@ export const references = [
     year: '1265 a 1274',
     topic: 'Demonstrações da existência de Deus',
     text: 'É necessário chegar a um primeiro motor que não seja movido por nenhum outro; e esse todos entendem ser Deus. O segundo caminho parte da causalidade eficiente. O terceiro caminho parte do contingente e do necessário. O quarto parte dos graus de perfeição. O quinto parte da ordem do mundo.',
-    url: 'https://sumateologica.fandom.com/pt/wiki/Tomo_I,_Quest%C3%A3o_2',
+    url: 'https://apologetica.net.br/wp-content/uploads/2016/07/cinco_vias.pdf',
   },
   {
     id: 'inacio-esmirnenses-7',
@@ -414,7 +414,7 @@ export const references = [
     year: 'c. 107 d.C.',
     topic: 'Presença real de Cristo na Eucaristia',
     text: 'Afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo, que padeceu por nossos pecados e que o Pai, em sua bondade, ressuscitou.',
-    url: 'https://www.veritatis.com.br/article/3537',
+    url: 'https://www.cristianismo.org.br/inacio-7.htm',
   },
   {
     id: 'lewis-problema-dor',
@@ -425,7 +425,7 @@ export const references = [
     year: '1940',
     topic: 'Problema do mal e do sofrimento',
     text: 'Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo.',
-    url: 'https://thomasnelson.com.br/produto/o-problema-da-dor/',
+    url: 'https://thomasnelson.com.br/products/o-problema-da-dor-cs-lewis',
   },
   {
     id: 'josefo-antiguidades-20',
@@ -436,7 +436,7 @@ export const references = [
     year: 'c. 93-94 d.C.',
     topic: 'Atestação histórica de Jesus e Tiago',
     text: 'Anás reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados.',
-    url: 'https://pt.wikisource.org/wiki/Antiguidades_Judaicas',
+    url: 'https://pt.wikipedia.org/wiki/Antiguidades_Judaicas',
   },
 ];
 
