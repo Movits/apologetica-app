@@ -72,16 +72,6 @@ export default function SettingsScreen() {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.row} onPress={() => emBreve('Idioma')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="language-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>Idioma (Português)</Text>
-        </View>
-        <View style={styles.soonBadge}>
-          <Text style={styles.soonText}>em breve</Text>
-        </View>
-      </TouchableOpacity>
-
       <Text style={styles.section}>Sobre</Text>
 
       <View style={styles.aboutBox}>
