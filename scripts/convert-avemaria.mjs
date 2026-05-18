@@ -90,6 +90,16 @@ const allBooks = [...data.antigoTestamento, ...data.novoTestamento];
 const result = {};
 const chapterCounts = {};
 
+// Remove marcadores de nota de rodapé (asteriscos) que ficam órfãos
+// porque o JSON original não inclui o texto das notas.
+function cleanVerse(text) {
+  return text
+    .replace(/\*+/g, '')           // tira asteriscos (notas de rodapé)
+    .replace(/\s+([.,;:!?])/g, '$1') // tira espaço antes de pontuação
+    .replace(/\s{2,}/g, ' ')       // colapsa espaços duplos
+    .trim();
+}
+
 for (const book of allBooks) {
   const id = NAME_MAP[book.nome];
   if (!id) {
@@ -97,7 +107,7 @@ for (const book of allBooks) {
     continue;
   }
   // Cada capítulo vira array de strings (na ordem dos versículos)
-  result[id] = book.capitulos.map((ch) => ch.versiculos.map((v) => v.texto));
+  result[id] = book.capitulos.map((ch) => ch.versiculos.map((v) => cleanVerse(v.texto)));
   chapterCounts[id] = result[id].length;
 }
 

@@ -425,7 +425,6 @@ export const references = [
     year: '1940',
     topic: 'Problema do mal e do sofrimento',
     text: 'Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo.',
-    url: 'https://thomasnelson.com.br/products/o-problema-da-dor-cs-lewis',
   },
   {
     id: 'josefo-antiguidades-20',
