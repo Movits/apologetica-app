@@ -2,6 +2,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 
 const HIGHLIGHTS = [
   { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas comuns', tab: 'Artigos' },
@@ -9,9 +10,15 @@ const HIGHLIGHTS = [
   { icon: 'bookmark-outline', label: 'Bíblia Sagrada', sub: 'Leia as Escrituras no app', tab: 'Bíblia' },
 ];
 
+const STUDY = [
+  { icon: 'color-fill-outline', label: 'Minhas Marcações', screen: 'Highlights' },
+  { icon: 'document-text-outline', label: 'Minhas Notas', screen: 'Notes' },
+];
+
 export default function HomeScreen() {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
+  const { user } = useAuth();
   const styles = makeStyles(colors, fs);
 
   return (
@@ -42,6 +49,25 @@ export default function HomeScreen() {
           <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
         </TouchableOpacity>
       ))}
+
+      {user && (
+        <>
+          <Text style={styles.sectionTitle}>Meu Estudo</Text>
+          {STUDY.map((item) => (
+            <TouchableOpacity
+              key={item.screen}
+              style={styles.card}
+              onPress={() => navigation.navigate(item.screen)}
+            >
+              <View style={styles.cardIcon}>
+                <Ionicons name={item.icon} size={26} color={colors.primaryText} />
+              </View>
+              <Text style={[styles.cardLabel, { flex: 1 }]}>{item.label}</Text>
+              <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
+            </TouchableOpacity>
+          ))}
+        </>
+      )}
     </ScrollView>
   );
 }
@@ -51,33 +77,21 @@ const makeStyles = (c, fs) =>
     container: { flex: 1, backgroundColor: c.bg },
     content: { padding: 20, paddingBottom: 40 },
     hero: {
-      alignItems: 'center',
-      backgroundColor: c.primary,
-      borderRadius: 16,
-      padding: 28,
-      marginBottom: 28,
+      alignItems: 'center', backgroundColor: c.primary, borderRadius: 16,
+      padding: 28, marginBottom: 28,
     },
     heroIcon: { fontSize: fs(40), color: c.accent },
     heroTitle: { color: '#fff', fontSize: fs(24), fontWeight: 'bold', marginTop: 10 },
     heroSub: { color: c.heroSub, fontSize: fs(14), textAlign: 'center', marginTop: 10, lineHeight: fs(20) },
     heroRef: { color: c.accent, fontSize: fs(13), marginTop: 10, fontStyle: 'italic', fontWeight: 'bold' },
-    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 12 },
+    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 12, marginTop: 8 },
     card: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 16,
-      marginBottom: 12,
-      gap: 14,
+      flexDirection: 'row', alignItems: 'center',
+      backgroundColor: c.card, borderRadius: 12, padding: 16, marginBottom: 12, gap: 14,
     },
     cardIcon: {
-      width: 44,
-      height: 44,
-      borderRadius: 10,
-      backgroundColor: c.badgeBg,
-      justifyContent: 'center',
-      alignItems: 'center',
+      width: 44, height: 44, borderRadius: 10, backgroundColor: c.badgeBg,
+      justifyContent: 'center', alignItems: 'center',
     },
     cardLabel: { fontSize: fs(16), color: c.text, fontWeight: '600' },
     cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },

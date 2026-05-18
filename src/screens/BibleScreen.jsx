@@ -1,20 +1,37 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert, Clipboard } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BIBLE_BOOKS } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
+import {
+  watchChapterHighlights, watchChapterNotes,
+  addHighlight, removeHighlight,
+} from '../services/userData';
+
+const HIGHLIGHT_COLORS = [
+  { key: 'yellow', value: '#fff3a6' },
+  { key: 'green', value: '#c8f0c0' },
+  { key: 'blue', value: '#c4dffb' },
+  { key: 'pink', value: '#f8c4d3' },
+  { key: 'orange', value: '#ffd9a8' },
+];
 
 export default function BibleScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
+  const { user } = useAuth();
   const [view, setView] = useState('books');
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
   const [highlightVerse, setHighlightVerse] = useState(null);
   const [filterText, setFilterText] = useState('');
+  const [actionVerse, setActionVerse] = useState(null);
+  const [chapterHighlights, setChapterHighlights] = useState([]);
+  const [chapterNotes, setChapterNotes] = useState([]);
   const verseListRef = useRef(null);
 
-  // Deep link de uma referência clicada (rota tem bookId/chapter/highlightVerse)
+  // Deep link de uma referência
   useEffect(() => {
     const params = route?.params;
     if (params?.bookId) {
@@ -33,11 +50,38 @@ export default function BibleScreen({ route, navigation }) {
     }
   }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse]);
 
-  // Dados do capítulo atual (sync, vem do bundle local)
   const chapterData = useMemo(() => {
     if (view !== 'verses' || !book || !chapter) return null;
     return getChapter(book.id, chapter);
   }, [view, book?.id, chapter]);
+
+  // Subscreve às marcações e notas deste capítulo
+  useEffect(() => {
+    if (view !== 'verses' || !book || !chapter || !user) {
+      setChapterHighlights([]);
+      setChapterNotes([]);
+      return;
+    }
+    const u1 = watchChapterHighlights(book.id, chapter, setChapterHighlights);
+    const u2 = watchChapterNotes(book.id, chapter, setChapterNotes);
+    return () => { u1(); u2(); };
+  }, [view, book?.id, chapter, user]);
+
+  // Mapa: { verseNumber: highlight }
+  const highlightsByVerse = useMemo(() => {
+    const map = {};
+    chapterHighlights.forEach((h) => { map[h.verse] = h; });
+    return map;
+  }, [chapterHighlights]);
+
+  // Verses with notes (Set of verse numbers covered)
+  const versesWithNotes = useMemo(() => {
+    const s = new Set();
+    chapterNotes.forEach((n) => {
+      for (let v = n.verseStart; v <= n.verseEnd; v++) s.add(v);
+    });
+    return s;
+  }, [chapterNotes]);
 
   // Scroll até versículo destacado
   useEffect(() => {
@@ -50,15 +94,55 @@ export default function BibleScreen({ route, navigation }) {
     }
   }, [chapterData, highlightVerse]);
 
+  const onLongPressVerse = (verse) => {
+    if (!user) {
+      Alert.alert('Entre na sua conta', 'Faça login em Ajustes para marcar e anotar versículos.');
+      return;
+    }
+    setActionVerse(verse);
+  };
+
+  const applyHighlight = async (color) => {
+    if (!actionVerse) return;
+    const existing = highlightsByVerse[actionVerse.n];
+    try {
+      if (existing) await removeHighlight(existing.id);
+      if (!existing || existing.color !== color) {
+        await addHighlight({ bookId: book.id, chapter, verse: actionVerse.n, color });
+      }
+    } catch (e) {
+      Alert.alert('Erro', e.message || 'Não consegui salvar a marcação.');
+    }
+    setActionVerse(null);
+  };
+
+  const openNoteEditor = () => {
+    if (!actionVerse) return;
+    const v = actionVerse;
+    setActionVerse(null);
+    navigation.navigate('NoteEditor', {
+      bookId: book.id,
+      chapter,
+      verseStart: v.n,
+      verseEnd: v.n,
+    });
+  };
+
+  const copyVerse = () => {
+    if (!actionVerse) return;
+    const refText = `${book.name} ${chapter},${actionVerse.n}\n${actionVerse.t}`;
+    Clipboard.setString(refText);
+    setActionVerse(null);
+    Alert.alert('Copiado', 'Versículo copiado para a área de transferência.');
+  };
+
   const styles = makeStyles(colors, fs);
 
   // ===== LIVROS =====
   if (view === 'books') {
     const q = filterText.trim().toLowerCase();
     const filtered = q
-      ? BIBLE_BOOKS.filter(
-          (b) => b.name.toLowerCase().includes(q) || b.short.toLowerCase().includes(q)
-        )
+      ? BIBLE_BOOKS.filter((b) => b.name.toLowerCase().includes(q) || b.short.toLowerCase().includes(q))
       : BIBLE_BOOKS;
 
     const grouped = filtered.reduce((acc, b) => {
@@ -72,7 +156,7 @@ export default function BibleScreen({ route, navigation }) {
         <View style={styles.intro}>
           <Text style={styles.introTitle}>Bíblia Sagrada</Text>
           <Text style={styles.introSub}>
-            73 livros do cânon católico, tradução Ave Maria completa. Funciona 100% offline.
+            73 livros do cânon católico, tradução Ave Maria. Toque e segure num versículo para marcar ou anotar.
           </Text>
         </View>
 
@@ -95,10 +179,7 @@ export default function BibleScreen({ route, navigation }) {
                 <TouchableOpacity
                   key={b.id}
                   style={styles.bookRow}
-                  onPress={() => {
-                    setBook(b);
-                    setView('chapters');
-                  }}
+                  onPress={() => { setBook(b); setView('chapters'); }}
                 >
                   <View style={styles.bookAbbrev}>
                     <Text style={styles.bookAbbrevText}>{b.short}</Text>
@@ -123,16 +204,13 @@ export default function BibleScreen({ route, navigation }) {
   // ===== CAPÍTULOS =====
   if (view === 'chapters' && book) {
     const allChapters = Array.from({ length: book.totalChapters }, (_, i) => i + 1);
-
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.backRow} onPress={() => setView('books')}>
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
           <Text style={styles.backText}>Livros</Text>
         </TouchableOpacity>
-
         <Text style={styles.bookHeader}>{book.name}</Text>
-
         <FlatList
           key="chapters-grid"
           data={allChapters}
@@ -142,11 +220,7 @@ export default function BibleScreen({ route, navigation }) {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.chapterCell}
-              onPress={() => {
-                setChapter(item);
-                setHighlightVerse(null);
-                setView('verses');
-              }}
+              onPress={() => { setChapter(item); setHighlightVerse(null); setView('verses'); }}
             >
               <Text style={styles.chapterCellText}>{item}</Text>
             </TouchableOpacity>
@@ -161,36 +235,21 @@ export default function BibleScreen({ route, navigation }) {
     const hasPrev = chapter > 1;
     const hasNext = chapter < book.totalChapters;
     const isEmpty = !chapterData?.verses?.length;
-
-    const goPrev = () => {
-      if (!hasPrev) return;
-      setHighlightVerse(null);
-      setChapter(chapter - 1);
-    };
-    const goNext = () => {
-      if (!hasNext) return;
-      setHighlightVerse(null);
-      setChapter(chapter + 1);
-    };
+    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setChapter(chapter - 1); } };
+    const goNext = () => { if (hasNext) { setHighlightVerse(null); setChapter(chapter + 1); } };
 
     return (
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.backRow}
-          onPress={() => {
-            setChapter(null);
-            setHighlightVerse(null);
-            setView('chapters');
-          }}
+          onPress={() => { setChapter(null); setHighlightVerse(null); setView('chapters'); }}
         >
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
           <Text style={styles.backText}>{book.name}</Text>
         </TouchableOpacity>
 
         <View style={styles.verseHeader}>
-          <Text style={styles.verseHeaderTitle}>
-            {book.name} {chapter}
-          </Text>
+          <Text style={styles.verseHeaderTitle}>{book.name} {chapter}</Text>
         </View>
 
         {isEmpty ? (
@@ -198,7 +257,7 @@ export default function BibleScreen({ route, navigation }) {
             <Ionicons name="time-outline" size={48} color={colors.textSubtle} />
             <Text style={styles.errorText}>Capítulo em preparação</Text>
             <Text style={styles.errorSub}>
-              Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app. Será incluído em uma próxima atualização.
+              Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app.
             </Text>
           </View>
         ) : (
@@ -210,22 +269,39 @@ export default function BibleScreen({ route, navigation }) {
             contentContainerStyle={styles.verseList}
             onScrollToIndexFailed={() => {}}
             renderItem={({ item }) => {
-              const isHighlight = highlightVerse && item.n === highlightVerse;
+              const isDeepLinked = highlightVerse && item.n === highlightVerse;
+              const userHighlight = highlightsByVerse[item.n];
+              const hasNote = versesWithNotes.has(item.n);
               return (
-                <View style={[styles.verseRow, isHighlight && styles.verseRowHighlight]}>
-                  <Text style={[styles.verseNum, isHighlight && styles.verseNumHighlight]}>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  delayLongPress={350}
+                  onLongPress={() => onLongPressVerse(item)}
+                  style={[
+                    styles.verseRow,
+                    userHighlight && { backgroundColor: userHighlight.color },
+                    isDeepLinked && !userHighlight && styles.verseRowDeepLink,
+                  ]}
+                >
+                  <Text style={[styles.verseNum, isDeepLinked && styles.verseNumHighlight]}>
                     {item.n}
                   </Text>
-                  <Text style={[styles.verseText, isHighlight && styles.verseTextHighlight]}>
+                  <Text style={[
+                    styles.verseText,
+                    userHighlight && { color: '#1a1a1a' },
+                    isDeepLinked && styles.verseTextHighlight,
+                  ]}>
                     {item.t}
                   </Text>
-                </View>
+                  {hasNote && (
+                    <Ionicons name="document-text" size={14} color={colors.accent} style={{ marginLeft: 6, marginTop: 4 }} />
+                  )}
+                </TouchableOpacity>
               );
             }}
           />
         )}
 
-        {/* Barra de navegação inferior */}
         <View style={styles.navBar}>
           <TouchableOpacity
             style={[styles.navBtn, !hasPrev && styles.navBtnDisabled]}
@@ -237,9 +313,7 @@ export default function BibleScreen({ route, navigation }) {
               {hasPrev ? `${book.short} ${chapter - 1}` : ''}
             </Text>
           </TouchableOpacity>
-
           <Text style={styles.navCurrent}>{chapter}/{book.totalChapters}</Text>
-
           <TouchableOpacity
             style={[styles.navBtn, !hasNext && styles.navBtnDisabled, { justifyContent: 'flex-end' }]}
             onPress={goNext}
@@ -251,6 +325,57 @@ export default function BibleScreen({ route, navigation }) {
             <Ionicons name="chevron-forward" size={20} color={hasNext ? colors.primaryText : colors.textSubtle} />
           </TouchableOpacity>
         </View>
+
+        {/* Menu de ações no long-press */}
+        <Modal
+          visible={!!actionVerse}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setActionVerse(null)}
+        >
+          <TouchableOpacity style={styles.modalOverlay} activeOpacity={1} onPress={() => setActionVerse(null)}>
+            <View style={styles.modalSheet}>
+              <Text style={styles.modalRef}>
+                {book.name} {chapter},{actionVerse?.n}
+              </Text>
+              <Text style={styles.modalVerseText} numberOfLines={3}>{actionVerse?.t}</Text>
+
+              <Text style={styles.modalSection}>Marcar com cor</Text>
+              <View style={styles.colorRow}>
+                {HIGHLIGHT_COLORS.map((c) => {
+                  const current = actionVerse && highlightsByVerse[actionVerse.n]?.color === c.value;
+                  return (
+                    <TouchableOpacity
+                      key={c.key}
+                      style={[styles.colorDot, { backgroundColor: c.value }, current && styles.colorDotActive]}
+                      onPress={() => applyHighlight(c.value)}
+                    >
+                      {current && <Ionicons name="checkmark" size={18} color="#333" />}
+                    </TouchableOpacity>
+                  );
+                })}
+                {actionVerse && highlightsByVerse[actionVerse.n] && (
+                  <TouchableOpacity
+                    style={styles.removeColorBtn}
+                    onPress={() => applyHighlight(highlightsByVerse[actionVerse.n].color)}
+                  >
+                    <Ionicons name="close-circle-outline" size={22} color={colors.textMuted} />
+                  </TouchableOpacity>
+                )}
+              </View>
+
+              <TouchableOpacity style={styles.modalAction} onPress={openNoteEditor}>
+                <Ionicons name="document-text-outline" size={20} color={colors.primaryText} />
+                <Text style={styles.modalActionText}>Anotar</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.modalAction} onPress={copyVerse}>
+                <Ionicons name="copy-outline" size={20} color={colors.primaryText} />
+                <Text style={styles.modalActionText}>Copiar</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </Modal>
       </View>
     );
   }
@@ -266,84 +391,47 @@ const makeStyles = (c, fs) =>
     introTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText },
     introSub: { fontSize: fs(12), color: c.textMuted, lineHeight: fs(18), marginTop: 6 },
     searchRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginHorizontal: 16,
-      marginBottom: 8,
-      backgroundColor: c.card,
-      borderRadius: 10,
-      paddingHorizontal: 12,
+      flexDirection: 'row', alignItems: 'center',
+      marginHorizontal: 16, marginBottom: 8,
+      backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 12,
     },
     searchInput: { flex: 1, height: 42, fontSize: fs(15), color: c.text },
     groupHeader: {
-      fontSize: fs(13),
-      fontWeight: 'bold',
-      color: c.textSubtle,
-      textTransform: 'uppercase',
-      letterSpacing: 1,
-      marginTop: 16,
-      marginBottom: 8,
+      fontSize: fs(13), fontWeight: 'bold', color: c.textSubtle,
+      textTransform: 'uppercase', letterSpacing: 1, marginTop: 16, marginBottom: 8,
     },
     bookRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: c.card,
-      borderRadius: 10,
-      padding: 12,
-      marginBottom: 6,
-      gap: 12,
+      flexDirection: 'row', alignItems: 'center',
+      backgroundColor: c.card, borderRadius: 10, padding: 12, marginBottom: 6, gap: 12,
     },
     bookAbbrev: {
-      width: 44,
-      height: 44,
-      borderRadius: 10,
-      backgroundColor: c.primary,
-      justifyContent: 'center',
-      alignItems: 'center',
+      width: 44, height: 44, borderRadius: 10, backgroundColor: c.primary,
+      justifyContent: 'center', alignItems: 'center',
     },
     bookAbbrevText: { color: '#fff', fontWeight: 'bold', fontSize: fs(13) },
     bookName: { fontSize: fs(15), color: c.text, fontWeight: '600' },
     bookMeta: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
     backRow: { flexDirection: 'row', alignItems: 'center', padding: 12, gap: 6 },
     backText: { fontSize: fs(15), color: c.primaryText },
-    bookHeader: {
-      fontSize: fs(22),
-      fontWeight: 'bold',
-      color: c.primaryText,
-      paddingHorizontal: 16,
-      marginBottom: 12,
-    },
+    bookHeader: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, paddingHorizontal: 16, marginBottom: 12 },
     chapterGrid: { padding: 12 },
     chapterCell: {
-      flex: 1,
-      aspectRatio: 1,
-      margin: 4,
-      borderRadius: 8,
-      backgroundColor: c.card,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderWidth: 1,
-      borderColor: c.accent,
+      flex: 1, aspectRatio: 1, margin: 4, borderRadius: 8,
+      backgroundColor: c.card, justifyContent: 'center', alignItems: 'center',
+      borderWidth: 1, borderColor: c.accent,
     },
     chapterCellText: { color: c.primaryText, fontWeight: 'bold', fontSize: fs(15) },
     verseHeader: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingHorizontal: 16,
-      paddingBottom: 8,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      paddingHorizontal: 16, paddingBottom: 8,
     },
     verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText },
     verseList: { padding: 16, paddingBottom: 24 },
     verseRow: { flexDirection: 'row', marginBottom: 10, padding: 8, borderRadius: 8 },
-    verseRowHighlight: { backgroundColor: c.badgeBg },
+    verseRowDeepLink: { backgroundColor: c.badgeBg },
     verseNum: {
-      fontSize: fs(11),
-      color: c.accent,
-      fontWeight: 'bold',
-      marginRight: 8,
-      minWidth: 24,
-      paddingTop: 3,
+      fontSize: fs(11), color: c.accent, fontWeight: 'bold',
+      marginRight: 8, minWidth: 24, paddingTop: 3,
     },
     verseNumHighlight: { color: c.primaryText },
     verseText: { flex: 1, fontSize: fs(15), color: c.text, lineHeight: fs(23) },
@@ -352,25 +440,35 @@ const makeStyles = (c, fs) =>
     errorText: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },
     errorSub: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(19) },
     navBar: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingHorizontal: 12,
-      paddingVertical: 10,
-      borderTopWidth: 1,
-      borderTopColor: c.divider,
-      backgroundColor: c.card,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      paddingHorizontal: 12, paddingVertical: 10,
+      borderTopWidth: 1, borderTopColor: c.divider, backgroundColor: c.card,
     },
-    navBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      flex: 1,
-      paddingVertical: 6,
-      paddingHorizontal: 8,
-    },
+    navBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, flex: 1, paddingVertical: 6, paddingHorizontal: 8 },
     navBtnDisabled: { opacity: 0.3 },
     navBtnText: { fontSize: fs(13), color: c.primaryText, fontWeight: '600' },
     navBtnTextDisabled: { color: c.textSubtle },
     navCurrent: { fontSize: fs(12), color: c.textMuted, fontWeight: '600', minWidth: 60, textAlign: 'center' },
+    // Modal de ações
+    modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' },
+    modalSheet: {
+      backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20,
+      padding: 20, paddingBottom: 32,
+    },
+    modalRef: { fontSize: fs(15), fontWeight: 'bold', color: c.accent, marginBottom: 4 },
+    modalVerseText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginBottom: 16 },
+    modalSection: { fontSize: fs(12), fontWeight: 'bold', color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 },
+    colorRow: { flexDirection: 'row', gap: 12, marginBottom: 20, alignItems: 'center' },
+    colorDot: {
+      width: 38, height: 38, borderRadius: 19,
+      justifyContent: 'center', alignItems: 'center',
+      borderWidth: 1, borderColor: c.divider,
+    },
+    colorDotActive: { borderColor: c.primaryText, borderWidth: 2 },
+    removeColorBtn: { marginLeft: 4 },
+    modalAction: {
+      flexDirection: 'row', alignItems: 'center', gap: 12,
+      paddingVertical: 14, borderTopWidth: 1, borderTopColor: c.divider,
+    },
+    modalActionText: { fontSize: fs(15), color: c.text, fontWeight: '500' },
   });
