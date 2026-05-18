@@ -4,6 +4,7 @@
     "slug": "apologetica-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "appologetica",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
