@@ -3,10 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Keyboa
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 
 export default function SignupScreen({ navigation }) {
   const { signUp } = useAuth();
   const { colors, fs } = useTheme();
+  const google = useGoogleSignIn();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -97,10 +99,31 @@ export default function SignupScreen({ navigation }) {
           />
         </View>
 
-        {error ? <Text style={styles.error}>{error}</Text> : null}
+        {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
 
         <TouchableOpacity style={styles.primaryBtn} onPress={handleSignup} disabled={busy}>
           {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>Criar conta</Text>}
+        </TouchableOpacity>
+
+        <View style={styles.divider}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>ou</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
+        <TouchableOpacity
+          style={styles.googleBtn}
+          onPress={google.signIn}
+          disabled={!google.ready || google.busy}
+        >
+          {google.busy ? (
+            <ActivityIndicator color={colors.text} />
+          ) : (
+            <>
+              <Ionicons name="logo-google" size={20} color="#DB4437" />
+              <Text style={styles.googleBtnText}>Continuar com Google</Text>
+            </>
+          )}
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 16 }}>
@@ -137,4 +160,19 @@ const makeStyles = (c, fs) =>
     },
     primaryBtnText: { color: '#fff', fontSize: fs(16), fontWeight: 'bold' },
     linkText: { color: c.accent, textAlign: 'center', fontSize: fs(14), fontWeight: '600' },
+    divider: { flexDirection: 'row', alignItems: 'center', marginVertical: 18 },
+    dividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
+    dividerText: { marginHorizontal: 12, color: c.textSubtle, fontSize: fs(12) },
+    googleBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 10,
+      borderWidth: 1,
+      borderColor: c.divider,
+      backgroundColor: c.card,
+      paddingVertical: 14,
+      borderRadius: 12,
+    },
+    googleBtnText: { color: c.text, fontSize: fs(15), fontWeight: '600' },
   });

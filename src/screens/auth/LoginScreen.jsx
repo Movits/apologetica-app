@@ -3,10 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Keyboa
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 
 export default function LoginScreen({ navigation }) {
   const { signIn } = useAuth();
   const { colors, fs } = useTheme();
+  const google = useGoogleSignIn();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -71,7 +73,7 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.forgotText}>Esqueci minha senha</Text>
         </TouchableOpacity>
 
-        {error ? <Text style={styles.error}>{error}</Text> : null}
+        {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
 
         <TouchableOpacity style={styles.primaryBtn} onPress={handleLogin} disabled={busy}>
           {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>Entrar</Text>}
@@ -82,6 +84,21 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.dividerText}>ou</Text>
           <View style={styles.dividerLine} />
         </View>
+
+        <TouchableOpacity
+          style={styles.googleBtn}
+          onPress={google.signIn}
+          disabled={!google.ready || google.busy}
+        >
+          {google.busy ? (
+            <ActivityIndicator color={colors.text} />
+          ) : (
+            <>
+              <Ionicons name="logo-google" size={20} color="#DB4437" />
+              <Text style={styles.googleBtnText}>Continuar com Google</Text>
+            </>
+          )}
+        </TouchableOpacity>
 
         <TouchableOpacity style={styles.secondaryBtn} onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.secondaryBtnText}>Criar conta nova</Text>
@@ -129,6 +146,20 @@ const makeStyles = (c, fs) =>
       borderRadius: 12,
       width: '100%',
       alignItems: 'center',
+      marginTop: 10,
     },
     secondaryBtnText: { color: c.accent, fontSize: fs(15), fontWeight: 'bold' },
+    googleBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 10,
+      borderWidth: 1,
+      borderColor: c.divider,
+      backgroundColor: c.card,
+      paddingVertical: 14,
+      borderRadius: 12,
+      width: '100%',
+    },
+    googleBtnText: { color: c.text, fontSize: fs(15), fontWeight: '600' },
   });
