@@ -1,19 +1,19 @@
-// Inicialização do Firebase. Substitua o firebaseConfig pelos valores reais
-// do seu projeto em console.firebase.google.com (Project settings → Your apps).
+// Inicialização do Firebase para o projeto appologetica7.
+// Chaves do client-side são públicas por design - a segurança vem das
+// regras do Firestore (ver firestore.rules na raiz do repo).
 
 import { initializeApp } from 'firebase/app';
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// TODO: substituir pelos valores reais do projeto Firebase
 const firebaseConfig = {
-  apiKey: 'FIREBASE_API_KEY',
-  authDomain: 'FIREBASE_AUTH_DOMAIN',
-  projectId: 'FIREBASE_PROJECT_ID',
-  storageBucket: 'FIREBASE_STORAGE_BUCKET',
-  messagingSenderId: 'FIREBASE_SENDER_ID',
-  appId: 'FIREBASE_APP_ID',
+  apiKey: 'AIzaSyB4m4-KPZ36woRBZVA-ku-pi6ZR1e8u_FQ',
+  authDomain: 'appologetica7.firebaseapp.com',
+  projectId: 'appologetica7',
+  storageBucket: 'appologetica7.firebasestorage.app',
+  messagingSenderId: '784268138897',
+  appId: '1:784268138897:web:01ac558075d2556711a230',
 };
 
 const app = initializeApp(firebaseConfig);
