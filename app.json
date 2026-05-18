@@ -11,6 +11,9 @@
     },
     "android": {
       "package": "com.appologetica.app"
-    }
+    },
+    "plugins": [
+      "expo-web-browser"
+    ]
   }
 }
