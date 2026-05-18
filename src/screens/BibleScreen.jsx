@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert, Clipboard } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { Ionicons } from '@expo/vector-icons';
 import { BIBLE_BOOKS } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
@@ -128,10 +129,10 @@ export default function BibleScreen({ route, navigation }) {
     });
   };
 
-  const copyVerse = () => {
+  const copyVerse = async () => {
     if (!actionVerse) return;
     const refText = `${book.name} ${chapter},${actionVerse.n}\n${actionVerse.t}`;
-    Clipboard.setString(refText);
+    await Clipboard.setStringAsync(refText);
     setActionVerse(null);
     Alert.alert('Copiado', 'Versículo copiado para a área de transferência.');
   };
