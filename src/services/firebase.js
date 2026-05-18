@@ -18,8 +18,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+// Persistência: se getReactNativePersistence existir (Firebase resolve a versão RN),
+// usa AsyncStorage. Senão cai pro default (memória — perde login ao reiniciar app).
 export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
+  persistence: typeof getReactNativePersistence === 'function'
+    ? getReactNativePersistence(AsyncStorage)
+    : undefined,
 });
 
 export const db = getFirestore(app);
