@@ -35,8 +35,12 @@ export default function SettingsScreen() {
         return;
       }
     }
-    await setDailyVerseEnabled(value, notifPrefs.verseHour, notifPrefs.verseMinute);
+    // Atualiza UI imediatamente
     setNotifPrefs((p) => ({ ...p, dailyVerse: value }));
+    const res = await setDailyVerseEnabled(value, notifPrefs.verseHour, notifPrefs.verseMinute);
+    if (!res.ok) {
+      Alert.alert('Atenção', `${res.error}\n\nO Expo Go tem limitações com notificações. Vai funcionar normalmente quando publicado.`);
+    }
   };
 
   const toggleSundayLiturgy = async (value) => {
@@ -47,8 +51,11 @@ export default function SettingsScreen() {
         return;
       }
     }
-    await setSundayLiturgyEnabled(value);
     setNotifPrefs((p) => ({ ...p, sundayLiturgy: value }));
+    const res = await setSundayLiturgyEnabled(value);
+    if (!res.ok) {
+      Alert.alert('Atenção', `${res.error}\n\nO Expo Go tem limitações com notificações. Vai funcionar normalmente quando publicado.`);
+    }
   };
 
   const handleLogout = () => {

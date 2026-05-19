@@ -1,8 +1,12 @@
 import { Share } from 'react-native';
 
-// Linha de promoção sutil incluída no fim de cada compartilhamento.
-// URL aponta para a página de doação (que tem link pro repo e info do app).
-const APP_PROMO = '\n— APPologética\nhttps://movits.github.io/apologetica-app/';
+// Mensagem de promoção sutil incluída no fim de cada compartilhamento.
+// URL fica em branco até o app estar nas lojas (Play Store / App Store).
+const APP_PROMO_URL = ''; // ← preencher quando publicar
+
+const APP_PROMO = APP_PROMO_URL
+  ? `\n\n✝ Enviado pelo APPologética — apologética católica e Bíblia, gratuito.\n${APP_PROMO_URL}`
+  : '\n\n✝ Enviado pelo APPologética';
 
 export function shareVerse({ bookName, chapter, verse, text }) {
   const msg = `"${text}"\n\n${bookName} ${chapter},${verse}${APP_PROMO}`;

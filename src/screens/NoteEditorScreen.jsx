@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvo
 import { Ionicons } from '@expo/vector-icons';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { addNote, updateNote, removeNote } from '../services/userData';
 import { getBook } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
@@ -14,6 +15,7 @@ import { shareNote } from '../utils/share';
 //   - bookId/chapter/verseStart/verseEnd (criação)
 export default function NoteEditorScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
+  const insets = useSafeAreaInsets();
   const { noteId, bookId, chapter, verseStart, verseEnd } = route.params || {};
   const [text, setText] = useState('');
   const [meta, setMeta] = useState({ bookId, chapter, verseStart, verseEnd });
@@ -139,7 +141,10 @@ export default function NoteEditorScreen({ route, navigation }) {
       />
 
       {noteId && (
-        <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete}>
+        <TouchableOpacity
+          style={[styles.deleteBtn, { paddingBottom: 14 + Math.max(insets.bottom, 8) }]}
+          onPress={handleDelete}
+        >
           <Ionicons name="trash-outline" size={18} color="#c0392b" />
           <Text style={styles.deleteText}>Excluir nota</Text>
         </TouchableOpacity>

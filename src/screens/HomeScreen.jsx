@@ -7,7 +7,7 @@ import VerseOfDayCard from '../components/VerseOfDayCard';
 import LiturgyCard from '../components/LiturgyCard';
 
 const HIGHLIGHTS = [
-  { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas comuns', tab: 'Artigos' },
+  { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas', tab: 'Artigos' },
   { icon: 'library-outline', label: 'Versículos e Referências', sub: 'Bíblia, Catecismo, documentos', tab: 'Referências' },
   { icon: 'bookmark-outline', label: 'Bíblia Sagrada', sub: 'Leia as Escrituras no app', tab: 'Bíblia' },
 ];
@@ -41,7 +41,7 @@ export default function HomeScreen() {
       </View>
 
       <TouchableOpacity style={styles.searchBar} onPress={openSearch}>
-        <Ionicons name="search-outline" size={20} color={colors.textSubtle} />
+        <Ionicons name="search-outline" size={18} color={colors.textSubtle} />
         <Text style={styles.searchPlaceholder}>Buscar em todo o app...</Text>
       </TouchableOpacity>
 
@@ -57,13 +57,13 @@ export default function HomeScreen() {
           onPress={() => navigation.navigate(item.tab)}
         >
           <View style={styles.cardIcon}>
-            <Ionicons name={item.icon} size={26} color={colors.primaryText} />
+            <Ionicons name={item.icon} size={22} color={colors.primaryText} />
           </View>
           <View style={{ flex: 1 }}>
             <Text style={styles.cardLabel}>{item.label}</Text>
             <Text style={styles.cardSub}>{item.sub}</Text>
           </View>
-          <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
+          <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
         </TouchableOpacity>
       ))}
 
@@ -77,10 +77,10 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate(item.screen)}
             >
               <View style={styles.cardIcon}>
-                <Ionicons name={item.icon} size={26} color={colors.primaryText} />
+                <Ionicons name={item.icon} size={22} color={colors.primaryText} />
               </View>
               <Text style={[styles.cardLabel, { flex: 1 }]}>{item.label}</Text>
-              <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
+              <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
             </TouchableOpacity>
           ))}
         </>
@@ -92,30 +92,36 @@ export default function HomeScreen() {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 20, paddingBottom: 40 },
+    content: { padding: 14, paddingBottom: 30 },
     hero: {
-      alignItems: 'center', backgroundColor: c.primary, borderRadius: 16,
-      padding: 28, marginBottom: 20,
+      alignItems: 'center', backgroundColor: c.primary, borderRadius: 14,
+      padding: 16, marginBottom: 10,
     },
-    heroIcon: { fontSize: fs(40), color: c.accent },
-    heroTitle: { color: '#fff', fontSize: fs(24), fontWeight: 'bold', marginTop: 10 },
-    heroSub: { color: c.heroSub, fontSize: fs(14), textAlign: 'center', marginTop: 10, lineHeight: fs(20) },
-    heroRef: { color: c.accent, fontSize: fs(13), marginTop: 10, fontStyle: 'italic', fontWeight: 'bold' },
+    heroIcon: { fontSize: fs(28), color: c.accent },
+    heroTitle: { color: '#fff', fontSize: fs(20), fontWeight: 'bold', marginTop: 4 },
+    heroSub: {
+      color: c.heroSub,
+      fontSize: fs(11),
+      textAlign: 'center',
+      marginTop: 6,
+      lineHeight: fs(15),
+    },
+    heroRef: { color: c.accent, fontSize: fs(11), marginTop: 6, fontStyle: 'italic', fontWeight: 'bold' },
     searchBar: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      backgroundColor: c.card, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 12,
-      marginBottom: 20,
+      flexDirection: 'row', alignItems: 'center', gap: 8,
+      backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 12, paddingVertical: 10,
+      marginBottom: 10,
     },
-    searchPlaceholder: { color: c.textSubtle, fontSize: fs(14) },
-    sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 12, marginTop: 8 },
+    searchPlaceholder: { color: c.textSubtle, fontSize: fs(13) },
+    sectionTitle: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText, marginBottom: 8, marginTop: 8 },
     card: {
       flexDirection: 'row', alignItems: 'center',
-      backgroundColor: c.card, borderRadius: 12, padding: 16, marginBottom: 12, gap: 14,
+      backgroundColor: c.card, borderRadius: 10, padding: 12, marginBottom: 8, gap: 12,
     },
     cardIcon: {
-      width: 44, height: 44, borderRadius: 10, backgroundColor: c.badgeBg,
+      width: 36, height: 36, borderRadius: 8, backgroundColor: c.badgeBg,
       justifyContent: 'center', alignItems: 'center',
     },
-    cardLabel: { fontSize: fs(16), color: c.text, fontWeight: '600' },
-    cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
+    cardLabel: { fontSize: fs(14), color: c.text, fontWeight: '600' },
+    cardSub: { fontSize: fs(11), color: c.textMuted, marginTop: 1 },
   });

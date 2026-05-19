@@ -4,33 +4,48 @@ import { Ionicons } from '@expo/vector-icons';
 import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
 import { references } from '../data/references';
+import { DAILY_VERSES } from '../data/dailyVerses';
 import { useTheme } from '../context/ThemeContext';
 
-// Cria os índices uma vez (fora do componente) pra não recriar a cada render.
+// Threshold mais estrito (0.35) pra evitar matches absurdos.
+// Fuse.js: 0.0 = match exato, 1.0 = qualquer coisa.
+
 const articleIndex = new Fuse(articles, {
   keys: [
     { name: 'title', weight: 3 },
     { name: 'summary', weight: 2 },
-    { name: 'body', weight: 1 },
-    { name: 'category', weight: 1.5 },
+    { name: 'body', weight: 1.5 },
+    { name: 'category', weight: 1 },
   ],
-  threshold: 0.4,
+  threshold: 0.35,
   includeScore: true,
   ignoreLocation: true,
-  minMatchCharLength: 2,
+  minMatchCharLength: 3,
 });
 
 const referenceIndex = new Fuse(references, {
   keys: [
     { name: 'ref', weight: 3 },
     { name: 'topic', weight: 2 },
-    { name: 'text', weight: 1 },
-    { name: 'fullSource', weight: 1.5 },
+    { name: 'text', weight: 2 },
+    { name: 'fullSource', weight: 1 },
   ],
-  threshold: 0.4,
+  threshold: 0.35,
   includeScore: true,
   ignoreLocation: true,
-  minMatchCharLength: 2,
+  minMatchCharLength: 3,
+});
+
+// Versículos populares (mesmos do "Versículo do dia") - inclui Jo 3,16 e clássicos
+const verseIndex = new Fuse(DAILY_VERSES, {
+  keys: [
+    { name: 'text', weight: 3 },
+    { name: 'ref', weight: 2 },
+  ],
+  threshold: 0.35,
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 3,
 });
 
 export default function SearchScreen({ navigation }) {
@@ -39,7 +54,6 @@ export default function SearchScreen({ navigation }) {
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [busy, setBusy] = useState(false);
 
-  // Debounce de 200ms para não rodar busca a cada tecla
   useEffect(() => {
     setBusy(true);
     const t = setTimeout(() => {
@@ -51,30 +65,52 @@ export default function SearchScreen({ navigation }) {
 
   const results = useMemo(() => {
     const q = debouncedQuery.trim();
-    if (q.length < 2) return { articles: [], references: [] };
-    const aHits = articleIndex.search(q).slice(0, 10);
-    const rHits = referenceIndex.search(q).slice(0, 15);
+    if (q.length < 3) return { articles: [], references: [], verses: [] };
     return {
-      articles: aHits.map((h) => ({ ...h.item, score: h.score })),
-      references: rHits.map((h) => ({ ...h.item, score: h.score })),
+      articles: articleIndex.search(q).slice(0, 8).map((h) => h.item),
+      references: referenceIndex.search(q).slice(0, 10).map((h) => h.item),
+      verses: verseIndex.search(q).slice(0, 8).map((h) => h.item),
     };
   }, [debouncedQuery]);
 
-  const totalHits = results.articles.length + results.references.length;
+  const totalHits = results.articles.length + results.references.length + results.verses.length;
   const styles = makeStyles(colors, fs);
 
-  // Sugestão de "você quis dizer" — se zero resultados mas algum match parcial existe
+  // Para sugestão "Você quis dizer", usa threshold mais frouxo
+  // mas só sugere se a sugestão tiver score razoável.
   const suggestion = useMemo(() => {
     if (totalHits > 0 || debouncedQuery.trim().length < 3) return null;
-    // Tenta com threshold mais frouxo
-    const loose = new Fuse(
-      [...articles.map((a) => ({ type: 'a', item: a, text: a.title })),
-       ...references.map((r) => ({ type: 'r', item: r, text: r.ref + ' ' + r.topic }))],
-      { keys: ['text'], threshold: 0.6, ignoreLocation: true }
-    );
-    const top = loose.search(debouncedQuery.trim())[0];
-    return top ? top.item.text : null;
+    const looseArticle = new Fuse(articles, {
+      keys: ['title', 'summary'],
+      threshold: 0.55,
+      includeScore: true,
+    });
+    const looseVerse = new Fuse(DAILY_VERSES, {
+      keys: ['text', 'ref'],
+      threshold: 0.55,
+      includeScore: true,
+    });
+    const a = looseArticle.search(debouncedQuery.trim())[0];
+    const v = looseVerse.search(debouncedQuery.trim())[0];
+    // Pega a melhor sugestão (menor score = melhor)
+    const candidates = [
+      a && { type: 'article', label: a.item.title, item: a.item, score: a.score },
+      v && { type: 'verse', label: v.item.ref, item: v.item, score: v.score },
+    ].filter(Boolean);
+    if (candidates.length === 0) return null;
+    candidates.sort((x, y) => x.score - y.score);
+    return candidates[0];
   }, [debouncedQuery, totalHits]);
+
+  const openSuggestion = () => {
+    if (!suggestion) return;
+    if (suggestion.type === 'article') {
+      navigation.navigate('Artigos', { openId: suggestion.item.id });
+    } else if (suggestion.type === 'verse') {
+      const v = suggestion.item;
+      navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse });
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -84,7 +120,7 @@ export default function SearchScreen({ navigation }) {
           style={styles.input}
           value={query}
           onChangeText={setQuery}
-          placeholder="Buscar em artigos e referências..."
+          placeholder="Buscar artigos, versículos, referências..."
           placeholderTextColor={colors.textSubtle}
           autoFocus
           autoCorrect={false}
@@ -96,24 +132,22 @@ export default function SearchScreen({ navigation }) {
         )}
       </View>
 
-      {busy && query.length >= 2 && (
+      {busy && query.length >= 3 && (
         <ActivityIndicator color={colors.accent} style={{ marginTop: 20 }} />
       )}
 
-      {!busy && debouncedQuery.length >= 2 && totalHits === 0 && (
+      {!busy && debouncedQuery.length >= 3 && totalHits === 0 && (
         <View style={styles.empty}>
           <Ionicons name="search-outline" size={48} color={colors.textSubtle} />
           <Text style={styles.emptyTitle}>Nada encontrado</Text>
           {suggestion ? (
-            <Text style={styles.emptySub}>
-              Você quis dizer{' '}
-              <Text style={{ color: colors.accent, fontWeight: 'bold' }}>
-                {suggestion}
-              </Text>
-              ?
-            </Text>
+            <TouchableOpacity onPress={openSuggestion} style={styles.suggestionBtn}>
+              <Text style={styles.emptySub}>Você quis dizer:</Text>
+              <Text style={styles.suggestionLabel}>{suggestion.label}</Text>
+              <Text style={styles.suggestionHint}>Toque para abrir</Text>
+            </TouchableOpacity>
           ) : (
-            <Text style={styles.emptySub}>Tenta uma palavra diferente.</Text>
+            <Text style={styles.emptySub}>Tente palavras diferentes ou trechos exatos.</Text>
           )}
         </View>
       )}
@@ -122,10 +156,12 @@ export default function SearchScreen({ navigation }) {
         data={[
           ...(results.articles.length > 0 ? [{ type: 'header', label: 'Artigos' }] : []),
           ...results.articles.map((a) => ({ type: 'article', item: a })),
+          ...(results.verses.length > 0 ? [{ type: 'header', label: 'Versículos' }] : []),
+          ...results.verses.map((v) => ({ type: 'verse', item: v })),
           ...(results.references.length > 0 ? [{ type: 'header', label: 'Referências' }] : []),
           ...results.references.map((r) => ({ type: 'reference', item: r })),
         ]}
-        keyExtractor={(item, i) => `${item.type}-${item.item?.id || item.label}-${i}`}
+        keyExtractor={(item, i) => `${item.type}-${item.item?.id || item.item?.ref || item.label}-${i}`}
         contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
         renderItem={({ item }) => {
           if (item.type === 'header') {
@@ -144,6 +180,23 @@ export default function SearchScreen({ navigation }) {
                   <Text style={styles.cardCategory}>{item.item.category}</Text>
                   <Text style={styles.cardTitle}>{item.item.title}</Text>
                   <Text style={styles.cardSub} numberOfLines={2}>{item.item.summary}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }
+          if (item.type === 'verse') {
+            const v = item.item;
+            return (
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse })}
+              >
+                <View style={styles.cardIcon}>
+                  <Ionicons name="bookmark-outline" size={20} color={colors.primaryText} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.cardCategory}>{v.ref}</Text>
+                  <Text style={styles.cardSub} numberOfLines={3}>"{v.text}"</Text>
                 </View>
               </TouchableOpacity>
             );
@@ -186,6 +239,19 @@ const makeStyles = (c, fs) =>
     empty: { alignItems: 'center', padding: 40, gap: 10 },
     emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },
     emptySub: { fontSize: fs(13), color: c.textMuted, textAlign: 'center' },
+    suggestionBtn: {
+      backgroundColor: c.card,
+      paddingVertical: 14,
+      paddingHorizontal: 18,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: c.accent,
+      marginTop: 12,
+      alignItems: 'center',
+      width: '100%',
+    },
+    suggestionLabel: { fontSize: fs(15), color: c.primaryText, fontWeight: 'bold', marginTop: 6 },
+    suggestionHint: { fontSize: fs(11), color: c.accent, marginTop: 4 },
     sectionHeader: {
       fontSize: fs(12), fontWeight: 'bold', color: c.textSubtle,
       textTransform: 'uppercase', letterSpacing: 1,

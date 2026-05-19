@@ -44,9 +44,13 @@ export default function LiturgyCard({ onOpen }) {
                     <Text style={styles.metaText}>{liturgy.cor}</Text>
                   </View>
                 )}
-                {liturgy?.leituras?.evangelho?.referencia && (
-                  <Text style={styles.metaText}>{liturgy.leituras.evangelho.referencia}</Text>
-                )}
+                {(() => {
+                  const ev = liturgy?.leituras?.evangelho;
+                  const evObj = Array.isArray(ev) ? ev[0] : ev;
+                  return evObj?.referencia ? (
+                    <Text style={styles.metaText}>{evObj.referencia}</Text>
+                  ) : null;
+                })()}
               </View>
             </>
           )}
@@ -62,21 +66,21 @@ const makeStyles = (c, fs) =>
     card: {
       backgroundColor: c.card,
       borderRadius: 12,
-      padding: 14,
-      marginBottom: 12,
-      borderLeftWidth: 4,
+      padding: 10,
+      marginBottom: 10,
+      borderLeftWidth: 3,
     },
-    row: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    row: { flexDirection: 'row', alignItems: 'center', gap: 10 },
     icon: {
-      width: 40, height: 40, borderRadius: 10,
+      width: 32, height: 32, borderRadius: 8,
       backgroundColor: c.badgeBg,
       justifyContent: 'center', alignItems: 'center',
     },
-    label: { fontSize: fs(11), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1 },
-    title: { fontSize: fs(14), color: c.text, fontWeight: '600', marginTop: 4, lineHeight: fs(19) },
-    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6 },
+    label: { fontSize: fs(10), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1 },
+    title: { fontSize: fs(12), color: c.text, fontWeight: '600', marginTop: 2, lineHeight: fs(16) },
+    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 },
     colorPill: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-    colorDot: { width: 10, height: 10, borderRadius: 5, borderWidth: 1, borderColor: c.divider },
-    metaText: { fontSize: fs(11), color: c.textMuted },
-    error: { fontSize: fs(12), color: c.textMuted, marginTop: 4, fontStyle: 'italic' },
+    colorDot: { width: 9, height: 9, borderRadius: 4.5, borderWidth: 1, borderColor: c.divider },
+    metaText: { fontSize: fs(10), color: c.textMuted },
+    error: { fontSize: fs(11), color: c.textMuted, marginTop: 4, fontStyle: 'italic' },
   });

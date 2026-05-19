@@ -5,7 +5,7 @@ import { getLiturgy, getLiturgicalColorHex } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { Share } from 'react-native';
 
-const APP_PROMO = '\n\n— APPologética\nhttps://movits.github.io/apologetica-app/';
+const APP_PROMO = '\n\n✝ Enviado pelo APPologética';
 
 export default function LiturgyScreen() {
   const { colors, fs } = useTheme();
@@ -77,6 +77,14 @@ export default function LiturgyScreen() {
   const cor = liturgy.cor;
   const corHex = getLiturgicalColorHex(cor);
 
+  // A API retorna primeiraLeitura/salmo/segundaLeitura/evangelho como arrays
+  // (suporta leituras alternativas). Pega o primeiro item de cada.
+  const pick = (arr) => (Array.isArray(arr) && arr.length > 0 ? arr[0] : arr);
+  const primeira = pick(liturgy.leituras?.primeiraLeitura);
+  const salmo = pick(liturgy.leituras?.salmo);
+  const segunda = pick(liturgy.leituras?.segundaLeitura);
+  const evangelho = pick(liturgy.leituras?.evangelho);
+
   return (
     <ScrollView
       style={styles.container}
@@ -114,32 +122,32 @@ export default function LiturgyScreen() {
 
       <ReadingSection
         title="Primeira Leitura"
-        reading={liturgy.leituras?.primeiraLeitura}
-        onShare={() => shareReading('Primeira Leitura', liturgy.leituras?.primeiraLeitura)}
+        reading={primeira}
+        onShare={() => shareReading('Primeira Leitura', primeira)}
         theme={{ colors, fs }}
       />
 
       <ReadingSection
         title="Salmo Responsorial"
-        reading={liturgy.leituras?.salmo}
-        onShare={() => shareReading('Salmo', liturgy.leituras?.salmo)}
+        reading={salmo}
+        onShare={() => shareReading('Salmo', salmo)}
         isPsalm
         theme={{ colors, fs }}
       />
 
-      {liturgy.leituras?.segundaLeitura && (
+      {segunda && (
         <ReadingSection
           title="Segunda Leitura"
-          reading={liturgy.leituras.segundaLeitura}
-          onShare={() => shareReading('Segunda Leitura', liturgy.leituras.segundaLeitura)}
+          reading={segunda}
+          onShare={() => shareReading('Segunda Leitura', segunda)}
           theme={{ colors, fs }}
         />
       )}
 
       <ReadingSection
         title="Evangelho"
-        reading={liturgy.leituras?.evangelho}
-        onShare={() => shareReading('Evangelho', liturgy.leituras?.evangelho)}
+        reading={evangelho}
+        onShare={() => shareReading('Evangelho', evangelho)}
         emphasize
         theme={{ colors, fs }}
       />
