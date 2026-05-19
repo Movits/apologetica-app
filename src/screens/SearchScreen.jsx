@@ -120,7 +120,7 @@ export default function SearchScreen({ navigation }) {
           style={styles.input}
           value={query}
           onChangeText={setQuery}
-          placeholder="Buscar artigos, versículos, referências..."
+          placeholder="O que você procura?"
           placeholderTextColor={colors.textSubtle}
           autoFocus
           autoCorrect={false}
