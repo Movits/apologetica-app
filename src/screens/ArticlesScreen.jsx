@@ -12,17 +12,20 @@ export default function ArticlesScreen({ route }) {
   const { colors, fs } = useTheme();
   const [category, setCategory] = useState('Todos');
 
-  // Abre artigo específico via deep link (da busca global)
+  // Abre artigo específico via deep link (da busca global ou outra tela)
   useEffect(() => {
-    if (route?.params?.openId) {
-      navigation.navigate('ArticleDetail', { articleId: route.params.openId });
-      navigation.setParams?.({ openId: undefined });
+    const articleId = route?.params?.articleId || route?.params?.openId;
+    if (articleId) {
+      navigation.navigate('ArticleDetail', { articleId });
+      navigation.setParams?.({ openId: undefined, articleId: undefined });
     }
-  }, [route?.params?.openId]);
+  }, [route?.params?.openId, route?.params?.articleId]);
 
-  // Reseta categoria ao tocar no tab de novo
+  // Reseta categoria ao tocar no tab de novo (o popToTop pro detalhe é automático)
   useEffect(() => {
-    const unsub = navigation.addListener('tabPress', () => {
+    const tabNav = navigation.getParent();
+    if (!tabNav) return;
+    const unsub = tabNav.addListener('tabPress', () => {
       if (navigation.isFocused()) {
         setCategory('Todos');
       }

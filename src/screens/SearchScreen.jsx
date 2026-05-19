@@ -105,7 +105,7 @@ export default function SearchScreen({ navigation }) {
   const openSuggestion = () => {
     if (!suggestion) return;
     if (suggestion.type === 'article') {
-      navigation.navigate('Artigos', { openId: suggestion.item.id });
+      navigation.navigate('Artigos', { screen: 'ArticleDetail', params: { articleId: suggestion.item.id } });
     } else if (suggestion.type === 'verse') {
       const v = suggestion.item;
       navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse });
@@ -171,7 +171,7 @@ export default function SearchScreen({ navigation }) {
             return (
               <TouchableOpacity
                 style={styles.card}
-                onPress={() => navigation.navigate('Artigos', { openId: item.item.id })}
+                onPress={() => navigation.navigate('Artigos', { screen: 'ArticleDetail', params: { articleId: item.item.id } })}
               >
                 <View style={styles.cardIcon}>
                   <Ionicons name="book-outline" size={20} color={colors.primaryText} />

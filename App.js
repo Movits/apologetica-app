@@ -27,6 +27,33 @@ import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const ArticlesNav = createNativeStackNavigator();
+
+// Stack interno do tab Artigos: lista -> detalhe. Mantém a tab bar visível
+// porque está DENTRO do tab navigator.
+function ArticlesStackScreen() {
+  const { colors } = useTheme();
+  return (
+    <ArticlesNav.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.primary },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
+      <ArticlesNav.Screen
+        name="ArticlesList"
+        component={ArticlesScreen}
+        options={{ title: 'Artigos' }}
+      />
+      <ArticlesNav.Screen
+        name="ArticleDetail"
+        component={ArticleDetailScreen}
+        options={{ title: 'Artigo' }}
+      />
+    </ArticlesNav.Navigator>
+  );
+}
 
 // Splash branded — usado durante hidratação do auth + tema.
 // Cores fixas (não dependem do ThemeContext) pra dar identidade visual consistente.
@@ -101,7 +128,11 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name="Início" component={HomeScreen} />
-      <Tab.Screen name="Artigos" component={ArticlesScreen} />
+      <Tab.Screen
+        name="Artigos"
+        component={ArticlesStackScreen}
+        options={{ headerShown: false }}
+      />
       <Tab.Screen name="Referências" component={ReferencesScreen} />
       <Tab.Screen name="Bíblia" component={BibleScreen} />
       <Tab.Screen name="Ajustes" component={SettingsScreen} />
@@ -129,7 +160,6 @@ function MainStack() {
       />
       <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Buscar' }} />
       <Stack.Screen name="Liturgy" component={LiturgyScreen} options={{ title: 'Liturgia Diária' }} />
-      <Stack.Screen name="ArticleDetail" component={ArticleDetailScreen} options={{ title: 'Artigo' }} />
     </Stack.Navigator>
   );
 }
