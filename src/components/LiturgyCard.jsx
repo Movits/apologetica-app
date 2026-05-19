@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { getLiturgy, getLiturgicalColorHex } from '../services/liturgyApi';
+import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 
 export default function LiturgyCard({ onOpen }) {
@@ -52,6 +52,11 @@ export default function LiturgyCard({ onOpen }) {
                   ) : null;
                 })()}
               </View>
+              {liturgy?.cor && getLiturgicalColorMeaning(liturgy.cor) ? (
+                <Text style={styles.colorMeaning} numberOfLines={3}>
+                  {getLiturgicalColorMeaning(liturgy.cor)}
+                </Text>
+              ) : null}
             </>
           )}
         </View>
@@ -82,5 +87,6 @@ const makeStyles = (c, fs) =>
     colorPill: { flexDirection: 'row', alignItems: 'center', gap: 4 },
     colorDot: { width: 10, height: 10, borderRadius: 5, borderWidth: 1, borderColor: c.divider },
     metaText: { fontSize: fs(11), color: c.textMuted },
+    colorMeaning: { fontSize: fs(11), color: c.textMuted, marginTop: 6, lineHeight: fs(15), fontStyle: 'italic' },
     error: { fontSize: fs(12), color: c.textMuted, marginTop: 4, fontStyle: 'italic' },
   });

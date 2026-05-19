@@ -72,3 +72,18 @@ export function getLiturgicalColorHex(cor) {
   const k = cor.toLowerCase().trim();
   return map[k] || '#888';
 }
+
+// Curta explicação do significado de cada cor litúrgica na Missa.
+export function getLiturgicalColorMeaning(cor) {
+  const map = {
+    'branco': 'Alegria e pureza. Usada no Tempo Pascal, Natal, festas de Cristo, da Virgem Maria e dos santos não mártires.',
+    'vermelho': 'Sangue e fogo do Espírito. Usada no Domingo de Ramos, Sexta-feira Santa, Pentecostes e nas festas dos mártires.',
+    'verde': 'Esperança e crescimento na fé. Usada no Tempo Comum, fora dos tempos fortes.',
+    'roxo': 'Penitência e preparação. Usada no Advento, na Quaresma e nas missas pelos defuntos.',
+    'rosa': 'Alegria contida no meio da penitência. Usada apenas no 3º domingo do Advento (Gaudete) e 4º da Quaresma (Laetare).',
+    'preto': 'Luto. Pode ser usada nas missas pelos defuntos, embora hoje seja rara.',
+    'dourado': 'Solenidade. Pode substituir branco, vermelho ou verde em festas de grande importância.',
+  };
+  if (!cor) return '';
+  return map[cor.toLowerCase().trim()] || '';
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet, ActivityIndicator, TouchableOpacity, RefreshControl } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { getLiturgy, getLiturgicalColorHex } from '../services/liturgyApi';
+import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { Share } from 'react-native';
 import ReadingText from '../components/ReadingText';
@@ -96,10 +96,15 @@ export default function LiturgyScreen() {
         <Text style={styles.date}>{liturgy.data}</Text>
         <Text style={styles.title}>{liturgy.liturgia}</Text>
         {cor && (
-          <View style={styles.colorRow}>
-            <View style={[styles.colorDot, { backgroundColor: corHex }]} />
-            <Text style={styles.colorLabel}>Cor litúrgica: {cor}</Text>
-          </View>
+          <>
+            <View style={styles.colorRow}>
+              <View style={[styles.colorDot, { backgroundColor: corHex }]} />
+              <Text style={styles.colorLabel}>Cor litúrgica: {cor}</Text>
+            </View>
+            {getLiturgicalColorMeaning(cor) ? (
+              <Text style={styles.colorMeaning}>{getLiturgicalColorMeaning(cor)}</Text>
+            ) : null}
+          </>
         )}
         {liturgy.source === 'stale' && (
           <View style={styles.stalebanner}>
@@ -244,6 +249,7 @@ const makeStyles = (c, fs) =>
     colorRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 },
     colorDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 1, borderColor: c.divider },
     colorLabel: { fontSize: fs(12), color: c.textMuted },
+    colorMeaning: { fontSize: fs(12), color: c.textMuted, marginTop: 6, lineHeight: fs(17), fontStyle: 'italic' },
     stalebanner: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12, padding: 8, backgroundColor: c.badgeBg, borderRadius: 6 },
     staleText: { fontSize: fs(11), color: c.textMuted, flex: 1 },
     section: { backgroundColor: c.card, borderRadius: 12, padding: 16, marginBottom: 12 },
