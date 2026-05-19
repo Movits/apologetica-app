@@ -1,8 +1,6 @@
 import 'react-native-gesture-handler';
-import { useEffect } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet, Platform } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import * as NavigationBar from 'expo-navigation-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,6 +17,7 @@ import NotesScreen from './src/screens/NotesScreen';
 import NoteEditorScreen from './src/screens/NoteEditorScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import LiturgyScreen from './src/screens/LiturgyScreen';
+import ArticleDetailScreen from './src/screens/ArticleDetailScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignupScreen from './src/screens/auth/SignupScreen';
 import ForgotPasswordScreen from './src/screens/auth/ForgotPasswordScreen';
@@ -130,6 +129,7 @@ function MainStack() {
       />
       <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Buscar' }} />
       <Stack.Screen name="Liturgy" component={LiturgyScreen} options={{ title: 'Liturgia Diária' }} />
+      <Stack.Screen name="ArticleDetail" component={ArticleDetailScreen} options={{ title: 'Artigo' }} />
     </Stack.Navigator>
   );
 }
@@ -147,13 +147,6 @@ function AuthStack() {
 function RootNavigation() {
   const { colors, darkMode } = useTheme();
   const { user, loading } = useAuth();
-
-  // Sincroniza a cor da barra de sistema do Android com o tema do app.
-  useEffect(() => {
-    if (Platform.OS !== 'android') return;
-    NavigationBar.setBackgroundColorAsync(colors.card).catch(() => {});
-    NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
-  }, [colors.card, darkMode]);
 
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
