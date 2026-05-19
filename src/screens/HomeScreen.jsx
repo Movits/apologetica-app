@@ -95,7 +95,7 @@ const makeStyles = (c, fs) =>
     content: { padding: 16, paddingBottom: 30 },
     hero: {
       alignItems: 'center', backgroundColor: c.primary, borderRadius: 14,
-      paddingTop: 14, paddingBottom: 18, paddingHorizontal: 20, marginBottom: 12,
+      padding: 20, marginBottom: 12,
     },
     heroIcon: { fontSize: fs(34), color: c.accent },
     heroTitle: { color: '#fff', fontSize: fs(22), fontWeight: 'bold', marginTop: 6 },
@@ -113,7 +113,7 @@ const makeStyles = (c, fs) =>
       marginBottom: 12,
     },
     searchPlaceholder: { color: c.textSubtle, fontSize: fs(14) },
-    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 10, marginTop: 14 },
+    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 10, marginTop: 18 },
     card: {
       flexDirection: 'row', alignItems: 'center',
       backgroundColor: c.card, borderRadius: 10, padding: 13, marginBottom: 9, gap: 12,
