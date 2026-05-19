@@ -5,7 +5,9 @@ import { collection, doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
 import { addNote, updateNote, removeNote } from '../services/userData';
 import { getBook } from '../data/bible';
+import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
+import { shareNote } from '../utils/share';
 
 // route.params:
 //   - noteId (edição) OU
@@ -93,11 +95,31 @@ export default function NoteEditorScreen({ route, navigation }) {
           <Ionicons name="close" size={26} color={colors.primaryText} />
         </TouchableOpacity>
         <Text style={styles.title}>{noteId ? 'Editar nota' : 'Nova nota'}</Text>
-        <TouchableOpacity onPress={handleSave} disabled={busy}>
-          {busy ? <ActivityIndicator color={colors.accent} /> : (
-            <Text style={styles.saveText}>Salvar</Text>
-          )}
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+          {noteId && text.trim() ? (
+            <TouchableOpacity
+              onPress={() => {
+                const ch = getChapter(meta.bookId, meta.chapter);
+                const verseText = ch?.verses?.find((v) => v.n === meta.verseStart)?.t || '';
+                shareNote({
+                  bookName: book?.name || '',
+                  chapter: meta.chapter,
+                  verseStart: meta.verseStart,
+                  verseEnd: meta.verseEnd,
+                  verseText,
+                  noteText: text.trim(),
+                });
+              }}
+            >
+              <Ionicons name="share-social-outline" size={22} color={colors.accent} />
+            </TouchableOpacity>
+          ) : null}
+          <TouchableOpacity onPress={handleSave} disabled={busy}>
+            {busy ? <ActivityIndicator color={colors.accent} /> : (
+              <Text style={styles.saveText}>Salvar</Text>
+            )}
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={styles.refBox}>

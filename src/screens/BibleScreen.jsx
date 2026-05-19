@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { Ionicons } from '@expo/vector-icons';
+import { shareVerse } from '../utils/share';
 import { BIBLE_BOOKS } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
@@ -135,6 +136,13 @@ export default function BibleScreen({ route, navigation }) {
     await Clipboard.setStringAsync(refText);
     setActionVerse(null);
     Alert.alert('Copiado', 'Versículo copiado para a área de transferência.');
+  };
+
+  const shareVerseFromMenu = () => {
+    if (!actionVerse) return;
+    const v = actionVerse;
+    setActionVerse(null);
+    shareVerse({ bookName: book.name, chapter, verse: v.n, text: v.t });
   };
 
   const styles = makeStyles(colors, fs);
@@ -368,6 +376,11 @@ export default function BibleScreen({ route, navigation }) {
               <TouchableOpacity style={styles.modalAction} onPress={openNoteEditor}>
                 <Ionicons name="document-text-outline" size={20} color={colors.primaryText} />
                 <Text style={styles.modalActionText}>Anotar</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.modalAction} onPress={shareVerseFromMenu}>
+                <Ionicons name="share-social-outline" size={20} color={colors.primaryText} />
+                <Text style={styles.modalActionText}>Compartilhar</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.modalAction} onPress={copyVerse}>

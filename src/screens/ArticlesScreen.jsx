@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
 import { referenceById } from '../data/references';
 import { useTheme } from '../context/ThemeContext';
+import { shareArticle } from '../utils/share';
 
 const CATEGORIES = ['Todos', 'Existência de Deus', 'Igreja Católica', 'Sagrada Escritura', 'Moral', 'Outros'];
 
@@ -81,10 +82,20 @@ export default function ArticlesScreen() {
 
       <Modal visible={!!selected} animationType="slide" onRequestClose={() => setSelected(null)}>
         <View style={styles.modal}>
-          <TouchableOpacity style={styles.modalClose} onPress={() => setSelected(null)}>
-            <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
-            <Text style={styles.modalCloseText}>Voltar</Text>
-          </TouchableOpacity>
+          <View style={styles.modalHeader}>
+            <TouchableOpacity style={styles.modalClose} onPress={() => setSelected(null)}>
+              <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
+              <Text style={styles.modalCloseText}>Voltar</Text>
+            </TouchableOpacity>
+            {selected && (
+              <TouchableOpacity
+                onPress={() => shareArticle({ title: selected.title, summary: selected.summary })}
+                style={{ padding: 8 }}
+              >
+                <Ionicons name="share-social-outline" size={22} color={colors.accent} />
+              </TouchableOpacity>
+            )}
+          </View>
           {selected && (
             <ScrollView contentContainerStyle={styles.modalContent}>
               <Text style={styles.modalCat}>{selected.category}</Text>
@@ -163,7 +174,14 @@ const makeStyles = (c, fs) =>
     cardSummary: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18) },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
     modal: { flex: 1, backgroundColor: c.bg },
-    modalClose: { flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 50, gap: 8 },
+    modalHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingTop: 50,
+      paddingHorizontal: 8,
+    },
+    modalClose: { flexDirection: 'row', alignItems: 'center', padding: 8, gap: 8 },
     modalCloseText: { fontSize: fs(16), color: c.primaryText },
     modalContent: { padding: 20, paddingBottom: 60 },
     modalCat: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', marginBottom: 6 },

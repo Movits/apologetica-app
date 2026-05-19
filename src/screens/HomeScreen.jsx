@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+import VerseOfDayCard from '../components/VerseOfDayCard';
 
 const HIGHLIGHTS = [
   { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas comuns', tab: 'Artigos' },
@@ -21,6 +22,12 @@ export default function HomeScreen() {
   const { user } = useAuth();
   const styles = makeStyles(colors, fs);
 
+  const openVerse = ({ bookId, chapter, verse }) => {
+    navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
+  };
+
+  const openSearch = () => navigation.navigate('Search');
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.hero}>
@@ -31,6 +38,13 @@ export default function HomeScreen() {
         </Text>
         <Text style={styles.heroRef}>1 Pedro 3,15</Text>
       </View>
+
+      <TouchableOpacity style={styles.searchBar} onPress={openSearch}>
+        <Ionicons name="search-outline" size={20} color={colors.textSubtle} />
+        <Text style={styles.searchPlaceholder}>Buscar em todo o app...</Text>
+      </TouchableOpacity>
+
+      <VerseOfDayCard onOpen={openVerse} />
 
       <Text style={styles.sectionTitle}>Explorar</Text>
       {HIGHLIGHTS.map((item) => (
@@ -78,12 +92,18 @@ const makeStyles = (c, fs) =>
     content: { padding: 20, paddingBottom: 40 },
     hero: {
       alignItems: 'center', backgroundColor: c.primary, borderRadius: 16,
-      padding: 28, marginBottom: 28,
+      padding: 28, marginBottom: 20,
     },
     heroIcon: { fontSize: fs(40), color: c.accent },
     heroTitle: { color: '#fff', fontSize: fs(24), fontWeight: 'bold', marginTop: 10 },
     heroSub: { color: c.heroSub, fontSize: fs(14), textAlign: 'center', marginTop: 10, lineHeight: fs(20) },
     heroRef: { color: c.accent, fontSize: fs(13), marginTop: 10, fontStyle: 'italic', fontWeight: 'bold' },
+    searchBar: {
+      flexDirection: 'row', alignItems: 'center', gap: 10,
+      backgroundColor: c.card, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 12,
+      marginBottom: 20,
+    },
+    searchPlaceholder: { color: c.textSubtle, fontSize: fs(14) },
     sectionTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 12, marginTop: 8 },
     card: {
       flexDirection: 'row', alignItems: 'center',

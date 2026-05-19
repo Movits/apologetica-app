@@ -5,6 +5,7 @@ import { watchHighlights, removeHighlight } from '../services/userData';
 import { getBook } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
+import { shareHighlight } from '../utils/share';
 
 export default function HighlightsScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -62,6 +63,12 @@ export default function HighlightsScreen({ navigation }) {
         const book = getBook(item.bookId);
         const ch = getChapter(item.bookId, item.chapter);
         const verseText = ch?.verses?.find((v) => v.n === item.verse)?.t || '';
+        const onShare = () => shareHighlight({
+          bookName: book?.name || '',
+          chapter: item.chapter,
+          verse: item.verse,
+          text: verseText,
+        });
         return (
           <TouchableOpacity style={styles.card} onPress={() => open(item)} onLongPress={() => confirmRemove(item)}>
             <View style={[styles.colorBar, { backgroundColor: item.color }]} />
@@ -73,7 +80,9 @@ export default function HighlightsScreen({ navigation }) {
                 <Text style={styles.verseText} numberOfLines={3}>{verseText}</Text>
               ) : null}
             </View>
-            <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
+            <TouchableOpacity style={styles.shareBtn} onPress={onShare}>
+              <Ionicons name="share-social-outline" size={18} color={colors.accent} />
+            </TouchableOpacity>
           </TouchableOpacity>
         );
       }}
@@ -97,4 +106,5 @@ const makeStyles = (c, fs) =>
     colorBar: { width: 6, alignSelf: 'stretch', borderRadius: 3 },
     ref: { fontSize: fs(14), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
     verseText: { fontSize: fs(13), color: c.text, lineHeight: fs(18) },
+    shareBtn: { padding: 8 },
   });

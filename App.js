@@ -15,6 +15,7 @@ import SettingsScreen from './src/screens/SettingsScreen';
 import HighlightsScreen from './src/screens/HighlightsScreen';
 import NotesScreen from './src/screens/NotesScreen';
 import NoteEditorScreen from './src/screens/NoteEditorScreen';
+import SearchScreen from './src/screens/SearchScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignupScreen from './src/screens/auth/SignupScreen';
 import ForgotPasswordScreen from './src/screens/auth/ForgotPasswordScreen';
@@ -124,6 +125,7 @@ function MainStack() {
         component={NoteEditorScreen}
         options={{ headerShown: false, presentation: 'modal' }}
       />
+      <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Buscar' }} />
     </Stack.Navigator>
   );
 }
