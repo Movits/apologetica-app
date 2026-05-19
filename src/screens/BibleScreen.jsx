@@ -52,6 +52,20 @@ export default function BibleScreen({ route, navigation }) {
     }
   }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse]);
 
+  // Volta pro início da seção quando o usuário aperta o tab Bíblia de novo
+  useEffect(() => {
+    const unsub = navigation?.addListener?.('tabPress', () => {
+      if (navigation.isFocused() && view !== 'books') {
+        setView('books');
+        setBook(null);
+        setChapter(null);
+        setHighlightVerse(null);
+        setFilterText('');
+      }
+    });
+    return unsub;
+  }, [navigation, view]);
+
   const chapterData = useMemo(() => {
     if (view !== 'verses' || !book || !chapter) return null;
     return getChapter(book.id, chapter);

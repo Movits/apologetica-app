@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { references } from '../data/references';
@@ -10,7 +10,6 @@ const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos'];
 export default function ReferencesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
-  const [search, setSearch] = useState('');
   const [source, setSource] = useState('Todos');
   const [expanded, setExpanded] = useState(null);
   const listRef = useRef(null);
@@ -18,7 +17,6 @@ export default function ReferencesScreen({ route }) {
   useEffect(() => {
     if (route?.params?.highlightId) {
       const id = route.params.highlightId;
-      setSearch('');
       setSource('Todos');
       setExpanded(id);
       setTimeout(() => {
@@ -30,15 +28,21 @@ export default function ReferencesScreen({ route }) {
     }
   }, [route?.params?.highlightId]);
 
-  const filtered = references.filter((r) => {
-    const matchSearch =
-      r.ref.toLowerCase().includes(search.toLowerCase()) ||
-      r.text.toLowerCase().includes(search.toLowerCase()) ||
-      r.topic.toLowerCase().includes(search.toLowerCase()) ||
-      r.fullSource.toLowerCase().includes(search.toLowerCase());
-    const matchSource = source === 'Todos' || r.source === source;
-    return matchSearch && matchSource;
-  });
+  // Volta ao topo quando o usuário aperta o tab Referências de novo
+  useEffect(() => {
+    const unsub = navigation.addListener('tabPress', () => {
+      if (navigation.isFocused()) {
+        setExpanded(null);
+        setSource('Todos');
+        listRef.current?.scrollToOffset({ offset: 0, animated: true });
+      }
+    });
+    return unsub;
+  }, [navigation]);
+
+  const filtered = references.filter((r) =>
+    source === 'Todos' || r.source === source
+  );
 
   const openUrl = (url) => {
     if (!url) return;
@@ -58,17 +62,6 @@ export default function ReferencesScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchRow}>
-        <Ionicons name="search-outline" size={18} color={colors.textSubtle} style={styles.searchIcon} />
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Buscar versículo, tema, fonte..."
-          value={search}
-          onChangeText={setSearch}
-          placeholderTextColor={colors.textSubtle}
-        />
-      </View>
-
       <FlatList
         horizontal
         data={SOURCES}
@@ -160,18 +153,7 @@ export default function ReferencesScreen({ route }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    searchRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      margin: 16,
-      marginBottom: 8,
-      backgroundColor: c.card,
-      borderRadius: 10,
-      paddingHorizontal: 12,
-    },
-    searchIcon: { marginRight: 8 },
-    searchInput: { flex: 1, height: 42, fontSize: fs(15), color: c.text },
-    sourceList: { maxHeight: 44, paddingLeft: 16, marginBottom: 4 },
+    sourceList: { maxHeight: 60, paddingLeft: 16, paddingTop: 14, marginBottom: 4 },
     chip: {
       borderWidth: 1,
       borderColor: c.divider,

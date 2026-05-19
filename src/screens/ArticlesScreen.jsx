@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { useState, useEffect } from 'react';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
@@ -9,20 +9,38 @@ import { shareArticle } from '../utils/share';
 
 const CATEGORIES = ['Todos', 'Existência de Deus', 'Igreja Católica', 'Sagrada Escritura', 'Moral', 'Outros'];
 
-export default function ArticlesScreen() {
+export default function ArticlesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
-  const [search, setSearch] = useState('');
   const [category, setCategory] = useState('Todos');
   const [selected, setSelected] = useState(null);
 
-  const filtered = articles.filter((a) => {
-    const matchSearch =
-      a.title.toLowerCase().includes(search.toLowerCase()) ||
-      a.summary.toLowerCase().includes(search.toLowerCase());
-    const matchCat = category === 'Todos' || a.category === category;
-    return matchSearch && matchCat;
-  });
+  // Abre artigo específico via deep link (da busca global)
+  useEffect(() => {
+    if (route?.params?.openId) {
+      const article = articles.find((a) => a.id === route.params.openId);
+      if (article) {
+        setCategory('Todos');
+        setSelected(article);
+      }
+      navigation.setParams?.({ openId: undefined });
+    }
+  }, [route?.params?.openId]);
+
+  // Fecha o modal quando o usuário aperta o tab Artigos de novo
+  useEffect(() => {
+    const unsub = navigation.addListener('tabPress', () => {
+      if (navigation.isFocused()) {
+        setSelected(null);
+        setCategory('Todos');
+      }
+    });
+    return unsub;
+  }, [navigation]);
+
+  const filtered = articles.filter((a) =>
+    category === 'Todos' || a.category === category
+  );
 
   const openReference = (refId) => {
     setSelected(null);
@@ -35,17 +53,6 @@ export default function ArticlesScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchRow}>
-        <Ionicons name="search-outline" size={18} color={colors.textSubtle} style={styles.searchIcon} />
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Buscar artigos..."
-          value={search}
-          onChangeText={setSearch}
-          placeholderTextColor={colors.textSubtle}
-        />
-      </View>
-
       <FlatList
         horizontal
         data={CATEGORIES}
@@ -138,18 +145,7 @@ export default function ArticlesScreen() {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    searchRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      margin: 16,
-      marginBottom: 8,
-      backgroundColor: c.card,
-      borderRadius: 10,
-      paddingHorizontal: 12,
-    },
-    searchIcon: { marginRight: 8 },
-    searchInput: { flex: 1, height: 42, fontSize: fs(15), color: c.text },
-    catList: { maxHeight: 44, paddingLeft: 16, marginBottom: 4 },
+    catList: { maxHeight: 60, paddingLeft: 16, paddingTop: 14, marginBottom: 4 },
     catChip: {
       borderWidth: 1,
       borderColor: c.divider,

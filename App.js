@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { useEffect } from 'react';
+import { View, Text, ActivityIndicator, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import * as NavigationBar from 'expo-navigation-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
@@ -145,6 +147,13 @@ function AuthStack() {
 function RootNavigation() {
   const { colors, darkMode } = useTheme();
   const { user, loading } = useAuth();
+
+  // Sincroniza a cor da barra de sistema do Android com o tema do app.
+  useEffect(() => {
+    if (Platform.OS !== 'android') return;
+    NavigationBar.setBackgroundColorAsync(colors.card).catch(() => {});
+    NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
+  }, [colors.card, darkMode]);
 
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
