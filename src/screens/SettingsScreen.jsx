@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import {
   getPrefs, requestPermissions,
   setDailyVerseEnabled, setSundayLiturgyEnabled,
+  sendTestNotification,
 } from '../services/notifications';
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
@@ -153,6 +154,23 @@ export default function SettingsScreen() {
           thumbColor="#fff"
         />
       </View>
+
+      <TouchableOpacity
+        style={styles.row}
+        onPress={async () => {
+          const res = await sendTestNotification();
+          if (!res.ok) {
+            Alert.alert('Erro', res.error || 'Não consegui agendar a notificação.');
+          } else {
+            Alert.alert('Notificação agendada', 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.');
+          }
+        }}
+      >
+        <View style={styles.rowLeft}>
+          <Ionicons name="notifications-outline" size={22} color={colors.primaryText} />
+          <Text style={styles.rowLabel}>Enviar notificação de teste</Text>
+        </View>
+      </TouchableOpacity>
 
       {user && (
         <>

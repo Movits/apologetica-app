@@ -113,3 +113,18 @@ export async function ensureScheduled() {
   if (granted.status !== 'granted') return;
   await rescheduleAll();
 }
+
+// Dispara uma notificação de teste em ~5 segundos, pra verificar se funciona.
+export async function sendTestNotification() {
+  const ok = await requestPermissions();
+  if (!ok) return { ok: false, error: 'Permissão de notificação não concedida.' };
+  const verse = getVerseOfDay();
+  await Notifications.scheduleNotificationAsync({
+    content: {
+      title: '🌅 Versículo do dia (teste)',
+      body: `${verse.text}\n— ${verse.ref}`,
+    },
+    trigger: { seconds: 5 },
+  });
+  return { ok: true };
+}
