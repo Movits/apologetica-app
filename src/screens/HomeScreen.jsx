@@ -113,7 +113,7 @@ const makeStyles = (c, fs) =>
       marginBottom: 14,
     },
     searchPlaceholder: { color: c.textSubtle, fontSize: fs(14) },
-    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 10, marginTop: 14 },
+    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 12, marginTop: 28 },
     card: {
       flexDirection: 'row', alignItems: 'center',
       backgroundColor: c.card, borderRadius: 10, padding: 13, marginBottom: 9, gap: 12,
