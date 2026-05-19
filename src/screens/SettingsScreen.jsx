@@ -1,7 +1,9 @@
-import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+
+const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
 const FONT_OPTIONS = [
   { key: 'pequeno', label: 'Pequeno', sample: 14 },
@@ -92,6 +94,21 @@ export default function SettingsScreen() {
         </>
       )}
 
+      <Text style={styles.section}>Apoie o projeto</Text>
+      <TouchableOpacity
+        style={styles.row}
+        onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
+      >
+        <View style={styles.rowLeft}>
+          <Ionicons name="heart-outline" size={22} color={colors.accent} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>Fazer uma doação</Text>
+            <Text style={styles.rowSub}>Via PIX. Qualquer valor ajuda a manter o app gratuito.</Text>
+          </View>
+        </View>
+        <Ionicons name="open-outline" size={18} color={colors.textSubtle} />
+      </TouchableOpacity>
+
       <Text style={styles.section}>Sobre</Text>
 
       <View style={styles.aboutBox}>
@@ -138,6 +155,7 @@ const makeStyles = (c, fs) =>
     },
     rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flex: 1 },
     rowLabel: { fontSize: fs(15), color: c.text },
+    rowSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
     fontGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 14 },
     fontChip: {
       paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10,

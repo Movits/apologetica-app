@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoie o APPologética</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #c9a84c;
+      --bg: #f5f0e8;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      max-width: 480px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      margin-top: 20px;
+    }
+    .cross {
+      font-size: 56px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--primary);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .intro {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+    .pix-section {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .pix-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .pix-key {
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      word-break: break-all;
+      background: var(--card);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px dashed var(--accent);
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .pix-name {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+      font-family: 'Lato', sans-serif;
+    }
+    button:hover { background: #143049; }
+    button.copied { background: var(--accent); color: white; }
+    .steps {
+      text-align: left;
+      margin: 24px 0;
+      padding-left: 20px;
+    }
+    .steps li {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+    }
+    .quote-ref {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .back-link:hover { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cross">✝</div>
+    <h1>APPologética</h1>
+    <p class="subtitle">Apoie este projeto</p>
+
+    <p class="intro">
+      Obrigado por considerar apoiar este projeto. Sua contribuição ajuda a manter o app gratuito, expandir o conteúdo e levar a apologética católica a mais pessoas.
+    </p>
+
+    <div class="pix-section">
+      <div class="pix-label">Chave PIX</div>
+      <div class="pix-key" id="pixKey">SUA_CHAVE_PIX_AQUI</div>
+      <div class="pix-name" id="pixName">Roberto Alagemovits</div>
+      <button onclick="copyKey()" id="copyBtn">Copiar chave</button>
+    </div>
+
+    <ol class="steps">
+      <li>Abra o app do seu banco</li>
+      <li>Vá em <strong>PIX</strong> → <strong>Transferir</strong></li>
+      <li>Cole a chave acima</li>
+      <li>Escolha o valor que quiser doar</li>
+      <li>Confirme a transferência</li>
+    </ol>
+
+    <p class="quote">
+      Cada um dê conforme propôs no seu coração, não com tristeza ou por necessidade; porque Deus ama ao que dá com alegria.
+      <span class="quote-ref">2 Coríntios 9,7</span>
+    </p>
+
+    <a href="https://github.com/Movits/apologetica-app" class="back-link">Saiba mais sobre o projeto →</a>
+  </div>
+
+  <script>
+    function copyKey() {
+      const key = document.getElementById('pixKey').textContent.trim();
+      const btn = document.getElementById('copyBtn');
+      navigator.clipboard.writeText(key).then(() => {
+        btn.textContent = 'Chave copiada!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copiar chave';
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        alert('Chave: ' + key);
+      });
+    }
+  </script>
+</body>
+</html>
