@@ -4,8 +4,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { getLiturgy, getLiturgicalColorHex } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { Share } from 'react-native';
+import ReadingText from '../components/ReadingText';
 
-const APP_PROMO = '\n\n✝ Enviado pelo APPologética';
+const APP_PROMO = '\n\nEnviado pelo APPologética ✝';
 
 export default function LiturgyScreen() {
   const { colors, fs } = useTheme();
@@ -202,7 +203,11 @@ function ReadingSection({ title, reading, onShare, emphasize, isPsalm, theme }) 
         {reading.referencia ? <Text style={styles.reading_ref}>{reading.referencia}</Text> : null}
         {reading.titulo ? <Text style={styles.reading_title}>{reading.titulo}</Text> : null}
         {reading.texto ? (
-          <Text style={[styles.body, isPsalm && styles.bodyPsalm]}>{reading.texto}</Text>
+          <ReadingText
+            text={reading.texto}
+            style={[styles.body, isPsalm && styles.bodyPsalm]}
+            numberStyle={styles.verseNumberInline}
+          />
         ) : null}
         {reading.refrao ? (
           <Text style={styles.refrao}>R/. {reading.refrao}</Text>
@@ -252,6 +257,11 @@ const makeStyles = (c, fs) =>
     reading_title: { fontSize: fs(13), color: c.textMuted, fontStyle: 'italic' },
     body: { fontSize: fs(15), color: c.text, lineHeight: fs(24) },
     bodyPsalm: { fontStyle: 'italic' },
+    verseNumberInline: {
+      fontSize: fs(10),
+      color: c.accent,
+      fontWeight: 'bold',
+    },
     refrao: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold', fontStyle: 'italic', marginTop: 8 },
     footer: { fontSize: fs(11), color: c.textSubtle, textAlign: 'center', marginTop: 12, marginBottom: 8 },
   });

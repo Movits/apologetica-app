@@ -5,8 +5,8 @@ import { Share } from 'react-native';
 const APP_PROMO_URL = ''; // ← preencher quando publicar
 
 const APP_PROMO = APP_PROMO_URL
-  ? `\n\n✝ Enviado pelo APPologética — apologética católica e Bíblia, gratuito.\n${APP_PROMO_URL}`
-  : '\n\n✝ Enviado pelo APPologética';
+  ? `\n\nEnviado pelo APPologética ✝\nApologética católica e Bíblia, gratuito.\n${APP_PROMO_URL}`
+  : '\n\nEnviado pelo APPologética ✝';
 
 export function shareVerse({ bookName, chapter, verse, text }) {
   const msg = `"${text}"\n\n${bookName} ${chapter},${verse}${APP_PROMO}`;
