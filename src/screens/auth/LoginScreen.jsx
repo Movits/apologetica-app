@@ -85,20 +85,22 @@ export default function LoginScreen({ navigation }) {
           <View style={styles.dividerLine} />
         </View>
 
-        <TouchableOpacity
-          style={styles.googleBtn}
-          onPress={google.signIn}
-          disabled={!google.ready || google.busy}
-        >
-          {google.busy ? (
-            <ActivityIndicator color={colors.text} />
-          ) : (
-            <>
-              <Ionicons name="logo-google" size={20} color="#DB4437" />
-              <Text style={styles.googleBtnText}>Continuar com Google</Text>
-            </>
-          )}
-        </TouchableOpacity>
+        {!google.unavailable && (
+          <TouchableOpacity
+            style={styles.googleBtn}
+            onPress={google.signIn}
+            disabled={!google.ready || google.busy}
+          >
+            {google.busy ? (
+              <ActivityIndicator color={colors.text} />
+            ) : (
+              <>
+                <Ionicons name="logo-google" size={20} color="#DB4437" />
+                <Text style={styles.googleBtnText}>Continuar com Google</Text>
+              </>
+            )}
+          </TouchableOpacity>
+        )}
 
         <TouchableOpacity style={styles.secondaryBtn} onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.secondaryBtnText}>Criar conta nova</Text>

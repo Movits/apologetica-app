@@ -111,20 +111,22 @@ export default function SignupScreen({ navigation }) {
           <View style={styles.dividerLine} />
         </View>
 
-        <TouchableOpacity
-          style={styles.googleBtn}
-          onPress={google.signIn}
-          disabled={!google.ready || google.busy}
-        >
-          {google.busy ? (
-            <ActivityIndicator color={colors.text} />
-          ) : (
-            <>
-              <Ionicons name="logo-google" size={20} color="#DB4437" />
-              <Text style={styles.googleBtnText}>Continuar com Google</Text>
-            </>
-          )}
-        </TouchableOpacity>
+        {!google.unavailable && (
+          <TouchableOpacity
+            style={styles.googleBtn}
+            onPress={google.signIn}
+            disabled={!google.ready || google.busy}
+          >
+            {google.busy ? (
+              <ActivityIndicator color={colors.text} />
+            ) : (
+              <>
+                <Ionicons name="logo-google" size={20} color="#DB4437" />
+                <Text style={styles.googleBtnText}>Continuar com Google</Text>
+              </>
+            )}
+          </TouchableOpacity>
+        )}
 
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 16 }}>
           <Text style={styles.linkText}>Já tenho uma conta. Entrar.</Text>

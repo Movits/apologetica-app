@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as Google from 'expo-auth-session/providers/google';
 import * as WebBrowser from 'expo-web-browser';
+import Constants from 'expo-constants';
 import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 import { auth } from '../services/firebase';
 
@@ -8,6 +9,12 @@ WebBrowser.maybeCompleteAuthSession();
 
 // Web Client ID do Firebase (Authentication → Google → Configuração da Web).
 const WEB_CLIENT_ID = '784268138897-l8jmdvhtncqvb3b3885u4m8bms12onpc.apps.googleusercontent.com';
+
+// Google bloqueia OAuth de Web Client IDs vindos de apps mobile (política de 2025+).
+// Em Expo Go o redirect URI é um scheme custom (não-HTTPS) que o Google rejeita.
+// A solução real é dev build com EAS (Android/iOS Client IDs nativos).
+// Por enquanto detectamos Expo Go e desabilitamos o botão.
+const IS_EXPO_GO = Constants.executionEnvironment === 'storeClient';
 
 export function useGoogleSignIn() {
   const [busy, setBusy] = useState(false);
@@ -33,6 +40,10 @@ export function useGoogleSignIn() {
 
   const signIn = async () => {
     setError(null);
+    if (IS_EXPO_GO) {
+      setError('Login com Google só funciona em builds de produção. Use e-mail e senha por enquanto.');
+      return;
+    }
     try {
       await promptAsync();
     } catch (e) {
@@ -40,5 +51,11 @@ export function useGoogleSignIn() {
     }
   };
 
-  return { signIn, busy, error, ready: !!request };
+  return {
+    signIn,
+    busy,
+    error,
+    ready: !!request && !IS_EXPO_GO,
+    unavailable: IS_EXPO_GO,
+  };
 }
