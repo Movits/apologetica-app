@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import VerseOfDayCard from '../components/VerseOfDayCard';
+import LiturgyCard from '../components/LiturgyCard';
 
 const HIGHLIGHTS = [
   { icon: 'book-outline', label: 'Artigos de Apologética', sub: 'Textos para responder dúvidas comuns', tab: 'Artigos' },
@@ -45,6 +46,8 @@ export default function HomeScreen() {
       </TouchableOpacity>
 
       <VerseOfDayCard onOpen={openVerse} />
+
+      <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
 
       <Text style={styles.sectionTitle}>Explorar</Text>
       {HIGHLIGHTS.map((item) => (

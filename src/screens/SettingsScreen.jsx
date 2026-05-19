@@ -1,7 +1,12 @@
+import { useEffect, useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+import {
+  getPrefs, requestPermissions,
+  setDailyVerseEnabled, setSundayLiturgyEnabled,
+} from '../services/notifications';
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
@@ -15,6 +20,35 @@ const FONT_OPTIONS = [
 export default function SettingsScreen() {
   const { colors, darkMode, setDarkMode, fontSize, setFontSize, fs } = useTheme();
   const { user, signOut } = useAuth();
+  const [notifPrefs, setNotifPrefs] = useState({ dailyVerse: false, sundayLiturgy: false, verseHour: 7, verseMinute: 0 });
+
+  useEffect(() => {
+    getPrefs().then(setNotifPrefs);
+  }, []);
+
+  const toggleDailyVerse = async (value) => {
+    if (value) {
+      const ok = await requestPermissions();
+      if (!ok) {
+        Alert.alert('Permissão necessária', 'Habilite as notificações nas configurações do celular para receber o versículo do dia.');
+        return;
+      }
+    }
+    await setDailyVerseEnabled(value, notifPrefs.verseHour, notifPrefs.verseMinute);
+    setNotifPrefs((p) => ({ ...p, dailyVerse: value }));
+  };
+
+  const toggleSundayLiturgy = async (value) => {
+    if (value) {
+      const ok = await requestPermissions();
+      if (!ok) {
+        Alert.alert('Permissão necessária', 'Habilite as notificações nas configurações do celular para receber lembretes de domingo.');
+        return;
+      }
+    }
+    await setSundayLiturgyEnabled(value);
+    setNotifPrefs((p) => ({ ...p, sundayLiturgy: value }));
+  };
 
   const handleLogout = () => {
     Alert.alert('Sair da conta?', 'Você pode entrar novamente quando quiser.', [
@@ -80,6 +114,44 @@ export default function SettingsScreen() {
             </TouchableOpacity>
           ))}
         </View>
+      </View>
+
+      <Text style={styles.section}>Notificações</Text>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="sunny-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>Versículo do dia</Text>
+            <Text style={styles.rowSub}>
+              {notifPrefs.dailyVerse
+                ? `Receber às ${String(notifPrefs.verseHour).padStart(2, '0')}:${String(notifPrefs.verseMinute).padStart(2, '0')}`
+                : 'Receber lembrete diário'}
+            </Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.dailyVerse}
+          onValueChange={toggleDailyVerse}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
+      </View>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>Liturgia de domingo</Text>
+            <Text style={styles.rowSub}>Lembrete da liturgia toda manhã de domingo</Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.sundayLiturgy}
+          onValueChange={toggleSundayLiturgy}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
       </View>
 
       {user && (

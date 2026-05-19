@@ -16,6 +16,7 @@ import HighlightsScreen from './src/screens/HighlightsScreen';
 import NotesScreen from './src/screens/NotesScreen';
 import NoteEditorScreen from './src/screens/NoteEditorScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import LiturgyScreen from './src/screens/LiturgyScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignupScreen from './src/screens/auth/SignupScreen';
 import ForgotPasswordScreen from './src/screens/auth/ForgotPasswordScreen';
@@ -126,6 +127,7 @@ function MainStack() {
         options={{ headerShown: false, presentation: 'modal' }}
       />
       <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Buscar' }} />
+      <Stack.Screen name="Liturgy" component={LiturgyScreen} options={{ title: 'Liturgia Diária' }} />
     </Stack.Navigator>
   );
 }

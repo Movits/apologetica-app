@@ -21,6 +21,8 @@
     "expo-auth-session": "~7.0.11",
     "expo-clipboard": "~8.0.8",
     "expo-crypto": "~15.0.9",
+    "expo-device": "~8.0.10",
+    "expo-notifications": "~0.32.17",
     "expo-status-bar": "~3.0.9",
     "expo-web-browser": "~15.0.11",
     "firebase": "^12.13.0",
