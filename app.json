@@ -6,6 +6,10 @@
     "orientation": "portrait",
     "scheme": "appologetica",
     "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#1a3a5c",
+      "resizeMode": "contain"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.appologetica.app"

@@ -19,22 +19,25 @@ const LIGHT = {
   heroSub: '#ccd9e8',
 };
 
+// Paleta dark mode estilo "noite na catedral": navy profundo com dourado quente.
+// Tudo na mesma família de cor (azul-marinho) - cards, bg e hero coordenados.
+// Texto cor de creme (não branco puro) pra dar sensação de luz de vela.
 const DARK = {
   mode: 'dark',
-  primary: '#0f1f33',
-  primaryText: '#e6c878',
-  accent: '#d4b86a',
-  bg: '#121212',
-  card: '#1e1e1e',
-  cardBorder: '#2a2a2a',
-  text: '#ececec',
-  textMuted: '#b8b8b8',
-  textSubtle: '#909090',
-  divider: '#333333',
-  inputBg: '#1e1e1e',
-  badgeBg: '#2a3a4f',
+  primary: '#142844',         // navy rico pro hero/header
+  primaryText: '#e6c878',     // dourado claro pros títulos em cards
+  accent: '#d4b86a',          // dourado pra botões e ícones
+  bg: '#0d1722',              // navy bem escuro (mais cohesivo que black puro)
+  card: '#172538',            // card visivelmente separado do bg
+  cardBorder: '#243248',
+  text: '#ece8d8',            // creme quente (mais agradável que branco frio)
+  textMuted: '#a8a395',
+  textSubtle: '#7a7568',
+  divider: '#243248',
+  inputBg: '#172538',
+  badgeBg: '#243248',
   badgeText: '#e6c878',
-  heroSub: '#a8b8cc',
+  heroSub: '#b8c4d8',
 };
 
 const FONT_SCALES = {
@@ -54,7 +57,6 @@ export function ThemeProvider({ children }) {
   const [fontSize, setFontSizeState] = useState('normal');
   const [hydrated, setHydrated] = useState(false);
 
-  // Carrega settings do disco no boot
   useEffect(() => {
     (async () => {
       try {
@@ -72,7 +74,6 @@ export function ThemeProvider({ children }) {
     })();
   }, []);
 
-  // Persiste mudanças
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_DARK, String(darkMode)).catch(() => {});
   }, [darkMode, hydrated]);

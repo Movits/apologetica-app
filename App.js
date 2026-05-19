@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import { View, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -24,6 +24,44 @@ import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+// Splash branded — usado durante hidratação do auth + tema.
+// Cores fixas (não dependem do ThemeContext) pra dar identidade visual consistente.
+function BrandedSplash() {
+  return (
+    <View style={splashStyles.container}>
+      <Text style={splashStyles.cross}>✝</Text>
+      <Text style={splashStyles.title}>APPologética</Text>
+      <Text style={splashStyles.verse}>1 Pedro 3,15</Text>
+      <ActivityIndicator size="small" color="#c9a84c" style={splashStyles.spinner} />
+    </View>
+  );
+}
+
+const splashStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1a3a5c',
+    paddingHorizontal: 32,
+  },
+  cross: { fontSize: 72, color: '#c9a84c', marginBottom: 24 },
+  title: {
+    fontSize: 30,
+    color: '#ffffff',
+    fontWeight: 'bold',
+    letterSpacing: 0.5,
+    marginBottom: 10,
+  },
+  verse: {
+    fontSize: 13,
+    color: '#c9a84c',
+    fontStyle: 'italic',
+    fontWeight: '600',
+  },
+  spinner: { marginTop: 48 },
+});
 
 const ICONS = {
   'Início': { on: 'home', off: 'home-outline' },
@@ -117,11 +155,7 @@ function RootNavigation() {
   };
 
   if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.bg }}>
-        <ActivityIndicator size="large" color={colors.accent} />
-      </View>
-    );
+    return <BrandedSplash />;
   }
 
   return (
