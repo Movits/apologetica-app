@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Modal, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
@@ -13,6 +13,7 @@ export default function BibleMapScreen({ navigation }) {
   const { isEn } = useLanguage();
   const [step, setStep] = useState(0);
   const [selected, setSelected] = useState(null);
+  const [mapInteracting, setMapInteracting] = useState(false);
   const webRef = useRef(null);
 
   const total = JESUS_JOURNEY.length;
@@ -67,7 +68,7 @@ export default function BibleMapScreen({ navigation }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
+      <ScrollView contentContainerStyle={{ padding: 16, paddingBottom: 40 }} scrollEnabled={!mapInteracting}>
         <View style={styles.intro}>
           <Text style={styles.title}>
             {isEn ? 'In Jesus\' Footsteps' : 'Nos Passos de Jesus'}
@@ -79,7 +80,12 @@ export default function BibleMapScreen({ navigation }) {
           </Text>
         </View>
 
-        <View style={styles.mapWrapper}>
+        <View
+          style={styles.mapWrapper}
+          onTouchStart={() => setMapInteracting(true)}
+          onTouchEnd={() => setMapInteracting(false)}
+          onTouchCancel={() => setMapInteracting(false)}
+        >
           <WebView
             ref={webRef}
             originWhitelist={['*']}
@@ -308,10 +314,12 @@ update();
 function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
   if (!place) return null;
   const s = modalStyles(colors, fs);
+  const [imgLoading, setImgLoading] = useState(true);
+  const [imgError, setImgError] = useState(false);
   return (
     <Modal visible={!!place} transparent animationType="slide" onRequestClose={onClose}>
-      <View style={s.backdrop}>
-        <View style={s.sheet}>
+      <Pressable style={s.backdrop} onPress={onClose}>
+        <Pressable style={s.sheet} onPress={(e) => e.stopPropagation()}>
           <View style={s.header}>
             <View style={{ flex: 1 }}>
               <Text style={s.place}>
@@ -324,6 +332,20 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
             </TouchableOpacity>
           </View>
           <ScrollView contentContainerStyle={{ padding: 18, paddingTop: 8 }}>
+            {place.photo && !imgError && (
+              <View style={s.photoBox}>
+                {imgLoading && (
+                  <ActivityIndicator style={StyleSheet.absoluteFill} color={colors.accent} />
+                )}
+                <Image
+                  source={{ uri: place.photo }}
+                  style={[s.photo, imgLoading && { opacity: 0 }]}
+                  resizeMode="cover"
+                  onLoad={() => setImgLoading(false)}
+                  onError={() => { setImgLoading(false); setImgError(true); }}
+                />
+              </View>
+            )}
             <Text style={s.body}>{isEn ? place.descEn : place.desc}</Text>
             <TouchableOpacity style={s.bibleBtn} onPress={() => onOpenBible(place.nav)}>
               <Ionicons name="bookmark" size={16} color="#fff" />
@@ -332,8 +354,8 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
               </Text>
             </TouchableOpacity>
           </ScrollView>
-        </View>
-      </View>
+        </Pressable>
+      </Pressable>
     </Modal>
   );
 }
@@ -348,6 +370,8 @@ const modalStyles = (c, fs) =>
     },
     place: { fontSize: fs(13), color: c.accent, fontWeight: 'bold', marginBottom: 4 },
     title: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText },
+    photoBox: { width: '100%', height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 14, backgroundColor: c.divider },
+    photo: { width: '100%', height: '100%' },
     body: { fontSize: fs(15), color: c.text, lineHeight: fs(23), marginBottom: 16 },
     bibleBtn: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,

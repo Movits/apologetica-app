@@ -53,7 +53,7 @@ function QuizMenu({ navigation, colors, fs, isEn, t }) {
         <TouchableOpacity
           key={m.key}
           style={styles.card}
-          onPress={() => navigation.replace('Quiz', { mode: m.key })}
+          onPress={() => navigation.navigate('Quiz', { mode: m.key })}
         >
           <View style={styles.iconBox}>
             <Ionicons name={m.icon} size={26} color={colors.accent} />
@@ -243,13 +243,20 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
               <Text style={styles.nextBtnText}>{t('quiz.practiceAgain')}</Text>
               <Ionicons name="refresh" size={18} color="#fff" />
             </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.practiceBtn}
+              onPress={() => navigation.goBack()}
+            >
+              <Ionicons name="grid-outline" size={18} color={colors.accent} />
+              <Text style={styles.practiceText}>{isEn ? 'Other game modes' : 'Outros modos'}</Text>
+            </TouchableOpacity>
           </View>
         )}
 
         {mode === 'daily' && showResult && (
           <TouchableOpacity
             style={styles.practiceBtn}
-            onPress={() => navigation.replace('Quiz', { mode: 'menu' })}
+            onPress={() => navigation.goBack()}
           >
             <Ionicons name="grid-outline" size={18} color={colors.accent} />
             <Text style={styles.practiceText}>{isEn ? 'See other game modes' : 'Ver outros modos de jogo'}</Text>
@@ -363,7 +370,7 @@ function TrueFalseGame({ navigation, colors, fs, isEn, t }) {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.practiceBtn}
-              onPress={() => navigation.replace('Quiz', { mode: 'menu' })}
+              onPress={() => navigation.goBack()}
             >
               <Ionicons name="grid-outline" size={18} color={colors.accent} />
               <Text style={styles.practiceText}>{isEn ? 'Other game modes' : 'Outros modos'}</Text>
@@ -423,7 +430,8 @@ const makeStyles = (c, fs) =>
     scoreText: { fontSize: fs(15), color: c.text, marginBottom: 14 },
     practiceBtn: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      paddingVertical: 12, borderRadius: 10, marginTop: 10, borderWidth: 1, borderColor: c.accent,
+      paddingVertical: 16, paddingHorizontal: 20, minHeight: 54,
+      borderRadius: 10, marginTop: 12, borderWidth: 1.5, borderColor: c.accent,
     },
-    practiceText: { color: c.accent, fontSize: fs(14), fontWeight: '600' },
+    practiceText: { color: c.accent, fontSize: fs(15), fontWeight: '600' },
   });

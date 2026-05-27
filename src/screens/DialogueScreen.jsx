@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, BackHandler } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES, getDialogueById } from '../data/dialogues';
@@ -17,6 +18,32 @@ export default function DialogueScreen({ navigation, route }) {
   const [stepIndex, setStepIndex] = useState(0);
 
   const dialogue = activeId ? getDialogueById(activeId) : null;
+
+  // Intercepta o botão de voltar (hardware) quando dentro de um diálogo:
+  // volta para a lista em vez de sair da tela.
+  useFocusEffect(useCallback(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (activeId !== null) {
+        setActiveId(null);
+        setStepIndex(0);
+        return true;
+      }
+      return false;
+    });
+    return () => sub.remove();
+  }, [activeId]));
+
+  // Intercepta o botão de voltar do header quando dentro de um diálogo.
+  useEffect(() => {
+    const unsub = navigation.addListener('beforeRemove', (e) => {
+      if (activeId !== null) {
+        e.preventDefault();
+        setActiveId(null);
+        setStepIndex(0);
+      }
+    });
+    return unsub;
+  }, [navigation, activeId]);
 
   if (!dialogue) {
     return <DialogueList navigation={navigation} isEn={isEn} onChoose={(id) => { setActiveId(id); setStepIndex(0); }} />;

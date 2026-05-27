@@ -15,6 +15,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Basilica of the Nativity, over the grotto venerated as the birth site since the 2nd century (Justin Martyr). Jesus is born in Bethlehem during the census of Caesar Augustus. Angels announce to shepherds.',
     ref: 'Lucas 2,1-20', refEn: 'Luke 2:1-20',
     nav: { bookId: 'lc', chapter: 2, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Basilica_of_the_Nativity%2C_Bethlehem.jpg/640px-Basilica_of_the_Nativity%2C_Bethlehem.jpg',
     // Belém → Egito (Matariyya): sul por Hebron, Beersheba, deserto do Negev, Sinai
     waypointsToNext: [[31.53, 35.10], [31.25, 34.79], [31.10, 34.40], [30.85, 33.50], [30.50, 32.50]],
   },
@@ -27,6 +28,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Coptic tradition places the Holy Family\'s stay in Matariyya (north of Cairo), where the "Tree of Mary" has been venerated since the 4th century. They flee because of Herod, who ordered the slaughter of the innocents.',
     ref: 'Mateus 2,13-15', refEn: 'Matthew 2:13-15',
     nav: { bookId: 'mt', chapter: 2, verse: 13 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Virgin_Mary%27s_Tree_in_Matariyya.JPG/640px-Virgin_Mary%27s_Tree_in_Matariyya.JPG',
     // Egito → Nazaré: norte pelo Sinai, costa do Mediterrâneo, depois leste pra Galileia
     waypointsToNext: [[30.50, 32.50], [31.10, 33.50], [31.50, 34.20], [31.80, 34.65], [32.20, 34.85], [32.50, 35.00], [32.70, 35.20]],
   },
@@ -39,6 +41,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Basilica of the Annunciation, over a 1st-century house discovered in excavations (2009), possibly of the Holy Family\'s type. Jesus grows up in Nazareth with Mary and Joseph, working as a carpenter.',
     ref: 'Lucas 2,39-52', refEn: 'Luke 2:39-52',
     nav: { bookId: 'lc', chapter: 2, verse: 39 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Basilica_of_the_Annunciation_Nazareth_2.jpg/640px-Basilica_of_the_Annunciation_Nazareth_2.jpg',
     // Nazaré → Al-Maghtas (Jordão): sul pela Galileia, vale do Jordão
     waypointsToNext: [[32.50, 35.40], [32.10, 35.50], [31.85, 35.54]],
   },
@@ -51,6 +54,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Al-Maghtas / Bethany Beyond the Jordan, recognized by UNESCO in 2015 as the baptism site. Byzantine churches from the 5th-6th centuries, monasteries, and the venerated cave of John the Baptist. The Holy Spirit descends as a dove and the Father speaks from heaven.',
     ref: 'Mateus 3,13-17', refEn: 'Matthew 3:13-17',
     nav: { bookId: 'mt', chapter: 3, verse: 13 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Jordan_River_baptism_site_Al-Maghtas.jpg/640px-Jordan_River_baptism_site_Al-Maghtas.jpg',
     // Jordão → Monte da Quarentena: oeste, curto
     waypointsToNext: [[31.85, 35.50]],
   },
@@ -63,6 +67,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Jebel Quruntul, west of Jericho. A Greek-Orthodox monastery carved into the rock since the 6th century marks the traditional site. Jesus fasts 40 days and overcomes all three temptations by quoting Scripture.',
     ref: 'Mateus 4,1-11', refEn: 'Matthew 4:1-11',
     nav: { bookId: 'mt', chapter: 4, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Monastery_of_the_Temptation%2C_Jericho.jpg/640px-Monastery_of_the_Temptation%2C_Jericho.jpg',
     // Quarentena → Caná (Khirbet Qana): norte voltando pra Galileia
     waypointsToNext: [[32.10, 35.45], [32.40, 35.40], [32.65, 35.32], [32.75, 35.30]],
   },
@@ -75,6 +80,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Archaeological site of Khirbet Qana, 14 km north of Nazareth. Identified by Eusebius (4th century) and confirmed by excavations with 1st-century pottery, coins, and Jewish ritual baths. Jesus turns water into wine.',
     ref: 'João 2,1-11', refEn: 'John 2:1-11',
     nav: { bookId: 'jo', chapter: 2, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Cana_of_Galilee_-_Kafr_Kanna.jpg/640px-Cana_of_Galilee_-_Kafr_Kanna.jpg',
     // Caná → Cafarnaum: leste
     waypointsToNext: [[32.84, 35.42]],
   },
@@ -87,6 +93,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Archaeological site with "Peter\'s House" identified by Franciscan excavations (1968) and the 4th-century white synagogue over a 1st-century black basalt synagogue, possibly where Jesus preached. "His own city" (Mt 9:1).',
     ref: 'Mateus 4,12-25', refEn: 'Matthew 4:12-25',
     nav: { bookId: 'mt', chapter: 4, verse: 12 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Capernaum_Synagogue.jpg/640px-Capernaum_Synagogue.jpg',
     // Cafarnaum → Mt. Bem-Aventuranças: logo ao lado
     waypointsToNext: [],
   },
@@ -99,6 +106,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Traditional site of the Sermon on the Mount, with remains of a 4th-5th-century Byzantine chapel. The current Italian church dates from 1937, designed by Antonio Barluzzi. The Beatitudes (Mt 5:3-12) and the Lord\'s Prayer (Mt 6:9-13).',
     ref: 'Mateus 5–7', refEn: 'Matthew 5–7',
     nav: { bookId: 'mt', chapter: 5, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Church_of_the_Beatitudes_aerial.jpg/640px-Church_of_the_Beatitudes_aerial.jpg',
     // Bem-Aventuranças → Mar Galileia: desce pra orla
     waypointsToNext: [],
   },
@@ -111,6 +119,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Freshwater lake in northern Israel. In 1986, during a drought, a 1st-century boat (the "Jesus Boat") was discovered. He calms the storm, walks on water, multiplies loaves.',
     ref: 'Marcos 4,35-41', refEn: 'Mark 4:35-41',
     nav: { bookId: 'mc', chapter: 4, verse: 35 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sea_of_Galilee_by_David_Shankbone.jpg/640px-Sea_of_Galilee_by_David_Shankbone.jpg',
     // Mar Galileia → Cesareia de Filipe: norte, contornando o lago
     waypointsToNext: [[32.92, 35.65], [33.05, 35.68], [33.18, 35.70]],
   },
@@ -123,6 +132,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Archaeological site of Banias, at the foot of Mount Hermon. "Thou art the Christ, the Son of the living God". Jesus declares: "Thou art Peter, and upon this rock I will build my church".',
     ref: 'Mateus 16,13-20', refEn: 'Matthew 16:13-20',
     nav: { bookId: 'mt', chapter: 16, verse: 13 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Banias_Springs.jpg/640px-Banias_Springs.jpg',
     // Cesareia → Tabor: sul atravessando Galileia
     waypointsToNext: [[33.05, 35.60], [32.90, 35.55], [32.78, 35.45]],
   },
@@ -135,6 +145,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Tradition locates the Transfiguration on Mount Tabor since the 4th century (Cyril of Jerusalem). Franciscan basilica of 1924 at the summit. Jesus is transfigured before Peter, James, and John. Moses and Elijah appear.',
     ref: 'Lucas 9,28-36', refEn: 'Luke 9:28-36',
     nav: { bookId: 'lc', chapter: 9, verse: 28 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mount_Tabor_Basilica_of_the_Transfiguration.jpg/640px-Mount_Tabor_Basilica_of_the_Transfiguration.jpg',
     // Tabor → Jericó (Herodiana): sul pelo vale do Jordão
     waypointsToNext: [[32.55, 35.40], [32.20, 35.50], [31.95, 35.50]],
   },
@@ -147,6 +158,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Tulul Abu el-Alayiq, site of Herod\'s winter palace. The New Testament Jericho was here (south of ancient Tell es-Sultan). He calls Zacchaeus, the chief tax collector, and heals blind Bartimaeus.',
     ref: 'Lucas 19,1-10', refEn: 'Luke 19:1-10',
     nav: { bookId: 'lc', chapter: 19, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Zacchaeus_sycamore_tree_Jericho.jpg/640px-Zacchaeus_sycamore_tree_Jericho.jpg',
     // Jericó → Betânia: oeste subindo as montanhas de Jerusalém
     waypointsToNext: [[31.83, 35.38], [31.79, 35.30]],
   },
@@ -159,6 +171,7 @@ export const JESUS_JOURNEY = [
     descEn: 'al-Eizariya (from Aramaic "place of Lazarus"). The 1st-century Tomb of Lazarus is preserved and accessible. Jesus weeps and raises Lazarus, dead for four days.',
     ref: 'João 11,1-45', refEn: 'John 11:1-45',
     nav: { bookId: 'jo', chapter: 11, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Lazarusgrab-eingang.jpg/640px-Lazarusgrab-eingang.jpg',
     // Betânia → Jerusalém (Porta Dourada): oeste curto
     waypointsToNext: [],
   },
@@ -171,6 +184,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Sha\'ar HaRahamim / Bab al-Dhahabi, eastern gate of the Temple Mount. Jesus entered here coming from the Mount of Olives, riding a young donkey. The crowd hails him with palms. Sealed by Suleiman in 1541.',
     ref: 'Mateus 21,1-11', refEn: 'Matthew 21:1-11',
     nav: { bookId: 'mt', chapter: 21, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Jerusalem-Golden_Gate.jpg/640px-Jerusalem-Golden_Gate.jpg',
     // Porta Dourada → Cenáculo: curto, dentro de Jerusalém
     waypointsToNext: [],
   },
@@ -183,6 +197,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Upper room on Mount Zion, venerated since the 4th century as the site of the Last Supper. Jesus institutes the Eucharist and the Priesthood. He washes the apostles\' feet.',
     ref: 'Mateus 26,17-30', refEn: 'Matthew 26:17-30',
     nav: { bookId: 'mt', chapter: 26, verse: 17 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Cenacle_BW_1.JPG/640px-Cenacle_BW_1.JPG',
     // Cenáculo → Getsêmani: leste, atravessando Cidade Velha
     waypointsToNext: [],
   },
@@ -195,6 +210,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Garden preserved to this day at the foot of the Mount of Olives, with ancient olive trees (carbon-14: about 900 years, possibly regrowth from the original trees). Next to it stands the Church of All Nations (1924). Judas betrays him with a kiss.',
     ref: 'Lucas 22,39-53', refEn: 'Luke 22:39-53',
     nav: { bookId: 'lc', chapter: 22, verse: 39 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jerusalem_Garden_of_Gethsemane.jpg/640px-Jerusalem_Garden_of_Gethsemane.jpg',
     // Getsêmani → Pretório: oeste, atravessando Cidade Velha
     waypointsToNext: [],
   },
@@ -207,6 +223,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Antonia Fortress, next to the Temple. Today marked by the Ecce Homo Arch and the Sisters of Zion Convent, start of the Via Dolorosa. Pilate questions Jesus, says three times he finds no guilt, but yields to the crowd.',
     ref: 'João 18,28–19,16', refEn: 'John 18:28–19:16',
     nav: { bookId: 'jo', chapter: 18, verse: 28 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Ecce_Homo_arch_Jerusalem.jpg/640px-Ecce_Homo_arch_Jerusalem.jpg',
     // Pretório → Calvário: curto, dentro da Cidade Velha
     waypointsToNext: [],
   },
@@ -219,6 +236,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Today inside the Church of the Holy Sepulchre (Calvary Chapel, upper floor). The original Golgotha rock is visible behind glass. Eusebius (4th century) and excavations confirm 1st-century quarry and tombs. He dies around 3 PM on Good Friday.',
     ref: 'João 19,17-37', refEn: 'John 19:17-37',
     nav: { bookId: 'jo', chapter: 19, verse: 17 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Golgotha_2.jpg/640px-Golgotha_2.jpg',
     // Calvário → Sepulcro: mesmo prédio
     waypointsToNext: [],
   },
@@ -231,6 +249,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Aedicule inside the Church of the Holy Sepulchre: the burial chamber carved into 1st-century rock, where Joseph of Arimathea buried Jesus. On the third day the tomb is empty. Christ is risen.',
     ref: 'Mateus 27,57–28,10', refEn: 'Matthew 27:57–28:10',
     nav: { bookId: 'mt', chapter: 28, verse: 1 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Holy_sepulchre_church_ventral.jpg/640px-Holy_sepulchre_church_ventral.jpg',
     // Sepulcro → Emaús: oeste pra fora de Jerusalém
     waypointsToNext: [[31.80, 35.15], [31.82, 35.07]],
   },
@@ -243,6 +262,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Archaeological site of Emmaus-Nicopolis (Latrun), Western Christian tradition since Eusebius (4th century). The risen Jesus walks with two disciples. They recognize him in the breaking of the bread.',
     ref: 'Lucas 24,13-35', refEn: 'Luke 24:13-35',
     nav: { bookId: 'lc', chapter: 24, verse: 13 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Emmaus_Nicopolis_ruins.jpg/640px-Emmaus_Nicopolis_ruins.jpg',
     // Emaús → Monte das Oliveiras: volta pra Jerusalém leste
     waypointsToNext: [[31.80, 35.10], [31.79, 35.18]],
   },
@@ -255,6 +275,7 @@ export const JESUS_JOURNEY = [
     descEn: 'Chapel of the Ascension at the top of the Mount of Olives, built in 392 AD and venerated since the 4th century. Forty days after the Resurrection, Jesus sends the apostles to evangelize all peoples and ascends to heaven.',
     ref: 'Atos 1,9-11', refEn: 'Acts 1:9-11',
     nav: { bookId: 'at', chapter: 1, verse: 9 },
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Chapel_of_the_Ascension_Jerusalem.jpg/640px-Chapel_of_the_Ascension_Jerusalem.jpg',
     waypointsToNext: [],
   },
 ];

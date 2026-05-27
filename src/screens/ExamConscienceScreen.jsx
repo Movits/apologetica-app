@@ -29,8 +29,8 @@ export default function ExamConscienceScreen() {
           </Text>
           <Text style={styles.introBody}>
             {isEn
-              ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God. No answers are stored. This examination is completely private.'
-              : 'Preparação para o Sacramento da Reconciliação. Use estas perguntas para examinar sua vida diante de Deus. Nenhuma resposta é armazenada, este exame é totalmente privado.'}
+              ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God.'
+              : 'Preparação para o Sacramento da Reconciliação. Use estas perguntas para examinar sua vida diante de Deus.'}
           </Text>
           <Text style={styles.introHint}>
             {isEn

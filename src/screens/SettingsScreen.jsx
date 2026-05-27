@@ -383,7 +383,7 @@ export default function SettingsScreen() {
 
       <Text style={styles.section}>{t('settings.section.content')}</Text>
 
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Início', { screen: 'Glossary' })}>
+      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Glossary')}>
         <View style={styles.rowLeft}>
           <Ionicons name="school-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>{t('home.card.glossary')}</Text>
@@ -391,7 +391,7 @@ export default function SettingsScreen() {
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Início', { screen: 'ReadingPlan' })}>
+      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('ReadingPlan')}>
         <View style={styles.rowLeft}>
           <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>{t('header.readingPlan')} (30)</Text>
@@ -399,7 +399,7 @@ export default function SettingsScreen() {
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Início', { screen: 'Rosary' })}>
+      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Rosary')}>
         <View style={styles.rowLeft}>
           <Ionicons name="flower-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>{t('home.card.rosary')}</Text>
@@ -407,7 +407,7 @@ export default function SettingsScreen() {
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Início', { screen: 'ExamConscience' })}>
+      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('ExamConscience')}>
         <View style={styles.rowLeft}>
           <Ionicons name="shield-checkmark-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>{t('home.card.exam')}</Text>
@@ -415,7 +415,7 @@ export default function SettingsScreen() {
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Início', { screen: 'Favorites' })}>
+      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Favorites')}>
         <View style={styles.rowLeft}>
           <Ionicons name="star-outline" size={22} color={colors.primaryText} />
           <Text style={styles.rowLabel}>{t('home.card.favorites')}</Text>
@@ -512,7 +512,7 @@ export default function SettingsScreen() {
       <Text style={styles.section}>{t('settings.section.privacy')}</Text>
       <TouchableOpacity
         style={styles.row}
-        onPress={() => navigation.navigate('Início', { screen: 'Legal', params: { kind: 'privacy' } })}
+        onPress={() => navigation.navigate('Legal', { kind: 'privacy' })}
       >
         <View style={styles.rowLeft}>
           <Ionicons name="shield-outline" size={22} color={colors.primaryText} />
@@ -522,7 +522,7 @@ export default function SettingsScreen() {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.row}
-        onPress={() => navigation.navigate('Início', { screen: 'Legal', params: { kind: 'terms' } })}
+        onPress={() => navigation.navigate('Legal', { kind: 'terms' })}
       >
         <View style={styles.rowLeft}>
           <Ionicons name="document-text-outline" size={22} color={colors.primaryText} />

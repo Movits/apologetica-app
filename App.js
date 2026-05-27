@@ -69,6 +69,7 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const ArticlesNav = createNativeStackNavigator();
 const HomeNav = createNativeStackNavigator();
+const SettingsNav = createNativeStackNavigator();
 
 // Stack interno do tab Inicio: contem HomeScreen e as telas secundarias
 // (Favoritos, Glossario, Plano, Rosario, Exame, Highlights, Notes, Search, Liturgia).
@@ -101,6 +102,30 @@ function HomeStackScreen() {
       <HomeNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
       <HomeNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
     </HomeNav.Navigator>
+  );
+}
+
+// Stack interno do tab Ajustes: permite voltar para Ajustes a partir de sub-telas
+// (Legal, Glossary, etc.) sem saltar para o tab Início.
+function SettingsStackScreen() {
+  const { colors } = useTheme();
+  const { t } = useLanguage();
+  return (
+    <SettingsNav.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.primary },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
+      <SettingsNav.Screen name="SettingsMain" component={SettingsScreen} options={{ title: t('tab.settings') }} />
+      <SettingsNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
+      <SettingsNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
+      <SettingsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
+      <SettingsNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
+      <SettingsNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
+      <SettingsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
+    </SettingsNav.Navigator>
   );
 }
 
@@ -237,7 +262,7 @@ function MainTabs() {
       />
       <Tab.Screen name="Referências" component={ReferencesScreen} />
       <Tab.Screen name="Bíblia" component={BibleScreen} />
-      <Tab.Screen name="Ajustes" component={SettingsScreen} />
+      <Tab.Screen name="Ajustes" component={SettingsStackScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }
