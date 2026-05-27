@@ -1,22 +1,33 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { getVerseOfDay } from '../data/dailyVerses';
 import { shareVerse } from '../utils/share';
+import { captureAndShareImage } from '../utils/shareAsImage';
+import ShareVerseCard from './ShareVerseCard';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function VerseOfDayCard({ onOpen }) {
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
   const verse = useMemo(() => getVerseOfDay(), []);
   const styles = makeStyles(colors, fs);
+  const shareCardRef = useRef(null);
+
+  const text = isEn ? (verse.textEn || verse.text) : verse.text;
+  const ref = isEn ? (verse.refEn || verse.ref) : verse.ref;
 
   const handleShare = () =>
     shareVerse({
-      bookName: verse.ref.split(' ').slice(0, -1).join(' '),
-      chapter: verse.ref.match(/(\d+),/)?.[1],
+      bookName: ref.split(/[\s:,]/).slice(0, -1).join(' '),
+      chapter: ref.match(/[:,](\d+)/)?.[1],
       verse: verse.verse,
-      text: verse.text,
+      text,
     });
+
+  const handleShareAsImage = () =>
+    captureAndShareImage(shareCardRef, `"${text}"\n\n${ref}`);
 
   const openVerse = () =>
     onOpen?.({ bookId: verse.bookId, chapter: verse.chapter, verse: verse.verse });
@@ -27,21 +38,30 @@ export default function VerseOfDayCard({ onOpen }) {
         <View style={styles.headerIcon}>
           <Ionicons name="sunny-outline" size={18} color={colors.accent} />
         </View>
-        <Text style={styles.headerLabel}>Versículo do dia</Text>
+        <Text style={styles.headerLabel}>{t('home.verse.label')}</Text>
       </View>
 
-      <Text style={styles.verseText}>"{verse.text}"</Text>
-      <Text style={styles.verseRef}>{verse.ref}</Text>
+      <Text style={styles.verseText}>"{text}"</Text>
+      <Text style={styles.verseRef}>{ref}</Text>
 
       <View style={styles.actions}>
         <TouchableOpacity style={styles.actionBtn} onPress={openVerse}>
           <Ionicons name="book-outline" size={16} color={colors.accent} />
-          <Text style={styles.actionText}>Ler no contexto</Text>
+          <Text style={styles.actionText}>{t('home.verse.readContext')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionBtn} onPress={handleShare}>
           <Ionicons name="share-social-outline" size={16} color={colors.accent} />
-          <Text style={styles.actionText}>Compartilhar</Text>
+          <Text style={styles.actionText}>{t('home.verse.shareText')}</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.actionBtn} onPress={handleShareAsImage}>
+          <Ionicons name="image-outline" size={16} color={colors.accent} />
+          <Text style={styles.actionText}>{t('home.verse.shareImage')}</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Card offscreen renderizado para captura como imagem. */}
+      <View style={styles.offscreen} pointerEvents="none">
+        <ShareVerseCard ref={shareCardRef} text={text} passageRef={ref} />
       </View>
     </View>
   );
@@ -106,4 +126,5 @@ const makeStyles = (c, fs) =>
       justifyContent: 'center',
     },
     actionText: { color: c.accent, fontSize: fs(12), fontWeight: '600' },
+    offscreen: { position: 'absolute', left: -10000, top: -10000, opacity: 0 },
   });

@@ -1,16 +1,22 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
+import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
 import { shareVerse } from '../utils/share';
-import { BIBLE_BOOKS } from '../data/bible';
+import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useRequireAccount } from '../components/GuestGate';
 import {
   watchChapterHighlights, watchChapterNotes,
   addHighlight, removeHighlight,
 } from '../services/userData';
+import { useScrollHints } from '../hooks/useScrollHints';
+import ScrollHint from '../components/ScrollHint';
+import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 
 const HIGHLIGHT_COLORS = [
   { key: 'yellow', value: '#fff3a6' },
@@ -23,6 +29,10 @@ const HIGHLIGHT_COLORS = [
 export default function BibleScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
   const { user } = useAuth();
+  const { lang, t, isEn } = useLanguage();
+  const bn = (b) => bookName(b, isEn);
+  const bs = (b) => bookShort(b, isEn);
+  const requireAccount = useRequireAccount();
   const [view, setView] = useState('books');
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
@@ -31,7 +41,14 @@ export default function BibleScreen({ route, navigation }) {
   const [actionVerse, setActionVerse] = useState(null);
   const [chapterHighlights, setChapterHighlights] = useState([]);
   const [chapterNotes, setChapterNotes] = useState([]);
+  const [speaking, setSpeaking] = useState(false);
   const verseListRef = useRef(null);
+  const booksScrollRef = useRef(null);
+
+  // Scroll hints separados pra cada view (books / verses).
+  // Só um deles está montado por vez, então não conflitam.
+  const bookHints = useScrollHints();
+  const verseHints = useScrollHints();
 
   // Deep link de uma referência
   useEffect(() => {
@@ -55,12 +72,16 @@ export default function BibleScreen({ route, navigation }) {
   // Volta pro início da seção quando o usuário aperta o tab Bíblia de novo
   useEffect(() => {
     const unsub = navigation?.addListener?.('tabPress', () => {
-      if (navigation.isFocused() && view !== 'books') {
+      if (!navigation.isFocused?.()) return;
+      if (view !== 'books') {
         setView('books');
         setBook(null);
         setChapter(null);
         setHighlightVerse(null);
         setFilterText('');
+      } else {
+        // Ja esta na view de livros: scroll pro topo
+        booksScrollRef.current?.scrollTo({ y: 0, animated: true });
       }
     });
     return unsub;
@@ -68,8 +89,8 @@ export default function BibleScreen({ route, navigation }) {
 
   const chapterData = useMemo(() => {
     if (view !== 'verses' || !book || !chapter) return null;
-    return getChapter(book.id, chapter);
-  }, [view, book?.id, chapter]);
+    return getChapter(book.id, chapter, lang);
+  }, [view, book?.id, chapter, lang]);
 
   // Subscreve às marcações e notas deste capítulo
   useEffect(() => {
@@ -111,12 +132,19 @@ export default function BibleScreen({ route, navigation }) {
   }, [chapterData, highlightVerse]);
 
   const onLongPressVerse = (verse) => {
-    if (!user) {
-      Alert.alert('Entre na sua conta', 'Faça login em Ajustes para marcar e anotar versículos.');
-      return;
-    }
-    setActionVerse(verse);
+    requireAccount(
+      () => setActionVerse(verse),
+      {
+        title: isEn ? 'Highlight verse?' : 'Marcar versículo?',
+        message: isEn
+          ? 'To highlight verses and create notes, create a free account. Your annotations stay saved and synced across devices.'
+          : 'Para marcar versículos e criar notas, crie uma conta gratuita. Suas marcações ficam salvas e sincronizadas entre dispositivos.',
+        icon: 'color-fill-outline',
+      }
+    );
   };
+
+  const applyHighlightError = () => isEn ? 'Could not save the highlight.' : 'Não consegui salvar a marcação.';
 
   const applyHighlight = async (color) => {
     if (!actionVerse) return;
@@ -127,7 +155,7 @@ export default function BibleScreen({ route, navigation }) {
         await addHighlight({ bookId: book.id, chapter, verse: actionVerse.n, color });
       }
     } catch (e) {
-      Alert.alert('Erro', e.message || 'Não consegui salvar a marcação.');
+      Alert.alert(isEn ? 'Error' : 'Erro', e.message || applyHighlightError());
     }
     setActionVerse(null);
   };
@@ -146,18 +174,55 @@ export default function BibleScreen({ route, navigation }) {
 
   const copyVerse = async () => {
     if (!actionVerse) return;
-    const refText = `${book.name} ${chapter},${actionVerse.n}\n${actionVerse.t}`;
+    const sep = isEn ? ':' : ',';
+    const refText = `${bn(book)} ${chapter}${sep}${actionVerse.n}\n${actionVerse.t}`;
     await Clipboard.setStringAsync(refText);
     setActionVerse(null);
-    Alert.alert('Copiado', 'Versículo copiado para a área de transferência.');
+    Alert.alert(isEn ? 'Copied' : 'Copiado', isEn ? 'Verse copied to clipboard.' : 'Versículo copiado para a área de transferência.');
   };
 
   const shareVerseFromMenu = () => {
     if (!actionVerse) return;
     const v = actionVerse;
     setActionVerse(null);
-    shareVerse({ bookName: book.name, chapter, verse: v.n, text: v.t });
+    shareVerse({ bookName: bn(book), chapter, verse: v.n, text: v.t });
   };
+
+  // Narra o capítulo inteiro (versículo por versículo).
+  const toggleChapterTts = async () => {
+    const isPlaying = await Speech.isSpeakingAsync();
+    if (isPlaying || speaking) {
+      Speech.stop();
+      setSpeaking(false);
+      return;
+    }
+    if (!chapterData?.verses?.length) return;
+    setSpeaking(true);
+    // Idioma do TEXTO bíblico (se estivermos exibindo fallback PT mesmo com UI EN).
+    const textLang = chapterData.language === 'en' ? 'en' : 'pt';
+    const [voice, rate] = await Promise.all([resolveVoice(textLang), getSavedRate()]);
+    const defaultLang = textLang === 'en' ? 'en-US' : 'pt-BR';
+    const intro = `${bn(book)} ${chapter}. `;
+    const body = chapterData.verses.map((v) => `${v.n}. ${v.t}`).join(' ');
+    Speech.speak(intro + body, {
+      language: voice?.language || defaultLang,
+      voice: voice?.identifier,
+      rate,
+      pitch: 1.0,
+      onDone: () => setSpeaking(false),
+      onStopped: () => setSpeaking(false),
+      onError: () => setSpeaking(false),
+    });
+  };
+
+  // Para TTS quando capítulo muda ou tela é desmontada.
+  useEffect(() => {
+    return () => { Speech.stop(); };
+  }, []);
+  useEffect(() => {
+    if (speaking) { Speech.stop(); setSpeaking(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chapter, book?.id]);
 
   const styles = makeStyles(colors, fs);
 
@@ -165,11 +230,15 @@ export default function BibleScreen({ route, navigation }) {
   if (view === 'books') {
     const q = filterText.trim().toLowerCase();
     const filtered = q
-      ? BIBLE_BOOKS.filter((b) => b.name.toLowerCase().includes(q) || b.short.toLowerCase().includes(q))
+      ? BIBLE_BOOKS.filter((b) =>
+          b.name.toLowerCase().includes(q) || b.short.toLowerCase().includes(q) ||
+          b.nameEn?.toLowerCase().includes(q) || b.shortEn?.toLowerCase().includes(q))
       : BIBLE_BOOKS;
 
     const grouped = filtered.reduce((acc, b) => {
-      const key = b.testament === 'AT' ? 'Antigo Testamento' : 'Novo Testamento';
+      const key = b.testament === 'AT'
+        ? (isEn ? 'Old Testament' : 'Antigo Testamento')
+        : (isEn ? 'New Testament' : 'Novo Testamento');
       (acc[key] = acc[key] || []).push(b);
       return acc;
     }, {});
@@ -177,9 +246,11 @@ export default function BibleScreen({ route, navigation }) {
     return (
       <View style={styles.container}>
         <View style={styles.intro}>
-          <Text style={styles.introTitle}>Bíblia Sagrada</Text>
+          <Text style={styles.introTitle}>{isEn ? 'Holy Bible' : 'Bíblia Sagrada'}</Text>
           <Text style={styles.introSub}>
-            73 livros do cânon católico, tradução Ave Maria. Toque e segure num versículo para marcar ou anotar.
+            {isEn
+              ? '73 books of the Catholic canon, Douay-Rheims-Challoner translation. Long-press a verse to highlight or annotate.'
+              : '73 livros do cânon católico, tradução Ave Maria. Toque e segure num versículo para marcar ou anotar.'}
           </Text>
         </View>
 
@@ -187,14 +258,22 @@ export default function BibleScreen({ route, navigation }) {
           <Ionicons name="search-outline" size={18} color={colors.textSubtle} style={{ marginRight: 8 }} />
           <TextInput
             style={styles.searchInput}
-            placeholder="Buscar livro..."
+            placeholder={isEn ? 'Search book...' : 'Buscar livro...'}
             value={filterText}
             onChangeText={setFilterText}
             placeholderTextColor={colors.textSubtle}
           />
         </View>
 
-        <ScrollView contentContainerStyle={styles.content}>
+        <View style={{ flex: 1 }}>
+        <ScrollView
+          ref={booksScrollRef}
+          contentContainerStyle={styles.content}
+          onScroll={bookHints.onScroll}
+          onContentSizeChange={bookHints.onContentSizeChange}
+          onLayout={bookHints.onLayout}
+          scrollEventThrottle={32}
+        >
           {Object.entries(grouped).map(([groupName, books]) => (
             <View key={groupName}>
               <Text style={styles.groupHeader}>{groupName}</Text>
@@ -205,13 +284,13 @@ export default function BibleScreen({ route, navigation }) {
                   onPress={() => { setBook(b); setView('chapters'); }}
                 >
                   <View style={styles.bookAbbrev}>
-                    <Text style={styles.bookAbbrevText}>{b.short}</Text>
+                    <Text style={styles.bookAbbrevText}>{bs(b)}</Text>
                   </View>
                   <View style={{ flex: 1 }}>
-                    <Text style={styles.bookName}>{b.name}</Text>
+                    <Text style={styles.bookName}>{bn(b)}</Text>
                     <Text style={styles.bookMeta}>
-                      {b.totalChapters} capítulo{b.totalChapters > 1 ? 's' : ''}
-                      {b.deutero ? ' · deuterocanônico' : ''}
+                      {b.totalChapters} {isEn ? (b.totalChapters > 1 ? 'chapters' : 'chapter') : (b.totalChapters > 1 ? 'capítulos' : 'capítulo')}
+                      {b.deutero ? (isEn ? ' · deuterocanonical' : ' · deuterocanônico') : ''}
                     </Text>
                   </View>
                   <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
@@ -220,6 +299,9 @@ export default function BibleScreen({ route, navigation }) {
             </View>
           ))}
         </ScrollView>
+          <ScrollHint direction="up" visible={bookHints.showTop} />
+          <ScrollHint direction="down" visible={bookHints.showBottom} />
+        </View>
       </View>
     );
   }
@@ -231,9 +313,9 @@ export default function BibleScreen({ route, navigation }) {
       <View style={styles.container}>
         <TouchableOpacity style={styles.backRow} onPress={() => setView('books')}>
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
-          <Text style={styles.backText}>Livros</Text>
+          <Text style={styles.backText}>{t('bible.books')}</Text>
         </TouchableOpacity>
-        <Text style={styles.bookHeader}>{book.name}</Text>
+        <Text style={styles.bookHeader}>{bn(book)}</Text>
         <FlatList
           key="chapters-grid"
           data={allChapters}
@@ -268,22 +350,32 @@ export default function BibleScreen({ route, navigation }) {
           onPress={() => { setChapter(null); setHighlightVerse(null); setView('chapters'); }}
         >
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
-          <Text style={styles.backText}>{book.name}</Text>
+          <Text style={styles.backText}>{bn(book)}</Text>
         </TouchableOpacity>
 
         <View style={styles.verseHeader}>
-          <Text style={styles.verseHeaderTitle}>{book.name} {chapter}</Text>
+          <Text style={styles.verseHeaderTitle}>{bn(book)} {chapter}</Text>
+          <TouchableOpacity onPress={toggleChapterTts} hitSlop={10} style={styles.ttsBtn}>
+            <Ionicons
+              name={speaking ? 'stop-circle' : 'volume-high-outline'}
+              size={24}
+              color={speaking ? colors.accent : colors.primaryText}
+            />
+          </TouchableOpacity>
         </View>
 
         {isEmpty ? (
           <View style={styles.center}>
             <Ionicons name="time-outline" size={48} color={colors.textSubtle} />
-            <Text style={styles.errorText}>Capítulo em preparação</Text>
+            <Text style={styles.errorText}>{t('bible.chapterPrep')}</Text>
             <Text style={styles.errorSub}>
-              Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app.
+              {isEn
+                ? 'This chapter of the deuterocanonical books has not been added to the app yet.'
+                : 'Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app.'}
             </Text>
           </View>
         ) : (
+          <View style={{ flex: 1 }}>
           <FlatList
             key="verses-list"
             ref={verseListRef}
@@ -291,6 +383,10 @@ export default function BibleScreen({ route, navigation }) {
             keyExtractor={(v) => String(v.n)}
             contentContainerStyle={styles.verseList}
             onScrollToIndexFailed={() => {}}
+            onScroll={verseHints.onScroll}
+            onContentSizeChange={verseHints.onContentSizeChange}
+            onLayout={verseHints.onLayout}
+            scrollEventThrottle={32}
             renderItem={({ item }) => {
               const isDeepLinked = highlightVerse && item.n === highlightVerse;
               const userHighlight = highlightsByVerse[item.n];
@@ -323,6 +419,9 @@ export default function BibleScreen({ route, navigation }) {
               );
             }}
           />
+            <ScrollHint direction="up" visible={verseHints.showTop} />
+            <ScrollHint direction="down" visible={verseHints.showBottom} />
+          </View>
         )}
 
         <View style={styles.navBar}>
@@ -333,7 +432,7 @@ export default function BibleScreen({ route, navigation }) {
           >
             <Ionicons name="chevron-back" size={20} color={hasPrev ? colors.primaryText : colors.textSubtle} />
             <Text style={[styles.navBtnText, !hasPrev && styles.navBtnTextDisabled]}>
-              {hasPrev ? `${book.short} ${chapter - 1}` : ''}
+              {hasPrev ? `${bs(book)} ${chapter - 1}` : ''}
             </Text>
           </TouchableOpacity>
           <Text style={styles.navCurrent}>{chapter}/{book.totalChapters}</Text>
@@ -343,7 +442,7 @@ export default function BibleScreen({ route, navigation }) {
             disabled={!hasNext}
           >
             <Text style={[styles.navBtnText, !hasNext && styles.navBtnTextDisabled]}>
-              {hasNext ? `${book.short} ${chapter + 1}` : ''}
+              {hasNext ? `${bs(book)} ${chapter + 1}` : ''}
             </Text>
             <Ionicons name="chevron-forward" size={20} color={hasNext ? colors.primaryText : colors.textSubtle} />
           </TouchableOpacity>
@@ -359,11 +458,11 @@ export default function BibleScreen({ route, navigation }) {
           <TouchableOpacity style={styles.modalOverlay} activeOpacity={1} onPress={() => setActionVerse(null)}>
             <View style={styles.modalSheet}>
               <Text style={styles.modalRef}>
-                {book.name} {chapter},{actionVerse?.n}
+                {bn(book)} {chapter}{isEn ? ':' : ','}{actionVerse?.n}
               </Text>
               <Text style={styles.modalVerseText} numberOfLines={3}>{actionVerse?.t}</Text>
 
-              <Text style={styles.modalSection}>Marcar com cor</Text>
+              <Text style={styles.modalSection}>{t('bible.markColor')}</Text>
               <View style={styles.colorRow}>
                 {HIGHLIGHT_COLORS.map((c) => {
                   const current = actionVerse && highlightsByVerse[actionVerse.n]?.color === c.value;
@@ -389,17 +488,17 @@ export default function BibleScreen({ route, navigation }) {
 
               <TouchableOpacity style={styles.modalAction} onPress={openNoteEditor}>
                 <Ionicons name="document-text-outline" size={20} color={colors.primaryText} />
-                <Text style={styles.modalActionText}>Anotar</Text>
+                <Text style={styles.modalActionText}>{t('bible.annotate')}</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.modalAction} onPress={shareVerseFromMenu}>
                 <Ionicons name="share-social-outline" size={20} color={colors.primaryText} />
-                <Text style={styles.modalActionText}>Compartilhar</Text>
+                <Text style={styles.modalActionText}>{t('common.share')}</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.modalAction} onPress={copyVerse}>
                 <Ionicons name="copy-outline" size={20} color={colors.primaryText} />
-                <Text style={styles.modalActionText}>Copiar</Text>
+                <Text style={styles.modalActionText}>{t('bible.copy')}</Text>
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
@@ -453,7 +552,8 @@ const makeStyles = (c, fs) =>
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       paddingHorizontal: 16, paddingBottom: 8,
     },
-    verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText },
+    verseHeaderTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText, flex: 1 },
+    ttsBtn: { padding: 4 },
     verseList: { padding: 16, paddingBottom: 24 },
     verseRow: { flexDirection: 'row', marginBottom: 10, padding: 8, borderRadius: 8 },
     verseRowDeepLink: { backgroundColor: c.badgeBg },

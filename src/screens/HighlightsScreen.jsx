@@ -2,23 +2,33 @@ import { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { watchHighlights, removeHighlight } from '../services/userData';
-import { getBook } from '../data/bible';
+import { getBook, bookName } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
 import { shareHighlight } from '../utils/share';
+import { useScrollHints } from '../hooks/useScrollHints';
+import ScrollHint from '../components/ScrollHint';
 
 export default function HighlightsScreen({ navigation }) {
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { user, exitGuest } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     const unsub = watchHighlights((list) => {
       setItems(list);
       setLoading(false);
     });
     return unsub;
-  }, []);
+  }, [user]);
 
   const open = (h) => {
     navigation.navigate('Bíblia', {
@@ -29,42 +39,75 @@ export default function HighlightsScreen({ navigation }) {
   };
 
   const confirmRemove = (h) => {
-    Alert.alert('Remover marcação?', 'Esta marcação será excluída.', [
-      { text: 'Cancelar', style: 'cancel' },
-      { text: 'Remover', style: 'destructive', onPress: () => removeHighlight(h.id) },
-    ]);
+    Alert.alert(
+      isEn ? 'Remove highlight?' : 'Remover marcação?',
+      isEn ? 'This highlight will be deleted.' : 'Esta marcação será excluída.',
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('common.remove'), style: 'destructive', onPress: () => removeHighlight(h.id) },
+      ]
+    );
   };
 
+  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
-    return <View style={styles.center}><Text style={styles.muted}>Carregando...</Text></View>;
+    return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
+  }
+
+  if (!user) {
+    return (
+      <View style={styles.center}>
+        <Ionicons name="lock-closed-outline" size={56} color={colors.textSubtle} />
+        <Text style={styles.emptyTitle}>{t('empty.createAccount')}</Text>
+        <Text style={styles.muted}>
+          {isEn
+            ? 'Highlights are saved and synced between devices when you have an account.'
+            : 'Marcações ficam salvas e sincronizadas entre dispositivos quando você tem conta.'}
+        </Text>
+        <TouchableOpacity
+          style={{ marginTop: 16, backgroundColor: colors.accent, paddingVertical: 12, paddingHorizontal: 24, borderRadius: 10 }}
+          onPress={() => exitGuest()}
+        >
+          <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: fs(14) }}>{t('auth.signup')}</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   if (items.length === 0) {
     return (
       <View style={styles.center}>
         <Ionicons name="bookmark-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>Nenhuma marcação ainda</Text>
+        <Text style={styles.emptyTitle}>{t('empty.highlights')}</Text>
         <Text style={styles.muted}>
-          Toque e segure em um versículo na Bíblia para criar uma marcação.
+          {isEn
+            ? 'Touch and hold a verse in the Bible to create a highlight.'
+            : 'Toque e segure em um versículo na Bíblia para criar uma marcação.'}
         </Text>
       </View>
     );
   }
 
   return (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
     <FlatList
-      style={{ backgroundColor: colors.bg }}
       data={items}
       keyExtractor={(h) => h.id}
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+      onScroll={onScroll}
+      onContentSizeChange={onContentSizeChange}
+      onLayout={onLayout}
+      scrollEventThrottle={32}
       renderItem={({ item }) => {
         const book = getBook(item.bookId);
-        const ch = getChapter(item.bookId, item.chapter);
+        const bn = bookName(book, isEn);
+        const ch = getChapter(item.bookId, item.chapter, isEn ? 'en' : 'pt');
         const verseText = ch?.verses?.find((v) => v.n === item.verse)?.t || '';
+        const sep = isEn ? ':' : ',';
         const onShare = () => shareHighlight({
-          bookName: book?.name || '',
+          bookName: bn,
           chapter: item.chapter,
           verse: item.verse,
           text: verseText,
@@ -74,7 +117,7 @@ export default function HighlightsScreen({ navigation }) {
             <View style={[styles.colorBar, { backgroundColor: item.color }]} />
             <View style={{ flex: 1, paddingLeft: 12 }}>
               <Text style={styles.ref}>
-                {book?.name} {item.chapter},{item.verse}
+                {bn} {item.chapter}{sep}{item.verse}
               </Text>
               {verseText ? (
                 <Text style={styles.verseText} numberOfLines={3}>{verseText}</Text>
@@ -87,6 +130,9 @@ export default function HighlightsScreen({ navigation }) {
         );
       }}
     />
+      <ScrollHint direction="up" visible={showTop} />
+      <ScrollHint direction="down" visible={showBottom} />
+    </View>
   );
 }
 

@@ -5,9 +5,10 @@ import { collection, doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { addNote, updateNote, removeNote } from '../services/userData';
-import { getBook } from '../data/bible';
+import { getBook, bookName } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 import { shareNote } from '../utils/share';
 
 // route.params:
@@ -15,6 +16,7 @@ import { shareNote } from '../utils/share';
 //   - bookId/chapter/verseStart/verseEnd (criação)
 export default function NoteEditorScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
   const insets = useSafeAreaInsets();
   const { noteId, bookId, chapter, verseStart, verseEnd } = route.params || {};
   const [text, setText] = useState('');
@@ -43,12 +45,19 @@ export default function NoteEditorScreen({ route, navigation }) {
   }, [noteId]);
 
   const book = getBook(meta.bookId);
+  const bn = bookName(book, isEn);
+  const sep = isEn ? ':' : ',';
   const refLabel = book
-    ? `${book.name} ${meta.chapter},${meta.verseStart === meta.verseEnd ? meta.verseStart : `${meta.verseStart}-${meta.verseEnd}`}`
+    ? `${bn} ${meta.chapter}${sep}${meta.verseStart === meta.verseEnd ? meta.verseStart : `${meta.verseStart}-${meta.verseEnd}`}`
     : '';
 
   const handleSave = async () => {
-    if (!text.trim()) return Alert.alert('Nota vazia', 'Escreva alguma coisa antes de salvar.');
+    if (!text.trim()) {
+      return Alert.alert(
+        isEn ? 'Empty note' : 'Nota vazia',
+        isEn ? 'Write something before saving.' : 'Escreva alguma coisa antes de salvar.'
+      );
+    }
     setBusy(true);
     try {
       if (noteId) {
@@ -58,7 +67,10 @@ export default function NoteEditorScreen({ route, navigation }) {
       }
       navigation.goBack();
     } catch (e) {
-      Alert.alert('Erro', e.message || 'Não foi possível salvar a nota.');
+      Alert.alert(
+        isEn ? 'Error' : 'Erro',
+        e.message || (isEn ? 'Could not save the note.' : 'Não foi possível salvar a nota.')
+      );
     } finally {
       setBusy(false);
     }
@@ -66,10 +78,13 @@ export default function NoteEditorScreen({ route, navigation }) {
 
   const handleDelete = () => {
     if (!noteId) return navigation.goBack();
-    Alert.alert('Excluir nota?', 'A nota será removida permanentemente.', [
-      { text: 'Cancelar', style: 'cancel' },
+    Alert.alert(
+      isEn ? 'Delete note?' : 'Excluir nota?',
+      isEn ? 'The note will be permanently removed.' : 'A nota será removida permanentemente.',
+      [
+      { text: t('common.cancel'), style: 'cancel' },
       {
-        text: 'Excluir', style: 'destructive', onPress: async () => {
+        text: t('common.delete'), style: 'destructive', onPress: async () => {
           await removeNote(noteId);
           navigation.goBack();
         },
@@ -96,15 +111,15 @@ export default function NoteEditorScreen({ route, navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="close" size={26} color={colors.primaryText} />
         </TouchableOpacity>
-        <Text style={styles.title}>{noteId ? 'Editar nota' : 'Nova nota'}</Text>
+        <Text style={styles.title}>{noteId ? (isEn ? 'Edit note' : 'Editar nota') : (isEn ? 'New note' : 'Nova nota')}</Text>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
           {noteId && text.trim() ? (
             <TouchableOpacity
               onPress={() => {
-                const ch = getChapter(meta.bookId, meta.chapter);
+                const ch = getChapter(meta.bookId, meta.chapter, isEn ? 'en' : 'pt');
                 const verseText = ch?.verses?.find((v) => v.n === meta.verseStart)?.t || '';
                 shareNote({
-                  bookName: book?.name || '',
+                  bookName: bn,
                   chapter: meta.chapter,
                   verseStart: meta.verseStart,
                   verseEnd: meta.verseEnd,
@@ -118,7 +133,7 @@ export default function NoteEditorScreen({ route, navigation }) {
           ) : null}
           <TouchableOpacity onPress={handleSave} disabled={busy}>
             {busy ? <ActivityIndicator color={colors.accent} /> : (
-              <Text style={styles.saveText}>Salvar</Text>
+              <Text style={styles.saveText}>{t('common.save')}</Text>
             )}
           </TouchableOpacity>
         </View>
@@ -133,7 +148,7 @@ export default function NoteEditorScreen({ route, navigation }) {
         style={styles.editor}
         value={text}
         onChangeText={setText}
-        placeholder="Escreva sua anotação..."
+        placeholder={isEn ? 'Write your note...' : 'Escreva sua anotação...'}
         placeholderTextColor={colors.textSubtle}
         multiline
         autoFocus={!noteId}
@@ -146,7 +161,7 @@ export default function NoteEditorScreen({ route, navigation }) {
           onPress={handleDelete}
         >
           <Ionicons name="trash-outline" size={18} color="#c0392b" />
-          <Text style={styles.deleteText}>Excluir nota</Text>
+          <Text style={styles.deleteText}>{t('note.delete')}</Text>
         </TouchableOpacity>
       )}
     </KeyboardAvoidingView>

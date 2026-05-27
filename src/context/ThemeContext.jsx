@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as NavigationBar from 'expo-navigation-bar';
 
 const LIGHT = {
   mode: 'light',
@@ -81,6 +83,17 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
   }, [fontSize, hydrated]);
+
+  // Sincroniza a navigation bar do Android (botões home/voltar) com o tema.
+  // No dev build com edgeToEdgeEnabled=false a cor de fundo é aplicada normal.
+  // No Expo Go / builds com edge-to-edge forçado, o sistema ignora o
+  // setBackgroundColor (warning benigno) e mantém a barra translúcida.
+  useEffect(() => {
+    if (Platform.OS !== 'android') return;
+    const c = darkMode ? DARK : LIGHT;
+    NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
+    NavigationBar.setBackgroundColorAsync(c.card).catch(() => {});
+  }, [darkMode]);
 
   const value = useMemo(() => {
     const colors = darkMode ? DARK : LIGHT;

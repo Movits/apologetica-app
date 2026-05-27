@@ -1,32 +1,136 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { references } from '../data/references';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useScrollHints } from '../hooks/useScrollHints';
+import ScrollHint from '../components/ScrollHint';
 
-const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos'];
+const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos', 'Outros'];
+const SOURCES_EN = { 'Todos': 'All', 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
+const translateSource = (s, isEn) => (isEn ? (SOURCES_EN[s] || s) : s);
+
+// Card de referência separado e memoizado. Sem isso, qualquer re-render
+// do ReferencesScreen (typing, scroll, focus) re-renderiza todos os 60+ itens
+// visíveis, causando o aviso de VirtualizedList lenta.
+const RefCard = memo(function RefCard({
+  item, isOpen, accent, textSubtle, styles, onToggle, onOpenInBible, onOpenUrl, t, isEn,
+}) {
+  return (
+    <View style={[styles.card, isOpen && styles.cardOpen]}>
+      <TouchableOpacity onPress={() => onToggle(item.id)}>
+        <View style={styles.cardTop}>
+          <View style={styles.badge}>
+            <Text style={styles.badgeText}>{translateSource(item.source, isEn)}</Text>
+          </View>
+          <Ionicons
+            name={isOpen ? 'chevron-up' : 'chevron-down'}
+            size={16}
+            color={textSubtle}
+          />
+        </View>
+        <Text style={styles.cardRef}>{item.ref}</Text>
+        <Text style={styles.cardFullSource}>{item.fullSource}</Text>
+        {(item.author || item.year) && (
+          <Text style={styles.cardMeta}>
+            {item.author}{item.author && item.year ? ' · ' : ''}{item.year}
+          </Text>
+        )}
+        <Text style={styles.cardTopic}>{item.topic}</Text>
+      </TouchableOpacity>
+
+      {isOpen && (
+        <View style={styles.expanded}>
+          <Text style={styles.cardText}>{item.text}</Text>
+
+          {item.originalLanguage && (
+            <View style={styles.origBox}>
+              <View style={styles.origHeader}>
+                <Ionicons name="language-outline" size={14} color={accent} />
+                <Text style={styles.origLabel}>
+                  {isEn ? `Original in ${item.originalLanguage.language}` : `Original em ${item.originalLanguage.language}`}
+                </Text>
+              </View>
+              <Text style={styles.origWord}>{item.originalLanguage.word}</Text>
+              <Text style={styles.origTransliteration}>
+                /{item.originalLanguage.transliteration}/
+              </Text>
+              <Text style={styles.origMeaning}>{item.originalLanguage.meaning}</Text>
+              <Text style={styles.origStrongs}>
+                {isEn ? 'Strong Concordance' : 'Concordância Strong'} {item.originalLanguage.strongs}
+              </Text>
+            </View>
+          )}
+
+          <View style={styles.actions}>
+            {item.bibleNav && (
+              <TouchableOpacity
+                style={[styles.actionBtn, styles.actionBtnPrimary]}
+                onPress={() => onOpenInBible(item.bibleNav)}
+              >
+                <Ionicons name="bookmark-outline" size={16} color="#fff" />
+                <Text style={styles.actionTextPrimary}>{t('ref.readInApp')}</Text>
+              </TouchableOpacity>
+            )}
+            {item.url && (
+              <TouchableOpacity style={styles.actionBtn} onPress={() => onOpenUrl(item.url)}>
+                <Ionicons name="open-outline" size={16} color={accent} />
+                <Text style={styles.actionText}>{t('ref.openSource')}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+      )}
+    </View>
+  );
+});
 
 export default function ReferencesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
   const [source, setSource] = useState('Todos');
   const [expanded, setExpanded] = useState(null);
   const listRef = useRef(null);
 
+  // Memoiza estilos pra que a ref não mude entre renders (StyleSheet.create
+  // sempre retorna objeto novo). Sem isso, todos os cards re-renderizam.
+  const styles = useMemo(() => makeStyles(colors, fs), [colors, fs]);
+
+  // Abre + scrolla até a referência quando chega via deep link.
   useEffect(() => {
-    if (route?.params?.highlightId) {
-      const id = route.params.highlightId;
+    const scheduledTimeouts = [];
+
+    const handleHighlight = () => {
+      const id = route?.params?.highlightId;
+      if (!id) return;
+
       setSource('Todos');
       setExpanded(id);
-      setTimeout(() => {
-        const idx = references.findIndex((r) => r.id === id);
-        if (idx >= 0 && listRef.current) {
-          listRef.current.scrollToIndex({ index: idx, animated: true, viewPosition: 0.1 });
-        }
-      }, 300);
-    }
-  }, [route?.params?.highlightId]);
+
+      const idx = references.findIndex((r) => r.id === id);
+      if (idx < 0) return;
+
+      const scrollTry = (animated) => {
+        try {
+          listRef.current?.scrollToIndex({ index: idx, animated, viewPosition: 0.1 });
+        } catch {}
+      };
+      scheduledTimeouts.push(setTimeout(() => scrollTry(false), 50));
+      scheduledTimeouts.push(setTimeout(() => scrollTry(true), 300));
+      scheduledTimeouts.push(setTimeout(() => scrollTry(true), 600));
+    };
+
+    handleHighlight();
+    const unsub = navigation.addListener('focus', handleHighlight);
+
+    return () => {
+      unsub();
+      scheduledTimeouts.forEach(clearTimeout);
+    };
+  }, [route?.params?.highlightId, navigation]);
 
   // Volta ao topo quando o usuário aperta o tab Referências de novo
   useEffect(() => {
@@ -40,25 +144,67 @@ export default function ReferencesScreen({ route }) {
     return unsub;
   }, [navigation]);
 
-  const filtered = references.filter((r) =>
-    source === 'Todos' || r.source === source
+  // Memoiza a lista filtrada pra que data prop não mude por referência a cada render
+  const filtered = useMemo(
+    () => (source === 'Todos' ? references : references.filter((r) => r.source === source)),
+    [source]
   );
 
-  const openUrl = (url) => {
+  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
+
+  // Callbacks estáveis pra que props do RefCard não mudem desnecessariamente
+  const handleToggle = useCallback((id) => {
+    setExpanded((prev) => (prev === id ? null : id));
+  }, []);
+
+  const handleOpenUrl = useCallback((url) => {
     if (!url) return;
     Linking.openURL(url).catch(() => {});
-  };
+  }, []);
 
-  const openInBible = (nav) => {
-    if (!nav) return;
-    navigation.navigate('Bíblia', {
-      bookId: nav.bookId,
-      chapter: nav.chapter,
-      highlightVerse: nav.verse,
-    });
-  };
+  const handleOpenInBible = useCallback(
+    (nav) => {
+      if (!nav) return;
+      navigation.navigate('Bíblia', {
+        bookId: nav.bookId,
+        chapter: nav.chapter,
+        highlightVerse: nav.verse,
+      });
+    },
+    [navigation]
+  );
 
-  const styles = makeStyles(colors, fs);
+  const renderItem = useCallback(
+    ({ item }) => (
+      <RefCard
+        item={item}
+        isOpen={expanded === item.id}
+        accent={colors.accent}
+        textSubtle={colors.textSubtle}
+        styles={styles}
+        onToggle={handleToggle}
+        onOpenInBible={handleOpenInBible}
+        onOpenUrl={handleOpenUrl}
+        t={t}
+        isEn={isEn}
+      />
+    ),
+    [expanded, colors.accent, colors.textSubtle, styles, handleToggle, handleOpenInBible, handleOpenUrl, t, isEn]
+  );
+
+  const renderChip = useCallback(
+    ({ item }) => (
+      <TouchableOpacity
+        style={[styles.chip, source === item && styles.chipActive]}
+        onPress={() => setSource(item)}
+      >
+        <Text style={[styles.chipText, source === item && styles.chipTextActive]}>
+          {isEn ? SOURCES_EN[item] : item}
+        </Text>
+      </TouchableOpacity>
+    ),
+    [source, styles, isEn]
+  );
 
   return (
     <View style={styles.container}>
@@ -69,83 +215,45 @@ export default function ReferencesScreen({ route }) {
         showsHorizontalScrollIndicator={false}
         style={styles.sourceList}
         contentContainerStyle={{ paddingRight: 16 }}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[styles.chip, source === item && styles.chipActive]}
-            onPress={() => setSource(item)}
-          >
-            <Text style={[styles.chipText, source === item && styles.chipTextActive]}>{item}</Text>
-          </TouchableOpacity>
-        )}
+        renderItem={renderChip}
       />
 
-      <FlatList
-        ref={listRef}
-        data={filtered}
-        keyExtractor={(r) => r.id}
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        onScrollToIndexFailed={() => {}}
-        ListEmptyComponent={<Text style={styles.empty}>Nenhuma referência encontrada.</Text>}
-        renderItem={({ item }) => {
-          const isOpen = expanded === item.id;
-          return (
-            <View style={[styles.card, isOpen && styles.cardOpen]}>
-              <TouchableOpacity onPress={() => setExpanded(isOpen ? null : item.id)}>
-                <View style={styles.cardTop}>
-                  <View style={styles.badge}>
-                    <Text style={styles.badgeText}>{item.source}</Text>
-                  </View>
-                  <Ionicons
-                    name={isOpen ? 'chevron-up' : 'chevron-down'}
-                    size={16}
-                    color={colors.textSubtle}
-                  />
-                </View>
-                <Text style={styles.cardRef}>{item.ref}</Text>
-                <Text style={styles.cardFullSource}>{item.fullSource}</Text>
-                {(item.author || item.year) && (
-                  <Text style={styles.cardMeta}>
-                    {item.author}{item.author && item.year ? ' · ' : ''}{item.year}
-                  </Text>
-                )}
-                <Text style={styles.cardTopic}>{item.topic}</Text>
-              </TouchableOpacity>
-
-              {isOpen && (
-                <View style={styles.expanded}>
-                  <Text style={styles.cardText}>{item.text}</Text>
-                  <View style={styles.actions}>
-                    {item.bibleNav && (
-                      <TouchableOpacity
-                        style={[styles.actionBtn, styles.actionBtnPrimary]}
-                        onPress={() => openInBible(item.bibleNav)}
-                      >
-                        <Ionicons name="bookmark-outline" size={16} color="#fff" />
-                        <Text style={styles.actionTextPrimary}>Ler no app</Text>
-                      </TouchableOpacity>
-                    )}
-                    {item.url && (
-                      <TouchableOpacity style={styles.actionBtn} onPress={() => openUrl(item.url)}>
-                        <Ionicons name="open-outline" size={16} color={colors.accent} />
-                        <Text style={styles.actionText}>Abrir fonte oficial</Text>
-                      </TouchableOpacity>
-                    )}
-                    {item.urlStrongs && (
-                      <TouchableOpacity
-                        style={styles.actionBtn}
-                        onPress={() => openUrl(item.urlStrongs)}
-                      >
-                        <Ionicons name="library-outline" size={16} color={colors.accent} />
-                        <Text style={styles.actionText}>Língua original (Bible Hub)</Text>
-                      </TouchableOpacity>
-                    )}
-                  </View>
-                </View>
-              )}
-            </View>
-          );
-        }}
-      />
+      <View style={{ flex: 1 }}>
+        <FlatList
+          ref={listRef}
+          data={filtered}
+          keyExtractor={(r) => r.id}
+          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+          renderItem={renderItem}
+          ListEmptyComponent={<Text style={styles.empty}>Nenhuma referência encontrada.</Text>}
+          // Performance: limita quantos itens são montados de uma vez
+          initialNumToRender={8}
+          maxToRenderPerBatch={5}
+          windowSize={7}
+          removeClippedSubviews
+          onScrollToIndexFailed={(info) => {
+            listRef.current?.scrollToOffset({
+              offset: (info.averageItemLength || 120) * info.index,
+              animated: false,
+            });
+            setTimeout(() => {
+              try {
+                listRef.current?.scrollToIndex({
+                  index: info.index,
+                  animated: true,
+                  viewPosition: 0.1,
+                });
+              } catch {}
+            }, 120);
+          }}
+          onScroll={onScroll}
+          onContentSizeChange={onContentSizeChange}
+          onLayout={onLayout}
+          scrollEventThrottle={32}
+        />
+        <ScrollHint direction="up" visible={showTop} />
+        <ScrollHint direction="down" visible={showBottom} />
+      </View>
     </View>
   );
 }
@@ -182,6 +290,26 @@ const makeStyles = (c, fs) =>
     cardTopic: { fontSize: fs(12), color: c.textSubtle, marginTop: 4 },
     expanded: { marginTop: 10, borderTopWidth: 1, borderTopColor: c.divider, paddingTop: 10 },
     cardText: { fontSize: fs(15), color: c.text, lineHeight: fs(24) },
+    origBox: {
+      marginTop: 14,
+      padding: 14,
+      borderRadius: 10,
+      backgroundColor: c.badgeBg,
+      borderLeftWidth: 3,
+      borderLeftColor: c.accent,
+    },
+    origHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
+    origLabel: {
+      fontSize: fs(10),
+      color: c.accent,
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
+      letterSpacing: 1,
+    },
+    origWord: { fontSize: fs(22), color: c.primaryText, fontWeight: 'bold', marginBottom: 2 },
+    origTransliteration: { fontSize: fs(13), color: c.textMuted, fontStyle: 'italic', marginBottom: 8 },
+    origMeaning: { fontSize: fs(13), color: c.text, lineHeight: fs(20), marginBottom: 8 },
+    origStrongs: { fontSize: fs(11), color: c.textSubtle, fontWeight: '600' },
     actions: { marginTop: 12, gap: 8 },
     actionBtn: {
       flexDirection: 'row',

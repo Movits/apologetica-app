@@ -3,18 +3,21 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Keyboa
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function ForgotPasswordScreen({ navigation }) {
   const { resetPassword } = useAuth();
   const { colors, fs } = useTheme();
+  const { t, lang } = useLanguage();
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [sent, setSent] = useState(false);
+  const isEn = lang === 'en';
 
   const handleSend = async () => {
     setError('');
-    if (!email.trim()) return setError('Informe seu e-mail.');
+    if (!email.trim()) return setError(isEn ? 'Please enter your email.' : 'Informe seu e-mail.');
     setBusy(true);
     const res = await resetPassword(email.trim().toLowerCase());
     setBusy(false);
@@ -34,30 +37,34 @@ export default function ForgotPasswordScreen({ navigation }) {
           <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
         </TouchableOpacity>
 
-        <Text style={styles.title}>Recuperar senha</Text>
+        <Text style={styles.title}>{t('auth.recoverTitle')}</Text>
 
         {sent ? (
           <View style={styles.successBox}>
             <Ionicons name="mail-outline" size={48} color={colors.accent} />
-            <Text style={styles.successText}>E-mail enviado!</Text>
+            <Text style={styles.successText}>{isEn ? 'Email sent!' : 'E-mail enviado!'}</Text>
             <Text style={styles.subtitle}>
-              Verifique sua caixa de entrada e siga o link para definir uma nova senha.
+              {isEn
+                ? 'Check your inbox and follow the link to set a new password.'
+                : 'Verifique sua caixa de entrada e siga o link para definir uma nova senha.'}
             </Text>
             <TouchableOpacity style={styles.primaryBtn} onPress={() => navigation.goBack()}>
-              <Text style={styles.primaryBtnText}>Voltar ao login</Text>
+              <Text style={styles.primaryBtnText}>{t('auth.backToLogin')}</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <>
             <Text style={styles.subtitle}>
-              Digite seu e-mail e enviaremos um link para você criar uma nova senha.
+              {isEn
+                ? 'Enter your email and we will send a link to set a new password.'
+                : 'Digite seu e-mail e enviaremos um link para você criar uma nova senha.'}
             </Text>
 
             <View style={styles.inputRow}>
               <Ionicons name="mail-outline" size={20} color={colors.textSubtle} />
               <TextInput
                 style={styles.input}
-                placeholder="E-mail"
+                placeholder={t('auth.email')}
                 value={email}
                 onChangeText={setEmail}
                 placeholderTextColor={colors.textSubtle}
@@ -69,7 +76,7 @@ export default function ForgotPasswordScreen({ navigation }) {
             {error ? <Text style={styles.error}>{error}</Text> : null}
 
             <TouchableOpacity style={styles.primaryBtn} onPress={handleSend} disabled={busy}>
-              {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>Enviar link</Text>}
+              {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>{t('auth.sendLink')}</Text>}
             </TouchableOpacity>
           </>
         )}

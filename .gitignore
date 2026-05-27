@@ -20,3 +20,5 @@ yarn-error.*
 *.njsproj
 *.sln
 *.sw?
+
+.env.local

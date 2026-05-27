@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview - Rosário Virtual v6</title>
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --card: #ffffff;
+    --primary: #1a3a5c;
+    --accent: #c9a84c;
+    --text: #2c2c2c;
+    --textSubtle: #9a9a9a;
+    --divider: #e3dccf;
+    --badgeBg: #ece4d1;
+  }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #444; color: var(--text); padding: 20px 0; display: flex; justify-content: center; }
+  .phone { width: 440px; background: var(--bg); border-radius: 30px; box-shadow: 0 8px 40px rgba(0,0,0,0.4); overflow: hidden; padding: 16px; }
+  .header { text-align: center; background: var(--primary); color: #fff; padding: 10px; border-radius: 8px; font-weight: bold; margin-bottom: 14px; }
+  .virtualBox { background: var(--card); border-radius: 12px; padding: 14px; border: 1px solid var(--divider); }
+  .virtualTitle { font-size: 14px; font-weight: bold; color: var(--primary); margin-bottom: 2px; }
+  .virtualSub { font-size: 11px; color: var(--textSubtle); font-style: italic; margin-bottom: 14px; }
+  .rosary-stage { display: flex; justify-content: center; margin: 0 auto 14px; }
+  .currentStep { background: var(--badgeBg); padding: 10px; border-radius: 8px; margin-bottom: 10px; text-align: center; }
+  .currentStepLabel { font-size: 10px; color: var(--textSubtle); font-weight: bold; text-transform: uppercase; letter-spacing: 0.8px; }
+  .currentStepText { font-size: 15px; color: var(--primary); font-weight: 600; margin-top: 4px; }
+  .virtualBtns { display: flex; gap: 8px; }
+  .advanceBtn { flex: 1; background: var(--primary); color: #fff; padding: 10px; border-radius: 8px; border: 0; font-weight: 600; font-size: 13px; cursor: pointer; }
+  .resetBtn { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); background: transparent; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .note { color: var(--textSubtle); font-size: 11px; font-style: italic; text-align: center; margin-top: 10px; }
+  h2 { text-align: center; color: #fff; margin: 0 0 16px; font-size: 16px; }
+  .frame { display: flex; flex-direction: column; align-items: center; }
+  .caption { color: #ddd; font-size: 13px; max-width: 400px; text-align: center; margin-top: 16px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <h2>Preview · Rosário Virtual v6 — estilo do diagrama</h2>
+  <div class="phone">
+    <div class="header">Santo Rosário</div>
+    <div class="virtualBox">
+      <div class="virtualTitle">Rosário Virtual</div>
+      <div class="virtualSub">Use o botão "Próxima conta" para avançar. As contas não são clicáveis.</div>
+
+      <div class="rosary-stage" id="stage"></div>
+
+      <div class="currentStep">
+        <div class="currentStepLabel">Passo 1 / 75</div>
+        <div class="currentStepText">Sinal da Cruz</div>
+      </div>
+
+      <div class="virtualBtns">
+        <button class="advanceBtn" onclick="advance()">▶ Próxima conta</button>
+        <button class="resetBtn" onclick="reset()">↻ Reiniciar</button>
+      </div>
+
+      <div class="note">
+        As contas NÃO são clicáveis. Só o botão "Próxima conta"<br>
+        avança o passo e dispara vibração curta.
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">
+    Igual ao diagrama: 4 Pai-Nossos amarelos nos cantos do loop (10h, 2h, 8h, 4h), medalhão na base como o 5º Pai-Nosso, e o rabo com Pai-Nosso → 3 Aves → Pai-Nosso → Cruz.
+  </p>
+</div>
+
+<script>
+// =================== CONFIG ===================
+const W = 400, H = 850;
+const cx = W / 2;
+const cy = 280;
+const rx = 145, ry = 175;
+// 55 slots no loop: 1 medalhão (slot 0) + 4 Paters + 50 Aves
+const slots = 55;
+const slotAngle = (2 * Math.PI) / slots;
+
+// Pater slots: 11, 22, 33, 44 (cada 11 slots após o medalhão na base)
+// Com medalhão em slot 0 (angle π/2 = base), isso coloca os Paters em:
+//   slot 11 → π/2 + 72° = 162° → cantos esquerdo-baixo (8h)
+//   slot 22 → π/2 + 144° = 234° → canto esquerdo-cima (10h)
+//   slot 33 → π/2 + 216° = 306° → canto direito-cima (2h)
+//   slot 44 → π/2 + 288° = 18° → canto direito-baixo (4h)
+// Espelhamento perfeito no eixo vertical, igual ao diagrama.
+const paterSlots = [11, 22, 33, 44];
+const paterSet = new Set(paterSlots);
+
+const COL_AVE = '#f0e6cf';
+const COL_AVE_STROKE = '#b8a878';
+const COL_PATER_STROKE = '#a8861a';
+const COL_PAST = '#1a3a5c';
+const COL_CURRENT = '#e09010';
+const COL_BORDER_CURRENT = '#7a4e0a';
+const COL_CHAIN = '#8a7a52';
+
+// =================== SEQUÊNCIA ===================
+// pos: 'cross' | 'tail-pater-low' | 'tail-ave-N' | 'tail-pater-high' | 'medal' | <slot 1..54 (sem o 0)>
+function buildSequence() {
+  const seq = [];
+  seq.push({ pos: 'cross', label: 'Sinal da Cruz' });
+  seq.push({ pos: 'cross', label: 'Credo Apostólico' });
+  seq.push({ pos: 'tail-pater-low', label: 'Pai-Nosso (introdução)' });
+  // Rezar de baixo pra cima: começa pela Ave mais próxima do Pater inferior
+  // (tail-ave-3 fica logo acima dele) e vai subindo até a Ave perto do medalhão.
+  seq.push({ pos: 'tail-ave-3', label: '1ª Ave-Maria (introdução)' });
+  seq.push({ pos: 'tail-ave-2', label: '2ª Ave-Maria (introdução)' });
+  seq.push({ pos: 'tail-ave-1', label: '3ª Ave-Maria (introdução)' });
+  seq.push({ pos: 'tail-pater-high', label: 'Glória ao Pai (introdução)' });
+  seq.push({ pos: 'medal', label: 'Anúncio do 1º Mistério + Pai-Nosso (1ª dezena)' });
+
+  // Decade 1: Aves nos slots 1-10
+  for (let a = 1; a <= 10; a++) {
+    seq.push({ pos: a, label: `Ave-Maria ${a} (1ª dezena)` });
+  }
+  // Pater 1 no slot 11
+  seq.push({ pos: 11, label: 'Glória + Anúncio do 2º Mistério + Pai-Nosso (2ª dezena)' });
+  // Decade 2: Aves nos slots 12-21
+  for (let a = 1; a <= 10; a++) {
+    seq.push({ pos: 11 + a, label: `Ave-Maria ${a} (2ª dezena)` });
+  }
+  // Pater 2 no slot 22
+  seq.push({ pos: 22, label: 'Glória + Anúncio do 3º Mistério + Pai-Nosso (3ª dezena)' });
+  // Decade 3: Aves nos slots 23-32
+  for (let a = 1; a <= 10; a++) {
+    seq.push({ pos: 22 + a, label: `Ave-Maria ${a} (3ª dezena)` });
+  }
+  // Pater 3 no slot 33
+  seq.push({ pos: 33, label: 'Glória + Anúncio do 4º Mistério + Pai-Nosso (4ª dezena)' });
+  // Decade 4: Aves nos slots 34-43
+  for (let a = 1; a <= 10; a++) {
+    seq.push({ pos: 33 + a, label: `Ave-Maria ${a} (4ª dezena)` });
+  }
+  // Pater 4 no slot 44
+  seq.push({ pos: 44, label: 'Glória + Anúncio do 5º Mistério + Pai-Nosso (5ª dezena)' });
+  // Decade 5: Aves nos slots 45-54
+  for (let a = 1; a <= 10; a++) {
+    seq.push({ pos: 44 + a, label: `Ave-Maria ${a} (5ª dezena)` });
+  }
+  // De volta ao medalhão
+  seq.push({ pos: 'medal', label: 'Glória da 5ª dezena' });
+  seq.push({ pos: 'medal', label: 'Salve Rainha' });
+  seq.push({ pos: 'cross', label: 'Sinal da Cruz (fim)' });
+  return seq;
+}
+const sequence = buildSequence();
+let stepIndex = 0;
+
+// =================== POSIÇÕES ===================
+function loopPos(slot) {
+  const angle = Math.PI / 2 + slot * slotAngle;
+  return { x: cx + rx * Math.cos(angle), y: cy + ry * Math.sin(angle) };
+}
+// Medalhão fica logo abaixo da base do loop (slot 0 está dentro do loop, mas
+// visualmente o desenhamos como medalhão pendurado).
+const medalPos = { x: cx, y: cy + ry + 26 };
+const tailStartY = medalPos.y + 56;
+const tailGap = 28;
+// Tail: do medalhão pra baixo: tail-pater-high (perto do medalhão),
+// 3 Aves, tail-pater-low (perto da cruz), depois cruz.
+function tailPos(key) {
+  const order = ['tail-pater-high', 'tail-ave-1', 'tail-ave-2', 'tail-ave-3', 'tail-pater-low'];
+  const i = order.indexOf(key);
+  return { x: cx, y: tailStartY + i * tailGap };
+}
+const crossPos = { x: cx, y: tailPos('tail-pater-low').y + 56 };
+
+// =================== RENDER ===================
+function render() {
+  const stage = document.getElementById('stage');
+  let svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+  svg += `<defs>
+    <radialGradient id="paterGrad" cx="0.35" cy="0.35">
+      <stop offset="0" stop-color="#fbe78a"/>
+      <stop offset="0.6" stop-color="#f4c842"/>
+      <stop offset="1" stop-color="#a88018"/>
+    </radialGradient>
+    <radialGradient id="aveGrad" cx="0.35" cy="0.35">
+      <stop offset="0" stop-color="#fdf9ee"/>
+      <stop offset="1" stop-color="#d4c8a0"/>
+    </radialGradient>
+    <linearGradient id="medalGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde8a8"/>
+      <stop offset="1" stop-color="#c8a040"/>
+    </linearGradient>
+  </defs>`;
+
+  // === Corda do loop (elipse) ===
+  svg += `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"
+    fill="none" stroke="${COL_CHAIN}" stroke-width="1.8" opacity="0.55"/>`;
+  // === Corda da base do loop até o topo do medalhão ===
+  svg += `<line x1="${cx}" y1="${cy + ry}" x2="${cx}" y2="${medalPos.y - 19}"
+    stroke="${COL_CHAIN}" stroke-width="1.8" opacity="0.55"/>`;
+  // === Corda do medalhão até a cruz ===
+  svg += `<line x1="${cx}" y1="${medalPos.y + 19}" x2="${cx}" y2="${crossPos.y - 22}"
+    stroke="${COL_CHAIN}" stroke-width="1.8" opacity="0.55"/>`;
+
+  // === Estado ===
+  const current = sequence[stepIndex];
+  const visitedLoop = new Set();
+  const visitedTail = new Set();
+  for (let s = 0; s <= stepIndex; s++) {
+    const p = sequence[s].pos;
+    if (typeof p === 'number') visitedLoop.add(p);
+    else if (typeof p === 'string' && p.startsWith('tail-')) visitedTail.add(p);
+  }
+  const currentLoopPos = typeof current.pos === 'number' ? current.pos : null;
+  const currentTailKey = (typeof current.pos === 'string' && current.pos.startsWith('tail-'))
+    ? current.pos : null;
+
+  // === 54 contas do loop (slots 1..54), pulando slot 0 (medalhão) ===
+  for (let i = 1; i <= 54; i++) {
+    const { x, y } = loopPos(i);
+    const isPater = paterSet.has(i);
+    const r = isPater ? 10 : 5;
+    let fill, stroke, strokeWidth;
+
+    if (i === currentLoopPos) {
+      fill = COL_CURRENT;
+      stroke = COL_BORDER_CURRENT;
+      strokeWidth = 2;
+    } else if (visitedLoop.has(i)) {
+      fill = COL_PAST;
+      stroke = isPater ? COL_PATER_STROKE : 'none';
+      strokeWidth = isPater ? 1.2 : 0;
+    } else if (isPater) {
+      fill = 'url(#paterGrad)';
+      stroke = COL_PATER_STROKE;
+      strokeWidth = 1.4;
+    } else {
+      fill = 'url(#aveGrad)';
+      stroke = COL_AVE_STROKE;
+      strokeWidth = 0.7;
+    }
+    svg += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}"
+      fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}"/>`;
+  }
+
+  // === Medalhão circular com a Rosa Mística ===
+  const medalActive = (current.pos === 'medal');
+  const medalFill = medalActive ? '#fff4d8' : 'url(#medalGrad)';
+  const medalStroke = medalActive ? COL_BORDER_CURRENT : '#8a6818';
+  const medalStrokeWidth = medalActive ? 2.5 : 1.6;
+  const medalR = 19;
+  svg += `<g transform="translate(${medalPos.x}, ${medalPos.y})">
+    <circle cx="0" cy="0" r="${medalR}" fill="${medalFill}" stroke="${medalStroke}" stroke-width="${medalStrokeWidth}"/>
+    <!-- Rosa Mística: 5 pétalas + miolo -->
+    <g fill="#fff" opacity="0.95">
+      <circle cx="0" cy="-7.5" r="3.6"/>
+      <circle cx="7" cy="-2.4" r="3.6"/>
+      <circle cx="4.3" cy="5.8" r="3.6"/>
+      <circle cx="-4.3" cy="5.8" r="3.6"/>
+      <circle cx="-7" cy="-2.4" r="3.6"/>
+      <circle cx="0" cy="0" r="2.6" fill="${medalActive ? '#5a3a10' : '#7a5418'}"/>
+    </g>
+  </g>`;
+
+  // === Contas do rabo ===
+  const tailKeys = [
+    { key: 'tail-pater-high', isPater: true },
+    { key: 'tail-ave-1', isPater: false },
+    { key: 'tail-ave-2', isPater: false },
+    { key: 'tail-ave-3', isPater: false },
+    { key: 'tail-pater-low', isPater: true },
+  ];
+  for (const t of tailKeys) {
+    const { x, y } = tailPos(t.key);
+    const r = t.isPater ? 10 : 5;
+    let fill, stroke, strokeWidth;
+
+    if (currentTailKey === t.key) {
+      fill = COL_CURRENT;
+      stroke = COL_BORDER_CURRENT;
+      strokeWidth = 2;
+    } else if (visitedTail.has(t.key)) {
+      fill = COL_PAST;
+      stroke = t.isPater ? COL_PATER_STROKE : 'none';
+      strokeWidth = t.isPater ? 1.2 : 0;
+    } else if (t.isPater) {
+      fill = 'url(#paterGrad)';
+      stroke = COL_PATER_STROKE;
+      strokeWidth = 1.4;
+    } else {
+      fill = 'url(#aveGrad)';
+      stroke = COL_AVE_STROKE;
+      strokeWidth = 0.7;
+    }
+    svg += `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}"/>`;
+  }
+
+  // === Cruz (✝ idêntica ao logo do app: cor accent #c9a84c, sem peso/sombra extra) ===
+  const crossActive = current.pos === 'cross';
+  const crossSize = 64;
+  // Quando ativa, desenha um círculo sutil de destaque atrás da cruz (sem mudar a cor dela).
+  if (crossActive) {
+    svg += `<circle cx="${crossPos.x}" cy="${crossPos.y + 4}" r="32"
+      fill="#fff4d8" stroke="${COL_BORDER_CURRENT}" stroke-width="1.5" opacity="0.7"/>`;
+  }
+  svg += `<text x="${crossPos.x}" y="${crossPos.y + 22}"
+    text-anchor="middle" font-size="${crossSize}" font-family="Georgia, serif"
+    fill="#c9a84c">✝</text>`;
+
+  svg += `</svg>`;
+  stage.innerHTML = svg;
+
+  document.querySelector('.currentStepLabel').textContent = `Passo ${stepIndex + 1} / ${sequence.length}`;
+  document.querySelector('.currentStepText').textContent = current.label;
+}
+
+function advance() {
+  if (stepIndex + 1 < sequence.length) { stepIndex++; render(); }
+}
+function reset() { stepIndex = 0; render(); }
+render();
+</script>
+</body>
+</html>

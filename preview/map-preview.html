@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview - Mapa Nos Passos de Jesus v2</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #c9a84c;
+    --bg: #f5f0e8;
+    --text: #2c2c2c;
+    --textSubtle: #9a9a9a;
+    --divider: #e3dccf;
+    --badgeBg: #ece4d1;
+  }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #444; color: var(--text); padding: 20px 0; display: flex; justify-content: center; }
+  .frame { display: flex; flex-direction: column; align-items: center; max-width: 480px; }
+  h2 { color: #fff; text-align: center; margin: 0 0 16px; font-size: 16px; }
+  .phone { width: 440px; background: var(--bg); border-radius: 30px; box-shadow: 0 8px 40px rgba(0,0,0,0.4); overflow: hidden; padding: 16px; }
+  .header { text-align: center; background: var(--primary); color: #fff; padding: 10px; border-radius: 8px; font-weight: bold; margin-bottom: 12px; }
+  .intro { background: #fff; border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+  .intro-title { font-size: 16px; font-weight: bold; color: var(--primary); margin-bottom: 4px; }
+  .intro-sub { font-size: 12px; color: #6b6b6b; line-height: 1.5; }
+  #map { width: 100%; height: 480px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .map-hint { font-size: 11px; color: var(--textSubtle); font-style: italic; text-align: center; margin-top: 6px; margin-bottom: 12px; }
+  .timeline { background: #fff; border-radius: 10px; padding: 12px; margin-top: 12px; }
+  .step-label { font-size: 10px; color: var(--textSubtle); font-weight: bold; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+  .progress { height: 4px; background: var(--divider); border-radius: 2px; overflow: hidden; margin-bottom: 10px; }
+  .progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+  .current-card { background: var(--badgeBg); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+  .place-name { font-size: 12px; color: var(--accent); font-weight: bold; margin-bottom: 4px; }
+  .event-title { font-size: 15px; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
+  .event-desc { font-size: 13px; color: var(--text); line-height: 1.5; }
+  .ref-link { font-size: 11px; color: var(--accent); font-weight: bold; margin-top: 6px; display: block; }
+  .nav-row { display: flex; gap: 8px; }
+  .nav-btn { flex: 1; padding: 10px; border: 1px solid var(--accent); border-radius: 10px; background: transparent; color: var(--primary); font-weight: 600; font-size: 13px; cursor: pointer; }
+  .nav-btn:disabled { border-color: var(--divider); color: var(--textSubtle); cursor: not-allowed; }
+
+  /* Pins */
+  .pin-future { background: #b9a878; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+  .pin-past { background: var(--primary); width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+  .pin-current { background: #e09010; width: 20px; height: 20px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.5); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+  .caption { color: #ddd; font-size: 13px; max-width: 420px; text-align: center; margin-top: 16px; line-height: 1.5; }
+  .leaflet-control-attribution { font-size: 9px; background: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+<div class="frame">
+  <h2>Preview · Mapa v2 — rotas realistas + setas direcionais</h2>
+  <div class="phone">
+    <div class="header">Nos Passos de Jesus</div>
+    <div class="intro">
+      <div class="intro-title">Jornada de Jesus</div>
+      <div class="intro-sub">A rota agora segue caminhos terrestres (não corta o mar) e tem setas mostrando a direção do movimento.</div>
+    </div>
+
+    <div id="map"></div>
+    <div class="map-hint">Pinça pra zoom · Arraste · Toque num pino pra ver detalhes</div>
+
+    <div class="timeline">
+      <div class="step-label" id="step-label">Passo 1 / 21</div>
+      <div class="progress"><div class="progress-fill" id="progress-fill" style="width: 5%"></div></div>
+      <div class="current-card" id="current-card"></div>
+      <div class="nav-row">
+        <button class="nav-btn" onclick="goPrev()" id="prev-btn">◄ Anterior</button>
+        <button class="nav-btn" onclick="goNext()" id="next-btn">Próximo ►</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">
+    Cada perna do trajeto tem waypoints intermediários pra contornar o Mediterrâneo e seguir rotas históricas plausíveis (estrada do mar, vale do Jordão, etc.). Setas indicam direção.
+  </p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+<script>
+// =================== PARADAS ===================
+const JOURNEY = [
+  { name: 'Belém',                   title: 'Nascimento',                lat: 31.7042, lng: 35.2074, ref: 'Lc 2,1-20',    desc: 'Basílica da Natividade, sobre a gruta venerada como local do nascimento desde o séc. II.' },
+  { name: 'Egito (Matariyya)',       title: 'Fuga para o Egito',         lat: 30.1212, lng: 31.3072, ref: 'Mt 2,13-15',   desc: 'Tradição copta localiza a estadia da Sagrada Família em Matariyya (norte do Cairo), onde existe a "Árvore de Maria" venerada desde o séc. IV.' },
+  { name: 'Nazaré',                  title: 'Infância e juventude',      lat: 32.7022, lng: 35.2978, ref: 'Lc 2,39-52',   desc: 'Jesus cresce em Nazaré com Maria e José.' },
+  { name: 'Al-Maghtas (Jordão)',     title: 'Batismo por João',          lat: 31.8367, lng: 35.5453, ref: 'Mt 3,13-17',   desc: 'Al-Maghtas / Betânia Além-Jordão (lado jordaniano), reconhecida pela UNESCO em 2015 como local do batismo. Igrejas bizantinas dos sécs. V-VI, mosteiros, e a gruta venerada de João Batista. Visitada por João Paulo II, Bento XVI e Francisco.' },
+  { name: 'Monte da Quarentena',     title: 'Tentações',                 lat: 31.8742, lng: 35.4344, ref: 'Mt 4,1-11',    desc: 'Tradição localiza as 40 dias de jejum no Monte da Quarentena (Jebel Quruntul), oeste de Jericó. Mosteiro grego-ortodoxo lá desde o séc. VI.' },
+  { name: 'Caná (Khirbet Qana)',     title: 'Primeiro milagre',          lat: 32.8202, lng: 35.3068, ref: 'Jo 2,1-11',    desc: 'Sítio arqueológico de Khirbet Qana, 14 km ao norte de Nazaré. Identificado por Eusébio (séc. IV) e confirmado por escavações (cerâmica, moedas e banhos rituais judaicos do séc. I). A tradição moderna de Kafr Kanna só começou no séc. XVII e é menos provável.' },
+  { name: 'Cafarnaum',               title: 'Base do ministério',        lat: 32.8807, lng: 35.5755, ref: 'Mt 4,12-25',   desc: '"Sua cidade". Chama os primeiros discípulos.' },
+  { name: 'Monte das Bem-Aventuranças', title: 'Sermão da Montanha',    lat: 32.8809, lng: 35.5544, ref: 'Mt 5–7',       desc: 'Proclama as Bem-Aventuranças e ensina o Pai-Nosso.' },
+  { name: 'Mar da Galileia',         title: 'Milagres no lago',          lat: 32.8284, lng: 35.5912, ref: 'Mc 4,35-41',   desc: 'Acalma a tempestade, caminha sobre as águas.' },
+  { name: 'Cesareia de Filipe',      title: 'Confissão de Pedro',        lat: 33.2486, lng: 35.6953, ref: 'Mt 16,13-20',  desc: 'Sítio arqueológico de Banias, ao pé do Monte Hermon. "Tu és o Cristo, o Filho do Deus vivo".' },
+  { name: 'Monte Tabor',             title: 'Transfiguração',            lat: 32.6878, lng: 35.3905, ref: 'Lc 9,28-36',   desc: 'Transfigura-se diante de Pedro, Tiago e João.' },
+  { name: 'Jericó (Herodiana)',      title: 'Zaqueu e o cego',           lat: 31.8550, lng: 35.4500, ref: 'Lc 19,1-10',   desc: 'A Jericó do Novo Testamento é Tulul Abu el-Alayiq (sítio do palácio de inverno de Herodes), ao sul da antiga Tell es-Sultan. É por aqui que Jesus passava a caminho de Jerusalém quando chamou Zaqueu e curou o cego Bartimeu.' },
+  { name: 'Betânia',                 title: 'Lázaro ressuscitado',       lat: 31.7716, lng: 35.2603, ref: 'Jo 11,1-45',   desc: 'Ressuscita Lázaro, morto há quatro dias.' },
+  { name: 'Jerusalém (Porta Dourada)', title: 'Entrada triunfal',        lat: 31.7787, lng: 35.2371, ref: 'Mt 21,1-11',   desc: 'Sha\'ar HaRahamim / Bab al-Dhahabi, no muro oriental do Monte do Templo. Entrou por aqui vindo do Monte das Oliveiras, montado num jumentinho. Fechada por Suleiman em 1541 mas a localização é exata.' },
+  { name: 'Cenáculo (Monte Sião)',   title: 'Última Ceia',               lat: 31.7715, lng: 35.2293, ref: 'Mt 26,17-30',  desc: 'No Monte Sião. Institui a Eucaristia. Lava os pés dos apóstolos.' },
+  { name: 'Jardim do Getsêmani',     title: 'Agonia e prisão',           lat: 31.7797, lng: 35.2397, ref: 'Lc 22,39-53',  desc: 'O jardim existe até hoje, ao pé do Monte das Oliveiras, com oliveiras milenares (algumas com ~1000 anos, possivelmente rebrotos das originais). Ao lado fica a Igreja de Todas as Nações (Basílica da Agonia, 1924). Judas o trai com um beijo aqui. (Dê zoom máximo para ver o jardim em verde.)' },
+  { name: 'Pretório (Fortaleza Antonia)', title: 'Julgamento por Pilatos', lat: 31.7803, lng: 35.2350, ref: 'Jo 18,28-19,16', desc: 'Fortaleza Antonia, junto ao Templo (Arco Ecce Homo, início da Via Dolorosa).' },
+  { name: 'Calvário (Gólgota)',      title: 'Crucificação',              lat: 31.7784, lng: 35.2298, ref: 'Jo 19,17-37',  desc: 'Hoje dentro da Igreja do Santo Sepulcro. Morre às 15h da Sexta-Feira Santa.' },
+  { name: 'Santo Sepulcro',          title: 'Sepultura e Ressurreição',  lat: 31.7784, lng: 35.2298, ref: 'Mt 27,57-28,10', desc: 'Mesmo edifício do Calvário. No 3º dia o túmulo está vazio. Cristo ressuscitou.' },
+  { name: 'Emaús-Nicópolis',         title: 'Aparição aos discípulos',   lat: 31.8369, lng: 34.9892, ref: 'Lc 24,13-35',  desc: 'Sítio arqueológico de Emaús-Nicópolis (Latrun), tradição cristã ocidental desde o séc. IV. Caminham com dois discípulos, que o reconhecem na fração do pão.' },
+  { name: 'Monte das Oliveiras',     title: 'Ascensão',                  lat: 31.7787, lng: 35.2451, ref: 'At 1,9-11',    desc: 'Capela da Ascensão no topo do Monte das Oliveiras, construída em 392 d.C. e venerada desde o séc. IV. Sobe ao céu diante dos apóstolos.' },
+];
+
+// =================== ROTA REALISTA ===================
+// Cada elemento define o trajeto da parada N pra N+1 com waypoints intermediários.
+// Indices: index do array JOURNEY (0 = Belém, 1 = Egito, etc).
+// Sem waypoint = linha reta direta (OK pra trajetos curtos no mesmo lugar).
+const SEGMENTS = [
+  // 0→1: Belém → Egito (passa por Hebron, Beersheva, deserto do Negev, Sinai)
+  { from: 0, to: 1, via: [[31.53, 35.10], [31.25, 34.79], [31.10, 34.40], [30.85, 33.50], [30.50, 32.50]] },
+  // 1→2: Egito → Nazaré (norte pelo Sinai, costa do Mediterrâneo, depois leste pra Galileia)
+  { from: 1, to: 2, via: [[30.50, 32.50], [31.10, 33.50], [31.50, 34.20], [31.80, 34.65], [32.20, 34.85], [32.50, 35.00], [32.70, 35.20]] },
+  // 2→3: Nazaré → Rio Jordão (sul pela Galileia, vale do Jordão)
+  { from: 2, to: 3, via: [[32.50, 35.40], [32.10, 35.50], [31.85, 35.55]] },
+  // 3→4: Jordão → Deserto da Judeia (oeste, subindo)
+  { from: 3, to: 4, via: [[31.80, 35.50]] },
+  // 4→5: Quarentena → Caná (Khirbet Qana, ao norte de Nazaré)
+  { from: 4, to: 5, via: [[32.10, 35.45], [32.40, 35.40], [32.65, 35.32], [32.75, 35.30]] },
+  // 5→6: Caná (Khirbet Qana) → Cafarnaum (leste)
+  { from: 5, to: 6, via: [[32.84, 35.42]] },
+  // 6→7: Cafarnaum → Monte das Bem-Aventuranças (logo ao lado)
+  { from: 6, to: 7, via: [] },
+  // 7→8: Monte → Mar da Galileia (desce pra orla)
+  { from: 7, to: 8, via: [] },
+  // 8→9: Mar Galileia → Cesareia de Filipe (norte, contornando lago)
+  { from: 8, to: 9, via: [[32.92, 35.65], [33.05, 35.68], [33.18, 35.70]] },
+  // 9→10: Cesareia → Tabor (sul, atravessando Galileia)
+  { from: 9, to: 10, via: [[33.05, 35.60], [32.90, 35.55], [32.78, 35.45]] },
+  // 10→11: Tabor → Jericó (sul pelo vale do Jordão)
+  { from: 10, to: 11, via: [[32.55, 35.40], [32.20, 35.50], [31.95, 35.50]] },
+  // 11→12: Jericó (Herodiana) → Betânia (oeste subindo as montanhas de Jerusalém)
+  { from: 11, to: 12, via: [[31.83, 35.38], [31.79, 35.30]] },
+  // 12→13: Betânia → Jerusalém (oeste, curto)
+  { from: 12, to: 13, via: [] },
+  // 13→18: Em Jerusalém, todos próximos
+  { from: 13, to: 14, via: [] },
+  { from: 14, to: 15, via: [] },
+  { from: 15, to: 16, via: [] },
+  { from: 16, to: 17, via: [] },
+  { from: 17, to: 18, via: [] },
+  // 18→19: Sepulcro → Emaús (oeste de Jerusalém)
+  { from: 18, to: 19, via: [[31.80, 35.15], [31.82, 35.07]] },
+  // 19→20: Emaús → Monte das Oliveiras (volta pra Jerusalém leste)
+  { from: 19, to: 20, via: [[31.80, 35.10], [31.79, 35.18]] },
+];
+
+let step = 0;
+
+// =================== MAPA ===================
+const map = L.map('map', {
+  center: [31.9, 35.4],
+  zoom: 8,
+  zoomControl: true,
+});
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap, © CARTO',
+  subdomains: 'abcd',
+  maxZoom: 19,
+}).addTo(map);
+
+// Camadas de rota
+let routeLayer = L.layerGroup().addTo(map);
+
+// Markers
+const markers = JOURNEY.map((p, idx) => {
+  const m = L.marker([p.lat, p.lng], {
+    icon: L.divIcon({ className: '', html: `<div class="pin-future"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }),
+    title: p.name,
+  }).addTo(map);
+  m.on('click', () => { step = idx; update(); map.panTo([p.lat, p.lng]); });
+  return m;
+});
+
+// Constrói o array de coordenadas pra polyline até o passo atual
+function buildPathUpTo(stepIdx) {
+  const path = [];
+  if (stepIdx < 1) return path;
+  for (let i = 0; i < stepIdx; i++) {
+    const seg = SEGMENTS[i];
+    if (!seg) continue;
+    const fromPt = [JOURNEY[seg.from].lat, JOURNEY[seg.from].lng];
+    const toPt = [JOURNEY[seg.to].lat, JOURNEY[seg.to].lng];
+    // Adiciona ponto de partida só na primeira iteração ou se descontinuidade
+    if (path.length === 0) path.push(fromPt);
+    seg.via.forEach((v) => path.push(v));
+    path.push(toPt);
+  }
+  return path;
+}
+
+function update() {
+  // Atualiza ícones
+  markers.forEach((m, i) => {
+    const isPast = i < step;
+    const isCurrent = i === step;
+    const cls = isCurrent ? 'pin-current' : isPast ? 'pin-past' : 'pin-future';
+    const size = isCurrent ? 26 : isPast ? 18 : 16;
+    m.setIcon(L.divIcon({
+      className: '',
+      html: `<div class="${cls}"></div>`,
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+    }));
+    if (isPast || isCurrent) {
+      m.bindTooltip(JOURNEY[i].name, { permanent: isCurrent, direction: 'top', offset: [0, -10] });
+    } else {
+      m.unbindTooltip();
+    }
+  });
+
+  // Atualiza rota
+  routeLayer.clearLayers();
+  const path = buildPathUpTo(step);
+  if (path.length >= 2) {
+    const line = L.polyline(path, {
+      color: '#c44a1a',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '8 5',
+      lineCap: 'round',
+      lineJoin: 'round',
+    }).addTo(routeLayer);
+
+    // Decorador com setas ao longo da linha
+    L.polylineDecorator(line, {
+      patterns: [
+        {
+          // Seta a cada X pixels
+          offset: 30,
+          repeat: 80,
+          symbol: L.Symbol.arrowHead({
+            pixelSize: 12,
+            polygon: false,
+            pathOptions: {
+              stroke: true,
+              color: '#8a2a08',
+              weight: 2.5,
+              opacity: 0.95,
+            },
+          }),
+        },
+      ],
+    }).addTo(routeLayer);
+  }
+
+  // UI
+  const current = JOURNEY[step];
+  document.getElementById('step-label').textContent = `Passo ${step + 1} / ${JOURNEY.length}`;
+  document.getElementById('progress-fill').style.width = `${((step + 1) / JOURNEY.length) * 100}%`;
+  document.getElementById('current-card').innerHTML = `
+    <div class="place-name">📍 ${current.name}</div>
+    <div class="event-title">${current.title}</div>
+    <div class="event-desc">${current.desc}</div>
+    <span class="ref-link">${current.ref}</span>
+  `;
+  document.getElementById('prev-btn').disabled = step === 0;
+  document.getElementById('next-btn').disabled = step === JOURNEY.length - 1;
+
+  map.panTo([current.lat, current.lng], { animate: true, duration: 0.5 });
+}
+
+function goNext() { if (step < JOURNEY.length - 1) { step++; update(); } }
+function goPrev() { if (step > 0) { step--; update(); } }
+
+update();
+</script>
+</body>
+</html>

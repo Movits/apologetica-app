@@ -26,9 +26,12 @@ export async function getLiturgy() {
     // ignora erro de cache, tenta rede
   }
 
-  // 2. Busca da API
+  // 2. Busca da API com timeout para não travar offline indefinidamente
   try {
-    const response = await fetch(API_URL);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const response = await fetch(API_URL, { signal: controller.signal });
+    clearTimeout(timeoutId);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     // 3. Salva no cache
@@ -50,7 +53,10 @@ export async function getLiturgy() {
     } catch {
       // sem fallback
     }
-    throw new Error('Sem conexão e sem dados em cache');
+    // Erro identificável pra UI mostrar mensagem clara de offline
+    const e = new Error('OFFLINE_NO_CACHE');
+    e.code = 'OFFLINE_NO_CACHE';
+    throw e;
   }
 }
 

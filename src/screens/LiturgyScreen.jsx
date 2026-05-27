@@ -3,13 +3,18 @@ import { View, Text, ScrollView, StyleSheet, ActivityIndicator, TouchableOpacity
 import { Ionicons } from '@expo/vector-icons';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 import { Share } from 'react-native';
 import ReadingText from '../components/ReadingText';
+import { useScrollHints } from '../hooks/useScrollHints';
+import ScrollHint from '../components/ScrollHint';
 
-const APP_PROMO = '\n\nEnviado pelo APPologética ✝';
+const APP_PROMO_PT = '\n\nEnviado pelo APPologética ✝';
+const APP_PROMO_EN = '\n\nShared from APPologética ✝';
 
 export default function LiturgyScreen() {
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
   const [liturgy, setLiturgy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -21,9 +26,11 @@ export default function LiturgyScreen() {
       setLiturgy(data);
       setError(null);
     } catch (e) {
-      setError(e.message || 'Erro ao carregar liturgia');
+      setError(e);
     }
   }, []);
+
+  const isOffline = error?.code === 'OFFLINE_NO_CACHE' || error?.message === 'OFFLINE_NO_CACHE';
 
   useEffect(() => {
     (async () => {
@@ -45,17 +52,48 @@ export default function LiturgyScreen() {
     if (reading.referencia) msg += `${reading.referencia}\n\n`;
     if (reading.titulo) msg += `${reading.titulo}\n\n`;
     if (reading.texto) msg += reading.texto;
-    msg += APP_PROMO;
+    msg += isEn ? APP_PROMO_EN : APP_PROMO_PT;
     Share.share({ message: msg }).catch(() => {});
   };
 
+  const L = isEn ? {
+    entrance: 'Entrance Antiphon',
+    collect: 'Collect',
+    first: 'First Reading',
+    psalm: 'Responsorial Psalm',
+    second: 'Second Reading',
+    gospel: 'Gospel',
+    offer: 'Prayer over the Offerings',
+    communionAnt: 'Communion Antiphon',
+    afterCommunion: 'Prayer After Communion',
+    color: 'Liturgical color',
+    stale: 'Showing saved data. No connection?',
+    footer: 'Liturgy provided by CNBB (in Portuguese). Last update',
+    error: 'Error loading liturgy',
+  } : {
+    entrance: 'Antífona de entrada',
+    collect: 'Oração da coleta',
+    first: 'Primeira Leitura',
+    psalm: 'Salmo Responsorial',
+    second: 'Segunda Leitura',
+    gospel: 'Evangelho',
+    offer: 'Oração sobre as oferendas',
+    communionAnt: 'Antífona de comunhão',
+    afterCommunion: 'Oração após a comunhão',
+    color: 'Cor litúrgica',
+    stale: 'Mostrando dados salvos. Sem conexão?',
+    footer: 'Liturgia fornecida pela CNBB. Última atualização',
+    error: 'Erro ao carregar liturgia',
+  };
+
+  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
     return (
       <View style={styles.center}>
         <ActivityIndicator size="large" color={colors.accent} />
-        <Text style={styles.muted}>Carregando liturgia...</Text>
+        <Text style={styles.muted}>{isEn ? 'Loading liturgy...' : 'Carregando liturgia...'}</Text>
       </View>
     );
   }
@@ -64,10 +102,20 @@ export default function LiturgyScreen() {
     return (
       <View style={styles.center}>
         <Ionicons name="cloud-offline-outline" size={48} color={colors.textSubtle} />
-        <Text style={styles.errorTitle}>Não consegui carregar</Text>
-        <Text style={styles.muted}>{error}</Text>
+        <Text style={styles.errorTitle}>
+          {isOffline
+            ? (isEn ? 'Liturgy needs internet' : 'Liturgia precisa de internet')
+            : t('liturgy.errorTitle')}
+        </Text>
+        <Text style={styles.muted}>
+          {isOffline
+            ? (isEn
+                ? 'The daily readings come from the CNBB online and are not yet cached on your device. Connect to Wi-Fi or mobile data, then tap Try again.'
+                : 'As leituras do dia vêm da CNBB online e ainda não estão guardadas no aparelho. Conecte ao Wi-Fi ou dados móveis e toque em Tentar novamente.')
+            : (error?.message || (isEn ? 'Error loading liturgy' : 'Erro ao carregar liturgia'))}
+        </Text>
         <TouchableOpacity style={styles.retryBtn} onPress={load}>
-          <Text style={styles.retryText}>Tentar novamente</Text>
+          <Text style={styles.retryText}>{t('common.tryAgain')}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -87,10 +135,14 @@ export default function LiturgyScreen() {
   const evangelho = pick(liturgy.leituras?.evangelho);
 
   return (
+    <View style={styles.container}>
     <ScrollView
-      style={styles.container}
       contentContainerStyle={styles.content}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.accent} />}
+      onScroll={onScroll}
+      onContentSizeChange={onContentSizeChange}
+      onLayout={onLayout}
+      scrollEventThrottle={32}
     >
       <View style={[styles.headerCard, { borderLeftColor: corHex }]}>
         <Text style={styles.date}>{liturgy.data}</Text>
@@ -99,7 +151,7 @@ export default function LiturgyScreen() {
           <>
             <View style={styles.colorRow}>
               <View style={[styles.colorDot, { backgroundColor: corHex }]} />
-              <Text style={styles.colorLabel}>Cor litúrgica: {cor}</Text>
+              <Text style={styles.colorLabel}>{L.color}: {cor}</Text>
             </View>
             {getLiturgicalColorMeaning(cor) ? (
               <Text style={styles.colorMeaning}>{getLiturgicalColorMeaning(cor)}</Text>
@@ -109,77 +161,80 @@ export default function LiturgyScreen() {
         {liturgy.source === 'stale' && (
           <View style={styles.stalebanner}>
             <Ionicons name="warning-outline" size={14} color={colors.accent} />
-            <Text style={styles.staleText}>Mostrando dados salvos. Sem conexão?</Text>
+            <Text style={styles.staleText}>{L.stale}</Text>
           </View>
         )}
       </View>
 
       {liturgy.antifonas?.entrada && (
-        <Section title="Antífona de entrada" theme={{ colors, fs }}>
+        <Section title={L.entrance} theme={{ colors, fs }}>
           <Text style={styles.body}>{liturgy.antifonas.entrada}</Text>
         </Section>
       )}
 
       {liturgy.oracoes?.coleta && (
-        <Section title="Oração da coleta" theme={{ colors, fs }}>
+        <Section title={L.collect} theme={{ colors, fs }}>
           <Text style={styles.body}>{liturgy.oracoes.coleta}</Text>
         </Section>
       )}
 
       <ReadingSection
-        title="Primeira Leitura"
+        title={L.first}
         reading={primeira}
-        onShare={() => shareReading('Primeira Leitura', primeira)}
+        onShare={() => shareReading(L.first, primeira)}
         theme={{ colors, fs }}
       />
 
       <ReadingSection
-        title="Salmo Responsorial"
+        title={L.psalm}
         reading={salmo}
-        onShare={() => shareReading('Salmo', salmo)}
+        onShare={() => shareReading(L.psalm, salmo)}
         isPsalm
         theme={{ colors, fs }}
       />
 
       {segunda && (
         <ReadingSection
-          title="Segunda Leitura"
+          title={L.second}
           reading={segunda}
-          onShare={() => shareReading('Segunda Leitura', segunda)}
+          onShare={() => shareReading(L.second, segunda)}
           theme={{ colors, fs }}
         />
       )}
 
       <ReadingSection
-        title="Evangelho"
+        title={L.gospel}
         reading={evangelho}
-        onShare={() => shareReading('Evangelho', evangelho)}
+        onShare={() => shareReading(L.gospel, evangelho)}
         emphasize
         theme={{ colors, fs }}
       />
 
       {liturgy.oracoes?.oferendas && (
-        <Section title="Oração sobre as oferendas" theme={{ colors, fs }}>
+        <Section title={L.offer} theme={{ colors, fs }}>
           <Text style={styles.body}>{liturgy.oracoes.oferendas}</Text>
         </Section>
       )}
 
       {liturgy.antifonas?.comunhao && (
-        <Section title="Antífona de comunhão" theme={{ colors, fs }}>
+        <Section title={L.communionAnt} theme={{ colors, fs }}>
           <Text style={styles.body}>{liturgy.antifonas.comunhao}</Text>
         </Section>
       )}
 
       {liturgy.oracoes?.comunhao && (
-        <Section title="Oração após a comunhão" theme={{ colors, fs }}>
+        <Section title={L.afterCommunion} theme={{ colors, fs }}>
           <Text style={styles.body}>{liturgy.oracoes.comunhao}</Text>
         </Section>
       )}
 
       <Text style={styles.footer}>
-        Liturgia fornecida pela CNBB. Última atualização: {formatTime(liturgy.fetchedAt)}.
+        {L.footer}: {formatTime(liturgy.fetchedAt)}.
       </Text>
     </ScrollView>
+      <ScrollHint direction="up" visible={showTop} />
+      <ScrollHint direction="down" visible={showBottom} />
+    </View>
   );
 }
 

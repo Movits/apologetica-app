@@ -17,10 +17,13 @@ const PREFS_KEY = 'notifications:prefs';
 
 const ID_DAILY_VERSE = 'daily-verse';
 const ID_SUNDAY_LITURGY = 'sunday-liturgy';
+const ID_FRIDAY_FAST = 'friday-fast'; // mantido só para limpar agendamentos antigos
+const ID_DAILY_QUIZ = 'daily-quiz';
 
 const DEFAULT_PREFS = {
   dailyVerse: false,
   sundayLiturgy: false,
+  dailyQuiz: false,
   verseHour: 7,
   verseMinute: 0,
 };
@@ -51,7 +54,16 @@ async function cancelOurNotifications() {
   try {
     await Notifications.cancelScheduledNotificationAsync(ID_DAILY_VERSE).catch(() => {});
     await Notifications.cancelScheduledNotificationAsync(ID_SUNDAY_LITURGY).catch(() => {});
+    await Notifications.cancelScheduledNotificationAsync(ID_FRIDAY_FAST).catch(() => {});
+    await Notifications.cancelScheduledNotificationAsync(ID_DAILY_QUIZ).catch(() => {});
   } catch {}
+}
+
+export async function setDailyQuizEnabled(enabled) {
+  const prefs = await getPrefs();
+  prefs.dailyQuiz = enabled;
+  await savePrefs(prefs);
+  return rescheduleAll();
 }
 
 // Resultado: { ok, error? }
@@ -84,7 +96,7 @@ export async function rescheduleAll() {
         identifier: ID_DAILY_VERSE,
         content: {
           title: 'Versículo do dia',
-          body: `${verse.text}\n— ${verse.ref}`,
+          body: `${verse.text} (${verse.ref})`,
           data: { type: 'verse-of-day' },
         },
         trigger: {
@@ -111,6 +123,22 @@ export async function rescheduleAll() {
         },
       });
     }
+
+    if (prefs.dailyQuiz) {
+      await Notifications.scheduleNotificationAsync({
+        identifier: ID_DAILY_QUIZ,
+        content: {
+          title: 'Quiz apologético do dia',
+          body: 'Uma pergunta nova hoje. Vamos ver quanto você acerta.',
+          data: { type: 'daily-quiz' },
+        },
+        trigger: {
+          type: Notifications.SchedulableTriggerInputTypes.DAILY,
+          hour: 19,
+          minute: 0,
+        },
+      });
+    }
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e?.message || 'Erro ao agendar notificação' };
@@ -132,7 +160,7 @@ export async function sendTestNotification() {
     await Notifications.scheduleNotificationAsync({
       content: {
         title: 'Versículo do dia (teste)',
-        body: `${verse.text}\n— ${verse.ref}`,
+        body: `${verse.text} (${verse.ref})`,
       },
       trigger: {
         type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,

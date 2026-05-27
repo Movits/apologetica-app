@@ -3,11 +3,13 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Keyboa
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 
 export default function LoginScreen({ navigation }) {
-  const { signIn } = useAuth();
+  const { signIn, continueAsGuest } = useAuth();
   const { colors, fs } = useTheme();
+  const { t, lang, setLang } = useLanguage();
   const google = useGoogleSignIn();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +20,7 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     setError('');
     if (!email.trim() || !password) {
-      setError('Preencha e-mail e senha.');
+      setError(lang === 'en' ? 'Fill in email and password.' : 'Preencha e-mail e senha.');
       return;
     }
     setBusy(true);
@@ -28,22 +30,29 @@ export default function LoginScreen({ navigation }) {
   };
 
   const styles = makeStyles(colors, fs);
+  const toggleLang = () => setLang(lang === 'pt' ? 'en' : 'pt');
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1, backgroundColor: colors.bg }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
+      {/* Botão sutil de idioma no canto superior direito */}
+      <TouchableOpacity style={styles.langToggle} onPress={toggleLang} hitSlop={12}>
+        <Ionicons name="language-outline" size={14} color={colors.textMuted} />
+        <Text style={styles.langText}>{lang === 'pt' ? 'English' : 'Português'}</Text>
+      </TouchableOpacity>
+
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <Text style={styles.cross}>✝</Text>
         <Text style={styles.title}>APPologética</Text>
-        <Text style={styles.subtitle}>Entre na sua conta para continuar</Text>
+        <Text style={styles.subtitle}>{t('auth.subtitle')}</Text>
 
         <View style={styles.inputRow}>
           <Ionicons name="mail-outline" size={20} color={colors.textSubtle} />
           <TextInput
             style={styles.input}
-            placeholder="E-mail"
+            placeholder={t('auth.email')}
             value={email}
             onChangeText={setEmail}
             placeholderTextColor={colors.textSubtle}
@@ -57,7 +66,7 @@ export default function LoginScreen({ navigation }) {
           <Ionicons name="lock-closed-outline" size={20} color={colors.textSubtle} />
           <TextInput
             style={styles.input}
-            placeholder="Senha"
+            placeholder={t('auth.password')}
             value={password}
             onChangeText={setPassword}
             placeholderTextColor={colors.textSubtle}
@@ -70,18 +79,18 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')} style={styles.forgotLink}>
-          <Text style={styles.forgotText}>Esqueci minha senha</Text>
+          <Text style={styles.forgotText}>{t('auth.forgotPassword')}</Text>
         </TouchableOpacity>
 
         {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
 
         <TouchableOpacity style={styles.primaryBtn} onPress={handleLogin} disabled={busy}>
-          {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>Entrar</Text>}
+          {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>{t('auth.login')}</Text>}
         </TouchableOpacity>
 
         <View style={styles.divider}>
           <View style={styles.dividerLine} />
-          <Text style={styles.dividerText}>ou</Text>
+          <Text style={styles.dividerText}>{lang === 'en' ? 'or' : 'ou'}</Text>
           <View style={styles.dividerLine} />
         </View>
 
@@ -96,15 +105,31 @@ export default function LoginScreen({ navigation }) {
             ) : (
               <>
                 <Ionicons name="logo-google" size={20} color="#DB4437" />
-                <Text style={styles.googleBtnText}>Continuar com Google</Text>
+                <Text style={styles.googleBtnText}>{lang === 'en' ? 'Continue with Google' : 'Continuar com Google'}</Text>
               </>
             )}
           </TouchableOpacity>
         )}
 
         <TouchableOpacity style={styles.secondaryBtn} onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.secondaryBtnText}>Criar conta nova</Text>
+          <Text style={styles.secondaryBtnText}>{t('auth.signupNew')}</Text>
         </TouchableOpacity>
+
+        <View style={styles.guestDivider}>
+          <View style={styles.guestDividerLine} />
+          <Text style={styles.guestDividerText}>{lang === 'en' ? 'or' : 'ou'}</Text>
+          <View style={styles.guestDividerLine} />
+        </View>
+
+        <TouchableOpacity style={styles.guestBtn} onPress={continueAsGuest}>
+          <Ionicons name="enter-outline" size={18} color={colors.textMuted} />
+          <Text style={styles.guestBtnText}>{t('auth.guest')}</Text>
+        </TouchableOpacity>
+        <Text style={styles.guestHint}>
+          {lang === 'en'
+            ? 'You can explore articles, Bible, liturgy and references.\nHighlights and notes require an account.'
+            : 'Você pode explorar artigos, Bíblia, liturgia e referências.\nMarcações e notas exigem conta.'}
+        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -116,6 +141,22 @@ const makeStyles = (c, fs) =>
     cross: { fontSize: fs(54), color: c.accent, marginBottom: 12 },
     title: { fontSize: fs(28), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
     subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 32, textAlign: 'center' },
+    langToggle: {
+      position: 'absolute',
+      top: 50,
+      right: 20,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 10,
+      paddingVertical: 6,
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: c.divider,
+      backgroundColor: c.card,
+      zIndex: 10,
+    },
+    langText: { color: c.textMuted, fontSize: fs(11), fontWeight: '600' },
     inputRow: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -151,6 +192,20 @@ const makeStyles = (c, fs) =>
       marginTop: 10,
     },
     secondaryBtnText: { color: c.accent, fontSize: fs(15), fontWeight: 'bold' },
+    guestDivider: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 28, width: '100%' },
+    guestDividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
+    guestDividerText: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1 },
+    guestBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      width: '100%',
+      paddingVertical: 14,
+      marginTop: 16,
+    },
+    guestBtnText: { color: c.textMuted, fontSize: fs(14), fontWeight: '600' },
+    guestHint: { fontSize: fs(11), color: c.textSubtle, textAlign: 'center', marginTop: 4, lineHeight: fs(16) },
     googleBtn: {
       flexDirection: 'row',
       alignItems: 'center',

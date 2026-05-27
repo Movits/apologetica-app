@@ -4,21 +4,49 @@
     "slug": "apologetica-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "scheme": "appologetica",
     "userInterfaceStyle": "light",
     "splash": {
+      "image": "./assets/splash-icon.png",
       "backgroundColor": "#1a3a5c",
       "resizeMode": "contain"
+    },
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "color": "#c9a84c"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.appologetica.app"
     },
     "android": {
-      "package": "com.appologetica.app"
+      "package": "com.appologetica.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a3a5c"
+      },
+      "edgeToEdgeEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-web-browser"
-    ]
+      "expo-web-browser",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "react-native",
+          "organization": "appologetica"
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cf11bc18-bc5d-4d38-ab78-fa688d1c4ca3"
+      }
+    }
   }
 }

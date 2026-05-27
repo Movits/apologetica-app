@@ -3,9 +3,11 @@ import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'rea
 import { Ionicons } from '@expo/vector-icons';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function LiturgyCard({ onOpen }) {
   const { colors, fs } = useTheme();
+  const { t, isEn } = useLanguage();
   const [liturgy, setLiturgy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -29,11 +31,13 @@ export default function LiturgyCard({ onOpen }) {
           <Ionicons name="calendar-outline" size={20} color={colors.primaryText} />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={styles.label}>Liturgia de hoje</Text>
+          <Text style={styles.label}>{t('home.todayLiturgy')}</Text>
           {loading ? (
             <ActivityIndicator size="small" color={colors.accent} style={{ alignSelf: 'flex-start', marginTop: 6 }} />
           ) : error ? (
-            <Text style={styles.error}>Sem conexão. Toque pra tentar.</Text>
+            <Text style={styles.error}>
+              {isEn ? 'Liturgy needs internet to download today\'s readings.' : 'Liturgia precisa de internet para baixar as leituras de hoje.'}
+            </Text>
           ) : (
             <>
               <Text style={styles.title} numberOfLines={2}>{liturgy?.liturgia}</Text>
