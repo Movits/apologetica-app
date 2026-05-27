@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet, ActivityIndicator, TouchableOpacity, RefreshControl } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,16 +10,54 @@ import ReadingText from '../components/ReadingText';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
+const EN_BOOK_ID = {
+  'Genesis': 'gn', 'Exodus': 'ex', 'Leviticus': 'lv', 'Numbers': 'nm',
+  'Deuteronomy': 'dt', 'Joshua': 'js', 'Judges': 'jz', 'Ruth': 'rt',
+  '1 Samuel': '1sm', '2 Samuel': '2sm', '1 Kings': '1rs', '2 Kings': '2rs',
+  '1 Chronicles': '1cr', '2 Chronicles': '2cr', 'Ezra': 'esd', 'Nehemiah': 'ne',
+  'Tobit': 'tb', 'Judith': 'jt', 'Esther': 'est',
+  '1 Maccabees': '1mc', '2 Maccabees': '2mc',
+  'Job': 'jo_at', 'Psalms': 'sl', 'Psalm': 'sl',
+  'Proverbs': 'pr', 'Ecclesiastes': 'ecl',
+  'Song of Solomon': 'ct', 'Song of Songs': 'ct',
+  'Wisdom': 'sb', 'Sirach': 'eclo',
+  'Isaiah': 'is', 'Jeremiah': 'jr', 'Lamentations': 'lm', 'Baruch': 'br',
+  'Ezekiel': 'ez', 'Daniel': 'dn', 'Hosea': 'os', 'Joel': 'jl', 'Amos': 'am',
+  'Obadiah': 'ab', 'Jonah': 'jn_at', 'Micah': 'mq', 'Nahum': 'na',
+  'Habakkuk': 'hab', 'Zephaniah': 'sf', 'Haggai': 'ag', 'Zechariah': 'zc',
+  'Malachi': 'ml', 'Matthew': 'mt', 'Mark': 'mc', 'Luke': 'lc', 'John': 'jo',
+  'Acts': 'at', 'Romans': 'rm',
+  '1 Corinthians': '1cor', '2 Corinthians': '2cor',
+  'Galatians': 'gl', 'Ephesians': 'ef', 'Philippians': 'fl', 'Colossians': 'cl',
+  '1 Thessalonians': '1ts', '2 Thessalonians': '2ts',
+  '1 Timothy': '1tm', '2 Timothy': '2tm',
+  'Titus': 'tt', 'Philemon': 'fm', 'Hebrews': 'hb',
+  'James': 'tg', '1 Peter': '1pd', '2 Peter': '2pd',
+  '1 John': '1jo', '2 John': '2jo', '3 John': '3jo',
+  'Jude': 'jd', 'Revelation': 'ap',
+};
+
+const parseReadingRef = (ref) => {
+  if (!ref) return null;
+  const match = ref.match(/^(.+?)\s+(\d+):(\d+)/);
+  if (!match) return null;
+  const bookId = EN_BOOK_ID[match[1].trim()];
+  if (!bookId) return null;
+  return { bookId, chapter: parseInt(match[2]), verse: parseInt(match[3]) };
+};
+
 const APP_PROMO_PT = '\n\nEnviado pelo APPologética ✝';
 const APP_PROMO_EN = '\n\nShared from APPologética ✝';
 
 export default function LiturgyScreen() {
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
+  const navigation = useNavigation();
   const [liturgy, setLiturgy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(null);
+  const [enReadings, setEnReadings] = useState(null);
 
   const load = useCallback(async () => {
     try {
@@ -39,6 +78,18 @@ export default function LiturgyScreen() {
       setLoading(false);
     })();
   }, [load]);
+
+  useEffect(() => {
+    if (!isEn) return;
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    fetch(`https://cpbjr.github.io/catholic-readings-api/readings/${yyyy}/${mm}-${dd}.json`)
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => { if (data?.readings) setEnReadings(data.readings); })
+      .catch(() => {});
+  }, [isEn]);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -153,8 +204,8 @@ export default function LiturgyScreen() {
               <View style={[styles.colorDot, { backgroundColor: corHex }]} />
               <Text style={styles.colorLabel}>{L.color}: {cor}</Text>
             </View>
-            {getLiturgicalColorMeaning(cor) ? (
-              <Text style={styles.colorMeaning}>{getLiturgicalColorMeaning(cor)}</Text>
+            {getLiturgicalColorMeaning(cor, isEn ? 'en' : 'pt') ? (
+              <Text style={styles.colorMeaning}>{getLiturgicalColorMeaning(cor, isEn ? 'en' : 'pt')}</Text>
             ) : null}
           </>
         )}
@@ -165,6 +216,45 @@ export default function LiturgyScreen() {
           </View>
         )}
       </View>
+
+      {isEn && (
+        <View style={styles.enBanner}>
+          <Ionicons name="information-circle-outline" size={16} color={colors.accent} />
+          <Text style={styles.enBannerText}>
+            Full liturgy text is in Portuguese (CNBB). Tap a reading below to open it in English (Douay-Rheims).
+          </Text>
+        </View>
+      )}
+
+      {isEn && enReadings && (
+        <View style={styles.enReadings}>
+          <Text style={styles.enReadingsTitle}>Today's Readings (USCCB)</Text>
+          {[
+            { label: 'First Reading', ref: enReadings.firstReading },
+            { label: 'Psalm', ref: enReadings.psalm },
+            { label: 'Second Reading', ref: enReadings.secondReading },
+            { label: 'Gospel', ref: enReadings.gospel },
+          ].filter((r) => r.ref).map((r) => {
+            const nav = parseReadingRef(r.ref);
+            return (
+              <TouchableOpacity
+                key={r.label}
+                style={[styles.enChip, !nav && styles.enChipDisabled]}
+                onPress={() => nav && navigation.navigate('Bíblia', {
+                  bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse,
+                })}
+                disabled={!nav}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.enChipLabel}>{r.label}</Text>
+                  <Text style={styles.enChipRef}>{r.ref}</Text>
+                </View>
+                {nav && <Ionicons name="chevron-forward" size={16} color={colors.accent} />}
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      )}
 
       {liturgy.antifonas?.entrada && (
         <Section title={L.entrance} theme={{ colors, fs }}>
@@ -325,4 +415,18 @@ const makeStyles = (c, fs) =>
     },
     refrao: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold', fontStyle: 'italic', marginTop: 8 },
     footer: { fontSize: fs(11), color: c.textSubtle, textAlign: 'center', marginTop: 12, marginBottom: 8 },
+    enBanner: {
+      flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginBottom: 12,
+      backgroundColor: c.badgeBg, borderRadius: 10, padding: 12,
+    },
+    enBannerText: { flex: 1, fontSize: fs(12), color: c.textMuted, lineHeight: fs(17) },
+    enReadings: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 12, gap: 8 },
+    enReadingsTitle: { fontSize: fs(11), fontWeight: 'bold', color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 },
+    enChip: {
+      flexDirection: 'row', alignItems: 'center', gap: 8,
+      borderWidth: 1, borderColor: c.accent, borderRadius: 10, padding: 10,
+    },
+    enChipDisabled: { borderColor: c.divider },
+    enChipLabel: { fontSize: fs(11), color: c.textSubtle, fontWeight: '600', marginBottom: 2 },
+    enChipRef: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold' },
   });

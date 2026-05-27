@@ -53,7 +53,7 @@ function QuizMenu({ navigation, colors, fs, isEn, t }) {
         <TouchableOpacity
           key={m.key}
           style={styles.card}
-          onPress={() => navigation.navigate('Quiz', { mode: m.key })}
+          onPress={() => navigation.push('Quiz', { mode: m.key })}
         >
           <View style={styles.iconBox}>
             <Ionicons name={m.icon} size={26} color={colors.accent} />

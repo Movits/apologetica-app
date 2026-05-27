@@ -44,6 +44,7 @@ export default function BibleScreen({ route, navigation }) {
   const [speaking, setSpeaking] = useState(false);
   const verseListRef = useRef(null);
   const booksScrollRef = useRef(null);
+  const speakingRef = useRef(false);
 
   // Scroll hints separados pra cada view (books / verses).
   // Só um deles está montado por vez, então não conflitam.
@@ -188,39 +189,73 @@ export default function BibleScreen({ route, navigation }) {
     shareVerse({ bookName: bn(book), chapter, verse: v.n, text: v.t });
   };
 
-  // Narra o capítulo inteiro (versículo por versículo).
+  // Narra o capítulo inteiro. Usa verse-by-verse para capítulos longos
+  // (Android TTS tem limite de ~4000 chars por chamada — Genesis 1 EN excede).
   const toggleChapterTts = async () => {
     const isPlaying = await Speech.isSpeakingAsync();
     if (isPlaying || speaking) {
+      speakingRef.current = false;
       Speech.stop();
       setSpeaking(false);
       return;
     }
     if (!chapterData?.verses?.length) return;
+    speakingRef.current = true;
     setSpeaking(true);
-    // Idioma do TEXTO bíblico (se estivermos exibindo fallback PT mesmo com UI EN).
     const textLang = chapterData.language === 'en' ? 'en' : 'pt';
     const [voice, rate] = await Promise.all([resolveVoice(textLang), getSavedRate()]);
     const defaultLang = textLang === 'en' ? 'en-US' : 'pt-BR';
     const intro = `${bn(book)} ${chapter}. `;
     const body = chapterData.verses.map((v) => `${v.n}. ${v.t}`).join(' ');
-    Speech.speak(intro + body, {
+    const fullText = intro + body;
+
+    const onError = () => {
+      speakingRef.current = false;
+      setSpeaking(false);
+      Alert.alert(
+        isEn ? 'Narration failed' : 'Erro na narração',
+        isEn
+          ? 'Could not play audio. Go to Settings → Voice to configure an English voice.'
+          : 'Não foi possível reproduzir. Acesse Ajustes → Voz para configurar.',
+      );
+    };
+    const onStopped = () => { speakingRef.current = false; setSpeaking(false); };
+    const opts = {
       language: voice?.language || defaultLang,
       voice: voice?.identifier,
       rate,
       pitch: 1.0,
-      onDone: () => setSpeaking(false),
-      onStopped: () => setSpeaking(false),
-      onError: () => setSpeaking(false),
-    });
+      onStopped,
+      onError,
+    };
+
+    if (fullText.length <= 4000) {
+      Speech.speak(fullText, {
+        ...opts,
+        onDone: () => { speakingRef.current = false; setSpeaking(false); },
+      });
+    } else {
+      // Capítulo longo: fala versículo por versículo para não exceder limite
+      const utterances = [intro.trim(), ...chapterData.verses.map((v) => `${v.n}. ${v.t}`)];
+      let idx = 0;
+      const speakNext = () => {
+        if (!speakingRef.current || idx >= utterances.length) {
+          speakingRef.current = false;
+          setSpeaking(false);
+          return;
+        }
+        Speech.speak(utterances[idx++], { ...opts, onDone: speakNext });
+      };
+      speakNext();
+    }
   };
 
   // Para TTS quando capítulo muda ou tela é desmontada.
   useEffect(() => {
-    return () => { Speech.stop(); };
+    return () => { speakingRef.current = false; Speech.stop(); };
   }, []);
   useEffect(() => {
-    if (speaking) { Speech.stop(); setSpeaking(false); }
+    if (speaking) { speakingRef.current = false; Speech.stop(); setSpeaking(false); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chapter, book?.id]);
 

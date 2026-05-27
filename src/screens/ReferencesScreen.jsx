@@ -12,6 +12,44 @@ const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos', 'Ou
 const SOURCES_EN = { 'Todos': 'All', 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
 const translateSource = (s, isEn) => (isEn ? (SOURCES_EN[s] || s) : s);
 
+const BOOK_PT_TO_EN = {
+  '1 Coríntios': '1 Corinthians', '2 Coríntios': '2 Corinthians',
+  '1 Tessalonicenses': '1 Thessalonians', '2 Tessalonicenses': '2 Thessalonians',
+  '1 Timóteo': '1 Timothy', '2 Timóteo': '2 Timothy',
+  '1 Macabeus': '1 Maccabees', '2 Macabeus': '2 Maccabees',
+  '1 Pedro': '1 Peter', '2 Pedro': '2 Peter',
+  '1 João': '1 John', '2 João': '2 John', '3 João': '3 John',
+  'Cântico dos Cânticos': 'Song of Songs', 'Cântico': 'Song of Songs',
+  'Eclesiástico': 'Sirach', 'Sabedoria': 'Wisdom',
+  'Gênesis': 'Genesis', 'Êxodo': 'Exodus', 'Levítico': 'Leviticus',
+  'Números': 'Numbers', 'Deuteronômio': 'Deuteronomy', 'Josué': 'Joshua',
+  'Juízes': 'Judges', 'Salmos': 'Psalms', 'Salmo': 'Psalm',
+  'Provérbios': 'Proverbs', 'Eclesiastes': 'Ecclesiastes',
+  'Isaías': 'Isaiah', 'Jeremias': 'Jeremiah', 'Lamentações': 'Lamentations',
+  'Ezequiel': 'Ezekiel', 'Oséias': 'Hosea', 'Amós': 'Amos',
+  'Obadias': 'Obadiah', 'Jonas': 'Jonah', 'Miquéias': 'Micah',
+  'Naum': 'Nahum', 'Habacuc': 'Habakkuk', 'Sofonias': 'Zephaniah',
+  'Ageu': 'Haggai', 'Zacarias': 'Zechariah', 'Malaquias': 'Malachi',
+  'Tobias': 'Tobit', 'Judite': 'Judith', 'Baruc': 'Baruch',
+  'Mateus': 'Matthew', 'Marcos': 'Mark', 'Lucas': 'Luke', 'João': 'John',
+  'Atos': 'Acts', 'Romanos': 'Romans', 'Gálatas': 'Galatians',
+  'Efésios': 'Ephesians', 'Filipenses': 'Philippians', 'Colossenses': 'Colossians',
+  'Tito': 'Titus', 'Filemon': 'Philemon', 'Hebreus': 'Hebrews',
+  'Tiago': 'James', 'Judas': 'Jude', 'Apocalipse': 'Revelation',
+};
+
+const translateRef = (ref, isEn) => {
+  if (!isEn || !ref) return ref;
+  let result = ref;
+  for (const [pt, en] of Object.entries(BOOK_PT_TO_EN)) {
+    if (result.startsWith(pt + ' ') || result.startsWith(pt + ',') || result === pt) {
+      result = en + result.slice(pt.length);
+      break;
+    }
+  }
+  return result.replace(/(\d),(\d)/g, '$1:$2');
+};
+
 // Card de referência separado e memoizado. Sem isso, qualquer re-render
 // do ReferencesScreen (typing, scroll, focus) re-renderiza todos os 60+ itens
 // visíveis, causando o aviso de VirtualizedList lenta.
@@ -31,7 +69,7 @@ const RefCard = memo(function RefCard({
             color={textSubtle}
           />
         </View>
-        <Text style={styles.cardRef}>{item.ref}</Text>
+        <Text style={styles.cardRef}>{translateRef(item.ref, isEn)}</Text>
         <Text style={styles.cardFullSource}>{item.fullSource}</Text>
         {(item.author || item.year) && (
           <Text style={styles.cardMeta}>
@@ -44,6 +82,13 @@ const RefCard = memo(function RefCard({
       {isOpen && (
         <View style={styles.expanded}>
           <Text style={styles.cardText}>{item.text}</Text>
+
+          {isEn && item.text && (
+            <View style={styles.ptBadge}>
+              <Ionicons name="language-outline" size={12} color={textSubtle} />
+              <Text style={styles.ptBadgeText}>Content available in Portuguese only</Text>
+            </View>
+          )}
 
           {item.originalLanguage && (
             <View style={styles.origBox}>
@@ -159,8 +204,11 @@ export default function ReferencesScreen({ route }) {
 
   const handleOpenUrl = useCallback((url) => {
     if (!url) return;
-    Linking.openURL(url).catch(() => {});
-  }, []);
+    const finalUrl = (isEn && url.includes('_po.html'))
+      ? url.replace(/_po\.html/, '_en.html')
+      : url;
+    Linking.openURL(finalUrl).catch(() => {});
+  }, [isEn]);
 
   const handleOpenInBible = useCallback(
     (nav) => {
@@ -326,4 +374,6 @@ const makeStyles = (c, fs) =>
     actionText: { color: c.accent, fontSize: fs(13), fontWeight: '600' },
     actionTextPrimary: { color: '#fff', fontSize: fs(13), fontWeight: '600' },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
+    ptBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 8 },
+    ptBadgeText: { fontSize: fs(11), color: c.textSubtle, fontStyle: 'italic' },
   });

@@ -80,8 +80,8 @@ export function getLiturgicalColorHex(cor) {
 }
 
 // Curta explicação do significado de cada cor litúrgica na Missa.
-export function getLiturgicalColorMeaning(cor) {
-  const map = {
+export function getLiturgicalColorMeaning(cor, lang = 'pt') {
+  const mapPt = {
     'branco': 'Alegria e pureza. Usada no Tempo Pascal, Natal, festas de Cristo, da Virgem Maria e dos santos não mártires.',
     'vermelho': 'Sangue e fogo do Espírito. Usada no Domingo de Ramos, Sexta-feira Santa, Pentecostes e nas festas dos mártires.',
     'verde': 'Esperança e crescimento na fé. Usada no Tempo Comum, fora dos tempos fortes.',
@@ -90,6 +90,16 @@ export function getLiturgicalColorMeaning(cor) {
     'preto': 'Luto. Pode ser usada nas missas pelos defuntos, embora hoje seja rara.',
     'dourado': 'Solenidade. Pode substituir branco, vermelho ou verde em festas de grande importância.',
   };
+  const mapEn = {
+    'branco': 'Joy and purity. Used during Eastertide, Christmas, feasts of Christ, the Virgin Mary, and non-martyr saints.',
+    'vermelho': 'Blood and fire of the Spirit. Used on Palm Sunday, Good Friday, Pentecost, and feasts of martyrs.',
+    'verde': 'Hope and growth in faith. Used during Ordinary Time, outside the major liturgical seasons.',
+    'roxo': 'Penance and preparation. Used in Advent, Lent, and Masses for the dead.',
+    'rosa': 'Restrained joy amid penance. Used only on the 3rd Sunday of Advent (Gaudete) and 4th Sunday of Lent (Laetare).',
+    'preto': 'Mourning. May be used in Masses for the dead, though rare today.',
+    'dourado': 'Solemnity. May substitute for white, red, or green on feasts of great importance.',
+  };
   if (!cor) return '';
+  const map = lang === 'en' ? mapEn : mapPt;
   return map[cor.toLowerCase().trim()] || '';
 }
