@@ -1535,3 +1535,100 @@ export const references = [
 
 // Helpers
 export const referenceById = (id) => references.find((r) => r.id === id);
+
+export const BOOK_PT_TO_EN = {
+  '1 Coríntios': '1 Corinthians', '2 Coríntios': '2 Corinthians',
+  '1 Tessalonicenses': '1 Thessalonians', '2 Tessalonicenses': '2 Thessalonians',
+  '1 Timóteo': '1 Timothy', '2 Timóteo': '2 Timothy',
+  '1 Macabeus': '1 Maccabees', '2 Macabeus': '2 Maccabees',
+  '1 Pedro': '1 Peter', '2 Pedro': '2 Peter',
+  '1 João': '1 John', '2 João': '2 John', '3 João': '3 John',
+  'Cântico dos Cânticos': 'Song of Songs', 'Cântico': 'Song of Songs',
+  'Eclesiástico': 'Sirach', 'Sabedoria': 'Wisdom',
+  'Gênesis': 'Genesis', 'Êxodo': 'Exodus', 'Levítico': 'Leviticus',
+  'Números': 'Numbers', 'Deuteronômio': 'Deuteronomy', 'Josué': 'Joshua',
+  'Juízes': 'Judges', 'Salmos': 'Psalms', 'Salmo': 'Psalm',
+  'Provérbios': 'Proverbs', 'Eclesiastes': 'Ecclesiastes',
+  'Isaías': 'Isaiah', 'Jeremias': 'Jeremiah', 'Lamentações': 'Lamentations',
+  'Ezequiel': 'Ezekiel', 'Oséias': 'Hosea', 'Amós': 'Amos',
+  'Obadias': 'Obadiah', 'Jonas': 'Jonah', 'Miquéias': 'Micah',
+  'Naum': 'Nahum', 'Habacuc': 'Habakkuk', 'Sofonias': 'Zephaniah',
+  'Ageu': 'Haggai', 'Zacarias': 'Zechariah', 'Malaquias': 'Malachi',
+  'Tobias': 'Tobit', 'Judite': 'Judith', 'Baruc': 'Baruch',
+  'Mateus': 'Matthew', 'Marcos': 'Mark', 'Lucas': 'Luke', 'João': 'John',
+  'Atos': 'Acts', 'Romanos': 'Romans', 'Gálatas': 'Galatians',
+  'Efésios': 'Ephesians', 'Filipenses': 'Philippians', 'Colossenses': 'Colossians',
+  'Tito': 'Titus', 'Filemon': 'Philemon', 'Hebreus': 'Hebrews',
+  'Tiago': 'James', 'Judas': 'Jude', 'Apocalipse': 'Revelation',
+  'Catecismo': 'Catechism',
+};
+
+export const translateRef = (ref, isEn) => {
+  if (!isEn || !ref) return ref;
+  let result = ref;
+  for (const [pt, en] of Object.entries(BOOK_PT_TO_EN)) {
+    if (result.startsWith(pt + ' ') || result.startsWith(pt + ',') || result === pt) {
+      result = en + result.slice(pt.length);
+      break;
+    }
+  }
+  return result.replace(/(\d),(\d)/g, '$1:$2');
+};
+
+const APOSTLE_PT_TO_EN = {
+  'Mateus': 'Matthew', 'Pedro': 'Peter', 'João': 'John', 'Paulo': 'Paul',
+  'Lucas': 'Luke', 'Marcos': 'Mark', 'Tiago': 'James', 'Judas': 'Jude',
+};
+const AUTHOR_DIRECT_MAP = {
+  'Tradicionalmente atribuído a Moisés': 'Traditionally attributed to Moses',
+  'Atribuída a Paulo ou círculo paulino': 'Attributed to Paul or the Pauline circle',
+  'Autor inspirado (deuterocanônico)': 'Inspired author (deuterocanonical)',
+  'Magistério da Igreja, promulgado por São João Paulo II': 'Magisterium of the Church, promulgated by Pope John Paul II',
+  'Concílio Vaticano I, promulgada pelo Beato Papa Pio IX': 'First Vatican Council, promulgated by Blessed Pope Pius IX',
+  'Concílio Vaticano II': 'Second Vatican Council',
+  'Papa Francisco': 'Pope Francis',
+  'Beato Papa Pio IX': 'Blessed Pope Pius IX',
+  'Beato Papa Paulo VI': 'Blessed Pope Paul VI',
+  'Papa Pio XII': 'Pope Pius XII',
+  'São Papa João Paulo II': 'Pope John Paul II',
+  'Concílio Ecumênico de Éfeso': 'Ecumenical Council of Ephesus',
+  'Concílio de Hipona (Norte da África)': 'Council of Hippo (North Africa)',
+  'Concílio de Cartago (Norte da África)': 'Council of Carthage (North Africa)',
+  'Concílio Ecumênico de Trento': 'Ecumenical Council of Trent',
+  'Texto sagrado do Islã, transmitido por Maomé': 'Sacred text of Islam, transmitted by Muhammad',
+};
+export const translateAuthor = (author, isEn) => {
+  if (!isEn || !author) return author;
+  if (AUTHOR_DIRECT_MAP[author]) return AUTHOR_DIRECT_MAP[author];
+  const apostleMatch = author.match(/^Apóstolo (.+)$/);
+  if (apostleMatch) return `Apostle ${APOSTLE_PT_TO_EN[apostleMatch[1]] || apostleMatch[1]}`;
+  return author;
+};
+
+const ROMAN_ORDINALS = {
+  'I': '1st', 'II': '2nd', 'III': '3rd', 'IV': '4th', 'V': '5th',
+  'VI': '6th', 'VII': '7th', 'VIII': '8th', 'IX': '9th', 'X': '10th',
+};
+const MONTHS_PT_TO_EN = {
+  'janeiro': 'January', 'fevereiro': 'February', 'março': 'March',
+  'abril': 'April', 'maio': 'May', 'junho': 'June',
+  'julho': 'July', 'agosto': 'August', 'setembro': 'September',
+  'outubro': 'October', 'novembro': 'November', 'dezembro': 'December',
+};
+export const translateYear = (year, isEn) => {
+  if (!isEn || !year) return year;
+  let y = year;
+  y = y.replace(/(\d+)[ºª°]/g, '$1');
+  y = y.replace(/(\d{1,2}) de (\w+) de (\d{4})/g, (_, day, month, yr) => {
+    const m = MONTHS_PT_TO_EN[month.toLowerCase()];
+    return m ? `${m} ${day}, ${yr}` : `${day} ${month} ${yr}`;
+  });
+  y = y.replace(/séc\. ([IVXLCDM]+) d\.C\./g, (_, r) => `${ROMAN_ORDINALS[r] || r} century AD`);
+  y = y.replace(/séc\. ([IVXLCDM]+) a\.C\./g, (_, r) => `${ROMAN_ORDINALS[r] || r} century BC`);
+  y = y.replace(/ d\.C\./g, ' AD').replace(/ a\.C\./g, ' BC');
+  y = y.replace(/redação final/g, 'final redaction');
+  y = y.replace(/(\d{4}) a (\d{4})/g, '$1 to $2');
+  y = y.replace(/\(conferência\)/g, '(lecture)');
+  y = y.replace(/livro publicado em (\d{4})/g, 'book published in $1');
+  return y;
+};

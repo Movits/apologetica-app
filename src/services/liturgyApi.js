@@ -79,6 +79,21 @@ export function getLiturgicalColorHex(cor) {
   return map[k] || '#888';
 }
 
+// Translates the liturgical color name itself (not the description).
+export function getLiturgicalColorName(cor, lang = 'pt') {
+  const names = {
+    branco:   { pt: 'Branco',   en: 'White'  },
+    verde:    { pt: 'Verde',    en: 'Green'  },
+    vermelho: { pt: 'Vermelho', en: 'Red'    },
+    roxo:     { pt: 'Roxo',     en: 'Purple' },
+    rosa:     { pt: 'Rosa',     en: 'Rose'   },
+    preto:    { pt: 'Preto',    en: 'Black'  },
+    dourado:  { pt: 'Dourado',  en: 'Gold'   },
+  };
+  if (!cor) return cor;
+  return names[cor.toLowerCase().trim()]?.[lang] ?? cor;
+}
+
 // Curta explicação do significado de cada cor litúrgica na Missa.
 export function getLiturgicalColorMeaning(cor, lang = 'pt') {
   const mapPt = {

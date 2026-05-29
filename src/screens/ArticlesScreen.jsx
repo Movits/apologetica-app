@@ -1,25 +1,22 @@
-import { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { useEffect, useMemo, useRef } from 'react';
+import { View, Text, SectionList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
+import { ARTICLE_CATEGORIES } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import SectionBanner from '../components/SectionBanner';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
-const CATEGORIES = ['Todos', 'Existência de Deus', 'Igreja Católica', 'Sagrada Escritura', 'Moral', 'Outras Religiões', 'História da Igreja'];
-
-function labelForCategory(cat, isEn, t) {
-  if (cat === 'Todos') return isEn ? 'All' : 'Todos';
-  return isEn ? t(`category.${cat}`) : cat;
-}
-
+// Aba Artigos: página única com todos os artigos, separados por cabeçalho fixo
+// (SectionBanner) por categoria. O banner do topo troca ao rolar de uma seção
+// para outra (stickySectionHeadersEnabled).
 export default function ArticlesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
-  const [category, setCategory] = useState('Todos');
   const listRef = useRef(null);
 
   // Abre artigo específico via deep link (da busca global ou outra tela)
@@ -31,75 +28,75 @@ export default function ArticlesScreen({ route }) {
     }
   }, [route?.params?.openId, route?.params?.articleId]);
 
-  // Reseta categoria ao tocar no tab de novo (o popToTop pro detalhe é automático)
+  // Volta ao topo ao tocar no tab de novo (o popToTop pro detalhe é automático)
   useEffect(() => {
     const tabNav = navigation.getParent();
     if (!tabNav) return;
     const unsub = tabNav.addListener('tabPress', () => {
       if (navigation.isFocused()) {
-        setCategory('Todos');
-        listRef.current?.scrollToOffset({ offset: 0, animated: true });
+        try {
+          listRef.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 0, animated: true });
+        } catch {}
       }
     });
     return unsub;
   }, [navigation]);
 
-  const filtered = articles.filter((a) =>
-    category === 'Todos' || a.category === category
+  // Seções na ordem das categorias, ignorando categorias sem artigos.
+  const sections = useMemo(
+    () =>
+      ARTICLE_CATEGORIES
+        .map((cat) => ({ meta: cat, data: articles.filter((a) => a.category === cat.id) }))
+        .filter((s) => s.data.length > 0),
+    []
   );
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
+  const countLabel = (n) =>
+    isEn ? `${n} ${n === 1 ? 'article' : 'articles'}` : `${n} ${n === 1 ? 'artigo' : 'artigos'}`;
+
   return (
     <View style={styles.container}>
-      <FlatList
-        horizontal
-        data={CATEGORIES}
-        keyExtractor={(c) => c}
-        showsHorizontalScrollIndicator={false}
-        style={styles.catList}
-        contentContainerStyle={{ paddingRight: 16 }}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[styles.catChip, category === item && styles.catChipActive]}
-            onPress={() => setCategory(item)}
-          >
-            <Text style={[styles.catText, category === item && styles.catTextActive]}>{labelForCategory(item, isEn, t)}</Text>
-          </TouchableOpacity>
+      <SectionList
+        ref={listRef}
+        sections={sections}
+        keyExtractor={(a) => String(a.id)}
+        stickySectionHeadersEnabled
+        contentContainerStyle={{ paddingBottom: 40 }}
+        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
+        onScroll={onScroll}
+        onContentSizeChange={onContentSizeChange}
+        onLayout={onLayout}
+        scrollEventThrottle={32}
+        onScrollToIndexFailed={() => {}}
+        renderSectionHeader={({ section }) => (
+          <SectionBanner
+            iconSet={section.meta.iconSet}
+            icon={section.meta.icon}
+            title={isEn ? t(`category.${section.meta.id}`) : section.meta.id}
+            subtitle={t(`category.${section.meta.id}.desc`)}
+            countLabel={countLabel(section.data.length)}
+          />
         )}
-      />
-
-      <View style={{ flex: 1 }}>
-        <FlatList
-          ref={listRef}
-          data={filtered}
-          keyExtractor={(a) => String(a.id)}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          renderItem={({ item }) => (
+        renderItem={({ item }) => (
+          <View style={styles.itemWrap}>
             <TouchableOpacity
               style={styles.card}
               onPress={() => navigation.navigate('ArticleDetail', { articleId: item.id })}
             >
               <View style={styles.cardHeader}>
-                <View style={styles.cardCatBadge}>
-                  <Text style={styles.cardCat}>{labelForCategory(item.category, isEn, t)}</Text>
-                </View>
+                <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
                 <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
               </View>
-              <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
               <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
             </TouchableOpacity>
-          )}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+          </View>
+        )}
+      />
+      <ScrollHint direction="up" visible={showTop} />
+      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }
@@ -107,34 +104,15 @@ export default function ArticlesScreen({ route }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    catList: { maxHeight: 60, paddingLeft: 16, paddingTop: 14, marginBottom: 4 },
-    catChip: {
-      borderWidth: 1,
-      borderColor: c.divider,
-      borderRadius: 20,
-      paddingHorizontal: 14,
-      paddingVertical: 6,
-      marginRight: 8,
-      backgroundColor: c.card,
-    },
-    catChipActive: { backgroundColor: c.primary, borderColor: c.primary },
-    catText: { fontSize: fs(13), color: c.textMuted },
-    catTextActive: { color: '#fff', fontWeight: 'bold' },
+    itemWrap: { paddingHorizontal: 16 },
     card: {
       backgroundColor: c.card,
       borderRadius: 12,
       padding: 16,
-      marginBottom: 12,
+      marginTop: 12,
     },
-    cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
-    cardCatBadge: {
-      backgroundColor: c.badgeBg,
-      paddingHorizontal: 9,
-      paddingVertical: 3,
-      borderRadius: 6,
-    },
-    cardCat: { fontSize: fs(10), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
-    cardTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
+    cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, gap: 8 },
+    cardTitle: { flex: 1, fontSize: fs(16), fontWeight: 'bold', color: c.primaryText },
     cardSummary: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18) },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
   });

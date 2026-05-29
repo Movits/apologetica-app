@@ -34,7 +34,7 @@ function QuizMenu({ navigation, colors, fs, isEn, t }) {
     },
     {
       key: 'practice', icon: 'trophy-outline',
-      label: isEn ? 'Practice (10 questions)' : 'Praticar (10 perguntas)',
+      label: isEn ? 'Practice' : 'Praticar',
       sub: isEn ? 'Mixed questions across all topics.' : 'Perguntas misturadas de todos os temas.',
     },
     {
@@ -145,9 +145,11 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
       >
         <View style={styles.header}>
           <View style={styles.headerRow}>
-            <View style={styles.badge}>
-              <Text style={styles.badgeText}>{catText}</Text>
-            </View>
+            {catText ? (
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>{catText}</Text>
+              </View>
+            ) : <View />}
             {mode === 'daily' && streak > 0 && (
               <View style={styles.streakRow}>
                 <Ionicons name="flame" size={16} color={colors.accent} />

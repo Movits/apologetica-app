@@ -338,7 +338,7 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
                   <ActivityIndicator style={StyleSheet.absoluteFill} color={colors.accent} />
                 )}
                 <Image
-                  source={{ uri: place.photo }}
+                  source={typeof place.photo === 'number' ? place.photo : { uri: place.photo }}
                   style={[s.photo, imgLoading && { opacity: 0 }]}
                   resizeMode="cover"
                   onLoad={() => setImgLoading(false)}

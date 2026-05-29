@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
+import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning, getLiturgicalColorName } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -40,12 +40,17 @@ export default function LiturgyCard({ onOpen }) {
             </Text>
           ) : (
             <>
-              <Text style={styles.title} numberOfLines={2}>{liturgy?.liturgia}</Text>
+              <Text style={styles.title} numberOfLines={2}>{(() => {
+                if (!isEn) return liturgy?.liturgia;
+                const day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+                const wm = liturgy?.liturgia?.match(/(\d+)[aª°]?\s*semana/i);
+                return wm ? `${day} – Week ${wm[1]}` : day;
+              })()}</Text>
               <View style={styles.metaRow}>
                 {liturgy?.cor && (
                   <View style={styles.colorPill}>
                     <View style={[styles.colorDot, { backgroundColor: corHex }]} />
-                    <Text style={styles.metaText}>{liturgy.cor}</Text>
+                    <Text style={styles.metaText}>{getLiturgicalColorName(liturgy.cor, isEn ? 'en' : 'pt')}</Text>
                   </View>
                 )}
                 {(() => {
@@ -56,9 +61,9 @@ export default function LiturgyCard({ onOpen }) {
                   ) : null;
                 })()}
               </View>
-              {liturgy?.cor && getLiturgicalColorMeaning(liturgy.cor) ? (
+              {liturgy?.cor && getLiturgicalColorMeaning(liturgy.cor, isEn ? 'en' : 'pt') ? (
                 <Text style={styles.colorMeaning} numberOfLines={3}>
-                  {getLiturgicalColorMeaning(liturgy.cor)}
+                  {getLiturgicalColorMeaning(liturgy.cor, isEn ? 'en' : 'pt')}
                 </Text>
               ) : null}
             </>

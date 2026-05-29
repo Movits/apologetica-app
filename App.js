@@ -35,6 +35,9 @@ import QuizScreen from './src/screens/QuizScreen';
 import DialogueScreen from './src/screens/DialogueScreen';
 import BibleMapScreen from './src/screens/BibleMapScreen';
 import LegalScreen from './src/screens/LegalScreen';
+import ToolsScreen from './src/screens/ToolsScreen';
+import CategoryArticlesScreen from './src/screens/CategoryArticlesScreen';
+import TodayScreen from './src/screens/TodayScreen';
 
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
@@ -76,7 +79,7 @@ const SettingsNav = createNativeStackNavigator();
 // Como esta DENTRO do Tab navigator, a tab bar continua visivel em todas elas.
 function HomeStackScreen() {
   const { colors } = useTheme();
-  const { t } = useLanguage();
+  const { t, isEn } = useLanguage();
   return (
     <HomeNav.Navigator
       screenOptions={{
@@ -86,6 +89,13 @@ function HomeStackScreen() {
       }}
     >
       <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ headerShown: false }} />
+      <HomeNav.Screen name="Tools" component={ToolsScreen} options={{ title: t('header.tools') }} />
+      <HomeNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
+      <HomeNav.Screen
+        name="CategoryArticles"
+        component={CategoryArticlesScreen}
+        options={({ route }) => ({ title: isEn ? t(`category.${route.params?.category}`) : route.params?.category })}
+      />
       <HomeNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
       <HomeNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
       <HomeNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
@@ -242,6 +252,7 @@ function MainTabs() {
           paddingBottom: Math.max(insets.bottom, 8),
           height: 56 + Math.max(insets.bottom, 8),
         },
+        title: LABELS[route.name] || route.name,
         tabBarLabelStyle: { fontSize: 11 },
         tabBarLabel: LABELS[route.name] || route.name,
         tabBarIcon: ({ focused, color, size }) => {

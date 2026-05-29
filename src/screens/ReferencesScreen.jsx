@@ -1,54 +1,83 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, SectionList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { references } from '../data/references';
+import { references, translateRef, translateAuthor, translateYear, BOOK_PT_TO_EN } from '../data/references';
+import { referencesEn } from '../data/references-en';
+import { REFERENCE_SOURCES } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import SectionBanner from '../components/SectionBanner';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
-const SOURCES = ['Todos', 'Bíblia', 'Catecismo', 'Documentos', 'Teólogos', 'Outros'];
 const SOURCES_EN = { 'Todos': 'All', 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
 const translateSource = (s, isEn) => (isEn ? (SOURCES_EN[s] || s) : s);
 
-const BOOK_PT_TO_EN = {
-  '1 Coríntios': '1 Corinthians', '2 Coríntios': '2 Corinthians',
-  '1 Tessalonicenses': '1 Thessalonians', '2 Tessalonicenses': '2 Thessalonians',
-  '1 Timóteo': '1 Timothy', '2 Timóteo': '2 Timothy',
-  '1 Macabeus': '1 Maccabees', '2 Macabeus': '2 Maccabees',
-  '1 Pedro': '1 Peter', '2 Pedro': '2 Peter',
-  '1 João': '1 John', '2 João': '2 John', '3 João': '3 John',
-  'Cântico dos Cânticos': 'Song of Songs', 'Cântico': 'Song of Songs',
-  'Eclesiástico': 'Sirach', 'Sabedoria': 'Wisdom',
-  'Gênesis': 'Genesis', 'Êxodo': 'Exodus', 'Levítico': 'Leviticus',
-  'Números': 'Numbers', 'Deuteronômio': 'Deuteronomy', 'Josué': 'Joshua',
-  'Juízes': 'Judges', 'Salmos': 'Psalms', 'Salmo': 'Psalm',
-  'Provérbios': 'Proverbs', 'Eclesiastes': 'Ecclesiastes',
-  'Isaías': 'Isaiah', 'Jeremias': 'Jeremiah', 'Lamentações': 'Lamentations',
-  'Ezequiel': 'Ezekiel', 'Oséias': 'Hosea', 'Amós': 'Amos',
-  'Obadias': 'Obadiah', 'Jonas': 'Jonah', 'Miquéias': 'Micah',
-  'Naum': 'Nahum', 'Habacuc': 'Habakkuk', 'Sofonias': 'Zephaniah',
-  'Ageu': 'Haggai', 'Zacarias': 'Zechariah', 'Malaquias': 'Malachi',
-  'Tobias': 'Tobit', 'Judite': 'Judith', 'Baruc': 'Baruch',
-  'Mateus': 'Matthew', 'Marcos': 'Mark', 'Lucas': 'Luke', 'João': 'John',
-  'Atos': 'Acts', 'Romanos': 'Romans', 'Gálatas': 'Galatians',
-  'Efésios': 'Ephesians', 'Filipenses': 'Philippians', 'Colossenses': 'Colossians',
-  'Tito': 'Titus', 'Filemon': 'Philemon', 'Hebreus': 'Hebrews',
-  'Tiago': 'James', 'Judas': 'Jude', 'Apocalipse': 'Revelation',
+// Translate verbose Portuguese fullSource strings for Bible and Catechism entries.
+const FS_GOSPEL = {
+  'São Mateus': 'Matthew', 'São Marcos': 'Mark', 'São Lucas': 'Luke', 'São João': 'John',
 };
-
-const translateRef = (ref, isEn) => {
-  if (!isEn || !ref) return ref;
-  let result = ref;
-  for (const [pt, en] of Object.entries(BOOK_PT_TO_EN)) {
-    if (result.startsWith(pt + ' ') || result.startsWith(pt + ',') || result === pt) {
-      result = en + result.slice(pt.length);
-      break;
+const translateFullSource = (fs, isEn) => {
+  if (!isEn || !fs) return fs;
+  // Catechism
+  if (fs.startsWith('Catecismo da Igreja Católica')) {
+    return fs
+      .replace('Catecismo da Igreja Católica', 'Catechism of the Catholic Church')
+      .replace(/,?\s*parágrafos?\s*/gi, ' §')
+      .replace(/\s+a\s+(\d)/g, '-$1');
+  }
+  // Gospel pattern
+  for (const [ptName, enName] of Object.entries(FS_GOSPEL)) {
+    if (fs.startsWith(`Evangelho segundo ${ptName}`)) {
+      return fs
+        .replace(`Evangelho segundo ${ptName}`, `Gospel of ${enName}`)
+        .replace(/,?\s*capítulo\s*/gi, ', chapter ')
+        .replace(/,?\s*versículos?\s*/gi, ', verse')
+        .replace(/\s+a\s+(\d)/g, '-$1');
     }
   }
-  return result.replace(/(\d),(\d)/g, '$1:$2');
+  // Other Bible books and letters
+  const biblePrefixes = [
+    ['Primeira Carta a Timóteo', 'First Letter to Timothy'],
+    ['Segunda Carta a Timóteo', 'Second Letter to Timothy'],
+    ['Primeira Carta aos Coríntios', 'First Letter to the Corinthians'],
+    ['Segunda Carta aos Coríntios', 'Second Letter to the Corinthians'],
+    ['Primeira Carta de São Pedro', 'First Letter of Peter'],
+    ['Segunda Carta de São Pedro', 'Second Letter of Peter'],
+    ['Primeira Carta de São João', 'First Letter of John'],
+    ['Carta de São Tiago', 'Letter of James'],
+    ['Carta aos Romanos', 'Letter to the Romans'],
+    ['Carta aos Hebreus', 'Letter to the Hebrews'],
+    ['Carta aos Gálatas', 'Letter to the Galatians'],
+    ['Carta aos Efésios', 'Letter to the Ephesians'],
+    ['Carta aos Filipenses', 'Letter to the Philippians'],
+    ['Carta aos Colossenses', 'Letter to the Colossians'],
+    ['Carta aos Tessalonicenses', 'Letter to the Thessalonians'],
+    ['Segunda Carta aos Tessalonicenses', 'Second Letter to the Thessalonians'],
+    ['Livro do Gênesis', 'Book of Genesis'],
+    ['Livro do Êxodo', 'Book of Exodus'],
+    ['Livro do Deuteronômio', 'Book of Deuteronomy'],
+    ['Segundo Livro dos Macabeus', 'Second Book of Maccabees'],
+    ['Apocalipse de São João', 'Book of Revelation'],
+    ['Atos dos Apóstolos', 'Acts of the Apostles'],
+  ];
+  for (const [pt, en] of biblePrefixes) {
+    if (fs.startsWith(pt)) {
+      return fs
+        .replace(pt, en)
+        .replace(/,?\s*capítulo\s*/gi, ', chapter ')
+        .replace(/,?\s*versículos?\s*/gi, ', verse')
+        .replace(/\s+a\s+(\d)/g, '-$1');
+    }
+  }
+  return fs;
 };
+
+const refsWithEn = references.map((r) => {
+  const en = referencesEn[r.id];
+  return en ? { ...r, ...en } : r;
+});
 
 // Card de referência separado e memoizado. Sem isso, qualquer re-render
 // do ReferencesScreen (typing, scroll, focus) re-renderiza todos os 60+ itens
@@ -69,21 +98,25 @@ const RefCard = memo(function RefCard({
             color={textSubtle}
           />
         </View>
-        <Text style={styles.cardRef}>{translateRef(item.ref, isEn)}</Text>
-        <Text style={styles.cardFullSource}>{item.fullSource}</Text>
-        {(item.author || item.year) && (
-          <Text style={styles.cardMeta}>
-            {item.author}{item.author && item.year ? ' · ' : ''}{item.year}
-          </Text>
-        )}
-        <Text style={styles.cardTopic}>{item.topic}</Text>
+        <Text style={styles.cardRef}>{isEn ? (item.refEn || translateRef(item.ref, isEn)) : item.ref}</Text>
+        <Text style={styles.cardFullSource}>{isEn ? (item.fullSourceEn || translateFullSource(item.fullSource, isEn)) : item.fullSource}</Text>
+        {(item.author || item.year) && (() => {
+          const displayAuthor = isEn ? (item.authorEn || translateAuthor(item.author, isEn)) : item.author;
+          const displayYear = isEn ? (item.yearEn || translateYear(item.year, isEn)) : item.year;
+          return (
+            <Text style={styles.cardMeta}>
+              {displayAuthor}{displayAuthor && displayYear ? ' · ' : ''}{displayYear}
+            </Text>
+          );
+        })()}
+        <Text style={styles.cardTopic}>{isEn ? (item.topicEn || item.topic) : item.topic}</Text>
       </TouchableOpacity>
 
       {isOpen && (
         <View style={styles.expanded}>
-          <Text style={styles.cardText}>{item.text}</Text>
+          <Text style={styles.cardText}>{isEn ? (item.textEn || item.text) : item.text}</Text>
 
-          {isEn && item.text && (
+          {isEn && !item.textEn && item.text && (
             <View style={styles.ptBadge}>
               <Ionicons name="language-outline" size={12} color={textSubtle} />
               <Text style={styles.ptBadgeText}>Content available in Portuguese only</Text>
@@ -102,7 +135,7 @@ const RefCard = memo(function RefCard({
               <Text style={styles.origTransliteration}>
                 /{item.originalLanguage.transliteration}/
               </Text>
-              <Text style={styles.origMeaning}>{item.originalLanguage.meaning}</Text>
+              <Text style={styles.origMeaning}>{isEn ? (item.meaningEn || item.originalLanguage.meaning) : item.originalLanguage.meaning}</Text>
               <Text style={styles.origStrongs}>
                 {isEn ? 'Strong Concordance' : 'Concordância Strong'} {item.originalLanguage.strongs}
               </Text>
@@ -120,7 +153,7 @@ const RefCard = memo(function RefCard({
               </TouchableOpacity>
             )}
             {item.url && (
-              <TouchableOpacity style={styles.actionBtn} onPress={() => onOpenUrl(item.url)}>
+              <TouchableOpacity style={styles.actionBtn} onPress={() => onOpenUrl(isEn ? (item.urlEn || item.url) : item.url)}>
                 <Ionicons name="open-outline" size={16} color={accent} />
                 <Text style={styles.actionText}>{t('ref.openSource')}</Text>
               </TouchableOpacity>
@@ -136,13 +169,21 @@ export default function ReferencesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
-  const [source, setSource] = useState('Todos');
   const [expanded, setExpanded] = useState(null);
   const listRef = useRef(null);
 
   // Memoiza estilos pra que a ref não mude entre renders (StyleSheet.create
   // sempre retorna objeto novo). Sem isso, todos os cards re-renderizam.
   const styles = useMemo(() => makeStyles(colors, fs), [colors, fs]);
+
+  // Seções agrupadas por fonte, na ordem de REFERENCE_SOURCES (ignora vazias).
+  const sections = useMemo(
+    () =>
+      REFERENCE_SOURCES
+        .map((s) => ({ meta: s, data: refsWithEn.filter((r) => r.source === s.id) }))
+        .filter((s) => s.data.length > 0),
+    []
+  );
 
   // Abre + scrolla até a referência quando chega via deep link.
   useEffect(() => {
@@ -152,15 +193,19 @@ export default function ReferencesScreen({ route }) {
       const id = route?.params?.highlightId;
       if (!id) return;
 
-      setSource('Todos');
       setExpanded(id);
 
-      const idx = references.findIndex((r) => r.id === id);
-      if (idx < 0) return;
+      let sectionIndex = -1;
+      let itemIndex = -1;
+      for (let si = 0; si < sections.length; si++) {
+        const ii = sections[si].data.findIndex((r) => r.id === id);
+        if (ii >= 0) { sectionIndex = si; itemIndex = ii; break; }
+      }
+      if (sectionIndex < 0) return;
 
       const scrollTry = (animated) => {
         try {
-          listRef.current?.scrollToIndex({ index: idx, animated, viewPosition: 0.1 });
+          listRef.current?.scrollToLocation({ sectionIndex, itemIndex, viewPosition: 0.15, animated });
         } catch {}
       };
       scheduledTimeouts.push(setTimeout(() => scrollTry(false), 50));
@@ -175,25 +220,20 @@ export default function ReferencesScreen({ route }) {
       unsub();
       scheduledTimeouts.forEach(clearTimeout);
     };
-  }, [route?.params?.highlightId, navigation]);
+  }, [route?.params?.highlightId, navigation, sections]);
 
   // Volta ao topo quando o usuário aperta o tab Referências de novo
   useEffect(() => {
     const unsub = navigation.addListener('tabPress', () => {
       if (navigation.isFocused()) {
         setExpanded(null);
-        setSource('Todos');
-        listRef.current?.scrollToOffset({ offset: 0, animated: true });
+        try {
+          listRef.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 0, animated: true });
+        } catch {}
       }
     });
     return unsub;
   }, [navigation]);
-
-  // Memoiza a lista filtrada pra que data prop não mude por referência a cada render
-  const filtered = useMemo(
-    () => (source === 'Todos' ? references : references.filter((r) => r.source === source)),
-    [source]
-  );
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
@@ -204,9 +244,18 @@ export default function ReferencesScreen({ route }) {
 
   const handleOpenUrl = useCallback((url) => {
     if (!url) return;
-    const finalUrl = (isEn && url.includes('_po.html'))
-      ? url.replace(/_po\.html/, '_en.html')
-      : url;
+    let finalUrl = url;
+    if (isEn) {
+      if (url.includes('cathechism_po')) {
+        finalUrl = 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
+      } else if (url.includes('_po.html')) {
+        finalUrl = url.replace(/_po\.html/, '_en.html');
+      } else if (url.includes('/pt/')) {
+        finalUrl = url.replace('/pt/', '/en/');
+      } else if (url.includes('pt.wikipedia.org')) {
+        finalUrl = url.replace('pt.wikipedia.org', 'en.wikipedia.org');
+      }
+    }
     Linking.openURL(finalUrl).catch(() => {});
   }, [isEn]);
 
@@ -224,84 +273,63 @@ export default function ReferencesScreen({ route }) {
 
   const renderItem = useCallback(
     ({ item }) => (
-      <RefCard
-        item={item}
-        isOpen={expanded === item.id}
-        accent={colors.accent}
-        textSubtle={colors.textSubtle}
-        styles={styles}
-        onToggle={handleToggle}
-        onOpenInBible={handleOpenInBible}
-        onOpenUrl={handleOpenUrl}
-        t={t}
-        isEn={isEn}
-      />
+      <View style={styles.itemWrap}>
+        <RefCard
+          item={item}
+          isOpen={expanded === item.id}
+          accent={colors.accent}
+          textSubtle={colors.textSubtle}
+          styles={styles}
+          onToggle={handleToggle}
+          onOpenInBible={handleOpenInBible}
+          onOpenUrl={handleOpenUrl}
+          t={t}
+          isEn={isEn}
+        />
+      </View>
     ),
     [expanded, colors.accent, colors.textSubtle, styles, handleToggle, handleOpenInBible, handleOpenUrl, t, isEn]
   );
 
-  const renderChip = useCallback(
-    ({ item }) => (
-      <TouchableOpacity
-        style={[styles.chip, source === item && styles.chipActive]}
-        onPress={() => setSource(item)}
-      >
-        <Text style={[styles.chipText, source === item && styles.chipTextActive]}>
-          {isEn ? SOURCES_EN[item] : item}
-        </Text>
-      </TouchableOpacity>
+  const countLabel = (n) =>
+    isEn ? `${n} ${n === 1 ? 'reference' : 'references'}` : `${n} ${n === 1 ? 'referência' : 'referências'}`;
+
+  const renderSectionHeader = useCallback(
+    ({ section }) => (
+      <SectionBanner
+        icon={section.meta.icon}
+        title={translateSource(section.meta.id, isEn)}
+        subtitle={t(`source.${section.meta.id}.desc`)}
+        countLabel={countLabel(section.data.length)}
+      />
     ),
-    [source, styles, isEn]
+    [isEn, t]
   );
 
   return (
     <View style={styles.container}>
-      <FlatList
-        horizontal
-        data={SOURCES}
-        keyExtractor={(s) => s}
-        showsHorizontalScrollIndicator={false}
-        style={styles.sourceList}
-        contentContainerStyle={{ paddingRight: 16 }}
-        renderItem={renderChip}
+      <SectionList
+        ref={listRef}
+        sections={sections}
+        keyExtractor={(r) => r.id}
+        stickySectionHeadersEnabled
+        contentContainerStyle={{ paddingBottom: 40 }}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        ListEmptyComponent={<Text style={styles.empty}>Nenhuma referência encontrada.</Text>}
+        // Performance: limita quantos itens são montados de uma vez
+        initialNumToRender={8}
+        maxToRenderPerBatch={5}
+        windowSize={7}
+        removeClippedSubviews
+        onScrollToIndexFailed={() => {}}
+        onScroll={onScroll}
+        onContentSizeChange={onContentSizeChange}
+        onLayout={onLayout}
+        scrollEventThrottle={32}
       />
-
-      <View style={{ flex: 1 }}>
-        <FlatList
-          ref={listRef}
-          data={filtered}
-          keyExtractor={(r) => r.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          renderItem={renderItem}
-          ListEmptyComponent={<Text style={styles.empty}>Nenhuma referência encontrada.</Text>}
-          // Performance: limita quantos itens são montados de uma vez
-          initialNumToRender={8}
-          maxToRenderPerBatch={5}
-          windowSize={7}
-          removeClippedSubviews
-          onScrollToIndexFailed={(info) => {
-            listRef.current?.scrollToOffset({
-              offset: (info.averageItemLength || 120) * info.index,
-              animated: false,
-            });
-            setTimeout(() => {
-              try {
-                listRef.current?.scrollToIndex({
-                  index: info.index,
-                  animated: true,
-                  viewPosition: 0.1,
-                });
-              } catch {}
-            }, 120);
-          }}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <ScrollHint direction="up" visible={showTop} />
+      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }
@@ -309,24 +337,11 @@ export default function ReferencesScreen({ route }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    sourceList: { maxHeight: 60, paddingLeft: 16, paddingTop: 14, marginBottom: 4 },
-    chip: {
-      borderWidth: 1,
-      borderColor: c.divider,
-      borderRadius: 20,
-      paddingHorizontal: 14,
-      paddingVertical: 6,
-      marginRight: 8,
-      backgroundColor: c.card,
-    },
-    chipActive: { backgroundColor: c.primary, borderColor: c.primary },
-    chipText: { fontSize: fs(13), color: c.textMuted },
-    chipTextActive: { color: '#fff', fontWeight: 'bold' },
+    itemWrap: { paddingHorizontal: 16, paddingTop: 10 },
     card: {
       backgroundColor: c.card,
       borderRadius: 12,
       padding: 16,
-      marginBottom: 10,
     },
     cardOpen: { borderWidth: 1, borderColor: c.accent },
     cardTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },

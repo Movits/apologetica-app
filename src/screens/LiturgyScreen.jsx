@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet, ActivityIndicator, TouchableOpacity, RefreshControl } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning } from '../services/liturgyApi';
+import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning, getLiturgicalColorName } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Share } from 'react-native';
@@ -44,6 +44,13 @@ const parseReadingRef = (ref) => {
   const bookId = EN_BOOK_ID[match[1].trim()];
   if (!bookId) return null;
   return { bookId, chapter: parseInt(match[2]), verse: parseInt(match[3]) };
+};
+
+// Returns only "Book Chapter" (e.g. "Psalm 147") stripping verse ranges.
+const getChipLabel = (ref) => {
+  if (!ref) return '';
+  const m = ref.match(/^(.+?)\s+(\d+)/);
+  return m ? `${m[1]} ${m[2]}` : ref;
 };
 
 const APP_PROMO_PT = '\n\nEnviado pelo APPologética ✝';
@@ -197,12 +204,21 @@ export default function LiturgyScreen() {
     >
       <View style={[styles.headerCard, { borderLeftColor: corHex }]}>
         <Text style={styles.date}>{liturgy.data}</Text>
-        <Text style={styles.title}>{liturgy.liturgia}</Text>
+        <Text style={styles.title}>{(() => {
+          if (!isEn) return liturgy.liturgia;
+          const dayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+          const weekMatch = liturgy.liturgia?.match(/(\d+)[aª°]?\s*semana/i);
+          const weekNum = weekMatch ? weekMatch[1] : null;
+          const season = enReadings?.season;
+          if (season && weekNum) return `${dayName} – Week ${weekNum} of ${season}`;
+          if (season) return `${dayName} – ${season}`;
+          return dayName;
+        })()}</Text>
         {cor && (
           <>
             <View style={styles.colorRow}>
               <View style={[styles.colorDot, { backgroundColor: corHex }]} />
-              <Text style={styles.colorLabel}>{L.color}: {cor}</Text>
+              <Text style={styles.colorLabel}>{L.color}: {getLiturgicalColorName(cor, isEn ? 'en' : 'pt')}</Text>
             </View>
             {getLiturgicalColorMeaning(cor, isEn ? 'en' : 'pt') ? (
               <Text style={styles.colorMeaning}>{getLiturgicalColorMeaning(cor, isEn ? 'en' : 'pt')}</Text>
@@ -247,7 +263,7 @@ export default function LiturgyScreen() {
               >
                 <View style={{ flex: 1 }}>
                   <Text style={styles.enChipLabel}>{r.label}</Text>
-                  <Text style={styles.enChipRef}>{r.ref}</Text>
+                  <Text style={styles.enChipRef}>{getChipLabel(r.ref)}</Text>
                 </View>
                 {nav && <Ionicons name="chevron-forward" size={16} color={colors.accent} />}
               </TouchableOpacity>

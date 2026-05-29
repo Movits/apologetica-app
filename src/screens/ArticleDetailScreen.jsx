@@ -4,7 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
 import { articles } from '../data/articles';
-import { referenceById } from '../data/references';
+import { referenceById, translateRef } from '../data/references';
+import { referencesEn } from '../data/references-en';
 import { useTheme } from '../context/ThemeContext';
 import { shareArticle } from '../utils/share';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -210,12 +211,17 @@ export default function ArticleDetailScreen({ route, navigation }) {
                   style={styles.refItem}
                   onPress={() => openReference(refId)}
                 >
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.refItemRef}>{r.ref}</Text>
-                    <Text style={styles.refItemSource}>
-                      {r.fullSource} {r.author ? `(${r.author}` : ''}{r.year ? `, ${r.year})` : r.author ? ')' : ''}
-                    </Text>
-                  </View>
+                  {(() => {
+                    const rWithEn = { ...r, ...(referencesEn[r.id] || {}) };
+                    return (
+                      <View style={{ flex: 1 }}>
+                        <Text style={styles.refItemRef}>{isEn ? (rWithEn.refEn || translateRef(r.ref, isEn)) : r.ref}</Text>
+                        <Text style={styles.refItemSource}>
+                          {isEn ? (rWithEn.fullSourceEn || r.fullSource) : r.fullSource}{r.author ? ` (${r.author}` : ''}{r.year ? `, ${r.year})` : r.author ? ')' : ''}
+                        </Text>
+                      </View>
+                    );
+                  })()}
                   <Ionicons name="chevron-forward" size={16} color={colors.accent} />
                 </TouchableOpacity>
               );

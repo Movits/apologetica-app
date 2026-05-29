@@ -85,8 +85,8 @@ const PRIVACY = {
     {
       heading: { pt: 'Contato', en: 'Contact' },
       body: {
-        pt: 'Dúvidas sobre privacidade ou solicitações de exclusão: apologetica.app@proton.me',
-        en: 'Privacy questions or deletion requests: apologetica.app@proton.me',
+        pt: 'Dúvidas sobre privacidade ou solicitações de exclusão: deusosfera@gmail.com',
+        en: 'Privacy questions or deletion requests: deusosfera@gmail.com',
       },
     },
   ],
@@ -141,8 +141,8 @@ const TERMS = {
     {
       heading: { pt: 'Contato', en: 'Contact' },
       body: {
-        pt: 'Para dúvidas legais ou sugestões: apologetica.app@proton.me',
-        en: 'For legal questions or suggestions: apologetica.app@proton.me',
+        pt: 'Para dúvidas legais ou sugestões: deusosfera@gmail.com',
+        en: 'For legal questions or suggestions: deusosfera@gmail.com',
       },
     },
   ],
