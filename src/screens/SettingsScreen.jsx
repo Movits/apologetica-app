@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert, Linking, Modal, FlatList, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import * as Sentry from '@sentry/react-native';
+import { captureException } from '../sentry';
 import * as Speech from 'expo-speech';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import WebDownloadBanner from '../components/WebDownloadBanner';
 import {
   getPrefs, requestPermissions,
   setDailyVerseEnabled, setSundayLiturgyEnabled,
@@ -167,6 +168,8 @@ export default function SettingsScreen() {
       onLayout={onLayout}
       scrollEventThrottle={32}
     >
+      <WebDownloadBanner />
+
       {user && (
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
@@ -300,6 +303,8 @@ export default function SettingsScreen() {
         </View>
       </View>
 
+      {Platform.OS !== 'web' && (
+       <>
       <Text style={styles.section}>{t('settings.section.notifications')}</Text>
 
       <View style={styles.row}>
@@ -380,6 +385,8 @@ export default function SettingsScreen() {
           <Text style={styles.rowLabel}>{t('settings.notif.test')}</Text>
         </View>
       </TouchableOpacity>
+       </>
+      )}
 
       <Text style={styles.section}>{t('settings.section.content')}</Text>
 
@@ -440,7 +447,7 @@ export default function SettingsScreen() {
         style={styles.row}
         onPress={() => {
           try {
-            Sentry.captureException(new Error('Teste manual do Sentry, APPologetica'));
+            captureException(new Error('Teste manual do Sentry, APPologetica'));
             Alert.alert(
               isEn ? 'Test error sent' : 'Erro de teste enviado',
               isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'

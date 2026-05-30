@@ -46,27 +46,10 @@ import ErrorBoundary from './src/components/ErrorBoundary';
 import { AccountPromptProvider } from './src/components/AccountPrompt';
 import { useEffect, useState } from 'react';
 import { hasSeenOnboarding } from './src/utils/onboarding';
-import * as Sentry from '@sentry/react-native';
-import Constants from 'expo-constants';
+import { initSentry, wrap } from './src/sentry';
 
-// Sentry tem módulos nativos que não existem no Expo Go.
-// Só inicializa em standalone (preview/production build).
-const isExpoGo = Constants.executionEnvironment === 'storeClient';
-
-if (!isExpoGo) {
-  try {
-    Sentry.init({
-      dsn: 'https://787cc318d8fe8083c42accd0e7866cc2@o4511423581650945.ingest.us.sentry.io/4511423587876864',
-      sendDefaultPii: true,
-      enableLogs: true,
-      replaysSessionSampleRate: 0.1,
-      replaysOnErrorSampleRate: 1,
-      integrations: [Sentry.mobileReplayIntegration(), Sentry.feedbackIntegration()],
-    });
-  } catch (e) {
-    // Ignora: Sentry não está disponível neste ambiente
-  }
-}
+// Inicializa o Sentry (no-op na web e no Expo Go — ver src/sentry.js / sentry.web.js).
+initSentry();
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -366,5 +349,5 @@ function App() {
   );
 }
 
-// Sentry.wrap só em standalone (Sentry.wrap no Expo Go quebra porque o módulo nativo não existe).
-export default isExpoGo ? App : Sentry.wrap(App);
+// wrap() aplica Sentry.wrap só em standalone; no Expo Go e na web passa direto.
+export default wrap(App);

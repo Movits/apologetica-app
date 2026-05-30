@@ -2,8 +2,14 @@
 // Chaves do client-side são públicas por design - a segurança vem das
 // regras do Firestore (ver firestore.rules na raiz do repo).
 
+import { Platform } from 'react-native';
 import { initializeApp } from 'firebase/app';
-import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import {
+  initializeAuth,
+  getReactNativePersistence,
+  browserLocalPersistence,
+  indexedDBLocalPersistence,
+} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -18,12 +24,17 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// Persistência: se getReactNativePersistence existir (Firebase resolve a versão RN),
-// usa AsyncStorage. Senão cai pro default (memória — perde login ao reiniciar app).
+// Persistência por plataforma:
+//   - web: IndexedDB (fallback localStorage) — mantém o login após recarregar a página.
+//   - nativo: AsyncStorage via getReactNativePersistence.
+// Sem isso a web cairia em persistência de memória (perderia o login no refresh),
+// quebrando a sincronização com a conta.
 export const auth = initializeAuth(app, {
-  persistence: typeof getReactNativePersistence === 'function'
-    ? getReactNativePersistence(AsyncStorage)
-    : undefined,
+  persistence: Platform.OS === 'web'
+    ? [indexedDBLocalPersistence, browserLocalPersistence]
+    : (typeof getReactNativePersistence === 'function'
+        ? getReactNativePersistence(AsyncStorage)
+        : undefined),
 });
 
 export const db = getFirestore(app);

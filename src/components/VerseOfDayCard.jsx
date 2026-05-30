@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useMemo, useRef } from 'react';
 import { getVerseOfDay } from '../data/dailyVerses';
@@ -53,10 +53,12 @@ export default function VerseOfDayCard({ onOpen }) {
           <Ionicons name="share-social-outline" size={16} color={colors.accent} />
           <Text style={styles.actionText}>{t('home.verse.shareText')}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.actionBtn} onPress={handleShareAsImage}>
-          <Ionicons name="image-outline" size={16} color={colors.accent} />
-          <Text style={styles.actionText}>{t('home.verse.shareImage')}</Text>
-        </TouchableOpacity>
+        {Platform.OS !== 'web' && (
+          <TouchableOpacity style={styles.actionBtn} onPress={handleShareAsImage}>
+            <Ionicons name="image-outline" size={16} color={colors.accent} />
+            <Text style={styles.actionText}>{t('home.verse.shareImage')}</Text>
+          </TouchableOpacity>
+        )}
       </View>
 
       {/* Card offscreen renderizado para captura como imagem. */}

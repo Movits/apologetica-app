@@ -2,11 +2,167 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=donate.html">
-  <link rel="canonical" href="donate.html">
-  <title>APPologética</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APPologética — Evangelização e apologética católica</title>
+  <meta name="description" content="App católico de evangelização e apologética: artigos, Bíblia, referências e ferramentas de oração. 100% offline. Disponível também na web.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #c9a84c;
+      --bg: #f5f0e8;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+
+    /* Hero */
+    .hero {
+      background: var(--primary);
+      border-radius: 20px;
+      padding: 44px 28px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+    .cross { font-size: 56px; color: var(--accent); line-height: 1; }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px; font-weight: 700; margin-top: 6px;
+    }
+    .hero .tagline { font-size: 16px; color: #d8e2ec; margin-top: 8px; }
+    .verse {
+      font-style: italic; color: var(--accent); font-size: 14px;
+      margin-top: 18px; max-width: 420px; margin-left: auto; margin-right: auto;
+    }
+    .verse span { display: block; font-style: normal; font-weight: 700; margin-top: 6px; }
+
+    /* Botões */
+    .cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: #1a2a3a; font-weight: 700; font-size: 16px;
+      padding: 15px 28px; border-radius: 12px; text-decoration: none; margin-top: 26px;
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 4px 14px rgba(201,168,76,0.4);
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201,168,76,0.5); }
+
+    .stores { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .store {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25);
+      color: #fff; border-radius: 12px; padding: 10px 18px; min-width: 168px;
+      position: relative; opacity: 0.85;
+    }
+    .store .logo { font-size: 24px; line-height: 1; }
+    .store .lines { text-align: left; }
+    .store .small { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+    .store .name { font-size: 15px; font-weight: 700; }
+    .soon {
+      position: absolute; top: -9px; right: 10px; background: var(--accent); color: #1a2a3a;
+      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;
+    }
+
+    /* Destaques */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif; color: var(--primary);
+      font-size: 28px; font-weight: 700; text-align: center; margin: 44px 0 4px;
+    }
+    .section-sub { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .feature {
+      background: var(--card); border-radius: 14px; padding: 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05); border-left: 4px solid var(--accent);
+    }
+    .feature .ico { font-size: 26px; }
+    .feature h3 { color: var(--primary); font-size: 17px; margin: 8px 0 4px; }
+    .feature p { color: var(--muted); font-size: 13px; }
+
+    /* Bloco "abrir web" */
+    .webcard {
+      background: var(--card); border-radius: 16px; padding: 28px; text-align: center;
+      margin-top: 36px; box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+    }
+    .webcard h2 { font-family: 'Cormorant Garamond', serif; color: var(--primary); font-size: 26px; }
+    .webcard p { color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
+
+    /* Rodapé */
+    footer { text-align: center; margin-top: 40px; color: var(--muted); font-size: 13px; }
+    footer a { color: var(--primary); font-weight: 700; text-decoration: none; margin: 0 8px; }
+    footer a:hover { text-decoration: underline; }
+    .madewith { margin-top: 18px; font-style: italic; color: var(--accent); }
+  </style>
 </head>
 <body>
-  <p>Redirecionando para <a href="donate.html">a página de doação</a>...</p>
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="cross">✝</div>
+      <h1>APPologética</h1>
+      <p class="tagline">Evangelização e apologética católica — 100% offline</p>
+      <p class="verse">
+        "Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."
+        <span>1 Pedro 3,15</span>
+      </p>
+
+      <a class="cta" href="app/">Abrir versão web &rarr;</a>
+
+      <div class="stores">
+        <div class="store">
+          <span class="soon">Em breve</span>
+          <span class="logo"></span>
+          <span class="lines"><span class="small">Baixar na</span><span class="name">App Store</span></span>
+        </div>
+        <div class="store">
+          <span class="soon">Em breve</span>
+          <span class="logo">▶</span>
+          <span class="lines"><span class="small">Disponível no</span><span class="name">Google Play</span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- DESTAQUES -->
+    <h2 class="section-title">O que você encontra</h2>
+    <p class="section-sub">Conteúdo para conhecer, viver e defender a fé católica.</p>
+    <div class="grid">
+      <div class="feature"><div class="ico">📚</div><h3>Artigos</h3><p>Existência de Deus, Igreja, Escritura, moral, outras religiões e história.</p></div>
+      <div class="feature"><div class="ico">📖</div><h3>Bíblia</h3><p>73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).</p></div>
+      <div class="feature"><div class="ico">🔖</div><h3>Referências</h3><p>Versículos, Catecismo e documentos da Igreja, com o texto no original.</p></div>
+      <div class="feature"><div class="ico">🌅</div><h3>Dia de Hoje</h3><p>Versículo do dia, santo do dia e a liturgia diária.</p></div>
+      <div class="feature"><div class="ico">🧰</div><h3>Ferramentas</h3><p>Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.</p></div>
+      <div class="feature"><div class="ico">🌐</div><h3>PT / EN · Offline</h3><p>Português e inglês, modo escuro e tudo funcionando sem internet.</p></div>
+    </div>
+
+    <!-- ABRIR WEB -->
+    <div class="webcard">
+      <h2>Prefere usar no navegador?</h2>
+      <p>Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas
+         ficam sincronizados com o celular.</p>
+      <a class="cta" href="app/">Abrir versão web &rarr;</a>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div>
+        <a href="privacy.html">Privacidade</a> ·
+        <a href="terms.html">Termos</a> ·
+        <a href="donate.html">Apoiar</a> ·
+        <a href="https://github.com/Movits/apologetica-app">GitHub</a>
+      </div>
+      <p class="madewith">Feito com fé. ✝</p>
+    </footer>
+  </div>
 </body>
 </html>
