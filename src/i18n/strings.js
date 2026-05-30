@@ -49,6 +49,7 @@ export const STRINGS = {
     'header.articles': 'Artigos',
     'header.tools': 'Ferramentas',
     'header.today': 'Dia de Hoje',
+    'header.notebook': 'Caderno',
     'header.noteEditor': 'Editar Nota',
 
     // === Home ===
@@ -63,6 +64,8 @@ export const STRINGS = {
     'home.card.toolsSub': 'Orações, treino e estudo',
     'home.card.today': 'Dia de Hoje',
     'home.card.todaySub': 'Versículo e liturgia do dia',
+    'home.card.notebook': 'Caderno',
+    'home.card.notebookSub': 'Suas anotações livres com referências',
     'home.card.articles': 'Artigos de Apologética',
     'home.card.articlesSub': 'Textos para responder dúvidas',
     'home.card.references': 'Versículos e Referências',
@@ -312,6 +315,7 @@ export const STRINGS = {
     'header.articles': 'Articles',
     'header.tools': 'Tools',
     'header.today': 'Today',
+    'header.notebook': 'Notebook',
     'header.noteEditor': 'Edit Note',
 
     // === Home ===
@@ -326,6 +330,8 @@ export const STRINGS = {
     'home.card.toolsSub': 'Prayers, practice and study',
     'home.card.today': 'Today',
     'home.card.todaySub': 'Verse and liturgy of the day',
+    'home.card.notebook': 'Notebook',
+    'home.card.notebookSub': 'Your free notes with references',
     'home.card.articles': 'Apologetics Articles',
     'home.card.articlesSub': 'Answers for common questions',
     'home.card.references': 'Verses and References',

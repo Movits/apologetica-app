@@ -1,5 +1,5 @@
 import {
-  collection, doc, addDoc, updateDoc, deleteDoc, getDocs,
+  collection, doc, addDoc, updateDoc, deleteDoc, getDocs, getDoc,
   query, where, orderBy, onSnapshot, serverTimestamp,
 } from 'firebase/firestore';
 import { db, auth } from './firebase';
@@ -112,6 +112,54 @@ export function watchChapterNotes(bookId, chapter, callback) {
     where('bookId', '==', bookId),
     where('chapter', '==', chapter)
   );
+  return onSnapshot(q, (snap) => {
+    const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    callback(items);
+  });
+}
+
+// ============ CADERNO (notebook) ============
+// Páginas livres com referências @ a versículos/artigos.
+// { title, text, createdAt, updatedAt }
+
+export async function addNotebookPage({ title, text }) {
+  return addDoc(userCol('notebook'), {
+    title: title || '',
+    text: text || '',
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  });
+}
+
+export async function updateNotebookPage(pageId, { title, text }) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) throw new Error('Usuário não autenticado');
+  return updateDoc(doc(db, 'users', uid, 'notebook', pageId), {
+    title: title || '',
+    text: text || '',
+    updatedAt: serverTimestamp(),
+  });
+}
+
+export async function removeNotebookPage(pageId) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) throw new Error('Usuário não autenticado');
+  return deleteDoc(doc(db, 'users', uid, 'notebook', pageId));
+}
+
+export async function getNotebookPage(pageId) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) return null;
+  const snap = await getDoc(doc(db, 'users', uid, 'notebook', pageId));
+  return snap.exists() ? { id: snap.id, ...snap.data() } : null;
+}
+
+export function watchNotebook(callback) {
+  if (!auth.currentUser) {
+    callback([]);
+    return () => {};
+  }
+  const q = query(userCol('notebook'), orderBy('updatedAt', 'desc'));
   return onSnapshot(q, (snap) => {
     const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
     callback(items);

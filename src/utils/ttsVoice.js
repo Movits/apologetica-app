@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Speech from 'expo-speech';
 
@@ -109,9 +110,54 @@ function priorityScore(voice, info) {
   return score;
 }
 
+// Na web as vozes (speechSynthesis.getVoices) podem vir vazias até o evento
+// 'voiceschanged'. Tenta algumas vezes antes de desistir.
+async function getAllVoicesWithRetry(tries = 6) {
+  for (let i = 0; i < tries; i++) {
+    const all = await Speech.getAvailableVoicesAsync().catch(() => []);
+    if (all && all.length) return all;
+    await new Promise((r) => setTimeout(r, 150));
+  }
+  return [];
+}
+
+function webRegion(language) {
+  const l = (language || '').toLowerCase();
+  if (l.startsWith('pt-br')) return 'Brasil';
+  if (l.startsWith('pt-pt')) return 'Portugal';
+  if (l.startsWith('en-gb')) return 'UK';
+  if (l.startsWith('en-au')) return 'Austrália';
+  if (l.startsWith('en')) return 'EUA';
+  if (l.startsWith('pt')) return 'Português';
+  return language || '';
+}
+
+function cleanWebVoiceName(name) {
+  return String(name || 'Voz').replace(/^(Microsoft|Google)\s+/i, '').trim();
+}
+
+// Vozes do navegador (web): classifica por idioma do voice.lang, não por
+// padrões de identifier (que só existem em Android/iOS).
+async function listVoicesWeb(language) {
+  const all = await getAllVoicesWithRetry();
+  const seen = new Set();
+  const out = [];
+  for (const v of all) {
+    const lang = (v.language || '').toLowerCase();
+    if (!lang.startsWith(language)) continue; // 'pt' cobre pt-br/pt-pt; 'en' cobre en-*
+    if (seen.has(v.identifier)) continue;
+    seen.add(v.identifier);
+    out.push(v);
+  }
+  // Vozes locais antes das de rede/nuvem.
+  out.sort((a, b) => (isOnline(a) ? 1 : 0) - (isOnline(b) ? 1 : 0));
+  return out.slice(0, 6);
+}
+
 // Lista vozes para o idioma escolhido ('pt' ou 'en').
-// Retorna no máximo 4 vozes (2 por país, M + F).
+// Retorna no máximo 4 vozes (2 por país, M + F) — exceto na web.
 export async function listVoicesForLanguage(language = 'pt') {
+  if (Platform.OS === 'web') return listVoicesWeb(language);
   try {
     const all = await Speech.getAvailableVoicesAsync();
     const slots = {};
@@ -188,6 +234,10 @@ export async function resolveVoice(language = 'pt') {
 
 export function describeVoice(v) {
   if (!v) return { name: 'Voz padrão', badges: [] };
+  if (Platform.OS === 'web') {
+    const region = webRegion(v.language);
+    return { name: cleanWebVoiceName(v.name), badges: region ? [region] : [] };
+  }
   const info = classifyVoice(v);
   if (info) return { name: info.name, badges: [info.country] };
   return { name: v.name || 'Voz', badges: [] };

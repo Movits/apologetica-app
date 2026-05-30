@@ -100,7 +100,7 @@ const makeStyles = (c, fs) =>
       marginBottom: 12,
       gap: 10,
     },
-    input: { flex: 1, height: 48, fontSize: fs(15), color: c.text },
+    input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, outlineStyle: 'none', outlineWidth: 0 },
     error: { color: '#c0392b', fontSize: fs(13), marginVertical: 12, textAlign: 'center' },
     primaryBtn: {
       backgroundColor: c.primary,

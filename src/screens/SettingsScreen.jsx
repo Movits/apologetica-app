@@ -238,71 +238,6 @@ export default function SettingsScreen() {
         </View>
       </View>
 
-      <Text style={styles.section}>{t('settings.section.reading')}</Text>
-
-      <TouchableOpacity
-        style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}
-        onPress={() => setVoicePickerOpen(true)}
-        activeOpacity={0.7}
-      >
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <View style={styles.rowLeft}>
-            <Ionicons name="mic-outline" size={22} color={colors.primaryText} />
-            <View style={{ flex: 1 }}>
-              <Text style={styles.rowLabel}>{t('settings.voice')}</Text>
-              <Text style={styles.rowSub} numberOfLines={1}>
-                {ttsVoices.length === 0
-                  ? (isEn ? 'No voices found for this language' : 'Nenhuma voz encontrada para esse idioma')
-                  : describeVoiceShort(selectedVoice)}
-              </Text>
-            </View>
-          </View>
-          <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-        </View>
-        {Platform.OS === 'ios' && (
-          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
-            {isEn
-              ? 'Tip: "Premium" voices can be downloaded in iOS Settings → Accessibility → Spoken Content → Voices.'
-              : 'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS → Acessibilidade → Conteúdo Falado → Vozes.'}
-          </Text>
-        )}
-        {Platform.OS === 'android' && (
-          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
-            {isEn
-              ? 'Tip: install "Google Speech Services" from Play Store for more voices.'
-              : 'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.'}
-          </Text>
-        )}
-      </TouchableOpacity>
-
-      <View style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="speedometer-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.speed')}</Text>
-            <Text style={styles.rowSub}>{rateLabel(ttsRate, isEn)}</Text>
-          </View>
-        </View>
-        <View style={styles.fontGrid}>
-          {RATE_OPTIONS.map((opt) => (
-            <TouchableOpacity
-              key={opt.value}
-              style={[styles.fontChip, Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipActive]}
-              onPress={() => changeRate(opt.value)}
-            >
-              <Text
-                style={[
-                  styles.fontChipLabel,
-                  Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipLabelActive,
-                ]}
-              >
-                {isEn ? opt.labelEn : opt.labelPt}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
       {Platform.OS !== 'web' && (
        <>
       <Text style={styles.section}>{t('settings.section.notifications')}</Text>
@@ -513,6 +448,70 @@ export default function SettingsScreen() {
               English
             </Text>
           </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Voz e velocidade da narração (TTS) agrupadas com o idioma. */}
+      <TouchableOpacity
+        style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}
+        onPress={() => setVoicePickerOpen(true)}
+        activeOpacity={0.7}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <View style={styles.rowLeft}>
+            <Ionicons name="mic-outline" size={22} color={colors.primaryText} />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.rowLabel}>{t('settings.voice')}</Text>
+              <Text style={styles.rowSub} numberOfLines={1}>
+                {ttsVoices.length === 0
+                  ? (isEn ? 'No voices found for this language' : 'Nenhuma voz encontrada para esse idioma')
+                  : describeVoiceShort(selectedVoice)}
+              </Text>
+            </View>
+          </View>
+          <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
+        </View>
+        {Platform.OS === 'ios' && (
+          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
+            {isEn
+              ? 'Tip: "Premium" voices can be downloaded in iOS Settings → Accessibility → Spoken Content → Voices.'
+              : 'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS → Acessibilidade → Conteúdo Falado → Vozes.'}
+          </Text>
+        )}
+        {Platform.OS === 'android' && (
+          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
+            {isEn
+              ? 'Tip: install "Google Speech Services" from Play Store for more voices.'
+              : 'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.'}
+          </Text>
+        )}
+      </TouchableOpacity>
+
+      <View style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="speedometer-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.speed')}</Text>
+            <Text style={styles.rowSub}>{rateLabel(ttsRate, isEn)}</Text>
+          </View>
+        </View>
+        <View style={styles.fontGrid}>
+          {RATE_OPTIONS.map((opt) => (
+            <TouchableOpacity
+              key={opt.value}
+              style={[styles.fontChip, Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipActive]}
+              onPress={() => changeRate(opt.value)}
+            >
+              <Text
+                style={[
+                  styles.fontChipLabel,
+                  Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipLabelActive,
+                ]}
+              >
+                {isEn ? opt.labelEn : opt.labelPt}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
 

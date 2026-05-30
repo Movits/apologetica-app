@@ -182,6 +182,7 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
                   style={[s.photo, imgLoading && { opacity: 0 }]}
                   resizeMode="cover"
                   onLoad={() => setImgLoading(false)}
+                  onLoadEnd={() => setImgLoading(false)}
                   onError={() => { setImgLoading(false); setImgError(true); }}
                 />
               </View>

@@ -62,7 +62,9 @@ export default function OnboardingScreen({ onDone }) {
   const SLIDES = getSlides(isEn);
 
   const goTo = (i) => {
-    listRef.current?.scrollToIndex({ index: i, animated: true });
+    // scrollToOffset é mais confiável que scrollToIndex no react-native-web.
+    listRef.current?.scrollToOffset({ offset: i * width, animated: true });
+    setIndex(i);
   };
 
   const finish = async () => {
@@ -104,6 +106,9 @@ export default function OnboardingScreen({ onDone }) {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         renderItem={renderItem}
+        getItemLayout={(_, i) => ({ length: width, offset: width * i, index: i })}
+        onScroll={(e) => setIndex(Math.round(e.nativeEvent.contentOffset.x / width))}
+        scrollEventThrottle={32}
         onMomentumScrollEnd={(e) => setIndex(Math.round(e.nativeEvent.contentOffset.x / width))}
       />
 

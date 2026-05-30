@@ -9,6 +9,7 @@ import {
   getReactNativePersistence,
   browserLocalPersistence,
   indexedDBLocalPersistence,
+  browserPopupRedirectResolver,
 } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -35,6 +36,9 @@ export const auth = initializeAuth(app, {
     : (typeof getReactNativePersistence === 'function'
         ? getReactNativePersistence(AsyncStorage)
         : undefined),
+  // Na web, initializeAuth não inclui o resolver de popup por padrão; sem ele
+  // signInWithPopup lança auth/argument-error. No nativo é ignorado.
+  ...(Platform.OS === 'web' ? { popupRedirectResolver: browserPopupRedirectResolver } : {}),
 });
 
 export const db = getFirestore(app);

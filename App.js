@@ -38,14 +38,15 @@ import LegalScreen from './src/screens/LegalScreen';
 import ToolsScreen from './src/screens/ToolsScreen';
 import CategoryArticlesScreen from './src/screens/CategoryArticlesScreen';
 import TodayScreen from './src/screens/TodayScreen';
+import NotebookScreen from './src/screens/NotebookScreen';
+import NotebookPageScreen from './src/screens/NotebookPageScreen';
 
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { LanguageProvider, useLanguage } from './src/context/LanguageContext';
 import ErrorBoundary from './src/components/ErrorBoundary';
 import { AccountPromptProvider } from './src/components/AccountPrompt';
-import { useEffect, useState } from 'react';
-import { hasSeenOnboarding } from './src/utils/onboarding';
+import { useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
 
 // Inicializa o Sentry (no-op na web e no Expo Go — ver src/sentry.js / sentry.web.js).
@@ -74,6 +75,8 @@ function HomeStackScreen() {
       <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ headerShown: false }} />
       <HomeNav.Screen name="Tools" component={ToolsScreen} options={{ title: t('header.tools') }} />
       <HomeNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
+      <HomeNav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
+      <HomeNav.Screen name="NotebookPage" component={NotebookPageScreen} options={{ title: t('header.notebook') }} />
       <HomeNav.Screen
         name="CategoryArticles"
         component={CategoryArticlesScreen}
@@ -294,12 +297,12 @@ function AuthStack() {
 
 function RootNavigation() {
   const { colors, darkMode } = useTheme();
-  const { signedInOrGuest, loading } = useAuth();
-  const [onboardingDone, setOnboardingDone] = useState(null);
-
-  useEffect(() => {
-    hasSeenOnboarding().then((seen) => setOnboardingDone(seen));
-  }, []);
+  const { user, signedInOrGuest, loading } = useAuth();
+  // TEMPORÁRIO (pré-lançamento): mostra o onboarding em toda abertura enquanto
+  // não há conta logada, para o usuário poder revisar as telas de explicação.
+  // Estado de sessão (não persistido). Para voltar ao "uma vez só", basta
+  // regravar o gate usando hasSeenOnboarding/setOnboardingDone.
+  const [onboardingPassed, setOnboardingPassed] = useState(false);
 
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
@@ -313,12 +316,12 @@ function RootNavigation() {
     },
   };
 
-  if (loading || onboardingDone === null) {
+  if (loading) {
     return <BrandedSplash />;
   }
 
-  if (!onboardingDone) {
-    return <OnboardingScreen onDone={() => setOnboardingDone(true)} />;
+  if (!user && !onboardingPassed) {
+    return <OnboardingScreen onDone={() => setOnboardingPassed(true)} />;
   }
 
   return (

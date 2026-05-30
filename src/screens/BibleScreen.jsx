@@ -112,7 +112,7 @@ export default function BibleScreen({ route, navigation }) {
     return map;
   }, [chapterHighlights]);
 
-  // Verses with notes (Set of verse numbers covered)
+  // Verses with notes (Set of verse numbers) + map verse -> note id (para abrir a nota)
   const versesWithNotes = useMemo(() => {
     const s = new Set();
     chapterNotes.forEach((n) => {
@@ -120,6 +120,21 @@ export default function BibleScreen({ route, navigation }) {
     });
     return s;
   }, [chapterNotes]);
+
+  const noteIdByVerse = useMemo(() => {
+    const m = {};
+    chapterNotes.forEach((n) => {
+      for (let v = n.verseStart; v <= n.verseEnd; v++) {
+        if (!(v in m)) m[v] = n.id;
+      }
+    });
+    return m;
+  }, [chapterNotes]);
+
+  const openVerseNote = (verse) => {
+    const noteId = noteIdByVerse[verse];
+    if (noteId) navigation.navigate('NoteEditor', { noteId });
+  };
 
   // Scroll até versículo destacado
   useEffect(() => {
@@ -448,7 +463,13 @@ export default function BibleScreen({ route, navigation }) {
                     {item.t}
                   </Text>
                   {hasNote && (
-                    <Ionicons name="document-text" size={14} color={colors.accent} style={{ marginLeft: 6, marginTop: 4 }} />
+                    <TouchableOpacity
+                      onPress={() => openVerseNote(item.n)}
+                      hitSlop={10}
+                      style={{ marginLeft: 6, marginTop: 4 }}
+                    >
+                      <Ionicons name="document-text" size={14} color={colors.accent} />
+                    </TouchableOpacity>
                   )}
                 </TouchableOpacity>
               );

@@ -31,6 +31,7 @@ function buildTraining(t) {
 
 function buildStudy(t) {
   return [
+    { icon: 'journal-outline', label: t('home.card.notebook'), sub: t('home.card.notebookSub'), screen: 'Notebook' },
     { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites' },
     { icon: 'color-fill-outline', label: t('home.card.highlights'), screen: 'Highlights' },
     { icon: 'document-text-outline', label: t('home.card.notes'), screen: 'Notes' },
