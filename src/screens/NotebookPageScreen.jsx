@@ -117,6 +117,8 @@ export default function NotebookPageScreen({ route, navigation }) {
     navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
   const openArticle = (articleId) =>
     navigation.navigate('ArticleFromSearch', { articleId });
+  const openRef = (refId) =>
+    navigation.navigate('RefDetail', { highlightId: refId });
 
   if (loading) {
     return <View style={styles.center}><ActivityIndicator color={colors.accent} /></View>;
@@ -169,7 +171,7 @@ export default function NotebookPageScreen({ route, navigation }) {
       ) : (
         <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 40 }}>
           {title.trim() ? <Text style={styles.readTitle}>{title}</Text> : null}
-          <NotebookText text={text} onOpenVerse={openVerse} onOpenArticle={openArticle} />
+          <NotebookText text={text} onOpenVerse={openVerse} onOpenArticle={openArticle} onOpenRef={openRef} />
         </ScrollView>
       )}
 

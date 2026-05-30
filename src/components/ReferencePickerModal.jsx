@@ -4,12 +4,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { articles } from '../data/articles';
+import { references, translateRef } from '../data/references';
+import { referencesEn } from '../data/references-en';
 import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 
 // Modal para inserir uma referência no caderno. Retorna o token via onPick:
-//   versículo -> @[Mt 16,18](v:mt/16/18)
-//   artigo    -> @[Título](a:articleId)
+//   versículo  -> @[Mt 16,18](v:mt/16/18)
+//   referência -> @[Mt 16,18](r:refId)   (referências curadas do app)
+//   artigo     -> @[Título](a:articleId)
 export default function ReferencePickerModal({ visible, onClose, onPick }) {
   const { colors, fs } = useTheme();
   const { isEn, t } = useLanguage();
@@ -17,16 +20,25 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
 
   const [tab, setTab] = useState('verse');
   const [articleQuery, setArticleQuery] = useState('');
+  const [refQuery, setRefQuery] = useState('');
   const [bookQuery, setBookQuery] = useState('');
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState('');
   const [verse, setVerse] = useState('');
 
   const reset = () => {
-    setTab('verse'); setArticleQuery(''); setBookQuery('');
+    setTab('verse'); setArticleQuery(''); setRefQuery(''); setBookQuery('');
     setBook(null); setChapter(''); setVerse('');
   };
   const close = () => { reset(); onClose?.(); };
+
+  const refLabel = (item) => {
+    if (isEn) {
+      const en = referencesEn[item.id];
+      return en?.refEn || translateRef(item.ref, true);
+    }
+    return item.ref;
+  };
 
   const filteredArticles = useMemo(() => {
     const q = articleQuery.trim().toLowerCase();
@@ -35,6 +47,15 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
       return !q || title.toLowerCase().includes(q);
     });
   }, [articleQuery, isEn]);
+
+  const filteredRefs = useMemo(() => {
+    const q = refQuery.trim().toLowerCase();
+    if (!q) return references;
+    return references.filter((r) => {
+      const hay = `${r.ref} ${r.topic || ''} ${r.fullSource || ''} ${r.source || ''} ${refLabel(r)}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }, [refQuery, isEn]);
 
   const filteredBooks = useMemo(() => {
     const q = bookQuery.trim().toLowerCase();
@@ -47,6 +68,11 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
   const pickArticle = (a) => {
     const title = isEn ? (a.titleEn || a.title) : a.title;
     onPick?.(`@[${title}](a:${a.id})`);
+    close();
+  };
+
+  const pickRef = (r) => {
+    onPick?.(`@[${refLabel(r)}](r:${r.id})`);
     close();
   };
 
@@ -87,6 +113,12 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
               <Text style={[styles.segText, tab === 'verse' && styles.segTextActive]}>{isEn ? 'Verse' : 'Versículo'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
+              style={[styles.segBtn, tab === 'ref' && styles.segBtnActive]}
+              onPress={() => setTab('ref')}
+            >
+              <Text style={[styles.segText, tab === 'ref' && styles.segTextActive]}>{isEn ? 'Reference' : 'Referência'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
               style={[styles.segBtn, tab === 'article' && styles.segBtnActive]}
               onPress={() => setTab('article')}
             >
@@ -112,6 +144,31 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
                   <TouchableOpacity style={styles.listRow} onPress={() => pickArticle(item)}>
                     <Ionicons name="document-text-outline" size={18} color={colors.accent} />
                     <Text style={styles.listText} numberOfLines={1}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
+                  </TouchableOpacity>
+                )}
+              />
+            </>
+          ) : tab === 'ref' ? (
+            <>
+              <TextInput
+                style={styles.input}
+                placeholder={isEn ? 'Search reference (verse, Catechism, document...)' : 'Buscar referência (versículo, Catecismo, documento...)'}
+                placeholderTextColor={colors.textSubtle}
+                value={refQuery}
+                onChangeText={setRefQuery}
+              />
+              <FlatList
+                data={filteredRefs}
+                keyExtractor={(r) => r.id}
+                keyboardShouldPersistTaps="handled"
+                style={{ maxHeight: 320 }}
+                renderItem={({ item }) => (
+                  <TouchableOpacity style={styles.listRow} onPress={() => pickRef(item)}>
+                    <Ionicons name="bookmark-outline" size={18} color={colors.accent} />
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.listText} numberOfLines={1}>{refLabel(item)}</Text>
+                      <Text style={styles.listSub} numberOfLines={1}>{isEn ? (referencesEn[item.id]?.topicEn || item.topic) : item.topic}</Text>
+                    </View>
                   </TouchableOpacity>
                 )}
               />
@@ -196,6 +253,7 @@ const makeStyles = (c, fs) =>
     },
     listRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.divider },
     listText: { flex: 1, fontSize: fs(14), color: c.text },
+    listSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
     backRow: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingVertical: 8, marginBottom: 4 },
     backText: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText },
     numRow: { flexDirection: 'row', gap: 12, marginBottom: 16 },

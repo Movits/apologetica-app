@@ -9,7 +9,7 @@ import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
 // Remove tokens de referência do preview: @[Mt 16,18](v:..) -> Mt 16,18
-const stripRefs = (s) => String(s || '').replace(/@\[([^\]]+)\]\((?:v|a):[^)]+\)/g, '$1');
+const stripRefs = (s) => String(s || '').replace(/@\[([^\]]+)\]\((?:v|a|r):[^)]+\)/g, '$1');
 
 export default function NotebookScreen({ navigation }) {
   const { colors, fs } = useTheme();

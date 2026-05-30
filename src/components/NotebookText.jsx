@@ -6,10 +6,11 @@ import { useTheme } from '../context/ThemeContext';
 // referência em links clicáveis:
 //   @[Mt 16,18](v:mt/16/18)        -> versículo  (onOpenVerse)
 //   @[Igreja Católica](a:igreja...) -> artigo     (onOpenArticle)
+//   @[Mt 16,18 (CIC)](r:mt-16-18)   -> referência do app (onOpenRef)
 // O restante é texto normal (parágrafos separados por quebras de linha).
-const REF_RE = /@\[([^\]]+)\]\((v|a):([^)]+)\)/g;
+const REF_RE = /@\[([^\]]+)\]\((v|a|r):([^)]+)\)/g;
 
-export default function NotebookText({ text, onOpenVerse, onOpenArticle, baseStyle }) {
+export default function NotebookText({ text, onOpenVerse, onOpenArticle, onOpenRef, baseStyle }) {
   const { colors, fs } = useTheme();
   const styles = makeStyles(colors, fs);
 
@@ -31,6 +32,8 @@ export default function NotebookText({ text, onOpenVerse, onOpenArticle, baseSty
             if (kind === 'v') {
               const [bookId, chapter, verse] = payload.split('/');
               onOpenVerse?.(bookId, Number(chapter), Number(verse));
+            } else if (kind === 'r') {
+              onOpenRef?.(payload);
             } else {
               onOpenArticle?.(payload);
             }
