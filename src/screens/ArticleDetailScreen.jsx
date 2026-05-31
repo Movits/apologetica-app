@@ -11,7 +11,6 @@ import { shareArticle } from '../utils/share';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 import ReadingProgressBar from '../components/ReadingProgressBar';
-import NextPrevArticle from '../components/NextPrevArticle';
 import RelatedArticles from '../components/RelatedArticles';
 import MarkdownText from '../components/MarkdownText';
 import { setLastRead } from '../utils/lastRead';
@@ -230,7 +229,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
         )}
 
         <RelatedArticles currentId={article.id} onOpen={openOtherArticle} />
-        <NextPrevArticle current={article} onOpen={openOtherArticle} />
       </ScrollView>
       <ScrollHint direction="up" visible={hintScroll.showTop} />
       <ScrollHint direction="down" visible={hintScroll.showBottom} />
