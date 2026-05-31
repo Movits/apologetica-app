@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
@@ -53,7 +54,7 @@ export default function NoteEditorScreen({ route, navigation }) {
 
   const handleSave = async () => {
     if (!text.trim()) {
-      return Alert.alert(
+      return notify(
         isEn ? 'Empty note' : 'Nota vazia',
         isEn ? 'Write something before saving.' : 'Escreva alguma coisa antes de salvar.'
       );
@@ -67,7 +68,7 @@ export default function NoteEditorScreen({ route, navigation }) {
       }
       navigation.goBack();
     } catch (e) {
-      Alert.alert(
+      notify(
         isEn ? 'Error' : 'Erro',
         e.message || (isEn ? 'Could not save the note.' : 'Não foi possível salvar a nota.')
       );
@@ -78,18 +79,17 @@ export default function NoteEditorScreen({ route, navigation }) {
 
   const handleDelete = () => {
     if (!noteId) return navigation.goBack();
-    Alert.alert(
-      isEn ? 'Delete note?' : 'Excluir nota?',
-      isEn ? 'The note will be permanently removed.' : 'A nota será removida permanentemente.',
-      [
-      { text: t('common.cancel'), style: 'cancel' },
-      {
-        text: t('common.delete'), style: 'destructive', onPress: async () => {
-          await removeNote(noteId);
-          navigation.goBack();
-        },
+    confirmAction({
+      title: isEn ? 'Delete note?' : 'Excluir nota?',
+      message: isEn ? 'The note will be permanently removed.' : 'A nota será removida permanentemente.',
+      confirmText: t('common.delete'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: async () => {
+        await removeNote(noteId);
+        navigation.goBack();
       },
-    ]);
+    });
   };
 
   const styles = makeStyles(colors, fs);

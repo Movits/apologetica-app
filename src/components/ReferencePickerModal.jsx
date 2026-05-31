@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Modal, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Modal, Pressable, StyleSheet, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -249,7 +249,8 @@ const makeStyles = (c, fs) =>
     segTextActive: { color: '#fff' },
     input: {
       backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 14, height: 46,
-      fontSize: fs(15), color: c.text, marginBottom: 8, outlineStyle: 'none', outlineWidth: 0,
+      fontSize: fs(15), color: c.text, marginBottom: 8,
+      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
     },
     listRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.divider },
     listText: { flex: 1, fontSize: fs(14), color: c.text },
@@ -260,7 +261,8 @@ const makeStyles = (c, fs) =>
     numLabel: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4 },
     numInput: {
       backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 14, height: 46,
-      fontSize: fs(16), color: c.text, outlineStyle: 'none', outlineWidth: 0,
+      fontSize: fs(16), color: c.text,
+      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
     },
     confirmBtn: { backgroundColor: c.primary, borderRadius: 10, paddingVertical: 14, alignItems: 'center' },
     confirmText: { color: '#fff', fontSize: fs(15), fontWeight: 'bold' },

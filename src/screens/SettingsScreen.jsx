@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert, Linking, Modal, FlatList, Platform } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Linking, Modal, FlatList, Platform } from 'react-native';
+import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { captureException } from '../sentry';
@@ -107,41 +108,41 @@ export default function SettingsScreen() {
   const toggleDailyVerse = async (value) => {
     if (value) {
       const ok = await requestPermissions();
-      if (!ok) { Alert.alert(permTitle(), permMsg()); return; }
+      if (!ok) { notify(permTitle(), permMsg()); return; }
     }
     setNotifPrefs((p) => ({ ...p, dailyVerse: value }));
     const res = await setDailyVerseEnabled(value, notifPrefs.verseHour, notifPrefs.verseMinute);
-    if (!res.ok) Alert.alert(warnTitle(), `${res.error}${expoGoNote()}`);
+    if (!res.ok) notify(warnTitle(), `${res.error}${expoGoNote()}`);
   };
 
   const toggleSundayLiturgy = async (value) => {
     if (value) {
       const ok = await requestPermissions();
-      if (!ok) { Alert.alert(permTitle(), permMsg()); return; }
+      if (!ok) { notify(permTitle(), permMsg()); return; }
     }
     setNotifPrefs((p) => ({ ...p, sundayLiturgy: value }));
     const res = await setSundayLiturgyEnabled(value);
-    if (!res.ok) Alert.alert(warnTitle(), `${res.error}${expoGoNote()}`);
+    if (!res.ok) notify(warnTitle(), `${res.error}${expoGoNote()}`);
   };
 
   const toggleDailyQuiz = async (value) => {
     if (value) {
       const ok = await requestPermissions();
-      if (!ok) { Alert.alert(permTitle(), permMsg()); return; }
+      if (!ok) { notify(permTitle(), permMsg()); return; }
     }
     setNotifPrefs((p) => ({ ...p, dailyQuiz: value }));
     await setDailyQuizEnabled(value);
   };
 
   const handleLogout = () => {
-    Alert.alert(
-      isEn ? 'Sign out?' : 'Sair da conta?',
-      isEn ? 'You can sign in again anytime.' : 'Você pode entrar novamente quando quiser.',
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        { text: isEn ? 'Sign out' : 'Sair', style: 'destructive', onPress: () => signOut() },
-      ]
-    );
+    confirmAction({
+      title: isEn ? 'Sign out?' : 'Sair da conta?',
+      message: isEn ? 'You can sign in again anytime.' : 'Você pode entrar novamente quando quiser.',
+      confirmText: isEn ? 'Sign out' : 'Sair',
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: () => signOut(),
+    });
   };
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
@@ -303,12 +304,12 @@ export default function SettingsScreen() {
         onPress={async () => {
           const res = await sendTestNotification();
           if (!res.ok) {
-            Alert.alert(
+            notify(
               isEn ? 'Error' : 'Erro',
               res.error || (isEn ? 'Could not schedule notification.' : 'Não consegui agendar a notificação.')
             );
           } else {
-            Alert.alert(
+            notify(
               isEn ? 'Notification scheduled' : 'Notificação agendada',
               isEn ? 'It will arrive in ~5 seconds. You can minimize the app to see it better.' : 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.'
             );
@@ -383,12 +384,12 @@ export default function SettingsScreen() {
         onPress={() => {
           try {
             captureException(new Error('Teste manual do Sentry, APPologetica'));
-            Alert.alert(
+            notify(
               isEn ? 'Test error sent' : 'Erro de teste enviado',
               isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'
             );
           } catch (e) {
-            Alert.alert(
+            notify(
               isEn ? 'Failed' : 'Falha',
               isEn ? 'Sentry is not available in this build.' : 'Sentry não está disponível neste build.'
             );

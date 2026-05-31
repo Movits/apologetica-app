@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>APPologética — Evangelização e apologética católica</title>
-  <meta name="description" content="App católico de evangelização e apologética: artigos, Bíblia, referências e ferramentas de oração. 100% offline. Disponível também na web.">
+  <meta name="description" content="App católico de evangelização e apologética: artigos, Bíblia, referências e ferramentas de oração. Disponível também na web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -28,6 +28,15 @@
     a { color: inherit; }
     .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
 
+    /* Toggle de idioma */
+    .langtoggle {
+      position: fixed; top: 14px; right: 14px; z-index: 20;
+      background: var(--card); color: var(--primary); border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 20px; padding: 7px 14px; font-weight: 700; font-size: 13px;
+      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.08); font-family: 'Lato', sans-serif;
+    }
+    .langtoggle:hover { background: #fff; }
+
     /* Hero */
     .hero {
       background: var(--primary);
@@ -47,7 +56,7 @@
       font-style: italic; color: var(--accent); font-size: 14px;
       margin-top: 18px; max-width: 420px; margin-left: auto; margin-right: auto;
     }
-    .verse span { display: block; font-style: normal; font-weight: 700; margin-top: 6px; }
+    .verse .ref { display: block; font-style: normal; font-weight: 700; margin-top: 6px; }
 
     /* Botões */
     .cta {
@@ -106,63 +115,132 @@
   </style>
 </head>
 <body>
+  <button id="langBtn" class="langtoggle" type="button">EN</button>
   <div class="wrap">
     <!-- HERO -->
     <header class="hero">
       <div class="cross">✝</div>
       <h1>APPologética</h1>
-      <p class="tagline">Evangelização e apologética católica — 100% offline</p>
+      <p class="tagline" data-i18n="tagline">Evangelização e apologética católica</p>
       <p class="verse">
-        "Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."
-        <span>1 Pedro 3,15</span>
+        <span data-i18n="verse">"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."</span>
+        <span class="ref" data-i18n="verseRef">1 Pedro 3,15</span>
       </p>
 
-      <a class="cta" href="app/">Abrir versão web &rarr;</a>
+      <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web →</a>
 
       <div class="stores">
         <div class="store">
-          <span class="soon">Em breve</span>
+          <span class="soon" data-i18n="soon">Em breve</span>
           <span class="logo"></span>
-          <span class="lines"><span class="small">Baixar na</span><span class="name">App Store</span></span>
+          <span class="lines"><span class="small" data-i18n="dlApple">Baixar na</span><span class="name">App Store</span></span>
         </div>
         <div class="store">
-          <span class="soon">Em breve</span>
+          <span class="soon" data-i18n="soon">Em breve</span>
           <span class="logo">▶</span>
-          <span class="lines"><span class="small">Disponível no</span><span class="name">Google Play</span></span>
+          <span class="lines"><span class="small" data-i18n="dlGoogle">Disponível no</span><span class="name">Google Play</span></span>
         </div>
       </div>
     </header>
 
     <!-- DESTAQUES -->
-    <h2 class="section-title">O que você encontra</h2>
-    <p class="section-sub">Conteúdo para conhecer, viver e defender a fé católica.</p>
+    <h2 class="section-title" data-i18n="featTitle">O que você encontra</h2>
+    <p class="section-sub" data-i18n="featSub">Conteúdo para conhecer, viver e defender a fé católica.</p>
     <div class="grid">
-      <div class="feature"><div class="ico">📚</div><h3>Artigos</h3><p>Existência de Deus, Igreja, Escritura, moral, outras religiões e história.</p></div>
-      <div class="feature"><div class="ico">📖</div><h3>Bíblia</h3><p>73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).</p></div>
-      <div class="feature"><div class="ico">🔖</div><h3>Referências</h3><p>Versículos, Catecismo e documentos da Igreja, com o texto no original.</p></div>
-      <div class="feature"><div class="ico">🌅</div><h3>Dia de Hoje</h3><p>Versículo do dia, santo do dia e a liturgia diária.</p></div>
-      <div class="feature"><div class="ico">🧰</div><h3>Ferramentas</h3><p>Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.</p></div>
-      <div class="feature"><div class="ico">🌐</div><h3>PT / EN · Offline</h3><p>Português e inglês, modo escuro e tudo funcionando sem internet.</p></div>
+      <div class="feature"><div class="ico">📚</div><h3 data-i18n="f1t">Artigos</h3><p data-i18n="f1d">Existência de Deus, Igreja, Escritura, moral, outras religiões e história.</p></div>
+      <div class="feature"><div class="ico">📖</div><h3 data-i18n="f2t">Bíblia</h3><p data-i18n="f2d">73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).</p></div>
+      <div class="feature"><div class="ico">🔖</div><h3 data-i18n="f3t">Referências</h3><p data-i18n="f3d">Versículos, Catecismo e documentos da Igreja, com o texto no original.</p></div>
+      <div class="feature"><div class="ico">🌅</div><h3 data-i18n="f4t">Dia de Hoje</h3><p data-i18n="f4d">Versículo do dia, santo do dia e a liturgia diária.</p></div>
+      <div class="feature"><div class="ico">🧰</div><h3 data-i18n="f5t">Ferramentas</h3><p data-i18n="f5d">Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.</p></div>
+      <div class="feature"><div class="ico">🌐</div><h3 data-i18n="f6t">PT / EN · Offline</h3><p data-i18n="f6d">Português e inglês, modo escuro e tudo funcionando sem internet.</p></div>
     </div>
 
     <!-- ABRIR WEB -->
     <div class="webcard">
-      <h2>Prefere usar no navegador?</h2>
-      <p>Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas
-         ficam sincronizados com o celular.</p>
-      <a class="cta" href="app/">Abrir versão web &rarr;</a>
+      <h2 data-i18n="webTitle">Prefere usar no navegador?</h2>
+      <p data-i18n="webDesc">Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas ficam sincronizados com o celular.</p>
+      <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web →</a>
     </div>
 
     <!-- RODAPÉ -->
     <footer>
       <div>
-        <a href="privacy.html">Privacidade</a> ·
-        <a href="terms.html">Termos</a> ·
-        <a href="donate.html">Apoiar</a> ·
+        <a href="privacy.html" data-i18n="footPrivacy">Privacidade</a> ·
+        <a href="terms.html" data-i18n="footTerms">Termos</a> ·
+        <a href="donate.html" data-i18n="footDonate">Apoiar</a> ·
         <a href="https://github.com/Movits/apologetica-app">GitHub</a>
       </div>
-      <p class="madewith">Feito com fé. ✝</p>
+      <p class="madewith" data-i18n="madewith">Feito com fé. ✝</p>
     </footer>
   </div>
+
+  <script>
+    var I18N = {
+      pt: {
+        tagline: 'Evangelização e apologética católica',
+        verse: '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."',
+        verseRef: '1 Pedro 3,15',
+        ctaOpen: 'Abrir versão web →',
+        soon: 'Em breve',
+        dlApple: 'Baixar na',
+        dlGoogle: 'Disponível no',
+        featTitle: 'O que você encontra',
+        featSub: 'Conteúdo para conhecer, viver e defender a fé católica.',
+        f1t: 'Artigos', f1d: 'Existência de Deus, Igreja, Escritura, moral, outras religiões e história.',
+        f2t: 'Bíblia', f2d: '73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).',
+        f3t: 'Referências', f3d: 'Versículos, Catecismo e documentos da Igreja, com o texto no original.',
+        f4t: 'Dia de Hoje', f4d: 'Versículo do dia, santo do dia e a liturgia diária.',
+        f5t: 'Ferramentas', f5d: 'Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.',
+        f6t: 'PT / EN · Offline', f6d: 'Português e inglês, modo escuro e tudo funcionando sem internet.',
+        webTitle: 'Prefere usar no navegador?',
+        webDesc: 'Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas ficam sincronizados com o celular.',
+        footPrivacy: 'Privacidade', footTerms: 'Termos', footDonate: 'Apoiar',
+        madewith: 'Feito com fé. ✝'
+      },
+      en: {
+        tagline: 'Catholic evangelization and apologetics',
+        verse: '"Always be ready to give an answer to anyone who asks you the reason for the hope that is in you."',
+        verseRef: '1 Peter 3:15',
+        ctaOpen: 'Open web version →',
+        soon: 'Coming soon',
+        dlApple: 'Download on the',
+        dlGoogle: 'Get it on',
+        featTitle: "What you'll find",
+        featSub: 'Content to know, live and defend the Catholic faith.',
+        f1t: 'Articles', f1d: 'Existence of God, the Church, Scripture, morality, other religions and history.',
+        f2t: 'Bible', f2d: '73 complete books in Portuguese (Ave Maria) and English (Douay-Rheims).',
+        f3t: 'References', f3d: 'Verses, Catechism and Church documents, with the original text.',
+        f4t: 'Today', f4d: 'Verse of the day, saint of the day and the daily liturgy.',
+        f5t: 'Tools', f5d: 'Rosary, reading plan, examination of conscience, quiz and dialogue mode.',
+        f6t: 'PT / EN · Offline', f6d: 'Portuguese and English, dark mode, and everything works offline.',
+        webTitle: 'Prefer the browser?',
+        webDesc: 'Access all the content on the web and, by signing in, your favorites, highlights and notes stay synced with your phone.',
+        footPrivacy: 'Privacy', footTerms: 'Terms', footDonate: 'Support',
+        madewith: 'Made with faith. ✝'
+      }
+    };
+    var current = 'pt';
+    function applyLang(lang) {
+      if (!I18N[lang]) lang = 'pt';
+      current = lang;
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var k = el.getAttribute('data-i18n');
+        if (I18N[lang][k] != null) el.textContent = I18N[lang][k];
+      });
+      var btn = document.getElementById('langBtn');
+      if (btn) btn.textContent = lang === 'pt' ? 'EN' : 'PT';
+      try { localStorage.setItem('appg_lang', lang); } catch (e) {}
+    }
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('appg_lang'); } catch (e) {}
+      var nav = (navigator.language || '').toLowerCase();
+      applyLang(saved || (nav.indexOf('en') === 0 ? 'en' : 'pt'));
+    })();
+    document.getElementById('langBtn').addEventListener('click', function () {
+      applyLang(current === 'pt' ? 'en' : 'pt');
+    });
+  </script>
 </body>
 </html>

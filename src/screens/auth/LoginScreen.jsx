@@ -167,7 +167,7 @@ const makeStyles = (c, fs) =>
       width: '100%',
       gap: 10,
     },
-    input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, outlineStyle: 'none', outlineWidth: 0 },
+    input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null) },
     forgotLink: { alignSelf: 'flex-end', marginBottom: 16, marginTop: 4 },
     forgotText: { fontSize: fs(13), color: c.accent, fontWeight: '600' },
     error: { color: '#c0392b', fontSize: fs(13), marginBottom: 12, textAlign: 'center', width: '100%' },

@@ -1,7 +1,8 @@
 import { useState, useCallback } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
+import { confirmAction, notify } from '../utils/dialog';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { readingPlan } from '../data/readingPlan';
@@ -27,22 +28,19 @@ export default function ReadingPlanScreen({ navigation }) {
   );
 
   const onReset = () => {
-    Alert.alert(
-      isEn ? 'Reset progress?' : 'Reiniciar progresso?',
-      isEn
+    confirmAction({
+      title: isEn ? 'Reset progress?' : 'Reiniciar progresso?',
+      message: isEn
         ? 'Plan progress will be erased. Read articles remain available.'
         : 'O progresso do plano será apagado. Os artigos lidos continuam disponíveis.',
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        {
-          text: isEn ? 'Reset' : 'Reiniciar', style: 'destructive',
-          onPress: async () => {
-            await resetPlanProgress();
-            setProgress({ completed: [], lastDay: 0 });
-          }
-        },
-      ]
-    );
+      confirmText: isEn ? 'Reset' : 'Reiniciar',
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: async () => {
+        await resetPlanProgress();
+        setProgress({ completed: [], lastDay: 0 });
+      },
+    });
   };
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
@@ -93,7 +91,7 @@ export default function ReadingPlanScreen({ navigation }) {
                   if (article) {
                     navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day });
                   } else {
-                    Alert.alert(
+                    notify(
                       isEn ? 'In preparation' : 'Em preparação',
                       isEn ? 'This article will be added in a future update.' : 'Este artigo ainda será adicionado em uma próxima atualização.'
                     );

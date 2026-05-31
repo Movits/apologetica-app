@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Alert } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal } from 'react-native';
+import { notify } from '../utils/dialog';
 import * as Clipboard from 'expo-clipboard';
 import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
@@ -171,7 +172,7 @@ export default function BibleScreen({ route, navigation }) {
         await addHighlight({ bookId: book.id, chapter, verse: actionVerse.n, color });
       }
     } catch (e) {
-      Alert.alert(isEn ? 'Error' : 'Erro', e.message || applyHighlightError());
+      notify(isEn ? 'Error' : 'Erro', e.message || applyHighlightError());
     }
     setActionVerse(null);
   };
@@ -194,7 +195,7 @@ export default function BibleScreen({ route, navigation }) {
     const refText = `${bn(book)} ${chapter}${sep}${actionVerse.n}\n${actionVerse.t}`;
     await Clipboard.setStringAsync(refText);
     setActionVerse(null);
-    Alert.alert(isEn ? 'Copied' : 'Copiado', isEn ? 'Verse copied to clipboard.' : 'Versículo copiado para a área de transferência.');
+    notify(isEn ? 'Copied' : 'Copiado', isEn ? 'Verse copied to clipboard.' : 'Versículo copiado para a área de transferência.');
   };
 
   const shareVerseFromMenu = () => {
@@ -227,7 +228,7 @@ export default function BibleScreen({ route, navigation }) {
     const onError = () => {
       speakingRef.current = false;
       setSpeaking(false);
-      Alert.alert(
+      notify(
         isEn ? 'Narration failed' : 'Erro na narração',
         isEn
           ? 'Could not play audio. Go to Settings → Voice to configure an English voice.'

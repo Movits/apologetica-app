@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { watchHighlights, removeHighlight } from '../services/userData';
+import { confirmAction } from '../utils/dialog';
 import { getBook, bookName } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
@@ -39,14 +40,14 @@ export default function HighlightsScreen({ navigation }) {
   };
 
   const confirmRemove = (h) => {
-    Alert.alert(
-      isEn ? 'Remove highlight?' : 'Remover marcação?',
-      isEn ? 'This highlight will be deleted.' : 'Esta marcação será excluída.',
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        { text: t('common.remove'), style: 'destructive', onPress: () => removeHighlight(h.id) },
-      ]
-    );
+    confirmAction({
+      title: isEn ? 'Remove highlight?' : 'Remover marcação?',
+      message: isEn ? 'This highlight will be deleted.' : 'Esta marcação será excluída.',
+      confirmText: t('common.remove'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: () => removeHighlight(h.id),
+    });
   };
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();

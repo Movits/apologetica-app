@@ -32,8 +32,8 @@ function getSlides(isEn) {
       icon: 'compass-outline',
       title: isEn ? 'What you find here' : 'O que você encontra aqui',
       body: isEn
-        ? 'Ave Maria Bible offline (PT), Douay-Rheims in English, Catechism, daily liturgy from CNBB, biblical map, apologetics quiz, dialogue mode, and 36-day reading plan.'
-        : 'Bíblia Ave Maria offline, Douay-Rheims em inglês, Catecismo, liturgia diária da CNBB, mapa bíblico, quiz apologético, modo diálogo e plano de leitura de 36 dias.',
+        ? 'Ave Maria Bible offline (PT), Douay-Rheims in English, Catechism, daily liturgy from CNBB, biblical map, apologetics quiz, dialogue mode, and 30-day reading plan.'
+        : 'Bíblia Ave Maria offline, Douay-Rheims em inglês, Catecismo, liturgia diária da CNBB, mapa bíblico, quiz apologético, modo diálogo e plano de leitura de 30 dias.',
     },
     {
       icon: 'language-outline',

@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView,
-  KeyboardAvoidingView, Platform, ActivityIndicator, Alert,
+  KeyboardAvoidingView, Platform, ActivityIndicator,
 } from 'react-native';
+import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
@@ -54,7 +55,7 @@ export default function NotebookPageScreen({ route, navigation }) {
       }
       setMode('read');
     } catch (e) {
-      Alert.alert(isEn ? 'Error' : 'Erro', e.message || (isEn ? 'Could not save.' : 'Não foi possível salvar.'));
+      notify(isEn ? 'Error' : 'Erro', e.message || (isEn ? 'Could not save.' : 'Não foi possível salvar.'));
     } finally {
       setBusy(false);
     }
@@ -62,19 +63,17 @@ export default function NotebookPageScreen({ route, navigation }) {
 
   const confirmDelete = () => {
     if (!pageId) return navigation.goBack();
-    Alert.alert(
-      isEn ? 'Delete page?' : 'Excluir página?',
-      isEn ? 'This page will be permanently removed.' : 'Esta página será removida permanentemente.',
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        {
-          text: t('common.delete'), style: 'destructive', onPress: async () => {
-            await removeNotebookPage(pageId);
-            navigation.goBack();
-          },
-        },
-      ]
-    );
+    confirmAction({
+      title: isEn ? 'Delete page?' : 'Excluir página?',
+      message: isEn ? 'This page will be permanently removed.' : 'Esta página será removida permanentemente.',
+      confirmText: t('common.delete'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: async () => {
+        await removeNotebookPage(pageId);
+        navigation.goBack();
+      },
+    });
   };
 
   useLayoutEffect(() => {
@@ -191,7 +190,7 @@ const makeStyles = (c, fs) =>
     titleInput: {
       fontSize: fs(20), fontWeight: 'bold', color: c.primaryText,
       paddingHorizontal: 20, paddingTop: 16, paddingBottom: 8,
-      outlineStyle: 'none', outlineWidth: 0,
+      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
     },
     toolbar: { flexDirection: 'row', paddingHorizontal: 20, paddingBottom: 8 },
     atBtn: {
@@ -203,7 +202,7 @@ const makeStyles = (c, fs) =>
     bodyInput: {
       flex: 1, paddingHorizontal: 20, paddingTop: 4,
       fontSize: fs(16), color: c.text, lineHeight: fs(24),
-      outlineStyle: 'none', outlineWidth: 0,
+      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
     },
     readTitle: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, marginBottom: 14 },
     deleteBtn: {
