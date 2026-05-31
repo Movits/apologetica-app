@@ -90,6 +90,28 @@ export function ThemeProvider({ children }) {
     NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
   }, [darkMode]);
 
+  // Web: o autofill do navegador pinta um fundo azul/amarelo só no <input> interno,
+  // destoando do card. Aqui forçamos o autofill a usar a cor do card e do texto do
+  // tema, deixando o campo uniforme. Atualiza quando o tema muda.
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+    const c = darkMode ? DARK : LIGHT;
+    const id = 'appg-autofill-style';
+    let el = document.getElementById(id);
+    if (!el) {
+      el = document.createElement('style');
+      el.id = id;
+      document.head.appendChild(el);
+    }
+    el.textContent =
+      'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,textarea:-webkit-autofill{' +
+      '-webkit-box-shadow:0 0 0 1000px ' + c.card + ' inset !important;' +
+      'box-shadow:0 0 0 1000px ' + c.card + ' inset !important;' +
+      '-webkit-text-fill-color:' + c.text + ' !important;' +
+      'caret-color:' + c.text + ';' +
+      'transition:background-color 9999s ease-in-out 0s;}';
+  }, [darkMode]);
+
   const value = useMemo(() => {
     const colors = darkMode ? DARK : LIGHT;
     const scale = FONT_SCALES[fontSize] ?? 1;
