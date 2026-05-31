@@ -5,17 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>APPologética — Evangelização e apologética católica</title>
   <meta name="description" content="App católico de evangelização e apologética: artigos, Bíblia, referências e ferramentas de oração. Disponível também na web.">
+  <!-- Define o tema antes do render para evitar flash. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('appg_theme');
+        if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1a3a5c;
+      --primary: #1a3a5c;   /* fundo do hero */
+      --heading: #1a3a5c;   /* cor dos títulos */
       --accent: #c9a84c;
       --bg: #f5f0e8;
       --card: #ffffff;
+      --cardBorder: rgba(0,0,0,0.12);
       --text: #222;
       --muted: #666;
+    }
+    :root[data-theme="dark"] {
+      --primary: #142844;
+      --heading: #e6c878;
+      --accent: #d4b86a;
+      --bg: #0d1722;
+      --card: #172538;
+      --cardBorder: rgba(255,255,255,0.14);
+      --text: #ece8d8;
+      --muted: #a8a395;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,18 +46,26 @@
       color: var(--text);
       min-height: 100vh;
       line-height: 1.5;
+      transition: background-color .2s ease, color .2s ease;
     }
     a { color: inherit; }
     .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
 
-    /* Toggle de idioma */
-    .langtoggle {
-      position: fixed; top: 14px; right: 14px; z-index: 20;
-      background: var(--card); color: var(--primary); border: 1px solid rgba(0,0,0,0.12);
-      border-radius: 20px; padding: 7px 14px; font-weight: 700; font-size: 13px;
-      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.08); font-family: 'Lato', sans-serif;
+    /* Pílulas de tema + idioma (canto superior direito) */
+    .toggles { position: fixed; top: 14px; right: 14px; z-index: 20; display: flex; gap: 8px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--card); color: var(--muted);
+      border: 1px solid var(--cardBorder); border-radius: 20px;
+      padding: 7px 12px; font-weight: 700; font-size: 13px;
+      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      font-family: 'Lato', sans-serif; line-height: 1;
     }
-    .langtoggle:hover { background: #fff; }
+    .pill svg { width: 16px; height: 16px; display: block; }
+    .pill:hover { border-color: var(--accent); }
+    .icon-sun { display: none; }
+    :root[data-theme="dark"] .icon-sun { display: block; }
+    :root[data-theme="dark"] .icon-moon { display: none; }
 
     /* Hero */
     .hero {
@@ -86,7 +116,7 @@
 
     /* Destaques */
     .section-title {
-      font-family: 'Cormorant Garamond', serif; color: var(--primary);
+      font-family: 'Cormorant Garamond', serif; color: var(--heading);
       font-size: 28px; font-weight: 700; text-align: center; margin: 44px 0 4px;
     }
     .section-sub { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 24px; }
@@ -96,7 +126,7 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.05); border-left: 4px solid var(--accent);
     }
     .feature .ico { font-size: 26px; }
-    .feature h3 { color: var(--primary); font-size: 17px; margin: 8px 0 4px; }
+    .feature h3 { color: var(--heading); font-size: 17px; margin: 8px 0 4px; }
     .feature p { color: var(--muted); font-size: 13px; }
 
     /* Bloco "abrir web" */
@@ -104,18 +134,28 @@
       background: var(--card); border-radius: 16px; padding: 28px; text-align: center;
       margin-top: 36px; box-shadow: 0 6px 22px rgba(0,0,0,0.06);
     }
-    .webcard h2 { font-family: 'Cormorant Garamond', serif; color: var(--primary); font-size: 26px; }
+    .webcard h2 { font-family: 'Cormorant Garamond', serif; color: var(--heading); font-size: 26px; }
     .webcard p { color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
 
     /* Rodapé */
     footer { text-align: center; margin-top: 40px; color: var(--muted); font-size: 13px; }
-    footer a { color: var(--primary); font-weight: 700; text-decoration: none; margin: 0 8px; }
+    footer a { color: var(--heading); font-weight: 700; text-decoration: none; margin: 0 8px; }
     footer a:hover { text-decoration: underline; }
     .madewith { margin-top: 18px; font-style: italic; color: var(--accent); }
   </style>
 </head>
 <body>
-  <button id="langBtn" class="langtoggle" type="button">EN</button>
+  <div class="toggles">
+    <button id="themeBtn" class="pill" type="button" aria-label="Tema claro/escuro">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button id="langBtn" class="pill" type="button">
+      <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"><path d="M48 112h288M192 64v48M272 448l96-224 96 224M301.5 384h133M281.3 112S257 206 199 277 80 384 80 384"/><path d="M256 336s-35-27-72-75-56-85-56-85"/></svg>
+      <span id="langLabel">English</span>
+    </button>
+  </div>
+
   <div class="wrap">
     <!-- HERO -->
     <header class="hero">
@@ -219,6 +259,7 @@
         madewith: 'Made with faith. ✝'
       }
     };
+
     var current = 'pt';
     function applyLang(lang) {
       if (!I18N[lang]) lang = 'pt';
@@ -228,18 +269,33 @@
         var k = el.getAttribute('data-i18n');
         if (I18N[lang][k] != null) el.textContent = I18N[lang][k];
       });
-      var btn = document.getElementById('langBtn');
-      if (btn) btn.textContent = lang === 'pt' ? 'EN' : 'PT';
+      // O botão mostra o idioma de destino (igual ao app).
+      var label = document.getElementById('langLabel');
+      if (label) label.textContent = lang === 'pt' ? 'English' : 'Português';
       try { localStorage.setItem('appg_lang', lang); } catch (e) {}
     }
+
+    function applyTheme(theme) {
+      theme = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      try { localStorage.setItem('appg_theme', theme); } catch (e) {}
+    }
+
     (function () {
-      var saved = null;
-      try { saved = localStorage.getItem('appg_lang'); } catch (e) {}
+      var savedLang = null, savedTheme = null;
+      try { savedLang = localStorage.getItem('appg_lang'); } catch (e) {}
+      try { savedTheme = localStorage.getItem('appg_theme'); } catch (e) {}
       var nav = (navigator.language || '').toLowerCase();
-      applyLang(saved || (nav.indexOf('en') === 0 ? 'en' : 'pt'));
+      applyLang(savedLang || (nav.indexOf('en') === 0 ? 'en' : 'pt'));
+      applyTheme(savedTheme || (document.documentElement.dataset.theme || 'light'));
     })();
+
     document.getElementById('langBtn').addEventListener('click', function () {
       applyLang(current === 'pt' ? 'en' : 'pt');
+    });
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(t);
     });
   </script>
 </body>
