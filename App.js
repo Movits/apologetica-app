@@ -325,7 +325,15 @@ function RootNavigation() {
   }
 
   return (
-    <NavigationContainer theme={navTheme}>
+    <NavigationContainer
+      theme={navTheme}
+      // Título da aba do navegador (web): marca + seção, nunca o nome interno
+      // da rota (ex.: "HomeMain"). No nativo é ignorado.
+      documentTitle={{
+        formatter: (options) =>
+          options?.title ? `APPologética · ${options.title}` : 'APPologética',
+      }}
+    >
       <StatusBar style="light" />
       {signedInOrGuest ? <MainStack /> : <AuthStack />}
     </NavigationContainer>
