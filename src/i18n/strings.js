@@ -55,8 +55,6 @@ export const STRINGS = {
     // === Home ===
     'home.search': 'Buscar em todo o app...',
     'home.section.learn': 'O que você quer aprender?',
-    'home.section.today': 'Hoje',
-    'home.section.explore': 'Explorar',
     'home.section.spirituality': 'Espiritualidade',
     'home.section.training': 'Treino',
     'home.section.study': 'Meu Estudo',
@@ -84,8 +82,6 @@ export const STRINGS = {
     'home.card.quizSub': 'Pergunta nova todo dia',
     'home.card.dialogue': 'Modo Diálogo',
     'home.card.dialogueSub': 'Treine respostas para objeções',
-    'home.card.catechism': 'Catecismo',
-    'home.card.catechismSub': 'Catecismo da Igreja Católica',
     'home.card.map': 'Nos Passos de Jesus',
     'home.card.mapSub': 'Acompanhe o caminho de Cristo',
     'home.card.favorites': 'Meus Favoritos',
@@ -100,7 +96,6 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Aparência',
-    'settings.section.reading': 'Leitura em voz alta',
     'settings.section.notifications': 'Notificações',
     'settings.section.content': 'Conteúdo e devoção',
     'settings.section.language': 'Idioma',
@@ -136,7 +131,6 @@ export const STRINGS = {
     'bible.book': 'Livro',
     'bible.testament.ot': 'Antigo Testamento',
     'bible.testament.nt': 'Novo Testamento',
-    'bible.notAvailable': 'A Bíblia em inglês ainda não está disponível offline. Em breve.',
 
     // === Articles ===
     'articles.all': 'Todos',
@@ -321,8 +315,6 @@ export const STRINGS = {
     // === Home ===
     'home.search': 'Search in the app...',
     'home.section.learn': 'What do you want to learn?',
-    'home.section.today': 'Today',
-    'home.section.explore': 'Explore',
     'home.section.spirituality': 'Spirituality',
     'home.section.training': 'Training',
     'home.section.study': 'My Study',
@@ -350,8 +342,6 @@ export const STRINGS = {
     'home.card.quizSub': 'A new question every day',
     'home.card.dialogue': 'Dialogue Mode',
     'home.card.dialogueSub': 'Practice responses to objections',
-    'home.card.catechism': 'Catechism',
-    'home.card.catechismSub': 'Catechism of the Catholic Church',
     'home.card.map': 'In Jesus\' Footsteps',
     'home.card.mapSub': 'Follow the path of Christ',
     'home.card.favorites': 'My Favorites',
@@ -366,7 +356,6 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Appearance',
-    'settings.section.reading': 'Read aloud',
     'settings.section.notifications': 'Notifications',
     'settings.section.content': 'Content and devotion',
     'settings.section.language': 'Language',
@@ -402,7 +391,6 @@ export const STRINGS = {
     'bible.book': 'Book',
     'bible.testament.ot': 'Old Testament',
     'bible.testament.nt': 'New Testament',
-    'bible.notAvailable': 'The English Bible is not yet available offline. Coming soon.',
 
     // === Articles ===
     'articles.all': 'All',
