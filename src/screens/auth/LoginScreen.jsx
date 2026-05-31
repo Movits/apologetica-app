@@ -5,11 +5,12 @@ import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
+import AuthTopToggles from '../../components/AuthTopToggles';
 
 export default function LoginScreen({ navigation }) {
   const { signIn, continueAsGuest } = useAuth();
   const { colors, fs } = useTheme();
-  const { t, lang, setLang } = useLanguage();
+  const { t, lang } = useLanguage();
   const google = useGoogleSignIn();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,18 +31,13 @@ export default function LoginScreen({ navigation }) {
   };
 
   const styles = makeStyles(colors, fs);
-  const toggleLang = () => setLang(lang === 'pt' ? 'en' : 'pt');
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1, backgroundColor: colors.bg }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      {/* Botão sutil de idioma no canto superior direito */}
-      <TouchableOpacity style={styles.langToggle} onPress={toggleLang} hitSlop={12}>
-        <Ionicons name="language-outline" size={14} color={colors.textMuted} />
-        <Text style={styles.langText}>{lang === 'pt' ? 'English' : 'Português'}</Text>
-      </TouchableOpacity>
+      <AuthTopToggles />
 
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <Text style={styles.cross}>✝</Text>
@@ -141,22 +137,6 @@ const makeStyles = (c, fs) =>
     cross: { fontSize: fs(54), color: c.accent, marginBottom: 12 },
     title: { fontSize: fs(28), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
     subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 32, textAlign: 'center' },
-    langToggle: {
-      position: 'absolute',
-      top: 50,
-      right: 20,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
-      borderRadius: 14,
-      borderWidth: 1,
-      borderColor: c.divider,
-      backgroundColor: c.card,
-      zIndex: 10,
-    },
-    langText: { color: c.textMuted, fontSize: fs(11), fontWeight: '600' },
     inputRow: {
       flexDirection: 'row',
       alignItems: 'center',

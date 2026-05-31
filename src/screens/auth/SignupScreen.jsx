@@ -5,11 +5,12 @@ import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
+import AuthTopToggles from '../../components/AuthTopToggles';
 
 export default function SignupScreen({ navigation }) {
   const { signUp } = useAuth();
   const { colors, fs } = useTheme();
-  const { t, lang, setLang } = useLanguage();
+  const { t, lang } = useLanguage();
   const google = useGoogleSignIn();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,17 +42,13 @@ export default function SignupScreen({ navigation }) {
   };
 
   const styles = makeStyles(colors, fs);
-  const toggleLang = () => setLang(lang === 'pt' ? 'en' : 'pt');
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1, backgroundColor: colors.bg }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <TouchableOpacity style={styles.langToggle} onPress={toggleLang} hitSlop={12}>
-        <Ionicons name="language-outline" size={14} color={colors.textMuted} />
-        <Text style={styles.langText}>{lang === 'pt' ? 'English' : 'Português'}</Text>
-      </TouchableOpacity>
+      <AuthTopToggles />
 
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
@@ -160,13 +157,6 @@ const makeStyles = (c, fs) =>
   StyleSheet.create({
     content: { padding: 24, paddingTop: 60 },
     backBtn: { marginBottom: 12, alignSelf: 'flex-start' },
-    langToggle: {
-      position: 'absolute', top: 50, right: 20,
-      flexDirection: 'row', alignItems: 'center', gap: 4,
-      paddingHorizontal: 10, paddingVertical: 6, borderRadius: 14,
-      borderWidth: 1, borderColor: c.divider, backgroundColor: c.card, zIndex: 10,
-    },
-    langText: { color: c.textMuted, fontSize: fs(11), fontWeight: '600' },
     title: { fontSize: fs(26), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
     subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 28, lineHeight: fs(20) },
     inputRow: {

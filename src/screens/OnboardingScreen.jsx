@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { setOnboardingDone } from '../utils/onboarding';
+import AuthTopToggles from '../components/AuthTopToggles';
 
 const { width } = Dimensions.get('window');
 
@@ -53,8 +54,8 @@ function getSlides(isEn) {
 }
 
 export default function OnboardingScreen({ onDone }) {
-  const { colors, fs, darkMode, setDarkMode } = useTheme();
-  const { isEn, lang, setLang } = useLanguage();
+  const { colors, fs } = useTheme();
+  const { isEn } = useLanguage();
   const [index, setIndex] = useState(0);
   const listRef = useRef(null);
   const styles = makeStyles(colors, fs);
@@ -71,8 +72,6 @@ export default function OnboardingScreen({ onDone }) {
     await setOnboardingDone();
     onDone?.();
   };
-
-  const toggleLang = () => setLang(lang === 'pt' ? 'en' : 'pt');
 
   const renderItem = ({ item }) => (
     <View style={styles.slide}>
@@ -92,16 +91,7 @@ export default function OnboardingScreen({ onDone }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {/* Pílulas de tema (claro/escuro) e idioma no canto superior direito */}
-      <View style={styles.toggleRow}>
-        <TouchableOpacity style={styles.pill} onPress={() => setDarkMode(!darkMode)} hitSlop={12}>
-          <Ionicons name={darkMode ? 'sunny-outline' : 'moon-outline'} size={14} color={colors.textMuted} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.pill} onPress={toggleLang} hitSlop={12}>
-          <Ionicons name="language-outline" size={14} color={colors.textMuted} />
-          <Text style={styles.langText}>{lang === 'pt' ? 'English' : 'Português'}</Text>
-        </TouchableOpacity>
-      </View>
+      <AuthTopToggles />
 
       <FlatList
         ref={listRef}
@@ -161,16 +151,6 @@ const makeStyles = (c, fs) =>
     verseBox: { marginTop: 12, paddingHorizontal: 20, paddingVertical: 14, backgroundColor: c.card, borderRadius: 10, borderLeftWidth: 3, borderLeftColor: c.accent },
     verse: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', textAlign: 'center', lineHeight: fs(20) },
     verseRef: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', textAlign: 'center', marginTop: 6 },
-    toggleRow: {
-      position: 'absolute', top: 50, right: 20, zIndex: 10,
-      flexDirection: 'row', alignItems: 'center', gap: 8,
-    },
-    pill: {
-      flexDirection: 'row', alignItems: 'center', gap: 4,
-      paddingHorizontal: 10, paddingVertical: 6, borderRadius: 14,
-      borderWidth: 1, borderColor: c.divider, backgroundColor: c.card,
-    },
-    langText: { color: c.textMuted, fontSize: fs(11), fontWeight: '600' },
     footer: { padding: 24, paddingBottom: 40, gap: 20 },
     dots: { flexDirection: 'row', gap: 8, justifyContent: 'center' },
     dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: c.divider },
