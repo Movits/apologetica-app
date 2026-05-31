@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, SectionList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, SectionList, StyleSheet, TouchableOpacity, Linking, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { references, translateRef, translateAuthor, translateYear, BOOK_PT_TO_EN } from '../data/references';
@@ -312,7 +312,8 @@ export default function ReferencesScreen({ route }) {
         ref={listRef}
         sections={sections}
         keyExtractor={(r) => r.id}
-        stickySectionHeadersEnabled
+        // Sticky só no mobile: no react-native-web os cabeçalhos se sobrepõem.
+        stickySectionHeadersEnabled={Platform.OS !== 'web'}
         contentContainerStyle={{ paddingBottom: 40 }}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}

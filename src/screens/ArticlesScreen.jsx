@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { View, Text, SectionList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, SectionList, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
@@ -10,9 +10,9 @@ import SectionBanner from '../components/SectionBanner';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
-// Aba Artigos: página única com todos os artigos, separados por cabeçalho fixo
-// (SectionBanner) por categoria. O banner do topo troca ao rolar de uma seção
-// para outra (stickySectionHeadersEnabled).
+// Aba Artigos: página única com todos os artigos, separados por cabeçalho
+// (SectionBanner) por categoria. No mobile o banner fica fixo e troca ao rolar
+// de uma seção para outra; na web ele rola junto (sticky causa sobreposição).
 export default function ArticlesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
@@ -63,7 +63,9 @@ export default function ArticlesScreen({ route }) {
         ref={listRef}
         sections={sections}
         keyExtractor={(a) => String(a.id)}
-        stickySectionHeadersEnabled
+        // No react-native-web os cabeçalhos sticky empilham no top:0 e se
+        // sobrepõem (não há o "empurra-troca" do nativo). Sticky só no mobile.
+        stickySectionHeadersEnabled={Platform.OS !== 'web'}
         contentContainerStyle={{ paddingBottom: 40 }}
         ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
         onScroll={onScroll}
