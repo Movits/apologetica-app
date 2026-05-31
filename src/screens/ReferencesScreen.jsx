@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, SectionList, StyleSheet, TouchableOpacity, Linking, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { references, translateRef, translateAuthor, translateYear, BOOK_PT_TO_EN } from '../data/references';
@@ -8,6 +8,7 @@ import { REFERENCE_SOURCES } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
+import StickySectionList from '../components/StickySectionList';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
@@ -308,12 +309,10 @@ export default function ReferencesScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      <SectionList
+      <StickySectionList
         ref={listRef}
         sections={sections}
         keyExtractor={(r) => r.id}
-        // Sticky só no mobile: no react-native-web os cabeçalhos se sobrepõem.
-        stickySectionHeadersEnabled={Platform.OS !== 'web'}
         contentContainerStyle={{ paddingBottom: 40 }}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
