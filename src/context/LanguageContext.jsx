@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { translate, STRINGS } from '../i18n/strings';
 import { setAuthLanguage } from './AuthContext';
@@ -15,7 +16,15 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     (async () => {
       try {
-        const saved = await AsyncStorage.getItem(STORAGE_KEY);
+        // Na web, a escolha feita na landing fica em localStorage (appg_lang),
+        // compartilhada com o app (mesmo domínio). Ela tem prioridade.
+        let saved = null;
+        if (Platform.OS === 'web') {
+          try { saved = window.localStorage.getItem('appg_lang'); } catch {}
+        }
+        if (!saved || !STRINGS[saved]) {
+          saved = await AsyncStorage.getItem(STORAGE_KEY);
+        }
         if (saved && STRINGS[saved]) {
           setLangState(saved);
           setAuthLanguage(saved);
@@ -30,6 +39,10 @@ export function LanguageProvider({ children }) {
     setLangState(newLang);
     setAuthLanguage(newLang);
     AsyncStorage.setItem(STORAGE_KEY, newLang).catch(() => {});
+    // Mantém a chave compartilhada com a landing (web) em sincronia.
+    if (Platform.OS === 'web') {
+      try { window.localStorage.setItem('appg_lang', newLang); } catch {}
+    }
   };
 
   const value = useMemo(

@@ -62,11 +62,21 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     (async () => {
       try {
+        // Na web, a escolha feita na landing fica em localStorage (appg_theme),
+        // compartilhada com o app (mesmo domínio). Ela tem prioridade.
+        let webTheme = null;
+        if (Platform.OS === 'web') {
+          try { webTheme = window.localStorage.getItem('appg_theme'); } catch {}
+        }
         const [dm, fs] = await Promise.all([
           AsyncStorage.getItem(STORAGE_DARK),
           AsyncStorage.getItem(STORAGE_FONT),
         ]);
-        if (dm !== null) setDarkModeState(dm === 'true');
+        if (webTheme === 'dark' || webTheme === 'light') {
+          setDarkModeState(webTheme === 'dark');
+        } else if (dm !== null) {
+          setDarkModeState(dm === 'true');
+        }
         if (fs && FONT_SCALES[fs]) setFontSizeState(fs);
       } catch {
         // sem persistência, segue com padrão
@@ -77,7 +87,12 @@ export function ThemeProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    if (hydrated) AsyncStorage.setItem(STORAGE_DARK, String(darkMode)).catch(() => {});
+    if (!hydrated) return;
+    AsyncStorage.setItem(STORAGE_DARK, String(darkMode)).catch(() => {});
+    // Mantém a chave compartilhada com a landing (web) em sincronia.
+    if (Platform.OS === 'web') {
+      try { window.localStorage.setItem('appg_theme', darkMode ? 'dark' : 'light'); } catch {}
+    }
   }, [darkMode, hydrated]);
 
   useEffect(() => {
