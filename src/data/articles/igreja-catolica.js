@@ -17,7 +17,7 @@ Há também uma razão histórica simples e contundente sobre a Bíblia. O câno
 
 Quem é cristão sem ser católico geralmente herda doutrinas selecionadas da Igreja Católica (a Trindade, a divindade de Cristo, o cânon bíblico) mas rejeita a autoridade que as definiu. É um arranjo incoerente. Ou a Igreja teve autoridade dada por Cristo (e nesse caso continua tendo), ou nunca teve (e nesse caso a Bíblia que ela compilou também não é confiável).
 
-Perguntas que viram a conversa com um protestante:
+Perguntas-chave:
 
 1. Se sua igreja não existe historicamente até o século XVI, como ela pode ser a Igreja fundada por Cristo no século I?
 
@@ -45,15 +45,9 @@ Em mil anos não houve cristão sério defendendo que fosse apenas símbolo. A l
 
 Milagres eucarísticos comprovados
 
-A Igreja reconhece dezenas de milagres eucarísticos ao longo da história, vários submetidos a análise científica rigorosa.
+Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vários submetidos a análise científica rigorosa, com resultados convergentes: tecido cardíaco humano, vivo, do tipo sanguíneo AB. O mais famoso é o de Lanciano, na Itália. Por seu peso como evidência, esse tema é tratado em artigo próprio, com os estudos médicos de Lanciano, Buenos Aires, Sokolka e Tixtla e o catálogo do Bem-Aventurado Carlo Acutis.
 
-O mais famoso é o Milagre de Lanciano, na Itália. Por volta do ano 750, um monge basiliano duvidou da Presença Real durante a Missa. A Hóstia consagrada transformou-se em carne visível, e o vinho em sangue coagulado em cinco glóbulos. As relíquias estão preservadas há mais de 1200 anos sem nenhum tipo de conservante. Em 1970-1971, o anatomopatologista Dr. Edoardo Linoli e o Dr. Ruggero Bertelli, da Universidade de Siena, fizeram estudos científicos cegos sobre as relíquias. Resultados: a carne é tecido cardíaco humano (miocárdio); o sangue é humano, tipo AB; a carne e o sangue são da mesma pessoa; as proteínas se mantiveram conservadas por mais de mil anos, o que é cientificamente inexplicável. Uma comissão da Organização Mundial de Saúde em 1973 confirmou os resultados.
-
-Outros casos analisados independentemente, como Buenos Aires (1996, autorizado pelo então cardeal Bergoglio, hoje Papa Francisco), Sokolka (Polônia, 2008) e Tixtla (México, 2006), apresentam resultados convergentes: tecido cardíaco humano, vivo, tipo AB.
-
-O Bem-Aventurado Carlo Acutis, jovem leigo italiano (1991-2006), beatificado em 2020 e canonizado em 2025, compilou na adolescência um catálogo internacional de milagres eucarísticos aprovados pela Igreja. O site dele documenta cerca de 140 casos. Esse trabalho é uma referência atual para conhecer essas evidências.
-
-Perguntas que viram a conversa com um protestante:
+Perguntas-chave:
 
 1. Por que Jesus perdeu muitos discípulos em João 6,66 se ele estava apenas falando simbolicamente? Por que não os chamou de volta esclarecendo o mal-entendido?
 
@@ -79,7 +73,7 @@ Maria, como Mãe de Cristo, tem uma intercessão única. Nas Bodas de Caná, ela
 
 A distinção católica clássica é entre latria (adoração devida só a Deus), dulia (veneração devida aos santos) e hiperdulia (veneração superior devida a Maria, por sua dignidade única como Mãe de Deus). A confusão entre adorar e venerar é o coração da objeção popular, mas a Igreja sempre fez essa distinção com clareza.
 
-Perguntas que viram a conversa com um protestante:
+Perguntas-chave:
 
 1. Você pede que sua mãe ou um amigo ore por você? Por quê? Isso seria "intermediação indevida"?
 
@@ -107,7 +101,7 @@ A primeira testemunha cristã do tema é Justino Mártir, na metade do séc. II,
 
 A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogma. Em Portugal e no Brasil, ela é Padroeira oficial.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Por que Gabriel chama Maria de kecharitōménē (já totalmente agraciada) em vez de simplesmente "Maria"? O título substitui o nome.
 
@@ -135,7 +129,7 @@ Os Padres confirmam a doutrina já no séc. II e III. Tertuliano, em "De Carne C
 
 Vale notar uma curiosidade histórica. Os próprios Reformadores Martinho Lutero, João Calvino e Ulrico Zwínglio aceitavam a virgindade perpétua de Maria. A negação dessa doutrina é fenômeno bem posterior na história protestante. A Igreja Católica ensina hoje o que sempre se ensinou desde Santo Inácio de Antioquia, Justino Mártir e Tertuliano.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Por que Maria, já noiva de José, pergunta ao anjo "como será isso, pois não conheço varão"? A pergunta só faz sentido se ela tinha propósito de virgindade.
 
@@ -165,7 +159,7 @@ A festa litúrgica de Maria, Mãe de Deus, é celebrada em 1º de janeiro, oitav
 
 Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Maria é mãe de Jesus. Jesus é Deus. Logo, Maria é mãe de Deus. Onde está o erro?
 
@@ -195,7 +189,7 @@ A sucessão papal é documentável de modo único. Pedro, Lino, Cleto, Clemente,
 
 Sobre infalibilidade: o Concílio Vaticano I (1870), na constituição Pastor Aeternus, definiu que o Papa é infalível quando ensina ex cathedra (do trono), em matéria de fé ou moral, dirigindo-se a toda a Igreja, com a intenção clara de definir definitivamente. Isso aconteceu pouquíssimas vezes na história (Imaculada Conceição em 1854, Assunção em 1950). Não significa que o Papa não erra em opiniões particulares, política, futebol ou estilo de governo. Significa que Cristo protege a Igreja de erro doutrinal quando o sucessor de Pedro ensina solenemente.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Se Pedro não tinha autoridade especial, por que Jesus mudou seu nome e lhe deu "as chaves" diretamente?
 
@@ -233,7 +227,7 @@ Matrimônio entre dois batizados é elevado por Cristo à dignidade sacramental 
 
 Cada sacramento tem três elementos: matéria (sinal sensível, como água ou óleo), forma (palavras precisas) e ministro qualificado. Quando estes três estão presentes corretamente, o sacramento é válido e produz objetivamente o que significa, independentemente da virtude do ministro (princípio ex opere operato).
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Se sacramentos são "só símbolos", por que Jesus diz em João 6,53 que sem comer sua carne não há vida em vós?
 
@@ -267,7 +261,7 @@ A objeção "Deus me conhece e perdoa direto" tem três problemas. Primeiro, con
 
 A Igreja exige confissão obrigatória apenas em duas situações: ao menos uma vez por ano (preceito mínimo, Catecismo §1457) e antes de comungar quando se tem consciência de pecado grave (1 Cor 11,27-29). A confissão frequente, mesmo de pecados veniais, é fortemente recomendada como meio de crescimento espiritual.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Em João 20,23 Jesus dá poder de perdoar pecados aos apóstolos. Para quem foi esse poder, se não para os sacerdotes?
 
@@ -297,7 +291,7 @@ O detalhe historicamente significativo: nunca houve disputa entre cidades pela r
 
 Pio XII, antes de definir o dogma, consultou os bispos do mundo inteiro. A esmagadora maioria respondeu favoravelmente, atestando que essa fé era vivida e ensinada nas suas igrejas. O dogma não foi novidade: foi reconhecimento solene do que a Igreja já cria desde sempre.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Por que não existe nenhum túmulo de Maria reivindicado por nenhuma cidade do mundo cristão antigo?
 
@@ -333,7 +327,7 @@ Importante distinguir: o Purgatório não é "pena externa" arbitrária. É a ma
 
 Por isso a Igreja exorta os vivos a rezar pelos mortos. Não muda o destino deles (céu ou inferno foi decidido na hora da morte), mas pode abreviar e suavizar a purificação dos que vão para o céu. Daí as missas pelos defuntos, indulgências aplicadas em sufrágio, novenas, terços. É expressão da Comunhão dos Santos.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Como você interpreta 2 Macabeus 12,44-46 sobre orar pelos mortos? (Se rejeita o livro, por que Lutero precisou removê-lo, se ele não dizia nada problemático?)
 
@@ -369,7 +363,7 @@ A questão prática é simples. Imagine alguém que confessa Cristo com a boca, 
 
 A formulação católica clássica é: somos justificados pela fé que opera pela caridade. Fé sem caridade é morta. Caridade sem fé é mero filantropismo. As duas juntas, animadas pela graça, são o caminho da salvação.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Como você lê Tiago 2,24, que diz literalmente que a justificação não é "somente pela fé"?
 
@@ -379,6 +373,44 @@ Perguntas que viram a conversa:
 
 4. Se as obras não importam, por que Apocalipse 20,12 diz que "os mortos foram julgados conforme as suas obras"?`,
     references: ['tg-2-24', 'mt-25-31', 'mt-7-21', 'rm-3-28', 'gl-5-6', 'ap-20-12', 'cic-1991'],
+  },
+  {
+    id: 49,
+    title: 'Milagres Eucarísticos: Quando a Hóstia Vira Carne',
+    category: 'Igreja Católica',
+    summary: 'Em vários milagres eucarísticos analisados por cientistas, a Hóstia se tornou tecido cardíaco humano vivo, do tipo AB. Lanciano, Buenos Aires, Sokolka e Tixtla apontam para o mesmo coração.',
+    body: `A Igreja Católica afirma que, na consagração, o pão e o vinho se tornam verdadeiramente o Corpo e o Sangue de Cristo. Em alguns momentos da história, segundo a fé católica, Deus tornou esse mistério visível: a Hóstia se transformou em carne, e o vinho em sangue. O notável é que vários desses casos foram submetidos à ciência moderna, sem que se soubesse de antemão o resultado, e os achados são convergentes e difíceis de explicar.
+
+## Lanciano, o caso mais estudado
+
+Por volta do ano 750, na cidade de Lanciano, na Itália, um monge que duvidava da Presença Real viu, durante a Missa, a Hóstia transformar-se em carne e o vinho em sangue coagulado em cinco glóbulos. As relíquias foram conservadas por mais de mil e duzentos anos, sem qualquer conservante.
+
+Entre 1970 e 1971, o anatomopatologista Dr. Edoardo Linoli, com o Dr. Ruggero Bertelli, da Universidade de Siena, examinou as relíquias em estudo científico rigoroso. As conclusões: a carne é tecido cardíaco humano, especificamente miocárdio, a parede do coração; o sangue é humano, do tipo AB; a carne e o sangue são da mesma pessoa; e as proteínas se mantiveram íntegras por mais de mil anos, sem decomposição, algo que a ciência não consegue explicar. Em 1973, uma comissão ligada à Organização Mundial da Saúde confirmou os resultados após anos de verificação.
+
+## Buenos Aires, Sokolka, Tixtla
+
+O caso de Lanciano não está sozinho. Em Buenos Aires, em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi analisada anos depois, com a autorização do então arcebispo, o cardeal Jorge Bergoglio, hoje Papa Francisco. O resultado: tecido do músculo cardíaco, com sinais de inflamação, como o de um coração que sofreu. Em Sokolka, na Polônia, em 2008, e em Tixtla, no México, em 2006, exames independentes chegaram ao mesmo tipo de achado: tecido cardíaco humano, vivo, do tipo AB.
+
+A convergência é o que mais impressiona. Casos separados por séculos e continentes, analisados por equipes diferentes, apontam todos para a mesma coisa: o músculo de um coração humano, do mesmo tipo sanguíneo, em estado de quem agoniza.
+
+## O tipo sanguíneo AB
+
+Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o AB, o mesmo identificado no Sudário de Turim e no Sudário de Oviedo, panos associados à sepultura de Jesus. O AB é, além disso, um tipo relativamente raro e considerado receptor universal. Não é uma prova fechada, mas é uma coincidência que dá o que pensar.
+
+## O que isso prova e o que pede fé
+
+É preciso honestidade. Esses milagres não substituem a fé nem a tornam desnecessária. A Presença Real se crê pela palavra de Cristo, não por exames de laboratório. Mas os milagres eucarísticos são sinais: confirmações sensíveis, dadas por Deus, de uma verdade que já estava na Escritura e na Tradição. O Bem-Aventurado Carlo Acutis, jovem italiano canonizado em 2025, dedicou a adolescência a catalogar mais de uma centena desses casos aprovados pela Igreja, justamente para ajudar as pessoas a crer.
+
+## Perguntas-chave
+
+1. Como explicar que tecidos de mais de mil anos, sem conservante, se mantenham sem decomposição, como em Lanciano?
+
+2. Por que milagres separados por séculos e continentes apresentam o mesmo achado: músculo cardíaco humano, vivo, do tipo AB?
+
+3. O mesmo tipo sanguíneo AB aparece nos milagres eucarísticos e nos sudários de Turim e Oviedo. É coincidência sem importância?
+
+4. Se a Igreja quisesse fraudar, por que submeteria as relíquias a cientistas, alguns deles não crentes, com risco de desmentido público?`,
+    references: ['milagre-lanciano', 'acutis-milagres', 'jo-6-53'],
   },
 ];
 

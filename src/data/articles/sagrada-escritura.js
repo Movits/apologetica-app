@@ -19,7 +19,7 @@ O quarto problema é histórico. O Sola Scriptura surgiu no séc. XVI. Antes dis
 
 A solução católica é coerente: a Revelação de Deus se transmite pela Sagrada Escritura e pela Sagrada Tradição, ambas interpretadas pelo Magistério vivo da Igreja. As três coisas se sustentam mutuamente.
 
-Perguntas que viram a conversa com um protestante:
+Perguntas-chave:
 
 1. Onde, em que versículo específico, a Bíblia ensina que a Bíblia é a única regra de fé? (Sola Scriptura é autorrefutante: ele próprio não está na Bíblia.)
 
@@ -53,7 +53,7 @@ A Igreja Católica, no Concílio de Trento (1546), reafirmou solenemente o câno
 
 Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob a guia do Espírito Santo, quais livros eram autênticos, apostólicos, em conformidade com a regra de fé recebida. Os critérios eram: origem apostólica (escritos pelos apóstolos ou seus discípulos próximos), uso litúrgico nas igrejas (especialmente na liturgia eucarística), e ortodoxia (conformidade com a doutrina recebida). Os 73 livros passaram nesses critérios.
 
-Perguntas que viram a conversa:
+Perguntas-chave:
 
 1. Quem decidiu quais livros pertencem ao Novo Testamento? Se foi a Igreja Católica (e foi), por que aceitar essa decisão e rejeitar a mesma Igreja no Antigo?
 
@@ -107,7 +107,7 @@ As "contradições" mais famosas (Herodes vs Quirino no nascimento de Jesus, as 
 
 Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, escreve em seus livros que nenhuma das aparentes contradições afeta substancialmente a história central do cristianismo: Jesus existiu, foi crucificado, e seus discípulos creram tê-lo visto vivo após a morte.
 
-Perguntas que viram a conversa com um cético:
+Perguntas-chave:
 
 1. Você consegue dar um exemplo concreto de "contradição"? Vamos examinar juntos com calma.
 
@@ -137,7 +137,7 @@ A objeção, portanto, não é decisiva. As soluções linguísticas e históric
 
 Vale notar a desproporção da objeção. A historicidade de Jesus está atestada por múltiplas fontes independentes (Mateus, Marcos, Lucas, João, Paulo, Josefo, Tácito, Plínio o Jovem, Suetônio). Cinco palavras gramaticalmente ambíguas em Lucas 2,2 não derrubam esse edifício.
 
-Perguntas que viram a conversa com um cético:
+Perguntas-chave:
 
 1. Você já examinou o grego de Lucas 2,2, ou aceitou a tradução tradicional sem questionar a possibilidade de "antes de"?
 
@@ -169,7 +169,7 @@ A objeção, portanto, parte de uma expectativa moderna anacrônica (genealogias
 
 Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas para evitar a aparência de incoerência. O fato de coexistirem duas genealogias distintas, sem tentativa de harmonização, é sinal de fidelidade independente às fontes que cada um recebeu, não de fraude.
 
-Perguntas que viram a conversa com um cético:
+Perguntas-chave:
 
 1. Por que dois autores que fabricassem uma genealogia para Jesus produziriam versões diferentes? Não alinhariam para evitar contradição?
 
@@ -221,7 +221,7 @@ Gary Habermas, no estudo já citado sobre "fatos mínimos" da Ressurreição, mo
 
 Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordenada, os autores teriam ajustado as periferias para parecer uniforme. As diferenças visíveis nos Evangelhos são exatamente o tipo de discrepância natural que se espera de testemunhas independentes de um evento real.
 
-Perguntas que viram a conversa com um cético:
+Perguntas-chave:
 
 1. Quando quatro pessoas relatam o mesmo acidente de carro, é normal que mencionem detalhes diferentes. Você acusa todas elas de mentirem?
 
@@ -231,6 +231,162 @@ Perguntas que viram a conversa com um cético:
 
 4. Quantos anjos ou quantas mulheres mudam a substância do evento "Jesus ressuscitou"?`,
     references: ['mt-28-1', 'at-1-3', 'agostinho-consenso', 'habermas-resurreicao'],
+  },
+  {
+    id: 45,
+    title: 'A Escuridão na Cruz e a Datação da Crucificação',
+    category: 'Sagrada Escritura',
+    summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Fontes pagãs a registraram, e a astronomia moderna ajudou a datar a crucificação no ano 33.',
+    body: `No momento da morte de Jesus, os três Evangelhos sinópticos relatam um fenômeno estranho: "desde a hora sexta até a hora nona, houve trevas sobre toda a terra" (Mateus 27,45), isto é, do meio-dia às três da tarde. Marcos e Lucas registram o mesmo. Esse detalhe, longe de ser uma lenda fácil de inventar, levanta questões interessantes de história e de astronomia.
+
+## Não foi um eclipse solar
+
+A primeira coisa a notar é que a escuridão não pode ter sido um eclipse solar comum. A crucificação ocorreu na Páscoa judaica, que cai sempre na lua cheia. Ora, um eclipse solar só acontece na lua nova, quando a Lua se interpõe entre a Terra e o Sol. Na lua cheia, é astronomicamente impossível. Além disso, um eclipse solar total dura poucos minutos, não três horas.
+
+Isso tem uma consequência curiosa. Se os evangelistas quisessem inventar um sinal cósmico para impressionar, um "eclipse" na Páscoa seria o erro mais fácil de desmascarar para qualquer leitor da época que entendesse de calendário. Eles não descrevem um eclipse: descrevem trevas, um escurecimento anômalo, sem explicá-lo. É o tipo de relato sóbrio que se espera de uma testemunha, não de um mito.
+
+## O que dizem fontes não cristãs
+
+O detalhe não ficou restrito aos cristãos. O historiador Talo, por volta do ano 55, mencionou a escuridão e tentou explicá-la como um eclipse. Conhecemos isso porque o cristão Júlio Africano, no século III, cita Talo e observa, com razão, que não podia ser eclipse, já que era Páscoa, em lua cheia. Flégon de Trales, autor pagão do século II, também registrou uma grande escuridão e um terremoto por volta do quarto ano da 202ª Olimpíada, que corresponde aproximadamente ao ano 33. Fontes hostis ou neutras, portanto, conheciam o fenômeno.
+
+## A lua em sangue e a datação pela astronomia
+
+Há ainda outro fio, e é onde entra a astronomia moderna. No dia de Pentecostes, o apóstolo Pedro cita o profeta Joel: "o sol se converterá em trevas e a lua em sangue" (Atos 2,20, citando Joel 2,31), aplicando a profecia aos acontecimentos da Páscoa em que Jesus morreu. A "lua em sangue" é a descrição clássica de um eclipse lunar, em que a Lua, ao ser encoberta pela sombra da Terra, ganha tom avermelhado.
+
+Em 1983, os cientistas Colin Humphreys e W. G. Waddington publicaram na revista Nature o estudo "Dating the Crucifixion". Usando o cálculo astronômico de eclipses, o mesmo tipo de cálculo que hoje permite à NASA prever e retroprever eclipses com precisão de séculos, eles mostraram que na tarde e noite de sexta-feira, 3 de abril do ano 33, houve um eclipse lunar visível de Jerusalém: a Lua nasceu naquela noite já parcialmente eclipsada, avermelhada, exatamente "em sangue". Para os autores, esta é a data mais provável da crucificação, havendo também a hipótese de 7 de abril do ano 30.
+
+O resultado é notável. Uma profecia do profeta Joel, escrita séculos antes de Cristo, foi relatada por Pedro como cumprida na morte de Jesus, e só com a ciência astronômica recente foi possível identificar o eclipse lunar real, calculável, que ocorreu naquele dia exato. A escuridão das três horas continua sem explicação natural simples. O eclipse lunar da noite, esse sim, a astronomia confirma.
+
+## O que isso prova e o que não prova
+
+É preciso honestidade. A datação por eclipse não prova a divindade de Jesus, e os estudiosos ainda debatem entre os anos 30 e 33. Mas mostra duas coisas. Primeira, que os Evangelhos relatam acontecimentos ancorados num tempo e num lugar reais, verificáveis, e não num "era uma vez" mítico. Segunda, que detalhes considerados lendários por muito tempo se revelam compatíveis com a história e a astronomia quando examinados de perto.
+
+## Perguntas-chave
+
+1. Se os evangelistas quisessem inventar um eclipse para impressionar, por que o colocariam na Páscoa, em lua cheia, quando isso é impossível e fácil de desmentir?
+
+2. Como explicar que autores pagãos e neutros, como Talo e Flégon, tenham registrado uma escuridão e um terremoto na mesma época?
+
+3. Pedro aplica a profecia de Joel, a lua em sangue, à Páscoa de Jesus. Não é notável que a astronomia identifique um eclipse lunar real em Jerusalém em 3 de abril do ano 33?
+
+4. Se o relato fosse lenda tardia, por que é tão sóbrio, sem nem explicar o fenômeno, ao contrário das fábulas, que costumam exagerar?`,
+    references: ['mt-27-45', 'jl-2-31', 'at-2-20', 'talo-flegon', 'humphreys-eclipse'],
+  },
+  {
+    id: 46,
+    title: 'Profecias Messiânicas Cumpridas em Jesus',
+    category: 'Sagrada Escritura',
+    summary: 'Séculos antes de Cristo, os profetas anunciaram detalhes da vida, da morte e da vitória do Messias. Jesus os cumpre de modo impressionante.',
+    body: `Uma das evidências mais fortes a favor de Jesus como o Messias está nas Escrituras hebraicas escritas séculos antes do seu nascimento. Elas anunciam, com detalhes concretos, o lugar do nascimento, o modo da morte e a vitória sobre ela. Tomadas em conjunto, formam um retrato que Jesus de Nazaré preenche de modo impressionante.
+
+## Onde nasceria
+
+O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel nasceria em Belém, uma cidade pequena: "de ti sairá aquele que há de governar Israel" (Miquéias 5,2). Setecentos anos depois, Jesus nasce ali.
+
+Isaías anunciou ainda o sinal da concepção virginal: "a virgem conceberá e dará à luz um filho, e o chamarão Emanuel" (Isaías 7,14), nome que significa "Deus conosco".
+
+## Como morreria
+
+Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22, escrito séculos antes de a crucificação existir como forma de execução, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", as primeiras palavras de Jesus na cruz, tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os quatro Evangelhos descrevem exatamente isso na crucificação.
+
+O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "ferido por causa de nossas iniquidades", levado "como cordeiro ao matadouro", que "não abriu a boca", e cuja morte traz cura "por suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
+
+Zacarias acrescenta um detalhe singular: "olharão para mim, a quem traspassaram" (Zacarias 12,10), cumprido quando o soldado abre o lado de Jesus com a lança.
+
+## Quando viria
+
+O profeta Daniel, no capítulo 9, fixa um prazo: depois de um período de "setenta semanas", o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
+
+## A força do conjunto
+
+Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Que um único homem nasça no lugar previsto, morra do modo previsto, no tempo previsto, e cumpra ao mesmo tempo o Servo de Isaías, o justo do Salmo 22, o traspassado de Zacarias e o prazo de Daniel, é algo que nenhuma coincidência simples explica. Os primeiros cristãos, todos judeus conhecedores dessas Escrituras, reconheceram nelas o retrato de Jesus, e foi isso que os convenceu.
+
+## Perguntas-chave
+
+1. O Salmo 22 descreve mãos e pés traspassados e vestes sorteadas séculos antes de a crucificação existir como pena. De quem ele fala, senão de Jesus?
+
+2. Isaías 53 descreve um servo inocente que sofre e morre pelos pecados do povo. Que outra figura da história cumpre essa descrição como Jesus?
+
+3. Daniel 9 coloca a vinda e a morte do Messias antes da destruição do Templo, no ano 70. Quem cumpriu esse prazo?
+
+4. Uma só pessoa cumprir o lugar (Miquéias), o modo (Salmo 22 e Isaías 53) e o tempo (Daniel) é coincidência razoável, ou aponta para um plano?`,
+    references: ['mq-5-2', 'is-7-14', 'sl-22', 'is-53', 'zc-12-10', 'dn-9-24'],
+  },
+  {
+    id: 47,
+    title: 'A Arqueologia Confirma a Bíblia',
+    category: 'Sagrada Escritura',
+    summary: 'Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. A história confirma a Bíblia ponto a ponto.',
+    body: `Durante muito tempo se disse que a Bíblia estava cheia de personagens e lugares inventados. A cada nova escavação, porém, a história tem feito o contrário: confirmado nomes, cargos e locais exatamente como o texto os descreve. A arqueologia não prova que a Bíblia é Palavra de Deus, isso é questão de fé, mas comprova, de novo e de novo, que ela é confiável como documento histórico.
+
+## Pôncio Pilatos existiu, e era prefeito
+
+Por séculos, a menção a Pôncio Pilatos vinha sobretudo dos Evangelhos e de poucas fontes antigas, e alguns duvidavam dele. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
+
+## O ossuário de Caifás
+
+Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57; João 11,49). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
+
+## Piscinas que diziam não existir
+
+O Evangelho de João menciona a piscina de Betesda, "que tem cinco pórticos" (João 5,2). Críticos achavam o detalhe inventado, pois nenhuma piscina assim era conhecida. A escavação perto da igreja de Santa Ana, em Jerusalém, revelou exatamente uma piscina com cinco pórticos, como João descreveu. O mesmo aconteceu com a piscina de Siloé (João 9,7), localizada em 2004.
+
+## A Casa de Davi fora da Bíblia
+
+Houve quem dissesse que o rei Davi era apenas lenda. Em 1993, em Tel Dan, no norte de Israel, encontrou-se uma estela do século IX a.C., feita por um rei inimigo, que se gaba de ter derrotado a "Casa de Davi" (Beit David). É a dinastia davídica mencionada por uma fonte de fora, hostil, pouco mais de um século depois de Davi.
+
+## Os hititas, de "mito" a império
+
+Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Como nenhum outro documento antigo falava deles, muitos estudiosos do século XIX os tinham por invenção. Então a arqueologia desenterrou a capital hitita, Hattusa, e milhares de tabuinhas: os hititas eram um grande império. A Bíblia estava certa, e os críticos, errados.
+
+## O que a arqueologia mostra e o que não mostra
+
+É preciso ser justo. Achados arqueológicos não provam milagres nem a inspiração divina das Escrituras. Mas mostram um padrão claro: onde o texto bíblico pode ser testado contra a história e a terra, ele resiste ao teste. Um livro que acerta os nomes, os cargos e os lugares verificáveis merece crédito também naquilo que relata e não se pode escavar.
+
+## Perguntas-chave
+
+1. A pedra de Cesareia traz "Pôncio Pilatos, prefeito da Judeia". Ainda faz sentido dizer que os Evangelhos inventaram seus personagens?
+
+2. A piscina de Betesda, com seus cinco pórticos, foi tida por invenção de João até ser desenterrada. Quantos outros detalhes lendários só esperam a próxima escavação?
+
+3. Uma estela inimiga do século IX a.C. fala da "Casa de Davi". Como sustentar que Davi é mito?
+
+4. Se a Bíblia acerta de modo verificável os nomes, cargos e lugares, por que tratá-la como não confiável justamente onde fala de Deus?`,
+    references: ['arq-pilatos', 'arq-caifas', 'arq-betesda', 'arq-tel-dan', 'arq-hititas'],
+  },
+  {
+    id: 48,
+    title: 'Os Manuscritos do Novo Testamento',
+    category: 'Sagrada Escritura',
+    summary: 'A acusação de que a Bíblia foi mudada ao longo dos séculos não resiste aos fatos: o Novo Testamento é, de longe, o texto antigo mais bem documentado da história.',
+    body: `Uma objeção repetida sem cansaço, por ateus, muçulmanos e céticos em geral, é que a Bíblia teria sido alterada ao longo dos séculos, como num telefone sem fio, e que não saberíamos o que os autores escreveram de fato. A acusação parece forte, mas desmorona diante dos manuscritos. O Novo Testamento é, com folga, o texto mais bem atestado de toda a Antiguidade.
+
+## Uma montanha de cópias
+
+De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem mais de 5.800 manuscritos em grego, além de cerca de 10 mil em latim e milhares em outras línguas antigas, somando algo perto de 25 mil cópias. Para comparar: da "Guerra das Gálias", de Júlio César, restam poucas centenas de manuscritos; da "Ilíada" de Homero, o segundo texto antigo mais copiado, cerca de 1.800. O Novo Testamento está numa categoria à parte.
+
+## E cópias muito antigas
+
+Não é só quantidade, é proximidade. O fragmento mais antigo, o papiro P52, do Evangelho de João, é datado por volta do ano 125, ou seja, a poucas décadas do original. Para a maioria das obras clássicas, a cópia mais antiga que temos foi feita 700, 900, às vezes mil anos depois do autor. O Novo Testamento se mede em décadas, não em séculos. Quanto menor o intervalo, menor a chance de alteração acumulada.
+
+## E as variações entre as cópias?
+
+Os críticos costumam citar que há centenas de milhares de variantes entre os manuscritos. O número impressiona, mas engana. A imensa maioria dessas variantes são diferenças de grafia, de ordem das palavras ou erros óbvios de cópia, sem efeito no sentido. Estudiosos do texto, como Bruce Metzger e Daniel Wallace, são claros: nenhuma doutrina central do cristianismo depende de uma passagem textualmente duvidosa. Justamente porque há tantas cópias, é possível compará-las entre si e reconstruir o texto original com altíssima confiança.
+
+## O Antigo Testamento também
+
+O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos do Mar Morto, em Qumran, mil anos mais antigos do que as cópias hebraicas que se conheciam. Ao compará-los, viu-se que o texto havia sido transmitido com notável fidelidade ao longo de um milênio. A ideia de uma Bíblia adulterada não sobrevive ao confronto com os documentos.
+
+## Perguntas-chave
+
+1. Se a Bíblia foi mudada ao longo dos séculos, por que o papiro P52 já traz João por volta do ano 125, a poucas décadas do original?
+
+2. Aceitamos com confiança os textos de César e de Tácito, copiados séculos depois e em pouquíssimas cópias. Por que aplicar ao Novo Testamento, muito melhor atestado, um critério mais severo?
+
+3. Se há tantas cópias espalhadas tão cedo, isso facilita ou dificulta esconder uma alteração?
+
+4. Os Manuscritos do Mar Morto, mil anos mais antigos, batem com o texto posterior. Onde está, de fato, a tal adulteração?`,
+    references: ['ms-p52', 'ms-bibliografico'],
   },
 ];
 

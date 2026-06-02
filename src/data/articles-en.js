@@ -14,7 +14,7 @@ Saint Thomas calls this demonstration the "First Way" in the Summa Theologica. E
 
 The modern version of this argument is the Kalam argument, formulated by William Lane Craig. It has three premises. First: everything that begins to exist has a cause. Second: the universe began to exist (confirmed by modern cosmology, especially by the Borde-Guth-Vilenkin theorem of 2003, which proves that every universe with positive average expansion had an absolute beginning in time). Third: therefore, the universe has a cause. This cause, by definition, must be timeless, immaterial, outside of space, and endowed with sufficient power to create the entire cosmos from nothing. The classical attributes of God.
 
-Questions that turn the conversation with an atheist:
+Key questions:
 
 1. If everything began at the Big Bang, what existed before? And how could anything "begin" without cause, contradicting all scientific observation that effects have causes?
 
@@ -40,7 +40,7 @@ Gary Habermas, a specialized researcher on the topic and professor at Liberty Un
 
 The historical question is not "was there evidence?", but "what explanation accounts for all of it?". The alternative theories (collective hallucination, body theft, apparent death, late myth) fail to explain at least one of these five facts each. The only hypothesis that accounts for all of them is bodily Resurrection.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. How do you explain that men who fled in fear on Friday were preaching publicly in Jerusalem fifty days later, under penalty of death, saying that Jesus had risen?
 
@@ -72,7 +72,7 @@ The strength of the argument lies in closing off the ambiguous escape. The perso
 
 There is a fourth option that modern skeptics try to introduce: Jesus never said these things, the Gospels were corrupted. This escape is historical, not philosophical, and falls before the dating of the manuscripts and the universal testimony of the early Christian communities, addressed in other articles.
 
-Questions that turn the conversation:
+Key questions:
 
 1. How can Jesus, in your view, be a "great moral teacher" if he claimed to be God and was not?
 
@@ -96,7 +96,7 @@ There is also a simple and compelling historical reason concerning the Bible. Th
 
 Whoever is Christian without being Catholic generally inherits selected doctrines from the Catholic Church (the Trinity, the divinity of Christ, the biblical canon) but rejects the authority that defined them. It is an incoherent arrangement. Either the Church had authority given by Christ (and in that case still has it), or it never had (and in that case the Bible it compiled is also not reliable).
 
-Questions that turn the conversation with a Protestant:
+Key questions:
 
 1. If your church does not exist historically until the 16th century, how can it be the Church founded by Christ in the 1st century?
 
@@ -130,7 +130,7 @@ Other independently analyzed cases, such as Buenos Aires (1996, authorized by th
 
 Blessed Carlo Acutis, young Italian layman (1991-2006), beatified in 2020 and canonized in 2025, compiled in his adolescence an international catalog of Eucharistic miracles approved by the Church. His website documents about 140 cases. This work is a current reference for knowing this evidence.
 
-Questions that turn the conversation with a Protestant:
+Key questions:
 
 1. Why did Jesus lose many disciples in John 6,66 if he was only speaking symbolically? Why did he not call them back clearing up the misunderstanding?
 
@@ -156,7 +156,7 @@ There is still a philosophical problem that atheists rarely perceive. The argume
 
 Saint Paul writes in Romans 8,28 that "all things work together for good for those who love God". Not that everything is good, but that God draws good even out of evil. The Pasch is the supreme example: the worst crime in history (killing the incarnate God) became the source of redemption.
 
-Questions that turn the conversation with an atheist:
+Key questions:
 
 1. You call suffering "evil". By what objective standard is suffering evil? If it is only your preference, your objection against God collapses.
 
@@ -180,7 +180,7 @@ The fourth problem is historical. Sola Scriptura emerged in the 16th century. Be
 
 The Catholic solution is coherent: God\'s Revelation is transmitted through Sacred Scripture and Sacred Tradition, both interpreted by the living Magisterium of the Church. The three things mutually support each other.
 
-Questions that turn the conversation with a Protestant:
+Key questions:
 
 1. Where, in what specific verse, does the Bible teach that the Bible is the only rule of faith? (Sola Scriptura is self-refuting: it itself is not in the Bible.)
 
@@ -210,7 +210,7 @@ The multiverse objection (there exist infinite universes with different constant
 
 Saint Paul already said in the Letter to the Romans that "the invisible perfections of God, since the creation of the world, are understood and seen through created things". Modern science does not refute this affirmation, it confirms it with mathematical precision.
 
-Questions that turn the conversation:
+Key questions:
 
 1. What empirical evidence do you have for the multiverse?
 
@@ -232,7 +232,7 @@ But we all live as if morality were real. We condemn Nazism, defend the weak, be
 
 The moral argument does not say that atheists cannot act morally. They can and often act with great integrity. The argument is more subtle. Atheism, taken to its ultimate consequences, has no way to justify morality as objective. If it is objective, and it seems to be, then there must be a source that sustains it. This source is the personal God, creator of human nature and author of the moral law inscribed in the heart of each person.
 
-Questions that turn the conversation with an atheist:
+Key questions:
 
 1. Was the Holocaust objectively wrong, or just something you prefer had not happened?
 
@@ -262,7 +262,7 @@ If the answer "God always existed" seems unsatisfactory, it is worth noting that
 
 The question turns against the questioner. Why is there something rather than nothing? Without a necessary reality at the basis of everything, existence itself remains unexplained. Philosophers call this requirement "principle of sufficient reason". God, understood correctly, is the only coherent answer to it.
 
-Questions that turn the conversation:
+Key questions:
 
 1. If "everything needs a cause", how do you explain the existence of the universe itself without falling into the same problem?
 
@@ -284,7 +284,7 @@ Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, sh
 
 The classical Catholic distinction is between latria (adoration owed only to God), dulia (veneration owed to the saints), and hyperdulia (superior veneration owed to Mary, for her unique dignity as Mother of God). The confusion between adoring and venerating is at the heart of the popular objection, but the Church has always made this distinction with clarity.
 
-Questions that turn the conversation with a Protestant:
+Key questions:
 
 1. Do you ask your mother or a friend to pray for you? Why? Would this be "undue intermediation"?
 
@@ -310,7 +310,7 @@ The first Christian witness on the subject is Justin Martyr, in the mid-2nd cent
 
 Devotion to Our Lady of the Conception is the liturgical expression of this dogma. In Portugal and Brazil, she is official Patroness.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Why does Gabriel call Mary kecharitōménē (already totally graced) instead of simply "Mary"? The title replaces the name.
 
@@ -336,7 +336,7 @@ The Fathers confirm the doctrine already in the 2nd and 3rd centuries. Tertullia
 
 A historical curiosity is worth noting. The Reformers themselves Martin Luther, John Calvin and Ulrich Zwingli accepted the perpetual virginity of Mary. The denial of this doctrine is a much later phenomenon in Protestant history. The Catholic Church teaches today what has always been taught since Saint Ignatius of Antioch, Justin Martyr and Tertullian.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Why does Mary, already engaged to Joseph, ask the angel "how shall this be, since I do not know man?". The question only makes sense if she had a purpose of virginity.
 
@@ -364,7 +364,7 @@ Papal succession is uniquely documentable. Peter, Linus, Cletus, Clement, Evaris
 
 On infallibility: the First Vatican Council (1870), in the constitution Pastor Aeternus, defined that the Pope is infallible when he teaches ex cathedra (from the throne), in matters of faith or morals, addressing the entire Church, with the clear intention of defining definitively. This has happened very few times in history (Immaculate Conception in 1854, Assumption in 1950). It does not mean that the Pope does not err in private opinions, politics, soccer or governing style. It means that Christ protects the Church from doctrinal error when the successor of Peter teaches solemnly.
 
-Questions that turn the conversation:
+Key questions:
 
 1. If Peter had no special authority, why did Jesus change his name and give him "the keys" directly?
 
@@ -392,7 +392,7 @@ The historically significant detail: there has never been a dispute between citi
 
 Pius XII, before defining the dogma, consulted the bishops of the whole world. The overwhelming majority responded favorably, attesting that this faith was lived and taught in their churches. The dogma was not a novelty: it was solemn recognition of what the Church had always believed.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Why is there no tomb of Mary claimed by any city of the ancient Christian world?
 
@@ -426,7 +426,7 @@ Important to distinguish: Purgatory is not "external punishment" arbitrary. It i
 
 That is why the Church exhorts the living to pray for the dead. It does not change their destiny (heaven or hell was decided at the moment of death), but it can shorten and soften the purification of those going to heaven. Hence the masses for the deceased, indulgences applied in suffrage, novenas, rosaries. It is an expression of the Communion of Saints.
 
-Questions that turn the conversation:
+Key questions:
 
 1. How do you interpret 2 Maccabees 12,44-46 about praying for the dead? (If you reject the book, why did Luther need to remove it, if it said nothing problematic?)
 
@@ -460,7 +460,7 @@ The practical question is simple. Imagine someone who confesses Christ with the 
 
 The classical Catholic formulation is: we are justified by faith working through charity. Faith without charity is dead. Charity without faith is mere philanthropy. The two together, animated by grace, are the path of salvation.
 
-Questions that turn the conversation:
+Key questions:
 
 1. How do you read James 2,24, which says literally that justification is not "by faith alone"?
 
@@ -491,7 +491,7 @@ The liturgical feast of Mary, Mother of God, is celebrated on January 1st, the o
 
 Denying the Theotokos of Mary is not a minor objection. It is denying who Jesus is.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Mary is the mother of Jesus. Jesus is God. Therefore, Mary is mother of God. Where is the error?
 
@@ -522,7 +522,7 @@ The popular objection that "love is love" ignores an essential distinction. The 
 
 The doctrine does not change because the truth about the human being does not change. The Church does not condemn persons; it teaches about acts. And it teaches, along with the moral teaching, the real possibility of living in grace and the hope of fulfillment in Christ.
 
-Questions for dialogue:
+Key questions:
 
 1. If "love is love", is any sexual expression legitimate as long as there is love? Would this also apply between adult siblings or in consensual polygamy?
 
@@ -532,59 +532,81 @@ Questions for dialogue:
   },
 
   15: {
-    titleEn: 'The Islamic Dilemma',
-    summaryEn: 'If the Gospels are preserved, Jesus claimed divinity. If they were corrupted, the Quran contradicts itself.',
-    bodyEn: `Islam recognizes Jesus as a prophet. The Quran calls him Isa al-Masih (Jesus, the Messiah) and affirms that he was sent by Allah, performed miracles, and was even born of a virgin. But the Quran also expressly denies that Jesus is God or Son of God. Sura 5,72-75 says: "They blaspheme who say: Allah is the Messiah, son of Mary". Sura 4,171 orders: "do not say Trinity".
+    titleEn: 'Islam',
+    summaryEn: 'Islam honors Jesus as a prophet born of a virgin, but denies that he is God, that he died on the cross, and that he rose. That is where the internal tensions begin.',
+    bodyEn: `Islam is today the second largest religion in the world, with about two billion faithful. Dialoguing with a Muslim requires two things at once: sincere respect for his devotion and real knowledge of what he believes. This article first presents the Islamic faith honestly, acknowledges what we have in common, and only then shows the points where Islam, in speaking of Jesus, comes into tension with itself and with history.
 
-Here is the dilemma. Jesus, according to the canonical Gospels, repeatedly affirmed himself to be God. In John 8,58 he says "before Abraham was, I am", applying to himself the divine name YHWH revealed to Moses in Exodus 3,14 (ehyeh asher ehyeh). The Jews present understood perfectly: they immediately picked up stones to stone him for blasphemy (Jn 8,59). In John 10,30 he says "I and the Father are one", and again they tried to stone him "because, being a man, you make yourself God" (Jn 10,33). In Mark 14,61-62, under oath before the high priest, he responds that he is the Son of the Blessed. He was condemned to death for blasphemy, not for any other reason.
+## What they believe
 
-The Muslim has two options, and neither is acceptable within his own system.
+Islam was founded by Muhammad, born in Mecca around the year 570 and deceased in 632. According to Islamic tradition, from the age of forty he began to receive revelations from the angel Gabriel, gathered in the Quran, made up of 114 chapters called suras. For the Muslim, the Quran is the literal, uncreated word of Allah, transmitted in Arabic, and this is the greatest of miracles.
 
-First option: accept that Jesus actually said these things. In that case, either Jesus is God (and the Quran errs in denying it), or Jesus is blasphemer, liar, or madman. But if he is blasphemer or liar, he cannot be a prophet. The Quran itself requires that true prophets be most truthful.
+The center of everything is tawhid, the absolute oneness of God. Allah is one, creator of all things, omniscient, almighty, and final judge. The gravest sin that exists is shirk, associating any partner or equal with Allah. Religious life is organized around the five pillars: the profession of faith (there is no deity but Allah, and Muhammad is his messenger), the five daily prayers, obligatory almsgiving (zakat), the fast of the month of Ramadan, and the pilgrimage to Mecca (hajj).
 
-Second option: reject that Jesus said these things, alleging that the Gospels were corrupted by Christians. But this contradicts the Quran itself, which affirms the preservation of previous scriptures. Sura 3,3 says that Allah "sent down the Torah and the Gospel as guidance for men". Sura 5,46-47 calls the Gospel "guidance and light" and orders: "Let the people of the Gospel judge by what Allah has revealed therein". If the Gospel was corrupted, how could Allah order judgment by it in the 7th century?
+The Muslim reveres a long line of prophets that includes Adam, Noah, Abraham, Moses, and Jesus. And here is something that surprises many Christians: Islam has great respect for Jesus, whom it calls Isa, the Messiah. The Quran affirms that he was born of a virgin, Mary, the only woman named in the book and to whom sura 19 is dedicated. It affirms that Jesus performed miracles by Allah's permission and that he will return at the end of time. What Islam denies is that Jesus is God or Son of God, that he died on the cross, and the Trinity itself.
 
-The dilemma is simple and devastating. For the Muslim, either the Gospels are preserved (and Jesus claimed divinity), or they were corrupted (and the Quran contradicts itself by ordering judgment by them). Either Jesus is God, or Islam is incoherent. There is no intermediate way out.
+## Points of convergence
 
-Christian apologetics calls this the "Islamic Dilemma" because it exposes an internal tension in Islam that has no elegant solution. The Christian solution is coherent. Jesus said what he said and was who he claimed to be. The historical testimony of the Gospels was preserved by the Church, and Jesus of Nazareth is truly Son of God incarnate.
+Christians and Muslims affirm much together. We believe in one God, creator of heaven and earth, personal, just, who reveals himself and who will judge each one according to his deeds. We honor Mary and recognize Jesus as born of a virgin. We share moral seriousness, the life of prayer, fasting, and almsgiving. The Second Vatican Council, in the declaration Nostra Aetate of 1965, affirms that the Church regards with esteem the Muslims, who adore the one, living, and subsistent God. To acknowledge this is not empty diplomacy. It is justice toward what is true in the other's faith, and it is the only honest starting point for the conversation.
 
-Questions that turn the conversation with a Muslim:
+## Points of confrontation
 
-1. You accept that the Quran (sura 5,46-47) orders to judge by the Gospel. Where, in the Gospel preserved at that time, is it said that Jesus denied being God?
+The difficulties begin precisely where the greatest Islamic reverence lies: in the person of Jesus. It is not a single problem, but several, and together they form a tension that is hard to sustain.
 
-2. Why did the Jews try to stone Jesus, if he only taught monotheism? The accusation of blasphemy in John 10,33 ("being a man, you make yourself God") only makes sense if he claimed divinity.
+1. The Islamic Dilemma. Jesus, according to the Gospels, repeatedly affirmed himself to be God. In John 8,58 he declares "before Abraham was, I am", applying to himself the divine name revealed to Moses. The listeners understood so well that they picked up stones to stone him for blasphemy. In John 10,30 he says "I and the Father are one", and again they try to stone him "because, being a man, you make yourself God". Before the high priest, under oath, he confirms that he is the Son of the Blessed, and he is condemned to death for it. The Muslim then has two ways out, and neither satisfies him. Either he accepts that Jesus said these things, and then Jesus is God (and the Quran errs in denying it) or he is a blasphemer (and cannot be a prophet). Or he denies that he said them, alleging that the Gospels were corrupted, but this contradicts the Quran itself, which orders judgment by the Gospel (sura 5,46-47).
 
-3. If the Gospels were corrupted, when, by whom, and why did Allah not preserve the previous revelation, as the Quran itself affirms? Where are the "original" uncorrupted copies?
+2. The denial of the crucifixion. Sura 4,157 affirms that the Jews "did not kill him nor crucify him, but it only appeared so to them". Now, the death of Jesus by crucifixion is one of the best established facts of all ancient history. It is attested by the four Gospels, by Paul a few years after the event, and also by non-Christian and hostile sources, such as the Roman historian Tacitus, who records the execution of Christ under Pontius Pilate, and the Jew Flavius Josephus. A 7th-century text is denying an event documented by 1st-century witnesses.
 
-4. Jesus claimed to forgive sins (Mark 2,5-7), which for the Jews was a prerogative of God alone. If he is not God, he was a blasphemer. If he was a blasphemer, how can he be a prophet?`,
+3. The preservation of the Quran itself. The Muslim usually says that the Bible was corrupted, but that the Quran arrived perfect to this day. Islamic sources themselves say otherwise. The Sahih al-Bukhari, the most respected collection of traditions in Sunni Islam, reports that Caliph Uthman, around 650, ordered the divergent copies of the Quran to be gathered and burned, fixing a single version. If the existence of variants and a later standardization invalidated a scripture, that same criterion would reach the Quran before reaching the Bible.
+
+4. Was Muhammad foretold in the Bible? Some Islamic apologists cite Deuteronomy 18,18 ("I will raise up a prophet like you") and the Paraclete promised by Jesus in John 14,16, identified with "Ahmad" in sura 61,6. But Deuteronomy speaks of a prophet from among the people of Israel, and the Acts of the Apostles apply the text to Jesus, not to an Arab six centuries later. And the Paraclete, in John's own Gospel, is explicitly the Holy Spirit, who "remains with you and will be in you" and was given at Pentecost, not a man who would be born much later.
+
+## Key questions
+
+1. You accept that the Quran (sura 5,46-47) orders judgment by the Gospel. Where, in the Gospel that existed at that time, does Jesus deny being God?
+
+2. The crucifixion of Jesus is attested even by Roman and Jewish sources hostile to Christianity. On what 1st-century evidence does sura 4,157 deny it?
+
+3. If the Bible was corrupted, when and by whom? And what about the Quran, knowing that Caliph Uthman himself ordered the divergent copies burned?
+
+4. The Paraclete of John 14 to 16 speaks, teaches, is called the Spirit of Truth, and dwells within the disciples. How could he be a human prophet born centuries later?`,
   },
 
   16: {
-    titleEn: 'Spiritism and the Divinity of Jesus',
-    summaryEn: 'Spiritism presents Jesus as the purest of spirits. But Jesus claimed to be God, not creature.',
-    bodyEn: `Spiritism, codified by Allan Kardec (pseudonym of Hippolyte Léon Denizard Rivail) in France in 1857 with "The Spirits\' Book", teaches that Jesus was a "purest spirit", the most elevated among the incarnated, sent by God to serve as a model for humanity. In the answer to question 625, Kardec defines Jesus as "type of the moral perfection to which Humanity can aspire on Earth", but explicitly not as God incarnate. For Spiritism, Jesus is creature, not Creator.
+    titleEn: 'Spiritism (Kardecism)',
+    summaryEn: 'Born in 19th-century France and very strong in Brazil, Spiritism teaches reincarnation and communication with the dead, and sees Jesus as the purest of spirits, not as God. The Bible answers both points.',
+    bodyEn: `Spiritism was born in 19th-century France and found in Brazil the largest number of followers in the world. It is a serious doctrine, which presents itself as science, philosophy, and religion at the same time, with a strong emphasis on charity and on consoling those who have lost loved ones. For that reason it deserves to be treated with care, acknowledging what is good in it before showing where it departs from the Gospel it claims to respect.
 
-This position is incompatible with the testimony of the Gospels themselves, which Spiritism affirms to respect. In John 1,1-3, the Word already existed "in the beginning", already was God, and through him all things were made. There is no interval between the Word and God. In John 8,58, Jesus assumes the divine name "I Am" (egṑ eimí), the same revealed to Moses. In John 20,28, Thomas recognizes the risen Christ as "My Lord and my God", and Jesus accepts the title without correcting it. No true prophet or angel would accept worship as God, as seen in Apocalypse 22,8-9, when the angel vehemently refuses John\'s worship: "Beware not to do it, I am your fellow servant. Worship God".
+## What they believe
 
-The difference between creature and Creator is absolute. Even the most elevated of spirits, according to Christian theology, is creature. Angels are not gods, nor do they confuse themselves with God. If Jesus is only a highly evolved spirit, then his acceptance of worship was blasphemy. If he accepted worship as God, it is because he is God.
+Spiritism was codified by Allan Kardec, pen name of the French pedagogue Hippolyte Léon Denizard Rivail, from 1857 on, with the publication of The Spirits' Book. This was followed by four other foundational works: The Mediums' Book, The Gospel According to Spiritism, Heaven and Hell, and Genesis.
 
-Spiritism is also incompatible with Christianity in other central points. It denies the resurrection of the flesh, teaching reincarnation. It denies original sin and redemption by a single salvific death. It denies the final judgment and the eternity of heaven and hell. It replaces salvation through Christ\'s merit with progressive improvement through multiple lives.
+The pillars of the doctrine are the existence of one God; the immortality of the soul; reincarnation, that is, the passage of the soul through many successive lives to evolve morally; communication with the spirits of the dead through mediums; and the law of progress, according to which everyone walks, life after life, toward perfection. Jesus holds a central place, but as the most elevated spirit ever incarnated on Earth, model and guide of humanity, and not as God made man. In Brazil, the figure of the medium Chico Xavier and the vast charitable work of the spiritist centers gave the movement great social respectability.
 
-The Letter to the Hebrews is categorical: "it is appointed for man to die once, and after this comes the judgment" (Hebrews 9,27). There are no reincarnations. Life is one, and in it eternity is decided. Even the case of John the Baptist, whom some Spiritists use to defend reincarnation (alleging that he would be Elijah reincarnated), is denied by the Baptist himself in John 1,21 when asked directly: "Are you Elijah? He replied: I am not". Jesus said that John came "in the spirit and power of Elijah" (Luke 1,17), which is a symbolic allusion to his mission, not identification of personality.
+## Points of convergence
 
-The Church, throughout its history, has always rejected doctrines that reduce Christ to a creature, whatever the disguise of those doctrines: Arianism, Gnosticism, Spiritism. The confession is constant: Jesus is true God of true God.
+There is real common ground. Against materialism, Spiritism affirms that God exists, that the soul is immortal and survives the death of the body, that life has moral meaning, and that each one answers for his acts. It deeply values charity. These are truths that the Christian also holds, and that deserve to be acknowledged sincerely.
 
-Questions that turn the conversation with a Spiritist:
+## Points of confrontation
 
-1. In John 20,28 Thomas calls Jesus "my God" and Jesus accepts. In Apocalypse 22,8-9 an angel refuses worship and orders worship only of God. Why did Jesus, according to Spiritism merely a creature, accept what an angel refused?
+The differences, however, reach the heart of the faith.
 
-2. In John 1,21 John the Baptist is asked directly if he is Elijah and answers categorically "no". How do you reconcile this with reincarnation?
+1. Jesus: creature or Creator? In the answer to question 625 of The Spirits' Book, Kardec defines Jesus as "type of the moral perfection to which Humanity can aspire on Earth", but not as God. This contradicts the Gospels themselves. In John 1,1 the Word "was God" from the beginning. In John 8,58 Jesus takes for himself the divine name "I Am". In John 20,28 the apostle Thomas calls him "My Lord and my God", and Jesus accepts the title. Yet in Apocalypse 22,8-9 an angel firmly refuses to be worshiped and orders that only God be adored. If Jesus were merely a very elevated spirit, accepting worship would have been exactly the sin the angel refused to commit.
 
-3. If man dies only once (Hebrews 9,27) and is then judged, at what moment of the current life do future "reincarnations" occur?
+2. Reincarnation or resurrection? The Letter to the Hebrews is direct: "it is appointed for men to die once, and after that the judgment" (Hebrews 9,27). One life, one judgment, not a cycle of returns. Jesus, in the parable of the rich man and Lazarus (Luke 16,19-31), describes the dead as conscious, with identity preserved, separated by a chasm that no one can cross. There is no reincarnation there, there is permanence. And when John the Baptist is asked directly whether he is Elijah, whom some Spiritists say is reincarnated in him, he answers categorically: "I am not" (John 1,21). Christianity awaits the resurrection of the body itself, not the transmigration of the soul through different bodies.
 
-4. If Jesus is not God, then the Scriptures are wrong in calling him God in several places. In what other things, even more central, do you concede that the Scriptures are wrong?
+3. Communication with the dead. Here the conflict is head-on. The Bible expressly forbids consulting the dead. Deuteronomy 18,10-12 includes among the abominations "one who consults spirits and one who questions the dead". Isaiah 8,19 asks ironically: "should not a people consult its God? Will they consult the dead on behalf of the living?". When King Saul resorts to the medium of Endor (1 Samuel 28), the episode is narrated as a grave sin that precedes his ruin, not as an example to follow. The Catechism of the Catholic Church, in paragraphs 2116 and 2117, clearly condemns spiritism and every form of divination. Behind what presents itself as the spirit of a deceased person is not always who it claims to be.
 
-5. On what authority does Allan Kardec, a 19th century French pedagogue, surpass two thousand years of Christian tradition and the eyewitness testimony of the apostles?`,
+4. The authority of Kardec. There remains the underlying question. On what does a 19th-century French pedagogue rest, starting from messages attributed to spirits, to correct the eyewitness testimony of the apostles and eighteen centuries of Christian doctrine about who Jesus is and what happens after death?
+
+## Key questions
+
+1. In John 20,28 Thomas calls Jesus "my God" and he accepts it; in Apocalypse 22,9 an angel refuses worship. Why did Jesus, if he were only a creature, accept what the angel refused?
+
+2. If man dies only once and is then judged (Hebrews 9,27), where do reincarnations fit?
+
+3. The Bible forbids consulting the dead (Deuteronomy 18,11; Isaiah 8,19). On what biblical text does Spiritism rely to do the opposite?
+
+4. On what authority does Allan Kardec correct the apostles regarding the identity of Jesus?`,
   },
 
   18: {
@@ -606,7 +628,7 @@ The Catholic Church, at the Council of Trent (1546), solemnly reaffirmed the can
 
 Worth noting: the Church did not "decide arbitrarily" the canon. It discerned, under the guidance of the Holy Spirit, which books were authentic, apostolic, in conformity with the received rule of faith. The criteria were: apostolic origin (written by the apostles or their close disciples), liturgical use in the churches (especially in the Eucharistic liturgy), and orthodoxy (conformity with received doctrine). The 73 books passed these criteria.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Who decided which books belong to the New Testament? If it was the Catholic Church (and it was), why accept that decision and reject the same Church on the Old?
 
@@ -642,7 +664,7 @@ Matrimony between two baptized persons is elevated by Christ to sacramental dign
 
 Each sacrament has three elements: matter (sensible sign, like water or oil), form (precise words) and qualified minister. When these three are present correctly, the sacrament is valid and objectively produces what it signifies, regardless of the minister\'s virtue (principle ex opere operato).
 
-Questions that turn the conversation:
+Key questions:
 
 1. If sacraments are "only symbols", why does Jesus say in John 6,53 that without eating his flesh there is no life in you?
 
@@ -674,7 +696,7 @@ The objection "God knows me and forgives me directly" has three problems. First,
 
 The Church requires obligatory confession only in two situations: at least once a year (minimum precept, Catechism §1457) and before communicating when one is conscious of grave sin (1 Cor 11,27-29). Frequent confession, even of venial sins, is strongly recommended as a means of spiritual growth.
 
-Questions that turn the conversation:
+Key questions:
 
 1. In John 20,23 Jesus gives the power to forgive sins to the apostles. To whom was this power given, if not to priests?
 
@@ -715,7 +737,7 @@ Catholic jurisprudence is firm: direct abortion is objectively a mortal sin. Tho
 
 But the doctrine is also merciful. The Church offers sacramental forgiveness to those who repent. Pope Francis authorized all priests to absolve the sin of abortion (previously reserved to bishops in some places). There is specific pastoral care for women who have aborted, with spiritual accompaniment, prayer, reconciliation. As in every sin: clear condemnation of the act, full mercy for the person.
 
-Questions that turn the conversation:
+Key questions:
 
 1. At what moment of gestation, exactly, do you say the fetus becomes "human"? Why this moment and not another?
 
@@ -757,7 +779,7 @@ The argument "if the Church allowed contraception, people would have fewer abort
 
 The Church is the only global institution that still coherently defends this position. Not because it is "backward", but because it is the only one courageous enough to tell the unpopular truth: the conjugal act has a given nature, and violating it has consequences.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Paul VI\'s 1968 predictions came true. How do you explain that, if the Church "doesn\'t understand real life"?
 
@@ -791,7 +813,7 @@ The doctrine was formally defined at the Council of Nicaea (325) against Arius, 
 
 Jehovah\'s Witnesses also have serious historical problems: failed eschatological dates (1914, 1925, 1975 were pointed out as dates of the end, all failed), absurd prohibitions (blood transfusion, even at risk of death), frustrated predictions. All this indicates an organization without real apostolic foundation.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Why does only the New World Translation (1950) translate John 1,1 as "a god"? Why does none of the historical traditions (Vulgate, Orthodox, Protestant) do this?
 
@@ -823,7 +845,7 @@ The just condemnation: the Inquisition had real problems. The use of torture, ev
 
 But recognizing real errors is not the same as accepting the mythical caricature. Real history is grave, requires reflection and repentance, but is qualitatively and quantitatively very different from the popular image.
 
-Questions that turn the conversation:
+Key questions:
 
 1. How many were really executed by the Inquisition? (Historical answer: about 3,000-5,000 in 350 years of the Spanish, against tens of thousands by European civil courts in the same period.)
 
@@ -861,7 +883,7 @@ The spiritual motivation of the crusaders was complex. For most, it was genuinel
 
 Modern secular historiography, free from religious polemics, has increasingly recognized this complexity. Thomas Madden, Jonathan Riley-Smith, Christopher Tyerman: all historians of the Crusades, all non-confessional, all reject the popular narrative of "invading crusaders against peaceful Muslims".
 
-Questions that turn the conversation:
+Key questions:
 
 1. The Crusades began in 1095. Who conquered Egypt, Syria, North Africa and Spain between 632 and 732, and why?
 
@@ -895,7 +917,7 @@ Catholic scientists were protagonists in almost all areas. Gregor Mendel (August
 
 The myth of "science-faith conflict" was constructed mainly in the 19th century, by authors like Andrew Dickson White ("The Warfare of Science with Theology", 1896) and John William Draper, with anti-Catholic political objectives. Contemporary historians of science (Edward Grant, Stanley Jaki, Ronald Numbers) recognize that this narrative is fundamentally false.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Was Galileo tortured? (No.)
 
@@ -952,7 +974,7 @@ The most famous "contradictions" (Herod vs Quirinius at the birth of Jesus, the 
 
 Bart Ehrman, agnostic and one of the best-known critics of the New Testament, writes in his books that none of the apparent contradictions substantially affects the central story of Christianity: Jesus existed, was crucified, and his disciples believed they had seen him alive after death.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. Can you give a concrete example of "contradiction"? Let\'s examine it together calmly.
 
@@ -980,7 +1002,7 @@ The objection, therefore, is not decisive. The linguistic and historical solutio
 
 Worth noting the disproportion of the objection. The historicity of Jesus is attested by multiple independent sources (Matthew, Mark, Luke, John, Paul, Josephus, Tacitus, Pliny the Younger, Suetonius). Five grammatically ambiguous words in Luke 2,2 do not bring down this edifice.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. Have you examined the Greek of Luke 2,2, or accepted the traditional translation without questioning the possibility of "before"?
 
@@ -1010,7 +1032,7 @@ The objection, therefore, starts from an anachronistic modern expectation (genea
 
 Worth adding: if the evangelists were inventing, they would align the lists to avoid the appearance of incoherence. The fact that two distinct genealogies coexist, without an attempt at harmonization, is a sign of independent fidelity to the sources that each received, not of fraud.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. Why would two authors who fabricate a genealogy for Jesus produce different versions? Wouldn\'t they align them to avoid contradiction?
 
@@ -1060,7 +1082,7 @@ Gary Habermas, in the already cited study on "minimal facts" of the Resurrection
 
 Worth noting a counterproof: if the Resurrection had been a coordinated invention, the authors would have adjusted the peripheries to look uniform. The differences visible in the Gospels are exactly the type of natural discrepancy expected from independent witnesses of a real event.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. When four people report the same car accident, it is normal for them to mention different details. Do you accuse them all of lying?
 
@@ -1094,7 +1116,7 @@ Five independent sources (Jewish Josephus, pagan Tacitus, pagan Pliny, pagan Sue
 
 The mythical thesis needs to explain how, in just a few years after the supposed "literary creation", there were already dozens of churches scattered around the Mediterranean, with real martyrs, established liturgical formulas, circulating writings, and directed imperial persecution. No alternative explanation works historically. That is why serious academia, even the most agnostic, rejects mythicism.
 
-Questions that turn the conversation with a skeptic:
+Key questions:
 
 1. Do you know how many academic historians from recognized universities defend that Jesus did not exist? (Answer: practically none.)
 
@@ -1128,7 +1150,7 @@ C. S. Lewis, who was an atheist before converting to Christianity, reflected int
 
 The classical Catholic argument accepts the real similarities (which do exist, yes) and interprets them as providence. God prepared pagan humanity to receive the Gospel through partial intuitions of the truth in previous religions. When the Word became flesh, those intuitions found their real fulfillment, not in one more myth, but in a living historical person.
 
-Questions that turn the conversation:
+Key questions:
 
 1. Can you cite a primary academic source (Egyptian, Roman, Greek text) that confirms Zeitgeist\'s claims about Horus, Mithras or Dionysus?
 
@@ -1137,5 +1159,539 @@ Questions that turn the conversation:
 3. Mythological religions speak of timeless events, without datable witnesses. Christianity affirms historical event with living witnesses in Jerusalem. Why is this a minor detail?
 
 4. If similarities proved plagiarism, any two religions would "plagiarize" one another. How do you distinguish plagiarism from coincidence or from universal human convergence?`,
+  },
+
+  37: {
+    titleEn: 'Protestantism',
+    summaryEn: 'Brothers in Christ through Baptism, Protestants share with us the essentials about God and Christ. The differences come from two 16th-century mottos: Scripture alone and faith alone.',
+    bodyEn: `Before any debate, a truth that changes the tone of the conversation: the Protestant is not the adversary of another religion, he is a separated brother within the same faith in Christ. That is why this is the only article in this section in which the refutation is, in truth, a family dialogue. The goal is not to defeat anyone, it is to show why the fullness of the Christian faith is in the Catholic Church.
+
+## What they believe
+
+Protestantism was born from the 16th-century Reformation, begun by Martin Luther in 1517 and developed by John Calvin, Ulrich Zwingli, and others. From one trunk came many branches: Lutherans, Reformed, Anglicans, Baptists, Methodists, Pentecostals, and the great variety of evangelical churches today.
+
+Despite the diversity, most recognize themselves in five mottos, the so-called five "solas": Scripture alone (Sola Scriptura), faith alone (Sola Fide), grace alone (Sola Gratia), Christ alone (Solus Christus), and glory to God alone (Soli Deo Gloria). In general they reject the authority of the Pope, purgatory, the intercession of the saints, the Marian dogmas, the seven deuterocanonical books, and, in most cases, transubstantiation. In common, there is a sincere love for Christ and for reading the Bible, great missionary zeal, and living communities.
+
+## Points of convergence
+
+And here the convergence is enormous, far greater than with any other belief in this section. We share faith in the Most Holy Trinity, in the divinity and resurrection of Christ, in the Bible as the inspired Word of God, in the Nicene Creed. The Catholic Church recognizes as valid the Trinitarian Baptism celebrated by Protestants. That is why the Second Vatican Council, in the decree Unitatis Redintegratio, calls them "separated brethren": through Baptism they are truly, though imperfectly, united to the Church. We are not enemies, we are a divided family that Christ wishes to reunite.
+
+## Points of confrontation
+
+The differences spring from two mottos, and both have an internal problem.
+
+1. Scripture alone (Sola Scriptura) refutes itself. Nowhere does the Bible teach that the Bible alone is the only rule of faith. On the contrary. Paul orders us to "hold to the traditions you were taught, whether by word or by letter" (2 Thessalonians 2,15) and calls the Church, not Scripture, "the pillar and foundation of truth" (1 Timothy 3,15). Peter warns that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1,20) and that the ignorant distort Paul's letters "as they do the rest of the Scriptures" (2 Peter 3,16). There is also the problem of the table of contents: it was the Catholic Church, at the councils of Hippo (393) and Carthage (397), that defined which books make up the Bible. To accept that list and reject the authority that made it is to sit on a branch and saw through the tree. Saint Augustine was frank: "I would not believe the Gospel unless moved to it by the authority of the Catholic Church".
+
+2. Faith alone (Sola Fide) contradicts James. The only time the phrase "faith alone" appears in the Bible is to be denied: "a man is justified by works and not by faith alone" (James 2,24). Luther had such difficulty with that letter that he called it an "epistle of straw" and even added the word "alone" (allein) to his German translation of Romans 3,28, where Paul did not write it. The Catholic position does not oppose faith and works: grace saves, faith receives grace, and living faith necessarily blossoms into works of love, as a good tree bears fruit. This is how the Council of Trent answered the Reformation.
+
+3. Fragmentation. Five centuries of "Bible alone", without a living authority to interpret, produced thousands of denominations, disagreeing among themselves about baptism, the Lord's Supper, salvation, and morality. When each Christian becomes the final judge of the meaning of Scripture, the unity for which Christ prayed ("that they may all be one", John 17,21) becomes impossible in practice.
+
+4. The Church of the first centuries was already Catholic. The Reformation claimed to return to the early Church, but the oldest documents describe a Church that believes in the real presence of the Eucharist, in the succession of bishops, in confession, and in prayer for the dead. Ignatius of Antioch, around 107, and Justin Martyr, around 155, sound far more Catholic than Protestant.
+
+## Key questions
+
+1. If "Scripture alone" holds, in what verse does the Bible teach that it is the only rule of faith?
+
+2. Who defined which books belong in the Bible? Why accept that decision of the Catholic Church and reject the others?
+
+3. James 2,24 says that a man is not justified "by faith alone". How do you reconcile this with Sola Fide?
+
+4. If "Bible alone" were enough, why did five centuries of the Reformation produce thousands of churches that disagree among themselves about what the Bible teaches?`,
+  },
+
+  38: {
+    titleEn: 'Judaism',
+    summaryEn: 'Judaism is the root from which Christianity springs. One question separates us: has the promised Messiah already come? The prophecies answer.',
+    bodyEn: `The Christian owes Judaism a debt he owes no other religion: it was from the Jewish people that we received the one God, the Scriptures, the prophets, and the Messiah himself. Jesus, Mary, the apostles, all were Jews. So the conversation here is not between strangers, but between those who share the same root. One question separates us, but it is decisive: has the Messiah promised by God already come?
+
+## What they believe
+
+Judaism is the faith of the people of Israel, founded on the covenant between God and Abraham and sealed with Moses at Sinai. Its center is the Shema: "Hear, O Israel: the Lord our God, the Lord is one" (Deuteronomy 6,4). The Torah, the first five books, is the heart of the Hebrew Scriptures, which Christians call the Old Testament.
+
+After the destruction of the Temple of Jerusalem in the year 70, Judaism reorganized around the synagogue, study, and rabbinic interpretation, gathered in the Mishnah and the Talmud. In the 12th century, Maimonides summarized the faith in thirteen principles, among them the oneness of God, the authority of the Torah, and the hope for the coming of the Messiah, a descendant of King David who would bring peace and gather Israel. It is this point, the identity of the Messiah, that defines the entire difference with Christianity.
+
+## Points of convergence
+
+The convergence is deep. We worship the same God, the God of Abraham, Isaac, and Jacob. We receive as inspired Word the same Hebrew Scriptures. We share the Ten Commandments, the messianic expectation, the sanctity of life, and the covenant. Saint Paul, in Romans 11, compares Israel to the good olive tree onto which Christians from the nations were grafted: the root supports the branches, not the other way around. The Second Vatican Council, in the declaration Nostra Aetate, condemns every form of antisemitism and recognizes the unique bond between the Church and the Jewish people.
+
+## Points of confrontation
+
+The point is one: is Jesus of Nazareth the Messiah announced by the prophets? The Christian answers yes, and points to the Hebrew texts themselves.
+
+1. The Suffering Servant of Isaiah 53. Written centuries before Christ, it describes a servant "wounded for our iniquities", who "like a lamb was led to the slaughter", who "did not open his mouth", and whose death brings healing "by his wounds". The correspondence with the passion of Jesus is striking.
+
+2. Psalm 22. It begins with "My God, my God, why have you forsaken me", the words of Jesus on the cross, and describes pierced hands and feet and garments divided by lot, centuries before crucifixion existed as a penalty.
+
+3. The prophecy of Daniel 9. It sets a deadline, the "seventy weeks", after which the Anointed One would be cut off and the city and the sanctuary destroyed. The Temple was destroyed in the year 70. If the Messiah was to come and be put to death before that destruction, the deadline has already passed.
+
+4. The place and the sign. Micah 5,2 announces the birth of the ruler in Bethlehem. Zechariah 12,10 speaks of those who "will look on the one they pierced" and mourn for him. These are concrete signs, not vague ones.
+
+5. The end of sacrifices. The Torah commanded sacrifice in the Temple for the atonement of sins. Since the year 70 there has been no Temple and no sacrifice. The Christian sees in this the meaning of the Letter to the Hebrews: the definitive sacrifice has already been offered by Christ, priest and victim, once for all.
+
+## Key questions
+
+1. If the Messiah was to come before the destruction of the Temple (Daniel 9), and the Temple fell in the year 70, who fulfilled the deadline?
+
+2. Of whom does Isaiah 53 speak, an innocent servant who suffers and dies for the sins of the people, if the description matches the passion of Jesus so closely?
+
+3. Since the year 70 there has been no Temple and no sacrifice of atonement. How does the covenant continue without the means of atonement that the Torah itself required?
+
+4. The first to believe in Jesus as Messiah were thousands of observant Jews. What did they see in the Scriptures that led so many to recognize him?`,
+  },
+
+  39: {
+    titleEn: 'Buddhism',
+    summaryEn: 'Buddhism seeks the end of suffering through the extinction of desire and of the self. Christianity answers that the self is real, loved by a personal God, and saved as a gift, not as an achievement.',
+    bodyEn: `Buddhism attracts many people in the West for its serenity, the discipline of meditation, and the emphasis on compassion. It is not a religion of combat, and dialogue with a Buddhist is usually calm. But beneath the similarity of language (peace, compassion, detachment) there are answers opposite to those of Christianity about what is real, what we are, and where we are going.
+
+## What they believe
+
+Buddhism was born in India around the 5th century BC, out of the experience of Siddhartha Gautama, the Buddha, which means "the awakened one". Faced with human suffering, he formulated the Four Noble Truths: life is marked by suffering (dukkha); the cause of suffering is desire and attachment (tanha); it is possible to extinguish suffering; and the path to this is the Noble Eightfold Path, a life of righteousness, mindfulness, and meditation.
+
+Two ideas are central. Impermanence (anicca): everything is in constant change, nothing is fixed. And no-self (anatta): there is no permanent soul or "self", and what we call a person is a flow of states that dissolves. The ultimate goal is nirvana, the extinction of desire and of the illusion of the self, which ends the cycle of rebirths (samsara). Classical Buddhism, especially in the Theravada form, does not affirm a personal creator God.
+
+## Points of convergence
+
+There is much to admire and to learn. Buddhism takes suffering seriously, instead of fleeing from it. It cultivates compassion, nonviolence, sobriety before the appetites, and a rich tradition of silence and contemplation, with parallels in the Christian monastic tradition. The Second Vatican Council, in Nostra Aetate, recognizes in these traditions a ray of the Truth that enlightens all men. Detachment from goods and mastery over the passions are also Christian virtues.
+
+## Points of confrontation
+
+The differences, however, are foundational.
+
+1. Is reality personal or impersonal? This is the basic question. For the Christian, in the beginning there is a personal God who loves, speaks, and creates. For classical Buddhism, the absolute is not someone, and salvation is to dissolve into stillness. Either the foundation of everything is personal Love, or it is impersonal silence. Both cannot be true at the same time.
+
+2. Is the self an illusion or the image of God? Buddhism teaches that the "self" is an illusion to be dissolved. Christianity affirms the opposite: each person is unique, created in the image of God (Genesis 1,27) and destined to live forever, not to disappear. One's identity is not a problem to eliminate, it is a gift to be purified and fulfilled.
+
+3. Compassion grounded in what? Buddhism preaches compassion, and that is beautiful. But if the "self" of the other is an illusion, why have compassion for it? Christian compassion has a clear root: the other is a child of God, of infinite value, for whom Christ gave his life. The dignity of the person is not merely practical, it is personal.
+
+4. To liberate oneself by a method, or to be saved as a gift? The Buddha offers a path for you to liberate yourself by your own effort. Christ does not offer a method, he offers himself: "God so loved the world that he gave his only Son" (John 3,16). For those who carry real guilt, the difference is enormous: salvation comes from outside, as a free gift, not as an achievement.
+
+5. To be reborn or to rise again? Samsara is a cycle of rebirths from which one wishes to escape into the nothingness of nirvana. Christianity announces one single life (Hebrews 9,27) and, in the end, the resurrection of the body and eternal communion with God. Not the extinction of the self, but its fullness.
+
+## Key questions
+
+1. If the "self" is an illusion, who exactly attains nirvana? And who is reborn from one life to the next?
+
+2. Why have compassion for someone whose self, according to Buddhism, does not truly exist?
+
+3. Nirvana is the extinction of desire and of the self. Does the human heart truly long to disappear, or to be loved and to last?
+
+4. The Buddha shows a path to be walked by one's own effort. And when the effort fails? What does Christianity offer at that point that Buddhism does not?`,
+  },
+
+  40: {
+    titleEn: 'Hinduism',
+    summaryEn: 'Hinduism sees the divine in everything and the self as a spark of the impersonal absolute. Christianity affirms a personal God distinct from creation, and one life that decides eternity.',
+    bodyEn: `Hinduism is the oldest of the great living religions and one of the hardest to summarize, because it is not a single block but an immense family of traditions, with many gods, many texts, and many paths. It has great spiritual beauty and a thirst for the transcendent that the Christian recognizes at once. The differences appear when one asks who God is, what the human being is, and how history ends.
+
+## What they believe
+
+The roots of Hinduism lie in the Vedas, the oldest sacred texts, deepened by the Upanishads and the famous Bhagavad Gita. At the foundation of much of the tradition is the idea of Brahman, the ultimate and absolute reality, and of atman, the inner self, which in one of the main schools, Advaita Vedanta, is identified with Brahman itself: at bottom, all is one.
+
+Human life is bound to samsara, the cycle of rebirths governed by the law of karma, in which the actions of one life determine the condition of the next. The goal is moksha, liberation from that cycle, attained by different paths: that of knowledge, that of action, and that of loving devotion to a deity, bhakti. The many gods are, for many Hindus, faces of a single divine reality, and the deities manifest in avatars, such as Krishna.
+
+## Points of convergence
+
+The Christian recognizes here a sincere and profound search. Hinduism affirms that the material world is not ultimate reality, it values contemplation, spiritual discipline, and devotion, and it keeps alive the awareness of a moral order (dharma). The Second Vatican Council, in Nostra Aetate, speaks with respect of the Hindus, who explore the divine mystery and express it with an inexhaustible fruitfulness of myths and with profound philosophical efforts.
+
+## Points of confrontation
+
+The underlying answers, however, diverge from the Gospel.
+
+1. Is God everything, or the Creator distinct from everything? In much of Hinduism, the divine and the world blend together (pantheism), and in the end all is the same Brahman. Christianity affirms a personal God who created the world out of nothing and is distinct from it. The creature is not God and does not dissolve into God: it is loved by Him and called to communion, without ceasing to be itself.
+
+2. Does the self dissolve or remain? If atman is Brahman, the goal is to cease being an individual and merge into the whole. Christianity affirms the opposite: the person is created in the image of God (Genesis 1,27) and remains a person forever, in a relationship of love. Salvation does not erase the face, it fulfills it.
+
+3. Karma and reincarnation, or grace and resurrection? The law of karma is relentless: each one reaps exactly what he sowed, life after life. The Gospel announces something karma does not know: forgiveness and grace. And it teaches one single life, followed by judgment and resurrection (Hebrews 9,27), not an endless cycle of returns.
+
+4. Many paths or one Way? For Hinduism, in general, there are many valid paths to the divine. Jesus affirms something unique: "I am the way, the truth, and the life; no one comes to the Father except through me" (John 14,6). Not out of arrogance, but because, if God truly entered history in person, that fact changes everything.
+
+5. Is history a cycle or a road? The Hindu view of time is cyclical, without a definite end. The Christian view is of a real history, with a beginning (creation), a center (the Incarnation of God in Jesus, in a place and on a date), and an end (eternal life). Salvation is not flight from time, it is time brought to fullness.
+
+## Key questions
+
+1. If all is the same Brahman, where do evil, the distinction between right and wrong, and the very effort to liberate oneself come from?
+
+2. If the goal is to dissolve the self into the absolute, who enjoys the liberation after the self has disappeared?
+
+3. The law of karma knows no forgiveness, only consequence. Does the human heart not also long for mercy, which karma cannot give?
+
+4. If God entered history personally in Jesus, and this is a fact and not a myth, does it still make sense to say all paths lead to the same place?`,
+  },
+
+  41: {
+    titleEn: 'Mormonism (LDS)',
+    summaryEn: 'Mormons believe in Christ and take family seriously, but they follow a new book and a god who was once a man. Archaeology, Egyptology, and the Bible answer.',
+    bodyEn: `Mormons, members of the Church of Jesus Christ of Latter-day Saints, are usually well-educated people, of serious moral life and deeply devoted to family. They speak of Jesus and use the Bible. That is why many take them for just another Christian denomination. But the differences are so deep that they touch on who God is, and they can be tested with history and archaeology.
+
+## What they believe
+
+The religion was founded by Joseph Smith in the United States. Smith claimed to have had, beginning in 1820, heavenly visions, and to have received from an angel named Moroni golden plates that he translated as the Book of Mormon, published in 1830. According to that book, ancient tribes of Israel migrated to the Americas around 600 BC, forming the civilizations of the Nephites and Lamanites, and the risen Jesus visited them.
+
+Besides the Bible and the Book of Mormon, Mormons follow Doctrine and Covenants and the Pearl of Great Price, and they believe in living prophets who receive continuing revelation. Striking points of doctrine: God the Father was once a man who became God ("as man is, God once was; as God is, man may become"); there is a plurality of gods; and the faithful may, in the end, become gods of their own worlds. Eternal family, baptism for the dead, and a strong missionary drive complete the picture.
+
+## Points of convergence
+
+There is much to admire. Mormons greatly value family, chastity, sobriety (they drink no alcohol and do not smoke), community service, and religious study. They have reverence for Jesus and the Bible. In moral virtue and dedication, they put many Christians to shame. That zeal is real and deserves respect.
+
+## Points of confrontation
+
+The difficulties, however, are not small, and several are verifiable.
+
+1. The Book of Mormon and archaeology. The book describes great civilizations of Hebrew origin in the Americas, with cities, battles, horses, chariots, swords and steel armor, wheat and barley. American archaeology has found none of this in the indicated period: not the cities, not the Hebrew writing, not the animals and metals mentioned, which only reached the Americas with the Europeans. And DNA studies show that Native American peoples are of Asian, not Semitic, origin.
+
+2. The Book of Abraham, a test that failed. Joseph Smith said he had translated part of the Pearl of Great Price from Egyptian papyri he had bought. Those papyri, thought to be lost, were rediscovered in 1966. When Egyptologists read them, they saw they were ordinary funerary texts (the Book of Breathings), with no relation to Abraham. Smith's translation does not correspond to what the papyri actually say.
+
+3. The doctrine of God. That God was once a man, that there are many gods, and that men can become gods directly contradicts Scripture. In Isaiah 43,10 God declares: "before me no god was formed, and after me there shall be none". The absolute monotheism of the Bible does not allow a God who progressed from man to God.
+
+4. The revelations that change. Polygamy was taught by revelation and then forbidden in 1890, under pressure from the American government. The priesthood was denied to Black members until 1978, when a new revelation reversed the rule. A revelation that changes according to social convenience raises the question of its source.
+
+## Key questions
+
+1. If the Book of Mormon describes entire civilizations, with cities, horses, and steel, why do archaeology and DNA find no trace of them?
+
+2. The papyri of the Book of Abraham were rediscovered and read by Egyptologists. Why does Joseph Smith's translation not match what they say?
+
+3. Isaiah 43,10 says there is no other God before or after. How do you reconcile this with a God who was once a man and with many gods?
+
+4. If polygamy and the exclusion of Black members were revoked by revelation precisely under social pressure, what does that say about the source of those revelations?`,
+  },
+
+  42: {
+    titleEn: 'Atheism and Naturalism',
+    summaryEn: 'Atheism denies God; naturalism says only matter exists. These are serious worldviews, but they struggle to ground the existence of the world itself, morality, and reason.',
+    bodyEn: `The atheist is not, in general, an enemy of truth. Often he is an honest person who demands reasons to believe and is troubled by religious hypocrisy and by the suffering of the world. To take atheism seriously is to answer its best arguments, not a caricature. This article presents the position fairly and then shows the points where it struggles to sustain itself.
+
+## What they believe
+
+Atheism, in the strict sense, is the absence of belief in God, or the affirmation that God does not exist. It usually comes with naturalism: the thesis that only nature exists, matter and energy, and nothing beyond it, no soul, no spirit, no Creator. Valid knowledge would be above all that of science, and the universe would be explained by natural laws, without need of purpose.
+
+The strongest arguments of atheism deserve to be named honestly: the suffering and evil in the world seem incompatible with a good God; direct empirical evidence of God would be lacking; science would have explained much of what was once attributed to the divine; and religion would have produced violence and abuse. These are weighty objections, felt by many serious people.
+
+## Points of convergence
+
+The Christian has more in common with the sincere atheist than it seems. Both value reason, evidence, and intellectual honesty. The Church, in the encyclical Fides et Ratio, teaches that faith and reason are the two wings by which the spirit rises to truth, and that they never truly oppose each other. Modern science itself was born in Christian civilization. The demand not to believe just anything without good reasons is a demand the Christian also makes.
+
+## Points of confrontation
+
+The question is whether naturalism can sustain what it itself depends on.
+
+1. Why is there something rather than nothing? Naturalism describes how the universe works, but it does not explain why there is a universe, why it had a beginning (as current cosmology indicates), and why its laws are so precisely tuned to allow life. To say "it just is that way" is not an explanation, it is to stop asking. This point is treated in detail in the articles on the cosmological argument and fine-tuning.
+
+2. Where does morality come from? When the atheist revolts against evil, he presupposes that a real good exists, an objective standard above opinions. But if only matter in motion exists, where does that standard come from? Without God, "right" and "wrong" tend to become preferences, and moral indignation loses its ground. The argument from evil itself, the greatest atheist objection, only works if good truly exists, which points beyond matter.
+
+3. Why trust reason? If the mind is merely the result of blind processes, selected to survive and not to reach truth, why trust its conclusions, including the conclusion that God does not exist? Naturalism, taken seriously, saws off the branch it is sitting on: it uses reason to deny what would give reason its foundation.
+
+4. Scientism refutes itself. The statement "only what science can prove is true" is not, itself, a statement that science can prove. It is a philosophical claim. So it brings itself down. Science is magnificent in its field, but there are real truths, such as the mathematical, moral, and logical, that are not the object of experiment.
+
+## Key questions
+
+1. Naturalism explains how the universe works. But why is there a universe, and why did it begin?
+
+2. When you call something "evil", where does the standard of good it presupposes come from, if only matter exists?
+
+3. If the mind is the product of blind processes aimed at survival, not at truth, why trust it to conclude that God does not exist?
+
+4. Is "only what science proves is true" a statement that science can prove? If not, does it not refute itself?`,
+  },
+
+  43: {
+    titleEn: 'New Age',
+    summaryEn: 'The New Age blends crystals, energies, reincarnation, and a "cosmic Christ" with the idea that the divine is within you. The Gospel answers: you are a beloved creature, not God.',
+    bodyEn: `The New Age is not a church and has no founder. It is a diffuse spiritual climate, appearing in crystals, astral charts, energy therapies, divination, reincarnation, spiritualized self-help, and in the phrase "I am spiritual, not religious". Many people who call themselves Catholic absorb New Age ideas without noticing. So it is worth understanding what it proposes and where it collides with the faith.
+
+## What they believe
+
+Emerging strongly from the 1970s on, the New Age gathers varied beliefs around a few common ideas. The main one is monism: all is one, and at bottom everything is divine, including you. Salvation would be to awaken to the inner divinity, expand consciousness, and harmonize the energies. To this are added reincarnation and karma, astrology, communication with spirit guides, the use of crystals and holistic healing practices, and the idea that all religions ultimately say the same thing.
+
+Jesus is usually reinterpreted as an "ascended master" or as the bearer of a "Christ consciousness" that everyone can attain, and not as the incarnate Son of God, unique, who died and rose in history.
+
+## Points of convergence
+
+There is a true longing behind this. The New Age reacts against dry materialism, seeks meaning, interiority, and an integral view of the person, and it cares for nature. That desire for the transcendent is good, and the Christian understands it. The problem is not the thirst, it is the direction in which one seeks to quench it.
+
+## Points of confrontation
+
+The Church itself analyzed this movement in the document "Jesus Christ, the Bearer of the Water of Life", of 2003. The points of collision are clear.
+
+1. Are you God or a creature of God? The New Age says the divine is within you and that you need only awaken to it. The Christian faith says the opposite: you are a creature, good and beloved, but you are not God. Curiously, the promise "you will be like gods" is exactly the serpent's, at the beginning of Genesis (Genesis 3,5). Human greatness is not in being God, but in being loved by Him.
+
+2. A cosmic Christ or the Jesus of history? To exchange the Jesus who was born, died, and rose in a place and on a date for a vague "Christ energy" empties the Gospel. The First Letter of John warns: every spirit that does not acknowledge Jesus come in the flesh is not from God (1 John 4,2-3).
+
+3. Crystals, astrology, channeling. The search for power through energies, stars, and spirits is precisely what the Bible calls divination and forbids (Deuteronomy 18,10-12). The Catechism of the Catholic Church, in paragraphs 2116 and 2117, condemns astrology, consulting mediums, and magic, even when done in search of good.
+
+4. To save oneself or to be saved? For the New Age, salvation is self-realization, the work of one's own effort and technique. For Christianity, no one saves himself: salvation is the gift of Another, of a personal God who comes to meet the one who cannot arrive alone.
+
+## Key questions
+
+1. If "all is one" and everything is divine, where do evil, lies, and suffering come from, which would then also have to be divine?
+
+2. Is the promise that "you are God" new, or is it the same as at the beginning of Genesis, "you will be like gods"?
+
+3. What is left of the Gospel if Jesus stops being a historical person and becomes an "energy" that is in everyone?
+
+4. If salvation is only to awaken the inner divinity, why do so many who tried this path remain empty and still searching?`,
+  },
+
+  44: {
+    titleEn: 'Umbanda and Candomblé',
+    summaryEn: 'Afro-Brazilian religions of great cultural force, born from the faith of enslaved Africans. The Church respects these people and condemns racism, but distinguishes the Catholic faith from the cult of the orixás and from mediumship.',
+    bodyEn: `Speaking of Umbanda and Candomblé calls for extra care. These are religions born from the faith of Africans brought as slaves, who preserved their traditions amid centuries of persecution and racism. Any approach that despises these people or ignores that unjust history would be, above all, anti-Christian. The goal here is not to attack, it is to distinguish, with clarity and respect, the Catholic faith from what these traditions profess.
+
+## What they believe
+
+Candomblé arrived in Brazil with the enslaved African peoples, especially of Yoruba and Bantu tradition. It worships the orixás, deities linked to the forces of nature (such as Iemanjá, Ogum, Oxóssi, Xangô), below a supreme and distant God (Olorum, or Zambi). The religion expresses itself in offerings, drumming, dance, initiation, and the incorporation of the orixás by the initiates.
+
+Umbanda was born in Brazil in the early 20th century and is a synthesis: it combines elements of Candomblé, Kardecist Spiritism, popular Catholicism, and indigenous traditions. It works with spirit guides such as pretos-velhos, caboclos, and exus, through mediums, and emphasizes charity. During persecution, many practitioners associated each orixá with a Catholic saint, and so images and devotions remain mixed to this day.
+
+## Points of convergence
+
+There are sincere points of contact. These religions affirm the existence of a supreme God, have a strong sense of the sacred, deep respect for ancestors, and great value for community and welcome. And there is a historical truth the Christian must affirm firmly: the slavery and religious persecution that fell upon Black people were a grave sin, and racism, in any form, is incompatible with the Gospel. The dignity of these persons is whole and inviolable.
+
+## Points of confrontation
+
+That said, there are differences that are not resolved by sympathy alone.
+
+1. Mediumship and spirits. The incorporation of spirits and guides, present especially in Umbanda, runs into the same biblical prohibition that applies to Spiritism: consulting and invoking the dead is forbidden in Scripture (Deuteronomy 18,10-12), and the Catechism of the Catholic Church condemns these practices in paragraphs 2116 and 2117.
+
+2. The cult of the orixás. The Catholic faith is radically monotheistic: worship is due to God alone (Exodus 20,3: "you shall have no other gods before me"). To render cult to orixás, even thought of as forces or intermediaries, is not the same as venerating a saint. The saint is a brother who intercedes before the one God; he does not receive cult as a deity.
+
+3. Syncretism. To associate an orixá with a saint was often a survival strategy under persecution, and this is understood with compassion. But, theologically, the saint and the orixá are not the same thing. Clarity here is an act of respect for the truth, not contempt for history.
+
+4. Salvation. Much of these traditions seek balance and favor through offerings and ritual obligations. The Gospel announces something else: salvation is neither bought nor earned with rites, it is the free gift of a personal God who redeems each person in Christ.
+
+## Key questions
+
+1. Scripture forbids invoking spirits and the dead (Deuteronomy 18,11). How do you reconcile this with the incorporation of guides and mediumship?
+
+2. If there is one God to whom worship is due (Exodus 20,3), what place remains for the cult of the orixás?
+
+3. To venerate a saint is to ask the intercession of a brother before God. Is that really the same as worshiping an orixá?
+
+4. Is salvation obtained with offerings and obligations, or is it the free gift of God in Christ, which cannot be bought?`,
+  },
+
+  27: {
+    titleEn: 'Jehovah\'s Witnesses',
+    summaryEn: 'Jehovah\'s Witnesses deny the Trinity and the divinity of Christ, relying on their own translation of the Bible, made in 1950. The Greek text and history answer.',
+    bodyEn: `Jehovah's Witnesses knock at the door with the Bible in hand and great knowledge of verses. They are disciplined, sincere, and dedicated. But behind the name of Jehovah, they profess a doctrine that denies the divinity of Christ and the Trinity, and that rests largely on their own translation of the Bible. It is worth knowing what they believe and where it does not hold up.
+
+## What they believe
+
+The movement was founded by Charles Taze Russell in the United States at the end of the 19th century, and is directed by the Watch Tower Society. Jehovah's Witnesses believe in a one-person God, called Jehovah, and deny the Trinity. For them, Jesus is not God but the first creature of Jehovah, identified with the archangel Michael, and the Holy Spirit is not a person but God's "active force".
+
+They await an imminent Armageddon, believe that only 144,000 go to heaven while the other faithful will live on a paradise earth, refuse blood transfusions, do not take part in wars, politics, or holidays, and devote themselves intensely to door-to-door preaching. They use their own Bible, the New World Translation, published in 1950.
+
+## Points of convergence
+
+There is something to acknowledge. Jehovah's Witnesses believe in one God, have great reverence for the Bible and study it diligently, take morality seriously, reject idolatry, and keep united and zealous communities. The seriousness with which they treat the faith puts many lukewarm believers to shame.
+
+## Points of confrontation
+
+The problem is that the central doctrine, the denial of Christ's divinity, does not come from the Gospels, but from a forced reading of them.
+
+1. The translation of John 1,1. The Greek text says: "in the beginning was the Word (Logos), and the Word was with God, and the Word was God". The New World Translation renders the end as "the Word was a god", adding an article that does not exist in Greek. The construction (a predicate without article before the verb) indicates nature, not indefiniteness: in John 1,14 the same form appears with "flesh", and no one translates "became a flesh". Almost no translation in history renders John 1,1 as the Watch Tower does.
+
+2. Divine titles given to Jesus. In John 20,28 Thomas calls Jesus "my Lord and my God", and Jesus accepts. In Titus 2,13 and 2 Peter 1,1 he is "our great God and Savior". In Hebrews 1,8 the Father calls the Son "God". In Philippians 2,6 Christ is "in the form of God".
+
+3. Jesus is not the archangel Michael. In Hebrews 1, the author shows the superiority of the Son precisely by comparing him to the angels: "to which of the angels did God ever say, you are my Son?" and "let all God's angels worship him" (Hebrews 1,5-6). Jesus is worshiped by the angels, he is not one of them.
+
+4. The Holy Spirit is a person, not a force. In Acts 13,2 "the Holy Spirit said: set apart for me Barnabas and Saul". A force does not speak or choose. In John 14,16 Jesus calls the Spirit "another Paraclete", a word that designates a person. In Acts 5,3-4 to lie to the Holy Spirit is to lie to God.
+
+5. The dates that failed. The Watch Tower announced the end for 1914, then 1925, then 1975. All failed. The Bible itself gives the criterion (Deuteronomy 18,22): when a prophet announces something in God's name and it does not happen, it was not God who spoke.
+
+## Key questions
+
+1. Why does only the New World Translation (1950) render John 1,1 as "a god", and none of the historical translations (Catholic, Orthodox, Protestant) do so?
+
+2. In John 20,28 Thomas calls Jesus "my God". If Jesus is not God, why did he not correct Thomas?
+
+3. If Jesus is the archangel Michael, how do we understand Hebrews 1,6: "let all God's angels worship him"?
+
+4. If the dates for the end announced by the Watch Tower Society (1914, 1925, 1975) failed, why trust the next one, given the criterion of Deuteronomy 18,22?`,
+  },
+
+  45: {
+    titleEn: 'The Darkness at the Cross and the Dating of the Crucifixion',
+    summaryEn: 'The Gospels report three hours of darkness at the death of Jesus. Pagan sources recorded it, and modern astronomy helped date the crucifixion to the year 33.',
+    bodyEn: `At the moment of Jesus' death, the three synoptic Gospels report a strange phenomenon: "from the sixth hour there was darkness over all the land until the ninth hour" (Matthew 27,45), that is, from noon to three in the afternoon. Mark and Luke record the same. This detail, far from being an easy legend to invent, raises interesting questions of history and astronomy.
+
+## It was not a solar eclipse
+
+The first thing to note is that the darkness cannot have been an ordinary solar eclipse. The crucifixion happened at the Jewish Passover, which always falls at the full moon. Now, a solar eclipse can only occur at the new moon, when the Moon passes between the Earth and the Sun. At the full moon it is astronomically impossible. Besides, a total solar eclipse lasts a few minutes, not three hours.
+
+This has a curious consequence. If the evangelists had wanted to invent a cosmic sign to impress, an "eclipse" at Passover would be the easiest mistake to expose for any reader of the time who understood the calendar. They do not describe an eclipse: they describe darkness, an anomalous dimming, without explaining it. It is the kind of sober report one expects from a witness, not from a myth.
+
+## What non-Christian sources say
+
+The detail was not limited to Christians. The historian Thallus, around the year 55, mentioned the darkness and tried to explain it as an eclipse. We know this because the Christian Julius Africanus, in the 3rd century, quotes Thallus and rightly observes that it could not be an eclipse, since it was Passover, at the full moon. Phlegon of Tralles, a pagan author of the 2nd century, also recorded a great darkness and an earthquake around the fourth year of the 202nd Olympiad, which corresponds roughly to the year 33. Hostile or neutral sources, then, knew of the phenomenon.
+
+## The moon to blood and dating by astronomy
+
+There is yet another thread, and this is where modern astronomy comes in. On the day of Pentecost, the apostle Peter quotes the prophet Joel: "the sun shall be turned to darkness and the moon to blood" (Acts 2,20, citing Joel 2,31), applying the prophecy to the events of the Passover at which Jesus died. The "moon to blood" is the classic description of a lunar eclipse, in which the Moon, covered by the Earth's shadow, takes on a reddish tone.
+
+In 1983, the scientists Colin Humphreys and W. G. Waddington published in the journal Nature the study "Dating the Crucifixion". Using the astronomical computation of eclipses, the same kind of computation that today allows NASA to predict and retro-predict eclipses with precision across centuries, they showed that on the afternoon and night of Friday, 3 April of the year 33, there was a lunar eclipse visible from Jerusalem: the Moon rose that night already partially eclipsed, reddened, exactly "as blood". For the authors, this is the most likely date of the crucifixion, with 7 April of the year 30 as an alternative.
+
+The result is remarkable. A prophecy of the prophet Joel, written centuries before Christ, was reported by Peter as fulfilled at the death of Jesus, and only with recent astronomical science was it possible to identify the real, computable lunar eclipse that occurred on that exact day. The three-hour darkness remains without a simple natural explanation. The lunar eclipse of that evening, however, astronomy does confirm.
+
+## What this proves and what it does not
+
+Honesty is needed. Dating by eclipse does not prove the divinity of Jesus, and scholars still debate between the years 30 and 33. But it shows two things. First, that the Gospels report events anchored in a real, verifiable time and place, not in a mythical "once upon a time". Second, that details long considered legendary turn out to be compatible with history and astronomy when examined closely.
+
+## Key questions
+
+1. If the evangelists had wanted to invent an eclipse to impress, why would they place it at Passover, at the full moon, when that is impossible and easy to disprove?
+
+2. How do we explain that pagan and neutral authors, such as Thallus and Phlegon, recorded a darkness and an earthquake at the same period?
+
+3. Peter applies Joel's prophecy, the moon to blood, to the Passover of Jesus. Is it not remarkable that astronomy identifies a real lunar eclipse over Jerusalem on 3 April of the year 33?
+
+4. If the account were a late legend, why is it so sober, not even explaining the phenomenon, unlike fables, which tend to exaggerate?`,
+  },
+
+  46: {
+    titleEn: 'Messianic Prophecies Fulfilled in Jesus',
+    summaryEn: 'Centuries before Christ, the prophets foretold details of the Messiah\'s life, death, and victory. Jesus fulfills them strikingly.',
+    bodyEn: `One of the strongest pieces of evidence for Jesus as the Messiah lies in the Hebrew Scriptures written centuries before his birth. They announce, with concrete details, the place of his birth, the manner of his death, and his victory over it. Taken together, they form a portrait that Jesus of Nazareth fills strikingly.
+
+## Where he would be born
+
+The prophet Micah, in the 8th century BC, announced that the ruler of Israel would be born in Bethlehem, a small town: "from you shall come forth the one who is to rule Israel" (Micah 5,2). Seven hundred years later, Jesus is born there.
+
+Isaiah also announced the sign of the virginal conception: "the virgin shall conceive and bear a son, and they shall call him Emmanuel" (Isaiah 7,14), a name that means "God with us".
+
+## How he would die
+
+Here the prophecies reach a level of detail that astonishes. Psalm 22, written centuries before crucifixion existed as a form of execution, describes a persecuted righteous one who cries "My God, my God, why have you forsaken me", the first words of Jesus on the cross, has his hands and feet pierced, and sees his executioners divide his garments by casting lots. The four Gospels describe exactly this at the crucifixion.
+
+Chapter 53 of Isaiah, the song of the Suffering Servant, is even more explicit: the Servant is "wounded for our iniquities", led "like a lamb to the slaughter", who "did not open his mouth", and whose death brings healing "by his wounds". It is the description of an atoning death, voluntary and innocent.
+
+Zechariah adds a singular detail: "they will look on me, the one they pierced" (Zechariah 12,10), fulfilled when the soldier opens Jesus' side with the lance.
+
+## When he would come
+
+The prophet Daniel, in chapter 9, sets a deadline: after a period of "seventy weeks", the Anointed One would be cut off, and then the city and the sanctuary would be destroyed (Daniel 9,24-26). The Temple was destroyed by the Romans in the year 70. If the Messiah was to come and die before that destruction, the time of his coming has already been fulfilled, and Jesus fits exactly in that window.
+
+## The force of the whole
+
+Each prophecy, in isolation, could be debated. But the force lies in the whole. That a single man should be born in the foretold place, die in the foretold manner, at the foretold time, and at the same time fulfill the Servant of Isaiah, the righteous one of Psalm 22, the pierced one of Zechariah, and the deadline of Daniel, is something no simple coincidence explains. The first Christians, all Jews familiar with these Scriptures, recognized in them the portrait of Jesus, and that is what convinced them.
+
+## Key questions
+
+1. Psalm 22 describes pierced hands and feet and garments cast by lot, centuries before crucifixion existed as a penalty. Of whom does it speak, if not of Jesus?
+
+2. Isaiah 53 describes an innocent servant who suffers and dies for the sins of the people. What other figure in history fulfills that description like Jesus?
+
+3. Daniel 9 places the coming and death of the Messiah before the destruction of the Temple in the year 70. Who fulfilled that deadline?
+
+4. For one person to fulfill the place (Micah), the manner (Psalm 22 and Isaiah 53), and the time (Daniel), is that reasonable coincidence, or does it point to a plan?`,
+  },
+
+  47: {
+    titleEn: 'Archaeology Confirms the Bible',
+    summaryEn: 'Characters and places that critics called legend have been unearthed: Pilate, Caiaphas, the pool of Bethesda, the House of David. History confirms the Bible point by point.',
+    bodyEn: `For a long time it was said that the Bible was full of invented characters and places. With every new excavation, however, history has done the opposite: confirmed names, titles, and places exactly as the text describes them. Archaeology does not prove that the Bible is the Word of God, that is a matter of faith, but it shows, again and again, that it is reliable as a historical document.
+
+## Pontius Pilate existed, and was prefect
+
+For centuries, the mention of Pontius Pilate came mainly from the Gospels and a few ancient sources, and some doubted him. In 1961, in Caesarea Maritima, archaeologists found a stone with a Latin inscription naming "Pontius Pilate, prefect of Judea". The man who condemned Jesus is now carved in stone, with the exact title.
+
+## The ossuary of Caiaphas
+
+The Gospels tell that Jesus was tried by Caiaphas, the high priest (Matthew 26,57; John 11,49). In 1990, in Jerusalem, a tomb with ossuaries was found, one of them richly decorated, with the inscription "Yehosef bar Qayafa", that is, Joseph, son of Caiaphas. It is very probably the ossuary of the very high priest who handed Jesus over.
+
+## Pools that were said not to exist
+
+The Gospel of John mentions the pool of Bethesda, "which has five porticoes" (John 5,2). Critics thought the detail invented, since no such pool was known. The excavation near the church of Saint Anne, in Jerusalem, revealed exactly a pool with five porticoes, as John described. The same happened with the pool of Siloam (John 9,7), located in 2004.
+
+## The House of David outside the Bible
+
+Some said that King David was only a legend. In 1993, at Tel Dan, in northern Israel, a stele from the 9th century BC was found, made by an enemy king, who boasts of having defeated the "House of David" (Beit David). It is the Davidic dynasty mentioned by an outside, hostile source, little more than a century after David.
+
+## The Hittites, from myth to empire
+
+Perhaps the most famous case. The Bible mentions the Hittites dozens of times. Since no other ancient document spoke of them, many 19th-century scholars took them for invention. Then archaeology unearthed the Hittite capital, Hattusa, and thousands of tablets: the Hittites were a great empire. The Bible was right, and the critics were wrong.
+
+## What archaeology shows and what it does not
+
+We must be fair. Archaeological finds do not prove miracles or the divine inspiration of the Scriptures. But they show a clear pattern: where the biblical text can be tested against history and the land, it withstands the test. A book that gets the verifiable names, titles, and places right deserves credit also in what it reports and cannot be excavated.
+
+## Key questions
+
+1. The Caesarea stone reads "Pontius Pilate, prefect of Judea". Does it still make sense to say the Gospels invented their characters?
+
+2. The pool of Bethesda, with its five porticoes, was thought to be John's invention until it was unearthed. How many other "legendary" details are just waiting for the next excavation?
+
+3. An enemy stele from the 9th century BC speaks of the "House of David". How can one maintain that David is a myth?
+
+4. If the Bible is verifiably right about names, titles, and places, why treat it as unreliable precisely where it speaks of God?`,
+  },
+
+  48: {
+    titleEn: 'The Manuscripts of the New Testament',
+    summaryEn: 'The claim that the Bible was changed over the centuries does not survive the facts: the New Testament is by far the best-documented ancient text in history.',
+    bodyEn: `An objection repeated tirelessly, by atheists, Muslims, and skeptics in general, is that the Bible was altered over the centuries, like a game of telephone, and that we would not know what the authors actually wrote. The accusation sounds strong, but it collapses before the manuscripts. The New Testament is, by far, the best-attested text of all antiquity.
+
+## A mountain of copies
+
+No other ancient work has left so many copies. Of the New Testament there are more than 5,800 manuscripts in Greek, plus about 10,000 in Latin and thousands in other ancient languages, totaling something close to 25,000 copies. For comparison: of "The Gallic War", by Julius Caesar, a few hundred manuscripts remain; of Homer's "Iliad", the second most copied ancient text, about 1,800. The New Testament is in a category of its own.
+
+## And very early copies
+
+It is not only quantity, it is closeness. The oldest fragment, papyrus P52, of the Gospel of John, is dated around the year 125, that is, a few decades from the original. For most classical works, the oldest copy we have was made 700, 900, sometimes a thousand years after the author. The New Testament is measured in decades, not centuries. The smaller the gap, the smaller the chance of accumulated alteration.
+
+## And the variations between copies?
+
+Critics often cite that there are hundreds of thousands of "variants" among the manuscripts. The number impresses, but it misleads. The vast majority of these variants are differences of spelling, word order, or obvious copying errors, with no effect on the meaning. Textual scholars, such as Bruce Metzger and Daniel Wallace, are clear: no central doctrine of Christianity depends on a textually doubtful passage. Precisely because there are so many copies, it is possible to compare them with one another and reconstruct the original text with very high confidence.
+
+## The Old Testament too
+
+The same holds for the Old Testament. In 1947 the Dead Sea Scrolls were discovered at Qumran, a thousand years older than the Hebrew copies then known. On comparing them, it was seen that the text had been transmitted with remarkable fidelity over a millennium. The idea of a tampered Bible does not survive the confrontation with the documents.
+
+## Key questions
+
+1. If the Bible was changed over the centuries, why does papyrus P52 already carry John around the year 125, a few decades from the original?
+
+2. We confidently accept the texts of Caesar and Tacitus, copied centuries later and in very few copies. Why apply to the New Testament, far better attested, a stricter criterion?
+
+3. If there are so many copies spread so early, does that make it easier or harder to hide an alteration?
+
+4. The Dead Sea Scrolls, a thousand years older, match the later text. Where, in fact, is the alleged tampering?`,
+  },
+
+  49: {
+    titleEn: 'Eucharistic Miracles: When the Host Becomes Flesh',
+    summaryEn: 'In several scientifically analyzed Eucharistic miracles, the Host became living human heart tissue, of blood type AB. Lanciano, Buenos Aires, Sokolka, and Tixtla point to the same heart.',
+    bodyEn: `The Catholic Church affirms that, at the consecration, the bread and wine truly become the Body and Blood of Christ. At certain moments in history, according to the Catholic faith, God made this mystery visible: the Host turned into flesh, and the wine into blood. What is remarkable is that several of these cases were submitted to modern science, without the result being known in advance, and the findings are convergent and hard to explain.
+
+## Lanciano, the most studied case
+
+Around the year 750, in the town of Lanciano, in Italy, a monk who doubted the Real Presence saw, during Mass, the Host turn into flesh and the wine into blood coagulated in five globules. The relics were preserved for more than twelve hundred years, without any preservative.
+
+Between 1970 and 1971, the pathologist Dr. Edoardo Linoli, with Dr. Ruggero Bertelli, of the University of Siena, examined the relics in a rigorous scientific study. The conclusions: the flesh is human heart tissue, specifically myocardium, the wall of the heart; the blood is human, of type AB; the flesh and the blood are from the same person; and the proteins remained intact for more than a thousand years, without decomposition, something science cannot explain. In 1973, a commission linked to the World Health Organization confirmed the results after years of verification.
+
+## Buenos Aires, Sokolka, Tixtla
+
+The case of Lanciano does not stand alone. In Buenos Aires, in 1996, a discarded Host that turned into a bloody substance was analyzed years later, with the authorization of the then archbishop, Cardinal Jorge Bergoglio, now Pope Francis. The result: heart muscle tissue, with signs of inflammation, like that of a heart that has suffered. In Sokolka, Poland, in 2008, and in Tixtla, Mexico, in 2006, independent examinations reached the same kind of finding: living human heart tissue, of type AB.
+
+The convergence is what most impresses. Cases separated by centuries and continents, analyzed by different teams, all point to the same thing: the muscle of a human heart, of the same blood type, in the state of one in agony.
+
+## The blood type AB
+
+One detail stands out. The blood type found in these miracles is AB, the same identified in the Shroud of Turin and the Sudarium of Oviedo, cloths associated with the burial of Jesus. AB is also a relatively rare type, considered the universal recipient. It is not a closed proof, but it is a coincidence that gives one pause.
+
+## What this proves and what asks for faith
+
+Honesty is needed. These miracles do not replace faith or make it unnecessary. The Real Presence is believed on the word of Christ, not on laboratory tests. But Eucharistic miracles are signs: tangible confirmations, given by God, of a truth that was already in Scripture and Tradition. Blessed Carlo Acutis, a young Italian canonized in 2025, devoted his adolescence to cataloging more than a hundred of these cases approved by the Church, precisely to help people believe.
+
+## Key questions
+
+1. How do we explain that tissue more than a thousand years old, without preservative, remains without decomposition, as in Lanciano?
+
+2. Why do miracles separated by centuries and continents present the same finding: living human heart muscle, of type AB?
+
+3. The same blood type AB appears in the Eucharistic miracles and in the shrouds of Turin and Oviedo. Is that an unimportant coincidence?
+
+4. If the Church wanted to commit fraud, why would it submit the relics to scientists, some of them non-believers, at the risk of public refutation?`,
   },
 });
