@@ -1118,9 +1118,15 @@ Bart Ehrman, agnostic and one of the best-known critics of the New Testament, wr
 
 The solution involves two complementary paths: a linguistic one and a historical one.
 
+## The linguistic path
+
 Linguistic path: Luke\'s Greek. The verse Lk 2,2 literally says "haute apographe prṓtē egeneto hēgemoneúontos tēs Syrías Kyrēníou". The traditional translation is "this was the first census made when Quirinius was governor of Syria". But the word prṓtē (πρώτη), normally "first", is also used in the Greek of the New Testament with the sense of "before". John 1,15 and 15,18 bring this explicit use: prṓtós mou ("before me"), referring to Jesus in relation to John the Baptist. Applying this reading to Luke 2,2, the sense would be: "this census happened before the one made when Quirinius was governor". The grammarian Daniel Wallace, author of the Greek grammar "Greek Grammar Beyond the Basics" (1996), a reference in New Testament studies, defends this translation as grammatically legitimate and historically coherent.
 
+## The historical path
+
 Historical path: Quirinius\' career. Latin inscriptions, especially the so-called Lapis Tiburtinus found near Tivoli, mention a Roman official (probably Quirinius) who was legate of Syria twice, with an interval between the two occasions. Sir William Ramsay, a Scottish archaeologist specialist in the geography and administration of the Roman Empire, defended in "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915) that Quirinius exercised administrative functions in Syria even before the year 6 AD, possibly as a military legate with fiscal responsibilities. The census mentioned by Luke would have begun in that first phase, before Herod\'s death, and was completed later with Quirinius already in second occupation of the post. Other evidence is the very Roman practices: censuses could last years and involved multiple administrative stages.
+
+## A third possibility
 
 There is also a third path, which many historians accept: the census described by Luke may not be the famous one of Quirinius of 6 AD (mentioned by Josephus in Antiquities 18,1), but another previous administrative process. The Roman records of the time are not complete, and local memory of the birth of Jesus may be referencing a documentally lost event.
 
@@ -1146,9 +1152,15 @@ Worth noting the disproportion of the objection. The historicity of Jesus is att
 
 The classical Catholic explanation, sustained since the Fathers, distinguishes legal genealogy and biological genealogy.
 
+## Legal line and biological line
+
 First hypothesis: Matthew gives the legal line of Joseph, Luke gives the biological line of Mary. Matthew writes for a Jewish audience and emphasizes Jesus as Messiah son of David through the royal line (Solomon), legally heir to the throne through Joseph, husband of Mary. Luke writes for a broader (Greco-Roman) audience and traces the human ancestry of Jesus through his biological mother, who was also of the house of David (through the line of Nathan, younger son of David). Verse Luke 3,23 begins with "Jesus, as was supposed son of Joseph, son of Heli". The Greek construction allows reading that Heli was the father of Mary, father-in-law of Joseph, the Lucan line being the maternal one.
 
+## The levirate explanation
+
 Second hypothesis: both genealogies are of Joseph, but they explain a case of levirate. The Levirate Law in Deuteronomy 25,5-6 established that, when a man died childless, his brother should marry the widow, and the first son of that union would be considered the legal son of the deceased. Applied to the genealogies: if Joseph\'s biological father was Jacob (Matthew) and the legal father was Heli (Luke, by levirate), the two lists would be true in different senses. Eusebius of Caesarea, in "Ecclesiastical History" I,7, cites a tradition transmitted by Julius Africanus (3rd century) with this explanation.
+
+## Genealogies were not spreadsheets
 
 There is a less common but defensible third way: the two lines converge at different points in history. Ancient genealogical lists frequently skipped generations, grouped ancestors in symbolic blocks, and followed theological objectives. The very structure of Matthew in 3 groups of 14 generations (1,17) is deliberately symbolic (14 is the numerical value in Hebrew of "David"), and required intentional omissions that the author knew (Matthew skips kings like Ahaziah, Joash and Amaziah, known from the Old Testament).
 
@@ -1174,7 +1186,7 @@ Worth adding: if the evangelists were inventing, they would align the lists to a
     summaryEn: 'The four Gospels diverge in details of Easter morning. These differences confirm independent testimony, not coordinated invention.',
     bodyEn: `Whoever has read the four Gospels side by side notices differences in the accounts of the Resurrection. How many women went to the tomb? How many angels were there? Did Jesus appear first in Galilee or in Jerusalem? Critics of the Bible list these differences as proofs of fabrication. Honest analysis shows exactly the opposite: confirmation of independence of testimony.
 
-How many women went to the tomb?
+## How many women went to the tomb?
 
 Matthew 28,1: "Mary Magdalene and the other Mary".
 Mark 16,1: "Mary Magdalene, Mary, mother of James, and Salome".
@@ -1183,7 +1195,7 @@ John 20,1: "Mary Magdalene" (but in verse 2 she says "we do not know where they 
 
 There is no contradiction. Each evangelist mentions some of the women present, none says "only these were there". John focuses on Mary Magdalene because she is the central character of his subsequent narrative. Matthew, writing for Jews, mentions only two official witnesses (the sufficient according to Deuteronomy 19,15). Luke, attentive physician, lists more names. The lists overlap and complement each other: Magdalene appears in all four, Mary mother of James in three, Salome and Joanna in two each.
 
-How many angels at the tomb?
+## How many angels at the tomb?
 
 Matthew 28,5: "the angel".
 Mark 16,5: "a young man".
@@ -1192,13 +1204,15 @@ John 20,12: "two angels".
 
 Same principle. When there are two, there is always one. Matthew and Mark focus on the angel who spoke (probably the protagonist of the scene). Luke and John mention both present. There is no logical contradiction between "one spoke" and "there were two". Saint Augustine uses exactly this example in "De Consensu Evangelistarum" (c. 400) to show how partial testimonies are not lying.
 
-Galilee or Jerusalem?
+## Galilee or Jerusalem?
 
 Matthew 28,16: appearance in Galilee, on the mountain indicated by Jesus.
 Luke 24,33-49: appearances in Jerusalem, and ascension from Bethany.
 John 20-21: appearances in Jerusalem and in Galilee (by the Sea of Tiberias, chapter 21).
 
 Acts 1,3 gives the key: Jesus appeared to the disciples during forty days after the Resurrection. There were multiple appearances, in different locations, throughout almost six weeks. Luke and Matthew focus on different sets of these appearances, according to their narrative purposes. There is no contradiction between "appeared in Galilee" and "appeared in Jerusalem" if there were appearances in both places.
+
+## The weight is in the convergence
 
 The fundamental principle: partial testimony is not false. Four honest witnesses of an event mention different details, and this is normal. In any court, divergences in periphery summed with convergence in essence is a sign of independent testimony, not lying.
 
