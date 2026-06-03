@@ -1780,4 +1780,142 @@ The Catholic Church investigated the case for years and, in 1930, declared the a
 
 4. The sign was promised months in advance, for an exact date. What fraud can set the hour of a miracle before seventy thousand people?`,
   },
+
+  52: {
+    titleEn: 'Our Lady of Guadalupe and the Tilma',
+    summaryEn: 'In 1531, in Mexico, the image of the Virgin was imprinted on the cloak of a poor native. The fabric should have rotted in twenty years; almost five hundred years later, it remains intact and unexplained.',
+    bodyEn: `In December 1531, ten years after the Spanish conquest of Mexico, a poor and recently converted native named Juan Diego, now canonized, was climbing Mount Tepeyac, near Mexico City. There, according to the account, a young dark-skinned woman appeared to him, dressed like a pregnant Aztec princess, who identified herself as the Mother of the true God and asked that a temple be built there. As proof for the unbelieving bishop, she made Castilian roses bloom on a barren hill, in the middle of winter, and placed them in the tilma, Juan Diego's fiber cloak. When he opened the cloak before the bishop, the roses fell and, on the cloth, was imprinted the image of the Virgin, still seen today.
+
+## The image that should not exist
+
+The extraordinary thing is not only the story, it is the object. The tilma is made of agave fiber, a coarse material that, by all calculations, should have disintegrated in twenty or thirty years. Almost five hundred years later, the cloth remains intact, with no sign of decay, even though it was exposed without protection for more than a century, to the smoke of candles and the touch of millions of faithful.
+
+The image itself defies explanation. Infrared studies carried out in the 1970s found no signs of preliminary drawing, sketch, or brushstrokes, which would be impossible for a human painter of the time, who always works from a sketch. There is no varnish or fixative, and yet the colors have not faded. In 1791, nitric acid was accidentally spilled on the cloth, and the stain, instead of destroying the image, faded over time without leaving serious damage.
+
+## The eyes of the Virgin
+
+Perhaps the most intriguing detail is in the eyes of the figure. From the 1950s on, ophthalmologists who magnified the corneas of the image reported seeing in them, reflected, small human figures, as if the eyes had recorded the scene of the moment when the tilma was opened before the bishop. The engineer José Aste Tonsmann, in digital studies in the 1980s, described a group of people reflected in both eyes, in the proportion and distortion a real cornea would produce. The point is debated among scholars, but it is the kind of detail a 16th-century forger could never have planned.
+
+## A sermon in an image
+
+For the natives, the image was a catechism. Each element spoke in their language: the woman clothed with the sun, with the moon under her feet, is the Woman of Revelation (Revelation 12,1); the black sash indicated pregnancy; the stars on the mantle, according to studies, match the position of the sky over Mexico at the winter solstice of 1531. She was neither an Aztec idol nor a Spanish goddess: she was the Mother of God, dark-skinned like them, who stepped on the moon and the sun they had once worshiped. In the following ten years, about nine million natives converted to Christianity, and the practice of human sacrifice, which killed thousands each year, came to an end.
+
+## What this means
+
+As always, honesty is needed. The Church does not require anyone to believe in Guadalupe, and not every claim about the tilma has the same scientific weight. But the whole is impressive: a cloth that does not rot, an image without brushstrokes that does not fade, details revealed only by recent technology, and an immense historical fruit. Our Lady of Guadalupe is today the patroness of the Americas, and her mantle remains a sign hard to explain within a purely materialist view of the world.
+
+## Key questions
+
+1. How does a cloth of agave fiber, which should last a few decades, remain intact for almost five hundred years?
+
+2. Painters work from a sketch. Why does the image of Guadalupe have no preliminary drawing and no brushstrokes?
+
+3. If the image is a 16th-century forgery, how do we explain the figures reflected in the eyes, detected only with modern magnification?
+
+4. What forgery converts nine million people and ends the human sacrifices of an entire civilization?`,
+  },
+
+  53: {
+    titleEn: 'The Apparitions of Zeitoun (Egypt, 1968)',
+    summaryEn: 'For more than two years, crowds of Christians and Muslims saw, and photographed, a luminous figure of the Virgin over a church in Cairo. The Egyptian government investigated and found no fraud.',
+    bodyEn: `Between 1968 and 1971, in the Zeitoun district of Cairo, one of the most unusual and best-witnessed Marian apparitions in history took place, for a striking reason: a large part of the witnesses were Muslim.
+
+## What was seen
+
+On the night of 2 April 1968, Muslim workers near the Coptic Orthodox Church of Saint Mary, in Zeitoun, saw a luminous figure of a woman over the dome of the church. At first they thought it was a woman about to jump. They soon realized it was an apparition of light, in the form of the Virgin Mary. In the following months and years, the apparitions repeated dozens of times, usually at night, lasting from a few minutes to hours. The figure walked over the dome, bowed, blessed the crowd, and doves of light accompanied it.
+
+## A multitude of witnesses
+
+What makes Zeitoun extraordinary is the scale and diversity of the public. The apparitions were witnessed by crowds that, over the period, added up to hundreds of thousands and, by some estimates, millions of people. They were Coptic, Catholic, and Protestant Christians, but also Muslims and even skeptics, who had no religious motive to confirm a Marian apparition. Egypt is a Muslim-majority country, and Islam, though it honors Mary, does not cultivate apparitions like Catholics. Even so, Muslims reported exactly the same as the Christians.
+
+## Photographed and investigated
+
+Unlike almost all apparitions, Zeitoun was photographed. Several images of the luminous figure over the church were recorded by witnesses and by the press of the time. The Egyptian government, then secular and socialist, under Nasser, officially investigated the case, precisely to rule out fraud or trickery, and found no projector, spotlight, or any manipulation within a radius of kilometers. The Coptic Orthodox Church, through Pope Cyril VI, officially recognized the apparitions. Later, the Catholic Church recognized them too.
+
+## Why the case is strong
+
+Zeitoun brings together, at once, several factors that usually are missing from miracle claims: long duration, of years and not of an instant; an enormous number of witnesses; photographic record; investigation by a government with no interest in confirming the supernatural; and the presence of witnesses from another religion. The explanation by collective hysteria, always invoked, runs into this combination. Hysteria does not last two years, does not appear in photographs, and does not convince skeptics and Muslims at the same time.
+
+## Key questions
+
+1. How do we explain that Muslims, who do not cultivate Marian apparitions, witnessed the same as the Christians, for years, in Zeitoun?
+
+2. Does collective hysteria produce photographs and last more than two years?
+
+3. Why did the secular government of Egypt, which investigated to debunk, find no trick?
+
+4. If a phenomenon is seen by crowds of various religions, recorded in photos, and recognized even by authorities who gain nothing from it, on what does the one who dismisses it in advance rely?`,
+  },
+
+  54: {
+    titleEn: 'Our Lady Aparecida',
+    summaryEn: 'In 1717, three fishermen drew a small broken image from the Paraíba River, followed by an abundant catch where there had been none. It was the start of the devotion that would make her the patroness of Brazil.',
+    bodyEn: `The greatest Marian devotion in Brazil began humbly, with three poor fishermen and an empty net. The story of Our Lady Aparecida joins Brazilian popular faith to a series of facts that crossed three centuries.
+
+## The finding in the river
+
+In October 1717, the town of Guaratinguetá, in the interior of São Paulo, was awaiting the visit of a count, and the fishermen went to the Paraíba do Sul River to provide fish for the banquet. The fishing, however, was terrible, and nothing came to the nets. At one point, Domingos Garcia, João Alves, and Felipe Pedroso cast the net and drew up the body of a small terracotta image, without the head. They cast again, and the head came. They kept fishing and, from then on, drew up such a large quantity of fish that the canoe nearly sank, after hours of catching nothing. The image was of Our Lady of the Conception, darkened by time at the bottom of the river.
+
+## The devotion that grew
+
+The small image stayed in the house of Felipe Pedroso and, later, of his son, and around it the neighbors began to gather to pray. Reports of graces and healings multiplied, and its fame grew. A chapel was built, then a church, then the great Shrine of Aparecida, today one of the largest Marian basilicas in the world, which receives millions of pilgrims a year. In 1930, Pope Pius XI proclaimed Our Lady Aparecida the official patroness of Brazil.
+
+## The signs that are told
+
+Tradition keeps striking episodes. The most famous is that of the slave Zacarias, who, on his way to a punishment, asked to stop before the image; as he prayed, the chains that bound him are said to have broken on their own. There is also the case of the candles that, blown out by the wind during a prayer, relit without a human hand. As with every popular devotion, one must distinguish documented fact from narrated piety; but the whole, and above all the uninterrupted testimony of the faithful over three centuries, gave this image a unique place in the faith of the Brazilian people.
+
+## What it means for Brazil
+
+Aparecida is not just a statue. It is the symbol of a people who recognize themselves in it: poor, mixed, darkened, found by simple folk and raised to the dignity of patroness of an entire nation. The devotion to Aparecida crossed slavery, the Empire, the Republic, and remains alive. For the Christian, she points, like every true Marian devotion, not to herself, but to Christ, repeating what Mary said at Cana: "do whatever he tells you" (John 2,5).
+
+## Key questions
+
+1. Why did a small image found by three poor fishermen become the center of the faith of an entire nation, for more than three hundred years?
+
+2. The abundant catch came right after the finding of the image, on a day when nothing was being caught. Coincidence or sign?
+
+3. What keeps alive, for three centuries and without interruption, the devotion of millions of people to such a simple image?
+
+4. If Marian devotion were empty, why does it produce so much conversion, prayer, and charity in the people who cultivate it?`,
+  },
+
+  55: {
+    titleEn: 'Marian Apparitions: Evidence for God?',
+    summaryEn: 'Marian apparitions with thousands of witnesses, announced signs, and even photographs are hard data for the atheist. And to the Protestant who calls them demonic, there is a clear answer: by their fruits you know the tree.',
+    bodyEn: `Marian apparitions are usually treated as an internal matter of Catholicism. But seen from the outside, they raise a question that interests anyone who seeks the truth: if some of these events really happened, as thousands of witnesses affirm, then there is a reality that materialism cannot explain. This article proposes to face the apparitions as evidence, and to answer the two most common objections: that of the atheist and that of the Protestant.
+
+## The argument, in a few words
+
+Consider the whole. At Fatima, in 1917, a sign was announced months in advance and witnessed by about seventy thousand people, including skeptics, with coverage by the secular press. At Guadalupe, in 1531, an image remained on a cloth that should have rotted and did not, with no brushstrokes to explain it. At Zeitoun, in Cairo, between 1968 and 1971, crowds of Christians and Muslims saw, for more than two years, and photographed, a luminous figure over a church, without the Egyptian government finding fraud.
+
+These cases have in common precisely what legends lack: witnesses in great number, of different creeds, at precise dates and places, sometimes with signs announced beforehand and with physical traces. They are not "someone felt something". They are public and documented events.
+
+## The answer to the atheist
+
+For the atheist, only matter exists, and nothing supernatural can happen. Faced with Fatima or Zeitoun, he basically has one way out: to say it was collective hysteria, optical illusion, or fraud. But those explanations have clear limits. Collective hysteria does not last two years, does not dry soaked clothes, does not appear in photographs, and does not convince Muslims and skeptics at the same time. Fraud does not survive the investigation of a secular government bent on debunking it. And no optical illusion announces itself months in advance, for an exact date.
+
+The point is not that each case, alone, proves God. It is that the atheist, to maintain materialism, has to discard an enormous amount of serious human testimony, precisely the kind of testimony he accepts without hesitation in any other area of history. When the rule becomes "I accept any testimony, except the one that points to the supernatural", it is no longer science, it is a prejudice disguised as method.
+
+## The answer to the Protestant
+
+Many Protestants, if they accept that these events actually happened, give another explanation: they would be demonic deceptions. They cite Saint Paul, who warns that "Satan himself disguises himself as an angel of light" (2 Corinthians 11,14). The objection deserves a serious answer, and the answer is in the criterion Jesus himself gave: "by their fruits you will know them" (Matthew 7,16).
+
+What fruits do true Marian apparitions produce? Conversion, repentance, return to the sacraments, prayer, charity, the end of human sacrifice at Guadalupe, the return of sinners to Christ. Now, Jesus himself taught that "every kingdom divided against itself will be destroyed" (Matthew 12,25). A demon that led crowds to convert to Christ, to confess their sins, to pray, and to live the Gospel would be working against its own kingdom. It makes no sense. The devil does not lead people closer to Jesus.
+
+And that is exactly what Mary does in the approved apparitions: she never draws attention to herself, she always points to her Son. The phrase that sums up her whole message is that of Cana: "do whatever he tells you" (John 2,5). An apparition that led away from Christ, or that contradicted Scripture, would be rejected for that very reason. The Church, moreover, is very strict: it examines each case for years and rejects the great majority of claims.
+
+## The right place of apparitions
+
+Finally, each thing must be put in its place. Apparitions are private revelations. They add nothing to public revelation, which closed with the apostles, and no one is obliged to believe them in order to be saved. The foundation of faith is not Fatima or Guadalupe, it is the resurrection of Christ. Apparitions are signs, helps, tangible confirmations for times of little faith. But, as signs, they speak, and what they say is hard to silence within a view of the world that insists only matter exists.
+
+## Key questions
+
+1. The atheist accepts human testimony throughout history, except when it points to the supernatural. Is that scientific method or prejudice?
+
+2. Do hysteria and fraud explain a sign announced in advance, seen by tens of thousands, photographed, and investigated by a secular government?
+
+3. To the Protestant: if these apparitions lead people to Christ, to confession, and to charity, what demon would work this way against its own kingdom (Matthew 12,25)?
+
+4. Mary, in the approved apparitions, always points to Jesus, saying "do whatever he tells you". Does that fit with demonic deception, or with the opposite?`,
+  },
 });

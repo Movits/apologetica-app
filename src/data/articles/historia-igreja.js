@@ -148,6 +148,110 @@ A Igreja Católica investigou o caso por anos e, em 1930, declarou as apariçõe
 4. O sinal foi prometido com meses de antecedência, para uma data exata. Que fraude consegue marcar a hora de um milagre diante de setenta mil pessoas?`,
     references: ['fatima-milagre-sol'],
   },
+  {
+    id: 52,
+    title: 'Nossa Senhora de Guadalupe e a Tilma',
+    category: 'História da Igreja',
+    summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos; quase quinhentos anos depois, continua intacto e sem explicação.',
+    body: `Em dezembro de 1531, dez anos após a conquista espanhola do México, um índio pobre e recém-convertido chamado Juan Diego, hoje canonizado, subia o monte Tepeyac, perto da Cidade do México. Ali, segundo o relato, apareceu-lhe uma jovem morena, vestida como uma princesa asteca grávida, que se identificou como a Mãe do verdadeiro Deus e pediu que se construísse ali um templo. Como prova para o bispo incrédulo, ela fez brotar rosas de Castela num morro árido, em pleno inverno, e as colocou na tilma, o manto de fibra de Juan Diego. Quando ele abriu o manto diante do bispo, as rosas caíram e, no tecido, estava impressa a imagem da Virgem, que se vê até hoje.
+
+## A imagem que não devia existir
+
+O extraordinário não é só a história, é o objeto. A tilma é feita de fibra de agave, um material grosseiro que, segundo todos os cálculos, deveria ter se desintegrado em vinte ou trinta anos. Quase quinhentos anos depois, o tecido permanece íntegro, sem sinal de deterioração, mesmo tendo ficado exposto sem proteção por mais de um século, à fumaça das velas e ao toque de milhões de fiéis.
+
+A imagem em si desafia explicação. Estudos com infravermelho realizados na década de 1970 não encontraram sinais de desenho preliminar, esboço ou pinceladas, o que seria impossível para um pintor humano da época, que sempre trabalha a partir de um esboço. Não há verniz nem fixador, e ainda assim as cores não desbotaram. Em 1791, derramou-se acidentalmente ácido nítrico sobre o tecido, e a mancha, em vez de destruir a imagem, foi desaparecendo com o tempo sem deixar dano grave.
+
+## Os olhos da Virgem
+
+Talvez o detalhe mais intrigante esteja nos olhos da figura. A partir dos anos 1950, oftalmologistas que ampliaram as córneas da imagem relataram enxergar nelas, refletidas, pequenas figuras humanas, como se os olhos tivessem registrado a cena do momento em que a tilma foi aberta diante do bispo. O engenheiro José Aste Tonsmann, em estudos digitais nos anos 1980, descreveu um grupo de pessoas refletido nos dois olhos, na proporção e na distorção que uma córnea real produziria. O ponto é debatido entre os estudiosos, mas é o tipo de detalhe que um falsário do século XVI jamais conseguiria planejar.
+
+## Um sermão em imagem
+
+Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1); o cinto preto indicava gravidez; as estrelas no manto, segundo estudos, correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e o sol que eles antes adoravam. Nos dez anos seguintes, cerca de nove milhões de indígenas se converteram ao cristianismo, e a prática dos sacrifícios humanos, que matava milhares por ano, chegou ao fim.
+
+## O que isso significa
+
+Como sempre, é preciso honestidade. A Igreja não obriga ninguém a crer em Guadalupe, e nem toda alegação sobre a tilma tem o mesmo peso científico. Mas o conjunto é impressionante: um tecido que não apodrece, uma imagem sem pinceladas que não desbota, detalhes que só a tecnologia recente revelou, e um fruto histórico imenso. Nossa Senhora de Guadalupe é hoje padroeira das Américas, e seu manto continua sendo um sinal difícil de explicar dentro de uma visão puramente materialista do mundo.
+
+## Perguntas-chave
+
+1. Como um tecido de fibra de agave, que deveria durar poucas décadas, permanece intacto há quase quinhentos anos?
+
+2. Pintores trabalham a partir de um esboço. Por que a imagem de Guadalupe não tem nenhum desenho preliminar, nem pinceladas?
+
+3. Se a imagem é uma fraude do século XVI, como explicar as figuras refletidas nos olhos, detectadas só com ampliação moderna?
+
+4. Que falsificação converte nove milhões de pessoas e põe fim aos sacrifícios humanos de toda uma civilização?`,
+    references: ['guadalupe-tilma', 'ap-12-1'],
+  },
+  {
+    id: 53,
+    title: 'As Aparições de Zeitoun (Egito, 1968)',
+    category: 'História da Igreja',
+    summary: 'Por mais de dois anos, multidões de cristãos e muçulmanos viram, e fotografaram, uma figura luminosa da Virgem sobre uma igreja no Cairo. O governo egípcio investigou e não achou fraude.',
+    body: `Entre 1968 e 1971, no bairro de Zeitoun, no Cairo, aconteceu uma das aparições marianas mais incomuns e mais bem testemunhadas da história, por um motivo que chama a atenção: boa parte das testemunhas era muçulmana.
+
+## O que foi visto
+
+Na noite de 2 de abril de 1968, operários muçulmanos que trabalhavam perto da igreja copta ortodoxa de Santa Maria, em Zeitoun, viram uma figura luminosa de mulher sobre a cúpula do templo. Pensaram, a princípio, numa mulher prestes a se atirar. Logo perceberam que era uma aparição de luz, com a forma da Virgem Maria. Nos meses e anos seguintes, as aparições se repetiram dezenas de vezes, em geral à noite, durando de poucos minutos a horas. A figura caminhava sobre a cúpula, inclinava-se, abençoava a multidão, e pombas de luz a acompanhavam.
+
+## Uma multidão de testemunhas
+
+O que torna Zeitoun extraordinário é a escala e a diversidade do público. As aparições foram presenciadas por multidões que, ao longo do período, somaram centenas de milhares e, segundo algumas estimativas, milhões de pessoas. Eram cristãos coptas, católicos e protestantes, mas também muçulmanos e até céticos, que não tinham nenhum motivo religioso para confirmar uma aparição mariana. O Egito é um país de maioria muçulmana, e o Islã, embora honre Maria, não cultiva aparições como os católicos. Ainda assim, muçulmanos relataram exatamente o mesmo que os cristãos.
+
+## Fotografada e investigada
+
+Diferente de quase todas as aparições, Zeitoun foi fotografada. Várias imagens da figura luminosa sobre a igreja foram registradas por testemunhas e pela imprensa da época. O governo egípcio, então de orientação laica e socialista, sob Nasser, investigou o caso oficialmente, justamente para descartar fraude ou truque, e não encontrou projetor, holofote ou qualquer manipulação num raio de quilômetros. A Igreja Copta Ortodoxa, pela voz do papa Cirilo VI, reconheceu oficialmente as aparições. Mais tarde, a Igreja Católica também as reconheceu.
+
+## Por que o caso é forte
+
+Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: duração longa, de anos e não de um instante; número enorme de testemunhas; registro fotográfico; investigação por um governo sem interesse em confirmar o sobrenatural; e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
+
+## Perguntas-chave
+
+1. Como explicar que muçulmanos, que não cultivam aparições marianas, tenham testemunhado o mesmo que os cristãos, por anos, em Zeitoun?
+
+2. Histeria coletiva produz fotografias e dura mais de dois anos?
+
+3. Por que o governo laico do Egito, que investigou para desmascarar, não encontrou nenhum truque?
+
+4. Se um fenômeno é visto por multidões de várias religiões, registrado em fotos e reconhecido até por autoridades que não ganham nada com isso, em que se apoia quem o descarta de antemão?`,
+    references: ['zeitoun-aparicao'],
+  },
+  {
+    id: 54,
+    title: 'Nossa Senhora Aparecida',
+    category: 'História da Igreja',
+    summary: 'Em 1717, três pescadores tiraram do rio Paraíba uma pequena imagem quebrada e, em seguida, uma pesca farta onde não havia nada. Era o começo da devoção que faria dela a padroeira do Brasil.',
+    body: `A maior devoção mariana do Brasil começou de modo humilde, com três pescadores pobres e uma rede vazia. A história de Nossa Senhora Aparecida une a fé popular brasileira a uma série de fatos que atravessaram três séculos.
+
+## O achado no rio
+
+Em outubro de 1717, a cidade de Guaratinguetá, no interior de São Paulo, esperava a visita de um conde, e os pescadores foram ao rio Paraíba do Sul providenciar peixe para o banquete. A pesca, porém, estava péssima, e nada vinha às redes. Em certo momento, Domingos Garcia, João Alves e Felipe Pedroso lançaram a rede e recolheram o corpo de uma pequena imagem de terracota, sem a cabeça. Lançaram de novo, e veio a cabeça. Continuaram pescando e, a partir dali, recolheram uma quantidade tão grande de peixes que a canoa quase afundou, depois de horas sem pegar nada. A imagem era a de Nossa Senhora da Conceição, escurecida pelo tempo no fundo do rio.
+
+## A devoção que cresceu
+
+A pequena imagem ficou na casa de Felipe Pedroso e, depois, de seu filho, e em torno dela começaram a se reunir os vizinhos para rezar. Relatos de graças e curas se multiplicaram, e a fama cresceu. Construiu-se uma capela, depois uma igreja, depois o grande Santuário de Aparecida, hoje uma das maiores basílicas marianas do mundo, que recebe milhões de peregrinos por ano. Em 1930, o Papa Pio XI proclamou Nossa Senhora Aparecida padroeira oficial do Brasil.
+
+## Os sinais narrados
+
+A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias, que, a caminho de um castigo, pediu para parar diante da imagem; ao rezar, as correntes que o prendiam teriam se rompido sozinhas. Conta-se também o caso das velas que, apagadas pelo vento durante uma oração, se reacenderam sem mão humana. Como em toda devoção popular, é preciso distinguir o que é fato documentado do que é piedade narrada; mas o conjunto, e sobretudo o testemunho ininterrupto de fiéis ao longo de três séculos, deu a essa imagem um lugar único na fé do povo brasileiro.
+
+## O que significa para o Brasil
+
+Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece nela: pobre, mestiço, escurecido, achado por gente simples e elevado à dignidade de padroeira de uma nação inteira. A devoção a Aparecida atravessou a escravidão, o Império, a República, e continua viva. Para o cristão, ela aponta, como toda devoção mariana verdadeira, não para si mesma, mas para Cristo, repetindo o que Maria disse em Caná: "fazei tudo o que ele vos disser" (João 2,5).
+
+## Perguntas-chave
+
+1. Por que uma pequena imagem achada por três pescadores pobres se tornou o centro da fé de uma nação inteira, por mais de trezentos anos?
+
+2. A pesca farta veio logo após o achado da imagem, num dia em que nada se pegava. Coincidência ou sinal?
+
+3. O que mantém viva, por três séculos e sem interrupção, a devoção de milhões de pessoas a uma imagem tão simples?
+
+4. Se a devoção mariana fosse vazia, por que produz tanta conversão, oração e caridade no povo que a cultiva?`,
+    references: ['aparecida-historia', 'jo-2-1'],
+  },
 ];
 
 export default articles;

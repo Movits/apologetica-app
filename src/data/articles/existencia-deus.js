@@ -264,6 +264,48 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. T
 4. O tipo sanguíneo do Sudário é AB, o mesmo dos milagres eucarísticos e do Sudário de Oviedo. É só coincidência?`,
     references: ['sudario-turim', 'milagre-lanciano', 'mt-28-1'],
   },
+  {
+    id: 55,
+    title: 'Aparições de Maria: Evidência para Deus?',
+    category: 'Existência de Deus',
+    summary: 'Aparições marianas com milhares de testemunhas, sinais anunciados e até fotografias são dados difíceis para o ateu. E ao protestante que as chama de demoníacas, há uma resposta clara: pelos frutos se conhece a árvore.',
+    body: `As aparições de Maria costumam ser tratadas como assunto interno do catolicismo. Mas, vistas de fora, elas levantam uma questão que interessa a qualquer pessoa que busca a verdade: se alguns desses eventos realmente aconteceram, como milhares de testemunhas afirmam, então existe uma realidade que o materialismo não consegue explicar. Este artigo propõe encarar as aparições como evidência, e responder às duas objeções mais comuns: a do ateu e a do protestante.
+
+## O argumento, em poucas palavras
+
+Veja o conjunto. Em Fátima, em 1917, um sinal foi anunciado com meses de antecedência e presenciado por cerca de setenta mil pessoas, incluindo céticos, com cobertura da imprensa laica. Em Guadalupe, em 1531, ficou uma imagem num tecido que deveria ter apodrecido e não apodreceu, sem pinceladas que a expliquem. Em Zeitoun, no Cairo, entre 1968 e 1971, multidões de cristãos e muçulmanos viram, por mais de dois anos, e fotografaram, uma figura luminosa sobre uma igreja, sem que o governo egípcio achasse fraude.
+
+Esses casos têm em comum justamente o que falta às lendas: testemunhas em grande número, de credos diferentes, em datas e lugares precisos, às vezes com sinais anunciados de antemão e com vestígios físicos. Não são "alguém sentiu algo". São eventos públicos e documentados.
+
+## A resposta ao ateu
+
+Para o ateu, só existe matéria, e nada de sobrenatural pode acontecer. Diante de Fátima ou de Zeitoun, ele tem basicamente uma saída: dizer que foi histeria coletiva, ilusão de ótica ou fraude. Mas essas explicações têm limites claros. A histeria coletiva não dura dois anos, não seca roupas encharcadas, não aparece em fotografias e não convence muçulmanos e céticos ao mesmo tempo. A fraude não atravessa a investigação de um governo laico empenhado em desmascará-la. E nenhuma ilusão de ótica anuncia a si mesma com meses de antecedência, para uma data exata.
+
+O ponto não é que cada caso, sozinho, prove Deus. É que o ateu, para manter o materialismo, precisa descartar uma quantidade enorme de testemunho humano sério, justamente o tipo de testemunho que ele aceita sem hesitar em qualquer outra área da história. Quando a regra passa a ser "aceito qualquer testemunho, menos o que aponta para o sobrenatural", já não é mais ciência, é um preconceito disfarçado de método.
+
+## A resposta ao protestante
+
+Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outra explicação: seriam enganos demoníacos. Citam São Paulo, que adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A objeção merece resposta séria, e a resposta está no critério que o próprio Jesus deu: "pelos seus frutos os conhecereis" (Mateus 7,16).
+
+Que frutos as verdadeiras aparições marianas produzem? Conversão, arrependimento, volta aos sacramentos, oração, caridade, fim dos sacrifícios humanos em Guadalupe, retorno de pecadores a Cristo. Ora, Jesus mesmo ensinou que "todo reino dividido contra si mesmo será destruído" (Mateus 12,25). Um demônio que levasse multidões a se converter a Cristo, a confessar os pecados, a rezar e a viver o Evangelho estaria trabalhando contra o próprio reino. Não faz sentido. O diabo não conduz as pessoas para mais perto de Jesus.
+
+E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama atenção para si, sempre aponta para o Filho. A frase que resume toda a sua mensagem é a de Caná: "fazei tudo o que ele vos disser" (João 2,5). Uma aparição que levasse para longe de Cristo, ou que contradissesse a Escritura, seria rejeitada exatamente por isso. A Igreja, aliás, é severíssima: examina cada caso por anos e reprova a grande maioria das alegações.
+
+## O lugar certo das aparições
+
+É preciso, por fim, pôr cada coisa no seu lugar. As aparições são revelações privadas. Não acrescentam nada à revelação pública, que se encerrou com os apóstolos, e ninguém é obrigado a crer nelas para se salvar. O fundamento da fé não é Fátima nem Guadalupe, é a ressurreição de Cristo. As aparições são sinais, ajudas, confirmações sensíveis para tempos de pouca fé. Mas, como sinais, elas falam, e o que dizem é difícil de calar dentro de uma visão de mundo que insiste que só existe matéria.
+
+## Perguntas-chave
+
+1. O ateu aceita o testemunho humano em toda a história, menos quando aponta para o sobrenatural. Isso é método científico ou preconceito?
+
+2. Histeria e fraude explicam um sinal anunciado com antecedência, visto por dezenas de milhares, fotografado e investigado por um governo laico?
+
+3. Ao protestante: se essas aparições levam as pessoas a Cristo, à confissão e à caridade, que demônio trabalharia assim contra o próprio reino (Mateus 12,25)?
+
+4. Maria, nas aparições aprovadas, sempre aponta para Jesus, dizendo "fazei o que ele vos disser". Isso combina com engano demoníaco, ou com o contrário?`,
+    references: ['fatima-milagre-sol', 'guadalupe-tilma', 'zeitoun-aparicao', '2cor-11-14', 'mt-7-16', 'mt-12-25', 'jo-2-1'],
+  },
 ];
 
 export default articles;

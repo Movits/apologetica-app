@@ -57,6 +57,10 @@ export const RELATED_ARTICLES = {
   49: [7, 20, 21, 5],    // Milagres Eucarísticos → Eucaristia, Sacramentos, Confissão, Ressurreição
   50: [5, 49, 45, 35],   // Sudário de Turim → Ressurreição, Milagres Eucarísticos, Eclipse/datação, Jesus existiu
   51: [50, 49, 4, 30],   // Milagre do Sol (Fátima) → Sudário, Milagres Eucarísticos, Maria intercessora, Galileu
+  52: [55, 51, 50, 4],   // Guadalupe → Aparições(evidência), Fátima, Sudário, Maria intercessora
+  53: [55, 51, 52, 35],  // Zeitoun → Aparições(evidência), Fátima, Guadalupe, Jesus existiu
+  54: [55, 52, 51, 4],   // Aparecida → Aparições(evidência), Guadalupe, Fátima, Maria intercessora
+  55: [51, 52, 53, 5],   // Aparições como evidência → Fátima, Guadalupe, Zeitoun, Ressurreição
 
   // História da Igreja
   28: [29, 30],          // Inquisição → Cruzadas, Galileu
