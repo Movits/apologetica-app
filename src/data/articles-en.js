@@ -126,9 +126,15 @@ There is a fourth option that modern skeptics try to introduce: Jesus never said
     summaryEn: 'The Church founded by Christ is one, and it subsists in the Catholic Church.',
     bodyEn: `Jesus founded a Church, not churches. In Matthew 16,18 he says "upon this rock I will build my Church", in the singular. And he handed the keys of the Kingdom to Peter, establishing a visible authority structure, not an invisible network of disorganized believers.
 
+## Apostolic continuity
+
 Apostolic continuity is what distinguishes the Catholic Church from denominations that emerged centuries later. Catholic bishops trace their unbroken line of ordination back to the Apostles. Peter\'s succession goes from the apostle himself to Linus, Cletus, Clement, and continues unbroken to the current Pope. Each bishop can trace his line of ordination to an apostle. This is documentable, historical, not metaphorical.
 
+## It subsists in the Catholic Church
+
 The Second Vatican Council was explicit in teaching that "the one Church of Christ subsists in the Catholic Church, governed by the successor of Peter and by the bishops in communion with him" (Lumen Gentium §8). It recognizes elements of sanctification and truth outside it, but the fullness lies in the one, holy, catholic and apostolic Church.
+
+## Who defined the Bible
 
 There is also a simple and compelling historical reason concerning the Bible. The canon (the list of inspired books) was defined by Catholic councils. The Council of Hippo in 393 and the Council of Carthage in 397 fixed for the first time the 73 books of the Catholic canon (including the deuterocanonical), with Saint Augustine\'s participation. Before these councils, there was no universal consensus on which books belonged to the Bible. The Catholic Church, exercising its authority, decided. Whoever accepts the Bible but rejects the Church that defined it is in logical contradiction.
 
@@ -150,15 +156,21 @@ Whoever is Christian without being Catholic generally inherits selected doctrine
     summaryEn: 'The Eucharist is not a symbol. It is the Body, Blood, Soul and Divinity of Jesus Christ, confirmed by Scripture, by the Fathers, and by approved miracles.',
     bodyEn: `In chapter 6 of John\'s Gospel, Jesus says six times that his flesh is true food and his blood is true drink. When many disciples murmur against the teaching and stop following him, Jesus does not call them back saying "it was only a metaphor". He asks the Twelve: "Will you also go away?" (Jn 6,67). If it were figurative language, would it make sense to lose disciples over a misunderstanding? No.
 
+## "This is my body"
+
 At the Last Supper, he says "This is my body" (Mt 26,26). In Greek, the word used is estin, which means "is", not "represents" or "signifies". Terms for "to symbolize" existed in the Greek of the New Testament (semaínō, homoióō), and Jesus did not use them. Jesus also chose the verb trōgō ("to chew", as animals eat) in John 6, a physically concrete word that does not admit a symbolic reading.
 
+## Paul confirms the Real Presence
+
 Saint Paul confirms the Real Presence by warning the Corinthians that eating the bread or drinking the cup "unworthily" makes one "guilty of the body and blood of the Lord" (1 Cor 11,27). This language only makes sense if there is actually a body and blood present. If it were only a symbol, why would receiving a symbol unworthily bring condemnation?
+
+## The Church Fathers
 
 The Church Fathers are unanimous in the first centuries. Saint Ignatius of Antioch, in 107, writes to the Smyrnaeans that the heretics "abstain from the Eucharist because they do not confess that the Eucharist is the flesh of our Savior Jesus Christ". Saint Justin Martyr, in the First Apology to Emperor Antoninus Pius (c. 155), affirms: "This food is not common bread nor common drink. As Jesus Christ became flesh, so this food, over which thanksgiving has been pronounced, is the flesh and blood of that same Jesus made incarnate". Saint Cyril of Jerusalem, in Mystagogical Catechesis IV (c. 350), asks: "Who shall dare to doubt, when he himself said: This is my body?". The Council of Trent, in session XIII of 1551, solemnly defined the dogma of transubstantiation against the reformers.
 
 For a thousand years there was no serious Christian defending that it was only a symbol. The symbolic reading is a late innovation, from the 16th century (Ulrich Zwingli in particular, against other reformers who maintained some form of real presence).
 
-Approved Eucharistic Miracles
+## Approved Eucharistic Miracles
 
 The Church recognizes dozens of Eucharistic miracles throughout history, several submitted to rigorous scientific analysis.
 
@@ -356,11 +368,19 @@ The question turns against the questioner. Why is there something rather than no
     summaryEn: 'Asking saints to intercede is not idolatry; it is the same as asking a friend to pray for us.',
     bodyEn: `One of the most common objections to Catholicism is devotion to Mary and the saints. "Why not go directly to Jesus?" is the classic question.
 
+## Mediation and intercession
+
 This objection confuses mediation with intercession. Christ is the only mediator between God and men, as Saint Paul teaches in 1 Timothy 2,5. He is the source of all grace. But just as we ask a friend here on earth to pray for us, we can ask the saints in heaven to intercede with God. This does not replace Christ, it depends on him.
+
+## The saints are alive
 
 The objection that the saints are dead does not hold, because Jesus himself said that "God is not God of the dead, but of the living" (Mt 22,32). The saints live in Christ. The Apocalypse shows this in image: the elders in heaven offer to God "golden bowls full of incense, which are the prayers of the saints" (Apoc 5,8). The intercession of the saints is Scripture, not late invention.
 
+## Mary's intercession
+
 Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, she perceives the lack of wine and intercedes. Jesus responds, even before "his hour" (Jn 2,4-5). This scene is the biblical model of Marian intercession. She points to Christ, and what she says to the servants applies to every Christian: "Do whatever he tells you."
+
+## To adore and to venerate
 
 The classical Catholic distinction is between latria (adoration owed only to God), dulia (veneration owed to the saints), and hyperdulia (superior veneration owed to Mary, for her unique dignity as Mother of God). The confusion between adoring and venerating is at the heart of the popular objection, but the Church has always made this distinction with clarity.
 
@@ -380,11 +400,17 @@ The classical Catholic distinction is between latria (adoration owed only to God
     summaryEn: 'Mary was preserved from original sin in anticipation of the merits of Christ, not after falling into it.',
     bodyEn: `The Immaculate Conception is the dogma that Mary was conceived without the stain of original sin. It is not about the conception of Jesus (that is another mystery, the Incarnation), but about Mary herself, in the womb of her mother Saint Anne.
 
+## "Mary too needed a Savior"
+
 The popular objection is that Mary needed to be saved like any other human being, according to Luke 1,47, when she herself calls God "my Savior" in the Magnificat. The Catholic doctrine responds with elegance. Mary was indeed saved, but in a unique way. She was preserved from original sin in anticipation of the merits of Christ, not after falling into it. As in a fall, it is better to be held back before than to be lifted out afterwards. Christ is her Savior too, but through preservation, and not through subsequent healing. This distinction is clear in the Magnificat itself: she rejoices "in God, my Savior", recognizing God\'s saving work in her life.
+
+## "Full of grace" in Luke 1,28
 
 The biblical basis is in Luke 1,28. The angel Gabriel greets Mary not by her name, but with a title: kecharitōménē in Greek, which is the perfect passive participle of the verb "to grace". The Greek perfect tense indicates a completed action whose effects continue. The literal translation would be "you who have been and remain totally graced". Mary\'s grace is not momentary; it is a permanent, complete, full state.
 
 There is also Genesis 3,15, the so-called "Protoevangelium". God says to the serpent "I will put enmity between you and the woman, between your seed and her seed". The Hebrew word used here is eyvah, which means enmity or absolute antagonism, in the sense of opposition as between nations at declared war. The Fathers saw in this "woman" Mary, and the totality of this enmity has direct implication: if the opposition between Mary and the serpent (representative of sin and the devil) is absolute, Mary cannot, at any moment, be under the domain of the serpent, that is, under original sin. This is the Old Testament foundation of the dogma of the Immaculate Conception. Pius IX explicitly cites this verse in the bull Ineffabilis Deus of 1854.
+
+## The new Eve in the Fathers
 
 The first Christian witness on the subject is Justin Martyr, in the mid-2nd century, contrasting Eve (who said no to God) with Mary (who said yes). Saint Irenaeus of Lyons (c. 180), in "Against Heresies" book III, developed the parallel decisively. Mary is the "new Eve", and as the first Eve was created without original sin, the new Eve was preserved from it. Irenaeus writes: "the knot of Eve\'s disobedience was untied by Mary\'s obedience". The Eastern and Western Fathers discussed the topic for centuries, and the dogma was solemnly defined by Blessed Pius IX on December 8, 1854, in the bull Ineffabilis Deus.
 
@@ -404,13 +430,19 @@ Devotion to Our Lady of the Conception is the liturgical expression of this dogm
     summaryEn: 'Mary was a virgin before, during, and after the birth of Jesus, a doctrine confessed since the earliest centuries.',
     bodyEn: `The Church teaches that Mary was a virgin before, during, and after the birth of Jesus. She had no other children, did not know man. This doctrine is called the Perpetual Virginity of Mary and has been confessed since the first Christian centuries.
 
+## The "brothers of Jesus"
+
 The main objection comes from the texts that speak of the "brothers of Jesus" (Matthew 13,55; Mark 6,3). The Greek word adelphós, used in these texts, had a much broader meaning than biological brother of the same mother. It also designated cousins, close relatives, and even members of the same community. In the Septuagint (the Greek translation of the Old Testament used by the apostles), Abraham and Lot are called adelphoi, although Lot was Abraham\'s nephew according to Genesis 14,14. Hebrew and Aramaic, languages spoken by Jesus, had no specific word for cousin, they used "brother" in the broad sense. This usage passed naturally into the Greek of the Gospels.
+
+## Mary's question
 
 When Luke 1,34 narrates the Annunciation, Mary, already engaged to Joseph, asks the angel "how shall this be, since I do not know man?". The question only makes sense if she already had the firm purpose of remaining a virgin. Otherwise, being betrothed in marriage, the news that she would conceive would have been normal.
 
 In John 19,26-27, Jesus on the cross entrusts Mary to the care of the apostle John. In Jewish custom, this would not have happened if there were other biological children alive to care for her. James, "the brother of the Lord", mentioned by Paul in Galatians 1,19, is the same James son of Alphaeus (cf. Mt 10,3; Mk 15,40), close relative, not son of Mary.
 
 The objection of the "firstborn" in Luke 2,7 also does not stand. In Hebrew, bekhor (translated as prōtótokos in Greek) meant simply the first to open the womb, with specific ritual rights (Exodus 13,2), regardless of whether there were others after. It was a technical ritual term, not comparative. There exist Jewish funerary inscriptions using "firstborn" for women who died at first birth, without other children.
+
+## Fathers and reformers
 
 The Fathers confirm the doctrine already in the 2nd and 3rd centuries. Tertullian, in "De Carne Christi" (c. 207), defends the virginal conception and Mary\'s integrity. Origen, Athanasius, Gregory of Nyssa, Ambrose and Jerome are unanimous. The title "Aeiparthenos" (Ever Virgin) is fixed at the Fifth Ecumenical Council, Constantinople II, in 553.
 
@@ -432,15 +464,23 @@ A historical curiosity is worth noting. The Reformers themselves Martin Luther, 
     summaryEn: 'Christ gave Peter unique authority, and that authority continues in his legitimate successors: the Popes.',
     bodyEn: `The Pope is the successor of Peter and the visible head of the Catholic Church. The standard Protestant objection is that this is a "late invention of the medieval Church". History shows exactly the opposite.
 
+## "You are Peter" (Matthew 16)
+
 The biblical basis is direct. In Matthew 16,18-19, Jesus says to Simon: "You are Peter, and on this rock I will build my Church, and the gates of hell shall not prevail against it. I will give you the keys of the Kingdom of Heaven. Whatever you bind on earth shall be bound in heaven, and whatever you loose on earth shall be loosed in heaven". Three unique things: new name (Peter, "Rock"), promise of edification upon him, delivery of the keys (symbol of administrative authority, cf. Is 22,22) and the power to bind and loose.
+
+## "This rock" is Peter himself
 
 The common objection is that "this rock" refers to Peter\'s confession of faith, not to him. But the wordplay only works if it is Peter himself. In Aramaic, the language Jesus spoke, it is the same word Kepha (rock) on both sides: "You are Kepha, and on this Kepha I will build my Church". In Greek, kefa became Pétros (masculine) and pétra (feminine) for grammatical reasons (masculine name for a man), but the meaning is the same.
 
 In John 21,15-17, after the Resurrection, Jesus repeats three times "feed my sheep" only to Peter, confirming him as universal shepherd of the flock. In Luke 22,32 he prays specifically for Peter that his faith may not fail and that he may confirm his brothers.
 
+## The witness of the first centuries
+
 The patristic history is equally clear. Saint Ignatius of Antioch, in the year 107, writes to the Church of Rome as "the one that presides" among the Churches. Saint Irenaeus of Lyons (c. 180), in "Against Heresies" (book III, 3,2), lists the succession of the bishops of Rome from Peter to Eleutherius (his contemporary) and says that "with this Church, on account of its more excellent origin, it is necessary that every Church should agree". The Fathers recognized Rome as apostolic reference since the first century.
 
 Papal succession is uniquely documentable. Peter, Linus, Cletus, Clement, Evaristus, and continues uninterrupted to the current Pope. There are records, episcopal lists, letters, decrees. No other "Christian church" can trace this continuity. The very title "Pope" (from the Latin papa, "father") was first applied to all bishops, then reserved for the Bishop of Rome from the 6th century.
+
+## Infallibility, properly understood
 
 On infallibility: the First Vatican Council (1870), in the constitution Pastor Aeternus, defined that the Pope is infallible when he teaches ex cathedra (from the throne), in matters of faith or morals, addressing the entire Church, with the clear intention of defining definitively. This has happened very few times in history (Immaculate Conception in 1854, Assumption in 1950). It does not mean that the Pope does not err in private opinions, politics, soccer or governing style. It means that Christ protects the Church from doctrinal error when the successor of Peter teaches solemnly.
 
@@ -460,13 +500,21 @@ On infallibility: the First Vatican Council (1870), in the constitution Pastor A
     summaryEn: 'Mary was raised to heavenly glory in body and soul. A dogma defined in 1950, but a universal belief since the first centuries.',
     bodyEn: `The Assumption of Mary is the dogma that, the course of her earthly life finished, Mary was raised to heavenly glory in body and soul. Pius XII solemnly defined this on November 1, 1950, in the apostolic constitution Munificentissimus Deus. But the belief is much older.
 
+## What the dogma defines
+
 The definition is careful: "Mary, having completed the course of her earthly life, was assumed in body and soul into heavenly glory". The dogma does not define whether Mary died (Eastern tradition says yes, with the Dormition) or was assumed without passing through death. In both cases, her body did not know the corruption of the tomb: it was glorified.
+
+## The biblical basis and the argument of suitability
 
 The biblical basis is indirect but convergent. In Luke 1,28, the angel calls her kecharitōménē (totally graced). In Luke 1,42, Elizabeth declares her "blessed among women". The messianic psalm applies to Mary: "The Queen stands at your right hand" (Ps 45,10). Apocalypse 12,1 shows "a woman clothed with the sun, with the moon under her feet and on her head a crown of twelve stars" — an image that Tradition sees as the glorified Mary in heaven.
 
 The argument of suitability is strong. Mary was preserved from original sin (Immaculate Conception) and never committed personal sin. The corruption of the body is a consequence of sin (Gen 3,19; Rom 6,23). If Mary was exempt from the cause, why would she suffer the consequence? It was fitting that the Mother of God, free from sin, did not know the decomposition of the tomb. She was united in life to the body of Christ (whom she carried) and was united in glory to the risen Christ.
 
+## An ancient belief
+
 The history of belief is ancient. In the 4th-5th century, churches in Jerusalem and in Ephesus celebrated the "Dormition of Mary". Eastern Fathers (Saint John Damascene, 8th century) already developed the doctrine clearly. The early Councils, when defining other Marian questions, presupposed this faith. The Liturgy of the Hours and the Eastern liturgical calendar have celebrated the Dormition since the 6th century. Lateran IV (1215) refers to Mary\'s glorification.
+
+## The tomb no one claims
 
 The historically significant detail: there has never been a dispute between cities for the claim of possessing Mary\'s tomb with her mortal remains. For other saints (even for Jesus, with the Holy Sepulchre), there are disputes, pilgrimages, translations of relics. Mary has no bodily relics. Why? Because her body is not on earth.
 
@@ -488,9 +536,13 @@ Pius XII, before defining the dogma, consulted the bishops of the whole world. T
     summaryEn: 'Not a "temporary hell" or a "second chance". It is the final purification of those already saved but still imperfect.',
     bodyEn: `Purgatory is one of the most misunderstood Catholic doctrines. It is not "hell light", it is not "second chance after death", it is not "place where you buy salvation". It is the final purification of those who die in a state of grace but are not yet fully purified to enter the glory of heaven.
 
+## Nothing impure enters heaven
+
 The foundation departs from a clear biblical premise: nothing impure enters heaven. In Apocalypse 21,27, about the heavenly Jerusalem: "nothing unclean shall enter it". In Hebrews 12,14, "strive for peace with all, and for the holiness without which no one will see the Lord". But the reality is that many die in a state of grace (saved) without having reached full sanctification. What happens to those souls?
 
 The Catholic answer is Purgatory: a state of purification that prepares for the definitive encounter with God. It is not a "third place" between heaven and hell: it is the final path to heaven for those who are already saved.
+
+## The biblical basis
 
 The biblical basis is found in two strands. First: 2 Maccabees 12,44-46. Judas Maccabeus, after a battle, discovers that some of his fallen soldiers were carrying pagan amulets (sin against the first commandment). He organizes a collection and orders sacrifices offered for the dead, "so that they might be loosed from their sins". The text comments: "it is a holy and wholesome thought to pray for the dead, that they may be loosed from their sins". This verse is so clear that Luther, not finding a way to reconcile it with his doctrine, removed the book from the Protestant canon.
 
@@ -498,9 +550,13 @@ Second strand: 1 Corinthians 3,12-15. Saint Paul writes that each one will build
 
 Other passages converge. Matthew 12,32 speaks of sins "that will not be forgiven either in this world or in the age to come", implying that others can be forgiven in the age to come. Matthew 5,26 speaks of "not coming out until you have paid the last penny", referring to debt purification.
 
+## The Church always prayed for the dead
+
 The history of the Church confirms it. The inscriptions in the Roman catacombs (2nd century) bear prayers for the dead. Tertullian, in the 3rd century, describes annual offerings on the anniversary of death of Christians. Saint Augustine, in "Confessions" book IX, prays at length for his deceased mother Monica. The entire Christian liturgy, from the beginning, contains prayers for the dead. If there is no Purgatory, these two-thousand-year-old prayers make no sense.
 
 The doctrine was formally defined by the Councils of Florence (1439) and Trent (1563), in response to Protestant denials.
+
+## What Purgatory really is
 
 Important to distinguish: Purgatory is not "external punishment" arbitrary. It is the maturation of the soul in the vision of God. When the soul sees God face to face and perceives its own imperfection, it suffers intensely out of love, and is thus purified. Saint Catherine of Genoa describes in the "Treatise on Purgatory" that souls in Purgatory suffer and at the same time are the happiest after those in heaven, because they know they will be saved with certainty.
 
@@ -522,17 +578,25 @@ That is why the Church exhorts the living to pray for the dead. It does not chan
     summaryEn: 'Salvation is obtained by faith that works through charity. James 2,24 explicitly contradicts Protestant Sola Fide.',
     bodyEn: `One of the pillars of the Protestant Reformation was Sola Fide (faith alone): the doctrine that salvation is obtained exclusively by faith, without any cooperation of works. Luther went so far as to call the Letter of James "an epistle of straw" because it contradicted this doctrine.
 
+## "Not by faith alone"
+
 James 2,24 writes, literally: "You see that a man is justified by works and not by faith alone". This is the only time in the entire Bible that the expression "by faith alone" (sola fide) appears, and it appears denied. James continues: "For as the body without the spirit is dead, so faith without works is dead" (Jas 2,26).
 
 True faith is never alone. It is alive, and necessarily produces works of charity. When Paul says we are "justified by faith without the works of the Law" (Romans 3,28), he is contrasting Christian faith with the works of the Mosaic Law (circumcision, sabbath, kosher rites). He is not denying the necessity of the works of charity that faith inspires. In Galatians 5,6, Paul himself writes: "In Christ Jesus neither circumcision nor uncircumcision counts for anything, but faith working through love".
 
+## The Catholic position
+
 The Catholic position is simple and biblical. Salvation is free: nothing we do can "merit" the first gift of grace. We are justified gratuitously by faith. But once justified, grace acts in us producing works that cooperate for our final salvation. Works are not the initial cause, but they are a necessary fruit and contribute to growth in grace and to eternal reward.
+
+## Works in the final judgment
 
 Jesus himself speaks of the decisive importance of works in the final judgment. In Matthew 25,31-46 (the judgment of the nations), the saved and the condemned are separated by concrete works of mercy: "I was hungry and you gave me food... I was thirsty and you gave me drink... What you did to the least of these my brothers, you did to me". Faith is not even mentioned in that judgment.
 
 In Matthew 7,21, Jesus is categorical: "Not everyone who says to me, Lord, Lord, will enter the Kingdom of Heaven, but the one who does the will of my Father". Merely confessing the faith with the mouth ("saying Lord, Lord") is not enough. One must do.
 
 Apocalypse 20,12-13 describes the final judgment: "The dead were judged according to their works". Romans 2,6-7: "God will give to each one according to his works: eternal life to those who persevere in doing good".
+
+## Everything is grace
 
 There is still a common confusion of terms. Protestants sometimes think that "justification" in the Catholic sense means "earning entry into heaven by one\'s own effort". It is not that. Catholic doctrine is clear: everything is grace. Even our good works are possible by grace. As Saint Augustine says, "when God crowns our merits, he crowns his own gifts".
 
@@ -559,11 +623,17 @@ Object.assign(ARTICLES_EN, {
     summaryEn: 'Mary bore the one who, in the unity of his person, is truly God. To deny this is to deny the Incarnation.',
     bodyEn: `Mary is called Mother of God from the earliest centuries of the Church. The title does not mean that Mary generated divinity, as if God had origin in her. It means that the one she bore, in the unity of his person, is truly God.
 
+## The Council of Ephesus
+
 The question was formally debated at the Council of Ephesus in 431, against the patriarch Nestorius of Constantinople, who defended calling Mary only Christotokos (Mother of Christ) and not Theotokos (Mother of God). Nestorius separated the two natures of Jesus to the point of making him practically two persons, one human and another divine. Cyril of Alexandria led the defense of the title Theotokos in order to preserve the unity of the person of Christ. Jesus is one single person, and that person is the Eternal Word made flesh. The mother of that person is, therefore, Mother of God.
+
+## "Mother of my Lord"
 
 The biblical basis is direct. In Luke 1,43, Elizabeth, full of the Holy Spirit, calls Mary "the mother of my Lord". The word Kyrios (Lord) in Judeo-Christian tradition is the divine title par excellence, used in the Septuagint to translate YHWH. Mary is declared, in the New Testament, mother of the Lord God.
 
 The Council of Ephesus solemnly affirmed: "If anyone does not confess that Emmanuel is truly God, and therefore that the Holy Virgin is the Mother of God, since she bore according to the flesh the Word of God become flesh, let him be anathema". This title is as Christological as it is Mariological. To deny it is to deny the true Incarnation.
+
+## Mother of the person, not the nature
 
 The most useful distinction here is between motherhood of the divine nature (which Mary does not have, since God is eternal, without origin) and motherhood of the person who is God (which Mary does have, because she is mother of Jesus, and Jesus is the Second Person of the Holy Trinity incarnate). Every mother is mother of a person, not of an isolated nature. Mary is mother of the person of the Word, and that person is God.
 
@@ -742,7 +812,11 @@ Worth noting: the Church did not "decide arbitrarily" the canon. It discerned, u
     summaryEn: 'Not mere symbols. The sacraments effectively transmit the grace they signify.',
     bodyEn: `The sacraments are seven sensible signs instituted by Christ to signify and produce grace: Baptism, Confirmation (Chrismation), Eucharist, Reconciliation (Confession), Anointing of the Sick, Holy Orders and Matrimony.
 
+## Why sensible signs
+
 The fundamental principle is simple: God accommodates himself to human nature. We are bodily beings, we know through the senses. That is why grace comes to us through sensible signs. It is not "magic": it is divine mercy using visible matter (water, oil, bread, wine, words, gestures) to transmit invisible realities (divine life, forgiveness, strength).
+
+## The seven, one by one
 
 The seven sacraments embrace all stages of Christian life.
 
@@ -759,6 +833,8 @@ Anointing of the Sick strengthens those who are in grave illness. James 5,14-15 
 Holy Orders is the sacrament that constitutes bishops, priests and deacons. Apostolic succession passes through here: each bishop receives ordination from another bishop, in an unbroken chain back to the apostles. Without valid orders, there is no valid Eucharist and no valid confession. That is why the Church does not recognize as priests pastors of denominations without apostolic succession.
 
 Matrimony between two baptized persons is elevated by Christ to sacramental dignity (Mt 19,6; Eph 5,32). It confers special grace so that the spouses may live conjugal love according to Christ and fulfill faithfully the duties of marriage. It is indissoluble: "what God has joined together, let no man separate".
+
+## Matter, form, and minister
 
 Each sacrament has three elements: matter (sensible sign, like water or oil), form (precise words) and qualified minister. When these three are present correctly, the sacrament is valid and objectively produces what it signifies, regardless of the minister\'s virtue (principle ex opere operato).
 
@@ -778,15 +854,23 @@ Each sacrament has three elements: matter (sensible sign, like water or oil), fo
     summaryEn: 'Christ instituted the sacrament of Confession on the Sunday of the Resurrection. Not human tradition, but divine mandate.',
     bodyEn: `"Why confess to a man if I can confess directly to God?" This is the most common objection to sacramental Confession. The answer is simple: because Jesus ordered it this way.
 
+## Instituted at the Resurrection
+
 On the very Sunday of the Resurrection, Jesus appears to the apostles and says: "As the Father has sent me, so I also send you". And he breathed on them, saying: "Receive the Holy Spirit. Those whose sins you forgive will be forgiven; those whose sins you retain will be retained" (John 20,21-23). This is the formal institution of the sacrament of Reconciliation.
 
 Notice: Jesus gives the power to forgive and the power to retain sins. To retain or forgive with wisdom, it is necessary to know them. And to know them, it is necessary to hear them. Hence confession.
 
 This power is not transferable to oneself (you cannot absolve yourself). It is not exercised in inner silence (Jesus wants the power exercised by concrete men to other concrete men). It is a public, sacramental ministry, exercised by the successors of the apostles: bishops and priests, validly ordained.
 
+## Confession in Scripture
+
 The Bible knows of other practices of confession as well. James 5,16 orders: "Confess your sins to one another". 1 John 1,9 says that "if we confess our sins, he is faithful and just to forgive us". Acts 19,18 narrates Christians who came "confessing and publicly declaring their deeds". Confession was part of Christian life from the beginning.
 
+## The practice from the beginning
+
 The historical practice is documentable. The Didache (1st-2nd century) instructs: "In the assembly you shall confess your sins". Saint Ignatius of Antioch, Tertullian, Origen, Cyprian: all describe the practice of confession to a priest. In the 3rd century, Saint Cyprian of Carthage writes about "private confession" as a remedy for the soul. The form evolved (in the beginning it was more public, then became private to preserve the dignity of the penitent), but the essence is the same since the apostles.
+
+## It is God who forgives
 
 Worth noting an important distinction. Who forgives the sin is God, not the priest. The priest is an instrument. He acts in persona Christi (in the person of Christ). It is like the pipe that carries water: the water comes from the source, but passes through the pipe. The absolution comes from God, but passes through the minister\'s word: "I absolve you of your sins, in the name of the Father, and of the Son, and of the Holy Spirit".
 
@@ -1278,6 +1362,8 @@ The mythical thesis needs to explain how, in just a few years after the supposed
     summaryEn: 'The popular thesis that Jesus is "a copy of Horus, Mithras or Dionysus" is false in fact and in chronology. It does not withstand serious academic analysis.',
     bodyEn: `Documentaries like Zeitgeist and books like "The Pagan Christ" popularized the idea that Christianity would be a plagiarism of earlier pagan religions. Jesus would be a rewriting of Horus, Mithras, Dionysus, Krishna, Attis and other pagan gods, all allegedly born of virgins on December 25, killed and resurrected on the third day, with 12 disciples, and so on. The thesis is massively repeated in atheist forums and videos, but has no serious foundation in academia.
 
+## The similarities are almost all false
+
 First problem: the supposed similarities are almost all false. The Egyptian texts about Horus are preserved, can be read directly. Horus was not born of a virgin (his mother Isis conceived from partially resurrected Osiris, a completely different myth). He was not born on December 25 (no ancient text records this date for Horus). He was not crucified (crucifixion as a Roman penalty did not even exist in Pharaonic Egypt). He did not resurrect on the third day. He did not have 12 disciples. The popular claims are modern fabrications, easy to verify by consulting basic Egyptology.
 
 The same goes for Mithras. Roman Mithraism existed, yes. But its characteristics appear in the 2nd and 3rd centuries AD, therefore after the foundation and expansion of Christianity. The direction of influence (if there was any) is the inverse: Mithraism absorbed Christian elements while competing for the same public in the late Roman Empire. The "12 followers of Mithras" that appear on atheist sites are modern interpretation of zodiacal constellations in Mithraic mosaics, not personal disciples.
@@ -1286,11 +1372,19 @@ Dionysus, Greek god of wine, had myths of death and cyclic vegetative renewal (a
 
 Krishna in the Hindu tradition was born of a royal couple, Vasudeva and Devaki, after already having seven other children. He was not born of a virgin. He was not crucified. He did not resurrect on the third day. The "similarity" with Jesus is a construction of popular Western literature, not of authentic Hindu texts.
 
+## The chronology fails
+
 Second problem: chronology. The truly parallel elements between Christianity and mystery religions appear in the mystery religions only after Christianity was already formed. Ronald Nash, in "The Gospel and the Greeks" (1992), makes the exhaustive textual analysis showing that the popular claims of Christian plagiarism are anachronistic. The mystery religions that resemble Christianity partially (Mithraism, some cults of Isis) reach those forms in the 2nd century AD or later, an era in which Christianity already had a practically complete New Testament canon, communities throughout the Empire, and established liturgical formulas.
+
+## Fundamental differences
 
 Third problem: fundamental differences. Christianity affirms a dated historical event, with named witnesses, in a specific geographical location, in a well-documented historical period. The pagan myths are timeless, atemporal, without anchoring in historical person or verifiable date. When the Gospels speak of Pilate, Tiberius, Caiaphas, Herod, they mention real characters known from Roman history. The pagan myths do not do this. This difference is qualitative, not of degree.
 
+## The argument refutes itself
+
 Fourth problem: the argument refutes itself. If the similarities between Christianity and pagan myths were evidence of plagiarism, the same principle applied to any two religions would "prove" that both are plagiarism of one another. All religions speak of salvation, sacrifice, the divine, encounter with the transcendent. This does not prove plagiarism: it proves that these are universal human concerns.
+
+## The myth that became fact
 
 C. S. Lewis, who was an atheist before converting to Christianity, reflected intensely on the relation between pagan myths and Christianity. In a conversation with J. R. R. Tolkien (also a Catholic) and Hugo Dyson on September 19, 1931, his resistance to Christianity broke when he understood that the problem was not "Christianity resembles pagan myths" but the opposite: "the pagan myths were true intuitions (dreams of God) preparing humanity for the historical fact that would be fulfilled in Christ". Lewis wrote later that "the myth became fact" in Christianity: the universal human intuitions (need for salvation, redemptive sacrifice, victory over death) were realized concretely in a datable historical person.
 

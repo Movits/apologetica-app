@@ -135,6 +135,8 @@ O problema é que a doutrina central, a negação da divindade de Cristo, não v
     summary: 'A tese popular de que Jesus é "cópia de Hórus, Mitra ou Dionísio" é falsa em fato e em cronologia. Não resiste à análise acadêmica séria.',
     body: `Documentários como Zeitgeist e livros como "The Pagan Christ" popularizaram a ideia de que o cristianismo seria plágio de religiões pagãs anteriores. Jesus seria reescritura de Hórus, Mitra, Dionísio, Krishna, Áttis e outros deuses pagãos, todos supostamente nascidos de virgens em 25 de dezembro, mortos e ressuscitados ao terceiro dia, com 12 discípulos, e assim por diante. A tese é massivamente repetida em fóruns e vídeos ateus, mas não tem qualquer fundamento sério na academia.
 
+## As semelhanças são quase todas falsas
+
 Primeiro problema: as supostas semelhanças são quase todas falsas. Os textos egípcios sobre Hórus estão preservados, podem ser lidos diretamente. Hórus não nasceu de virgem (sua mãe Ísis concebeu de Osíris ressuscitado parcialmente, mito completamente diferente). Não nasceu em 25 de dezembro (nenhum texto antigo registra essa data para Hórus). Não foi crucificado (a crucificação como pena romana nem existia no Egito faraônico). Não ressuscitou ao terceiro dia. Não teve 12 discípulos. As alegações populares são fabricações modernas, fáceis de checar consultando egiptologia básica.
 
 O mesmo vale para Mitra. O mitraísmo romano existiu, sim. Mas suas características aparecem nos séculos II e III d.C., portanto depois da fundação e expansão do cristianismo. A direção da influência (se houve alguma) é a inversa: o mitraísmo absorveu elementos cristãos enquanto competia pelo mesmo público no Império Romano tardio. Os "12 seguidores de Mitra" que aparecem em sites ateus são interpretação moderna de constelações zodiacais em mosaicos mitraicos, não discípulos pessoais.
@@ -143,11 +145,19 @@ Dionísio, deus grego do vinho, tinha mitos de morte e renovação cíclica vege
 
 Krishna na tradição hindu nasceu de um casal real, Vasudeva e Devaki, depois de já terem outros sete filhos. Não nasceu de virgem. Não foi crucificado. Não ressuscitou ao terceiro dia. A "similaridade" com Jesus é construção de literatura popular ocidental, não de textos hindus autênticos.
 
+## A cronologia não fecha
+
 Segundo problema: cronologia. Os elementos verdadeiramente paralelos entre cristianismo e religiões de mistério aparecem nas religiões de mistério apenas depois do cristianismo já estar formado. Ronald Nash, em "The Gospel and the Greeks" (1992), faz a análise textual exaustiva mostrando que as alegações populares de plágio cristão são anacrônicas. As religiões de mistério que se assemelham parcialmente ao cristianismo (mitraísmo, alguns cultos de Ísis) atingem essas formas no séc. II d.C. ou depois, época em que o cristianismo já tinha cânon do Novo Testamento praticamente completo, comunidades em todo o Império, e fórmulas litúrgicas estabelecidas.
+
+## Diferenças fundamentais
 
 Terceiro problema: diferenças fundamentais. O cristianismo afirma um evento histórico datado, com testemunhas nomeadas, em local geográfico específico, em período histórico bem documentado. Os mitos pagãos são intemporais, atemporais, sem ancoragem em pessoa histórica ou data verificável. Quando os Evangelhos falam de Pilatos, Tibério, Caifás, Herodes, mencionam personagens reais conhecidos da história romana. Os mitos pagãos não fazem isso. Essa diferença é qualitativa, não de grau.
 
+## O argumento se autorrefuta
+
 Quarto problema: o argumento se autorrefuta. Se as semelhanças entre cristianismo e mitos pagãos fossem evidência de plágio, o mesmo princípio aplicado a quaisquer duas religiões "provaria" que ambas são plágio uma da outra. Todas as religiões falam de salvação, sacrifício, divino, encontro com o transcendente. Isso não prova plágio: prova que essas são preocupações humanas universais.
+
+## O mito que se fez fato
 
 C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intensamente sobre a relação entre mitos pagãos e cristianismo. Em conversa com J. R. R. Tolkien (também católico) e Hugo Dyson em 19 de setembro de 1931, sua resistência ao cristianismo se quebrou quando entendeu que o problema não era "o cristianismo se parece com mitos pagãos" mas o oposto: "os mitos pagãos eram intuições verdadeiras (sonhos de Deus) preparando a humanidade para o fato histórico que se cumpriria em Cristo". Lewis escreveu depois que "o mito se fez fato" no cristianismo: as intuições humanas universais (necessidade de salvação, sacrifício redentor, vitória sobre a morte) foram realizadas concretamente em uma pessoa histórica datável.
 
