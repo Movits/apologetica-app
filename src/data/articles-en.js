@@ -6,21 +6,43 @@ export const ARTICLES_EN = {
   1: {
     titleEn: 'The Existence of God: The Cosmological Argument',
     summaryEn: 'Why an uncaused first cause must exist to explain everything that exists.',
-    bodyEn: `Everything that exists has a cause. The universe, with all its order and complexity, did not arise from nothing. The first law of thermodynamics states that the total energy of an isolated system is constant, which already presupposes that something exists. The deeper question is another: why is there something rather than nothing?
+    bodyEn: `Why is there something rather than nothing? This is perhaps the deepest question a human being can ask, and it is the starting point of the cosmological argument, the oldest and most classic of the rational demonstrations of the existence of God.
 
-Aristotle formulated the problem, and Saint Thomas Aquinas deepened the answer. Every series of causes must have a beginning. An infinite regression of causes would explain nothing, because we would never arrive at the reason anything exists. So there must be a being who exists by himself, without depending on an external cause. This being is the foundation of everything, and we call it God.
+## The underlying question
 
-Saint Thomas calls this demonstration the "First Way" in the Summa Theologica. Everything in motion is moved by another. Since the chain of motion cannot be infinite, there is a First Unmoved Mover. This is the most classical argument of Christian philosophy for the existence of God, and it still stands today.
+Everything we see around us could fail to exist. This page, the chair, the stars, you yourself: none of it is necessary, all of it could simply not be. Philosophy calls this contingency. Now, if each thing, taken alone, could fail to exist, why does the whole set of them exist? Add up as many contingent things as you like: the sum remains contingent, and no one adds zeros and gets one. There must be, at the foundation of everything, something that is not contingent, something that exists by itself, necessarily. That something is what we call God.
 
-The modern version of this argument is the Kalam argument, formulated by William Lane Craig. It has three premises. First: everything that begins to exist has a cause. Second: the universe began to exist (confirmed by modern cosmology, especially by the Borde-Guth-Vilenkin theorem of 2003, which proves that every universe with positive average expansion had an absolute beginning in time). Third: therefore, the universe has a cause. This cause, by definition, must be timeless, immaterial, outside of space, and endowed with sufficient power to create the entire cosmos from nothing. The classical attributes of God.
+## From Aristotle to Thomas Aquinas
 
-Key questions:
+Aristotle, four centuries before Christ, had already noted that everything in motion is moved by another, and that this chain cannot recede to infinity without ever reaching a starting point. Saint Thomas Aquinas took up and deepened the argument in his Five Ways. In the First Way, he starts from motion and concludes that there is a First Unmoved Mover. In the Second, from causes, concluding that there is an uncaused First Cause. In the Third, from contingency, concluding that there is a Necessary Being.
 
-1. If everything began at the Big Bang, what existed before? And how could anything "begin" without cause, contradicting all scientific observation that effects have causes?
+The point is not chronological, as if God were merely the first domino in the past. The argument is about dependence here and now: the universe, at every instant, is sustained by something that depends on nothing else. Remove that foundation and everything collapses, like a chandelier that needs, at this very moment, the chain that fastens it to the ceiling.
 
-2. If you believe in a multiverse, what is the empirical evidence for it? And does the multiverse not also need a cause?
+The philosopher Gottfried Leibniz formulated the same intuition in the so-called principle of sufficient reason: everything that exists has a reason for existing, whether in itself or in another. Only God, the Necessary Being, has in himself the reason for existing. Everything else receives it from him.
 
-3. Why is there something rather than nothing? Absolute nothing, by definition, produces nothing.`,
+## The Kalam argument and science
+
+The most discussed contemporary version is the Kalam argument, popularized by the philosopher William Lane Craig. It has three simple steps: whatever begins to exist has a cause; the universe began to exist; therefore, the universe has a cause.
+
+The second premise, once merely philosophical, today has strong scientific support. The discovery of the Big Bang showed that space, time, and matter themselves had a beginning. The Borde-Guth-Vilenkin theorem, of 2003, proved that any universe with a positive average expansion, including most multiverse models, had an absolute beginning in time. Curiously, it was a Catholic priest, Georges Lemaître, who first proposed the primeval atom model that would come to be called the Big Bang.
+
+## "It came from nothing", "from the quantum vacuum"
+
+Some object that the universe could have arisen from nothing, citing physicists like Stephen Hawking or Lawrence Krauss. But here there is a play on words. The nothing of these authors is not absolute nothing: it is the quantum vacuum, an energy field governed by physical laws. Now, a field with energy and laws is not nothing, it is something, and something that also needs to be explained. Absolute nothing, by definition, has no properties, does not fluctuate, does not produce universes. From strictly nothing, nothing comes.
+
+## What kind of cause?
+
+If the universe, that is, all space, time, and matter, has a cause, that cause cannot be made of space, time, or matter. It must be immaterial, timeless, beyond space, immensely powerful, and able to create freely. These are, point by point, the attributes always ascribed to God. As Saint Paul says, "the invisible perfections of God have become visible to the intelligence through his works" (Romans 1,20).
+
+## Key questions
+
+1. If everything began at the Big Bang, what existed before? And how could anything begin to exist without a cause, against all scientific observation?
+
+2. When physicists say the universe came from nothing, is that nothing absolute nothing, or a quantum vacuum with energy and laws? Because the two are very different.
+
+3. If you believe in an eternal multiverse, what is the empirical evidence for it, and would it not itself need a cause?
+
+4. Add up as many contingent things as you like. Where does the existence of the whole come from, if each part could fail to exist?`,
   },
 
   5: {

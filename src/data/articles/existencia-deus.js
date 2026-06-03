@@ -7,22 +7,44 @@ const articles = [
     title: 'A Existência de Deus: o Argumento Cosmológico',
     category: 'Existência de Deus',
     summary: 'Por que precisa existir uma causa primeira não causada para explicar tudo que existe.',
-    body: `Tudo que existe tem uma causa. O universo, com toda sua ordem e complexidade, não surgiu do nada. A primeira lei da termodinâmica diz que a energia total de um sistema isolado é constante, e isso já pressupõe que existe algo. A pergunta de fundo é outra: por que existe algo em vez de nada?
+    body: `Por que existe algo em vez de nada? Esta é, talvez, a pergunta mais profunda que um ser humano pode fazer, e é dela que parte o argumento cosmológico, a mais antiga e clássica das demonstrações racionais da existência de Deus.
 
-Aristóteles formulou o problema, e Santo Tomás de Aquino aprofundou a resposta. Toda série de causas precisa ter um início. Uma regressão infinita de causas não explicaria nada, porque nunca chegaríamos ao motivo de qualquer coisa existir. Então tem que haver um ser que exista por si mesmo, sem depender de causa externa. Esse ser é o fundamento de tudo, e nós o chamamos de Deus.
+## A pergunta de fundo
 
-Santo Tomás chama essa demonstração de "Primeira Via" na Suma Teológica. Tudo que se move, é movido por outro. Como a cadeia de movimentos não pode ser infinita, há um Primeiro Motor Imóvel. Esse é o argumento mais clássico da filosofia cristã para a existência de Deus, e continua de pé até hoje.
+Tudo o que vemos ao redor poderia não existir. Esta página, a cadeira, as estrelas, você mesmo: nada disso é necessário, tudo poderia simplesmente não ser. A filosofia chama isso de contingência. Ora, se cada coisa, isoladamente, poderia não existir, por que existe o conjunto de todas elas? Some quantas coisas contingentes quiser: a soma continua contingente, e ninguém soma zeros e obtém um. Precisa haver, na base de tudo, algo que não seja contingente, algo que exista por si mesmo, necessariamente. Esse algo é o que chamamos Deus.
 
-A versão moderna desse argumento é o argumento Kalam, formulado por William Lane Craig. Tem três premissas. Primeira: tudo que começa a existir tem uma causa. Segunda: o universo começou a existir (confirmado pela cosmologia moderna, especialmente pelo teorema Borde-Guth-Vilenkin de 2003, que demonstra que todo universo em expansão média positiva teve um início absoluto no tempo). Terceira: portanto, o universo tem uma causa. Essa causa, por definição, deve ser atemporal, imaterial, fora do espaço, e dotada de poder suficiente para criar todo o cosmos do nada. Os atributos clássicos de Deus.
+## De Aristóteles a Tomás de Aquino
 
-Perguntas-chave:
+Aristóteles, quatro séculos antes de Cristo, já notara que tudo o que se move é movido por outro, e que essa cadeia não pode recuar ao infinito sem nunca chegar a um ponto de partida. Santo Tomás de Aquino retomou e aprofundou o argumento nas suas Cinco Vias. Na Primeira Via, parte do movimento e conclui que há um Primeiro Motor Imóvel. Na Segunda, parte das causas e conclui que há uma Causa Primeira não causada. Na Terceira, parte da contingência e conclui que há um Ser Necessário.
 
-1. Se tudo começou no Big Bang, o que existia antes? E como algo poderia "começar" sem causa, contrariando toda a observação científica de que efeitos têm causas?
+O ponto não é cronológico, como se Deus fosse apenas a primeira peça do dominó no passado. O argumento é sobre a dependência aqui e agora: o universo, a cada instante, é sustentado por algo que não depende de mais nada. Tire esse fundamento e tudo desaba, como um lustre que precisa, neste momento, da corrente que o prende ao teto.
 
-2. Se você acredita em multiverso, qual é a evidência empírica disso? E o multiverso também não precisa de uma causa?
+O filósofo Gottfried Leibniz formulou a mesma intuição no chamado princípio de razão suficiente: tudo o que existe tem uma razão para existir, seja em si mesmo, seja em outro. Só Deus, o Ser Necessário, tem em si mesmo a razão de existir. Tudo o mais a recebe dele.
 
-3. Por que existe algo em vez de nada? O nada absoluto, por definição, não produz nada.`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam'],
+## O argumento Kalam e a ciência
+
+A versão contemporânea mais discutida é o argumento Kalam, popularizado pelo filósofo William Lane Craig. Ele tem três passos simples: tudo o que começa a existir tem uma causa; o universo começou a existir; logo, o universo tem uma causa.
+
+A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo em expansão média positiva, incluindo a maioria dos modelos de multiverso, teve um começo absoluto no tempo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
+
+## "Veio do nada", "veio do vácuo quântico"
+
+Alguns objetam que o universo poderia ter surgido do nada, citando físicos como Stephen Hawking ou Lawrence Krauss. Mas aqui há um jogo de palavras. O nada desses autores não é o nada absoluto: é o vácuo quântico, um campo de energia regido por leis físicas. Ora, um campo com energia e leis não é nada, é alguma coisa, e alguma coisa que também precisa ser explicada. O nada absoluto, por definição, não tem propriedades, não flutua, não produz universos. De rigorosamente nada, nada vem.
+
+## Que tipo de causa?
+
+Se o universo, isto é, todo o espaço, o tempo e a matéria, tem uma causa, essa causa não pode ser feita de espaço, tempo ou matéria. Ela deve ser imaterial, atemporal, fora do espaço, imensamente poderosa, e capaz de criar livremente. São, ponto por ponto, os atributos que sempre se atribuíram a Deus. Como diz São Paulo, "as perfeições invisíveis de Deus tornaram-se visíveis pela inteligência, através das suas obras" (Romanos 1,20).
+
+## Perguntas-chave
+
+1. Se tudo começou no Big Bang, o que existia antes? E como algo poderia começar a existir sem causa, contra toda a observação científica?
+
+2. Quando físicos dizem que o universo veio do nada, esse nada é o nada absoluto, ou um vácuo quântico com energia e leis? Porque as duas coisas são muito diferentes.
+
+3. Se você acredita num multiverso eterno, qual é a evidência empírica disso, e ele próprio não precisaria de uma causa?
+
+4. Some quantas coisas contingentes quiser. De onde vem a existência do conjunto, se cada parte poderia não existir?`,
+    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam', 'lemaitre-bigbang'],
   },
   {
     id: 9,

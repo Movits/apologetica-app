@@ -47,7 +47,7 @@ A objeção popular de que "o amor é amor" ignora uma distinção essencial. A 
 
 A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja não condena pessoas, ensina sobre atos. E ensina, junto com o ensinamento moral, a possibilidade real de viver na graça e a esperança da plenitude em Cristo.
 
-Perguntas para o diálogo:
+Perguntas-chave:
 
 1. Se "amor é amor", qualquer expressão sexual é legítima desde que haja amor? Isso valeria também entre irmãos adultos ou em poligamia consentida?
 
