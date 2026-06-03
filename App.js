@@ -33,6 +33,7 @@ import ExamConscienceScreen from './src/screens/ExamConscienceScreen';
 import RosaryScreen from './src/screens/RosaryScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import DialogueScreen from './src/screens/DialogueScreen';
+import DebateStrategiesScreen from './src/screens/DebateStrategiesScreen';
 import BibleMapScreen from './src/screens/BibleMapScreen';
 import LegalScreen from './src/screens/LegalScreen';
 import ToolsScreen from './src/screens/ToolsScreen';
@@ -95,6 +96,7 @@ function HomeStackScreen() {
       <HomeNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
       <HomeNav.Screen name="Quiz" component={QuizScreen} options={{ title: t('header.quiz') }} />
       <HomeNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
+      <HomeNav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
       <HomeNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
       <HomeNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
     </HomeNav.Navigator>
