@@ -832,40 +832,6 @@ The Church is the only global institution that still coherently defends this pos
 4. If every conjugal act can be freely emptied of its procreative dimension, why criticize sexual objectification? Are you not doing that?`,
   },
 
-  27: {
-    titleEn: 'Jehovah\'s Witnesses and the Trinity',
-    summaryEn: 'The denial of the Trinity does not come from the Gospels. It comes from a biased Bible translation, made in 1950.',
-    bodyEn: `Jehovah\'s Witnesses deny three central doctrines of Christianity: the Trinity, the divinity of Christ, and the personality of the Holy Spirit. They hold that Jesus is "Archangel Michael incarnate" and that the Holy Spirit is only "Jehovah\'s active force". All of this frontally contradicts the New Testament.
-
-Most of the building of the sect rests on the New World Translation of the Holy Scriptures, made by the organization itself (Watchtower) in 1950 and revised several times. This translation, according to the unanimity of biblical Greek scholars (including non-Catholics), is seriously biased to support the peculiar doctrines of the sect.
-
-The most notorious example is John 1,1. The original Greek text says: "In the beginning was the Logos, and the Logos was with God (pros ton Theón), and the Logos was God (Theós ēn ho Lógos)". The New World Translation renders it as "and the Word was a god". It added the article "a" that does not exist in the Greek, to suggest that Jesus is "an inferior god", not God in an absolute sense.
-
-This translation is wrong for several reasons. First: the predicate in Greek (Theós) precedes the verb (ēn) and is without article. This construction (called anarthrous predicate in prepositive position) indicates nature or quality, not indefiniteness. Compare with John 1,14 ("the Word became flesh"): "flesh" is also without article, and no one translates "became a flesh". Colwell\'s rule in Greek grammar explains this construction.
-
-Second: the New Testament itself applies exclusive divine titles to Jesus. In John 20,28 Thomas calls Jesus "My Lord and my God" (ho Kyrios mou kai ho Theós mou), with article. Jesus accepts. In Titus 2,13 and 2 Peter 1,1, Paul calls Christ "our great God and Savior Jesus Christ". In Hebrews 1,8 the Father directly calls the Son "God": "to the Son, however, he says: Your throne, O God, is forever". In Philippians 2,6, Christ "subsisting in the form of God, did not consider it usurpation to be equal to God".
-
-About Jesus being "Archangel Michael", there is no biblical basis. In Hebrews 1, the author explicitly compares the Son with the angels to show the Son\'s infinite superiority: "To which of the angels did God ever say: You are my Son, I have today begotten you?" (Heb 1,5). And "let all God\'s angels worship him" (Heb 1,6). Jesus is worshiped by the angels, he is not one of them.
-
-About the Holy Spirit being an "active force", the Scriptures treat him as a person, not as energy. Acts 13,2 narrates that "the Holy Spirit said: Set apart for me Barnabas and Saul for the work to which I have destined them". A force does not speak, does not destine, does not choose. In John 14,16-17 Jesus calls the Holy Spirit "another Paraclete" (allon Paráklēton), a word that designates a person, not impersonal. In Acts 5,3-4 Ananias lies "to the Holy Spirit", and Peter says he lied "to God", equating the Spirit with God.
-
-The doctrine of the Trinity is the confession that God is one (Dt 6,4) in nature, and three Persons distinct (Father, Son and Holy Spirit) that share that single nature. It is not "three gods" (polytheism), nor "one God with three masks" (modalism). It is one God in three eternally distinct Persons, in perfect communion of love.
-
-The doctrine was formally defined at the Council of Nicaea (325) against Arius, and at Constantinople (381) against deniers of the Holy Spirit. But the Trinitarian faith is apostolic: Matthew 28,19 orders to baptize "in the name of the Father, and of the Son, and of the Holy Spirit" (in singular name, three Persons). 2 Corinthians 13,13 invokes the three together as a blessing. The earliest Christian doxologies (1st-2nd century) are already Trinitarian.
-
-Jehovah\'s Witnesses also have serious historical problems: failed eschatological dates (1914, 1925, 1975 were pointed out as dates of the end, all failed), absurd prohibitions (blood transfusion, even at risk of death), frustrated predictions. All this indicates an organization without real apostolic foundation.
-
-## Key questions
-
-1. Why does only the New World Translation (1950) translate John 1,1 as "a god"? Why does none of the historical traditions (Vulgate, Orthodox, Protestant) do this?
-
-2. In John 20,28 Thomas calls Jesus "my God". If Jesus is not God, why did he not correct him?
-
-3. How do you reconcile that Jesus is "Archangel Michael" with Hebrews 1,6 which says "let all God\'s angels worship him"?
-
-4. If the Watchtower Society\'s predictions failed several times (1914, 1925, 1975), why trust the next?`,
-  },
-
   28: {
     titleEn: 'The Inquisition: What Really Happened',
     summaryEn: 'The popular myth of the Inquisition far surpasses real history. The numbers, compared to other courts of the time, are revealing.',
