@@ -38,6 +38,10 @@ export default function BibleScreen({ route, navigation }) {
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
   const [highlightVerse, setHighlightVerse] = useState(null);
+  // Marca que chegamos a um capítulo/versículo por deep link (ref, artigo, etc.),
+  // para que a seta de voltar retorne à tela de origem em vez de descer na
+  // hierarquia interna da Bíblia (versículos -> capítulos -> livros).
+  const [fromDeepLink, setFromDeepLink] = useState(false);
   const [filterText, setFilterText] = useState('');
   const [actionVerse, setActionVerse] = useState(null);
   const [chapterHighlights, setChapterHighlights] = useState([]);
@@ -59,6 +63,7 @@ export default function BibleScreen({ route, navigation }) {
       const b = BIBLE_BOOKS.find((x) => x.id === params.bookId);
       if (b) {
         setBook(b);
+        setFromDeepLink(true);
         if (params.chapter) {
           setChapter(params.chapter);
           setHighlightVerse(params.highlightVerse ?? null);
@@ -81,6 +86,7 @@ export default function BibleScreen({ route, navigation }) {
         setChapter(null);
         setHighlightVerse(null);
         setFilterText('');
+        setFromDeepLink(false);
       } else {
         // Ja esta na view de livros: scroll pro topo
         booksScrollRef.current?.scrollTo({ y: 0, animated: true });
@@ -332,7 +338,7 @@ export default function BibleScreen({ route, navigation }) {
                 <TouchableOpacity
                   key={b.id}
                   style={styles.bookRow}
-                  onPress={() => { setBook(b); setView('chapters'); }}
+                  onPress={() => { setBook(b); setView('chapters'); setFromDeepLink(false); }}
                 >
                   <View style={styles.bookAbbrev}>
                     <Text style={styles.bookAbbrevText}>{bs(b)}</Text>
@@ -362,9 +368,15 @@ export default function BibleScreen({ route, navigation }) {
     const allChapters = Array.from({ length: book.totalChapters }, (_, i) => i + 1);
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.backRow} onPress={() => setView('books')}>
+        <TouchableOpacity
+          style={styles.backRow}
+          onPress={() => {
+            if (fromDeepLink && navigation.canGoBack()) { navigation.goBack(); return; }
+            setView('books');
+          }}
+        >
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
-          <Text style={styles.backText}>{t('bible.books')}</Text>
+          <Text style={styles.backText}>{fromDeepLink ? (isEn ? 'Back' : 'Voltar') : t('bible.books')}</Text>
         </TouchableOpacity>
         <Text style={styles.bookHeader}>{bn(book)}</Text>
         <FlatList
@@ -376,7 +388,7 @@ export default function BibleScreen({ route, navigation }) {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.chapterCell}
-              onPress={() => { setChapter(item); setHighlightVerse(null); setView('verses'); }}
+              onPress={() => { setChapter(item); setHighlightVerse(null); setView('verses'); setFromDeepLink(false); }}
             >
               <Text style={styles.chapterCellText}>{item}</Text>
             </TouchableOpacity>
@@ -391,17 +403,20 @@ export default function BibleScreen({ route, navigation }) {
     const hasPrev = chapter > 1;
     const hasNext = chapter < book.totalChapters;
     const isEmpty = !chapterData?.verses?.length;
-    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setChapter(chapter - 1); } };
-    const goNext = () => { if (hasNext) { setHighlightVerse(null); setChapter(chapter + 1); } };
+    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setChapter(chapter - 1); setFromDeepLink(false); } };
+    const goNext = () => { if (hasNext) { setHighlightVerse(null); setChapter(chapter + 1); setFromDeepLink(false); } };
 
     return (
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.backRow}
-          onPress={() => { setChapter(null); setHighlightVerse(null); setView('chapters'); }}
+          onPress={() => {
+            if (fromDeepLink && navigation.canGoBack()) { navigation.goBack(); return; }
+            setChapter(null); setHighlightVerse(null); setView('chapters');
+          }}
         >
           <Ionicons name="arrow-back" size={20} color={colors.primaryText} />
-          <Text style={styles.backText}>{bn(book)}</Text>
+          <Text style={styles.backText}>{fromDeepLink ? (isEn ? 'Back' : 'Voltar') : bn(book)}</Text>
         </TouchableOpacity>
 
         <View style={styles.verseHeader}>

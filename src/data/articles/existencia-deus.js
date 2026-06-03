@@ -61,7 +61,7 @@ Santo Tomás de Aquino, na Quinta Via da Suma Teológica, observou que mesmo ser
 
 Existem dezenas de constantes fundamentais que precisam ter valores extremamente específicos para que a vida seja possível. A força gravitacional, a constante eletromagnética, a razão entre a massa do próton e do elétron, a constante cosmológica. Se qualquer uma delas tivesse valor ligeiramente diferente, mesmo por uma fração infinitesimal, o universo seria estéril.
 
-O físico e ateu Fred Hoyle, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro O Caminho para a Realidade que a probabilidade do nosso universo ter condições iniciais favoráveis à vida é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo.
+O físico e ateu Fred Hoyle, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro A Nova Mente do Imperador que a probabilidade do nosso universo ter condições iniciais favoráveis à vida é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo.
 
 ## Necessidade, acaso ou design?
 
@@ -69,7 +69,7 @@ Há três explicações possíveis para esse ajuste fino. A necessidade física 
 
 ## A objeção do multiverso
 
-A objeção do multiverso (existem infinitos universos com constantes diferentes, e por sorte estamos no que permite vida) tem três problemas. Primeiro, não há evidência empírica de outros universos. Segundo, mesmo o multiverso, se existir, precisaria ele próprio de ajuste fino para gerar universos diversos. Terceiro, a navalha de Occam recomenda a explicação mais simples: um Designer, não infinitas realidades inverificáveis.
+A objeção do multiverso (existem infinitos universos com constantes diferentes, e por sorte estamos no que permite vida) tem três problemas. Primeiro, não há evidência empírica de outros universos. Segundo, mesmo o multiverso, se existir, precisaria ele próprio de ajuste fino para gerar universos diversos. Terceiro, a [[navalha de Occam]] recomenda a explicação mais econômica. Esse princípio, atribuído ao filósofo franciscano Guilherme de Ockham no século XIV, diz que, entre explicações que dão conta dos mesmos fatos, devemos preferir a que postula menos entidades sem necessidade. Postular um único Designer é mais econômico do que postular infinitos universos inverificáveis só para escapar dessa conclusão.
 
 São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de Deus, desde a criação do mundo, são entendidas e vistas por meio das coisas criadas". A ciência moderna não derruba essa afirmação, ela a confirma com precisão matemática.
 
@@ -80,7 +80,7 @@ São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de De
 2. Se as constantes físicas pudessem ter qualquer valor, por que justamente as únicas que permitem vida foram realizadas?
 
 3. Como uma matéria sem inteligência produziu observadores capazes de descrever matematicamente o universo que os produziu?`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'hoyle-universo', 'penrose-road'],
+    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'hoyle-universo', 'penrose-road', 'occam-navalha'],
   },
   {
     id: 10,
@@ -137,7 +137,7 @@ Santo Tomás de Aquino fez essa distinção há quase oitocentos anos. Há seres
 
 A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Causalidade é uma relação entre coisas no universo. Aplicá-la a Deus é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
 
-O argumento Kalam formaliza isso bem. William Lane Craig mostra que tudo que começa a existir tem causa. O universo começou a existir (teorema Borde-Guth-Vilenkin, cosmologia atual). Logo, o universo tem causa. Deus não começou, então não cai sob essa regra. Atribuir a Deus o predicado "começou a existir" é negar o conceito mesmo de Deus.
+O argumento Kalam formaliza isso bem. William Lane Craig mostra que tudo que começa a existir tem causa. O universo começou a existir, como indica a cosmologia atual: o teorema de Borde-Guth-Vilenkin, demonstrado em 2003 pelos físicos Arvind Borde, Alan Guth e Alexander Vilenkin, prova que qualquer universo que em média esteve em expansão não pode ser eterno no passado, ele precisa ter tido um começo. Logo, o universo tem causa. Deus não começou, então não cai sob essa regra. Atribuir a Deus o predicado "começou a existir" é negar o conceito mesmo de Deus.
 
 ## O ateu também precisa de algo eterno
 
@@ -152,7 +152,7 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
 2. Se Deus pode ser eterno sem causa, por que você não admite que o universo precise de uma causa eterna?
 
 3. Você sabe o que significa "Deus" no argumento? Não é "alguém como você, mas grande", é o fundamento do ser. A pergunta "quem criou o fundamento do ser?" é incoerente.`,
-    references: ['suma-i-q2-a3', 'cic-31-35', 'craig-kalam'],
+    references: ['suma-i-q2-a3', 'cic-31-35', 'craig-kalam', 'bgv-teorema'],
   },
   {
     id: 5,

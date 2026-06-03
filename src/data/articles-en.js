@@ -274,7 +274,7 @@ Saint Thomas Aquinas, in the Fifth Way of the Summa Theologica, observed that ev
 
 There are dozens of fundamental constants that need to have extremely specific values for life to be possible. Gravitational force, electromagnetic constant, the ratio between proton and electron mass, the cosmological constant. If any of them had a slightly different value, even by an infinitesimal fraction, the universe would be sterile.
 
-The physicist and former atheist Fred Hoyle, after calculating the conditions necessary for carbon formation in stars, wrote that "a common-sense interpretation of the facts suggests that a superintellect has monkeyed with physics, chemistry and biology". Roger Penrose, mathematician and Nobel Prize winner in Physics in 2020, calculated in "The Road to Reality" that the probability of our universe having favorable initial conditions for life is on the order of 1 in 10 to the power of 10 to the power of 123. A number so small that, compared to it, winning the lottery a thousand times in a row is practically certain.
+The physicist and former atheist Fred Hoyle, after calculating the conditions necessary for carbon formation in stars, wrote that "a common-sense interpretation of the facts suggests that a superintellect has monkeyed with physics, chemistry and biology". Roger Penrose, mathematician and Nobel Prize winner in Physics in 2020, calculated in "The Emperor\'s New Mind" that the probability of our universe having favorable initial conditions for life is on the order of 1 in 10 to the power of 10 to the power of 123. A number so small that, compared to it, winning the lottery a thousand times in a row is practically certain.
 
 ## Necessity, chance, or design?
 
@@ -282,7 +282,7 @@ There are three possible explanations for this fine-tuning. Physical necessity d
 
 ## The multiverse objection
 
-The multiverse objection (there exist infinite universes with different constants, and by luck we are in the one that allows life) has three problems. First, there is no empirical evidence of other universes. Second, even the multiverse, if it exists, would itself need fine-tuning to generate diverse universes. Third, Occam\'s razor recommends the simplest explanation: a Designer, not infinite unverifiable realities.
+The multiverse objection (there exist infinite universes with different constants, and by luck we are in the one that allows life) has three problems. First, there is no empirical evidence of other universes. Second, even the multiverse, if it exists, would itself need fine-tuning to generate diverse universes. Third, [[Occam\'s razor]] recommends the most economical explanation. This principle, attributed to the Franciscan philosopher William of Ockham in the 14th century, holds that among explanations that account for the same facts we should prefer the one positing fewer entities without necessity. Positing a single Designer is more economical than positing infinite unverifiable universes just to escape this conclusion.
 
 Saint Paul already said in the Letter to the Romans that "the invisible perfections of God, since the creation of the world, are understood and seen through created things". Modern science does not refute this affirmation, it confirms it with mathematical precision.
 
@@ -346,7 +346,7 @@ Saint Thomas Aquinas made this distinction almost eight hundred years ago. There
 
 The question "who created God?" is like asking "who is married to the bachelor?". The question presupposes a confusion of categories. God is not a being among other beings, he is the foundation of being. Causality is a relationship between things in the universe. Applying it to God is the same error as applying physical laws outside the universe where they operate.
 
-The Kalam argument formalizes this well. William Lane Craig shows that everything that begins to exist has a cause. The universe began to exist (Borde-Guth-Vilenkin theorem, current cosmology). Therefore, the universe has a cause. God did not begin, so he does not fall under that rule. To attribute to God the predicate "began to exist" is to deny the very concept of God.
+The Kalam argument formalizes this well. William Lane Craig shows that everything that begins to exist has a cause. The universe began to exist, as current cosmology indicates: the Borde-Guth-Vilenkin theorem, proved in 2003 by physicists Arvind Borde, Alan Guth, and Alexander Vilenkin, shows that any universe that on average has been expanding cannot be eternal in the past, it must have had a beginning. Therefore, the universe has a cause. God did not begin, so he does not fall under that rule. To attribute to God the predicate "began to exist" is to deny the very concept of God.
 
 ## The atheist also needs something eternal
 

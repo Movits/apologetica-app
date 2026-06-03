@@ -123,6 +123,11 @@ function SettingsStackScreen() {
       <SettingsNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
       <SettingsNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
       <SettingsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
+      {/* Favoritos e Plano de Leitura abrem artigos via 'ArticleFromSearch' (que por sua
+          vez navega para RefDetail). Sem estas rotas, tocar num artigo pela aba Ajustes
+          não era tratado por nenhum navegador. */}
+      <SettingsNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
+      <SettingsNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
     </SettingsNav.Navigator>
   );
 }

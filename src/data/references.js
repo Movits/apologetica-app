@@ -692,7 +692,7 @@ export const references = [
     author: 'Concílio Vaticano II',
     year: '21 de novembro de 1964',
     topic: 'Eclesiologia / subsistit in',
-    text: 'Esta Igreja, constituída e organizada neste mundo como sociedade, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos Bispos em comunhão com ele, embora fora de sua estrutura se encontrem muitos elementos de santificação e verdade que, como dons próprios da Igreja de Cristo, impelem para a unidade católica.',
+    text: '"Esta Igreja, constituída e organizada neste mundo como sociedade, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos Bispos em comunhão com ele, embora fora de sua estrutura se encontrem muitos elementos de santificação e verdade que, como dons próprios da Igreja de Cristo, impelem para a unidade católica."',
     url: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_po.html',
   },
   {
@@ -703,7 +703,7 @@ export const references = [
     author: 'Concílio Vaticano II',
     year: '21 de novembro de 1964',
     topic: 'Mediação de Maria',
-    text: 'Maria, a Mãe de Deus, na ordem da graça é nossa Mãe. Sua maternidade na ordem da graça perdura sem cessar desde o consentimento que prestou fielmente na anunciação e que conservou sem hesitação ao pé da cruz, até a consumação eterna de todos os eleitos.',
+    text: '"Maria, a Mãe de Deus, na ordem da graça é nossa Mãe. Sua maternidade na ordem da graça perdura sem cessar desde o consentimento que prestou fielmente na anunciação e que conservou sem hesitação ao pé da cruz, até a consumação eterna de todos os eleitos."',
     url: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_po.html',
   },
   {
@@ -714,7 +714,7 @@ export const references = [
     author: 'Concílio Vaticano II',
     year: '18 de novembro de 1965',
     topic: 'Escritura, Tradição e Magistério',
-    text: 'A Sagrada Tradição e a Sagrada Escritura estão intimamente unidas e compenetradas entre si; por isso, ambas devem ser recebidas e veneradas com igual piedade e reverência. O múnus de interpretar autenticamente a Palavra de Deus escrita ou transmitida foi confiado somente ao Magistério vivo da Igreja.',
+    text: '"A Sagrada Tradição e a Sagrada Escritura estão intimamente unidas e compenetradas entre si; por isso, ambas devem ser recebidas e veneradas com igual piedade e reverência. O múnus de interpretar autenticamente a Palavra de Deus escrita ou transmitida foi confiado somente ao Magistério vivo da Igreja."',
     url: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_po.html',
   },
   {
@@ -725,7 +725,7 @@ export const references = [
     author: 'Papa Francisco',
     year: '24 de novembro de 2013',
     topic: 'Evangelização / Igreja em saída',
-    text: 'A Igreja em saída é a comunidade de discípulos missionários que tomam a iniciativa, que se envolvem, que acompanham, que frutificam e festejam. Comunidade missionária sabe que o Senhor tomou a iniciativa, que Ele a amou primeiro.',
+    text: '"A Igreja em saída é a comunidade de discípulos missionários que tomam a iniciativa, que se envolvem, que acompanham, que frutificam e festejam. Comunidade missionária sabe que o Senhor tomou a iniciativa, que Ele a amou primeiro."',
     url: 'https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html',
   },
   {
@@ -736,7 +736,7 @@ export const references = [
     author: 'Papa Francisco',
     year: '19 de março de 2016',
     topic: 'Acolhimento de pessoas com tendência homossexual',
-    text: 'A Igreja faz sua a atitude do Senhor Jesus que, num amor sem limites, se ofereceu por cada pessoa sem exceção. Toda pessoa, independentemente da sua tendência sexual, deve ser respeitada na sua dignidade e acolhida com respeito, procurando evitar todo sinal de discriminação injusta.',
+    text: '"A Igreja faz sua a atitude do Senhor Jesus que, num amor sem limites, se ofereceu por cada pessoa sem exceção. Toda pessoa, independentemente da sua tendência sexual, deve ser respeitada na sua dignidade e acolhida com respeito, procurando evitar todo sinal de discriminação injusta."',
     url: 'https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html',
   },
   {
@@ -747,7 +747,7 @@ export const references = [
     author: 'Beato Papa Pio IX',
     year: '8 de dezembro de 1854',
     topic: 'Imaculada Conceição / dogma',
-    text: 'Declaramos, pronunciamos e definimos que a doutrina que sustenta que a Bem-Aventurada Virgem Maria, no primeiro instante de sua concepção, por singular graça e privilégio de Deus Onipotente, em vista dos méritos de Jesus Cristo, Salvador do gênero humano, foi preservada imune de toda mancha do pecado original, é revelada por Deus e, por isso, deve ser firmemente e constantemente acreditada por todos os fiéis.',
+    text: '"Declaramos, pronunciamos e definimos que a doutrina que sustenta que a Bem-Aventurada Virgem Maria, no primeiro instante de sua concepção, por singular graça e privilégio de Deus Onipotente, em vista dos méritos de Jesus Cristo, Salvador do gênero humano, foi preservada imune de toda mancha do pecado original, é revelada por Deus e, por isso, deve ser firmemente e constantemente acreditada por todos os fiéis."',
     url: 'https://pt.wikipedia.org/wiki/Ineffabilis_Deus',
   },
   {
@@ -758,7 +758,7 @@ export const references = [
     author: 'Concílio Ecumênico de Éfeso',
     year: '431 d.C.',
     topic: 'Theotokos / Maria Mãe de Deus',
-    text: 'Se alguém não confessar que o Emanuel é verdadeiramente Deus e que, por isso, a Santa Virgem é Mãe de Deus (Theotokos), pois ela gerou segundo a carne o Verbo de Deus feito carne, seja anátema.',
+    text: '"Se alguém não confessar que o Emanuel é verdadeiramente Deus e que, por isso, a Santa Virgem é Mãe de Deus (Theotokos), pois ela gerou segundo a carne o Verbo de Deus feito carne, seja anátema."',
     url: 'https://pt.wikipedia.org/wiki/Conc%C3%ADlio_de_%C3%89feso',
   },
   {
@@ -779,7 +779,7 @@ export const references = [
     author: 'Concílio de Cartago (Norte da África)',
     year: '397 d.C.',
     topic: 'Cânon da Bíblia',
-    text: 'Cânon 24: Além das Escrituras canônicas, nada se leia na Igreja sob o nome das divinas Escrituras. Lista os 73 livros do cânon católico, incluindo os deuterocanônicos. Essa lista foi novamente confirmada em 419 e tornou-se norma da Igreja universal.',
+    text: 'Cânon 24: "Além das Escrituras canônicas, nada se leia na Igreja sob o nome das divinas Escrituras." O concílio lista os 73 livros do cânon católico, incluindo os deuterocanônicos. Essa lista foi novamente confirmada em 419 e tornou-se norma da Igreja universal.',
   },
   {
     id: 'trento-eucaristia',
@@ -789,7 +789,7 @@ export const references = [
     author: 'Concílio Ecumênico de Trento',
     year: '11 de outubro de 1551',
     topic: 'Definição dogmática da transubstanciação',
-    text: 'Se alguém negar que no santíssimo sacramento da Eucaristia se contêm verdadeira, real e substancialmente o corpo e o sangue, juntamente com a alma e divindade de nosso Senhor Jesus Cristo e, portanto, Cristo todo, mas disser que o Cristo está nele apenas como em sinal ou figura ou por sua virtude, seja anátema.',
+    text: '"Se alguém negar que no santíssimo sacramento da Eucaristia se contêm verdadeira, real e substancialmente o corpo e o sangue, juntamente com a alma e divindade de nosso Senhor Jesus Cristo e, portanto, Cristo todo, mas disser que o Cristo está nele apenas como em sinal ou figura ou por sua virtude, seja anátema."',
     url: 'https://www.vatican.va/content/vatican/pt.html',
   },
 
@@ -802,7 +802,7 @@ export const references = [
     author: 'Santo Tomás de Aquino',
     year: '1265 a 1274',
     topic: 'Demonstrações da existência de Deus',
-    text: 'É necessário chegar a um primeiro motor que não seja movido por nenhum outro; e esse todos entendem ser Deus. O segundo caminho parte da causalidade eficiente. O terceiro caminho parte do contingente e do necessário. O quarto parte dos graus de perfeição. O quinto parte da ordem do mundo.',
+    text: '"É necessário chegar a um primeiro motor que não seja movido por nenhum outro; e esse todos entendem ser Deus." O segundo caminho parte da causalidade eficiente. O terceiro caminho parte do contingente e do necessário. O quarto parte dos graus de perfeição. O quinto parte da ordem do mundo.',
     url: 'https://apologetica.net.br/wp-content/uploads/2016/07/cinco_vias.pdf',
   },
   {
@@ -813,7 +813,7 @@ export const references = [
     author: 'Santo Inácio de Antioquia (discípulo de São João Apóstolo)',
     year: 'c. 107 d.C.',
     topic: 'Presença real de Cristo na Eucaristia',
-    text: 'Afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo, que padeceu por nossos pecados e que o Pai, em sua bondade, ressuscitou.',
+    text: '"Afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo, que padeceu por nossos pecados e que o Pai, em sua bondade, ressuscitou."',
     url: 'https://www.cristianismo.org.br/inacio-7.htm',
   },
   {
@@ -824,7 +824,7 @@ export const references = [
     author: 'São Justino Mártir (filósofo e mártir)',
     year: 'c. 155 d.C.',
     topic: 'Eucaristia / testemunho do séc. II',
-    text: 'Esse alimento é chamado entre nós Eucaristia. Ninguém pode participar dele a não ser quem creia ser verdade o que ensinamos, tenha sido lavado pelo banho da remissão dos pecados e do novo nascimento, e viva como Cristo ensinou. Pois não recebemos isso como pão comum ou bebida comum. Como Jesus Cristo, nosso Salvador, encarnou pela Palavra de Deus, assim também esse alimento, sobre o qual se rezou a ação de graças, é a carne e o sangue do mesmo Jesus encarnado.',
+    text: '"Esse alimento é chamado entre nós Eucaristia. Ninguém pode participar dele a não ser quem creia ser verdade o que ensinamos, tenha sido lavado pelo banho da remissão dos pecados e do novo nascimento, e viva como Cristo ensinou. Pois não recebemos isso como pão comum ou bebida comum. Como Jesus Cristo, nosso Salvador, encarnou pela Palavra de Deus, assim também esse alimento, sobre o qual se rezou a ação de graças, é a carne e o sangue do mesmo Jesus encarnado."',
   },
   {
     id: 'ireneu-contra-heresias',
@@ -834,7 +834,7 @@ export const references = [
     author: 'Santo Irineu de Lyon (discípulo de São Policarpo, que foi discípulo de São João)',
     year: 'c. 180 d.C.',
     topic: 'Maria, Nova Eva / recapitulação',
-    text: 'Como Eva, tendo a Adão por marido, mas ainda virgem, foi desobediente e se tornou causa de morte para si e para todo o gênero humano, assim Maria, tendo um marido predestinado e sendo ainda virgem, obedeceu e se tornou causa de salvação para si e para todo o gênero humano. O nó da desobediência de Eva foi desatado pela obediência de Maria.',
+    text: '"Como Eva, tendo a Adão por marido, mas ainda virgem, foi desobediente e se tornou causa de morte para si e para todo o gênero humano, assim Maria, tendo um marido predestinado e sendo ainda virgem, obedeceu e se tornou causa de salvação para si e para todo o gênero humano. O nó da desobediência de Eva foi desatado pela obediência de Maria."',
   },
   {
     id: 'tertuliano-de-carne',
@@ -844,7 +844,7 @@ export const references = [
     author: 'Tertuliano',
     year: 'c. 207 a 212 d.C.',
     topic: 'Encarnação / virgindade de Maria',
-    text: 'Cristo nasceu de uma virgem; e foi necessário ser assim, para que aquele que veio para destruir a morte pela vida não nascesse pela mesma porta pela qual a morte havia entrado. Maria permaneceu virgem após o parto, conforme a tradição apostólica.',
+    text: '"Cristo nasceu de uma virgem; e foi necessário ser assim, para que aquele que veio para destruir a morte pela vida não nascesse pela mesma porta pela qual a morte havia entrado. Maria permaneceu virgem após o parto, conforme a tradição apostólica."',
   },
   {
     id: 'cirilo-jerusalem',
@@ -854,17 +854,17 @@ export const references = [
     author: 'São Cirilo de Jerusalém (Doutor da Igreja)',
     year: 'c. 350 d.C.',
     topic: 'Eucaristia / presença real',
-    text: 'Visto que ele mesmo, falando do pão, declarou expressamente: Este é o meu corpo, quem ousará duvidar? E visto que ele afirmou e disse: Este é o meu sangue, quem hesitará dizendo que não é seu sangue? Não vês então com plena certeza que aquilo que parece ser pão não é pão, embora o paladar o perceba como tal, mas o corpo de Cristo? E que aquilo que parece vinho não é vinho, embora o gosto assim o julgue, mas o sangue de Cristo?',
+    text: '"Visto que ele mesmo, falando do pão, declarou expressamente: Este é o meu corpo, quem ousará duvidar? E visto que ele afirmou e disse: Este é o meu sangue, quem hesitará dizendo que não é seu sangue? Não vês então com plena certeza que aquilo que parece ser pão não é pão, embora o paladar o perceba como tal, mas o corpo de Cristo? E que aquilo que parece vinho não é vinho, embora o gosto assim o julgue, mas o sangue de Cristo?"',
   },
   {
     id: 'lewis-problema-dor',
     ref: 'O Problema da Dor',
     source: 'Teólogos',
-    fullSource: 'O Problema da Dor (livro)',
+    fullSource: 'O Problema da Dor (The Problem of Pain), capítulo 6 ("A Dor Humana"), 1940',
     author: 'C. S. Lewis (apologista e professor de Oxford e Cambridge)',
     year: '1940',
     topic: 'Problema do mal e do sofrimento',
-    text: 'Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo.',
+    text: '"Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo."',
   },
   {
     id: 'lewis-mere-christianity',
@@ -874,27 +874,27 @@ export const references = [
     author: 'C. S. Lewis',
     year: '1952',
     topic: 'Argumento moral pela existência de Deus',
-    text: 'Toda vez que você encontra um homem dizendo que não acredita em um Bem e em um Mal reais, descobre que esse mesmo homem volta atrás um momento depois. Ele pode quebrar a promessa que fez a você, mas se você tentar quebrar uma com ele, ele dirá "isso não é justo". Uma nação pode dizer que tratados não importam, mas ao mesmo tempo se defende dizendo que o tratado que ela quer agora respeitar é justo. Parece, então, que somos forçados a acreditar em um Padrão real de Certo e Errado.',
+    text: '"Toda vez que você encontra um homem dizendo que não acredita em um Bem e em um Mal reais, descobre que esse mesmo homem volta atrás um momento depois. Ele pode quebrar a promessa que fez a você, mas se você tentar quebrar uma com ele, ele dirá \'isso não é justo\'. Uma nação pode dizer que tratados não importam, mas ao mesmo tempo se defende dizendo que o tratado que ela quer agora respeitar é justo. Parece, então, que somos forçados a acreditar em um Padrão real de Certo e Errado."',
   },
   {
     id: 'hoyle-universo',
-    ref: 'O Universo Inteligente',
+    ref: 'Reflexões sobre o universo (Hoyle)',
     source: 'Teólogos',
-    fullSource: 'The Intelligent Universe (livro) e artigos sobre ajuste fino',
+    fullSource: '"The Universe: Past and Present Reflections", Engineering and Science, vol. 45 (Caltech, novembro de 1981), p. 12. Hoyle retoma a ideia no livro The Intelligent Universe (1983).',
     author: 'Fred Hoyle (astrofísico, originalmente ateu)',
-    year: '1983',
+    year: '1981',
     topic: 'Ajuste fino do universo / design cósmico',
-    text: 'Uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, assim como a química e a biologia, e que não há forças cegas dignas de menção na natureza. Os números que se calculam a partir dos fatos parecem-me tão esmagadores como para colocar essa conclusão quase além de questão.',
+    text: '"Uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, assim como a química e a biologia, e que não há forças cegas dignas de menção na natureza. Os números que se calculam a partir dos fatos parecem-me tão esmagadores como para colocar essa conclusão quase além de questão."',
   },
   {
     id: 'penrose-road',
-    ref: 'O Caminho para a Realidade',
+    ref: 'A Nova Mente do Imperador',
     source: 'Teólogos',
-    fullSource: 'The Road to Reality: A Complete Guide to the Laws of the Universe (livro)',
+    fullSource: 'The Emperor\'s New Mind (A Nova Mente do Imperador, livro), Oxford University Press, 1989, p. 339-345. Penrose retoma o mesmo cálculo em The Road to Reality (2004).',
     author: 'Sir Roger Penrose (matemático e físico, Prêmio Nobel de Física 2020)',
-    year: '2004',
+    year: '1989',
     topic: 'Ajuste fino / probabilidade do universo',
-    text: 'A probabilidade de o universo, ao escolher por puro acaso uma configuração inicial compatível com as condições atuais de baixa entropia, é da ordem de uma parte em 10 elevado a 10 elevado a 123. Esse número é tão pequeno que está completamente além de qualquer significação intuitiva, e indica fortemente uma escolha não-aleatória das condições iniciais.',
+    text: '"A probabilidade de o universo, ao escolher por puro acaso uma configuração inicial compatível com as condições atuais de baixa entropia, é da ordem de uma parte em 10 elevado a 10 elevado a 123. Esse número é tão pequeno que está completamente além de qualquer significação intuitiva, e indica fortemente uma escolha não-aleatória das condições iniciais."',
   },
   {
     id: 'craig-kalam',
@@ -924,7 +924,7 @@ export const references = [
     author: 'Flávio Josefo (historiador judeu)',
     year: 'c. 93-94 d.C.',
     topic: 'Atestação histórica de Jesus e Tiago',
-    text: 'Anás reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados.',
+    text: '"Anás reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados."',
     url: 'https://pt.wikipedia.org/wiki/Antiguidades_Judaicas',
   },
   {
@@ -935,7 +935,7 @@ export const references = [
     author: 'Friedrich Nietzsche (filósofo alemão, ateu)',
     year: '1882',
     topic: 'Consequências do ateísmo / fim da moral objetiva',
-    text: 'Deus está morto. Deus continua morto. E nós o matamos. Como nos consolaremos, nós, os assassinos dos assassinos? O que de mais santo e poderoso o mundo possuía até hoje sangrou sob os nossos punhais. Quem nos limpará desse sangue? Que festas expiatórias, que jogos sagrados teremos de inventar? A grandeza desse ato não é demasiado grande para nós?',
+    text: '"Deus está morto. Deus continua morto. E nós o matamos. Como nos consolaremos, nós, os assassinos dos assassinos? O que de mais santo e poderoso o mundo possuía até hoje sangrou sob os nossos punhais. Quem nos limpará desse sangue? Que festas expiatórias, que jogos sagrados teremos de inventar? A grandeza desse ato não é demasiado grande para nós?"',
   },
   {
     id: 'sartre-existencialismo',
@@ -945,7 +945,7 @@ export const references = [
     author: 'Jean-Paul Sartre (filósofo francês, ateu)',
     year: '29 de outubro de 1945 (conferência); livro publicado em 1946',
     topic: 'Consequências do ateísmo / liberdade radical',
-    text: 'O existencialista pensa que é muito constrangedor que Deus não exista, pois com Ele desaparece toda possibilidade de encontrar valores em um céu inteligível. Não pode mais haver bem a priori, pois não há mais consciência infinita e perfeita para pensá-lo. Dostoiévski escreveu: Se Deus não existisse, tudo seria permitido. Este é o ponto de partida do existencialismo.',
+    text: '"O existencialista pensa que é muito constrangedor que Deus não exista, pois com Ele desaparece toda possibilidade de encontrar valores em um céu inteligível. Não pode mais haver bem a priori, pois não há mais consciência infinita e perfeita para pensá-lo. Dostoiévski escreveu: Se Deus não existisse, tudo seria permitido. Este é o ponto de partida do existencialismo."',
   },
   {
     id: 'kardec-livro',
@@ -955,7 +955,7 @@ export const references = [
     author: 'Allan Kardec (Hippolyte Léon Denizard Rivail, pedagogo francês)',
     year: '18 de abril de 1857',
     topic: 'Doutrina espírita / negação da divindade de Cristo',
-    text: 'Pergunta 625: Que se deve pensar de Jesus? Resposta: Tipo da perfeição moral a que pode aspirar a Humanidade na Terra. Deus o ofereceu à nossa contemplação como o mais perfeito modelo. Jesus é apresentado como espírito puríssimo enviado para servir de modelo, mas explicitamente não como Deus encarnado. A doutrina também ensina reencarnação e nega a ressurreição corporal final.',
+    text: 'Pergunta 625: "Que se deve pensar de Jesus?" Resposta: "Tipo da perfeição moral a que pode aspirar a Humanidade na Terra. Deus o ofereceu à nossa contemplação como o mais perfeito modelo." Jesus é apresentado como espírito puríssimo enviado para servir de modelo, mas explicitamente não como Deus encarnado. A doutrina também ensina reencarnação e nega a ressurreição corporal final.',
   },
 
   // ============ OUTROS (Alcorão, Milagres) ============
@@ -967,7 +967,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C. (compilado c. 650)',
     topic: 'Negação explícita da divindade de Jesus',
-    text: 'Blasfemam aqueles que dizem: Allah é o Messias, filho de Maria. Pois o próprio Messias disse: Ó filhos de Israel, adorai a Allah, meu Senhor e vosso Senhor. (...) O Messias, filho de Maria, não é mais que um mensageiro. Antes dele, outros mensageiros se sucederam. E sua mãe era uma mulher veraz. Ambos comiam alimentos.',
+    text: '"Blasfemam aqueles que dizem: Allah é o Messias, filho de Maria. Pois o próprio Messias disse: Ó filhos de Israel, adorai a Allah, meu Senhor e vosso Senhor. (...) O Messias, filho de Maria, não é mais que um mensageiro. Antes dele, outros mensageiros se sucederam. E sua mãe era uma mulher veraz. Ambos comiam alimentos."',
   },
   {
     id: 'alcorao-4-171',
@@ -977,7 +977,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C.',
     topic: 'Negação da filiação divina de Jesus',
-    text: 'Ó gente do Livro, não exagereis em vossa religião e não digais sobre Allah senão a verdade. O Messias, Jesus, filho de Maria, é apenas mensageiro de Allah, sua palavra que ele transmitiu a Maria, e um espírito procedente dele. Crede, pois, em Allah e em seus mensageiros, e não digais Trindade. Abstende-vos disso, será melhor para vós. Allah é um só Deus.',
+    text: '"Ó gente do Livro, não exagereis em vossa religião e não digais sobre Allah senão a verdade. O Messias, Jesus, filho de Maria, é apenas mensageiro de Allah, sua palavra que ele transmitiu a Maria, e um espírito procedente dele. Crede, pois, em Allah e em seus mensageiros, e não digais Trindade. Abstende-vos disso, será melhor para vós. Allah é um só Deus."',
   },
   {
     id: 'alcorao-3-3',
@@ -987,7 +987,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C.',
     topic: 'Afirmação da Torá e do Evangelho como Escrituras de Deus',
-    text: 'Ele te enviou o Livro com a verdade, confirmando o que estava antes dele, e fez descer a Torá e o Evangelho como guia para os homens.',
+    text: '"Ele te enviou o Livro com a verdade, confirmando o que estava antes dele, e fez descer a Torá e o Evangelho como guia para os homens."',
   },
   {
     id: 'alcorao-5-46',
@@ -997,7 +997,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C.',
     topic: 'Reconhecimento autoritativo do Evangelho cristão',
-    text: 'Fizemos seguir, sobre os passos dos profetas, Jesus, filho de Maria, confirmando o que estava antes dele na Torá. E lhe demos o Evangelho, no qual há orientação e luz, confirmando o que estava antes dele na Torá, como direção e exortação para os tementes. Que a gente do Evangelho julgue segundo o que Allah ali revelou. Quem não julga segundo o que Allah fez descer, esses são os transgressores.',
+    text: '"Fizemos seguir, sobre os passos dos profetas, Jesus, filho de Maria, confirmando o que estava antes dele na Torá. E lhe demos o Evangelho, no qual há orientação e luz, confirmando o que estava antes dele na Torá, como direção e exortação para os tementes. Que a gente do Evangelho julgue segundo o que Allah ali revelou. Quem não julga segundo o que Allah fez descer, esses são os transgressores."',
   },
   {
     id: 'milagre-lanciano',
@@ -1178,7 +1178,7 @@ export const references = [
     author: 'Beato Papa Paulo VI',
     year: '25 de julho de 1968',
     topic: 'Previsões sobre as consequências sociais da contracepção',
-    text: 'Pessoas honradas podem ainda convencer-se de quão poderosas armas estarão postas à mão das autoridades públicas pouco preocupadas com as exigências morais. Reflitam ainda os homens, que com a aceitação da contracepção, se pode oferecer um caminho fácil aos jovens, podendo-se temer uma queda dos costumes. Não é necessário fazer uma longa experiência para se conhecer a fragilidade humana e para se compreender que os homens precisam de ser estimulados a observar a lei moral; seria pois um erro deixar-lhes esse meio para violar tal lei.',
+    text: '"Pessoas honradas podem ainda convencer-se de quão poderosas armas estarão postas à mão das autoridades públicas pouco preocupadas com as exigências morais. Reflitam ainda os homens, que com a aceitação da contracepção, se pode oferecer um caminho fácil aos jovens, podendo-se temer uma queda dos costumes. Não é necessário fazer uma longa experiência para se conhecer a fragilidade humana e para se compreender que os homens precisam de ser estimulados a observar a lei moral; seria pois um erro deixar-lhes esse meio para violar tal lei."',
     url: 'https://www.vatican.va/content/paul-vi/pt/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html',
   },
   {
@@ -1189,7 +1189,7 @@ export const references = [
     author: 'Papa Pio XII',
     year: '1º de novembro de 1950',
     topic: 'Definição do dogma da Assunção de Maria',
-    text: 'Definimos ser dogma divinamente revelado que a Imaculada Mãe de Deus, sempre Virgem Maria, terminado o curso da vida terrena, foi assunta à glória celeste em corpo e alma.',
+    text: '"Definimos ser dogma divinamente revelado que a Imaculada Mãe de Deus, sempre Virgem Maria, terminado o curso da vida terrena, foi assunta à glória celeste em corpo e alma."',
     url: 'https://www.vatican.va/content/pius-xii/pt/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html',
   },
   {
@@ -1200,7 +1200,7 @@ export const references = [
     author: 'Concílio Vaticano I, promulgada pelo Beato Papa Pio IX',
     year: '18 de julho de 1870',
     topic: 'Infalibilidade do Papa quando ensina ex cathedra',
-    text: 'Definimos ser dogma divinamente revelado: o Romano Pontífice, quando fala ex cathedra, isto é, quando exercendo o ofício de pastor e doutor de todos os cristãos, em virtude da sua suprema autoridade apostólica define que uma doutrina sobre a fé ou os costumes deve ser sustentada pela Igreja universal, possui pela assistência divina prometida a ele no bem-aventurado Pedro aquela infalibilidade da qual o divino Redentor quis que a sua Igreja fosse dotada ao definir a doutrina sobre a fé e os costumes.',
+    text: '"Definimos ser dogma divinamente revelado: o Romano Pontífice, quando fala ex cathedra, isto é, quando exercendo o ofício de pastor e doutor de todos os cristãos, em virtude da sua suprema autoridade apostólica define que uma doutrina sobre a fé ou os costumes deve ser sustentada pela Igreja universal, possui pela assistência divina prometida a ele no bem-aventurado Pedro aquela infalibilidade da qual o divino Redentor quis que a sua Igreja fosse dotada ao definir a doutrina sobre a fé e os costumes."',
     url: 'https://pt.wikipedia.org/wiki/Pastor_Aeternus',
   },
   {
@@ -1211,7 +1211,7 @@ export const references = [
     author: 'São Papa João Paulo II',
     year: '10 de novembro de 1994',
     topic: 'Pedido de perdão pelos pecados dos filhos da Igreja na história',
-    text: 'É justo que, no termo do segundo milênio do cristianismo, a Igreja assuma com mais aguda consciência o pecado dos seus filhos, lembrando todas as circunstâncias em que, no transcurso da história, eles se afastaram do espírito de Cristo e do seu Evangelho. (...) Outro capítulo doloroso, sobre o qual os filhos da Igreja devem retornar com espírito aberto à penitência, é constituído pela aquiescência manifestada, particularmente em alguns séculos, com métodos de intolerância e até de violência no serviço da verdade.',
+    text: '"É justo que, no termo do segundo milênio do cristianismo, a Igreja assuma com mais aguda consciência o pecado dos seus filhos, lembrando todas as circunstâncias em que, no transcurso da história, eles se afastaram do espírito de Cristo e do seu Evangelho. (...) Outro capítulo doloroso, sobre o qual os filhos da Igreja devem retornar com espírito aberto à penitência, é constituído pela aquiescência manifestada, particularmente em alguns séculos, com métodos de intolerância e até de violência no serviço da verdade."',
     url: 'https://www.vatican.va/content/john-paul-ii/pt/apost_letters/1994/documents/hf_jp-ii_apl_10111994_tertio-millennio-adveniente.html',
   },
   {
@@ -1222,7 +1222,7 @@ export const references = [
     author: 'São Papa João Paulo II',
     year: '31 de outubro de 1992',
     topic: 'Reconhecimento dos erros no caso Galileu',
-    text: 'O erro dos teólogos da época, ao sustentar a centralidade da Terra, foi pensar que o nosso conhecimento da estrutura física do mundo era, de algum modo, imposto pelo sentido literal da Sagrada Escritura. (...) O caso Galileu pôde constituir uma espécie de mito, no qual a imagem fabricada dos acontecimentos era bastante distinta da realidade. Sob essa perspectiva, o caso Galileu foi o símbolo da pretensa rejeição, por parte da Igreja, do progresso científico.',
+    text: '"O erro dos teólogos da época, ao sustentar a centralidade da Terra, foi pensar que o nosso conhecimento da estrutura física do mundo era, de algum modo, imposto pelo sentido literal da Sagrada Escritura. (...) O caso Galileu pôde constituir uma espécie de mito, no qual a imagem fabricada dos acontecimentos era bastante distinta da realidade. Sob essa perspectiva, o caso Galileu foi o símbolo da pretensa rejeição, por parte da Igreja, do progresso científico."',
     url: 'https://www.vatican.va/content/john-paul-ii/pt/speeches/1992/october/documents/hf_jp-ii_spe_19921031_accademia-scienze.html',
   },
   {
@@ -1244,7 +1244,7 @@ export const references = [
     author: 'Concílio Ecumênico de Niceia',
     year: '325 d.C.',
     topic: 'Definição da divindade de Cristo / Trindade',
-    text: 'Cremos em um só Senhor Jesus Cristo, Filho de Deus, gerado unigênito do Pai, isto é, da substância do Pai, Deus de Deus, Luz da Luz, Deus verdadeiro de Deus verdadeiro, gerado, não criado, consubstancial ao Pai (homoousios), pelo qual todas as coisas foram feitas. (...) Os que dizem que houve tempo em que o Filho não existia, ou que ele veio à existência a partir do nada, ou que é de outra hipóstase ou substância, esses a Igreja Católica e Apostólica anatematiza.',
+    text: '"Cremos em um só Senhor Jesus Cristo, Filho de Deus, gerado unigênito do Pai, isto é, da substância do Pai, Deus de Deus, Luz da Luz, Deus verdadeiro de Deus verdadeiro, gerado, não criado, consubstancial ao Pai (homoousios), pelo qual todas as coisas foram feitas. (...) Os que dizem que houve tempo em que o Filho não existia, ou que ele veio à existência a partir do nada, ou que é de outra hipóstase ou substância, esses a Igreja Católica e Apostólica anatematiza."',
     url: 'https://pt.wikipedia.org/wiki/Primeiro_Conc%C3%ADlio_de_Niceia',
   },
 
@@ -1464,7 +1464,7 @@ export const references = [
     author: 'Públio Cornélio Tácito (historiador romano)',
     year: 'c. 116 d.C.',
     topic: 'Atestação romana sobre Cristo e os cristãos',
-    text: 'O nome Cristãos vem de Cristo, que, no reinado de Tibério, foi entregue ao suplício pelo procurador Pôncio Pilatos. Essa superstição perniciosa, momentaneamente reprimida, ressurgia de novo, não apenas na Judeia onde nascera o mal, mas também em Roma. Tácito narra a perseguição neroniana após o incêndio de Roma em 64 d.C., quando cristãos foram torturados e mortos como bodes expiatórios.',
+    text: '"O nome Cristãos vem de Cristo, que, no reinado de Tibério, foi entregue ao suplício pelo procurador Pôncio Pilatos. Essa superstição perniciosa, momentaneamente reprimida, ressurgia de novo, não apenas na Judeia onde nascera o mal, mas também em Roma." Tácito narra a perseguição neroniana após o incêndio de Roma em 64 d.C., quando cristãos foram torturados e mortos como bodes expiatórios.',
     url: 'https://pt.wikipedia.org/wiki/T%C3%A1cito',
   },
   {
@@ -1475,7 +1475,7 @@ export const references = [
     author: 'Plínio, o Jovem (governador romano da Bitínia)',
     year: 'c. 112 d.C.',
     topic: 'Prática cristã primitiva atestada por autoridade romana',
-    text: 'Costumam reunir-se em dia determinado, antes do amanhecer, e cantar entre si, alternadamente, um hino a Cristo como a um deus. Comprometiam-se por juramento a não cometer crime algum, a não roubar, a não cometer adultério, a não faltar à palavra, a não negar um depósito. Plínio descreve ao imperador Trajano os cristãos da Bitínia, atestando independentemente a prática cristã primitiva de adoração a Cristo como divino, apenas oito décadas após a Ressurreição.',
+    text: '"Costumam reunir-se em dia determinado, antes do amanhecer, e cantar entre si, alternadamente, um hino a Cristo como a um deus. Comprometiam-se por juramento a não cometer crime algum, a não roubar, a não cometer adultério, a não faltar à palavra, a não negar um depósito." Plínio descreve ao imperador Trajano os cristãos da Bitínia, atestando independentemente a prática cristã primitiva de adoração a Cristo como divino, apenas oito décadas após a Ressurreição.',
     url: 'https://pt.wikipedia.org/wiki/Pl%C3%ADnio,_o_Jovem',
   },
   {
@@ -1486,7 +1486,7 @@ export const references = [
     author: 'Caio Suetônio Tranquilo (historiador romano)',
     year: 'c. 121 d.C.',
     topic: 'Expulsão dos judeus de Roma por agitação cristã',
-    text: 'Como os judeus provocassem agitações constantes por instigação de Chrestus, Cláudio os expulsou de Roma. A grafia Chrestus é a forma latina helenizada de Christus, e a passagem provavelmente refere-se a controvérsias entre judeus de Roma sobre Jesus Cristo. Esse mesmo evento é mencionado em Atos 18,2, quando Áquila e Priscila chegam a Corinto por terem sido expulsos de Roma.',
+    text: '"Como os judeus provocassem agitações constantes por instigação de Chrestus, Cláudio os expulsou de Roma." A grafia Chrestus é a forma latina helenizada de Christus, e a passagem provavelmente refere-se a controvérsias entre judeus de Roma sobre Jesus Cristo. Esse mesmo evento é mencionado em Atos 18,2, quando Áquila e Priscila chegam a Corinto por terem sido expulsos de Roma.',
     url: 'https://pt.wikipedia.org/wiki/Suet%C3%B4nio',
   },
   {
@@ -1541,7 +1541,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C.',
     topic: 'Negação islâmica da crucificação de Jesus',
-    text: 'E por dizerem: Matamos o Messias, Jesus, filho de Maria, mensageiro de Allah. Mas não o mataram nem o crucificaram, embora assim lhes parecesse. (...) Não o mataram com certeza, mas Allah o elevou até si.',
+    text: '"E por dizerem: Matamos o Messias, Jesus, filho de Maria, mensageiro de Allah. Mas não o mataram nem o crucificaram, embora assim lhes parecesse. (...) Não o mataram com certeza, mas Allah o elevou até si."',
   },
   {
     id: 'alcorao-61-6',
@@ -1551,7 +1551,7 @@ export const references = [
     author: 'Texto sagrado do Islã, transmitido por Maomé',
     year: 'séc. VII d.C.',
     topic: 'Alegação de que Jesus anunciou Maomé (Ahmad)',
-    text: 'E quando Jesus, filho de Maria, disse: Ó filhos de Israel, sou o mensageiro de Allah enviado a vós, confirmando a Torá anterior a mim e anunciando um mensageiro que virá depois de mim, cujo nome será Ahmad. Apologistas islâmicos identificam esse anúncio com o Paráclito prometido por Jesus em João 14,16, mas no Evangelho o Paráclito é explicitamente o Espírito Santo.',
+    text: '"E quando Jesus, filho de Maria, disse: Ó filhos de Israel, sou o mensageiro de Allah enviado a vós, confirmando a Torá anterior a mim e anunciando um mensageiro que virá depois de mim, cujo nome será Ahmad." Apologistas islâmicos identificam esse anúncio com o Paráclito prometido por Jesus em João 14,16, mas no Evangelho o Paráclito é explicitamente o Espírito Santo.',
   },
   {
     id: 'bukhari-uthman',
@@ -1659,7 +1659,7 @@ export const references = [
     author: 'Santo Agostinho de Hipona',
     year: 'c. 397 d.C.',
     topic: 'Autoridade da Igreja no reconhecimento das Escrituras',
-    text: 'Eu não creria no Evangelho se a isso não me movesse a autoridade da Igreja Católica. A frase mostra que Escritura e Igreja não se opõem: foi pela Igreja que os fiéis reconheceram quais livros são Palavra de Deus.',
+    text: '"Eu não creria no Evangelho se a isso não me movesse a autoridade da Igreja Católica." A frase mostra que Escritura e Igreja não se opõem: foi pela Igreja que os fiéis reconheceram quais livros são Palavra de Deus.',
   },
   {
     id: 'lutero-rm-3-28',
@@ -1702,7 +1702,7 @@ export const references = [
     author: 'Concílio Vaticano II, promulgada por São Paulo VI',
     year: '28 de outubro de 1965',
     topic: 'Atitude católica diante das outras religiões',
-    text: 'A Igreja Católica nada rejeita do que há de verdadeiro e santo nessas religiões. Considera com sincero respeito os modos de agir e de viver, os preceitos e doutrinas que, embora discordando em muitos pontos do que ela própria tem e propõe, não raro refletem um raio da Verdade que ilumina todos os homens. A declaração também reprova qualquer perseguição e toda manifestação de antissemitismo.',
+    text: '"A Igreja Católica nada rejeita do que há de verdadeiro e santo nessas religiões. Considera com sincero respeito os modos de agir e de viver, os preceitos e doutrinas que, embora discordando em muitos pontos do que ela própria tem e propõe, não raro refletem um raio da Verdade que ilumina todos os homens. A declaração também reprova qualquer perseguição e toda manifestação de antissemitismo."',
     url: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_po.html',
   },
   {
@@ -1853,7 +1853,7 @@ export const references = [
     author: 'São João Paulo II',
     year: '14 de setembro de 1998',
     topic: 'Fé e razão como vias complementares para a verdade',
-    text: 'A fé e a razão constituem como que as duas asas pelas quais o espírito humano se eleva para a contemplação da verdade. Foi Deus quem pôs no coração do homem o desejo de conhecer a verdade e, em última análise, de conhecê-lo a Ele.',
+    text: '"A fé e a razão constituem como que as duas asas pelas quais o espírito humano se eleva para a contemplação da verdade. Foi Deus quem pôs no coração do homem o desejo de conhecer a verdade e, em última análise, de conhecê-lo a Ele."',
     url: 'https://www.vatican.va/content/john-paul-ii/pt/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html',
   },
   {
@@ -1932,7 +1932,8 @@ export const references = [
     year: 'séc. IX a IV a.C.',
     topic: 'Sinais cósmicos: o sol em trevas e a lua em sangue',
     text: 'O sol se converterá em trevas e a lua em sangue, antes que venha o grande e terrível dia do Senhor.',
-    bibleNav: { bookId: 'jl', chapter: 2, verse: 31 },
+    bibleNav: { bookId: 'jl', chapter: 3, verse: 4 },
+    bibleNavEn: { bookId: 'jl', chapter: 2, verse: 31 },
   },
   {
     id: 'at-2-20',
@@ -2150,6 +2151,28 @@ export const references = [
     topic: 'Um reino dividido contra si mesmo não subsiste',
     text: 'Todo reino dividido contra si mesmo será destruído, e toda cidade ou casa dividida contra si mesma não subsistirá. Ora, se Satanás expele Satanás, está dividido contra si mesmo. Como subsistirá, então, o seu reino?',
     bibleNav: { bookId: 'mt', chapter: 12, verse: 25 },
+  },
+  {
+    id: 'occam-navalha',
+    ref: 'Navalha de Occam',
+    source: 'Teólogos',
+    fullSource: 'Princípio de parcimônia atribuído a Guilherme de Ockham (Summa Logicae, c. 1323). A formulação latina mais conhecida, "entia non sunt multiplicanda praeter necessitatem", é posterior, do franciscano John Punch (1639).',
+    author: 'Guilherme de Ockham (frade franciscano e filósofo)',
+    year: 'c. 1287-1347',
+    topic: 'Princípio de parcimônia explicativa',
+    text: '"A pluralidade não deve ser afirmada sem necessidade" (Pluralitas non est ponenda sine necessitate). Entre explicações que dão conta dos mesmos fatos, prefere-se a que postula menos entidades.',
+    url: 'https://iep.utm.edu/ockham/',
+  },
+  {
+    id: 'bgv-teorema',
+    ref: 'Teorema de Borde-Guth-Vilenkin',
+    source: 'Outros',
+    fullSource: 'Arvind Borde, Alan H. Guth e Alexander Vilenkin, "Inflationary Spacetimes Are Incomplete in Past Directions", Physical Review Letters, vol. 90, artigo 151301 (2003).',
+    author: 'Arvind Borde, Alan Guth e Alexander Vilenkin (físicos e cosmólogos)',
+    year: '2003',
+    topic: 'Um universo em expansão não pode ser eterno no passado',
+    text: 'Qualquer universo que, em média, esteve em expansão ao longo de sua história não pode ser infinito no passado: precisa ter tido um começo. O resultado vale independentemente do conteúdo de matéria e energia do universo.',
+    url: 'https://doi.org/10.1103/PhysRevLett.90.151301',
   },
 ];
 

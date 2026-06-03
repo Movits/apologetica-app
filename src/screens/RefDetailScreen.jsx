@@ -30,11 +30,14 @@ export default function SearchedRefScreen({ route, navigation }) {
   }
 
   const openInBible = () => {
-    if (!item.bibleNav) return;
+    // Algumas referências divergem de capítulo/versículo entre a Bíblia PT
+    // (Ave Maria) e EN (Douay-Rheims), ex.: Joel 3,4 (PT) = Joel 2,31 (EN).
+    const nav = (isEn && item.bibleNavEn) || item.bibleNav;
+    if (!nav) return;
     navigation.navigate('Bíblia', {
-      bookId: item.bibleNav.bookId,
-      chapter: item.bibleNav.chapter,
-      highlightVerse: item.bibleNav.verse,
+      bookId: nav.bookId,
+      chapter: nav.chapter,
+      highlightVerse: nav.verse,
     });
   };
 
@@ -116,7 +119,7 @@ export default function SearchedRefScreen({ route, navigation }) {
                   <Text style={styles.actionTextPrimary}>{t('ref.openCatechism')}</Text>
                 </TouchableOpacity>
               )}
-              {item.url && (
+              {item.url && !isCatechismRef && (
                 <TouchableOpacity style={styles.actionBtn} onPress={() => openUrl(item.url)}>
                   <Ionicons name="open-outline" size={16} color={colors.accent} />
                   <Text style={styles.actionText}>{t('ref.openSource')}</Text>

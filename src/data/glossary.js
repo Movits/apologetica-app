@@ -176,8 +176,8 @@ export const glossary = [
   },
   {
     id: 'septuaginta',
-    term: 'Septuaginta (LXX)',
-    termEn: 'Septuagint (LXX)',
+    term: 'Septuaginta',
+    termEn: 'Septuagint',
     definition:
       'Tradução grega do Antigo Testamento feita por 70 (ou 72) sábios judeus em Alexandria entre os sécs. III e II a.C. Inclui os deuterocanônicos. Era a Bíblia usada pelos apóstolos e pela Igreja primitiva. Citada explicitamente em mais de 300 passagens do Novo Testamento.',
     definitionEn:
@@ -227,6 +227,15 @@ export const glossary = [
       'Três níveis de culto distinguidos pela teologia: latria é a adoração devida só a Deus; dulia é a veneração devida aos santos; hiperdulia é a veneração superior devida a Maria, pela sua dignidade única como Mãe de Deus. Confundir veneração com adoração é o cerne da objeção popular contra a devoção mariana.',
     definitionEn:
       'Three levels of cult distinguished by theology: latria is worship due only to God; dulia is veneration due to the saints; hyperdulia is the higher veneration due to Mary for her unique dignity as Mother of God. Confusing veneration with worship is the heart of the popular objection against Marian devotion.',
+  },
+  {
+    id: 'navalha-de-occam',
+    term: 'Navalha de Occam',
+    termEn: "Occam's razor",
+    definition:
+      'Princípio de parcimônia atribuído ao filósofo franciscano Guilherme de Ockham (século XIV): entre explicações que dão conta dos mesmos fatos, deve-se preferir a que postula menos entidades sem necessidade. Não é uma prova de verdade, mas um critério de economia, quando duas hipóteses explicam o mesmo, a mais simples é preferível.',
+    definitionEn:
+      "A principle of parsimony attributed to the Franciscan philosopher William of Ockham (14th century): among explanations that account for the same facts, one should prefer the one positing fewer entities without necessity. It is not a proof of truth but a criterion of economy, when two hypotheses explain the same data, the simpler one is preferable.",
   },
 ];
 

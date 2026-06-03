@@ -147,7 +147,7 @@ const RefCard = memo(function RefCard({
             {item.bibleNav && (
               <TouchableOpacity
                 style={[styles.actionBtn, styles.actionBtnPrimary]}
-                onPress={() => onOpenInBible(item.bibleNav)}
+                onPress={() => onOpenInBible((isEn && item.bibleNavEn) || item.bibleNav)}
               >
                 <Ionicons name="bookmark-outline" size={16} color="#fff" />
                 <Text style={styles.actionTextPrimary}>{t('ref.readInApp')}</Text>
