@@ -9,13 +9,23 @@ const articles = [
     summary: 'A Bíblia sozinha não se interpreta a si mesma. A Tradição e o Magistério são necessários.',
     body: `O princípio protestante do [[Sola Scriptura]] afirma que a Bíblia é a única regra de fé. Mas o princípio tem problemas sérios que ele próprio não resolve.
 
+## A Bíblia não ensina o Sola Scriptura
+
 O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, São Paulo escreve aos Tessalonicenses: "permanecei firmes e conservai as tradições que aprendestes, seja por palavra, seja por carta nossa" (2 Ts 2,15). A Tradição oral é colocada lado a lado com a Tradição escrita. Em 1 Coríntios 11,2 ele elogia os fiéis por guardarem as tradições "como eu vo-las transmiti".
+
+## Quem interpreta?
 
 O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity estima mais de 45.000), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação particular".
 
+## Foi a Igreja que definiu o cânon
+
 O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concílio de Hipona em 393 e o Concílio de Cartago em 397 fixaram pela primeira vez a lista dos 73 livros do cânon católico, com a participação de Santo Agostinho. Antes desses concílios, ninguém sabia oficialmente quais livros pertenciam à Bíblia. Sem confiar na autoridade da Igreja, não há como saber quais livros pertencem à Bíblia. O próprio livro não traz índice.
 
+## Uma novidade do século XVI
+
 O quarto problema é histórico. O Sola Scriptura surgiu no séc. XVI. Antes disso, por 1500 anos, a Igreja funcionou com Escritura, Tradição e Magistério juntos. Se Sola Scriptura é a verdadeira doutrina cristã, isso significa que a Igreja inteira errou nos primeiros 15 séculos. Difícil de conciliar com a promessa de Jesus de que as portas do inferno não prevaleceriam contra ela.
+
+## A solução católica
 
 A solução católica é coerente: a Revelação de Deus se transmite pela Sagrada Escritura e pela Sagrada Tradição, ambas interpretadas pelo Magistério vivo da Igreja. As três coisas se sustentam mutuamente.
 
@@ -41,15 +51,25 @@ A solução católica é coerente: a Revelação de Deus se transmite pela Sagra
 
 A pergunta inevitável: quem está certo?
 
+## A Bíblia dos apóstolos era a Septuaginta
+
 A história responde com clareza. Antes do nascimento de Cristo, o judaísmo de língua grega (a maior parte da diáspora judaica) usava a [[Septuaginta]], tradução grega do Antigo Testamento feita em Alexandria entre os séculos III e II a.C. Essa tradução incluía os 7 livros deuterocanônicos. Era a Bíblia dos judeus helenistas, era a Bíblia dos apóstolos. O Novo Testamento cita o Antigo mais de 300 vezes, e cerca de dois terços dessas citações seguem a versão da Septuaginta, não o texto hebraico massorético posterior.
 
 Os apóstolos pregaram em grego no mundo greco-romano, usando a Septuaginta como Escritura. As primeiras gerações cristãs receberam essa Bíblia. Os primeiros concílios cristãos a confirmaram. O Concílio de Hipona em 393, com a participação de Santo Agostinho, fixou pela primeira vez o cânon dos 73 livros. O Concílio de Cartago em 397 reafirmou. Por mil e cem anos, a Igreja inteira (Ocidente e Oriente) usou essa Bíblia.
 
+## O que mudou: o cânon de Jâmnia
+
 O que mudou? Em 90 d.C., depois da destruição do Templo, líderes rabínicos judeus reunidos no chamado "Concílio de Jâmnia" fixaram um cânon hebraico mais estreito, excluindo os livros escritos em grego ou de cujo original hebraico não restavam cópias. Eles tinham razões pastorais (combater o cristianismo, que usava esses livros como prova) e linguísticas. Foi um cânon judaico pós-cristão, não a Bíblia que Cristo e os apóstolos receberam.
+
+## Lutero remove sete livros
 
 No século XVI, Martinho Lutero adotou o cânon judaico de Jâmnia, removendo os deuterocanônicos das Bíblias protestantes. Fez isso por motivos teológicos: livros como 2 Macabeus 12,45 falam explicitamente em rezar pelos mortos, fundamentando a doutrina católica do Purgatório, que Lutero rejeitava. Foi uma decisão posterior, contra mil e quinhentos anos de tradição cristã unânime.
 
+## Trento confirma o cânon
+
 A Igreja Católica, no Concílio de Trento (1546), reafirmou solenemente o cânon de 73 livros, formalizando o que já era prática constante desde a era apostólica. Os mesmos livros foram confirmados em concílios anteriores: Roma (382), Hipona (393), Cartago (397, 419), Florença (1442).
+
+## Os critérios do discernimento
 
 Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob a guia do Espírito Santo, quais livros eram autênticos, apostólicos, em conformidade com a regra de fé recebida. Os critérios eram: origem apostólica (escritos pelos apóstolos ou seus discípulos próximos), uso litúrgico nas igrejas (especialmente na liturgia eucarística), e ortodoxia (conformidade com a doutrina recebida). Os 73 livros passaram nesses critérios.
 
@@ -71,7 +91,11 @@ Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob
     summary: 'Discrepâncias aparentes entre relatos quase sempre se resolvem com leitura honesta dos textos e princípios básicos de interpretação histórica.',
     body: `A objeção mais comum contra a inerrância bíblica é a lista de "contradições". Sites ateus e ex-cristãos publicam compilações com dezenas, às vezes centenas, de supostas incoerências. A boa notícia é que, examinadas uma por uma com honestidade intelectual, quase todas se resolvem facilmente. Sobram poucas dificuldades reais, e mesmo essas têm soluções razoáveis.
 
+## O que inerrância significa
+
 O primeiro princípio é a definição correta de inerrância. A Igreja não ensina que cada detalhe periférico da Bíblia (datas, números arredondados, ordem narrativa) é descrito com precisão moderna de jornalismo científico. O Concílio Vaticano II, em Dei Verbum §11, define que "os livros da Escritura ensinam com firmeza, com fidelidade e sem erro a verdade que Deus, para nossa salvação, quis ver consignada nas Sagradas Letras". O foco está na verdade salvífica, não em estatísticas de censo babilônico.
+
+## Conheça o gênero literário
 
 O segundo princípio é o gênero literário. A Bíblia não é um livro único, é uma biblioteca de 73 livros escritos ao longo de mais de mil anos, em estilos muito diferentes. Conhecer o gênero do livro que se está lendo é metade da batalha contra falsas contradições.
 
@@ -91,9 +115,11 @@ O Apocalipse é o ápice do gênero apocalíptico, comum no judaísmo do séc. I
 
 Resumo: cada livro fala sua língua. Antes de gritar "contradição", pergunte qual o gênero do trecho, qual o público original, qual o objetivo do autor. Quase todas as supostas contradições somem aí.
 
+## O valor do testemunho parcial
+
 O terceiro princípio é o testemunho parcial. Quando quatro pessoas relatam o mesmo acidente, cada uma menciona detalhes diferentes. Isso é sinal de testemunho autêntico, não de mentira. Se as versões fossem idênticas, suspeitaríamos de conluio. Santo Agostinho dedicou uma obra inteira a esse tema, "De Consensu Evangelistarum" (c. 400), demonstrando como as aparentes discrepâncias entre os Evangelhos confirmam a independência dos relatos.
 
-Quatro tipos comuns de "contradições" e como resolvê-las:
+## Quatro tipos comuns e como resolvê-los
 
 Primeiro tipo: omissões interpretadas como negações. Mateus 28,5 menciona um anjo no túmulo, Lucas 24,4 menciona dois. Não há contradição: quando há dois, sempre há um. Mateus foca no que falou.
 

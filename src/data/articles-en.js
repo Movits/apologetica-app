@@ -192,13 +192,23 @@ Saint Paul writes in Romans 8,28 that "all things work together for good for tho
     summaryEn: 'The Bible alone does not interpret itself. Tradition and the Magisterium are necessary.',
     bodyEn: `The Protestant principle of Sola Scriptura affirms that the Bible is the only rule of faith. But the principle has serious problems that it itself does not resolve.
 
+## The Bible does not teach Sola Scriptura
+
 The first is that the Bible itself does not say this about itself. On the contrary, Saint Paul writes to the Thessalonians: "stand firm and hold to the traditions you were taught, whether by word or by letter from us" (2 Thes 2,15). Oral Tradition is placed side by side with written Tradition. In 1 Corinthians 11,2 he praises the faithful for keeping the traditions "as I delivered them to you".
+
+## Who interprets?
 
 The second problem is that the Bible needs to be interpreted. Who decides which interpretation is correct? In the absence of interpretive authority, each Christian becomes his own Pope. The practical result was that, in 500 years of Protestantism, tens of thousands of denominations emerged (the Center for the Study of Global Christianity estimates more than 45,000), all saying they follow "only the Bible" and arriving at opposite conclusions about baptism, the Eucharist, salvation, morality, ministry. Saint Peter already warned in 2 Peter 1,20 that "no prophecy of Scripture is a matter of one\'s own interpretation".
 
+## It was the Church that defined the canon
+
 The third problem is that the biblical canon was defined by the Church. The Council of Hippo in 393 and the Council of Carthage in 397 fixed for the first time the list of 73 books of the Catholic canon, with the participation of Saint Augustine. Before these councils, no one officially knew which books belonged to the Bible. Without trusting the authority of the Church, there is no way to know which books belong to the Bible. The book itself does not have a table of contents.
 
+## A 16th-century novelty
+
 The fourth problem is historical. Sola Scriptura emerged in the 16th century. Before that, for 1500 years, the Church functioned with Scripture, Tradition and Magisterium together. If Sola Scriptura is the true Christian doctrine, this means that the entire Church erred in the first 15 centuries. Difficult to reconcile with Jesus\' promise that the gates of hell would not prevail against it.
+
+## The Catholic solution
 
 The Catholic solution is coherent: God\'s Revelation is transmitted through Sacred Scripture and Sacred Tradition, both interpreted by the living Magisterium of the Church. The three things mutually support each other.
 
@@ -638,15 +648,25 @@ The differences, however, reach the heart of the faith.
 
 The inevitable question: who is right?
 
+## The apostles used the Septuagint
+
 History responds with clarity. Before the birth of Christ, Greek-speaking Judaism (the majority of the Jewish diaspora) used the Septuagint, the Greek translation of the Old Testament made in Alexandria between the 3rd and 2nd centuries BC. This translation included the 7 deuterocanonical books. It was the Bible of Hellenistic Jews, it was the Bible of the apostles. The New Testament cites the Old more than 300 times, and about two thirds of those citations follow the Septuagint version, not the later Masoretic Hebrew text.
 
 The apostles preached in Greek in the Greco-Roman world, using the Septuagint as Scripture. The first Christian generations received this Bible. The early Christian councils confirmed it. The Council of Hippo in 393, with the participation of Saint Augustine, fixed for the first time the canon of 73 books. The Council of Carthage in 397 reaffirmed it. For eleven hundred years, the entire Church (West and East) used this Bible.
 
+## What changed: the canon of Jamnia
+
 What changed? In 90 AD, after the destruction of the Temple, Jewish rabbinical leaders gathered at the so-called "Council of Jamnia" fixed a narrower Hebrew canon, excluding books written in Greek or whose Hebrew originals had no remaining copies. They had pastoral reasons (combat Christianity, which used these books as proof) and linguistic reasons. It was a post-Christian Jewish canon, not the Bible that Christ and the apostles received.
+
+## Luther removes seven books
 
 In the 16th century, Martin Luther adopted the Jewish canon of Jamnia, removing the deuterocanonical from Protestant Bibles. He did so for theological reasons: books like 2 Maccabees 12,45 speak explicitly of praying for the dead, grounding the Catholic doctrine of Purgatory, which Luther rejected. It was a later decision, against 1500 years of unanimous Christian tradition.
 
+## Trent confirms the canon
+
 The Catholic Church, at the Council of Trent (1546), solemnly reaffirmed the canon of 73 books, formalizing what had already been constant practice since the apostolic era. The same books were confirmed in previous councils: Rome (382), Hippo (393), Carthage (397, 419), Florence (1442).
+
+## The criteria of discernment
 
 Worth noting: the Church did not "decide arbitrarily" the canon. It discerned, under the guidance of the Holy Spirit, which books were authentic, apostolic, in conformity with the received rule of faith. The criteria were: apostolic origin (written by the apostles or their close disciples), liturgical use in the churches (especially in the Eucharistic liturgy), and orthodoxy (conformity with received doctrine). The 73 books passed these criteria.
 
@@ -996,7 +1016,11 @@ Object.assign(ARTICLES_EN, {
     summaryEn: 'Apparent discrepancies between accounts almost always resolve with honest reading of the texts and basic principles of historical interpretation.',
     bodyEn: `The most common objection against biblical inerrancy is the list of "contradictions". Atheist and ex-Christian websites publish compilations with dozens, sometimes hundreds, of supposed inconsistencies. The good news is that, examined one by one with intellectual honesty, almost all of them resolve easily. Few real difficulties remain, and even these have reasonable solutions.
 
+## What inerrancy means
+
 The first principle is the correct definition of inerrancy. The Church does not teach that every peripheral detail of the Bible (dates, rounded numbers, narrative order) is described with modern scientific journalistic precision. The Second Vatican Council, in Dei Verbum §11, defines that "the books of Scripture firmly, faithfully and without error teach the truth which God, for the sake of our salvation, wished to see confided to the Sacred Scriptures". The focus is on the saving truth, not on Babylonian census statistics.
+
+## Know the literary genre
 
 The second principle is the literary genre. The Bible is not a single book, it is a library of 73 books written over more than a thousand years, in very different styles. Knowing the genre of the book you are reading is half the battle against false contradictions.
 
@@ -1016,9 +1040,11 @@ Revelation is the climax of the apocalyptic genre, common in Judaism from the 2n
 
 Summary: each book speaks its own language. Before crying "contradiction", ask what is the genre of the passage, who was the original audience, what was the author's goal. Almost all supposed contradictions vanish right there.
 
+## The value of partial testimony
+
 The third principle is partial testimony. When four people report the same accident, each one mentions different details. This is a sign of authentic testimony, not lying. If the versions were identical, we would suspect collusion. Saint Augustine dedicated an entire work to this theme, "De Consensu Evangelistarum" (c. 400), demonstrating how the apparent discrepancies between the Gospels confirm the independence of the accounts.
 
-Four common types of "contradictions" and how to resolve them:
+## Four common types and how to resolve them
 
 First type: omissions interpreted as denials. Matthew 28,5 mentions an angel at the tomb, Luke 24,4 mentions two. There is no contradiction: when there are two, there is always one. Matthew focuses on the one who spoke.
 
