@@ -851,17 +851,29 @@ Jehovah\'s Witnesses also have serious historical problems: failed eschatologica
     summaryEn: 'The popular myth of the Inquisition far surpasses real history. The numbers, compared to other courts of the time, are revealing.',
     bodyEn: `Few institutions in Catholic history generate as much prejudice as the Inquisition. The popular image is one of generalized torture, millions of dead, medieval fanaticism. Serious historical research, done even by non-Catholic historians, shows a very different reality.
 
+## The various Inquisitions
+
 First crucial distinction: several "Inquisitions" existed in different periods and places. The Medieval Inquisition (12th-15th century, especially against Cathars in southern France), the Spanish Inquisition (1478-1834, under control of the Spanish crown), the Roman Inquisition (1542 onwards) and the Portuguese Inquisition. Each with distinct rules, methods and scope. Treating them as one is historical dishonesty.
+
+## The real numbers
 
 The real numbers, according to modern research based on archives. The Spanish Inquisition, the most famous and most defamed, in more than three centuries of activity (1478-1834), executed about 3,000 to 5,000 people, according to historian Henry Kamen (The Spanish Inquisition: A Historical Revision, 1997). In comparison, in the same period, European civil courts executed tens to hundreds of thousands for witchcraft. The rate of acquittal by the Inquisition was high: around 40 to 70%.
 
 The Roman Inquisition, directed by the Vatican, was even more restrictive. In more than two centuries, it executed fewer than 100 people. The most famous case was Giordano Bruno (1600), executed not for defending heliocentrism (he was an occultist, defended pantheism and doctrines that denied fundamental dogmas). The Galileo case (1633) ended in house arrest, not execution, and the Vatican formally apologized in 1992.
 
+## More safeguards than the civil courts
+
 Inquisitorial methods, compared to civil courts of the time, were surprisingly safeguard-oriented. There were formal rules of process. The accused had the right to defense. Confessions obtained under torture needed to be freely ratified afterwards (and if the accused retracted, torture could not be repeated for the same crime). Torture was used with severe limitations: maximum of 30 minutes once, without mutilation, with a doctor present. Compared to European civil justice of the time (which tortured freely, executed by suspicion, without right of defense), the Inquisition was reformist.
+
+## The Spanish Black Legend
 
 Why the exaggeration? Clear historical reasons. The "Spanish Black Legend" was constructed by Protestant pamphleteers from northern Europe (England, Holland) in the 16th century, at political and religious war with Catholic Spain. The objective was propaganda, not history. The work of William Lithgow (1614) and later John Foxe were fundamental in spreading the distorted image in the English-speaking world.
 
+## The witch hunt was the work of civil courts
+
 Worth noting that most of what was attributed to the Inquisition (burning of witches, mass witch hunts) was done not by the Catholic Church, but by civil courts, especially in Protestant lands. The Spanish Inquisition, in fact, was skeptical about witchcraft from 1610 (Logroño case), and instructed its courts to treat accusations of witchcraft with extreme care, against popular hysteria. In Catholic lands, there were few executions for witchcraft. In Protestant lands (Lutheran Germany, Reformed Switzerland, Presbyterian Scotland, Puritan Massachusetts), there were tens of thousands.
+
+## The real errors and the request for forgiveness
 
 The just condemnation: the Inquisition had real problems. The use of torture, even limited, is today morally rejected. State religious intolerance is incompatible with human dignity. The confusion between civil and ecclesiastical power was disastrous for the Church. Saint John Paul II, in the year 2000, publicly asked forgiveness for the sins of the Church\'s children in the Inquisition (Tertio Millennio Adveniente, §33).
 
@@ -883,21 +895,33 @@ But recognizing real errors is not the same as accepting the mythical caricature
     summaryEn: 'The Crusades were not a war of aggression against Islam. They were a late defensive response to four hundred years of Muslim conquest.',
     bodyEn: `The Crusades, like the Inquisition, are a poorly understood topic. The popular image is of "fanatical Christians invading peaceful Muslim lands". History shows exactly the opposite: they were a late defensive response, and morally just in many aspects, to four hundred years of Muslim conquest over Christian lands.
 
+## Before Islam, they were Christian lands
+
 Forgotten historical context: until the year 632 (death of Muhammad), the lands of the Middle East, North Africa, Anatolia (modern Turkey) and Spain were predominantly Christian. Syria had been Christian for six centuries. Egypt was Christian (Coptic church) for five centuries. Carthage, in modern Tunisia, had been the seat of great Fathers of the Church (Tertullian, Cyprian, Augustine). Hippo, land of Saint Augustine, was a Christian city.
+
+## A hundred years of conquest by the sword
 
 Between 632 and 732, in just one hundred years, Muslim armies conquered all of this by the sword. Damascus in 635, Jerusalem in 638, Alexandria in 642, Carthage in 698. In 711, they crossed the Strait of Gibraltar and conquered Christian Spain (which would only be partially reconquered in 1492, after eight hundred years). In 732, they were stopped in France by Charles Martel, at Poitiers.
 
+## The life of Christians under Islamic rule
+
 Christians under Muslim rule (called dhimmis, "protected") had reduced citizenship status: they paid a special tax (jizya), could not build new churches, could not proselytize, could not hold public office. Conversion to Islam was rewarded with tax exemption and social ascension; conversion from Islam to Christianity was punished by death. It was not "peaceful coexistence", it was organized subjugation.
+
+## The 11th century and the Byzantine appeal
 
 In the 11th century the situation worsened even more. In 1009, the Fatimid caliph al-Hakim destroyed the Church of the Holy Sepulchre in Jerusalem (the place of Christ\'s tomb) and persecuted Christians. The Seljuk Turks, newly converted to Islam, conquered Jerusalem in 1071, defeated the Byzantine Empire at Manzikert in the same year, and began to harass Christian pilgrims going to the Holy Land. The pilgrims were robbed, enslaved, killed.
 
 The Byzantine emperor Alexios I Komnenos asked the Pope Urban II for military help against the Seljuk advance. In response, at the Council of Clermont (November 27, 1095), Urban II preached the First Crusade: military campaign to defend the Christians of the East and liberate the Holy Land, especially Jerusalem, from Muslim rule.
+
+## Defense, not aggression
 
 It was defense, not aggression. Four hundred and sixty years after the beginning of the Muslim conquest, Christians finally responded in an organized manner. The Crusade was not against a peaceful people: it was against an empire that took by the sword lands that had been Christian for six centuries.
 
 The First Crusade (1096-1099) succeeded in retaking Jerusalem in 1099. The subsequent ones (until 1291) had mixed results: some victories, decisive defeats (especially the final loss of Acre in 1291). There were atrocities, without doubt: the massacre of the population of Jerusalem in 1099 is the best known. The Church does not justify these excesses; it condemns them.
 
 But it is dishonest to speak of crusader atrocities without mentioning the Muslim atrocities in the same period. There was no "civilized side": they were two civilizations at war, with cruel military practices typical of the era. The massacre of Tyre in 1124, executed by Muslims, killed all the Christians of the city. Mass enslavements were a normal practice on both sides. The Muslim large-scale enslavement of Africans lasted thirteen centuries, enslaving an estimated number of people comparable to the Atlantic trade according to estimates by historians such as Olivier Pétré-Grenouilleau.
+
+## The shame of the Fourth Crusade
 
 The Fourth Crusade (1202-1204) was a moral disaster: crusaders were diverted by the Venetians and attacked Christian Constantinople (Orthodox), sacking the city. Pope Innocent III immediately condemned the act. In 2001, Pope John Paul II publicly apologized to Patriarch Bartholomew I for this sin. Honest Catholic history recognizes the grave errors.
 
@@ -921,17 +945,29 @@ Modern secular historiography, free from religious polemics, has increasingly re
     summaryEn: 'The modern narrative about Galileo is a caricature. Real history is more complex, and the Church was, at various moments, a defender of scientific research.',
     bodyEn: `The Galileo case (1633) is often presented as proof of the "conflict between science and faith". The popular narrative: Galileo discovered that the Earth revolves around the Sun, and the Church, fanatical, condemned and tortured him. Historical reality is quite different.
 
+## The context before Galileo
+
 First, the context. Heliocentrism (Sun at the center) had already been proposed by Aristarchus of Samos in the 3rd century BC, but had been rejected for scientific reasons (observational evidence was lacking). In the 16th century, Nicolaus Copernicus, a Catholic cleric (canon of the Cathedral of Frombork), took up the hypothesis again in his book "On the Revolutions of the Celestial Spheres" (1543). This book was dedicated to Pope Paul III and well received in Catholic circles, including by the Pope himself. The Jesuits, the main order of Catholic scientists, studied and taught the Copernican system for decades before Galileo.
 
+## What the problem really was
+
 The problem with Galileo was not that he defended heliocentrism as a mathematical hypothesis (that was tolerated). The problem was that he affirmed heliocentrism as proven physical truth, in contradiction to the traditional reading of certain biblical passages (such as Joshua 10,12, where the sun "stops"). And at the time, definitive evidence was still lacking. Galileo could not explain why, if the Earth moves at thousands of kilometers per hour, there is no contrary wind blowing against us, and why objects thrown upward fall at the same point (the explanation would only come with Newton, 50 years later).
+
+## What really happened
 
 The Church, in 1616, warned Galileo to teach heliocentrism only as a mathematical hypothesis, not as physical truth, until definitive evidence emerged. Galileo accepted. In 1632, he published "Dialogue Concerning the Two Chief World Systems", presenting heliocentrism in a way that ridiculed the contrary position (he put the arguments of Pope Urban VIII in the mouth of a character called Simplicio, "fool"). Urban, formerly a friend and protector of Galileo, was furious and the case was reopened.
 
 In 1633, Galileo was tried by the Roman Inquisition. The sentence: he had to formally abjure heliocentrism. The penalty: house arrest for the rest of his life, in his comfortable villa in Arcetri, near Florence, where he continued researching science (published "Discourses on Two New Sciences" in 1638, foundation of classical mechanics) and receiving visits from international scientists. He was not tortured (the formal decree against torture was express). He was not killed. He was not burned. He was 69 at the trial and died in 1642 in his home.
 
+## A human error, acknowledged in 1992
+
 Was the condemnation of Galileo an error of ecclesiastical authority? Yes, clearly. Pope John Paul II formally recognized this in 1992, after a study commission that lasted years. He spoke of "a painful misunderstanding that belongs to the past". But it is a human error of prudential judgment, not a "condemnation of science by faith". The Church did not condemn the scientific method; it condemned (mistakenly) a specific scientific theory, and for partially scientific reasons of the time.
 
+## The reformers were more hostile
+
 Compare the Church\'s position with the scientific hostility of other movements. Luther called Copernicus "a fool" who "wants to turn astronomy upside down". Melanchthon (the great Lutheran systematizer) condemned heliocentrism. Calvin rejected it. The Protestant reformers of the 16th century were, in general, more hostile to Copernicus than the Catholics.
+
+## Science and faith: matrix, not conflict
 
 The history of science and the Catholic Church, far from being "conflict", is largely cooperative. The very existence of modern science owes much to Christianity. The idea of a rational universe, ordered by mathematical laws, created by a divine mind, was a theological presupposition that allowed trust in scientific investigation. Modern universities were founded by Catholic medieval initiative (Bologna 1088, Oxford 1096, Paris 1150, Salamanca 1218, etc).
 

@@ -9,17 +9,29 @@ const articles = [
     summary: 'O mito popular da Inquisição supera em muito a história real. Os números, comparados a outros tribunais da época, são reveladores.',
     body: `Poucas instituições da história católica geram tanto preconceito quanto a Inquisição. A imagem popular é de tortura generalizada, milhões de mortos, fanatismo medieval. A pesquisa histórica séria, feita inclusive por historiadores não-católicos, mostra uma realidade muito diferente.
 
+## As várias Inquisições
+
 Primeira distinção crucial: existiram várias "Inquisições" diferentes, em períodos e lugares diferentes. A Inquisição Medieval (séc. XII-XV, especialmente contra cátaros no sul da França), a Inquisição Espanhola (1478-1834, sob o controle da coroa espanhola), a Inquisição Romana (1542 em diante) e a Inquisição Portuguesa. Cada uma com regras, métodos e abrangência distintos. Tratá-las como uma só é desonestidade histórica.
+
+## Os números reais
 
 Os números reais, segundo pesquisas modernas baseadas em arquivos. A Inquisição Espanhola, a mais famosa e mais difamada, em mais de três séculos de atividade (1478-1834), executou cerca de 3.000 a 5.000 pessoas, segundo o historiador Henry Kamen (The Spanish Inquisition: A Historical Revision, 1997). Em comparação, no mesmo período, os tribunais civis europeus executaram dezenas a centenas de milhares por bruxaria. A taxa de absolvição inquisitorial era alta: em torno de 40 a 70%.
 
 A Inquisição Romana, dirigida pelo Vaticano, foi ainda mais restritiva. Em mais de dois séculos, executou menos de 100 pessoas. O caso mais famoso foi Giordano Bruno (1600), executado não por defender o heliocentrismo (era ocultista, defendia panteísmo e doutrinas que negavam dogmas fundamentais). O caso Galileu (1633) terminou em prisão domiciliar, não execução, e o Vaticano se desculpou formalmente em 1992.
 
+## Métodos mais garantistas que os tribunais civis
+
 Os métodos inquisitoriais, comparados aos tribunais civis da época, eram surpreendentemente garantistas. Existiam regras formais de processo. O acusado tinha direito a defesa. Confissões obtidas sob tortura precisavam ser ratificadas livremente depois (e se o acusado se retratasse, a tortura não podia se repetir pelo mesmo crime). A tortura era usada com limitações severas: máximo de 30 minutos uma só vez, sem mutilação, com presença de médico. Comparado à justiça civil europeia da época (que torturava livremente, executava por suspeita, sem direito de defesa), a Inquisição era reformista.
+
+## A lenda negra espanhola
 
 Por que o exagero? Razões históricas claras. A "lenda negra espanhola" foi construída por panfletistas protestantes do norte europeu (Inglaterra, Holanda) no séc. XVI, em guerra política e religiosa com a Espanha católica. O objetivo era propaganda, não história. A obra de William Lithgow (1614) e depois John Foxe foram fundamentais para difundir a imagem distorcida no mundo de língua inglesa.
 
+## A caça às bruxas foi obra dos tribunais civis
+
 Vale notar que a maior parte do que se atribuiu à Inquisição (queima de bruxas, caça às bruxas em massa) foi feita não pela Igreja Católica, mas por tribunais civis, especialmente em terras protestantes. A Inquisição Espanhola, na verdade, foi cética sobre bruxaria desde 1610 (caso de Logroño), e instruiu seus tribunais a tratar acusações de bruxaria com extremo cuidado, contra a histeria popular. Em terras católicas, houve poucas execuções por bruxaria. Em terras protestantes (Alemanha luterana, Suíça reformada, Escócia presbiteriana, Massachusetts puritana), houve dezenas de milhares.
+
+## Os erros reais e o pedido de perdão
 
 A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, mesmo limitado, é hoje moralmente rejeitado. A intolerância religiosa de Estado é incompatível com a dignidade humana. A confusão entre poder civil e poder eclesiástico foi desastrosa para a Igreja. São João Paulo II, no ano 2000, pediu publicamente perdão pelos pecados dos filhos da Igreja na Inquisição (Tertio Millennio Adveniente, §33).
 
@@ -43,21 +55,33 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
     summary: 'As Cruzadas não foram guerra de agressão contra o islã. Foram resposta defensiva tardia a quatrocentos anos de conquista muçulmana.',
     body: `As Cruzadas, como a Inquisição, são tema mal compreendido. A imagem popular é de "cristãos fanáticos invadindo terras pacíficas muçulmanas". A história mostra exatamente o oposto: foram resposta defensiva tardia, e moralmente justa em muitos aspectos, a quatrocentos anos de conquista muçulmana sobre terras cristãs.
 
+## Antes do Islã, eram terras cristãs
+
 Contexto histórico esquecido: até o ano 632 (morte de Maomé), as terras do Oriente Médio, Norte da África, Anatólia (Turquia atual) e Espanha eram majoritariamente cristãs. A Síria era cristã há seis séculos. O Egito era cristão (igreja copta) há cinco séculos. Cartago, na atual Tunísia, fora sede de grandes Padres da Igreja (Tertuliano, Cipriano, Agostinho). Hipona, terra de Santo Agostinho, era cidade cristã.
+
+## Cem anos de conquista pela espada
 
 Entre 632 e 732, em apenas cem anos, os exércitos muçulmanos conquistaram tudo isso pela espada. Damasco em 635, Jerusalém em 638, Alexandria em 642, Cartago em 698. Em 711, atravessaram o Estreito de Gibraltar e conquistaram a Espanha cristã (que só seria reconquistada parcialmente em 1492, depois de oitocentos anos). Em 732, foram detidos na França por Carlos Martel, em Poitiers.
 
+## A vida dos cristãos sob domínio islâmico
+
 Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham status de cidadania reduzida: pagavam imposto especial (jizya), não podiam construir igrejas novas, não podiam fazer proselitismo, não podiam ter cargos públicos. A conversão ao islã era recompensada com isenção de imposto e ascensão social; a conversão do islã ao cristianismo era punida com morte. Não era "convivência pacífica", era subjugação organizada.
+
+## O século XI e o pedido bizantino
 
 No séc. XI a situação piorou ainda mais. Em 1009, o califa fatímida al-Hakim destruiu a Igreja do Santo Sepulcro em Jerusalém (o lugar do túmulo de Cristo) e perseguiu cristãos. Os turcos seljúcidas, recém-convertidos ao islã, conquistaram Jerusalém em 1071, derrotaram o Império Bizantino em Manzikert no mesmo ano, e começaram a hostilizar peregrinos cristãos que iam à Terra Santa. Os peregrinos eram roubados, escravizados, mortos.
 
 O imperador bizantino Aleixo I Comneno pediu socorro militar ao Papa Urbano II contra o avanço seljúcida. Em resposta, no Concílio de Clermont (27 de novembro de 1095), Urbano II pregou a Primeira Cruzada: campanha militar para defender os cristãos do Oriente e libertar a Terra Santa, especialmente Jerusalém, do domínio muçulmano.
+
+## Defesa, não agressão
 
 Foi defesa, não agressão. Quatrocentos e sessenta anos depois do início da conquista muçulmana, os cristãos finalmente responderam organizadamente. A Cruzada não foi contra um povo pacífico: foi contra um império que tomou pela espada terras que tinham sido cristãs por seis séculos.
 
 A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. A Igreja não justifica esses excessos; condena-os.
 
 Mas é desonesto falar das atrocidades cruzadas sem mencionar as atrocidades muçulmanas no mesmo período. Não havia "lado civilizado": eram duas civilizações em guerra, com práticas militares cruéis típicas da época. O massacre de Tiro em 1124, executado por muçulmanos, matou todos os cristãos da cidade. As escravidões em massa eram prática normal de ambos os lados. O comércio de escravos transaariano e do Índico, sob direção muçulmana, durou mais de uma dúzia de séculos e atingiu cifras comparáveis ao tráfico atlântico segundo estimativas de historiadores como Olivier Pétré-Grenouilleau.
+
+## A vergonha da Quarta Cruzada
 
 A Quarta Cruzada (1202-1204) foi um desastre moral: cruzados foram desviados pelos venezianos e atacaram Constantinopla cristã (ortodoxa), saqueando a cidade. O Papa Inocêncio III condenou imediatamente o ato. Em 2001, o Papa João Paulo II pediu perdão público ao Patriarca Bartolomeu I por esse pecado. A história católica honesta reconhece os erros graves.
 
@@ -83,17 +107,29 @@ A historiografia secular moderna, livre de polêmica religiosa, tem reconhecido 
     summary: 'A narrativa moderna sobre Galileu é caricatura. A história real é mais complexa, e a Igreja foi, em vários momentos, defensora da pesquisa científica.',
     body: `O caso Galileu (1633) é frequentemente apresentado como prova do "conflito entre ciência e fé". A narrativa popular: Galileu descobriu que a Terra gira em torno do Sol, e a Igreja, fanática, o condenou e torturou. A realidade histórica é bem diferente.
 
+## O contexto antes de Galileu
+
 Primeiro, o contexto. O heliocentrismo (Sol no centro) já tinha sido proposto por Aristarco de Samos no séc. III a.C., mas tinha sido rejeitado por motivos científicos (faltavam evidências observacionais). No séc. XVI, Nicolau Copérnico, um clérigo católico (cônego da Catedral de Frombork), retomou a hipótese em seu livro "Sobre as Revoluções dos Orbes Celestes" (1543). Esse livro foi dedicado ao Papa Paulo III e bem recebido nos círculos católicos, incluindo o próprio Papa. Os jesuítas, principal ordem de cientistas católicos, estudavam e ensinavam o sistema copernicano há décadas antes de Galileu.
 
+## Qual era o problema, de fato
+
 O problema com Galileu não era ele defender o heliocentrismo como hipótese matemática (isso era tolerado). O problema era ele afirmar o heliocentrismo como verdade física comprovada, em contradição com a leitura tradicional de certas passagens bíblicas (como Josué 10,12, onde o sol "para"). E na época, faltavam ainda evidências definitivas. Galileu não conseguia explicar por que, se a Terra se move a milhares de quilômetros por hora, não há vento contrário soprando contra nós, e por que os objetos jogados para cima caem no mesmo ponto (a explicação só viria com Newton, 50 anos depois).
+
+## O que realmente aconteceu
 
 A Igreja, em 1616, advertiu Galileu para ensinar o heliocentrismo apenas como hipótese matemática, não como verdade física, até que surgissem evidências definitivas. Galileu aceitou. Em 1632, publicou "Diálogo sobre os Dois Máximos Sistemas do Mundo", apresentando o heliocentrismo de modo a ridicularizar a posição contrária (colocou os argumentos do Papa Urbano VIII na boca de um personagem chamado Simplicio, "tonto"). Urbano, antes amigo e protetor de Galileu, ficou furioso e o caso foi reaberto.
 
 Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença: ele teve que abjurar formalmente o heliocentrismo. A pena: prisão domiciliar pelo resto da vida, na sua confortável villa em Arcetri, perto de Florença, onde continuou pesquisando ciência (publicou "Discursos sobre as Duas Novas Ciências" em 1638, fundamento da mecânica clássica) e recebendo visitas de cientistas internacionais. Não foi torturado (o decreto formal contra a tortura era expresso). Não foi morto. Não foi queimado. Tinha 69 anos no julgamento e morreu em 1642 em sua casa.
 
+## Um erro humano, reconhecido em 1992
+
 A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 1992, depois de uma comissão de estudo que durou anos. Falou de "um doloroso mal-entendido que pertence ao passado". Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico; condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
 
+## Os reformadores foram mais hostis
+
 Compare a posição da Igreja com a hostilidade científica de outros movimentos. Lutero chamou Copérnico de "tolo" que "quer virar de cabeça para baixo a astronomia toda". Melanchthon (o grande sistematizador luterano) condenou o heliocentrismo. Calvino rejeitou. Os reformadores protestantes do séc. XVI foram, em geral, mais hostis a Copérnico do que os católicos.
+
+## Ciência e fé: matriz, não conflito
 
 A história da ciência e da Igreja Católica, longe de ser "conflito", é amplamente cooperativa. A própria existência da ciência moderna deve muito ao cristianismo. A ideia de um universo racional, ordenado por leis matemáticas, criado por uma mente divina, foi pressuposto teológico que permitiu a confiança na investigação científica. As universidades modernas foram fundadas por iniciativa católica medieval (Bolonha 1088, Oxford 1096, Paris 1150, Salamanca 1218, etc).
 
