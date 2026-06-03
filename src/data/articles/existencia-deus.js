@@ -230,6 +230,40 @@ Perguntas-chave:
 4. Bart Ehrman, agnóstico crítico do cristianismo, defende a existência histórica de Jesus. Em que base você sustenta o contrário?`,
     references: ['josefo-antiguidades-20', 'tacito-anais', 'plinio-jovem', 'suetonio-claudio', 'ehrman-jesus-existiu'],
   },
+  {
+    id: 50,
+    title: 'O Sudário de Turim',
+    category: 'Existência de Deus',
+    summary: 'Um lençol que envolveu um homem crucificado exatamente como os Evangelhos descrevem Jesus, com uma imagem que a ciência ainda não sabe explicar. As evidências e os debates.',
+    body: `O Sudário de Turim é um lençol de linho de mais de quatro metros, que traz a imagem frontal e dorsal de um homem que sofreu uma crucificação. Para a tradição cristã, é o pano que envolveu o corpo de Jesus no sepulcro. É também um dos objetos mais estudados da história, e várias de suas características continuam sem explicação científica.
+
+## O que a imagem mostra
+
+O homem do Sudário sofreu exatamente o que os Evangelhos descrevem da paixão de Jesus, em detalhes que vão além do que se sabia na Idade Média. Há marcas de uma flagelação severa, com dezenas de golpes de um açoite romano de pontas em forma de halteres. Há ferimentos no couro cabeludo, compatíveis com uma coroa de espinhos em forma de capacete, e não de aro, como costuma aparecer na arte. Há a marca de uma lança no lado direito, da qual saíram sangue e um líquido claro, como descreve João 19,34. As pernas não foram quebradas, ao contrário do que se fazia para apressar a morte dos crucificados (João 19,33). O sangue presente no pano é humano, do tipo AB.
+
+## O que a ciência não explica
+
+Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com instrumentos avançados. As conclusões foram surpreendentes. A imagem não é pintura: não há pigmento, nem tinta, nem pinceladas; a coloração está apenas na superfície mais externa das fibras, numa espessura de fração de milésimo de milímetro. A imagem contém informação tridimensional, algo que uma fotografia ou uma pintura comuns não têm. E não se sabe como ela foi produzida. Nenhuma técnica conhecida, medieval ou moderna, reproduz todas as suas propriedades ao mesmo tempo.
+
+## E a datação por carbono-14?
+
+É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores apontaram que a amostra foi retirada de um canto do pano que havia sido remendado e costurado em épocas posteriores a um incêndio, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
+
+## O que a Igreja diz
+
+A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. Trata-o oficialmente como um ícone, um objeto de devoção, e deixa a questão da autenticidade aberta à ciência. São João Paulo II chamou-o de espelho do Evangelho. O valor do Sudário não substitui a fé na Ressurreição, que se apoia no testemunho dos apóstolos. Mas, como sinal, ele continua provocando: um homem flagelado, coroado de espinhos, traspassado no lado e não quebrado nas pernas, cuja imagem ninguém sabe como se formou.
+
+## Perguntas-chave
+
+1. Se o Sudário é uma falsificação medieval, por que traz detalhes anatômicos da crucificação que só se confirmaram com a medicina moderna, e por que ninguém consegue reproduzir a imagem?
+
+2. A imagem não tem tinta nem pinceladas e guarda informação tridimensional. Que falsário medieval teria feito isso, e como?
+
+3. A amostra do carbono-14 saiu de um canto remendado do pano. Faz sentido datar o lençol inteiro por um pedaço costurado depois de um incêndio?
+
+4. O tipo sanguíneo do Sudário é AB, o mesmo dos milagres eucarísticos e do Sudário de Oviedo. É só coincidência?`,
+    references: ['sudario-turim', 'milagre-lanciano', 'mt-28-1'],
+  },
 ];
 
 export default articles;

@@ -114,6 +114,40 @@ Perguntas-chave:
 5. Se "ciência e fé são incompatíveis", como explicar que a ciência moderna nasceu na civilização cristã, e não nas civilizações orientais ou pagãs?`,
     references: ['jp2-galileu-1992', 'lemaitre-bigbang'],
   },
+  {
+    id: 51,
+    title: 'O Milagre do Sol em Fátima (1917)',
+    category: 'História da Igreja',
+    summary: 'Dezenas de milhares de pessoas, avisadas com meses de antecedência, viram o sol "dançar" no céu em 13 de outubro de 1917. Até a imprensa secular e cética registrou.',
+    body: `No dia 13 de outubro de 1917, em Fátima, Portugal, cerca de setenta mil pessoas reuniram-se num campo chamado Cova da Iria. Tinham ido porque três crianças pastoras, Lúcia, Francisco e Jacinta, diziam que a Virgem Maria lhes aparecia desde maio e havia prometido, para aquele dia exato, um sinal para que todos cressem. O que a multidão relatou ter visto é um dos eventos religiosos mais bem testemunhados da história moderna.
+
+## O que aconteceu
+
+Chovia forte naquela manhã, e as pessoas estavam encharcadas. Por volta do meio-dia, as nuvens se abriram e, segundo milhares de testemunhas, o sol apareceu como um disco que se podia fitar sem ferir os olhos, girando sobre si mesmo, lançando feixes de luz colorida sobre a terra, e parecendo precipitar-se em direção à multidão, que gritou de pavor. Ao fim, as roupas das pessoas, antes encharcadas pela chuva, estavam secas.
+
+## Por que o caso é forte
+
+Três pontos tornam o episódio difícil de descartar. Primeiro, o sinal foi anunciado com antecedência: as crianças haviam dito, meses antes, a data e que haveria um milagre, o que afasta a hipótese de uma coincidência interpretada depois. Segundo, o número de testemunhas: dezenas de milhares de pessoas, em diferentes estados de espírito, incluindo curiosos e céticos. Terceiro, a cobertura da imprensa não católica. O jornal O Século, laico e anticlerical, publicou em 15 de outubro uma reportagem de seu redator-chefe, Avelino de Almeida, descrevendo o fenômeno do sol diante da multidão atônita.
+
+## As explicações naturais não fecham
+
+Tentou-se explicar o fenômeno como ilusão de ótica, histeria coletiva ou efeito de olhar para o sol. Mas a histeria não explica como milhares de pessoas, espalhadas por uma grande área, descreveram a mesma coisa, nem por que pessoas a vários quilômetros de distância, que não estavam na multidão, também relataram ver o sol mover-se. E nenhuma ilusão de ótica seca roupas encharcadas. Os observatórios astronômicos, por sua vez, não registraram nenhum movimento real do sol, o que para o crente apenas reforça o caráter de sinal: algo dado a ver àquelas pessoas, naquele lugar, no momento anunciado.
+
+## O que a Igreja diz
+
+A Igreja Católica investigou o caso por anos e, em 1930, declarou as aparições de Fátima dignas de fé. Como em toda aparição privada, ninguém é obrigado a crer. Mas o Milagre do Sol permanece como um sinal público e datado, num século que se dizia científico demais para milagres.
+
+## Perguntas-chave
+
+1. Como dezenas de milhares de pessoas, num dia e lugar anunciados com antecedência, descreveram o mesmo fenômeno, se nada aconteceu?
+
+2. Por que um jornal laico e anticlerical como O Século relatou o acontecimento diante da multidão?
+
+3. A histeria coletiva explica roupas encharcadas que secam, e relatos de gente a quilômetros de distância que não estava na multidão?
+
+4. O sinal foi prometido com meses de antecedência, para uma data exata. Que fraude consegue marcar a hora de um milagre diante de setenta mil pessoas?`,
+    references: ['fatima-milagre-sol'],
+  },
 ];
 
 export default articles;

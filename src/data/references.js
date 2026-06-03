@@ -2048,6 +2048,30 @@ export const references = [
     topic: 'Confiabilidade do texto do Novo Testamento',
     text: 'Existem mais de 5.800 manuscritos gregos do Novo Testamento, além de milhares em outras línguas. A maioria das centenas de milhares de variantes são de grafia ou de ordem de palavras, sem efeito doutrinal. Os especialistas concluem que o texto pode ser reconstruído com altíssima confiança, e que nenhuma doutrina central depende de uma passagem duvidosa.',
   },
+
+  // ============ NOVOS ARTIGOS (Fase 4c: Sudário, Fátima) ============
+  {
+    id: 'sudario-turim',
+    ref: 'O Sudário de Turim e o projeto STURP',
+    source: 'Outros',
+    fullSource: 'Estudos científicos sobre o Sudário de Turim, incluindo o Shroud of Turin Research Project (STURP, 1978) e análises posteriores',
+    author: 'Equipes científicas internacionais (STURP e outros)',
+    year: '1978 (STURP); 1988 (carbono-14, contestado); estudos posteriores',
+    topic: 'A imagem do homem crucificado no Sudário de Turim',
+    text: 'O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. O sangue é humano, do tipo AB. O STURP concluiu em 1978 que a imagem não é pintura (sem pigmentos ou pinceladas), está apenas na superfície das fibras e contém informação tridimensional, sem explicação técnica conhecida. A datação por carbono-14 de 1988 (séc. XIII-XIV) é contestada por ter sido feita num canto remendado do pano.',
+    url: 'https://pt.wikipedia.org/wiki/Sud%C3%A1rio_de_Turim',
+  },
+  {
+    id: 'fatima-milagre-sol',
+    ref: 'O Milagre do Sol (Fátima, 1917)',
+    source: 'Outros',
+    fullSource: 'O Milagre do Sol, ocorrido na Cova da Iria, Fátima, Portugal, em 13 de outubro de 1917, e a cobertura da imprensa da época',
+    author: 'Relatos de testemunhas e imprensa (jornal O Século, entre outros)',
+    year: '13 de outubro de 1917',
+    topic: 'Fenômeno solar testemunhado por dezenas de milhares de pessoas',
+    text: 'Anunciado com meses de antecedência por três crianças, o sinal foi presenciado por cerca de 70 mil pessoas. Testemunhas relataram que o sol girou, lançou luzes coloridas e pareceu precipitar-se sobre a multidão, e que as roupas encharcadas pela chuva secaram. O jornal laico e anticlerical O Século noticiou o fenômeno. A Igreja declarou as aparições de Fátima dignas de fé em 1930.',
+    url: 'https://pt.wikipedia.org/wiki/Milagre_do_Sol',
+  },
 ];
 
 // Helpers

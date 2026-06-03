@@ -1716,4 +1716,68 @@ Honesty is needed. These miracles do not replace faith or make it unnecessary. T
 
 4. If the Church wanted to commit fraud, why would it submit the relics to scientists, some of them non-believers, at the risk of public refutation?`,
   },
+
+  50: {
+    titleEn: 'The Shroud of Turin',
+    summaryEn: 'A linen cloth that wrapped a crucified man exactly as the Gospels describe Jesus, with an image science still cannot explain. The evidence and the debates.',
+    bodyEn: `The Shroud of Turin is a linen cloth more than four meters long, bearing the front and back image of a man who suffered a crucifixion. For Christian tradition, it is the cloth that wrapped the body of Jesus in the tomb. It is also one of the most studied objects in history, and several of its features remain without scientific explanation.
+
+## What the image shows
+
+The man of the Shroud suffered exactly what the Gospels describe of the passion of Jesus, in details that go beyond what was known in the Middle Ages. There are marks of a severe scourging, with dozens of blows from a Roman whip with dumbbell-shaped tips. There are wounds on the scalp, consistent with a crown of thorns shaped like a cap, not a ring, as it usually appears in art. There is the mark of a lance on the right side, from which came blood and a clear fluid, as John 19,34 describes. The legs were not broken, contrary to what was done to hasten the death of the crucified (John 19,33). The blood on the cloth is human, of type AB.
+
+## What science cannot explain
+
+In 1978, a team of scientists, the STURP project, examined the Shroud with advanced instruments. The conclusions were surprising. The image is not a painting: there is no pigment, no ink, no brushstrokes; the coloring is only on the outermost surface of the fibers, at a thickness of a fraction of a thousandth of a millimeter. The image contains three-dimensional information, something an ordinary photograph or painting does not have. And it is not known how it was produced. No known technique, medieval or modern, reproduces all its properties at once.
+
+## And the carbon-14 dating?
+
+Honesty is needed. In 1988, a carbon-14 test dated a sample of the Shroud between 1260 and 1390, which would suggest a medieval origin. That result, however, is seriously contested. Later studies pointed out that the sample was taken from a corner of the cloth that had been patched and sewn in periods after a fire, which would contaminate the dating. A statistical analysis published in 2019 showed that the sample was not homogeneous, which weakens the test by science's own criteria. The dating, therefore, is far from a final word.
+
+## What the Church says
+
+The Catholic Church does not require anyone to believe that the Shroud is authentic. It officially treats it as an icon, an object of devotion, and leaves the question of authenticity open to science. Saint John Paul II called it a mirror of the Gospel. The value of the Shroud does not replace faith in the Resurrection, which rests on the testimony of the apostles. But, as a sign, it keeps provoking: a man scourged, crowned with thorns, pierced in the side and not broken in the legs, whose image no one knows how it was formed.
+
+## Key questions
+
+1. If the Shroud is a medieval forgery, why does it bear anatomical details of crucifixion that were only confirmed by modern medicine, and why can no one reproduce the image?
+
+2. The image has no ink and no brushstrokes and holds three-dimensional information. What medieval forger would have done that, and how?
+
+3. The carbon-14 sample came from a patched corner of the cloth. Does it make sense to date the whole cloth by a piece sewn on after a fire?
+
+4. The blood type of the Shroud is AB, the same as the Eucharistic miracles and the Sudarium of Oviedo. Is it merely a coincidence?`,
+  },
+
+  51: {
+    titleEn: 'The Miracle of the Sun at Fatima (1917)',
+    summaryEn: 'Tens of thousands of people, warned months in advance, saw the sun "dance" in the sky on 13 October 1917. Even the secular and skeptical press reported it.',
+    bodyEn: `On 13 October 1917, in Fatima, Portugal, about seventy thousand people gathered in a field called Cova da Iria. They had come because three shepherd children, Lucia, Francisco, and Jacinta, said that the Virgin Mary had been appearing to them since May and had promised, for that exact day, a sign so that all might believe. What the crowd reported seeing is one of the best-witnessed religious events in modern history.
+
+## What happened
+
+It had been raining hard that morning, and the people were drenched. Around noon, the clouds opened and, according to thousands of witnesses, the sun appeared as a disc that could be gazed at without hurting the eyes, spinning on itself, casting beams of colored light over the ground, and seeming to plunge toward the crowd, who cried out in terror. At the end, the people's clothes, before soaked by the rain, were dry.
+
+## Why the case is strong
+
+Three points make the episode hard to dismiss. First, the sign was announced in advance: the children had said, months before, the date and that there would be a miracle, which rules out the hypothesis of a coincidence interpreted afterward. Second, the number of witnesses: tens of thousands of people, in different states of mind, including the curious and the skeptical. Third, the coverage by the non-Catholic press. The newspaper O Século, secular and anticlerical, published on 15 October a report by its editor-in-chief, Avelino de Almeida, describing the phenomenon of the sun before the astonished crowd.
+
+## The natural explanations do not close the case
+
+People tried to explain the phenomenon as an optical illusion, collective hysteria, or the effect of staring at the sun. But hysteria does not explain how thousands of people, spread over a large area, described the same thing, nor why people several kilometers away, who were not in the crowd, also reported seeing the sun move. And no optical illusion dries soaked clothes. The astronomical observatories, for their part, recorded no real movement of the sun, which for the believer only reinforces its character as a sign: something given to be seen by those people, in that place, at the announced moment.
+
+## What the Church says
+
+The Catholic Church investigated the case for years and, in 1930, declared the apparitions of Fatima worthy of belief. As with every private apparition, no one is obliged to believe. But the Miracle of the Sun remains a public and dated sign, in a century that called itself too scientific for miracles.
+
+## Key questions
+
+1. How did tens of thousands of people, on a day and place announced in advance, describe the same phenomenon, if nothing happened?
+
+2. Why did a secular and anticlerical newspaper like O Século report the event before the crowd?
+
+3. Does collective hysteria explain soaked clothes that dry, and reports from people kilometers away who were not in the crowd?
+
+4. The sign was promised months in advance, for an exact date. What fraud can set the hour of a miracle before seventy thousand people?`,
+  },
 });

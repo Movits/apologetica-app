@@ -55,6 +55,8 @@ export const RELATED_ARTICLES = {
   47: [48, 35, 32, 5],   // Arqueologia → Manuscritos, Jesus existiu, Herodes/Quirino, Ressurreição
   48: [47, 18, 31, 35],  // Manuscritos do NT → Arqueologia, Cânon, Contradições, Jesus existiu
   49: [7, 20, 21, 5],    // Milagres Eucarísticos → Eucaristia, Sacramentos, Confissão, Ressurreição
+  50: [5, 49, 45, 35],   // Sudário de Turim → Ressurreição, Milagres Eucarísticos, Eclipse/datação, Jesus existiu
+  51: [50, 49, 4, 30],   // Milagre do Sol (Fátima) → Sudário, Milagres Eucarísticos, Maria intercessora, Galileu
 
   // História da Igreja
   28: [29, 30],          // Inquisição → Cruzadas, Galileu
