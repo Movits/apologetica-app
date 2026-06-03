@@ -9,11 +9,19 @@ const articles = [
     summary: 'O sofrimento no mundo não refuta Deus. Pode ser compreendido dentro da fé cristã.',
     body: `"Se Deus existe, por que há sofrimento?" Essa é talvez a objeção mais emotiva ao teísmo. Não é uma objeção fraca, e a fé cristã não a evita.
 
+## Mal moral e mal natural
+
 Primeiro, é preciso distinguir o mal moral, causado pela liberdade humana, do mal natural, que envolve doenças, terremotos, sofrimento físico. Deus criou seres livres porque o amor exige liberdade. A liberdade implica a possibilidade real do mal moral. Sem liberdade, não há virtude, nem amor verdadeiro, nem mérito. Um Deus que impedisse toda escolha errada teria criado robôs, não pessoas.
+
+## Deus pode ter razões que não vemos
 
 Segundo, Deus pode ter razões suficientes para permitir sofrimentos que não compreendemos. Um cirurgião causa dor para curar. Isso não o torna mau, embora a criança no momento da injeção possa achar que sim. Nossa perspectiva é limitada. O livro de Jó no Antigo Testamento explora exatamente essa tensão: Jó sofre sem entender por quê, e Deus não dá explicações, apenas mostra que sua sabedoria excede a humana.
 
+## Um Deus que sofre conosco
+
 Terceiro, o cristianismo não ignora o sofrimento, ele o transforma. Deus mesmo entrou no sofrimento humano na cruz. O Cristo crucificado não é um Deus distante e indiferente. É um Deus que sofre junto, que assume o pior da existência humana, e que mostra que o sofrimento pode ter sentido redentor. Isso é único no cristianismo. Nenhuma outra religião apresenta Deus crucificado por amor.
+
+## A objeção que se volta contra si
 
 Há ainda um problema filosófico que ateus raramente percebem. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, não há padrão objetivo. O próprio argumento colapsa: o ateísmo não tem base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis observou em "O Problema da Dor" (1940), quando tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. A objeção do mal, levada a sério, prova justamente a existência do padrão moral objetivo, ou seja, de Deus.
 
@@ -35,13 +43,21 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqu
     summary: 'A Igreja distingue entre a inclinação e o ato, e chama todos a viver em dignidade e castidade.',
     body: `A doutrina católica sobre sexualidade humana é baseada em antropologia e lei natural, não em preconceito. É importante entender essa distinção para discutir o tema com clareza.
 
+## A dignidade de toda pessoa
+
 A Igreja ensina, sem ambiguidade, que toda pessoa possui dignidade inalienável, independente de orientação sexual. Pessoas com tendência homossexual devem ser acolhidas com respeito, compaixão e delicadeza, e qualquer discriminação injusta deve ser rejeitada (Catecismo §2358).
 
+## Inclinação e ato
+
 A distinção crucial é entre a inclinação e o ato. A Igreja não condena a tendência homossexual em si mesma. O que ela ensina ser contrário à lei natural são os atos homossexuais. A razão é antropológica: a sexualidade humana, na visão cristã, está ordenada à união entre homem e mulher e à transmissão da vida (Gênesis 1,27-28). Atos que excluem essa finalidade por princípio se afastam da ordem para a qual a sexualidade foi criada.
+
+## O que diz o Novo Testamento
 
 São Paulo trata do tema em Romanos 1,26-27 e em 1 Coríntios 6,9-11. Esta última passagem é importante porque, depois de listar várias condutas (incluindo atos homossexuais) que excluem do Reino, conclui: "E tais éreis vós, alguns de vós. Mas fostes lavados, mas fostes santificados, mas fostes justificados em nome do Senhor Jesus Cristo". O ensinamento apostólico não é de exclusão, é de transformação possível pela graça.
 
 Essa posição não é discriminação. A Igreja pede castidade a todos, casados e solteiros. Um homem ou mulher heterossexual solteiro também é chamado à castidade. O ensinamento é universal, exigente, e o mesmo para todos. Não há um padrão moral para uns e outro para outros.
+
+## "Amor é amor"?
 
 A objeção popular de que "o amor é amor" ignora uma distinção essencial. A Igreja afirma profundamente o amor entre pessoas do mesmo sexo, na forma de amizade, fraternidade, solidariedade. O que ela distingue é o amor da sua expressão sexual ordenada. Nem todo amor é genital, e nem toda relação genital é amor. O Papa Francisco, em Amoris Laetitia (2016), reforçou tanto o respeito devido a essas pessoas quanto a continuidade do ensinamento doutrinal.
 
@@ -63,15 +79,25 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
     summary: 'A vida humana começa na concepção. A ciência confirma o que a fé sempre ensinou.',
     body: `A doutrina católica sobre o aborto é constante desde o século I: é gravemente imoral, equivalente ao homicídio. A objeção comum é que se trata de "imposição religiosa" sobre tema secular. A resposta é que a ciência confirma o que a fé sempre afirmou.
 
+## O que a ciência diz
+
 O que a ciência embriológica estabelece sem disputa: na fecundação (encontro do espermatozoide com o óvulo), forma-se um novo organismo humano completo. Não "pedaço de tecido da mãe", não "potencial vida": um ser humano individual, geneticamente distinto, com cromossomos próprios, capaz de auto-organização e desenvolvimento contínuo. O coração começa a bater entre 18 e 21 dias. O sistema nervoso central inicia formação entre 18 e 27 dias. Em 8 semanas, todos os órgãos principais estão formados.
 
 Esses são fatos científicos, não opiniões religiosas. Qualquer livro de embriologia médica os afirma. A questão é exclusivamente filosófica e ética: esse ser humano tem direito à vida?
 
+## A dignidade não depende de capacidades
+
 A posição católica responde sim, e por razões universalmente válidas: a vida humana é digna pelo simples fato de ser humana, não por capacidades atuais. Caso contrário, teríamos que negar dignidade também a recém-nascidos (que não falam, não andam, dependem totalmente), a pessoas em coma, a idosos com Alzheimer. Capacidades variam; a humanidade é a mesma.
+
+## A Igreja desde o século I
 
 A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás a criança no seio materno, nem a deixarás morrer depois de nascida". Tertuliano (c. 197) escreve: "Para nós, é homicídio precoce impedir o nascimento; não há diferença se se priva da vida quem já nasceu ou se interrompe a vida no ato de nascer". Santo Agostinho, São Basílio, São Jerônimo: todos os Padres condenam o aborto sem ambiguidade.
 
+## "Meu corpo, minha decisão"
+
 A objeção do "meu corpo, minha decisão" pressupõe que o feto é parte do corpo da mãe. Não é. Tem DNA distinto, tipo sanguíneo que pode ser diferente, sexo que pode ser diferente, sistema imunológico próprio. Está dentro da mãe, mas não é a mãe. É outro ser humano, hospedado no corpo dela.
+
+## Os casos difíceis
 
 A objeção do "caso difícil" (estupro, malformação fetal, risco de vida da mãe) é importante e merece resposta cuidadosa.
 
@@ -103,15 +129,23 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
     summary: 'A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.',
     body: `Em 25 de julho de 1968, o Beato Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, as previsões de Paulo VI sobre as consequências sociais se cumpriram com precisão profética.
 
+## Os dois sentidos do ato conjugal
+
 O ensinamento básico é simples. A sexualidade humana, segundo a teologia católica, tem dois significados inseparáveis: unitivo (expressão de amor entre os esposos) e procriativo (abertura à transmissão da vida). Esses dois aspectos foram instituídos pelo Criador e estão unidos pela própria natureza do ato. Separá-los artificialmente é violar a verdade do ato conjugal.
 
 A contracepção artificial separa esses dois aspectos: mantém o prazer e a união física, mas elimina deliberadamente a abertura à vida. O ato conjugal deixa de ser totalmente verdadeiro. Transforma-se em algo diferente do que naturalmente é.
 
+## A Igreja aprova o planejamento responsável
+
 A Igreja não condena o planejamento familiar responsável. Ao contrário, ensina que os esposos podem e devem decidir responsavelmente o número e o espaçamento dos filhos, atendendo a circunstâncias físicas, econômicas, psicológicas e sociais. O que importa é o método.
+
+## Métodos naturais e contracepção artificial
 
 Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São cientificamente comprovados (eficácia superior a 98% quando bem usados), respeitam o corpo da mulher, exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal.
 
 Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laqueadura, vasectomia) separam artificialmente os dois aspectos. Cada método tem problemas específicos. A pílula tem efeitos abortivos em pelo menos parte dos casos (impede a implantação do embrião já formado). O DIU funciona principalmente como abortivo. A laqueadura mutila um órgão saudável. O preservativo introduz uma barreira artificial no ato.
+
+## As quatro previsões de Paulo VI
 
 As previsões proféticas de Paulo VI estão no parágrafo 17 da encíclica. Ele previu quatro consequências da aceitação ampla da contracepção:
 
@@ -122,6 +156,8 @@ Segunda: a perda do respeito pela mulher. "O homem, acostumado ao uso de prátic
 Terceira: o uso da contracepção pelos poderes públicos. "Quanto perigo seria pôr nas mãos das autoridades públicas insensíveis às exigências morais a faculdade de intervir na missão mais pessoal e mais reservada dos esposos". Resultado: políticas públicas de controle populacional impostas a populações pobres, esterilização forçada (caso da Índia, casos no Peru, presente até hoje em programas de "saúde reprodutiva" globais).
 
 Quarta: o homem se considera ilimitadamente dono do próprio corpo. Resultado: cultura de descarte, eutanásia, aborto, mutilação cirúrgica voluntária, ideologia de gênero. A lógica é a mesma: meu corpo é meu, faço o que quero.
+
+## Os dados confirmam
 
 Os indicadores sociais nas décadas seguintes à popularização da pílula são consistentes com as previsões. Nos Estados Unidos, as taxas de divórcio aproximadamente dobraram entre o fim dos anos 1960 e meados dos anos 1980, segundo dados do National Center for Health Statistics. A proporção de filhos nascidos fora do casamento subiu de cerca de 5% em 1960 para mais de 40% nas décadas recentes. Em paralelo, casos amplamente documentados de esterilização forçada em programas públicos (como o programa de planejamento familiar do Peru entre 1996 e 2000, sob Fujimori, e a Emergência indiana de 1975-1977) confirmaram o terceiro temor de Paulo VI sobre o uso da contracepção por autoridades insensíveis às exigências morais.
 

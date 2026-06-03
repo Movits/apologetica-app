@@ -168,11 +168,19 @@ Blessed Carlo Acutis, young Italian layman (1991-2006), beatified in 2020 and ca
     summaryEn: 'Suffering in the world does not refute God. It can be understood within Christian faith.',
     bodyEn: `"If God exists, why is there suffering?" This is perhaps the most emotionally charged objection to theism. It is not a weak objection, and Christian faith does not avoid it.
 
+## Moral evil and natural evil
+
 First, it is necessary to distinguish moral evil, caused by human freedom, from natural evil, which involves diseases, earthquakes, physical suffering. God created free beings because love requires freedom. Freedom implies the real possibility of moral evil. Without freedom, there is no virtue, no true love, no merit. A God who prevented every wrong choice would have created robots, not persons.
+
+## God may have reasons we do not see
 
 Second, God may have sufficient reasons to permit sufferings that we do not understand. A surgeon causes pain in order to heal. This does not make him evil, even if the child at the moment of the injection thinks so. Our perspective is limited. The book of Job in the Old Testament explores exactly this tension: Job suffers without understanding why, and God gives no explanations, only shows that his wisdom exceeds the human.
 
+## A God who suffers with us
+
 Third, Christianity does not ignore suffering, it transforms it. God himself entered into human suffering on the cross. The crucified Christ is not a distant and indifferent God. He is a God who suffers alongside, who assumes the worst of human existence, and who shows that suffering can have redemptive meaning. This is unique in Christianity. No other religion presents God crucified out of love.
+
+## The objection that turns on itself
 
 There is still a philosophical problem that atheists rarely perceive. The argument from evil presupposes an objective standard of good and evil. If there is no God, there is no objective standard. The argument itself collapses: atheism has no basis to call anything "evil", only "unpleasant". As C. S. Lewis observed in "The Problem of Pain" (1940), when he tried to use the argument from evil against God, he realized that his whole notion of "evil" presupposed the "good" he wanted to deny. The objection from evil, taken seriously, proves precisely the existence of the objective moral standard, that is, of God.
 
@@ -542,13 +550,21 @@ Object.assign(ARTICLES_EN, {
     summaryEn: 'The Church distinguishes between inclination and act, and calls everyone to live in dignity and chastity.',
     bodyEn: `Catholic doctrine on human sexuality is based on anthropology and natural law, not prejudice. It is important to understand this distinction to discuss the topic with clarity.
 
+## The dignity of every person
+
 The Church teaches, without ambiguity, that every person possesses inalienable dignity, regardless of sexual orientation. Persons with a homosexual tendency must be accepted with respect, compassion, and sensitivity, and any unjust discrimination must be rejected (Catechism §2358).
 
+## Inclination and act
+
 The crucial distinction is between inclination and act. The Church does not condemn the homosexual tendency in itself. What it teaches as contrary to natural law are homosexual acts. The reason is anthropological: human sexuality, in the Christian view, is ordered to the union between man and woman and to the transmission of life (Genesis 1,27-28). Acts that exclude this finality in principle move away from the order for which sexuality was created.
+
+## What the New Testament says
 
 Saint Paul treats the subject in Romans 1,26-27 and in 1 Corinthians 6,9-11. This last passage is important because, after listing various conducts (including homosexual acts) that exclude from the Kingdom, it concludes: "And such were some of you. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ". The apostolic teaching is not one of exclusion, it is of transformation possible by grace.
 
 This position is not discrimination. The Church asks for chastity from everyone, married and single. A single heterosexual man or woman is also called to chastity. The teaching is universal, demanding, and the same for all. There is no moral standard for some and another for others.
+
+## "Love is love"?
 
 The popular objection that "love is love" ignores an essential distinction. The Church deeply affirms love between persons of the same sex, in the form of friendship, fraternity, solidarity. What it distinguishes is love from its ordered sexual expression. Not all love is genital, and not all genital relation is love. Pope Francis, in Amoris Laetitia (2016), reinforced both the respect due to these persons and the continuity of doctrinal teaching.
 
@@ -757,15 +773,25 @@ Object.assign(ARTICLES_EN, {
     summaryEn: 'Human life begins at conception. Science confirms what faith has always taught.',
     bodyEn: `Catholic doctrine on abortion has been constant since the 1st century: it is gravely immoral, equivalent to homicide. The common objection is that this is "religious imposition" on a secular subject. The answer is that science confirms what faith has always affirmed.
 
+## What science says
+
 What embryological science establishes without dispute: at fertilization (encounter of sperm and ovum), a new complete human organism forms. Not a "piece of the mother\'s tissue", not "potential life": an individual human being, genetically distinct, with its own chromosomes, capable of self-organization and continuous development. The heart begins to beat between 18 and 21 days. The central nervous system begins formation between 18 and 27 days. At 8 weeks, all main organs are formed.
 
 These are scientific facts, not religious opinions. Any medical embryology textbook affirms them. The question is exclusively philosophical and ethical: does this human being have the right to life?
 
+## Dignity does not depend on capabilities
+
 The Catholic position answers yes, and for universally valid reasons: human life is worthy by the simple fact of being human, not by current capabilities. Otherwise, we would also have to deny dignity to newborns (who do not speak, do not walk, depend totally), to people in a coma, to elderly with Alzheimer\'s. Capabilities vary; humanity is the same.
+
+## The Church since the 1st century
 
 The Didache, Christian instruction manual from the 1st-2nd century, affirms: "You shall not kill the child in the womb, nor let it die after being born". Tertullian (c. 197) writes: "For us, it is early homicide to prevent birth; there is no difference whether one deprives of life one who is already born or interrupts the life in the act of being born". Saint Augustine, Saint Basil, Saint Jerome: all the Fathers condemn abortion without ambiguity.
 
+## "My body, my decision"
+
 The "my body, my decision" objection presupposes that the fetus is part of the mother\'s body. It is not. It has distinct DNA, blood type that may be different, sex that may be different, its own immune system. It is inside the mother, but is not the mother. It is another human being, hosted in her body.
+
+## The difficult cases
 
 The "difficult case" objection (rape, fetal malformation, risk to mother\'s life) is important and deserves a careful response.
 
@@ -795,15 +821,23 @@ But the doctrine is also merciful. The Church offers sacramental forgiveness to 
     summaryEn: 'Paul VI\'s prophecy in 1968 about the social consequences of contraception was fulfilled in full.',
     bodyEn: `On July 25, 1968, Blessed Paul VI published the encyclical Humanae Vitae, reaffirming the constant teaching of the Church: artificial contraceptive methods are morally illicit. The reaction was violent, inside and outside the Church. Decades later, Paul VI\'s predictions about the social consequences were fulfilled with prophetic precision.
 
+## The two meanings of the conjugal act
+
 The basic teaching is simple. Human sexuality, according to Catholic theology, has two inseparable meanings: unitive (expression of love between spouses) and procreative (openness to the transmission of life). These two aspects were instituted by the Creator and are united by the very nature of the act. Separating them artificially is to violate the truth of the conjugal act.
 
 Artificial contraception separates these two aspects: it maintains pleasure and physical union, but deliberately eliminates openness to life. The conjugal act ceases to be fully truthful. It transforms into something different from what it naturally is.
 
+## The Church approves responsible planning
+
 The Church does not condemn responsible family planning. On the contrary, it teaches that spouses can and should responsibly decide the number and spacing of children, attending to physical, economic, psychological, and social circumstances. What matters is the method.
+
+## Natural methods and artificial contraception
 
 The Natural Methods (Billings, Symptothermal, Creighton) are based on observation of the woman\'s fertility cycles. They allow either abstinence in fertile periods (if the couple seeks to avoid pregnancy) or intentionality in those periods (if seeking to conceive). They are scientifically proven (effectiveness above 98% when well used), respect the woman\'s body, demand communication and self-mastery between spouses. Without chemical alteration, without physical barriers, without violation of the conjugal act.
 
 The contraceptive pill, IUD, condom, surgical methods (tubal ligation, vasectomy) artificially separate the two aspects. Each method has specific problems. The pill has abortifacient effects in at least some cases (it prevents the implantation of the embryo already formed). The IUD works mainly as abortifacient. Tubal ligation mutilates a healthy organ. The condom introduces an artificial barrier in the act.
+
+## Paul VI's four predictions
 
 Paul VI\'s prophetic predictions are in paragraph 17 of the encyclical. He predicted four consequences of the broad acceptance of contraception:
 
@@ -814,6 +848,8 @@ Second: the loss of respect for the woman. "Man, accustomed to the use of contra
 Third: the use of contraception by public powers. "How great a danger it would be to place in the hands of public authorities insensitive to moral demands the faculty to intervene in the most personal and reserved mission of the spouses". Result: public policies of population control imposed on poor populations, forced sterilization (India case, Peru cases, present even today in global "reproductive health" programs).
 
 Fourth: man considers himself unlimitedly owner of his own body. Result: discard culture, euthanasia, abortion, voluntary surgical mutilation, gender ideology. The logic is the same: my body is mine, I do what I want.
+
+## The data confirm it
 
 Social indicators in the decades following the popularization of the pill are consistent with the predictions. In the United States, divorce rates approximately doubled between the end of the 1960s and the mid-1980s, according to National Center for Health Statistics data. The proportion of children born outside marriage rose from about 5% in 1960 to more than 40% in recent decades. In parallel, widely documented cases of forced sterilization in public programs (such as the family planning program of Peru between 1996 and 2000, under Fujimori, and the Indian Emergency of 1975-1977) confirmed Paul VI\'s third fear about the use of contraception by authorities insensitive to moral demands.
 
