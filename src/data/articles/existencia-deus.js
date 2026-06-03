@@ -53,13 +53,21 @@ Se o universo, isto é, todo o espaço, o tempo e a matéria, tem uma causa, ess
     summary: 'As constantes físicas do universo são tão precisas que sua existência aponta para um designer inteligente.',
     body: `O universo apresenta uma ordem tão extraordinariamente precisa que sua mera existência aponta para um Designer inteligente. Esse é o ponto central do argumento teleológico, também chamado argumento do design.
 
+## Da Quinta Via ao ajuste fino
+
 Santo Tomás de Aquino, na Quinta Via da Suma Teológica, observou que mesmo seres sem inteligência agem para um fim, e isso só faz sentido se uma inteligência os ordena. A física moderna deu forma nova e poderosa a esse argumento através do que se chama "ajuste fino das constantes físicas".
+
+## Constantes precisas demais
 
 Existem dezenas de constantes fundamentais que precisam ter valores extremamente específicos para que a vida seja possível. A força gravitacional, a constante eletromagnética, a razão entre a massa do próton e do elétron, a constante cosmológica. Se qualquer uma delas tivesse valor ligeiramente diferente, mesmo por uma fração infinitesimal, o universo seria estéril.
 
 O físico e ateu Fred Hoyle, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro O Caminho para a Realidade que a probabilidade do nosso universo ter condições iniciais favoráveis à vida é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo.
 
+## Necessidade, acaso ou design?
+
 Há três explicações possíveis para esse ajuste fino. A necessidade física não funciona, porque as constantes poderiam logicamente ter outros valores. O acaso é absurdo dada a precisão envolvida. Resta o design.
+
+## A objeção do multiverso
 
 A objeção do multiverso (existem infinitos universos com constantes diferentes, e por sorte estamos no que permite vida) tem três problemas. Primeiro, não há evidência empírica de outros universos. Segundo, mesmo o multiverso, se existir, precisaria ele próprio de ajuste fino para gerar universos diversos. Terceiro, a navalha de Occam recomenda a explicação mais simples: um Designer, não infinitas realidades inverificáveis.
 
@@ -81,11 +89,19 @@ São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de De
     summary: 'Se a moral é objetiva (e parece ser), ela precisa de uma fonte transcendente que a sustente.',
     body: `Se Deus não existe, a moral objetiva também não existe. Essa premissa, sustentada igualmente por crentes e por ateus consequentes, é o ponto de partida do argumento moral pela existência de Deus.
 
+## O padrão acima de nós
+
 C. S. Lewis, em "Cristianismo Puro e Simples" (1952), argumentou que toda discussão moral pressupõe um padrão acima das partes envolvidas. Quando duas pessoas discutem sobre o que é justo, ambas apelam para algo maior do que suas próprias preferências. Esse padrão objetivo não pode vir das próprias pessoas, nem do consenso social, nem da evolução, porque nenhuma dessas fontes pode justificar a obrigação moral absoluta.
+
+## Ateus que entenderam o que está em jogo
 
 O filósofo ateu Friedrich Nietzsche reconheceu isso com franqueza. Em "A Gaia Ciência" (1882), proclamou que a morte de Deus implica também a morte da moral cristã, e que devemos ter coragem para aceitar as consequências. "Quem nos limpará desse sangue?", perguntou ele. Jean-Paul Sartre, outro ateu, escreveu em "O Existencialismo é um Humanismo" (1946) que "se Deus não existe, tudo é permitido", citando Dostoiévski. Eles entenderam, com mais clareza que muitos contemporâneos, o que está em jogo.
 
+## Vivemos como se a moral fosse real
+
 Mas todos vivemos como se a moral fosse real. Condenamos o nazismo, defendemos os fracos, indignamo-nos com a injustiça. Não como se esses julgamentos fossem mera preferência, mas como se fossem verdadeiros. Em Romanos 2,14-15, São Paulo escreve que mesmo os gentios "trazem inscritas em seus corações as obras da lei", manifestando uma consciência que acusa ou justifica suas ações.
+
+## O que o argumento não diz
 
 O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem e muitas vezes agem com grande integridade. O argumento é mais sutil. O ateísmo, levado às últimas consequências, não tem como justificar a moral como objetiva. Se ela é objetiva, e parece ser, então deve haver uma fonte que a sustente. Essa fonte é o Deus pessoal, criador da natureza humana e autor da lei moral inscrita no coração de cada pessoa.
 
@@ -109,13 +125,21 @@ O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem 
     summary: 'A pergunta confunde categorias. Tudo que começa a existir tem causa; Deus não começou.',
     body: `A objeção é antiga e parece poderosa. Se tudo precisa ter uma causa, quem causou Deus? Se Deus não precisa de causa, por que o universo precisaria? O argumento se baseia em uma má compreensão do princípio causal.
 
+## A formulação correta
+
 A formulação correta do argumento cosmológico não é "tudo tem uma causa". É "tudo que começa a existir tem uma causa". O universo começou a existir, e a ciência hoje confirma isso com o Big Bang. Logo, o universo tem uma causa. Deus, por definição, não começou a existir. Ele é eterno, necessário, não contingente.
 
+## Contingente e necessário
+
 Santo Tomás de Aquino fez essa distinção há quase oitocentos anos. Há seres contingentes, que poderiam não existir, e há o ser necessário, que existe por si mesmo. Tudo o que vemos no universo é contingente. Esta pedra poderia não estar aqui, sua vida poderia não ter acontecido, o universo poderia ter sido outro. Mas se tudo fosse contingente, nada existiria, porque a contingência precisa de algo que não seja contingente para sustentá-la.
+
+## Uma confusão de categorias
 
 A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Causalidade é uma relação entre coisas no universo. Aplicá-la a Deus é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
 
 O argumento Kalam formaliza isso bem. William Lane Craig mostra que tudo que começa a existir tem causa. O universo começou a existir (teorema Borde-Guth-Vilenkin, cosmologia atual). Logo, o universo tem causa. Deus não começou, então não cai sob essa regra. Atribuir a Deus o predicado "começou a existir" é negar o conceito mesmo de Deus.
+
+## O ateu também precisa de algo eterno
 
 Se a resposta "Deus sempre existiu" parece insatisfatória, vale notar que o ateu precisa dizer exatamente o mesmo sobre algo. Ou o universo é eterno (contrário à cosmologia), ou veio do nada absoluto (contrário ao princípio causal), ou veio de um multiverso eterno (sem evidência e ainda contingente). Cada uma dessas alternativas envolve um salto metafísico maior do que o teísmo clássico.
 
@@ -137,13 +161,21 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
     summary: 'A ressurreição não é mito. Há evidências históricas robustas que a sustentam.',
     body: `A ressurreição de Jesus não é apenas crença religiosa, é evento histórico com evidências substanciais que precisam ser explicadas.
 
+## O túmulo vazio
+
 O túmulo estava vazio. Tanto judeus quanto romanos tinham interesse claro em produzir o corpo de Jesus para suprimir o cristianismo no nascedouro. Nunca conseguiram, porque o corpo não estava lá.
 
+## As aparições
+
 As aparições foram públicas e múltiplas. São Paulo lista mais de quinhentas pessoas que viram Cristo ressuscitado em 1 Coríntios 15,3-8, muitas delas ainda vivas quando ele escreveu a carta. Podiam ser interrogadas. Ele convida o leitor a verificar.
+
+## A transformação dos apóstolos
 
 A transformação dos apóstolos é talvez a evidência mais forte. Homens que fugiram com medo na noite da prisão de Jesus, todos exceto João morreram mártires proclamando a ressurreição. Ninguém morre torturado por algo que sabe ser mentira.
 
 Mesmo fontes pagãs e judaicas hostis ao cristianismo atestam a existência e a execução de Jesus. O historiador judeu Flávio Josefo, em Antiguidades Judaicas (c. 93-94), menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Vale uma nota importante aqui: a palavra grega adelphós usada para "irmão" tinha sentido amplo no judaísmo helenístico, designando irmão biológico, primo ou parente próximo (vide Gênesis 14,14 onde Ló é chamado adelphós de Abraão, sendo seu sobrinho). Tiago, "o irmão do Senhor" mencionado também por São Paulo em Gálatas 1,19, é parente de Jesus, não filho biológico de Maria. A Virgindade Perpétua de Maria é doutrina constante da Igreja, e os "irmãos de Jesus" nos Evangelhos seguem o uso amplo do termo (mais detalhes no artigo "A Virgindade Perpétua de Maria").
+
+## Os fatos mínimos
 
 Gary Habermas, pesquisador especializado no tema e professor de Liberty University, identificou em "O Caso da Ressurreição de Jesus" (2004) o que chama de "fatos mínimos" sobre a ressurreição. São eventos aceitos por cerca de 95% dos historiadores críticos do tema, mesmo os não-crentes: morte por crucificação, túmulo vazio, aparições percebidas como reais pelos discípulos, conversão de Paulo de perseguidor a apóstolo, e conversão de Tiago (parente de Jesus), que antes não cria nele. Mesmo o historiador agnóstico Bart Ehrman aceita a maior parte desses fatos.
 
@@ -167,7 +199,11 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
     summary: 'Jesus não pode ter sido apenas "um grande mestre moral". Suas afirmações deixam três opções, nenhuma neutra.',
     body: `Um dos argumentos mais conhecidos da apologética moderna é o Trilema de C. S. Lewis, exposto em "Cristianismo Puro e Simples" (1952). Lewis confronta a ideia comum de que Jesus foi "apenas um grande mestre moral" e mostra que essa posição é a única logicamente impossível.
 
+## Jesus afirmou ser Deus
+
 Jesus afirmou repetidamente ser Deus. Em João 10,30 diz "eu e o Pai somos um". Em João 8,58, aplicando a si o nome divino YHWH revelado a Moisés, declara "antes que Abraão fosse, eu sou". Em Marcos 2,5-7 perdoa pecados, prerrogativa exclusiva de Deus segundo os próprios escribas presentes. Em João 14,9 diz "quem me viu, viu o Pai". Em João 5,18 os judeus tentam matá-lo porque "se igualava a Deus".
+
+## Três opções, e só três
 
 Diante dessas afirmações, Lewis identifica três (e apenas três) opções possíveis:
 
@@ -179,7 +215,11 @@ Terceira opção: Jesus disse a verdade. Era de fato quem afirmou ser, o Filho d
 
 Lewis escreve: "Estou tentando aqui evitar que alguém diga a tolice que se ouve com frequência: aceito Jesus como um grande mestre moral, mas não aceito sua reivindicação de ser Deus. Isto é exatamente o que não devemos dizer. Um homem que era simplesmente um homem e dizia o tipo de coisa que Jesus disse não seria um grande mestre moral. Seria ou um lunático em nível de alguém que diz ser um ovo cozido, ou então o Diabo do Inferno".
 
+## A saída ambígua não se sustenta
+
 A força do argumento está em fechar a saída ambígua. A pessoa que tenta louvar Jesus como bom homem enquanto nega sua divindade está sendo intelectualmente desonesta. As próprias palavras de Jesus tornam essa posição insustentável.
+
+## E a "quarta opção"?
 
 Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca disse essas coisas, os Evangelhos foram corrompidos. Essa saída é histórica, não filosófica, e cai diante da datação dos manuscritos e do testemunho universal das comunidades cristãs primitivas, abordado em outros artigos.
 
@@ -201,7 +241,11 @@ Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca diss
     summary: 'A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o que os Evangelhos narram.',
     body: `Uma das objeções mais radicais é a chamada tese mítica: Jesus de Nazaré nunca teria existido como pessoa histórica. Seria um personagem literário construído a partir de mitos pagãos. A tese aparece em livros populares e documentários como Zeitgeist, mas é praticamente inexistente entre historiadores acadêmicos.
 
+## O que diz a academia
+
 Bart Ehrman, agnóstico, crítico do cristianismo institucional, professor de Estudos Religiosos na University of North Carolina, escreve em "Did Jesus Exist?" (2012) que a tese mítica "não convence virtualmente nenhum estudioso da antiguidade, do cristianismo primitivo ou do Novo Testamento que trabalhe em uma universidade acreditada do mundo ocidental". Ehrman não é apologista cristão. É um dos críticos mais conhecidos do Novo Testamento. E mesmo assim defende a existência histórica de Jesus contra os míticos.
+
+## As fontes não cristãs
 
 As evidências extra-bíblicas (fora dos Evangelhos) são múltiplas e independentes.
 
@@ -216,6 +260,8 @@ Suetônio, historiador romano, em "Vida de Cláudio" (c. 121), capítulo 25, men
 O Talmude babilônico, redigido entre os séculos III e V mas preservando tradições mais antigas, menciona em Sanhedrin 43a um certo Yeshu enforcado na véspera da Páscoa por "ter praticado feitiçaria e seduzido Israel à apostasia". A referência é hostil e procura desqualificar Jesus, mas confirma o essencial: existiu, foi executado em Jerusalém, atraiu seguidores.
 
 Cinco fontes independentes (Josefo judeu, Tácito pagão, Plínio pagão, Suetônio pagão, Talmude judaico) atestam, de pontos de vista hostis ou neutros, a existência histórica de Jesus, sua crucificação por autoridade romana, e a rápida expansão de um movimento de seguidores. Some-se a isso os 27 livros do Novo Testamento (escritos por pelo menos 8 autores independentes nas primeiras décadas), os escritos dos Padres Apostólicos (Clemente Romano c. 96, Inácio de Antioquia c. 107, Policarpo, Papias, Pastor de Hermas, Didaqué), e o testemunho convergente é esmagador.
+
+## Por que o mitismo não se sustenta
 
 A tese mítica precisa explicar como, em poucos anos após a suposta "criação literária", já existiam dezenas de igrejas espalhadas pelo Mediterrâneo, com mártires reais, fórmulas litúrgicas estabelecidas, escritos circulando, e perseguição imperial direcionada. Nenhuma explicação alternativa funciona historicamente. Por isso a academia séria, mesmo a mais agnóstica, rejeita o mitismo.
 

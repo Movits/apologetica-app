@@ -50,13 +50,21 @@ If the universe, that is, all space, time, and matter, has a cause, that cause c
     summaryEn: 'The Resurrection is not myth. There is robust historical evidence to support it.',
     bodyEn: `The Resurrection of Jesus is not merely a religious belief. It is a historical event with substantial evidence that must be explained.
 
+## The empty tomb
+
 The tomb was empty. Both Jews and Romans had a clear interest in producing Jesus\' body to suppress Christianity at its birth. They never could, because the body was not there.
 
+## The appearances
+
 The appearances were public and multiple. Saint Paul lists more than five hundred people who saw the risen Christ in 1 Corinthians 15,3-8, many of them still alive when he wrote the letter. They could be questioned. He invites the reader to verify.
+
+## The transformation of the apostles
 
 The transformation of the apostles is perhaps the strongest piece of evidence. Men who fled in fear on the night of Jesus\' arrest, all except John, died as martyrs proclaiming the Resurrection. No one dies tortured for something they know to be a lie.
 
 Even pagan and Jewish sources hostile to Christianity attest to the existence and execution of Jesus. The Jewish historian Flavius Josephus, in Jewish Antiquities (c. 93-94 AD), mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. An important note here: the Greek word adelphós used for "brother" had a broad sense in Hellenistic Judaism, designating biological brother, cousin, or close relative (see Genesis 14,14 where Lot is called adelphós of Abraham, being his nephew). James, the "brother of the Lord" also mentioned by Saint Paul in Galatians 1,19, is a relative of Jesus, not a biological son of Mary. The Perpetual Virginity of Mary is constant doctrine of the Church, and the "brothers of Jesus" in the Gospels follow the broad use of the term.
+
+## The minimal facts
 
 Gary Habermas, a specialized researcher on the topic and professor at Liberty University, identified in "The Case for the Resurrection of Jesus" (2004) what he calls the "minimal facts" about the Resurrection. These are events accepted by about 95% of critical historians of the subject, even non-believers: death by crucifixion, empty tomb, appearances perceived as real by the disciples, conversion of Paul from persecutor to apostle, and conversion of James (relative of Jesus), who previously did not believe in him. Even the agnostic historian Bart Ehrman accepts most of these facts.
 
@@ -78,7 +86,11 @@ The historical question is not "was there evidence?", but "what explanation acco
     summaryEn: 'Jesus cannot have been merely "a great moral teacher." His claims leave three options, none neutral.',
     bodyEn: `One of the most well-known arguments in modern apologetics is C. S. Lewis\'s Trilemma, presented in "Mere Christianity" (1952). Lewis confronts the common idea that Jesus was "just a great moral teacher" and shows that this position is the only logically impossible one.
 
+## Jesus claimed to be God
+
 Jesus repeatedly affirmed himself to be God. In John 10,30 he says "I and the Father are one". In John 8,58, applying to himself the divine name YHWH revealed to Moses, he declares "before Abraham was, I am". In Mark 2,5-7 he forgives sins, an exclusive prerogative of God according to the very scribes present. In John 14,9 he says "whoever has seen me has seen the Father". In John 5,18 the Jews try to kill him because "he made himself equal to God".
+
+## Three options, and only three
 
 Faced with these affirmations, Lewis identifies three (and only three) possible options:
 
@@ -90,7 +102,11 @@ Third option: Jesus told the truth. He was in fact who he claimed to be, the Son
 
 Lewis writes: "I am trying here to prevent anyone saying the really foolish thing that people often say about Him: I\'m ready to accept Jesus as a great moral teacher, but I don\'t accept his claim to be God. That is the one thing we must not say. A man who was merely a man and said the sort of things Jesus said would not be a great moral teacher. He would either be a lunatic, on a level with the man who says he is a poached egg, or else he would be the Devil of Hell."
 
+## The ambiguous escape fails
+
 The strength of the argument lies in closing off the ambiguous escape. The person who tries to praise Jesus as a good man while denying his divinity is being intellectually dishonest. Jesus\' own words make this position untenable.
+
+## And the "fourth option"?
 
 There is a fourth option that modern skeptics try to introduce: Jesus never said these things, the Gospels were corrupted. This escape is historical, not philosophical, and falls before the dating of the manuscripts and the universal testimony of the early Christian communities, addressed in other articles.
 
@@ -238,13 +254,21 @@ The Catholic solution is coherent: God\'s Revelation is transmitted through Sacr
     summaryEn: 'The physical constants of the universe are so precise that their existence points to an intelligent designer.',
     bodyEn: `The universe presents an order so extraordinarily precise that its mere existence points to an intelligent Designer. This is the central point of the teleological argument, also called the design argument.
 
+## From the Fifth Way to fine-tuning
+
 Saint Thomas Aquinas, in the Fifth Way of the Summa Theologica, observed that even beings without intelligence act toward an end, and this only makes sense if an intelligence orders them. Modern physics gave a new and powerful form to this argument through what is called "fine-tuning of the physical constants".
+
+## Constants too precise
 
 There are dozens of fundamental constants that need to have extremely specific values for life to be possible. Gravitational force, electromagnetic constant, the ratio between proton and electron mass, the cosmological constant. If any of them had a slightly different value, even by an infinitesimal fraction, the universe would be sterile.
 
 The physicist and former atheist Fred Hoyle, after calculating the conditions necessary for carbon formation in stars, wrote that "a common-sense interpretation of the facts suggests that a superintellect has monkeyed with physics, chemistry and biology". Roger Penrose, mathematician and Nobel Prize winner in Physics in 2020, calculated in "The Road to Reality" that the probability of our universe having favorable initial conditions for life is on the order of 1 in 10 to the power of 10 to the power of 123. A number so small that, compared to it, winning the lottery a thousand times in a row is practically certain.
 
+## Necessity, chance, or design?
+
 There are three possible explanations for this fine-tuning. Physical necessity doesn\'t work, because the constants could logically have other values. Chance is absurd given the precision involved. Design remains.
+
+## The multiverse objection
 
 The multiverse objection (there exist infinite universes with different constants, and by luck we are in the one that allows life) has three problems. First, there is no empirical evidence of other universes. Second, even the multiverse, if it exists, would itself need fine-tuning to generate diverse universes. Third, Occam\'s razor recommends the simplest explanation: a Designer, not infinite unverifiable realities.
 
@@ -264,11 +288,19 @@ Saint Paul already said in the Letter to the Romans that "the invisible perfecti
     summaryEn: 'If morality is objective (and it seems to be), it needs a transcendent source to sustain it.',
     bodyEn: `If God does not exist, objective morality also does not exist. This premise, sustained equally by believers and by consistent atheists, is the starting point of the moral argument for the existence of God.
 
+## The standard above us
+
 C. S. Lewis, in "Mere Christianity" (1952), argued that every moral discussion presupposes a standard above the parties involved. When two people argue about what is just, both appeal to something greater than their own preferences. This objective standard cannot come from the people themselves, nor from social consensus, nor from evolution, because none of these sources can justify absolute moral obligation.
+
+## Atheists who saw what is at stake
 
 The atheist philosopher Friedrich Nietzsche recognized this with frankness. In "The Gay Science" (1882), he proclaimed that the death of God also implies the death of Christian morality, and that we must have the courage to accept the consequences. "Who will wipe this blood off us?", he asked. Jean-Paul Sartre, another atheist, wrote in "Existentialism is a Humanism" (1946) that "if God does not exist, everything is permitted", citing Dostoyevsky. They understood, with more clarity than many contemporaries, what is at stake.
 
+## We live as if morality were real
+
 But we all live as if morality were real. We condemn Nazism, defend the weak, become indignant at injustice. Not as if these judgments were mere preference, but as if they were true. In Romans 2,14-15, Saint Paul writes that even the gentiles "have the work of the law written on their hearts", manifesting a conscience that accuses or justifies their actions.
+
+## What the argument does not say
 
 The moral argument does not say that atheists cannot act morally. They can and often act with great integrity. The argument is more subtle. Atheism, taken to its ultimate consequences, has no way to justify morality as objective. If it is objective, and it seems to be, then there must be a source that sustains it. This source is the personal God, creator of human nature and author of the moral law inscribed in the heart of each person.
 
@@ -290,13 +322,21 @@ The moral argument does not say that atheists cannot act morally. They can and o
     summaryEn: 'The question confuses categories. Everything that begins to exist has a cause; God did not begin.',
     bodyEn: `The objection is old and seems powerful. If everything needs to have a cause, who caused God? If God doesn\'t need a cause, why would the universe need one? The argument is based on a misunderstanding of the causal principle.
 
+## The correct formulation
+
 The correct formulation of the cosmological argument is not "everything has a cause". It is "everything that begins to exist has a cause". The universe began to exist, and science today confirms this with the Big Bang. Therefore, the universe has a cause. God, by definition, did not begin to exist. He is eternal, necessary, not contingent.
 
+## Contingent and necessary
+
 Saint Thomas Aquinas made this distinction almost eight hundred years ago. There are contingent beings, which could not exist, and there is the necessary being, which exists by itself. Everything we see in the universe is contingent. This stone could not be here, your life could not have happened, the universe could have been otherwise. But if everything were contingent, nothing would exist, because contingency needs something that is not contingent to sustain it.
+
+## A confusion of categories
 
 The question "who created God?" is like asking "who is married to the bachelor?". The question presupposes a confusion of categories. God is not a being among other beings, he is the foundation of being. Causality is a relationship between things in the universe. Applying it to God is the same error as applying physical laws outside the universe where they operate.
 
 The Kalam argument formalizes this well. William Lane Craig shows that everything that begins to exist has a cause. The universe began to exist (Borde-Guth-Vilenkin theorem, current cosmology). Therefore, the universe has a cause. God did not begin, so he does not fall under that rule. To attribute to God the predicate "began to exist" is to deny the very concept of God.
+
+## The atheist also needs something eternal
 
 If the answer "God always existed" seems unsatisfactory, it is worth noting that the atheist needs to say exactly the same about something. Either the universe is eternal (contrary to cosmology), or it came from absolute nothing (contrary to the causal principle), or it came from an eternal multiverse (without evidence and still contingent). Each of these alternatives involves a greater metaphysical leap than classical theism.
 
@@ -1184,7 +1224,11 @@ Worth noting a counterproof: if the Resurrection had been a coordinated inventio
     summaryEn: 'The thesis that Jesus never existed (mythicism) is practically nonexistent in serious academia. Pagan and Jewish sources confirm what the Gospels narrate.',
     bodyEn: `One of the most radical objections is the so-called mythical thesis: Jesus of Nazareth never existed as a historical person. He would be a literary character constructed from pagan myths. The thesis appears in popular books and documentaries like Zeitgeist, but is practically nonexistent among academic historians.
 
+## What academia says
+
 Bart Ehrman, agnostic, critic of institutional Christianity, professor of Religious Studies at the University of North Carolina, writes in "Did Jesus Exist?" (2012) that the mythical thesis "fails to convince virtually any scholar of antiquity, early Christianity, or the New Testament working at an accredited university in the Western world". Ehrman is not a Christian apologist. He is one of the best-known critics of the New Testament. And even so he defends the historical existence of Jesus against the mythicists.
+
+## The non-Christian sources
 
 The extra-biblical evidences (outside the Gospels) are multiple and independent.
 
@@ -1199,6 +1243,8 @@ Suetonius, Roman historian, in "Life of Claudius" (c. 121), chapter 25, mentions
 The Babylonian Talmud, redacted between the 3rd and 5th centuries but preserving older traditions, mentions in Sanhedrin 43a a certain Yeshu hanged on the eve of Passover for "having practiced sorcery and seduced Israel into apostasy". The reference is hostile and seeks to disqualify Jesus, but confirms the essential: he existed, was executed in Jerusalem, attracted followers.
 
 Five independent sources (Jewish Josephus, pagan Tacitus, pagan Pliny, pagan Suetonius, Jewish Talmud) attest, from hostile or neutral points of view, the historical existence of Jesus, his crucifixion by Roman authority, and the rapid expansion of a movement of followers. Add to this the 27 books of the New Testament (written by at least 8 independent authors in the first decades), the writings of the Apostolic Fathers (Clement of Rome c. 96, Ignatius of Antioch c. 107, Polycarp, Papias, Shepherd of Hermas, Didache), and the convergent testimony is overwhelming.
+
+## Why mythicism does not hold
 
 The mythical thesis needs to explain how, in just a few years after the supposed "literary creation", there were already dozens of churches scattered around the Mediterranean, with real martyrs, established liturgical formulas, circulating writings, and directed imperial persecution. No alternative explanation works historically. That is why serious academia, even the most agnostic, rejects mythicism.
 
