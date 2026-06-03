@@ -12,6 +12,10 @@
       "backgroundColor": "#1a3a5c",
       "resizeMode": "contain"
     },
+    "androidNavigationBar": {
+      "backgroundColor": "#ffffff",
+      "barStyle": "dark-content"
+    },
     "notification": {
       "icon": "./assets/notification-icon.png",
       "color": "#c9a84c"

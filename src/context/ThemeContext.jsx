@@ -99,9 +99,13 @@ export function ThemeProvider({ children }) {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
   }, [fontSize, hydrated]);
 
-  // Sincroniza os ícones da navigation bar do Android com o tema (claro/escuro).
+  // Sincroniza a navigation bar do Android (fundo + ícones) com o tema, para a
+  // barra do sistema não destoar do app no build nativo. O fundo acompanha a cor
+  // da tab bar (card); os ícones invertem conforme claro/escuro.
   useEffect(() => {
     if (Platform.OS !== 'android') return;
+    const c = darkMode ? DARK : LIGHT;
+    NavigationBar.setBackgroundColorAsync(c.card).catch(() => {});
     NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
   }, [darkMode]);
 
