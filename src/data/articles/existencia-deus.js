@@ -65,7 +65,7 @@ A objeção do multiverso (existem infinitos universos com constantes diferentes
 
 São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de Deus, desde a criação do mundo, são entendidas e vistas por meio das coisas criadas". A ciência moderna não derruba essa afirmação, ela a confirma com precisão matemática.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Que evidência empírica você tem para o multiverso?
 
@@ -89,7 +89,7 @@ Mas todos vivemos como se a moral fosse real. Condenamos o nazismo, defendemos o
 
 O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem e muitas vezes agem com grande integridade. O argumento é mais sutil. O ateísmo, levado às últimas consequências, não tem como justificar a moral como objetiva. Se ela é objetiva, e parece ser, então deve haver uma fonte que a sustente. Essa fonte é o Deus pessoal, criador da natureza humana e autor da lei moral inscrita no coração de cada pessoa.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. O Holocausto foi objetivamente errado, ou apenas algo que você prefere que não tivesse acontecido?
 
@@ -121,7 +121,7 @@ Se a resposta "Deus sempre existiu" parece insatisfatória, vale notar que o ate
 
 A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem uma realidade necessária na base de tudo, a existência mesma fica sem explicação. Os filósofos chamam essa exigência de "princípio de razão suficiente". Deus, entendido corretamente, é a única resposta coerente a ela.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Se "tudo precisa de causa", como você explica a existência do próprio universo sem cair no mesmo problema?
 
@@ -149,7 +149,7 @@ Gary Habermas, pesquisador especializado no tema e professor de Liberty Universi
 
 A questão histórica não é "houve evidências?", mas "qual explicação dá conta de todas elas?". As teorias alternativas (alucinação coletiva, roubo do corpo, morte aparente, mito tardio) falham em explicar pelo menos um desses cinco fatos cada. A única hipótese que dá conta de todos é a ressurreição corporal.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Como você explica que homens que fugiram com medo na sexta-feira estavam pregando publicamente em Jerusalém cinquenta dias depois, sob pena de morte, dizendo que Jesus ressuscitou?
 
@@ -183,7 +183,7 @@ A força do argumento está em fechar a saída ambígua. A pessoa que tenta louv
 
 Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca disse essas coisas, os Evangelhos foram corrompidos. Essa saída é histórica, não filosófica, e cai diante da datação dos manuscritos e do testemunho universal das comunidades cristãs primitivas, abordado em outros artigos.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Como Jesus, segundo você, pode ser um "grande mestre moral" se ele afirmava ser Deus e não era?
 
@@ -219,7 +219,7 @@ Cinco fontes independentes (Josefo judeu, Tácito pagão, Plínio pagão, Suetô
 
 A tese mítica precisa explicar como, em poucos anos após a suposta "criação literária", já existiam dezenas de igrejas espalhadas pelo Mediterrâneo, com mártires reais, fórmulas litúrgicas estabelecidas, escritos circulando, e perseguição imperial direcionada. Nenhuma explicação alternativa funciona historicamente. Por isso a academia séria, mesmo a mais agnóstica, rejeita o mitismo.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você sabe quantos historiadores acadêmicos de universidades reconhecidas defendem que Jesus não existiu? (Resposta: praticamente nenhum.)
 

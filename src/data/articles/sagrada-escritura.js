@@ -19,7 +19,7 @@ O quarto problema é histórico. O Sola Scriptura surgiu no séc. XVI. Antes dis
 
 A solução católica é coerente: a Revelação de Deus se transmite pela Sagrada Escritura e pela Sagrada Tradição, ambas interpretadas pelo Magistério vivo da Igreja. As três coisas se sustentam mutuamente.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Onde, em que versículo específico, a Bíblia ensina que a Bíblia é a única regra de fé? (Sola Scriptura é autorrefutante: ele próprio não está na Bíblia.)
 
@@ -53,7 +53,7 @@ A Igreja Católica, no Concílio de Trento (1546), reafirmou solenemente o câno
 
 Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob a guia do Espírito Santo, quais livros eram autênticos, apostólicos, em conformidade com a regra de fé recebida. Os critérios eram: origem apostólica (escritos pelos apóstolos ou seus discípulos próximos), uso litúrgico nas igrejas (especialmente na liturgia eucarística), e ortodoxia (conformidade com a doutrina recebida). Os 73 livros passaram nesses critérios.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Quem decidiu quais livros pertencem ao Novo Testamento? Se foi a Igreja Católica (e foi), por que aceitar essa decisão e rejeitar a mesma Igreja no Antigo?
 
@@ -107,7 +107,7 @@ As "contradições" mais famosas (Herodes vs Quirino no nascimento de Jesus, as 
 
 Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, escreve em seus livros que nenhuma das aparentes contradições afeta substancialmente a história central do cristianismo: Jesus existiu, foi crucificado, e seus discípulos creram tê-lo visto vivo após a morte.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você consegue dar um exemplo concreto de "contradição"? Vamos examinar juntos com calma.
 
@@ -137,7 +137,7 @@ A objeção, portanto, não é decisiva. As soluções linguísticas e históric
 
 Vale notar a desproporção da objeção. A historicidade de Jesus está atestada por múltiplas fontes independentes (Mateus, Marcos, Lucas, João, Paulo, Josefo, Tácito, Plínio o Jovem, Suetônio). Cinco palavras gramaticalmente ambíguas em Lucas 2,2 não derrubam esse edifício.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você já examinou o grego de Lucas 2,2, ou aceitou a tradução tradicional sem questionar a possibilidade de "antes de"?
 
@@ -169,7 +169,7 @@ A objeção, portanto, parte de uma expectativa moderna anacrônica (genealogias
 
 Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas para evitar a aparência de incoerência. O fato de coexistirem duas genealogias distintas, sem tentativa de harmonização, é sinal de fidelidade independente às fontes que cada um recebeu, não de fraude.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Por que dois autores que fabricassem uma genealogia para Jesus produziriam versões diferentes? Não alinhariam para evitar contradição?
 
@@ -221,7 +221,7 @@ Gary Habermas, no estudo já citado sobre "fatos mínimos" da Ressurreição, mo
 
 Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordenada, os autores teriam ajustado as periferias para parecer uniforme. As diferenças visíveis nos Evangelhos são exatamente o tipo de discrepância natural que se espera de testemunhas independentes de um evento real.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Quando quatro pessoas relatam o mesmo acidente de carro, é normal que mencionem detalhes diferentes. Você acusa todas elas de mentirem?
 

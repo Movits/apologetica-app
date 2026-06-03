@@ -25,7 +25,7 @@ A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, me
 
 Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. A história real é grave, exige reflexão e arrependimento, mas é qualitativa e quantitativamente muito diferente da imagem popular.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Quantos foram realmente executados pela Inquisição? (Resposta histórica: cerca de 3.000-5.000 em 350 anos da Espanhola, contra dezenas de milhares pelos tribunais civis europeus no mesmo período.)
 
@@ -65,7 +65,7 @@ A motivação espiritual dos cruzados era complexa. Para a maioria, era genuinam
 
 A historiografia secular moderna, livre de polêmica religiosa, tem reconhecido cada vez mais essa complexidade. Thomas Madden, Jonathan Riley-Smith, Christopher Tyerman: todos historiadores das Cruzadas, todos não-confessionais, todos rejeitam a narrativa popular de "cruzados invasores contra pacíficos muçulmanos".
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. As Cruzadas começaram em 1095. Quem conquistou o Egito, Síria, Norte da África e Espanha entre 632 e 732, e por quê?
 
@@ -101,7 +101,7 @@ Cientistas católicos foram protagonistas em quase todas as áreas. Gregor Mende
 
 O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, por autores como Andrew Dickson White ("The Warfare of Science with Theology", 1896) e John William Draper, com objetivos políticos anticatólicos. Historiadores da ciência contemporâneos (Edward Grant, Stanley Jaki, Ronald Numbers) reconhecem que essa narrativa é fundamentalmente falsa.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Galileu foi torturado? (Não.)
 

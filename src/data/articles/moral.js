@@ -19,7 +19,7 @@ Há ainda um problema filosófico que ateus raramente percebem. O argumento do m
 
 São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você chama o sofrimento de "mau". Por qual padrão objetivo o sofrimento é mau? Se for só preferência sua, sua objeção contra Deus colapsa.
 
@@ -47,7 +47,7 @@ A objeção popular de que "o amor é amor" ignora uma distinção essencial. A 
 
 A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja não condena pessoas, ensina sobre atos. E ensina, junto com o ensinamento moral, a possibilidade real de viver na graça e a esperança da plenitude em Cristo.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Se "amor é amor", qualquer expressão sexual é legítima desde que haja amor? Isso valeria também entre irmãos adultos ou em poligamia consentida?
 
@@ -85,7 +85,7 @@ A jurisprudência católica é firme: o aborto direto é objetivamente um pecado
 
 Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a quem se arrepende. O Papa Francisco autorizou todos os sacerdotes a absolverem o pecado do aborto (antes era reservado a bispos em alguns lugares). Existe pastoral específica para mulheres que abortaram, com acompanhamento espiritual, oração, reconciliação. Como em todo pecado: condenação clara do ato, misericórdia plena para a pessoa.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Em que momento da gestação, exatamente, você diz que o feto vira "humano"? Por que esse momento e não outro?
 
@@ -129,7 +129,7 @@ O argumento "se a Igreja permitisse contracepção, as pessoas teriam menos abor
 
 A Igreja é a única instituição global que ainda defende coerentemente esta posição. Não porque seja "atrasada", mas porque é a única corajosa o suficiente para dizer a verdade impopular: o ato conjugal tem natureza dada, e violá-la traz consequências.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. As previsões de Paulo VI em 1968 se cumpriram. Como você explica isso, se a Igreja "não entende a vida real"?
 

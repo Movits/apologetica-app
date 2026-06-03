@@ -153,7 +153,7 @@ C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intens
 
 O argumento católico clássico aceita as similaridades reais (que existem, sim) e as interpreta como providência. Deus preparou a humanidade pagã para receber o Evangelho através de intuições parciais da verdade nas religiões anteriores. Quando o Verbo se fez carne, essas intuições encontraram seu cumprimento real, não em mais um mito, mas em uma pessoa histórica viva.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você consegue citar uma fonte acadêmica primária (texto egípcio, romano, grego) que confirme as alegações de Zeitgeist sobre Hórus, Mitra ou Dionísio?
 

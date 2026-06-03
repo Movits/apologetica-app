@@ -17,7 +17,7 @@ Há também uma razão histórica simples e contundente sobre a Bíblia. O câno
 
 Quem é cristão sem ser católico geralmente herda doutrinas selecionadas da Igreja Católica (a Trindade, a divindade de Cristo, o cânon bíblico) mas rejeita a autoridade que as definiu. É um arranjo incoerente. Ou a Igreja teve autoridade dada por Cristo (e nesse caso continua tendo), ou nunca teve (e nesse caso a Bíblia que ela compilou também não é confiável).
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Se sua igreja não existe historicamente até o século XVI, como ela pode ser a Igreja fundada por Cristo no século I?
 
@@ -47,7 +47,7 @@ Milagres eucarísticos comprovados
 
 Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vários submetidos a análise científica rigorosa, com resultados convergentes: tecido cardíaco humano, vivo, do tipo sanguíneo AB. O mais famoso é o de Lanciano, na Itália. Por seu peso como evidência, esse tema é tratado em artigo próprio, com os estudos médicos de Lanciano, Buenos Aires, Sokolka e Tixtla e o catálogo do Bem-Aventurado Carlo Acutis.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Por que Jesus perdeu muitos discípulos em João 6,66 se ele estava apenas falando simbolicamente? Por que não os chamou de volta esclarecendo o mal-entendido?
 
@@ -73,7 +73,7 @@ Maria, como Mãe de Cristo, tem uma intercessão única. Nas Bodas de Caná, ela
 
 A distinção católica clássica é entre latria (adoração devida só a Deus), dulia (veneração devida aos santos) e hiperdulia (veneração superior devida a Maria, por sua dignidade única como Mãe de Deus). A confusão entre adorar e venerar é o coração da objeção popular, mas a Igreja sempre fez essa distinção com clareza.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Você pede que sua mãe ou um amigo ore por você? Por quê? Isso seria "intermediação indevida"?
 
@@ -101,7 +101,7 @@ A primeira testemunha cristã do tema é Justino Mártir, na metade do séc. II,
 
 A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogma. Em Portugal e no Brasil, ela é Padroeira oficial.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Por que Gabriel chama Maria de kecharitōménē (já totalmente agraciada) em vez de simplesmente "Maria"? O título substitui o nome.
 
@@ -129,7 +129,7 @@ Os Padres confirmam a doutrina já no séc. II e III. Tertuliano, em "De Carne C
 
 Vale notar uma curiosidade histórica. Os próprios Reformadores Martinho Lutero, João Calvino e Ulrico Zwínglio aceitavam a virgindade perpétua de Maria. A negação dessa doutrina é fenômeno bem posterior na história protestante. A Igreja Católica ensina hoje o que sempre se ensinou desde Santo Inácio de Antioquia, Justino Mártir e Tertuliano.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Por que Maria, já noiva de José, pergunta ao anjo "como será isso, pois não conheço varão"? A pergunta só faz sentido se ela tinha propósito de virgindade.
 
@@ -159,7 +159,7 @@ A festa litúrgica de Maria, Mãe de Deus, é celebrada em 1º de janeiro, oitav
 
 Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Maria é mãe de Jesus. Jesus é Deus. Logo, Maria é mãe de Deus. Onde está o erro?
 
@@ -189,7 +189,7 @@ A sucessão papal é documentável de modo único. Pedro, Lino, Cleto, Clemente,
 
 Sobre infalibilidade: o Concílio Vaticano I (1870), na constituição Pastor Aeternus, definiu que o Papa é infalível quando ensina ex cathedra (do trono), em matéria de fé ou moral, dirigindo-se a toda a Igreja, com a intenção clara de definir definitivamente. Isso aconteceu pouquíssimas vezes na história (Imaculada Conceição em 1854, Assunção em 1950). Não significa que o Papa não erra em opiniões particulares, política, futebol ou estilo de governo. Significa que Cristo protege a Igreja de erro doutrinal quando o sucessor de Pedro ensina solenemente.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Se Pedro não tinha autoridade especial, por que Jesus mudou seu nome e lhe deu "as chaves" diretamente?
 
@@ -227,7 +227,7 @@ Matrimônio entre dois batizados é elevado por Cristo à dignidade sacramental 
 
 Cada sacramento tem três elementos: matéria (sinal sensível, como água ou óleo), forma (palavras precisas) e ministro qualificado. Quando estes três estão presentes corretamente, o sacramento é válido e produz objetivamente o que significa, independentemente da virtude do ministro (princípio ex opere operato).
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Se sacramentos são "só símbolos", por que Jesus diz em João 6,53 que sem comer sua carne não há vida em vós?
 
@@ -261,7 +261,7 @@ A objeção "Deus me conhece e perdoa direto" tem três problemas. Primeiro, con
 
 A Igreja exige confissão obrigatória apenas em duas situações: ao menos uma vez por ano (preceito mínimo, Catecismo §1457) e antes de comungar quando se tem consciência de pecado grave (1 Cor 11,27-29). A confissão frequente, mesmo de pecados veniais, é fortemente recomendada como meio de crescimento espiritual.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Em João 20,23 Jesus dá poder de perdoar pecados aos apóstolos. Para quem foi esse poder, se não para os sacerdotes?
 
@@ -291,7 +291,7 @@ O detalhe historicamente significativo: nunca houve disputa entre cidades pela r
 
 Pio XII, antes de definir o dogma, consultou os bispos do mundo inteiro. A esmagadora maioria respondeu favoravelmente, atestando que essa fé era vivida e ensinada nas suas igrejas. O dogma não foi novidade: foi reconhecimento solene do que a Igreja já cria desde sempre.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Por que não existe nenhum túmulo de Maria reivindicado por nenhuma cidade do mundo cristão antigo?
 
@@ -327,7 +327,7 @@ Importante distinguir: o Purgatório não é "pena externa" arbitrária. É a ma
 
 Por isso a Igreja exorta os vivos a rezar pelos mortos. Não muda o destino deles (céu ou inferno foi decidido na hora da morte), mas pode abreviar e suavizar a purificação dos que vão para o céu. Daí as missas pelos defuntos, indulgências aplicadas em sufrágio, novenas, terços. É expressão da Comunhão dos Santos.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Como você interpreta 2 Macabeus 12,44-46 sobre orar pelos mortos? (Se rejeita o livro, por que Lutero precisou removê-lo, se ele não dizia nada problemático?)
 
@@ -363,7 +363,7 @@ A questão prática é simples. Imagine alguém que confessa Cristo com a boca, 
 
 A formulação católica clássica é: somos justificados pela fé que opera pela caridade. Fé sem caridade é morta. Caridade sem fé é mero filantropismo. As duas juntas, animadas pela graça, são o caminho da salvação.
 
-Perguntas-chave:
+## Perguntas-chave
 
 1. Como você lê Tiago 2,24, que diz literalmente que a justificação não é "somente pela fé"?
 

@@ -62,7 +62,7 @@ Gary Habermas, a specialized researcher on the topic and professor at Liberty Un
 
 The historical question is not "was there evidence?", but "what explanation accounts for all of it?". The alternative theories (collective hallucination, body theft, apparent death, late myth) fail to explain at least one of these five facts each. The only hypothesis that accounts for all of them is bodily Resurrection.
 
-Key questions:
+## Key questions
 
 1. How do you explain that men who fled in fear on Friday were preaching publicly in Jerusalem fifty days later, under penalty of death, saying that Jesus had risen?
 
@@ -94,7 +94,7 @@ The strength of the argument lies in closing off the ambiguous escape. The perso
 
 There is a fourth option that modern skeptics try to introduce: Jesus never said these things, the Gospels were corrupted. This escape is historical, not philosophical, and falls before the dating of the manuscripts and the universal testimony of the early Christian communities, addressed in other articles.
 
-Key questions:
+## Key questions
 
 1. How can Jesus, in your view, be a "great moral teacher" if he claimed to be God and was not?
 
@@ -118,7 +118,7 @@ There is also a simple and compelling historical reason concerning the Bible. Th
 
 Whoever is Christian without being Catholic generally inherits selected doctrines from the Catholic Church (the Trinity, the divinity of Christ, the biblical canon) but rejects the authority that defined them. It is an incoherent arrangement. Either the Church had authority given by Christ (and in that case still has it), or it never had (and in that case the Bible it compiled is also not reliable).
 
-Key questions:
+## Key questions
 
 1. If your church does not exist historically until the 16th century, how can it be the Church founded by Christ in the 1st century?
 
@@ -152,7 +152,7 @@ Other independently analyzed cases, such as Buenos Aires (1996, authorized by th
 
 Blessed Carlo Acutis, young Italian layman (1991-2006), beatified in 2020 and canonized in 2025, compiled in his adolescence an international catalog of Eucharistic miracles approved by the Church. His website documents about 140 cases. This work is a current reference for knowing this evidence.
 
-Key questions:
+## Key questions
 
 1. Why did Jesus lose many disciples in John 6,66 if he was only speaking symbolically? Why did he not call them back clearing up the misunderstanding?
 
@@ -178,7 +178,7 @@ There is still a philosophical problem that atheists rarely perceive. The argume
 
 Saint Paul writes in Romans 8,28 that "all things work together for good for those who love God". Not that everything is good, but that God draws good even out of evil. The Pasch is the supreme example: the worst crime in history (killing the incarnate God) became the source of redemption.
 
-Key questions:
+## Key questions
 
 1. You call suffering "evil". By what objective standard is suffering evil? If it is only your preference, your objection against God collapses.
 
@@ -202,7 +202,7 @@ The fourth problem is historical. Sola Scriptura emerged in the 16th century. Be
 
 The Catholic solution is coherent: God\'s Revelation is transmitted through Sacred Scripture and Sacred Tradition, both interpreted by the living Magisterium of the Church. The three things mutually support each other.
 
-Key questions:
+## Key questions
 
 1. Where, in what specific verse, does the Bible teach that the Bible is the only rule of faith? (Sola Scriptura is self-refuting: it itself is not in the Bible.)
 
@@ -232,7 +232,7 @@ The multiverse objection (there exist infinite universes with different constant
 
 Saint Paul already said in the Letter to the Romans that "the invisible perfections of God, since the creation of the world, are understood and seen through created things". Modern science does not refute this affirmation, it confirms it with mathematical precision.
 
-Key questions:
+## Key questions
 
 1. What empirical evidence do you have for the multiverse?
 
@@ -254,7 +254,7 @@ But we all live as if morality were real. We condemn Nazism, defend the weak, be
 
 The moral argument does not say that atheists cannot act morally. They can and often act with great integrity. The argument is more subtle. Atheism, taken to its ultimate consequences, has no way to justify morality as objective. If it is objective, and it seems to be, then there must be a source that sustains it. This source is the personal God, creator of human nature and author of the moral law inscribed in the heart of each person.
 
-Key questions:
+## Key questions
 
 1. Was the Holocaust objectively wrong, or just something you prefer had not happened?
 
@@ -284,7 +284,7 @@ If the answer "God always existed" seems unsatisfactory, it is worth noting that
 
 The question turns against the questioner. Why is there something rather than nothing? Without a necessary reality at the basis of everything, existence itself remains unexplained. Philosophers call this requirement "principle of sufficient reason". God, understood correctly, is the only coherent answer to it.
 
-Key questions:
+## Key questions
 
 1. If "everything needs a cause", how do you explain the existence of the universe itself without falling into the same problem?
 
@@ -306,7 +306,7 @@ Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, sh
 
 The classical Catholic distinction is between latria (adoration owed only to God), dulia (veneration owed to the saints), and hyperdulia (superior veneration owed to Mary, for her unique dignity as Mother of God). The confusion between adoring and venerating is at the heart of the popular objection, but the Church has always made this distinction with clarity.
 
-Key questions:
+## Key questions
 
 1. Do you ask your mother or a friend to pray for you? Why? Would this be "undue intermediation"?
 
@@ -332,7 +332,7 @@ The first Christian witness on the subject is Justin Martyr, in the mid-2nd cent
 
 Devotion to Our Lady of the Conception is the liturgical expression of this dogma. In Portugal and Brazil, she is official Patroness.
 
-Key questions:
+## Key questions
 
 1. Why does Gabriel call Mary kecharitōménē (already totally graced) instead of simply "Mary"? The title replaces the name.
 
@@ -358,7 +358,7 @@ The Fathers confirm the doctrine already in the 2nd and 3rd centuries. Tertullia
 
 A historical curiosity is worth noting. The Reformers themselves Martin Luther, John Calvin and Ulrich Zwingli accepted the perpetual virginity of Mary. The denial of this doctrine is a much later phenomenon in Protestant history. The Catholic Church teaches today what has always been taught since Saint Ignatius of Antioch, Justin Martyr and Tertullian.
 
-Key questions:
+## Key questions
 
 1. Why does Mary, already engaged to Joseph, ask the angel "how shall this be, since I do not know man?". The question only makes sense if she had a purpose of virginity.
 
@@ -386,7 +386,7 @@ Papal succession is uniquely documentable. Peter, Linus, Cletus, Clement, Evaris
 
 On infallibility: the First Vatican Council (1870), in the constitution Pastor Aeternus, defined that the Pope is infallible when he teaches ex cathedra (from the throne), in matters of faith or morals, addressing the entire Church, with the clear intention of defining definitively. This has happened very few times in history (Immaculate Conception in 1854, Assumption in 1950). It does not mean that the Pope does not err in private opinions, politics, soccer or governing style. It means that Christ protects the Church from doctrinal error when the successor of Peter teaches solemnly.
 
-Key questions:
+## Key questions
 
 1. If Peter had no special authority, why did Jesus change his name and give him "the keys" directly?
 
@@ -414,7 +414,7 @@ The historically significant detail: there has never been a dispute between citi
 
 Pius XII, before defining the dogma, consulted the bishops of the whole world. The overwhelming majority responded favorably, attesting that this faith was lived and taught in their churches. The dogma was not a novelty: it was solemn recognition of what the Church had always believed.
 
-Key questions:
+## Key questions
 
 1. Why is there no tomb of Mary claimed by any city of the ancient Christian world?
 
@@ -448,7 +448,7 @@ Important to distinguish: Purgatory is not "external punishment" arbitrary. It i
 
 That is why the Church exhorts the living to pray for the dead. It does not change their destiny (heaven or hell was decided at the moment of death), but it can shorten and soften the purification of those going to heaven. Hence the masses for the deceased, indulgences applied in suffrage, novenas, rosaries. It is an expression of the Communion of Saints.
 
-Key questions:
+## Key questions
 
 1. How do you interpret 2 Maccabees 12,44-46 about praying for the dead? (If you reject the book, why did Luther need to remove it, if it said nothing problematic?)
 
@@ -482,7 +482,7 @@ The practical question is simple. Imagine someone who confesses Christ with the 
 
 The classical Catholic formulation is: we are justified by faith working through charity. Faith without charity is dead. Charity without faith is mere philanthropy. The two together, animated by grace, are the path of salvation.
 
-Key questions:
+## Key questions
 
 1. How do you read James 2,24, which says literally that justification is not "by faith alone"?
 
@@ -513,7 +513,7 @@ The liturgical feast of Mary, Mother of God, is celebrated on January 1st, the o
 
 Denying the Theotokos of Mary is not a minor objection. It is denying who Jesus is.
 
-Key questions:
+## Key questions
 
 1. Mary is the mother of Jesus. Jesus is God. Therefore, Mary is mother of God. Where is the error?
 
@@ -544,7 +544,7 @@ The popular objection that "love is love" ignores an essential distinction. The 
 
 The doctrine does not change because the truth about the human being does not change. The Church does not condemn persons; it teaches about acts. And it teaches, along with the moral teaching, the real possibility of living in grace and the hope of fulfillment in Christ.
 
-Key questions:
+## Key questions
 
 1. If "love is love", is any sexual expression legitimate as long as there is love? Would this also apply between adult siblings or in consensual polygamy?
 
@@ -650,7 +650,7 @@ The Catholic Church, at the Council of Trent (1546), solemnly reaffirmed the can
 
 Worth noting: the Church did not "decide arbitrarily" the canon. It discerned, under the guidance of the Holy Spirit, which books were authentic, apostolic, in conformity with the received rule of faith. The criteria were: apostolic origin (written by the apostles or their close disciples), liturgical use in the churches (especially in the Eucharistic liturgy), and orthodoxy (conformity with received doctrine). The 73 books passed these criteria.
 
-Key questions:
+## Key questions
 
 1. Who decided which books belong to the New Testament? If it was the Catholic Church (and it was), why accept that decision and reject the same Church on the Old?
 
@@ -686,7 +686,7 @@ Matrimony between two baptized persons is elevated by Christ to sacramental dign
 
 Each sacrament has three elements: matter (sensible sign, like water or oil), form (precise words) and qualified minister. When these three are present correctly, the sacrament is valid and objectively produces what it signifies, regardless of the minister\'s virtue (principle ex opere operato).
 
-Key questions:
+## Key questions
 
 1. If sacraments are "only symbols", why does Jesus say in John 6,53 that without eating his flesh there is no life in you?
 
@@ -718,7 +718,7 @@ The objection "God knows me and forgives me directly" has three problems. First,
 
 The Church requires obligatory confession only in two situations: at least once a year (minimum precept, Catechism §1457) and before communicating when one is conscious of grave sin (1 Cor 11,27-29). Frequent confession, even of venial sins, is strongly recommended as a means of spiritual growth.
 
-Key questions:
+## Key questions
 
 1. In John 20,23 Jesus gives the power to forgive sins to the apostles. To whom was this power given, if not to priests?
 
@@ -759,7 +759,7 @@ Catholic jurisprudence is firm: direct abortion is objectively a mortal sin. Tho
 
 But the doctrine is also merciful. The Church offers sacramental forgiveness to those who repent. Pope Francis authorized all priests to absolve the sin of abortion (previously reserved to bishops in some places). There is specific pastoral care for women who have aborted, with spiritual accompaniment, prayer, reconciliation. As in every sin: clear condemnation of the act, full mercy for the person.
 
-Key questions:
+## Key questions
 
 1. At what moment of gestation, exactly, do you say the fetus becomes "human"? Why this moment and not another?
 
@@ -801,7 +801,7 @@ The argument "if the Church allowed contraception, people would have fewer abort
 
 The Church is the only global institution that still coherently defends this position. Not because it is "backward", but because it is the only one courageous enough to tell the unpopular truth: the conjugal act has a given nature, and violating it has consequences.
 
-Key questions:
+## Key questions
 
 1. Paul VI\'s 1968 predictions came true. How do you explain that, if the Church "doesn\'t understand real life"?
 
@@ -835,7 +835,7 @@ The doctrine was formally defined at the Council of Nicaea (325) against Arius, 
 
 Jehovah\'s Witnesses also have serious historical problems: failed eschatological dates (1914, 1925, 1975 were pointed out as dates of the end, all failed), absurd prohibitions (blood transfusion, even at risk of death), frustrated predictions. All this indicates an organization without real apostolic foundation.
 
-Key questions:
+## Key questions
 
 1. Why does only the New World Translation (1950) translate John 1,1 as "a god"? Why does none of the historical traditions (Vulgate, Orthodox, Protestant) do this?
 
@@ -867,7 +867,7 @@ The just condemnation: the Inquisition had real problems. The use of torture, ev
 
 But recognizing real errors is not the same as accepting the mythical caricature. Real history is grave, requires reflection and repentance, but is qualitatively and quantitatively very different from the popular image.
 
-Key questions:
+## Key questions
 
 1. How many were really executed by the Inquisition? (Historical answer: about 3,000-5,000 in 350 years of the Spanish, against tens of thousands by European civil courts in the same period.)
 
@@ -905,7 +905,7 @@ The spiritual motivation of the crusaders was complex. For most, it was genuinel
 
 Modern secular historiography, free from religious polemics, has increasingly recognized this complexity. Thomas Madden, Jonathan Riley-Smith, Christopher Tyerman: all historians of the Crusades, all non-confessional, all reject the popular narrative of "invading crusaders against peaceful Muslims".
 
-Key questions:
+## Key questions
 
 1. The Crusades began in 1095. Who conquered Egypt, Syria, North Africa and Spain between 632 and 732, and why?
 
@@ -939,7 +939,7 @@ Catholic scientists were protagonists in almost all areas. Gregor Mendel (August
 
 The myth of "science-faith conflict" was constructed mainly in the 19th century, by authors like Andrew Dickson White ("The Warfare of Science with Theology", 1896) and John William Draper, with anti-Catholic political objectives. Contemporary historians of science (Edward Grant, Stanley Jaki, Ronald Numbers) recognize that this narrative is fundamentally false.
 
-Key questions:
+## Key questions
 
 1. Was Galileo tortured? (No.)
 
@@ -996,7 +996,7 @@ The most famous "contradictions" (Herod vs Quirinius at the birth of Jesus, the 
 
 Bart Ehrman, agnostic and one of the best-known critics of the New Testament, writes in his books that none of the apparent contradictions substantially affects the central story of Christianity: Jesus existed, was crucified, and his disciples believed they had seen him alive after death.
 
-Key questions:
+## Key questions
 
 1. Can you give a concrete example of "contradiction"? Let\'s examine it together calmly.
 
@@ -1024,7 +1024,7 @@ The objection, therefore, is not decisive. The linguistic and historical solutio
 
 Worth noting the disproportion of the objection. The historicity of Jesus is attested by multiple independent sources (Matthew, Mark, Luke, John, Paul, Josephus, Tacitus, Pliny the Younger, Suetonius). Five grammatically ambiguous words in Luke 2,2 do not bring down this edifice.
 
-Key questions:
+## Key questions
 
 1. Have you examined the Greek of Luke 2,2, or accepted the traditional translation without questioning the possibility of "before"?
 
@@ -1054,7 +1054,7 @@ The objection, therefore, starts from an anachronistic modern expectation (genea
 
 Worth adding: if the evangelists were inventing, they would align the lists to avoid the appearance of incoherence. The fact that two distinct genealogies coexist, without an attempt at harmonization, is a sign of independent fidelity to the sources that each received, not of fraud.
 
-Key questions:
+## Key questions
 
 1. Why would two authors who fabricate a genealogy for Jesus produce different versions? Wouldn\'t they align them to avoid contradiction?
 
@@ -1104,7 +1104,7 @@ Gary Habermas, in the already cited study on "minimal facts" of the Resurrection
 
 Worth noting a counterproof: if the Resurrection had been a coordinated invention, the authors would have adjusted the peripheries to look uniform. The differences visible in the Gospels are exactly the type of natural discrepancy expected from independent witnesses of a real event.
 
-Key questions:
+## Key questions
 
 1. When four people report the same car accident, it is normal for them to mention different details. Do you accuse them all of lying?
 
@@ -1138,7 +1138,7 @@ Five independent sources (Jewish Josephus, pagan Tacitus, pagan Pliny, pagan Sue
 
 The mythical thesis needs to explain how, in just a few years after the supposed "literary creation", there were already dozens of churches scattered around the Mediterranean, with real martyrs, established liturgical formulas, circulating writings, and directed imperial persecution. No alternative explanation works historically. That is why serious academia, even the most agnostic, rejects mythicism.
 
-Key questions:
+## Key questions
 
 1. Do you know how many academic historians from recognized universities defend that Jesus did not exist? (Answer: practically none.)
 
@@ -1172,7 +1172,7 @@ C. S. Lewis, who was an atheist before converting to Christianity, reflected int
 
 The classical Catholic argument accepts the real similarities (which do exist, yes) and interprets them as providence. God prepared pagan humanity to receive the Gospel through partial intuitions of the truth in previous religions. When the Word became flesh, those intuitions found their real fulfillment, not in one more myth, but in a living historical person.
 
-Key questions:
+## Key questions
 
 1. Can you cite a primary academic source (Egyptian, Roman, Greek text) that confirms Zeitgeist\'s claims about Horus, Mithras or Dionysus?
 
