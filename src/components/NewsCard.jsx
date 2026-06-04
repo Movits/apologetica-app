@@ -19,7 +19,7 @@ function relDate(ts, isEn) {
   return d.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', { day: 'numeric', month: 'short' });
 }
 
-const SLIDE_H = 190;
+const ASPECT = 16 / 9; // slide na proporção da imagem (mostra a foto quase inteira)
 
 // Carrossel de notícias católicas no "Dia de hoje". Cada card tem foto (do feed
 // ou da og:image do artigo) + título; passa sozinho a cada 3s e dá pra arrastar,
@@ -65,6 +65,7 @@ export default function NewsCard() {
   }, [items, width]);
 
   const styles = makeStyles(colors, fs);
+  const slideH = width > 0 ? Math.round(width / ASPECT) : 190;
   const open = (url) => { if (url) WebBrowser.openBrowserAsync(url).catch(() => {}); };
 
   const goTo = (i) => {
@@ -87,7 +88,7 @@ export default function NewsCard() {
     return (
       <TouchableOpacity
         activeOpacity={0.85}
-        style={[styles.slide, { width }]}
+        style={[styles.slide, { width, height: slideH }]}
         onPress={() => open(item.link)}
       >
         {hasImg ? (
@@ -129,11 +130,12 @@ export default function NewsCard() {
         <Text style={styles.error}>{t('news.offline')}</Text>
       ) : (
         <>
-          <View style={styles.carousel} onLayout={(e) => setWidth(e.nativeEvent.layout.width)}>
+          <View style={[styles.carousel, { height: slideH }]} onLayout={(e) => setWidth(e.nativeEvent.layout.width)}>
             {width > 0 && (
               <FlatList
                 ref={listRef}
                 data={items}
+                extraData={slideH}
                 keyExtractor={(it, i) => `${it.link}-${i}`}
                 renderItem={renderItem}
                 horizontal
@@ -186,8 +188,8 @@ const makeStyles = (c, fs) =>
     label: { fontSize: fs(11), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1 },
     error: { fontSize: fs(12), color: c.textMuted, marginTop: 4, marginLeft: 4, fontStyle: 'italic' },
 
-    carousel: { height: SLIDE_H, borderRadius: 10, overflow: 'hidden', backgroundColor: c.primary },
-    slide: { height: SLIDE_H, justifyContent: 'flex-end' },
+    carousel: { borderRadius: 10, overflow: 'hidden', backgroundColor: c.primary },
+    slide: { justifyContent: 'flex-end' },
     overlay: { backgroundColor: 'rgba(13, 23, 34, 0.5)' },
     noImgBg: { backgroundColor: c.primary },
     bgIcon: { position: 'absolute', top: 18, right: 18, opacity: 0.5 },

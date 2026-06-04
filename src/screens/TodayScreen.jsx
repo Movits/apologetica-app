@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
@@ -41,11 +41,13 @@ export default function TodayScreen() {
         onLayout={onLayout}
         scrollEventThrottle={32}
       >
-        <Text style={styles.dateLabel}>{dateLabel}</Text>
-        <NewsCard />
-        <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
-        <SaintTodayCard />
-        <VerseOfDayCard onOpen={openVerse} />
+        <View style={styles.column}>
+          <Text style={styles.dateLabel}>{dateLabel}</Text>
+          <NewsCard />
+          <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
+          <SaintTodayCard />
+          <VerseOfDayCard onOpen={openVerse} />
+        </View>
       </ScrollView>
       <ScrollHint direction="up" visible={showTop} />
       <ScrollHint direction="down" visible={showBottom} />
@@ -56,7 +58,9 @@ export default function TodayScreen() {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 16 },
+    content: { padding: 16, alignItems: 'center' },
+    // No desktop a página vira uma coluna central; no celular ocupa 100%.
+    column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: 720 } : null) },
     dateLabel: {
       fontSize: fs(13), color: c.textSubtle, fontWeight: 'bold',
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12,
