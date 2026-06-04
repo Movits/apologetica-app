@@ -93,6 +93,34 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 
 Icons via `@expo/vector-icons` (Ionicons).
 
+## Fluxo de revisão e verificação
+
+Antes de dar uma mudança como concluída, siga este fluxo leve. Ele substitui, de
+forma adaptada ao app (JS/RN), a ideia de "agentes para verificar e aperfeiçoar o
+código": a verificação determinística aqui é o lint e o build, não scripts Python.
+
+**1. Lint (verificação determinística):**
+```bash
+npm run lint    # ESLint em src/ — precisa passar antes de commitar
+```
+
+**2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**
+- `/code-review` — revisa o diff atual em busca de bugs de correção.
+- `/simplify` — limpa duplicação e simplifica o que foi alterado (só qualidade, não bugs).
+- `/security-review` — quando a mudança toca auth, Firebase ou dados do usuário.
+
+**3. Verificação de comportamento — quando a mudança é visível ao usuário:**
+- `/verify` ou `/run` — sobe o app e confirma que a alteração funciona de verdade,
+  não só que compila.
+
+**Regras práticas:**
+- Mudança só de conteúdo (texto de artigo, referência, tradução em `strings.js`):
+  basta o lint. Não precisa de review nem build.
+- Mudança em tela, navegação, contexto ou serviço: lint + `/code-review`, e `/verify`
+  se houver impacto visual.
+- Nunca dar como "pronto e testado" o que só compilou — diga o que foi de fato
+  verificado e o que ficou de fora.
+
 # Agent Instructions
 
 You're working inside the **WAT framework** (Workflows, Agents, Tools). This architecture separates concerns so that probabilistic AI handles reasoning while deterministic code handles execution. That separation is what makes this system reliable.
