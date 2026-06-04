@@ -205,15 +205,16 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
 
 const modalStyles = (c, fs) =>
   StyleSheet.create({
-    backdrop: { flex: 1, backgroundColor: 'rgba(13, 23, 34, 0.75)', justifyContent: 'flex-end' },
-    sheet: { backgroundColor: c.bg, borderTopLeftRadius: 18, borderTopRightRadius: 18, maxHeight: '85%' },
+    backdrop: { flex: 1, backgroundColor: 'rgba(13, 23, 34, 0.75)', justifyContent: 'flex-end', alignItems: 'center' },
+    // maxWidth evita o sheet ficar largo demais no desktop (web); no celular fica 100%.
+    sheet: { backgroundColor: c.bg, borderTopLeftRadius: 18, borderTopRightRadius: 18, maxHeight: '85%', width: '100%', maxWidth: 520 },
     header: {
       flexDirection: 'row', alignItems: 'flex-start', gap: 12,
       paddingHorizontal: 18, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: c.divider,
     },
     place: { fontSize: fs(13), color: c.accent, fontWeight: 'bold', marginBottom: 4 },
     title: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText },
-    photoBox: { width: '100%', height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 14, backgroundColor: c.divider },
+    photoBox: { width: '100%', aspectRatio: 3 / 2, borderRadius: 10, overflow: 'hidden', marginBottom: 14, backgroundColor: c.divider },
     photo: { width: '100%', height: '100%' },
     body: { fontSize: fs(15), color: c.text, lineHeight: fs(23), marginBottom: 16 },
     bibleBtn: {

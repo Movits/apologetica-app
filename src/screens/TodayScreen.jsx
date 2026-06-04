@@ -42,10 +42,10 @@ export default function TodayScreen() {
         scrollEventThrottle={32}
       >
         <Text style={styles.dateLabel}>{dateLabel}</Text>
+        <NewsCard />
+        <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
         <VerseOfDayCard onOpen={openVerse} />
         <SaintTodayCard />
-        <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
-        <NewsCard />
       </ScrollView>
       <ScrollHint direction="up" visible={showTop} />
       <ScrollHint direction="down" visible={showBottom} />

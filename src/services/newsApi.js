@@ -27,7 +27,9 @@ const MAX_ITEMS = 6;
 const cacheKey = (lang) => `news:cache:${lang}`;
 
 async function fetchFeed(feed) {
-  const url = `${RSS2JSON}${encodeURIComponent(feed.url)}&count=8`;
+  // Sem &count: o endpoint gratuito (sem api key) rejeita esse parâmetro (HTTP 422).
+  // Ele já devolve ~10 itens; cortamos para MAX_ITEMS adiante.
+  const url = `${RSS2JSON}${encodeURIComponent(feed.url)}`;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 8000);
   try {
