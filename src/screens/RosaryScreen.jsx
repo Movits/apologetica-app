@@ -8,6 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import { verseEndFromRef } from '../utils/verseRange';
 
 // Mistérios com referência bíblica (bookId, chapter, verse) pra deep-link.
 const MYSTERIES = {
@@ -151,9 +152,9 @@ export default function RosaryScreen() {
   const styles = makeStyles(colors, fs);
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
-  const openInBible = (nav) => {
+  const openInBible = (nav, ref) => {
     if (!nav) return;
-    navigation.navigate('Bíblia', { bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse });
+    navigation.navigate('Bíblia', { bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse, highlightVerseEnd: verseEndFromRef(ref) });
   };
 
   const advanceStep = () => {
@@ -215,7 +216,7 @@ export default function RosaryScreen() {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.cardTitle}>{isEn ? m.nameEn : m.name}</Text>
-                <TouchableOpacity onPress={() => openInBible(m.nav)} hitSlop={6}>
+                <TouchableOpacity onPress={() => openInBible(m.nav, m.ref)} hitSlop={6}>
                   <Text style={styles.cardRef}>
                     <Ionicons name="bookmark-outline" size={12} color={colors.accent} />{' '}
                     {isEn ? m.refEn : m.ref}
@@ -239,7 +240,7 @@ export default function RosaryScreen() {
             </Text>
             <Text style={styles.currentStepText}>{currentStep?.label}</Text>
             {currentMystery && (
-              <TouchableOpacity onPress={() => openInBible(currentMystery.nav)} hitSlop={6} style={{ marginTop: 8 }}>
+              <TouchableOpacity onPress={() => openInBible(currentMystery.nav, currentMystery.ref)} hitSlop={6} style={{ marginTop: 8 }}>
                 <Text style={styles.currentMystery}>
                   {isEn ? `→ ${currentMystery.nameEn} (${currentMystery.refEn})` : `→ ${currentMystery.name} (${currentMystery.ref})`}
                 </Text>

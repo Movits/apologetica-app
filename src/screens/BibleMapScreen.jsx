@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { JESUS_JOURNEY } from '../data/jesusJourney';
 import MapView from './bibleMap/MapView';
 import { buildMapHtml } from './bibleMap/mapHtml';
+import { verseEndFromRef } from '../utils/verseRange';
 
 // Tela "Nos Passos de Jesus": mapa real (Leaflet + CartoDB Voyager).
 // O renderizador do mapa é plataforma-específico (MapView.native = WebView,
@@ -25,13 +26,14 @@ export default function BibleMapScreen({ navigation }) {
   const goNext = () => { if (step < total - 1) setStep(step + 1); };
   const goToStep = (n) => setStep(n);
 
-  const openInBible = (nav) => {
+  const openInBible = (nav, ref) => {
     if (!nav) return;
     setSelected(null);
     navigation.navigate('Bíblia', {
       bookId: nav.bookId,
       chapter: nav.chapter,
       highlightVerse: nav.verse,
+      highlightVerseEnd: verseEndFromRef(ref),
     });
   };
 
@@ -188,7 +190,7 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
               </View>
             )}
             <Text style={s.body}>{isEn ? place.descEn : place.desc}</Text>
-            <TouchableOpacity style={s.bibleBtn} onPress={() => onOpenBible(place.nav)}>
+            <TouchableOpacity style={s.bibleBtn} onPress={() => onOpenBible(place.nav, place.ref)}>
               <Ionicons name="bookmark" size={16} color="#fff" />
               <Text style={s.bibleBtnText}>
                 {isEn ? `Read ${place.refEn} in the Bible` : `Ler ${place.ref} na Bíblia`}

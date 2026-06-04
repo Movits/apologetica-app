@@ -9,6 +9,7 @@ import { Share } from 'react-native';
 import ReadingText from '../components/ReadingText';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import { verseEndFromRef } from '../utils/verseRange';
 
 const EN_BOOK_ID = {
   'Genesis': 'gn', 'Exodus': 'ex', 'Leviticus': 'lv', 'Numbers': 'nm',
@@ -43,7 +44,7 @@ const parseReadingRef = (ref) => {
   if (!match) return null;
   const bookId = EN_BOOK_ID[match[1].trim()];
   if (!bookId) return null;
-  return { bookId, chapter: parseInt(match[2]), verse: parseInt(match[3]) };
+  return { bookId, chapter: parseInt(match[2]), verse: parseInt(match[3]), verseEnd: verseEndFromRef(ref) };
 };
 
 // Returns only "Book Chapter" (e.g. "Psalm 147") stripping verse ranges.
@@ -257,7 +258,7 @@ export default function LiturgyScreen() {
                 key={r.label}
                 style={[styles.enChip, !nav && styles.enChipDisabled]}
                 onPress={() => nav && navigation.navigate('Bíblia', {
-                  bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse,
+                  bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse, highlightVerseEnd: nav.verseEnd,
                 })}
                 disabled={!nav}
               >
