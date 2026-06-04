@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Modal, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Modal, ScrollView, Pressable, Image, ActivityIndicator, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -159,7 +159,7 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
   const [imgLoading, setImgLoading] = useState(true);
   const [imgError, setImgError] = useState(false);
   return (
-    <Modal visible={!!place} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={!!place} transparent animationType={Platform.OS === 'web' ? 'fade' : 'slide'} onRequestClose={onClose}>
       <Pressable style={s.backdrop} onPress={onClose}>
         <Pressable style={s.sheet} onPress={(e) => e.stopPropagation()}>
           <View style={s.header}>
@@ -205,9 +205,13 @@ function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
 
 const modalStyles = (c, fs) =>
   StyleSheet.create({
-    backdrop: { flex: 1, backgroundColor: 'rgba(13, 23, 34, 0.75)', justifyContent: 'flex-end', alignItems: 'center' },
+    // Web: modal flutua centralizado no meio. Celular: bottom sheet (sobe de baixo).
+    backdrop: { flex: 1, backgroundColor: 'rgba(13, 23, 34, 0.75)', justifyContent: Platform.OS === 'web' ? 'center' : 'flex-end', alignItems: 'center' },
     // maxWidth evita o sheet ficar largo demais no desktop (web); no celular fica 100%.
-    sheet: { backgroundColor: c.bg, borderTopLeftRadius: 18, borderTopRightRadius: 18, maxHeight: '85%', width: '100%', maxWidth: 520 },
+    sheet: {
+      backgroundColor: c.bg, maxHeight: '85%', width: '100%', maxWidth: 520,
+      ...(Platform.OS === 'web' ? { borderRadius: 18 } : { borderTopLeftRadius: 18, borderTopRightRadius: 18 }),
+    },
     header: {
       flexDirection: 'row', alignItems: 'flex-start', gap: 12,
       paddingHorizontal: 18, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: c.divider,

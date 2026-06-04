@@ -239,187 +239,6 @@ export default function SettingsScreen() {
         </View>
       </View>
 
-      {Platform.OS !== 'web' && (
-       <>
-      <Text style={styles.section}>{t('settings.section.notifications')}</Text>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="sunny-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.daily')}</Text>
-            <Text style={styles.rowSub}>
-              {notifPrefs.dailyVerse
-                ? (isEn ? `Receive at ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}` : `Receber às ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}`)
-                : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.dailyVerse}
-          onValueChange={toggleDailyVerse}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.sunday')}</Text>
-            <Text style={styles.rowSub}>
-              {isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.sundayLiturgy}
-          onValueChange={toggleSundayLiturgy}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="help-circle-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.quiz')}</Text>
-            <Text style={styles.rowSub}>
-              {isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.dailyQuiz}
-          onValueChange={toggleDailyQuiz}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <TouchableOpacity
-        style={styles.row}
-        onPress={async () => {
-          const res = await sendTestNotification();
-          if (!res.ok) {
-            notify(
-              isEn ? 'Error' : 'Erro',
-              res.error || (isEn ? 'Could not schedule notification.' : 'Não consegui agendar a notificação.')
-            );
-          } else {
-            notify(
-              isEn ? 'Notification scheduled' : 'Notificação agendada',
-              isEn ? 'It will arrive in ~5 seconds. You can minimize the app to see it better.' : 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.'
-            );
-          }
-        }}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="notifications-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.notif.test')}</Text>
-        </View>
-      </TouchableOpacity>
-       </>
-      )}
-
-      <Text style={styles.section}>{t('settings.section.content')}</Text>
-
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Glossary')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="school-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('home.card.glossary')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('ReadingPlan')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('header.readingPlan')} (30)</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Rosary')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="flower-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('home.card.rosary')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('ExamConscience')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="shield-checkmark-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('home.card.exam')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.row} onPress={() => navigation.navigate('Favorites')}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="star-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('home.card.favorites')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      {user && (
-        <>
-          <Text style={styles.section}>{t('settings.section.account')}</Text>
-          <TouchableOpacity style={styles.row} onPress={handleLogout}>
-            <View style={styles.rowLeft}>
-              <Ionicons name="log-out-outline" size={22} color="#c0392b" />
-              <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{t('settings.logout')}</Text>
-            </View>
-          </TouchableOpacity>
-        </>
-      )}
-
-      <Text style={styles.section}>{t('settings.section.diagnostic')}</Text>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => {
-          try {
-            captureException(new Error('Teste manual do Sentry, APPologetica'));
-            notify(
-              isEn ? 'Test error sent' : 'Erro de teste enviado',
-              isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'
-            );
-          } catch (e) {
-            notify(
-              isEn ? 'Failed' : 'Falha',
-              isEn ? 'Sentry is not available in this build.' : 'Sentry não está disponível neste build.'
-            );
-          }
-        }}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="bug-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.sentry.test')}</Text>
-            <Text style={styles.rowSub}>{t('settings.sentry.testSub')}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-
-      <Text style={styles.section}>{t('settings.section.donate')}</Text>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="heart-outline" size={22} color={colors.accent} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.donate')}</Text>
-            <Text style={styles.rowSub}>{t('settings.donateSub')}</Text>
-          </View>
-        </View>
-        <Ionicons name="open-outline" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
       <Text style={styles.section}>{t('settings.section.language')}</Text>
       <View style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}>
         <View style={styles.rowLeft}>
@@ -515,6 +334,145 @@ export default function SettingsScreen() {
           ))}
         </View>
       </View>
+
+      {Platform.OS !== 'web' && (
+       <>
+      <Text style={styles.section}>{t('settings.section.notifications')}</Text>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="sunny-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.notif.daily')}</Text>
+            <Text style={styles.rowSub}>
+              {notifPrefs.dailyVerse
+                ? (isEn ? `Receive at ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}` : `Receber às ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}`)
+                : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
+            </Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.dailyVerse}
+          onValueChange={toggleDailyVerse}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
+      </View>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.notif.sunday')}</Text>
+            <Text style={styles.rowSub}>
+              {isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
+            </Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.sundayLiturgy}
+          onValueChange={toggleSundayLiturgy}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
+      </View>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="help-circle-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.notif.quiz')}</Text>
+            <Text style={styles.rowSub}>
+              {isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
+            </Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.dailyQuiz}
+          onValueChange={toggleDailyQuiz}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
+      </View>
+
+      <TouchableOpacity
+        style={styles.row}
+        onPress={async () => {
+          const res = await sendTestNotification();
+          if (!res.ok) {
+            notify(
+              isEn ? 'Error' : 'Erro',
+              res.error || (isEn ? 'Could not schedule notification.' : 'Não consegui agendar a notificação.')
+            );
+          } else {
+            notify(
+              isEn ? 'Notification scheduled' : 'Notificação agendada',
+              isEn ? 'It will arrive in ~5 seconds. You can minimize the app to see it better.' : 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.'
+            );
+          }
+        }}
+      >
+        <View style={styles.rowLeft}>
+          <Ionicons name="notifications-outline" size={22} color={colors.primaryText} />
+          <Text style={styles.rowLabel}>{t('settings.notif.test')}</Text>
+        </View>
+      </TouchableOpacity>
+       </>
+      )}
+
+      {user && (
+        <>
+          <Text style={styles.section}>{t('settings.section.account')}</Text>
+          <TouchableOpacity style={styles.row} onPress={handleLogout}>
+            <View style={styles.rowLeft}>
+              <Ionicons name="log-out-outline" size={22} color="#c0392b" />
+              <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{t('settings.logout')}</Text>
+            </View>
+          </TouchableOpacity>
+        </>
+      )}
+
+      <Text style={styles.section}>{t('settings.section.diagnostic')}</Text>
+      <TouchableOpacity
+        style={styles.row}
+        onPress={() => {
+          try {
+            captureException(new Error('Teste manual do Sentry, APPologetica'));
+            notify(
+              isEn ? 'Test error sent' : 'Erro de teste enviado',
+              isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'
+            );
+          } catch (e) {
+            notify(
+              isEn ? 'Failed' : 'Falha',
+              isEn ? 'Sentry is not available in this build.' : 'Sentry não está disponível neste build.'
+            );
+          }
+        }}
+      >
+        <View style={styles.rowLeft}>
+          <Ionicons name="bug-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.sentry.test')}</Text>
+            <Text style={styles.rowSub}>{t('settings.sentry.testSub')}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <Text style={styles.section}>{t('settings.section.donate')}</Text>
+      <TouchableOpacity
+        style={styles.row}
+        onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
+      >
+        <View style={styles.rowLeft}>
+          <Ionicons name="heart-outline" size={22} color={colors.accent} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{t('settings.donate')}</Text>
+            <Text style={styles.rowSub}>{t('settings.donateSub')}</Text>
+          </View>
+        </View>
+        <Ionicons name="open-outline" size={18} color={colors.textSubtle} />
+      </TouchableOpacity>
 
       <Text style={styles.section}>{t('settings.section.privacy')}</Text>
       <TouchableOpacity

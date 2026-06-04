@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Platform } from 'react-native';
 
 // Notícias católicas para o card "Dia de hoje". Estratégia igual à liturgia:
 // busca da rede com cache em AsyncStorage e fallback offline.
@@ -18,7 +19,7 @@ const FEEDS = {
   ],
   en: [
     { source: 'Vatican News', url: 'https://www.vaticannews.va/en.rss.xml' },
-    { source: 'CNA', url: 'https://feeds.feedburner.com/catholicnewsagency/dailynews' },
+    { source: 'CNA', url: 'https://www.catholicnewsagency.com/rss/news.xml' },
   ],
 };
 
@@ -53,6 +54,39 @@ async function fetchFeed(feed) {
   }
 }
 
+// Feeds da ACI/CNA não trazem imagem no RSS, mas as páginas dos artigos têm
+// og:image no topo. Buscamos o HTML e extraímos. Na web, o navegador não pode
+// buscar o HTML por CORS, então passamos por um proxy (codetabs); no nativo,
+// busca direto. Falha -> null (o card cai no fundo estilizado).
+const CODETABS = 'https://api.codetabs.com/v1/proxy/?quest=';
+
+function decodeEntities(s) {
+  return s
+    .replace(/&amp;/g, '&').replace(/&#38;/g, '&')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x2F;/g, '/');
+}
+
+async function resolveImage(articleUrl) {
+  if (!articleUrl) return null;
+  const target = Platform.OS === 'web' ? `${CODETABS}${encodeURIComponent(articleUrl)}` : articleUrl;
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 7000);
+  try {
+    const res = await fetch(target, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    if (!res.ok) return null;
+    const html = (await res.text()).slice(0, 200000); // og:image às vezes vem depois do head
+    const m =
+      html.match(/<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) ||
+      html.match(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]*content=["']([^"']+)["']/i);
+    return m ? decodeEntities(m[1]) : null;
+  } catch {
+    clearTimeout(timeoutId);
+    return null;
+  }
+}
+
 export async function getNews(lang = 'pt', { force = false } = {}) {
   const key = cacheKey(lang);
 
@@ -79,6 +113,13 @@ export async function getNews(lang = 'pt', { force = false } = {}) {
   items = items.filter((it) => (seen.has(it.link) ? false : (seen.add(it.link), true)));
   items.sort((a, b) => b.pubDate - a.pubDate);
   items = items.slice(0, MAX_ITEMS);
+
+  // Completa a foto dos itens sem imagem buscando a og:image da página (em paralelo).
+  await Promise.all(
+    items.map(async (it) => {
+      if (!it.image) it.image = await resolveImage(it.link);
+    })
+  );
 
   if (items.length > 0) {
     await AsyncStorage.setItem(

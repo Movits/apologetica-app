@@ -44,8 +44,8 @@ export default function TodayScreen() {
         <Text style={styles.dateLabel}>{dateLabel}</Text>
         <NewsCard />
         <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
-        <VerseOfDayCard onOpen={openVerse} />
         <SaintTodayCard />
+        <VerseOfDayCard onOpen={openVerse} />
       </ScrollView>
       <ScrollHint direction="up" visible={showTop} />
       <ScrollHint direction="down" visible={showBottom} />
