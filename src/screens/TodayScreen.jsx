@@ -7,6 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 import VerseOfDayCard from '../components/VerseOfDayCard';
 import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
+import NewsCard from '../components/NewsCard';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
@@ -44,6 +45,7 @@ export default function TodayScreen() {
         <VerseOfDayCard onOpen={openVerse} />
         <SaintTodayCard />
         <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
+        <NewsCard />
       </ScrollView>
       <ScrollHint direction="up" visible={showTop} />
       <ScrollHint direction="down" visible={showBottom} />

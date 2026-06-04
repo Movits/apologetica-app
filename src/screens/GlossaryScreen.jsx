@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -35,16 +35,19 @@ export default function GlossaryScreen({ route, navigation }) {
   }, [query]);
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
+  const [focused, setFocused] = useState(false);
   const styles = makeStyles(colors, fs);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={styles.searchRow}>
+      <View style={[styles.searchRow, focused && styles.searchRowFocused]}>
         <Ionicons name="search-outline" size={18} color={colors.textSubtle} />
         <TextInput
           style={styles.input}
           value={query}
           onChangeText={setQuery}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           placeholder={isEn ? 'Search term...' : 'Buscar termo...'}
           placeholderTextColor={colors.textSubtle}
           autoCorrect={false}
@@ -97,8 +100,10 @@ const makeStyles = (c, fs) =>
       flexDirection: 'row', alignItems: 'center', gap: 10,
       backgroundColor: c.card, margin: 16, paddingHorizontal: 14,
       borderRadius: 12, minHeight: 48,
+      borderWidth: 1.5, borderColor: 'transparent',
     },
-    input: { flex: 1, color: c.text, fontSize: fs(14), paddingVertical: 10 },
+    searchRowFocused: { borderColor: c.accent },
+    input: { flex: 1, color: c.text, fontSize: fs(14), paddingVertical: 10, ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null) },
     card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
     cardOpen: { borderWidth: 1, borderColor: c.accent },
     headRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },

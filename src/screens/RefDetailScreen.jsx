@@ -38,6 +38,7 @@ export default function SearchedRefScreen({ route, navigation }) {
       bookId: nav.bookId,
       chapter: nav.chapter,
       highlightVerse: nav.verse,
+      highlightVerseEnd: nav.verseEnd,
     });
   };
 

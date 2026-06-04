@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
@@ -76,6 +76,7 @@ export default function SearchScreen({ navigation }) {
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [busy, setBusy] = useState(false);
   const [history, setHistory] = useState([]);
+  const [focused, setFocused] = useState(false);
 
   // Memoiza styles pra que ref não mude por render
   const styles = useMemo(() => makeStyles(colors, fs), [colors, fs]);
@@ -220,12 +221,14 @@ export default function SearchScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchRow}>
+      <View style={[styles.searchRow, focused && styles.searchRowFocused]}>
         <Ionicons name="search-outline" size={20} color={colors.textSubtle} />
         <TextInput
           style={styles.input}
           value={query}
           onChangeText={setQuery}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           placeholder={isEn ? 'What are you looking for?' : 'O que você procura?'}
           placeholderTextColor={colors.textSubtle}
           autoFocus
@@ -317,13 +320,17 @@ const makeStyles = (c, fs) =>
       backgroundColor: c.card, margin: 16, paddingHorizontal: 14,
       borderRadius: 12,
       minHeight: 52,
+      borderWidth: 1.5, borderColor: 'transparent',
     },
+    searchRowFocused: { borderColor: c.accent },
     input: {
       flex: 1,
       fontSize: fs(15),
       color: c.text,
       paddingVertical: 12,
       textAlignVertical: 'center',
+      // remove o outline preto padrão do navegador (web); a borda fica na caixa
+      ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null),
     },
     empty: { alignItems: 'center', padding: 40, gap: 10 },
     emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },

@@ -19,6 +19,7 @@ const LIGHT = {
   badgeBg: '#eef2f7',
   badgeText: '#1a3a5c',
   heroSub: '#ccd9e8',
+  deepLinkHl: '#f6e6b0',      // destaque temporário (chegada por referência) bem visível
 };
 
 // Paleta dark mode estilo "noite na catedral": navy profundo com dourado quente.
@@ -40,6 +41,7 @@ const DARK = {
   badgeBg: '#243248',
   badgeText: '#e6c878',
   heroSub: '#b8c4d8',
+  deepLinkHl: '#3a3320',      // destaque temporário (chegada por referência) bem visível
 };
 
 const FONT_SCALES = {

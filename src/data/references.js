@@ -15,7 +15,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Primado de Pedro / fundação da Igreja',
     text: `E eu te declaro: tu és Pedro, e sobre esta pedra edificarei a minha Igreja; as portas do inferno não prevalecerão contra ela. Eu te darei as chaves do Reino dos Céus: tudo o que ligares na terra será ligado nos céus, e tudo o que desligares na terra será desligado nos céus”.`,
-    bibleNav: { bookId: 'mt', chapter: 16, verse: 18 },
+    bibleNav: { bookId: 'mt', chapter: 16, verse: 18, verseEnd: 19 },
     originalLanguage: {
       language: 'Grego',
       word: 'Πέτρος / πέτρα',
@@ -51,7 +51,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Eucaristia / presença real',
     text: `Então, Jesus lhes disse: “Em verdade, em verdade vos digo: se não comerdes a carne do Filho do Homem, e não beberdes o seu sangue, não tereis a vida em vós mesmos. Quem come a minha carne e bebe o meu sangue tem a vida eterna; e eu o ressuscitarei no último dia. Pois a minha carne é verdadeiramente uma comida e o meu sangue, verdadeiramente uma bebida.`,
-    bibleNav: { bookId: 'jo', chapter: 6, verse: 53 },
+    bibleNav: { bookId: 'jo', chapter: 6, verse: 53, verseEnd: 55 },
     originalLanguage: {
       language: 'Grego',
       word: 'σάρξ / τρώγω',
@@ -80,7 +80,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Lei moral inscrita no coração / argumento moral',
     text: `Os pagãos, que não têm a Lei, fazendo naturalmente as coisas que são da Lei, embora não tenham a lei, a si mesmos servem de lei; eles mostram que o objeto da lei está gravado nos seus corações, dando-lhes testemunho a sua consciên­cia, bem como os seus raciocínios, com os quais se acusam ou se escusam mutuamente.`,
-    bibleNav: { bookId: 'rm', chapter: 2, verse: 14 },
+    bibleNav: { bookId: 'rm', chapter: 2, verse: 14, verseEnd: 15 },
   },
   {
     id: '1cor-15-3',
@@ -91,7 +91,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Ressurreição de Cristo / testemunhas oculares',
     text: `Eu vos transmiti primeiramente o que eu mesmo havia recebido: que Cristo morreu por nossos pecados, segundo as Escrituras; foi sepultado, e ressurgiu ao terceiro dia, segundo as Escrituras; apareceu a Cefas e, em seguida, aos Doze. Depois apareceu a mais de quinhentos irmãos de uma vez, dos quais a maior parte ainda vive (e alguns já são mortos); depois apareceu a Tiago, em seguida a todos os apóstolos. E, por último de todos, apareceu também a mim, como a um abortivo.`,
-    bibleNav: { bookId: '1cor', chapter: 15, verse: 3 },
+    bibleNav: { bookId: '1cor', chapter: 15, verse: 3, verseEnd: 8 },
   },
   {
     id: '2ts-2-15',
@@ -120,7 +120,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Bodas de Caná / intercessão de Maria',
     text: `Três dias depois, celebravam-se bodas em Caná da Galileia, e achava-se ali a mãe de Jesus. Também foram convidados Jesus e os seus discípulos. Como viesse a faltar vinho, a mãe de Jesus disse-lhe: “Eles já não têm vinho”. Respondeu-lhe Jesus: “Mulher, isso compete a nós? Minha hora ainda não chegou”. Disse, então, sua mãe aos serventes: “Fazei o que ele vos disser”. Ora, achavam-se ali seis talhas de pedra para as purificações dos judeus, que continham cada qual duas ou três medidas. Jesus ordena-lhes: “Enchei as talhas de água”. Eles encheram-nas até em cima. “Tirai agora” – disse-lhes Jesus – “e levai ao chefe dos serventes”. E levaram. Logo que o chefe dos serventes provou da água tornada vinho, não sabendo de onde era (se bem que o soubessem os serventes, pois tinham tirado a água), chamou o noivo e disse-lhe: “É costume servir primeiro o vinho bom e, depois, quando os convidados já estão quase embriagados, servir o menos bom. Mas tu guardaste o vinho me­lhor até agora”. Esse foi o primeiro milagre de Jesus; realizou-o em Caná da Galileia. Manifestou a sua glória, e os seus discípulos creram nele.`,
-    bibleNav: { bookId: 'jo', chapter: 2, verse: 1 },
+    bibleNav: { bookId: 'jo', chapter: 2, verse: 1, verseEnd: 11 },
   },
   {
     id: 'mt-22-32',
@@ -175,7 +175,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Grande Mandato / evangelização',
     text: `Ide, pois, e ensinai a todas as nações; batizai-as em nome do Pai, do Filho e do Espírito Santo. Ensinai-as a observar tudo o que vos prescrevi. Eis que estou convosco todos os dias, até o fim do mundo”.`,
-    bibleNav: { bookId: 'mt', chapter: 28, verse: 19 },
+    bibleNav: { bookId: 'mt', chapter: 28, verse: 19, verseEnd: 20 },
   },
   {
     id: 'mt-26-26',
@@ -186,7 +186,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Instituição da Eucaristia',
     text: `Durante a refeição, Jesus tomou o pão, benzeu-o, partiu-o e o deu aos discípulos, dizendo: “Tomai e comei, isto é meu corpo”. Tomou depois o cálice, rendeu graças e deu-lho, dizendo: “Bebei dele todos, porque isto é meu sangue, o sangue da Nova Aliança, derramado por muitos homens em remissão dos pecados.`,
-    bibleNav: { bookId: 'mt', chapter: 26, verse: 26 },
+    bibleNav: { bookId: 'mt', chapter: 26, verse: 26, verseEnd: 28 },
     originalLanguage: {
       language: 'Grego',
       word: 'τοῦτό ἐστιν τὸ σῶμά μου',
@@ -204,7 +204,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Eucaristia / comunhão indigna',
     text: `Portanto, todo aquele que comer o pão ou beber o cálice do Senhor indignamente será culpável do corpo e do sangue do Senhor. Que cada um se examine a si mesmo e, assim, coma desse pão e beba desse cálice. Aquele que o come e o bebe sem distinguir o corpo do Senhor, come e bebe a sua própria condenação.`,
-    bibleNav: { bookId: '1cor', chapter: 11, verse: 27 },
+    bibleNav: { bookId: '1cor', chapter: 11, verse: 27, verseEnd: 29 },
   },
   {
     id: 'gn-1-27',
@@ -215,7 +215,7 @@ export const references = [
     year: 'redação final c. séc. VI a.C.',
     topic: 'Criação do homem / sexualidade',
     text: `Deus criou o homem à sua imagem; criou-o à imagem de Deus, criou o homem e a mulher. Deus os abençoou: “Frutificai – disse ele – e multiplicai-vos, enchei a terra e submetei-a. Dominai sobre os peixes do mar, sobre as aves do céu e sobre todos os animais que se arrastam sobre a terra”.`,
-    bibleNav: { bookId: 'gn', chapter: 1, verse: 27 },
+    bibleNav: { bookId: 'gn', chapter: 1, verse: 27, verseEnd: 28 },
   },
   {
     id: 'rm-1-26',
@@ -226,7 +226,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Sexualidade desordenada',
     text: `Por isso, Deus os entregou a paixões vergonhosas: as suas mu­lheres mudaram as relações natu­rais em relações contra a natureza. Do mesmo modo também os homens, deixando o uso natural da mulher, arderam em desejos uns para com os outros, cometendo homens com homens a torpeza, e recebendo em seus corpos a paga devida ao seu desvario.`,
-    bibleNav: { bookId: 'rm', chapter: 1, verse: 26 },
+    bibleNav: { bookId: 'rm', chapter: 1, verse: 26, verseEnd: 27 },
   },
   {
     id: '1cor-6-9',
@@ -237,7 +237,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Sexualidade / chamado universal à conversão',
     text: `Acaso não sabeis que os injustos não hão de possuir o Reino de Deus? Não vos enganeis: nem os impuros, nem os idólatras, nem os adúlteros, nem os efeminados, nem os devassos, nem os ladrões, nem os avarentos, nem os bêbados, nem os difamadores, nem os assaltantes hão de possuir o Reino de Deus. Ao menos alguns de vós têm sido isso. Mas fostes lavados, mas fostes santificados, mas fostes justificados, em nome do Senhor Jesus Cristo e pelo Espírito de nosso Deus.`,
-    bibleNav: { bookId: '1cor', chapter: 6, verse: 9 },
+    bibleNav: { bookId: '1cor', chapter: 6, verse: 9, verseEnd: 11 },
   },
   {
     id: '2pd-1-20',
@@ -248,7 +248,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Inspiração e interpretação da Escritura',
     text: `Antes de tudo, sabei que nenhuma profecia da Escritura é de interpretação pessoal. Porque jamais uma profecia foi proferida por efeito de uma vontade humana. Homens inspirados pelo Espírito Santo falaram da parte de Deus.`,
-    bibleNav: { bookId: '2pd', chapter: 1, verse: 20 },
+    bibleNav: { bookId: '2pd', chapter: 1, verse: 20, verseEnd: 21 },
   },
   {
     id: 'mt-28-1',
@@ -259,7 +259,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Ressurreição de Cristo / túmulo vazio',
     text: `Depois do sábado, quando amanhecia o primeiro dia da semana, Maria Madalena e a ou­tra Maria foram ver o túmulo. E eis que houve um violento tremor de terra: um anjo do Senhor desceu do céu, rolou a pedra e sentou-se sobre ela. Resplandecia como relâmpago e suas vestes eram brancas como a neve. Vendo isso, os guardas pensaram que morre­riam de pavor. Mas o anjo disse às mulheres: “Não temais! Sei que procurais Jesus, que foi crucificado. Não está aqui: ressuscitou como disse. Vinde e vede o lugar em que ele repousou. Ide depressa e dizei aos discípulos que ele ressuscitou dos mortos. Ele vos precede na Galileia. Lá o haveis de rever, eu vo-lo disse”. Elas se afastaram prontamente do túmulo com certo receio, mas ao mesmo tempo com alegria, e correram a dar a Boa-Nova aos discípulos. Nesse momento, Jesus apresentou-se diante delas e disse-lhes: “Salve!”. Aproximaram-se elas e, prostradas diante dele, beijaram-lhe os pés. Disse-lhes Jesus: “Não temais! Ide dizer aos meus irmãos que se dirijam à Galileia, pois é lá que eles me verão”.`,
-    bibleNav: { bookId: 'mt', chapter: 28, verse: 1 },
+    bibleNav: { bookId: 'mt', chapter: 28, verse: 1, verseEnd: 10 },
   },
   {
     id: 'jo-17-20',
@@ -270,7 +270,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Oração pela unidade da Igreja',
     text: `“Não rogo somente por eles, mas também por aqueles que por sua palavra hão de crer em mim. Para que todos sejam um, assim como tu, Pai, estás em mim e eu em ti, para que também eles estejam em nós e o mundo creia que tu me enviaste.`,
-    bibleNav: { bookId: 'jo', chapter: 17, verse: 20 },
+    bibleNav: { bookId: 'jo', chapter: 17, verse: 20, verseEnd: 21 },
   },
   {
     id: 'jo-6-67',
@@ -281,7 +281,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Eucaristia / confissão de Pedro',
     text: `Então, Jesus perguntou aos Doze: “Quereis vós também retirar-vos?”. Respondeu-lhe Simão Pedro: “Senhor, a quem iríamos nós? Tu tens as palavras da vida eterna. E nós cremos e sabemos que tu és o Santo de Deus!”.`,
-    bibleNav: { bookId: 'jo', chapter: 6, verse: 67 },
+    bibleNav: { bookId: 'jo', chapter: 6, verse: 67, verseEnd: 69 },
   },
   {
     id: 'lc-1-28',
@@ -310,7 +310,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Maria louva Deus como Salvador / Magnificat',
     text: `E Maria disse: “Minha alma glorifica ao Senhor, meu espírito exulta de alegria em Deus, meu Salvador,`,
-    bibleNav: { bookId: 'lc', chapter: 1, verse: 46 },
+    bibleNav: { bookId: 'lc', chapter: 1, verse: 46, verseEnd: 47 },
   },
   {
     id: 'gn-3-15',
@@ -368,7 +368,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Irmãos de Jesus / adelphós no grego',
     text: `Não é este o filho do carpinteiro? Não é Maria sua mãe? Não são seus irmãos Tiago, José, Simão e Judas? E suas irmãs, não vivem todas entre nós? Donde lhe vem, pois, tudo isso?”.`,
-    bibleNav: { bookId: 'mt', chapter: 13, verse: 55 },
+    bibleNav: { bookId: 'mt', chapter: 13, verse: 55, verseEnd: 56 },
     originalLanguage: {
       language: 'Grego',
       word: 'ἀδελφός',
@@ -419,7 +419,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Jesus entrega Maria a João / virgindade perpétua',
     text: `Quando Jesus viu sua mãe e perto dela o discípulo que amava, disse à sua mãe: “Mulher, eis aí teu filho”. Depois disse ao discípulo: “Eis aí tua mãe”. E dessa hora em diante o discípulo a recebeu como sua mãe.`,
-    bibleNav: { bookId: 'jo', chapter: 19, verse: 26 },
+    bibleNav: { bookId: 'jo', chapter: 19, verse: 26, verseEnd: 27 },
   },
   {
     id: 'lc-1-43',
@@ -466,7 +466,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Divindade de Jesus / unidade com o Pai',
     text: `Eu e o Pai somos um”. Os judeus pegaram pela segunda vez em pedras para o apedrejar. Disse-lhes Jesus: “Tenho-vos mostrado muitas obras boas da parte de meu Pai. Por qual dessas obras me apedre­jais?”. Os judeus responderam-lhe: “Não é por causa de alguma boa obra que te queremos apedrejar, mas por uma blasfêmia, porque, sendo homem, te fazes Deus”.`,
-    bibleNav: { bookId: 'jo', chapter: 10, verse: 30 },
+    bibleNav: { bookId: 'jo', chapter: 10, verse: 30, verseEnd: 33 },
   },
   {
     id: 'mc-14-61',
@@ -477,7 +477,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Divindade de Jesus / declaração diante do Sinédrio',
     text: `Mas Jesus se calava e nada respondia. O sumo sacerdote tornou a perguntar-lhe: “És tu o Cristo, o Filho de Deus bendito?”. Jesus respondeu: “Eu o sou. E vereis o Filho do Homem sentado à direita do poder de Deus, vindo sobre as nuvens do céu”.`,
-    bibleNav: { bookId: 'mc', chapter: 14, verse: 61 },
+    bibleNav: { bookId: 'mc', chapter: 14, verse: 61, verseEnd: 62 },
   },
   {
     id: 'ex-3-14',
@@ -506,7 +506,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Divindade do Verbo / Cristologia',
     text: `No princípio era o Verbo, e o Verbo estava junto de Deus e o Verbo era Deus. Ele estava no princípio junto de Deus. Tudo foi feito por ele, e sem ele nada foi feito.`,
-    bibleNav: { bookId: 'jo', chapter: 1, verse: 1 },
+    bibleNav: { bookId: 'jo', chapter: 1, verse: 1, verseEnd: 3 },
     originalLanguage: {
       language: 'Grego',
       word: 'ὁ λόγος',
@@ -546,7 +546,7 @@ export const references = [
     year: 'c. 95 d.C.',
     topic: 'Anjo recusa adoração / só Deus é adorado',
     text: `Fui eu, João, que vi e ouvi estas coisas. Depois de as ter ouvido e visto, prostrei-me aos pés do anjo que as mostrava. Mas ele me disse: “Não faças isto! Sou um servo como tu e teus irmãos, os profetas, e aqueles que guardam as palavras deste livro. Prostra-te diante de Deus”.`,
-    bibleNav: { bookId: 'ap', chapter: 22, verse: 8 },
+    bibleNav: { bookId: 'ap', chapter: 22, verse: 8, verseEnd: 9 },
   },
 
   // ============ CATECISMO DA IGREJA CATÓLICA ============
@@ -1032,7 +1032,7 @@ export const references = [
     year: 'séc. II a.C.',
     topic: 'Oração pelos mortos / fundamento do Purgatório',
     text: 'Pois se ele não esperasse que os mortos haviam de ressuscitar, teria sido supérfluo e vão orar pelos mortos. Mas, considerando que aos que morriam piedosamente estava reservada a mais bela recompensa, esse pensamento era santo e piedoso. Eis por que ele mandou fazer esse sacrifício expiatório pelos mortos, para que fossem libertos de seus pecados.',
-    bibleNav: { bookId: '2mc', chapter: 12, verse: 44 },
+    bibleNav: { bookId: '2mc', chapter: 12, verse: 44, verseEnd: 46 },
   },
   {
     id: '1cor-3-12',
@@ -1043,7 +1043,7 @@ export const references = [
     year: 'c. 53-54 d.C.',
     topic: 'Purificação pelo fogo / Purgatório',
     text: 'Quanto àquele que edifica sobre este fundamento com ouro, prata, pedras preciosas, madeira, feno ou palha, a obra de cada um aparecerá. O dia (do Senhor) demonstrá-la-á. Esse dia há de manifestar-se pelo fogo, e o fogo provará o que vale a obra de cada um. Se a obra construída sobre o fundamento subsistir, o construtor receberá a recompensa; se a obra ficar destruída, ele perderá a recompensa; ele, porém, será salvo, mas como que através do fogo.',
-    bibleNav: { bookId: '1cor', chapter: 3, verse: 12 },
+    bibleNav: { bookId: '1cor', chapter: 3, verse: 12, verseEnd: 15 },
   },
   {
     id: 'tg-2-24',
@@ -1054,7 +1054,7 @@ export const references = [
     year: 'c. 45-50 d.C.',
     topic: 'Fé e obras / contra o Sola Fide',
     text: 'Meus irmãos, que aproveita a alguém dizer que tem fé, se não tiver obras? Acaso a fé poderá salvá-lo? (...) A fé sem as obras é morta. (...) Vedes que o homem é justificado pelas obras e não somente pela fé. (...) Assim como o corpo sem a alma é morto, também a fé sem obras é morta.',
-    bibleNav: { bookId: 'tg', chapter: 2, verse: 14 },
+    bibleNav: { bookId: 'tg', chapter: 2, verse: 14, verseEnd: 26 },
   },
   {
     id: 'mt-25-31',
@@ -1065,7 +1065,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Juízo final pelas obras de misericórdia',
     text: 'Quando o Filho do Homem voltar na sua glória e todos os anjos com ele, sentar-se-á no trono glorioso. Todas as nações se reunirão diante dele e ele separará uns dos outros, como o pastor separa as ovelhas dos cabritos. (...) Porque tive fome, e me destes de comer; tive sede, e me destes de beber; (...) Em verdade vos digo: todas as vezes que fizestes isso a um destes meus irmãos mais pequeninos, foi a mim que o fizestes.',
-    bibleNav: { bookId: 'mt', chapter: 25, verse: 31 },
+    bibleNav: { bookId: 'mt', chapter: 25, verse: 31, verseEnd: 46 },
   },
   {
     id: 'jo-20-22',
@@ -1076,7 +1076,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Instituição do sacramento da Confissão',
     text: 'Disse-lhes outra vez: "A paz esteja convosco! Como o Pai me enviou, assim também eu vos envio". Depois dessas palavras, soprou sobre eles, dizendo-lhes: "Recebei o Espírito Santo. Aqueles a quem perdoardes os pecados, ser-lhes-ão perdoados; aqueles a quem retiverdes, ser-lhes-ão retidos".',
-    bibleNav: { bookId: 'jo', chapter: 20, verse: 21 },
+    bibleNav: { bookId: 'jo', chapter: 20, verse: 21, verseEnd: 23 },
   },
   {
     id: 'tg-5-14',
@@ -1087,7 +1087,7 @@ export const references = [
     year: 'c. 45-50 d.C.',
     topic: 'Unção dos enfermos e confissão dos pecados',
     text: 'Está alguém enfermo entre vós? Chame os sacerdotes da Igreja, e estes façam oração sobre ele, ungindo-o com óleo em nome do Senhor. A oração da fé salvará o enfermo e o Senhor o restabelecerá; e, se tiver pecados, eles lhe serão perdoados. Confessai os vossos pecados uns aos outros, e orai uns pelos outros, para serdes curados.',
-    bibleNav: { bookId: 'tg', chapter: 5, verse: 14 },
+    bibleNav: { bookId: 'tg', chapter: 5, verse: 14, verseEnd: 16 },
   },
   {
     id: 'hb-1-8',
@@ -1109,7 +1109,7 @@ export const references = [
     year: 'c. 61-63 d.C.',
     topic: 'Divindade de Cristo / Encarnação',
     text: 'Ele, que era de condição divina, não considerou como uma usurpação ser igual a Deus. Mas aniquilou-se a si mesmo, assumindo a condição de servo e tornando-se semelhante aos homens. (...) Por isso Deus o exaltou soberanamente e lhe outorgou o nome que está acima de todo nome, para que ao nome de Jesus todo joelho se dobre.',
-    bibleNav: { bookId: 'fl', chapter: 2, verse: 6 },
+    bibleNav: { bookId: 'fl', chapter: 2, verse: 6, verseEnd: 11 },
   },
 
   // ============ CATECISMO ADICIONAL ============
@@ -1334,7 +1334,7 @@ export const references = [
     year: 'c. 95 d.C.',
     topic: 'Juízo final segundo as obras',
     text: 'E vi os mortos, grandes e pequenos, em pé diante do trono. Abriram-se livros, e ainda outro livro, que é o livro da vida; e os mortos foram julgados segundo as suas obras, conforme o que estava escrito nos livros. (...) Cada um foi julgado segundo as suas obras.',
-    bibleNav: { bookId: 'ap', chapter: 20, verse: 12 },
+    bibleNav: { bookId: 'ap', chapter: 20, verse: 12, verseEnd: 13 },
   },
   {
     id: 'mt-7-21',
@@ -1367,7 +1367,7 @@ export const references = [
     year: 'c. 61-63 d.C.',
     topic: 'Matrimônio como sacramento',
     text: 'Por isso o homem deixará pai e mãe, e se unirá à sua mulher, e os dois serão uma só carne. Grande é este mistério, refiro-me a Cristo e à Igreja.',
-    bibleNav: { bookId: 'ef', chapter: 5, verse: 31 },
+    bibleNav: { bookId: 'ef', chapter: 5, verse: 31, verseEnd: 32 },
   },
   {
     id: 'at-8-14',
@@ -1378,7 +1378,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Crisma / imposição das mãos pelos apóstolos',
     text: 'Os apóstolos que estavam em Jerusalém, sabendo que Samaria recebera a palavra de Deus, enviaram-lhes Pedro e João. Estes, ali chegando, oraram pelos samaritanos para que recebessem o Espírito Santo. Pois ainda não havia descido sobre nenhum deles, mas só haviam sido batizados em nome do Senhor Jesus. Então lhes impuseram as mãos, e receberam o Espírito Santo.',
-    bibleNav: { bookId: 'at', chapter: 8, verse: 14 },
+    bibleNav: { bookId: 'at', chapter: 8, verse: 14, verseEnd: 17 },
   },
   // ============ REFERÊNCIAS PARA NOVOS ARTIGOS (CONTRADIÇÕES, HISTORICIDADE) ============
   {
@@ -1390,7 +1390,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Censo de Quirino / nascimento de Jesus',
     text: 'Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do que se efetuou quando Quirino era governador da Síria. Iam todos alistar-se, cada um na sua cidade. Também José subiu da Galileia, da cidade de Nazaré, à Judeia, à Cidade de Davi chamada Belém, porque era da casa e família de Davi, a fim de alistar-se com Maria, sua esposa, que estava grávida.',
-    bibleNav: { bookId: 'lc', chapter: 2, verse: 1 },
+    bibleNav: { bookId: 'lc', chapter: 2, verse: 1, verseEnd: 7 },
     originalLanguage: {
       language: 'Grego',
       word: 'πρώτη',
@@ -1419,7 +1419,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Genealogia de Jesus segundo Mateus / linha legal por José',
     text: 'Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Assim, todas as gerações de Abraão a Davi são catorze. De Davi até o cativeiro da Babilônia, catorze gerações; e do cativeiro da Babilônia até Cristo, catorze gerações.',
-    bibleNav: { bookId: 'mt', chapter: 1, verse: 1 },
+    bibleNav: { bookId: 'mt', chapter: 1, verse: 1, verseEnd: 17 },
   },
   {
     id: 'lc-3-23',
@@ -1430,7 +1430,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Genealogia de Jesus segundo Lucas / linha ascendente até Adão',
     text: 'Quando Jesus começou a ensinar, tinha cerca de trinta anos e era tido como filho de José, filho de Heli, filho de Matat, filho de Levi (...) filho de Set, filho de Adão, filho de Deus.',
-    bibleNav: { bookId: 'lc', chapter: 3, verse: 23 },
+    bibleNav: { bookId: 'lc', chapter: 3, verse: 23, verseEnd: 38 },
   },
   {
     id: 'dt-25-5',
@@ -1441,7 +1441,7 @@ export const references = [
     year: 'redação final c. séc. VI a.C.',
     topic: 'Lei do Levirato / casamento da viúva sem filhos',
     text: 'Quando irmãos morarem juntos e um deles morrer sem ter filho, a mulher do falecido não se casará fora, com um estrangeiro; seu cunhado a tomará por mulher, e cumprirá com ela o dever de cunhado. O primogênito que ela conceber será considerado como filho do irmão falecido, para que o nome deste não se apague em Israel.',
-    bibleNav: { bookId: 'dt', chapter: 25, verse: 5 },
+    bibleNav: { bookId: 'dt', chapter: 25, verse: 5, verseEnd: 6 },
   },
   {
     id: 'at-1-3',
@@ -1583,7 +1583,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'O Paráclito prometido é o Espírito Santo',
     text: 'E eu rogarei ao Pai, e ele vos dará outro Paráclito, para que fique convosco eternamente: o Espírito da Verdade, que o mundo não pode receber, porque não o vê nem o conhece. Vós o conheceis, porque permanece convosco e estará em vós.',
-    bibleNav: { bookId: 'jo', chapter: 14, verse: 16 },
+    bibleNav: { bookId: 'jo', chapter: 14, verse: 16, verseEnd: 17 },
   },
   {
     id: 'lc-16-19',
@@ -1594,7 +1594,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Estado dos mortos: consciência, identidade e abismo intransponível',
     text: 'Entre nós e vós está firmado um grande abismo, de modo que os que querem passar daqui para vós não o podem, nem os de lá passar para nós. (...) Se não ouvem a Moisés e aos profetas, tampouco se deixarão convencer ainda que ressuscite alguém dentre os mortos.',
-    bibleNav: { bookId: 'lc', chapter: 16, verse: 19 },
+    bibleNav: { bookId: 'lc', chapter: 16, verse: 19, verseEnd: 31 },
   },
   {
     id: 'dt-18-10',
@@ -1605,7 +1605,7 @@ export const references = [
     year: 'séc. XIII a VII a.C.',
     topic: 'Proibição de consultar os mortos e a adivinhação',
     text: 'Não se ache no meio de ti quem se dê à adivinhação, aos agouros, à magia, ao encantamento, nem quem consulte espíritos, nem mágico, nem quem interrogue os mortos. Pois quem faz tais coisas é abominável ao Senhor.',
-    bibleNav: { bookId: 'dt', chapter: 18, verse: 10 },
+    bibleNav: { bookId: 'dt', chapter: 18, verse: 10, verseEnd: 12 },
   },
   {
     id: 'is-8-19',
@@ -1714,7 +1714,7 @@ export const references = [
     year: 'séc. VIII a.C.',
     topic: 'Profecia do Servo que sofre pelos pecados do povo',
     text: 'Era desprezado, abandonado pelos homens, homem das dores. Foram as nossas enfermidades que ele levou sobre si. Mas foi ferido por causa de nossas iniquidades; o castigo que nos traz a paz caiu sobre ele, e fomos curados por suas chagas. Maltratado, voluntariamente se humilhou e não abriu a boca, como cordeiro que se leva ao matadouro.',
-    bibleNav: { bookId: 'is', chapter: 53, verse: 3 },
+    bibleNav: { bookId: 'is', chapter: 53, verse: 3, verseEnd: 7 },
   },
   {
     id: 'sl-22',
@@ -1735,7 +1735,7 @@ export const references = [
     year: 'séc. II a.C. (ambientado no séc. VI a.C.)',
     topic: 'Prazo para a vinda e a morte do Ungido antes da destruição da cidade',
     text: 'Setenta semanas estão fixadas para o teu povo e para a tua cidade santa. Depois das sessenta e duas semanas, um ungido será suprimido. E o povo de um chefe que há de vir destruirá a cidade e o santuário.',
-    bibleNav: { bookId: 'dn', chapter: 9, verse: 24 },
+    bibleNav: { bookId: 'dn', chapter: 9, verse: 24, verseEnd: 26 },
   },
   {
     id: 'mq-5-2',
@@ -1746,7 +1746,7 @@ export const references = [
     year: 'séc. VIII a.C.',
     topic: 'O governante de Israel nasceria em Belém',
     text: 'E tu, Belém-Efrata, tão pequena entre os clãs de Judá, de ti sairá aquele que há de governar Israel, e cujas origens vêm desde os tempos antigos, desde os dias da eternidade.',
-    bibleNav: { bookId: 'mq', chapter: 5, verse: 1 },
+    bibleNav: { bookId: 'mq', chapter: 5, verse: 1, verseEnd: 2 },
   },
   {
     id: 'zc-12-10',
@@ -1768,7 +1768,7 @@ export const references = [
     year: 'c. 57 d.C.',
     topic: 'Israel como a oliveira boa em que os cristãos foram enxertados',
     text: 'Se alguns ramos foram cortados, e tu, oliveira brava, foste enxertado em seu lugar, tornando-te participante da raiz e da seiva da oliveira, não te glories contra os ramos. Não és tu que sustentas a raiz, mas a raiz é que te sustenta.',
-    bibleNav: { bookId: 'rm', chapter: 11, verse: 17 },
+    bibleNav: { bookId: 'rm', chapter: 11, verse: 17, verseEnd: 18 },
   },
   {
     id: 'jo-3-16',
@@ -1897,7 +1897,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Critério para discernir os espíritos: Jesus veio em carne',
     text: 'Nisto se reconhece o espírito de Deus: todo espírito que confessa que Jesus Cristo veio em carne é de Deus; e todo espírito que não confessa Jesus não é de Deus.',
-    bibleNav: { bookId: '1jo', chapter: 4, verse: 2 },
+    bibleNav: { bookId: '1jo', chapter: 4, verse: 2, verseEnd: 3 },
   },
   {
     id: 'ex-20-3',
@@ -1908,7 +1908,7 @@ export const references = [
     year: 'séc. XIII a VII a.C.',
     topic: 'Primeiro mandamento: um só Deus a ser adorado',
     text: 'Não terás outros deuses diante de mim. Não farás para ti imagem esculpida de nada que se assemelhe ao que existe lá em cima nos céus, ou embaixo na terra, para adorá-la, pois eu, o Senhor teu Deus, sou um Deus zeloso.',
-    bibleNav: { bookId: 'ex', chapter: 20, verse: 3 },
+    bibleNav: { bookId: 'ex', chapter: 20, verse: 3, verseEnd: 5 },
   },
 
   // ============ NOVOS ARTIGOS (Fase 4: escuridão/eclipse, profecias messiânicas) ============
@@ -1921,7 +1921,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'As trevas durante a crucificação',
     text: 'Desde a hora sexta até a hora nona, houve trevas sobre toda a terra. Por volta da hora nona, Jesus bradou em alta voz: Eli, Eli, lammá sabactani? Isto é: Meu Deus, meu Deus, por que me abandonaste?',
-    bibleNav: { bookId: 'mt', chapter: 27, verse: 45 },
+    bibleNav: { bookId: 'mt', chapter: 27, verse: 45, verseEnd: 46 },
   },
   {
     id: 'jl-2-31',
@@ -2150,7 +2150,7 @@ export const references = [
     year: 'séc. I d.C.',
     topic: 'Um reino dividido contra si mesmo não subsiste',
     text: 'Todo reino dividido contra si mesmo será destruído, e toda cidade ou casa dividida contra si mesma não subsistirá. Ora, se Satanás expele Satanás, está dividido contra si mesmo. Como subsistirá, então, o seu reino?',
-    bibleNav: { bookId: 'mt', chapter: 12, verse: 25 },
+    bibleNav: { bookId: 'mt', chapter: 12, verse: 25, verseEnd: 26 },
   },
   {
     id: 'occam-navalha',

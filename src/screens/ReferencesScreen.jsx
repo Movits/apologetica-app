@@ -267,6 +267,7 @@ export default function ReferencesScreen({ route }) {
         bookId: nav.bookId,
         chapter: nav.chapter,
         highlightVerse: nav.verse,
+        highlightVerseEnd: nav.verseEnd,
       });
     },
     [navigation]

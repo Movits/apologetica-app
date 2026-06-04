@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Platform } from 'react-native';
 import { notify } from '../utils/dialog';
 import * as Clipboard from 'expo-clipboard';
 import * as Speech from 'expo-speech';
@@ -38,11 +38,14 @@ export default function BibleScreen({ route, navigation }) {
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
   const [highlightVerse, setHighlightVerse] = useState(null);
+  // Fim do intervalo destacado (ex.: Mt 16,18-19 destaca 18 e 19). Null = só o verso inicial.
+  const [highlightVerseEnd, setHighlightVerseEnd] = useState(null);
   // Marca que chegamos a um capítulo/versículo por deep link (ref, artigo, etc.),
   // para que a seta de voltar retorne à tela de origem em vez de descer na
   // hierarquia interna da Bíblia (versículos -> capítulos -> livros).
   const [fromDeepLink, setFromDeepLink] = useState(false);
   const [filterText, setFilterText] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
   const [actionVerse, setActionVerse] = useState(null);
   const [chapterHighlights, setChapterHighlights] = useState([]);
   const [chapterNotes, setChapterNotes] = useState([]);
@@ -67,14 +70,15 @@ export default function BibleScreen({ route, navigation }) {
         if (params.chapter) {
           setChapter(params.chapter);
           setHighlightVerse(params.highlightVerse ?? null);
+          setHighlightVerseEnd(params.highlightVerseEnd ?? null);
           setView('verses');
         } else {
           setView('chapters');
         }
-        navigation?.setParams?.({ bookId: undefined, chapter: undefined, highlightVerse: undefined });
+        navigation?.setParams?.({ bookId: undefined, chapter: undefined, highlightVerse: undefined, highlightVerseEnd: undefined });
       }
     }
-  }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse]);
+  }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse, route?.params?.highlightVerseEnd]);
 
   // Volta pro início da seção quando o usuário aperta o tab Bíblia de novo
   useEffect(() => {
@@ -85,6 +89,7 @@ export default function BibleScreen({ route, navigation }) {
         setBook(null);
         setChapter(null);
         setHighlightVerse(null);
+        setHighlightVerseEnd(null);
         setFilterText('');
         setFromDeepLink(false);
       } else {
@@ -311,13 +316,15 @@ export default function BibleScreen({ route, navigation }) {
           </Text>
         </View>
 
-        <View style={styles.searchRow}>
+        <View style={[styles.searchRow, searchFocused && styles.searchRowFocused]}>
           <Ionicons name="search-outline" size={18} color={colors.textSubtle} style={{ marginRight: 8 }} />
           <TextInput
             style={styles.searchInput}
             placeholder={isEn ? 'Search book...' : 'Buscar livro...'}
             value={filterText}
             onChangeText={setFilterText}
+            onFocus={() => setSearchFocused(true)}
+            onBlur={() => setSearchFocused(false)}
             placeholderTextColor={colors.textSubtle}
           />
         </View>
@@ -403,8 +410,8 @@ export default function BibleScreen({ route, navigation }) {
     const hasPrev = chapter > 1;
     const hasNext = chapter < book.totalChapters;
     const isEmpty = !chapterData?.verses?.length;
-    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setChapter(chapter - 1); setFromDeepLink(false); } };
-    const goNext = () => { if (hasNext) { setHighlightVerse(null); setChapter(chapter + 1); setFromDeepLink(false); } };
+    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter - 1); setFromDeepLink(false); } };
+    const goNext = () => { if (hasNext) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter + 1); setFromDeepLink(false); } };
 
     return (
       <View style={styles.container}>
@@ -454,7 +461,7 @@ export default function BibleScreen({ route, navigation }) {
             onLayout={verseHints.onLayout}
             scrollEventThrottle={32}
             renderItem={({ item }) => {
-              const isDeepLinked = highlightVerse && item.n === highlightVerse;
+              const isDeepLinked = highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse);
               const userHighlight = highlightsByVerse[item.n];
               const hasNote = versesWithNotes.has(item.n);
               return (
@@ -593,8 +600,10 @@ const makeStyles = (c, fs) =>
       flexDirection: 'row', alignItems: 'center',
       marginHorizontal: 16, marginBottom: 8,
       backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 12,
+      borderWidth: 1.5, borderColor: 'transparent',
     },
-    searchInput: { flex: 1, height: 42, fontSize: fs(15), color: c.text },
+    searchRowFocused: { borderColor: c.accent },
+    searchInput: { flex: 1, height: 42, fontSize: fs(15), color: c.text, ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null) },
     groupHeader: {
       fontSize: fs(13), fontWeight: 'bold', color: c.textSubtle,
       textTransform: 'uppercase', letterSpacing: 1, marginTop: 16, marginBottom: 8,
@@ -628,7 +637,7 @@ const makeStyles = (c, fs) =>
     ttsBtn: { padding: 4 },
     verseList: { padding: 16, paddingBottom: 24 },
     verseRow: { flexDirection: 'row', marginBottom: 10, padding: 8, borderRadius: 8 },
-    verseRowDeepLink: { backgroundColor: c.badgeBg },
+    verseRowDeepLink: { backgroundColor: c.deepLinkHl, borderLeftWidth: 3, borderLeftColor: c.accent },
     verseNum: {
       fontSize: fs(11), color: c.accent, fontWeight: 'bold',
       marginRight: 8, minWidth: 24, paddingTop: 3,
