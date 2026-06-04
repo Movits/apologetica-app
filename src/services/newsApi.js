@@ -25,7 +25,7 @@ const FEEDS = {
 
 const TTL_MS = 3 * 60 * 60 * 1000; // revalida a cada 3 horas
 const MAX_ITEMS = 6;
-const cacheKey = (lang) => `news:cache:${lang}`;
+const cacheKey = (lang) => `news:cache:v2:${lang}`; // v2: itens agora incluem foto
 
 async function fetchFeed(feed) {
   // Sem &count: o endpoint gratuito (sem api key) rejeita esse parâmetro (HTTP 422).
@@ -60,6 +60,14 @@ async function fetchFeed(feed) {
 // busca direto. Falha -> null (o card cai no fundo estilizado).
 const CODETABS = 'https://api.codetabs.com/v1/proxy/?quest=';
 
+// Serve as imagens por um CDN/proxy (wsrv.nl): contorna CORS/hotlink de qualquer
+// host, converte para jpg e redimensiona — exibição uniforme e mais rápida.
+const WSRV = 'https://wsrv.nl/?url=';
+function proxyImg(url) {
+  if (!url || url.startsWith('https://wsrv.nl/')) return url || null;
+  return `${WSRV}${encodeURIComponent(url)}&w=1000&output=jpg&q=80`;
+}
+
 function decodeEntities(s) {
   return s
     .replace(/&amp;/g, '&').replace(/&#38;/g, '&')
@@ -70,7 +78,7 @@ async function resolveImage(articleUrl) {
   if (!articleUrl) return null;
   const target = Platform.OS === 'web' ? `${CODETABS}${encodeURIComponent(articleUrl)}` : articleUrl;
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 7000);
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
   try {
     const res = await fetch(target, { signal: controller.signal });
     clearTimeout(timeoutId);
@@ -120,6 +128,8 @@ export async function getNews(lang = 'pt', { force = false } = {}) {
       if (!it.image) it.image = await resolveImage(it.link);
     })
   );
+  // Roteia toda imagem pelo CDN/proxy para exibir de forma uniforme e confiável.
+  items.forEach((it) => { it.image = proxyImg(it.image); });
 
   if (items.length > 0) {
     await AsyncStorage.setItem(
