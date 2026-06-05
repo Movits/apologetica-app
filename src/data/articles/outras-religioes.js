@@ -547,6 +547,41 @@ No fundo, a mensagem cristã aqui é libertadora. O cristão não precisa viver 
 4. Ler horóscopo "de brincadeira" educa você a confiar em Deus, ou a buscar segurança em outro lugar?`,
     references: ['dt-18-10', 'cic-2116', 'is-8-19', 'ex-20-3', '2cor-11-14'],
   },
+  {
+    id: 77,
+    title: 'A Igreja e a Maçonaria',
+    category: 'Outras Religiões',
+    image: require('../../../assets/articles/77-maconaria.jpg'),
+    imageAlt: 'A Torre de Babel, de Bruegel',
+    imageCredit: 'Pieter Bruegel, o Velho, A Torre de Babel (1563). Domínio público.',
+    imageAspect: 1.37,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPieter%2520Bruegel%2520the%2520Elder%2520-%2520The%2520Tower%2520of%2520Babel%2520(Vienna)%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
+    summary: 'Um católico pode ser maçom? Por que a Igreja, há séculos, considera a Maçonaria incompatível com a fé. Sem teorias da conspiração, com base em princípios.',
+    body: `Poucos temas vêm tão cercados de mistério e de teorias fantasiosas quanto a Maçonaria. A posição da Igreja, porém, é antiga, clara e baseada em princípios doutrinais, não em medo nem em conspiração.
+
+## O que a Igreja decidiu
+
+Desde 1738, com o Papa Clemente XII, a Igreja proíbe os católicos de se filiarem à Maçonaria. Em 1983, a Congregação para a Doutrina da Fé, com a aprovação de São João Paulo II, reafirmou de forma direta que os fiéis que aderem a associações maçônicas estão em pecado grave e não podem receber a comunhão. Não é a opinião de um padre mais rigoroso; é uma posição firme e constante do Magistério.
+
+## Por quê: não é perseguição, é coerência
+
+O problema não é o segredo em si, nem as obras de filantropia que muitos maçons praticam. O problema é a visão de mundo que está na base. A Maçonaria professa, em geral, um relativismo religioso (todas as religiões valeriam igualmente, e Deus seria um "Grande Arquiteto" genérico, sem rosto), um naturalismo que dispensa a revelação, e juramentos que pedem uma lealdade à loja capaz de se sobrepor à própria consciência. Isso é incompatível com a fé cristã, que confessa Jesus Cristo como único Salvador, "o caminho, a verdade e a vida" (João 14,6), e com o primeiro mandamento, que reserva a Deus a adoração (Êxodo 20,3).
+
+## Sem conspiração
+
+É importante o tom. A Igreja não trata os maçons como demônios, não alimenta teorias de que dominam secretamente o mundo, nem fomenta caça às bruxas. Ela aponta, com sobriedade, uma incompatibilidade de princípios entre a fé católica e a doutrina maçônica, e ao mesmo tempo respeita as pessoas concretas e deseja o seu bem. Discordar de uma doutrina não é odiar quem a segue.
+
+## E quem já está dentro?
+
+Para o católico que descobriu, talvez tarde, essa incompatibilidade, o convite não é ao drama, mas ao discernimento sereno e, se for o caso, à saída, com a ajuda de um sacerdote. Não se trata de condenar ninguém, mas de viver a fé com coerência: não se pode servir a dois senhores quando os fundamentos se contradizem.
+
+## Perguntas-chave
+
+1. Se a Igreja proíbe a Maçonaria desde 1738 e reafirmou isso em 1983, faz sentido tratar o tema como invenção recente ou exagero?
+
+2. O problema apontado é a filantropia dos maçons, ou a visão de fundo (relativismo, naturalismo, juramentos acima da consciência)?`,
+    references: ['ex-20-3', 'jo-14-6'],
+  },
 ];
 
 export default articles;

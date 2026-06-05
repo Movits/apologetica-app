@@ -25,6 +25,7 @@ export const RANKED_IDS = [
   20, 12, 13, 14, 22, 49, 50, 55, 47, 48,
   34, 32, 33, 45, 51, 54, 52, 53, 44, 27,
   42, 43, 36, 38, 39, 40, 41,
+  73, 74, 78, 79, 75, 76, 81, 80, 77, 82,
 ];
 
 // Seção "Mais buscados" no topo da aba Artigos (ids curados, em ordem).

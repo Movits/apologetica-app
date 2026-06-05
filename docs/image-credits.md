@@ -34,6 +34,16 @@ Arquivos em `assets/articles/`.
 | 70 — O Fim do Mundo | `70-fim-do-mundo.jpg` | O Grande Dia da Sua Ira (1851–53) | John Martin |
 | 71 — Como Ler a Bíblia | `71-como-ler-biblia.jpg` | Cristo Pregando (Estampa dos Cem Florins, c. 1648) | Rembrandt |
 | 72 — Evolução e Gênesis | `72-evolucao.jpg` | Adão e Eva no Paraíso (séc. XVII) | Jan Brueghel, o Jovem |
+| 73 — Como Rezar | `73-como-rezar.jpg` | A Oração no Horto (c. 1465) | Giovanni Bellini |
+| 74 — Como Rezar o Rosário | `74-rosario.jpg` | A Virgem do Rosário (séc. XVII) | Bartolomé Esteban Murillo |
+| 75 — O Dízimo | `75-dizimo.jpg` | O Tributo (Capela Brancacci, c. 1425) | Masaccio |
+| 76 — Canonização | `76-canonizacao.jpg` | Todos os Santos (séc. XVI) | Arte sacra (domínio público) |
+| 77 — A Igreja e a Maçonaria | `77-maconaria.jpg` | A Torre de Babel (1563) | Pieter Bruegel, o Velho |
+| 78 — Fortalecer a Fé | `78-fortalecer-fe.jpg` | Cristo e os Apóstolos no Mar da Galileia (1553) | Pieter Bruegel, o Velho |
+| 79 — Jejum e Quaresma | `79-jejum-quaresma.jpg` | As Tentações de Cristo (Sistina, 1481–82) | Sandro Botticelli |
+| 80 — Riqueza da Igreja | `80-vaticano.jpg` | Interior da Basílica de São Pedro (1731) | Giovanni Paolo Panini |
+| 81 — Escândalos de Abuso | `81-abusos.jpg` | Cristo Abençoa as Crianças (séc. XVII) | Estúdio de Artus Wolffort |
+| 82 — Pio XII | `82-pio-xii.jpg` | A Praça de São Pedro (séc. XVIII) | Gaspar van Wittel |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.

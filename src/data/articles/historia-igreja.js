@@ -288,6 +288,111 @@ Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece
 4. Se a devoção mariana fosse vazia, por que produz tanta conversão, oração e caridade no povo que a cultiva?`,
     references: ['aparecida-historia', 'jo-2-1'],
   },
+  {
+    id: 80,
+    title: 'A Riqueza da Igreja e do Vaticano',
+    category: 'História da Igreja',
+    image: require('../../../assets/articles/80-vaticano.jpg'),
+    imageAlt: 'Interior da Basílica de São Pedro, de Panini',
+    imageCredit: 'Giovanni Paolo Panini, Interior da Basílica de São Pedro (1731). Domínio público.',
+    imageAspect: 1.57,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FSt-peters-basilica-interior-pannini-1731.jpg&w=2200&output=jpg&q=80',
+    summary: 'Se a Igreja e tao rica, por que nao vende tudo e acaba com a pobreza? Uma resposta honesta sobre o patrimonio da Igreja, a arte e os pobres.',
+    body: `"Se o Vaticano é tão rico, por que não vende tudo e acaba com a fome do mundo?" A objeção é frequente e quase sempre bem-intencionada. Mas parte de alguns equívocos sobre o que a Igreja, de fato, "possui".
+
+## Que "tesouro" é esse
+
+A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça ou a preços simbólicos. A Capela Sistina não é uma conta bancária; é um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
+
+## Vender tudo acabaria com a pobreza?
+
+Não. Imagine que se vendesse a arte. A quem? Provavelmente a colecionadores bilionários, que a trancariam longe do público. O valor arrecadado, por maior que fosse, seria gasto uma única vez e logo se esgotaria diante da pobreza imensa do mundo, enquanto a humanidade perderia para sempre o acesso a essas obras. A pobreza é um problema estrutural, de justiça e de organização social; não se resolve com um grande leilão, por mais generoso que pareça.
+
+## O que a Igreja de fato faz
+
+Aqui está o dado que costuma ser esquecido: a Igreja Católica é, de longe, a maior rede de assistência e educação do planeta. Hospitais, escolas, universidades, orfanatos, abrigos, distribuição de alimentos, presença em lugares onde nem o Estado chega. Boa parte disso é invisível e silenciosa. Antes de perguntar por que a Igreja não faz mais pelos pobres, vale perguntar: quem, no mundo, faz mais?
+
+## O ideal e as falhas
+
+Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e ainda há luxo indevido e abusos por parte de clérigos, que a própria Igreja deve corrigir. O Papa Francisco insiste numa "Igreja pobre e para os pobres". Criticar a ostentação de um ou outro é legítimo e necessário. Concluir, disso, que a Igreja deveria desaparecer, ou que ela nada faz pelos pobres, é injusto com os fatos.
+
+## Perguntas-chave
+
+1. O patrimônio da Igreja é dinheiro guardado, ou em grande parte arte e templos abertos a todos, que não geram renda?
+
+2. Vender as obras de arte acabaria mesmo com a pobreza do mundo, ou apenas as tiraria do alcance das pessoas?`,
+    references: ['mt-25-31'],
+  },
+  {
+    id: 81,
+    title: 'A Igreja e os Escândalos de Abuso',
+    category: 'História da Igreja',
+    image: require('../../../assets/articles/81-abusos.jpg'),
+    imageAlt: 'Cristo abençoa as crianças',
+    imageCredit: 'Estúdio de Artus Wolffort, Cristo Abençoa as Crianças (séc. XVII). Domínio público.',
+    imageAspect: 1.31,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FArtus%2520Wolfaerts%2520(studio)%2520Christ%2520blessing%2520the%2520children.jpg&w=2200&output=jpg&q=80',
+    summary: 'Os crimes de abuso por parte de clérigos são uma ferida real e gravíssima. O que dizer disso com honestidade, sem relativizar nem destruir a fé.',
+    body: `Este é, provavelmente, o tema mais doloroso ligado à Igreja, e o mais usado contra a fé. Aqui não cabe minimizar nem disfarçar. Cabe verdade, justiça e, sobretudo, o olhar voltado para as vítimas.
+
+## Primeiro, a verdade nua
+
+Houve crimes hediondos cometidos por padres e religiosos contra crianças e jovens. E houve, pior ainda, encobrimento por parte de superiores que deveriam ter protegido as vítimas e preferiram proteger a instituição. Isso é uma traição ao Evangelho, não a sua aplicação. O próprio Jesus reservou as palavras mais terríveis a quem fizesse mal a "um destes pequeninos": "melhor lhe seria que se lhe pendurasse ao pescoço uma pedra de moinho" (Mateus 18,6). Nada justifica esses crimes, nada os relativiza.
+
+## O que não é honesto fazer
+
+Reconhecida a gravidade, é preciso apontar também os usos desonestos do tema. Tratar o abuso como se fosse um problema exclusivamente católico é falso: trata-se, tragicamente, de um drama presente em toda a sociedade, nas famílias, nas escolas, no esporte, em outras religiões e instituições, muitas vezes em proporções maiores. E usar os crimes de alguns para condenar a fé de milhões, e todo o bem imenso que a Igreja faz, é uma generalização injusta. O crime é dos criminosos, não da fé que eles traíram.
+
+## O que a Igreja tem feito
+
+Longe de ser perfeita, e tendo demorado demais a reagir, a Igreja hoje conta com algumas das normas mais rígidas que existem: tolerância zero, afastamento dos culpados, denúncia obrigatória, colaboração com a justiça civil, comissões de proteção de menores e protocolos em todas as dioceses. Muito veio tarde, e ainda há o que melhorar, mas houve uma mudança real e profunda, reconhecida até por especialistas de fora.
+
+## E a fé?
+
+No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidade dos seus ministros, mas em Cristo. Que homens traiam o Evangelho prova que precisamos do Evangelho, não que ele seja falso. Jesus mesmo avisou que o joio cresceria ao lado do trigo até o fim, e que entre os Doze haveria um traidor. Isso não anula o trigo nem os outros onze. Diante das vítimas, a primeira palavra da Igreja não pode ser a defesa, mas o pedido de perdão e o compromisso firme de proteger.
+
+## Perguntas-chave
+
+1. Os crimes de abuso são uma aplicação do Evangelho, ou justamente uma traição àquilo que Jesus mais defendeu?
+
+2. Se o abuso de menores é um drama de toda a sociedade, é honesto tratá-lo como se fosse um problema só da Igreja?`,
+    references: ['mt-25-31'],
+  },
+  {
+    id: 82,
+    title: 'Pio XII e a Igreja na Segunda Guerra',
+    category: 'História da Igreja',
+    image: require('../../../assets/articles/82-pio-xii.jpg'),
+    imageAlt: 'A Praça de São Pedro, de van Wittel',
+    imageCredit: 'Gaspar van Wittel, A Praça de São Pedro (séc. XVIII). Domínio público.',
+    imageAspect: 1.95,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGaspar%2520van%2520Wittel%2520002.jpg&w=2200&output=jpg&q=80',
+    summary: 'O Papa Pio XII foi um cumplice silencioso do nazismo, como diz a lenda negra, ou agiu nos bastidores para salvar judeus? O que a historia mostra.',
+    body: `Uma acusação famosa pinta o Papa Pio XII como o "Papa de Hitler", um cúmplice silencioso diante do Holocausto. A história séria, baseada em documentos, conta uma história bem diferente.
+
+## A "lenda negra"
+
+A imagem de um Pio XII conivente não nasceu de arquivos, mas sobretudo de uma peça de teatro alemã de 1963, "O Vigário", de ficção, e foi amplificada no clima ideológico da Guerra Fria. Tornou-se um lugar-comum repetido sem checagem. Mas, quando se vai às fontes, o quadro se inverte.
+
+## O que ele de fato fez
+
+Durante a guerra, Pio XII orientou conventos, mosteiros, igrejas e o próprio Vaticano a abrigarem e esconderem judeus. Historiadores estimam que a ação da Igreja sob o seu pontificado tenha contribuído para salvar centenas de milhares de judeus. Não por acaso, líderes judeus da época reconheceram isso publicamente: Golda Meir, futura primeira-ministra de Israel, prestou homenagem na sua morte, e o rabino-chefe de Roma do período acabou se convertendo ao catolicismo, em parte por gratidão.
+
+## Por que não gritou mais alto?
+
+A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda, onde uma condenação pública dos bispos levou os nazistas a intensificarem as deportações, inclusive de judeus convertidos. Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha; é difícil discutir a boa intenção e os resultados.
+
+## O veredito da história
+
+Em 2020, o Vaticano abriu os arquivos do pontificado de Pio XII à pesquisa. À medida que os documentos são estudados, o que emerge confirma o quadro de um Papa que agiu nos bastidores para proteger vidas, e não de um cúmplice. O debate sobre detalhes continua, e a Igreja não tem pressa em julgamentos. Mas a caricatura do "Papa de Hitler" simplesmente não se sustenta diante dos fatos.
+
+## Perguntas-chave
+
+1. Se líderes judeus da época, como Golda Meir, agradeceram publicamente a Pio XII, de onde veio a fama de "cúmplice"?
+
+2. Diante do caso da Holanda, em que um protesto público agravou as deportações, a ação discreta de Pio XII foi covardia ou cálculo para salvar mais vidas?`,
+    references: ['nostra-aetate'],
+  },
 ];
 
 export default articles;

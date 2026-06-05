@@ -709,6 +709,216 @@ C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: qu
 4. Negar o mal espiritual e ser obcecado por ele são erros opostos. Em qual deles a nossa época tende a cair?`,
     references: ['gn-3-15', '2cor-11-14', 'ap-12-1', 'mt-12-25'],
   },
+  {
+    id: 73,
+    title: 'Como Rezar: Um Guia para Começar',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/73-como-rezar.jpg'),
+    imageAlt: 'A Oração no Horto, de Bellini',
+    imageCredit: 'Giovanni Bellini, A Oração no Horto (c. 1465). Domínio público.',
+    imageAspect: 1.59,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBellini%252CGiovanni%2520-%2520Agony%2520in%2520the%2520Garden%2520-%2520National%2520Gallery.jpg&w=2200&output=jpg&q=80',
+    summary: 'Rezar não é recitar fórmulas mágicas nem exige palavras bonitas. É conversar com Deus, que já espera por você. Um guia simples para quem quer começar.',
+    body: `Muita gente quer rezar e sente que "não sabe". Trava por imaginar que precisa das palavras certas, de uma técnica, de um talento especial. A verdade é bem mais simples e mais bonita: rezar é, antes de tudo, estar com Deus.
+
+## O que é rezar
+
+Rezar não é dobrar a vontade de Deus com fórmulas, como se Ele fosse uma máquina de atender pedidos. É a relação viva com um Pai que ama você. A tradição define a oração como "a elevação da alma a Deus". E o mais importante: a iniciativa é dele. Você só procura porque já foi procurado primeiro. Não é você que precisa convencer Deus a aparecer; é Ele que já está esperando, e a oração é abrir a porta.
+
+## Não é só pedir
+
+A oração tem várias formas, e reduzi-la a pedir empobrece tudo. Há a adoração e o louvor (reconhecer quem Deus é), a ação de graças (agradecer), a contrição (pedir perdão) e, sim, a súplica (pedir). O modelo de toda oração é o Pai-Nosso, que o próprio Jesus ensinou: nele cabe tudo, do louvor ao perdão, do pão de cada dia ao livramento do mal.
+
+## Como começar na prática
+
+Comece pequeno e constante. Reserve um tempo e um lugar fixos, ainda que cinco minutos. Faça o sinal da cruz, com calma. Fale com Deus com as suas próprias palavras, como se fala com um amigo. Leia um trecho curto do Evangelho e converse com Ele sobre o que leu. Termine com um Pai-Nosso e uma Ave-Maria. Não precisa ser longo nem eloquente; precisa ser verdadeiro.
+
+## Quando "não sinto nada"
+
+Muitos desanimam porque rezam e não sentem emoção. Mas a oração não é sobre sentir; é sobre amar e estar presente. Perseverar na secura, sem nenhum consolo, é justamente uma das maiores provas de amor a Deus. Até as distrações podem ser oferecidas. Deus age no silêncio, mesmo quando nada se percebe. Quem reza só quando sente, ainda não aprendeu a rezar; quem reza também na aridez, está aprendendo.
+
+## Perguntas-chave
+
+1. Se a iniciativa da oração é de Deus, que já espera por você, faz sentido travar por achar que não sabe as palavras certas?
+
+2. Rezar é apenas pedir coisas, ou também louvar, agradecer e pedir perdão, como no Pai-Nosso?
+
+3. Se você só reza quando sente emoção, está buscando a Deus, ou a um sentimento?`,
+    references: ['1tm-2-5', 'jo-14-6'],
+  },
+  {
+    id: 74,
+    title: 'Como Rezar o Rosário',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/74-rosario.jpg'),
+    imageAlt: 'A Virgem do Rosário, de Murillo',
+    imageCredit: 'Bartolomé Esteban Murillo, A Virgem do Rosário (séc. XVII). Domínio público.',
+    imageAspect: 1.4,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F2Murillo%2520comp.V.Rosario-castres-prado%2520(1).jpg&w=2200&output=jpg&q=80',
+    summary: 'O Rosário é um resumo do Evangelho meditado com Maria. Aprenda, de forma simples, como rezá-lo, e por que ele não é repetição vazia.',
+    body: `Visto de fora, o terço parece complicado: tantas contas, tantas orações repetidas. Mas é mais simples do que parece, e profundamente eficaz. Este aplicativo tem, inclusive, a ferramenta do Rosário para acompanhar você passo a passo.
+
+## O que é o Rosário
+
+Antes de tudo, um esclarecimento: rezar o Rosário não é adorar Maria. É meditar a vida de Jesus Cristo, da encarnação à ressurreição, ao lado daquela que esteve mais perto dele. A repetição da Ave-Maria funciona como uma melodia de fundo que acalma a mente e a deixa livre para contemplar cada cena, chamada "mistério". São quatro grupos: os mistérios Gozosos, Luminosos, Dolorosos e Gloriosos.
+
+## Não é "repetição vazia"
+
+A objeção mais comum é a das "vãs repetições". Mas a repetição feita por amor não é vã. Quem ama diz "eu te amo" mil vezes, e nem por isso são palavras ocas. Além disso, a Ave-Maria é, em boa parte, palavra de Deus: a saudação do anjo e as palavras de Isabel (Lucas 1,28.42). Enquanto os lábios repetem, o coração medita os fatos da salvação. Não é a boca que reza o Rosário, é a mente que contempla.
+
+## Como rezar, passo a passo
+
+Comece com o sinal da cruz e o Credo. No início, um Pai-Nosso, três Ave-Marias e um Glória. Depois, para cada um dos cinco mistérios do dia: anuncie o mistério, reze um Pai-Nosso, dez Ave-Marias meditando a cena e um Glória ao Pai. Ao fim das cinco dezenas, conclua com a Salve-Rainha. Parece muito escrito, mas o ritmo entra rápido, e o aplicativo conduz tudo, indicando cada passo.
+
+## Por que vale a pena
+
+Quem reza o Rosário com frequência encontra paz, foco e uma intimidade crescente com Jesus, conduzido pela mão de Maria, que nunca aponta para si, mas para o Filho: "fazei tudo o que ele vos disser" (João 2,5). É uma oração que cabe no ônibus, na fila, na caminhada, e que tem acompanhado os cristãos, nas alegrias e nas guerras, há séculos.
+
+## Perguntas-chave
+
+1. Se a Ave-Maria é, em grande parte, palavra do anjo e de Isabel na Escritura, faz sentido chamá-la de "repetição vazia"?
+
+2. O Rosário leva você a olhar para Maria em si mesma, ou a contemplar a vida de Jesus ao lado dela?`,
+    references: ['lc-1-28', 'jo-2-1', 'ap-5-8'],
+  },
+  {
+    id: 75,
+    title: 'O Dízimo: Obrigação ou Gratidão?',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/75-dizimo.jpg'),
+    imageAlt: 'O Tributo, de Masaccio',
+    imageCredit: 'Masaccio, O Tributo (Capela Brancacci, c. 1425). Domínio público.',
+    imageAspect: 2.16,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Tribute%2520Money%2520by%2520Masaccio.jpg&w=2200&output=jpg&q=80',
+    summary: 'Os católicos são obrigados a dar dez por cento da renda? O que a Igreja realmente ensina sobre o dízimo, entre o legalismo e o descaso.',
+    body: `O dízimo gera muita confusão. De um lado, há quem cobre os dez por cento como uma regra rígida, quase mágica; de outro, quem simplesmente ignore o tema. A posição católica fica no equilíbrio, e mexe menos com a calculadora do que com o coração.
+
+## De onde vem
+
+A palavra "dízimo" significa a décima parte. No Antigo Testamento, era uma prática regulada: o povo entregava dez por cento para o sustento do culto e dos levitas. No Novo Testamento, porém, o critério muda de natureza. Não se trata mais de uma porcentagem imposta de fora, mas da generosidade que brota de dentro. São Paulo resume: "cada um dê conforme o coração lhe ditar, sem tristeza nem constrangimento, pois Deus ama quem dá com alegria" (2 Coríntios 9,7).
+
+## A Igreja obriga dez por cento?
+
+Não existe uma lei católica universal que fixe o dízimo em dez por cento sob pena de pecado. O que a Igreja ensina é que o fiel deve contribuir, segundo as suas posses, para o sustento da obra de Deus e dos pobres. O "dez por cento" é uma referência saudável e generosa, um bom parâmetro, não um imposto que compra a salvação. Quem dá não está pagando uma taxa; está participando de uma missão.
+
+## O perigo dos dois extremos
+
+Há dois erros opostos. O legalismo, que transforma o dízimo num cálculo frio ou numa espécie de troca mágica ("dou dez por cento e Deus me devolve em dobro"). E o descaso, de quem se diz cristão mas nunca sustenta a comunidade que o alimenta espiritualmente nem ajuda os necessitados. No fundo, o verdadeiro tema não é o quanto, mas uma pergunta incômoda: a quem pertence, de fato, o meu dinheiro?
+
+## O coração da questão
+
+Jesus elogiou uma viúva que pôs no tesouro do templo duas moedinhas, dizendo que ela deu mais do que todos os ricos, "porque deu de sua pobreza tudo o que tinha" (Marcos 12,43-44). Não é o valor que conta, é o amor que vai junto. Dar liberta da escravidão das coisas, ensina a confiar e abre a mão que o egoísmo fecha. O dízimo bem entendido não empobrece ninguém; enriquece o coração.
+
+## Perguntas-chave
+
+1. Se "Deus ama quem dá com alegria", o dízimo é um imposto a pagar com medo, ou uma resposta de gratidão?
+
+2. A viúva deu duas moedinhas e Jesus disse que deu mais que os ricos. O que isso ensina sobre o valor real do que damos?`,
+  },
+  {
+    id: 76,
+    title: 'Como a Igreja Reconhece um Santo: A Canonização',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/76-canonizacao.jpg'),
+    imageAlt: 'Todos os Santos',
+    imageCredit: 'Todos os Santos (arte sacra, séc. XVI). Domínio público.',
+    imageAspect: 1.49,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAll-Saints.jpg&w=2200&output=jpg&q=80',
+    summary: 'Como alguém é declarado santo? Entenda o processo de canonização, o papel dos milagres e por que a Igreja não fabrica santos, apenas reconhece.',
+    body: `Quando a Igreja "faz" um santo, ela não está produzindo santidade, está reconhecendo a que Deus já fez. Entender isso desfaz o mal-entendido de que se trataria de uma promoção honorária decidida por homens.
+
+## O que é a canonização
+
+Canonizar é declarar publicamente, com a autoridade da Igreja, que determinada pessoa viveu as virtudes cristãs em grau heroico e já está com Deus no céu, podendo ser venerada e proposta a todos como modelo. Santo, no sentido próprio, é simplesmente quem está salvo, junto de Deus, e não um super-herói de poderes especiais. A Igreja não cria essa realidade; ela a constata e a apresenta.
+
+## As etapas
+
+O caminho tem fases bem definidas. Primeiro, a pessoa é declarada Servo de Deus, quando se abre oficialmente a investigação sobre a sua vida. Depois, reconhecidas as virtudes heroicas, torna-se Venerável. Em seguida vem a beatificação, que faz dela um Beato, em geral após a comprovação de um milagre atribuído à sua intercessão. Por fim, a canonização, que a declara Santo, normalmente após um segundo milagre.
+
+## Por que os milagres
+
+Os milagres não servem para "provar" que a pessoa mereceu o céu, como se fossem pontos. Eles funcionam como um sinal, um "sim" de Deus à intercessão daquela pessoa, confirmando que ela está realmente junto dele. As curas alegadas são investigadas com rigor por comissões médicas, que incluem profissionais não crentes, e só são aceitas quando não há explicação natural conhecida.
+
+## Para que servem os santos
+
+Os santos não substituem Cristo nem competem com ele. São amigos no céu que intercedem por nós, como os anciãos do Apocalipse que oferecem a Deus "as orações dos santos" (Apocalipse 5,8). E são, sobretudo, a prova viva de que a santidade é possível, em toda época e condição: operários, reis, mães, jovens, sábios e analfabetos. Eles mostram que o Evangelho funciona, porque "Deus não é Deus de mortos, mas de vivos" (Mateus 22,32).
+
+## Perguntas-chave
+
+1. A Igreja "fabrica" santos por decreto, ou reconhece publicamente uma santidade que Deus já realizou?
+
+2. Se as curas são investigadas até por médicos não crentes, faz sentido tratar os milagres da canonização como ingenuidade?`,
+    references: ['ap-5-8', 'mt-22-32', 'hb-12-14'],
+  },
+  {
+    id: 78,
+    title: 'Como Ter e Fortalecer a Fé',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/78-fortalecer-fe.jpg'),
+    imageAlt: 'Cristo e os apóstolos no mar da Galileia, de Bruegel',
+    imageCredit: 'Pieter Bruegel, o Velho, Cristo e os Apóstolos no Mar da Galileia (1553). Domínio público.',
+    imageAspect: 1.51,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FChristus%2520und%2520die%2520Apostel%2520am%2520See%2520Genezareth%2520(Bruegel%25201553).jpg&w=2200&output=jpg&q=80',
+    summary: 'A fé é um dom, mas também se cultiva. Para quem tem pouca fé, ou está em crise, há caminhos concretos para crer e crescer.',
+    body: `"Eu queria ter fé, mas não consigo." É uma das frases mais sinceras e mais comuns. A boa notícia é que a fé não é um sentimento que se liga ou desliga, nem um talento que se tem ou não se tem. É um dom que se pede e, ao mesmo tempo, um músculo que se exercita.
+
+## A fé é dom e é resposta
+
+Ninguém crê apenas pela força do próprio esforço; a fé é, antes de tudo, graça, algo que Deus oferece. Por isso a primeira atitude é pedir, com a humildade daquele pai do Evangelho que disse a Jesus: "creio, Senhor, ajudai a minha falta de fé" (Marcos 9,24). Mas Deus respeita a liberdade: o dom precisa ser acolhido, e isso exige querer e dar passos concretos. A fé não cai pronta do céu sobre quem fica parado.
+
+## Caminhos concretos
+
+A fé cresce na prática, como a confiança numa amizade. Alguns passos ajudam muito: rezar todos os dias, mesmo sem sentir nada; frequentar os sacramentos, sobretudo a Eucaristia e a confissão; ler um pouco do Evangelho com regularidade; conviver com pessoas que têm fé, porque a fé se contagia; e praticar a caridade concreta, pois, como diz São Paulo, "o que vale é a fé que age pela caridade" (Gálatas 5,6). Fé sem prática definha; fé exercitada se fortalece.
+
+## A fé e a dúvida
+
+É preciso desfazer um medo: ter dúvidas não é perder a fé. A dúvida faz parte do caminho de quase todo crente, e enfrentá-la com honestidade fortalece. Por isso vale buscar respostas, e a apologética, os bons livros e os artigos deste aplicativo existem para isso. Buscar entender e, ao mesmo tempo, confiar, lembrando que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28).
+
+## Quando a fé esfria
+
+Crises e períodos de aridez são normais, até nos santos. O erro é justamente largar a oração e os sacramentos na hora da seca, quando eles são mais necessários. Nesses momentos, vale pedir ajuda a um sacerdote ou a um amigo de fé, e simplesmente perseverar. Deus costuma agir no escuro, e muita gente descobriu, anos depois, que a fé que parecia morta estava, na verdade, criando raízes mais fundas.
+
+## Perguntas-chave
+
+1. Se a fé é dom que se pede e músculo que se exercita, faz sentido esperar que ela apareça pronta sem rezar nem buscar?
+
+2. Ter dúvidas é o fim da fé, ou parte do caminho de quem leva a fé a sério e procura entender?`,
+    references: ['gl-5-6', 'rm-8-28'],
+  },
+  {
+    id: 79,
+    title: 'Jejum, Abstinência e Quaresma',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/79-jejum-quaresma.jpg'),
+    imageAlt: 'As Tentações de Cristo, de Botticelli',
+    imageCredit: 'Sandro Botticelli, As Tentações de Cristo (Capela Sistina, 1481 a 1482). Domínio público.',
+    imageAspect: 1.61,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F05%2520Tentaciones%2520de%2520Cristo%2520(Botticelli).jpg&w=2200&output=jpg&q=80',
+    summary: 'Por que a Igreja pede jejum e sextas-feiras sem carne? O sentido da Quaresma, sem legalismo e sem virar moda de dieta.',
+    body: `Muita gente cumpre o jejum sem saber bem por quê, e outros tantos o acham uma "regra sem sentido". Mas o jejum cristão tem uma lógica antiga e profunda, que não se confunde nem com dieta nem com proeza.
+
+## O que é e o que não é
+
+Jejuar não é emagrecer nem testar a própria força de vontade. É um ato de amor e de penitência: dizer não ao corpo, em algo legítimo, para dizer um sim maior a Deus. É treinar a liberdade, lembrando que "nem só de pão vive o homem". O próprio Jesus jejuou quarenta dias no deserto antes de iniciar sua missão (Mateus 4,2), e a Quaresma reproduz justamente esse tempo.
+
+## Quaresma: os quarenta dias
+
+A Quaresma são os quarenta dias de preparação para a Páscoa, a maior festa cristã. Ela se apoia em três pilares que andam juntos: a oração (mais intimidade com Deus), o jejum (domínio de si) e a esmola (abertura ao próximo). O objetivo não é "passar sem chocolate" por esporte, mas converter o coração, arrancar apegos e chegar à Páscoa renovado.
+
+## As regras concretas
+
+Na Igreja Católica, as exigências mínimas são poucas e razoáveis. Há jejum (fazer uma refeição mais leve) na Quarta-Feira de Cinzas e na Sexta-Feira Santa. E há abstinência de carne nessas duas datas e em todas as sextas-feiras da Quaresma. São mínimos, abertos a quem quiser ser mais generoso; e doentes, idosos, gestantes e crianças estão dispensados. A Igreja pede saúde do corpo, não masoquismo.
+
+## Por que justo na sexta-feira
+
+A sexta-feira é o dia em que Cristo morreu na cruz. Fazer um pequeno sacrifício nesse dia une o fiel à entrega de Jesus e mantém viva a memória do amor que nos salvou. E há um detalhe bonito: o que se poupa ao comer mais simples pode virar esmola, transformando a renúncia em ajuda concreta a quem tem fome de verdade.
+
+## Perguntas-chave
+
+1. Se Jesus jejuou quarenta dias no deserto, o jejum cristão é uma regra arbitrária ou uma união à sua entrega?
+
+2. A Quaresma é só "passar sem algo gostoso", ou um tempo de oração, jejum e esmola para converter o coração?`,
+  },
 ];
 
 export default articles;

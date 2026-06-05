@@ -3,6 +3,278 @@
 // com o aviso "translation in progress" quando o usuário escolhe EN.
 
 export const ARTICLES_EN = {
+  73: {
+    titleEn: 'How to Pray: A Guide for Beginners',
+    summaryEn: 'To pray is not to recite magic formulas nor does it require beautiful words. It is to talk with God, who is already waiting for you. A simple guide to get started.',
+    bodyEn: `Many people want to pray and feel they "do not know how". They freeze, imagining they need the right words, a technique, a special talent. The truth is far simpler and more beautiful: to pray is, above all, to be with God.
+
+## What prayer is
+
+Prayer is not bending God's will with formulas, as if he were a machine for granting requests. It is the living relationship with a Father who loves you. Tradition defines prayer as "the raising of the soul to God". And most importantly: the initiative is his. You only seek because you were first sought. It is not you who must convince God to show up; it is he who is already waiting, and prayer is opening the door.
+
+## It is not only asking
+
+Prayer has many forms, and reducing it to asking impoverishes everything. There is adoration and praise (recognizing who God is), thanksgiving (giving thanks), contrition (asking forgiveness), and, yes, supplication (asking). The model of all prayer is the Our Father, which Jesus himself taught: in it fits everything, from praise to forgiveness, from daily bread to deliverance from evil.
+
+## How to begin in practice
+
+Start small and constant. Set aside a fixed time and place, even five minutes. Make the sign of the cross, calmly. Speak to God in your own words, as you speak to a friend. Read a short passage of the Gospel and talk with him about it. End with an Our Father and a Hail Mary. It need not be long or eloquent; it needs to be sincere.
+
+## When you "feel nothing"
+
+Many get discouraged because they pray and feel no emotion. But prayer is not about feeling; it is about loving and being present. To persevere in dryness, with no consolation, is precisely one of the greatest proofs of love for God. Even distractions can be offered up. God acts in silence, even when nothing is perceived. Whoever prays only when he feels something has not yet learned to pray; whoever prays also in aridity is learning.
+
+## Key questions
+
+1. If the initiative of prayer is God's, who is already waiting for you, does it make sense to freeze for fear of not knowing the right words?
+
+2. Is praying only asking for things, or also praising, thanking, and asking forgiveness, as in the Our Father?
+
+3. If you pray only when you feel emotion, are you seeking God, or a feeling?`,
+  },
+  74: {
+    titleEn: 'How to Pray the Rosary',
+    summaryEn: 'The Rosary is a summary of the Gospel meditated with Mary. Learn, simply, how to pray it, and why it is not empty repetition.',
+    bodyEn: `Seen from outside, the rosary seems complicated: so many beads, so many repeated prayers. But it is simpler than it looks, and deeply effective. This app even has a Rosary tool to guide you step by step.
+
+## What the Rosary is
+
+First, a clarification: praying the Rosary is not worshiping Mary. It is meditating on the life of Jesus Christ, from the incarnation to the resurrection, alongside the one who was closest to him. The repetition of the Hail Mary works like a background melody that calms the mind and frees it to contemplate each scene, called a "mystery". There are four groups: the Joyful, Luminous, Sorrowful, and Glorious mysteries.
+
+## It is not "empty repetition"
+
+The most common objection is that of "vain repetitions". But repetition made out of love is not vain. Whoever loves says "I love you" a thousand times, and they are not empty words. Besides, the Hail Mary is, in large part, the word of God: the greeting of the angel and the words of Elizabeth (Luke 1,28.42). While the lips repeat, the heart meditates on the facts of salvation. It is not the mouth that prays the Rosary, it is the mind that contemplates.
+
+## How to pray, step by step
+
+Begin with the sign of the cross and the Creed. At the start, an Our Father, three Hail Marys, and a Glory Be. Then, for each of the five mysteries of the day: announce the mystery, pray an Our Father, ten Hail Marys meditating on the scene, and a Glory Be. After the five decades, conclude with the Hail Holy Queen. It seems like a lot written out, but the rhythm comes quickly, and the app guides everything, indicating each step.
+
+## Why it is worth it
+
+Those who pray the Rosary often find peace, focus, and a growing intimacy with Jesus, led by the hand of Mary, who never points to herself but to her Son: "do whatever he tells you" (John 2,5). It is a prayer that fits on the bus, in line, on a walk, and that has accompanied Christians, in joys and in wars, for centuries.
+
+## Key questions
+
+1. If the Hail Mary is largely the word of the angel and of Elizabeth in Scripture, does it make sense to call it "empty repetition"?
+
+2. Does the Rosary lead you to look at Mary in herself, or to contemplate the life of Jesus alongside her?`,
+  },
+  75: {
+    titleEn: 'Tithing: Obligation or Gratitude?',
+    summaryEn: 'Are Catholics required to give ten percent of their income? What the Church really teaches about tithing, between legalism and neglect.',
+    bodyEn: `Tithing causes much confusion. On one side, some demand ten percent as a rigid, almost magical rule; on the other, some simply ignore the subject. The Catholic position lies in the balance, and deals less with the calculator than with the heart.
+
+## Where it comes from
+
+The word "tithe" means a tenth part. In the Old Testament, it was a regulated practice: the people handed over ten percent for the support of worship and of the Levites. In the New Testament, however, the criterion changes in nature. It is no longer an externally imposed percentage, but the generosity that springs from within. Saint Paul sums it up: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9,7).
+
+## Does the Church require ten percent?
+
+There is no universal Catholic law fixing the tithe at ten percent under pain of sin. What the Church teaches is that the faithful should contribute, according to their means, to the support of the work of God and of the poor. The "ten percent" is a healthy and generous reference, a good benchmark, not a tax that buys salvation. Whoever gives is not paying a fee; he is taking part in a mission.
+
+## The danger of two extremes
+
+There are two opposite errors. Legalism, which turns the tithe into a cold calculation or a kind of magic exchange ("I give ten percent and God repays me double"). And neglect, on the part of those who call themselves Christian but never support the community that feeds them spiritually nor help the needy. At bottom, the real issue is not how much, but an uncomfortable question: to whom does my money really belong?
+
+## The heart of the matter
+
+Jesus praised a widow who put two small coins into the temple treasury, saying she gave more than all the rich, "because she gave out of her poverty all she had" (Mark 12,43-44). It is not the amount that counts, it is the love that goes with it. Giving frees us from the slavery of things, teaches us to trust, and opens the hand that selfishness closes. Tithing rightly understood impoverishes no one; it enriches the heart.
+
+## Key questions
+
+1. If "God loves a cheerful giver", is the tithe a tax to be paid in fear, or a response of gratitude?
+
+2. The widow gave two small coins and Jesus said she gave more than the rich. What does that teach about the real value of what we give?`,
+  },
+  76: {
+    titleEn: 'How the Church Recognizes a Saint: Canonization',
+    summaryEn: 'How is someone declared a saint? Understand the process of canonization, the role of miracles, and why the Church does not manufacture saints, only recognizes them.',
+    bodyEn: `When the Church "makes" a saint, it is not producing holiness, it is recognizing the holiness God has already produced. Understanding this undoes the misunderstanding that it would be an honorary promotion decided by men.
+
+## What canonization is
+
+To canonize is to declare publicly, with the authority of the Church, that a certain person lived the Christian virtues to a heroic degree and is already with God in heaven, and may be venerated and proposed to all as a model. A saint, in the proper sense, is simply one who is saved, with God, and not a superhero with special powers. The Church does not create this reality; it attests to it and presents it.
+
+## The stages
+
+The path has well-defined phases. First, the person is declared a Servant of God, when the investigation of his life is officially opened. Then, once the heroic virtues are recognized, he becomes Venerable. Next comes beatification, which makes him a Blessed, generally after a miracle attributed to his intercession is verified. Finally, canonization, which declares him a Saint, usually after a second miracle.
+
+## Why the miracles
+
+Miracles do not serve to "prove" that the person earned heaven, as if they were points. They function as a sign, a "yes" from God to that person's intercession, confirming that he is truly with him. Alleged cures are rigorously investigated by medical commissions, which include non-believing professionals, and are accepted only when there is no known natural explanation.
+
+## What the saints are for
+
+The saints do not replace Christ nor compete with him. They are friends in heaven who intercede for us, like the elders of Revelation who offer God "the prayers of the saints" (Revelation 5,8). And they are, above all, the living proof that holiness is possible, in every age and condition: workers, kings, mothers, the young, the learned and the illiterate. They show that the Gospel works, because "God is not God of the dead, but of the living" (Matthew 22,32).
+
+## Key questions
+
+1. Does the Church "manufacture" saints by decree, or recognize publicly a holiness that God has already brought about?
+
+2. If cures are investigated even by non-believing doctors, does it make sense to treat the miracles of canonization as naivety?`,
+  },
+  77: {
+    titleEn: 'The Church and Freemasonry',
+    summaryEn: 'Can a Catholic be a Freemason? Why the Church, for centuries, has considered Freemasonry incompatible with the faith. Without conspiracy theories, on the basis of principles.',
+    bodyEn: `Few subjects come so surrounded by mystery and by fanciful theories as Freemasonry. The position of the Church, however, is ancient, clear, and based on doctrinal principles, not on fear or conspiracy.
+
+## What the Church decided
+
+Since 1738, with Pope Clement XII, the Church has forbidden Catholics to join Freemasonry. In 1983, the Congregation for the Doctrine of the Faith, with the approval of Saint John Paul II, directly reaffirmed that the faithful who join Masonic associations are in grave sin and may not receive communion. It is not the opinion of one stricter priest; it is a firm and constant position of the Magisterium.
+
+## Why: it is not persecution, it is coherence
+
+The problem is not secrecy in itself, nor the philanthropic works that many Masons carry out. The problem is the worldview at the base. Freemasonry generally professes a religious relativism (all religions would be equally valid, and God would be a generic "Great Architect", without a face), a naturalism that dispenses with revelation, and oaths that demand a loyalty to the lodge capable of overriding one's own conscience. This is incompatible with the Christian faith, which confesses Jesus Christ as the only Savior, "the way, the truth, and the life" (John 14,6), and with the first commandment, which reserves worship to God (Exodus 20,3).
+
+## Without conspiracy
+
+The tone matters. The Church does not treat Masons as demons, does not feed theories that they secretly rule the world, nor does it foment witch hunts. It points out, soberly, an incompatibility of principles between the Catholic faith and Masonic doctrine, while at the same time respecting concrete persons and desiring their good. To disagree with a doctrine is not to hate those who follow it.
+
+## And those already inside?
+
+For the Catholic who discovered, perhaps late, this incompatibility, the invitation is not to drama, but to serene discernment and, if appropriate, departure, with the help of a priest. It is not about condemning anyone, but about living the faith coherently: one cannot serve two masters when the foundations contradict each other.
+
+## Key questions
+
+1. If the Church has forbidden Freemasonry since 1738 and reaffirmed it in 1983, does it make sense to treat the subject as a recent invention or exaggeration?
+
+2. Is the problem pointed out the philanthropy of Masons, or the underlying view (relativism, naturalism, oaths above conscience)?`,
+  },
+  78: {
+    titleEn: 'How to Have and Strengthen Faith',
+    summaryEn: 'Faith is a gift, but it is also cultivated. For those with little faith, or in crisis, there are concrete paths to believe and grow.',
+    bodyEn: `"I would like to have faith, but I cannot." It is one of the most sincere and common sentences. The good news is that faith is not a feeling you switch on or off, nor a talent you either have or lack. It is a gift one asks for and, at the same time, a muscle one exercises.
+
+## Faith is gift and is response
+
+No one believes by the force of his own effort alone; faith is, above all, grace, something God offers. So the first attitude is to ask, with the humility of that father in the Gospel who said to Jesus: "I believe, Lord; help my unbelief" (Mark 9,24). But God respects freedom: the gift must be welcomed, and that requires willing it and taking concrete steps. Faith does not fall ready from heaven onto someone who stays still.
+
+## Concrete paths
+
+Faith grows in practice, like trust in a friendship. Some steps help greatly: praying every day, even without feeling anything; frequenting the sacraments, especially the Eucharist and confession; reading a little of the Gospel regularly; spending time with people of faith, because faith is contagious; and practicing concrete charity, for, as Saint Paul says, "what counts is faith working through love" (Galatians 5,6). Faith without practice withers; faith exercised grows strong.
+
+## Faith and doubt
+
+A fear must be undone: having doubts is not losing faith. Doubt is part of the journey of almost every believer, and facing it honestly strengthens. So it is worth seeking answers, and apologetics, good books, and the articles of this app exist for that. To seek to understand and, at the same time, to trust, remembering that "all things work together for good for those who love God" (Romans 8,28).
+
+## When faith grows cold
+
+Crises and periods of aridity are normal, even in the saints. The mistake is precisely to abandon prayer and the sacraments in the time of dryness, when they are most needed. In those moments, it is worth asking help from a priest or a friend of faith, and simply persevering. God usually acts in the dark, and many people discovered, years later, that the faith that seemed dead was, in fact, putting down deeper roots.
+
+## Key questions
+
+1. If faith is a gift one asks for and a muscle one exercises, does it make sense to expect it to appear ready without praying or seeking?
+
+2. Is having doubts the end of faith, or part of the journey of one who takes faith seriously and seeks to understand?`,
+  },
+  79: {
+    titleEn: 'Fasting, Abstinence, and Lent',
+    summaryEn: 'Why does the Church ask for fasting and meatless Fridays? The meaning of Lent, without legalism and without turning into a diet fad.',
+    bodyEn: `Many people keep the fast without really knowing why, and many others find it a "rule without meaning". But Christian fasting has an ancient and deep logic, which is confused neither with a diet nor with a feat of endurance.
+
+## What it is and what it is not
+
+To fast is not to lose weight nor to test one's own willpower. It is an act of love and penance: to say no to the body, in something legitimate, in order to say a greater yes to God. It is to train freedom, remembering that "man does not live on bread alone". Jesus himself fasted forty days in the desert before beginning his mission (Matthew 4,2), and Lent reproduces precisely that time.
+
+## Lent: the forty days
+
+Lent is the forty days of preparation for Easter, the greatest Christian feast. It rests on three pillars that go together: prayer (more intimacy with God), fasting (self-mastery), and almsgiving (openness to neighbor). The goal is not to "go without chocolate" as a sport, but to convert the heart, uproot attachments, and arrive at Easter renewed.
+
+## The concrete rules
+
+In the Catholic Church, the minimum requirements are few and reasonable. There is fasting (eating a lighter meal) on Ash Wednesday and Good Friday. And there is abstinence from meat on those two days and on all the Fridays of Lent. They are minimums, open to whoever wishes to be more generous; and the sick, the elderly, pregnant women, and children are dispensed. The Church asks for the health of the body, not masochism.
+
+## Why precisely Friday
+
+Friday is the day Christ died on the cross. To make a small sacrifice on that day unites the faithful to the self-giving of Jesus and keeps alive the memory of the love that saved us. And there is a beautiful detail: what is saved by eating more simply can become alms, turning the renunciation into concrete help for those who truly hunger.
+
+## Key questions
+
+1. If Jesus fasted forty days in the desert, is Christian fasting an arbitrary rule or a union with his self-giving?
+
+2. Is Lent just "going without something tasty", or a time of prayer, fasting, and almsgiving to convert the heart?`,
+  },
+  80: {
+    titleEn: 'The Wealth of the Church and the Vatican',
+    summaryEn: 'If the Church is so rich, why not sell everything and end poverty? An honest answer about the Church heritage, art, and the poor.',
+    bodyEn: `"If the Vatican is so rich, why not sell everything and end world hunger?" The objection is frequent and almost always well-meaning. But it starts from some misconceptions about what the Church actually "owns".
+
+## What "treasure" is this
+
+Most of the so-called heritage of the Church consists of churches, basilicas, works of art, libraries, and museums. These goods are not for sale and generate no income: they are the cultural heritage of humanity, preserved in the name of all and open to all, often free or at symbolic prices. The Sistine Chapel is not a bank account; it is a public good that belongs, at bottom, to the whole of civilization. To confuse artistic heritage with cash on hand is the first mistake.
+
+## Would selling everything end poverty?
+
+No. Imagine the art were sold. To whom? Probably to billionaire collectors, who would lock it away from the public. The amount raised, however large, would be spent only once and would soon run out before the immense poverty of the world, while humanity would lose access to those works forever. Poverty is a structural problem, of justice and social organization; it is not solved by a great auction, however generous it may seem.
+
+## What the Church actually does
+
+Here is the fact that tends to be forgotten: the Catholic Church is, by far, the largest network of assistance and education on the planet. Hospitals, schools, universities, orphanages, shelters, food distribution, presence in places the State does not even reach. Much of this is invisible and silent. Before asking why the Church does not do more for the poor, it is worth asking: who, in the world, does more?
+
+## The ideal and the failures
+
+None of this means closing our eyes. The Gospel asks for simplicity, and there has been and still is undue luxury and abuses on the part of clergy, which the Church itself must correct. Pope Francis insists on a "poor Church for the poor". To criticize the ostentation of one or another is legitimate and necessary. To conclude, from this, that the Church should disappear, or that it does nothing for the poor, is unjust to the facts.
+
+## Key questions
+
+1. Is the heritage of the Church money in storage, or largely art and temples open to all, that generate no income?
+
+2. Would selling the works of art really end world poverty, or just take them out of people reach?`,
+  },
+  81: {
+    titleEn: 'The Church and the Abuse Scandals',
+    summaryEn: 'The crimes of abuse by clergy are a real and gravest wound. What to say about it honestly, without relativizing nor destroying the faith.',
+    bodyEn: `This is, probably, the most painful subject linked to the Church, and the most used against the faith. Here there is no room to minimize or disguise. There is room for truth, justice, and, above all, the gaze turned toward the victims.
+
+## First, the naked truth
+
+There were heinous crimes committed by priests and religious against children and young people. And there was, worse still, cover-up by superiors who should have protected the victims and chose instead to protect the institution. This is a betrayal of the Gospel, not its application. Jesus himself reserved the most terrible words for whoever would harm "one of these little ones": "it would be better for him to have a millstone hung around his neck" (Matthew 18,6). Nothing justifies these crimes, nothing relativizes them.
+
+## What is not honest to do
+
+Having recognized the gravity, it is also necessary to point out the dishonest uses of the subject. To treat abuse as if it were an exclusively Catholic problem is false: it is, tragically, a drama present throughout society, in families, schools, sports, other religions and institutions, often in greater proportions. And to use the crimes of some to condemn the faith of millions, and all the immense good the Church does, is an unjust generalization. The crime belongs to the criminals, not to the faith they betrayed.
+
+## What the Church has done
+
+Far from perfect, and having taken far too long to react, the Church today has some of the strictest norms that exist: zero tolerance, removal of the guilty, mandatory reporting, collaboration with civil justice, child protection commissions, and protocols in every diocese. Much came late, and there is still room to improve, but there has been a real and profound change, recognized even by outside experts.
+
+## And the faith?
+
+In the end, one must remember where faith rests. It does not rest on the holiness of its ministers, but on Christ. That men betray the Gospel proves that we need the Gospel, not that it is false. Jesus himself warned that the weeds would grow alongside the wheat until the end, and that among the Twelve there would be a traitor. This nullifies neither the wheat nor the other eleven. Before the victims, the first word of the Church cannot be defense, but the request for forgiveness and the firm commitment to protect.
+
+## Key questions
+
+1. Are the crimes of abuse an application of the Gospel, or precisely a betrayal of what Jesus most defended?
+
+2. If the abuse of minors is a drama of all society, is it honest to treat it as if it were only the Church problem?`,
+  },
+  82: {
+    titleEn: 'Pius XII and the Church in the Second World War',
+    summaryEn: 'Was Pope Pius XII a silent accomplice of Nazism, as the black legend says, or did he act behind the scenes to save Jews? What history shows.',
+    bodyEn: `A famous accusation paints Pope Pius XII as "Hitler's Pope", a silent accomplice in the face of the Holocaust. Serious history, based on documents, tells a very different story.
+
+## The "black legend"
+
+The image of a complicit Pius XII was born not from archives, but mainly from a German stage play of 1963, "The Deputy", a work of fiction, and was amplified in the ideological climate of the Cold War. It became a commonplace repeated without checking. But, when one goes to the sources, the picture is reversed.
+
+## What he actually did
+
+During the war, Pius XII directed convents, monasteries, churches, and the Vatican itself to shelter and hide Jews. Historians estimate that the action of the Church under his pontificate helped save hundreds of thousands of Jews. It is no coincidence that Jewish leaders of the time acknowledged this publicly: Golda Meir, future prime minister of Israel, paid tribute at his death, and the chief rabbi of Rome of the period ended up converting to Catholicism, partly out of gratitude.
+
+## Why did he not cry out louder?
+
+The great question is why Pius XII did not make a more explicit public condemnation. The documented answer is prudential: he feared, with reason, that a strident protest would provoke even worse reprisals. That is what happened in the Netherlands, where a public condemnation by the bishops led the Nazis to intensify the deportations, including of converted Jews. Pius XII chose discreet and effective action, which saved concrete lives, instead of the heroic gesture that would cost more blood. One can debate the prudence of that choice; it is hard to debate the good intention and the results.
+
+## The verdict of history
+
+In 2020, the Vatican opened the archives of the pontificate of Pius XII to research. As the documents are studied, what emerges confirms the picture of a Pope who acted behind the scenes to protect lives, and not of an accomplice. The debate over details continues, and the Church is in no hurry with judgments. But the caricature of "Hitler's Pope" simply does not hold up against the facts.
+
+## Key questions
+
+1. If Jewish leaders of the time, like Golda Meir, publicly thanked Pius XII, where did the reputation of "accomplice" come from?
+
+2. Given the case of the Netherlands, where a public protest worsened the deportations, was the discreet action of Pius XII cowardice or a calculation to save more lives?`,
+  },
   68: {
     titleEn: 'Who Wrote the Bible?',
     summaryEn: 'The Bible was written by dozens of human authors over a thousand years, but faith recognizes a single Author behind them: God, who inspires without overriding man.',
