@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Platform, useWindowDimensions } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Pressable, Image, Platform, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
@@ -11,6 +11,7 @@ import { shareArticle } from '../utils/share';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 import CrossMark from '../components/CrossMark';
+import ImageZoomModal from '../components/ImageZoomModal';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
 import MarkdownText from '../components/MarkdownText';
@@ -33,6 +34,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const gutter = (winWidth - 720) / 2;
   const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
   const crossLeft = Math.max(0, gutter / 2 - 50);
+
+  // Herói: mede a largura e dá altura explícita (sem corte em web/nativo).
+  const [heroW, setHeroW] = useState(0);
+  const [zoomOpen, setZoomOpen] = useState(false);
+  const boxAspect = Math.max(article?.imageAspect || 1.6, 1.3);
+  const heroH = heroW > 0 ? Math.round(heroW / boxAspect) : 0;
 
   // Conteúdo no idioma escolhido, com fallback para PT se a tradução não existir.
   const displayTitle = isEn ? (article?.titleEn || article?.title) : article?.title;
@@ -196,14 +203,23 @@ export default function ArticleDetailScreen({ route, navigation }) {
         <View style={styles.column}>
         {article.image && (
           <View style={styles.heroWrap}>
-            <View style={[styles.heroBox, { aspectRatio: Math.max(article.imageAspect || 1.6, 1.3) }]}>
-              <Image
-                source={article.image}
-                style={StyleSheet.absoluteFill}
-                resizeMode="contain"
-                accessibilityLabel={article.imageAlt || displayTitle}
-              />
-            </View>
+            <Pressable
+              style={styles.heroBox}
+              onLayout={(e) => setHeroW(e.nativeEvent.layout.width)}
+              onPress={() => setZoomOpen(true)}
+            >
+              {heroW > 0 && (
+                <Image
+                  source={article.image}
+                  style={{ width: heroW, height: heroH }}
+                  resizeMode="contain"
+                  accessibilityLabel={article.imageAlt || displayTitle}
+                />
+              )}
+              <View style={styles.heroExpand} pointerEvents="none">
+                <Ionicons name="expand" size={15} color="#fff" />
+              </View>
+            </Pressable>
             {article.imageCredit ? <Text style={styles.heroCredit}>{article.imageCredit}</Text> : null}
           </View>
         )}
@@ -264,6 +280,13 @@ export default function ArticleDetailScreen({ route, navigation }) {
       </ScrollView>
       <ScrollHint direction="up" visible={hintScroll.showTop} />
       <ScrollHint direction="down" visible={hintScroll.showBottom} />
+      <ImageZoomModal
+        visible={zoomOpen}
+        source={article.image}
+        caption={article.imageCredit}
+        alt={article.imageAlt}
+        onClose={() => setZoomOpen(false)}
+      />
     </View>
   );
 }
@@ -275,7 +298,8 @@ const makeStyles = (c, fs) =>
     content: { padding: 20, paddingBottom: 40, ...(Platform.OS === 'web' ? { alignItems: 'center' } : null) },
     column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: 720, alignSelf: 'center' } : null) },
     heroWrap: { marginBottom: 14 },
-    heroBox: { width: '100%', borderRadius: 12, overflow: 'hidden', backgroundColor: c.card },
+    heroBox: { width: '100%', borderRadius: 12, overflow: 'hidden', backgroundColor: c.card, alignItems: 'center', justifyContent: 'center' },
+    heroExpand: { position: 'absolute', right: 8, bottom: 8, width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'center', alignItems: 'center' },
     sideCross: { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center' },
     heroCredit: { fontSize: fs(10), color: c.textSubtle, marginTop: 4, fontStyle: 'italic', textAlign: 'right' },
     headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
