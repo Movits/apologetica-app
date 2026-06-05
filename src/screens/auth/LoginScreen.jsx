@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
@@ -8,7 +8,7 @@ import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 import AuthTopToggles from '../../components/AuthTopToggles';
 
 export default function LoginScreen({ navigation }) {
-  const { signIn, continueAsGuest } = useAuth();
+  const { signIn, continueAsGuest, linkGoogleToEmail } = useAuth();
   const { colors, fs } = useTheme();
   const { t, lang } = useLanguage();
   const google = useGoogleSignIn();
@@ -17,6 +17,13 @@ export default function LoginScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+
+  const linkInfo = google.needsLink;
+  // Quando o Google detecta conta existente, prefixa o email para o usuário só
+  // precisar digitar a senha e vincular.
+  useEffect(() => {
+    if (linkInfo?.email) setEmail(linkInfo.email);
+  }, [linkInfo?.email]);
 
   const handleLogin = async () => {
     setError('');
@@ -28,6 +35,19 @@ export default function LoginScreen({ navigation }) {
     const res = await signIn(email.trim().toLowerCase(), password);
     setBusy(false);
     if (!res.ok) setError(res.error);
+  };
+
+  const handleLink = async () => {
+    setError('');
+    if (!password) {
+      setError(lang === 'en' ? 'Enter your password.' : 'Digite sua senha.');
+      return;
+    }
+    setBusy(true);
+    const res = await linkGoogleToEmail({ email: linkInfo.email, password, pendingCred: linkInfo.pendingCred });
+    setBusy(false);
+    if (!res.ok) setError(res.error);
+    else google.clearLink?.();
   };
 
   const styles = makeStyles(colors, fs);
@@ -77,6 +97,27 @@ export default function LoginScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')} style={styles.forgotLink}>
           <Text style={styles.forgotText}>{t('auth.forgotPassword')}</Text>
         </TouchableOpacity>
+
+        {linkInfo ? (
+          <View style={styles.linkBox}>
+            <Text style={styles.linkTitle}>
+              {lang === 'en' ? 'You already have an account with this email' : 'Você já tem uma conta com este e-mail'}
+            </Text>
+            <Text style={styles.linkBody}>
+              {lang === 'en'
+                ? `Enter the password for ${linkInfo.email} to link Google to that account.`
+                : `Digite a senha de ${linkInfo.email} para vincular o Google a essa conta.`}
+            </Text>
+            <TouchableOpacity style={styles.linkBtn} onPress={handleLink} disabled={busy}>
+              {busy ? <ActivityIndicator color="#fff" /> : (
+                <>
+                  <Ionicons name="link-outline" size={18} color="#fff" />
+                  <Text style={styles.linkBtnText}>{lang === 'en' ? 'Link Google' : 'Vincular Google'}</Text>
+                </>
+              )}
+            </TouchableOpacity>
+          </View>
+        ) : null}
 
         {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
 
@@ -151,6 +192,11 @@ const makeStyles = (c, fs) =>
     forgotLink: { alignSelf: 'flex-end', marginBottom: 16, marginTop: 4 },
     forgotText: { fontSize: fs(13), color: c.accent, fontWeight: '600' },
     error: { color: '#c0392b', fontSize: fs(13), marginBottom: 12, textAlign: 'center', width: '100%' },
+    linkBox: { width: '100%', backgroundColor: c.badgeBg, borderRadius: 12, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: c.accent },
+    linkTitle: { fontSize: fs(14), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
+    linkBody: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18), marginBottom: 12 },
+    linkBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: c.accent, paddingVertical: 12, borderRadius: 10 },
+    linkBtnText: { color: '#fff', fontSize: fs(14), fontWeight: 'bold' },
     primaryBtn: {
       backgroundColor: c.primary,
       paddingVertical: 14,

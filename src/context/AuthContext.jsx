@@ -7,6 +7,7 @@ import {
   signOut as fbSignOut,
   sendPasswordResetEmail,
   updateProfile,
+  linkWithCredential,
 } from 'firebase/auth';
 import { auth } from '../services/firebase';
 
@@ -109,6 +110,20 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // "Uma conta por email": quando o usuário tenta entrar com Google mas já existe
+  // uma conta de email/senha com aquele email, o Firebase pede para vincular.
+  // Aqui autenticamos com a senha e vinculamos a credencial Google à MESMA conta,
+  // para o login Google passar a cair nessa conta (mesmo UID, mesmos dados).
+  const linkGoogleToEmail = async ({ email, password, pendingCred }) => {
+    try {
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      if (pendingCred) await linkWithCredential(cred.user, pendingCred);
+      return { ok: true, user: cred.user };
+    } catch (e) {
+      return { ok: false, error: errorMessage(e.code) };
+    }
+  };
+
   const signOut = async () => {
     await fbSignOut(auth);
     setGuest(false);
@@ -138,6 +153,7 @@ export function AuthProvider({ children }) {
         signIn,
         signOut,
         resetPassword,
+        linkGoogleToEmail,
       }}
     >
       {children}

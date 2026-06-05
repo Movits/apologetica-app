@@ -11,16 +11,25 @@ import { auth } from '../services/firebase';
 export function useGoogleSignIn() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
+  // { email, pendingCred } quando já existe conta com aquele email (vincular).
+  const [needsLink, setNeedsLink] = useState(null);
 
   const signIn = async () => {
     setError(null);
+    setNeedsLink(null);
     setBusy(true);
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
     } catch (e) {
-      // Usuário fechar o popup não é um erro que precise ser exibido.
-      if (e?.code !== 'auth/popup-closed-by-user' && e?.code !== 'auth/cancelled-popup-request') {
+      if (e?.code === 'auth/account-exists-with-different-credential') {
+        // Já existe conta (email/senha) com este email: oferecer vínculo.
+        setNeedsLink({
+          email: e?.customData?.email || '',
+          pendingCred: GoogleAuthProvider.credentialFromError(e) || null,
+        });
+      } else if (e?.code !== 'auth/popup-closed-by-user' && e?.code !== 'auth/cancelled-popup-request') {
+        // Usuário fechar o popup não é um erro que precise ser exibido.
         setError(e?.message || 'Não foi possível autenticar com Google.');
       }
     } finally {
@@ -32,6 +41,8 @@ export function useGoogleSignIn() {
     signIn,
     busy,
     error,
+    needsLink,
+    clearLink: () => setNeedsLink(null),
     ready: true,
     unavailable: false,
   };
