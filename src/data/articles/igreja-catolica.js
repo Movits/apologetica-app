@@ -9,6 +9,7 @@ const articles = [
     image: require('../../../assets/articles/2-por-que-catolico.jpg'),
     imageAlt: 'A Entrega das Chaves a São Pedro, de Perugino',
     imageCredit: 'Pietro Perugino, A Entrega das Chaves a São Pedro (1481 a 1482). Domínio público.',
+    imageAspect: 1.66,
     summary: 'A Igreja fundada por Cristo é uma só, e ela subsiste na Igreja Católica.',
     body: `Jesus fundou uma Igreja, não igrejas. Em Mateus 16,18 ele diz "sobre esta pedra edificarei a minha Igreja", no singular. E entregou as chaves do Reino a Pedro, estabelecendo uma estrutura de autoridade visível, não uma rede invisível de crentes desorganizados.
 
@@ -44,6 +45,7 @@ Quem é cristão sem ser católico geralmente herda doutrinas selecionadas da Ig
     image: require('../../../assets/articles/7-eucaristia.jpg'),
     imageAlt: 'A Última Ceia, de Leonardo da Vinci',
     imageCredit: 'Leonardo da Vinci, A Última Ceia (1495 a 1498). Domínio público.',
+    imageAspect: 1.92,
     summary: 'A Eucaristia não é símbolo. É o Corpo, Sangue, Alma e Divindade de Jesus Cristo, confirmado pela Escritura, pelos Padres e por milagres comprovados.',
     body: `No capítulo 6 do Evangelho de João, Jesus diz seis vezes que sua carne é verdadeira comida e seu sangue é verdadeira bebida. Quando muitos discípulos murmuram contra o ensinamento e deixam de segui-lo, Jesus não os chama de volta dizendo "era só metáfora". Ele pergunta aos Doze: "Também vós quereis ir-vos embora?" (Jo 6,67). Se fosse linguagem figurada, faria sentido perder discípulos por um mal-entendido? Não.
 
@@ -81,8 +83,9 @@ Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vá
     title: 'Maria: Intercessora, Não Mediadora',
     category: 'Igreja Católica',
     image: require('../../../assets/articles/4-maria.jpg'),
-    imageAlt: 'Madona do Magnificat, de Botticelli',
-    imageCredit: 'Sandro Botticelli, Madona do Magnificat (c. 1481). Domínio público.',
+    imageAlt: 'As Bodas de Caná, de Veronese',
+    imageCredit: 'Paolo Veronese, As Bodas de Caná (1563). Domínio público.',
+    imageAspect: 1.47,
     summary: 'Pedir intercessão aos santos não é idolatria, é o mesmo que pedir a um amigo que ore por nós.',
     body: `Uma das objeções mais comuns ao catolicismo é a devoção a Maria e aos santos. "Por que não ir diretamente a Jesus?" é a pergunta clássica.
 
@@ -306,6 +309,7 @@ Cada sacramento tem três elementos: matéria (sinal sensível, como água ou ó
     image: require('../../../assets/articles/21-confissao.jpg'),
     imageAlt: 'A Confissão, de Giuseppe Maria Crespi',
     imageCredit: 'Giuseppe Maria Crespi, A Confissão (c. 1712). Domínio público.',
+    imageAspect: 0.74,
     summary: 'Cristo instituiu o sacramento da Confissão no domingo da Ressurreição. Não é tradição humana, é mandato divino.',
     body: `"Por que confessar a um homem se posso confessar diretamente a Deus?" Essa é a objeção mais comum à Confissão sacramental. A resposta é simples: porque foi Jesus que ordenou assim.
 
@@ -389,6 +393,7 @@ Pio XII, antes de definir o dogma, consultou os bispos do mundo inteiro. A esmag
     image: require('../../../assets/articles/23-purgatorio.jpg'),
     imageAlt: 'Um anjo liberta as almas do purgatório, de Carracci',
     imageCredit: 'Ludovico Carracci, Um Anjo Liberta as Almas do Purgatório (c. 1610). Domínio público.',
+    imageAspect: 0.72,
     summary: 'Não é "inferno temporário" nem "segunda chance". É a purificação final dos que já estão salvos mas ainda imperfeitos.',
     body: `O [[Purgatório]] é uma das doutrinas católicas mais incompreendidas. Não é "inferno light", não é "segunda chance depois da morte", não é "lugar onde se compra a salvação". É a purificação final daqueles que morrem em estado de graça mas ainda não estão totalmente purificados para entrar na glória do céu.
 

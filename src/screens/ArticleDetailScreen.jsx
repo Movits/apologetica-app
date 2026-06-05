@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Platform } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Platform, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
@@ -10,6 +10,7 @@ import { useTheme } from '../context/ThemeContext';
 import { shareArticle } from '../utils/share';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import CrossMark from '../components/CrossMark';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
 import MarkdownText from '../components/MarkdownText';
@@ -25,7 +26,13 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
   const { lang, t, isEn } = useLanguage();
   const insets = useSafeAreaInsets();
+  const { width: winWidth } = useWindowDimensions();
   const article = articles.find((a) => a.id === route.params?.articleId);
+
+  // Cruzes decorativas nos gutters da coluna central (só desktop), igual ao "Dia de hoje".
+  const gutter = (winWidth - 720) / 2;
+  const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
+  const crossLeft = Math.max(0, gutter / 2 - 50);
 
   // Conteúdo no idioma escolhido, com fallback para PT se a tradução não existir.
   const displayTitle = isEn ? (article?.titleEn || article?.title) : article?.title;
@@ -168,6 +175,16 @@ export default function ArticleDetailScreen({ route, navigation }) {
   return (
     <View style={[styles.container, { paddingBottom: insets.bottom }]}>
       <ReadingProgressBar progress={progress} />
+      {showSideCrosses && (
+        <>
+          <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
+            <CrossMark size={160} />
+          </View>
+          <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
+            <CrossMark size={160} />
+          </View>
+        </>
+      )}
       <ScrollView
         ref={scrollRef}
         contentContainerStyle={styles.content}
@@ -179,12 +196,14 @@ export default function ArticleDetailScreen({ route, navigation }) {
         <View style={styles.column}>
         {article.image && (
           <View style={styles.heroWrap}>
-            <Image
-              source={article.image}
-              style={styles.hero}
-              resizeMode="cover"
-              accessibilityLabel={article.imageAlt || displayTitle}
-            />
+            <View style={[styles.heroBox, { aspectRatio: Math.max(article.imageAspect || 1.6, 1.3) }]}>
+              <Image
+                source={article.image}
+                style={StyleSheet.absoluteFill}
+                resizeMode="contain"
+                accessibilityLabel={article.imageAlt || displayTitle}
+              />
+            </View>
             {article.imageCredit ? <Text style={styles.heroCredit}>{article.imageCredit}</Text> : null}
           </View>
         )}
@@ -256,7 +275,8 @@ const makeStyles = (c, fs) =>
     content: { padding: 20, paddingBottom: 40, ...(Platform.OS === 'web' ? { alignItems: 'center' } : null) },
     column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: 720, alignSelf: 'center' } : null) },
     heroWrap: { marginBottom: 14 },
-    hero: { width: '100%', aspectRatio: 16 / 9, borderRadius: 12, backgroundColor: c.card },
+    heroBox: { width: '100%', borderRadius: 12, overflow: 'hidden', backgroundColor: c.card },
+    sideCross: { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center' },
     heroCredit: { fontSize: fs(10), color: c.textSubtle, marginTop: 4, fontStyle: 'italic', textAlign: 'right' },
     headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
     catBadge: { backgroundColor: c.badgeBg, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },

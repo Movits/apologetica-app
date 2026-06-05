@@ -27,7 +27,7 @@ export const RANKED_IDS = [
 ];
 
 // Seção "Mais buscados" no topo da aba Artigos (ids curados, em ordem).
-export const POPULAR_IDS = [11, 1, 7, 4, 5, 2, 25, 23, 3];
+export const POPULAR_IDS = [11, 1, 7, 4, 5, 2, 25, 23, 3, 35];
 
 export const POPULAR_META = { id: 'popular', icon: 'star', iconSet: 'ion' };
 
