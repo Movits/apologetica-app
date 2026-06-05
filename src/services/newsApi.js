@@ -25,7 +25,7 @@ const FEEDS = {
 
 const TTL_MS = 3 * 60 * 60 * 1000; // revalida a cada 3 horas
 const MAX_ITEMS = 6;
-const cacheKey = (lang) => `news:cache:v3:${lang}`; // v3: cadeia de proxies p/ og:image
+const cacheKey = (lang) => `news:cache:v4:${lang}`; // v4: proxy allorigins /get (CORS)
 
 async function fetchFeed(feed) {
   // Sem &count: o endpoint gratuito (sem api key) rejeita esse parâmetro (HTTP 422).
@@ -55,13 +55,31 @@ async function fetchFeed(feed) {
 }
 
 // Feeds da ACI/CNA não trazem imagem no RSS, mas as páginas dos artigos têm
-// og:image no topo. Buscamos o HTML e extraímos. Na web, o navegador não pode
-// buscar o HTML por CORS, então passamos por um proxy. Proxies gratuitos caem com
-// frequência (o codetabs passou a dar 522), então tentamos uma CADEIA até um responder.
-const HTML_PROXIES = [
-  (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-  (u) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`,
-  (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+// og:image. Na web não dá para buscar o HTML por CORS, então usamos serviços de
+// terceiros (que precisam devolver o cabeçalho CORS). Os proxies gratuitos caem
+// muito, então tentamos vários resolvedores em ordem, até um trazer a imagem:
+//   1) microlink: API de metadados, devolve a imagem direto em JSON (CORS *).
+//   2) jina reader: devolve o HTML da página (CORS por origem).
+//   3) allorigins /get: JSON {contents} com o HTML.
+//   4) codetabs: HTML cru (reserva).
+// Cada resolvedor devolve a URL da imagem (ou null).
+const IMG_RESOLVERS = [
+  async (u) => {
+    const j = await fetchJson(`https://api.microlink.io/?url=${encodeURIComponent(u)}`);
+    return j && j.status === 'success' ? (j.data && j.data.image && j.data.image.url) || null : null;
+  },
+  async (u) => {
+    const html = await fetchText(`https://r.jina.ai/${u}`, { 'X-Return-Format': 'html' });
+    return html ? extractImage(html) : null;
+  },
+  async (u) => {
+    const j = await fetchJson(`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`);
+    return j && typeof j.contents === 'string' ? extractImage(j.contents) : null;
+  },
+  async (u) => {
+    const html = await fetchText(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`);
+    return html ? extractImage(html) : null;
+  },
 ];
 
 // Serve as imagens por um CDN/proxy (wsrv.nl): contorna CORS/hotlink de qualquer
@@ -87,11 +105,11 @@ function extractImage(html) {
   return m ? decodeEntities(m[1]) : null;
 }
 
-async function fetchHtml(url) {
+async function fetchText(url, headers) {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 9000);
+  const timeoutId = setTimeout(() => controller.abort(), 12000);
   try {
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch(url, { signal: controller.signal, headers });
     clearTimeout(timeoutId);
     return res.ok ? await res.text() : null;
   } catch {
@@ -100,18 +118,25 @@ async function fetchHtml(url) {
   }
 }
 
+async function fetchJson(url) {
+  const t = await fetchText(url);
+  if (!t) return null;
+  try { return JSON.parse(t); } catch { return null; }
+}
+
 async function resolveImage(articleUrl) {
   if (!articleUrl) return null;
-  // No nativo, busca direto (sem CORS). Na web, tenta a cadeia de proxies até um responder.
+  // No nativo, busca direto (sem CORS). Na web, tenta os resolvedores em ordem.
   if (Platform.OS !== 'web') {
-    const html = await fetchHtml(articleUrl);
+    const html = await fetchText(articleUrl);
     return html ? extractImage(html) : null;
   }
-  for (const proxy of HTML_PROXIES) {
-    const html = await fetchHtml(proxy(articleUrl));
-    if (html) {
-      const img = extractImage(html);
+  for (const resolve of IMG_RESOLVERS) {
+    try {
+      const img = await resolve(articleUrl);
       if (img) return img;
+    } catch {
+      // tenta o próximo
     }
   }
   return null;
