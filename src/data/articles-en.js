@@ -3,6 +3,39 @@
 // com o aviso "translation in progress" quando o usuário escolhe EN.
 
 export const ARTICLES_EN = {
+  83: {
+    titleEn: 'The Ten Commandments: the Guide God Gave Us',
+    summaryEn: 'The Ten Commandments are not a list of arbitrary prohibitions, nor did they stay behind in the Old Testament. They are the map that protects what matters most.',
+    bodyEn: `"Are the Ten Commandments not an Old Testament thing? Did Jesus not come to do away with the Law?" It is a common doubt, and the answer is no: Jesus himself said, "I have not come to abolish the Law, but to fulfill it" (Matthew 5,17). The Decalogue still stands, and understanding it undoes the idea that it would be a cage of rules.
+
+## Ceremonial law and moral law
+
+The confusion arises from mixing up different things. The Law of the Old Testament had ceremonial parts (sacrifices, circumcision, clean and unclean foods) and judicial parts (the civil rules of Israel), which pointed to Christ and were fulfilled and surpassed in him. But it also had the moral law, summed up in the Ten Commandments, which does not expire, because it does not depend on a culture: it describes the good of the human person himself. That is why Jesus deepens the commandments instead of abolishing them: "you have heard that it was said... but I say to you" (Matthew 5,21-22). He raises them, he does not revoke them.
+
+## Not an arbitrary imposition, but natural law
+
+The commandments are not a whim of God, as if he could have commanded the opposite. They are the description of how the human being flourishes, written on the heart itself. Saint Paul says that even the pagans, without the written Law, "show that the work of the Law is written on their hearts" (Romans 2,15). Almost every culture knows that killing the innocent, stealing, and lying is wrong. The Decalogue merely makes that knowledge explicit, and anchors it in God, who is its source.
+
+## Two tablets: love of God and of neighbor
+
+Jesus summed it all up in two commandments: to love God above all things and to love your neighbor as yourself (Matthew 22,37-40). The first three commandments concern the relationship with God; the other seven, the relationship with people. They are not two separate subjects: whoever truly loves God respects what he loves, that is, each person. That is why the Decalogue is a single law of love, not a collection of "do nots".
+
+## The most contested today
+
+It is worth defending closely the ones today's world most questions. The 1st ("you shall have no other gods") also condemns the occult, horoscopes, and superstition, because putting your life in the hands of "forces" or of money enslaves; only God sets free. The 3rd (keep the Lord's Day holy) protects time for God and family in a world that turns everything into work and consumption. The 4th (honor your father and mother) sustains the family, the first school of love. The 6th and 9th (chastity) defend the body and true love against the logic of disposability. The 7th (do not steal) demands justice and care for the poor, not just petty theft. Each "do not" guards a greater "yes".
+
+## A path of freedom, not a cage
+
+In the end, the commandment works like the sign that warns of the cliff on the mountain road. It does not take away your freedom to drive; it protects your life so you arrive. God does not give the commandments because he needs them, but because we need them. Whoever sees them as a prison has not yet noticed that it is precisely transgression that imprisons, and obedience to the good that sets free. That is why the psalm calls the Law a "delight" and "a light to my steps".
+
+## Key questions
+
+1. If Jesus said he came not to abolish the Law but to fulfill it, does it make sense to treat the Ten Commandments as something "outdated"?
+
+2. Are the commandments a whim God could have reversed, or do they describe the good of the person, engraved on everyone's heart?
+
+3. Does a commandment that forbids killing, stealing, and lying take away your freedom, or protect everyone's life, including yours?`,
+  },
   73: {
     titleEn: 'How to Pray: A Guide for Beginners',
     summaryEn: 'To pray is not to recite magic formulas nor does it require beautiful words. It is to talk with God, who is already waiting for you. A simple guide to get started.',

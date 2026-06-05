@@ -56,6 +56,7 @@ Arquivos em `assets/articles/`.
 | 37 — Protestantismo | `37-protestantismo.jpg` | Lutero na Dieta de Worms (1877) | Anton von Werner |
 | 46 — Profecias | `46-profecias.jpg` | O Profeta Isaías (Sistina, 1509) | Michelangelo |
 | 49 — Milagres Eucarísticos | `49-milagres-eucaristicos.jpg` | A Missa de São Gregório (séc. XV–XVI) | Anônimo flamengo |
+| 83 — Os Dez Mandamentos | `83-dez-mandamentos.jpg` | Moisés com as Tábuas da Lei (1659) | Rembrandt |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.

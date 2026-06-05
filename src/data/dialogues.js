@@ -680,6 +680,19 @@ export const DIALOGUES = [
     ],
     relatedArticle: 16,
   },
+  {
+    id: 'd-mandamentos',
+    objection: '"Os dez mandamentos são só do Antigo Testamento; não valem mais."',
+    objectionEn: '"The Ten Commandments are Old Testament only; they no longer apply."',
+    category: 'Moral', categoryEn: 'Morality', rank: 4,
+    steps: [
+      { label: 'Distinguir as leis', labelEn: 'Distinguish the laws', text: 'Concordo que muita coisa do Antigo Testamento ficou para trás: os sacrifícios, a circuncisão, as comidas puras e impuras. Mas isso era a lei cerimonial, que apontava para Cristo. Os dez mandamentos são lei moral, outra coisa.', textEn: 'I agree that much of the Old Testament was left behind: the sacrifices, circumcision, clean and unclean foods. But that was the ceremonial law, which pointed to Christ. The Ten Commandments are moral law, a different thing.' },
+      { label: 'O que Jesus disse', labelEn: 'What Jesus said', text: 'E o próprio Jesus foi claro: "não vim revogar a Lei, mas dar-lhe pleno cumprimento" (Mateus 5,17). Ele não apaga os mandamentos, ele aprofunda: "ouvistes que foi dito... eu, porém, vos digo". Eleva, não abole.', textEn: 'And Jesus himself was clear: "I have not come to abolish the Law, but to fulfill it" (Matthew 5,17). He does not erase the commandments, he deepens them: "you have heard that it was said... but I say to you". He raises, he does not abolish.' },
+      { label: 'Por que não caducam', labelEn: 'Why they do not expire', text: 'A lei moral não depende de época porque descreve o bem da própria pessoa. Não matar, não roubar, não mentir: quase toda cultura sabe disso. Paulo diz que está "gravada no coração" mesmo de quem não tem a Bíblia (Romanos 2,15).', textEn: 'The moral law does not depend on an era because it describes the good of the person. Do not kill, do not steal, do not lie: almost every culture knows this. Paul says it is "written on the heart" even of those without the Bible (Romans 2,15).' },
+      { label: 'Fechar', labelEn: 'Close', text: 'No fundo, o mandamento é como a placa que avisa do precipício: não tira sua liberdade, protege sua vida. Quem os vê como prisão não percebeu que é a transgressão que aprisiona, e o bem que liberta.', textEn: 'At bottom, the commandment is like the sign warning of the cliff: it does not take your freedom, it protects your life. Whoever sees them as a prison has not noticed that it is transgression that imprisons, and the good that sets free.' },
+    ],
+    relatedArticle: 83,
+  },
 ];
 
 export function getDialogueById(id) {

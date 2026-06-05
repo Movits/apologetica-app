@@ -19,7 +19,7 @@ export const ARTICLE_CATEGORIES = [
 // "Mais buscados". Ids fora desta lista mantêm a ordem original (vão para o fim).
 export const RANKED_IDS = [
   56, 11, 1, 57, 67, 7, 4, 60, 63, 5,
-  2, 25, 64, 62, 23, 61, 3, 68, 21, 66, 59,
+  2, 25, 64, 83, 62, 23, 61, 3, 68, 21, 66, 59,
   8, 35, 58, 28, 30, 19, 9, 72, 10, 18, 71, 26,
   24, 17, 37, 65, 15, 16, 29, 31, 69, 46, 70, 6,
   20, 12, 13, 14, 22, 49, 50, 55, 47, 48,

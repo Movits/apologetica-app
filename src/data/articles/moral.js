@@ -276,6 +276,47 @@ Há um fruto concreto nesse caminho: relações construídas sobre respeito e n�
 4. A liberdade sexual sem limites entregou de fato mais felicidade e amor estável, ou mais descarte e solidão?`,
     references: ['1cor-6-9', 'ef-5-32', 'gn-1-27', 'humanae-vitae-17'],
   },
+  {
+    id: 83,
+    title: 'Os Dez Mandamentos: o Guia que Deus nos Deu',
+    category: 'Moral',
+    image: require('../../../assets/articles/83-dez-mandamentos.jpg'),
+    imageAlt: 'Moisés com as Tábuas da Lei, de Rembrandt',
+    imageCredit: 'Rembrandt, Moisés com as Tábuas da Lei (1659). Domínio público.',
+    imageAspect: 0.8,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRembrandt%2520-%2520Moses%2520with%2520the%2520Ten%2520Commandments%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
+    summary: 'Os Dez Mandamentos não são uma lista de proibições arbitrárias nem ficaram no Antigo Testamento. São o mapa que protege o que mais importa.',
+    body: `"Os Dez Mandamentos não são coisa de Antigo Testamento? Jesus não veio acabar com a Lei?" É uma dúvida comum, e a resposta é não: o próprio Jesus disse "não vim revogar a Lei, mas dar-lhe pleno cumprimento" (Mateus 5,17). O Decálogo continua de pé, e entendê-lo desfaz a ideia de que seria uma jaula de regras.
+
+## Lei cerimonial e lei moral
+
+A confusão nasce de misturar coisas diferentes. A Lei do Antigo Testamento tinha partes cerimoniais (sacrifícios, circuncisão, comidas puras e impuras) e judiciais (regras civis de Israel), que apontavam para Cristo e foram cumpridas e superadas nele. Mas tinha também a lei moral, resumida nos Dez Mandamentos, que não caduca, porque não depende de uma cultura: descreve o bem da própria pessoa humana. Por isso Jesus aprofunda os mandamentos em vez de aboli-los: "ouvistes que foi dito... eu, porém, vos digo" (Mateus 5,21-22). Ele eleva, não revoga.
+
+## Não são imposição arbitrária, são lei natural
+
+Os mandamentos não são um capricho de Deus, como se ele pudesse ter mandado o contrário. São a descrição de como o ser humano floresce, escritos no próprio coração. São Paulo diz que mesmo os pagãos, sem a Lei escrita, "mostram que a obra da Lei está gravada em seus corações" (Romanos 2,15). Quase toda cultura sabe que matar o inocente, roubar e mentir é errado. O Decálogo apenas torna explícito esse conhecimento, e o ancora em Deus, que é a sua fonte.
+
+## Duas tábuas: amor a Deus e ao próximo
+
+Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo (Mateus 22,37-40). Os três primeiros mandamentos cuidam da relação com Deus; os outros sete, da relação com as pessoas. Não são dois assuntos separados: quem de fato ama a Deus respeita o que ele ama, isto é, cada pessoa. Por isso o Decálogo é uma só lei do amor, não uma coleção de "nãos".
+
+## Os mais contestados hoje
+
+Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses") condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza; só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
+
+## Caminho de liberdade, não jaula
+
+No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir; protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmo chama a Lei de "delícia" e "luz para os meus passos".
+
+## Perguntas-chave
+
+1. Se Jesus disse que não veio revogar a Lei, mas dar-lhe pleno cumprimento, faz sentido tratar os Dez Mandamentos como algo "superado"?
+
+2. Os mandamentos são um capricho que Deus poderia ter invertido, ou descrevem o bem da própria pessoa, gravado no coração de todos?
+
+3. Um mandamento que proíbe matar, roubar e mentir tira a sua liberdade, ou protege a vida de todos, inclusive a sua?`,
+    references: ['ex-20-3', 'hb-12-14'],
+  },
 ];
 
 export default articles;

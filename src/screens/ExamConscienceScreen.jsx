@@ -7,7 +7,7 @@ import { examConscience } from '../data/examConscience';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
-export default function ExamConscienceScreen() {
+export default function ExamConscienceScreen({ navigation }) {
   const { colors, fs } = useTheme();
   const { isEn } = useLanguage();
   const [expanded, setExpanded] = useState(null);
@@ -37,6 +37,16 @@ export default function ExamConscienceScreen() {
               ? '"If we confess our sins, he is faithful and just to forgive us." (1 John 1,9)'
               : '"Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar." (1 João 1,9)'}
           </Text>
+          <TouchableOpacity
+            style={styles.learnBtn}
+            onPress={() => navigation?.navigate('ArticleFromSearch', { articleId: 83 })}
+          >
+            <Ionicons name="book-outline" size={16} color={colors.accent} />
+            <Text style={styles.learnText}>
+              {isEn ? 'Understand and defend the Commandments' : 'Entenda e defenda os Mandamentos'}
+            </Text>
+            <Ionicons name="chevron-forward" size={16} color={colors.accent} />
+          </TouchableOpacity>
         </View>
 
         {examConscience.map((section) => {
@@ -79,6 +89,8 @@ const makeStyles = (c, fs) =>
     introTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 8 },
     introBody: { fontSize: fs(13), color: c.text, lineHeight: fs(20), marginBottom: 10 },
     introHint: { fontSize: fs(12), color: c.textMuted, fontStyle: 'italic', lineHeight: fs(18) },
+    learnBtn: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: c.divider },
+    learnText: { flex: 1, fontSize: fs(13), color: c.accent, fontWeight: '600' },
     card: { backgroundColor: c.card, borderRadius: 12, marginBottom: 8 },
     cardOpen: { borderWidth: 1, borderColor: c.accent },
     cardHead: { flexDirection: 'row', alignItems: 'center', padding: 14 },
