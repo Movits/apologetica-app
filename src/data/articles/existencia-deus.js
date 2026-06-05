@@ -10,6 +10,7 @@ const articles = [
     imageAlt: 'A Criação de Adão, de Michelangelo',
     imageCredit: 'Michelangelo, A Criação de Adão (Capela Sistina, 1512). Domínio público.',
     imageAspect: 2.2,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%2520-%2520Creation%2520of%2520Adam%2520(cropped).jpg&w=2200&output=jpg&q=80',
     summary: 'Por que precisa existir uma causa primeira não causada para explicar tudo que existe.',
     body: `Por que existe algo em vez de nada? Esta é, talvez, a pergunta mais profunda que um ser humano pode fazer, e é dela que parte o argumento cosmológico, a mais antiga e clássica das demonstrações racionais da existência de Deus.
 
@@ -130,6 +131,7 @@ O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem 
     imageAlt: 'A Criação do Sol e da Lua, de Michelangelo',
     imageCredit: 'Michelangelo, A Criação do Sol e da Lua (Capela Sistina, 1512). Domínio público.',
     imageAspect: 1.97,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%252C%2520Creation%2520of%2520the%2520Sun%252C%2520Moon%252C%2520and%2520Plants%252001.jpg&w=2200&output=jpg&q=80',
     summary: 'A pergunta confunde categorias. Tudo que começa a existir tem causa; Deus não começou.',
     body: `A objeção é antiga e parece poderosa. Se tudo precisa ter uma causa, quem causou Deus? Se Deus não precisa de causa, por que o universo precisaria? O argumento se baseia em uma má compreensão do princípio causal.
 
@@ -170,6 +172,7 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
     imageAlt: 'A Ceia em Emaús, de Caravaggio',
     imageCredit: 'Caravaggio, A Ceia em Emaús (1601). Domínio público.',
     imageAspect: 1.2,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCaravaggio%2520-%2520Cena%2520in%2520Emmaus.jpg&w=2200&output=jpg&q=80',
     summary: 'A ressurreição não é mito. Há evidências históricas robustas que a sustentam.',
     body: `A ressurreição de Jesus não é apenas crença religiosa, é evento histórico com evidências substanciais que precisam ser explicadas.
 
@@ -254,6 +257,7 @@ Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca diss
     imageAlt: 'Cristo diante de Pilatos, de Munkácsy',
     imageCredit: 'Mihály Munkácsy, Cristo diante de Pilatos (1881). Domínio público.',
     imageAspect: 1.53,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMunkacsy%2520-%2520Christ%2520in%2520front%2520of%2520Pilate.jpg&w=2200&output=jpg&q=80',
     summary: 'A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o que os Evangelhos narram.',
     body: `Uma das objeções mais radicais é a chamada tese mítica: Jesus de Nazaré nunca teria existido como pessoa histórica. Seria um personagem literário construído a partir de mitos pagãos. A tese aparece em livros populares e documentários como Zeitgeist, mas é praticamente inexistente entre historiadores acadêmicos.
 

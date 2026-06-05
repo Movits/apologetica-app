@@ -283,6 +283,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
       <ImageZoomModal
         visible={zoomOpen}
         source={article.image}
+        hdUri={article.imageHd}
         caption={article.imageCredit}
         alt={article.imageAlt}
         onClose={() => setZoomOpen(false)}

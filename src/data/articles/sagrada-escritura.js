@@ -10,6 +10,7 @@ const articles = [
     imageAlt: 'São Jerônimo escrevendo, de Caravaggio',
     imageCredit: 'Caravaggio, São Jerônimo Escrevendo (1605 a 1606). Domínio público.',
     imageAspect: 1.4,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FSaint%2520Jerome%2520Writing-Caravaggio%2520(1605-6).jpg&w=2200&output=jpg&q=80',
     summary: 'A Bíblia sozinha não se interpreta a si mesma. A Tradição e o Magistério são necessários.',
     body: `O princípio protestante do [[Sola Scriptura]] afirma que a Bíblia é a única regra de fé. Mas o princípio tem problemas sérios que ele próprio não resolve.
 

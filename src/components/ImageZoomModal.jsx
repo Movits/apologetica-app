@@ -1,22 +1,28 @@
-import { Modal, Image, Pressable, StyleSheet, useWindowDimensions, Text, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Modal, Image, Pressable, StyleSheet, useWindowDimensions, Text, View, Platform } from 'react-native';
 import { GestureHandlerRootView, Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // Visualizador de imagem em tela cheia: mostra a obra inteira (contain) e permite
-// zoom NO PONTO tocado (pinça / duplo-toque) e arrastar quando ampliada.
+// zoom NO PONTO tocado (pinça / duplo-toque / scroll do mouse) + arrastar.
 //
-// O GestureDetector envolve uma superfície NÃO transformada (coordenadas em tela);
-// a Animated.View interna é que recebe scale/translate. Isso é o que faz o foco do
-// zoom cair onde o dedo/mouse está, e o arrasto funcionar. O conteúdo do Modal é
-// envolto em seu próprio GestureHandlerRootView (no nativo o Modal sai da raiz).
-const MAX_SCALE = 5;
+// Detalhes que importam:
+// - Gestos numa superfície NÃO transformada (coordenadas em tela => foco correto).
+// - As <Image> têm pointerEvents:none (no web evita o arrasto/seleção nativos que
+//   travavam o pan); a superfície usa touchAction:none + userSelect:none.
+// - hdUri (alta resolução, Wikimedia via wsrv) carrega por cima da embutida e
+//   aparece quando pronta; offline/erro mantém a embutida.
+const MAX_SCALE = 6;
 const DOUBLE_TAP_SCALE = 2.5;
 
-export default function ImageZoomModal({ visible, source, caption, alt, onClose }) {
+export default function ImageZoomModal({ visible, source, hdUri, caption, alt, onClose }) {
   const { width: W, height: H } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const surfaceRef = useRef(null);
+  const [hdReady, setHdReady] = useState(false);
+  const [hdFailed, setHdFailed] = useState(false);
 
   const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
@@ -26,6 +32,40 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
   const savedTy = useSharedValue(0);
   const focalX = useSharedValue(0);
   const focalY = useSharedValue(0);
+
+  // Reset ao abrir; recarrega a HD (cache do navegador deixa rápido).
+  useEffect(() => {
+    if (!visible) return;
+    scale.value = 1; savedScale.value = 1;
+    tx.value = 0; ty.value = 0; savedTx.value = 0; savedTy.value = 0;
+    setHdReady(false); setHdFailed(false);
+  }, [visible, hdUri]);
+
+  // Zoom pelo scroll do mouse (web), centrado no cursor.
+  useEffect(() => {
+    if (Platform.OS !== 'web' || !visible) return;
+    const node = surfaceRef.current;
+    if (!node || !node.addEventListener) return;
+    const onWheel = (e) => {
+      e.preventDefault();
+      const rect = node.getBoundingClientRect();
+      const fx = e.clientX - rect.left;
+      const fy = e.clientY - rect.top;
+      const factor = Math.exp(-e.deltaY * 0.0015);
+      const newScale = Math.max(1, Math.min(scale.value * factor, MAX_SCALE));
+      const localX = (fx - W / 2 - tx.value) / scale.value;
+      const localY = (fy - H / 2 - ty.value) / scale.value;
+      scale.value = newScale;
+      savedScale.value = newScale;
+      if (newScale <= 1) { tx.value = 0; ty.value = 0; }
+      else {
+        tx.value = (fx - W / 2) - localX * newScale;
+        ty.value = (fy - H / 2) - localY * newScale;
+      }
+    };
+    node.addEventListener('wheel', onWheel, { passive: false });
+    return () => node.removeEventListener('wheel', onWheel);
+  }, [visible, W, H]);
 
   const pinch = Gesture.Pinch()
     .onStart((e) => {
@@ -37,7 +77,6 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
     })
     .onUpdate((e) => {
       const newScale = Math.max(1, Math.min(savedScale.value * e.scale, MAX_SCALE));
-      // ponto da imagem que estava sob o foco no início do gesto
       const localX = (focalX.value - W / 2 - savedTx.value) / savedScale.value;
       const localY = (focalY.value - H / 2 - savedTy.value) / savedScale.value;
       scale.value = newScale;
@@ -56,6 +95,7 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
 
   const pan = Gesture.Pan()
     .maxPointers(1)
+    .minDistance(1)
     .onStart(() => {
       savedTx.value = tx.value;
       savedTy.value = ty.value;
@@ -105,26 +145,40 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
     onClose?.();
   };
 
+  const imgStyle = { width: W, height: H, pointerEvents: 'none' };
+  const webSurface = Platform.OS === 'web' ? { touchAction: 'none', userSelect: 'none', cursor: 'grab' } : null;
+
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close}>
-      <GestureHandlerRootView style={styles.root}>
-        <GestureDetector gesture={gesture}>
-          <View style={StyleSheet.absoluteFill}>
-            <Animated.View style={[StyleSheet.absoluteFill, styles.center, aStyle]}>
-              <Image source={source} style={{ width: W, height: H }} resizeMode="contain" accessibilityLabel={alt} />
-            </Animated.View>
-          </View>
-        </GestureDetector>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <View ref={surfaceRef} collapsable={false} style={[styles.root, webSurface]}>
+          <GestureDetector gesture={gesture}>
+            <View style={[StyleSheet.absoluteFill, webSurface]}>
+              <Animated.View style={[StyleSheet.absoluteFill, styles.center, aStyle]}>
+                <Image source={source} style={imgStyle} resizeMode="contain" accessibilityLabel={alt} />
+                {hdUri && !hdFailed ? (
+                  <Image
+                    source={{ uri: hdUri }}
+                    style={[imgStyle, StyleSheet.absoluteFill, { opacity: hdReady ? 1 : 0 }]}
+                    resizeMode="contain"
+                    onLoad={() => setHdReady(true)}
+                    onError={() => setHdFailed(true)}
+                  />
+                ) : null}
+              </Animated.View>
+            </View>
+          </GestureDetector>
 
-        <Pressable style={[styles.close, { top: insets.top + 8 }]} onPress={close} hitSlop={12}>
-          <Ionicons name="close" size={26} color="#fff" />
-        </Pressable>
+          <Pressable style={[styles.close, { top: insets.top + 8 }]} onPress={close} hitSlop={12}>
+            <Ionicons name="close" size={26} color="#fff" />
+          </Pressable>
 
-        {caption ? (
-          <View pointerEvents="none" style={[styles.captionWrap, { bottom: insets.bottom + 16 }]}>
-            <Text style={styles.caption}>{caption}</Text>
-          </View>
-        ) : null}
+          {caption ? (
+            <View pointerEvents="none" style={[styles.captionWrap, { bottom: insets.bottom + 16 }]}>
+              <Text style={styles.caption}>{caption}</Text>
+            </View>
+          ) : null}
+        </View>
       </GestureHandlerRootView>
     </Modal>
   );
