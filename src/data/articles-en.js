@@ -3,6 +3,201 @@
 // com o aviso "translation in progress" quando o usuário escolhe EN.
 
 export const ARTICLES_EN = {
+  68: {
+    titleEn: 'Who Wrote the Bible?',
+    summaryEn: 'The Bible was written by dozens of human authors over a thousand years, but faith recognizes a single Author behind them: God, who inspires without overriding man.',
+    bodyEn: `Who wrote the Bible? The question seems simple, but the answer has two levels, and missing one of them leads to confusion. The Bible has human authors, many of them, and a single divine Author behind them all.
+
+## It is not a book, it is a library
+
+The very word "Bible" comes from Greek and means "the books", in the plural. There are seventy-three books, written over about a thousand years, by roughly forty authors of the most varied backgrounds: kings like David, prophets like Isaiah, a physician like Luke, fishermen like Peter and John, a converted persecutor like Paul. And in very different genres: laws, historical narratives, poetry, proverbs, letters, visions. To treat all this as if it were a single pamphlet written at once is the first mistake.
+
+## The Author behind the authors: inspiration
+
+The Christian faith affirms that, behind these many human authors, there is one principal Author: God. This is what is called inspiration. But note what it is not: it is not mechanical dictation, as if the authors were secretaries in a trance. God makes use of the intelligence, style, culture, and even the limitations of each author, without nullifying any of it, to communicate the truth he wills. As Saint Peter says, "moved by the Holy Spirit, holy men of God spoke" (2 Peter 1,21). That is why the Bible is, at the same time, fully human and fully the word of God.
+
+## How the Bible came to us
+
+Almost nothing was written down immediately. First came the events and oral tradition; then the writing; finally, the recognition. And here is a decisive point: it was not the Bible that decided which books are the Bible. It was the Church that, guided by the Spirit, recognized which writings were inspired, fixing the list (the canon) in councils at the end of the fourth century, such as Hippo in 393 and Carthage in 397. The Bible was born from the bosom of the Church, not the other way around.
+
+## Did Moses really write the Pentateuch? And the Gospels?
+
+Tradition attributes the first five books to Moses and each Gospel to a name. The Church does not demand proof that every word came from the hand of the traditional author: ancient texts grew, were gathered and edited over time, and this does not contradict inspiration. The Gospels, for example, spring from the preaching of the apostles, were set down in writing by the community, and faithfully transmit what Jesus did and taught. What is essential is not the signature, it is the apostolic origin and the divine inspiration.
+
+## And the "errors" and contradictions?
+
+Inspiration guarantees that the Bible teaches without error the truth God willed to entrust for our salvation. It is not a manual of astronomy or biology, and it does not answer questions that were not its own. Therefore, before crying "contradiction", one must ask what the genre of the text is and what the author actually meant. Most supposed contradictions dissolve when the Bible is read as it is, and not as a scientific report.
+
+## Why it matters
+
+If God is the Author of the Bible, it has an authority no other book has. But, precisely because it was born in the Church, it is not read alone, at the whim of each individual. To recognize the divine Author and the home where it was born, the Church, is the key to reading Sacred Scripture as it asks to be read.
+
+## Key questions
+
+1. If inspiration is not mechanical dictation, does it make sense to expect every book to have the same style and answer the same questions?
+
+2. Who decided which books belong in the Bible? And is it coherent to accept the Bible while rejecting the authority of the Church that defined it?
+
+3. Does the Bible "err" when it does not explain science like a modern manual, or is it simply dealing with something else?
+
+4. If God is the ultimate Author, should Sacred Scripture be read in isolation, to each one taste, or in the communion of the Church that received it?`,
+  },
+  69: {
+    titleEn: 'The Bible, Slavery, and Violence in the Old Testament',
+    summaryEn: 'How to understand the harsh passages of the Old Testament, with wars, severe laws, and slavery, without pretending they do not exist nor concluding that God is cruel.',
+    bodyEn: `It is one of the favorite objections of critics of the faith: the "God of the Old Testament" is said to be violent, a slaver, even genocidal. There is no point sweeping these passages under the rug; they are there. The question is how to read them, and the Christian answer is neither to deny the difficulty nor to surrender to the caricature.
+
+## The key to everything: revelation is progressive
+
+God did not pour out the whole truth at once upon a people of the second millennium before Christ. He revealed himself gradually, starting from where people were, like a father who educates his child in stages, or a teacher who instructs the student as he grows. Jesus himself gives the key: about the divorce permitted by Moses, he says it was granted "because of your hardness of heart, but from the beginning it was not so" (Matthew 19,8). In other words: not everything the Law tolerated was God's ideal; it was a possible step at that moment.
+
+## Slavery
+
+The Old Testament does not invent slavery; it already existed throughout the ancient world. What the Law does is regulate and humanize it (rest, periodic release, protection), at a time when no one imagined abolishing it. More importantly: the Bible plants the seed that would one day destroy it, by affirming that every human being is created "in the image of God" (Genesis 1,27). It is this seed that blossoms in the New Testament, when Paul commands to receive the slave Onesimus "no longer as a slave, but as a brother" (Philemon 16). It is no coincidence that, centuries later, Christians led abolition, precisely in the name of this biblical principle.
+
+## The wars of conquest
+
+There are very harsh texts, with orders of extermination. To read them honestly, three things must be considered. First, the genre: the language of total annihilation was a common hyperbole in the war chronicles of the ancient Near East, and does not necessarily describe what actually happened. Second, the theological target: the struggle was against the idolatry and corruption that threatened to destroy the people from within, not an ethnic hatred. Third, and decisively: these texts describe a moment in the history of salvation, not a model to imitate. No Christian reads in them a mandate for violence.
+
+## "Eye for eye"
+
+The famous law of retaliation sounds barbaric to our ears. But, in its time, it was a civilizing advance: instead of limitless revenge (killing a whole family for one offense), it imposed proportionality, "only" eye for eye, tooth for tooth. It was a brake on escalation, not an incentive to violence. And Jesus later brings the principle to fullness: "you have heard it said... but I say to you: love your enemies" (Matthew 5,38-44).
+
+## The final criterion is Christ
+
+The key to reading the entire Old Testament is Jesus. He is the fullness toward which everything was moving: the Old is the root, the New is the flower. Everything in the Old Testament that was still rough, provisional, or merely tolerated is judged and fulfilled in Christ, who reveals the definitive face of God, who loves even his enemies and dies for them. Whoever wants to know what God is really like does not look at an isolated page of Leviticus, but at Calvary.
+
+## A word to the critic
+
+Finally, an observation. The atheist who is outraged by the violence of the Old Testament uses a standard of "this is evil" that he himself must explain. If there is no God, where does that absolute moral duty come from that makes him condemn cruelty? The very ability to call something "evil" presupposes an objective good, and that is a terrain where faith has more to offer than materialism.
+
+## Key questions
+
+1. If God educates a people in stages, does it make sense to expect every page of the Old Testament to already express the full ideal, or only Christ to reveal it?
+
+2. Does the Bible institute slavery as an ideal, or plant the principle (man is the image of God) that would end up abolishing it?
+
+3. Jesus says Moses tolerated things "because of hardness of heart". Does that help distinguish what God permitted from what God wills?
+
+4. To call the violence of the Old Testament "evil", does the atheist critic not first need an absolute moral standard, which only makes sense if God exists?`,
+  },
+  70: {
+    titleEn: 'The End of the World: What the Church Teaches about Revelation',
+    summaryEn: 'The number 666, the antichrist, the rapture, fixed dates. Amid so much sensationalism, what the Catholic Church actually teaches about the end times.',
+    bodyEn: `Few subjects attract as much sensationalism as the end of the world. Films, sects, and preachers turn the book of Revelation into a map of catastrophes, calculate dates, and identify the antichrist of the day. The position of the Catholic Church is far more sober, and far more liberating.
+
+## Revelation is not a map of the future
+
+The first error is to read Revelation as a coded screenplay of the coming years. It belongs to an ancient literary genre, the apocalyptic, full of symbols (beasts, numbers, colors, trumpets) that spoke directly to the persecuted Christians of the first century. It was a letter of consolation in code: "hold on, because, despite appearances, Christ has already conquered and will conquer". The central message of the book is not a date, it is a certainty: the Lamb triumphs, and God wipes away every tear.
+
+## No one knows the day or the hour
+
+About the when, Jesus was categorical: "of that day and hour no one knows, not even the angels of heaven, nor the Son, but only the Father" (Matthew 24,36). Every date ever set for the end of the world, without exception, has failed. Therefore the Church is suspicious, on principle, of anyone who announces the end for such a year: this directly contradicts the word of Christ and tends to serve fear and manipulation more than faith.
+
+## The 666 and the antichrist
+
+The number 666 is, in all likelihood, a cipher: in the letter-numbers of Hebrew, it corresponds to the name of the emperor Nero, the persecutor of the time. It is not a code for cell phones or modern barcodes. As for the "antichrist", the New Testament speaks more of a spirit of opposition to Christ, present in every age, than of a single character to be identified. History is full of people who pointed the finger at this or that one as the antichrist, and were always wrong. Hunting antichrists is a waste of time and peace.
+
+## And the "rapture"?
+
+The idea of a secret rapture, in which the faithful suddenly vanish before a great tribulation, is popular in some circles, especially because of books and films. But it is recent: it arose in nineteenth-century Protestantism, with John Darby, and is not part of Christian Tradition. The Catholic Church does not profess it. What the faith has always believed is in a single glorious coming of Christ at the end of time.
+
+## What will actually happen
+
+Stripped of sensationalism, the teaching is clear and is in the Creed: Christ will return in glory, there will be the resurrection of the dead and the final judgment, evil will be definitively conquered, and there will be "new heavens and a new earth". It is not the annihilation of everything, but transformation and fullness. History does not move toward nothingness, but toward Christ.
+
+## How to live all this
+
+The Christian attitude toward the end is neither paralyzing fear nor obsession with signs, but the serene vigilance of one who awaits Someone he loves. Instead of calculating dates, the Christian seeks to live each day in such a way as not to fear the coming of the Lord, and makes his own the last prayer of the Bible: "Come, Lord Jesus" (Revelation 22,20).
+
+## Key questions
+
+1. If Jesus said "no one knows the day or the hour", what should we think of those who set dates for the end of the world?
+
+2. Was Revelation written to console persecuted Christians with symbols, or to serve as a calendar of future catastrophes?
+
+3. Does the "rapture" come from the apostles and Tradition, or from a nineteenth-century Protestant idea?
+
+4. Before the end, does it make more sense to live in fear, hunting signs, or with vigilance and hope, living each day well?`,
+  },
+  71: {
+    titleEn: 'How to Start Reading the Bible',
+    summaryEn: 'A practical guide for those who want to read the Bible and do not know where to start, without getting stuck in Leviticus or lost in isolated interpretations.',
+    bodyEn: `Many people decide to read the Bible, open to the first page, get through Genesis with enthusiasm, run into the laws of Leviticus, and give up. It is almost a classic. The good news is that there is a better way to begin, and it makes all the difference.
+
+## Do not start at the beginning: start with a Gospel
+
+The Bible was not made to be read from cover to cover, in order, like a novel. The heart of it all is Jesus Christ, and it is with him that one should begin. Choose a Gospel. Mark is the shortest and most direct, great for a first reading; Luke is careful and full of tenderness. Get to know the face of Jesus first, because he is the key that opens the meaning of all the rest of the Bible.
+
+## A suggested path
+
+After a Gospel, a good route is: the Acts of the Apostles, to see the Church being born; the Psalms, which are the school of prayer of the people of God themselves; and then, with more preparation, return to Genesis and Exodus, the great narratives of origins. Books like Leviticus and Numbers, full of ancient laws, can wait: do not get discouraged needlessly at the very start.
+
+## A little and constant beats a lot and sporadic
+
+Do not try to read ten chapters at once. Better a short passage a day, read slowly and without haste. Reading the Bible is not a marathon to finish, it is an encounter to cultivate. A reading plan helps keep the rhythm, and this app offers one, precisely to accompany you step by step.
+
+## The golden rule: do not read entirely alone
+
+Here is a point that prevents much error. The Bible was born within the Church and is read well in the Church. Saint Peter himself warns that in the Scriptures there are "things hard to understand, which the ignorant twist to their own destruction" (2 Peter 3,16), and that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1,20). Therefore, use a good Catholic Bible with footnotes, which situate and explain the texts, and let the faith of the Church illumine your reading. To read the Bible "on your own", with no reference at all, is like sailing without a map.
+
+## Understand the genre of what you read
+
+The Bible is a library: it has poetry, historical narrative, parable, law, letter, vision. One does not read a poem like a report, nor a parable like a news article. Before each passage, the double question is worth asking: what did the human author mean there, and what does God want to tell me today through it? This distinction undoes most confusions.
+
+## Read in order to pray, not only to know
+
+Finally, the most important thing: the goal is not to "know the Bible" as one memorizes dates, it is to encounter God. Christian tradition teaches the so-called prayerful reading, lectio divina, in four simple steps: read the text, meditate on what it says, pray from it, and rest in silence before God. Read like this, the Bible ceases to be a difficult book and becomes a letter from Someone who loves you.
+
+## Key questions
+
+1. Does it make more sense to start the Bible with Genesis and get stuck in Leviticus, or to first know Jesus through a Gospel?
+
+2. If Saint Peter himself says there are texts the imprudent "twist", is it not safer to read the Bible with the notes and the faith of the Church?
+
+3. Reading a short passage a day, calmly, or trying to devour chapters and giving up in the first week: which bears more fruit?
+
+4. Do you want to read the Bible to "complete a reading challenge", or to encounter God and pray with it?`,
+  },
+  72: {
+    titleEn: 'Evolution, Genesis, and Adam and Eve',
+    summaryEn: 'Does evolution refute the faith? Did Adam and Eve exist? The Church sees no war between science and Genesis, accepts evolution as possible, and gives up neither creation nor the soul.',
+    bodyEn: `"Either science or the Bible." This is a false dilemma, repeated by militant atheists and religious fundamentalists alike. The Catholic Church never entered that war: it is not afraid of evolution, nor does it give up creation. To understand how the two coexist undoes much confusion.
+
+## Genesis is not a book of science
+
+The first chapters of Genesis were not written to inform us of the age of the Earth nor of the biological mechanism of species. They were written to teach religious truths, and in symbolic language: that there is one God, that he created everything freely, that creation is good, that the human being has a unique dignity, and that evil entered the world through a disobedience, not by God's fault. Already in the fifth century, Saint Augustine warned Christians not to interpret Genesis in a crudely literal way, so as not to be embarrassed before those who understand nature. The warning is sixteen hundred years old.
+
+## The Church's position on evolution
+
+Contrary to what many imagine, the Church does not condemn the theory of evolution. Pope Pius XII, in the encyclical Humani Generis (1950), declared that the origin of the human body from preexisting living matter may be freely investigated and debated. Saint John Paul II, in 1996, went further and stated that evolution is "more than a hypothesis". Faith imposes a single limit: the spiritual soul of each human being does not emerge from matter by chance, it is created directly by God. The body may have a biological history; the soul is the immediate gift of the Creator.
+
+## Creation and evolution do not compete
+
+The underlying confusion is mixing two different planes. Science answers the question "how": by what mechanisms life developed. Faith answers the questions "why" and "who": why there is something rather than nothing, and who sustains everything in existence. To say that "evolution dispenses with God" is like saying that, once the engine of a car is explained, it is proven the car has no maker. They are questions on different levels. It is no coincidence that it was a Catholic priest, Georges Lemaitre, who proposed the Big Bang model.
+
+## Did Adam and Eve exist?
+
+Here the Church distinguishes the essential from the accessory. What it affirms as non-negotiable is not the literal form of the account (the apple, the rib, the talking serpent), but two underlying truths: that there was a real origin of sin, the so-called original sin, and that humanity has a unity of origin. "Adam and Eve" designate the first parents of humanity and their real fall. There was, in fact, a beginning and a free rupture of the relationship with God, and not merely a poetic myth. Exactly how this happened, faith does not detail; that it happened, it affirms.
+
+## What Genesis really teaches
+
+When Genesis is read for what it is, what it teaches remains intact, and science does not touch it: the universe is neither eternal nor absurd, but created and good; the human being is not just one more animal, but the image of God, with a dignity no other being possesses; and the evil of the world does not come from God, but from a free refusal of the creature. None of these affirmations is confirmed or refuted by a fossil, because they are on another plane.
+
+## Without fear of the truth
+
+At bottom, the Catholic attitude is born of a simple conviction: all truth comes from God. If evolution is true, it will be a truth of God, and faith has nothing to fear from it. The conflict between science and faith is not between honest science and mature faith; it is between two forms of fundamentalism, the one that turns Genesis into a biology manual and the one that turns biology into a weapon against God. The Church rejects both.
+
+## Key questions
+
+1. If Genesis was written to teach who created and why, and not how, does it make sense to demand answers of biology from it?
+
+2. Science explains the "how" and faith the "why" and the "who". Why treat evolution as if it answered questions that are not its own?
+
+3. The Church has accepted the evolution of the body since 1950, requiring only that the soul be created by God. Does that fit the reputation of being an "enemy of science"?
+
+4. Does denying that there was a real origin of sin solve the problem of evil in the world, or just leave it without explanation?`,
+  },
   63: {
     titleEn: 'Catholic or Evangelical? The Main Differences',
     summaryEn: 'Catholics and Evangelicals believe in Christ, but differ on central points: authority, salvation, sacraments, and the Church itself. An honest, respectful map of the differences.',

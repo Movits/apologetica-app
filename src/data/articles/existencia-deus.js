@@ -603,6 +603,53 @@ A Redenção não é um acontecimento distante do passado, fechado em si. Ela al
 4. Se Deus foi até a cruz para alcançar você, o que isso diz sobre quanto a sua vida vale aos olhos dele?`,
     references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6'],
   },
+  {
+    id: 72,
+    title: 'Evolução, Gênesis e Adão e Eva',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/72-evolucao.jpg'),
+    imageAlt: 'Adão e Eva no Paraíso, de Jan Brueghel',
+    imageCredit: 'Jan Brueghel, o Jovem, Adão e Eva no Paraíso (séc. XVII). Domínio público.',
+    imageAspect: 1.27,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJan%2520Breughel%2520(II)%2520-%2520Adam%2520and%2520Eve%2520in%2520paradise.jpg&w=2200&output=jpg&q=80',
+    summary: 'A evolução refuta a fé? Adão e Eva existiram? A Igreja não vê guerra entre ciência e Gênesis, aceita a evolução como possível e não abre mão da criação nem da alma.',
+    body: `"Ou a ciência ou a Bíblia." Esse é um falso dilema, repetido tanto por ateus militantes quanto por fundamentalistas religiosos. A Igreja Católica nunca entrou nessa guerra: ela não tem medo da evolução, e também não abre mão da criação. Entender como as duas coisas convivem desfaz muita confusão.
+
+## Gênesis não é um livro de ciência
+
+Os primeiros capítulos do Gênesis não foram escritos para informar a idade da Terra nem o mecanismo biológico das espécies. Foram escritos para ensinar verdades religiosas, e em linguagem simbólica: que existe um só Deus, que ele criou tudo livremente, que a criação é boa, que o ser humano tem uma dignidade única e que o mal entrou no mundo por uma desobediência, não por culpa de Deus. Já no século V, Santo Agostinho advertia os cristãos a não interpretarem o Gênesis de modo grosseiramente literal, para não passarem vergonha diante de quem entende de natureza. O alerta tem mil e seiscentos anos.
+
+## A posição da Igreja sobre a evolução
+
+Ao contrário do que muitos imaginam, a Igreja não condena a teoria da evolução. O Papa Pio XII, na encíclica Humani Generis (1950), declarou que a origem do corpo humano a partir de matéria viva preexistente pode ser livremente investigada e debatida. São João Paulo II, em 1996, foi além e afirmou que a evolução é "mais que uma hipótese". A fé impõe um único limite: a alma espiritual de cada ser humano não emerge da matéria por acaso, é criada diretamente por Deus. O corpo pode ter uma história biológica; a alma é dom imediato do Criador.
+
+## Criação e evolução não competem
+
+A confusão de fundo é misturar dois planos diferentes. A ciência responde à pergunta "como": por quais mecanismos a vida se desenvolveu. A fé responde às perguntas "por que" e "quem": por que existe algo em vez de nada, e quem sustenta tudo na existência. Dizer que "a evolução dispensa Deus" é como dizer que, explicado o motor de um carro, fica provado que ele não tem fabricante. São perguntas de níveis distintos. Não por acaso, foi um padre católico, Georges Lemaître, quem propôs o modelo do Big Bang.
+
+## Adão e Eva existiram?
+
+Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (a maçã, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem. "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético. Como exatamente isso se deu, a fé não detalha; que se deu, ela afirma.
+
+## O que o Gênesis ensina de verdade
+
+Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom; o ser humano não é um animal a mais, mas imagem de Deus, com uma dignidade que nenhum outro ser possui; e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
+
+## Sem medo da verdade
+
+No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem de Deus. Se a evolução for verdadeira, será uma verdade de Deus, e a fé não tem nada a temer dela. O conflito entre ciência e fé não é entre a ciência honesta e a fé madura; é entre duas formas de fundamentalismo, o que transforma o Gênesis em manual de biologia e o que transforma a biologia em arma contra Deus. A Igreja recusa os dois.
+
+## Perguntas-chave
+
+1. Se o Gênesis foi escrito para ensinar quem criou e por quê, e não como, faz sentido cobrar dele respostas de biologia?
+
+2. A ciência explica o "como" e a fé o "por quê" e o "quem". Por que tratar a evolução como se respondesse a perguntas que não são as dela?
+
+3. A Igreja aceita a evolução do corpo desde 1950, exigindo apenas que a alma seja criada por Deus. Isso combina com a fama de "inimiga da ciência"?
+
+4. Negar que houve uma origem real do pecado resolve o problema do mal no mundo, ou apenas o deixa sem explicação?`,
+    references: ['gn-1-27', 'cic-309', 'fides-et-ratio', 'lemaitre-bigbang'],
+  },
 ];
 
 export default articles;

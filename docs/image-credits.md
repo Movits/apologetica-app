@@ -29,6 +29,11 @@ Arquivos em `assets/articles/`.
 | 65 — Horóscopo e Ocultismo | `65-ocultismo.jpg` | A Sombra de Samuel Invocada por Saul (1668) | Salvator Rosa |
 | 66 — Anjos e Demônios | `66-anjos-demonios.jpg` | A Queda dos Anjos Rebeldes (1562) | Pieter Bruegel, o Velho |
 | 67 — A Redenção | `67-redencao.jpg` | A Crucificação (Scuola Grande di San Rocco, 1565) | Tintoretto |
+| 68 — Quem Escreveu a Bíblia? | `68-quem-escreveu-biblia.jpg` | Os Quatro Evangelistas (c. 1625) | Jacob Jordaens |
+| 69 — Escravidão e violência no AT | `69-escravidao-at.jpg` | Os Israelitas Saindo do Egito (1828) | David Roberts |
+| 70 — O Fim do Mundo | `70-fim-do-mundo.jpg` | O Grande Dia da Sua Ira (1851–53) | John Martin |
+| 71 — Como Ler a Bíblia | `71-como-ler-biblia.jpg` | Cristo Pregando (Estampa dos Cem Florins, c. 1648) | Rembrandt |
+| 72 — Evolução e Gênesis | `72-evolucao.jpg` | Adão e Eva no Paraíso (séc. XVII) | Jan Brueghel, o Jovem |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.

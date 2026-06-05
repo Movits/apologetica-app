@@ -576,6 +576,71 @@ export const DIALOGUES = [
     ],
     relatedArticle: 67,
   },
+  {
+    id: 'd-biblia-homens',
+    objection: '"A Bíblia foi escrita por homens, então é só invenção humana."',
+    objectionEn: '"The Bible was written by men, so it is just a human invention."',
+    category: 'Sagrada Escritura', categoryEn: 'Sacred Scripture', rank: 1,
+    steps: [
+      { label: 'Concordar', labelEn: 'Agree', text: 'É verdade que homens a escreveram: reis, pescadores, profetas, ao longo de mil anos. A fé não nega isso, afirma.', textEn: 'It is true that men wrote it: kings, fishermen, prophets, over a thousand years. Faith does not deny this, it affirms it.' },
+      { label: 'Reformular', labelEn: 'Reframe', text: '"Escrita por homens" não prova "só invenção". A fé diz que Deus inspirou esses autores sem anular o estilo deles, como um maestro rege músicos diferentes. Humana e divina ao mesmo tempo.', textEn: '"Written by men" does not prove "mere invention". Faith says God inspired these authors without nullifying their style, like a conductor directing different musicians. Human and divine at the same time.' },
+      { label: 'Mostrar a coerência', labelEn: 'Show the coherence', text: 'Repare na unidade: dezenas de autores, mil anos, e uma só história que converge em Cristo. E foi a Igreja, não os autores isolados, que reconheceu quais livros eram inspirados.', textEn: 'Notice the unity: dozens of authors, a thousand years, and one single story that converges on Christ. And it was the Church, not the isolated authors, that recognized which books were inspired.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'Que um livro tenha mãos humanas não o torna falso, assim como uma carta de amor escrita à mão não deixa de vir do coração. A pergunta é: quem move a mão? A fé responde: o Espírito.', textEn: 'That a book has human hands does not make it false, just as a love letter written by hand still comes from the heart. The question is: who moves the hand? Faith answers: the Spirit.' },
+    ],
+    relatedArticle: 68,
+  },
+  {
+    id: 'd-deus-at-monstro',
+    objection: '"O Deus do Antigo Testamento é um monstro genocida e escravagista."',
+    objectionEn: '"The God of the Old Testament is a genocidal, slaver monster."',
+    category: 'Sagrada Escritura', categoryEn: 'Sacred Scripture', rank: 2,
+    steps: [
+      { label: 'Não fugir da dificuldade', labelEn: 'Do not dodge the difficulty', text: 'Concordo que há páginas durésimas, e fingir que não existem seria desonesto. A questão não é negar, é como lê-las.', textEn: 'I agree there are very harsh pages, and pretending they do not exist would be dishonest. The question is not to deny, but how to read them.' },
+      { label: 'Revelação progressiva', labelEn: 'Progressive revelation', text: 'Deus educa um povo por etapas, partindo de onde ele estava. O próprio Jesus diz que Moisés tolerou coisas "pela dureza dos corações, mas no princípio não era assim" (Mt 19,8). Nem tudo o que a Lei permitiu era o ideal de Deus.', textEn: 'God educates a people in stages, starting from where it was. Jesus himself says Moses tolerated things "because of hardness of heart, but from the beginning it was not so" (Mt 19,8). Not everything the Law permitted was God\\u0027s ideal.' },
+      { label: 'A semente da abolição', labelEn: 'The seed of abolition', text: 'A escravidão já existia em todo lugar; a Bíblia a regula e planta o que a destruiria: todo homem é imagem de Deus (Gn 1,27). Foram cristãos que aboliram a escravidão, em nome desse princípio.', textEn: 'Slavery already existed everywhere; the Bible regulates it and plants what would destroy it: every man is the image of God (Gn 1,27). It was Christians who abolished slavery, in the name of that principle.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'O rosto definitivo de Deus não está numa página do Levítico, está no Calvário: o Deus que ama os inimigos e morre por eles. E quem chama o Antigo Testamento de "mau" precisa explicar de onde tira esse padrão de bem, se não há Deus.', textEn: 'The definitive face of God is not on a page of Leviticus, it is at Calvary: the God who loves his enemies and dies for them. And whoever calls the Old Testament "evil" must explain where he gets that standard of good, if there is no God.' },
+    ],
+    relatedArticle: 69,
+  },
+  {
+    id: 'd-fim-do-mundo',
+    objection: '"Os sinais estão aí, o fim do mundo está chegando agora."',
+    objectionEn: '"The signs are here, the end of the world is coming now."',
+    category: 'Sagrada Escritura', categoryEn: 'Sacred Scripture', rank: 3,
+    steps: [
+      { label: 'Acolher a inquietação', labelEn: 'Acknowledge the unease', text: 'Entendo a sensação: guerras, catástrofes, crises. Cada geração sentiu que era a última. Mas há uma palavra clara de Jesus sobre isso.', textEn: 'I understand the feeling: wars, disasters, crises. Every generation felt it was the last. But there is a clear word of Jesus about this.' },
+      { label: 'Citar Jesus', labelEn: 'Quote Jesus', text: 'Ele foi categórico: "daquele dia e hora ninguém sabe, nem os anjos, nem o Filho, só o Pai" (Mt 24,36). Toda data já marcada para o fim fracassou. Quem anuncia o fim para tal ano contradiz o próprio Cristo.', textEn: 'He was categorical: "of that day and hour no one knows, not the angels, nor the Son, but only the Father" (Mt 24,36). Every date ever set for the end has failed. Whoever announces the end for such a year contradicts Christ himself.' },
+      { label: 'Desmistificar', labelEn: 'Demystify', text: 'O Apocalipse não é um calendário de catástrofes; é uma carta em código para consolar cristãos perseguidos: "aguentem, o Cordeiro vence". O 666 é cifra de Nero, e o "arrebatamento" é ideia protestante do século XIX, não da Tradição.', textEn: 'Revelation is not a calendar of catastrophes; it is a coded letter to console persecuted Christians: "hold on, the Lamb conquers". The 666 is a cipher for Nero, and the "rapture" is a 19th-century Protestant idea, not from Tradition.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'A atitude certa não é medo nem caçar sinais, é vigilância serena: viver cada dia bem, sem temer a vinda do Senhor, e rezar "Vem, Senhor Jesus" (Ap 22,20).', textEn: 'The right attitude is neither fear nor hunting signs, it is serene vigilance: to live each day well, without fearing the coming of the Lord, and to pray "Come, Lord Jesus" (Rev 22,20).' },
+    ],
+    relatedArticle: 70,
+  },
+  {
+    id: 'd-leio-sozinho',
+    objection: '"Não preciso de igreja nem de padre: leio a Bíblia e Deus me ilumina."',
+    objectionEn: '"I do not need a church or a priest: I read the Bible and God enlightens me."',
+    category: 'Sagrada Escritura', categoryEn: 'Sacred Scripture', rank: 4,
+    steps: [
+      { label: 'Valorizar', labelEn: 'Affirm the good', text: 'Que bom que você lê a Bíblia, isso é ótimo e todo católico deveria fazer. Mas há um detalhe que a própria Bíblia aponta.', textEn: 'It is great that you read the Bible, every Catholic should. But there is a detail the Bible itself points out.' },
+      { label: 'Citar Pedro', labelEn: 'Quote Peter', text: 'São Pedro avisa que nas Escrituras há "coisas difíceis, que os ignorantes torcem para a própria perdição" (2 Pd 3,16), e que "nenhuma profecia é de interpretação particular" (2 Pd 1,20). Ler sozinho, sem referência, é arriscado.', textEn: 'Saint Peter warns that in the Scriptures there are "things hard to understand, which the ignorant twist to their own destruction" (2 Pt 3,16), and that "no prophecy is of private interpretation" (2 Pt 1,20). Reading alone, with no reference, is risky.' },
+      { label: 'Mostrar a consequência', labelEn: 'Show the consequence', text: 'Não é teoria: "cada um interpreta sozinho" gerou dezenas de milhares de denominações, todas lendo a mesma Bíblia e discordando. A Bíblia nasceu na Igreja e se lê na Igreja.', textEn: 'It is not theory: "each one interprets alone" produced tens of thousands of denominations, all reading the same Bible and disagreeing. The Bible was born in the Church and is read in the Church.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'Não é trocar a Bíblia pela Igreja, é ler a Bíblia com a Igreja, como ela pede. Comece por um Evangelho, use uma boa Bíblia com notas, e deixe a fé de dois mil anos iluminar a sua leitura.', textEn: 'It is not trading the Bible for the Church, it is reading the Bible with the Church, as it asks. Start with a Gospel, use a good Bible with notes, and let two thousand years of faith illumine your reading.' },
+    ],
+    relatedArticle: 71,
+  },
+  {
+    id: 'd-evolucao-deus',
+    objection: '"A evolução já provou que o Gênesis é mito e que Deus não é necessário."',
+    objectionEn: '"Evolution has proven that Genesis is a myth and that God is not necessary."',
+    category: 'Existência de Deus', categoryEn: 'Existence of God', rank: 3,
+    steps: [
+      { label: 'Concordar em parte', labelEn: 'Agree in part', text: 'A evolução é uma boa teoria científica, e a Igreja não briga com ela: desde 1950 aceita que o corpo possa ter evoluído. Mas "provou que Deus não é necessário" é outra coisa.', textEn: 'Evolution is a good scientific theory, and the Church does not fight it: since 1950 it accepts that the body may have evolved. But "proved that God is not necessary" is another matter.' },
+      { label: 'Separar os planos', labelEn: 'Separate the levels', text: 'A ciência explica o como (mecanismos); a fé explica o porquê e o Quem (por que existe algo, e quem sustenta tudo). Dizer que a evolução dispensa Deus é como dizer que, explicado o motor, o carro não tem fabricante.', textEn: 'Science explains the how (mechanisms); faith explains the why and the Who (why anything exists, and who sustains it all). To say evolution dispenses with God is like saying that, once the engine is explained, the car has no maker.' },
+      { label: 'O que o Gênesis ensina', labelEn: 'What Genesis teaches', text: 'O Gênesis não é manual de biologia; ensina que Deus criou, que a criação é boa, que o homem é imagem de Deus e que o mal veio de uma recusa livre. Nada disso um fóssil confirma ou refuta. Santo Agostinho já alertava, no século V, para não ler tudo ao pé da letra.', textEn: 'Genesis is not a biology manual; it teaches that God created, that creation is good, that man is the image of God, and that evil came from a free refusal. None of this is confirmed or refuted by a fossil. Saint Augustine warned, in the 5th century, not to read it all literally.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'Toda verdade vem de Deus: se a evolução é verdade, é verdade dele. Quem propôs o Big Bang foi um padre, Lemaitre. O conflito real não é ciência contra fé, é fundamentalismo contra fundamentalismo. A Igreja recusa os dois.', textEn: 'All truth comes from God: if evolution is true, it is his truth. The one who proposed the Big Bang was a priest, Lemaitre. The real conflict is not science against faith, it is fundamentalism against fundamentalism. The Church rejects both.' },
+    ],
+    relatedArticle: 72,
+  },
 ];
 
 export function getDialogueById(id) {

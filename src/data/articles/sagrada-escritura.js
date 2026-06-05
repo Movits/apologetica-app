@@ -433,6 +433,194 @@ O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos 
 4. Os Manuscritos do Mar Morto, mil anos mais antigos, batem com o texto posterior. Onde está, de fato, a tal adulteração?`,
     references: ['ms-p52', 'ms-bibliografico'],
   },
+  {
+    id: 68,
+    title: 'Quem Escreveu a Bíblia?',
+    category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/68-quem-escreveu-biblia.jpg'),
+    imageAlt: 'Os Quatro Evangelistas, de Jordaens',
+    imageCredit: 'Jacob Jordaens, Os Quatro Evangelistas (c. 1625). Domínio público.',
+    imageAspect: 1.23,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJordaens%2520Evangelists.JPG&w=2200&output=jpg&q=80',
+    summary: 'A Bíblia foi escrita por dezenas de autores humanos ao longo de mil anos, mas a fé reconhece um só Autor por trás deles: Deus, que inspira sem anular o homem.',
+    body: `Quem escreveu a Bíblia? A pergunta parece simples, mas a resposta tem dois níveis, e perder um deles leva a confusões. A Bíblia tem autores humanos, muitos, e um único Autor divino por trás de todos.
+
+## Não é um livro, é uma biblioteca
+
+A própria palavra "Bíblia" vem do grego e significa "os livros", no plural. São setenta e três livros, escritos ao longo de cerca de mil anos, por aproximadamente quarenta autores das mais diversas condições: reis como Davi, profetas como Isaías, um médico como Lucas, pescadores como Pedro e João, um perseguidor convertido como Paulo. E em gêneros muito diferentes: leis, narrativas históricas, poesia, provérbios, cartas, visões. Tratar tudo isso como se fosse um único panfleto escrito de uma vez é o primeiro erro.
+
+## O Autor por trás dos autores: a inspiração
+
+A fé cristã afirma que, por trás desses muitos autores humanos, há um só Autor principal: Deus. É o que se chama inspiração. Mas atenção ao que ela não é: não é um ditado mecânico, como se os autores fossem secretárias em transe. Deus se serve da inteligência, do estilo, da cultura e até das limitações de cada autor, sem anular nada disso, para comunicar a verdade que quer. Como diz São Pedro, "movidos pelo Espírito Santo é que os santos homens de Deus falaram" (2 Pedro 1,21). Por isso a Bíblia é, ao mesmo tempo, plenamente humana e plenamente palavra de Deus.
+
+## Como a Bíblia chegou até nós
+
+Quase nada foi escrito de imediato. Primeiro houve os acontecimentos e a tradição oral; depois a redação; por fim, o reconhecimento. E aqui está um ponto decisivo: não foi a Bíblia que decidiu quais livros são a Bíblia. Foi a Igreja que, guiada pelo Espírito, reconheceu quais escritos eram inspirados, fixando a lista (o cânon) em concílios do fim do século IV, como Hipona em 393 e Cartago em 397. A Bíblia nasceu do seio da Igreja, não o contrário.
+
+## Moisés escreveu mesmo o Pentateuco? E os Evangelhos?
+
+A tradição atribui os cinco primeiros livros a Moisés e cada Evangelho a um nome. A Igreja não exige que se prove que cada palavra saiu da mão do autor tradicional: textos antigos cresceram, foram reunidos e editados ao longo do tempo, e isso não contraria a inspiração. Os Evangelhos, por exemplo, brotam da pregação dos apóstolos, foram fixados por escrito pela comunidade e transmitem fielmente o que Jesus fez e ensinou. O essencial não é a assinatura, é a origem apostólica e a inspiração divina.
+
+## E os "erros" e contradições?
+
+A inspiração garante que a Bíblia ensina sem erro a verdade que Deus quis confiar para a nossa salvação. Ela não é um manual de astronomia ou de biologia, e não responde a perguntas que não eram as suas. Por isso, antes de gritar "contradição", é preciso perguntar qual o gênero do texto e o que o autor quis de fato dizer. A maioria das supostas contradições se desfaz quando se lê a Bíblia como ela é, e não como um relatório científico.
+
+## Por que isso importa
+
+Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem. Mas, justamente por ter nascido na Igreja, ela não se lê sozinha, ao sabor da interpretação de cada um. Reconhecer o Autor divino e o lar onde ela nasceu, a Igreja, é a chave para ler a Sagrada Escritura como ela pede para ser lida.
+
+## Perguntas-chave
+
+1. Se a inspiração não é ditado mecânico, faz sentido esperar que todos os livros tenham o mesmo estilo e respondam às mesmas perguntas?
+
+2. Quem decidiu quais livros entram na Bíblia? E é coerente aceitar a Bíblia e rejeitar a autoridade da Igreja que a definiu?
+
+3. A Bíblia "erra" quando não explica a ciência como um manual moderno, ou simplesmente está tratando de outra coisa?
+
+4. Se Deus é o Autor último, a Sagrada Escritura deve ser lida isoladamente, ao gosto de cada um, ou na comunhão da Igreja que a recebeu?`,
+    references: ['2pd-1-20', 'dei-verbum-9', 'hipona-393', 'ms-bibliografico', '2pd-3-16'],
+  },
+  {
+    id: 69,
+    title: 'A Bíblia, a Escravidão e a Violência no Antigo Testamento',
+    category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/69-escravidao-at.jpg'),
+    imageAlt: 'Os israelitas saindo do Egito, de David Roberts',
+    imageCredit: 'David Roberts, Os Israelitas Saindo do Egito (1828). Domínio público.',
+    imageAspect: 1.38,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FDavid%2520Roberts-IsraelitesLeavingEgypt%25201828.jpg&w=2200&output=jpg&q=80',
+    summary: 'Como entender as passagens duras do Antigo Testamento, com guerras, leis severas e escravidão, sem fingir que não existem nem concluir que Deus é cruel.',
+    body: `É uma das objeções favoritas dos críticos da fé: o "Deus do Antigo Testamento" seria violento, escravagista, até genocida. Não adianta varrer essas passagens para baixo do tapete; elas estão lá. A questão é como lê-las, e a resposta cristã não é nem negar a dificuldade nem render-se à caricatura.
+
+## A chave de tudo: a revelação é progressiva
+
+Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus; era um passo possível naquele momento.
+
+## A escravidão
+
+O Antigo Testamento não inventa a escravidão; ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
+
+## As guerras de conquista
+
+Há textos durésimos, com ordens de extermínio. Para lê-los com honestidade, é preciso considerar três coisas. Primeiro, o gênero: a linguagem de aniquilação total era uma hipérbole comum nas crônicas de guerra do Oriente Antigo, e não descreve necessariamente o que de fato ocorreu. Segundo, o alvo teológico: a luta era contra a idolatria e a corrupção que ameaçavam destruir o povo por dentro, não um ódio étnico. Terceiro, e decisivo: esses textos descrevem um momento da história da salvação, não um modelo a imitar. Nenhum cristão lê ali um mandado para a violência.
+
+## "Olho por olho"
+
+A famosa lei de talião soa bárbara aos nossos ouvidos. Mas, no seu tempo, ela foi um avanço civilizatório: em vez da vingança sem limites (matar a família inteira por uma ofensa), ela impôs proporcionalidade, "apenas" olho por olho, dente por dente. Era um freio à escalada, não um incentivo à violência. E Jesus, depois, leva o princípio à plenitude: "ouvistes que foi dito... eu, porém, vos digo: amai os vossos inimigos" (Mateus 5,38-44).
+
+## O critério final é Cristo
+
+A chave de leitura de todo o Antigo Testamento é Jesus. Ele é a plenitude para a qual tudo caminhava: o Antigo é a raiz, o Novo é a flor. Tudo o que no Antigo Testamento ainda era tosco, provisório ou tolerado é julgado e cumprido em Cristo, que revela o rosto definitivo de Deus, que ama até os inimigos e morre por eles. Quem quer saber como Deus realmente é não olha para uma página isolada do Levítico, olha para o Calvário.
+
+## Uma palavra ao crítico
+
+Por fim, uma observação. O ateu que se indigna com a violência do Antigo Testamento usa um padrão de "isto é mau" que ele precisa explicar. Se não há Deus, de onde vem esse dever moral absoluto que o faz condenar a crueldade? A própria capacidade de chamar algo de "mau" pressupõe um bem objetivo, e esse é um terreno em que a fé tem mais a oferecer do que o materialismo.
+
+## Perguntas-chave
+
+1. Se Deus educa um povo por etapas, faz sentido esperar que cada página do Antigo Testamento já expresse o ideal pleno, ou que isso só se revele em Cristo?
+
+2. A Bíblia institui a escravidão como ideal, ou planta o princípio (o homem é imagem de Deus) que acabaria por aboli-la?
+
+3. Jesus diz que Moisés tolerou coisas "pela dureza dos corações". Isso ajuda a distinguir o que Deus permitiu do que Deus quer?
+
+4. Para chamar a violência do Antigo Testamento de "má", o crítico ateu não precisa, antes, de um padrão moral absoluto, que só faz sentido se Deus existe?`,
+    references: ['gn-1-27', 'dei-verbum-9', 'rm-2-14'],
+  },
+  {
+    id: 70,
+    title: 'O Fim do Mundo: O Que a Igreja Ensina sobre o Apocalipse',
+    category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/70-fim-do-mundo.jpg'),
+    imageAlt: 'O Grande Dia da Sua Ira, de John Martin',
+    imageCredit: 'John Martin, O Grande Dia da Sua Ira (1851 a 1853). Domínio público.',
+    imageAspect: 1.55,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJohn%2520Martin%2520-%2520The%2520Great%2520Day%2520of%2520His%2520Wrath%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
+    summary: 'O número 666, o anticristo, o arrebatamento, datas marcadas. Em meio a tanto sensacionalismo, o que a Igreja Católica de fato ensina sobre o fim dos tempos.',
+    body: `Poucos temas atraem tanto sensacionalismo quanto o fim do mundo. Filmes, seitas e pregadores fazem do livro do Apocalipse um mapa de catástrofes, calculam datas e identificam o anticristo da vez. A posição da Igreja Católica é bem mais sóbria, e bem mais libertadora.
+
+## O Apocalipse não é um mapa do futuro
+
+O primeiro erro é ler o Apocalipse como um roteiro cifrado dos próximos anos. Ele pertence a um gênero literário antigo, o apocalíptico, cheio de símbolos (bestas, números, cores, trombetas) que falavam diretamente aos cristãos perseguidos do primeiro século. Era uma carta de consolação em código: "aguentem, porque, apesar das aparências, Cristo já venceu e vencerá". A mensagem central do livro não é uma data, é uma certeza: o Cordeiro triunfa, e Deus enxuga toda lágrima.
+
+## Ninguém sabe o dia nem a hora
+
+Sobre o quando, Jesus foi categórico: "daquele dia e hora ninguém sabe, nem os anjos do céu, nem o Filho, mas somente o Pai" (Mateus 24,36). Toda data já marcada para o fim do mundo, sem exceção, fracassou. Por isso a Igreja desconfia, por princípio, de quem anuncia o fim para tal ano: isso contraria diretamente a palavra de Cristo e costuma servir mais ao medo e à manipulação do que à fé.
+
+## O 666 e o anticristo
+
+O número 666 é, com grande probabilidade, uma cifra: nas letras-número do hebraico, corresponde ao nome do imperador Nero, o perseguidor da época. Não é um código para celulares ou códigos de barra modernos. Quanto ao "anticristo", o Novo Testamento fala mais de um espírito de oposição a Cristo, presente em todas as épocas, do que de um único personagem a ser identificado. A história está cheia de gente que apontou o dedo para este ou aquele como o anticristo, e sempre errou. Caçar anticristos é perder tempo e paz.
+
+## E o "arrebatamento"?
+
+A ideia de um arrebatamento secreto, em que os fiéis somem de repente antes de uma grande tribulação, é popular em alguns meios, sobretudo por causa de livros e filmes. Mas é uma invenção recente: surgiu no protestantismo do século XIX, com John Darby, e não faz parte da Tradição cristã. A Igreja Católica não a professa. O que a fé sempre creu é numa única vinda gloriosa de Cristo no fim dos tempos.
+
+## O que de fato vai acontecer
+
+Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória, haverá a ressurreição dos mortos e o juízo final, o mal será definitivamente vencido e haverá "novos céus e nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
+
+## Como viver tudo isso
+
+A atitude cristã diante do fim não é nem o medo paralisante nem a obsessão por sinais, mas a vigilância serena de quem espera Alguém que ama. Em vez de calcular datas, o cristão procura viver cada dia de modo que não tema a vinda do Senhor, e faz sua a última oração da Bíblia: "Vem, Senhor Jesus" (Apocalipse 22,20).
+
+## Perguntas-chave
+
+1. Se Jesus disse que "ninguém sabe o dia nem a hora", o que pensar de quem marca datas para o fim do mundo?
+
+2. O Apocalipse foi escrito para consolar cristãos perseguidos com símbolos, ou para servir de calendário de catástrofes futuras?
+
+3. O "arrebatamento" vem dos apóstolos e da Tradição, ou de uma ideia protestante do século XIX?
+
+4. Diante do fim, faz mais sentido viver com medo e caçando sinais, ou com vigilância e esperança, vivendo bem cada dia?`,
+    references: ['mt-25-31', 'ap-20-12', 'ap-21-27', 'hb-9-27'],
+  },
+  {
+    id: 71,
+    title: 'Como Começar a Ler a Bíblia',
+    category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/71-como-ler-biblia.jpg'),
+    imageAlt: 'Cristo pregando (Estampa dos Cem Florins), de Rembrandt',
+    imageCredit: 'Rembrandt, Cristo Pregando (A Estampa dos Cem Florins, c. 1648). Domínio público.',
+    imageAspect: 1.39,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRembrandt%2520van%2520Rijn%2520-%2520Christ%2520Preaching%2520(The%2520Hundred%2520Guilder%2520Print)%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
+    summary: 'Um guia prático para quem quer ler a Bíblia e não sabe por onde começar, sem travar no Levítico nem se perder em interpretações isoladas.',
+    body: `Muita gente decide ler a Bíblia, abre na primeira página, atravessa o Gênesis animada, esbarra nas leis do Levítico e desiste. É quase um clássico. A boa notícia é que existe um jeito melhor de começar, e ele faz toda a diferença.
+
+## Não comece pelo começo: comece por um Evangelho
+
+A Bíblia não foi feita para ser lida de capa a capa, na ordem, como um romance. O coração de tudo é Jesus Cristo, e é por ele que se deve começar. Escolha um Evangelho. Marcos é o mais curto e direto, ótimo para uma primeira leitura; Lucas é caprichado e cheio de ternura. Conheça primeiro o rosto de Jesus, porque ele é a chave que abre o sentido de todo o resto da Bíblia.
+
+## Um caminho sugerido
+
+Depois de um Evangelho, um bom percurso é: os Atos dos Apóstolos, para ver a Igreja nascendo; os Salmos, que são a escola de oração do próprio povo de Deus; e então, com outro preparo, voltar ao Gênesis e ao Êxodo, as grandes narrativas das origens. Livros como Levítico e Números, cheios de leis antigas, podem ficar para mais tarde: não desanime à toa logo no início.
+
+## Pouco e constante vence muito e esporádico
+
+Não tente ler dez capítulos de uma vez. Melhor um trecho curto por dia, lido com calma e sem pressa. A leitura da Bíblia não é uma maratona para terminar, é um encontro para cultivar. Um plano de leitura ajuda a manter o ritmo, e este aplicativo oferece um, justamente para acompanhar passo a passo.
+
+## A regra de ouro: não leia totalmente sozinho
+
+Aqui está um ponto que evita muito erro. A Bíblia nasceu dentro da Igreja e é na Igreja que se lê bem. O próprio São Pedro avisa que nas Escrituras há "coisas difíceis de entender, que os ignorantes torcem para a própria perdição" (2 Pedro 3,16), e que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20). Por isso, use uma boa Bíblia católica com notas de rodapé, que situam e explicam os textos, e deixe que a fé da Igreja ilumine a sua leitura. Ler a Bíblia "por conta própria", sem nenhuma referência, é como navegar sem mapa.
+
+## Entenda o gênero do que lê
+
+A Bíblia é uma biblioteca: tem poesia, narrativa histórica, parábola, lei, carta, visão. Não se lê um poema como um relatório, nem uma parábola como uma reportagem. Diante de cada trecho, vale a dupla pergunta: o que o autor humano quis dizer ali, e o que Deus quer me dizer hoje por meio disso? Essa distinção desfaz a maioria das confusões.
+
+## Leia para rezar, não só para saber
+
+Por fim, o mais importante: o objetivo não é "saber a Bíblia" como quem decora datas, é encontrar Deus. A tradição cristã ensina a chamada leitura orante, a lectio divina, em quatro passos simples: ler o texto, meditar no que ele diz, rezar a partir dele e descansar em silêncio diante de Deus. Lida assim, a Bíblia deixa de ser um livro difícil e vira uma carta de Alguém que ama você.
+
+## Perguntas-chave
+
+1. Faz mais sentido começar a Bíblia pelo Gênesis e travar no Levítico, ou conhecer primeiro Jesus por um Evangelho?
+
+2. Se o próprio São Pedro diz que há textos que os imprudentes "torcem", não é mais seguro ler a Bíblia com as notas e a fé da Igreja?
+
+3. Ler um trecho curto por dia, com calma, ou tentar devorar capítulos e desistir na primeira semana: o que dá mais fruto?
+
+4. Você quer ler a Bíblia para "vencer um desafio de leitura", ou para encontrar Deus e rezar com ela?`,
+    references: ['2pd-1-20', '2pd-3-16', 'dei-verbum-9', '1tm-3-15'],
+  },
 ];
 
 export default articles;
