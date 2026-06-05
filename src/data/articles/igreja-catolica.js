@@ -123,6 +123,11 @@ A distinção católica clássica é entre latria (adoração devida só a Deus)
     id: 12,
     title: 'A Imaculada Conceição de Maria',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/12-imaculada.jpg'),
+    imageAlt: 'A Imaculada Conceição',
+    imageCredit: 'Alonso Miguel de Tovar, A Imaculada Conceição (segundo Murillo, séc. XVIII). Domínio público.',
+    imageAspect: 0.76,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAlonso%2520Miguel%2520de%2520Tovar%2520(1678-1758)%2520-%2520The%2520Immaculate%2520Conception%2520(after%2520Bartolom%25C3%25A9%2520Esteban%2520Murillo)%2520-%252020940%2520-%2520National%2520Trust.jpg&w=2200&output=jpg&q=80',
     summary: 'Maria foi preservada do pecado original em previsão dos méritos de Cristo, não depois de cair nele.',
     body: `A Imaculada Conceição é o dogma de que Maria foi concebida sem mancha do pecado original. Não se trata da concepção de Jesus (esse é outro mistério, a Encarnação), mas da própria Maria, no ventre de sua mãe Sant'Ana.
 
@@ -155,6 +160,11 @@ A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogm
     id: 13,
     title: 'A Virgindade Perpétua de Maria',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/13-virgindade.jpg'),
+    imageAlt: 'A Sagrada Família',
+    imageCredit: 'Agustín Esteve, A Sagrada Família com São João Batista (segundo Murillo). Domínio público.',
+    imageAspect: 1.19,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAgust%25C3%25ADn%2520Esteve%2520y%2520Marques%2520(1753-c.1820)%2520-%2520The%2520Holy%2520Family%2520and%2520Saint%2520John%2520the%2520Baptist%2520(after%2520Bartolom%25C3%25A9%2520Esteban%2520Murillo)%2520-%2520872159%2520-%2520National%2520Trust.jpg&w=2200&output=jpg&q=80',
     summary: 'Maria foi virgem antes, durante e após o nascimento de Jesus, doutrina confessada desde os primeiros séculos.',
     body: `A Igreja ensina que Maria foi virgem antes, durante e após o nascimento de Jesus. Não teve outros filhos, não conheceu varão. Essa doutrina é chamada Virgindade Perpétua de Maria e é confessada desde os primeiros séculos cristãos.
 
@@ -191,6 +201,11 @@ Vale notar uma curiosidade histórica. Os próprios Reformadores Martinho Lutero
     id: 14,
     title: 'Maria, Mãe de Deus (Theotokos)',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/14-theotokos.jpg'),
+    imageAlt: 'Madona entronizada com o Menino',
+    imageCredit: 'Cimabue, Madona Entronizada com o Menino e Anjos (c. 1280). Domínio público.',
+    imageAspect: 1.22,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCimabue%2520-%2520Madonna%2520Enthroned%2520with%2520the%2520Child%252C%2520St%2520Francis%2520and%2520Four%2520Angels%2520-%2520WGA04920.jpg&w=2200&output=jpg&q=80',
     summary: 'Maria gerou aquele que, na unidade de sua pessoa, é verdadeiramente Deus. Negar isso é negar a Encarnação.',
     body: `Maria é chamada Mãe de Deus desde os primeiros séculos da Igreja. O título não significa que Maria gerou a divindade, como se Deus tivesse origem nela. Significa que aquele que ela gerou, na unidade de sua pessoa, é verdadeiramente Deus.
 
@@ -227,6 +242,11 @@ Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
     id: 19,
     title: 'O Papa: Cabeça Visível da Igreja',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/19-papa.jpg'),
+    imageAlt: 'A Entrega das Chaves a São Pedro',
+    imageCredit: 'Pietro Perugino, A Entrega das Chaves (Capela Sistina, 1482). Domínio público.',
+    imageAspect: 1.66,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPerugino%2520Keys.jpg&w=2200&output=jpg&q=80',
     summary: 'Cristo deu a Pedro autoridade única, e essa autoridade continua nos sucessores legítimos: os Papas.',
     body: `O Papa é o sucessor de Pedro e cabeça visível da Igreja Católica. A objeção protestante padrão é que isso é "invenção tardia da Igreja medieval". A história mostra exatamente o oposto.
 
@@ -453,6 +473,11 @@ Por isso a Igreja exorta os vivos a rezar pelos mortos. Não muda o destino dele
     id: 24,
     title: 'Fé e Obras: Não Sola Fide',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/24-fe-obras.jpg'),
+    imageAlt: 'As Sete Obras de Misericórdia',
+    imageCredit: 'Caravaggio, As Sete Obras de Misericórdia (1607). Domínio público.',
+    imageAspect: 1.26,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPio%2520Monte%2520della%2520Misericordia.%2520Sette%2520opere%2520di%2520Misericordia.jpg&w=2200&output=jpg&q=80',
     summary: 'A salvação se obtém pela fé que opera pela caridade. Tiago 2,24 contradiz explicitamente o Sola Fide protestante.',
     body: `Um dos pilares da Reforma protestante foi o [[Sola Fide]] (somente pela fé): a doutrina de que a salvação se obtém exclusivamente pela fé, sem qualquer cooperação das obras. Lutero foi tão longe que chamou a Carta de Tiago de "epístola de palha" porque ela contradizia essa doutrina.
 

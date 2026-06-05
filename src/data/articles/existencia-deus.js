@@ -315,6 +315,11 @@ A tese mítica precisa explicar como, em poucos anos após a suposta "criação 
     id: 50,
     title: 'O Sudário de Turim',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/50-sudario-turim.jpg'),
+    imageAlt: 'O Sudário de Turim',
+    imageCredit: 'O Sudário de Turim. Domínio público.',
+    imageAspect: 1.52,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FShroud%2520of%2520Turin%2520001.jpg&w=2200&output=jpg&q=80',
     summary: 'Um lençol que envolveu um homem crucificado exatamente como os Evangelhos descrevem Jesus, com uma imagem que a ciência ainda não sabe explicar. As evidências e os debates.',
     body: `O Sudário de Turim é um lençol de linho de mais de quatro metros, que traz a imagem frontal e dorsal de um homem que sofreu uma crucificação. Para a tradição cristã, é o pano que envolveu o corpo de Jesus no sepulcro. É também um dos objetos mais estudados da história, e várias de suas características continuam sem explicação científica.
 
@@ -349,6 +354,11 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. T
     id: 55,
     title: 'Aparições de Maria: Evidência para Deus?',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/55-aparicoes-maria.jpg'),
+    imageAlt: 'A Assunção da Virgem',
+    imageCredit: 'Pedro Paulo Rubens, A Assunção da Virgem (c. 1626). Domínio público.',
+    imageAspect: 0.67,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPeter%2520Paul%2520Rubens%2520-%2520The%2520Assumption%2520of%2520the%2520Virgin%2520Mary%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'Aparições marianas com milhares de testemunhas, sinais anunciados e até fotografias são dados difíceis para o ateu. E ao protestante que as chama de demoníacas, há uma resposta clara: pelos frutos se conhece a árvore.',
     body: `As aparições de Maria costumam ser tratadas como assunto interno do catolicismo. Mas, vistas de fora, elas levantam uma questão que interessa a qualquer pessoa que busca a verdade: se alguns desses eventos realmente aconteceram, como milhares de testemunhas afirmam, então existe uma realidade que o materialismo não consegue explicar. Este artigo propõe encarar as aparições como evidência, e responder às duas objeções mais comuns: a do ateu e a do protestante.
 

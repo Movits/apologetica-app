@@ -169,6 +169,11 @@ O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, p
     id: 51,
     title: 'O Milagre do Sol em Fátima (1917)',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/51-fatima.jpg'),
+    imageAlt: 'A multidão no Milagre do Sol, Fátima (1917)',
+    imageCredit: 'A multidão durante o Milagre do Sol, Fátima, 13 de outubro de 1917. Domínio público.',
+    imageAspect: 1.41,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPeople%2520looking%2520miracle%2520sun.jpg&w=2200&output=jpg&q=80',
     summary: 'Dezenas de milhares de pessoas, avisadas com meses de antecedência, viram o sol "dançar" no céu em 13 de outubro de 1917. Até a imprensa secular e cética registrou.',
     body: `No dia 13 de outubro de 1917, em Fátima, Portugal, cerca de setenta mil pessoas reuniram-se num campo chamado Cova da Iria. Tinham ido porque três crianças pastoras, Lúcia, Francisco e Jacinta, diziam que a Virgem Maria lhes aparecia desde maio e havia prometido, para aquele dia exato, um sinal para que todos cressem. O que a multidão relatou ter visto é um dos eventos religiosos mais bem testemunhados da história moderna.
 
@@ -203,6 +208,11 @@ A Igreja Católica investigou o caso por anos e, em 1930, declarou as apariçõe
     id: 52,
     title: 'Nossa Senhora de Guadalupe e a Tilma',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/52-guadalupe.jpg'),
+    imageAlt: 'Nossa Senhora de Guadalupe',
+    imageCredit: 'Nossa Senhora de Guadalupe (a tilma de São Juan Diego). Domínio público.',
+    imageAspect: 0.64,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FVirgen%2520de%2520guadalupe1.jpg&w=2200&output=jpg&q=80',
     summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos. Quase quinhentos anos depois, continua intacto e sem explicação.',
     body: `Em dezembro de 1531, dez anos após a conquista espanhola do México, um índio pobre e recém-convertido chamado Juan Diego, hoje canonizado, subia o monte Tepeyac, perto da Cidade do México. Ali, segundo o relato, apareceu-lhe uma jovem morena, vestida como uma princesa asteca grávida, que se identificou como a Mãe do verdadeiro Deus e pediu que se construísse ali um templo. Como prova para o bispo incrédulo, ela fez brotar rosas de Castela num morro árido, em pleno inverno, e as colocou na tilma, o manto de fibra de Juan Diego. Quando ele abriu o manto diante do bispo, as rosas caíram e, no tecido, estava impressa a imagem da Virgem, que se vê até hoje.
 
@@ -239,6 +249,11 @@ Como sempre, é preciso honestidade. A Igreja não obriga ninguém a crer em Gua
     id: 53,
     title: 'As Aparições de Zeitoun (Egito, 1968)',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/53-zeitoun.jpg'),
+    imageAlt: 'A Mãe de Deus (ícone de Vladimir)',
+    imageCredit: 'A Theotokos de Vladimir (ícone, séc. XII). Domínio público.',
+    imageAspect: 0.75,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FTheotokos%2520of%2520Vladimir.jpg&w=2200&output=jpg&q=80',
     summary: 'Por mais de dois anos, multidões de cristãos e muçulmanos viram, e fotografaram, uma figura luminosa da Virgem sobre uma igreja no Cairo. O governo egípcio investigou e não achou fraude.',
     body: `Entre 1968 e 1971, no bairro de Zeitoun, no Cairo, aconteceu uma das aparições marianas mais incomuns e mais bem testemunhadas da história, por um motivo que chama a atenção: boa parte das testemunhas era muçulmana.
 
@@ -273,6 +288,11 @@ Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações 
     id: 54,
     title: 'Nossa Senhora Aparecida',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/54-aparecida.jpg'),
+    imageAlt: 'Basílica de Nossa Senhora Aparecida',
+    imageCredit: 'Basílica de Nossa Senhora Aparecida. Foto via Wikimedia Commons.',
+    imageAspect: 1.54,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBasilica%2520of%2520the%2520National%2520Shrine%2520of%2520Our%2520Lady%2520of%2520Aparecida%252C%25202007.jpg&w=2200&output=jpg&q=80',
     summary: 'Em 1717, três pescadores tiraram do rio Paraíba uma pequena imagem quebrada e, em seguida, uma pesca farta onde não havia nada. Era o começo da devoção que faria dela a padroeira do Brasil.',
     body: `A maior devoção mariana do Brasil começou de modo humilde, com três pescadores pobres e uma rede vazia. A história de Nossa Senhora Aparecida une a fé popular brasileira a uma série de fatos que atravessaram três séculos.
 

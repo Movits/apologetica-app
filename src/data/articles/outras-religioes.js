@@ -8,6 +8,11 @@ const articles = [
     id: 15,
     title: 'Islamismo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/15-islamismo.jpg'),
+    imageAlt: 'Interior da Mesquita do Sultão Ahmed, Istambul',
+    imageCredit: 'Interior da Mesquita do Sultão Ahmed (Mesquita Azul), Istambul. Foto via Wikimedia Commons.',
+    imageAspect: 1.33,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FInterior%2520from%2520the%2520window%2520of%2520Sultan%2520Ahmed%2520I%2520Mosque%2520(2024).jpg&w=2200&output=jpg&q=80',
     summary: 'O Islã honra Jesus como profeta nascido de virgem, mas nega que ele seja Deus, que tenha morrido na cruz e que tenha ressuscitado. É aí que começam as tensões internas.',
     body: `O Islã é hoje a segunda maior religião do mundo, com cerca de dois bilhões de fiéis. Dialogar com um muçulmano exige duas coisas ao mesmo tempo: respeito sincero pela sua devoção e conhecimento real do que ele crê. Este artigo apresenta primeiro a fé islâmica com honestidade, reconhece o que temos em comum, e só então mostra os pontos em que o Islã, ao falar de Jesus, entra em tensão consigo mesmo e com a história.
 
@@ -50,6 +55,11 @@ As dificuldades começam justamente onde está a maior reverência islâmica: na
     id: 16,
     title: 'Espiritismo (Kardecismo)',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/16-espiritismo.jpg'),
+    imageAlt: 'Saul e a feiticeira de Endor',
+    imageCredit: 'Washington Allston, Saul e a Feiticeira de Endor (1820). Domínio público.',
+    imageAspect: 1.36,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F1820%2520Saul%2520Witch%2520Endor%2520byWashingtonAllston%2520FiveCollegeMuseums.jpg&w=2200&output=jpg&q=80',
     summary: 'Nascido na França no séc. XIX e fortíssimo no Brasil, o Espiritismo ensina reencarnação e comunicação com os mortos, e vê Jesus como espírito puríssimo, não como Deus. A Bíblia responde aos dois pontos.',
     body: `O Espiritismo nasceu na França no século XIX e encontrou no Brasil o maior número de adeptos do mundo. É uma doutrina séria, que se apresenta como ciência, filosofia e religião ao mesmo tempo, com forte ênfase na caridade e no consolo de quem perdeu entes queridos. Por isso merece ser tratado com cuidado, reconhecendo o que tem de bom antes de mostrar onde ele se afasta do Evangelho que diz respeitar.
 
@@ -90,6 +100,11 @@ As diferenças, porém, atingem o coração da fé.
     id: 27,
     title: 'Testemunhas de Jeová',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/27-tj.jpg'),
+    imageAlt: 'A Santíssima Trindade (ícone de Rublev)',
+    imageCredit: 'Andrei Rublev, A Trindade (c. 1411). Domínio público.',
+    imageAspect: 0.8,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAngelsatmamre-trinity-rublev-1410.jpg&w=2200&output=jpg&q=80',
     summary: 'As Testemunhas de Jeová negam a Trindade e a divindade de Cristo, apoiadas numa tradução própria da Bíblia, de 1950. O texto grego e a história respondem.',
     body: `As Testemunhas de Jeová batem à porta com a Bíblia na mão e grande conhecimento de versículos. São disciplinadas, sinceras e dedicadas. Mas, por trás do nome de Jeová, professam uma doutrina que nega a divindade de Cristo e a Trindade, e que se apoia, em grande parte, numa tradução própria da Bíblia. Vale conhecer o que creem e onde isso não se sustenta.
 
@@ -132,6 +147,11 @@ O problema é que a doutrina central, a negação da divindade de Cristo, não v
     id: 36,
     title: 'Cristianismo Copiou Religiões Pagãs?',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/36-pagas.jpg'),
+    imageAlt: 'Relevo do deus Mitra (tauroctonia)',
+    imageCredit: 'Relevo do deus Mitra (mitreu romano). Domínio público.',
+    imageAspect: 1.58,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAllard%2520Pierson%2520Mithras%2520relief%25207686.jpg&w=2200&output=jpg&q=80',
     summary: 'A tese popular de que Jesus é "cópia de Hórus, Mitra ou Dionísio" é falsa em fato e em cronologia. Não resiste à análise acadêmica séria.',
     body: `Documentários como Zeitgeist e livros como "The Pagan Christ" popularizaram a ideia de que o cristianismo seria plágio de religiões pagãs anteriores. Jesus seria reescritura de Hórus, Mitra, Dionísio, Krishna, Áttis e outros deuses pagãos, todos supostamente nascidos de virgens em 25 de dezembro, mortos e ressuscitados ao terceiro dia, com 12 discípulos, e assim por diante. A tese é massivamente repetida em fóruns e vídeos ateus, mas não tem qualquer fundamento sério na academia.
 
@@ -223,6 +243,11 @@ As diferenças brotam de dois lemas, e ambos têm um problema interno.
     id: 38,
     title: 'Judaísmo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/38-judaismo.jpg'),
+    imageAlt: 'O Muro das Lamentações',
+    imageCredit: 'Jean-Léon Gérôme, O Muro das Lamentações (séc. XIX). Domínio público.',
+    imageAspect: 0.82,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJ.L.%2520Gerome%2520-%2520The%2520Wailing%2520Wall%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'O Judaísmo é a raiz de onde brota o cristianismo. A pergunta que nos separa é uma só: o Messias prometido já veio? As profecias respondem.',
     body: `O cristão tem com o Judaísmo uma dívida que não tem com nenhuma outra religião: foi do povo judeu que recebemos o Deus único, as Escrituras, os profetas e o próprio Messias. Jesus, Maria, os apóstolos, todos eram judeus. Por isso a conversa aqui não é entre estranhos, é entre quem partilha a mesma raiz. A pergunta que nos separa é uma só, mas decisiva: o Messias prometido por Deus já veio?
 
@@ -265,6 +290,11 @@ O ponto é um só: Jesus de Nazaré é o Messias anunciado pelos profetas? O cri
     id: 39,
     title: 'Budismo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/39-budismo.jpg'),
+    imageAlt: 'O Grande Buda de Kamakura',
+    imageCredit: 'O Grande Buda de Kamakura, Japão. Foto via Wikimedia Commons.',
+    imageAspect: 1.33,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Great%2520Buddha%2520of%2520Kamakura%252C%2520Kanagawa%2520Prefecture%253B%2520May%25202011%2520(01).jpg&w=2200&output=jpg&q=80',
     summary: 'O Budismo busca o fim do sofrimento pela extinção do desejo e do próprio eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.',
     body: `O Budismo atrai muita gente no Ocidente pela serenidade, pela disciplina da meditação e pela ênfase na compaixão. Não é uma religião de combate, e o diálogo com um budista costuma ser tranquilo. Mas por baixo da semelhança de linguagem (paz, compaixão, desapego) há respostas opostas às do cristianismo sobre o que é real, o que somos e para onde vamos.
 
@@ -307,6 +337,11 @@ As diferenças, porém, são de fundo.
     id: 40,
     title: 'Hinduísmo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/40-hinduismo.jpg'),
+    imageAlt: 'Relevo do Bhagavad Gita (Krishna e Arjuna)',
+    imageCredit: 'Relevo do Bhagavad Gita, templo de Bishnupur, Índia. Foto via Wikimedia Commons.',
+    imageAspect: 1.33,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBhagavata%2520Gita%2520Bishnupur%2520Arnab%2520Dutta%25202011.JPG&w=2200&output=jpg&q=80',
     summary: 'O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.',
     body: `O Hinduísmo é a mais antiga das grandes religiões vivas e uma das mais difíceis de resumir, porque não é um bloco só, mas uma família imensa de tradições, com muitos deuses, muitos textos e muitos caminhos. Tem grande beleza espiritual e uma sede do transcendente que o cristão reconhece de imediato. As diferenças aparecem quando se pergunta quem é Deus, o que é o ser humano e como termina a história.
 
@@ -349,6 +384,11 @@ As respostas de fundo, porém, divergem do Evangelho.
     id: 41,
     title: 'Mormonismo (SUD)',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/41-mormonismo.jpg'),
+    imageAlt: 'A Primeira Visão de Joseph Smith',
+    imageCredit: 'A Primeira Visão de Joseph Smith (gravura, 1912). Domínio público.',
+    imageAspect: 0.78,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FFirst%2520Vision%25201912.PNG&w=2200&output=jpg&q=80',
     summary: 'Os mórmons creem em Cristo e levam a família a sério, mas seguem um novo livro e um deus que já foi homem. Arqueologia, egiptologia e a Bíblia respondem.',
     body: `Os mórmons, membros da Igreja de Jesus Cristo dos Santos dos Últimos Dias, costumam ser pessoas educadas, de vida moral séria e profundamente dedicadas à família. Falam de Jesus e usam a Bíblia. Por isso muitos os tomam por mais uma denominação cristã. Mas as diferenças são tão profundas que tocam quem é Deus, e podem ser testadas com história e arqueologia.
 
@@ -389,6 +429,11 @@ As dificuldades, porém, não são pequenas, e várias são verificáveis.
     id: 42,
     title: 'Ateísmo e Naturalismo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/42-ateismo.jpg'),
+    imageAlt: 'A Criação de Adão',
+    imageCredit: 'Michelangelo, A Criação de Adão (Capela Sistina, 1512). Domínio público.',
+    imageAspect: 2.2,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%2520-%2520Creation%2520of%2520Adam%2520(cropped).jpg&w=2200&output=jpg&q=80',
     summary: 'O ateísmo nega Deus. O naturalismo diz que só existe matéria. São cosmovisões sérias, mas têm dificuldade em fundamentar a própria existência do mundo, a moral e a razão.',
     body: `O ateu não é, em geral, um inimigo da verdade. Muitas vezes é alguém honesto, que exige razões para crer e se incomoda com a hipocrisia religiosa e com o sofrimento do mundo. Levar o ateísmo a sério é responder aos seus melhores argumentos, não a uma caricatura. Este artigo apresenta a posição com justiça e depois mostra os pontos em que ela tem dificuldade de se sustentar.
 
@@ -429,6 +474,11 @@ A questão é se o naturalismo consegue sustentar aquilo de que ele mesmo depend
     id: 43,
     title: 'Nova Era',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/43-nova-era.jpg'),
+    imageAlt: 'A gravura de Flammarion',
+    imageCredit: 'Gravura de Flammarion (1888). Domínio público.',
+    imageAspect: 1.19,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FFlammarion.jpg&w=2200&output=jpg&q=80',
     summary: 'A Nova Era mistura cristais, energias, reencarnação e um "Cristo cósmico", com a ideia de que o divino está em você. O Evangelho responde: você é criatura amada, não Deus.',
     body: `A Nova Era não é uma igreja nem tem um fundador. É um clima espiritual difuso, que aparece em cristais, mapas astrais, terapias energéticas, búzios, reencarnação, autoajuda espiritualizada e na frase "sou espiritualizado, mas não religioso". Muita gente que se diz católica absorve ideias da Nova Era sem perceber. Por isso vale entender o que ela propõe e onde isso colide com a fé.
 
@@ -469,6 +519,11 @@ A própria Igreja analisou esse movimento no documento "Jesus Cristo, portador d
     id: 44,
     title: 'Umbanda e Candomblé',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/44-umbanda.jpg'),
+    imageAlt: 'Batuque, de Rugendas',
+    imageCredit: 'Johann Moritz Rugendas, Batuque (c. 1835). Domínio público.',
+    imageAspect: 1.67,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FApunte%2520de%2520Batuque%2520Rugendas.jpg&w=2200&output=jpg&q=80',
     summary: 'Religiões afro-brasileiras de grande força cultural, nascidas da fé de africanos escravizados. A Igreja respeita essas pessoas e condena o racismo, mas distingue a fé católica do culto aos orixás e da mediunidade.',
     body: `Falar de Umbanda e Candomblé exige cuidado redobrado. São religiões nascidas da fé de africanos trazidos como escravos, que preservaram suas tradições em meio a séculos de perseguição e racismo. Qualquer abordagem que despreze essas pessoas ou ignore essa história injusta seria, antes de tudo, anticristã. O objetivo aqui não é atacar, é distinguir com clareza e respeito a fé católica daquilo que essas tradições professam.
 

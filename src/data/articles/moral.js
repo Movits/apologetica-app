@@ -45,6 +45,11 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqu
     id: 8,
     title: 'Homossexualidade e Doutrina Católica',
     category: 'Moral',
+    image: require('../../../assets/articles/8-homossexualidade.jpg'),
+    imageAlt: 'A Criação de Eva',
+    imageCredit: 'A Criação de Eva (arte renascentista). Domínio público.',
+    imageAspect: 1.33,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCreacionEva.jpg&w=2200&output=jpg&q=80',
     summary: 'A Igreja distingue entre a inclinação e o ato, e chama todos a viver em dignidade e castidade.',
     body: `A doutrina católica sobre sexualidade humana é baseada em antropologia e lei natural, não em preconceito. É importante entender essa distinção para discutir o tema com clareza.
 
@@ -136,6 +141,11 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
     id: 26,
     title: 'Contracepção e Humanae Vitae',
     category: 'Moral',
+    image: require('../../../assets/articles/26-contracepcao.jpg'),
+    imageAlt: 'A Sagrada Família',
+    imageCredit: 'Rafael, A Sagrada Família (séc. XVI). Domínio público.',
+    imageAspect: 0.75,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRaffael%2520015.jpg&w=2200&output=jpg&q=80',
     summary: 'A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.',
     body: `Em 25 de julho de 1968, o Beato Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, as previsões de Paulo VI sobre as consequências sociais se cumpriram com precisão profética.
 

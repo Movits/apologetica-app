@@ -51,6 +51,11 @@ A solução católica é coerente: a Revelação de Deus se transmite pela Sagra
     id: 18,
     title: 'O Cânon Bíblico: Por que 73 Livros',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/18-canon.jpg'),
+    imageAlt: 'São Jerônimo',
+    imageCredit: 'Jacopo Bassano, São Jerônimo (séc. XVI). Domínio público.',
+    imageAspect: 1.31,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F(Venice)%2520Saint%2520Jerome%2520Meditating%2520by%2520Jacopo%2520Da%2520ponte%2520-%2520gallerie%2520Accademia%2520Venice.jpg&w=2200&output=jpg&q=80',
     summary: 'A Bíblia católica tem 7 livros a mais que a protestante. A história mostra que os 73 livros são os originais.',
     body: `A Bíblia católica tem 73 livros: 46 no Antigo Testamento e 27 no Novo. A Bíblia protestante tem 66, removendo 7 livros do Antigo Testamento chamados [[Deuterocanônicos]]: Tobias, Judite, Sabedoria, Sirácida (Eclesiástico), Baruc e 1-2 Macabeus, além de partes de Ester e Daniel.
 
@@ -93,6 +98,11 @@ Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob
     id: 31,
     title: 'Como Lidar com Supostas Contradições na Bíblia',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/31-contradicoes.jpg'),
+    imageAlt: 'A Inspiração de São Mateus',
+    imageCredit: 'Caravaggio, A Inspiração de São Mateus (1602). Domínio público.',
+    imageAspect: 0.64,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Inspiration%2520of%2520Saint%2520Matthew-Caravaggio%2520(1602).jpg&w=2200&output=jpg&q=80',
     summary: 'Discrepâncias aparentes entre relatos quase sempre se resolvem com leitura honesta dos textos e princípios básicos de interpretação histórica.',
     body: `A objeção mais comum contra a inerrância bíblica é a lista de "contradições". Sites ateus e ex-cristãos publicam compilações com dezenas, às vezes centenas, de supostas incoerências. A boa notícia é que, examinadas uma por uma com honestidade intelectual, quase todas se resolvem facilmente. Sobram poucas dificuldades reais, e mesmo essas têm soluções razoáveis.
 
@@ -153,6 +163,11 @@ Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, e
     id: 32,
     title: 'Nascimento de Jesus: Herodes e o Censo de Quirino',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/32-quirino.jpg'),
+    imageAlt: 'A Adoração dos Pastores',
+    imageCredit: 'A Adoração dos Pastores (círculo de Apostolos Krezias). Domínio público.',
+    imageAspect: 1.27,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAdoration%2520by%2520the%2520shepherds.%2520Circle%2520of%2520Apostolos%2520Krezias.jpg&w=2200&output=jpg&q=80',
     summary: 'Mateus diz que Jesus nasceu sob Herodes (morto em 4 a.C.). Lucas menciona o censo de Quirino (governador a partir de 6 d.C.). A "contradição" tem solução textual e histórica.',
     body: `É uma das objeções mais citadas contra a historicidade dos Evangelhos. Mateus 2,1 diz que Jesus nasceu "no tempo do rei Herodes". Herodes, o Grande, morreu em 4 a.C., como atesta o historiador judeu Flávio Josefo. Mas Lucas 2,1-2 fala em um recenseamento ordenado por César Augusto "quando Quirino era governador da Síria". Quirino, segundo registros romanos, só foi governador da Síria a partir do ano 6 d.C., portanto cerca de dez anos após a morte de Herodes. Como Jesus pode ter nascido em dois períodos distintos?
 
@@ -189,6 +204,11 @@ Vale notar a desproporção da objeção. A historicidade de Jesus está atestad
     id: 33,
     title: 'As Duas Genealogias de Jesus: Mateus e Lucas',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/33-genealogias.jpg'),
+    imageAlt: 'A Árvore de Jessé',
+    imageCredit: 'A Árvore de Jessé (genealogia de Jesus, arte medieval). Domínio público.',
+    imageAspect: 1.66,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FWurzel%2520Jesse.jpg&w=2200&output=jpg&q=80',
     summary: 'Mateus e Lucas trazem listas diferentes de antepassados de Jesus. Não é contradição: são linhas distintas (legal e biológica) servindo a propósitos teológicos distintos.',
     body: `Outra objeção comum: Mateus 1,1-17 dá uma genealogia de Jesus que vai de Abraão até Jesus, passando por Davi e seu filho Salomão. Lucas 3,23-38 dá outra genealogia, que vai de Jesus para trás até Adão, passando por Davi mas por outro filho, Natã. As listas têm nomes diferentes. Como podem coexistir?
 
@@ -227,6 +247,11 @@ Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas
     id: 34,
     title: 'Aparentes Contradições na Ressurreição',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/34-ressurreicao-contrad.jpg'),
+    imageAlt: 'A Ressurreição',
+    imageCredit: 'Piero della Francesca, A Ressurreição (c. 1465). Domínio público.',
+    imageAspect: 1.2,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPiero%2520della%2520Francesca%2520-%2520Resurrection%2520(detail)%2520-%2520WGA17610.jpg&w=2200&output=jpg&q=80',
     summary: 'Os quatro Evangelhos divergem em detalhes da manhã de Páscoa. Essas diferenças confirmam testemunho independente, não invenção coordenada.',
     body: `Quem leu os quatro Evangelhos lado a lado nota diferenças nos relatos da Ressurreição. Quantas mulheres foram ao túmulo? Quantos anjos estavam lá? Jesus apareceu primeiro na Galileia ou em Jerusalém? Críticos da Bíblia listam essas diferenças como provas de fabricação. A análise honesta mostra exatamente o oposto: confirmação de independência de testemunho.
 
@@ -281,6 +306,11 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
     id: 45,
     title: 'A Escuridão na Cruz e a Datação da Crucificação',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/45-escuridao-cruz.jpg'),
+    imageAlt: 'A Crucificação',
+    imageCredit: 'A Crucificação (pintura, 1896). Domínio público.',
+    imageAspect: 0.73,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCrucifixion-1896.jpg&w=2200&output=jpg&q=80',
     summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Fontes pagãs a registraram, e a astronomia moderna ajudou a datar a crucificação no ano 33.',
     body: `No momento da morte de Jesus, os três Evangelhos sinópticos relatam um fenômeno estranho: "desde a hora sexta até a hora nona, houve trevas sobre toda a terra" (Mateus 27,45), isto é, do meio-dia às três da tarde. Marcos e Lucas registram o mesmo. Esse detalhe, longe de ser uma lenda fácil de inventar, levanta questões interessantes de história e de astronomia.
 
@@ -366,6 +396,11 @@ Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Q
     id: 47,
     title: 'A Arqueologia Confirma a Bíblia',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/47-arqueologia.jpg'),
+    imageAlt: 'A Pedra de Pôncio Pilatos (Cesareia Marítima)',
+    imageCredit: 'A Pedra de Pôncio Pilatos, Cesareia Marítima. Foto via Wikimedia Commons.',
+    imageAspect: 1.5,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FHoly%2520Land%25202016%2520P0231%2520Caesarea%2520Maritima%2520Pilate%2520stone.jpg&w=2200&output=jpg&q=80',
     summary: 'Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. A história confirma a Bíblia ponto a ponto.',
     body: `Durante muito tempo se disse que a Bíblia estava cheia de personagens e lugares inventados. A cada nova escavação, porém, a história tem feito o contrário: confirmado nomes, cargos e locais exatamente como o texto os descreve. A arqueologia não prova que a Bíblia é Palavra de Deus, isso é questão de fé, mas comprova, de novo e de novo, que ela é confiável como documento histórico.
 
@@ -408,6 +443,11 @@ Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Como 
     id: 48,
     title: 'Os Manuscritos do Novo Testamento',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/48-manuscritos.jpg'),
+    imageAlt: 'Fac-símile do Códice Sinaítico',
+    imageCredit: 'Fac-símile do Códice Sinaítico (séc. IV). Domínio público.',
+    imageAspect: 1.1,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBibelhandskrifter%252C%2520Utdrag%2520i%2520faksimile%2520ur%2520Codex%2520sinaiticus%252C%2520Nordisk%2520familjebok.png&w=2200&output=jpg&q=80',
     summary: 'A acusação de que a Bíblia foi mudada ao longo dos séculos não resiste aos fatos: o Novo Testamento é, de longe, o texto antigo mais bem documentado da história.',
     body: `Uma objeção repetida sem cansaço, por ateus, muçulmanos e céticos em geral, é que a Bíblia teria sido alterada ao longo dos séculos, como num telefone sem fio, e que não saberíamos o que os autores escreveram de fato. A acusação parece forte, mas desmorona diante dos manuscritos. O Novo Testamento é, com folga, o texto mais bem atestado de toda a Antiguidade.
 

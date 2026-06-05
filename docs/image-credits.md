@@ -60,3 +60,37 @@ Arquivos em `assets/articles/`.
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.
+
+<!-- Lote 3: imagens dos artigos antes sem foto -->
+| 8 | `8-homossexualidade.jpg` | A Criação de Eva | A Criação de Eva (arte renascentista). |
+| 12 | `12-imaculada.jpg` | A Imaculada Conceição | Alonso Miguel de Tovar, A Imaculada Conceição (segundo Murillo, séc. XVIII). |
+| 13 | `13-virgindade.jpg` | A Sagrada Família | Agustín Esteve, A Sagrada Família com São João Batista (segundo Murillo). |
+| 14 | `14-theotokos.jpg` | Madona entronizada com o Menino | Cimabue, Madona Entronizada com o Menino e Anjos (c. 1280). |
+| 15 | `15-islamismo.jpg` | Interior da Mesquita do Sultão Ahmed, Istambul | Interior da Mesquita do Sultão Ahmed (Mesquita Azul), Istambul. |
+| 16 | `16-espiritismo.jpg` | Saul e a feiticeira de Endor | Washington Allston, Saul e a Feiticeira de Endor (1820). |
+| 18 | `18-canon.jpg` | São Jerônimo | Jacopo Bassano, São Jerônimo (séc. XVI). |
+| 19 | `19-papa.jpg` | A Entrega das Chaves a São Pedro | Pietro Perugino, A Entrega das Chaves (Capela Sistina, 1482). |
+| 24 | `24-fe-obras.jpg` | As Sete Obras de Misericórdia | Caravaggio, As Sete Obras de Misericórdia (1607). |
+| 26 | `26-contracepcao.jpg` | A Sagrada Família | Rafael, A Sagrada Família (séc. XVI). |
+| 27 | `27-tj.jpg` | A Santíssima Trindade (ícone de Rublev) | Andrei Rublev, A Trindade (c. 1411). |
+| 31 | `31-contradicoes.jpg` | A Inspiração de São Mateus | Caravaggio, A Inspiração de São Mateus (1602). |
+| 32 | `32-quirino.jpg` | A Adoração dos Pastores | A Adoração dos Pastores (círculo de Apostolos Krezias). |
+| 33 | `33-genealogias.jpg` | A Árvore de Jessé | A Árvore de Jessé (genealogia de Jesus, arte medieval). |
+| 34 | `34-ressurreicao-contrad.jpg` | A Ressurreição | Piero della Francesca, A Ressurreição (c. 1465). |
+| 36 | `36-pagas.jpg` | Relevo do deus Mitra (tauroctonia) | Relevo do deus Mitra (mitreu romano). |
+| 38 | `38-judaismo.jpg` | O Muro das Lamentações | Jean-Léon Gérôme, O Muro das Lamentações (séc. XIX). |
+| 39 | `39-budismo.jpg` | O Grande Buda de Kamakura | O Grande Buda de Kamakura, Japão. |
+| 40 | `40-hinduismo.jpg` | Relevo do Bhagavad Gita (Krishna e Arjuna) | Relevo do Bhagavad Gita, templo de Bishnupur, Índia. |
+| 41 | `41-mormonismo.jpg` | A Primeira Visão de Joseph Smith | A Primeira Visão de Joseph Smith (gravura, 1912). |
+| 42 | `42-ateismo.jpg` | A Criação de Adão | Michelangelo, A Criação de Adão (Capela Sistina, 1512). |
+| 43 | `43-nova-era.jpg` | A gravura de Flammarion | Gravura de Flammarion (1888). |
+| 44 | `44-umbanda.jpg` | Batuque, de Rugendas | Johann Moritz Rugendas, Batuque (c. 1835). |
+| 45 | `45-escuridao-cruz.jpg` | A Crucificação | A Crucificação (pintura, 1896). |
+| 47 | `47-arqueologia.jpg` | A Pedra de Pôncio Pilatos (Cesareia Marítima) | A Pedra de Pôncio Pilatos, Cesareia Marítima. |
+| 48 | `48-manuscritos.jpg` | Fac-símile do Códice Sinaítico | Fac-símile do Códice Sinaítico (séc. IV). |
+| 50 | `50-sudario-turim.jpg` | O Sudário de Turim | O Sudário de Turim. |
+| 51 | `51-fatima.jpg` | A multidão no Milagre do Sol, Fátima (1917) | A multidão durante o Milagre do Sol, Fátima, 13 de outubro de 1917. |
+| 52 | `52-guadalupe.jpg` | Nossa Senhora de Guadalupe | Nossa Senhora de Guadalupe (a tilma de São Juan Diego). |
+| 53 | `53-zeitoun.jpg` | A Mãe de Deus (ícone de Vladimir) | A Theotokos de Vladimir (ícone, séc. XII). |
+| 54 | `54-aparecida.jpg` | Basílica de Nossa Senhora Aparecida | Basílica de Nossa Senhora Aparecida. |
+| 55 | `55-aparicoes-maria.jpg` | A Assunção da Virgem | Pedro Paulo Rubens, A Assunção da Virgem (c. 1626). |
