@@ -500,6 +500,53 @@ Dito isso, há diferenças que não se resolvem só com simpatia.
 4. A salvação se obtém com oferendas e obrigações, ou é dom gratuito de Deus em Cristo, que não se pode comprar?`,
     references: ['dt-18-10', 'cic-2116', 'ex-20-3', 'nostra-aetate', 'jo-14-6'],
   },
+  {
+    id: 65,
+    title: 'Horóscopo, Ocultismo e Superstição: O Que a Igreja Ensina',
+    category: 'Outras Religiões',
+    image: require('../../../assets/articles/65-ocultismo.jpg'),
+    imageAlt: 'A Sombra de Samuel invocada por Saul, de Salvator Rosa',
+    imageCredit: 'Salvator Rosa, A Sombra de Samuel Invocada por Saul (1668). Domínio público.',
+    imageAspect: 1.4,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Shade%2520of%2520Samuel%2520Invoked%2520by%2520Saul.jpg&w=2200&output=jpg&q=80',
+    summary: 'Horóscopo, tarô, búzios, amuletos, simpatias. Práticas comuns que a Igreja, seguindo a Bíblia, considera incompatíveis com a fé. Entenda por quê, sem fanatismo nem medo.',
+    body: `Muita gente lê o horóscopo "só por diversão", consulta o tarô "por curiosidade", carrega um amuleto "por garantia". Parece inofensivo. Mas a Igreja, seguindo a Bíblia, tem sobre isso uma posição clara e muito antiga, e vale entender as razões, longe tanto do fanatismo quanto da ingenuidade.
+
+## Tudo começa no primeiro mandamento
+
+O primeiro de todos os mandamentos é "não terás outros deuses diante de mim" (Êxodo 20,3). Ele não proíbe só estátuas de outros deuses; proíbe colocar a confiança última em qualquer coisa que não seja Deus. O ocultismo, em todas as suas formas, faz exatamente isso: busca poder, proteção ou conhecimento do futuro em forças que não são Deus, à margem dele. No fundo, é uma questão de a quem se entrega o coração.
+
+## O que a Bíblia diz
+
+A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a adivinhação, a magia, o feitiço e a consulta aos mortos: "não se ache no meio de ti quem pratique adivinhação, magia ou consulte os espíritos" (Deuteronômio 18,10-12). O quadro de Salvator Rosa retrata um caso bíblico: o rei Saul, em vez de confiar em Deus, procura uma necromante para invocar o espírito de Samuel, e isso é apresentado como a sua ruína. O profeta Isaías ironiza: "consultar os mortos a respeito dos vivos? Recorram antes à lei e ao testemunho" (Isaías 8,19-20).
+
+## Por que é perigoso, mesmo "de brincadeira"
+
+A objeção comum é: "mas eu não levo a sério". O problema é que essas práticas não são apenas bobagem inofensiva. Primeiro, porque educam o coração a buscar segurança fora de Deus, alimentando o medo, a dependência e a ansiedade pelo futuro. Segundo, porque podem abrir a pessoa a influências espirituais que ela não controla nem entende. São Paulo lembra que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14): nem tudo o que se apresenta como luz, paz ou autoconhecimento o é de fato.
+
+## Horóscopo e astrologia
+
+A astrologia parte de uma ideia que a fé rejeita: a de que a sua vida é determinada pela posição dos astros no dia em que você nasceu. O Catecismo é explícito ao condenar a astrologia e a adivinhação, porque elas negam duas coisas centrais: a providência de Deus, que conduz a história com amor, e a liberdade humana, que faz de cada um responsável pelas próprias escolhas. Reduzir uma pessoa, com a sua história e a sua alma, a um "signo" é, no fundo, diminuí-la.
+
+## E a sorte, os amuletos, as simpatias?
+
+A superstição é atribuir a um objeto, número ou gesto um poder que ele não tem. Ela difere radicalmente da fé. A fé confia numa Pessoa, Deus, que ama e é livre; a superstição confia numa mecânica, como se certos rituais "obrigassem" a sorte. Por isso a Igreja distingue: usar uma medalha ou um terço como lembrança e expressão de fé é uma coisa; tratá-los como amuletos mágicos, que funcionam por si, é cair na própria superstição que se deveria evitar.
+
+## A liberdade dos filhos de Deus
+
+No fundo, a mensagem cristã aqui é libertadora. O cristão não precisa viver com medo de azar, de mau-olhado, de números, de dias ou de signos. Ele se sabe nas mãos de um Pai providente, e sabe que Cristo já venceu todo poder das trevas. Trocar a leitura nervosa do horóscopo pela confiança serena na providência não é perder nada: é ganhar a paz de quem não está mais à mercê do destino, mas nas mãos de Quem o ama.
+
+## Perguntas-chave
+
+1. Se a sua vida fosse mesmo determinada pelos astros do dia do seu nascimento, onde ficaria a sua liberdade e a sua responsabilidade?
+
+2. A Bíblia condena a consulta aos mortos e a adivinhação há três mil anos. Isso é "atraso", ou um cuidado em proteger o coração?
+
+3. Qual a diferença entre confiar numa Pessoa que ama (fé) e confiar num ritual ou objeto que "obriga" a sorte (superstição)?
+
+4. Ler horóscopo "de brincadeira" educa você a confiar em Deus, ou a buscar segurança em outro lugar?`,
+    references: ['dt-18-10', 'cic-2116', 'is-8-19', 'ex-20-3', '2cor-11-14'],
+  },
 ];
 
 export default articles;

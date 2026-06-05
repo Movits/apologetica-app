@@ -3,6 +3,201 @@
 // com o aviso "translation in progress" quando o usuário escolhe EN.
 
 export const ARTICLES_EN = {
+  63: {
+    titleEn: 'Catholic or Evangelical? The Main Differences',
+    summaryEn: 'Catholics and Evangelicals believe in Christ, but differ on central points: authority, salvation, sacraments, and the Church itself. An honest, respectful map of the differences.',
+    bodyEn: `Catholics and Evangelicals have much in common: they believe in Jesus Christ, the Son of God, read the same central figure, pray, and seek to live the Gospel. That is why the Catholic sees in the Evangelical a brother, usually validly baptized. But it would be dishonest to pretend there are no differences, and they are not small. To know them clearly is not for quarreling, but for seeking truth with charity.
+
+## Authority: Scripture alone, or Scripture and the Church?
+
+This is the underlying disagreement, from which almost all the others flow. Protestantism began with the principle of "Scripture alone" (sola scriptura): only the Bible is the rule of faith. The Catholic Church replies that the Bible itself does not teach this. Saint Paul commands to "hold the traditions, whether by word or by letter" (2 Thessalonians 2,15) and calls the Church, not the Bible, "the pillar and foundation of truth" (1 Timothy 3,15). Moreover, it was the Church that, in fourth-century councils, defined which books make up the Bible. To accept the index of the Bible while rejecting the authority that defined it is an inconsistency.
+
+## Salvation: faith alone, or the faith that works through love?
+
+Another classic point is "faith alone" (sola fide): one is saved by faith alone, without works. The Church affirms that salvation is entirely grace, never a merit one buys; but that true faith does not remain alone, it becomes alive in love. It is Scripture itself: "a man is justified by works, and not by faith only" (James 2,24), and "what counts is faith working through love" (Galatians 5,6). It is not faith against works, but faith that blossoms into works.
+
+## The sacraments
+
+For the Catholic, Christ acts through seven sacraments, signs that bring about what they signify: baptism regenerates, the Eucharist is the real presence of Christ, confession truly forgives. Most Evangelicals recognize only two ordinances, baptism and the supper, understood as symbols. The difference is enormous: for one, God touches body and soul through concrete means; for the other, they are gestures of remembrance.
+
+## Mary and the saints
+
+Catholics honor Mary and ask the intercession of the saints, without worshiping them, in the conviction that those who are in Christ remain alive and united to us. Many Evangelicals see in this a deviation, holding that one should turn to God alone. The underlying question is the same: does the communion of saints exist, the Church of heaven united with that of earth, or not?
+
+## Unity: one Church or thousands?
+
+There is a fact that deserves reflection. Jesus prayed "that they may all be one" (John 17,21). In five centuries, the principle of "each one interprets the Bible for himself" produced tens of thousands of denominations, many with opposing doctrines, all claiming to follow Scripture alone. Without an authority to interpret and unite, fragmentation is inevitable. The Catholic Church presents itself as the one that has kept, since the apostles, a visible faith and government.
+
+## How to dialogue
+
+None of this licenses contempt. The way is not angry polemics, but serene witness and love for the truth. With the Evangelical brother, it is worth beginning with the much that is shared: Christ, Scripture, prayer, the desire for holiness. And from there, to propose with respect the fullness the Church offers: the sacraments, unity, living Tradition. The goal is not to win an argument, it is that all may be one, as Christ asked.
+
+## Key questions
+
+1. Where, exactly, does the Bible teach that the Bible alone is the rule of faith? And who defined which books belong in the Bible?
+
+2. If "faith without works is dead" (James 2), does salvation "by faith alone" not need, at the very least, a better explanation?
+
+3. Jesus prayed that all might be one. Do tens of thousands of divided denominations fit that prayer?
+
+4. Faced with so many opposing interpretations of the same Bible, how can one know which is the true one without an authority that Christ left for that?`,
+  },
+  64: {
+    titleEn: 'Sex Before Marriage and Chastity',
+    summaryEn: 'The Church is not against sex; it holds it in the highest regard. That is why it teaches that its place is marriage, and proposes chastity as a path of true love, not of repression.',
+    bodyEn: `Few teachings of the Church are as misunderstood as this one. It is said that the Church is "against sex", "repressed", "backward". The truth is almost the opposite: Christianity holds sex in the highest regard, too high to treat it as a pastime. Precisely because it takes it seriously, it reserves for it a place worthy of it.
+
+## What the Church really teaches
+
+Sex is not dirty or shameful; it is a good gift, created by God, who "created them male and female" and blessed them (Genesis 1,27-28). Catholic doctrine recognizes in it two inseparable meanings: the deep union between two persons and openness to life. And it teaches that its proper place is marriage, the total and definitive covenant between a man and a woman.
+
+## Why reserve it for marriage?
+
+The reason is not a taboo, it is coherence. The sexual act speaks a language of the body, and what it says is strong: "I give myself entirely to you, without reserve and forever". Now, only in marriage is that "forever" true, because there a public, total, and definitive commitment was made. Outside it, the body promises a gift the will has not yet confirmed: it says "forever" while reserving the right to leave tomorrow. That is why Saint Paul is firm against fornication: "flee from sexual immorality" (1 Corinthians 6,18), because it wounds the truth of love and the dignity of persons.
+
+## Chastity is not repression
+
+Chastity does not mean denying sexuality nor seeing it as evil. It means integrating it into love, living it according to one's state of life. It is a virtue, a self-mastery that sets free, and it applies to everyone: to the single person, who guards himself; to the married, who is faithful; to the one who chose consecrated life. The opposite of chastity is not joy, it is the use of the other. The chaste person is not someone without desire, but someone whose desire is at the service of love, and not the other way around.
+
+## Pornography and masturbation
+
+Here the Church is clear and, at the same time, understanding. Pornography and masturbation separate sexual pleasure from real self-giving to a person, and pornography turns human beings into objects of consumption, feeding an industry that exploits many people. They are wounds to chastity. But the Church knows that here there are vices, compulsions, and much fragility, and so it does not condemn persons: it offers a path of healing, with patience, prayer, accompaniment, and the sacrament of confession.
+
+## And what about those who have already failed?
+
+Most people come to this subject with a history, sometimes a heavy one. The word of the Church is not condemnation, it is a new beginning. Chastity is not a glass that, once broken, can never be mended; it is a virtue one can always begin to live again, with the grace of God. It was to Jesus that they brought the woman caught in adultery, and it was he who said, without humiliating her: "neither do I condemn you; go, and sin no more" (John 8,11). Firmness in the truth, tenderness with the person.
+
+## The fruit
+
+There is a concrete fruit on this path: relationships built on respect rather than use, stronger bonds, fewer people treated as disposable. The culture promised total freedom and, in many cases, delivered loneliness, trivialization, and disposal. The Christian proposal, demanding like all true love, points to something more beautiful: a love in which the body tells the truth the heart promises.
+
+## Key questions
+
+1. If the sexual act says with the body "I give myself entirely to you forever", does it make sense to say it without the commitment that makes that "forever" true?
+
+2. Is the Church "against sex", or does it take it too seriously to reduce it to entertainment?
+
+3. Is chastity denying desire, or placing it at the service of love rather than using the other?
+
+4. Has limitless sexual freedom in fact delivered more happiness and stable love, or more disposal and loneliness?`,
+  },
+  65: {
+    titleEn: 'Horoscopes, the Occult, and Superstition: What the Church Teaches',
+    summaryEn: 'Horoscopes, tarot, charms, lucky rituals. Common practices that the Church, following the Bible, considers incompatible with faith. Understand why, without fanaticism or fear.',
+    bodyEn: `Many people read the horoscope "just for fun", consult tarot "out of curiosity", carry a charm "just in case". It seems harmless. But the Church, following the Bible, has a clear and very ancient position on this, and it is worth understanding the reasons, far from both fanaticism and naivety.
+
+## It all begins with the first commandment
+
+The first of all commandments is "you shall have no other gods before me" (Exodus 20,3). It does not forbid only statues of other gods; it forbids placing ultimate trust in anything that is not God. The occult, in all its forms, does exactly that: it seeks power, protection, or knowledge of the future in forces that are not God, apart from him. At bottom, it is a question of to whom one gives the heart.
+
+## What the Bible says
+
+Scripture is direct. The book of Deuteronomy lists and expressly forbids divination, magic, sorcery, and consulting the dead: "let there not be found among you anyone who practices divination, magic, or consults spirits" (Deuteronomy 18,10-12). The painting by Salvator Rosa depicts a biblical case: King Saul, instead of trusting in God, seeks a medium to summon the spirit of Samuel, and this is presented as his ruin. The prophet Isaiah is ironic: "should they consult the dead on behalf of the living? To the law and to the testimony!" (Isaiah 8,19-20).
+
+## Why it is dangerous, even "for fun"
+
+The common objection is: "but I do not take it seriously". The problem is that these practices are not merely harmless nonsense. First, because they train the heart to seek security outside God, feeding fear, dependence, and anxiety about the future. Second, because they can open a person to spiritual influences he neither controls nor understands. Saint Paul reminds us that "Satan himself disguises as an angel of light" (2 Corinthians 11,14): not everything that presents itself as light, peace, or self-knowledge truly is.
+
+## Horoscopes and astrology
+
+Astrology starts from an idea that faith rejects: that your life is determined by the position of the stars on the day you were born. The Catechism is explicit in condemning astrology and divination, because they deny two central things: the providence of God, who guides history with love, and human freedom, which makes each one responsible for his own choices. To reduce a person, with his history and his soul, to a "sign" is, at bottom, to diminish him.
+
+## And luck, charms, lucky rituals?
+
+Superstition is attributing to an object, number, or gesture a power it does not have. It differs radically from faith. Faith trusts in a Person, God, who loves and is free; superstition trusts in a mechanism, as if certain rituals "compelled" luck. That is why the Church distinguishes: using a medal or a rosary as a reminder and expression of faith is one thing; treating them as magic charms that work by themselves is to fall into the very superstition one should avoid.
+
+## The freedom of the children of God
+
+At bottom, the Christian message here is liberating. The Christian does not need to live in fear of bad luck, the evil eye, numbers, days, or signs. He knows he is in the hands of a provident Father, and that Christ has already conquered every power of darkness. To trade the nervous reading of the horoscope for serene trust in providence is to lose nothing: it is to gain the peace of one who is no longer at the mercy of fate, but in the hands of the One who loves him.
+
+## Key questions
+
+1. If your life were really determined by the stars on the day of your birth, where would your freedom and responsibility be?
+
+2. The Bible has condemned consulting the dead and divination for three thousand years. Is that "backwardness", or care to protect the heart?
+
+3. What is the difference between trusting a Person who loves (faith) and trusting a ritual or object that "compels" luck (superstition)?
+
+4. Does reading the horoscope "for fun" train you to trust in God, or to seek security somewhere else?`,
+  },
+  66: {
+    titleEn: 'Angels and Demons: What the Church Teaches',
+    summaryEn: 'Guardian angels, demons, temptation, and exorcism. What is real, what is movie exaggeration, and why the Christian need not live in fear.',
+    bodyEn: `Few subjects produce as much exaggeration as this one. On one side, films and certain preaching that see a demon at every corner; on the other, those who treat angels and demons as outdated medieval folklore. Catholic doctrine stays far from both extremes, and is more sober and more serious than people imagine.
+
+## Angels exist
+
+The Christian faith affirms that, beyond the visible world, God created purely spiritual beings, intelligent and free: the angels. The word means "messenger", and that is how they appear in Scripture, announcing, protecting, serving. The Church teaches further that each person has a guardian angel, a spiritual companion who accompanies him. They are not winged babies from a postcard, but powerful creatures at the service of God.
+
+## Demons are fallen angels
+
+Demons are not the eternal opposite of God, as if there were two principles at war. They are creatures, angels whom God made good and who, freely, turned against him. Tradition sums up their choice in a phrase: "I will not serve". Bruegel painting depicts that moment: the rebel angels plunging from heaven, turned into monsters. The point is decisive: the devil is a defeated creature, not a rival equal to God. He has limited power and was already conquered on the cross.
+
+## How the demon acts: temptation
+
+In daily life, the action of the demon is almost never the spectacular possession of the movies. It is something more discreet and more dangerous: temptation, lies, discouragement, division. Jesus called him "the father of lies", and Saint Paul warns that "Satan himself disguises as an angel of light" (2 Corinthians 11,14). His favorite weapon is to convince someone that he does not exist, or that evil is good. To resist him is, above all, to live in truth and in grace.
+
+## Possession and exorcism
+
+Demonic possession exists, but it is rare, and the Church is extremely cautious. Before any exorcism, medical and psychological causes must be ruled out, for the vast majority of cases attributed to the demon are, in fact, illnesses that call for treatment. The exorcist is a priest appointed by the bishop, and the rite has nothing of spectacle: it is the prayer of the Church, in the name of Christ, with authority received from him. Sensationalism, here, is precisely what the Church avoids.
+
+## Without fear: Christ has won
+
+The Christian does not live obsessed with the demon, nor does he ignore him. He lives a serene vigilance, knowing that "greater is he who is in you than he who is in the world" (1 John 4,4). The weapons are simple and powerful: prayer, the sacraments, confession, the Word, sacramentals such as holy water. Whoever is in Christ need not fear bad luck, "spiritual attachment", or curses: he belongs to the One who has already conquered death and hell.
+
+## The danger of the two extremes
+
+C. S. Lewis observed that the devil rejoices equally in two opposite errors: that we deny his existence, or that we take in him a sick and fearful interest. The Catholic balance is exactly this: to take the reality of spiritual evil seriously, without fear and without obsession, with eyes fixed not on the demon, but on Christ the victor.
+
+## Key questions
+
+1. If the demon is a fallen creature already defeated on the cross, does it make sense for the Christian to live in fear of him?
+
+2. The Church requires ruling out medical causes before an exorcism. Does that fit the reputation of superstition, or does it show prudence?
+
+3. Jesus called the devil "the father of lies". If his greatest weapon is the lie, what is the best defense but the truth?
+
+4. Denying spiritual evil and being obsessed with it are opposite errors. Into which of them does our age tend to fall?`,
+  },
+  67: {
+    titleEn: 'Why Did Jesus Die on the Cross? The Redemption',
+    summaryEn: 'Why did salvation require a cross? The Redemption is not a bloodthirsty God collecting a debt, but the Love that takes on our death to give us back life.',
+    bodyEn: `The central symbol of Christianity is, incredible as it seems, an instrument of torture: the cross. Why did the salvation of the world pass through there? What does the phrase Christians repeat mean, "Christ died for our sins"? It is one of the most important questions of the faith, and also one of the most misunderstood.
+
+## The problem: sin and death
+
+To understand the cure, one must understand the disease. Sin is not only "breaking a rule"; it is rupturing the relationship with God, who is the source of life. When the human being turns away from that source, the natural consequence is death, spiritual and physical. And, once that relationship was broken, humanity could not, by itself, mend what it had broken: the offense was against God, infinite, and no creature could repair it alone.
+
+## Why does God not simply "forgive and be done"?
+
+It is the most common objection: if God is all-powerful and good, why not erase sins with a gesture? The answer touches the heart of true love. Love that is serious does not pretend the evil did not happen; it faces it, carries it, and heals it. A forgiveness that ignored sin would be cheap, and would treat evil as if it did not matter. On the cross, justice (sin is taken seriously) and mercy (the sinner is saved) meet and kiss. God does not pass over evil: he passes through it.
+
+## The key: God himself takes it on
+
+Here a false image must be undone, that of a vengeful Father who unloads his wrath on an innocent third party to calm himself. That is not it. What dies on the cross is not just any third party: it is God himself, in the Son made man, who freely takes our death upon himself. It is God paying, in himself, the price that was ours. The prophet Isaiah, eight centuries before, already described the Suffering Servant: "he was pierced for our transgressions... and by his wounds we are healed" (Isaiah 53,5). Saint Paul sums it up: "Christ died for our sins, according to the Scriptures" (1 Corinthians 15,3).
+
+## Love taken to the extreme
+
+The cross is not, at bottom, about punishment; it is about love. It answers the question "how far does God love me?" with a gesture without limits: to death, even death on a cross. "God so loved the world that he gave his only Son" (John 3,16). Saint Paul will say that Christ, "though he was in the form of God, emptied himself... and humbled himself, becoming obedient unto death" (Philippians 2,6-8). And Jesus himself: "no one has greater love than this, to lay down his life for his friends" (John 15,13). The cross is the measure of the love of God.
+
+## The resurrection: the cross is not the end
+
+The death of Jesus, alone, would be a tragedy. But on the third day he rises, and everything changes meaning. The cross was not a defeat followed by a reversal; it was the victory itself, won from within: God descends to the depths of human death to conquer it from there. That is why the Christian looks at the crucifix without despair: there is not only pain, there is the love that conquered death.
+
+## What it changes for you
+
+The Redemption is not an event distant in the past, closed in itself. It reaches each person, today, above all in the sacraments: in baptism, which applies the victory of Christ; in confession, which forgives; in the Eucharist, which makes the sacrifice itself present. And it gives a new meaning to suffering: united to the cross, it ceases to be absurd and becomes fruitful. In the end, the message of the cross is simple and overwhelming: you are loved to this extent.
+
+## Key questions
+
+1. If an "easy" forgiveness ignored the evil done, would it be real love or disguised indifference?
+
+2. On the cross it is not a third party punished by an angry God: it is God himself who takes on our death. Does that change your image of Christianity?
+
+3. Isaiah described the Servant "pierced for our transgressions" eight centuries before Christ. Coincidence, or announcement?
+
+4. If God went all the way to the cross to reach you, what does that say about how much your life is worth in his eyes?`,
+  },
   56: {
     titleEn: 'Does God Exist? The Best Arguments of Reason',
     summaryEn: 'An overview of the main rational arguments that point to the existence of God, and why believing is not the opposite of thinking.',

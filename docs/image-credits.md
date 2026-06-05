@@ -24,6 +24,11 @@ Arquivos em `assets/articles/`.
 | 60 — A Santa Missa | `60-missa.jpg` | Disputa do Santíssimo Sacramento (1509–1510) | Rafael |
 | 61 — Os Novíssimos | `61-novissimos.jpg` | O Juízo Final (c. 1450) | Fra Angelico |
 | 62 — Sentido da Vida | `62-sentido-da-vida.jpg` | O Angelus (1857–1859) | Jean-François Millet |
+| 63 — Católico ou Evangélico? | `63-catolico-evangelico.jpg` | A Vocação dos Apóstolos (Capela Sistina, 1481–82) | Domenico Ghirlandaio |
+| 64 — Sexo e Castidade | `64-castidade.jpg` | O Matrimônio (Os Sete Sacramentos, c. 1640) | Nicolas Poussin |
+| 65 — Horóscopo e Ocultismo | `65-ocultismo.jpg` | A Sombra de Samuel Invocada por Saul (1668) | Salvator Rosa |
+| 66 — Anjos e Demônios | `66-anjos-demonios.jpg` | A Queda dos Anjos Rebeldes (1562) | Pieter Bruegel, o Velho |
+| 67 — A Redenção | `67-redencao.jpg` | A Crucificação (Scuola Grande di San Rocco, 1565) | Tintoretto |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.

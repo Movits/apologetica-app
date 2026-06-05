@@ -511,6 +511,71 @@ export const DIALOGUES = [
     ],
     relatedArticle: 61,
   },
+  {
+    id: 'd-catolico-evangelico',
+    objection: '"No fim, católico e evangélico dá no mesmo, todos creem em Jesus."',
+    objectionEn: '"In the end, Catholic and Evangelical are the same, everyone believes in Jesus."',
+    category: 'Igreja Católica', categoryEn: 'Catholic Church', rank: 1,
+    steps: [
+      { label: 'Concordar com o que une', labelEn: 'Agree with what unites', text: 'É verdade que compartilhamos muito: Cristo, a Bíblia, a oração. Nisso somos irmãos. Mas "dar no mesmo" é exagero: há diferenças reais e importantes.', textEn: 'It is true that we share much: Christ, the Bible, prayer. In that we are brothers. But "the same" is an exaggeration: there are real and important differences.' },
+      { label: 'Mostrar a diferença de fundo', labelEn: 'Show the core difference', text: 'A maior é a autoridade. Evangélicos seguem "só a Bíblia"; mas a própria Bíblia manda guardar a Tradição (2 Ts 2,15) e chama a Igreja de "coluna da verdade" (1 Tm 3,15). E foi a Igreja que definiu quais livros são a Bíblia.', textEn: 'The biggest is authority. Evangelicals follow "the Bible alone"; but the Bible itself commands keeping Tradition (2 Thess 2,15) and calls the Church "the pillar of truth" (1 Tim 3,15). And it was the Church that defined which books are the Bible.' },
+      { label: 'Mostrar a consequência', labelEn: 'Show the consequence', text: 'Sem uma autoridade que interprete, "só a Bíblia" gerou dezenas de milhares de denominações, todas lendo o mesmo livro e discordando. Jesus rezou "para que todos sejam um" (Jo 17,21).', textEn: 'Without an authority to interpret, "the Bible alone" produced tens of thousands of denominations, all reading the same book and disagreeing. Jesus prayed "that they may all be one" (Jn 17,21).' },
+      { label: 'Fechar', labelEn: 'Close', text: 'Não é desprezar o irmão evangélico; é perguntar: onde está a Igreja una, visível, que vem dos apóstolos e que Cristo prometeu guiar? A resposta importa.', textEn: 'It is not to despise the Evangelical brother; it is to ask: where is the one, visible Church that comes from the apostles and that Christ promised to guide? The answer matters.' },
+    ],
+    relatedArticle: 63,
+  },
+  {
+    id: 'd-sexo-natural',
+    objection: '"Sexo é natural, por que esperar o casamento?"',
+    objectionEn: '"Sex is natural, why wait for marriage?"',
+    category: 'Moral', categoryEn: 'Morality', rank: 1,
+    steps: [
+      { label: 'Concordar', labelEn: 'Agree', text: 'É natural mesmo, e bom: a Igreja não acha o sexo feio, acha sagrado. A pergunta não é se é bom, é o que ele significa.', textEn: 'It is indeed natural, and good: the Church does not find sex ugly, it finds it sacred. The question is not whether it is good, but what it means.' },
+      { label: 'Reformular', labelEn: 'Reframe', text: 'O ato sexual diz, com o corpo, "eu me dou todo a você, para sempre". Só no casamento esse "para sempre" é verdade. Fora dele, o corpo promete o que a vontade ainda não garantiu.', textEn: 'The sexual act says, with the body, "I give myself entirely to you, forever". Only in marriage is that "forever" true. Outside it, the body promises what the will has not yet guaranteed.' },
+      { label: 'Aprofundar', labelEn: 'Go deeper', text: 'Castidade não é repressão, é integrar o desejo no amor. O contrário de casto não é alegre, é usar o outro. E a "liberdade" sem limites entregou mais descarte e solidão, não mais amor.', textEn: 'Chastity is not repression, it is integrating desire into love. The opposite of chaste is not joyful, it is using the other. And limitless "freedom" delivered more disposal and loneliness, not more love.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'E quem já errou? Não há condenação: a Igreja propõe recomeço, não vidro quebrado. Jesus disse à mulher adúltera: "nem eu te condeno; vai e não peques mais" (Jo 8,11).', textEn: 'And those who have already failed? There is no condemnation: the Church offers a new beginning, not broken glass. Jesus said to the adulterous woman: "neither do I condemn you; go, and sin no more" (Jn 8,11).' },
+    ],
+    relatedArticle: 64,
+  },
+  {
+    id: 'd-horoscopo',
+    objection: '"Ler horóscopo é inofensivo, é só diversão."',
+    objectionEn: '"Reading the horoscope is harmless, it is just fun."',
+    category: 'Outras Religiões', categoryEn: 'Other Religions', rank: 1,
+    steps: [
+      { label: 'Concordar em parte', labelEn: 'Agree in part', text: 'Entendo que pareça bobagem, e muita gente lê sem pensar. O ponto não é medo de "pecar à toa", é para onde isso educa o coração.', textEn: 'I understand it seems like nonsense, and many read without thinking. The point is not fear of "sinning over nothing", it is where this trains the heart.' },
+      { label: 'Reformular', labelEn: 'Reframe', text: 'A astrologia diz que a sua vida é decidida pelos astros do dia em que você nasceu. Isso apaga a sua liberdade e a providência de Deus. Você é muito mais que um signo.', textEn: 'Astrology says your life is decided by the stars on the day you were born. That erases your freedom and the providence of God. You are far more than a sign.' },
+      { label: 'Base bíblica', labelEn: 'Biblical basis', text: 'A Bíblia proíbe a adivinhação e a consulta aos mortos há três mil anos (Dt 18,10-12). Não por ranço, mas para proteger: "consultar os mortos em vez do Deus vivo?" (Is 8,19).', textEn: 'The Bible has forbidden divination and consulting the dead for three thousand years (Dt 18,10-12). Not out of spite, but to protect: "should they consult the dead instead of the living God?" (Is 8,19).' },
+      { label: 'Fechar', labelEn: 'Close', text: 'No fundo é libertador: o cristão não vive com medo de azar, número ou signo. Está nas mãos de um Pai que o ama, e Cristo já venceu as trevas. Trocar o horóscopo pela confiança é ganhar paz.', textEn: 'At bottom it is liberating: the Christian does not live in fear of bad luck, numbers, or signs. He is in the hands of a Father who loves him, and Christ has already conquered the darkness. To trade the horoscope for trust is to gain peace.' },
+    ],
+    relatedArticle: 65,
+  },
+  {
+    id: 'd-demonio-idade-media',
+    objection: '"Isso de demônio é coisa da Idade Média, hoje ninguém acredita."',
+    objectionEn: '"This demon business is a medieval thing, no one believes it today."',
+    category: 'Igreja Católica', categoryEn: 'Catholic Church', rank: 2,
+    steps: [
+      { label: 'Concordar com o exagero', labelEn: 'Agree about the exaggeration', text: 'Concordo que muito do que se vê é exagero: filme, sensacionalismo, "demônio em tudo". A Igreja é a primeira a desconfiar disso.', textEn: 'I agree that much of what we see is exaggeration: movies, sensationalism, "a demon in everything". The Church is the first to be suspicious of that.' },
+      { label: 'Mas há o outro extremo', labelEn: 'But there is the other extreme', text: 'Daí a negar que o mal espiritual exista é o outro extremo. Jesus, que não era ingênuo, chamou o demônio de "pai da mentira". A arma dele não é o espetáculo, é a mentira e a divisão.', textEn: 'But to deny that spiritual evil exists is the other extreme. Jesus, who was not naive, called the demon "the father of lies". His weapon is not spectacle, it is lies and division.' },
+      { label: 'Mostrar o equilíbrio', labelEn: 'Show the balance', text: 'A Igreja é tão cautelosa que, antes de qualquer exorcismo, exige descartar causas médicas e psicológicas. Quase tudo é doença, não possessão. Isso é superstição ou prudência?', textEn: 'The Church is so cautious that, before any exorcism, it requires ruling out medical and psychological causes. Almost everything is illness, not possession. Is that superstition or prudence?' },
+      { label: 'Fechar', labelEn: 'Close', text: 'C. S. Lewis dizia: o diabo gosta de dois erros, que você o ignore ou que viva obcecado por ele. O certo é levar o mal a sério, sem medo, com os olhos em Cristo, que já venceu.', textEn: 'C. S. Lewis said: the devil likes two errors, that you ignore him or that you live obsessed with him. The right path is to take evil seriously, without fear, with eyes on Christ, who has already won.' },
+    ],
+    relatedArticle: 66,
+  },
+  {
+    id: 'd-por-que-cruz',
+    objection: '"Que Deus cruel é esse que precisa da morte do próprio Filho para perdoar?"',
+    objectionEn: '"What cruel God is this who needs the death of his own Son in order to forgive?"',
+    category: 'Existência de Deus', categoryEn: 'Existence of God', rank: 2,
+    steps: [
+      { label: 'Reconhecer a força da pergunta', labelEn: 'Acknowledge the force of the question', text: 'A pergunta é justa, e a imagem de um Pai vingativo descontando a ira num inocente seria mesmo monstruosa. Mas não é isso que a cruz significa.', textEn: 'The question is fair, and the image of a vengeful Father unloading his wrath on an innocent would indeed be monstrous. But that is not what the cross means.' },
+      { label: 'Reformular', labelEn: 'Reframe', text: 'Na cruz não é um terceiro punido no nosso lugar. É o próprio Deus, no Filho, que assume livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso.', textEn: 'On the cross it is not a third party punished in our place. It is God himself, in the Son, who freely takes on our death. It is God paying, in himself, the price that was ours.' },
+      { label: 'Aprofundar', labelEn: 'Go deeper', text: 'Por que não só "perdoar e pronto"? Porque o amor de verdade não finge que o mal não houve; ele o carrega e cura. Um perdão que ignorasse o mal seria barato. Na cruz, justiça e misericórdia se encontram.', textEn: 'Why not just "forgive and be done"? Because true love does not pretend the evil did not happen; it carries and heals it. A forgiveness that ignored evil would be cheap. On the cross, justice and mercy meet.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'A cruz responde "até onde Deus te ama?": até a morte. "Tanto amou Deus o mundo que deu o seu Filho" (Jo 3,16). E a ressurreição mostra que não foi derrota, foi vitória. Você é amado a esse ponto.', textEn: 'The cross answers "how far does God love you?": to death. "God so loved the world that he gave his Son" (Jn 3,16). And the resurrection shows it was not defeat, but victory. You are loved to this extent.' },
+    ],
+    relatedArticle: 67,
+  },
 ];
 
 export function getDialogueById(id) {

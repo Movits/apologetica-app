@@ -224,6 +224,53 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
 4. Se nenhum pecado é maior que a misericórdia de Deus, por que tantos preferem negar o pecado a aceitar o perdão que o cura?`,
     references: ['gn-3-5', 'mt-12-32', '1cor-6-9', 'cic-1422', 'gl-5-6'],
   },
+  {
+    id: 64,
+    title: 'Sexo Antes do Casamento e a Castidade',
+    category: 'Moral',
+    image: require('../../../assets/articles/64-castidade.jpg'),
+    imageAlt: 'O Matrimônio, de Poussin',
+    imageCredit: 'Nicolas Poussin, O Matrimônio (Os Sete Sacramentos, c. 1640). Domínio público.',
+    imageAspect: 1.3,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F7--marriage.jpg&w=2200&output=jpg&q=80',
+    summary: 'A Igreja não é contra o sexo; ela o tem em altíssima conta. Por isso ensina que o seu lugar é o matrimônio, e propõe a castidade como caminho de amor verdadeiro, não de repressão.',
+    body: `Poucos ensinamentos da Igreja são tão incompreendidos quanto este. Diz-se que a Igreja é "contra o sexo", "reprimida", "atrasada". A verdade é quase o oposto: o cristianismo tem o sexo em altíssima conta, alto demais para tratá-lo como um passatempo. Justamente por levá-lo a sério, reserva-lhe um lugar à altura.
+
+## O que a Igreja realmente ensina
+
+O sexo não é sujo nem vergonhoso; é um dom bom, criado por Deus, que disse "macho e fêmea os criou" e os abençoou (Gênesis 1,27-28). A doutrina católica reconhece nele dois sentidos inseparáveis: a união profunda entre duas pessoas e a abertura à vida. E ensina que o seu lugar próprio é o matrimônio, a aliança total e definitiva entre um homem e uma mulher.
+
+## Por que reservar ao casamento?
+
+A razão não é um tabu, é a coerência. O ato sexual fala uma linguagem do corpo, e o que ele diz é forte: "eu me dou todo a você, sem reservas e para sempre". Ora, só no casamento esse "para sempre" é verdade, porque ali houve um compromisso público, total e definitivo. Fora dele, o corpo promete uma entrega que a vontade ainda não confirmou: diz "para sempre" enquanto se reserva o direito de ir embora amanhã. Por isso São Paulo é firme contra a fornicação: "fugi da imoralidade sexual" (1 Coríntios 6,18), porque ela fere a verdade do amor e a dignidade das pessoas.
+
+## Castidade não é repressão
+
+Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida. É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda; para o casado, que é fiel; para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
+
+## Pornografia e masturbação
+
+Aqui a Igreja é clara e, ao mesmo tempo, compreensiva. A pornografia e a masturbação separam o prazer sexual da entrega real a uma pessoa, e a pornografia ainda transforma seres humanos em objetos de consumo, alimentando uma indústria que explora muita gente. São feridas à castidade. Mas a Igreja sabe que aqui há vícios, compulsões e muita fragilidade, e por isso não condena as pessoas: oferece caminho de cura, com paciência, oração, acompanhamento e o sacramento da confissão.
+
+## E quem já errou?
+
+A grande maioria das pessoas chega a este assunto com uma história, às vezes pesada. A palavra da Igreja não é condenação, é recomeço. A castidade não é um vidro que, quebrado uma vez, não tem mais conserto; é uma virtude que se pode sempre recomeçar a viver, com a graça de Deus. Foi a Jesus que trouxeram a mulher pega em adultério, e foi ele quem disse, sem a humilhar: "nem eu te condeno; vai e não peques mais" (João 8,11). Firmeza na verdade, ternura com a pessoa.
+
+## O fruto
+
+Há um fruto concreto nesse caminho: relações construídas sobre respeito e não sobre uso, vínculos mais sólidos, menos pessoas tratadas como descartáveis. A cultura prometeu liberdade total e, em muitos casos, entregou solidão, banalização e descarte. A proposta cristã, exigente como todo amor verdadeiro, aponta para algo mais belo: um amor em que o corpo diz a verdade que o coração promete.
+
+## Perguntas-chave
+
+1. Se o ato sexual diz com o corpo "eu me dou todo a você para sempre", faz sentido dizê-lo sem o compromisso que torna esse "para sempre" verdadeiro?
+
+2. A Igreja é "contra o sexo", ou justamente o leva a sério demais para reduzi-lo a entretenimento?
+
+3. Castidade é negar o desejo, ou colocá-lo a serviço do amor, em vez de usar o outro?
+
+4. A liberdade sexual sem limites entregou de fato mais felicidade e amor estável, ou mais descarte e solidão?`,
+    references: ['1cor-6-9', 'ef-5-32', 'gn-1-27', 'humanae-vitae-17'],
+  },
 ];
 
 export default articles;

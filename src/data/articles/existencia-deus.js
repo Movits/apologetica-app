@@ -556,6 +556,53 @@ Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distraç�
 4. E se a resposta para a sua pergunta mais profunda não for uma ideia, mas Alguém que está, ele mesmo, à sua procura?`,
     references: ['rm-8-28', 'jo-14-6', 'fides-et-ratio', 'sartre-existencialismo', 'nietzsche-gaia', 'lewis-mere-christianity'],
   },
+  {
+    id: 67,
+    title: 'Por Que Jesus Morreu na Cruz? A Redenção',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/67-redencao.jpg'),
+    imageAlt: 'A Crucificação, de Tintoretto',
+    imageCredit: 'Tintoretto, A Crucificação (Scuola Grande di San Rocco, 1565). Domínio público.',
+    imageAspect: 1.78,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCrucifixion%252C%2520Scuola%2520Grande%2520di%2520San%2520Rocco.jpg&w=2200&output=jpg&q=80',
+    summary: 'Por que a salvação precisou de uma cruz? A Redenção não é um Deus sanguinário cobrando uma dívida, mas o Amor que assume a nossa morte para nos devolver a vida.',
+    body: `O símbolo central do cristianismo é, por incrível que pareça, um instrumento de tortura: a cruz. Por que a salvação do mundo passou por ali? O que quer dizer a frase que os cristãos repetem, "Cristo morreu pelos nossos pecados"? É uma das perguntas mais importantes da fé, e também uma das mais mal-entendidas.
+
+## O problema: o pecado e a morte
+
+Para entender a cura, é preciso entender a doença. O pecado não é só "transgredir uma regra"; é romper a relação com Deus, que é a fonte da vida. Quando o ser humano se afasta dessa fonte, a consequência natural é a morte, espiritual e física. E, uma vez quebrada essa relação, a humanidade não conseguia, por si mesma, refazer o que tinha quebrado: a ofensa era a Deus, infinita, e nenhuma criatura podia repará-la sozinha.
+
+## Por que Deus não simplesmente "perdoa e pronto"?
+
+É a objeção mais comum: se Deus é todo-poderoso e bom, por que não apaga os pecados com um gesto? A resposta toca o coração do amor verdadeiro. O amor que é a sério não finge que o mal não aconteceu; ele o encara, o carrega e o cura. Um perdão que ignorasse o pecado seria barato, e trataria o mal como se não importasse. Na cruz, a justiça (o pecado é levado a sério) e a misericórdia (o pecador é salvo) se encontram e se beijam. Deus não passa por cima do mal: ele o atravessa.
+
+## A chave: Deus mesmo assume
+
+Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega a ira num terceiro inocente para se acalmar. Não é isso. O que morre na cruz não é um terceiro qualquer: é o próprio Deus, no Filho feito homem, que toma sobre si livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso. O profeta Isaías, oito séculos antes, já descrevia o Servo Sofredor: "ele foi traspassado por causa das nossas transgressões... e por suas chagas fomos curados" (Isaías 53,5). São Paulo resume: "Cristo morreu pelos nossos pecados, segundo as Escrituras" (1 Coríntios 15,3).
+
+## O amor levado ao extremo
+
+A cruz não é, no fundo, sobre castigo; é sobre amor. Ela responde à pergunta "até onde Deus me ama?" com um gesto sem limites: até a morte, e morte de cruz. "Tanto amou Deus o mundo, que deu o seu Filho único" (João 3,16). São Paulo dirá que Cristo, "existindo em forma de Deus, esvaziou-se a si mesmo... humilhou-se, tornando-se obediente até a morte" (Filipenses 2,6-8). E o próprio Jesus: "ninguém tem maior amor do que aquele que dá a vida pelos seus amigos" (João 15,13). A cruz é a medida do amor de Deus.
+
+## A ressurreição: a cruz não é o fim
+
+A morte de Jesus, sozinha, seria uma tragédia. Mas no terceiro dia ele ressuscita, e tudo muda de sentido. A cruz não foi uma derrota seguida de uma reviravolta; foi a própria vitória, conquistada por dentro: Deus desce até o fundo da morte humana para vencê-la a partir de lá. Por isso o cristão olha para o crucifixo sem desespero: ali não está só a dor, está o amor que venceu a morte.
+
+## O que isso muda para você
+
+A Redenção não é um acontecimento distante do passado, fechado em si. Ela alcança cada pessoa, hoje, sobretudo nos sacramentos: no batismo, que aplica a vitória de Cristo; na confissão, que perdoa; na Eucaristia, que torna presente o próprio sacrifício. E dá um sentido novo ao sofrimento: unido à cruz, ele deixa de ser absurdo e se torna fecundo. No fim, a mensagem da cruz é simples e avassaladora: você é amado a este ponto.
+
+## Perguntas-chave
+
+1. Se um perdão "fácil" ignorasse o mal feito, ele seria amor de verdade ou indiferença disfarçada?
+
+2. Na cruz não é um terceiro punido por um Deus irado: é o próprio Deus que assume a nossa morte. Isso muda a sua imagem do cristianismo?
+
+3. Isaías descreveu o Servo "traspassado pelas nossas transgressões" oito séculos antes de Cristo. Coincidência, ou anúncio?
+
+4. Se Deus foi até a cruz para alcançar você, o que isso diz sobre quanto a sua vida vale aos olhos dele?`,
+    references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6'],
+  },
 ];
 
 export default articles;

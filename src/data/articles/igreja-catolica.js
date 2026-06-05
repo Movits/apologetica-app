@@ -615,6 +615,100 @@ No fim da história, haverá o juízo final, quando Cristo voltar "na sua glóri
 4. A Igreja proíbe julgar a salvação de quem se suicida e reza por essas pessoas. Isso combina com a fama de que ela "condena" automaticamente?`,
     references: ['hb-9-27', 'mt-25-31', 'ap-21-27', 'cic-1030', '2mc-12-44', '1cor-3-12'],
   },
+  {
+    id: 63,
+    title: 'Católico ou Evangélico? As Principais Diferenças',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/63-catolico-evangelico.jpg'),
+    imageAlt: 'A Vocação dos Apóstolos, de Ghirlandaio',
+    imageCredit: 'Domenico Ghirlandaio, A Vocação dos Apóstolos (Capela Sistina, 1481 a 1482). Domínio público.',
+    imageAspect: 1.5,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCalling%2520of%2520the%2520apostles%2520by%2520Domenico%2520Ghirlandaio%2520Roma.jpg&w=2200&output=jpg&q=80',
+    summary: 'Católicos e evangélicos creem em Cristo, mas divergem em pontos centrais: autoridade, salvação, sacramentos e a própria Igreja. Um mapa honesto e respeitoso das diferenças.',
+    body: `Católicos e evangélicos têm muito em comum: creem em Jesus Cristo, Filho de Deus, leem a mesma figura central, rezam, buscam viver o Evangelho. Por isso o católico vê no evangélico um irmão, em geral validamente batizado. Mas seria desonesto fingir que não há diferenças, e elas não são pequenas. Conhecê-las com clareza não serve para brigar, mas para buscar a verdade com caridade.
+
+## A autoridade: só a Bíblia, ou Bíblia e Igreja?
+
+Esta é a divergência de fundo, da qual quase todas as outras derivam. O protestantismo nasceu com o princípio da "Escritura somente" (sola scriptura): só a Bíblia é regra de fé. A Igreja Católica responde que a própria Bíblia não ensina isso. São Paulo manda "conservar as tradições, seja por palavra, seja por carta" (2 Tessalonicenses 2,15) e chama a Igreja, não a Bíblia, de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). Além disso, foi a Igreja que, em concílios do século IV, definiu quais livros formam a Bíblia. Aceitar o índice da Bíblia e rejeitar a autoridade que o definiu é uma incoerência.
+
+## A salvação: só a fé, ou a fé que age pelo amor?
+
+Outro ponto clássico é a "fé somente" (sola fide): salva-se só pela fé, sem as obras. A Igreja afirma que a salvação é toda graça, jamais um mérito que se compra; mas que a fé verdadeira não fica sozinha, ela se torna viva no amor. É a própria Escritura: "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24), e "o que vale é a fé que age pela caridade" (Gálatas 5,6). Não são fé contra obras, mas fé que floresce em obras.
+
+## Os sacramentos
+
+Para o católico, Cristo age por meio de sete sacramentos, sinais que realizam o que significam: o batismo regenera, a Eucaristia é a presença real de Cristo, a confissão perdoa de fato. A maioria dos evangélicos reconhece apenas duas ordenanças, o batismo e a ceia, entendidas como símbolos. A diferença é enorme: para um, Deus toca o corpo e a alma por meios concretos; para o outro, são gestos de lembrança.
+
+## Maria e os santos
+
+Católicos honram Maria e pedem a intercessão dos santos, sem os adorar, na convicção de que os que estão em Cristo continuam vivos e unidos a nós. Boa parte dos evangélicos vê nisso desvio, por entender que se deve recorrer só a Deus. A questão de fundo é a mesma: existe a comunhão dos santos, a Igreja do céu unida à da terra, ou não?
+
+## A unidade: uma Igreja ou milhares?
+
+Há um dado que merece reflexão. Jesus rezou "para que todos sejam um" (João 17,21). Em cinco séculos, o princípio do "cada um interpreta a Bíblia por si" gerou dezenas de milhares de denominações, muitas com doutrinas opostas, todas dizendo seguir só a Escritura. Sem uma autoridade que interprete e una, a fragmentação é inevitável. A Igreja Católica se apresenta como aquela que mantém, desde os apóstolos, uma fé e um governo visíveis.
+
+## Como dialogar
+
+Nada disso autoriza desprezo. O caminho não é a polêmica raivosa, mas o testemunho sereno e o amor à verdade. Com o irmão evangélico, vale começar pelo muito que se compartilha: Cristo, a Escritura, a oração, o desejo de santidade. E, a partir daí, propor com respeito a plenitude que a Igreja oferece: os sacramentos, a unidade, a Tradição viva. A meta não é vencer uma discussão, é que todos sejam um, como Cristo pediu.
+
+## Perguntas-chave
+
+1. Onde, exatamente, a Bíblia ensina que só a Bíblia é regra de fé? E quem definiu quais livros entram na Bíblia?
+
+2. Se "a fé sem obras é morta" (Tiago 2), a salvação "só pela fé" não precisa ser, no mínimo, melhor explicada?
+
+3. Jesus rezou para que todos fossem um. Dezenas de milhares de denominações divididas combinam com esse pedido?
+
+4. Diante de tantas interpretações opostas da mesma Bíblia, como saber qual é a verdadeira sem uma autoridade que Cristo tenha deixado para isso?`,
+    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', 'jo-17-20', 'csgc-denominacoes', 'hipona-393'],
+  },
+  {
+    id: 66,
+    title: 'Anjos e Demônios: O Que a Igreja Ensina',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/66-anjos-demonios.jpg'),
+    imageAlt: 'A Queda dos Anjos Rebeldes, de Bruegel',
+    imageCredit: 'Pieter Bruegel, o Velho, A Queda dos Anjos Rebeldes (1562). Domínio público.',
+    imageAspect: 1.39,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPieter%2520Bruegel%2520the%2520Elder%2520-%2520The%2520Fall%2520of%2520the%2520Rebel%2520Angels%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
+    summary: 'Anjos da guarda, demônios, tentação e exorcismo. O que é real, o que é exagero de cinema, e por que o cristão não precisa viver com medo.',
+    body: `Poucos temas geram tanto exagero quanto este. De um lado, filmes e certas pregações que veem demônio em cada esquina; do outro, quem trata anjos e demônios como folclore medieval já superado. A doutrina católica fica longe dos dois extremos, e é mais sóbria e mais séria do que se imagina.
+
+## Os anjos existem
+
+A fé cristã afirma que, além do mundo visível, Deus criou seres puramente espirituais, inteligentes e livres: os anjos. A palavra significa "mensageiro", e é assim que aparecem na Escritura, anunciando, protegendo, servindo. A Igreja ensina ainda que cada pessoa tem um anjo da guarda, um companheiro espiritual que a acompanha. Não são bebês alados de cartão-postal, mas criaturas poderosas a serviço de Deus.
+
+## Os demônios são anjos caídos
+
+Os demônios não são o oposto eterno de Deus, como se houvesse dois princípios em guerra. São criaturas, anjos que Deus fez bons e que, livremente, se voltaram contra ele. A tradição resume a sua escolha numa frase: "não servirei". O quadro de Bruegel retrata esse momento: os anjos rebeldes despencando do céu, transformados em monstros. O ponto é decisivo: o diabo é uma criatura derrotada, não um rival à altura de Deus. Ele tem poder limitado e já foi vencido na cruz.
+
+## Como o demônio age: a tentação
+
+No dia a dia, a ação do demônio quase nunca é a possessão espetacular do cinema. É algo mais discreto e mais perigoso: a tentação, a mentira, o desânimo, a divisão. Jesus o chamou de "pai da mentira", e São Paulo adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A sua arma preferida é convencer alguém de que ele não existe, ou de que o mal é bem. Resistir a ele é, antes de tudo, viver na verdade e na graça.
+
+## Possessão e exorcismo
+
+A possessão demoníaca existe, mas é rara, e a Igreja é extremamente cautelosa. Antes de qualquer exorcismo, exige-se descartar causas médicas e psicológicas, pois a imensa maioria dos casos atribuídos ao demônio são, na verdade, doenças que pedem tratamento. O exorcista é um sacerdote nomeado pelo bispo, e o rito não tem nada de espetáculo: é oração da Igreja, em nome de Cristo, com autoridade recebida dele. Sensacionalismo, aqui, é justamente o que a Igreja evita.
+
+## Sem medo: Cristo venceu
+
+O cristão não vive obcecado pelo demônio, nem o ignora. Vive uma vigilância serena, sabendo que "maior é aquele que está em vós do que aquele que está no mundo" (1 João 4,4). As armas são simples e poderosas: a oração, os sacramentos, a confissão, a Palavra, sacramentais como a água benta. Quem está em Cristo não precisa temer azar, "encosto" ou maldição: pertence a Quem já venceu a morte e o inferno.
+
+## O perigo dos dois extremos
+
+C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: que neguemos a sua existência, ou que tenhamos por ele um interesse doentio e amedrontado. O equilíbrio católico é justamente este: levar a sério a realidade do mal espiritual, sem medo e sem obsessão, com os olhos postos não no demônio, mas em Cristo vencedor.
+
+## Perguntas-chave
+
+1. Se o demônio é uma criatura caída e já derrotada na cruz, faz sentido o cristão viver com medo dele?
+
+2. A Igreja exige descartar causas médicas antes de um exorcismo. Isso combina com a fama de superstição, ou mostra prudência?
+
+3. Jesus chamou o diabo de "pai da mentira". Se a maior arma dele é a mentira, qual a melhor defesa senão a verdade?
+
+4. Negar o mal espiritual e ser obcecado por ele são erros opostos. Em qual deles a nossa época tende a cair?`,
+    references: ['gn-3-15', '2cor-11-14', 'ap-12-1', 'mt-12-25'],
+  },
 ];
 
 export default articles;

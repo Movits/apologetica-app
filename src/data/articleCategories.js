@@ -18,16 +18,17 @@ export const ARTICLE_CATEGORIES = [
 // Define como os artigos sobem dentro de cada categoria e quais entram em
 // "Mais buscados". Ids fora desta lista mantêm a ordem original (vão para o fim).
 export const RANKED_IDS = [
-  56, 11, 1, 57, 7, 4, 60, 5, 2, 25,
-  62, 23, 61, 3, 21, 59, 8, 35, 58, 28,
-  30, 19, 9, 10, 18, 26, 24, 17, 37, 15,
-  16, 29, 31, 46, 6, 20, 12, 13, 14, 22,
-  49, 50, 55, 47, 48, 34, 32, 33, 45, 51,
-  54, 52, 53, 44, 27, 42, 43, 36, 38, 39, 40, 41,
+  56, 11, 1, 57, 67, 7, 4, 60, 63, 5,
+  2, 25, 64, 62, 23, 61, 3, 21, 66, 59,
+  8, 35, 58, 28, 30, 19, 9, 10, 18, 26,
+  24, 17, 37, 65, 15, 16, 29, 31, 46, 6,
+  20, 12, 13, 14, 22, 49, 50, 55, 47, 48,
+  34, 32, 33, 45, 51, 54, 52, 53, 44, 27,
+  42, 43, 36, 38, 39, 40, 41,
 ];
 
 // Seção "Mais buscados" no topo da aba Artigos (ids curados, em ordem).
-export const POPULAR_IDS = [56, 11, 57, 7, 4, 60, 25, 61, 5, 2];
+export const POPULAR_IDS = [56, 11, 57, 67, 7, 4, 60, 63, 25, 5];
 
 export const POPULAR_META = { id: 'popular', icon: 'star', iconSet: 'ion' };
 
