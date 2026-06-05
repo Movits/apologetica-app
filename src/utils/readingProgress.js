@@ -20,26 +20,37 @@ export async function markAsRead(articleId) {
   return set;
 }
 
-// Progresso do plano de leitura (qual dia ja completou)
-export async function getPlanProgress() {
+// Progresso do plano de leitura, agora POR TRILHO (reading:plan:<trackId>).
+// A chave antiga reading:plan (trilho único) migra para 'fundamentos' na 1a leitura.
+const planKey = (trackId) => `reading:plan:${trackId}`;
+
+export async function getPlanProgress(trackId = 'fundamentos') {
   try {
-    const raw = await AsyncStorage.getItem(KEY_PLAN);
-    return raw ? JSON.parse(raw) : { completed: [], lastDay: 0 };
+    const raw = await AsyncStorage.getItem(planKey(trackId));
+    if (raw) return JSON.parse(raw);
+    if (trackId === 'fundamentos') {
+      const legacy = await AsyncStorage.getItem(KEY_PLAN);
+      if (legacy) {
+        await AsyncStorage.setItem(planKey('fundamentos'), legacy).catch(() => {});
+        return JSON.parse(legacy);
+      }
+    }
+    return { completed: [], lastDay: 0 };
   } catch {
     return { completed: [], lastDay: 0 };
   }
 }
 
-export async function markPlanDay(day) {
-  const state = await getPlanProgress();
+export async function markPlanDay(trackId, day) {
+  const state = await getPlanProgress(trackId);
   if (!state.completed.includes(day)) {
     state.completed.push(day);
   }
   state.lastDay = Math.max(state.lastDay, day);
-  await AsyncStorage.setItem(KEY_PLAN, JSON.stringify(state));
+  await AsyncStorage.setItem(planKey(trackId), JSON.stringify(state));
   return state;
 }
 
-export async function resetPlanProgress() {
-  await AsyncStorage.removeItem(KEY_PLAN).catch(() => {});
+export async function resetPlanProgress(trackId = 'fundamentos') {
+  await AsyncStorage.removeItem(planKey(trackId)).catch(() => {});
 }

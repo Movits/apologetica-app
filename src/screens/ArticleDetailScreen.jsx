@@ -21,7 +21,7 @@ import { useRequireAccount } from '../components/GuestGate';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 import { useLanguage } from '../context/LanguageContext';
 import { markPlanDay } from '../utils/readingProgress';
-import { planDayByArticle } from '../data/readingPlan';
+import { planEntriesByArticle } from '../data/readingPlan';
 
 export default function ArticleDetailScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
@@ -55,8 +55,14 @@ export default function ArticleDetailScreen({ route, navigation }) {
   useEffect(() => {
     if (!article) return;
     setLastRead(article.id);
-    const planDay = planDayByArticle(article.id);
-    if (planDay) markPlanDay(planDay.day);
+    // Vindo do plano: credita o trilho/dia exatos. Fora do plano: credita
+    // todos os dias (em qualquer trilho) que contêm este artigo.
+    const { fromPlanTrack, fromPlanDay } = route.params || {};
+    if (fromPlanTrack && fromPlanDay) {
+      markPlanDay(fromPlanTrack, fromPlanDay);
+    } else {
+      planEntriesByArticle(article.id).forEach((e) => markPlanDay(e.trackId, e.day));
+    }
     isFavorite(article.id).then(setFav);
     // Para o TTS se a tela for desmontada
     return () => { Speech.stop(); };

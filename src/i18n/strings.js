@@ -235,6 +235,8 @@ export const STRINGS = {
 
     // === Reading Plan ===
     'plan.reset': 'Reiniciar progresso',
+    'plan.track.fundamentos': 'Fundamentos',
+    'plan.track.aprofundamento': 'Aprofundamento',
 
     // === References ===
     'ref.readInApp': 'Ler no app',
@@ -509,6 +511,8 @@ export const STRINGS = {
 
     // === Reading Plan ===
     'plan.reset': 'Reset progress',
+    'plan.track.fundamentos': 'Foundations',
+    'plan.track.aprofundamento': 'Going Deeper',
 
     // === References ===
     'ref.readInApp': 'Read in app',

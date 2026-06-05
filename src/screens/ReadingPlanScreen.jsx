@@ -5,7 +5,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { confirmAction, notify } from '../utils/dialog';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { readingPlan } from '../data/readingPlan';
+import { READING_TRACKS, getTrack } from '../data/readingPlan';
 import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress } from '../utils/readingProgress';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -14,30 +14,34 @@ import ScrollHint from '../components/ScrollHint';
 export default function ReadingPlanScreen({ navigation }) {
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
+  const [trackId, setTrackId] = useState('fundamentos');
   const [progress, setProgress] = useState({ completed: [], lastDay: 0 });
+
+  const track = getTrack(trackId);
+  const days = track.days;
 
   useFocusEffect(
     useCallback(() => {
       let active = true;
       (async () => {
-        const p = await getPlanProgress();
+        const p = await getPlanProgress(trackId);
         if (active) setProgress(p);
       })();
       return () => { active = false; };
-    }, [])
+    }, [trackId])
   );
 
   const onReset = () => {
     confirmAction({
       title: isEn ? 'Reset progress?' : 'Reiniciar progresso?',
       message: isEn
-        ? 'Plan progress will be erased. Read articles remain available.'
-        : 'O progresso do plano será apagado. Os artigos lidos continuam disponíveis.',
+        ? 'Progress for this track will be erased. Read articles remain available.'
+        : 'O progresso deste trilho será apagado. Os artigos lidos continuam disponíveis.',
       confirmText: isEn ? 'Reset' : 'Reiniciar',
       cancelText: t('common.cancel'),
       destructive: true,
       onConfirm: async () => {
-        await resetPlanProgress();
+        await resetPlanProgress(trackId);
         setProgress({ completed: [], lastDay: 0 });
       },
     });
@@ -47,22 +51,35 @@ export default function ReadingPlanScreen({ navigation }) {
   const styles = makeStyles(colors, fs);
 
   const totalDone = progress.completed.length;
-  const pct = Math.round((totalDone / readingPlan.length) * 100);
+  const pct = days.length ? Math.round((totalDone / days.length) * 100) : 0;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={styles.header}>
-        <Text style={styles.title}>{isEn ? 'Foundations in 30 days' : 'Fundamentos em 30 dias'}</Text>
-        <Text style={styles.sub}>
-          {isEn
-            ? 'One article a day, from "Is there a God?" to the central truths of the Catholic faith. Built for someone starting from zero, or for any Christian who wants to defend the basics well.'
-            : 'Um artigo por dia, começando em "Existe Deus?" até as verdades centrais da fé católica. Pensado pra quem começa do zero, ou pra qualquer cristão que queira saber defender o básico.'}
-        </Text>
+        <View style={styles.segment}>
+          {READING_TRACKS.map((tr) => {
+            const activeTrack = tr.id === trackId;
+            return (
+              <TouchableOpacity
+                key={tr.id}
+                style={[styles.segmentBtn, activeTrack && styles.segmentBtnActive]}
+                onPress={() => setTrackId(tr.id)}
+              >
+                <Text style={[styles.segmentText, activeTrack && styles.segmentTextActive]}>
+                  {t(`plan.track.${tr.id}`)}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        <Text style={styles.title}>{isEn ? track.titleEn : track.titlePt}</Text>
+        <Text style={styles.sub}>{isEn ? track.descEn : track.descPt}</Text>
         <View style={styles.progressRow}>
           <View style={styles.bar}>
             <View style={[styles.barFill, { width: `${pct}%` }]} />
           </View>
-          <Text style={styles.pctText}>{totalDone}/{readingPlan.length}</Text>
+          <Text style={styles.pctText}>{totalDone}/{days.length}</Text>
         </View>
         {totalDone > 0 && (
           <TouchableOpacity onPress={onReset} style={styles.resetBtn}>
@@ -74,8 +91,10 @@ export default function ReadingPlanScreen({ navigation }) {
 
       <View style={{ flex: 1 }}>
         <FlatList
-          data={readingPlan}
-          keyExtractor={(d) => String(d.day)}
+          key={trackId}
+          data={days}
+          extraData={progress}
+          keyExtractor={(d) => `${trackId}-${d.day}`}
           contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
           onScroll={onScroll}
           onContentSizeChange={onContentSizeChange}
@@ -89,7 +108,7 @@ export default function ReadingPlanScreen({ navigation }) {
                 style={[styles.card, done && styles.cardDone]}
                 onPress={() => {
                   if (article) {
-                    navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day });
+                    navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day, fromPlanTrack: trackId });
                   } else {
                     notify(
                       isEn ? 'In preparation' : 'Em preparação',
@@ -131,6 +150,11 @@ export default function ReadingPlanScreen({ navigation }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     header: { padding: 16, borderBottomWidth: 1, borderBottomColor: c.divider, backgroundColor: c.card },
+    segment: { flexDirection: 'row', backgroundColor: c.badgeBg, borderRadius: 10, padding: 3, marginBottom: 12 },
+    segmentBtn: { flex: 1, paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
+    segmentBtnActive: { backgroundColor: c.accent },
+    segmentText: { fontSize: fs(13), fontWeight: '600', color: c.textMuted },
+    segmentTextActive: { color: '#fff' },
     title: { fontSize: fs(18), color: c.primaryText, fontWeight: 'bold', marginBottom: 6 },
     sub: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18), marginBottom: 12 },
     progressRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
