@@ -112,7 +112,7 @@ Os Evangelhos são biografia antiga (em grego, bios), gênero documentado fora d
 
 Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-romano. Citações, viagens, autoridades civis, geografia precisa. O arqueólogo William Ramsay começou cético e terminou defendendo Lucas como historiador de primeira ordem, comparável a Tucídides.
 
-As Cartas (Paulo, Tiago, Pedro, João, Judas, Hebreus) são correspondência ocasional. Foram escritas para problemas concretos de comunidades específicas. Paulo não está escrevendo um sistema teológico fechado; está respondendo a questões. Por isso 1 Coríntios passa de discussão sobre carnes de ídolos a regulamento de Eucaristia em poucas páginas: refletem a pauta dos coríntios, não um índice de teologia sistemática.
+As Cartas (Paulo, Tiago, Pedro, João, Judas, Hebreus) são correspondência ocasional. Foram escritas para problemas concretos de comunidades específicas. Paulo não está escrevendo um sistema teológico fechado. Está respondendo a questões. Por isso 1 Coríntios passa de discussão sobre carnes de ídolos a regulamento de Eucaristia em poucas páginas: refletem a pauta dos coríntios, não um índice de teologia sistemática.
 
 Os Profetas (Isaías, Jeremias, Ezequiel, os 12 menores) misturam denúncia social, oráculo de juízo, promessa messiânica e visão simbólica. Isaías é o profeta de imagens mais densas: a "Águia das Águias" do capítulo 31, o Servo Sofredor do 53, o céu novo do 65. As datas e cenários históricos importam muito ali, mas o que está em jogo são padrões teológicos repetíveis, não fotografias documentais de cada inimigo histórico.
 
@@ -375,7 +375,7 @@ Por séculos, a menção a Pôncio Pilatos vinha sobretudo dos Evangelhos e de p
 
 ## O ossuário de Caifás
 
-Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57; João 11,49). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
+Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57. João 11,49). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
 
 ## Piscinas que diziam não existir
 
@@ -413,7 +413,7 @@ Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Como 
 
 ## Uma montanha de cópias
 
-De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem mais de 5.800 manuscritos em grego, além de cerca de 10 mil em latim e milhares em outras línguas antigas, somando algo perto de 25 mil cópias. Para comparar: da "Guerra das Gálias", de Júlio César, restam poucas centenas de manuscritos; da "Ilíada" de Homero, o segundo texto antigo mais copiado, cerca de 1.800. O Novo Testamento está numa categoria à parte.
+De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem mais de 5.800 manuscritos em grego, além de cerca de 10 mil em latim e milhares em outras línguas antigas, somando algo perto de 25 mil cópias. Para comparar: da "Guerra das Gálias", de Júlio César, restam poucas centenas de manuscritos, da "Ilíada" de Homero, o segundo texto antigo mais copiado, cerca de 1.800. O Novo Testamento está numa categoria à parte.
 
 ## E cópias muito antigas
 
@@ -460,7 +460,7 @@ A fé cristã afirma que, por trás desses muitos autores humanos, há um só Au
 
 ## Como a Bíblia chegou até nós
 
-Quase nada foi escrito de imediato. Primeiro houve os acontecimentos e a tradição oral; depois a redação; por fim, o reconhecimento. E aqui está um ponto decisivo: não foi a Bíblia que decidiu quais livros são a Bíblia. Foi a Igreja que, guiada pelo Espírito, reconheceu quais escritos eram inspirados, fixando a lista (o cânon) em concílios do fim do século IV, como Hipona em 393 e Cartago em 397. A Bíblia nasceu do seio da Igreja, não o contrário.
+Quase nada foi escrito de imediato. Primeiro houve os acontecimentos e a tradição oral. Depois a redação. Por fim, o reconhecimento. E aqui está um ponto decisivo: não foi a Bíblia que decidiu quais livros são a Bíblia. Foi a Igreja que, guiada pelo Espírito, reconheceu quais escritos eram inspirados, fixando a lista (o cânon) em concílios do fim do século IV, como Hipona em 393 e Cartago em 397. A Bíblia nasceu do seio da Igreja, não o contrário.
 
 ## Moisés escreveu mesmo o Pentateuco? E os Evangelhos?
 
@@ -495,15 +495,15 @@ Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem
     imageAspect: 1.38,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FDavid%2520Roberts-IsraelitesLeavingEgypt%25201828.jpg&w=2200&output=jpg&q=80',
     summary: 'Como entender as passagens duras do Antigo Testamento, com guerras, leis severas e escravidão, sem fingir que não existem nem concluir que Deus é cruel.',
-    body: `É uma das objeções favoritas dos críticos da fé: o "Deus do Antigo Testamento" seria violento, escravagista, até genocida. Não adianta varrer essas passagens para baixo do tapete; elas estão lá. A questão é como lê-las, e a resposta cristã não é nem negar a dificuldade nem render-se à caricatura.
+    body: `É uma das objeções favoritas dos críticos da fé: o "Deus do Antigo Testamento" seria violento, escravagista, até genocida. Não adianta varrer essas passagens para baixo do tapete. Elas estão lá. A questão é como lê-las, e a resposta cristã não é nem negar a dificuldade nem render-se à caricatura.
 
 ## A chave de tudo: a revelação é progressiva
 
-Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus; era um passo possível naquele momento.
+Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus. Era um passo possível naquele momento.
 
 ## A escravidão
 
-O Antigo Testamento não inventa a escravidão; ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
+O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
 
 ## As guerras de conquista
 
@@ -593,11 +593,11 @@ A atitude cristã diante do fim não é nem o medo paralisante nem a obsessão p
 
 ## Não comece pelo começo: comece por um Evangelho
 
-A Bíblia não foi feita para ser lida de capa a capa, na ordem, como um romance. O coração de tudo é Jesus Cristo, e é por ele que se deve começar. Escolha um Evangelho. Marcos é o mais curto e direto, ótimo para uma primeira leitura; Lucas é caprichado e cheio de ternura. Conheça primeiro o rosto de Jesus, porque ele é a chave que abre o sentido de todo o resto da Bíblia.
+A Bíblia não foi feita para ser lida de capa a capa, na ordem, como um romance. O coração de tudo é Jesus Cristo, e é por ele que se deve começar. Escolha um Evangelho. Marcos é o mais curto e direto, ótimo para uma primeira leitura. Lucas é caprichado e cheio de ternura. Conheça primeiro o rosto de Jesus, porque ele é a chave que abre o sentido de todo o resto da Bíblia.
 
 ## Um caminho sugerido
 
-Depois de um Evangelho, um bom percurso é: os Atos dos Apóstolos, para ver a Igreja nascendo; os Salmos, que são a escola de oração do próprio povo de Deus; e então, com outro preparo, voltar ao Gênesis e ao Êxodo, as grandes narrativas das origens. Livros como Levítico e Números, cheios de leis antigas, podem ficar para mais tarde: não desanime à toa logo no início.
+Depois de um Evangelho, um bom percurso é: os Atos dos Apóstolos, para ver a Igreja nascendo. Os Salmos, que são a escola de oração do próprio povo de Deus, e então, com outro preparo, voltar ao Gênesis e ao Êxodo, as grandes narrativas das origens. Livros como Levítico e Números, cheios de leis antigas, podem ficar para mais tarde: não desanime à toa logo no início.
 
 ## Pouco e constante vence muito e esporádico
 

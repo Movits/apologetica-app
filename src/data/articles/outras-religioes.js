@@ -57,7 +57,7 @@ As dificuldades começam justamente onde está a maior reverência islâmica: na
 
 O Espiritismo foi codificado por Allan Kardec, pseudônimo do pedagogo francês Hippolyte Léon Denizard Rivail, a partir de 1857, com a publicação de O Livro dos Espíritos. A esse seguiram outras quatro obras de base: O Livro dos Médiuns, O Evangelho segundo o Espiritismo, O Céu e o Inferno e A Gênese.
 
-Os pilares da doutrina são a existência de um Deus único; a imortalidade da alma; a reencarnação, isto é, a passagem da alma por muitas vidas sucessivas para evoluir moralmente; a comunicação com os espíritos dos mortos por meio de médiuns; e a lei do progresso, segundo a qual todos caminham, vida após vida, rumo à perfeição. Jesus ocupa lugar central, mas como o espírito mais elevado já encarnado na Terra, modelo e guia da humanidade, e não como Deus feito homem. No Brasil, a figura do médium Chico Xavier e a vasta obra assistencial dos centros espíritas deram ao movimento grande respeitabilidade social.
+Os pilares da doutrina são a existência de um Deus único. A imortalidade da alma. A reencarnação, isto é, a passagem da alma por muitas vidas sucessivas para evoluir moralmente. A comunicação com os espíritos dos mortos por meio de médiuns, e a lei do progresso, segundo a qual todos caminham, vida após vida, rumo à perfeição. Jesus ocupa lugar central, mas como o espírito mais elevado já encarnado na Terra, modelo e guia da humanidade, e não como Deus feito homem. No Brasil, a figura do médium Chico Xavier e a vasta obra assistencial dos centros espíritas deram ao movimento grande respeitabilidade social.
 
 ## Pontos de convergência
 
@@ -77,11 +77,11 @@ As diferenças, porém, atingem o coração da fé.
 
 ## Perguntas-chave
 
-1. Em João 20,28 Tomé chama Jesus de "meu Deus" e ele aceita; em Apocalipse 22,9 um anjo recusa adoração. Por que Jesus, se fosse só criatura, aceitou o que o anjo recusou?
+1. Em João 20,28 Tomé chama Jesus de "meu Deus" e ele aceita. Em Apocalipse 22,9 um anjo recusa adoração. Por que Jesus, se fosse só criatura, aceitou o que o anjo recusou?
 
 2. Se o homem morre uma só vez e depois é julgado (Hebreus 9,27), onde cabem as reencarnações?
 
-3. A Bíblia proíbe consultar os mortos (Deuteronômio 18,11; Isaías 8,19). Em que texto bíblico o Espiritismo se apoia para fazer o contrário?
+3. A Bíblia proíbe consultar os mortos (Deuteronômio 18,11. Isaías 8,19). Em que texto bíblico o Espiritismo se apoia para fazer o contrário?
 
 4. Sobre que autoridade Allan Kardec corrige os apóstolos a respeito da identidade de Jesus?`,
     references: ['kardec-livro', 'jo-1-1', 'jo-8-58', 'jo-20-28', 'ap-22-8', 'hb-9-27', 'lc-16-19', 'dt-18-10', 'is-8-19', 'cic-2116'],
@@ -270,7 +270,7 @@ O ponto é um só: Jesus de Nazaré é o Messias anunciado pelos profetas? O cri
 
 ## O que creem
 
-O Budismo nasceu na Índia por volta do século V a.C., a partir da experiência de Sidarta Gautama, o Buda, que significa "o desperto". Diante do sofrimento humano, ele formulou as Quatro Nobres Verdades: a vida é marcada pelo sofrimento (dukkha); a causa do sofrimento é o desejo e o apego (tanha); é possível extinguir o sofrimento; e o caminho para isso é o Nobre Caminho Óctuplo, uma vida de retidão, atenção e meditação.
+O Budismo nasceu na Índia por volta do século V a.C., a partir da experiência de Sidarta Gautama, o Buda, que significa "o desperto". Diante do sofrimento humano, ele formulou as Quatro Nobres Verdades: a vida é marcada pelo sofrimento (dukkha). A causa do sofrimento é o desejo e o apego (tanha). É possível extinguir o sofrimento, e o caminho para isso é o Nobre Caminho Óctuplo, uma vida de retidão, atenção e meditação.
 
 Duas ideias são centrais. A impermanência (anicca): tudo está em mudança constante, nada é fixo. E o não-eu (anatta): não existe uma alma ou um "eu" permanente, e o que chamamos de pessoa é um fluxo de estados que se desfaz. O objetivo final é o nirvana, a extinção do desejo e da ilusão do eu, que põe fim ao ciclo de renascimentos (samsara). O Budismo clássico, sobretudo na forma Theravada, não afirma um Deus pessoal criador.
 
@@ -330,7 +330,7 @@ As respostas de fundo, porém, divergem do Evangelho.
 
 3. Karma e reencarnação ou graça e ressurreição? A lei do karma é implacável: cada um colhe exatamente o que plantou, vida após vida. O Evangelho anuncia algo que o karma não conhece: o perdão e a graça. E ensina uma só vida, seguida do juízo e da ressurreição (Hebreus 9,27), não um ciclo interminável de retornos.
 
-4. Muitos caminhos ou um Caminho? Para o Hinduísmo, em geral, há muitos caminhos válidos para o divino. Jesus afirma algo único: "Eu sou o caminho, a verdade e a vida; ninguém vai ao Pai senão por mim" (João 14,6). Não por arrogância, mas porque, se Deus de fato entrou na história em pessoa, esse fato muda tudo.
+4. Muitos caminhos ou um Caminho? Para o Hinduísmo, em geral, há muitos caminhos válidos para o divino. Jesus afirma algo único: "Eu sou o caminho, a verdade e a vida. Ninguém vai ao Pai senão por mim" (João 14,6). Não por arrogância, mas porque, se Deus de fato entrou na história em pessoa, esse fato muda tudo.
 
 5. A história é ciclo ou caminho? A visão hindu do tempo é cíclica, sem um fim definido. A visão cristã é de uma história real, com um começo (a criação), um centro (a Encarnação de Deus em Jesus, num lugar e numa data) e um fim (a vida eterna). A salvação não é fuga do tempo, é o tempo levado à plenitude.
 
@@ -356,7 +356,7 @@ As respostas de fundo, porém, divergem do Evangelho.
 
 A religião foi fundada por Joseph Smith nos Estados Unidos. Smith afirmou ter tido, a partir de 1820, visões celestes, e ter recebido de um anjo chamado Morôni placas de ouro que traduziu como o Livro de Mórmon, publicado em 1830. Segundo esse livro, antigas tribos de Israel teriam migrado para as Américas por volta de 600 a.C., formando as civilizações dos nefitas e lamanitas, e Jesus ressuscitado as teria visitado.
 
-Além da Bíblia e do Livro de Mórmon, os mórmons seguem Doutrina e Convênios e a Pérola de Grande Valor, e creem em profetas vivos que recebem revelação contínua. Pontos marcantes da doutrina: Deus Pai teria sido um homem que se tornou Deus ("como o homem é, Deus já foi; como Deus é, o homem pode vir a ser"); existe uma pluralidade de deuses; e os fiéis podem, por fim, tornar-se deuses de seus próprios mundos. A família eterna, o batismo pelos mortos e o forte impulso missionário completam o quadro.
+Além da Bíblia e do Livro de Mórmon, os mórmons seguem Doutrina e Convênios e a Pérola de Grande Valor, e creem em profetas vivos que recebem revelação contínua. Pontos marcantes da doutrina: Deus Pai teria sido um homem que se tornou Deus ("como o homem é, Deus já foi. Como Deus é, o homem pode vir a ser"). Existe uma pluralidade de deuses, e os fiéis podem, por fim, tornar-se deuses de seus próprios mundos. A família eterna, o batismo pelos mortos e o forte impulso missionário completam o quadro.
 
 ## Pontos de convergência
 
@@ -389,14 +389,14 @@ As dificuldades, porém, não são pequenas, e várias são verificáveis.
     id: 42,
     title: 'Ateísmo e Naturalismo',
     category: 'Outras Religiões',
-    summary: 'O ateísmo nega Deus; o naturalismo diz que só existe matéria. São cosmovisões sérias, mas têm dificuldade em fundamentar a própria existência do mundo, a moral e a razão.',
+    summary: 'O ateísmo nega Deus. O naturalismo diz que só existe matéria. São cosmovisões sérias, mas têm dificuldade em fundamentar a própria existência do mundo, a moral e a razão.',
     body: `O ateu não é, em geral, um inimigo da verdade. Muitas vezes é alguém honesto, que exige razões para crer e se incomoda com a hipocrisia religiosa e com o sofrimento do mundo. Levar o ateísmo a sério é responder aos seus melhores argumentos, não a uma caricatura. Este artigo apresenta a posição com justiça e depois mostra os pontos em que ela tem dificuldade de se sustentar.
 
 ## O que creem
 
 O ateísmo, em sentido estrito, é a ausência de crença em Deus, ou a afirmação de que Deus não existe. Costuma vir acompanhado do naturalismo: a tese de que só existe a natureza, matéria e energia, e nada além dela, nem alma, nem espírito, nem Criador. O conhecimento válido seria sobretudo o da ciência, e o universo se explicaria por leis naturais, sem necessidade de propósito.
 
-Os argumentos mais fortes do ateísmo merecem ser nomeados com honestidade: o sofrimento e o mal no mundo parecem incompatíveis com um Deus bom; faltaria evidência empírica direta de Deus; a ciência teria explicado muito do que antes se atribuía ao divino; e a religião teria produzido violência e abuso. São objeções de peso, sentidas por muita gente séria.
+Os argumentos mais fortes do ateísmo merecem ser nomeados com honestidade: o sofrimento e o mal no mundo parecem incompatíveis com um Deus bom. Faltaria evidência empírica direta de Deus. A ciência teria explicado muito do que antes se atribuía ao divino, e a religião teria produzido violência e abuso. São objeções de peso, sentidas por muita gente séria.
 
 ## Pontos de convergência
 
@@ -488,7 +488,7 @@ Dito isso, há diferenças que não se resolvem só com simpatia.
 
 1. A mediunidade e os espíritos. A incorporação de espíritos e guias, presente sobretudo na Umbanda, esbarra na mesma proibição bíblica que vale para o Espiritismo: consultar e invocar os mortos é vedado na Escritura (Deuteronômio 18,10-12), e o Catecismo da Igreja Católica condena essas práticas nos parágrafos 2116 e 2117.
 
-2. O culto aos orixás. A fé católica é radicalmente monoteísta: a adoração é devida só a Deus (Êxodo 20,3: "não terás outros deuses diante de mim"). Render culto a orixás, ainda que pensados como forças ou intermediários, não é o mesmo que venerar um santo. O santo é um irmão que intercede diante do único Deus; ele não recebe culto como divindade.
+2. O culto aos orixás. A fé católica é radicalmente monoteísta: a adoração é devida só a Deus (Êxodo 20,3: "não terás outros deuses diante de mim"). Render culto a orixás, ainda que pensados como forças ou intermediários, não é o mesmo que venerar um santo. O santo é um irmão que intercede diante do único Deus. Ele não recebe culto como divindade.
 
 3. O sincretismo. Associar um orixá a um santo foi, muitas vezes, uma estratégia de sobrevivência sob perseguição, e isso se compreende com compaixão. Mas, teologicamente, o santo e o orixá não são a mesma coisa. A clareza, aqui, é um ato de respeito pela verdade, não de desprezo pela história.
 
@@ -519,7 +519,7 @@ Dito isso, há diferenças que não se resolvem só com simpatia.
 
 ## Tudo começa no primeiro mandamento
 
-O primeiro de todos os mandamentos é "não terás outros deuses diante de mim" (Êxodo 20,3). Ele não proíbe só estátuas de outros deuses; proíbe colocar a confiança última em qualquer coisa que não seja Deus. O ocultismo, em todas as suas formas, faz exatamente isso: busca poder, proteção ou conhecimento do futuro em forças que não são Deus, à margem dele. No fundo, é uma questão de a quem se entrega o coração.
+O primeiro de todos os mandamentos é "não terás outros deuses diante de mim" (Êxodo 20,3). Ele não proíbe só estátuas de outros deuses. Proíbe colocar a confiança última em qualquer coisa que não seja Deus. O ocultismo, em todas as suas formas, faz exatamente isso: busca poder, proteção ou conhecimento do futuro em forças que não são Deus, à margem dele. No fundo, é uma questão de a quem se entrega o coração.
 
 ## O que a Bíblia diz
 
@@ -535,7 +535,7 @@ A astrologia parte de uma ideia que a fé rejeita: a de que a sua vida é determ
 
 ## E a sorte, os amuletos, as simpatias?
 
-A superstição é atribuir a um objeto, número ou gesto um poder que ele não tem. Ela difere radicalmente da fé. A fé confia numa Pessoa, Deus, que ama e é livre; a superstição confia numa mecânica, como se certos rituais "obrigassem" a sorte. Por isso a Igreja distingue: usar uma medalha ou um terço como lembrança e expressão de fé é uma coisa; tratá-los como amuletos mágicos, que funcionam por si, é cair na própria superstição que se deveria evitar.
+A superstição é atribuir a um objeto, número ou gesto um poder que ele não tem. Ela difere radicalmente da fé. A fé confia numa Pessoa, Deus, que ama e é livre. A superstição confia numa mecânica, como se certos rituais "obrigassem" a sorte. Por isso a Igreja distingue: usar uma medalha ou um terço como lembrança e expressão de fé é uma coisa. Tratá-los como amuletos mágicos, que funcionam por si, é cair na própria superstição que se deveria evitar.
 
 ## A liberdade dos filhos de Deus
 
@@ -566,7 +566,7 @@ No fundo, a mensagem cristã aqui é libertadora. O cristão não precisa viver 
 
 ## O que a Igreja decidiu
 
-Desde 1738, com o Papa Clemente XII, a Igreja proíbe os católicos de se filiarem à Maçonaria. Em 1983, a Congregação para a Doutrina da Fé, com a aprovação de São João Paulo II, reafirmou de forma direta que os fiéis que aderem a associações maçônicas estão em pecado grave e não podem receber a comunhão. Não é a opinião de um padre mais rigoroso; é uma posição firme e constante do Magistério.
+Desde 1738, com o Papa Clemente XII, a Igreja proíbe os católicos de se filiarem à Maçonaria. Em 1983, a Congregação para a Doutrina da Fé, com a aprovação de São João Paulo II, reafirmou de forma direta que os fiéis que aderem a associações maçônicas estão em pecado grave e não podem receber a comunhão. Não é a opinião de um padre mais rigoroso. É uma posição firme e constante do Magistério.
 
 ## Por quê: não é perseguição, é coerência
 

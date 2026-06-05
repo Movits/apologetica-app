@@ -97,11 +97,11 @@ Esses são fatos científicos, não opiniões religiosas. Qualquer livro de embr
 
 ## A dignidade não depende de capacidades
 
-A posição católica responde sim, e por razões universalmente válidas: a vida humana é digna pelo simples fato de ser humana, não por capacidades atuais. Caso contrário, teríamos que negar dignidade também a recém-nascidos (que não falam, não andam, dependem totalmente), a pessoas em coma, a idosos com Alzheimer. Capacidades variam; a humanidade é a mesma.
+A posição católica responde sim, e por razões universalmente válidas: a vida humana é digna pelo simples fato de ser humana, não por capacidades atuais. Caso contrário, teríamos que negar dignidade também a recém-nascidos (que não falam, não andam, dependem totalmente), a pessoas em coma, a idosos com Alzheimer. Capacidades variam. A humanidade é a mesma.
 
 ## A Igreja desde o século I
 
-A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás a criança no seio materno, nem a deixarás morrer depois de nascida". Tertuliano (c. 197) escreve: "Para nós, é homicídio precoce impedir o nascimento; não há diferença se se priva da vida quem já nasceu ou se interrompe a vida no ato de nascer". Santo Agostinho, São Basílio, São Jerônimo: todos os Padres condenam o aborto sem ambiguidade.
+A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás a criança no seio materno, nem a deixarás morrer depois de nascida". Tertuliano (c. 197) escreve: "Para nós, é homicídio precoce impedir o nascimento. Não há diferença se se priva da vida quem já nasceu ou se interrompe a vida no ato de nascer". Santo Agostinho, São Basílio, São Jerônimo: todos os Padres condenam o aborto sem ambiguidade.
 
 ## "Meu corpo, minha decisão"
 
@@ -111,7 +111,7 @@ A objeção do "meu corpo, minha decisão" pressupõe que o feto é parte do cor
 
 A objeção do "caso difícil" (estupro, malformação fetal, risco de vida da mãe) é importante e merece resposta cuidadosa.
 
-Em caso de risco de vida da mãe: a Igreja permite procedimentos médicos que visam salvar a mãe, mesmo se indiretamente causam a morte do feto (princípio do duplo efeito). Ex: tratamento de câncer uterino em mulher grávida; tratamento de gravidez ectópica. Em nenhum desses casos se busca a morte do feto: ela é consequência indireta. Diferente do aborto, que busca diretamente a morte do feto.
+Em caso de risco de vida da mãe: a Igreja permite procedimentos médicos que visam salvar a mãe, mesmo se indiretamente causam a morte do feto (princípio do duplo efeito). Ex: tratamento de câncer uterino em mulher grávida. Tratamento de gravidez ectópica. Em nenhum desses casos se busca a morte do feto: ela é consequência indireta. Diferente do aborto, que busca diretamente a morte do feto.
 
 Em caso de estupro: a violência ao corpo da mãe é crime gravíssimo, e ela merece todo apoio físico, psicológico, espiritual. Mas o filho não é responsável pela violência do pai. Matar a criança não desfaz o estupro, só adiciona uma segunda vítima inocente. A solução é amparar a mãe, oferecer adoção, e não puni-la duas vezes (a primeira pelo agressor, a segunda pelo Estado, exigindo que se torne assassina do próprio filho).
 
@@ -196,7 +196,7 @@ A Igreja é a única instituição global que ainda defende coerentemente esta p
     imageAspect: 2.28,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%252C%2520Fall%2520and%2520Expulsion%2520from%2520Garden%2520of%2520Eden%252000.jpg&w=2200&output=jpg&q=80',
     summary: 'Pecado não é "quebrar uma regra de Deus por capricho". É ferir o amor e a si mesmo. Entenda a diferença entre pecado mortal e venial e o que são os sete vícios capitais.',
-    body: `"Pecado" virou uma palavra desconfortável. Para uns, soa a culpa doentia e repressão; para outros, é coisa do passado, que não existe mais. Mas a noção de pecado, bem entendida, não é uma invenção para amedrontar: é um diagnóstico realista da condição humana, e a porta para a cura.
+    body: `"Pecado" virou uma palavra desconfortável. Para uns, soa a culpa doentia e repressão. Para outros, é coisa do passado, que não existe mais. Mas a noção de pecado, bem entendida, não é uma invenção para amedrontar: é um diagnóstico realista da condição humana, e a porta para a cura.
 
 ## O que é o pecado, de verdade
 
@@ -208,15 +208,15 @@ Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue "pecado que leva
 
 ## Os sete pecados capitais
 
-Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça. "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade; à avareza, a generosidade; à inveja, a caridade; à ira, a mansidão; à luxúria, a castidade; à gula, a temperança; à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
+Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça. "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade, à avareza, a generosidade, à inveja, a caridade, à ira, a mansidão, à luxúria, a castidade, à gula, a temperança, à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
 
 ## O pecado contra o Espírito Santo
 
-Jesus fez uma advertência misteriosa: todo pecado pode ser perdoado, "mas a blasfêmia contra o Espírito não será perdoada" (Mateus 12,31-32). Isso não significa que Deus se recuse a perdoar algo; significa que existe um pecado que, por sua própria natureza, fecha a porta ao perdão: a recusa final e obstinada de se arrepender. Deus oferece sempre a misericórdia; mas a misericórdia, para curar, precisa ser acolhida. Quem, até o fim, rejeita o perdão, não é perdoado, não porque Deus não queira, mas porque a pessoa não quer.
+Jesus fez uma advertência misteriosa: todo pecado pode ser perdoado, "mas a blasfêmia contra o Espírito não será perdoada" (Mateus 12,31-32). Isso não significa que Deus se recuse a perdoar algo. Significa que existe um pecado que, por sua própria natureza, fecha a porta ao perdão: a recusa final e obstinada de se arrepender. Deus oferece sempre a misericórdia, mas a misericórdia, para curar, precisa ser acolhida. Quem, até o fim, rejeita o perdão, não é perdoado, não porque Deus não queira, mas porque a pessoa não quer.
 
 ## A boa notícia: a misericórdia é maior
 
-Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristianismo não é uma religião de gente perfeita, mas de pecadores perdoados. Não há pecado, por mais grave, que seja maior do que a misericórdia de Deus, desde que haja arrependimento. Foi para isso que Cristo instituiu o sacramento da Confissão, onde o que estava morto volta a viver. A parábola do filho pródigo resume tudo: por pior que tenha sido a queda, o Pai corre ao encontro de quem volta. Reconhecer o pecado não é afundar na culpa; é dar o primeiro passo para casa.
+Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristianismo não é uma religião de gente perfeita, mas de pecadores perdoados. Não há pecado, por mais grave, que seja maior do que a misericórdia de Deus, desde que haja arrependimento. Foi para isso que Cristo instituiu o sacramento da Confissão, onde o que estava morto volta a viver. A parábola do filho pródigo resume tudo: por pior que tenha sido a queda, o Pai corre ao encontro de quem volta. Reconhecer o pecado não é afundar na culpa. É dar o primeiro passo para casa.
 
 ## Perguntas-chave
 
@@ -238,12 +238,12 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
     imageCredit: 'Nicolas Poussin, O Matrimônio (Os Sete Sacramentos, c. 1640). Domínio público.',
     imageAspect: 1.3,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F7--marriage.jpg&w=2200&output=jpg&q=80',
-    summary: 'A Igreja não é contra o sexo; ela o tem em altíssima conta. Por isso ensina que o seu lugar é o matrimônio, e propõe a castidade como caminho de amor verdadeiro, não de repressão.',
+    summary: 'A Igreja não é contra o sexo. Ela o tem em altíssima conta. Por isso ensina que o seu lugar é o matrimônio, e propõe a castidade como caminho de amor verdadeiro, não de repressão.',
     body: `Poucos ensinamentos da Igreja são tão incompreendidos quanto este. Diz-se que a Igreja é "contra o sexo", "reprimida", "atrasada". A verdade é quase o oposto: o cristianismo tem o sexo em altíssima conta, alto demais para tratá-lo como um passatempo. Justamente por levá-lo a sério, reserva-lhe um lugar à altura.
 
 ## O que a Igreja realmente ensina
 
-O sexo não é sujo nem vergonhoso; é um dom bom, criado por Deus, que disse "macho e fêmea os criou" e os abençoou (Gênesis 1,27-28). A doutrina católica reconhece nele dois sentidos inseparáveis: a união profunda entre duas pessoas e a abertura à vida. E ensina que o seu lugar próprio é o matrimônio, a aliança total e definitiva entre um homem e uma mulher.
+O sexo não é sujo nem vergonhoso. É um dom bom, criado por Deus, que disse "macho e fêmea os criou" e os abençoou (Gênesis 1,27-28). A doutrina católica reconhece nele dois sentidos inseparáveis: a união profunda entre duas pessoas e a abertura à vida. E ensina que o seu lugar próprio é o matrimônio, a aliança total e definitiva entre um homem e uma mulher.
 
 ## Por que reservar ao casamento?
 
@@ -251,7 +251,7 @@ A razão não é um tabu, é a coerência. O ato sexual fala uma linguagem do co
 
 ## Castidade não é repressão
 
-Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida. É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda; para o casado, que é fiel; para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
+Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida. É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda. Para o casado, que é fiel. Para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
 
 ## Pornografia e masturbação
 
@@ -259,7 +259,7 @@ Aqui a Igreja é clara e, ao mesmo tempo, compreensiva. A pornografia e a mastur
 
 ## E quem já errou?
 
-A grande maioria das pessoas chega a este assunto com uma história, às vezes pesada. A palavra da Igreja não é condenação, é recomeço. A castidade não é um vidro que, quebrado uma vez, não tem mais conserto; é uma virtude que se pode sempre recomeçar a viver, com a graça de Deus. Foi a Jesus que trouxeram a mulher pega em adultério, e foi ele quem disse, sem a humilhar: "nem eu te condeno; vai e não peques mais" (João 8,11). Firmeza na verdade, ternura com a pessoa.
+A grande maioria das pessoas chega a este assunto com uma história, às vezes pesada. A palavra da Igreja não é condenação, é recomeço. A castidade não é um vidro que, quebrado uma vez, não tem mais conserto. É uma virtude que se pode sempre recomeçar a viver, com a graça de Deus. Foi a Jesus que trouxeram a mulher pega em adultério, e foi ele quem disse, sem a humilhar: "nem eu te condeno. Vai e não peques mais" (João 8,11). Firmeza na verdade, ternura com a pessoa.
 
 ## O fruto
 
@@ -298,15 +298,15 @@ Os mandamentos não são um capricho de Deus, como se ele pudesse ter mandado o 
 
 ## Duas tábuas: amor a Deus e ao próximo
 
-Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo (Mateus 22,37-40). Os três primeiros mandamentos cuidam da relação com Deus; os outros sete, da relação com as pessoas. Não são dois assuntos separados: quem de fato ama a Deus respeita o que ele ama, isto é, cada pessoa. Por isso o Decálogo é uma só lei do amor, não uma coleção de "nãos".
+Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo (Mateus 22,37-40). Os três primeiros mandamentos cuidam da relação com Deus. Os outros sete, da relação com as pessoas. Não são dois assuntos separados: quem de fato ama a Deus respeita o que ele ama, isto é, cada pessoa. Por isso o Decálogo é uma só lei do amor, não uma coleção de "nãos".
 
 ## Os mais contestados hoje
 
-Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses") condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza; só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
+Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses") condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
 
 ## Caminho de liberdade, não jaula
 
-No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir; protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmo chama a Lei de "delícia" e "luz para os meus passos".
+No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir. Protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmo chama a Lei de "delícia" e "luz para os meus passos".
 
 ## Perguntas-chave
 

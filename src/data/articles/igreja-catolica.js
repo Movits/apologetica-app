@@ -160,13 +160,13 @@ A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogm
 
 ## Os "irmãos de Jesus"
 
-A objeção principal vem dos textos que falam dos "irmãos de Jesus" (Mateus 13,55; Marcos 6,3). A palavra grega adelphós, usada nesses textos, tinha sentido bem mais amplo do que o irmão biológico de mesma mãe. Designava também primos, parentes próximos e até membros da mesma comunidade. Na Septuaginta (a tradução grega do Antigo Testamento usada pelos apóstolos), Abraão e Ló são chamados adelphoi, embora Ló fosse sobrinho de Abraão segundo Gênesis 14,14. Hebraico e aramaico, línguas faladas por Jesus, não tinham palavra específica para primo, usavam "irmão" no sentido amplo. Esse uso passou naturalmente para o grego dos Evangelhos.
+A objeção principal vem dos textos que falam dos "irmãos de Jesus" (Mateus 13,55. Marcos 6,3). A palavra grega adelphós, usada nesses textos, tinha sentido bem mais amplo do que o irmão biológico de mesma mãe. Designava também primos, parentes próximos e até membros da mesma comunidade. Na Septuaginta (a tradução grega do Antigo Testamento usada pelos apóstolos), Abraão e Ló são chamados adelphoi, embora Ló fosse sobrinho de Abraão segundo Gênesis 14,14. Hebraico e aramaico, línguas faladas por Jesus, não tinham palavra específica para primo, usavam "irmão" no sentido amplo. Esse uso passou naturalmente para o grego dos Evangelhos.
 
 ## A pergunta de Maria
 
 Quando Lucas 1,34 narra a Anunciação, Maria, já noiva de José, pergunta ao anjo "como acontecerá isso, pois não conheço varão?". A pergunta só faz sentido se ela já tivesse o propósito firme de permanecer virgem. Caso contrário, sendo prometida em matrimônio, a notícia de que conceberia teria sido normal.
 
-Em João 19,26-27, Jesus crucificado entrega Maria aos cuidados do apóstolo João. No costume judaico, isso não aconteceria se houvesse outros filhos biológicos vivos para cuidar dela. Tiago, "o irmão do Senhor", mencionado por Paulo em Gálatas 1,19, é o mesmo Tiago filho de Alfeu (cf. Mt 10,3; Mc 15,40), parente próximo, não filho de Maria.
+Em João 19,26-27, Jesus crucificado entrega Maria aos cuidados do apóstolo João. No costume judaico, isso não aconteceria se houvesse outros filhos biológicos vivos para cuidar dela. Tiago, "o irmão do Senhor", mencionado por Paulo em Gálatas 1,19, é o mesmo Tiago filho de Alfeu (cf. Mt 10,3. Mc 15,40), parente próximo, não filho de Maria.
 
 A objeção do "primogênito" em Lucas 2,7 também não procede. Em hebraico, bekhor (traduzido por prōtótokos em grego) significava simplesmente o primeiro a abrir o ventre, com direitos rituais específicos (Êxodo 13,2), independente de haver outros depois. Era termo técnico ritual, não comparativo. Existem inscrições funerárias judaicas usando "primogênita" para mulheres que morreram no primeiro parto, sem outros filhos.
 
@@ -218,7 +218,7 @@ Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
 
 2. Em Lucas 1,43 Isabel chama Maria de "mãe do meu Senhor". Se Senhor (Kyrios) é título divino, como negar Theotokos?
 
-3. Se você nega que Maria é Mãe de Deus, você está dizendo que Jesus tem duas pessoas (uma humana, mãe de Maria; outra divina, eterna)? Isso é nestorianismo, condenado em Éfeso.
+3. Se você nega que Maria é Mãe de Deus, você está dizendo que Jesus tem duas pessoas (uma humana, mãe de Maria. Outra divina, eterna)? Isso é nestorianismo, condenado em Éfeso.
 
 4. Toda mãe é mãe de uma pessoa. Você concorda? Maria é mãe de qual pessoa? Da pessoa do Verbo Eterno, que é Deus. Logo, Maria é Mãe de Deus.`,
     references: ['lc-1-43', 'efeso-anatema', 'cic-466'],
@@ -293,7 +293,7 @@ Unção dos Enfermos fortalece quem está em grave enfermidade. Tiago 5,14-15 ma
 
 Ordem é o sacramento que constitui bispos, padres e diáconos. [[Sucessão Apostólica]] passa por aqui: cada bispo recebe a ordenação de outro bispo, em cadeia ininterrupta até os apóstolos. Sem ordem válida, não há Eucaristia válida nem confissão válida. Por isso a Igreja não reconhece como sacerdotes os pastores de denominações sem sucessão apostólica.
 
-Matrimônio entre dois batizados é elevado por Cristo à dignidade sacramental (Mt 19,6; Ef 5,32). Confere graça especial para que os esposos vivam o amor conjugal segundo Cristo e cumpram fielmente os deveres do matrimônio. É indissolúvel: "o que Deus uniu, o homem não separe".
+Matrimônio entre dois batizados é elevado por Cristo à dignidade sacramental (Mt 19,6. Ef 5,32). Confere graça especial para que os esposos vivam o amor conjugal segundo Cristo e cumpram fielmente os deveres do matrimônio. É indissolúvel: "o que Deus uniu, o homem não separe".
 
 ## Matéria, forma e ministro
 
@@ -324,7 +324,7 @@ Cada sacramento tem três elementos: matéria (sinal sensível, como água ou ó
 
 ## Instituído na Ressurreição
 
-No próprio domingo da Ressurreição, Jesus aparece aos apóstolos e diz: "Como o Pai me enviou, também eu vos envio". E soprou sobre eles, dizendo: "Recebei o Espírito Santo. Aqueles a quem perdoardes os pecados, ser-lhes-ão perdoados; aqueles a quem retiverdes, ser-lhes-ão retidos" (João 20,21-23). Essa é a instituição formal do sacramento da Reconciliação.
+No próprio domingo da Ressurreição, Jesus aparece aos apóstolos e diz: "Como o Pai me enviou, também eu vos envio". E soprou sobre eles, dizendo: "Recebei o Espírito Santo. Aqueles a quem perdoardes os pecados, ser-lhes-ão perdoados. Aqueles a quem retiverdes, ser-lhes-ão retidos" (João 20,21-23). Essa é a instituição formal do sacramento da Reconciliação.
 
 Observe: Jesus dá o poder de perdoar e o poder de reter os pecados. Para reter ou perdoar com sabedoria, é necessário conhecê-los. E para conhecê-los, é necessário ouvi-los. Daí a confissão.
 
@@ -377,7 +377,7 @@ A definição é cuidadosa: "Maria, terminado o curso da vida terrena, foi assum
 
 A base bíblica é indireta, mas convergente. Em Lucas 1,28, o anjo a chama kecharitōménē (totalmente agraciada). Em Lucas 1,42, Isabel a declara "bendita entre as mulheres". O salmo messiânico aplica a Maria: "A Rainha está à tua direita" (Sl 45,10). Apocalipse 12,1 mostra "uma mulher vestida do sol, com a lua sob os pés e na cabeça uma coroa de doze estrelas" - imagem que a Tradição vê como Maria glorificada no céu.
 
-O argumento de conveniência é forte. Maria foi preservada do pecado original (Imaculada Conceição) e nunca cometeu pecado pessoal. A corrupção do corpo é consequência do pecado (Gn 3,19; Rm 6,23). Se Maria foi isenta da causa, por que sofreria a consequência? Era conveniente que a Mãe de Deus, livre do pecado, não conhecesse a decomposição do túmulo. Foi unida em vida ao corpo de Cristo (que ela gestou) e foi unida na glória ao Cristo ressuscitado.
+O argumento de conveniência é forte. Maria foi preservada do pecado original (Imaculada Conceição) e nunca cometeu pecado pessoal. A corrupção do corpo é consequência do pecado (Gn 3,19. Rm 6,23). Se Maria foi isenta da causa, por que sofreria a consequência? Era conveniente que a Mãe de Deus, livre do pecado, não conhecesse a decomposição do túmulo. Foi unida em vida ao corpo de Cristo (que ela gestou) e foi unida na glória ao Cristo ressuscitado.
 
 ## Uma crença antiga
 
@@ -422,7 +422,7 @@ A resposta católica é o Purgatório: estado de purificação que prepara para 
 
 A base bíblica é encontrada em duas vertentes. Primeira: 2 Macabeus 12,44-46. Judas Macabeu, depois de uma batalha, descobre que alguns dos seus soldados mortos carregavam amuletos pagãos (pecado contra o primeiro mandamento). Ele organiza uma coleta e manda oferecer sacrifícios pelos mortos, "para que fossem absolvidos dos seus pecados". O texto comenta: "é santa e salutar a ideia de orar pelos defuntos, para que sejam libertos de seus pecados". Esse versículo é tão claro que Lutero, sem encontrar como conciliá-lo com sua doutrina, removeu o livro do cânon protestante.
 
-Segunda vertente: 1 Coríntios 3,12-15. São Paulo escreve que cada um construirá sobre o fundamento de Cristo "ouro, prata, pedras preciosas, madeira, feno, palha", e o dia do Senhor mostrará a obra de cada um, sendo "provada pelo fogo". Continua: "se a obra de alguém for queimada, ele sofrerá perda; ele próprio, porém, será salvo, como que através do fogo". A pessoa é salva, mas atravessa um "fogo" purificador. Essa é a imagem clássica do Purgatório.
+Segunda vertente: 1 Coríntios 3,12-15. São Paulo escreve que cada um construirá sobre o fundamento de Cristo "ouro, prata, pedras preciosas, madeira, feno, palha", e o dia do Senhor mostrará a obra de cada um, sendo "provada pelo fogo". Continua: "se a obra de alguém for queimada, ele sofrerá perda. Ele próprio, porém, será salvo, como que através do fogo". A pessoa é salva, mas atravessa um "fogo" purificador. Essa é a imagem clássica do Purgatório.
 
 Outras passagens convergem. Mateus 12,32 fala em pecados "que não serão perdoados nem neste mundo nem no porvir", implicando que outros podem ser perdoados no porvir. Mateus 5,26 fala em "não sair de lá até pagar o último centavo", referindo-se à purificação debitória.
 
@@ -509,7 +509,7 @@ A formulação católica clássica é: somos justificados pela fé que opera pel
 
 Por volta do ano 750, na cidade de Lanciano, na Itália, um monge que duvidava da Presença Real viu, durante a Missa, a Hóstia transformar-se em carne e o vinho em sangue coagulado em cinco glóbulos. As relíquias foram conservadas por mais de mil e duzentos anos, sem qualquer conservante.
 
-Entre 1970 e 1971, o anatomopatologista Dr. Edoardo Linoli, com o Dr. Ruggero Bertelli, da Universidade de Siena, examinou as relíquias em estudo científico rigoroso. As conclusões: a carne é tecido cardíaco humano, especificamente miocárdio, a parede do coração; o sangue é humano, do tipo AB; a carne e o sangue são da mesma pessoa; e as proteínas se mantiveram íntegras por mais de mil anos, sem decomposição, algo que a ciência não consegue explicar. Em 1973, uma comissão ligada à Organização Mundial da Saúde confirmou os resultados após anos de verificação.
+Entre 1970 e 1971, o anatomopatologista Dr. Edoardo Linoli, com o Dr. Ruggero Bertelli, da Universidade de Siena, examinou as relíquias em estudo científico rigoroso. As conclusões: a carne é tecido cardíaco humano, especificamente miocárdio, a parede do coração. O sangue é humano, do tipo AB. A carne e o sangue são da mesma pessoa, e as proteínas se mantiveram íntegras por mais de mil anos, sem decomposição, algo que a ciência não consegue explicar. Em 1973, uma comissão ligada à Organização Mundial da Saúde confirmou os resultados após anos de verificação.
 
 ## Buenos Aires, Sokolka, Tixtla
 
@@ -550,7 +550,7 @@ Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o 
 
 ## Não é uma repetição, é uma re-presentação
 
-Há um mal-entendido comum: o de que a Missa "repete" o sacrifício de Jesus, como se a cruz não tivesse bastado. Não é isso. A Carta aos Hebreus é clara: Cristo se ofereceu "uma vez por todas" (Hebreus 9,28). A Missa não repete esse sacrifício; ela o torna presente. O único sacrifício do Calvário, fora do tempo, é trazido ao altar aqui e agora, para que cada geração possa participar dele. O Concílio de Trento definiu que na Missa "se contém e se imola de modo incruento o mesmo Cristo que se ofereceu uma só vez de modo cruento na cruz".
+Há um mal-entendido comum: o de que a Missa "repete" o sacrifício de Jesus, como se a cruz não tivesse bastado. Não é isso. A Carta aos Hebreus é clara: Cristo se ofereceu "uma vez por todas" (Hebreus 9,28). A Missa não repete esse sacrifício. Ela o torna presente. O único sacrifício do Calvário, fora do tempo, é trazido ao altar aqui e agora, para que cada geração possa participar dele. O Concílio de Trento definiu que na Missa "se contém e se imola de modo incruento o mesmo Cristo que se ofereceu uma só vez de modo cruento na cruz".
 
 ## As duas mesas: a Palavra e a Eucaristia
 
@@ -570,13 +570,13 @@ A Igreja pede a participação na Missa dominical, e isso incomoda alguns. Mas h
 
 ## Como participar bem
 
-A Missa não é um espetáculo a que se assiste; é um sacrifício de que se participa. O fiel é chamado a unir a sua vida, as suas alegrias e dores à oferta de Cristo no altar, e a receber a comunhão em estado de graça, pois São Paulo adverte que quem come o Corpo do Senhor "indignamente" come a própria condenação (1 Coríntios 11,27-29). Bem vivida, a Missa deixa de ser obrigação e vira o centro da semana: o lugar onde o céu toca a terra.
+A Missa não é um espetáculo a que se assiste. É um sacrifício de que se participa. O fiel é chamado a unir a sua vida, as suas alegrias e dores à oferta de Cristo no altar, e a receber a comunhão em estado de graça, pois São Paulo adverte que quem come o Corpo do Senhor "indignamente" come a própria condenação (1 Coríntios 11,27-29). Bem vivida, a Missa deixa de ser obrigação e vira o centro da semana: o lugar onde o céu toca a terra.
 
 ## Perguntas-chave
 
 1. Se São Justino, no ano 155, descreve exatamente a estrutura da Missa, faz sentido chamá-la de invenção medieval?
 
-2. A Missa não repete a cruz; torna presente o único sacrifício de Cristo. Por que tratar isso como se contrariasse o "de uma vez por todas" de Hebreus?
+2. A Missa não repete a cruz. Torna presente o único sacrifício de Cristo. Por que tratar isso como se contrariasse o "de uma vez por todas" de Hebreus?
 
 3. Jesus disse que sem comer a sua carne não há vida em nós. Se a Eucaristia fosse só símbolo, por que uma linguagem tão forte e tão custosa?
 
@@ -605,7 +605,7 @@ O céu não é um lugar de nuvens e harpas, mas o estado de felicidade perfeita 
 
 ## O Inferno
 
-O inferno é a verdade que mais se evita, mas Jesus falou dele mais do que qualquer outro no Novo Testamento. Ele é real e eterno. E é importante entender o que ele é: não um castigo que Deus, vingativo, impõe a quem queria salvar, mas a consequência de uma recusa livre e definitiva do amor de Deus. Deus não manda ninguém para o inferno; ele respeita a liberdade de quem, até o fim, diz não. Como se costuma resumir, as portas do inferno estão trancadas por dentro. O inferno existe porque o amor de Deus é a sério, e o amor que não pode ser recusado não é amor.
+O inferno é a verdade que mais se evita, mas Jesus falou dele mais do que qualquer outro no Novo Testamento. Ele é real e eterno. E é importante entender o que ele é: não um castigo que Deus, vingativo, impõe a quem queria salvar, mas a consequência de uma recusa livre e definitiva do amor de Deus. Deus não manda ninguém para o inferno. Ele respeita a liberdade de quem, até o fim, diz não. Como se costuma resumir, as portas do inferno estão trancadas por dentro. O inferno existe porque o amor de Deus é a sério, e o amor que não pode ser recusado não é amor.
 
 ## O Purgatório
 
@@ -617,7 +617,7 @@ Um ponto exige delicadeza. Por muito tempo, espalhou-se a ideia de que quem se s
 
 ## O juízo final e a ressurreição da carne
 
-No fim da história, haverá o juízo final, quando Cristo voltar "na sua glória" e separar uns dos outros (Mateus 25,31-32). Então acontecerá aquilo que o Credo professa: a ressurreição da carne. A alma não ficará desencarnada para sempre; o corpo também ressuscitará, transformado, para participar do destino eterno. O cristianismo não promete uma fuga do corpo, mas a redenção da pessoa inteira.
+No fim da história, haverá o juízo final, quando Cristo voltar "na sua glória" e separar uns dos outros (Mateus 25,31-32). Então acontecerá aquilo que o Credo professa: a ressurreição da carne. A alma não ficará desencarnada para sempre. O corpo também ressuscitará, transformado, para participar do destino eterno. O cristianismo não promete uma fuga do corpo, mas a redenção da pessoa inteira.
 
 ## Perguntas-chave
 
@@ -648,11 +648,11 @@ Esta é a divergência de fundo, da qual quase todas as outras derivam. O protes
 
 ## A salvação: só a fé, ou a fé que age pelo amor?
 
-Outro ponto clássico é a "fé somente" (sola fide): salva-se só pela fé, sem as obras. A Igreja afirma que a salvação é toda graça, jamais um mérito que se compra; mas que a fé verdadeira não fica sozinha, ela se torna viva no amor. É a própria Escritura: "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24), e "o que vale é a fé que age pela caridade" (Gálatas 5,6). Não são fé contra obras, mas fé que floresce em obras.
+Outro ponto clássico é a "fé somente" (sola fide): salva-se só pela fé, sem as obras. A Igreja afirma que a salvação é toda graça, jamais um mérito que se compra, mas que a fé verdadeira não fica sozinha, ela se torna viva no amor. É a própria Escritura: "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24), e "o que vale é a fé que age pela caridade" (Gálatas 5,6). Não são fé contra obras, mas fé que floresce em obras.
 
 ## Os sacramentos
 
-Para o católico, Cristo age por meio de sete sacramentos, sinais que realizam o que significam: o batismo regenera, a Eucaristia é a presença real de Cristo, a confissão perdoa de fato. A maioria dos evangélicos reconhece apenas duas ordenanças, o batismo e a ceia, entendidas como símbolos. A diferença é enorme: para um, Deus toca o corpo e a alma por meios concretos; para o outro, são gestos de lembrança.
+Para o católico, Cristo age por meio de sete sacramentos, sinais que realizam o que significam: o batismo regenera, a Eucaristia é a presença real de Cristo, a confissão perdoa de fato. A maioria dos evangélicos reconhece apenas duas ordenanças, o batismo e a ceia, entendidas como símbolos. A diferença é enorme: para um, Deus toca o corpo e a alma por meios concretos. Para o outro, são gestos de lembrança.
 
 ## Maria e os santos
 
@@ -687,7 +687,7 @@ Nada disso autoriza desprezo. O caminho não é a polêmica raivosa, mas o teste
     imageAspect: 1.39,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPieter%2520Bruegel%2520the%2520Elder%2520-%2520The%2520Fall%2520of%2520the%2520Rebel%2520Angels%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'Anjos da guarda, demônios, tentação e exorcismo. O que é real, o que é exagero de cinema, e por que o cristão não precisa viver com medo.',
-    body: `Poucos temas geram tanto exagero quanto este. De um lado, filmes e certas pregações que veem demônio em cada esquina; do outro, quem trata anjos e demônios como folclore medieval já superado. A doutrina católica fica longe dos dois extremos, e é mais sóbria e mais séria do que se imagina.
+    body: `Poucos temas geram tanto exagero quanto este. De um lado, filmes e certas pregações que veem demônio em cada esquina, do outro, quem trata anjos e demônios como folclore medieval já superado. A doutrina católica fica longe dos dois extremos, e é mais sóbria e mais séria do que se imagina.
 
 ## Os anjos existem
 
@@ -738,7 +738,7 @@ C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: qu
 
 ## O que é rezar
 
-Rezar não é dobrar a vontade de Deus com fórmulas, como se Ele fosse uma máquina de atender pedidos. É a relação viva com um Pai que ama você. A tradição define a oração como "a elevação da alma a Deus". E o mais importante: a iniciativa é dele. Você só procura porque já foi procurado primeiro. Não é você que precisa convencer Deus a aparecer; é Ele que já está esperando, e a oração é abrir a porta.
+Rezar não é dobrar a vontade de Deus com fórmulas, como se Ele fosse uma máquina de atender pedidos. É a relação viva com um Pai que ama você. A tradição define a oração como "a elevação da alma a Deus". E o mais importante: a iniciativa é dele. Você só procura porque já foi procurado primeiro. Não é você que precisa convencer Deus a aparecer. É Ele que já está esperando, e a oração é abrir a porta.
 
 ## Não é só pedir
 
@@ -746,11 +746,11 @@ A oração tem várias formas, e reduzi-la a pedir empobrece tudo. Há a adoraç
 
 ## Como começar na prática
 
-Comece pequeno e constante. Reserve um tempo e um lugar fixos, ainda que cinco minutos. Faça o sinal da cruz, com calma. Fale com Deus com as suas próprias palavras, como se fala com um amigo. Leia um trecho curto do Evangelho e converse com Ele sobre o que leu. Termine com um Pai-Nosso e uma Ave-Maria. Não precisa ser longo nem eloquente; precisa ser verdadeiro.
+Comece pequeno e constante. Reserve um tempo e um lugar fixos, ainda que cinco minutos. Faça o sinal da cruz, com calma. Fale com Deus com as suas próprias palavras, como se fala com um amigo. Leia um trecho curto do Evangelho e converse com Ele sobre o que leu. Termine com um Pai-Nosso e uma Ave-Maria. Não precisa ser longo nem eloquente. Precisa ser verdadeiro.
 
 ## Quando "não sinto nada"
 
-Muitos desanimam porque rezam e não sentem emoção. Mas a oração não é sobre sentir; é sobre amar e estar presente. Perseverar na secura, sem nenhum consolo, é justamente uma das maiores provas de amor a Deus. Até as distrações podem ser oferecidas. Deus age no silêncio, mesmo quando nada se percebe. Quem reza só quando sente, ainda não aprendeu a rezar; quem reza também na aridez, está aprendendo.
+Muitos desanimam porque rezam e não sentem emoção. Mas a oração não é sobre sentir. É sobre amar e estar presente. Perseverar na secura, sem nenhum consolo, é justamente uma das maiores provas de amor a Deus. Até as distrações podem ser oferecidas. Deus age no silêncio, mesmo quando nada se percebe. Quem reza só quando sente, ainda não aprendeu a rezar. Quem reza também na aridez, está aprendendo.
 
 ## Perguntas-chave
 
@@ -806,7 +806,7 @@ Quem reza o Rosário com frequência encontra paz, foco e uma intimidade crescen
     imageAspect: 2.16,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Tribute%2520Money%2520by%2520Masaccio.jpg&w=2200&output=jpg&q=80',
     summary: 'Os católicos são obrigados a dar dez por cento da renda? O que a Igreja realmente ensina sobre o dízimo, entre o legalismo e o descaso.',
-    body: `O dízimo gera muita confusão. De um lado, há quem cobre os dez por cento como uma regra rígida, quase mágica; de outro, quem simplesmente ignore o tema. A posição católica fica no equilíbrio, e mexe menos com a calculadora do que com o coração.
+    body: `O dízimo gera muita confusão. De um lado, há quem cobre os dez por cento como uma regra rígida, quase mágica, de outro, quem simplesmente ignore o tema. A posição católica fica no equilíbrio, e mexe menos com a calculadora do que com o coração.
 
 ## De onde vem
 
@@ -814,7 +814,7 @@ A palavra "dízimo" significa a décima parte. No Antigo Testamento, era uma pr�
 
 ## A Igreja obriga dez por cento?
 
-Não existe uma lei católica universal que fixe o dízimo em dez por cento sob pena de pecado. O que a Igreja ensina é que o fiel deve contribuir, segundo as suas posses, para o sustento da obra de Deus e dos pobres. O "dez por cento" é uma referência saudável e generosa, um bom parâmetro, não um imposto que compra a salvação. Quem dá não está pagando uma taxa; está participando de uma missão.
+Não existe uma lei católica universal que fixe o dízimo em dez por cento sob pena de pecado. O que a Igreja ensina é que o fiel deve contribuir, segundo as suas posses, para o sustento da obra de Deus e dos pobres. O "dez por cento" é uma referência saudável e generosa, um bom parâmetro, não um imposto que compra a salvação. Quem dá não está pagando uma taxa. Está participando de uma missão.
 
 ## O perigo dos dois extremos
 
@@ -822,7 +822,7 @@ Há dois erros opostos. O legalismo, que transforma o dízimo num cálculo frio 
 
 ## O coração da questão
 
-Jesus elogiou uma viúva que pôs no tesouro do templo duas moedinhas, dizendo que ela deu mais do que todos os ricos, "porque deu de sua pobreza tudo o que tinha" (Marcos 12,43-44). Não é o valor que conta, é o amor que vai junto. Dar liberta da escravidão das coisas, ensina a confiar e abre a mão que o egoísmo fecha. O dízimo bem entendido não empobrece ninguém; enriquece o coração.
+Jesus elogiou uma viúva que pôs no tesouro do templo duas moedinhas, dizendo que ela deu mais do que todos os ricos, "porque deu de sua pobreza tudo o que tinha" (Marcos 12,43-44). Não é o valor que conta, é o amor que vai junto. Dar liberta da escravidão das coisas, ensina a confiar e abre a mão que o egoísmo fecha. O dízimo bem entendido não empobrece ninguém. Enriquece o coração.
 
 ## Perguntas-chave
 
@@ -845,7 +845,7 @@ Jesus elogiou uma viúva que pôs no tesouro do templo duas moedinhas, dizendo q
 
 ## O que é a canonização
 
-Canonizar é declarar publicamente, com a autoridade da Igreja, que determinada pessoa viveu as virtudes cristãs em grau heroico e já está com Deus no céu, podendo ser venerada e proposta a todos como modelo. Santo, no sentido próprio, é simplesmente quem está salvo, junto de Deus, e não um super-herói de poderes especiais. A Igreja não cria essa realidade; ela a constata e a apresenta.
+Canonizar é declarar publicamente, com a autoridade da Igreja, que determinada pessoa viveu as virtudes cristãs em grau heroico e já está com Deus no céu, podendo ser venerada e proposta a todos como modelo. Santo, no sentido próprio, é simplesmente quem está salvo, junto de Deus, e não um super-herói de poderes especiais. A Igreja não cria essa realidade. Ela a constata e a apresenta.
 
 ## As etapas
 
@@ -880,11 +880,11 @@ Os santos não substituem Cristo nem competem com ele. São amigos no céu que i
 
 ## A fé é dom e é resposta
 
-Ninguém crê apenas pela força do próprio esforço; a fé é, antes de tudo, graça, algo que Deus oferece. Por isso a primeira atitude é pedir, com a humildade daquele pai do Evangelho que disse a Jesus: "creio, Senhor, ajudai a minha falta de fé" (Marcos 9,24). Mas Deus respeita a liberdade: o dom precisa ser acolhido, e isso exige querer e dar passos concretos. A fé não cai pronta do céu sobre quem fica parado.
+Ninguém crê apenas pela força do próprio esforço. A fé é, antes de tudo, graça, algo que Deus oferece. Por isso a primeira atitude é pedir, com a humildade daquele pai do Evangelho que disse a Jesus: "creio, Senhor, ajudai a minha falta de fé" (Marcos 9,24). Mas Deus respeita a liberdade: o dom precisa ser acolhido, e isso exige querer e dar passos concretos. A fé não cai pronta do céu sobre quem fica parado.
 
 ## Caminhos concretos
 
-A fé cresce na prática, como a confiança numa amizade. Alguns passos ajudam muito: rezar todos os dias, mesmo sem sentir nada; frequentar os sacramentos, sobretudo a Eucaristia e a confissão; ler um pouco do Evangelho com regularidade; conviver com pessoas que têm fé, porque a fé se contagia; e praticar a caridade concreta, pois, como diz São Paulo, "o que vale é a fé que age pela caridade" (Gálatas 5,6). Fé sem prática definha; fé exercitada se fortalece.
+A fé cresce na prática, como a confiança numa amizade. Alguns passos ajudam muito: rezar todos os dias, mesmo sem sentir nada, frequentar os sacramentos, sobretudo a Eucaristia e a confissão, ler um pouco do Evangelho com regularidade, conviver com pessoas que têm fé, porque a fé se contagia, e praticar a caridade concreta, pois, como diz São Paulo, "o que vale é a fé que age pela caridade" (Gálatas 5,6). Fé sem prática definha. Fé exercitada se fortalece.
 
 ## A fé e a dúvida
 
@@ -923,7 +923,7 @@ A Quaresma são os quarenta dias de preparação para a Páscoa, a maior festa c
 
 ## As regras concretas
 
-Na Igreja Católica, as exigências mínimas são poucas e razoáveis. Há jejum (fazer uma refeição mais leve) na Quarta-Feira de Cinzas e na Sexta-Feira Santa. E há abstinência de carne nessas duas datas e em todas as sextas-feiras da Quaresma. São mínimos, abertos a quem quiser ser mais generoso; e doentes, idosos, gestantes e crianças estão dispensados. A Igreja pede saúde do corpo, não masoquismo.
+Na Igreja Católica, as exigências mínimas são poucas e razoáveis. Há jejum (fazer uma refeição mais leve) na Quarta-Feira de Cinzas e na Sexta-Feira Santa. E há abstinência de carne nessas duas datas e em todas as sextas-feiras da Quaresma. São mínimos, abertos a quem quiser ser mais generoso, e doentes, idosos, gestantes e crianças estão dispensados. A Igreja pede saúde do corpo, não masoquismo.
 
 ## Por que justo na sexta-feira
 

@@ -84,8 +84,10 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 
 ### Convenções de conteúdo
 - **Sem travessões (—)**.
+- **Evitar ponto e vírgula (;)** no corpo dos artigos: usar vírgula ou ponto final, que soa mais natural e menos "AI-like".
 - **Linguagem natural** em português, não "AI-like".
 - **Citações completas**: expandir siglas (Catecismo em vez de CIC) e incluir autor + ano.
+- **Referências batem com o texto**: todo versículo citado de forma central no corpo deve ter uma entrada correspondente em `references`; não deixar refs que não são citadas.
 
 ### Paleta
 - `primary: #1a3a5c` (azul marinho), `accent: #c9a84c` (dourado), `bg: #f5f0e8` (creme).

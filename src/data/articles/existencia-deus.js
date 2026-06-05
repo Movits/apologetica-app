@@ -28,7 +28,7 @@ O filósofo Gottfried Leibniz formulou a mesma intuição no chamado princípio 
 
 ## O argumento Kalam e a ciência
 
-A versão contemporânea mais discutida é o argumento Kalam, popularizado pelo filósofo William Lane Craig. Ele tem três passos simples: tudo o que começa a existir tem uma causa; o universo começou a existir; logo, o universo tem uma causa.
+A versão contemporânea mais discutida é o argumento Kalam, popularizado pelo filósofo William Lane Craig. Ele tem três passos simples: tudo o que começa a existir tem uma causa. O universo começou a existir. Logo, o universo tem uma causa.
 
 A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo em expansão média positiva, incluindo a maioria dos modelos de multiverso, teve um começo absoluto no tempo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
 
@@ -142,7 +142,7 @@ O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem 
     imageCredit: 'Michelangelo, A Criação do Sol e da Lua (Capela Sistina, 1512). Domínio público.',
     imageAspect: 1.97,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%252C%2520Creation%2520of%2520the%2520Sun%252C%2520Moon%252C%2520and%2520Plants%252001.jpg&w=2200&output=jpg&q=80',
-    summary: 'A pergunta confunde categorias. Tudo que começa a existir tem causa; Deus não começou.',
+    summary: 'A pergunta confunde categorias. Tudo que começa a existir tem causa. Deus não começou.',
     body: `A objeção é antiga e parece poderosa. Se tudo precisa ter uma causa, quem causou Deus? Se Deus não precisa de causa, por que o universo precisaria? O argumento se baseia em uma má compreensão do princípio causal.
 
 ## A formulação correta
@@ -324,7 +324,7 @@ O homem do Sudário sofreu exatamente o que os Evangelhos descrevem da paixão d
 
 ## O que a ciência não explica
 
-Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com instrumentos avançados. As conclusões foram surpreendentes. A imagem não é pintura: não há pigmento, nem tinta, nem pinceladas; a coloração está apenas na superfície mais externa das fibras, numa espessura de fração de milésimo de milímetro. A imagem contém informação tridimensional, algo que uma fotografia ou uma pintura comuns não têm. E não se sabe como ela foi produzida. Nenhuma técnica conhecida, medieval ou moderna, reproduz todas as suas propriedades ao mesmo tempo.
+Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com instrumentos avançados. As conclusões foram surpreendentes. A imagem não é pintura: não há pigmento, nem tinta, nem pinceladas. A coloração está apenas na superfície mais externa das fibras, numa espessura de fração de milésimo de milímetro. A imagem contém informação tridimensional, algo que uma fotografia ou uma pintura comuns não têm. E não se sabe como ela foi produzida. Nenhuma técnica conhecida, medieval ou moderna, reproduz todas as suas propriedades ao mesmo tempo.
 
 ## E a datação por carbono-14?
 
@@ -421,11 +421,11 @@ Há ainda um argumento sutil e poderoso. Se a sua mente é só o resultado cego 
 
 ## "E o sofrimento? E quem criou Deus?"
 
-Duas objeções aparecem sempre. A do mal ("se Deus é bom, por que há sofrimento?") e a da causa ("se tudo precisa de causa, quem criou Deus?"). As duas têm resposta, e cada uma tem seu artigo aqui. Em resumo: o mal é o preço da liberdade real e não refuta Deus, mas exige um padrão de bem que só Deus fundamenta; e Deus, por definição, não começou a existir, então não pede causa. O que não pode é o universo, que começou, existir sem causa.
+Duas objeções aparecem sempre. A do mal ("se Deus é bom, por que há sofrimento?") e a da causa ("se tudo precisa de causa, quem criou Deus?"). As duas têm resposta, e cada uma tem seu artigo aqui. Em resumo: o mal é o preço da liberdade real e não refuta Deus, mas exige um padrão de bem que só Deus fundamenta, e Deus, por definição, não começou a existir, então não pede causa. O que não pode é o universo, que começou, existir sem causa.
 
 ## A conclusão razoável
 
-Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, somados, eles convergem: o universo teve um começo, é ordenado, abriga seres morais e racionais. A explicação mais simples e completa de tudo isso é uma Causa pessoal, inteligente e boa. A fé não pede um salto no escuro; pede um passo à luz do que a razão já entrevê. Como prometeu Jesus, "buscai e achareis" (Mateus 7,7).
+Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, somados, eles convergem: o universo teve um começo, é ordenado, abriga seres morais e racionais. A explicação mais simples e completa de tudo isso é uma Causa pessoal, inteligente e boa. A fé não pede um salto no escuro. Pede um passo à luz do que a razão já entrevê. Como prometeu Jesus, "buscai e achareis" (Mateus 7,7).
 
 ## Perguntas-chave
 
@@ -456,7 +456,7 @@ Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em
 
 ## O trilema
 
-Diante disso, o escritor C. S. Lewis formulou um dilema célebre. Um homem que diz as coisas que Jesus disse não pode ser apenas um "grande mestre moral". Ou ele sabia que não era Deus, e então era um mentiroso; ou achava que era sem ser, e então era um lunático, no nível de quem se diz ovo cozido; ou então era de fato quem dizia ser. Mentiroso, lunático ou Senhor. O que não se sustenta é o elogio morno de chamá-lo de bom professor e ignorar o que ele de fato afirmou.
+Diante disso, o escritor C. S. Lewis formulou um dilema célebre. Um homem que diz as coisas que Jesus disse não pode ser apenas um "grande mestre moral". Ou ele sabia que não era Deus, e então era um mentiroso, ou achava que era sem ser, e então era um lunático, no nível de quem se diz ovo cozido, ou então era de fato quem dizia ser. Mentiroso, lunático ou Senhor. O que não se sustenta é o elogio morno de chamá-lo de bom professor e ignorar o que ele de fato afirmou.
 
 ## Os sinais e a Ressurreição
 
@@ -482,7 +482,7 @@ Se Jesus é Deus, então suas palavras não são uma opinião religiosa entre ou
 
 3. Tomé, um cético, chama Jesus de "meu Senhor e meu Deus". Ou estava errado, ou viu algo que muda a história. Qual das duas?
 
-4. Niceia não inventou a divindade de Cristo; ela a defendeu contra quem a negava. O que está no Novo Testamento confirma ou contradiz essa definição?`,
+4. Niceia não inventou a divindade de Cristo. Ela a defendeu contra quem a negava. O que está no Novo Testamento confirma ou contradiz essa definição?`,
     references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'cic-466'],
   },
   {
@@ -503,11 +503,11 @@ A Igreja confessa um só Deus em três Pessoas: o Pai, o Filho e o Espírito San
 
 ## Por que não é contradição
 
-Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o caso. Ele é um numa coisa (natureza) e três em outra (pessoa). Assim como não há contradição em algo ser um triângulo e ter três lados, não há contradição em Deus ser uma essência em três Pessoas. As analogias da criatura sempre falham, porque Deus é único, mas servem para mostrar que o mistério está acima da razão, não contra ela. Mistério não quer dizer absurdo; quer dizer uma verdade tão rica que a nossa mente não a abarca por inteiro.
+Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o caso. Ele é um numa coisa (natureza) e três em outra (pessoa). Assim como não há contradição em algo ser um triângulo e ter três lados, não há contradição em Deus ser uma essência em três Pessoas. As analogias da criatura sempre falham, porque Deus é único, mas servem para mostrar que o mistério está acima da razão, não contra ela. Mistério não quer dizer absurdo. Quer dizer uma verdade tão rica que a nossa mente não a abarca por inteiro.
 
 ## A raiz bíblica
 
-A Trindade não foi inventada por concílios; foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu. Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai e do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1); Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava; o Novo o revela em plenitude.
+A Trindade não foi inventada por concílios. Foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu. Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai e do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1). Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava. O Novo o revela em plenitude.
 
 ## Como a Igreja definiu
 
@@ -542,7 +542,7 @@ A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, 
 
 ## A resposta honesta do materialismo
 
-Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche reconheceu que, "morto Deus", não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado; tem, no máximo, um sentido fingido, que a morte apaga.
+Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche reconheceu que, "morto Deus", não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado. Tem, no máximo, um sentido fingido, que a morte apaga.
 
 ## O vazio que nada preenche
 
@@ -550,15 +550,15 @@ E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscam
 
 ## A resposta cristã
 
-O cristianismo responde à pergunta com uma audácia desconcertante: você não é um acidente. Foi pensado, querido e criado por Amor, à imagem de Deus. O sentido da vida, na fórmula clássica do catecismo, é conhecer, amar e servir a Deus nesta vida, e ser feliz com ele para sempre na outra. Não é uma tarefa fria; é uma história de amor. Jesus diz: "eu sou o caminho, a verdade e a vida" (João 14,6). E São Paulo garante que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28), inclusive as dolorosas. O sentido não é uma teoria, é uma Pessoa.
+O cristianismo responde à pergunta com uma audácia desconcertante: você não é um acidente. Foi pensado, querido e criado por Amor, à imagem de Deus. O sentido da vida, na fórmula clássica do catecismo, é conhecer, amar e servir a Deus nesta vida, e ser feliz com ele para sempre na outra. Não é uma tarefa fria. É uma história de amor. Jesus diz: "eu sou o caminho, a verdade e a vida" (João 14,6). E São Paulo garante que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28), inclusive as dolorosas. O sentido não é uma teoria, é uma Pessoa.
 
 ## E o sofrimento, não tira o sentido?
 
-À primeira vista, a dor parece esvaziar tudo. Mas é o contrário. Justamente porque há um sentido e um Deus que entra na história, o sofrimento deixa de ser absurdo. Na cruz, Deus mesmo sofre conosco e dá ao sofrimento um valor que ele não teria num universo cego. Quem perde o sentido da vida sofre duas vezes; quem o encontra pode até sofrer, mas não sem esperança.
+À primeira vista, a dor parece esvaziar tudo. Mas é o contrário. Justamente porque há um sentido e um Deus que entra na história, o sofrimento deixa de ser absurdo. Na cruz, Deus mesmo sofre conosco e dá ao sofrimento um valor que ele não teria num universo cego. Quem perde o sentido da vida sofre duas vezes. Quem o encontra pode até sofrer, mas não sem esperança.
 
 ## O que fazer com isso
 
-Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distrações; é uma bússola. Vale a pena buscar a sério, com a mesma honestidade com que se busca a verdade em qualquer outra área. A promessa é antiga e ousada: "buscai e achareis" (Mateus 7,7). No fim, a resposta para "qual é o sentido da vida?" não é uma frase, é um encontro.
+Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distrações. É uma bússola. Vale a pena buscar a sério, com a mesma honestidade com que se busca a verdade em qualquer outra área. A promessa é antiga e ousada: "buscai e achareis" (Mateus 7,7). No fim, a resposta para "qual é o sentido da vida?" não é uma frase, é um encontro.
 
 ## Perguntas-chave
 
@@ -585,11 +585,11 @@ Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distraç�
 
 ## O problema: o pecado e a morte
 
-Para entender a cura, é preciso entender a doença. O pecado não é só "transgredir uma regra"; é romper a relação com Deus, que é a fonte da vida. Quando o ser humano se afasta dessa fonte, a consequência natural é a morte, espiritual e física. E, uma vez quebrada essa relação, a humanidade não conseguia, por si mesma, refazer o que tinha quebrado: a ofensa era a Deus, infinita, e nenhuma criatura podia repará-la sozinha.
+Para entender a cura, é preciso entender a doença. O pecado não é só "transgredir uma regra". É romper a relação com Deus, que é a fonte da vida. Quando o ser humano se afasta dessa fonte, a consequência natural é a morte, espiritual e física. E, uma vez quebrada essa relação, a humanidade não conseguia, por si mesma, refazer o que tinha quebrado: a ofensa era a Deus, infinita, e nenhuma criatura podia repará-la sozinha.
 
 ## Por que Deus não simplesmente "perdoa e pronto"?
 
-É a objeção mais comum: se Deus é todo-poderoso e bom, por que não apaga os pecados com um gesto? A resposta toca o coração do amor verdadeiro. O amor que é a sério não finge que o mal não aconteceu; ele o encara, o carrega e o cura. Um perdão que ignorasse o pecado seria barato, e trataria o mal como se não importasse. Na cruz, a justiça (o pecado é levado a sério) e a misericórdia (o pecador é salvo) se encontram e se beijam. Deus não passa por cima do mal: ele o atravessa.
+É a objeção mais comum: se Deus é todo-poderoso e bom, por que não apaga os pecados com um gesto? A resposta toca o coração do amor verdadeiro. O amor que é a sério não finge que o mal não aconteceu. Ele o encara, o carrega e o cura. Um perdão que ignorasse o pecado seria barato, e trataria o mal como se não importasse. Na cruz, a justiça (o pecado é levado a sério) e a misericórdia (o pecador é salvo) se encontram e se beijam. Deus não passa por cima do mal: ele o atravessa.
 
 ## A chave: Deus mesmo assume
 
@@ -597,15 +597,15 @@ Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega 
 
 ## O amor levado ao extremo
 
-A cruz não é, no fundo, sobre castigo; é sobre amor. Ela responde à pergunta "até onde Deus me ama?" com um gesto sem limites: até a morte, e morte de cruz. "Tanto amou Deus o mundo, que deu o seu Filho único" (João 3,16). São Paulo dirá que Cristo, "existindo em forma de Deus, esvaziou-se a si mesmo... humilhou-se, tornando-se obediente até a morte" (Filipenses 2,6-8). E o próprio Jesus: "ninguém tem maior amor do que aquele que dá a vida pelos seus amigos" (João 15,13). A cruz é a medida do amor de Deus.
+A cruz não é, no fundo, sobre castigo. É sobre amor. Ela responde à pergunta "até onde Deus me ama?" com um gesto sem limites: até a morte, e morte de cruz. "Tanto amou Deus o mundo, que deu o seu Filho único" (João 3,16). São Paulo dirá que Cristo, "existindo em forma de Deus, esvaziou-se a si mesmo... humilhou-se, tornando-se obediente até a morte" (Filipenses 2,6-8). E o próprio Jesus: "ninguém tem maior amor do que aquele que dá a vida pelos seus amigos" (João 15,13). A cruz é a medida do amor de Deus.
 
 ## A ressurreição: a cruz não é o fim
 
-A morte de Jesus, sozinha, seria uma tragédia. Mas no terceiro dia ele ressuscita, e tudo muda de sentido. A cruz não foi uma derrota seguida de uma reviravolta; foi a própria vitória, conquistada por dentro: Deus desce até o fundo da morte humana para vencê-la a partir de lá. Por isso o cristão olha para o crucifixo sem desespero: ali não está só a dor, está o amor que venceu a morte.
+A morte de Jesus, sozinha, seria uma tragédia. Mas no terceiro dia ele ressuscita, e tudo muda de sentido. A cruz não foi uma derrota seguida de uma reviravolta. Foi a própria vitória, conquistada por dentro: Deus desce até o fundo da morte humana para vencê-la a partir de lá. Por isso o cristão olha para o crucifixo sem desespero: ali não está só a dor, está o amor que venceu a morte.
 
 ## O que isso muda para você
 
-A Redenção não é um acontecimento distante do passado, fechado em si. Ela alcança cada pessoa, hoje, sobretudo nos sacramentos: no batismo, que aplica a vitória de Cristo; na confissão, que perdoa; na Eucaristia, que torna presente o próprio sacrifício. E dá um sentido novo ao sofrimento: unido à cruz, ele deixa de ser absurdo e se torna fecundo. No fim, a mensagem da cruz é simples e avassaladora: você é amado a este ponto.
+A Redenção não é um acontecimento distante do passado, fechado em si. Ela alcança cada pessoa, hoje, sobretudo nos sacramentos: no batismo, que aplica a vitória de Cristo. Na confissão, que perdoa. Na Eucaristia, que torna presente o próprio sacrifício. E dá um sentido novo ao sofrimento: unido à cruz, ele deixa de ser absurdo e se torna fecundo. No fim, a mensagem da cruz é simples e avassaladora: você é amado a este ponto.
 
 ## Perguntas-chave
 
@@ -636,7 +636,7 @@ Os primeiros capítulos do Gênesis não foram escritos para informar a idade da
 
 ## A posição da Igreja sobre a evolução
 
-Ao contrário do que muitos imaginam, a Igreja não condena a teoria da evolução. O Papa Pio XII, na encíclica Humani Generis (1950), declarou que a origem do corpo humano a partir de matéria viva preexistente pode ser livremente investigada e debatida. São João Paulo II, em 1996, foi além e afirmou que a evolução é "mais que uma hipótese". A fé impõe um único limite: a alma espiritual de cada ser humano não emerge da matéria por acaso, é criada diretamente por Deus. O corpo pode ter uma história biológica; a alma é dom imediato do Criador.
+Ao contrário do que muitos imaginam, a Igreja não condena a teoria da evolução. O Papa Pio XII, na encíclica Humani Generis (1950), declarou que a origem do corpo humano a partir de matéria viva preexistente pode ser livremente investigada e debatida. São João Paulo II, em 1996, foi além e afirmou que a evolução é "mais que uma hipótese". A fé impõe um único limite: a alma espiritual de cada ser humano não emerge da matéria por acaso, é criada diretamente por Deus. O corpo pode ter uma história biológica. A alma é dom imediato do Criador.
 
 ## Criação e evolução não competem
 
@@ -644,15 +644,15 @@ A confusão de fundo é misturar dois planos diferentes. A ciência responde à 
 
 ## Adão e Eva existiram?
 
-Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (a maçã, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem. "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético. Como exatamente isso se deu, a fé não detalha; que se deu, ela afirma.
+Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (a maçã, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem. "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético. Como exatamente isso se deu, a fé não detalha. Que se deu, ela afirma.
 
 ## O que o Gênesis ensina de verdade
 
-Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom; o ser humano não é um animal a mais, mas imagem de Deus, com uma dignidade que nenhum outro ser possui; e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
+Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom. O ser humano não é um animal a mais, mas imagem de Deus, com uma dignidade que nenhum outro ser possui, e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
 
 ## Sem medo da verdade
 
-No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem de Deus. Se a evolução for verdadeira, será uma verdade de Deus, e a fé não tem nada a temer dela. O conflito entre ciência e fé não é entre a ciência honesta e a fé madura; é entre duas formas de fundamentalismo, o que transforma o Gênesis em manual de biologia e o que transforma a biologia em arma contra Deus. A Igreja recusa os dois.
+No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem de Deus. Se a evolução for verdadeira, será uma verdade de Deus, e a fé não tem nada a temer dela. O conflito entre ciência e fé não é entre a ciência honesta e a fé madura. É entre duas formas de fundamentalismo, o que transforma o Gênesis em manual de biologia e o que transforma a biologia em arma contra Deus. A Igreja recusa os dois.
 
 ## Perguntas-chave
 

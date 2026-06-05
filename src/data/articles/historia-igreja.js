@@ -75,7 +75,7 @@ Entre 632 e 732, em apenas cem anos, os exércitos muçulmanos conquistaram tudo
 
 ## A vida dos cristãos sob domínio islâmico
 
-Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham status de cidadania reduzida: pagavam imposto especial (jizya), não podiam construir igrejas novas, não podiam fazer proselitismo, não podiam ter cargos públicos. A conversão ao islã era recompensada com isenção de imposto e ascensão social; a conversão do islã ao cristianismo era punida com morte. Não era "convivência pacífica", era subjugação organizada.
+Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham status de cidadania reduzida: pagavam imposto especial (jizya), não podiam construir igrejas novas, não podiam fazer proselitismo, não podiam ter cargos públicos. A conversão ao islã era recompensada com isenção de imposto e ascensão social. A conversão do islã ao cristianismo era punida com morte. Não era "convivência pacífica", era subjugação organizada.
 
 ## O século XI e o pedido bizantino
 
@@ -87,7 +87,7 @@ O imperador bizantino Aleixo I Comneno pediu socorro militar ao Papa Urbano II c
 
 Foi defesa, não agressão. Quatrocentos e sessenta anos depois do início da conquista muçulmana, os cristãos finalmente responderam organizadamente. A Cruzada não foi contra um povo pacífico: foi contra um império que tomou pela espada terras que tinham sido cristãs por seis séculos.
 
-A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. A Igreja não justifica esses excessos; condena-os.
+A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. A Igreja não justifica esses excessos. Condena-os.
 
 Mas é desonesto falar das atrocidades cruzadas sem mencionar as atrocidades muçulmanas no mesmo período. Não havia "lado civilizado": eram duas civilizações em guerra, com práticas militares cruéis típicas da época. O massacre de Tiro em 1124, executado por muçulmanos, matou todos os cristãos da cidade. As escravidões em massa eram prática normal de ambos os lados. O comércio de escravos transaariano e do Índico, sob direção muçulmana, durou mais de uma dúzia de séculos e atingiu cifras comparáveis ao tráfico atlântico segundo estimativas de historiadores como Olivier Pétré-Grenouilleau.
 
@@ -138,7 +138,7 @@ Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença: ele teve que
 
 ## Um erro humano, reconhecido em 1992
 
-A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 1992, depois de uma comissão de estudo que durou anos. Falou de "um doloroso mal-entendido que pertence ao passado". Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico; condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
+A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 1992, depois de uma comissão de estudo que durou anos. Falou de "um doloroso mal-entendido que pertence ao passado". Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico. Condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
 
 ## Os reformadores foram mais hostis
 
@@ -203,7 +203,7 @@ A Igreja Católica investigou o caso por anos e, em 1930, declarou as apariçõe
     id: 52,
     title: 'Nossa Senhora de Guadalupe e a Tilma',
     category: 'História da Igreja',
-    summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos; quase quinhentos anos depois, continua intacto e sem explicação.',
+    summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos. Quase quinhentos anos depois, continua intacto e sem explicação.',
     body: `Em dezembro de 1531, dez anos após a conquista espanhola do México, um índio pobre e recém-convertido chamado Juan Diego, hoje canonizado, subia o monte Tepeyac, perto da Cidade do México. Ali, segundo o relato, apareceu-lhe uma jovem morena, vestida como uma princesa asteca grávida, que se identificou como a Mãe do verdadeiro Deus e pediu que se construísse ali um templo. Como prova para o bispo incrédulo, ela fez brotar rosas de Castela num morro árido, em pleno inverno, e as colocou na tilma, o manto de fibra de Juan Diego. Quando ele abriu o manto diante do bispo, as rosas caíram e, no tecido, estava impressa a imagem da Virgem, que se vê até hoje.
 
 ## A imagem que não devia existir
@@ -218,7 +218,7 @@ Talvez o detalhe mais intrigante esteja nos olhos da figura. A partir dos anos 1
 
 ## Um sermão em imagem
 
-Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1); o cinto preto indicava gravidez; as estrelas no manto, segundo estudos, correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e o sol que eles antes adoravam. Nos dez anos seguintes, cerca de nove milhões de indígenas se converteram ao cristianismo, e a prática dos sacrifícios humanos, que matava milhares por ano, chegou ao fim.
+Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1). O cinto preto indicava gravidez. As estrelas no manto, segundo estudos, correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e o sol que eles antes adoravam. Nos dez anos seguintes, cerca de nove milhões de indígenas se converteram ao cristianismo, e a prática dos sacrifícios humanos, que matava milhares por ano, chegou ao fim.
 
 ## O que isso significa
 
@@ -256,7 +256,7 @@ Diferente de quase todas as aparições, Zeitoun foi fotografada. Várias imagen
 
 ## Por que o caso é forte
 
-Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: duração longa, de anos e não de um instante; número enorme de testemunhas; registro fotográfico; investigação por um governo sem interesse em confirmar o sobrenatural; e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
+Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: duração longa, de anos e não de um instante. Número enorme de testemunhas. Registro fotográfico. Investigação por um governo sem interesse em confirmar o sobrenatural, e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
 
 ## Perguntas-chave
 
@@ -286,7 +286,7 @@ A pequena imagem ficou na casa de Felipe Pedroso e, depois, de seu filho, e em t
 
 ## Os sinais narrados
 
-A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias, que, a caminho de um castigo, pediu para parar diante da imagem; ao rezar, as correntes que o prendiam teriam se rompido sozinhas. Conta-se também o caso das velas que, apagadas pelo vento durante uma oração, se reacenderam sem mão humana. Como em toda devoção popular, é preciso distinguir o que é fato documentado do que é piedade narrada; mas o conjunto, e sobretudo o testemunho ininterrupto de fiéis ao longo de três séculos, deu a essa imagem um lugar único na fé do povo brasileiro.
+A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias, que, a caminho de um castigo, pediu para parar diante da imagem, ao rezar, as correntes que o prendiam teriam se rompido sozinhas. Conta-se também o caso das velas que, apagadas pelo vento durante uma oração, se reacenderam sem mão humana. Como em toda devoção popular, é preciso distinguir o que é fato documentado do que é piedade narrada, mas o conjunto, e sobretudo o testemunho ininterrupto de fiéis ao longo de três séculos, deu a essa imagem um lugar único na fé do povo brasileiro.
 
 ## O que significa para o Brasil
 
@@ -317,11 +317,11 @@ Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece
 
 ## Que "tesouro" é esse
 
-A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça ou a preços simbólicos. A Capela Sistina não é uma conta bancária; é um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
+A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça ou a preços simbólicos. A Capela Sistina não é uma conta bancária. É um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
 
 ## Vender tudo acabaria com a pobreza?
 
-Não. Imagine que se vendesse a arte. A quem? Provavelmente a colecionadores bilionários, que a trancariam longe do público. O valor arrecadado, por maior que fosse, seria gasto uma única vez e logo se esgotaria diante da pobreza imensa do mundo, enquanto a humanidade perderia para sempre o acesso a essas obras. A pobreza é um problema estrutural, de justiça e de organização social; não se resolve com um grande leilão, por mais generoso que pareça.
+Não. Imagine que se vendesse a arte. A quem? Provavelmente a colecionadores bilionários, que a trancariam longe do público. O valor arrecadado, por maior que fosse, seria gasto uma única vez e logo se esgotaria diante da pobreza imensa do mundo, enquanto a humanidade perderia para sempre o acesso a essas obras. A pobreza é um problema estrutural, de justiça e de organização social. Não se resolve com um grande leilão, por mais generoso que pareça.
 
 ## O que a Igreja de fato faz
 
@@ -395,7 +395,7 @@ Durante a guerra, Pio XII orientou conventos, mosteiros, igrejas e o próprio Va
 
 ## Por que não gritou mais alto?
 
-A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda, onde uma condenação pública dos bispos levou os nazistas a intensificarem as deportações, inclusive de judeus convertidos. Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha; é difícil discutir a boa intenção e os resultados.
+A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda, onde uma condenação pública dos bispos levou os nazistas a intensificarem as deportações, inclusive de judeus convertidos. Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha. É difícil discutir a boa intenção e os resultados.
 
 ## O veredito da história
 
