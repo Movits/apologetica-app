@@ -265,6 +265,11 @@ Sobre infalibilidade: o Concílio Vaticano I (1870), na constituição Pastor Ae
     id: 20,
     title: 'Os Sete Sacramentos: Sinais que Produzem Graça',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/20-sacramentos.jpg'),
+    imageAlt: 'Os Sete Sacramentos, de Rogier van der Weyden',
+    imageCredit: 'Rogier van der Weyden, Os Sete Sacramentos (c. 1448). Domínio público.',
+    imageAspect: 1.15,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRogier%2520van%2520der%2520Weyden-%2520Seven%2520Sacraments%2520Altarpiece%2520-%2520Baptism%252C%2520Confirmation%252C%2520and%2520Penance%253B%2520detail%252C%2520left%2520wing.JPG&w=2200&output=jpg&q=80',
     summary: 'Não são meros símbolos. Os sacramentos efetivamente transmitem a graça que significam.',
     body: `Os sacramentos são sete sinais sensíveis instituídos por Cristo para significar e produzir a graça: Batismo, Crisma (Confirmação), Eucaristia, Reconciliação (Confissão), Unção dos Enfermos, Ordem e Matrimônio.
 
@@ -356,6 +361,11 @@ A Igreja exige confissão obrigatória apenas em duas situações: ao menos uma 
     id: 22,
     title: 'A Assunção de Maria',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/22-assuncao.jpg'),
+    imageAlt: 'A Assunção da Virgem, de Ticiano',
+    imageCredit: 'Ticiano, A Assunção da Virgem (1518). Domínio público.',
+    imageAspect: 0.54,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FTizian%2520041.jpg&w=2200&output=jpg&q=80',
     summary: 'Maria foi elevada à glória celeste em corpo e alma. Dogma definido em 1950, mas crença universal desde os primeiros séculos.',
     body: `A Assunção de Maria é o dogma de que, terminada a vida terrena, Maria foi elevada à glória celeste em corpo e alma. Pio XII definiu solenemente em 1º de novembro de 1950, na constituição apostólica Munificentissimus Deus. Mas a crença é muito mais antiga.
 
@@ -487,6 +497,11 @@ A formulação católica clássica é: somos justificados pela fé que opera pel
     id: 49,
     title: 'Milagres Eucarísticos: Quando a Hóstia Vira Carne',
     category: 'Igreja Católica',
+    image: require('../../../assets/articles/49-milagres-eucaristicos.jpg'),
+    imageAlt: 'A Missa de São Gregório',
+    imageCredit: 'A Missa de São Gregório (Países Baixos, séc. XV ou XVI). Domínio público.',
+    imageAspect: 1.39,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAnonymous%2520Netherlands%2520Mass%2520of%2520Saint%2520Gregory.jpg&w=2200&output=jpg&q=80',
     summary: 'Em vários milagres eucarísticos analisados por cientistas, a Hóstia se tornou tecido cardíaco humano vivo, do tipo AB. Lanciano, Buenos Aires, Sokolka e Tixtla apontam para o mesmo coração.',
     body: `A Igreja Católica afirma que, na consagração, o pão e o vinho se tornam verdadeiramente o Corpo e o Sangue de Cristo. Em alguns momentos da história, segundo a fé católica, Deus tornou esse mistério visível: a Hóstia se transformou em carne, e o vinho em sangue. O notável é que vários desses casos foram submetidos à ciência moderna, sem que se soubesse de antemão o resultado, e os achados são convergentes e difíceis de explicar.
 

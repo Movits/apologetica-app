@@ -6,6 +6,11 @@ const articles = [
     id: 6,
     title: 'Ateísmo e o Problema do Mal',
     category: 'Moral',
+    image: require('../../../assets/articles/6-problema-mal.jpg'),
+    imageAlt: 'Jó e seus amigos, de Ilya Repin',
+    imageCredit: 'Ilya Repin, Jó e seus Amigos (1869). Domínio público.',
+    imageAspect: 1.4,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJob%2520and%2520his%2520friends.jpg&w=2200&output=jpg&q=80',
     summary: 'O sofrimento no mundo não refuta Deus. Pode ser compreendido dentro da fé cristã.',
     body: `"Se Deus existe, por que há sofrimento?" Essa é talvez a objeção mais emotiva ao teísmo. Não é uma objeção fraca, e a fé cristã não a evita.
 

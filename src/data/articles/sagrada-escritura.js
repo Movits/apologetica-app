@@ -321,6 +321,11 @@ O resultado é notável. Uma profecia do profeta Joel, escrita séculos antes de
     id: 46,
     title: 'Profecias Messiânicas Cumpridas em Jesus',
     category: 'Sagrada Escritura',
+    image: require('../../../assets/articles/46-profecias.jpg'),
+    imageAlt: 'O profeta Isaías, de Michelangelo',
+    imageCredit: 'Michelangelo, O Profeta Isaías (Capela Sistina, 1509). Domínio público.',
+    imageAspect: 1.35,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FJesaja%2520(Michelangelo)%25202.jpg&w=2200&output=jpg&q=80',
     summary: 'Séculos antes de Cristo, os profetas anunciaram detalhes da vida, da morte e da vitória do Messias. Jesus os cumpre de modo impressionante.',
     body: `Uma das evidências mais fortes a favor de Jesus como o Messias está nas Escrituras hebraicas escritas séculos antes do seu nascimento. Elas anunciam, com detalhes concretos, o lugar do nascimento, o modo da morte e a vitória sobre ela. Tomadas em conjunto, formam um retrato que Jesus de Nazaré preenche de modo impressionante.
 

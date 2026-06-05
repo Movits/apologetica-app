@@ -178,6 +178,11 @@ O argumento católico clássico aceita as similaridades reais (que existem, sim)
     id: 37,
     title: 'Protestantismo',
     category: 'Outras Religiões',
+    image: require('../../../assets/articles/37-protestantismo.jpg'),
+    imageAlt: 'Lutero na Dieta de Worms, de Anton von Werner',
+    imageCredit: 'Anton von Werner, Lutero na Dieta de Worms (1877). Domínio público.',
+    imageAspect: 1.89,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FLuther%2520at%2520the%2520Diet%2520of%2520Worms.jpg&w=2200&output=jpg&q=80',
     summary: 'Irmãos em Cristo pelo Batismo, os protestantes partilham conosco o essencial sobre Deus e Cristo. As diferenças vêm de dois lemas do séc. XVI: só a Escritura e só a fé.',
     body: `Antes de qualquer debate, uma verdade que muda o tom da conversa: o protestante não é adversário de outra religião, é um irmão separado dentro da mesma fé em Cristo. Por isso este é o único artigo desta seção em que a refutação é, na verdade, um diálogo de família. O objetivo não é vencer ninguém, é mostrar por que a plenitude da fé cristã está na Igreja Católica.
 

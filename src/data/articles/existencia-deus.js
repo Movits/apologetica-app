@@ -55,6 +55,11 @@ Se o universo, isto é, todo o espaço, o tempo e a matéria, tem uma causa, ess
     id: 9,
     title: 'O Argumento do Design Cósmico (Ajuste Fino)',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/9-ajuste-fino.jpg'),
+    imageAlt: 'A Noite Estrelada, de Van Gogh',
+    imageCredit: 'Vincent van Gogh, A Noite Estrelada (1889). Domínio público.',
+    imageAspect: 1.26,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FVan%2520Gogh%2520-%2520Starry%2520Night%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'As constantes físicas do universo são tão precisas que sua existência aponta para um designer inteligente.',
     body: `O universo apresenta uma ordem tão extraordinariamente precisa que sua mera existência aponta para um Designer inteligente. Esse é o ponto central do argumento teleológico, também chamado argumento do design.
 
@@ -91,6 +96,11 @@ São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de De
     id: 10,
     title: 'O Argumento Moral pela Existência de Deus',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/10-arg-moral.jpg'),
+    imageAlt: 'Paisagem com o Bom Samaritano, de Rembrandt',
+    imageCredit: 'Rembrandt, Paisagem com o Bom Samaritano (1638). Domínio público.',
+    imageAspect: 1.42,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FLandscape%2520with%2520the%2520Good%2520Samaritan%252C%2520Rembrandt%252C%25201638%252C%2520Krak%25C3%25B3w%252C%2520Muzeum%2520Narodowe%2520w%2520Krakowie.jpg&w=2200&output=jpg&q=80',
     summary: 'Se a moral é objetiva (e parece ser), ela precisa de uma fonte transcendente que a sustente.',
     body: `Se Deus não existe, a moral objetiva também não existe. Essa premissa, sustentada igualmente por crentes e por ateus consequentes, é o ponto de partida do argumento moral pela existência de Deus.
 
@@ -211,6 +221,11 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
     id: 17,
     title: 'O Trilema de C. S. Lewis: Mentiroso, Lunático ou Senhor',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/17-trilema.jpg'),
+    imageAlt: 'Cristo Pantocrator, mosaico de Cefalù',
+    imageCredit: 'Cristo Pantocrator, Catedral de Cefalù (1148). Domínio público.',
+    imageAspect: 1.26,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F1148%2520wurden%2520die%2520Mosaiken%2520in%2520der%2520Apsis%2520fertiggestellt.%252001.jpg&w=2200&output=jpg&q=80',
     summary: 'Jesus não pode ter sido apenas "um grande mestre moral". Suas afirmações deixam três opções, nenhuma neutra.',
     body: `Um dos argumentos mais conhecidos da apologética moderna é o Trilema de C. S. Lewis, exposto em "Cristianismo Puro e Simples" (1952). Lewis confronta a ideia comum de que Jesus foi "apenas um grande mestre moral" e mostra que essa posição é a única logicamente impossível.
 

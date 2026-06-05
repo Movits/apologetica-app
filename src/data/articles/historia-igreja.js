@@ -6,6 +6,11 @@ const articles = [
     id: 28,
     title: 'A Inquisição: O Que Realmente Aconteceu',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/28-inquisicao.jpg'),
+    imageAlt: 'São Domingos preside um auto de fé, de Berruguete',
+    imageCredit: 'Pedro Berruguete, São Domingos Preside um Auto de Fé (c. 1495). Domínio público.',
+    imageAspect: 1.5,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPedro%2520Berruguete%2520-%2520Saint%2520Dominic%2520Presiding%2520over%2520an%2520Auto-da-fe%2520(detail)%2520-%2520c.%25201491-1499%2520-%252001.jpg&w=2200&output=jpg&q=80',
     summary: 'O mito popular da Inquisição supera em muito a história real. Os números, comparados a outros tribunais da época, são reveladores.',
     body: `Poucas instituições da história católica geram tanto preconceito quanto a Inquisição. A imagem popular é de tortura generalizada, milhões de mortos, fanatismo medieval. A pesquisa histórica séria, feita inclusive por historiadores não-católicos, mostra uma realidade muito diferente.
 
@@ -52,6 +57,11 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
     id: 29,
     title: 'As Cruzadas no Contexto Histórico Real',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/29-cruzadas.jpg'),
+    imageAlt: 'A Tomada de Jerusalém pelos Cruzados, de Signol',
+    imageCredit: 'Émile Signol, A Tomada de Jerusalém pelos Cruzados (1099), pintura de 1847. Domínio público.',
+    imageAspect: 1.75,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FTaking%2520of%2520Jerusalem%2520by%2520the%2520Crusaders%252C%252015th%2520July%25201099.jpg&w=2200&output=jpg&q=80',
     summary: 'As Cruzadas não foram guerra de agressão contra o islã. Foram resposta defensiva tardia a quatrocentos anos de conquista muçulmana.',
     body: `As Cruzadas, como a Inquisição, são tema mal compreendido. A imagem popular é de "cristãos fanáticos invadindo terras pacíficas muçulmanas". A história mostra exatamente o oposto: foram resposta defensiva tardia, e moralmente justa em muitos aspectos, a quatrocentos anos de conquista muçulmana sobre terras cristãs.
 
@@ -104,6 +114,11 @@ A historiografia secular moderna, livre de polêmica religiosa, tem reconhecido 
     id: 30,
     title: 'Galileu Galilei e o Mito do Conflito Ciência-Fé',
     category: 'História da Igreja',
+    image: require('../../../assets/articles/30-galileu.jpg'),
+    imageAlt: 'Galileu diante da Inquisição Romana',
+    imageCredit: 'Cristiano Banti, Galileu diante da Inquisição Romana (1857). Domínio público.',
+    imageAspect: 1.31,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGalileo%2520facing%2520the%2520Roman%2520Inquisition.jpg&w=2200&output=jpg&q=80',
     summary: 'A narrativa moderna sobre Galileu é caricatura. A história real é mais complexa, e a Igreja foi, em vários momentos, defensora da pesquisa científica.',
     body: `O caso Galileu (1633) é frequentemente apresentado como prova do "conflito entre ciência e fé". A narrativa popular: Galileu descobriu que a Terra gira em torno do Sol, e a Igreja, fanática, o condenou e torturou. A realidade histórica é bem diferente.
 

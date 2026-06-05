@@ -44,6 +44,18 @@ Arquivos em `assets/articles/`.
 | 80 — Riqueza da Igreja | `80-vaticano.jpg` | Interior da Basílica de São Pedro (1731) | Giovanni Paolo Panini |
 | 81 — Escândalos de Abuso | `81-abusos.jpg` | Cristo Abençoa as Crianças (séc. XVII) | Estúdio de Artus Wolffort |
 | 82 — Pio XII | `82-pio-xii.jpg` | A Praça de São Pedro (séc. XVIII) | Gaspar van Wittel |
+| 6 — Problema do Mal | `6-problema-mal.jpg` | Jó e seus Amigos (1869) | Ilya Repin |
+| 9 — Ajuste Fino | `9-ajuste-fino.jpg` | A Noite Estrelada (1889) | Vincent van Gogh |
+| 10 — Argumento Moral | `10-arg-moral.jpg` | Paisagem com o Bom Samaritano (1638) | Rembrandt |
+| 17 — Trilema | `17-trilema.jpg` | Cristo Pantocrator (Cefalù, 1148) | Mosaico bizantino |
+| 20 — Sacramentos | `20-sacramentos.jpg` | Os Sete Sacramentos (c. 1448) | Rogier van der Weyden |
+| 22 — Assunção | `22-assuncao.jpg` | A Assunção da Virgem (1518) | Ticiano |
+| 28 — Inquisição | `28-inquisicao.jpg` | São Domingos e o Auto de Fé (c. 1495) | Pedro Berruguete |
+| 29 — Cruzadas | `29-cruzadas.jpg` | A Tomada de Jerusalém pelos Cruzados (1847) | Émile Signol |
+| 30 — Galileu | `30-galileu.jpg` | Galileu diante da Inquisição Romana (1857) | Cristiano Banti |
+| 37 — Protestantismo | `37-protestantismo.jpg` | Lutero na Dieta de Worms (1877) | Anton von Werner |
+| 46 — Profecias | `46-profecias.jpg` | O Profeta Isaías (Sistina, 1509) | Michelangelo |
+| 49 — Milagres Eucarísticos | `49-milagres-eucaristicos.jpg` | A Missa de São Gregório (séc. XV–XVI) | Anônimo flamengo |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.
