@@ -5,47 +5,91 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // Visualizador de imagem em tela cheia: mostra a obra inteira (contain) e permite
-// zoom por pinça (mobile/touch), duplo-toque (1x <-> 2.5x) e arrastar quando ampliada.
-// Cross-platform (web + nativo). O conteúdo do Modal é envolto em seu próprio
-// GestureHandlerRootView porque no nativo o Modal fica fora da árvore raiz.
+// zoom NO PONTO tocado (pinça / duplo-toque) e arrastar quando ampliada.
+//
+// O GestureDetector envolve uma superfície NÃO transformada (coordenadas em tela);
+// a Animated.View interna é que recebe scale/translate. Isso é o que faz o foco do
+// zoom cair onde o dedo/mouse está, e o arrasto funcionar. O conteúdo do Modal é
+// envolto em seu próprio GestureHandlerRootView (no nativo o Modal sai da raiz).
+const MAX_SCALE = 5;
+const DOUBLE_TAP_SCALE = 2.5;
+
 export default function ImageZoomModal({ visible, source, caption, alt, onClose }) {
-  const { width, height } = useWindowDimensions();
+  const { width: W, height: H } = useWindowDimensions();
   const insets = useSafeAreaInsets();
 
   const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
   const tx = useSharedValue(0);
   const ty = useSharedValue(0);
-  const sx = useSharedValue(0);
-  const sy = useSharedValue(0);
+  const savedTx = useSharedValue(0);
+  const savedTy = useSharedValue(0);
+  const focalX = useSharedValue(0);
+  const focalY = useSharedValue(0);
 
   const pinch = Gesture.Pinch()
+    .onStart((e) => {
+      savedScale.value = scale.value;
+      savedTx.value = tx.value;
+      savedTy.value = ty.value;
+      focalX.value = e.focalX;
+      focalY.value = e.focalY;
+    })
     .onUpdate((e) => {
-      scale.value = Math.max(1, Math.min(savedScale.value * e.scale, 5));
+      const newScale = Math.max(1, Math.min(savedScale.value * e.scale, MAX_SCALE));
+      // ponto da imagem que estava sob o foco no início do gesto
+      const localX = (focalX.value - W / 2 - savedTx.value) / savedScale.value;
+      const localY = (focalY.value - H / 2 - savedTy.value) / savedScale.value;
+      scale.value = newScale;
+      tx.value = (focalX.value - W / 2) - localX * newScale;
+      ty.value = (focalY.value - H / 2) - localY * newScale;
     })
     .onEnd(() => {
       savedScale.value = scale.value;
       if (scale.value <= 1) {
-        tx.value = withTiming(0); ty.value = withTiming(0); sx.value = 0; sy.value = 0;
+        scale.value = withTiming(1);
+        tx.value = withTiming(0);
+        ty.value = withTiming(0);
+        savedScale.value = 1;
       }
     });
 
   const pan = Gesture.Pan()
+    .maxPointers(1)
+    .onStart(() => {
+      savedTx.value = tx.value;
+      savedTy.value = ty.value;
+    })
     .onUpdate((e) => {
-      if (scale.value > 1) { tx.value = sx.value + e.translationX; ty.value = sy.value + e.translationY; }
+      if (scale.value > 1) {
+        tx.value = savedTx.value + e.translationX;
+        ty.value = savedTy.value + e.translationY;
+      }
     })
     .onEnd(() => {
-      if (scale.value > 1) { sx.value = tx.value; sy.value = ty.value; }
+      if (scale.value <= 1) {
+        tx.value = withTiming(0);
+        ty.value = withTiming(0);
+      }
     });
 
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
-    .onEnd(() => {
-      if (scale.value > 1) {
-        scale.value = withTiming(1); savedScale.value = 1;
-        tx.value = withTiming(0); ty.value = withTiming(0); sx.value = 0; sy.value = 0;
+    .maxDuration(300)
+    .onEnd((e) => {
+      if (scale.value > 1.01) {
+        scale.value = withTiming(1);
+        tx.value = withTiming(0);
+        ty.value = withTiming(0);
+        savedScale.value = 1;
       } else {
-        scale.value = withTiming(2.5); savedScale.value = 2.5;
+        const target = DOUBLE_TAP_SCALE;
+        const localX = (e.x - W / 2 - tx.value) / scale.value;
+        const localY = (e.y - H / 2 - ty.value) / scale.value;
+        scale.value = withTiming(target);
+        tx.value = withTiming((e.x - W / 2) - localX * target);
+        ty.value = withTiming((e.y - H / 2) - localY * target);
+        savedScale.value = target;
       }
     });
 
@@ -56,7 +100,8 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
   }));
 
   const close = () => {
-    scale.value = 1; savedScale.value = 1; tx.value = 0; ty.value = 0; sx.value = 0; sy.value = 0;
+    scale.value = 1; savedScale.value = 1;
+    tx.value = 0; ty.value = 0; savedTx.value = 0; savedTy.value = 0;
     onClose?.();
   };
 
@@ -64,9 +109,11 @@ export default function ImageZoomModal({ visible, source, caption, alt, onClose 
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close}>
       <GestureHandlerRootView style={styles.root}>
         <GestureDetector gesture={gesture}>
-          <Animated.View style={[StyleSheet.absoluteFill, styles.center, aStyle]}>
-            <Image source={source} style={{ width, height }} resizeMode="contain" accessibilityLabel={alt} />
-          </Animated.View>
+          <View style={StyleSheet.absoluteFill}>
+            <Animated.View style={[StyleSheet.absoluteFill, styles.center, aStyle]}>
+              <Image source={source} style={{ width: W, height: H }} resizeMode="contain" accessibilityLabel={alt} />
+            </Animated.View>
+          </View>
         </GestureDetector>
 
         <Pressable style={[styles.close, { top: insets.top + 8 }]} onPress={close} hitSlop={12}>
