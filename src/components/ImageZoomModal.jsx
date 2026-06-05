@@ -215,9 +215,13 @@ export default function ImageZoomModal({ visible, source, hdUri, caption, alt, o
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close}>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <View ref={surfaceRef} collapsable={false} style={[styles.root, webSurface]}>
+        <View style={styles.root}>
           {isWeb ? (
-            content
+            // Camada de gesto separada: NÃO inclui o botão X, senão o preventDefault
+            // do touchstart engole o clique do botão no celular.
+            <View ref={surfaceRef} collapsable={false} style={[StyleSheet.absoluteFill, webSurface]}>
+              {content}
+            </View>
           ) : (
             <GestureDetector gesture={gesture}>
               <View style={StyleSheet.absoluteFill}>{content}</View>
