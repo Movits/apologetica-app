@@ -641,6 +641,45 @@ export const DIALOGUES = [
     ],
     relatedArticle: 72,
   },
+  {
+    id: 'd-igreja-rica',
+    objection: '"A Igreja é riquíssima; devia vender tudo e acabar com a pobreza."',
+    objectionEn: '"The Church is super rich; it should sell everything and end poverty."',
+    category: 'História', categoryEn: 'History', rank: 1,
+    steps: [
+      { label: 'Reconhecer a boa intenção', labelEn: 'Acknowledge the good intention', text: 'A intenção é boa, e o Evangelho de fato pede simplicidade. Mas a objeção parte de um engano sobre o que a Igreja "tem".', textEn: 'The intention is good, and the Gospel does ask for simplicity. But the objection starts from a misconception about what the Church "owns".' },
+      { label: 'Esclarecer', labelEn: 'Clarify', text: 'A maior parte do patrimônio são igrejas, museus e obras de arte, que não estão à venda e não geram renda. A Capela Sistina não é uma poupança; é um bem público, aberto a todos. Confundir arte com dinheiro em caixa é o primeiro erro.', textEn: 'Most of the heritage is churches, museums, and works of art, which are not for sale and generate no income. The Sistine Chapel is not a savings account; it is a public good, open to all. Confusing art with cash on hand is the first mistake.' },
+      { label: 'O leilão não resolve', labelEn: 'An auction would not solve it', text: 'Vendida a arte, a quem? A bilionários, que a trancariam longe do público. O valor se esgotaria rápido diante da pobreza mundial, e a humanidade perderia as obras para sempre. Pobreza é problema estrutural, não se resolve num leilão.', textEn: 'If the art were sold, to whom? To billionaires, who would lock it away from the public. The value would run out quickly before world poverty, and humanity would lose the works forever. Poverty is a structural problem, not solved by an auction.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'E, na prática, a Igreja já é a maior rede de assistência do planeta: hospitais, escolas, comida, onde nem o Estado chega. Criticar o luxo de um clérigo é justo. Mas concluir que a Igreja nada faz pelos pobres é injusto com os fatos.', textEn: 'And, in practice, the Church is already the largest assistance network on the planet: hospitals, schools, food, where even the State does not reach. To criticize the luxury of a cleric is fair. But to conclude that the Church does nothing for the poor is unjust to the facts.' },
+    ],
+    relatedArticle: 80,
+  },
+  {
+    id: 'd-abusos',
+    objection: '"A Igreja está cheia de pedófilos encobertos; como confiar nela?"',
+    objectionEn: '"The Church is full of covered-up pedophiles; how can anyone trust it?"',
+    category: 'História', categoryEn: 'History', rank: 2,
+    steps: [
+      { label: 'Não minimizar', labelEn: 'Do not minimize', text: 'Aqui eu não vou defender o indefensável. Houve crimes hediondos e houve encobrimento. Isso é uma traição ao Evangelho, e Jesus reservou as piores palavras a quem faz mal a "um destes pequeninos" (Mt 18,6).', textEn: 'Here I will not defend the indefensible. There were heinous crimes and there was cover-up. This is a betrayal of the Gospel, and Jesus reserved the worst words for whoever harms "one of these little ones" (Mt 18,6).' },
+      { label: 'O que não é honesto', labelEn: 'What is not honest', text: 'Mas alguns usos do tema são desonestos. Tratar como se fosse problema só católico é falso: abuso de menores é, tragicamente, um drama de toda a sociedade, famílias, escolas, esportes, em proporções muitas vezes maiores.', textEn: 'But some uses of the subject are dishonest. To treat it as if it were only a Catholic problem is false: abuse of minors is, tragically, a drama of all society, families, schools, sports, often in greater proportions.' },
+      { label: 'O que mudou', labelEn: 'What has changed', text: 'E a Igreja hoje tem das normas mais rígidas que existem: tolerância zero, denúncia obrigatória, colaboração com a justiça, comissões de proteção. Veio tarde, ainda falta, mas houve mudança real.', textEn: 'And the Church today has some of the strictest norms that exist: zero tolerance, mandatory reporting, collaboration with justice, protection commissions. It came late, there is still work to do, but there was real change.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'A fé não se apoia na santidade dos padres, mas em Cristo. Que homens traiam o Evangelho prova que precisamos dele, não que ele seja falso. Diante das vítimas, a primeira palavra é pedir perdão e proteger.', textEn: 'Faith does not rest on the holiness of priests, but on Christ. That men betray the Gospel proves we need it, not that it is false. Before the victims, the first word is to ask forgiveness and to protect.' },
+    ],
+    relatedArticle: 81,
+  },
+  {
+    id: 'd-reencarnacao',
+    objection: '"Eu já vivi outras vidas; a reencarnação explica tudo."',
+    objectionEn: '"I have lived other lives; reincarnation explains everything."',
+    category: 'Outras Religiões', categoryEn: 'Other Religions', rank: 3,
+    steps: [
+      { label: 'Acolher o apelo', labelEn: 'Acknowledge the appeal', text: 'Entendo o apelo: a reencarnação parece dar uma segunda e terceira chance, e uma explicação para as desigualdades. Mas há problemas sérios, lógicos e bíblicos.', textEn: 'I understand the appeal: reincarnation seems to give a second and third chance, and an explanation for inequalities. But there are serious problems, logical and biblical.' },
+      { label: 'O que diz a Bíblia', labelEn: 'What the Bible says', text: 'A Escritura é direta: "está determinado que os homens morram uma só vez, e depois disso o juízo" (Hb 9,27). Uma só vida, depois o encontro com Deus. Não há ciclos de renascimento.', textEn: 'Scripture is direct: "it is appointed for men to die once, and after that comes judgment" (Hb 9,27). One life, then the meeting with God. There are no cycles of rebirth.' },
+      { label: 'O problema moral', labelEn: 'The moral problem', text: 'A reencarnação costuma explicar o sofrimento como "carma" de vidas passadas. Mas isso pode culpar a vítima: a criança que sofre estaria "pagando" algo? O cristianismo responde diferente: o sofrimento não é castigo automático, e Deus mesmo entra nele na cruz.', textEn: 'Reincarnation tends to explain suffering as "karma" from past lives. But that can blame the victim: would a suffering child be "paying" for something? Christianity answers differently: suffering is not automatic punishment, and God himself enters it on the cross.' },
+      { label: 'Fechar', labelEn: 'Close', text: 'E há a dignidade: você não é uma alma reciclável que troca de corpo como de roupa. É único, amado pelo nome, e ressuscitará em corpo e alma. Uma vida só, mas infinitamente valiosa, e a promessa não é repetir, é a vida eterna.', textEn: 'And there is dignity: you are not a recyclable soul that changes bodies like clothes. You are unique, loved by name, and will rise in body and soul. One life only, but infinitely valuable, and the promise is not to repeat, but eternal life.' },
+    ],
+    relatedArticle: 16,
+  },
 ];
 
 export function getDialogueById(id) {
