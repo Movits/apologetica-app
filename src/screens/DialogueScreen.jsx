@@ -116,6 +116,8 @@ function DialogueList({ navigation, onChoose, isEn }) {
       if (!out[catKey]) out[catKey] = [];
       out[catKey].push(d);
     });
+    // Mais comuns primeiro dentro de cada categoria (rank menor = mais buscado).
+    Object.keys(out).forEach((k) => out[k].sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999)));
     return out;
   }, [isEn]);
 

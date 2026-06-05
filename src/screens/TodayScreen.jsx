@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { View, Text, ScrollView, StyleSheet, Platform } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Platform, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
@@ -10,6 +10,10 @@ import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import CrossMark from '../components/CrossMark';
+
+const COLUMN_MAX = 720;   // largura da coluna central no desktop
+const CROSS_SIZE = 160;   // altura da cruz decorativa das laterais
 
 // Página "Dia de Hoje": reúne o conteúdo diário (Versículo, Santo, Liturgia)
 // que antes ficava na home. Acessível pela seção Espiritualidade (Ferramentas).
@@ -18,8 +22,16 @@ export default function TodayScreen() {
   const { colors, fs } = useTheme();
   const { isEn } = useLanguage();
   const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
+
+  // No desktop sobra espaço dos dois lados da coluna central: enche cada gutter
+  // com a cruz do app (marca d'água). Só na web e se o gutter for largo o bastante.
+  const gutter = (width - COLUMN_MAX) / 2;
+  const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
+  const crossW = Math.round(CROSS_SIZE * 0.62);
+  const crossLeft = Math.max(0, gutter / 2 - crossW / 2);
 
   const dateLabel = useMemo(() => {
     const d = new Date();
@@ -34,6 +46,16 @@ export default function TodayScreen() {
 
   return (
     <View style={styles.container}>
+      {showSideCrosses && (
+        <>
+          <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
+            <CrossMark size={CROSS_SIZE} />
+          </View>
+          <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
+            <CrossMark size={CROSS_SIZE} />
+          </View>
+        </>
+      )}
       <ScrollView
         contentContainerStyle={[styles.content, { paddingBottom: 30 + insets.bottom }]}
         onScroll={onScroll}
@@ -60,7 +82,9 @@ const makeStyles = (c, fs) =>
     container: { flex: 1, backgroundColor: c.bg },
     content: { padding: 16, alignItems: 'center' },
     // No desktop a página vira uma coluna central; no celular ocupa 100%.
-    column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: 720 } : null) },
+    column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: COLUMN_MAX } : null) },
+    // Cruz decorativa nas laterais (só desktop): centralizada verticalmente.
+    sideCross: { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center' },
     dateLabel: {
       fontSize: fs(13), color: c.textSubtle, fontWeight: 'bold',
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12,

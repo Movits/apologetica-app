@@ -1,7 +1,7 @@
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
@@ -19,7 +19,7 @@ export default function CategoryArticlesScreen({ route }) {
 
   const category = route?.params?.category;
   const meta = ARTICLE_CATEGORIES.find((c) => c.id === category);
-  const list = articles.filter((a) => a.category === category);
+  const list = sortByRank(articles.filter((a) => a.category === category));
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);

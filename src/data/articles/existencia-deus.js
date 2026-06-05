@@ -6,6 +6,9 @@ const articles = [
     id: 1,
     title: 'A Existência de Deus: o Argumento Cosmológico',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/1-deus-existe.jpg'),
+    imageAlt: 'A Criação de Adão, de Michelangelo',
+    imageCredit: 'Michelangelo, A Criação de Adão (Capela Sistina, 1512). Domínio público.',
     summary: 'Por que precisa existir uma causa primeira não causada para explicar tudo que existe.',
     body: `Por que existe algo em vez de nada? Esta é, talvez, a pergunta mais profunda que um ser humano pode fazer, e é dela que parte o argumento cosmológico, a mais antiga e clássica das demonstrações racionais da existência de Deus.
 
@@ -122,6 +125,9 @@ O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem 
     id: 11,
     title: 'Quem Criou Deus? A Objeção do Ateísmo',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/11-quem-criou-deus.jpg'),
+    imageAlt: 'O Ancião dos Dias, de William Blake',
+    imageCredit: 'William Blake, O Ancião dos Dias (1794). Domínio público.',
     summary: 'A pergunta confunde categorias. Tudo que começa a existir tem causa; Deus não começou.',
     body: `A objeção é antiga e parece poderosa. Se tudo precisa ter uma causa, quem causou Deus? Se Deus não precisa de causa, por que o universo precisaria? O argumento se baseia em uma má compreensão do princípio causal.
 
@@ -158,6 +164,9 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
     id: 5,
     title: 'A Ressurreição de Jesus: Fato Histórico',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/5-ressurreicao.jpg'),
+    imageAlt: 'A Ressurreição, de Piero della Francesca',
+    imageCredit: 'Piero della Francesca, A Ressurreição (c. 1465). Domínio público.',
     summary: 'A ressurreição não é mito. Há evidências históricas robustas que a sustentam.',
     body: `A ressurreição de Jesus não é apenas crença religiosa, é evento histórico com evidências substanciais que precisam ser explicadas.
 
@@ -238,6 +247,9 @@ Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca diss
     id: 35,
     title: 'Jesus Existiu? Evidências Extra-Bíblicas',
     category: 'Existência de Deus',
+    image: require('../../../assets/articles/35-jesus-existiu.jpg'),
+    imageAlt: 'Ícone de Cristo Pantocrator do Sinai',
+    imageCredit: 'Cristo Pantocrator, Mosteiro de Santa Catarina do Sinai (séc. VI). Domínio público.',
     summary: 'A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o que os Evangelhos narram.',
     body: `Uma das objeções mais radicais é a chamada tese mítica: Jesus de Nazaré nunca teria existido como pessoa histórica. Seria um personagem literário construído a partir de mitos pagãos. A tese aparece em livros populares e documentários como Zeitgeist, mas é praticamente inexistente entre historiadores acadêmicos.
 

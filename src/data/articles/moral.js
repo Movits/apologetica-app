@@ -76,6 +76,9 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
     id: 25,
     title: 'Aborto: A Dignidade da Vida Humana',
     category: 'Moral',
+    image: require('../../../assets/articles/25-aborto.jpg'),
+    imageAlt: 'Madona com o Menino e dois anjos, de Filippo Lippi',
+    imageCredit: 'Filippo Lippi, Madona com o Menino e dois Anjos (c. 1465). Domínio público.',
     summary: 'A vida humana começa na concepção. A ciência confirma o que a fé sempre ensinou.',
     body: `A doutrina católica sobre o aborto é constante desde o século I: é gravemente imoral, equivalente ao homicídio. A objeção comum é que se trata de "imposição religiosa" sobre tema secular. A resposta é que a ciência confirma o que a fé sempre afirmou.
 

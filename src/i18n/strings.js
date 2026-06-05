@@ -266,6 +266,8 @@ export const STRINGS = {
     'category.Moral.desc': 'Vida, sexualidade e lei natural',
     'category.Outras Religiões.desc': 'Islã, espiritismo, ateísmo e mais',
     'category.História da Igreja.desc': 'Cruzadas, Inquisição e mitos comuns',
+    'category.popular': 'Mais buscados',
+    'category.popular.desc': 'As perguntas que mais se buscam no Brasil',
 
     // === Descrições das fontes de referência ===
     'source.Bíblia.desc': 'Versículos das Escrituras',
@@ -538,6 +540,8 @@ export const STRINGS = {
     'category.Moral.desc': 'Life, sexuality and natural law',
     'category.Outras Religiões.desc': 'Islam, spiritism, atheism and more',
     'category.História da Igreja.desc': 'Crusades, Inquisition and common myths',
+    'category.popular': 'Most searched',
+    'category.popular.desc': 'The questions people search most',
 
     // === Reference source descriptions ===
     'source.Bíblia.desc': 'Verses from Scripture',

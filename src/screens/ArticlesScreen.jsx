@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, POPULAR_IDS, POPULAR_META, sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
@@ -43,14 +43,20 @@ export default function ArticlesScreen({ route }) {
     return unsub;
   }, [navigation]);
 
-  // Seções na ordem das categorias, ignorando categorias sem artigos.
-  const sections = useMemo(
-    () =>
-      ARTICLE_CATEGORIES
-        .map((cat) => ({ meta: cat, data: articles.filter((a) => a.category === cat.id) }))
-        .filter((s) => s.data.length > 0),
-    []
-  );
+  // "Mais buscados" no topo + categorias na ordem definida, cada uma ordenada
+  // por relevância. Os itens populares são clones marcados com _pop para manter
+  // as keys do SectionList únicas (eles também aparecem na própria categoria).
+  const sections = useMemo(() => {
+    const byId = (id) => articles.find((a) => a.id === id);
+    const popular = {
+      meta: POPULAR_META,
+      data: POPULAR_IDS.map(byId).filter(Boolean).map((a) => ({ ...a, _pop: true })),
+    };
+    const cats = ARTICLE_CATEGORIES
+      .map((cat) => ({ meta: cat, data: sortByRank(articles.filter((a) => a.category === cat.id)) }))
+      .filter((s) => s.data.length > 0);
+    return popular.data.length > 0 ? [popular, ...cats] : cats;
+  }, []);
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
@@ -63,7 +69,7 @@ export default function ArticlesScreen({ route }) {
       <StickySectionList
         ref={listRef}
         sections={sections}
-        keyExtractor={(a) => String(a.id)}
+        keyExtractor={(a) => (a._pop ? 'pop-' : '') + a.id}
         contentContainerStyle={{ paddingBottom: 40 }}
         ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
         onScroll={onScroll}
@@ -75,7 +81,7 @@ export default function ArticlesScreen({ route }) {
           <SectionBanner
             iconSet={section.meta.iconSet}
             icon={section.meta.icon}
-            title={isEn ? t(`category.${section.meta.id}`) : section.meta.id}
+            title={(isEn || section.meta.id === 'popular') ? t(`category.${section.meta.id}`) : section.meta.id}
             subtitle={t(`category.${section.meta.id}.desc`)}
             countLabel={countLabel(section.data.length)}
           />

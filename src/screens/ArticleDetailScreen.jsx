@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
@@ -176,6 +176,18 @@ export default function ArticleDetailScreen({ route, navigation }) {
         onLayout={hintScroll.onLayout}
         scrollEventThrottle={16}
       >
+        <View style={styles.column}>
+        {article.image && (
+          <View style={styles.heroWrap}>
+            <Image
+              source={article.image}
+              style={styles.hero}
+              resizeMode="cover"
+              accessibilityLabel={article.imageAlt || displayTitle}
+            />
+            {article.imageCredit ? <Text style={styles.heroCredit}>{article.imageCredit}</Text> : null}
+          </View>
+        )}
         <View style={styles.headerRow}>
           <View style={styles.catBadge}>
             <Text style={styles.category}>{isEn ? t(`category.${article.category}`) : article.category}</Text>
@@ -229,6 +241,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
         )}
 
         <RelatedArticles currentId={article.id} onOpen={openOtherArticle} />
+        </View>
       </ScrollView>
       <ScrollHint direction="up" visible={hintScroll.showTop} />
       <ScrollHint direction="down" visible={hintScroll.showBottom} />
@@ -239,7 +252,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 20, paddingBottom: 40 },
+    // No desktop centra o conteúdo numa coluna legível; no celular ocupa 100%.
+    content: { padding: 20, paddingBottom: 40, ...(Platform.OS === 'web' ? { alignItems: 'center' } : null) },
+    column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: 720, alignSelf: 'center' } : null) },
+    heroWrap: { marginBottom: 14 },
+    hero: { width: '100%', aspectRatio: 16 / 9, borderRadius: 12, backgroundColor: c.card },
+    heroCredit: { fontSize: fs(10), color: c.textSubtle, marginTop: 4, fontStyle: 'italic', textAlign: 'right' },
     headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
     catBadge: { backgroundColor: c.badgeBg, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
     category: { fontSize: fs(11), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },

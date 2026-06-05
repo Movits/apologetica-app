@@ -1,6 +1,7 @@
 node_modules/
 src/data/_avemaria_raw.json
 .expo/
+.tmp/
 dist/
 web-build/
 .env
