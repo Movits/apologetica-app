@@ -28,6 +28,7 @@ export const STRINGS = {
     'tab.articles': 'Artigos',
     'tab.references': 'Referências',
     'tab.bible': 'Bíblia',
+    'tab.tools': 'Ferramentas',
     'tab.settings': 'Ajustes',
 
     // === Headers de rotas (mostrados na navigation bar) ===
@@ -75,6 +76,7 @@ export const STRINGS = {
     'home.card.articles': 'Artigos de Apologética',
     'home.card.articlesSub': 'Textos para responder dúvidas',
     'home.card.references': 'Versículos e Referências',
+    'home.card.referencesSub': 'Versículos, Catecismo e documentos',
     'home.card.referencesSub': 'Bíblia, Catecismo, documentos',
     'home.card.bible': 'Bíblia Sagrada',
     'home.card.bibleSub': 'Leia as Escrituras no app',
@@ -304,6 +306,7 @@ export const STRINGS = {
     'tab.articles': 'Articles',
     'tab.references': 'References',
     'tab.bible': 'Bible',
+    'tab.tools': 'Tools',
     'tab.settings': 'Settings',
 
     // === Route headers ===
@@ -351,6 +354,7 @@ export const STRINGS = {
     'home.card.articles': 'Apologetics Articles',
     'home.card.articlesSub': 'Answers for common questions',
     'home.card.references': 'Verses and References',
+    'home.card.referencesSub': 'Verses, Catechism and documents',
     'home.card.referencesSub': 'Bible, Catechism, documents',
     'home.card.bible': 'Holy Bible',
     'home.card.bibleSub': 'Read Scripture in the app',

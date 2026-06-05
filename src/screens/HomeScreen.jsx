@@ -6,6 +6,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
+import { getPlanProgress } from '../utils/readingProgress';
+import { getTrack } from '../data/readingPlan';
 import AppIcon from '../components/AppIcon';
 import ContinueReadingCard from '../components/ContinueReadingCard';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -18,12 +20,18 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const [refreshKey, setRefreshKey] = useState(0);
+  const [planDone, setPlanDone] = useState(0);
   const scrollRef = useRef(null);
   const styles = makeStyles(colors, fs, insets.top);
+  const planTotal = getTrack('fundamentos').days.length;
+  const planPct = planTotal ? Math.round((planDone / planTotal) * 100) : 0;
 
   useFocusEffect(
     useCallback(() => {
       setRefreshKey((k) => k + 1);
+      let active = true;
+      getPlanProgress('fundamentos').then((p) => { if (active) setPlanDone(p.completed?.length || 0); });
+      return () => { active = false; };
     }, [])
   );
 
@@ -96,14 +104,29 @@ export default function HomeScreen() {
         })}
       </View>
 
-      {/* Acesso único ao hub de ferramentas. */}
-      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Tools')}>
+      {/* Plano de leitura: progresso do trilho Fundamentos. */}
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ReadingPlan')}>
         <View style={styles.cardIcon}>
-          <Ionicons name="construct-outline" size={22} color={colors.primaryText} />
+          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={styles.cardLabel}>{t('home.card.tools')}</Text>
-          <Text style={styles.cardSub}>{t('home.card.toolsSub')}</Text>
+          <Text style={styles.cardLabel}>{t('home.card.readingPlan')}</Text>
+          <View style={styles.planBar}>
+            <View style={[styles.planFill, { width: `${planPct}%` }]} />
+          </View>
+        </View>
+        <Text style={styles.planCount}>{planDone}/{planTotal}</Text>
+        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
+      </TouchableOpacity>
+
+      {/* Acesso às referências (versículos, Catecismo, documentos). */}
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('References')}>
+        <View style={styles.cardIcon}>
+          <Ionicons name="library-outline" size={22} color={colors.primaryText} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.cardLabel}>{t('home.card.references')}</Text>
+          <Text style={styles.cardSub}>{t('home.card.referencesSub')}</Text>
         </View>
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
@@ -163,4 +186,7 @@ const makeStyles = (c, fs, topInset = 0) =>
     },
     cardLabel: { fontSize: fs(15), color: c.text, fontWeight: '600' },
     cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
+    planBar: { height: 6, backgroundColor: c.divider, borderRadius: 3, overflow: 'hidden', marginTop: 6 },
+    planFill: { height: '100%', backgroundColor: c.accent },
+    planCount: { fontSize: fs(12), color: c.textMuted, fontWeight: '600', marginRight: 4 },
   });

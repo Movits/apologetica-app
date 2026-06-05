@@ -58,6 +58,7 @@ const Stack = createNativeStackNavigator();
 const ArticlesNav = createNativeStackNavigator();
 const HomeNav = createNativeStackNavigator();
 const SettingsNav = createNativeStackNavigator();
+const ToolsNav = createNativeStackNavigator();
 
 // Stack interno do tab Inicio: contem HomeScreen e as telas secundarias
 // (Favoritos, Glossario, Plano, Rosario, Exame, Highlights, Notes, Search, Liturgia).
@@ -74,6 +75,7 @@ function HomeStackScreen() {
       }}
     >
       <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ headerShown: false }} />
+      <HomeNav.Screen name="References" component={ReferencesScreen} options={{ title: t('tab.references') }} />
       <HomeNav.Screen name="Tools" component={ToolsScreen} options={{ title: t('header.tools') }} />
       <HomeNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
       <HomeNav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
@@ -100,6 +102,42 @@ function HomeStackScreen() {
       <HomeNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
       <HomeNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
     </HomeNav.Navigator>
+  );
+}
+
+// Stack interno do tab Ferramentas: raiz ToolsScreen + as telas que ele abre.
+// Mantém a tab bar visível e dá header/voltar a cada sub-tela.
+function ToolsStackScreen() {
+  const { colors } = useTheme();
+  const { t, isEn } = useLanguage();
+  return (
+    <ToolsNav.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.primary },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
+      <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('header.tools') }} />
+      <ToolsNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
+      <ToolsNav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
+      <ToolsNav.Screen name="NotebookPage" component={NotebookPageScreen} options={{ title: t('header.notebook') }} />
+      <ToolsNav.Screen name="CategoryArticles" component={CategoryArticlesScreen} options={({ route }) => ({ title: isEn ? t(`category.${route.params?.category}`) : route.params?.category })} />
+      <ToolsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
+      <ToolsNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
+      <ToolsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
+      <ToolsNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
+      <ToolsNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
+      <ToolsNav.Screen name="Highlights" component={HighlightsScreen} options={{ title: t('header.highlights') }} />
+      <ToolsNav.Screen name="Notes" component={NotesScreen} options={{ title: t('header.notes') }} />
+      <ToolsNav.Screen name="Liturgy" component={LiturgyScreen} options={{ title: t('header.liturgy') }} />
+      <ToolsNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
+      <ToolsNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
+      <ToolsNav.Screen name="Quiz" component={QuizScreen} options={{ title: t('header.quiz') }} />
+      <ToolsNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
+      <ToolsNav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
+      <ToolsNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
+    </ToolsNav.Navigator>
   );
 }
 
@@ -210,8 +248,8 @@ const splashStyles = StyleSheet.create({
 const ICONS = {
   'Início': { on: 'home', off: 'home-outline' },
   'Artigos': { on: 'book', off: 'book-outline' },
-  'Referências': { on: 'library', off: 'library-outline' },
   'Bíblia': { on: 'bookmark', off: 'bookmark-outline' },
+  'Ferramentas': { on: 'construct', off: 'construct-outline' },
   'Ajustes': { on: 'settings', off: 'settings-outline' },
 };
 
@@ -224,8 +262,8 @@ function MainTabs() {
   const LABELS = {
     'Início': t('tab.home'),
     'Artigos': t('tab.articles'),
-    'Referências': t('tab.references'),
     'Bíblia': t('tab.bible'),
+    'Ferramentas': t('tab.tools'),
     'Ajustes': t('tab.settings'),
   };
 
@@ -264,8 +302,8 @@ function MainTabs() {
         component={ArticlesStackScreen}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name="Referências" component={ReferencesScreen} />
       <Tab.Screen name="Bíblia" component={BibleScreen} />
+      <Tab.Screen name="Ferramentas" component={ToolsStackScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Ajustes" component={SettingsStackScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );

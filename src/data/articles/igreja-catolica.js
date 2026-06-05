@@ -794,6 +794,7 @@ Quem reza o Rosário com frequência encontra paz, foco e uma intimidade crescen
 1. Se a Ave-Maria é, em grande parte, palavra do anjo e de Isabel na Escritura, faz sentido chamá-la de "repetição vazia"?
 
 2. O Rosário leva você a olhar para Maria em si mesma, ou a contemplar a vida de Jesus ao lado dela?`,
+    tool: { tab: 'Ferramentas', screen: 'Rosary', icon: 'flower-outline', labelPt: 'Abrir o Rosário no app', labelEn: 'Open the Rosary in the app' },
     references: ['lc-1-28', 'jo-2-1'],
   },
   {

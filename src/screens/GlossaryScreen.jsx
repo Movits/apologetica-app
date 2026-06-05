@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
@@ -12,14 +12,22 @@ export default function GlossaryScreen({ route, navigation }) {
   const { t, isEn } = useLanguage();
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
+  const listRef = useRef(null);
 
-  // Quando aberto via link [[termo]] de um artigo, expande automaticamente.
+  // Quando aberto via link de um artigo, expande E rola até o termo.
   useEffect(() => {
     const term = route?.params?.highlightTerm;
-    if (term) {
-      const entry = glossaryByTerm(term);
-      if (entry) setExpanded(entry.id);
-    }
+    if (!term) return;
+    const entry = glossaryByTerm(term);
+    if (!entry) return;
+    setExpanded(entry.id);
+    setQuery('');
+    const index = glossary.findIndex((g) => g.id === entry.id);
+    if (index < 0) return;
+    const id = setTimeout(() => {
+      listRef.current?.scrollToIndex({ index, viewPosition: 0.12, animated: false });
+    }, 150);
+    return () => clearTimeout(id);
   }, [route?.params?.highlightTerm]);
 
   const filtered = useMemo(() => {
@@ -61,9 +69,14 @@ export default function GlossaryScreen({ route, navigation }) {
 
       <View style={{ flex: 1 }}>
         <FlatList
+          ref={listRef}
           data={filtered}
           keyExtractor={(g) => g.id}
           contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+          onScrollToIndexFailed={(info) => {
+            listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
+            setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: 0.12, animated: false }), 80);
+          }}
           onScroll={onScroll}
           onContentSizeChange={onContentSizeChange}
           onLayout={onLayout}

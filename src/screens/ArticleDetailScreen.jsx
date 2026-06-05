@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Pressable, Image, Platform, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import { articles } from '../data/articles';
 import { referenceById, translateRef } from '../data/references';
@@ -50,6 +51,9 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const [fav, setFav] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const scrollRef = useRef(null);
+  const scrollYRef = useRef(0);
+  const titleEndRef = useRef(0);
+  const headerTitleShownRef = useRef(false);
   const requireAccount = useRequireAccount();
 
   useEffect(() => {
@@ -136,6 +140,18 @@ export default function ArticleDetailScreen({ route, navigation }) {
     });
   }, [navigation, fav, speaking, article?.id, colors.accent]);
 
+  // Restaura a posição de scroll ao voltar de uma referência/glossário (web reseta).
+  useFocusEffect(
+    useCallback(() => {
+      const y = scrollYRef.current;
+      if (y > 0) {
+        const id = requestAnimationFrame(() => scrollRef.current?.scrollTo({ y, animated: false }));
+        return () => cancelAnimationFrame(id);
+      }
+      return undefined;
+    }, [])
+  );
+
   const openReference = (refId) => {
     navigation.navigate('RefDetail', { highlightId: refId });
   };
@@ -166,6 +182,13 @@ export default function ArticleDetailScreen({ route, navigation }) {
     const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
     const max = Math.max(1, contentSize.height - layoutMeasurement.height);
     setProgress(contentOffset.y / max);
+    scrollYRef.current = contentOffset.y;
+    // Quando o título da página sai da tela, mostra-o no header (barra navy).
+    const show = titleEndRef.current > 0 && contentOffset.y > titleEndRef.current;
+    if (show !== headerTitleShownRef.current) {
+      headerTitleShownRef.current = show;
+      navigation.setOptions({ headerTitle: show ? displayTitle : t('header.article') });
+    }
     hintScroll.onScroll(e);
   };
 
@@ -235,7 +258,10 @@ export default function ArticleDetailScreen({ route, navigation }) {
           </View>
         </View>
 
-        <Text style={styles.title}>{displayTitle}</Text>
+        <Text
+          style={styles.title}
+          onLayout={(e) => { titleEndRef.current = 20 + e.nativeEvent.layout.y + e.nativeEvent.layout.height; }}
+        >{displayTitle}</Text>
         {showTranslationNotice && (
           <View style={styles.translationNotice}>
             <Ionicons name="language-outline" size={14} color={colors.accent} />
@@ -249,6 +275,17 @@ export default function ArticleDetailScreen({ route, navigation }) {
           baseStyle={styles.body}
           onOpenGlossary={(term) => navigation.navigate('Glossary', { highlightTerm: term })}
         />
+
+        {article.tool && (
+          <TouchableOpacity
+            style={styles.toolBtn}
+            onPress={() => navigation.navigate(article.tool.tab || 'Ferramentas', { screen: article.tool.screen })}
+          >
+            <Ionicons name={article.tool.icon || 'open-outline'} size={20} color="#fff" />
+            <Text style={styles.toolBtnText}>{isEn ? (article.tool.labelEn || article.tool.labelPt) : article.tool.labelPt}</Text>
+            <Ionicons name="chevron-forward" size={18} color="#fff" />
+          </TouchableOpacity>
+        )}
 
         {article.references?.length > 0 && (
           <View style={styles.refBox}>
@@ -333,4 +370,6 @@ const makeStyles = (c, fs) =>
     },
     refItemRef: { fontSize: fs(14), color: c.primaryText, fontWeight: '600' },
     refItemSource: { fontSize: fs(11), color: c.textMuted, marginTop: 2 },
+    toolBtn: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: c.primary, borderRadius: 12, padding: 14, marginTop: 24 },
+    toolBtnText: { flex: 1, color: '#fff', fontSize: fs(15), fontWeight: 'bold' },
   });
