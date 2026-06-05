@@ -3,6 +3,271 @@
 // com o aviso "translation in progress" quando o usuário escolhe EN.
 
 export const ARTICLES_EN = {
+  56: {
+    titleEn: 'Does God Exist? The Best Arguments of Reason',
+    summaryEn: 'An overview of the main rational arguments that point to the existence of God, and why believing is not the opposite of thinking.',
+    bodyEn: `"Does God exist?" is probably the most important question anyone can ask, because the answer changes everything else. Many think it is only a matter of feeling or family custom. It is not. There are serious rational arguments, debated by philosophers for millennia, that point to the existence of God. This article gathers the main lines, each developed in its own text in the app.
+
+## Faith and reason are not enemies
+
+First, a myth must be undone: that faith and reason exclude each other. Modern science itself was born in Christian civilization, founded on the conviction that the universe is ordered and intelligible because it was made by an Intelligence. Saint John Paul II summed it up in the encyclical "Faith and Reason" (Fides et Ratio, 1998): "faith and reason are like two wings on which the human spirit rises to the contemplation of truth". To believe is not to switch off the brain; it is to follow it to where it points.
+
+## The argument from cause
+
+Nothing that begins to exist causes itself. The universe, according to science itself, had a beginning in the Big Bang. Therefore it had a cause, which cannot be made of time, space, or matter, because it created them. This is the heart of the cosmological argument, from Aristotle to Thomas Aquinas, and of its modern version, the Kalam argument.
+
+## The argument from order
+
+The fundamental constants of the universe are tuned with an absurd precision to allow life. Change one decimal place and nothing would exist. Chance, necessity, or design? The fine-tuning is today one of the most debated pieces of evidence for a Designer.
+
+## The moral argument
+
+If God does not exist, "right" and "wrong" are merely opinion or instinct, and nothing is truly evil. Yet we all know that torturing a child for fun is objectively wrong, in any culture or era. This sense of a moral law above us points to a Lawgiver.
+
+## The argument from reason itself
+
+There is also a subtle and powerful argument. If your mind is only the blind result of atoms and natural selection, which selected for survival and not for truth, why trust it? The philosopher Alvin Plantinga showed that atheist naturalism saws off the branch it sits on: it cannot justify trust in the very reason it uses to assert itself. Whoever thinks already presupposes that truth exists and that the mind reaches reality, and this fits far better with a rational Creator than with chance.
+
+## "And suffering? And who made God?"
+
+Two objections always appear. The one from evil ("if God is good, why is there suffering?") and the one from cause ("if everything needs a cause, who made God?"). Both have answers, each with its own article here. In short: evil is the price of real freedom and does not refute God, but it requires a standard of good that only God grounds; and God, by definition, did not begin to exist, so he needs no cause. What cannot be is for the universe, which began, to exist without a cause.
+
+## The reasonable conclusion
+
+None of these arguments, alone, "closes" the question like a theorem. But, added together, they converge: the universe had a beginning, is ordered, and harbors moral and rational beings. The simplest and most complete explanation of all this is a personal, intelligent, and good Cause. Faith does not ask for a leap into the dark; it asks for a step into the light that reason already glimpses. As Jesus promised, "seek and you shall find" (Matthew 7,7).
+
+## Key questions
+
+1. If the universe began to exist, and nothing that begins causes itself, what is the most reasonable explanation for its origin?
+
+2. Where does the sense that certain things are objectively wrong come from, if there is no moral law above human opinions?
+
+3. If the mind is only blind chemistry selected to survive, and not to find truth, by what right do you trust your own atheist arguments?
+
+4. Have you truly sought, with honesty and openness, or dismissed the question before examining it?`,
+  },
+  57: {
+    titleEn: 'Who Is Jesus? True God and True Man',
+    summaryEn: 'Jesus was not merely a good teacher. He claimed to be God, demonstrated it with signs, and the Church has always confessed him as true God and true man.',
+    bodyEn: `Almost everyone has an opinion about Jesus: a good man, a great moral teacher, a prophet, a revolutionary. What few face is the question he himself posed to the disciples: "but who do you say that I am?" (Matthew 16,15). For if we take seriously what Jesus said and did, the option "merely a good teacher" is the only one left out.
+
+## What Jesus claimed about himself
+
+Jesus did not simply go around saying wise things. He forgave sins in his own name, something only God can do. He accepted being worshiped. He said: "before Abraham was, I am" (John 8,58), taking for himself the divine name revealed to Moses, "I Am" (Exodus 3,14). He stated: "I and the Father are one" (John 10,30), and for this they tried to stone him for blasphemy. Before the High Priest, under oath, when asked if he was the Son of God, he answered "I am" (Mark 14,62), and was condemned to death precisely for that claim.
+
+## The trilemma
+
+In the face of this, the writer C. S. Lewis framed a famous dilemma. A man who says the things Jesus said cannot be merely a "great moral teacher". Either he knew he was not God, and then he was a liar; or he thought he was without being, and then he was a lunatic, on the level of someone who says he is a poached egg; or else he was in fact who he said he was. Liar, lunatic, or Lord. What does not hold up is the lukewarm compliment of calling him a good teacher while ignoring what he actually claimed.
+
+## The signs and the Resurrection
+
+Jesus did not ask for blind faith. He accompanied his words with signs: he healed the sick, multiplied loaves, calmed the storm with a command, raised the dead. And he sealed it all with the definitive sign, announced beforehand: his own resurrection, a historical fact supported by serious evidence, such as the empty tomb, the appearances, and the transformation of the apostles, who went from fear to martyrdom.
+
+## The witness of the New Testament
+
+The first Christian community, Jewish and monotheistic, did the unthinkable: it began to worship a man. Why? Because it had known him risen. John opens his Gospel saying that "the Word was God" and "became flesh" (John 1,1.14). Thomas, touching the wounds, exclaims "my Lord and my God" (John 20,28). The Letter to the Hebrews applies to the Son: "your throne, O God, endures forever" (Hebrews 1,8). And Saint Paul affirms that Christ, "though he was in the form of God, emptied himself, taking the form of a servant" (Philippians 2,6-7).
+
+## The Church's definition
+
+It took time for the Church to find the exact words for this mystery. Against Arius, who said the Son was only the greatest of creatures, the Council of Nicaea, in 325, defined that the Son is "consubstantial with the Father", true God from true God. Later, the Council of Chalcedon, in 451, clarified that in Christ there are two natures, divine and human, without confusion and without separation, in one single person. Not half god and half man: wholly God and wholly man.
+
+## Why this changes everything
+
+If Jesus is God, then his words are not one religious opinion among others, but the very voice of the Creator. The forgiveness he offers is real, the eternal life he promises is in his power, and the question ceases to be academic. To know who Jesus is, is to decide before whom one stands.
+
+## Key questions
+
+1. Does a mere "good teacher" claim to be older than Abraham, forgive sins, and accept worship? Why is that option precisely the one that does not fit?
+
+2. If Jesus was not God, how to explain that monotheistic Jews, willing to die for faith in one God, came to worship him within a few years of his death?
+
+3. Thomas, a skeptic, calls Jesus "my Lord and my God". Either he was wrong, or he saw something that changes history. Which of the two?
+
+4. Nicaea did not invent the divinity of Christ; it defended it against those who denied it. Does the New Testament confirm or contradict that definition?`,
+  },
+  58: {
+    titleEn: 'The Most Holy Trinity: One God in Three Persons',
+    summaryEn: 'The greatest Christian mystery is not a contradiction. God is one in nature and three in Persons. Scripture reveals it and reason can welcome it.',
+    bodyEn: `The Most Holy Trinity is the heart of the Christian faith and also its greatest mystery. Hence the objections: "you believe in three gods" or "that is pure contradiction, three is one?". Both dissolve when one understands, with precision, what the doctrine affirms and what it does not affirm.
+
+## What the doctrine affirms, and what it does not
+
+The Church confesses one God in three Persons: the Father, the Son, and the Holy Spirit. Note what this does not say. It does not say there are three gods, which would be polytheism. And it does not say there is a single Person wearing three masks or roles, now Father, now Son, which was condemned as heresy (modalism). The exact formula is: God is one in nature (essence) and three in Persons. The Father is not the Son, the Son is not the Spirit, but the three are the same and only God.
+
+## Why it is not a contradiction
+
+A contradiction would be to say that God is one and three in the same sense. That is not the case. He is one in one respect (nature) and three in another (person). Just as there is no contradiction in something being a triangle and having three sides, there is no contradiction in God being one essence in three Persons. Analogies from creatures always fail, because God is unique, but they serve to show that the mystery is above reason, not against it. Mystery does not mean absurdity; it means a truth so rich that our mind does not grasp it entirely.
+
+## The biblical root
+
+The Trinity was not invented by councils; it was discovered in Revelation. At Jesus' baptism, the Son is in the water, the Spirit descends like a dove, and the Father speaks from heaven. Sending the apostles, Jesus commands baptizing "in the name of the Father and of the Son and of the Holy Spirit" (Matthew 28,19), and says "in the name", singular, for three. John affirms that "the Word was God" (John 1,1); Jesus says "I and the Father are one" (John 10,30) and promises "another Advocate", the Spirit (John 14,16), distinct from him and the Father, yet also God. The Old Testament already hinted at it; the New reveals it in fullness.
+
+## How the Church defined it
+
+When Arius denied the full divinity of the Son, the Council of Nicaea, in 325, confessed that the Son is "consubstantial with the Father". Later, faced with those who denied the divinity of the Spirit, the Council of Constantinople, in 381, completed the Creed affirming the Holy Spirit "the Lord, the giver of life", adored with the Father and the Son. The doctrine grew not by invention but by defense: at each error, the Church had to state more clearly what it had always believed.
+
+## Why it matters
+
+The Trinity is not a useless puzzle. It reveals that God, in himself, is communion and eternal love: the Father who gives himself to the Son, the Son who returns to the Father, and the Spirit who is that Love. That is why Saint John could write "God is love" (1 John 4,8), for love exists in God from all eternity, before any creature. And that is why the human being, made in the image of this God, finds fulfillment only by loving and living in communion. To believe in the Trinity is to believe that, at the foundation of everything, there is Love.
+
+## Key questions
+
+1. The objection assumes Christians say "one is three" in the same sense. But the doctrine says one in nature and three in Persons. Where is the contradiction?
+
+2. If the Trinity were a late invention, why does Jesus command baptizing "in the name" (singular) "of the Father and of the Son and of the Holy Spirit" already at the end of the Gospels?
+
+3. "God is love" from eternity. But love requires someone to love. How would a solitary god without a Trinity be love before creating the world?
+
+4. Is mystery the same as absurdity? Or are there real truths (even in physics) that exceed our capacity to imagine without being illogical for that reason?`,
+  },
+  59: {
+    titleEn: 'What Is Sin? Mortal, Venial, and the Seven Capital Sins',
+    summaryEn: 'Sin is not about breaking a rule of God on a whim. It is wounding love and oneself. Understand the difference between mortal and venial sin and what the seven capital vices are.',
+    bodyEn: `"Sin" has become an uncomfortable word. For some, it sounds like sick guilt and repression; for others, it is a thing of the past that no longer exists. But the notion of sin, rightly understood, is not an invention to frighten people: it is a realistic diagnosis of the human condition, and the door to its cure.
+
+## What sin really is
+
+Sin is not disobeying an arbitrary rule, like being fined for parking in the wrong place. It is a failure against reason, truth, and above all against love: of God and of neighbor. God does not forbid certain things because he is authoritarian, but because they wound us, like a father who forbids his child to put his hand in the fire. The root of all sin is portrayed in Genesis: the serpent promises "you will be like gods" (Genesis 3,5). To sin is, at bottom, to want to be the god of oneself, to decide good and evil on one's own, instead of trusting the One who created us.
+
+## Mortal and venial sin
+
+Not every sin has the same weight, and Scripture itself distinguishes "sin that leads to death" and sin that does not (1 John 5,16-17). The Church clarified it. Mortal sin breaks friendship with God and requires three conditions together: grave matter, full knowledge that it is grave, and deliberate consent of the will. If one of them is missing, there is no mortal sin. Venial sin is the lighter failure, which does not break but cools and weakens charity, like a disease that does not kill but debilitates. The distinction is liberating: it prevents both laxity ("nothing is grave") and scrupulosity ("everything condemns me").
+
+## The seven capital sins
+
+There is a classic list of seven sins called capital: pride, greed, envy, anger, lust, gluttony, and sloth. "Capital" comes from head (caput): they are not necessarily the worst, but the sources from which others spring. Pride, the disordered desire for one's own greatness, is held to be the root of all. To each capital vice corresponds a virtue that heals it: to pride, humility; to greed, generosity; to envy, charity; to anger, meekness; to lust, chastity; to gluttony, temperance; to sloth, diligence. Knowing one's dominant vices is the beginning of the spiritual battle.
+
+## The sin against the Holy Spirit
+
+Jesus gave a mysterious warning: every sin can be forgiven, "but blasphemy against the Spirit will not be forgiven" (Matthew 12,31-32). This does not mean God refuses to forgive something; it means there is a sin that, by its very nature, closes the door to forgiveness: the final and obstinate refusal to repent. God always offers mercy; but mercy, to heal, must be received. Whoever, to the end, rejects forgiveness is not forgiven, not because God does not want to, but because the person does not.
+
+## The good news: mercy is greater
+
+Speaking of sin only makes sense because of what comes after: forgiveness. Christianity is not a religion of perfect people, but of forgiven sinners. There is no sin, however grave, that is greater than God's mercy, provided there is repentance. It was for this that Christ instituted the sacrament of Confession, where what was dead comes back to life. The parable of the prodigal son sums it all up: however bad the fall, the Father runs to meet the one who returns. To recognize sin is not to sink into guilt; it is to take the first step home.
+
+## Key questions
+
+1. If God forbids certain things like a father protecting his child from fire, is sin an arbitrary rule or a warning of something that truly wounds us?
+
+2. Does the distinction between mortal and venial sin, with the three conditions of grave sin, make Catholic morality more rigid or more just and realistic?
+
+3. The seven capital vices describe with precision the roots of evil you observe in yourself and others. In what way would that be "outdated"?
+
+4. If no sin is greater than God's mercy, why do so many prefer to deny sin rather than accept the forgiveness that heals it?`,
+  },
+  60: {
+    titleEn: 'The Holy Mass: What It Is and Why to Take Part',
+    summaryEn: 'The Mass is not a show nor merely a meeting. It is the sacrifice of Christ made present and communion with his Body. See what it is, and why the Church asks for it on Sundays.',
+    bodyEn: `Many people go to Mass out of habit, without really knowing what is happening there. Others, from outside, think it is just a service with songs, readings, and a talk. But the Catholic faith affirms something far greater: the Mass is the most important event on earth, because in it the very sacrifice of Christ becomes present and the faithful commune of his Body.
+
+## It is not a repetition, but a re-presentation
+
+There is a common misunderstanding: that the Mass "repeats" the sacrifice of Jesus, as if the cross had not been enough. That is not it. The Letter to the Hebrews is clear: Christ offered himself "once for all" (Hebrews 9,28). The Mass does not repeat that sacrifice; it makes it present. The one sacrifice of Calvary, outside of time, is brought to the altar here and now, so that every generation can take part in it. The Council of Trent defined that in the Mass "the same Christ is contained and offered in an unbloody manner who offered himself once in a bloody manner on the cross".
+
+## The two tables: the Word and the Eucharist
+
+The Mass has two great parts, like two arms. First, the Liturgy of the Word: readings from the Old Testament, the Apostles, and the Gospel, with the homily. Then, the Liturgy of the Eucharist, which culminates in the consecration and communion. It is the same movement of the road to Emmaus, on the day of the Resurrection: Jesus first explains the Scriptures to the disciples and then makes himself known "in the breaking of the bread" (Luke 24,30-31). Word and Sacrament, always together.
+
+## The heart of the Mass: the consecration
+
+At the central moment, the priest, acting in the person of Christ, repeats the words of the Last Supper: "this is my body", "this is my blood" (Matthew 26,26-28). And the bread and wine become, truly, the Body and Blood of Christ. It is not a symbol. Jesus was emphatic: "unless you eat the flesh of the Son of man and drink his blood, you have no life in you" (John 6,53). It is the same Real Presence confirmed over the centuries by eucharistic miracles studied by science.
+
+## The Mass is older than people think
+
+Whoever imagines the Mass to be a medieval invention is surprised when reading the first Christians. Around the year 155, Saint Justin Martyr described to a pagan emperor the Sunday celebration of Christians: a gathering on the day of the sun (Sunday), reading of the Scriptures, a homily by the one presiding, prayer, and then the bread and wine over which thanks are given and which are no longer "common food", but the flesh and blood of the incarnate Jesus. It is, point by point, the structure of today's Mass, almost two thousand years later.
+
+## Why on Sundays, and why of obligation?
+
+The Church asks for participation in the Sunday Mass, and this bothers some. But there is a deep reason. Sunday is the day of the Resurrection, "the day the Lord has made" (Psalm 118,24), and from the beginning Christians gathered on it "to break bread" (Acts 20,7). To keep Sunday is to live the third commandment, to sanctify the day of the Lord. It is not an arbitrary attendance rule: it is the recognition that, if God gives himself entirely to us in the Eucharist, the least we can do is reserve this weekly encounter for him.
+
+## How to take part well
+
+The Mass is not a spectacle to be watched; it is a sacrifice in which one participates. The faithful are called to unite their life, their joys and sorrows, to the offering of Christ on the altar, and to receive communion in a state of grace, for Saint Paul warns that whoever eats the Body of the Lord "unworthily" eats his own condemnation (1 Corinthians 11,27-29). Well lived, the Mass ceases to be an obligation and becomes the center of the week: the place where heaven touches earth.
+
+## Key questions
+
+1. If Saint Justin, in the year 155, describes exactly the structure of the Mass, does it make sense to call it a medieval invention?
+
+2. The Mass does not repeat the cross; it makes present the one sacrifice of Christ. Why treat this as if it contradicted the "once for all" of Hebrews?
+
+3. Jesus said that without eating his flesh there is no life in us. If the Eucharist were only a symbol, why such strong and costly language?
+
+4. If God gives himself entirely to you in the Eucharist, is reserving one hour a week a heavy demand or a minimal response of love?`,
+  },
+  61: {
+    titleEn: 'What Happens After Death? The Last Things',
+    summaryEn: 'Death, judgment, heaven, purgatory, and hell. What the Church really teaches about the destiny of the soul, without fear and without naivety.',
+    bodyEn: `What happens when we die? It is the question that sooner or later reaches every human being, and the answers in circulation tend to be vague, from "became a star" to "it is all over". The Christian faith does not flee from it. Theology calls the Last Things the final realities: death, judgment, heaven, purgatory, and hell.
+
+## Death and the particular judgment
+
+Death is not the end of the person, but the separation of soul and body. The soul is immortal and, at the instant of death, appears before God in the so-called particular judgment. As Scripture says, "it is appointed for men to die once, and after that comes judgment" (Hebrews 9,27). There is no reincarnation nor a second earthly life: each one reaps, before God, what he lived and loved.
+
+## Heaven
+
+Heaven is not a place of clouds and harps, but the state of perfect and eternal happiness: to see God "face to face" (1 Corinthians 13,12), the so-called beatific vision. It is the fullness of every human desire, with no more pain, death, or separation. But it has a condition: "nothing unclean shall enter" heaven (Revelation 21,27). Only one who is fully purified can bear the light of God.
+
+## Hell
+
+Hell is the truth most avoided, but Jesus spoke of it more than anyone else in the New Testament. It is real and eternal. And it is important to understand what it is: not a punishment that a vengeful God imposes on those he wanted to save, but the consequence of a free and definitive refusal of God's love. God sends no one to hell; he respects the freedom of those who, to the end, say no. As it is often summed up, the gates of hell are locked from the inside. Hell exists because God's love is serious, and a love that cannot be refused is not love.
+
+## Purgatory
+
+Between those who die in mortal sin and the already perfectly holy, there is a third, very common situation: that of one who dies a friend of God, saved, but still imperfect, with attachments and faults to be purified. For these there is purgatory, not a "second chance" nor a "temporary hell", but the final purification of those already saved. Saint Paul speaks of one who is saved "but only as through fire" (1 Corinthians 3,15). And the Second Book of Maccabees praises those who pray for the dead, "that they might be delivered from their sins" (2 Maccabees 12,46), which only makes sense if there is a purification after death.
+
+## Suicide and trust in mercy
+
+One point requires delicacy. For a long time, the idea spread that whoever takes his own life is automatically condemned. That is not what the Church teaches. Suicide is objectively a grave evil, but a person's culpability can be greatly diminished by psychological suffering, anguish, or illness. Therefore, "we should not despair of the eternal salvation" of such persons: the Church trusts that God, by ways known only to him, can offer them the grace of repentance, and it prays for them. Before death, the last Christian word is not fear, but mercy.
+
+## The final judgment and the resurrection of the body
+
+At the end of history, there will be the final judgment, when Christ returns "in his glory" and separates some from others (Matthew 25,31-32). Then what the Creed professes will take place: the resurrection of the body. The soul will not remain disembodied forever; the body too will rise, transformed, to share in the eternal destiny. Christianity does not promise an escape from the body, but the redemption of the whole person.
+
+## Key questions
+
+1. If "it is appointed for men to die once, and after that comes judgment", how can this be reconciled with the idea of reincarnation?
+
+2. If God respects freedom to the end, would not hell be the consequence of one who refuses love, rather than a divine vengeance?
+
+3. Scripture praises praying for the dead "that they might be delivered from their sins". Would that make sense if, at death, there were only heaven or hell?
+
+4. The Church forbids judging the salvation of one who takes his own life and prays for these people. Does that fit the reputation that it "condemns" them automatically?`,
+  },
+  62: {
+    titleEn: 'What Is the Meaning of Life?',
+    summaryEn: 'Without God, the universe is indifferent and life has no ultimate purpose. Christianity answers: you were created out of love, to love, and to live forever.',
+    bodyEn: `Sooner or later, everyone asks the question, sometimes on a sleepless night, sometimes before a coffin: why am I here? What is the meaning of all this? It is the most human question there is, and the answer one gives to it shapes one's whole life.
+
+## The honest answer of materialism
+
+If only matter exists, and the human being is a chance arrangement of atoms on a lost planet, then one must have the courage to draw the conclusions. The most consistent atheist thinkers drew them. Nietzsche recognized that, "God being dead", no foundation remains for values and meaning, and that this would open an abyss. Sartre stated that, without God, man is "condemned to be free" in a purposeless universe, having to invent a meaning that, deep down, is no more than invention. Honestly, without God, life has no given meaning; it has, at most, a pretended meaning, which death erases.
+
+## The emptiness that nothing fills
+
+And yet, no one actually lives as if life had no meaning. We seek happiness without ceasing. But notice something strange: nothing in this world fully satisfies. Once a pleasure, a success, a love is attained, the heart soon asks for more. Saint Augustine diagnosed this sixteen hundred years ago in a line that still disarms us today: "you have made us for yourself, O Lord, and our heart is restless until it rests in you". C. S. Lewis added: if no pleasure in the world satisfies me entirely, the most likely explanation is not that happiness does not exist, but that I was made for another world. The desire for the infinite is the mark of one made for the Infinite.
+
+## The Christian answer
+
+Christianity answers the question with a disconcerting boldness: you are not an accident. You were thought of, willed, and created by Love, in the image of God. The meaning of life, in the classic formula of the catechism, is to know, love, and serve God in this life, and to be happy with him forever in the next. It is not a cold task; it is a love story. Jesus says: "I am the way, and the truth, and the life" (John 14,6). And Saint Paul assures that "all things work together for good for those who love God" (Romans 8,28), including the painful ones. Meaning is not a theory; it is a Person.
+
+## And suffering, does it not remove meaning?
+
+At first sight, pain seems to empty everything. But it is the opposite. Precisely because there is a meaning and a God who enters history, suffering ceases to be absurd. On the cross, God himself suffers with us and gives suffering a value it would not have in a blind universe. Whoever loses the meaning of life suffers twice; whoever finds it may still suffer, but not without hope.
+
+## What to do with this
+
+If the question of meaning presses on you, that is not a defect to silence with distractions; it is a compass. It is worth seeking seriously, with the same honesty with which one seeks truth in any other area. The promise is ancient and bold: "seek and you shall find" (Matthew 7,7). In the end, the answer to "what is the meaning of life?" is not a sentence, but an encounter.
+
+## Key questions
+
+1. If life has no ultimate meaning, why can no one actually live as if it had none, and why do injustice and death revolt us so?
+
+2. Nothing in the world fully satisfies the human heart. Is that a defect of the world, or a sign that we were made for something greater than the world?
+
+3. The most honest atheists admit that, without God, meaning is invented and death erases everything. Can you truly live with that conclusion?
+
+4. And what if the answer to your deepest question is not an idea, but Someone who is, himself, in search of you?`,
+  },
   1: {
     titleEn: 'The Existence of God: The Cosmological Argument',
     summaryEn: 'Why an uncaused first cause must exist to explain everything that exists.',

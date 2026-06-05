@@ -521,6 +521,100 @@ Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o 
 4. Se a Igreja quisesse fraudar, por que submeteria as relíquias a cientistas, alguns deles não crentes, com risco de desmentido público?`,
     references: ['milagre-lanciano', 'acutis-milagres', 'jo-6-53'],
   },
+  {
+    id: 60,
+    title: 'A Santa Missa: O Que É e Por Que Participar',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/60-missa.jpg'),
+    imageAlt: 'A Disputa do Santíssimo Sacramento, de Rafael',
+    imageCredit: 'Rafael, Disputa do Santíssimo Sacramento (1509 a 1510). Domínio público.',
+    imageAspect: 1.39,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FDisputa%2520del%2520Sacramento%2520(Rafael).jpg&w=2200&output=jpg&q=80',
+    summary: 'A Missa não é um show nem apenas uma reunião. É o sacrifício de Cristo tornado presente e a comunhão com o seu Corpo. Veja o que é, e por que a Igreja a pede aos domingos.',
+    body: `Muita gente vai à Missa por hábito, sem saber bem o que está acontecendo ali. Outros, de fora, acham que é só um culto com músicas, leituras e um discurso. Mas a fé católica afirma algo muito maior: a Missa é o acontecimento mais importante que existe na terra, porque nela o próprio sacrifício de Cristo se torna presente e o fiel comunga do seu Corpo.
+
+## Não é uma repetição, é uma re-presentação
+
+Há um mal-entendido comum: o de que a Missa "repete" o sacrifício de Jesus, como se a cruz não tivesse bastado. Não é isso. A Carta aos Hebreus é clara: Cristo se ofereceu "uma vez por todas" (Hebreus 9,28). A Missa não repete esse sacrifício; ela o torna presente. O único sacrifício do Calvário, fora do tempo, é trazido ao altar aqui e agora, para que cada geração possa participar dele. O Concílio de Trento definiu que na Missa "se contém e se imola de modo incruento o mesmo Cristo que se ofereceu uma só vez de modo cruento na cruz".
+
+## As duas mesas: a Palavra e a Eucaristia
+
+A Missa tem duas grandes partes, como dois braços. Primeiro, a liturgia da Palavra: leituras do Antigo Testamento, dos Apóstolos e do Evangelho, com a homilia. Depois, a liturgia eucarística, que culmina na consagração e na comunhão. É o mesmo movimento da estrada de Emaús, no dia da Ressurreição: Jesus primeiro explica as Escrituras aos discípulos e depois se faz reconhecer "ao partir do pão" (Lucas 24,30-31). Palavra e Sacramento, sempre juntos.
+
+## O coração da Missa: a consagração
+
+No momento central, o sacerdote, agindo na pessoa de Cristo, repete as palavras da Última Ceia: "isto é o meu corpo", "este é o meu sangue" (Mateus 26,26-28). E o pão e o vinho passam a ser, verdadeiramente, o Corpo e o Sangue de Cristo. Não é símbolo. Jesus foi enfático: "se não comerdes a carne do Filho do homem e não beberdes o seu sangue, não tereis a vida em vós" (João 6,53). É a mesma Presença Real confirmada ao longo dos séculos por milagres eucarísticos estudados pela ciência.
+
+## A Missa é mais antiga do que se pensa
+
+Quem imagina que a Missa é uma invenção medieval se surpreende ao ler os primeiros cristãos. Por volta do ano 155, São Justino Mártir descreveu a um imperador pagão a celebração dominical dos cristãos: reunião no dia do sol (domingo), leitura das Escrituras, homilia do que preside, oração, e então o pão e o vinho sobre os quais se dá graças e que já não são "comida comum", mas a carne e o sangue de Jesus encarnado. É, ponto por ponto, a estrutura da Missa de hoje, quase dois mil anos depois.
+
+## Por que ao domingo, e por que de obrigação?
+
+A Igreja pede a participação na Missa dominical, e isso incomoda alguns. Mas há uma razão profunda. O domingo é o dia da Ressurreição, "o dia que o Senhor fez" (Salmo 118,24), e desde o início os cristãos se reuniam nele "para partir o pão" (Atos 20,7). Guardar o domingo é viver o terceiro mandamento, santificar o dia do Senhor. Não é uma regra arbitrária de comparecimento: é o reconhecimento de que, se Deus se dá inteiro a nós na Eucaristia, o mínimo é reservar a ele esse encontro semanal.
+
+## Como participar bem
+
+A Missa não é um espetáculo a que se assiste; é um sacrifício de que se participa. O fiel é chamado a unir a sua vida, as suas alegrias e dores à oferta de Cristo no altar, e a receber a comunhão em estado de graça, pois São Paulo adverte que quem come o Corpo do Senhor "indignamente" come a própria condenação (1 Coríntios 11,27-29). Bem vivida, a Missa deixa de ser obrigação e vira o centro da semana: o lugar onde o céu toca a terra.
+
+## Perguntas-chave
+
+1. Se São Justino, no ano 155, descreve exatamente a estrutura da Missa, faz sentido chamá-la de invenção medieval?
+
+2. A Missa não repete a cruz; torna presente o único sacrifício de Cristo. Por que tratar isso como se contrariasse o "de uma vez por todas" de Hebreus?
+
+3. Jesus disse que sem comer a sua carne não há vida em nós. Se a Eucaristia fosse só símbolo, por que uma linguagem tão forte e tão custosa?
+
+4. Se Deus se entrega inteiro a você na Eucaristia, reservar uma hora por semana é exigência pesada ou resposta mínima de amor?`,
+    references: ['mt-26-26', 'jo-6-53', '1cor-11-27', 'trento-eucaristia', 'cic-1373', 'milagre-lanciano', 'justino-apologia-1'],
+  },
+  {
+    id: 61,
+    title: 'O Que Acontece Depois da Morte? Os Novíssimos',
+    category: 'Igreja Católica',
+    image: require('../../../assets/articles/61-novissimos.jpg'),
+    imageAlt: 'O Juízo Final, de Fra Angelico',
+    imageCredit: 'Fra Angelico, O Juízo Final (c. 1450). Domínio público.',
+    imageAspect: 1.32,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F1450%2520Fra%2520Angelico%2520Last%2520Judgement%2520anagoria.JPG&w=2200&output=jpg&q=80',
+    summary: 'Morte, juízo, céu, purgatório e inferno. O que a Igreja realmente ensina sobre o destino da alma, sem medo e sem ingenuidade.',
+    body: `O que acontece quando morremos? É a pergunta que mais cedo ou mais tarde alcança todo ser humano, e as respostas que circulam costumam ser vagas, do "virou estrela" ao "acabou tudo". A fé cristã não foge dela. A teologia chama de Novíssimos as últimas realidades: a morte, o juízo, o céu, o purgatório e o inferno.
+
+## A morte e o juízo particular
+
+A morte não é o fim da pessoa, mas a separação da alma e do corpo. A alma é imortal e, no instante da morte, comparece diante de Deus no chamado juízo particular. Como diz a Escritura, "está determinado que os homens morram uma só vez, vindo depois disso o juízo" (Hebreus 9,27). Não há reencarnação nem segunda vida terrena: cada um colhe, diante de Deus, aquilo que viveu e amou.
+
+## O Céu
+
+O céu não é um lugar de nuvens e harpas, mas o estado de felicidade perfeita e eterna: ver a Deus "face a face" (1 Coríntios 13,12), a chamada visão beatífica. É a plenitude de todo desejo humano, sem mais dor, morte ou separação. Mas exige uma condição: "nada de impuro entrará" no céu (Apocalipse 21,27). Só quem está totalmente purificado pode suportar a luz de Deus.
+
+## O Inferno
+
+O inferno é a verdade que mais se evita, mas Jesus falou dele mais do que qualquer outro no Novo Testamento. Ele é real e eterno. E é importante entender o que ele é: não um castigo que Deus, vingativo, impõe a quem queria salvar, mas a consequência de uma recusa livre e definitiva do amor de Deus. Deus não manda ninguém para o inferno; ele respeita a liberdade de quem, até o fim, diz não. Como se costuma resumir, as portas do inferno estão trancadas por dentro. O inferno existe porque o amor de Deus é a sério, e o amor que não pode ser recusado não é amor.
+
+## O Purgatório
+
+Entre os que morrem em pecado mortal e os já perfeitamente santos, há uma terceira situação muito comum: a de quem morre amigo de Deus, salvo, mas ainda imperfeito, com apegos e faltas por purificar. Para esses existe o purgatório, não uma "segunda chance" nem um "inferno temporário", mas a purificação final dos que já estão salvos. São Paulo fala de quem se salva "como que através do fogo" (1 Coríntios 3,15). E o Segundo Livro dos Macabeus elogia quem reza pelos mortos, "para que fossem libertados dos seus pecados" (2 Macabeus 12,46), o que só faz sentido se há uma purificação após a morte.
+
+## O suicídio e a confiança na misericórdia
+
+Um ponto exige delicadeza. Por muito tempo, espalhou-se a ideia de que quem se suicida está automaticamente condenado. Não é o que a Igreja ensina. O suicídio é objetivamente um mal grave, mas a culpabilidade da pessoa pode ser muito diminuída por sofrimento psíquico, angústia ou doença. Por isso, "não se deve desesperar da salvação eterna" dessas pessoas: a Igreja confia que Deus, por caminhos que só ele conhece, pode lhes oferecer a graça do arrependimento, e reza por elas. Diante da morte, a última palavra cristã não é o medo, mas a misericórdia.
+
+## O juízo final e a ressurreição da carne
+
+No fim da história, haverá o juízo final, quando Cristo voltar "na sua glória" e separar uns dos outros (Mateus 25,31-32). Então acontecerá aquilo que o Credo professa: a ressurreição da carne. A alma não ficará desencarnada para sempre; o corpo também ressuscitará, transformado, para participar do destino eterno. O cristianismo não promete uma fuga do corpo, mas a redenção da pessoa inteira.
+
+## Perguntas-chave
+
+1. Se "está determinado que os homens morram uma só vez, vindo depois disso o juízo", como conciliar isso com a ideia de reencarnação?
+
+2. Se Deus respeita a liberdade até o fim, o inferno não seria a consequência de quem recusa o amor, mais do que uma vingança divina?
+
+3. A Escritura elogia rezar pelos mortos "para que sejam libertados dos pecados". Isso faria sentido se, ao morrer, só houvesse céu ou inferno?
+
+4. A Igreja proíbe julgar a salvação de quem se suicida e reza por essas pessoas. Isso combina com a fama de que ela "condena" automaticamente?`,
+    references: ['hb-9-27', 'mt-25-31', 'ap-21-27', 'cic-1030', '2mc-12-44', '1cor-3-12'],
+  },
 ];
 
 export default articles;

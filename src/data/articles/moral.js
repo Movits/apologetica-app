@@ -181,6 +181,49 @@ A Igreja é a única instituição global que ainda defende coerentemente esta p
 4. Se cada ato conjugal pode ser livremente esvaziado de sua dimensão procriativa, por que critica-se objetificação sexual? Você não está fazendo isso?`,
     references: ['gn-1-27', 'humanae-vitae-17', 'cic-2366'],
   },
+  {
+    id: 59,
+    title: 'O Que é o Pecado? Mortal, Venial e os Sete Pecados Capitais',
+    category: 'Moral',
+    image: require('../../../assets/articles/59-pecado.jpg'),
+    imageAlt: 'A Queda e a Expulsão do Paraíso, de Michelangelo',
+    imageCredit: 'Michelangelo, A Queda e a Expulsão do Paraíso (Capela Sistina, 1510). Domínio público.',
+    imageAspect: 2.28,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%252C%2520Fall%2520and%2520Expulsion%2520from%2520Garden%2520of%2520Eden%252000.jpg&w=2200&output=jpg&q=80',
+    summary: 'Pecado não é "quebrar uma regra de Deus por capricho". É ferir o amor e a si mesmo. Entenda a diferença entre pecado mortal e venial e o que são os sete vícios capitais.',
+    body: `"Pecado" virou uma palavra desconfortável. Para uns, soa a culpa doentia e repressão; para outros, é coisa do passado, que não existe mais. Mas a noção de pecado, bem entendida, não é uma invenção para amedrontar: é um diagnóstico realista da condição humana, e a porta para a cura.
+
+## O que é o pecado, de verdade
+
+Pecado não é desobedecer a uma regra arbitrária, como quem é multado por estacionar no lugar errado. É uma falta contra a razão, a verdade e, sobretudo, contra o amor: a Deus e ao próximo. Deus não proíbe certas coisas porque é autoritário, mas porque elas nos ferem, como um pai que proíbe o filho de pôr a mão no fogo. A raiz de todo pecado está retratada no Gênesis: a serpente promete "sereis como deuses" (Gênesis 3,5). Pecar é, no fundo, querer ser deus de si mesmo, decidir o bem e o mal por conta própria, em vez de confiar em Quem nos criou.
+
+## Pecado mortal e pecado venial
+
+Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue "pecado que leva à morte" e pecado que não leva (1 João 5,16-17). A Igreja precisou isso com clareza. O pecado mortal rompe a amizade com Deus e exige três condições juntas: matéria grave, plena consciência de que é grave e consentimento deliberado da vontade. Faltando uma delas, não há pecado mortal. O pecado venial é a falta mais leve, que não rompe, mas esfria e enfraquece a caridade, como uma doença que não mata mas debilita. A distinção é libertadora: ela impede tanto a frouxidão ("nada é grave") quanto o escrúpulo ("tudo me condena").
+
+## Os sete pecados capitais
+
+Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça. "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade; à avareza, a generosidade; à inveja, a caridade; à ira, a mansidão; à luxúria, a castidade; à gula, a temperança; à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
+
+## O pecado contra o Espírito Santo
+
+Jesus fez uma advertência misteriosa: todo pecado pode ser perdoado, "mas a blasfêmia contra o Espírito não será perdoada" (Mateus 12,31-32). Isso não significa que Deus se recuse a perdoar algo; significa que existe um pecado que, por sua própria natureza, fecha a porta ao perdão: a recusa final e obstinada de se arrepender. Deus oferece sempre a misericórdia; mas a misericórdia, para curar, precisa ser acolhida. Quem, até o fim, rejeita o perdão, não é perdoado, não porque Deus não queira, mas porque a pessoa não quer.
+
+## A boa notícia: a misericórdia é maior
+
+Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristianismo não é uma religião de gente perfeita, mas de pecadores perdoados. Não há pecado, por mais grave, que seja maior do que a misericórdia de Deus, desde que haja arrependimento. Foi para isso que Cristo instituiu o sacramento da Confissão, onde o que estava morto volta a viver. A parábola do filho pródigo resume tudo: por pior que tenha sido a queda, o Pai corre ao encontro de quem volta. Reconhecer o pecado não é afundar na culpa; é dar o primeiro passo para casa.
+
+## Perguntas-chave
+
+1. Se Deus proíbe certas coisas como um pai que protege o filho do fogo, o pecado é uma regra arbitrária ou um aviso de algo que de fato nos fere?
+
+2. A distinção entre pecado mortal e venial, com as três condições do pecado grave, torna a moral católica mais rígida ou mais justa e realista?
+
+3. Os sete vícios capitais descrevem com precisão as raízes do mal que você observa em si e nos outros. Em que isso seria "ultrapassado"?
+
+4. Se nenhum pecado é maior que a misericórdia de Deus, por que tantos preferem negar o pecado a aceitar o perdão que o cura?`,
+    references: ['gn-3-5', 'mt-12-32', '1cor-6-9', 'cic-1422', 'gl-5-6'],
+  },
 ];
 
 export default articles;

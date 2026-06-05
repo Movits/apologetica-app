@@ -17,6 +17,13 @@ Arquivos em `assets/articles/`.
 | 21 — Por que Confessar a um Padre | `21-confissao.jpg` | A Confissão (c. 1712) | Giuseppe Maria Crespi |
 | 3 — Sagrada Tradição e Sola Scriptura | `3-sola-scriptura.jpg` | São Jerônimo Escrevendo (1605–1606) | Caravaggio |
 | 25 — Aborto: Dignidade da Vida | `25-aborto.jpg` | Madona com o Menino e dois Anjos (c. 1465) | Filippo Lippi |
+| 56 — Deus Existe? (hub) | `56-deus-existe-2.jpg` | A Separação da Luz das Trevas (Capela Sistina, 1512) | Michelangelo |
+| 57 — Quem é Jesus? | `57-quem-e-jesus.jpg` | Cristo na Tempestade no Mar da Galileia (1633) | Rembrandt |
+| 58 — A Santíssima Trindade | `58-trindade.jpg` | A Trindade Adorada pela Família Gonzaga (séc. XV) | Andrea Mantegna |
+| 59 — O que é o Pecado | `59-pecado.jpg` | A Queda e a Expulsão do Paraíso (Capela Sistina, 1510) | Michelangelo |
+| 60 — A Santa Missa | `60-missa.jpg` | Disputa do Santíssimo Sacramento (1509–1510) | Rafael |
+| 61 — Os Novíssimos | `61-novissimos.jpg` | O Juízo Final (c. 1450) | Fra Angelico |
+| 62 — Sentido da Vida | `62-sentido-da-vida.jpg` | O Angelus (1857–1859) | Jean-François Millet |
 
 > Fonte: Wikimedia Commons. Reprodução fotográfica fiel de obras 2D em domínio público
 > também é de domínio público (Bridgeman v. Corel). Pipeline em `.tmp/fetch-images*.ps1`.

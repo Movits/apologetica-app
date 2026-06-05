@@ -372,6 +372,190 @@ E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama at
 4. Maria, nas aparições aprovadas, sempre aponta para Jesus, dizendo "fazei o que ele vos disser". Isso combina com engano demoníaco, ou com o contrário?`,
     references: ['fatima-milagre-sol', 'guadalupe-tilma', 'zeitoun-aparicao', '2cor-11-14', 'mt-7-16', 'mt-12-25', 'jo-2-1'],
   },
+  {
+    id: 56,
+    title: 'Deus Existe? Os Melhores Argumentos da Razão',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/56-deus-existe-2.jpg'),
+    imageAlt: 'A Separação da Luz das Trevas, de Michelangelo',
+    imageCredit: 'Michelangelo, A Separação da Luz das Trevas (Capela Sistina, 1512). Domínio público.',
+    imageAspect: 1.11,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMichelangelo%252C%2520Separation%2520of%2520Light%2520from%2520Darkness%252000.jpg&w=2200&output=jpg&q=80',
+    summary: 'Um panorama dos principais argumentos racionais que apontam para a existência de Deus, e por que crer não é o contrário de pensar.',
+    body: `"Deus existe?" é, provavelmente, a pergunta mais importante que alguém pode fazer, porque a resposta muda tudo o mais. Muita gente acha que é só questão de sentimento ou de costume familiar. Não é. Existem argumentos racionais sérios, discutidos por filósofos há milênios, que apontam para a existência de Deus. Este artigo reúne as principais linhas, cada uma aprofundada em seu próprio texto no aplicativo.
+
+## Fé e razão não são inimigas
+
+Antes de tudo, é preciso desfazer um mito: o de que fé e razão se excluem. A própria ciência moderna nasceu na civilização cristã, fundada na convicção de que o universo é ordenado e inteligível porque foi feito por uma Inteligência. São João Paulo II resumiu na encíclica "Fé e Razão" (Fides et Ratio, 1998): "a fé e a razão são como duas asas pelas quais o espírito humano se eleva para a contemplação da verdade". Crer não é desligar o cérebro, é segui-lo até onde ele aponta.
+
+## O argumento da causa
+
+Nada que começa a existir se causa a si mesmo. O universo, segundo a própria ciência, teve um início no Big Bang. Logo, ele teve uma causa, que não pode ser feita de tempo, espaço ou matéria, porque os criou. Esse é o coração do argumento cosmológico, de Aristóteles a Tomás de Aquino, e da sua versão moderna, o argumento Kalam.
+
+## O argumento da ordem
+
+As constantes fundamentais do universo são ajustadas com uma precisão absurda para permitir a vida. Mude uma casa decimal e nada existiria. Acaso, necessidade ou projeto? O ajuste fino é hoje uma das evidências mais debatidas a favor de um Planejador.
+
+## O argumento moral
+
+Se Deus não existe, "certo" e "errado" são apenas opinião ou instinto, e nada é de fato mau. Mas todos sabemos que torturar uma criança por diversão é objetivamente errado, em qualquer cultura e época. Esse senso de uma lei moral acima de nós aponta para um Legislador.
+
+## O argumento da própria razão
+
+Há ainda um argumento sutil e poderoso. Se a sua mente é só o resultado cego de átomos e da seleção natural, que selecionou sobrevivência e não verdade, por que confiar nela? O filósofo Alvin Plantinga mostrou que o naturalismo ateu serra o galho em que se senta: ele não consegue justificar a confiança na razão que usa para se afirmar. Quem pensa, já pressupõe que a verdade existe e que a mente alcança o real, e isso combina muito melhor com um Criador racional do que com o acaso.
+
+## "E o sofrimento? E quem criou Deus?"
+
+Duas objeções aparecem sempre. A do mal ("se Deus é bom, por que há sofrimento?") e a da causa ("se tudo precisa de causa, quem criou Deus?"). As duas têm resposta, e cada uma tem seu artigo aqui. Em resumo: o mal é o preço da liberdade real e não refuta Deus, mas exige um padrão de bem que só Deus fundamenta; e Deus, por definição, não começou a existir, então não pede causa. O que não pode é o universo, que começou, existir sem causa.
+
+## A conclusão razoável
+
+Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, somados, eles convergem: o universo teve um começo, é ordenado, abriga seres morais e racionais. A explicação mais simples e completa de tudo isso é uma Causa pessoal, inteligente e boa. A fé não pede um salto no escuro; pede um passo à luz do que a razão já entrevê. Como prometeu Jesus, "buscai e achareis" (Mateus 7,7).
+
+## Perguntas-chave
+
+1. Se o universo começou a existir, e nada que começa se causa a si mesmo, qual a explicação mais razoável para a sua origem?
+
+2. De onde vem o senso de que certas coisas são objetivamente erradas, se não há nenhuma lei moral acima das opiniões humanas?
+
+3. Se a mente é só química cega selecionada para sobreviver, e não para achar a verdade, com que direito você confia nos próprios argumentos ateus?
+
+4. Você já buscou de verdade, com honestidade e abertura, ou descartou a pergunta antes de examiná-la?`,
+    references: ['suma-i-q2-a3', 'rm-1-20', 'fides-et-ratio', 'craig-kalam', 'plantinga-eaan', 'cic-31-35'],
+  },
+  {
+    id: 57,
+    title: 'Quem é Jesus? Deus e Homem Verdadeiro',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/57-quem-e-jesus.jpg'),
+    imageAlt: 'Cristo na tempestade no mar da Galileia, de Rembrandt',
+    imageCredit: 'Rembrandt, Cristo na Tempestade no Mar da Galileia (1633). Domínio público.',
+    imageAspect: 1.28,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRembrandt%2520Christ%2520in%2520the%2520Storm%2520on%2520the%2520Lake%2520of%2520Galilee%2520(cropped%252C%2520Group%2520of%2520the%2520men%2520near%2520Christ).jpg&w=2200&output=jpg&q=80',
+    summary: 'Jesus não foi apenas um bom mestre. Ele afirmou ser Deus, demonstrou-o com sinais e a Igreja sempre o confessou como verdadeiro Deus e verdadeiro homem.',
+    body: `Quase todo mundo tem uma opinião sobre Jesus: um bom homem, um grande mestre de moral, um profeta, um revolucionário. O que poucos enfrentam é a pergunta que ele mesmo colocou aos discípulos: "e vós, quem dizeis que eu sou?" (Mateus 16,15). Porque, se levarmos a sério o que Jesus disse e fez, a opção "apenas um bom mestre" é a única que fica de fora.
+
+## O que Jesus afirmava de si
+
+Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em seu próprio nome, algo que só Deus pode fazer. Aceitou ser adorado. Disse: "antes que Abraão existisse, eu sou" (João 8,58), tomando para si o nome divino revelado a Moisés, "Eu Sou" (Êxodo 3,14). Afirmou: "eu e o Pai somos um" (João 10,30), e por isso quiseram apedrejá-lo por blasfêmia. Diante do Sumo Sacerdote, sob juramento, à pergunta se era o Filho de Deus, respondeu "Eu sou" (Marcos 14,62), e foi condenado à morte exatamente por essa afirmação.
+
+## O trilema
+
+Diante disso, o escritor C. S. Lewis formulou um dilema célebre. Um homem que diz as coisas que Jesus disse não pode ser apenas um "grande mestre moral". Ou ele sabia que não era Deus, e então era um mentiroso; ou achava que era sem ser, e então era um lunático, no nível de quem se diz ovo cozido; ou então era de fato quem dizia ser. Mentiroso, lunático ou Senhor. O que não se sustenta é o elogio morno de chamá-lo de bom professor e ignorar o que ele de fato afirmou.
+
+## Os sinais e a Ressurreição
+
+Jesus não pediu fé cega. Ele acompanhou suas palavras de sinais: curou doentes, multiplicou pães, acalmou a tempestade com uma ordem, ressuscitou mortos. E selou tudo com o sinal definitivo, anunciado de antemão: a sua própria ressurreição, fato histórico sustentado por evidências sérias, como o túmulo vazio, as aparições e a transformação dos apóstolos, que passaram do medo ao martírio.
+
+## O testemunho do Novo Testamento
+
+A primeira comunidade cristã, judaica e monoteísta, fez o impensável: começou a adorar um homem. Por quê? Porque o conhecera ressuscitado. João abre o seu Evangelho dizendo que "o Verbo era Deus" e "se fez carne" (João 1,1.14). Tomé, ao tocar as chagas, exclama "meu Senhor e meu Deus" (João 20,28). A Carta aos Hebreus aplica ao Filho: "o teu trono, ó Deus, subsiste pelos séculos" (Hebreus 1,8). E São Paulo afirma que Cristo, "existindo em forma de Deus, esvaziou-se a si mesmo, assumindo a condição de servo" (Filipenses 2,6-7).
+
+## A definição da Igreja
+
+Levou tempo para a Igreja encontrar as palavras exatas para esse mistério. Contra Ário, que dizia que o Filho era apenas a maior das criaturas, o Concílio de Niceia, em 325, definiu que o Filho é "consubstancial ao Pai", verdadeiro Deus de verdadeiro Deus. Depois, o Concílio de Calcedônia, em 451, precisou que em Cristo há duas naturezas, divina e humana, sem confusão e sem separação, numa só pessoa. Não meio deus e meio homem: Deus inteiro e homem inteiro.
+
+## Por que isso muda tudo
+
+Se Jesus é Deus, então suas palavras não são uma opinião religiosa entre outras, mas a própria voz do Criador. O perdão que ele oferece é real, a vida eterna que promete está em seu poder, e a pergunta deixa de ser acadêmica. Conhecer quem é Jesus é decidir diante de quem se está.
+
+## Perguntas-chave
+
+1. Um simples "bom mestre" afirma ser anterior a Abraão, perdoa pecados e aceita ser adorado? Por que essa opção é justamente a que não cabe?
+
+2. Se Jesus não era Deus, como explicar que judeus monoteístas, dispostos a morrer pela fé num só Deus, passaram a adorá-lo poucos anos depois da sua morte?
+
+3. Tomé, um cético, chama Jesus de "meu Senhor e meu Deus". Ou estava errado, ou viu algo que muda a história. Qual das duas?
+
+4. Niceia não inventou a divindade de Cristo; ela a defendeu contra quem a negava. O que está no Novo Testamento confirma ou contradiz essa definição?`,
+    references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'cic-466'],
+  },
+  {
+    id: 58,
+    title: 'A Santíssima Trindade: Um Só Deus em Três Pessoas',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/58-trindade.jpg'),
+    imageAlt: 'A Santíssima Trindade adorada, de Mantegna',
+    imageCredit: 'Andrea Mantegna, A Trindade Adorada pela Família Gonzaga (séc. XV). Domínio público.',
+    imageAspect: 1.62,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FLa%2520Trinit%25C3%25A0%2520adorata%2520dalla%2520famiglia%2520Gonzaga%2520(ricostruzione).png&w=2200&output=jpg&q=80',
+    summary: 'O maior mistério cristão não é uma contradição. Deus é um só na natureza e três nas Pessoas. A Escritura o revela e a razão pode acolhê-lo.',
+    body: `A Santíssima Trindade é o coração da fé cristã e também o seu maior mistério. Daí as objeções: "vocês acreditam em três deuses" ou "isso é contradição pura, três é um?". As duas se desfazem quando se entende, com precisão, o que a doutrina afirma e o que ela não afirma.
+
+## O que a doutrina afirma, e o que não afirma
+
+A Igreja confessa um só Deus em três Pessoas: o Pai, o Filho e o Espírito Santo. Atenção ao que isso não diz. Não diz que há três deuses, o que seria politeísmo. E não diz que há uma só Pessoa usando três máscaras ou papéis, ora Pai, ora Filho, o que foi condenado como heresia (o modalismo). A fórmula exata é: Deus é um só na natureza (essência) e três nas Pessoas. O Pai não é o Filho, o Filho não é o Espírito, mas os três são o mesmo e único Deus.
+
+## Por que não é contradição
+
+Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o caso. Ele é um numa coisa (natureza) e três em outra (pessoa). Assim como não há contradição em algo ser um triângulo e ter três lados, não há contradição em Deus ser uma essência em três Pessoas. As analogias da criatura sempre falham, porque Deus é único, mas servem para mostrar que o mistério está acima da razão, não contra ela. Mistério não quer dizer absurdo; quer dizer uma verdade tão rica que a nossa mente não a abarca por inteiro.
+
+## A raiz bíblica
+
+A Trindade não foi inventada por concílios; foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu. Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai e do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1); Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava; o Novo o revela em plenitude.
+
+## Como a Igreja definiu
+
+Quando Ário negou a divindade plena do Filho, o Concílio de Niceia, em 325, confessou que o Filho é "consubstancial ao Pai". Depois, diante de quem negava a divindade do Espírito, o Concílio de Constantinopla, em 381, completou o Credo afirmando o Espírito Santo "Senhor que dá a vida", adorado com o Pai e o Filho. A doutrina não cresceu por invenção, mas por defesa: a cada erro, a Igreja precisou dizer com mais clareza o que sempre creu.
+
+## Por que isso importa
+
+A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, é comunhão e amor eterno: o Pai que se dá ao Filho, o Filho que se devolve ao Pai, e o Espírito que é esse Amor. Por isso São João pôde escrever "Deus é amor" (1 João 4,8), pois o amor existe em Deus desde sempre, antes de qualquer criatura. E por isso o ser humano, feito à imagem desse Deus, só se realiza amando e vivendo em comunhão. Crer na Trindade é crer que, no fundo de tudo, está o Amor.
+
+## Perguntas-chave
+
+1. A objeção supõe que cristãos dizem "um é três" no mesmo sentido. Mas a doutrina diz um na natureza e três nas Pessoas. Onde está a contradição?
+
+2. Se a Trindade fosse invenção tardia, por que Jesus manda batizar "em nome" (singular) "do Pai e do Filho e do Espírito Santo" já no fim dos Evangelhos?
+
+3. "Deus é amor" desde a eternidade. Mas amor exige alguém a quem amar. Como um deus solitário e sem Trindade seria amor antes de criar o mundo?
+
+4. Mistério é o mesmo que absurdo? Ou há verdades reais (até na física) que ultrapassam a nossa capacidade de imaginar sem por isso serem ilógicas?`,
+    references: ['mt-28-19', 'jo-1-1', 'jo-10-30', 'jo-14-16', '1jo-4-2', 'concilio-niceia', 'hb-1-8'],
+  },
+  {
+    id: 62,
+    title: 'Qual é o Sentido da Vida?',
+    category: 'Existência de Deus',
+    image: require('../../../assets/articles/62-sentido-da-vida.jpg'),
+    imageAlt: 'O Angelus, de Millet',
+    imageCredit: 'Jean-François Millet, O Angelus (1857 a 1859). Domínio público.',
+    imageAspect: 1.1,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAngelus%2520MET%2520DP827872.jpg&w=2200&output=jpg&q=80',
+    summary: 'Sem Deus, o universo é indiferente e a vida não tem propósito último. O cristianismo responde: você foi criado por amor, para amar e para viver para sempre.',
+    body: `Mais cedo ou mais tarde, todo mundo se faz a pergunta, às vezes numa noite de insônia, às vezes diante de um caixão: para que estou aqui? Qual é o sentido de tudo isto? É a pergunta mais humana que existe, e a resposta que se dá a ela molda a vida inteira.
+
+## A resposta honesta do materialismo
+
+Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche reconheceu que, "morto Deus", não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado; tem, no máximo, um sentido fingido, que a morte apaga.
+
+## O vazio que nada preenche
+
+E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscamos felicidade sem parar. Mas note uma coisa estranha: nada deste mundo sacia por completo. Conquistado um prazer, um sucesso, um amor, logo o coração pede mais. Santo Agostinho diagnosticou isso há mil e seiscentos anos numa frase que ainda hoje desarma: "fizeste-nos para ti, Senhor, e o nosso coração está inquieto enquanto não repousa em ti". C. S. Lewis acrescentou: se nenhum prazer do mundo me satisfaz por inteiro, a explicação mais provável não é que a felicidade não exista, mas que eu fui feito para outro mundo. O desejo de infinito é a marca de quem foi feito para o Infinito.
+
+## A resposta cristã
+
+O cristianismo responde à pergunta com uma audácia desconcertante: você não é um acidente. Foi pensado, querido e criado por Amor, à imagem de Deus. O sentido da vida, na fórmula clássica do catecismo, é conhecer, amar e servir a Deus nesta vida, e ser feliz com ele para sempre na outra. Não é uma tarefa fria; é uma história de amor. Jesus diz: "eu sou o caminho, a verdade e a vida" (João 14,6). E São Paulo garante que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28), inclusive as dolorosas. O sentido não é uma teoria, é uma Pessoa.
+
+## E o sofrimento, não tira o sentido?
+
+À primeira vista, a dor parece esvaziar tudo. Mas é o contrário. Justamente porque há um sentido e um Deus que entra na história, o sofrimento deixa de ser absurdo. Na cruz, Deus mesmo sofre conosco e dá ao sofrimento um valor que ele não teria num universo cego. Quem perde o sentido da vida sofre duas vezes; quem o encontra pode até sofrer, mas não sem esperança.
+
+## O que fazer com isso
+
+Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distrações; é uma bússola. Vale a pena buscar a sério, com a mesma honestidade com que se busca a verdade em qualquer outra área. A promessa é antiga e ousada: "buscai e achareis" (Mateus 7,7). No fim, a resposta para "qual é o sentido da vida?" não é uma frase, é um encontro.
+
+## Perguntas-chave
+
+1. Se a vida não tem sentido último, por que ninguém consegue viver de fato como se não tivesse, e por que a injustiça e a morte nos revoltam tanto?
+
+2. Nada do mundo sacia por inteiro o coração humano. Isso é um defeito do mundo, ou um sinal de que fomos feitos para algo maior que o mundo?
+
+3. Os ateus mais honestos admitem que, sem Deus, o sentido é inventado e a morte apaga tudo. Você consegue viver, de verdade, com essa conclusão?
+
+4. E se a resposta para a sua pergunta mais profunda não for uma ideia, mas Alguém que está, ele mesmo, à sua procura?`,
+    references: ['rm-8-28', 'jo-14-6', 'fides-et-ratio', 'sartre-existencialismo', 'nietzsche-gaia', 'lewis-mere-christianity'],
+  },
 ];
 
 export default articles;
