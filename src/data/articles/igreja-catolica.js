@@ -534,7 +534,7 @@ Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o 
 3. O mesmo tipo sanguíneo AB aparece nos milagres eucarísticos e nos sudários de Turim e Oviedo. É coincidência sem importância?
 
 4. Se a Igreja quisesse fraudar, por que submeteria as relíquias a cientistas, alguns deles não crentes, com risco de desmentido público?`,
-    references: ['milagre-lanciano', 'acutis-milagres', 'jo-6-53'],
+    references: ['milagre-lanciano', 'milagre-buenos-aires', 'milagre-sokolka', 'milagre-tixtla', 'sudario-turim', 'sudario-oviedo', 'acutis-milagres', 'jo-6-53'],
   },
   {
     id: 60,
@@ -722,7 +722,7 @@ C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: qu
 3. Jesus chamou o diabo de "pai da mentira". Se a maior arma dele é a mentira, qual a melhor defesa senão a verdade?
 
 4. Negar o mal espiritual e ser obcecado por ele são erros opostos. Em qual deles a nossa época tende a cair?`,
-    references: ['gn-3-15', '2cor-11-14', 'ap-12-1', 'mt-12-25'],
+    references: ['2cor-11-14', '1jo-4-4', 'ap-12-7', 'cic-391'],
   },
   {
     id: 73,
@@ -759,7 +759,7 @@ Muitos desanimam porque rezam e não sentem emoção. Mas a oração não é sob
 2. Rezar é apenas pedir coisas, ou também louvar, agradecer e pedir perdão, como no Pai-Nosso?
 
 3. Se você só reza quando sente emoção, está buscando a Deus, ou a um sentimento?`,
-    references: ['1tm-2-5', 'jo-14-6'],
+    references: ['mt-6-9', 'cic-2559'],
   },
   {
     id: 74,
@@ -794,7 +794,7 @@ Quem reza o Rosário com frequência encontra paz, foco e uma intimidade crescen
 1. Se a Ave-Maria é, em grande parte, palavra do anjo e de Isabel na Escritura, faz sentido chamá-la de "repetição vazia"?
 
 2. O Rosário leva você a olhar para Maria em si mesma, ou a contemplar a vida de Jesus ao lado dela?`,
-    references: ['lc-1-28', 'jo-2-1', 'ap-5-8'],
+    references: ['lc-1-28', 'jo-2-1'],
   },
   {
     id: 75,
@@ -829,6 +829,7 @@ Jesus elogiou uma viúva que pôs no tesouro do templo duas moedinhas, dizendo q
 1. Se "Deus ama quem dá com alegria", o dízimo é um imposto a pagar com medo, ou uma resposta de gratidão?
 
 2. A viúva deu duas moedinhas e Jesus disse que deu mais que os ricos. O que isso ensina sobre o valor real do que damos?`,
+    references: ['2cor-9-7', 'mc-12-43'],
   },
   {
     id: 76,
@@ -898,7 +899,7 @@ Crises e períodos de aridez são normais, até nos santos. O erro é justamente
 1. Se a fé é dom que se pede e músculo que se exercita, faz sentido esperar que ela apareça pronta sem rezar nem buscar?
 
 2. Ter dúvidas é o fim da fé, ou parte do caminho de quem leva a fé a sério e procura entender?`,
-    references: ['gl-5-6', 'rm-8-28'],
+    references: ['gl-5-6', 'rm-8-28', 'mc-9-24'],
   },
   {
     id: 79,
@@ -933,6 +934,7 @@ A sexta-feira é o dia em que Cristo morreu na cruz. Fazer um pequeno sacrifíci
 1. Se Jesus jejuou quarenta dias no deserto, o jejum cristão é uma regra arbitrária ou uma união à sua entrega?
 
 2. A Quaresma é só "passar sem algo gostoso", ou um tempo de oração, jejum e esmola para converter o coração?`,
+    references: ['mt-4-2'],
   },
 ];
 

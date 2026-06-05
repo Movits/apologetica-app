@@ -315,7 +315,7 @@ No fim, o mandamento funciona como a placa que avisa do precipício na estrada d
 2. Os mandamentos são um capricho que Deus poderia ter invertido, ou descrevem o bem da própria pessoa, gravado no coração de todos?
 
 3. Um mandamento que proíbe matar, roubar e mentir tira a sua liberdade, ou protege a vida de todos, inclusive a sua?`,
-    references: ['ex-20-3', 'hb-12-14'],
+    references: ['ex-20-3', 'mt-5-17', 'rm-2-15', 'mt-22-37', 'hb-12-14'],
   },
 ];
 
