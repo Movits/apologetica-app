@@ -25,7 +25,7 @@ const FEEDS = {
 
 const TTL_MS = 3 * 60 * 60 * 1000; // revalida a cada 3 horas
 const MAX_ITEMS = 6;
-const cacheKey = (lang) => `news:cache:v2:${lang}`; // v2: itens agora incluem foto
+const cacheKey = (lang) => `news:cache:v3:${lang}`; // v3: cadeia de proxies p/ og:image
 
 async function fetchFeed(feed) {
   // Sem &count: o endpoint gratuito (sem api key) rejeita esse parâmetro (HTTP 422).
@@ -56,9 +56,13 @@ async function fetchFeed(feed) {
 
 // Feeds da ACI/CNA não trazem imagem no RSS, mas as páginas dos artigos têm
 // og:image no topo. Buscamos o HTML e extraímos. Na web, o navegador não pode
-// buscar o HTML por CORS, então passamos por um proxy (codetabs); no nativo,
-// busca direto. Falha -> null (o card cai no fundo estilizado).
-const CODETABS = 'https://api.codetabs.com/v1/proxy/?quest=';
+// buscar o HTML por CORS, então passamos por um proxy. Proxies gratuitos caem com
+// frequência (o codetabs passou a dar 522), então tentamos uma CADEIA até um responder.
+const HTML_PROXIES = [
+  (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  (u) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`,
+  (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+];
 
 // Serve as imagens por um CDN/proxy (wsrv.nl): contorna CORS/hotlink de qualquer
 // host, converte para jpg e redimensiona — exibição uniforme e mais rápida.
@@ -74,25 +78,43 @@ function decodeEntities(s) {
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x2F;/g, '/');
 }
 
-async function resolveImage(articleUrl) {
-  if (!articleUrl) return null;
-  const target = Platform.OS === 'web' ? `${CODETABS}${encodeURIComponent(articleUrl)}` : articleUrl;
+function extractImage(html) {
+  const h = html.slice(0, 200000); // og:image às vezes vem depois do head
+  const m =
+    h.match(/<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i) ||
+    h.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) ||
+    h.match(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]*content=["']([^"']+)["']/i);
+  return m ? decodeEntities(m[1]) : null;
+}
+
+async function fetchHtml(url) {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 10000);
+  const timeoutId = setTimeout(() => controller.abort(), 9000);
   try {
-    const res = await fetch(target, { signal: controller.signal });
+    const res = await fetch(url, { signal: controller.signal });
     clearTimeout(timeoutId);
-    if (!res.ok) return null;
-    const html = (await res.text()).slice(0, 200000); // og:image às vezes vem depois do head
-    const m =
-      html.match(/<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i) ||
-      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) ||
-      html.match(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]*content=["']([^"']+)["']/i);
-    return m ? decodeEntities(m[1]) : null;
+    return res.ok ? await res.text() : null;
   } catch {
     clearTimeout(timeoutId);
     return null;
   }
+}
+
+async function resolveImage(articleUrl) {
+  if (!articleUrl) return null;
+  // No nativo, busca direto (sem CORS). Na web, tenta a cadeia de proxies até um responder.
+  if (Platform.OS !== 'web') {
+    const html = await fetchHtml(articleUrl);
+    return html ? extractImage(html) : null;
+  }
+  for (const proxy of HTML_PROXIES) {
+    const html = await fetchHtml(proxy(articleUrl));
+    if (html) {
+      const img = extractImage(html);
+      if (img) return img;
+    }
+  }
+  return null;
 }
 
 export async function getNews(lang = 'pt', { force = false } = {}) {
