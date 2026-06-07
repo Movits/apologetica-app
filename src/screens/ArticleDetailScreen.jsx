@@ -52,8 +52,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const [speaking, setSpeaking] = useState(false);
   const scrollRef = useRef(null);
   const scrollYRef = useRef(0);
-  const titleEndRef = useRef(0);
-  const headerTitleShownRef = useRef(false);
+  const savedScrollRef = useRef(0);
   const requireAccount = useRequireAccount();
 
   useEffect(() => {
@@ -140,19 +139,29 @@ export default function ArticleDetailScreen({ route, navigation }) {
     });
   }, [navigation, fav, speaking, article?.id, colors.accent]);
 
+  // Header sempre "Artigo - Nome do artigo".
+  useEffect(() => {
+    if (!article) return;
+    navigation.setOptions({ headerTitle: `${t('header.article')} - ${displayTitle}` });
+  }, [navigation, article?.id, displayTitle, lang]);
+
   // Restaura a posição de scroll ao voltar de uma referência/glossário (web reseta).
+  // A posição é capturada no momento de navegar (savedScrollRef), porque eventos de
+  // scroll durante a transição corrompiam o valor (a página voltava no fim).
   useFocusEffect(
     useCallback(() => {
-      const y = scrollYRef.current;
-      if (y > 0) {
-        const id = requestAnimationFrame(() => scrollRef.current?.scrollTo({ y, animated: false }));
-        return () => cancelAnimationFrame(id);
-      }
-      return undefined;
+      const y = savedScrollRef.current;
+      if (!y) return undefined;
+      const restore = () => scrollRef.current?.scrollTo({ y, animated: false });
+      const r = requestAnimationFrame(restore);
+      const t1 = setTimeout(restore, 80);
+      const t2 = setTimeout(() => { restore(); savedScrollRef.current = 0; }, 220);
+      return () => { cancelAnimationFrame(r); clearTimeout(t1); clearTimeout(t2); };
     }, [])
   );
 
   const openReference = (refId) => {
+    savedScrollRef.current = scrollYRef.current;
     navigation.navigate('RefDetail', { highlightId: refId });
   };
 
@@ -183,12 +192,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
     const max = Math.max(1, contentSize.height - layoutMeasurement.height);
     setProgress(contentOffset.y / max);
     scrollYRef.current = contentOffset.y;
-    // Quando o título da página sai da tela, mostra-o no header (barra navy).
-    const show = titleEndRef.current > 0 && contentOffset.y > titleEndRef.current;
-    if (show !== headerTitleShownRef.current) {
-      headerTitleShownRef.current = show;
-      navigation.setOptions({ headerTitle: show ? displayTitle : t('header.article') });
-    }
     hintScroll.onScroll(e);
   };
 
@@ -258,10 +261,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
           </View>
         </View>
 
-        <Text
-          style={styles.title}
-          onLayout={(e) => { titleEndRef.current = 20 + e.nativeEvent.layout.y + e.nativeEvent.layout.height; }}
-        >{displayTitle}</Text>
+        <Text style={styles.title}>{displayTitle}</Text>
         {showTranslationNotice && (
           <View style={styles.translationNotice}>
             <Ionicons name="language-outline" size={14} color={colors.accent} />
@@ -273,7 +273,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
         <MarkdownText
           text={displayBody || article.body}
           baseStyle={styles.body}
-          onOpenGlossary={(term) => navigation.navigate('Glossary', { highlightTerm: term })}
+          onOpenGlossary={(term) => { savedScrollRef.current = scrollYRef.current; navigation.navigate('Glossary', { highlightTerm: term }); }}
         />
 
         {article.tool && (

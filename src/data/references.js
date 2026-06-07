@@ -1184,7 +1184,7 @@ export const references = [
     year: '1992',
     topic: 'O que é a oração',
     text: '"A oração é a elevação da alma a Deus ou o pedido a Deus dos bens convenientes" (São João Damasceno). A humildade é o fundamento da oração. O homem é um mendigo de Deus.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p4s1cap1_2566-2649_po.html',
   },
   {
     id: 'acutis-milagres',
@@ -1309,7 +1309,7 @@ export const references = [
     year: '1992',
     topic: 'Sacramento da Reconciliação / Confissão',
     text: 'Os que se aproximam do sacramento da Penitência recebem da misericórdia de Deus o perdão das ofensas feitas a Ele e, ao mesmo tempo, reconciliam-se com a Igreja, que foi ferida pelos seus pecados. Cristo instituiu o sacramento da Penitência para todos os membros pecadores da sua Igreja, sobretudo para os que, depois do Batismo, caíram em pecado grave.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap1_1420-1532_po.html',
   },
   {
     id: 'cic-1991',
@@ -1803,7 +1803,7 @@ export const references = [
     year: '1992',
     topic: 'Condenação do espiritismo, da adivinhação e da magia',
     text: 'Devem-se rejeitar todas as formas de adivinhação. O recurso aos chamados médiuns encobre muitas vezes uma vontade de poder sobre o tempo, a história e, em última análise, sobre os homens, e o desejo de captar potências ocultas. Contradiz a honra, o respeito e o temor amoroso que devemos somente a Deus.',
-    url: 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html',
+    url: 'https://www.vatican.va/archive/cathechism_po/index_new/p3s2cap1_2083-2195_po.html',
   },
   {
     id: '1tm-3-15',
@@ -1856,7 +1856,7 @@ export const references = [
     year: '1545 a 1563',
     topic: 'Resposta católica à Reforma: Escritura, Tradição e justificação',
     text: 'O Concílio de Trento respondeu à Reforma reafirmando o cânon de 73 livros, ensinando que o Evangelho está contido nos livros escritos e nas tradições não escritas, e definindo que a justificação não se dá pela fé sozinha, mas pela graça que renova interiormente o homem e frutifica em obras de caridade.',
-    url: 'https://www.vatican.va/',
+    url: 'https://www.montfort.org.br/bra/documentos/concilios/trento/',
   },
   {
     id: 'csgc-denominacoes',
