@@ -7,9 +7,10 @@ Tudo que estiver aqui é publicado junto com o site a cada push.
 FOTO DE SÃO MIGUEL (fundo da landing page)
 ------------------------------------------
 
-1. Baixe a obra em alta resolução abrindo este link no navegador:
+1. Baixe a obra em alta resolução abrindo este link no navegador
+   (ele baixa o arquivo original direto):
 
-   https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=2560
+   https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg
 
 2. Salve o arquivo com EXATAMENTE este nome, dentro desta pasta:
 
