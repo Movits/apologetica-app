@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APPologética — Evangelização e apologética católica</title>
-  <meta name="description" content="App católico de evangelização e apologética: artigos, Bíblia, referências e ferramentas de oração. Disponível também na web.">
+  <title>APPologética — A referência em apologética católica</title>
+  <meta name="description" content="App católico de apologética: artigos com fontes, Bíblia completa, referências, quiz, diálogos e ferramentas de oração. Bilíngue, offline e gratuito.">
+  <meta property="og:title" content="APPologética — A referência em apologética católica">
+  <meta property="og:description" content="Conhecer, viver e defender a fé católica. Artigos com fontes, Bíblia, quiz, diálogos e oração. Bilíngue, offline e gratuito.">
+  <meta property="og:type" content="website">
   <!-- Define o tema antes do render para evitar flash. -->
   <script>
     (function () {
@@ -17,242 +20,500 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1a3a5c;   /* fundo do hero */
-      --heading: #1a3a5c;   /* cor dos títulos */
+      --primary: #1a3a5c;
+      --primary2: #12283f;
+      --heading: #1a3a5c;
       --accent: #c9a84c;
+      --accent2: #e7cd7e;
       --bg: #f5f0e8;
+      --bg2: #efe7d8;
       --card: #ffffff;
-      --cardBorder: rgba(0,0,0,0.12);
+      --cardBorder: rgba(26,58,92,0.12);
       --text: #222;
       --muted: #666;
+      --heroText: #eaf1f8;
+      --heroMuted: #b9cadb;
     }
     :root[data-theme="dark"] {
       --primary: #142844;
+      --primary2: #0a1626;
       --heading: #e6c878;
       --accent: #d4b86a;
+      --accent2: #f0d79b;
       --bg: #0d1722;
+      --bg2: #0a131d;
       --card: #172538;
-      --cardBorder: rgba(255,255,255,0.14);
+      --cardBorder: rgba(214,184,106,0.18);
       --text: #ece8d8;
       --muted: #a8a395;
+      --heroText: #f2ede0;
+      --heroMuted: #b9c4d2;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Lato', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      line-height: 1.5;
-      transition: background-color .2s ease, color .2s ease;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color .3s ease, color .3s ease;
     }
-    a { color: inherit; }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    .serif { font-family: 'Cormorant Garamond', serif; }
 
-    /* Pílulas de tema + idioma (canto superior direito) */
-    .toggles { position: fixed; top: 14px; right: 14px; z-index: 20; display: flex; gap: 8px; }
+    /* ===== Top bar ===== */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 20px;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(160%) blur(12px);
+      -webkit-backdrop-filter: saturate(160%) blur(12px);
+      border-bottom: 1px solid var(--cardBorder);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 18px; color: var(--heading); }
+    .brand .mark {
+      width: 30px; height: 30px; border-radius: 9px;
+      display: grid; place-items: center;
+      background: linear-gradient(160deg, var(--primary), var(--primary2));
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+    .brand .mark svg { width: 17px; height: 17px; color: var(--accent); }
+    .topnav { display: flex; align-items: center; gap: 8px; }
     .pill {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--card); color: var(--muted);
-      border: 1px solid var(--cardBorder); border-radius: 20px;
-      padding: 7px 12px; font-weight: 700; font-size: 13px;
-      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      border: 1px solid var(--cardBorder); border-radius: 22px;
+      padding: 8px 13px; font-weight: 700; font-size: 13px;
+      cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       font-family: 'Lato', sans-serif; line-height: 1;
+      transition: border-color .2s ease, transform .2s ease, color .2s ease;
     }
+    .pill:hover { border-color: var(--accent); transform: translateY(-1px); color: var(--text); }
     .pill svg { width: 16px; height: 16px; display: block; }
-    .pill:hover { border-color: var(--accent); }
     .icon-sun { display: none; }
     :root[data-theme="dark"] .icon-sun { display: block; }
     :root[data-theme="dark"] .icon-moon { display: none; }
-
-    /* Hero */
-    .hero {
-      background: var(--primary);
-      border-radius: 20px;
-      padding: 44px 28px;
-      text-align: center;
-      color: #fff;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    .btn-app {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent); color: #20160a; font-weight: 900; font-size: 13px;
+      padding: 9px 16px; border-radius: 22px;
+      box-shadow: 0 4px 14px rgba(201,168,76,0.36);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .cross { font-size: 56px; color: var(--accent); line-height: 1; }
+    .btn-app:hover { transform: translateY(-1px); box-shadow: 0 7px 20px rgba(201,168,76,0.5); }
+    .btn-app svg { width: 15px; height: 15px; }
+    .topnav .btn-app .lbl-full { display: inline; }
+    @media (max-width: 540px) {
+      .pill .lbl { display: none; }
+      .brand span.full { display: none; }
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative; overflow: hidden;
+      background: radial-gradient(120% 120% at 50% -10%, var(--primary) 0%, var(--primary2) 70%);
+      color: var(--heroText);
+      text-align: center;
+      padding: 96px 20px 120px;
+    }
+    .rays {
+      position: absolute; left: 50%; top: 4%;
+      width: 1400px; height: 1400px; transform: translateX(-50%);
+      pointer-events: none; z-index: 0; opacity: .55;
+    }
+    .rays::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-conic-gradient(from 0deg at 50% 50%,
+        rgba(201,168,76,0) 0deg 5deg,
+        rgba(231,205,126,0.16) 5deg 7deg,
+        rgba(201,168,76,0) 7deg 12deg);
+      -webkit-mask: radial-gradient(closest-side, #000 0%, rgba(0,0,0,0.5) 38%, transparent 72%);
+              mask: radial-gradient(closest-side, #000 0%, rgba(0,0,0,0.5) 38%, transparent 72%);
+      animation: spin 90s linear infinite;
+    }
+    .glow {
+      position: absolute; left: 50%; top: 10%; transform: translateX(-50%);
+      width: 460px; height: 460px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(231,205,126,0.34) 0%, rgba(201,168,76,0.10) 40%, transparent 70%);
+      filter: blur(6px); z-index: 0; pointer-events: none;
+      animation: breathe 7s ease-in-out infinite;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 900; letter-spacing: 1.6px; text-transform: uppercase;
+      color: var(--accent2);
+      border: 1px solid rgba(231,205,126,0.4); border-radius: 30px;
+      padding: 7px 15px; margin-bottom: 26px;
+      background: rgba(231,205,126,0.06);
+    }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 10px var(--accent2); }
+    .cross-wrap { position: relative; width: 96px; height: 96px; margin: 0 auto 8px; }
+    .cross-wrap svg { width: 100%; height: 100%; filter: drop-shadow(0 6px 22px rgba(201,168,76,0.5)); animation: floaty 6s ease-in-out infinite; }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 40px; font-weight: 700; margin-top: 6px;
+      font-size: clamp(46px, 9vw, 84px); font-weight: 700; line-height: 1.02;
+      letter-spacing: 0.5px; margin-top: 6px;
+      background: linear-gradient(100deg, #fff 0%, var(--accent2) 30%, #fff 55%, var(--accent2) 80%, #fff 100%);
+      background-size: 250% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      animation: shimmer 7s linear infinite;
     }
-    .hero .tagline { font-size: 16px; color: #d8e2ec; margin-top: 8px; }
+    .hero .tagline {
+      font-size: clamp(18px, 2.4vw, 23px); color: var(--heroText);
+      margin-top: 14px; font-weight: 400;
+    }
+    .hero .tagline b { color: var(--accent2); font-weight: 900; }
     .verse {
-      font-style: italic; color: var(--accent); font-size: 14px;
-      margin-top: 18px; max-width: 420px; margin-left: auto; margin-right: auto;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      color: var(--heroMuted); font-size: clamp(17px, 2.2vw, 21px);
+      margin: 22px auto 0; max-width: 540px;
     }
-    .verse .ref { display: block; font-style: normal; font-weight: 700; margin-top: 6px; }
-
-    /* Botões */
+    .verse .ref { display: block; font-style: normal; font-weight: 700; font-size: 14px; color: var(--accent2); margin-top: 8px; letter-spacing: .5px; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
     .cta {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--accent); color: #1a2a3a; font-weight: 700; font-size: 16px;
-      padding: 15px 28px; border-radius: 12px; text-decoration: none; margin-top: 26px;
-      transition: transform .12s ease, box-shadow .12s ease;
-      box-shadow: 0 4px 14px rgba(201,168,76,0.4);
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      background: var(--accent); color: #20160a; font-weight: 900; font-size: 16px;
+      padding: 16px 30px; border-radius: 14px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      box-shadow: 0 8px 24px rgba(201,168,76,0.4);
     }
-    .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201,168,76,0.5); }
-
-    .stores { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .cta svg { width: 18px; height: 18px; }
+    .cta:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(201,168,76,0.55); }
+    .cta.ghost {
+      background: transparent; color: var(--heroText);
+      border: 1px solid rgba(255,255,255,0.28); box-shadow: none;
+    }
+    .cta.ghost:hover { border-color: var(--accent2); box-shadow: 0 8px 22px rgba(0,0,0,0.25); }
+    .stores { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
     .store {
-      display: flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25);
-      color: #fff; border-radius: 12px; padding: 10px 18px; min-width: 168px;
-      position: relative; opacity: 0.85;
+      display: flex; align-items: center; gap: 11px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; border-radius: 13px; padding: 10px 18px; min-width: 176px;
+      position: relative;
     }
-    .store .logo { font-size: 24px; line-height: 1; }
-    .store .lines { text-align: left; }
-    .store .small { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+    .store svg { width: 22px; height: 22px; }
+    .store .lines { text-align: left; line-height: 1.15; }
+    .store .small { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent2); }
     .store .name { display: block; font-size: 15px; font-weight: 700; }
     .soon {
-      position: absolute; top: -9px; right: 10px; background: var(--accent); color: #1a2a3a;
-      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;
+      position: absolute; top: -9px; right: 10px; background: var(--accent); color: #20160a;
+      font-size: 10px; font-weight: 900; padding: 2px 9px; border-radius: 10px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .wave { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 1; line-height: 0; }
+    .wave svg { width: 100%; height: 60px; display: block; }
+    .wave path { fill: var(--bg); }
+
+    /* ===== Stats ===== */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+      margin: -54px auto 0; position: relative; z-index: 3; max-width: 900px;
+    }
+    .stat {
+      background: var(--card); border: 1px solid var(--cardBorder);
+      border-radius: 16px; padding: 22px 14px; text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+    .stat .num { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 44px); font-weight: 700; color: var(--heading); line-height: 1; }
+    .stat .lbl { font-size: 12.5px; color: var(--muted); margin-top: 6px; font-weight: 700; letter-spacing: .3px; }
+    @media (max-width: 680px) {
+      .stats { grid-template-columns: repeat(2, 1fr); margin-top: -40px; }
     }
 
-    /* Destaques */
-    .section-title {
-      font-family: 'Cormorant Garamond', serif; color: var(--heading);
-      font-size: 28px; font-weight: 700; text-align: center; margin: 44px 0 4px;
-    }
-    .section-sub { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    /* ===== Sections ===== */
+    section.block { padding: 76px 0 8px; }
+    .kicker { text-align: center; color: var(--accent); font-weight: 900; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+    .section-title { font-family: 'Cormorant Garamond', serif; color: var(--heading); font-size: clamp(30px, 5vw, 44px); font-weight: 700; text-align: center; margin: 8px 0 6px; line-height: 1.1; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 16px; margin: 0 auto 40px; max-width: 560px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
     .feature {
-      background: var(--card); border-radius: 14px; padding: 20px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05); border-left: 4px solid var(--accent);
+      position: relative; overflow: hidden;
+      background: var(--card); border: 1px solid var(--cardBorder); border-radius: 18px; padding: 26px 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-    .feature .ico { font-size: 26px; }
-    .feature h3 { color: var(--heading); font-size: 17px; margin: 8px 0 4px; }
-    .feature p { color: var(--muted); font-size: 13px; }
+    .feature::after {
+      content: ''; position: absolute; inset: 0; border-radius: 18px;
+      background: radial-gradient(140px 140px at var(--mx, 50%) 0%, rgba(201,168,76,0.14), transparent 70%);
+      opacity: 0; transition: opacity .3s ease; pointer-events: none;
+    }
+    .feature:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); border-color: rgba(201,168,76,0.5); }
+    .feature:hover::after { opacity: 1; }
+    .feature .ico {
+      width: 50px; height: 50px; border-radius: 13px; display: grid; place-items: center;
+      background: linear-gradient(160deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06));
+      border: 1px solid rgba(201,168,76,0.3); margin-bottom: 14px;
+    }
+    .feature .ico svg { width: 26px; height: 26px; color: var(--accent); }
+    .feature h3 { font-family: 'Cormorant Garamond', serif; color: var(--heading); font-size: 23px; font-weight: 700; margin-bottom: 4px; }
+    .feature p { color: var(--muted); font-size: 14.5px; }
 
-    /* Bloco "abrir web" */
+    /* ===== Showcase / quote ===== */
+    .showcase {
+      position: relative; overflow: hidden;
+      margin-top: 70px; border-radius: 24px;
+      background: radial-gradient(120% 140% at 50% 0%, var(--primary) 0%, var(--primary2) 75%);
+      color: var(--heroText); text-align: center; padding: 70px 28px;
+    }
+    .showcase .rays { opacity: .35; top: -20%; }
+    .showcase .q-cross { color: var(--accent2); }
+    .showcase .quote {
+      position: relative; z-index: 2;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(24px, 4vw, 40px); line-height: 1.25; max-width: 760px; margin: 18px auto 0;
+    }
+    .showcase .by { position: relative; z-index: 2; margin-top: 18px; color: var(--accent2); font-weight: 700; letter-spacing: .5px; }
+    .showcase .diffs { position: relative; z-index: 2; display: flex; gap: 10px 22px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .showcase .diff { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--heroText); font-weight: 700; }
+    .showcase .diff svg { width: 17px; height: 17px; color: var(--accent2); }
+
+    /* ===== Web card ===== */
     .webcard {
-      background: var(--card); border-radius: 16px; padding: 28px; text-align: center;
-      margin-top: 36px; box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+      background: var(--card); border: 1px solid var(--cardBorder); border-radius: 20px; padding: 40px 28px; text-align: center;
+      margin-top: 36px; box-shadow: 0 8px 26px rgba(0,0,0,0.06);
     }
-    .webcard h2 { font-family: 'Cormorant Garamond', serif; color: var(--heading); font-size: 26px; }
-    .webcard p { color: var(--muted); font-size: 14px; margin: 8px 0 4px; }
+    .webcard h2 { font-family: 'Cormorant Garamond', serif; color: var(--heading); font-size: clamp(26px, 4vw, 34px); font-weight: 700; }
+    .webcard p { color: var(--muted); font-size: 15px; margin: 10px auto 22px; max-width: 520px; }
+    .webcard .cta { color: #20160a; }
 
-    /* Rodapé */
-    footer { text-align: center; margin-top: 40px; color: var(--muted); font-size: 13px; }
-    footer a { color: var(--heading); font-weight: 700; text-decoration: none; margin: 0 8px; }
-    footer a:hover { text-decoration: underline; }
-    .madewith { margin-top: 18px; font-style: italic; color: var(--accent); }
+    /* ===== Footer ===== */
+    footer { text-align: center; margin-top: 64px; padding: 40px 20px; border-top: 1px solid var(--cardBorder); color: var(--muted); font-size: 13.5px; }
+    footer .flinks a { color: var(--heading); font-weight: 700; margin: 0 9px; }
+    footer .flinks a:hover { color: var(--accent); }
+    .madewith { margin-top: 16px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: var(--accent); }
+
+    /* ===== Reveal + motion ===== */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    [data-delay="1"] { transition-delay: .08s; }
+    [data-delay="2"] { transition-delay: .16s; }
+    [data-delay="3"] { transition-delay: .24s; }
+    [data-delay="4"] { transition-delay: .32s; }
+    [data-delay="5"] { transition-delay: .4s; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes shimmer { to { background-position: 250% center; } }
+    @keyframes breathe { 0%,100% { opacity: .65; transform: translateX(-50%) scale(1); } 50% { opacity: 1; transform: translateX(-50%) scale(1.06); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .rays::before, .glow, .cross-wrap svg, .hero h1 { animation: none !important; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="toggles">
-    <button id="themeBtn" class="pill" type="button" aria-label="Tema claro/escuro">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-    <button id="langBtn" class="pill" type="button">
-      <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"><path d="M48 112h288M192 64v48M272 448l96-224 96 224M301.5 384h133M281.3 112S257 206 199 277 80 384 80 384"/><path d="M256 336s-35-27-72-75-56-85-56-85"/></svg>
-      <span id="langLabel">English</span>
-    </button>
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2h-3v6.5H4v3h6.5V22h3v-10.5H20v-3h-6.5V2z"/></svg>
+      </span>
+      <span>APP<span class="full">ologética</span></span>
+    </a>
+    <nav class="topnav">
+      <button id="themeBtn" class="pill" type="button" aria-label="Alternar tema claro e escuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button id="langBtn" class="pill" type="button" aria-label="Mudar idioma">
+        <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"><path d="M48 112h288M192 64v48M272 448l96-224 96 224M301.5 384h133M281.3 112S257 206 199 277 80 384 80 384"/><path d="M256 336s-35-27-72-75-56-85-56-85"/></svg>
+        <span class="lbl" id="langLabel">English</span>
+      </button>
+      <a class="btn-app" href="app/" data-i18n="navOpen">Abrir app</a>
+    </nav>
   </div>
 
-  <div class="wrap">
-    <!-- HERO -->
-    <header class="hero">
-      <div class="cross">✝</div>
+  <!-- ===== Hero ===== -->
+  <header class="hero" id="top">
+    <div class="rays" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">Apologética católica · PT / EN</span></span>
+      <div class="cross-wrap" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0d79b"/><stop offset="0.5" stop-color="#c9a84c"/><stop offset="1" stop-color="#9c7e30"/>
+            </linearGradient>
+          </defs>
+          <path d="M57 8H43v27H16v14h27v43h14V49h27V35H57V8z" fill="url(#gold)" stroke="#7d6224" stroke-width="1"/>
+        </svg>
+      </div>
       <h1>APPologética</h1>
-      <p class="tagline" data-i18n="tagline">Evangelização e apologética católica</p>
+      <p class="tagline"><span data-i18n="tagline">A referência em </span><b data-i18n="taglineB">apologética católica</b><span data-i18n="taglineEnd"> em português.</span></p>
       <p class="verse">
-        <span data-i18n="verse">"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."</span>
+        <span data-i18n="verse">"Esteja sempre pronto para dar uma resposta a quem vos pedir razão da esperança que há em vós."</span>
         <span class="ref" data-i18n="verseRef">1 Pedro 3,15</span>
       </p>
-
-      <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web →</a>
-
+      <div class="cta-row">
+        <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="cta ghost" href="#features" data-i18n="ctaExplore">Conhecer o app</a>
+      </div>
       <div class="stores">
         <div class="store">
           <span class="soon" data-i18n="soon">Em breve</span>
-          <span class="logo"></span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.4-.9-2.4-3.6zM14.2 5.1c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.2z"/></svg>
           <span class="lines"><span class="small" data-i18n="dlApple">Baixar na</span><span class="name">App Store</span></span>
         </div>
         <div class="store">
           <span class="soon" data-i18n="soon">Em breve</span>
-          <span class="logo">▶</span>
+          <svg viewBox="0 0 24 24"><path fill="#34a853" d="M3.6 21.4l10-10-2.7-2.7L3.6 21.4z" opacity=".0"/><path fill="currentColor" d="M4 2.4c-.3.2-.5.6-.5 1.1v17c0 .5.2.9.5 1.1l9.6-9.6L4 2.4zm12.8 8.4l-2.5-1.4-2.8 2.8 2.8 2.8 2.5-1.5c.8-.5.8-1.7 0-2.2zM5.3 1.9l8.2 4.7 2.3-2.3L6.6 1.4c-.5-.3-1-.2-1.3.5zM13.5 17.4L5.3 22.1c.3.6.8.7 1.3.4l9.2-5.3-2.3-2.3z"/></svg>
           <span class="lines"><span class="small" data-i18n="dlGoogle">Disponível no</span><span class="name">Google Play</span></span>
         </div>
       </div>
-    </header>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 40 C 240 10 480 10 720 30 C 960 50 1200 50 1440 24 L1440 60 L0 60 Z"/></svg>
+    </div>
+  </header>
 
-    <!-- DESTAQUES -->
-    <h2 class="section-title" data-i18n="featTitle">O que você encontra</h2>
-    <p class="section-sub" data-i18n="featSub">Conteúdo para conhecer, viver e defender a fé católica.</p>
-    <div class="grid">
-      <div class="feature"><div class="ico">📚</div><h3 data-i18n="f1t">Artigos</h3><p data-i18n="f1d">Existência de Deus, Igreja, Escritura, moral, outras religiões e história.</p></div>
-      <div class="feature"><div class="ico">📖</div><h3 data-i18n="f2t">Bíblia</h3><p data-i18n="f2d">73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).</p></div>
-      <div class="feature"><div class="ico">🔖</div><h3 data-i18n="f3t">Referências</h3><p data-i18n="f3d">Versículos, Catecismo e documentos da Igreja, com o texto no original.</p></div>
-      <div class="feature"><div class="ico">🌅</div><h3 data-i18n="f4t">Dia de Hoje</h3><p data-i18n="f4d">Versículo do dia, santo do dia e a liturgia diária.</p></div>
-      <div class="feature"><div class="ico">🧰</div><h3 data-i18n="f5t">Ferramentas</h3><p data-i18n="f5d">Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.</p></div>
-      <div class="feature"><div class="ico">🌐</div><h3 data-i18n="f6t">PT / EN · Offline</h3><p data-i18n="f6d">Português e inglês, modo escuro e tudo funcionando sem internet.</p></div>
+  <div class="wrap">
+    <!-- ===== Stats ===== -->
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-count="73">73</div><div class="lbl" data-i18n="s1">livros bíblicos</div></div>
+      <div class="stat reveal" data-delay="1"><div class="num" data-count="85" data-suffix="+">85+</div><div class="lbl" data-i18n="s2">artigos com fontes</div></div>
+      <div class="stat reveal" data-delay="2"><div class="num" data-count="2">2</div><div class="lbl" data-i18n="s3">idiomas (PT/EN)</div></div>
+      <div class="stat reveal" data-delay="3"><div class="num" data-count="100" data-suffix="%">100%</div><div class="lbl" data-i18n="s4">offline e gratuito</div></div>
     </div>
 
-    <!-- ABRIR WEB -->
-    <div class="webcard">
-      <h2 data-i18n="webTitle">Prefere usar no navegador?</h2>
-      <p data-i18n="webDesc">Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas ficam sincronizados com o celular.</p>
-      <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web →</a>
-    </div>
-
-    <!-- RODAPÉ -->
-    <footer>
-      <div>
-        <a href="privacy.html" data-i18n="footPrivacy">Privacidade</a> ·
-        <a href="terms.html" data-i18n="footTerms">Termos</a> ·
-        <a href="donate.html" data-i18n="footDonate">Apoiar</a> ·
-        <a href="https://github.com/Movits/apologetica-app">GitHub</a>
+    <!-- ===== Features ===== -->
+    <section class="block" id="features">
+      <p class="kicker reveal" data-i18n="featKicker">O que você encontra</p>
+      <h2 class="section-title reveal" data-i18n="featTitle">Conhecer, viver e defender a fé</h2>
+      <p class="section-sub reveal" data-i18n="featSub">Conteúdo confiável e bem organizado, com fontes citadas, em vários formatos.</p>
+      <div class="grid">
+        <div class="feature reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <h3 data-i18n="f1t">Artigos por tema</h3>
+          <p data-i18n="f1d">Existência de Deus, Igreja, Escritura, moral, outras religiões e história. Linguagem clara, sem rodeios.</p>
+        </div>
+        <div class="feature reveal" data-delay="1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3 data-i18n="f2t">Bíblia completa</h3>
+          <p data-i18n="f2d">73 livros em português (Ave Maria) e inglês (Douay-Rheims), com busca, marcações e notas.</p>
+        </div>
+        <div class="feature reveal" data-delay="2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+          <h3 data-i18n="f3t">Referências com fontes</h3>
+          <p data-i18n="f3d">Versículos, Catecismo e documentos da Igreja, com citação completa e autor. Confiança, não achismo.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3 data-i18n="f4t">Diálogos e Quiz</h3>
+          <p data-i18n="f4d">Treine respostas às objeções mais comuns e teste seu conhecimento com quizzes de fé.</p>
+        </div>
+        <div class="feature reveal" data-delay="1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4"/><path d="M17 18a5 5 0 1 0-10 0"/><path d="M2 18h20"/></svg></div>
+          <h3 data-i18n="f5t">Dia de hoje</h3>
+          <p data-i18n="f5d">Versículo do dia, santo do dia e a liturgia diária. Um motivo para voltar e cultivar a rotina.</p>
+        </div>
+        <div class="feature reveal" data-delay="2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M8 21h8M12 13v8M3 17h18"/></svg></div>
+          <h3 data-i18n="f6t">Oração e ferramentas</h3>
+          <p data-i18n="f6d">Rosário guiado, plano de leitura, exame de consciência e glossário. Tudo offline, no celular ou no navegador.</p>
+        </div>
       </div>
-      <p class="madewith" data-i18n="madewith">Feito com fé. ✝</p>
-    </footer>
+
+      <!-- ===== Showcase / quote ===== -->
+      <div class="showcase reveal">
+        <div class="rays" aria-hidden="true"></div>
+        <span class="q-cross serif" style="font-size:34px">✝</span>
+        <p class="quote" data-i18n="quote">"A fé e a razão são como as duas asas pelas quais o espírito humano se eleva à contemplação da verdade."</p>
+        <p class="by" data-i18n="quoteBy">São João Paulo II, Fides et Ratio (1998)</p>
+        <div class="diffs">
+          <span class="diff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="d1">Fontes citadas</span></span>
+          <span class="diff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="d2">Bilíngue PT / EN</span></span>
+          <span class="diff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="d3">100% offline</span></span>
+          <span class="diff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="d4">Gratuito</span></span>
+        </div>
+      </div>
+
+      <!-- ===== Web card ===== -->
+      <div class="webcard reveal">
+        <h2 data-i18n="webTitle">Prefere usar no navegador?</h2>
+        <p data-i18n="webDesc">Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas ficam sincronizados com o celular.</p>
+        <a class="cta" href="app/" data-i18n="ctaOpen">Abrir versão web
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
   </div>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="flinks">
+      <a href="privacy.html" data-i18n="footPrivacy">Privacidade</a> ·
+      <a href="terms.html" data-i18n="footTerms">Termos</a> ·
+      <a href="donate.html" data-i18n="footDonate">Apoiar</a> ·
+      <a href="https://github.com/Movits/apologetica-app">GitHub</a>
+    </div>
+    <p class="madewith" data-i18n="madewith">Feito com fé. ✝</p>
+  </footer>
 
   <script>
     var I18N = {
       pt: {
-        tagline: 'Evangelização e apologética católica',
-        verse: '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."',
+        navOpen: 'Abrir app',
+        eyebrow: 'Apologética católica · PT / EN',
+        tagline: 'A referência em ', taglineB: 'apologética católica', taglineEnd: ' em português.',
+        verse: '"Esteja sempre pronto para dar uma resposta a quem vos pedir razão da esperança que há em vós."',
         verseRef: '1 Pedro 3,15',
-        ctaOpen: 'Abrir versão web →',
-        soon: 'Em breve',
-        dlApple: 'Baixar na',
-        dlGoogle: 'Disponível no',
-        featTitle: 'O que você encontra',
-        featSub: 'Conteúdo para conhecer, viver e defender a fé católica.',
-        f1t: 'Artigos', f1d: 'Existência de Deus, Igreja, Escritura, moral, outras religiões e história.',
-        f2t: 'Bíblia', f2d: '73 livros completos em português (Ave Maria) e inglês (Douay-Rheims).',
-        f3t: 'Referências', f3d: 'Versículos, Catecismo e documentos da Igreja, com o texto no original.',
-        f4t: 'Dia de Hoje', f4d: 'Versículo do dia, santo do dia e a liturgia diária.',
-        f5t: 'Ferramentas', f5d: 'Rosário, plano de leitura, exame de consciência, quiz e modo diálogo.',
-        f6t: 'PT / EN · Offline', f6d: 'Português e inglês, modo escuro e tudo funcionando sem internet.',
+        ctaOpen: 'Abrir versão web', ctaExplore: 'Conhecer o app',
+        soon: 'Em breve', dlApple: 'Baixar na', dlGoogle: 'Disponível no',
+        s1: 'livros bíblicos', s2: 'artigos com fontes', s3: 'idiomas (PT/EN)', s4: 'offline e gratuito',
+        featKicker: 'O que você encontra',
+        featTitle: 'Conhecer, viver e defender a fé',
+        featSub: 'Conteúdo confiável e bem organizado, com fontes citadas, em vários formatos.',
+        f1t: 'Artigos por tema', f1d: 'Existência de Deus, Igreja, Escritura, moral, outras religiões e história. Linguagem clara, sem rodeios.',
+        f2t: 'Bíblia completa', f2d: '73 livros em português (Ave Maria) e inglês (Douay-Rheims), com busca, marcações e notas.',
+        f3t: 'Referências com fontes', f3d: 'Versículos, Catecismo e documentos da Igreja, com citação completa e autor. Confiança, não achismo.',
+        f4t: 'Diálogos e Quiz', f4d: 'Treine respostas às objeções mais comuns e teste seu conhecimento com quizzes de fé.',
+        f5t: 'Dia de hoje', f5d: 'Versículo do dia, santo do dia e a liturgia diária. Um motivo para voltar e cultivar a rotina.',
+        f6t: 'Oração e ferramentas', f6d: 'Rosário guiado, plano de leitura, exame de consciência e glossário. Tudo offline, no celular ou no navegador.',
+        quote: '"A fé e a razão são como as duas asas pelas quais o espírito humano se eleva à contemplação da verdade."',
+        quoteBy: 'São João Paulo II, Fides et Ratio (1998)',
+        d1: 'Fontes citadas', d2: 'Bilíngue PT / EN', d3: '100% offline', d4: 'Gratuito',
         webTitle: 'Prefere usar no navegador?',
         webDesc: 'Acesse todo o conteúdo na web e, fazendo login, seus favoritos, marcações e notas ficam sincronizados com o celular.',
         footPrivacy: 'Privacidade', footTerms: 'Termos', footDonate: 'Apoiar',
         madewith: 'Feito com fé. ✝'
       },
       en: {
-        tagline: 'Catholic evangelization and apologetics',
+        navOpen: 'Open app',
+        eyebrow: 'Catholic apologetics · PT / EN',
+        tagline: 'The reference in ', taglineB: 'Catholic apologetics', taglineEnd: ', in Portuguese and English.',
         verse: '"Always be ready to give an answer to anyone who asks you the reason for the hope that is in you."',
         verseRef: '1 Peter 3:15',
-        ctaOpen: 'Open web version →',
-        soon: 'Coming soon',
-        dlApple: 'Download on the',
-        dlGoogle: 'Get it on',
-        featTitle: "What you'll find",
-        featSub: 'Content to know, live and defend the Catholic faith.',
-        f1t: 'Articles', f1d: 'Existence of God, the Church, Scripture, morality, other religions and history.',
-        f2t: 'Bible', f2d: '73 complete books in Portuguese (Ave Maria) and English (Douay-Rheims).',
-        f3t: 'References', f3d: 'Verses, Catechism and Church documents, with the original text.',
-        f4t: 'Today', f4d: 'Verse of the day, saint of the day and the daily liturgy.',
-        f5t: 'Tools', f5d: 'Rosary, reading plan, examination of conscience, quiz and dialogue mode.',
-        f6t: 'PT / EN · Offline', f6d: 'Portuguese and English, dark mode, and everything works offline.',
+        ctaOpen: 'Open web version', ctaExplore: 'Explore the app',
+        soon: 'Coming soon', dlApple: 'Download on the', dlGoogle: 'Get it on',
+        s1: 'Bible books', s2: 'sourced articles', s3: 'languages (PT/EN)', s4: 'offline and free',
+        featKicker: "What you'll find",
+        featTitle: 'Know, live and defend the faith',
+        featSub: 'Reliable, well-organized content with cited sources, in multiple formats.',
+        f1t: 'Articles by theme', f1d: 'Existence of God, the Church, Scripture, morality, other religions and history. Clear language, no fluff.',
+        f2t: 'Full Bible', f2d: '73 books in Portuguese (Ave Maria) and English (Douay-Rheims), with search, highlights and notes.',
+        f3t: 'Sourced references', f3d: 'Verses, Catechism and Church documents, with full citation and author. Trust, not guesswork.',
+        f4t: 'Dialogues & Quiz', f4d: 'Practice answers to the most common objections and test your knowledge with faith quizzes.',
+        f5t: 'Today', f5d: 'Verse of the day, saint of the day and the daily liturgy. A reason to come back and build the habit.',
+        f6t: 'Prayer & tools', f6d: 'Guided rosary, reading plan, examination of conscience and glossary. All offline, on phone or browser.',
+        quote: '"Faith and reason are like two wings on which the human spirit rises to the contemplation of truth."',
+        quoteBy: 'St. John Paul II, Fides et Ratio (1998)',
+        d1: 'Cited sources', d2: 'Bilingual PT / EN', d3: '100% offline', d4: 'Free',
         webTitle: 'Prefer the browser?',
         webDesc: 'Access all the content on the web and, by signing in, your favorites, highlights and notes stay synced with your phone.',
         footPrivacy: 'Privacy', footTerms: 'Terms', footDonate: 'Support',
@@ -269,7 +530,6 @@
         var k = el.getAttribute('data-i18n');
         if (I18N[lang][k] != null) el.textContent = I18N[lang][k];
       });
-      // O botão mostra o idioma de destino (igual ao app).
       var label = document.getElementById('langLabel');
       if (label) label.textContent = lang === 'pt' ? 'English' : 'Português';
       try { localStorage.setItem('appg_lang', lang); } catch (e) {}
@@ -297,6 +557,63 @@
       var t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
       applyTheme(t);
     });
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll reveal + count-up
+    var counted = false;
+    function runCount(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduce) { el.textContent = target + suffix; return; }
+      var start = null, dur = 1100;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window && !reduce) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('in');
+          if (!counted && e.target.querySelector && e.target.closest('.stats')) {
+            counted = true;
+            document.querySelectorAll('.stat .num[data-count]').forEach(runCount);
+          }
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.18 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      document.querySelectorAll('.stat .num[data-count]').forEach(runCount);
+    }
+
+    // Pointer glow on feature cards
+    document.querySelectorAll('.feature').forEach(function (card) {
+      card.addEventListener('pointermove', function (ev) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (ev.clientX - r.left) + 'px');
+      });
+    });
+
+    // Subtle hero parallax
+    if (!reduce) {
+      var rays = document.querySelector('.hero .rays');
+      var glow = document.querySelector('.hero .glow');
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY || 0;
+        if (y > 700) return;
+        if (rays) rays.style.transform = 'translateX(-50%) translateY(' + (y * 0.18) + 'px)';
+        if (glow) glow.style.transform = 'translateX(-50%) translateY(' + (y * 0.08) + 'px)';
+      }, { passive: true });
+    }
   </script>
 </body>
 </html>
