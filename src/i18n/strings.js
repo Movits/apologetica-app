@@ -64,6 +64,8 @@ export const STRINGS = {
     // === Home ===
     'home.search': 'Buscar em todo o app...',
     'home.section.learn': 'O que você quer aprender?',
+    'home.objection.title': 'Objeção do dia',
+    'home.objection.cta': 'Ver como responder',
     'home.section.spirituality': 'Espiritualidade',
     'home.section.training': 'Treino',
     'home.section.study': 'Meu Estudo',
@@ -341,6 +343,8 @@ export const STRINGS = {
     // === Home ===
     'home.search': 'Search in the app...',
     'home.section.learn': 'What do you want to learn?',
+    'home.objection.title': 'Objection of the day',
+    'home.objection.cta': 'See how to answer',
     'home.section.spirituality': 'Spirituality',
     'home.section.training': 'Training',
     'home.section.study': 'My Study',

@@ -17,6 +17,16 @@ export default function DialogueScreen({ navigation, route }) {
   const [activeId, setActiveId] = useState(initialId || null);
   const [stepIndex, setStepIndex] = useState(0);
 
+  // Abre o diálogo certo quando a tela já está montada e chega um novo
+  // dialogueId por navegação (ex.: card Objeção do dia na Home).
+  useEffect(() => {
+    const id = route?.params?.dialogueId;
+    if (id) {
+      setActiveId(id);
+      setStepIndex(0);
+    }
+  }, [route?.params]);
+
   const dialogue = activeId ? getDialogueById(activeId) : null;
 
   // Intercepta o botão de voltar (hardware) quando dentro de um diálogo:

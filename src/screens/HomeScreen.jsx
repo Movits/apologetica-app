@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
+import { DIALOGUES } from '../data/dialogues';
 import AppIcon from '../components/AppIcon';
 import ContinueReadingCard from '../components/ContinueReadingCard';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -47,6 +48,11 @@ export default function HomeScreen() {
   const openCategory = (category) =>
     navigation.navigate('CategoryArticles', { category });
 
+  // Objeção do dia: rotação determinística pelos diálogos (mesma pra todos no dia).
+  const now = new Date();
+  const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+  const dailyObjection = DIALOGUES[dayOfYear % DIALOGUES.length];
+
   return (
     <View style={styles.container}>
     <ScrollView
@@ -70,6 +76,24 @@ export default function HomeScreen() {
       </TouchableOpacity>
 
       <ContinueReadingCard onOpen={openArticle} refreshKey={refreshKey} />
+
+      {/* Objeção do dia: uma pergunta difícil com roteiro de resposta rápido. */}
+      <TouchableOpacity
+        style={styles.objectionCard}
+        onPress={() => navigation.navigate('Dialogue', { dialogueId: dailyObjection.id })}
+      >
+        <View style={styles.objectionHeader}>
+          <Ionicons name="chatbubbles-outline" size={15} color={colors.accent} />
+          <Text style={styles.objectionKicker}>{t('home.objection.title')}</Text>
+        </View>
+        <Text style={styles.objectionText}>
+          {isEn ? dailyObjection.objectionEn : dailyObjection.objection}
+        </Text>
+        <View style={styles.objectionCtaRow}>
+          <Text style={styles.objectionCta}>{t('home.objection.cta')}</Text>
+          <Ionicons name="arrow-forward" size={14} color={colors.accent} />
+        </View>
+      </TouchableOpacity>
 
       {/* Centro da Home: categorias de artigos de apologética. */}
       <Text style={styles.sectionTitle}>{t('home.section.learn')}</Text>
@@ -163,4 +187,16 @@ const makeStyles = (c, fs, topInset = 0) =>
     },
     cardLabel: { fontSize: fs(15), color: c.text, fontWeight: '600' },
     cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
+    objectionCard: {
+      backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 12,
+      borderLeftWidth: 4, borderLeftColor: c.accent,
+    },
+    objectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+    objectionKicker: {
+      fontSize: fs(11), color: c.accent, fontWeight: 'bold',
+      textTransform: 'uppercase', letterSpacing: 0.5,
+    },
+    objectionText: { fontSize: fs(15), color: c.text, fontWeight: '600', marginTop: 8, lineHeight: fs(21) },
+    objectionCtaRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 10 },
+    objectionCta: { fontSize: fs(12.5), color: c.accent, fontWeight: 'bold' },
   });
