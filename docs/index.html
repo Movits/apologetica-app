@@ -194,7 +194,7 @@
       width: 100%; height: 100%;
       object-fit: cover; object-position: center 18%;
       opacity: 0;
-      transition: opacity 2s ease;
+      transition: opacity 1.3s ease;
       filter: grayscale(1) sepia(1) saturate(3.4) hue-rotate(187deg) brightness(0.62) contrast(1.08);
       -webkit-mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
               mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
@@ -206,9 +206,9 @@
     :root[data-theme="dark"] .hero-art img.loaded { opacity: 0.3; }
     .hero-art.failed { display: none; }
     .art-credit {
-      position: absolute; top: 14px; right: 16px; z-index: 2;
+      position: absolute; top: 14px; left: 16px; z-index: 2;
       font-size: 10.5px; font-style: italic; color: var(--heroMuted);
-      opacity: 0.8; margin: 0; max-width: 62vw; text-align: right;
+      opacity: 0.8; margin: 0; max-width: 62vw; text-align: left;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
