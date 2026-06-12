@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'assets/**'
       - 'docs/**'
+      - 'fotos/**'
       - 'App.js'
       - 'app.json'
       - 'app.config.js'
@@ -49,6 +50,7 @@ jobs:
         run: |
           mkdir -p _site
           cp docs/*.html _site/
+          if [ -d fotos ]; then cp -r fotos _site/fotos; fi
           cp -r dist _site/app
           touch _site/.nojekyll
 

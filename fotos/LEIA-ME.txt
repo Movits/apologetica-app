@@ -1,0 +1,25 @@
+PASTA DE FOTOS DO SITE
+======================
+
+Esta pasta guarda as fotos usadas no site (a landing page).
+Tudo que estiver aqui é publicado junto com o site a cada push.
+
+FOTO DE SÃO MIGUEL (fundo da landing page)
+------------------------------------------
+
+1. Baixe a obra em alta resolução abrindo este link no navegador:
+
+   https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=2560
+
+2. Salve o arquivo com EXATAMENTE este nome, dentro desta pasta:
+
+   sao-miguel.jpg
+
+3. Faça o commit e o push (no VS Code: Source Control, botão +, Commit, Sync).
+
+Pronto. O site passa a carregar a imagem do nosso próprio servidor,
+bem mais rápido. Enquanto o arquivo não existir, o site continua
+buscando a imagem da internet como antes (não quebra nada).
+
+Obra: Guido Reni, São Miguel Arcanjo derrotando Satanás (1635).
+Domínio público.

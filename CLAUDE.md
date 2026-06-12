@@ -89,6 +89,11 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 - **Citações completas**: expandir siglas (Catecismo em vez de CIC) e incluir autor + ano.
 - **Referências batem com o texto**: todo versículo citado de forma central no corpo deve ter uma entrada correspondente em `references`; não deixar refs que não são citadas.
 
+### Pastas do usuário (não código)
+- `documentos/` — pesquisas e anotações do usuário (mercado, público, top100, créditos de imagens, previews antigos). Nada referencia no código.
+- `fotos/` — imagens do site adicionadas pelo usuário. `fotos/sao-miguel.jpg` é o fundo do hero da landing (`docs/index.html`); o deploy copia a pasta inteira pro site. Fallback remoto se o arquivo faltar.
+- `GUIA-DO-PROJETO.md` — mapa da raiz em linguagem leiga; manter atualizado ao criar/mover pastas.
+
 ### Paleta
 - `primary: #1a3a5c` (azul marinho), `accent: #c9a84c` (dourado), `bg: #f5f0e8` (creme).
 - Dark mode: `primaryText` vira dourado claro (`#e6c878`).
