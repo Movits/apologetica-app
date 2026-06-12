@@ -3,7 +3,7 @@
 // (não cruzar o Mediterrâneo, contornar lagos, descer pelo vale do Jordão).
 //
 // Coordenadas escolhidas com base no melhor consenso arqueológico/histórico disponível
-// (ver discussão no preview HTML em /preview/map-preview.html).
+// (ver discussão no preview HTML em /documentos/previews/map-preview.html).
 
 export const JESUS_JOURNEY = [
   {
