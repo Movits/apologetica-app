@@ -178,13 +178,13 @@
        Tom dourado no modo escuro e azul navy no modo claro. */
     .hero-art { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
     .hero-art img {
-      position: absolute; left: 50%; top: 0; transform: translateX(-50%);
-      height: 112%; width: auto; min-width: 60%;
-      object-fit: cover; object-position: top center;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 18%;
       opacity: 0.34;
       filter: grayscale(1) sepia(1) saturate(3.4) hue-rotate(187deg) brightness(0.62) contrast(1.08);
-      -webkit-mask-image: radial-gradient(85% 75% at 50% 38%, #000 35%, transparent 95%);
-              mask-image: radial-gradient(85% 75% at 50% 38%, #000 35%, transparent 95%);
+      -webkit-mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
+              mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
     }
     :root[data-theme="dark"] .hero-art img {
       opacity: 0.3;
@@ -381,8 +381,8 @@
     <div class="hero-art" aria-hidden="true">
       <img
         alt="" loading="eager" decoding="async"
-        src="https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520-%2520The%2520Archangel%2520Michael%2520defeating%2520Satan%2520-%2520Google%2520Art%2520Project.jpg&w=900&output=jpg&q=78"
-        data-srcs='["https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=900","https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=900&output=jpg&q=78","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg?width=900"]'
+        src="https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520-%2520The%2520Archangel%2520Michael%2520defeating%2520Satan%2520-%2520Google%2520Art%2520Project.jpg&w=1600&output=jpg&q=75"
+        data-srcs='["https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=1600","https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=1600&output=jpg&q=75","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg?width=1600"]'
         onerror="window.artFallback && artFallback(this)">
     </div>
     <p class="art-credit" data-i18n="artCredit">Guido Reni, São Miguel Arcanjo (1635). Domínio público.</p>

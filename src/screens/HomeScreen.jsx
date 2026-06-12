@@ -48,10 +48,11 @@ export default function HomeScreen() {
   const openCategory = (category) =>
     navigation.navigate('CategoryArticles', { category });
 
-  // Objeção do dia: rotação determinística pelos diálogos (mesma pra todos no dia).
+  // Objeção do dia: rotação determinística (mesma pra todos no dia), com o
+  // ano na semente pra variar entre anos, igual ao getVerseOfDay.
   const now = new Date();
   const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
-  const dailyObjection = DIALOGUES[dayOfYear % DIALOGUES.length];
+  const dailyObjection = DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
 
   return (
     <View style={styles.container}>
