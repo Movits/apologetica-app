@@ -17,6 +17,14 @@
         document.documentElement.dataset.theme = t;
       } catch (e) {}
     })();
+    // Revela a obra com fade mesmo quando ela carrega instantaneamente:
+    // espera dois frames pra garantir que houve um frame em opacidade 0
+    // (senao a transicao nao tem de onde partir e a imagem aparece seca).
+    window.artReveal = function (img) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { img.classList.add('loaded'); });
+      });
+    };
     // Fallback da obra de Sao Miguel ao fundo: tenta as fontes alternativas
     // e, se todas falharem, esconde a camada (o hero segue normal).
     window.artFallback = function (img) {
@@ -186,7 +194,7 @@
       width: 100%; height: 100%;
       object-fit: cover; object-position: center 18%;
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.9s ease;
       filter: grayscale(1) sepia(1) saturate(3.4) hue-rotate(187deg) brightness(0.62) contrast(1.08);
       -webkit-mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
               mask-image: radial-gradient(115% 95% at 50% 40%, #000 45%, transparent 100%);
@@ -384,7 +392,7 @@
     <div class="hero-art" aria-hidden="true">
       <img
         alt="" loading="eager" decoding="async" fetchpriority="high"
-        onload="this.classList.add('loaded')"
+        onload="window.artReveal && artReveal(this)"
         src="fotos/sao-miguel.jpg"
         data-srcs='["https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=2560&output=jpg&q=82","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg"]'
         onerror="window.artFallback && artFallback(this)">
