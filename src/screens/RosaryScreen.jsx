@@ -216,7 +216,7 @@ export default function RosaryScreen() {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.cardTitle}>{isEn ? m.nameEn : m.name}</Text>
-                <TouchableOpacity onPress={() => openInBible(m.nav, m.ref)} hitSlop={6}>
+                <TouchableOpacity onPress={() => openInBible(m.nav, m.ref)} hitSlop={10}>
                   <Text style={styles.cardRef}>
                     <Ionicons name="bookmark-outline" size={12} color={colors.accent} />{' '}
                     {isEn ? m.refEn : m.ref}
@@ -240,7 +240,7 @@ export default function RosaryScreen() {
             </Text>
             <Text style={styles.currentStepText}>{currentStep?.label}</Text>
             {currentMystery && (
-              <TouchableOpacity onPress={() => openInBible(currentMystery.nav, currentMystery.ref)} hitSlop={6} style={{ marginTop: 8 }}>
+              <TouchableOpacity onPress={() => openInBible(currentMystery.nav, currentMystery.ref)} hitSlop={10} style={{ marginTop: 8 }}>
                 <Text style={styles.currentMystery}>
                   {isEn ? `→ ${currentMystery.nameEn} (${currentMystery.refEn})` : `→ ${currentMystery.name} (${currentMystery.ref})`}
                 </Text>

@@ -12,7 +12,15 @@ export default function AuthTopToggles() {
 
   return (
     <View style={styles.row}>
-      <TouchableOpacity style={styles.pill} onPress={() => setDarkMode(!darkMode)} hitSlop={12}>
+      <TouchableOpacity
+        style={styles.pill}
+        onPress={() => setDarkMode(!darkMode)}
+        hitSlop={12}
+        accessibilityRole="button"
+        accessibilityLabel={lang === 'en'
+          ? (darkMode ? 'Light theme' : 'Dark theme')
+          : (darkMode ? 'Tema claro' : 'Tema escuro')}
+      >
         <Ionicons name={darkMode ? 'sunny-outline' : 'moon-outline'} size={14} color={colors.textMuted} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.pill} onPress={() => setLang(lang === 'pt' ? 'en' : 'pt')} hitSlop={12}>

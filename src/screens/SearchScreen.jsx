@@ -235,7 +235,11 @@ export default function SearchScreen({ navigation }) {
           autoCorrect={false}
         />
         {query.length > 0 && (
-          <TouchableOpacity onPress={() => setQuery('')}>
+          <TouchableOpacity
+            onPress={() => setQuery('')}
+            accessibilityRole="button"
+            accessibilityLabel={isEn ? 'Clear search' : 'Limpar busca'}
+          >
             <Ionicons name="close-circle" size={20} color={colors.textSubtle} />
           </TouchableOpacity>
         )}
@@ -287,7 +291,7 @@ export default function SearchScreen({ navigation }) {
       <View style={{ flex: 1 }}>
         <FlatList
           data={flatData}
-          keyExtractor={(item, i) => `${item.type}-${item.item?.id || item.item?.ref || item.label}-${i}`}
+          keyExtractor={(item, i) => `${item.type}-${item.item?.id ?? item.item?.ref ?? item.label ?? i}`}
           contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
           renderItem={renderItem}
           initialNumToRender={10}

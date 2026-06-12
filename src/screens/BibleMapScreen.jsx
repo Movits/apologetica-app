@@ -154,10 +154,10 @@ export default function BibleMapScreen({ navigation }) {
 }
 
 function PlaceModal({ place, onClose, onOpenBible, isEn, colors, fs }) {
-  if (!place) return null;
-  const s = modalStyles(colors, fs);
   const [imgLoading, setImgLoading] = useState(true);
   const [imgError, setImgError] = useState(false);
+  if (!place) return null;
+  const s = modalStyles(colors, fs);
   return (
     <Modal visible={!!place} transparent animationType={Platform.OS === 'web' ? 'fade' : 'slide'} onRequestClose={onClose}>
       <Pressable style={s.backdrop} onPress={onClose}>

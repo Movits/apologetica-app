@@ -108,13 +108,19 @@ export default function NoteEditorScreen({ route, navigation }) {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          accessibilityRole="button"
+          accessibilityLabel={isEn ? 'Close' : 'Fechar'}
+        >
           <Ionicons name="close" size={26} color={colors.primaryText} />
         </TouchableOpacity>
         <Text style={styles.title}>{noteId ? (isEn ? 'Edit note' : 'Editar nota') : (isEn ? 'New note' : 'Nova nota')}</Text>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
           {noteId && text.trim() ? (
             <TouchableOpacity
+              accessibilityRole="button"
+              accessibilityLabel={isEn ? 'Share note' : 'Compartilhar nota'}
               onPress={() => {
                 const ch = getChapter(meta.bookId, meta.chapter, isEn ? 'en' : 'pt');
                 const verseText = ch?.verses?.find((v) => v.n === meta.verseStart)?.t || '';

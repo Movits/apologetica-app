@@ -20,11 +20,11 @@ import ScrollHint from '../components/ScrollHint';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 
 const HIGHLIGHT_COLORS = [
-  { key: 'yellow', value: '#fff3a6' },
-  { key: 'green', value: '#c8f0c0' },
-  { key: 'blue', value: '#c4dffb' },
-  { key: 'pink', value: '#f8c4d3' },
-  { key: 'orange', value: '#ffd9a8' },
+  { key: 'yellow', value: '#fff3a6', labelPt: 'Marcar em amarelo', labelEn: 'Highlight in yellow' },
+  { key: 'green', value: '#c8f0c0', labelPt: 'Marcar em verde', labelEn: 'Highlight in green' },
+  { key: 'blue', value: '#c4dffb', labelPt: 'Marcar em azul', labelEn: 'Highlight in blue' },
+  { key: 'pink', value: '#f8c4d3', labelPt: 'Marcar em rosa', labelEn: 'Highlight in pink' },
+  { key: 'orange', value: '#ffd9a8', labelPt: 'Marcar em laranja', labelEn: 'Highlight in orange' },
 ];
 
 export default function BibleScreen({ route, navigation }) {
@@ -113,7 +113,13 @@ export default function BibleScreen({ route, navigation }) {
         : view === 'chapters' && book ? bn(book)
         : t('tab.bible'),
       headerLeft: view === 'books' ? undefined : () => (
-        <TouchableOpacity onPress={goBackLevel} style={{ paddingHorizontal: 12, paddingVertical: 4 }} hitSlop={8}>
+        <TouchableOpacity
+          onPress={goBackLevel}
+          style={{ paddingHorizontal: 12, paddingVertical: 4 }}
+          hitSlop={8}
+          accessibilityRole="button"
+          accessibilityLabel={isEn ? 'Back' : 'Voltar'}
+        >
           <Ionicons name="arrow-back" size={24} color="#fff" />
         </TouchableOpacity>
       ),
@@ -427,7 +433,15 @@ export default function BibleScreen({ route, navigation }) {
       <View style={styles.container}>
         <View style={styles.verseHeader}>
           <Text style={styles.verseHeaderTitle}>{bn(book)} {chapter}</Text>
-          <TouchableOpacity onPress={toggleChapterTts} hitSlop={10} style={styles.ttsBtn}>
+          <TouchableOpacity
+            onPress={toggleChapterTts}
+            hitSlop={10}
+            style={styles.ttsBtn}
+            accessibilityRole="button"
+            accessibilityLabel={speaking
+              ? (isEn ? 'Stop narration' : 'Parar narração')
+              : (isEn ? 'Listen to chapter' : 'Ouvir capítulo')}
+          >
             <Ionicons
               name={speaking ? 'stop-circle' : 'volume-high-outline'}
               size={24}
@@ -489,6 +503,8 @@ export default function BibleScreen({ route, navigation }) {
                       onPress={() => openVerseNote(item.n)}
                       hitSlop={10}
                       style={{ marginLeft: 6, marginTop: 4 }}
+                      accessibilityRole="button"
+                      accessibilityLabel={isEn ? 'Open note' : 'Abrir nota'}
                     >
                       <Ionicons name="document-text" size={14} color={colors.accent} />
                     </TouchableOpacity>
@@ -507,6 +523,8 @@ export default function BibleScreen({ route, navigation }) {
             style={[styles.navBtn, !hasPrev && styles.navBtnDisabled]}
             onPress={goPrev}
             disabled={!hasPrev}
+            accessibilityRole="button"
+            accessibilityLabel={isEn ? 'Previous chapter' : 'Capítulo anterior'}
           >
             <Ionicons name="chevron-back" size={20} color={hasPrev ? colors.primaryText : colors.textSubtle} />
             <Text style={[styles.navBtnText, !hasPrev && styles.navBtnTextDisabled]}>
@@ -518,6 +536,8 @@ export default function BibleScreen({ route, navigation }) {
             style={[styles.navBtn, !hasNext && styles.navBtnDisabled, { justifyContent: 'flex-end' }]}
             onPress={goNext}
             disabled={!hasNext}
+            accessibilityRole="button"
+            accessibilityLabel={isEn ? 'Next chapter' : 'Próximo capítulo'}
           >
             <Text style={[styles.navBtnText, !hasNext && styles.navBtnTextDisabled]}>
               {hasNext ? `${bs(book)} ${chapter + 1}` : ''}
@@ -549,6 +569,8 @@ export default function BibleScreen({ route, navigation }) {
                       key={c.key}
                       style={[styles.colorDot, { backgroundColor: c.value }, current && styles.colorDotActive]}
                       onPress={() => applyHighlight(c.value)}
+                      accessibilityRole="button"
+                      accessibilityLabel={isEn ? c.labelEn : c.labelPt}
                     >
                       {current && <Ionicons name="checkmark" size={18} color="#333" />}
                     </TouchableOpacity>
@@ -558,6 +580,8 @@ export default function BibleScreen({ route, navigation }) {
                   <TouchableOpacity
                     style={styles.removeColorBtn}
                     onPress={() => applyHighlight(highlightsByVerse[actionVerse.n].color)}
+                    accessibilityRole="button"
+                    accessibilityLabel={isEn ? 'Remove highlight' : 'Remover marcação'}
                   >
                     <Ionicons name="close-circle-outline" size={22} color={colors.textMuted} />
                   </TouchableOpacity>

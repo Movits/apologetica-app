@@ -228,7 +228,13 @@ export default function ImageZoomModal({ visible, source, hdUri, caption, alt, o
             </GestureDetector>
           )}
 
-          <Pressable style={[styles.close, { top: insets.top + 8 }]} onPress={close} hitSlop={12}>
+          <Pressable
+            style={[styles.close, { top: insets.top + 8 }]}
+            onPress={close}
+            hitSlop={12}
+            accessibilityRole="button"
+            accessibilityLabel="Fechar"
+          >
             <Ionicons name="close" size={26} color="#fff" />
           </Pressable>
 

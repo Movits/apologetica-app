@@ -13,7 +13,7 @@ const LIGHT = {
   cardBorder: '#eee',
   text: '#222222',
   textMuted: '#666666',
-  textSubtle: '#888888',
+  textSubtle: '#6a6457',    // cinza quente com contraste AA sobre creme e branco
   divider: '#dddddd',
   inputBg: '#ffffff',
   badgeBg: '#eef2f7',
@@ -35,7 +35,7 @@ const DARK = {
   cardBorder: '#243248',
   text: '#ece8d8',            // creme quente (mais agradável que branco frio)
   textMuted: '#a8a395',
-  textSubtle: '#7a7568',
+  textSubtle: '#938d7e',    // contraste AA sobre bg e card no escuro
   divider: '#243248',
   inputBg: '#172538',
   badgeBg: '#243248',

@@ -81,7 +81,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
       .replace(/_([^_]+)_/g, '$1')               // _italic_ → italic
       .replace(/`([^`]+)`/g, '$1')               // `code` → code
       .replace(/^#{1,6}\s*/gm, '')               // # headers
-      .replace(/[​-‍﻿]/g, '');    // zero-width chars
+      .replace(/[\u200B-\u200D\uFEFF]/g, '');    // zero-width chars
 
   const onToggleSpeak = async () => {
     if (!article) return;
@@ -121,17 +121,33 @@ export default function ArticleDetailScreen({ route, navigation }) {
     navigation.setOptions({
       headerRight: () => (
         <View style={{ flexDirection: 'row', gap: 14, paddingRight: 4 }}>
-          <TouchableOpacity onPress={onToggleSpeak}>
+          <TouchableOpacity
+            onPress={onToggleSpeak}
+            accessibilityRole="button"
+            accessibilityLabel={speaking
+              ? (isEn ? 'Stop narration' : 'Parar narração')
+              : (isEn ? 'Listen to article' : 'Ouvir artigo')}
+          >
             <Ionicons
               name={speaking ? 'stop-circle' : 'volume-high-outline'}
               size={22}
               color={speaking ? colors.accent : '#fff'}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={onShare}>
+          <TouchableOpacity
+            onPress={onShare}
+            accessibilityRole="button"
+            accessibilityLabel={isEn ? 'Share article' : 'Compartilhar artigo'}
+          >
             <Ionicons name="share-social-outline" size={22} color="#fff" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={onToggleFav}>
+          <TouchableOpacity
+            onPress={onToggleFav}
+            accessibilityRole="button"
+            accessibilityLabel={fav
+              ? (isEn ? 'Remove from favorites' : 'Remover dos favoritos')
+              : (isEn ? 'Add to favorites' : 'Favoritar artigo')}
+          >
             <Ionicons name={fav ? 'star' : 'star-outline'} size={22} color={fav ? colors.accent : '#fff'} />
           </TouchableOpacity>
         </View>
@@ -239,6 +255,8 @@ export default function ArticleDetailScreen({ route, navigation }) {
               style={styles.heroBox}
               onLayout={(e) => setHeroW(e.nativeEvent.layout.width)}
               onPress={() => setZoomOpen(true)}
+              accessibilityRole="button"
+              accessibilityLabel={isEn ? 'Expand image' : 'Ampliar imagem'}
             >
               {heroW > 0 && (
                 <Image
@@ -302,11 +320,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
                 >
                   {(() => {
                     const rWithEn = { ...r, ...(referencesEn[r.id] || {}) };
+                    const credit = [r.author, r.year].filter(Boolean).join(', ');
                     return (
                       <View style={{ flex: 1 }}>
                         <Text style={styles.refItemRef}>{isEn ? (rWithEn.refEn || translateRef(r.ref, isEn)) : r.ref}</Text>
                         <Text style={styles.refItemSource}>
-                          {isEn ? (rWithEn.fullSourceEn || r.fullSource) : r.fullSource}{r.author ? ` (${r.author}` : ''}{r.year ? `, ${r.year})` : r.author ? ')' : ''}
+                          {isEn ? (rWithEn.fullSourceEn || r.fullSource) : r.fullSource}{credit ? ` (${credit})` : ''}
                         </Text>
                       </View>
                     );

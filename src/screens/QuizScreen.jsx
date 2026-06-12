@@ -71,6 +71,7 @@ function QuizMenu({ navigation, colors, fs, isEn, t }) {
 
 // ============== MÚLTIPLA ESCOLHA (daily + practice) ==============
 function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
+  const { darkMode } = useTheme();
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -171,11 +172,11 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
           let icon = null;
           if (showResult) {
             if (isCorrect) {
-              bg = colors.mode === 'dark' ? '#1f3a28' : '#e6f4ea';
+              bg = darkMode ? '#1f3a28' : '#e6f4ea';
               border = '#3a7d4b';
               icon = 'checkmark-circle';
             } else if (isPicked) {
-              bg = colors.mode === 'dark' ? '#3a1f1f' : '#f8d7da';
+              bg = darkMode ? '#3a1f1f' : '#f8d7da';
               border = '#a02020';
               icon = 'close-circle';
             }
@@ -273,6 +274,7 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
 
 // ============== VERDADEIRO / FALSO ==============
 function TrueFalseGame({ navigation, colors, fs, isEn, t }) {
+  const { darkMode } = useTheme();
   const [items, setItems] = useState([]);
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
@@ -321,8 +323,8 @@ function TrueFalseGame({ navigation, colors, fs, isEn, t }) {
             const isPicked = val === picked;
             let bg = colors.card; let border = colors.divider;
             if (picked !== null) {
-              if (isCorrect) { bg = colors.mode === 'dark' ? '#1f3a28' : '#e6f4ea'; border = '#3a7d4b'; }
-              else if (isPicked) { bg = colors.mode === 'dark' ? '#3a1f1f' : '#f8d7da'; border = '#a02020'; }
+              if (isCorrect) { bg = darkMode ? '#1f3a28' : '#e6f4ea'; border = '#3a7d4b'; }
+              else if (isPicked) { bg = darkMode ? '#3a1f1f' : '#f8d7da'; border = '#a02020'; }
             }
             return (
               <TouchableOpacity
