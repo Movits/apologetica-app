@@ -17,8 +17,8 @@
         document.documentElement.dataset.theme = t;
       } catch (e) {}
     })();
-    // Fallback da obra de Sao Miguel: tenta as fontes alternativas e, se
-    // todas falharem, mostra a cruz dourada no lugar.
+    // Fallback da obra de Sao Miguel ao fundo: tenta as fontes alternativas
+    // e, se todas falharem, esconde a camada (o hero segue normal).
     window.artFallback = function (img) {
       var srcs = [];
       try { srcs = JSON.parse(img.getAttribute('data-srcs') || '[]'); } catch (e) {}
@@ -27,8 +27,10 @@
         img.dataset.i = i + 1;
         img.src = srcs[i];
       } else {
-        var wrap = img.closest ? img.closest('.art-wrap') : null;
+        var wrap = img.closest ? img.closest('.hero-art') : null;
         if (wrap) wrap.classList.add('failed');
+        var credit = document.querySelector('.art-credit');
+        if (credit) credit.style.display = 'none';
       }
     };
   </script>
@@ -172,26 +174,27 @@
     .cross-wrap { position: relative; width: 96px; height: 96px; margin: 0 auto 8px; }
     .cross-wrap svg { width: 100%; height: 100%; filter: drop-shadow(0 6px 22px rgba(201,168,76,0.5)); animation: floaty 6s ease-in-out infinite; }
 
-    /* Moldura em arco com Sao Miguel (defesa da fe) */
-    .art-wrap { position: relative; margin: 0 auto 12px; }
-    .art-arch {
-      width: 188px; height: 246px; margin: 0 auto; padding: 7px;
-      border-radius: 94px 94px 18px 18px;
-      background: linear-gradient(165deg, #f0d79b 0%, #c9a84c 45%, #8f7128 100%);
-      box-shadow: 0 14px 44px rgba(201,168,76,0.4), 0 6px 20px rgba(0,0,0,0.45);
-      animation: floaty 6s ease-in-out infinite;
+    /* Sao Miguel derrotando Satanas como camada de fundo do hero.
+       Tom dourado no modo escuro e azul navy no modo claro. */
+    .hero-art { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+    .hero-art img {
+      position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+      height: 112%; width: auto; min-width: 60%;
+      object-fit: cover; object-position: top center;
+      opacity: 0.34;
+      filter: grayscale(1) sepia(1) saturate(3.4) hue-rotate(187deg) brightness(0.62) contrast(1.08);
+      -webkit-mask-image: radial-gradient(85% 75% at 50% 38%, #000 35%, transparent 95%);
+              mask-image: radial-gradient(85% 75% at 50% 38%, #000 35%, transparent 95%);
     }
-    .art-arch .frame-inner {
-      width: 100%; height: 100%; overflow: hidden;
-      border-radius: 87px 87px 12px 12px;
-      border: 1px solid rgba(255,255,255,0.3);
-      background: var(--primary2);
+    :root[data-theme="dark"] .hero-art img {
+      opacity: 0.3;
+      filter: grayscale(1) sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(0.85) contrast(1.05);
     }
-    .art-arch img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-    .art-credit { font-size: 11.5px; font-style: italic; color: var(--heroMuted); margin-top: 12px; }
-    .art-wrap .cross-wrap { display: none; }
-    .art-wrap.failed .art-arch, .art-wrap.failed .art-credit { display: none; }
-    .art-wrap.failed .cross-wrap { display: block; }
+    .hero-art.failed { display: none; }
+    .art-credit {
+      position: absolute; right: 14px; bottom: 12px; z-index: 2;
+      font-size: 10.5px; font-style: italic; color: var(--heroMuted); opacity: 0.75;
+    }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(46px, 9vw, 84px); font-weight: 700; line-height: 1.18;
@@ -375,30 +378,25 @@
   <header class="hero" id="top">
     <div class="rays" aria-hidden="true"></div>
     <div class="glow" aria-hidden="true"></div>
+    <div class="hero-art" aria-hidden="true">
+      <img
+        alt="" loading="eager" decoding="async"
+        src="https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520-%2520The%2520Archangel%2520Michael%2520defeating%2520Satan%2520-%2520Google%2520Art%2520Project.jpg&w=900&output=jpg&q=78"
+        data-srcs='["https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=900","https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=900&output=jpg&q=78","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg?width=900"]'
+        onerror="window.artFallback && artFallback(this)">
+    </div>
+    <p class="art-credit" data-i18n="artCredit">Guido Reni, São Miguel Arcanjo (1635). Domínio público.</p>
     <div class="hero-inner">
       <span class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">Apologética católica · PT / EN</span></span>
-      <div class="art-wrap">
-        <div class="art-arch">
-          <div class="frame-inner">
-            <img
-              alt="São Miguel Arcanjo com a espada erguida, por Guido Reni"
-              width="174" height="232" loading="eager" decoding="async"
-              src="https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520-%2520The%2520Archangel%2520Michael%2520defeating%2520Satan%2520-%2520Google%2520Art%2520Project.jpg&w=420&output=jpg&q=80"
-              data-srcs='["https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=420","https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=420&output=jpg&q=80","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg?width=420"]'
-              onerror="window.artFallback && artFallback(this)">
-          </div>
-        </div>
-        <div class="cross-wrap" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <defs>
-              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f0d79b"/><stop offset="0.5" stop-color="#c9a84c"/><stop offset="1" stop-color="#9c7e30"/>
-              </linearGradient>
-            </defs>
-            <path d="M57 8H43v27H16v14h27v43h14V49h27V35H57V8z" fill="url(#gold)" stroke="#7d6224" stroke-width="1"/>
-          </svg>
-        </div>
-        <p class="art-credit" data-i18n="artCredit">Guido Reni, São Miguel Arcanjo (1635). Domínio público.</p>
+      <div class="cross-wrap" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0d79b"/><stop offset="0.5" stop-color="#c9a84c"/><stop offset="1" stop-color="#9c7e30"/>
+            </linearGradient>
+          </defs>
+          <path d="M57 8H43v27H16v14h27v43h14V49h27V35H57V8z" fill="url(#gold)" stroke="#7d6224" stroke-width="1"/>
+        </svg>
       </div>
       <h1>APPologética</h1>
       <p class="tagline"><span data-i18n="tagline">A referência em </span><b data-i18n="taglineB">apologética católica</b><span data-i18n="taglineEnd"> em português.</span></p>
