@@ -195,10 +195,7 @@
       filter: grayscale(1) sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(0.85) contrast(1.05);
     }
     .hero-art.failed { display: none; }
-    .art-credit {
-      position: absolute; right: 14px; bottom: 12px; z-index: 2;
-      font-size: 10.5px; font-style: italic; color: var(--heroMuted); opacity: 0.75;
-    }
+    .art-credit { font-size: 11px; font-style: italic; color: var(--muted); opacity: 0.85; margin-top: 10px; }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(46px, 9vw, 84px); font-weight: 700; line-height: 1.18;
@@ -389,7 +386,6 @@
         data-srcs='["https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Archangel%20Michael%20defeating%20Satan%20-%20Google%20Art%20Project.jpg?width=2560","https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGuido%2520Reni%2520031.jpg&w=2560&output=jpg&q=82","https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg?width=2560"]'
         onerror="window.artFallback && artFallback(this)">
     </div>
-    <p class="art-credit" data-i18n="artCredit">Guido Reni, São Miguel Arcanjo (1635). Domínio público.</p>
     <div class="hero-inner">
       <span class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">Apologética católica · PT / EN</span></span>
       <div class="cross-wrap" aria-hidden="true">
@@ -512,6 +508,7 @@
       <a href="donate.html" data-i18n="footDonate">Apoiar</a> ·
       <a href="https://github.com/Movits/apologetica-app">GitHub</a>
     </div>
+    <p class="art-credit" data-i18n="artCredit">Arte: Guido Reni, São Miguel Arcanjo (1635). Domínio público.</p>
     <p class="madewith" data-i18n="madewith">Feito com fé. ✝</p>
   </footer>
 
@@ -523,7 +520,7 @@
         tagline: 'A referência em ', taglineB: 'apologética católica', taglineEnd: ' em português.',
         verse: '"Esteja sempre pronto para dar uma resposta a quem vos pedir razão da esperança que há em vós."',
         verseRef: '1 Pedro 3,15',
-        artCredit: 'Guido Reni, São Miguel Arcanjo (1635). Domínio público.',
+        artCredit: 'Arte: Guido Reni, São Miguel Arcanjo (1635). Domínio público.',
         ctaOpen: 'Abrir versão web', ctaExplore: 'Conhecer o app',
         soon: 'Em breve', dlApple: 'Baixar na', dlGoogle: 'Disponível no',
         s1: 'livros bíblicos', s2: 'artigos com fontes', s3: 'idiomas (PT/EN)', s4: 'offline e gratuito',
@@ -550,7 +547,7 @@
         tagline: 'The reference in ', taglineB: 'Catholic apologetics', taglineEnd: ', in Portuguese and English.',
         verse: '"Always be ready to give an answer to anyone who asks you the reason for the hope that is in you."',
         verseRef: '1 Peter 3:15',
-        artCredit: 'Guido Reni, St. Michael the Archangel (1635). Public domain.',
+        artCredit: 'Art: Guido Reni, St. Michael the Archangel (1635). Public domain.',
         ctaOpen: 'Open web version', ctaExplore: 'Explore the app',
         soon: 'Coming soon', dlApple: 'Download on the', dlGoogle: 'Get it on',
         s1: 'Bible books', s2: 'sourced articles', s3: 'languages (PT/EN)', s4: 'offline and free',
