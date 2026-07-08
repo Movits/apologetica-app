@@ -13,12 +13,11 @@ npm run ios                    # abrir no simulador iOS
 
 Scripts de conversão de dados:
 ```bash
-node scripts/convert-avemaria.mjs        # regera bibleAveMaria.js a partir do JSON fonte
-node scripts/convert-douay-rheims.mjs    # regera bibleDouayRheims.js (EN)
-node scripts/convert-catechism.mjs       # regera dados do Catecismo
-node scripts/split-articles.mjs          # divide artigos monolíticos em categorias
+node scripts/convert-avemaria.mjs        # regera bibleAveMaria.js (fonte _avemaria_raw.json é gitignored; obter antes de rodar)
+node scripts/convert-douay-rheims.mjs    # regera bibleDouayRheims.js (EN, fonte em scripts/source/)
 node scripts/sync-bible-refs.mjs         # sincroniza referências bíblicas
 node scripts/generate-icons.mjs          # gera ícones do app
+node scripts/merge-accounts.mjs          # admin: junta dados de duas contas (precisa .secrets/)
 ```
 
 ## Architecture
@@ -28,18 +27,21 @@ node scripts/generate-icons.mjs          # gera ícones do app
 ### Tabs
 1. **Início** — `HomeScreen` (com HomeStack interno para telas secundárias)
 2. **Artigos** — `ArticlesScreen` (com ArticlesStack: lista → detalhe)
-3. **Referências** — `ReferencesScreen`
-4. **Bíblia** — `BibleScreen` — 73 livros Ave Maria (PT) + Douay-Rheims (EN), navegação prev/next entre capítulos
-5. **Ajustes** — `SettingsScreen`
+3. **Bíblia** — `BibleScreen` — 73 livros Ave Maria (PT) + Douay-Rheims (EN), navegação prev/next entre capítulos
+4. **Ferramentas** — `ToolsScreen` (com ToolsStack: menu de todas as ferramentas)
+5. **Ajustes** — `SettingsScreen` (com SettingsStack)
 
 ### Navegação
-O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
+O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 
-- **HomeStack** (`HomeStackScreen`): HomeMain → Favorites, Glossary, ReadingPlan, Rosary, ExamConscience, Highlights, Notes, Search, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, BibleMap, Legal.
-- **ArticlesStack** (`ArticlesStackScreen`): ArticlesList → ArticleDetail → RefDetail, Glossary.
+- **HomeStack** (`HomeStackScreen`): HomeMain → References, Tools, Today, Notebook, NotebookPage, CategoryArticles, Favorites, Glossary, ReadingPlan, Rosary, ExamConscience, Highlights, Notes, Search, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, DebateStrategies, BibleMap, Legal.
+- **ToolsStack** (`ToolsStackScreen`): ToolsMain → mesmas telas secundárias (Today, Notebook, Quiz, Dialogue, DebateStrategies, BibleMap etc.).
+- **SettingsStack** (`SettingsStackScreen`): SettingsMain → Legal, Glossary, ReadingPlan, Rosary, ExamConscience, Favorites, ArticleFromSearch, RefDetail.
+- **ArticlesStack** (`ArticlesStackScreen`): ArticlesList → ArticleDetail → RefDetail.
 - **MainStack** (raiz): MainTabs + NoteEditor (modal full-screen sem tab bar).
 - **AuthStack**: Login, Signup, ForgotPassword.
-- **OnboardingScreen**: exibido uma vez antes das tabs.
+- **OnboardingScreen**: exibido antes das tabs enquanto deslogado.
+- Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa.
 
 ### Estado global (Contexts)
 - `ThemeContext` — `colors` (light/dark), `darkMode`, `fontSize`, `fs(n)` (escala). Persistido em AsyncStorage.
@@ -53,8 +55,8 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 - `language='en'` → Douay-Rheims-Challoner (`src/data/bibleDouayRheims.js`, ~4.5 MB). Fallback automático para PT se EN indisponível.
 
 ### Navegação entre telas
-- `ArticlesScreen` → tap em referência → `navigate('Referências', { highlightId })`.
-- `ReferencesScreen` → "Ler no app" (refs com `bibleNav`) → `navigate('Bíblia', { bookId, chapter, highlightVerse })`.
+- Artigo → tap em referência → `navigate('RefDetail', { highlightId })` (tela dedicada de uma referência).
+- Referências/RefDetail → "Ler no app" (refs com `bibleNav`) → `navigate('Bíblia', { bookId, chapter, highlightVerse })`.
 - `BibleScreen`: deep link via `route.params`, prev/next dentro da tela de versículos.
 
 ### Dados (estáticos em `src/data/`)
@@ -62,25 +64,29 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 - `articles-en.js` — traduções em inglês dos artigos (`{ [id]: { titleEn, summaryEn, bodyEn } }`).
 - `articleRelations.js` — relações entre artigos para "Artigos relacionados".
 - `references.js` — versículos/Catecismo/documentos. Refs bíblicas têm `bibleNav: { bookId, chapter, verse }`.
+- `references-en.js` — traduções EN das referências (`{ [id]: { textEn, topicEn, ... } }`).
+- `referenceSources.js` — categorias de fonte das referências (Bíblia, Catecismo, ...).
+- `articleCategories.js` — categorias, ranking e "mais buscados" dos artigos.
 - `bible.js` — metadados dos 73 livros (id, apiId, name, short, testament, group, totalChapters, deutero).
 - `bibleAveMaria.js` — Bíblia Ave Maria completa. Formato: `{ bookId: [[v1,v2,...], ...] }`.
 - `bibleDouayRheims.js` — Douay-Rheims-Challoner (EN). Mesmo formato.
-- `bibleMap.js` — mapa geográfico bíblico.
 - `dailyVerses.js` — versículos do dia.
 - `saints.js` — santos do dia.
 - `glossary.js` — glossário apologético.
 - `quiz.js` — questões para o quiz de fé.
 - `dialogues.js` — diálogos apologéticos.
 - `examConscience.js` — exame de consciência.
-- `readingPlan.js` — plano de leitura bíblica.
-- `jesusJourney.js` — mapa da jornada de Jesus.
+- `readingPlan.js` — plano de leitura em dois trilhos (Fundamentos + Aprofundamento).
+- `jesusJourney.js` — mapa da jornada de Jesus (21 paradas, usado pelo BibleMapScreen).
+- `debateStrategies.js` — táticas de debate e falácias.
 
 ### Serviços (`src/services/`)
 - `bibleApi.js` — acesso síncrono à Bíblia (PT e EN).
 - `firebase.js` — configuração do Firebase (auth, Firestore).
 - `userData.js` — CRUD de dados do usuário no Firestore (notas, destaques, favoritos).
-- `liturgyApi.js` — liturgia do dia.
-- `notifications.js` — notificações push locais.
+- `liturgyApi.js` — liturgia do dia (rede, com cache e fallback offline).
+- `newsApi.js` — notícias católicas via RSS (rede, cache de 3h por idioma).
+- `notifications.js` — notificações push locais (`.web.js` é no-op).
 
 ### Convenções de conteúdo
 - **Sem travessões (—)**.
@@ -92,6 +98,7 @@ O app usa dois stacks internos dentro dos tabs (tab bar permanece visível):
 ### Pastas do usuário (não código)
 - `documentos/` — pesquisas e anotações do usuário (mercado, público, top100, créditos de imagens, previews antigos). Nada referencia no código.
 - `fotos/` — imagens do site adicionadas pelo usuário. `fotos/sao-miguel.jpg` é o fundo do hero da landing (`docs/index.html`); o deploy copia a pasta inteira pro site. Fallback remoto se o arquivo faltar.
+- `brain/` — second brain do projeto (vault do Obsidian, versionado): notas em português explicando arquitetura, funcionalidades, dados, decisões e manutenção. Atualizar as notas relevantes ao fazer mudanças estruturais. `brain/.obsidian/` fica fora do git.
 - `GUIA-DO-PROJETO.md` — mapa da raiz em linguagem leiga; manter atualizado ao criar/mover pastas.
 
 ### Paleta

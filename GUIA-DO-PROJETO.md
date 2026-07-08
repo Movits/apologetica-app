@@ -13,6 +13,7 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 |---|---|
 | `fotos/` | Fotos que VOCÊ adiciona para o site (a landing page). Tem um LEIA-ME dentro explicando. |
 | `documentos/` | Suas pesquisas e anotações: pesquisa de mercado, pesquisa de público, lista dos 100 tópicos, créditos das imagens, rascunhos. Nada daqui afeta o app. |
+| `brain/` | Seu segundo cérebro: notas em português que explicam o projeto inteiro, conectadas entre si. Abra com o Obsidian apontando para esta pasta (ou para a raiz do projeto). Comece pela nota `Início`. |
 
 ## O aplicativo
 

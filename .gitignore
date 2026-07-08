@@ -27,3 +27,6 @@ yarn-error.*
 # Chaves de service account do Firebase (NUNCA commitar)
 .secrets/
 serviceAccount*.json
+
+# Config local do Obsidian (workspace, cache) fica fora do git
+brain/.obsidian/
