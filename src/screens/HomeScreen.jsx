@@ -7,6 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
 import { DIALOGUES } from '../data/dialogues';
+import { consumeStartIntent } from '../utils/onboarding';
 import AppIcon from '../components/AppIcon';
 import CrossMark from '../components/CrossMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
@@ -28,6 +29,15 @@ export default function HomeScreen() {
       setRefreshKey((k) => k + 1);
     }, [])
   );
+
+  // Ativacao do onboarding v2: abre o dialogo que o usuario escolheu, uma vez.
+  useEffect(() => {
+    let alive = true;
+    consumeStartIntent().then((dialogueId) => {
+      if (alive && dialogueId) navigation.navigate('Dialogue', { dialogueId });
+    });
+    return () => { alive = false; };
+  }, [navigation]);
 
   // Scroll to top quando o usuario toca novamente no tab Inicio
   useEffect(() => {
