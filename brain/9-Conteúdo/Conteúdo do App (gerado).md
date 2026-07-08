@@ -6,7 +6,7 @@ gerado: true
 # Conteúdo do App (gerado)
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Grafo do conteúdo real do app em 2026-07-08: aprox. 83 artigos, 205 referências, 53 diálogos e 2 trilhos de leitura, com as conexões que existem nos dados.
+Grafo do conteúdo real do app em 2026-07-08: aprox. 83 artigos, 205 referências, 53 diálogos, 26 termos do glossário e 2 trilhos de leitura, com as conexões que existem nos dados.
 
 ## Categorias
 - [[Existência de Deus]]

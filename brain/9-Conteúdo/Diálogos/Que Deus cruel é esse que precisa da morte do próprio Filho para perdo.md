@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Que Deus cruel é esse que precisa da morte do próprio Filho para perdoar?"
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-por-que-cruz`
 
 Artigo completo: [[67 - Por Que Jesus Morreu na Cruz A Redenção]]

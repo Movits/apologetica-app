@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Eu já vivi outras vidas; a reencarnação explica tudo."
-Categoria: Outras Religiões | Passos: 4
+Categoria: Outras Religiões | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-reencarnacao`
 
 Artigo completo: [[16 - Espiritismo (Kardecismo)]]

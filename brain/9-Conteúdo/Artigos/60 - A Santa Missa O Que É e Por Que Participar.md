@@ -8,8 +8,21 @@ gerado: true
 
 A Missa não é um show nem apenas uma reunião. É o sacrifício de Cristo tornado presente e a comunhão com o seu Corpo. Veja o que é, e por que a Igreja a pede aos domingos.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Não é uma repetição, é uma re-presentação
+- As duas mesas: a Palavra e a Eucaristia
+- O coração da Missa: a consagração
+- A Missa é mais antiga do que se pensa
+- Por que ao domingo, e por que de obrigação?
+- Como participar bem
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sacramento]]
+- [[Graça]]
 
 ## Referências usadas
 - [[Mateus 26,26-28]]

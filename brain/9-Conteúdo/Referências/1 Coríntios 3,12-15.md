@@ -12,6 +12,7 @@ Tema: Purificação pelo fogo / Purgatório
 > Quanto àquele que edifica sobre este fundamento com ouro, prata, pedras preciosas, madeira, feno ou palha, a obra de cada um aparecerá. O dia (do Senhor) demonstrá-la-á. Esse dia há de manifestar-se pelo fogo, e o fogo p...
 
 Abre no app em `1cor 3,12`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]

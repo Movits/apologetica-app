@@ -6,7 +6,7 @@ gerado: true
 # Existência de Deus
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Categoria com aprox. 15 artigos (2026-07-08).
+Categoria com aprox. 15 artigos (2026-07-08). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
 
 ## Artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]

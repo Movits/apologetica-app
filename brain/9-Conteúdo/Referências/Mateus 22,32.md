@@ -12,6 +12,7 @@ Tema: Comunhão dos santos / vida após a morte
 > Eu sou o Deus de Abraão, o Deus de Isaac e o Deus de Jacó (Ex 3,6)? Ora, ele não é Deus dos mortos, mas Deus dos vivos”.
 
 Abre no app em `mt 22,32`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]

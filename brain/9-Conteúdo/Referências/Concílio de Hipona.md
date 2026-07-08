@@ -10,6 +10,7 @@ Fonte: Documentos | Concílio de Hipona (Norte da África) (393 d.C.)
 Tema: Cânon da Bíblia / formação das Escrituras
 
 > O concílio fixou pela primeira vez de modo formal a lista dos livros que pertencem à Sagrada Escritura, incluindo os 46 do Antigo Testamento (com deuterocanônicos) e os 27 do Novo Testamento. Santo Agostinho participou a...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

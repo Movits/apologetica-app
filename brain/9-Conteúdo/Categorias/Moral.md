@@ -6,7 +6,7 @@ gerado: true
 # Moral
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Categoria com aprox. 7 artigos (2026-07-08).
+Categoria com aprox. 7 artigos (2026-07-08). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
 
 ## Artigos
 - [[06 - Ateísmo e o Problema do Mal]]

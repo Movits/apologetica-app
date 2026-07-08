@@ -10,6 +10,7 @@ Fonte: Documentos | Papa Francisco (19 de março de 2016)
 Tema: Acolhimento de pessoas com tendência homossexual
 
 > "A Igreja faz sua a atitude do Senhor Jesus que, num amor sem limites, se ofereceu por cada pessoa sem exceção. Toda pessoa, independentemente da sua tendência sexual, deve ser respeitada na sua dignidade e acolhida com ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]

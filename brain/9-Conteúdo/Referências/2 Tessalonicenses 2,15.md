@@ -12,6 +12,7 @@ Tema: Tradição apostólica
 > Assim, pois, irmãos, ficai firmes e conservai os ensinamentos que de nós aprendestes, seja por palavras, seja por carta nossa.
 
 Abre no app em `2ts 2,15`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]

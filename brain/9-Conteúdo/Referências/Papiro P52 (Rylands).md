@@ -10,6 +10,7 @@ Fonte: Outros | Cópia do Evangelho de João (c. 125 d.C.)
 Tema: O manuscrito mais antigo do Novo Testamento
 
 > Pequeno fragmento com versículos de João 18, datado por volta do ano 125, a poucas décadas da composição do Evangelho. Está entre as evidências de que o texto do Novo Testamento circulava muito cedo, deixando pouquíssimo...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[48 - Os Manuscritos do Novo Testamento]]

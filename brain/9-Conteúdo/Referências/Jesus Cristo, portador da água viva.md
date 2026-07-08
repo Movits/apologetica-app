@@ -10,6 +10,7 @@ Fonte: Documentos | Conselho Pontifício da Cultura e Conselho Pontifício para 
 Tema: Análise católica do movimento Nova Era
 
 > O documento reconhece o anseio espiritual genuíno por trás da Nova Era, mas aponta sua incompatibilidade com a fé cristã: a confusão entre criatura e Criador (o divino "interior"), a substituição do Jesus histórico por u...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[43 - Nova Era]]

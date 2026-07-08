@@ -10,6 +10,7 @@ Fonte: Teólogos | Ronald H. Nash (filósofo cristão, professor em Reformed The
 Tema: Refutação acadêmica da tese de plágio cristão sobre religiões pagãs
 
 > Nash analisa exaustivamente as supostas semelhanças entre o cristianismo e religiões de mistérios greco-romanas (mitraísmo, culto de Ísis, dionisismo, hermetismo). Conclusão: as alegações populares (em obras como Zeitgei...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[36 - Cristianismo Copiou Religiões Pagãs]]

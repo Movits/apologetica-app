@@ -8,8 +8,14 @@ gerado: true
 
 As Testemunhas de Jeová negam a Trindade e a divindade de Cristo, apoiadas numa tradução própria da Bíblia, de 1950. O texto grego e a história respondem.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[João 1,1-3]]

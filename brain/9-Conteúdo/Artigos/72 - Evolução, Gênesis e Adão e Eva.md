@@ -8,8 +8,20 @@ gerado: true
 
 A evolução refuta a fé? Adão e Eva existiram? A Igreja não vê guerra entre ciência e Gênesis, aceita a evolução como possível e não abre mão da criação nem da alma.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- Gênesis não é um livro de ciência
+- A posição da Igreja sobre a evolução
+- Criação e evolução não competem
+- Adão e Eva existiram?
+- O que o Gênesis ensina de verdade
+- Sem medo da verdade
+- Perguntas-chave
+
+## Termos do glossário
+- [[Pecado Original]]
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]

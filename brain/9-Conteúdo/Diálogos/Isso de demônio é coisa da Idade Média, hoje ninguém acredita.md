@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Isso de demônio é coisa da Idade Média, hoje ninguém acredita."
-Categoria: Igreja Católica | Passos: 4
+Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-demonio-idade-media`
 
 Artigo completo: [[66 - Anjos e Demônios O Que a Igreja Ensina]]

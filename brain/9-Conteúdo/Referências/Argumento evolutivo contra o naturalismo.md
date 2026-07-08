@@ -10,6 +10,7 @@ Fonte: Teólogos | Alvin Plantinga (filósofo, Universidade de Notre Dame) (2011
 Tema: A razão não tem fundamento confiável no naturalismo ateu
 
 > Plantinga argumenta que, se nossas faculdades cognitivas surgiram por um processo cego de evolução voltado apenas à sobrevivência, e não à verdade, então não há razão sólida para confiar que elas produzam crenças verdade...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[42 - Ateísmo e Naturalismo]]

@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Jesus não é o Messias. Os judeus, que conhecem as Escrituras, não o aceitaram."
-Categoria: Outras Religiões | Passos: 4
+Categoria: Outras Religiões | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-judaismo`
 
 Artigo completo: [[38 - Judaísmo]]

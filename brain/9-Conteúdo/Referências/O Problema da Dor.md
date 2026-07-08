@@ -10,6 +10,7 @@ Fonte: Teólogos | C. S. Lewis (apologista e professor de Oxford e Cambridge) (1
 Tema: Problema do mal e do sofrimento
 
 > "Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo."
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[06 - Ateísmo e o Problema do Mal]]

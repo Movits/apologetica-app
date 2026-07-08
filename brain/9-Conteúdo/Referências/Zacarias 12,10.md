@@ -12,6 +12,7 @@ Tema: Olharão para aquele a quem traspassaram
 > Derramarei sobre a casa de Davi e sobre os habitantes de Jerusalém um espírito de graça e de súplica. Olharão para mim, a quem traspassaram; farão luto por ele como se chora por um filho único.
 
 Abre no app em `zc 12,10`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]

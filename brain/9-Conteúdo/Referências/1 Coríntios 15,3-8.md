@@ -12,6 +12,7 @@ Tema: Ressurreição de Cristo / testemunhas oculares
 > Eu vos transmiti primeiramente o que eu mesmo havia recebido: que Cristo morreu por nossos pecados, segundo as Escrituras; foi sepultado, e ressurgiu ao terceiro dia, segundo as Escrituras; apareceu a Cefas e, em seguida...
 
 Abre no app em `1cor 15,3`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

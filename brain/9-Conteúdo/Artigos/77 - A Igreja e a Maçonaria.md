@@ -8,8 +8,18 @@ gerado: true
 
 Um católico pode ser maçom? Por que a Igreja, há séculos, considera a Maçonaria incompatível com a fé. Sem teorias da conspiração, com base em princípios.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que a Igreja decidiu
+- Por quê: não é perseguição, é coerência
+- Sem conspiração
+- E quem já está dentro?
+- Perguntas-chave
+
+## Termos do glossário
+- [[Magistério]]
 
 ## Referências usadas
 - [[Êxodo 20,3-5]]

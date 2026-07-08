@@ -10,6 +10,7 @@ Fonte: Outros | Equipes científicas internacionais (STURP e outros) (1978 (STUR
 Tema: A imagem do homem crucificado no Sudário de Turim
 
 > O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. O sangue é humano, do tipo AB. O STURP concl...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]

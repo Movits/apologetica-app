@@ -8,8 +8,17 @@ gerado: true
 
 Jesus não foi apenas um bom mestre. Ele afirmou ser Deus, demonstrou-o com sinais e a Igreja sempre o confessou como verdadeiro Deus e verdadeiro homem.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O que Jesus afirmava de si
+- O trilema
+- Os sinais e a Ressurreição
+- O testemunho do Novo Testamento
+- A definição da Igreja
+- Por que isso muda tudo
+- Perguntas-chave
 
 ## Referências usadas
 - [[João 1,1-3]]

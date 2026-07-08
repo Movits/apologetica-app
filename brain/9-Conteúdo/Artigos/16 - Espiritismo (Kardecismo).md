@@ -8,8 +8,14 @@ gerado: true
 
 Nascido na França no séc. XIX e fortíssimo no Brasil, o Espiritismo ensina reencarnação e comunicação com os mortos, e vê Jesus como espírito puríssimo, não como Deus. A Bíblia responde aos dois pontos.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[O Livro dos Espíritos]]

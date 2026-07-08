@@ -10,6 +10,7 @@ Fonte: Outros | Rei arameu (provavelmente Hazael de Damasco) (séc. IX a.C.; des
 Tema: Menção extrabíblica à dinastia de Davi
 
 > A estela, feita por um rei inimigo de Israel, gaba-se de vitórias e menciona a "Casa de Davi" (Beit David), atestando a dinastia davídica por uma fonte de fora, pouco mais de um século após Davi.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[47 - A Arqueologia Confirma a Bíblia]]

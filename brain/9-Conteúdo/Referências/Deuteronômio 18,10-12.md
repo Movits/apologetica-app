@@ -12,6 +12,7 @@ Tema: Proibição de consultar os mortos e a adivinhação
 > Não se ache no meio de ti quem se dê à adivinhação, aos agouros, à magia, ao encantamento, nem quem consulte espíritos, nem mágico, nem quem interrogue os mortos. Pois quem faz tais coisas é abominável ao Senhor.
 
 Abre no app em `dt 18,10`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[16 - Espiritismo (Kardecismo)]]

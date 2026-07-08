@@ -8,8 +8,19 @@ gerado: true
 
 A salvação se obtém pela fé que opera pela caridade. Tiago 2,24 contradiz explicitamente o Sola Fide protestante.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- "Não somente pela fé"
+- A posição católica
+- As obras no juízo final
+- Tudo é graça
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sola Fide]]
+- [[Graça]]
 
 ## Referências usadas
 - [[Tiago 2,14-26]]

@@ -8,8 +8,20 @@ gerado: true
 
 Não são meros símbolos. Os sacramentos efetivamente transmitem a graça que significam.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Por que sinais sensíveis
+- Os sete, um a um
+- Matéria, forma e ministro
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sucessão Apostólica]]
+- [[Sacramento]]
+- [[Graça]]
+- [[Pecado Original]]
 
 ## Referências usadas
 - [[Mateus 26,26-28]]

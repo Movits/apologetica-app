@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Theotokos / Maria Mãe de Deus / Encarnação
 
 > Maria é verdadeiramente "Mãe de Deus", pois é mãe do Filho eterno de Deus feito homem, que é o próprio Deus. Confessamos, pois, que aquele que foi concebido do Espírito Santo no seio da Virgem Maria, é verdadeiramente o ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[14 - Maria, Mãe de Deus (Theotokos)]]

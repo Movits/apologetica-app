@@ -8,8 +8,16 @@ gerado: true
 
 A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- Os dois sentidos do ato conjugal
+- A Igreja aprova o planejamento responsável
+- Métodos naturais e contracepção artificial
+- As quatro previsões de Paulo VI
+- Os dados confirmam
+- Perguntas-chave
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]

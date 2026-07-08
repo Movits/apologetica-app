@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Não preciso ir à missa, Deus está em todo lugar e posso rezar em casa."
-Categoria: Igreja Católica | Passos: 4
+Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-missa-casa`
 
 Artigo completo: [[60 - A Santa Missa O Que É e Por Que Participar]]

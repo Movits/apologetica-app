@@ -8,8 +8,14 @@ gerado: true
 
 O Islã honra Jesus como profeta nascido de virgem, mas nega que ele seja Deus, que tenha morrido na cruz e que tenha ressuscitado. É aí que começam as tensões internas.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Alcorão, sura 5,72-75]]

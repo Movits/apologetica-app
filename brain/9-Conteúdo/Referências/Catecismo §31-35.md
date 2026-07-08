@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Conhecimento natural de Deus pela razão
 
 > Criado à imagem de Deus, chamado a conhecê-lo e a amá-lo, o homem que procura Deus descobre certas vias para chegar ao conhecimento dele. Tomando como ponto de partida o movimento e o devir, a contingência, a ordem e a b...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]

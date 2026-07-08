@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Maria / Assunção / mediação
 
 > A Virgem imaculada, preservada imune de toda a mancha do pecado original, terminado o curso da vida terrena, foi elevada à glória celeste em corpo e alma, e exaltada pelo Senhor como Rainha do universo.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]

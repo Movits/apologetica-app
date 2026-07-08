@@ -8,8 +8,14 @@ gerado: true
 
 A Nova Era mistura cristais, energias, reencarnação e um "Cristo cósmico", com a ideia de que o divino está em você. O Evangelho responde: você é criatura amada, não Deus.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Jesus Cristo, portador da água viva]]

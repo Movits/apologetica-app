@@ -8,8 +8,23 @@ gerado: true
 
 Católicos e evangélicos creem em Cristo, mas divergem em pontos centrais: autoridade, salvação, sacramentos e a própria Igreja. Um mapa honesto e respeitoso das diferenças.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- A autoridade: só a Bíblia, ou Bíblia e Igreja?
+- A salvação: só a fé, ou a fé que age pelo amor?
+- Os sacramentos
+- Maria e os santos
+- A unidade: uma Igreja ou milhares?
+- Como dialogar
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sola Scriptura]]
+- [[Sola Fide]]
+- [[Graça]]
+- [[Comunhão dos Santos]]
 
 ## Referências usadas
 - [[Mateus 16,18-19]]

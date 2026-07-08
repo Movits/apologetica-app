@@ -8,8 +8,15 @@ gerado: true
 
 Os Evangelhos relatam três horas de escuridão na morte de Jesus. Fontes pagãs a registraram, e a astronomia moderna ajudou a datar a crucificação no ano 33.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Não foi um eclipse solar
+- O que dizem fontes não cristãs
+- A lua em sangue e a datação pela astronomia
+- O que isso prova e o que não prova
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 27,45-46]]

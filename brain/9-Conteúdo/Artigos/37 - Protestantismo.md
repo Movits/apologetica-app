@@ -8,8 +8,22 @@ gerado: true
 
 Irmãos em Cristo pelo Batismo, os protestantes partilham conosco o essencial sobre Deus e Cristo. As diferenças vêm de dois lemas do séc. XVI: só a Escritura e só a fé.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
+
+## Termos do glossário
+- [[Transubstanciação]]
+- [[Sola Scriptura]]
+- [[Sola Fide]]
+- [[Graça]]
+- [[Purgatório]]
+- [[Deuterocanônicos]]
 
 ## Referências usadas
 - [[Mateus 16,18-19]]

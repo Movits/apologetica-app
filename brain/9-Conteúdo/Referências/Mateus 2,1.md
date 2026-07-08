@@ -12,6 +12,7 @@ Tema: Nascimento de Jesus no reinado de Herodes
 > Tendo, pois, nascido Jesus em Belém de Judá, no tempo do rei Herodes, eis que magos vieram do Oriente a Jerusalém.
 
 Abre no app em `mt 2,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]

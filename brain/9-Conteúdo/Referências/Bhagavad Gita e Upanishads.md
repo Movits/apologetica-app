@@ -10,6 +10,7 @@ Fonte: Outros | Tradição hindu (textos compostos ao longo de séculos) (Upanis
 Tema: Brahman, atman e a libertação (moksha)
 
 > A tradição vedântica ensina a identidade entre o atman (o eu) e Brahman (a realidade última), resumida na fórmula tat tvam asi (tu és isso). A meta é moksha, a libertação do ciclo de renascimentos (samsara) regido pela l...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[40 - Hinduísmo]]

@@ -12,6 +12,7 @@ Tema: Juízo final segundo as obras
 > E vi os mortos, grandes e pequenos, em pé diante do trono. Abriram-se livros, e ainda outro livro, que é o livro da vida; e os mortos foram julgados segundo as suas obras, conforme o que estava escrito nos livros. (...) ...
 
 Abre no app em `ap 20,12`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[24 - Fé e Obras Não Sola Fide]]

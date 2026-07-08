@@ -8,8 +8,21 @@ gerado: true
 
 A Bíblia católica tem 7 livros a mais que a protestante. A história mostra que os 73 livros são os originais.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- A Bíblia dos apóstolos era a Septuaginta
+- O que mudou: o cânon de Jâmnia
+- Lutero remove sete livros
+- Trento confirma o cânon
+- Os critérios do discernimento
+- Perguntas-chave
+
+## Termos do glossário
+- [[Purgatório]]
+- [[Deuterocanônicos]]
+- [[Septuaginta]]
 
 ## Referências usadas
 - [[Concílio de Hipona]]

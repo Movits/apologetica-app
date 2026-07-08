@@ -8,8 +8,14 @@ gerado: true
 
 O ateísmo nega Deus. O naturalismo diz que só existe matéria. São cosmovisões sérias, mas têm dificuldade em fundamentar a própria existência do mundo, a moral e a razão.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Romanos 1,20]]

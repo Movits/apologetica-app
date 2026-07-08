@@ -12,6 +12,7 @@ Tema: Virgindade de Maria / propósito de virgindade perpétua
 > Maria perguntou ao anjo: “Como se fará isso, pois não conheço homem?”
 
 Abre no app em `lc 1,34`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

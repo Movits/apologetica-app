@@ -10,6 +10,7 @@ Fonte: Documentos | Concílio Ecumênico de Niceia (325 d.C.)
 Tema: Definição da divindade de Cristo / Trindade
 
 > "Cremos em um só Senhor Jesus Cristo, Filho de Deus, gerado unigênito do Pai, isto é, da substância do Pai, Deus de Deus, Luz da Luz, Deus verdadeiro de Deus verdadeiro, gerado, não criado, consubstancial ao Pai (homoous...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[27 - Testemunhas de Jeová]]

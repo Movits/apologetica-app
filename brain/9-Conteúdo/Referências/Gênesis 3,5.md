@@ -12,6 +12,7 @@ Tema: A tentação original: sereis como deuses
 > Mas a serpente disse à mulher: De modo nenhum morrereis. Deus sabe que, no dia em que dele comerdes, abrir-se-ão vossos olhos e sereis como deuses, conhecedores do bem e do mal.
 
 Abre no app em `gn 3,5`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[43 - Nova Era]]

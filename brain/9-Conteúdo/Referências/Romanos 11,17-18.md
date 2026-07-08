@@ -12,6 +12,7 @@ Tema: Israel como a oliveira boa em que os cristãos foram enxertados
 > Se alguns ramos foram cortados, e tu, oliveira brava, foste enxertado em seu lugar, tornando-te participante da raiz e da seiva da oliveira, não te glories contra os ramos. Não és tu que sustentas a raiz, mas a raiz é qu...
 
 Abre no app em `rm 11,17`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]

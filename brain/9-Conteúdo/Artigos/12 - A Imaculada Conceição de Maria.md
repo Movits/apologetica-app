@@ -8,8 +8,19 @@ gerado: true
 
 Maria foi preservada do pecado original em previsão dos méritos de Cristo, não depois de cair nele.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- "Maria também precisava de Salvador"
+- "Cheia de graça" em Lucas 1,28
+- A nova Eva nos Padres
+- Perguntas-chave
+
+## Termos do glossário
+- [[Dogma]]
+- [[Graça]]
+- [[Pecado Original]]
 
 ## Referências usadas
 - [[Lucas 1,28]]

@@ -10,6 +10,7 @@ Fonte: Outros | Arvind Borde, Alan Guth e Alexander Vilenkin (físicos e cosmól
 Tema: Um universo em expansão não pode ser eterno no passado
 
 > Qualquer universo que, em média, esteve em expansão ao longo de sua história não pode ser infinito no passado: precisa ter tido um começo. O resultado vale independentemente do conteúdo de matéria e energia do universo.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[11 - Quem Criou Deus A Objeção do Ateísmo]]

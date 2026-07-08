@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Homossexualidade / castidade
 
 > As pessoas homossexuais devem ser acolhidas com respeito, compaixão e delicadeza. Evitar-se-á para com elas qualquer sinal de discriminação injusta. Estas pessoas são chamadas a realizar a vontade de Deus em sua vida.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]

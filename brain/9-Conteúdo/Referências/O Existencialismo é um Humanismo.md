@@ -10,6 +10,7 @@ Fonte: Teólogos | Jean-Paul Sartre (filósofo francês, ateu) (29 de outubro de
 Tema: Consequências do ateísmo / liberdade radical
 
 > "O existencialista pensa que é muito constrangedor que Deus não exista, pois com Ele desaparece toda possibilidade de encontrar valores em um céu inteligível. Não pode mais haver bem a priori, pois não há mais consciênci...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[10 - O Argumento Moral pela Existência de Deus]]

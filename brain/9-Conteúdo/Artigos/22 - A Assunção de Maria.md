@@ -8,8 +8,19 @@ gerado: true
 
 Maria foi elevada à glória celeste em corpo e alma. Dogma definido em 1950, mas crença universal desde os primeiros séculos.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O que o dogma define
+- A base bíblica e o argumento de conveniência
+- Uma crença antiga
+- O túmulo que ninguém reivindica
+- Perguntas-chave
+
+## Termos do glossário
+- [[Dogma]]
+- [[Pecado Original]]
 
 ## Referências usadas
 - [[Catecismo §966-975]]

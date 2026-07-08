@@ -12,6 +12,7 @@ Tema: Matrimônio como sacramento
 > Por isso o homem deixará pai e mãe, e se unirá à sua mulher, e os dois serão uma só carne. Grande é este mistério, refiro-me a Cristo e à Igreja.
 
 Abre no app em `ef 5,31`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[20 - Os Sete Sacramentos Sinais que Produzem Graça]]

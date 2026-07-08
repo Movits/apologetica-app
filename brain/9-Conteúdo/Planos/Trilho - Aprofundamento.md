@@ -8,6 +8,8 @@ gerado: true
 
 Apologética avançada: história da Igreja, ciência e Bíblia, mariologia, milagres, outras religiões e moral aplicada. Pra quem já tem o básico e quer ir fundo.
 
+Funcionalidade: [[Plano de Leitura]]
+
 ## Dias
 - Dia 1: [[28 - A Inquisição O Que Realmente Aconteceu]] (A Inquisição: o que de fato aconteceu)
 - Dia 2: [[29 - As Cruzadas no Contexto Histórico Real]] (As Cruzadas no contexto histórico real)

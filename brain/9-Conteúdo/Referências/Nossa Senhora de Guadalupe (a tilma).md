@@ -10,6 +10,7 @@ Fonte: Outros | Tradição e estudos científicos (infravermelho, oftalmologia, 
 Tema: Imagem inexplicada na tilma de Guadalupe
 
 > A imagem ficou impressa numa tilma de fibra de agave, material que deveria desintegrar-se em poucas décadas, mas que se conserva há quase 500 anos. Estudos por infravermelho (anos 1970) não acharam desenho preliminar nem...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[52 - Nossa Senhora de Guadalupe e a Tilma]]

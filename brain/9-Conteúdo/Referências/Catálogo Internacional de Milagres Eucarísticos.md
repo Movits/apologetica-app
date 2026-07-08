@@ -10,6 +10,7 @@ Fonte: Outros | Beato (atualmente São) Carlo Acutis, leigo italiano de 15 anos 
 Tema: Milagres eucarísticos documentados ao longo da história
 
 > Carlo Acutis, jovem leigo apaixonado pela Eucaristia, criou em sua adolescência um site reunindo aproximadamente 140 milagres eucarísticos aprovados pela Igreja ao longo da história, incluindo Lanciano, Bolsena-Orvieto, ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]

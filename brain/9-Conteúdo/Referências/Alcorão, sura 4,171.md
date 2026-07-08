@@ -10,6 +10,7 @@ Fonte: Outros | Texto sagrado do Islã, transmitido por Maomé (séc. VII d.C.)
 Tema: Negação da filiação divina de Jesus
 
 > "Ó gente do Livro, não exagereis em vossa religião e não digais sobre Allah senão a verdade. O Messias, Jesus, filho de Maria, é apenas mensageiro de Allah, sua palavra que ele transmitiu a Maria, e um espírito procedent...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[15 - Islamismo]]

@@ -8,8 +8,18 @@ gerado: true
 
 Cristo deu a Pedro autoridade única, e essa autoridade continua nos sucessores legítimos: os Papas.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- "Tu és Pedro" (Mateus 16)
+- "Esta pedra" é o próprio Pedro
+- O testemunho dos primeiros séculos
+- A infalibilidade, bem entendida
+- Perguntas-chave
+
+## Termos do glossário
+- [[Patrística]]
 
 ## Referências usadas
 - [[Mateus 16,18-19]]

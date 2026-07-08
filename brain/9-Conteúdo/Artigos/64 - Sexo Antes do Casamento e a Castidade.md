@@ -8,8 +8,21 @@ gerado: true
 
 A Igreja não é contra o sexo. Ela o tem em altíssima conta. Por isso ensina que o seu lugar é o matrimônio, e propõe a castidade como caminho de amor verdadeiro, não de repressão.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- O que a Igreja realmente ensina
+- Por que reservar ao casamento?
+- Castidade não é repressão
+- Pornografia e masturbação
+- E quem já errou?
+- O fruto
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sacramento]]
+- [[Graça]]
 
 ## Referências usadas
 - [[1 Coríntios 6,9-11]]

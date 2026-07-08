@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "A Eucaristia é só símbolo do Corpo de Cristo."
-Categoria: Igreja Católica | Passos: 4
+Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-eucaristia-simbolo`
 
 Artigo completo: [[07 - A Eucaristia Presença Real de Cristo]]

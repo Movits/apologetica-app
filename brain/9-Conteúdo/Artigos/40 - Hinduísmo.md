@@ -8,8 +8,17 @@ gerado: true
 
 O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
 
 ## Referências usadas
 - [[João 14,6]]

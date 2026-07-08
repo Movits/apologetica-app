@@ -10,6 +10,7 @@ Fonte: Teólogos | Santo Tomás de Aquino (1265 a 1274)
 Tema: Demonstrações da existência de Deus
 
 > "É necessário chegar a um primeiro motor que não seja movido por nenhum outro; e esse todos entendem ser Deus." O segundo caminho parte da causalidade eficiente. O terceiro caminho parte do contingente e do necessário. O...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]

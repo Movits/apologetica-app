@@ -8,8 +8,15 @@ gerado: true
 
 A pergunta confunde categorias. Tudo que começa a existir tem causa. Deus não começou.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- A formulação correta
+- Contingente e necessário
+- Uma confusão de categorias
+- O ateu também precisa de algo eterno
+- Perguntas-chave
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]

@@ -8,8 +8,20 @@ gerado: true
 
 A Bíblia sozinha não se interpreta a si mesma. A Tradição e o Magistério são necessários.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- A Bíblia não ensina o Sola Scriptura
+- Quem interpreta?
+- Foi a Igreja que definiu o cânon
+- Uma novidade do século XVI
+- A solução católica
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sola Scriptura]]
+- [[Magistério]]
 
 ## Referências usadas
 - [[2 Tessalonicenses 2,15]]

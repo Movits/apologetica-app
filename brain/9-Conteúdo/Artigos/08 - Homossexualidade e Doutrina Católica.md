@@ -8,8 +8,19 @@ gerado: true
 
 A Igreja distingue entre a inclinação e o ato, e chama todos a viver em dignidade e castidade.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- A dignidade de toda pessoa
+- Inclinação e ato
+- O que diz o Novo Testamento
+- "Amor é amor"?
+- Perguntas-chave
+
+## Termos do glossário
+- [[Apostólico]]
+- [[Graça]]
 
 ## Referências usadas
 - [[Catecismo §2357-2359]]

@@ -12,6 +12,7 @@ Tema: Pelos frutos os conhecereis
 > Pelos seus frutos os conhecereis. Colhem-se, porventura, uvas dos espinheiros ou figos dos abrolhos?
 
 Abre no app em `mt 7,16`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[55 - Aparições de Maria Evidência para Deus]]

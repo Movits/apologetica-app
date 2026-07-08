@@ -12,6 +12,7 @@ Tema: Uso amplo de "irmão" / Abraão e Ló
 > Abrão, tendo ouvido que Ló, seu parente, ficara prisioneiro, escolheu trezentos e dezoito dos seus melhores e mais corajosos servos, nascidos em sua casa, e foi ao alcance dos reis até Dã.
 
 Abre no app em `gn 14,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

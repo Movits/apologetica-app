@@ -8,8 +8,19 @@ gerado: true
 
 Pedir intercessão aos santos não é idolatria, é o mesmo que pedir a um amigo que ore por nós.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Mediação e intercessão
+- Os santos estão vivos
+- A intercessão de Maria
+- Adorar e venerar
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
+- [[Comunhão dos Santos]]
 
 ## Referências usadas
 - [[1 Timóteo 2,5]]

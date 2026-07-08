@@ -8,8 +8,17 @@ gerado: true
 
 A narrativa moderna sobre Galileu é caricatura. A história real é mais complexa, e a Igreja foi, em vários momentos, defensora da pesquisa científica.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- O contexto antes de Galileu
+- Qual era o problema, de fato
+- O que realmente aconteceu
+- Um erro humano, reconhecido em 1992
+- Os reformadores foram mais hostis
+- Ciência e fé: matriz, não conflito
+- Perguntas-chave
 
 ## Referências usadas
 - [[Discurso de João Paulo II sobre o caso Galileu]]

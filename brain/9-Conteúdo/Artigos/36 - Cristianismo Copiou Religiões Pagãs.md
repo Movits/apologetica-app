@@ -8,8 +8,16 @@ gerado: true
 
 A tese popular de que Jesus é "cópia de Hórus, Mitra ou Dionísio" é falsa em fato e em cronologia. Não resiste à análise acadêmica séria.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- As semelhanças são quase todas falsas
+- A cronologia não fecha
+- Diferenças fundamentais
+- O argumento se autorrefuta
+- O mito que se fez fato
+- Perguntas-chave
 
 ## Referências usadas
 - [[The Gospel and the Greeks]]

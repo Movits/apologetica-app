@@ -8,6 +8,8 @@ gerado: true
 
 Um artigo por dia, de "Existe Deus?" até as verdades centrais da fé católica. Pensado pra quem começa do zero, ou pra qualquer cristão que queira saber defender o básico.
 
+Funcionalidade: [[Plano de Leitura]]
+
 ## Dias
 - Dia 1: [[56 - Deus Existe Os Melhores Argumentos da Razão]] (Deus existe? Os melhores argumentos da razão)
 - Dia 2: [[01 - A Existência de Deus o Argumento Cosmológico]] (Por que existe algo em vez de nada?)

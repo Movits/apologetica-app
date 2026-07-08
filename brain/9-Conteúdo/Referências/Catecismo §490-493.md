@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Imaculada Conceição de Maria
 
 > Maria, "a cheia de graça", é "obra-prima do Espírito Santo". Para se tornar a Mãe do Salvador, Maria "foi dotada por Deus dos dons à altura de tal função". Pela graça de Deus, Maria permaneceu pura de todo pecado pessoal...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[12 - A Imaculada Conceição de Maria]]

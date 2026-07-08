@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Proibir o divórcio é cruel — Jesus não entendeu a realidade humana."
-Categoria: Moral | Passos: 4
+Categoria: Moral | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-divorcio`
 
 Artigo completo: [[26 - Contracepção e Humanae Vitae]]

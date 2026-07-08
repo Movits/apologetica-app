@@ -8,8 +8,20 @@ gerado: true
 
 Anjos da guarda, demônios, tentação e exorcismo. O que é real, o que é exagero de cinema, e por que o cristão não precisa viver com medo.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Os anjos existem
+- Os demônios são anjos caídos
+- Como o demônio age: a tentação
+- Possessão e exorcismo
+- Sem medo: Cristo venceu
+- O perigo dos dois extremos
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
 
 ## Referências usadas
 - [[2 Coríntios 11,14]]

@@ -12,6 +12,7 @@ Tema: Criação do homem / sexualidade
 > Deus criou o homem à sua imagem; criou-o à imagem de Deus, criou o homem e a mulher. Deus os abençoou: “Frutificai – disse ele – e multiplicai-vos, enchei a terra e submetei-a. Dominai sobre os peixes do mar, sobre as av...
 
 Abre no app em `gn 1,27`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]

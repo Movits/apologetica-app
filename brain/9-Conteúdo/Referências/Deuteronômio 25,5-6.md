@@ -12,6 +12,7 @@ Tema: Lei do Levirato / casamento da viúva sem filhos
 > Quando irmãos morarem juntos e um deles morrer sem ter filho, a mulher do falecido não se casará fora, com um estrangeiro; seu cunhado a tomará por mulher, e cumprirá com ela o dever de cunhado. O primogênito que ela con...
 
 Abre no app em `dt 25,5`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[33 - As Duas Genealogias de Jesus Mateus e Lucas]]

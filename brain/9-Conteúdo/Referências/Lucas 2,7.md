@@ -12,6 +12,7 @@ Tema: Primogênito / termo técnico ritual hebraico
 > E deu à luz seu filho primogênito, e, envolvendo-o em faixas, reclinou-o num presépio; porque não havia lugar para eles na hospedaria.
 
 Abre no app em `lc 2,7`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

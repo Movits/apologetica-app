@@ -8,8 +8,14 @@ gerado: true
 
 Religiões afro-brasileiras de grande força cultural, nascidas da fé de africanos escravizados. A Igreja respeita essas pessoas e condena o racismo, mas distingue a fé católica do culto aos orixás e da mediunidade.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Deuteronômio 18,10-12]]

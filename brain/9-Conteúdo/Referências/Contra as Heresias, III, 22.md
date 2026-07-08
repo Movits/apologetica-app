@@ -10,6 +10,7 @@ Fonte: Teólogos | Santo Irineu de Lyon (discípulo de São Policarpo, que foi d
 Tema: Maria, Nova Eva / recapitulação
 
 > "Como Eva, tendo a Adão por marido, mas ainda virgem, foi desobediente e se tornou causa de morte para si e para todo o gênero humano, assim Maria, tendo um marido predestinado e sendo ainda virgem, obedeceu e se tornou ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[12 - A Imaculada Conceição de Maria]]

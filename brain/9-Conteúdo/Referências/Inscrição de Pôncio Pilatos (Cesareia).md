@@ -10,6 +10,7 @@ Fonte: Outros | Achado arqueológico (séc. I d.C.) (Inscrição c. 26 a 36 d.C.
 Tema: Confirmação histórica de Pôncio Pilatos como prefeito da Judeia
 
 > A inscrição, hoje no Museu de Israel, menciona "Pôncio Pilatos, prefeito da Judeia", confirmando a existência e o cargo do governador que condenou Jesus, exatamente como aparece nos Evangelhos.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[47 - A Arqueologia Confirma a Bíblia]]

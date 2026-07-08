@@ -8,8 +8,17 @@ gerado: true
 
 A Bíblia foi escrita por dezenas de autores humanos ao longo de mil anos, mas a fé reconhece um só Autor por trás deles: Deus, que inspira sem anular o homem.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Não é um livro, é uma biblioteca
+- O Autor por trás dos autores: a inspiração
+- Como a Bíblia chegou até nós
+- Moisés escreveu mesmo o Pentateuco? E os Evangelhos?
+- E os "erros" e contradições?
+- Por que isso importa
+- Perguntas-chave
 
 ## Referências usadas
 - [[2 Pedro 1,20-21]]

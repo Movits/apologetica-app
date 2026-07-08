@@ -12,6 +12,7 @@ Tema: Justificação pela fé sem as obras da Lei mosaica
 > Pois entendemos que o homem é justificado pela fé, independentemente das obras da Lei.
 
 Abre no app em `rm 3,28`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[24 - Fé e Obras Não Sola Fide]]

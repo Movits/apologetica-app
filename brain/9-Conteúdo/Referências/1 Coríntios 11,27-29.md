@@ -12,6 +12,7 @@ Tema: Eucaristia / comunhão indigna
 > Portanto, todo aquele que comer o pão ou beber o cálice do Senhor indignamente será culpável do corpo e do sangue do Senhor. Que cada um se examine a si mesmo e, assim, coma desse pão e beba desse cálice. Aquele que o co...
 
 Abre no app em `1cor 11,27`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]

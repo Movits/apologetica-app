@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Aborto é direito da mulher, é o corpo dela."
-Categoria: Moral | Passos: 4
+Categoria: Moral | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-aborto`
 
 Artigo completo: [[25 - Aborto A Dignidade da Vida Humana]]

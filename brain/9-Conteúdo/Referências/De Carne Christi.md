@@ -10,6 +10,7 @@ Fonte: Teólogos | Tertuliano (c. 207 a 212 d.C.)
 Tema: Encarnação / virgindade de Maria
 
 > "Cristo nasceu de uma virgem; e foi necessário ser assim, para que aquele que veio para destruir a morte pela vida não nascesse pela mesma porta pela qual a morte havia entrado. Maria permaneceu virgem após o parto, conf...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

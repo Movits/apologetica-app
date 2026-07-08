@@ -6,7 +6,7 @@ gerado: true
 # Sagrada Escritura
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Categoria com aprox. 14 artigos (2026-07-08).
+Categoria com aprox. 14 artigos (2026-07-08). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
 
 ## Artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]

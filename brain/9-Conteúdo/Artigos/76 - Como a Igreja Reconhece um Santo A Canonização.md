@@ -8,8 +8,15 @@ gerado: true
 
 Como alguém é declarado santo? Entenda o processo de canonização, o papel dos milagres e por que a Igreja não fabrica santos, apenas reconhece.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O que é a canonização
+- As etapas
+- Por que os milagres
+- Para que servem os santos
+- Perguntas-chave
 
 ## Referências usadas
 - [[Apocalipse 5,8]]

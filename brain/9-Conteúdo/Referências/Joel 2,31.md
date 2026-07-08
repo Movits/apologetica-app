@@ -12,6 +12,7 @@ Tema: Sinais cósmicos: o sol em trevas e a lua em sangue
 > O sol se converterá em trevas e a lua em sangue, antes que venha o grande e terrível dia do Senhor.
 
 Abre no app em `jl 3,4`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[45 - A Escuridão na Cruz e a Datação da Crucificação]]

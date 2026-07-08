@@ -10,6 +10,7 @@ Fonte: Teólogos | Gary Habermas (especialista em estudos da ressurreição, pro
 Tema: Fatos mínimos sobre a ressurreição / método histórico
 
 > A abordagem dos fatos mínimos identifica eventos sobre a vida de Jesus aceitos por praticamente todos os historiadores que estudam o tema, mesmo os céticos. Esses fatos incluem: morte por crucificação, sepultamento, túmu...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

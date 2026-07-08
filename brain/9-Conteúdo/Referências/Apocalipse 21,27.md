@@ -12,6 +12,7 @@ Tema: Pureza necessária para entrar no céu
 > Nada de impuro entrará nela, nem ninguém que cometa abominação e mentira, mas só os que estão inscritos no livro da vida do Cordeiro.
 
 Abre no app em `ap 21,27`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]

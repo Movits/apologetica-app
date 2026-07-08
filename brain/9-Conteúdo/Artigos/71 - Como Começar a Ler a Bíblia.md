@@ -8,8 +8,17 @@ gerado: true
 
 Um guia prático para quem quer ler a Bíblia e não sabe por onde começar, sem travar no Levítico nem se perder em interpretações isoladas.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Não comece pelo começo: comece por um Evangelho
+- Um caminho sugerido
+- Pouco e constante vence muito e esporádico
+- A regra de ouro: não leia totalmente sozinho
+- Entenda o gênero do que lê
+- Leia para rezar, não só para saber
+- Perguntas-chave
 
 ## Referências usadas
 - [[2 Pedro 1,20-21]]

@@ -12,6 +12,7 @@ Tema: Intercessão dos santos no céu
 > Quando recebeu o livro, os quatro Animais e os vinte e quatro Anciãos prostraram-se diante do Cordeiro, tendo cada um uma cítara e taças de ouro cheias de perfume (que são as orações dos santos).
 
 Abre no app em `ap 5,8`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]

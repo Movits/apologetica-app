@@ -12,6 +12,7 @@ Tema: Irmãos de Jesus / paralelo a Mateus 13,55
 > Não é ele o carpinteiro, o filho de Maria, o irmão de Tiago, de José, de Judas e de Simão? Não vivem aqui entre nós também suas irmãs?”. E ficaram perplexos a seu respeito.
 
 Abre no app em `mc 6,3`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

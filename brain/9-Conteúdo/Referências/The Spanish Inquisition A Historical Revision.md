@@ -10,6 +10,7 @@ Fonte: Teólogos | Henry Kamen (historiador britânico, especialista em Espanha 
 Tema: Revisão historiográfica da Inquisição Espanhola
 
 > Pesquisa baseada em arquivos primários da Inquisição Espanhola. Conclusões principais: o número total de executados em mais de três séculos de atividade (1478-1834) foi de aproximadamente 3.000 a 5.000 pessoas, número mu...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

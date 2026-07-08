@@ -8,8 +8,14 @@ gerado: true
 
 Mateus e Lucas trazem listas diferentes de antepassados de Jesus. Não é contradição: são linhas distintas (legal e biológica) servindo a propósitos teológicos distintos.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Linha legal e linha biológica
+- A explicação do levirato
+- Genealogias não eram planilhas
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 1,1-17]]

@@ -12,6 +12,7 @@ Tema: Ressurreição de Cristo / túmulo vazio
 > Depois do sábado, quando amanhecia o primeiro dia da semana, Maria Madalena e a ou­tra Maria foram ver o túmulo. E eis que houve um violento tremor de terra: um anjo do Senhor desceu do céu, rolou a pedra e sentou-se sob...
 
 Abre no app em `mt 28,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

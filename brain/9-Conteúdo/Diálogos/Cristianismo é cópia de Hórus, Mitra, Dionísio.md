@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Cristianismo é cópia de Hórus, Mitra, Dionísio."
-Categoria: Outras Religiões | Passos: 4
+Categoria: Outras Religiões | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-religiao-pagao`
 
 Artigo completo: [[36 - Cristianismo Copiou Religiões Pagãs]]

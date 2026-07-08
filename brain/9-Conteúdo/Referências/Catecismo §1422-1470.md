@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Sacramento da Reconciliação / Confissão
 
 > Os que se aproximam do sacramento da Penitência recebem da misericórdia de Deus o perdão das ofensas feitas a Ele e, ao mesmo tempo, reconciliam-se com a Igreja, que foi ferida pelos seus pecados. Cristo instituiu o sacr...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[21 - Por que Confessar a um Padre O Sacramento da Reconciliação]]

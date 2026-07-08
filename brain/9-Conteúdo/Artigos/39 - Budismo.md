@@ -8,8 +8,14 @@ gerado: true
 
 O Budismo busca o fim do sofrimento pela extinção do desejo e do próprio eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]

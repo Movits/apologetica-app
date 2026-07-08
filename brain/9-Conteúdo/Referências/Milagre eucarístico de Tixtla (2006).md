@@ -10,6 +10,7 @@ Fonte: Outros | Investigação coordenada pelo Dr. Ricardo Castañón Gómez (20
 Tema: Hóstia que exsudou substância sanguínea
 
 > Durante uma Missa em 2006, uma Hóstia começou a exsudar uma substância avermelhada. A análise identificou sangue humano com hemoglobina e DNA, e a substância vinha do interior da Hóstia, não da superfície. Os achados for...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]

@@ -8,8 +8,16 @@ gerado: true
 
 Sem Deus, o universo é indiferente e a vida não tem propósito último. O cristianismo responde: você foi criado por amor, para amar e para viver para sempre.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- A resposta honesta do materialismo
+- O vazio que nada preenche
+- A resposta cristã
+- E o sofrimento, não tira o sentido?
+- O que fazer com isso
+- Perguntas-chave
 
 ## Referências usadas
 - [[Romanos 8,28]]

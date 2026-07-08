@@ -12,6 +12,7 @@ Tema: Creio! Ajudai a minha falta de fé
 > Imediatamente exclamou o pai do menino: "Creio! Vem em socorro à minha falta de fé!".
 
 Abre no app em `mc 9,24`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[78 - Como Ter e Fortalecer a Fé]]

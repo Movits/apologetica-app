@@ -8,8 +8,15 @@ gerado: true
 
 Os católicos são obrigados a dar dez por cento da renda? O que a Igreja realmente ensina sobre o dízimo, entre o legalismo e o descaso.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- De onde vem
+- A Igreja obriga dez por cento?
+- O perigo dos dois extremos
+- O coração da questão
+- Perguntas-chave
 
 ## Referências usadas
 - [[2 Coríntios 9,7]]

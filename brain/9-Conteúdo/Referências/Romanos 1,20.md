@@ -12,6 +12,7 @@ Tema: Existência de Deus pela razão / lei natural
 > Desde a criação do mundo, as perfeições invisíveis de Deus, o seu sempiterno poder e divindade, se tornam visíveis à inteligência, por suas obras; de modo que não se podem escusar.
 
 Abre no app em `rm 1,20`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]

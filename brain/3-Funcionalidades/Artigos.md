@@ -33,6 +33,9 @@ Ver [[Catálogo de Dados]] e [[Artigos e Referências (dados)]].
 
 O usuário navega por categoria ou pelos mais buscados e abre o artigo. O detalhe mostra imagem com crédito (tocar amplia com zoom), corpo com referências clicáveis que abrem a tela de referência, termos do glossário clicáveis e a lista de artigos relacionados no fim. Se o artigo faz parte de um trilho do plano de leitura, o dia correspondente é marcado automaticamente ao ler. Tudo tem versão em inglês quando o idioma do app é EN.
 
+## Conteúdo real (grafo gerado)
+Cada artigo do app tem uma nota conectada em [[Conteúdo do App (gerado)]], organizada pelas categorias [[Existência de Deus]], [[Igreja Católica]], [[Sagrada Escritura]], [[Moral]], [[Outras Religiões]] e [[História da Igreja]].
+
 ## Ligações
 
 - [[Plano de Leitura]]

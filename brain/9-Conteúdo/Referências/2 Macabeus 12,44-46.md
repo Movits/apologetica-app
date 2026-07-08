@@ -12,6 +12,7 @@ Tema: Oração pelos mortos / fundamento do Purgatório
 > Pois se ele não esperasse que os mortos haviam de ressuscitar, teria sido supérfluo e vão orar pelos mortos. Mas, considerando que aos que morriam piedosamente estava reservada a mais bela recompensa, esse pensamento era...
 
 Abre no app em `2mc 12,44`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]

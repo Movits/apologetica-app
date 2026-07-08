@@ -12,6 +12,7 @@ Tema: As cartas de Paulo são deturpadas pelos ignorantes
 > Em todas as suas cartas, Paulo fala dessas coisas, nas quais há pontos difíceis de entender, que os ignorantes e inconstantes deturpam, como o fazem também com as demais Escrituras, para sua própria perdição.
 
 Abre no app em `2pd 3,16`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[37 - Protestantismo]]

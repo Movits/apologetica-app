@@ -8,8 +8,17 @@ gerado: true
 
 O número 666, o anticristo, o arrebatamento, datas marcadas. Em meio a tanto sensacionalismo, o que a Igreja Católica de fato ensina sobre o fim dos tempos.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- O Apocalipse não é um mapa do futuro
+- Ninguém sabe o dia nem a hora
+- O 666 e o anticristo
+- E o "arrebatamento"?
+- O que de fato vai acontecer
+- Como viver tudo isso
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 25,31-46]]

@@ -8,8 +8,19 @@ gerado: true
 
 A Eucaristia não é símbolo. É o Corpo, Sangue, Alma e Divindade de Jesus Cristo, confirmado pela Escritura, pelos Padres e por milagres comprovados.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- "Isto é o meu corpo"
+- Paulo confirma a Presença Real
+- Os Padres da Igreja
+- Milagres eucarísticos comprovados
+- Perguntas-chave
+
+## Termos do glossário
+- [[Transubstanciação]]
+- [[Dogma]]
 
 ## Referências usadas
 - [[João 6,53-55]]

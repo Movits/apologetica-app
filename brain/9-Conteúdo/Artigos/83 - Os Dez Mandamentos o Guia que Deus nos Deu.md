@@ -8,8 +8,16 @@ gerado: true
 
 Os Dez Mandamentos não são uma lista de proibições arbitrárias nem ficaram no Antigo Testamento. São o mapa que protege o que mais importa.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- Lei cerimonial e lei moral
+- Não são imposição arbitrária, são lei natural
+- Duas tábuas: amor a Deus e ao próximo
+- Os mais contestados hoje
+- Caminho de liberdade, não jaula
+- Perguntas-chave
 
 ## Referências usadas
 - [[Êxodo 20,3-5]]

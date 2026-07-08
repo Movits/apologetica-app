@@ -28,6 +28,9 @@ Ver [[Catálogo de Dados]] e [[Artigos e Referências (dados)]].
 
 Na lista, o usuário filtra por fonte e toca em uma referência para expandir. Referências bíblicas mostram o botão "Ler no app", que navega para a tab Bíblia já com o versículo destacado. Referências do Catecismo abrem o texto oficial no site do Vaticano no navegador, decisão registrada em [[Decisão - Catecismo vira link para o Vaticano]]. Quando um artigo cita uma referência, o toque leva para `src/screens/RefDetailScreen.jsx` sem perder o lugar da leitura. A convenção do projeto exige que toda citação central de um artigo tenha entrada correspondente aqui, ver [[Convenções do Projeto]].
 
+## Conteúdo real (grafo gerado)
+As aprox. 205 referências têm notas individuais em [[Conteúdo do App (gerado)]], cada uma listando os artigos que a usam.
+
 ## Ligações
 
 - [[Leitor da Bíblia]]

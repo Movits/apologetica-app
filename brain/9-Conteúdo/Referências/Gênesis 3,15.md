@@ -12,6 +12,7 @@ Tema: Protoevangelho / inimizade entre Maria e o demônio
 > Porei ódio entre ti e a mulher, entre a tua descendência e a dela. Esta te ferirá a cabeça, e tu lhe ferirás o calcanhar”.
 
 Abre no app em `gn 3,15`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[12 - A Imaculada Conceição de Maria]]

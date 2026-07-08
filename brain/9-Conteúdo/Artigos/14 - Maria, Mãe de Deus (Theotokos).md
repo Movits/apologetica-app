@@ -8,8 +8,18 @@ gerado: true
 
 Maria gerou aquele que, na unidade de sua pessoa, é verdadeiramente Deus. Negar isso é negar a Encarnação.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O Concílio de Éfeso
+- "Mãe do meu Senhor"
+- Mãe da pessoa, não da natureza
+- Perguntas-chave
+
+## Termos do glossário
+- [[Theotokos]]
+- [[Septuaginta]]
 
 ## Referências usadas
 - [[Lucas 1,43]]

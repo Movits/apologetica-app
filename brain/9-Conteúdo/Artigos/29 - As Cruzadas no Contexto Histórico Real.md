@@ -8,8 +8,20 @@ gerado: true
 
 As Cruzadas não foram guerra de agressão contra o islã. Foram resposta defensiva tardia a quatrocentos anos de conquista muçulmana.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- Antes do Islã, eram terras cristãs
+- Cem anos de conquista pela espada
+- A vida dos cristãos sob domínio islâmico
+- O século XI e o pedido bizantino
+- Defesa, não agressão
+- A vergonha da Quarta Cruzada
+- Perguntas-chave
+
+## Termos do glossário
+- [[Indulgência]]
 
 ## Referências usadas
 - [[Concílio de Clermont]]

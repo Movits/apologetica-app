@@ -8,8 +8,15 @@ gerado: true
 
 Dezenas de milhares de pessoas, avisadas com meses de antecedência, viram o sol "dançar" no céu em 13 de outubro de 1917. Até a imprensa secular e cética registrou.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- O que aconteceu
+- Por que o caso é forte
+- As explicações naturais não fecham
+- O que a Igreja diz
+- Perguntas-chave
 
 ## Referências usadas
 - [[O Milagre do Sol (Fátima, 1917)]]

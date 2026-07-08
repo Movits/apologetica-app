@@ -8,8 +8,18 @@ gerado: true
 
 Um panorama dos principais argumentos racionais que apontam para a existência de Deus, e por que crer não é o contrário de pensar.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- Fé e razão não são inimigas
+- O argumento da causa
+- O argumento da ordem
+- O argumento moral
+- O argumento da própria razão
+- "E o sofrimento? E quem criou Deus?"
+- A conclusão razoável
+- Perguntas-chave
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]

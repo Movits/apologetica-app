@@ -8,8 +8,18 @@ gerado: true
 
 Maria foi virgem antes, durante e após o nascimento de Jesus, doutrina confessada desde os primeiros séculos.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Os "irmãos de Jesus"
+- A pergunta de Maria
+- Padres e reformadores
+- Perguntas-chave
+
+## Termos do glossário
+- [[Septuaginta]]
+- [[Concílio Ecumênico]]
 
 ## Referências usadas
 - [[Lucas 1,34]]

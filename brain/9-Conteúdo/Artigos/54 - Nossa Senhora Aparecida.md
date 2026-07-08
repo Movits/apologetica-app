@@ -8,8 +8,15 @@ gerado: true
 
 Em 1717, três pescadores tiraram do rio Paraíba uma pequena imagem quebrada e, em seguida, uma pesca farta onde não havia nada. Era o começo da devoção que faria dela a padroeira do Brasil.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- O achado no rio
+- A devoção que cresceu
+- Os sinais narrados
+- O que significa para o Brasil
+- Perguntas-chave
 
 ## Referências usadas
 - [[Nossa Senhora Aparecida (1717)]]

@@ -25,6 +25,9 @@ Ver [[Catálogo de Dados]].
 
 O usuário escolhe um trilho e vê os dias em ordem, cada um com o tema e o artigo correspondente. Tocar em um dia abre o artigo em [[Artigos]] e, ao ler, o dia é marcado como concluído automaticamente, sem precisar voltar para dar check. A barra de progresso mostra quantos dias foram feitos no trilho. Dá para reiniciar o progresso de um trilho sem perder nada, já que os artigos continuam disponíveis. O progresso fica só no aparelho, em AsyncStorage, e funciona offline.
 
+## Conteúdo real (grafo gerado)
+Os trilhos têm notas com o dia a dia linkado aos artigos: [[Trilho - Fundamentos em 30 dias]] e [[Trilho - Aprofundamento]].
+
 ## Ligações
 
 - [[Artigos]]

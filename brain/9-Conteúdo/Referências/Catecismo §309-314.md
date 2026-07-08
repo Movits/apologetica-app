@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Problema do mal / providência
 
 > Deus, que é onipotente e soberanamente bom, por que permitiu o mal? A esta pergunta tão premente quanto inevitável só a fé cristã dá a resposta cabal: bondade de Deus e soberania são compatíveis com o mal porque Deus per...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[06 - Ateísmo e o Problema do Mal]]

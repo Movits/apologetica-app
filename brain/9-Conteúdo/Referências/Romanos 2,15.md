@@ -12,6 +12,7 @@ Tema: A lei moral gravada no coração humano
 > Eles mostram que o objeto da lei está gravado nos seus corações, dando-lhes testemunho a sua consciência, bem como os seus raciocínios, com os quais se acusam ou se escusam mutuamente.
 
 Abre no app em `rm 2,15`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[83 - Os Dez Mandamentos o Guia que Deus nos Deu]]

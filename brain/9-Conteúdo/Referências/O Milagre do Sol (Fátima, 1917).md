@@ -10,6 +10,7 @@ Fonte: Outros | Relatos de testemunhas e imprensa (jornal O Século, entre outro
 Tema: Fenômeno solar testemunhado por dezenas de milhares de pessoas
 
 > Anunciado com meses de antecedência por três crianças, o sinal foi presenciado por cerca de 70 mil pessoas. Testemunhas relataram que o sol girou, lançou luzes coloridas e pareceu precipitar-se sobre a multidão, e que as...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[51 - O Milagre do Sol em Fátima (1917)]]

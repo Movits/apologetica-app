@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "A Igreja é riquíssima; devia vender tudo e acabar com a pobreza."
-Categoria: História | Passos: 4
+Categoria: História | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-igreja-rica`
 
 Artigo completo: [[80 - A Riqueza da Igreja e do Vaticano]]

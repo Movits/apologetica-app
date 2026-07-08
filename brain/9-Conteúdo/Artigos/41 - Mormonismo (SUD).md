@@ -8,8 +8,14 @@ gerado: true
 
 Os mórmons creem em Cristo e levam a família a sério, mas seguem um novo livro e um deus que já foi homem. Arqueologia, egiptologia e a Bíblia respondem.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[O Livro de Mórmon]]

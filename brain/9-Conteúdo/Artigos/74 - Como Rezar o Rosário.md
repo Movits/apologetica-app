@@ -8,8 +8,15 @@ gerado: true
 
 O Rosário é um resumo do Evangelho meditado com Maria. Aprenda, de forma simples, como rezá-lo, e por que ele não é repetição vazia.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O que é o Rosário
+- Não é "repetição vazia"
+- Como rezar, passo a passo
+- Por que vale a pena
+- Perguntas-chave
 
 ## Referências usadas
 - [[Lucas 1,28]]

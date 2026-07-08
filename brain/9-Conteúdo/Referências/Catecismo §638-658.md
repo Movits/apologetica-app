@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Ressurreição de Cristo
 
 > A Ressurreição de Cristo é a verdade culminante da nossa fé em Cristo. A Ressurreição de Jesus é objeto de fé enquanto intervenção transcendente de Deus na criação e na história.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

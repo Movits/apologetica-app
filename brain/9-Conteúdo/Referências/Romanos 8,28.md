@@ -12,6 +12,7 @@ Tema: Problema do mal / providência divina
 > Aliás, sabemos que todas as coisas concorrem para o bem daqueles que amam a Deus, daqueles que são os eleitos, segundo os seus desígnios.
 
 Abre no app em `rm 8,28`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[06 - Ateísmo e o Problema do Mal]]

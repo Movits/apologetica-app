@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Ateus podem ser pessoas morais — não precisam de Deus para ter ética."
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-ateismo-moral`
 
 Artigo completo: [[06 - Ateísmo e o Problema do Mal]]

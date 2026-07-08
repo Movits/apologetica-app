@@ -8,8 +8,19 @@ gerado: true
 
 O maior mistério cristão não é uma contradição. Deus é um só na natureza e três nas Pessoas. A Escritura o revela e a razão pode acolhê-lo.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O que a doutrina afirma, e o que não afirma
+- Por que não é contradição
+- A raiz bíblica
+- Como a Igreja definiu
+- Por que isso importa
+- Perguntas-chave
+
+## Termos do glossário
+- [[Heresia]]
 
 ## Referências usadas
 - [[Mateus 28,19-20]]

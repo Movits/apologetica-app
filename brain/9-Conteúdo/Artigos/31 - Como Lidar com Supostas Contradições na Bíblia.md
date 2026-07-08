@@ -8,8 +8,18 @@ gerado: true
 
 Discrepâncias aparentes entre relatos quase sempre se resolvem com leitura honesta dos textos e princípios básicos de interpretação histórica.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- O que inerrância significa
+- Conheça o gênero literário
+- O valor do testemunho parcial
+- Quatro tipos comuns e como resolvê-los
+- Perguntas-chave
+
+## Termos do glossário
+- [[Inerrância]]
 
 ## Referências usadas
 - [[Dei Verbum §9-10]]

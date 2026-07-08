@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "A salvação é só pela fé — obras não contribuem em nada."
-Categoria: Igreja Católica | Passos: 4
+Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-fe-obras`
 
 Artigo completo: [[03 - A Sagrada Tradição e o Sola Scriptura]]

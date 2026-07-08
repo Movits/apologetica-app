@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Como um Deus bom permite o sofrimento de crianças inocentes?"
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-sofrimento-inocentes`
 
 Artigo completo: [[06 - Ateísmo e o Problema do Mal]]

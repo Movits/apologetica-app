@@ -26,6 +26,9 @@ Ver [[Catálogo de Dados]].
 
 O usuário escolhe uma objeção e a tela vira uma conversa guiada: primeiro a fala da outra pessoa, depois cada passo da resposta aparece um por vez, ensinando o ritmo de um diálogo respeitoso em vez de um sermão decorado. No fim há o link para o artigo completo. O botão voltar é inteligente: quem abriu o diálogo pela lista volta para a lista, quem chegou pelo card da Home sai da tela direto, sem parada intermediária (correção de julho de 2026, controlada por uma ref que registra a origem).
 
+## Conteúdo real (grafo gerado)
+Cada objeção tem nota própria conectada ao artigo correspondente, via [[Conteúdo do App (gerado)]].
+
 ## Ligações
 
 - [[Artigos]]

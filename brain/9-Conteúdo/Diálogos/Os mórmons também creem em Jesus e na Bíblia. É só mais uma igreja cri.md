@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Os mórmons também creem em Jesus e na Bíblia. É só mais uma igreja cristã."
-Categoria: Outras Religiões | Passos: 4
+Categoria: Outras Religiões | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-mormonismo`
 
 Artigo completo: [[41 - Mormonismo (SUD)]]

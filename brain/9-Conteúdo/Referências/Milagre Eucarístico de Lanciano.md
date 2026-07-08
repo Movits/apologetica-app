@@ -10,6 +10,7 @@ Fonte: Outros | Igreja de São Francisco, Lanciano (Itália); estudos de Dr. Edo
 Tema: Milagre eucarístico / evidência da Presença Real
 
 > Durante uma Missa no séc. VIII, um monge basiliano duvidou da Presença Real. Ao consagrar, a Hóstia transformou-se em carne visível e o vinho em sangue coagulado em cinco glóbulos. As relíquias estão preservadas em Lanci...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]

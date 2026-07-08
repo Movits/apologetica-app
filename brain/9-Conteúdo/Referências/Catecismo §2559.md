@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: O que é a oração
 
 > "A oração é a elevação da alma a Deus ou o pedido a Deus dos bens convenientes" (São João Damasceno). A humildade é o fundamento da oração. O homem é um mendigo de Deus.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[73 - Como Rezar Um Guia para Começar]]

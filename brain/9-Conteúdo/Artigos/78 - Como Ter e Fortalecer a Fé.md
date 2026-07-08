@@ -8,8 +8,19 @@ gerado: true
 
 A fé é um dom, mas também se cultiva. Para quem tem pouca fé, ou está em crise, há caminhos concretos para crer e crescer.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- A fé é dom e é resposta
+- Caminhos concretos
+- A fé e a dúvida
+- Quando a fé esfria
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
+- [[Apologética]]
 
 ## Referências usadas
 - [[Gálatas 5,6]]

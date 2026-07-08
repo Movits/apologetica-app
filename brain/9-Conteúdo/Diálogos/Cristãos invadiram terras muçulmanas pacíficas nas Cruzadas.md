@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Cristãos invadiram terras muçulmanas pacíficas nas Cruzadas."
-Categoria: História | Passos: 4
+Categoria: História | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-cruzadas`
 
 Artigo completo: [[29 - As Cruzadas no Contexto Histórico Real]]

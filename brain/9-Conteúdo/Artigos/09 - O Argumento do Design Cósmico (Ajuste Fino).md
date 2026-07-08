@@ -8,8 +8,18 @@ gerado: true
 
 As constantes físicas do universo são tão precisas que sua existência aponta para um designer inteligente.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- Da Quinta Via ao ajuste fino
+- Constantes precisas demais
+- Necessidade, acaso ou design?
+- A objeção do multiverso
+- Perguntas-chave
+
+## Termos do glossário
+- [[Navalha de Occam]]
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]

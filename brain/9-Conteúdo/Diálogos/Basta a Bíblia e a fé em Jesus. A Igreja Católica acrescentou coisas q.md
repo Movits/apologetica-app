@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Basta a Bíblia e a fé em Jesus. A Igreja Católica acrescentou coisas que não estão na Escritura."
-Categoria: Outras Religiões | Passos: 4
+Categoria: Outras Religiões | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-protestantismo`
 
 Artigo completo: [[37 - Protestantismo]]

@@ -8,8 +8,15 @@ gerado: true
 
 Em vários milagres eucarísticos analisados por cientistas, a Hóstia se tornou tecido cardíaco humano vivo, do tipo AB. Lanciano, Buenos Aires, Sokolka e Tixtla apontam para o mesmo coração.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Lanciano, o caso mais estudado
+- Buenos Aires, Sokolka, Tixtla
+- O tipo sanguíneo AB
+- O que isso prova e o que pede fé
+- Perguntas-chave
 
 ## Referências usadas
 - [[Milagre Eucarístico de Lanciano]]

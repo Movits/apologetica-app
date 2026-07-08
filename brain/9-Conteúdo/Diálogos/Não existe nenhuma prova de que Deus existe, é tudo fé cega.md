@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Não existe nenhuma prova de que Deus existe, é tudo fé cega."
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-deus-provas`
 
 Artigo completo: [[56 - Deus Existe Os Melhores Argumentos da Razão]]

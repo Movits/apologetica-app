@@ -8,8 +8,18 @@ gerado: true
 
 A Igreja fundada por Cristo é uma só, e ela subsiste na Igreja Católica.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- A continuidade apostólica
+- Subsiste na Igreja Católica
+- Quem definiu a Bíblia
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sola Scriptura]]
+- [[Deuterocanônicos]]
 
 ## Referências usadas
 - [[Mateus 16,18-19]]

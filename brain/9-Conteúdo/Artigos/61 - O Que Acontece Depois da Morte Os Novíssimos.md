@@ -8,8 +8,21 @@ gerado: true
 
 Morte, juízo, céu, purgatório e inferno. O que a Igreja realmente ensina sobre o destino da alma, sem medo e sem ingenuidade.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- A morte e o juízo particular
+- O Céu
+- O Inferno
+- O Purgatório
+- O suicídio e a confiança na misericórdia
+- O juízo final e a ressurreição da carne
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
+- [[Purgatório]]
 
 ## Referências usadas
 - [[Hebreus 9,27]]

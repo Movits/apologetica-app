@@ -10,6 +10,7 @@ Fonte: Teólogos | Friedrich Nietzsche (filósofo alemão, ateu) (1882)
 Tema: Consequências do ateísmo / fim da moral objetiva
 
 > "Deus está morto. Deus continua morto. E nós o matamos. Como nos consolaremos, nós, os assassinos dos assassinos? O que de mais santo e poderoso o mundo possuía até hoje sangrou sob os nossos punhais. Quem nos limpará de...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[10 - O Argumento Moral pela Existência de Deus]]

@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Jesus nunca existiu, é mito."
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-jesus-mito`
 
 Artigo completo: [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

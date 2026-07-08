@@ -10,6 +10,7 @@ Fonte: Documentos | Concílio Vaticano II (21 de novembro de 1964)
 Tema: Eclesiologia / subsistit in
 
 > "Esta Igreja, constituída e organizada neste mundo como sociedade, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos Bispos em comunhão com ele, embora fora de sua estrutura se encontrem muitos elemen...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

@@ -8,8 +8,20 @@ gerado: true
 
 Não é "inferno temporário" nem "segunda chance". É a purificação final dos que já estão salvos mas ainda imperfeitos.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Nada de impuro entra no céu
+- A base bíblica
+- A Igreja sempre orou pelos mortos
+- O que o Purgatório realmente é
+- Perguntas-chave
+
+## Termos do glossário
+- [[Graça]]
+- [[Comunhão dos Santos]]
+- [[Purgatório]]
 
 ## Referências usadas
 - [[2 Macabeus 12,44-46]]

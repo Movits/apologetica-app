@@ -8,8 +8,17 @@ gerado: true
 
 O mito popular da Inquisição supera em muito a história real. Os números, comparados a outros tribunais da época, são reveladores.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- As várias Inquisições
+- Os números reais
+- Métodos mais garantistas que os tribunais civis
+- A lenda negra espanhola
+- A caça às bruxas foi obra dos tribunais civis
+- Os erros reais e o pedido de perdão
+- Perguntas-chave
 
 ## Referências usadas
 - [[The Spanish Inquisition A Historical Revision]]

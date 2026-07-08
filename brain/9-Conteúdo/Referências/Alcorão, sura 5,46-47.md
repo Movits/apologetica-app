@@ -10,6 +10,7 @@ Fonte: Outros | Texto sagrado do Islã, transmitido por Maomé (séc. VII d.C.)
 Tema: Reconhecimento autoritativo do Evangelho cristão
 
 > "Fizemos seguir, sobre os passos dos profetas, Jesus, filho de Maria, confirmando o que estava antes dele na Torá. E lhe demos o Evangelho, no qual há orientação e luz, confirmando o que estava antes dele na Torá, como d...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[15 - Islamismo]]

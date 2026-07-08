@@ -8,8 +8,15 @@ gerado: true
 
 A ressurreição não é mito. Há evidências históricas robustas que a sustentam.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O túmulo vazio
+- As aparições
+- A transformação dos apóstolos
+- Os fatos mínimos
+- Perguntas-chave
 
 ## Referências usadas
 - [[1 Coríntios 15,3-8]]

@@ -8,8 +8,15 @@ gerado: true
 
 Aparições marianas com milhares de testemunhas, sinais anunciados e até fotografias são dados difíceis para o ateu. E ao protestante que as chama de demoníacas, há uma resposta clara: pelos frutos se conhece a árvore.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O argumento, em poucas palavras
+- A resposta ao ateu
+- A resposta ao protestante
+- O lugar certo das aparições
+- Perguntas-chave
 
 ## Referências usadas
 - [[O Milagre do Sol (Fátima, 1917)]]

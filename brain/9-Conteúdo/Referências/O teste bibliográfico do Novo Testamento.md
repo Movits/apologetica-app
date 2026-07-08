@@ -10,6 +10,7 @@ Fonte: Teólogos | Bruce M. Metzger e Daniel B. Wallace (estudiosos de crítica 
 Tema: Confiabilidade do texto do Novo Testamento
 
 > Existem mais de 5.800 manuscritos gregos do Novo Testamento, além de milhares em outras línguas. A maioria das centenas de milhares de variantes são de grafia ou de ordem de palavras, sem efeito doutrinal. Os especialist...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[48 - Os Manuscritos do Novo Testamento]]

@@ -8,8 +8,14 @@ gerado: true
 
 O Judaísmo é a raiz de onde brota o cristianismo. A pergunta que nos separa é uma só: o Messias prometido já veio? As profecias respondem.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- O que creem
+- Pontos de convergência
+- Pontos de confronto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Isaías 53,3-7]]

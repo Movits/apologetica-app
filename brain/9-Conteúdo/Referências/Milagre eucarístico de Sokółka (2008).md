@@ -10,6 +10,7 @@ Fonte: Outros | Profa. Maria Sobaniec-Łotowska e Prof. Stanisław Sulkowski (an
 Tema: Hóstia convertida em tecido cardíaco
 
 > Uma Hóstia caída e recolhida em água apresentou uma mancha vermelha. Dois anatomopatologistas da Universidade de Medicina de Białystok analisaram a amostra de forma independente e concluíram tratar-se de tecido do múscul...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]

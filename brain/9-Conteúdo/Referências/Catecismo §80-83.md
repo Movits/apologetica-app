@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Sagrada Escritura e Sagrada Tradição
 
 > A Sagrada Tradição e a Sagrada Escritura constituem um único sagrado depósito da Palavra de Deus, confiado à Igreja. Apenas o Magistério vivo da Igreja pode autenticamente interpretar a Palavra de Deus.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]

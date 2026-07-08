@@ -12,6 +12,7 @@ Tema: Anjo recusa adoração / só Deus é adorado
 > Fui eu, João, que vi e ouvi estas coisas. Depois de as ter ouvido e visto, prostrei-me aos pés do anjo que as mostrava. Mas ele me disse: “Não faças isto! Sou um servo como tu e teus irmãos, os profetas, e aqueles que gu...
 
 Abre no app em `ap 22,8`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[16 - Espiritismo (Kardecismo)]]

@@ -12,6 +12,7 @@ Tema: Satanás se disfarça de anjo de luz
 > E não é de admirar, porque o próprio Satanás se disfarça em anjo de luz.
 
 Abre no app em `2cor 11,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[55 - Aparições de Maria Evidência para Deus]]

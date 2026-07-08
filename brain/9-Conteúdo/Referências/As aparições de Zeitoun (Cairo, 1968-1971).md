@@ -10,6 +10,7 @@ Fonte: Outros | Testemunhas (cristãs e muçulmanas), imprensa e investigação 
 Tema: Aparição mariana pública testemunhada por multidões de várias religiões
 
 > Por mais de dois anos, uma figura luminosa da Virgem foi vista sobre a cúpula da igreja por multidões que somaram centenas de milhares de pessoas, incluindo cristãos coptas, católicos, protestantes e muçulmanos. O fenôme...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[53 - As Aparições de Zeitoun (Egito, 1968)]]

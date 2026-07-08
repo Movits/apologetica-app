@@ -8,8 +8,15 @@ gerado: true
 
 O sofrimento no mundo não refuta Deus. Pode ser compreendido dentro da fé cristã.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- Mal moral e mal natural
+- Deus pode ter razões que não vemos
+- Um Deus que sofre conosco
+- A objeção que se volta contra si
+- Perguntas-chave
 
 ## Referências usadas
 - [[Romanos 8,28]]

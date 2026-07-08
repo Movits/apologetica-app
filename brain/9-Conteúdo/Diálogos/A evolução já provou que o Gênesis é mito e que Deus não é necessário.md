@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "A evolução já provou que o Gênesis é mito e que Deus não é necessário."
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-evolucao-deus`
 
 Artigo completo: [[72 - Evolução, Gênesis e Adão e Eva]]

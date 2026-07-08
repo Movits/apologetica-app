@@ -24,6 +24,9 @@ Dicionário de termos teológicos e apologéticos que o usuário consulta na tel
 
 A tela mostra a lista de termos com campo de busca que filtra por termo e definição nos dois idiomas. Cada card expande para mostrar a definição completa. Nos artigos, o componente `MarkdownText` destaca automaticamente a primeira ocorrência de cada termo do glossário no corpo do texto, transformando a palavra em link clicável. O autor também pode forçar um link manual com a sintaxe `[[termo]]` no corpo do artigo. Tocar no link navega para a tela do glossário com o parâmetro `highlightTerm`, que expande o card certo e rola a lista até ele.
 
+## Conteúdo real (grafo gerado)
+Os 26 termos têm notas individuais mostrando em quais artigos aparecem, via [[Conteúdo do App (gerado)]].
+
 ## Ligações
 
 - [[Artigos]] (onde os termos aparecem destacados)

@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "No fim, católico e evangélico dá no mesmo, todos creem em Jesus."
-Categoria: Igreja Católica | Passos: 4
+Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-catolico-evangelico`
 
 Artigo completo: [[63 - Católico ou Evangélico As Principais Diferenças]]

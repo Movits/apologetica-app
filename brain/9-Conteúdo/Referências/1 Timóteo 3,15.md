@@ -12,6 +12,7 @@ Tema: A Igreja como coluna e sustentáculo da verdade
 > Para que, no caso de eu tardar, saibas como te portar na casa de Deus, que é a Igreja do Deus vivo, coluna e sustentáculo da verdade.
 
 Abre no app em `1tm 3,15`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[37 - Protestantismo]]

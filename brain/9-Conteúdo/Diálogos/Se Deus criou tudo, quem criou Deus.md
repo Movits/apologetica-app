@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Se Deus criou tudo, quem criou Deus?"
-Categoria: Existência de Deus | Passos: 4
+Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-deus-criou`
 
 Artigo completo: [[11 - Quem Criou Deus A Objeção do Ateísmo]]

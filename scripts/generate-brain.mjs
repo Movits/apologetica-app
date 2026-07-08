@@ -40,17 +40,19 @@ async function loadArticles() {
   return all.sort((a, b) => a.id - b.id);
 }
 
-const [articles, refsMod, relMod, diaMod, planMod] = await Promise.all([
+const [articles, refsMod, relMod, diaMod, planMod, gloMod] = await Promise.all([
   loadArticles(),
   import(pathToFileURL(join(ROOT, 'src/data/references.js')).href),
   import(pathToFileURL(join(ROOT, 'src/data/articleRelations.js')).href),
   import(pathToFileURL(join(ROOT, 'src/data/dialogues.js')).href),
   import(pathToFileURL(join(ROOT, 'src/data/readingPlan.js')).href),
+  import(pathToFileURL(join(ROOT, 'src/data/glossary.js')).href),
 ]);
 const references = refsMod.references;
 const RELATED = relMod.RELATED_ARTICLES;
 const DIALOGUES = diaMod.DIALOGUES;
 const TRACKS = planMod.READING_TRACKS;
+const GLOSSARY = gloMod.glossary;
 
 // ---------- utilitários ----------
 
@@ -103,6 +105,29 @@ for (const d of DIALOGUES) {
 const trackTitle = new Map();
 for (const t of TRACKS) trackTitle.set(t.id, sanitize(`Trilho - ${t.titlePt}`, 80));
 
+const termTitle = new Map(); // glossary id -> titulo da nota
+for (const g of GLOSSARY) termTitle.set(g.id, sanitize(g.term, 60));
+
+// Termos do glossário presentes em cada artigo (mesma ideia do MarkdownText:
+// [[termo]] explícito ou palavra inteira no corpo, sem diferenciar maiúsculas).
+function escapeRe(x) { return x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+const termsIn = new Map(); // articleId -> [glossary ids]
+const termUsedBy = new Map(); // glossary id -> [articleIds]
+for (const a of articles) {
+  const body = String(a.body || '');
+  const found = [];
+  for (const g of GLOSSARY) {
+    const explicit = body.includes(`[[${g.term}]]`);
+    const word = new RegExp(`(^|[^\\p{L}])${escapeRe(g.term)}($|[^\\p{L}])`, 'iu').test(body);
+    if (explicit || word) {
+      found.push(g.id);
+      if (!termUsedBy.has(g.id)) termUsedBy.set(g.id, []);
+      termUsedBy.get(g.id).push(a.id);
+    }
+  }
+  if (found.length) termsIn.set(a.id, found);
+}
+
 // ---------- índices reversos ----------
 
 const refUsedBy = new Map(); // refId -> [articleId]
@@ -136,7 +161,11 @@ for (const a of articles) {
   const plano = planFor.get(a.id) || [];
   let b = fm(['artigo', 'conteudo-gerado']) + `# ${artTitle.get(a.id)}\n${AVISO}\n`;
   b += `${a.summary}\n\n`;
-  b += `Categoria: [[${sanitize(a.category)}]]\nArquivo: \`${a._file}\`\n`;
+  b += `Categoria: [[${sanitize(a.category)}]] | Funcionalidade: [[Artigos]]\nArquivo: \`${a._file}\`\n`;
+  const topicos = [...String(a.body || '').matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
+  if (topicos.length) b += `\n## Tópicos internos\n${topicos.map((tp) => `- ${tp}`).join('\n')}\n`;
+  const termos = termsIn.get(a.id) || [];
+  if (termos.length) b += `\n## Termos do glossário\n${termos.map((id) => `- [[${termTitle.get(id)}]]`).join('\n')}\n`;
   if (refs.length) b += `\n## Referências usadas\n${refs.map((id) => `- [[${refTitle.get(id)}]]`).join('\n')}\n`;
   if (rel.length) b += `\n## Artigos relacionados\n${rel.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
   if (dias.length) b += `\n## Diálogos que levam a este artigo\n${dias.map((d) => `- [[${diaTitle.get(d.id)}]]`).join('\n')}\n`;
@@ -148,7 +177,7 @@ for (const a of articles) {
 for (const cat of categorias) {
   const lista = articles.filter((a) => a.category === cat);
   let b = fm(['categoria', 'conteudo-gerado']) + `# ${sanitize(cat)}\n${AVISO}\n`;
-  b += `Categoria com aprox. ${lista.length} artigos (${HOJE}).\n\n## Artigos\n`;
+  b += `Categoria com aprox. ${lista.length} artigos (${HOJE}). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]\n\n## Artigos\n`;
   b += lista.map((a) => `- [[${artTitle.get(a.id)}]]`).join('\n') + '\n';
   write('Categorias', sanitize(cat), b);
 }
@@ -162,6 +191,7 @@ for (const r of references) {
   if (r.topic) b += `Tema: ${r.topic}\n`;
   if (r.text) b += `\n> ${String(r.text).slice(0, 220)}${String(r.text).length > 220 ? '...' : ''}\n`;
   if (r.bibleNav) b += `\nAbre no app em \`${r.bibleNav.bookId} ${r.bibleNav.chapter},${r.bibleNav.verse}\`.\n`;
+  b += `Funcionalidade: [[Referências]]\n`;
   if (usada.length) b += `\n## Usada nos artigos\n${usada.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
   else b += `\nNenhum artigo usa esta referência hoje (candidata a revisão editorial).\n`;
   write('Referências', refTitle.get(r.id), b);
@@ -170,7 +200,7 @@ for (const r of references) {
 // Diálogos
 for (const d of DIALOGUES) {
   let b = fm(['dialogo', 'conteudo-gerado']) + `# ${diaTitle.get(d.id)}\n${AVISO}\n`;
-  b += `Objeção: ${d.objection}\nCategoria: ${d.category} | Passos: ${d.steps?.length || 0}\nId: \`${d.id}\`\n`;
+  b += `Objeção: ${d.objection}\nCategoria: ${d.category} | Passos: ${d.steps?.length || 0} | Funcionalidade: [[Diálogos e Objeção do Dia]]\nId: \`${d.id}\`\n`;
   if (d.relatedArticle != null && artTitle.has(d.relatedArticle)) {
     b += `\nArtigo completo: [[${artTitle.get(d.relatedArticle)}]]\n`;
   }
@@ -180,19 +210,28 @@ for (const d of DIALOGUES) {
 // Trilhos do plano
 for (const t of TRACKS) {
   let b = fm(['plano', 'conteudo-gerado']) + `# ${trackTitle.get(t.id)}\n${AVISO}\n`;
-  b += `${t.descPt}\n\n## Dias\n`;
+  b += `${t.descPt}\n\nFuncionalidade: [[Plano de Leitura]]\n\n## Dias\n`;
   b += t.days.map((d) => `- Dia ${d.day}: [[${artTitle.get(d.articleId) || '?'}]] (${d.theme})`).join('\n') + '\n';
   write('Planos', trackTitle.get(t.id), b);
+}
+
+// Termos do glossário
+for (const g of GLOSSARY) {
+  const usado = (termUsedBy.get(g.id) || []).filter((id) => artTitle.has(id));
+  let b = fm(['termo', 'conteudo-gerado']) + `# ${termTitle.get(g.id)}\n${AVISO}\n`;
+  b += `${g.definition}\n\nFuncionalidade: [[Glossário]]\n`;
+  if (usado.length) b += `\n## Aparece nos artigos\n${usado.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
+  write('Glossário', termTitle.get(g.id), b);
 }
 
 // Índice da seção gerada
 {
   let b = fm(['mapa', 'conteudo-gerado']) + `# Conteúdo do App (gerado)\n${AVISO}\n`;
-  b += `Grafo do conteúdo real do app em ${HOJE}: aprox. ${articles.length} artigos, ${references.length} referências, ${DIALOGUES.length} diálogos e ${TRACKS.length} trilhos de leitura, com as conexões que existem nos dados.\n\n`;
+  b += `Grafo do conteúdo real do app em ${HOJE}: aprox. ${articles.length} artigos, ${references.length} referências, ${DIALOGUES.length} diálogos, ${GLOSSARY.length} termos do glossário e ${TRACKS.length} trilhos de leitura, com as conexões que existem nos dados.\n\n`;
   b += `## Categorias\n${categorias.map((c) => `- [[${sanitize(c)}]]`).join('\n')}\n\n`;
   b += `## Trilhos do plano de leitura\n${TRACKS.map((t) => `- [[${trackTitle.get(t.id)}]]`).join('\n')}\n\n`;
   b += `## Como regenerar\nSempre que artigos, referências, diálogos ou plano mudarem, rode:\n\n\`\`\`\nnode scripts/generate-brain.mjs\n\`\`\`\n\nEsta pasta inteira (9-Conteúdo) é recriada do zero. Não editar as notas geradas à mão.\n`;
   writeFileSync(join(OUT, 'Conteúdo do App (gerado).md'), b);
 }
 
-console.log(`OK: ${articles.length} artigos, ${categorias.length} categorias, ${references.length} referências, ${DIALOGUES.length} diálogos, ${TRACKS.length} trilhos + índice em brain/9-Conteúdo/`);
+console.log(`OK: ${articles.length} artigos, ${categorias.length} categorias, ${references.length} referências, ${DIALOGUES.length} diálogos, ${GLOSSARY.length} termos, ${TRACKS.length} trilhos + índice em brain/9-Conteúdo/`);

@@ -12,6 +12,7 @@ Tema: A Mulher vestida de sol
 > Apareceu no céu um grande sinal: uma Mulher vestida do sol, tendo a lua debaixo dos pés e na cabeça uma coroa de doze estrelas.
 
 Abre no app em `ap 12,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[52 - Nossa Senhora de Guadalupe e a Tilma]]

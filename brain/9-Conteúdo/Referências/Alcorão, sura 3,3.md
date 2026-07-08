@@ -10,6 +10,7 @@ Fonte: Outros | Texto sagrado do Islã, transmitido por Maomé (séc. VII d.C.)
 Tema: Afirmação da Torá e do Evangelho como Escrituras de Deus
 
 > "Ele te enviou o Livro com a verdade, confirmando o que estava antes dele, e fez descer a Torá e o Evangelho como guia para os homens."
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[15 - Islamismo]]

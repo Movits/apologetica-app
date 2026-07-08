@@ -12,6 +12,7 @@ Tema: O governante de Israel nasceria em Belém
 > E tu, Belém-Efrata, tão pequena entre os clãs de Judá, de ti sairá aquele que há de governar Israel, e cujas origens vêm desde os tempos antigos, desde os dias da eternidade.
 
 Abre no app em `mq 5,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]

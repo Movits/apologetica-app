@@ -12,6 +12,7 @@ Tema: Lei moral inscrita no coração / argumento moral
 > Os pagãos, que não têm a Lei, fazendo naturalmente as coisas que são da Lei, embora não tenham a lei, a si mesmos servem de lei; eles mostram que o objeto da lei está gravado nos seus corações, dando-lhes testemunho a su...
 
 Abre no app em `rm 2,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[10 - O Argumento Moral pela Existência de Deus]]

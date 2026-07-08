@@ -12,6 +12,7 @@ Tema: Profecia do nascimento virginal do Emanuel
 > Por isso, o próprio Senhor vos dará um sinal: eis que a virgem conceberá e dará à luz um filho, e o chamará Emanuel, que significa Deus conosco.
 
 Abre no app em `is 7,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[46 - Profecias Messiânicas Cumpridas em Jesus]]

@@ -8,8 +8,17 @@ gerado: true
 
 Como entender as passagens duras do Antigo Testamento, com guerras, leis severas e escravidão, sem fingir que não existem nem concluir que Deus é cruel.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- A chave de tudo: a revelação é progressiva
+- A escravidão
+- As guerras de conquista
+- "Olho por olho"
+- O critério final é Cristo
+- Uma palavra ao crítico
+- Perguntas-chave
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]

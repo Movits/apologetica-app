@@ -12,6 +12,7 @@ Tema: Censo de Quirino / nascimento de Jesus
 > Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do que se efetuou quando Quirino era governador da Síria. Iam todos alistar-se, cada um ...
 
 Abre no app em `lc 2,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]

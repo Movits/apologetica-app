@@ -8,8 +8,16 @@ gerado: true
 
 A vida humana começa na concepção. A ciência confirma o que a fé sempre ensinou.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- O que a ciência diz
+- A dignidade não depende de capacidades
+- A Igreja desde o século I
+- "Meu corpo, minha decisão"
+- Os casos difíceis
+- Perguntas-chave
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]

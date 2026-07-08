@@ -8,8 +8,15 @@ gerado: true
 
 Rezar não é recitar fórmulas mágicas nem exige palavras bonitas. É conversar com Deus, que já espera por você. Um guia simples para quem quer começar.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O que é rezar
+- Não é só pedir
+- Como começar na prática
+- Quando "não sinto nada"
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 6,9-13]]

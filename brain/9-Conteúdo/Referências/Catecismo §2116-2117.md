@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Condenação do espiritismo, da adivinhação e da magia
 
 > Devem-se rejeitar todas as formas de adivinhação. O recurso aos chamados médiuns encobre muitas vezes uma vontade de poder sobre o tempo, a história e, em última análise, sobre os homens, e o desejo de captar potências o...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[16 - Espiritismo (Kardecismo)]]

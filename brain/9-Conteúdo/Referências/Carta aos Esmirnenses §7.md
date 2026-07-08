@@ -10,6 +10,7 @@ Fonte: Teólogos | Santo Inácio de Antioquia (discípulo de São João Apóstol
 Tema: Presença real de Cristo na Eucaristia
 
 > "Afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo, que padeceu por nossos pecados e que o Pai, em sua bondade, ressuscitou."
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]

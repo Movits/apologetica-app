@@ -12,6 +12,7 @@ Tema: Fé sem obras não basta
 > Nem todo aquele que me diz: Senhor, Senhor, entrará no Reino dos céus, mas sim aquele que faz a vontade de meu Pai que está nos céus.
 
 Abre no app em `mt 7,21`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[24 - Fé e Obras Não Sola Fide]]

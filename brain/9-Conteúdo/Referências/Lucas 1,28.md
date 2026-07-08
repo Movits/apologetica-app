@@ -12,6 +12,7 @@ Tema: Anunciação / cheia de graça (Imaculada Conceição)
 > Entrando, o anjo disse-lhe: “Ave, cheia de graça, o Senhor é contigo”.
 
 Abre no app em `lc 1,28`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[12 - A Imaculada Conceição de Maria]]

@@ -10,6 +10,7 @@ Fonte: Documentos | São Papa João Paulo II (10 de novembro de 1994)
 Tema: Pedido de perdão pelos pecados dos filhos da Igreja na história
 
 > "É justo que, no termo do segundo milênio do cristianismo, a Igreja assuma com mais aguda consciência o pecado dos seus filhos, lembrando todas as circunstâncias em que, no transcurso da história, eles se afastaram do es...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

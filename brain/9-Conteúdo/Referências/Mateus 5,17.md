@@ -12,6 +12,7 @@ Tema: Jesus não veio abolir a Lei, mas levá-la à perfeição
 > “Não julgueis que vim abolir a Lei ou os profetas. Não vim para os abolir, mas sim para levá-los à perfeição.”
 
 Abre no app em `mt 5,17`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[83 - Os Dez Mandamentos o Guia que Deus nos Deu]]

@@ -8,8 +8,17 @@ gerado: true
 
 Horóscopo, tarô, búzios, amuletos, simpatias. Práticas comuns que a Igreja, seguindo a Bíblia, considera incompatíveis com a fé. Entenda por quê, sem fanatismo nem medo.
 
-Categoria: [[Outras Religiões]]
+Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
+
+## Tópicos internos
+- Tudo começa no primeiro mandamento
+- O que a Bíblia diz
+- Por que é perigoso, mesmo "de brincadeira"
+- Horóscopo e astrologia
+- E a sorte, os amuletos, as simpatias?
+- A liberdade dos filhos de Deus
+- Perguntas-chave
 
 ## Referências usadas
 - [[Deuteronômio 18,10-12]]

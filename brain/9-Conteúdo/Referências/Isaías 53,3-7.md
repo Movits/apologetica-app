@@ -12,6 +12,7 @@ Tema: Profecia do Servo que sofre pelos pecados do povo
 > Era desprezado, abandonado pelos homens, homem das dores. Foram as nossas enfermidades que ele levou sobre si. Mas foi ferido por causa de nossas iniquidades; o castigo que nos traz a paz caiu sobre ele, e fomos curados ...
 
 Abre no app em `is 53,3`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]

@@ -8,8 +8,15 @@ gerado: true
 
 Séculos antes de Cristo, os profetas anunciaram detalhes da vida, da morte e da vitória do Messias. Jesus os cumpre de modo impressionante.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Onde nasceria
+- Como morreria
+- Quando viria
+- A força do conjunto
+- Perguntas-chave
 
 ## Referências usadas
 - [[Miquéias 5,1-2]]

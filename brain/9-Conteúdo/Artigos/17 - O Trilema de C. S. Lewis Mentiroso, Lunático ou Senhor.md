@@ -8,8 +8,18 @@ gerado: true
 
 Jesus não pode ter sido apenas "um grande mestre moral". Suas afirmações deixam três opções, nenhuma neutra.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- Jesus afirmou ser Deus
+- Três opções, e só três
+- A saída ambígua não se sustenta
+- E a "quarta opção"?
+- Perguntas-chave
+
+## Termos do glossário
+- [[Apologética]]
 
 ## Referências usadas
 - [[João 8,58]]

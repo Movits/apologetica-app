@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "O Deus do Antigo Testamento é um monstro genocida e escravagista."
-Categoria: Sagrada Escritura | Passos: 4
+Categoria: Sagrada Escritura | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-deus-at-monstro`
 
 Artigo completo: [[69 - A Bíblia, a Escravidão e a Violência no Antigo Testamento]]

@@ -8,8 +8,15 @@ gerado: true
 
 Por que a Igreja pede jejum e sextas-feiras sem carne? O sentido da Quaresma, sem legalismo e sem virar moda de dieta.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- O que é e o que não é
+- Quaresma: os quarenta dias
+- As regras concretas
+- Por que justo na sexta-feira
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 4,1-2]]

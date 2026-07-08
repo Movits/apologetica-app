@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Purgatório / purificação final dos eleitos
 
 > Os que morrem na graça e na amizade de Deus, mas imperfeitamente purificados, embora tenham assegurada a salvação eterna, sofrem depois da morte uma purificação, a fim de obterem a santidade necessária para entrar na ale...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]

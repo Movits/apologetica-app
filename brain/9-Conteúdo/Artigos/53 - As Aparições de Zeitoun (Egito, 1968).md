@@ -8,8 +8,15 @@ gerado: true
 
 Por mais de dois anos, multidões de cristãos e muçulmanos viram, e fotografaram, uma figura luminosa da Virgem sobre uma igreja no Cairo. O governo egípcio investigou e não achou fraude.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- O que foi visto
+- Uma multidão de testemunhas
+- Fotografada e investigada
+- Por que o caso é forte
+- Perguntas-chave
 
 ## Referências usadas
 - [[As aparições de Zeitoun (Cairo, 1968-1971)]]

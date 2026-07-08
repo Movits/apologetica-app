@@ -12,6 +12,7 @@ Tema: Vida única / refutação da reencarnação
 > Como está determinado que os homens morram uma só vez, e logo em seguida vem o juízo,
 
 Abre no app em `hb 9,27`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[16 - Espiritismo (Kardecismo)]]

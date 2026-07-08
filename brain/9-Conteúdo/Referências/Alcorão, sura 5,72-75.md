@@ -10,6 +10,7 @@ Fonte: Outros | Texto sagrado do Islã, transmitido por Maomé (séc. VII d.C. (
 Tema: Negação explícita da divindade de Jesus
 
 > "Blasfemam aqueles que dizem: Allah é o Messias, filho de Maria. Pois o próprio Messias disse: Ó filhos de Israel, adorai a Allah, meu Senhor e vosso Senhor. (...) O Messias, filho de Maria, não é mais que um mensageiro....
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[15 - Islamismo]]

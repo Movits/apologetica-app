@@ -10,6 +10,7 @@ Fonte: Teólogos | Caio Suetônio Tranquilo (historiador romano) (c. 121 d.C.)
 Tema: Expulsão dos judeus de Roma por agitação cristã
 
 > "Como os judeus provocassem agitações constantes por instigação de Chrestus, Cláudio os expulsou de Roma." A grafia Chrestus é a forma latina helenizada de Christus, e a passagem provavelmente refere-se a controvérsias e...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

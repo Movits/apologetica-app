@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Aborto / dignidade da vida humana desde a concepção
 
 > A vida humana deve ser respeitada e protegida de maneira absoluta desde o momento da concepção. Desde o primeiro instante da sua existência, o ser humano deve ver reconhecidos os seus direitos de pessoa, entre os quais o...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[25 - Aborto A Dignidade da Vida Humana]]

@@ -12,6 +12,7 @@ Tema: Sexualidade / chamado universal à conversão
 > Acaso não sabeis que os injustos não hão de possuir o Reino de Deus? Não vos enganeis: nem os impuros, nem os idólatras, nem os adúlteros, nem os efeminados, nem os devassos, nem os ladrões, nem os avarentos, nem os bêba...
 
 Abre no app em `1cor 6,9`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]

@@ -12,6 +12,7 @@ Tema: Fé que opera pela caridade
 > Porque, em Cristo Jesus, nem a circuncisão nem a incircuncisão têm valor algum, mas sim a fé que opera pela caridade.
 
 Abre no app em `gl 5,6`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[24 - Fé e Obras Não Sola Fide]]

@@ -12,6 +12,7 @@ Tema: Tiago "irmão do Senhor" / parente de Jesus
 > Dos outros apóstolos não vi mais nenhum, a não ser Tiago, irmão do Senhor.
 
 Abre no app em `gl 1,19`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

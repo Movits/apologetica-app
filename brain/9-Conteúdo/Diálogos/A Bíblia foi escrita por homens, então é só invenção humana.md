@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "A Bíblia foi escrita por homens, então é só invenção humana."
-Categoria: Sagrada Escritura | Passos: 4
+Categoria: Sagrada Escritura | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-biblia-homens`
 
 Artigo completo: [[68 - Quem Escreveu a Bíblia]]

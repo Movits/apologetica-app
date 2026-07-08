@@ -8,8 +8,14 @@ gerado: true
 
 Mateus diz que Jesus nasceu sob Herodes (morto em 4 a.C.). Lucas menciona o censo de Quirino (governador a partir de 6 d.C.). A "contradição" tem solução textual e histórica.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- A via linguística
+- A via histórica
+- Uma terceira possibilidade
+- Perguntas-chave
 
 ## Referências usadas
 - [[Lucas 2,1-7]]

@@ -8,8 +8,18 @@ gerado: true
 
 Cristo instituiu o sacramento da Confissão no domingo da Ressurreição. Não é tradição humana, é mandato divino.
 
-Categoria: [[Igreja Católica]]
+Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
+
+## Tópicos internos
+- Instituído na Ressurreição
+- A confissão na Escritura
+- A prática desde o início
+- Quem perdoa é Deus
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sacramento]]
 
 ## Referências usadas
 - [[João 20,21-23]]

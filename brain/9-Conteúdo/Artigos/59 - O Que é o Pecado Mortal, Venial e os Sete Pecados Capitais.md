@@ -8,8 +8,19 @@ gerado: true
 
 Pecado não é "quebrar uma regra de Deus por capricho". É ferir o amor e a si mesmo. Entenda a diferença entre pecado mortal e venial e o que são os sete vícios capitais.
 
-Categoria: [[Moral]]
+Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
+
+## Tópicos internos
+- O que é o pecado, de verdade
+- Pecado mortal e pecado venial
+- Os sete pecados capitais
+- O pecado contra o Espírito Santo
+- A boa notícia: a misericórdia é maior
+- Perguntas-chave
+
+## Termos do glossário
+- [[Sacramento]]
 
 ## Referências usadas
 - [[Gênesis 3,5]]

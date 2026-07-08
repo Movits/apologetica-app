@@ -8,8 +8,16 @@ gerado: true
 
 Por que precisa existir uma causa primeira não causada para explicar tudo que existe.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- A pergunta de fundo
+- De Aristóteles a Tomás de Aquino
+- O argumento Kalam e a ciência
+- "Veio do nada", "veio do vácuo quântico"
+- Que tipo de causa?
+- Perguntas-chave
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]

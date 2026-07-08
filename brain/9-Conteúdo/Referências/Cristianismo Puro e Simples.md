@@ -10,6 +10,7 @@ Fonte: Teólogos | C. S. Lewis (1952)
 Tema: Argumento moral pela existência de Deus
 
 > "Toda vez que você encontra um homem dizendo que não acredita em um Bem e em um Mal reais, descobre que esse mesmo homem volta atrás um momento depois. Ele pode quebrar a promessa que fez a você, mas se você tentar quebr...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[10 - O Argumento Moral pela Existência de Deus]]

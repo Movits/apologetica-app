@@ -12,6 +12,7 @@ Tema: Divindade de Cristo / Encarnação
 > Ele, que era de condição divina, não considerou como uma usurpação ser igual a Deus. Mas aniquilou-se a si mesmo, assumindo a condição de servo e tornando-se semelhante aos homens. (...) Por isso Deus o exaltou soberanam...
 
 Abre no app em `fl 2,6`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[27 - Testemunhas de Jeová]]

@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Objeção: "Não preciso de igreja nem de padre: leio a Bíblia e Deus me ilumina."
-Categoria: Sagrada Escritura | Passos: 4
+Categoria: Sagrada Escritura | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-leio-sozinho`
 
 Artigo completo: [[71 - Como Começar a Ler a Bíblia]]

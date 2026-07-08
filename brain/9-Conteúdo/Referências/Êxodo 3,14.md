@@ -12,6 +12,7 @@ Tema: Revelação do nome divino YHWH
 > Deus respondeu a Moisés: “Eu sou aquele que sou”. E ajuntou: “Eis como responderás aos israelitas: (Aquele que se chama) ‘Eu sou’ envia-me junto de vós”.
 
 Abre no app em `ex 3,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[57 - Quem é Jesus Deus e Homem Verdadeiro]]

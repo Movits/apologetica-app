@@ -12,6 +12,7 @@ Tema: Jesus jejua quarenta dias no deserto
 > Em seguida, Jesus foi conduzido pelo Espírito ao deserto para ser tentado pelo demônio. Jejuou quarenta dias e quarenta noites. Depois, teve fome.
 
 Abre no app em `mt 4,1`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[79 - Jejum, Abstinência e Quaresma]]

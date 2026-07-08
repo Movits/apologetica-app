@@ -12,6 +12,7 @@ Tema: Maria, Mãe do Senhor (Theotokos)
 > Donde me vem esta honra de vir a mim a mãe de meu Senhor?
 
 Abre no app em `lc 1,43`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[14 - Maria, Mãe de Deus (Theotokos)]]

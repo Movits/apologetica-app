@@ -12,6 +12,7 @@ Tema: Deus ama quem dá com alegria
 > Dê cada um conforme o impulso do seu coração, sem tristeza nem constrangimento. Deus ama o que dá com alegria.
 
 Abre no app em `2cor 9,7`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[75 - O Dízimo Obrigação ou Gratidão]]

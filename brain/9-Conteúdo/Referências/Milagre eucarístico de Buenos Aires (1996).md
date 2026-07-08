@@ -10,6 +10,7 @@ Fonte: Outros | Investigação coordenada pelo Dr. Ricardo Castañón Gómez; hi
 Tema: Hóstia convertida em tecido do músculo cardíaco
 
 > Em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi guardada e, anos depois, analisada por laboratórios sem que os peritos soubessem a origem. Os exames identificaram tecido do músculo cardíaco...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]

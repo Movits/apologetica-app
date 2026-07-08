@@ -10,6 +10,7 @@ Fonte: Outros | Tradução atribuída a Joseph Smith (1842 (papiros reencontrado
 Tema: Tradução do Livro de Abraão refutada pela egiptologia
 
 > Joseph Smith afirmou ter traduzido o Livro de Abraão a partir de papiros egípcios. Os papiros, dados como perdidos, foram reencontrados em 1966. Os egiptólogos os identificaram como textos funerários comuns (o Livro dos ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[41 - Mormonismo (SUD)]]

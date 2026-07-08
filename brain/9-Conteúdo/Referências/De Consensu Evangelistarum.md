@@ -10,6 +10,7 @@ Fonte: Teólogos | Santo Agostinho de Hipona (Doutor da Igreja) (c. 400 d.C.)
 Tema: Princípios para resolver aparentes contradições nos Evangelhos
 
 > Santo Agostinho escreveu uma obra inteira (quatro livros) demonstrando como as aparentes discrepâncias entre os Evangelhos não são contradições, mas perspectivas complementares de testemunhas distintas. O princípio centr...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

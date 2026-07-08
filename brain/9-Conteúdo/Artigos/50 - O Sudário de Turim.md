@@ -8,8 +8,15 @@ gerado: true
 
 Um lençol que envolveu um homem crucificado exatamente como os Evangelhos descrevem Jesus, com uma imagem que a ciência ainda não sabe explicar. As evidências e os debates.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O que a imagem mostra
+- O que a ciência não explica
+- E a datação por carbono-14?
+- O que a Igreja diz
+- Perguntas-chave
 
 ## Referências usadas
 - [[O Sudário de Turim e o projeto STURP]]

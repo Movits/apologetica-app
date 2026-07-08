@@ -10,6 +10,7 @@ Fonte: Teólogos | Mons. Georges Lemaître (sacerdote católico belga, professor
 Tema: Origem católica da teoria do Big Bang
 
 > O modelo cosmológico que viria a se chamar Big Bang foi proposto pelo padre Lemaître antes que Edwin Hubble confirmasse experimentalmente a expansão do universo. Lemaître derivou matematicamente, a partir da Relatividade...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]

@@ -12,6 +12,7 @@ Tema: Divindade do Filho / o Pai chama o Filho de Deus
 > Mas, do Filho, diz: "O teu trono, ó Deus, subsiste pelos séculos dos séculos; o cetro do teu reino é cetro de equidade".
 
 Abre no app em `hb 1,8`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[27 - Testemunhas de Jeová]]

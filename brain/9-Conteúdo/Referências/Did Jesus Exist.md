@@ -10,6 +10,7 @@ Fonte: Teólogos | Bart D. Ehrman (historiador agnóstico, professor de Estudos 
 Tema: Defesa acadêmica da existência histórica de Jesus
 
 > Apesar de ser agnóstico e amplamente crítico do cristianismo, Ehrman escreve nesta obra que a tese mítica (Jesus nunca existiu) "não convence virtualmente nenhum estudioso da antiguidade, do cristianismo primitivo ou do ...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

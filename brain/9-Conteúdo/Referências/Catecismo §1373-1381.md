@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Eucaristia / transubstanciação
 
 > O modo da presença de Cristo sob as espécies eucarísticas é único. Nesta presença, Cristo se faz presente de modo substancial: toda a substância do pão se converte na substância do Corpo de Cristo, e toda a substância do...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]

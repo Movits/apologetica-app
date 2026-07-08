@@ -10,6 +10,7 @@ Fonte: Teólogos | Flávio Josefo (historiador judeu) (c. 93-94 d.C.)
 Tema: Atestação histórica de Jesus e Tiago
 
 > "Anás reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados."
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

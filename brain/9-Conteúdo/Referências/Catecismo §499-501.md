@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Virgindade perpétua de Maria
 
 > O aprofundamento da fé na maternidade virginal levou a Igreja a confessar a virgindade real e perpétua de Maria também no parto do Filho de Deus feito homem. Maria é "sempre virgem" (aeiparthenos).
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[13 - A Virgindade Perpétua de Maria]]

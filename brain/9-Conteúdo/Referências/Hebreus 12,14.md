@@ -12,6 +12,7 @@ Tema: Santificação necessária para ver o Senhor
 > Buscai a paz com todos e a santificação, sem a qual ninguém verá o Senhor.
 
 Abre no app em `hb 12,14`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]

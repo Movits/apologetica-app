@@ -10,6 +10,7 @@ Fonte: Outros | Martinho Lutero (1530)
 Tema: Acréscimo da palavra "somente" em Romanos 3,28
 
 > Ao traduzir Romanos 3,28 para o alemão, Lutero acrescentou a palavra "somente" (allein), de modo que o texto passou a dizer que o homem é justificado "somente pela fé", embora a palavra não exista no original grego. Nest...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[37 - Protestantismo]]

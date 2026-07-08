@@ -8,8 +8,14 @@ gerado: true
 
 A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o que os Evangelhos narram.
 
-Categoria: [[Existência de Deus]]
+Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
+
+## Tópicos internos
+- O que diz a academia
+- As fontes não cristãs
+- Por que o mitismo não se sustenta
+- Perguntas-chave
 
 ## Referências usadas
 - [[Antiguidades Judaicas, livro 20]]

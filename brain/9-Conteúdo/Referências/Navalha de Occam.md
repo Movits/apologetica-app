@@ -10,6 +10,7 @@ Fonte: Teólogos | Guilherme de Ockham (frade franciscano e filósofo) (c. 1287-
 Tema: Princípio de parcimônia explicativa
 
 > "A pluralidade não deve ser afirmada sem necessidade" (Pluralitas non est ponenda sine necessitate). Entre explicações que dão conta dos mesmos fatos, prefere-se a que postula menos entidades.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[09 - O Argumento do Design Cósmico (Ajuste Fino)]]

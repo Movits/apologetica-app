@@ -8,8 +8,15 @@ gerado: true
 
 Os quatro Evangelhos divergem em detalhes da manhã de Páscoa. Essas diferenças confirmam testemunho independente, não invenção coordenada.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Quantas mulheres foram ao túmulo?
+- Quantos anjos no túmulo?
+- Galileia ou Jerusalém?
+- O peso está na convergência
+- Perguntas-chave
 
 ## Referências usadas
 - [[Mateus 28,1-10]]

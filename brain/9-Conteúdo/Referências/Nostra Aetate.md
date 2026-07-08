@@ -10,6 +10,7 @@ Fonte: Documentos | Concílio Vaticano II, promulgada por São Paulo VI (28 de o
 Tema: Atitude católica diante das outras religiões
 
 > "A Igreja Católica nada rejeita do que há de verdadeiro e santo nessas religiões. Considera com sincero respeito os modos de agir e de viver, os preceitos e doutrinas que, embora discordando em muitos pontos do que ela p...
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]

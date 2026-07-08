@@ -12,6 +12,7 @@ Tema: Mediação única de Cristo
 > Porque há um só Deus e há um só mediador entre Deus e os homens: Jesus Cristo, homem
 
 Abre no app em `1tm 2,5`.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]

@@ -8,8 +8,15 @@ gerado: true
 
 Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos. Quase quinhentos anos depois, continua intacto e sem explicação.
 
-Categoria: [[História da Igreja]]
+Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
+
+## Tópicos internos
+- A imagem que não devia existir
+- Os olhos da Virgem
+- Um sermão em imagem
+- O que isso significa
+- Perguntas-chave
 
 ## Referências usadas
 - [[Nossa Senhora de Guadalupe (a tilma)]]

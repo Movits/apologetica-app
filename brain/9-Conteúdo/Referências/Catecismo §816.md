@@ -10,6 +10,7 @@ Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (19
 Tema: Unidade da Igreja / subsistit in
 
 > A única Igreja de Cristo, que no Símbolo confessamos una, santa, católica e apostólica, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos bispos em comunhão com ele.
+Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

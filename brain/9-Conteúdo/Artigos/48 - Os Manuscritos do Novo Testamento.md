@@ -8,8 +8,15 @@ gerado: true
 
 A acusação de que a Bíblia foi mudada ao longo dos séculos não resiste aos fatos: o Novo Testamento é, de longe, o texto antigo mais bem documentado da história.
 
-Categoria: [[Sagrada Escritura]]
+Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
+
+## Tópicos internos
+- Uma montanha de cópias
+- E cópias muito antigas
+- E as variações entre as cópias?
+- O Antigo Testamento também
+- Perguntas-chave
 
 ## Referências usadas
 - [[Papiro P52 (Rylands)]]
