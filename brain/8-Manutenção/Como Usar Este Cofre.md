@@ -29,6 +29,16 @@ Cada nota tem tags no topo que dizem o tipo dela: `mapa`, `arquitetura`, `funcio
 
 Mudou a estrutura do projeto ou tomou uma decisão importante? Atualize a nota correspondente e o campo `atualizado` do topo dela. Para registrar uma decisão nova, crie uma nota em `brain/7-Decisões/` seguindo o modelo fixo das existentes: Contexto, Decisão, Motivo e Consequências.
 
+## O grafo de conteúdo (pasta 9-Conteúdo)
+
+As notas de artigos, referências e diálogos são GERADAS pelos dados do app, não escritas à mão. Mudou um artigo, adicionou referência ou diálogo? Rode no terminal do projeto:
+
+```
+node scripts/generate-brain.mjs
+```
+
+A pasta 9-Conteúdo é recriada inteira. Por isso, nunca edite essas notas diretamente: anote ideias nas notas das pastas 1 a 8, ou mude os dados do app e regenere.
+
 ## Detalhe técnico único
 
 A pasta `brain/.obsidian/` (configuração pessoal do Obsidian, tema, atalhos) fica fora do git de propósito. Pode personalizar à vontade que nada disso vai para o repositório.

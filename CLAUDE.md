@@ -18,6 +18,7 @@ node scripts/convert-douay-rheims.mjs    # regera bibleDouayRheims.js (EN, fonte
 node scripts/sync-bible-refs.mjs         # sincroniza referências bíblicas
 node scripts/generate-icons.mjs          # gera ícones do app
 node scripts/merge-accounts.mjs          # admin: junta dados de duas contas (precisa .secrets/)
+node scripts/generate-brain.mjs          # regera brain/9-Conteúdo (grafo de artigos/refs/diálogos do vault)
 ```
 
 ## Architecture

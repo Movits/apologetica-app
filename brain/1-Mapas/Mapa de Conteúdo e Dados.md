@@ -12,6 +12,10 @@ De onde vem tudo que o app mostra: os arquivos estáticos de `src/data/` e as pe
 - [[Bíblia (dados)]]: os dois maiores arquivos do projeto, Ave Maria (PT) e Douay-Rheims (EN), gerados por script e nunca editados na mão.
 - [[Artigos e Referências (dados)]]: estrutura interna dos aprox. 83 artigos em 6 categorias e das aprox. 205 referências que eles citam.
 
+## Grafo do conteúdo (gerado automaticamente)
+
+- [[Conteúdo do App (gerado)]]: uma nota por artigo, referência, diálogo e trilho do plano, com as conexões reais entre eles. Regenerado por `node scripts/generate-brain.mjs` sempre que o conteúdo do app mudar.
+
 ## Pesquisas de apoio
 
 Resumos autossuficientes, com link para os documentos originais em `documentos/`.

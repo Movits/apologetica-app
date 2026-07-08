@@ -19,7 +19,7 @@ O APPologetica é um app de apologética católica bilíngue (PT/EN) feito em Re
 
 - [[Mapa de Arquitetura]]: como o app é construído por dentro, do stack aos serviços.
 - [[Mapa de Funcionalidades]]: as 16 funcionalidades que o usuário vê, com a tabela de tela por funcionalidade.
-- [[Mapa de Conteúdo e Dados]]: os arquivos de `src/data/` e as pesquisas que orientam o conteúdo.
+- [[Mapa de Conteúdo e Dados]]: os arquivos de `src/data/`, as pesquisas e o grafo gerado do conteúdo ([[Conteúdo do App (gerado)]]: 83 artigos, 205 referências e 53 diálogos conectados).
 - [[Mapa do Projeto e Decisões]]: site, deploy, decisões registradas e rotinas de manutenção.
 
 ## Por onde começar

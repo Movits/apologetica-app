@@ -1,0 +1,16 @@
+---
+tags: [artigo, conteudo-gerado]
+atualizado: 2026-07-08
+gerado: true
+---
+# 77 - A Igreja e a Maçonaria
+> Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
+
+Um católico pode ser maçom? Por que a Igreja, há séculos, considera a Maçonaria incompatível com a fé. Sem teorias da conspiração, com base em princípios.
+
+Categoria: [[Outras Religiões]]
+Arquivo: `src/data/articles/outras-religioes.js`
+
+## Referências usadas
+- [[Êxodo 20,3-5]]
+- [[João 14,6]]
