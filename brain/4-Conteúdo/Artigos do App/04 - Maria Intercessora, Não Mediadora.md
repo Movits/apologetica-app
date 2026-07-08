@@ -41,3 +41,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 25: Intercessão dos santos: não é idolatria
+- [[Trilho - Respondendo objeções protestantes]], dia 9: Maria intercessora, não mediadora

@@ -42,3 +42,4 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 16: Sola Scriptura não funciona (a Tradição)
+- [[Trilho - Respondendo objeções protestantes]], dia 3: Sagrada Tradição e o Sola Scriptura

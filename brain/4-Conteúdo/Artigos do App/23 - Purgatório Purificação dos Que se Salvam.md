@@ -34,3 +34,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Artigos relacionados
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
 - [[24 - Fé e Obras Não Sola Fide]]
+
+## No plano de leitura
+- [[Trilho - Respondendo objeções protestantes]], dia 10: Purgatório: purificação dos que se salvam

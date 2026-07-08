@@ -38,3 +38,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 19: O Papado: Pedro como cabeça visível
+- [[Trilho - Respondendo objeções protestantes]], dia 6: O papa, cabeça visível da Igreja

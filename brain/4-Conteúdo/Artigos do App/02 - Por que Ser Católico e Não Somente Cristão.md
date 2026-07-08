@@ -36,3 +36,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 17: Por que ser católico, não só "cristão genérico"
+- [[Trilho - Respondendo objeções protestantes]], dia 2: Por que ser católico e não só cristão

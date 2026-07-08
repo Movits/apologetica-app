@@ -42,3 +42,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 20: Os 7 sacramentos: sinais que produzem graça
+- [[Trilho - Respondendo objeções protestantes]], dia 11: Os sete sacramentos

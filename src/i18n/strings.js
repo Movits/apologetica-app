@@ -182,6 +182,8 @@ export const STRINGS = {
     'plan.reset': 'Reiniciar progresso',
     'plan.track.fundamentos': 'Fundamentos',
     'plan.track.aprofundamento': 'Aprofundamento',
+    'plan.track.objecoes-protestantes': 'Objeções protestantes',
+    'plan.streak': 'dias seguidos',
 
     // === References ===
     'ref.readInApp': 'Ler no app',
@@ -403,6 +405,8 @@ export const STRINGS = {
     'plan.reset': 'Reset progress',
     'plan.track.fundamentos': 'Foundations',
     'plan.track.aprofundamento': 'Going Deeper',
+    'plan.track.objecoes-protestantes': 'Protestant objections',
+    'plan.streak': 'day streak',
 
     // === References ===
     'ref.readInApp': 'Read in app',

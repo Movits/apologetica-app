@@ -45,3 +45,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 21: A Eucaristia é Jesus mesmo (não símbolo)
+- [[Trilho - Respondendo objeções protestantes]], dia 7: A Eucaristia: presença real

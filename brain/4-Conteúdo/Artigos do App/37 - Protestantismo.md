@@ -49,3 +49,4 @@ Arquivo: `src/data/articles/outras-religioes.js`
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 25: Protestantismo: o que nos separa
+- [[Trilho - Respondendo objeções protestantes]], dia 12: Protestantismo: origem e panorama

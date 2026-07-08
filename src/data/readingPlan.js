@@ -112,6 +112,27 @@ export const READING_TRACKS = [
       { day: 34, articleId: 26, theme: 'Contracepção e Humanae Vitae', themeEn: 'Contraception and Humanae Vitae' },
     ],
   },
+  {
+    id: 'objecoes-protestantes',
+    titlePt: 'Respondendo objeções protestantes',
+    titleEn: 'Answering Protestant objections',
+    descPt: 'Uma trilha temática para conversar com irmãos evangélicos: os pontos que mais aparecem, com fontes na mão. Um artigo por dia.',
+    descEn: 'A thematic track for talking with Protestant brothers and sisters: the points that come up most, with sources in hand. One article a day.',
+    days: [
+      { day: 1, articleId: 63, theme: 'Católico ou evangélico: as diferenças', themeEn: 'Catholic or Protestant: the differences' },
+      { day: 2, articleId: 2, theme: 'Por que ser católico e não só cristão', themeEn: 'Why be Catholic and not just Christian' },
+      { day: 3, articleId: 3, theme: 'Sagrada Tradição e o Sola Scriptura', themeEn: 'Sacred Tradition and Sola Scriptura' },
+      { day: 4, articleId: 18, theme: 'O cânon bíblico: por que 73 livros', themeEn: 'The biblical canon: why 73 books' },
+      { day: 5, articleId: 24, theme: 'Fé e obras: não é sola fide', themeEn: 'Faith and works: not sola fide' },
+      { day: 6, articleId: 19, theme: 'O papa, cabeça visível da Igreja', themeEn: 'The pope, visible head of the Church' },
+      { day: 7, articleId: 7, theme: 'A Eucaristia: presença real', themeEn: 'The Eucharist: real presence' },
+      { day: 8, articleId: 21, theme: 'Por que confessar a um padre', themeEn: 'Why confess to a priest' },
+      { day: 9, articleId: 4, theme: 'Maria intercessora, não mediadora', themeEn: 'Mary intercessor, not mediator' },
+      { day: 10, articleId: 23, theme: 'Purgatório: purificação dos que se salvam', themeEn: 'Purgatory: purification of the saved' },
+      { day: 11, articleId: 20, theme: 'Os sete sacramentos', themeEn: 'The seven sacraments' },
+      { day: 12, articleId: 37, theme: 'Protestantismo: origem e panorama', themeEn: 'Protestantism: origin and overview' },
+    ],
+  },
 ];
 
 // Retrocompat: telas/utilitários antigos que esperam um array de dias.

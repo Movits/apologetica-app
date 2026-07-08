@@ -37,3 +37,4 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 15: De onde vieram os 73 livros do cânon
+- [[Trilho - Respondendo objeções protestantes]], dia 4: O cânon bíblico: por que 73 livros

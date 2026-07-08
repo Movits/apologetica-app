@@ -39,3 +39,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 18: Católico ou evangélico? As principais diferenças
+- [[Trilho - Respondendo objeções protestantes]], dia 1: Católico ou evangélico: as diferenças

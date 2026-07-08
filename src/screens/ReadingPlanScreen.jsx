@@ -7,7 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { READING_TRACKS, getTrack } from '../data/readingPlan';
 import { articles } from '../data/articles';
-import { getPlanProgress, resetPlanProgress } from '../utils/readingProgress';
+import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
@@ -16,6 +16,7 @@ export default function ReadingPlanScreen({ navigation }) {
   const { t, isEn } = useLanguage();
   const [trackId, setTrackId] = useState('fundamentos');
   const [progress, setProgress] = useState({ completed: [], lastDay: 0 });
+  const [streak, setStreak] = useState(0);
 
   const track = getTrack(trackId);
   const days = track.days;
@@ -25,7 +26,8 @@ export default function ReadingPlanScreen({ navigation }) {
       let active = true;
       (async () => {
         const p = await getPlanProgress(trackId);
-        if (active) setProgress(p);
+        const s = await getStreak();
+        if (active) { setProgress(p); setStreak(s?.count || 0); }
       })();
       return () => { active = false; };
     }, [trackId])
@@ -81,6 +83,12 @@ export default function ReadingPlanScreen({ navigation }) {
           </View>
           <Text style={styles.pctText}>{totalDone}/{days.length}</Text>
         </View>
+        {streak > 0 && (
+          <View style={styles.streakRow}>
+            <Ionicons name="flame" size={15} color={colors.accent} />
+            <Text style={styles.streakText}>{streak} {t('plan.streak')}</Text>
+          </View>
+        )}
         {totalDone > 0 && (
           <TouchableOpacity onPress={onReset} style={styles.resetBtn}>
             <Ionicons name="refresh-outline" size={14} color={colors.accent} />
@@ -161,6 +169,8 @@ const makeStyles = (c, fs) =>
     bar: { flex: 1, height: 6, backgroundColor: c.divider, borderRadius: 3, overflow: 'hidden' },
     barFill: { height: '100%', backgroundColor: c.accent },
     pctText: { fontSize: fs(12), color: c.textMuted, fontWeight: '600' },
+    streakRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 8 },
+    streakText: { fontSize: fs(12), color: c.accentText, fontWeight: '700' },
     resetBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, alignSelf: 'flex-start', marginTop: 10, paddingVertical: 4 },
     resetText: { fontSize: fs(11), color: c.accentText, fontWeight: '600' },
     card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.card, borderRadius: 12, padding: 13, marginBottom: 8 },

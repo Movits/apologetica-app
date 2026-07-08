@@ -37,3 +37,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 24: Fé E obras (não fé sozinha)
+- [[Trilho - Respondendo objeções protestantes]], dia 5: Fé e obras: não é sola fide
