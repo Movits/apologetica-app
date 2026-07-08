@@ -18,6 +18,16 @@ Retenção vem de hábito diário, e o app já entrega versículo, santo e obje�
 
 Premium opcional na faixa de R$ 5 a R$ 15 por mês, mantendo o essencial gratuito. O valor e o apetite precisam ser validados com a [[Pesquisa de Público (resumo)]] antes de qualquer construção.
 
+## Da pesquisa de concorrência (jul/2026)
+
+Ver [[Pesquisa de Concorrência - Capela e Hallow (UI-UX)]] para o detalhe e as fontes.
+
+- **Planos com metas e trilhas adotáveis**: evoluir o [[Plano de Leitura]] com progresso visível e trilhas temáticas (ex.: "30 dias respondendo objeções protestantes"). Retenção sem gamificação, padrão do Capela.
+- **Busca full-text offline na Bíblia**: hoje a [[Busca]] só cobre versículos curados. Os dados completos já estão no app.
+- **Deeplinks de compartilhamento** de artigos e referências (aquisição orgânica).
+- **Home com bloco dinâmico por tempo litúrgico** (JSON versionado + cálculo local, sem servidor).
+- **Página "por que é grátis"** no site e, se o premium vier, "por que cobramos" transparente. Nunca: trial com conversão automática opaca (a maior fonte de reviews negativos do Hallow).
+
 ## Conteúdo
 
 Cobrir as lacunas do [[Top 100 Tópicos]]: comparar a lista dos temas mais buscados com os artigos existentes e priorizar os buracos.
