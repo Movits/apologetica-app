@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
-import Svg, { Ellipse, Circle, Line, Text as SvgText, G, Defs, LinearGradient, Stop } from 'react-native-svg';
+import Svg, { Ellipse, Circle, Line, G, Defs, LinearGradient, Stop } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
@@ -353,6 +353,13 @@ function RosaryVisual({ sequence, stepIndex, colors }) {
   };
   const crossY = tailPos('tail-pater-low').y + Math.round(W * 0.12);
   const crossSize = Math.round(W * 0.16);
+  // Cruz latina desenhada com duas barras (mesma geometria do CrossMark), sem
+  // depender do glifo de emoji que renderiza de forma inconsistente entre fontes.
+  const crossVC = crossY + crossSize * 0.08;        // centro vertical, alinhado ao realce
+  const crossThk = Math.max(2, crossSize * 0.16);   // espessura das barras
+  const crossArm = crossSize * 0.31;                // meio-braco horizontal
+  const crossTop = crossVC - crossSize * 0.5;
+  const crossBar = crossTop + crossSize * 0.26;     // altura da barra (0.26 do topo)
 
   // Estado: quais posições foram visitadas (passado), qual é a atual
   const current = sequence[stepIndex];
@@ -448,17 +455,25 @@ function RosaryVisual({ sequence, stepIndex, colors }) {
           <Circle cx={cx} cy={crossY + crossSize * 0.08} r={crossSize * 0.5} fill="#fff4d8" stroke={COL_BORDER_CURRENT} strokeWidth={1.5} opacity={0.7} />
         )}
 
-        {/* Cruz: ✝ com a mesma cor do logo do app */}
-        <SvgText
-          x={cx}
-          y={crossY + crossSize * 0.35}
-          fontSize={crossSize}
-          fontFamily="serif"
-          textAnchor="middle"
-          fill={COL_CROSS}
-        >
-          ✝
-        </SvgText>
+        {/* Cruz com a mesma cor do logo do app, desenhada com duas barras */}
+        <Line
+          x1={cx}
+          y1={crossTop}
+          x2={cx}
+          y2={crossTop + crossSize}
+          stroke={COL_CROSS}
+          strokeWidth={crossThk}
+          strokeLinecap="round"
+        />
+        <Line
+          x1={cx - crossArm}
+          y1={crossBar}
+          x2={cx + crossArm}
+          y2={crossBar}
+          stroke={COL_CROSS}
+          strokeWidth={crossThk}
+          strokeLinecap="round"
+        />
       </Svg>
     </View>
   );
@@ -483,7 +498,7 @@ const makeStyles = (c, fs) =>
     chipActive: { backgroundColor: c.primary, borderColor: c.primary },
     chipText: { fontSize: fs(12), color: c.textMuted },
     chipTextActive: { color: '#fff', fontWeight: 'bold' },
-    daysLabel: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', textAlign: 'center', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 },
+    daysLabel: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', textAlign: 'center', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 },
     card: { backgroundColor: c.card, borderRadius: 12, padding: 12, marginBottom: 8 },
     cardActive: { borderWidth: 2, borderColor: c.accent },
     cardHead: { flexDirection: 'row', gap: 12, alignItems: 'center' },
@@ -491,24 +506,24 @@ const makeStyles = (c, fs) =>
     numBubbleActive: { backgroundColor: c.accent },
     numText: { color: '#fff', fontWeight: 'bold', fontSize: fs(14) },
     cardTitle: { fontSize: fs(14), color: c.primaryText, fontWeight: '600', marginBottom: 2 },
-    cardRef: { fontSize: fs(11), color: c.accent, fontWeight: 'bold', textDecorationLine: 'underline' },
+    cardRef: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', textDecorationLine: 'underline' },
     cardFruit: { fontSize: fs(11), color: c.textSubtle, fontStyle: 'italic', marginTop: 2 },
     toggleBtn: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 18, padding: 12, borderWidth: 1, borderColor: c.accent, borderRadius: 10, justifyContent: 'center' },
-    toggleText: { color: c.accent, fontWeight: '600', fontSize: fs(13) },
+    toggleText: { color: c.accentText, fontWeight: '600', fontSize: fs(13) },
     oracoes: { marginTop: 14, gap: 10 },
     prayerCard: { backgroundColor: c.card, padding: 14, borderRadius: 12 },
-    prayerTitle: { fontSize: fs(13), fontWeight: 'bold', color: c.accent, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8 },
+    prayerTitle: { fontSize: fs(13), fontWeight: 'bold', color: c.accentText, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8 },
     prayerText: { fontSize: fs(13), color: c.text, lineHeight: fs(20) },
 
     virtualBox: { backgroundColor: c.card, borderRadius: 12, padding: 10, marginTop: 14, borderWidth: 1, borderColor: c.divider },
     currentStep: { backgroundColor: c.badgeBg, padding: 10, borderRadius: 8, marginBottom: 8, alignItems: 'center' },
     currentStepLabel: { fontSize: fs(10), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.8 },
     currentStepText: { fontSize: fs(15), color: c.primaryText, fontWeight: '600', marginTop: 4, textAlign: 'center' },
-    currentMystery: { fontSize: fs(12), color: c.accent, fontWeight: '600', textDecorationLine: 'underline', textAlign: 'center' },
+    currentMystery: { fontSize: fs(12), color: c.accentText, fontWeight: '600', textDecorationLine: 'underline', textAlign: 'center' },
     virtualBtns: { flexDirection: 'row', gap: 8 },
     advanceBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: c.primary, paddingVertical: 10, borderRadius: 8 },
     advanceBtnDisabled: { opacity: 0.5 },
     advanceText: { color: '#fff', fontWeight: '600', fontSize: fs(13) },
     resetBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, paddingHorizontal: 12, paddingVertical: 10, borderRadius: 8, borderWidth: 1, borderColor: c.accent },
-    resetText: { color: c.accent, fontSize: fs(12), fontWeight: '600' },
+    resetText: { color: c.accentText, fontSize: fs(12), fontWeight: '600' },
   });

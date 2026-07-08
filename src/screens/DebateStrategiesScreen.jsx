@@ -153,7 +153,7 @@ const makeStyles = (c, fs) =>
     badgeTactic: { backgroundColor: c.badgeBg },
     badgeFallacy: { backgroundColor: c.badgeBg },
     badgeText: { fontSize: fs(10), fontWeight: 'bold' },
-    badgeTextTactic: { color: c.accent },
+    badgeTextTactic: { color: c.accentText },
     badgeTextFallacy: { color: c.primaryText },
     def: { fontSize: fs(13), color: c.text, lineHeight: fs(20) },
     fieldLabel: { fontSize: fs(11), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', marginTop: 12, marginBottom: 3, letterSpacing: 0.5 },

@@ -150,7 +150,7 @@ const makeStyles = (c, fs) =>
     body: { fontSize: fs(15), color: c.text, lineHeight: fs(22), textAlign: 'center', marginBottom: 16 },
     verseBox: { marginTop: 12, paddingHorizontal: 20, paddingVertical: 14, backgroundColor: c.card, borderRadius: 10, borderLeftWidth: 3, borderLeftColor: c.accent },
     verse: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', textAlign: 'center', lineHeight: fs(20) },
-    verseRef: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', textAlign: 'center', marginTop: 6 },
+    verseRef: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', textAlign: 'center', marginTop: 6 },
     footer: { padding: 24, paddingBottom: 40, gap: 20 },
     dots: { flexDirection: 'row', gap: 8, justifyContent: 'center' },
     dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: c.divider },

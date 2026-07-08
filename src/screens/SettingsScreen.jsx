@@ -668,7 +668,7 @@ const pickerStyles = (c, fs) =>
       borderWidth: 1,
       borderColor: c.divider,
     },
-    badgeText: { fontSize: fs(10), color: c.accent, fontWeight: '600', letterSpacing: 0.3 },
+    badgeText: { fontSize: fs(10), color: c.accentText, fontWeight: '600', letterSpacing: 0.3 },
     previewBtn: {
       width: 36, height: 36, borderRadius: 18,
       backgroundColor: c.badgeBg,
@@ -719,5 +719,5 @@ const makeStyles = (c, fs) =>
     aboutVersion: { fontSize: fs(12), color: c.textSubtle, marginTop: 2 },
     aboutText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginTop: 12 },
     aboutQuote: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', marginTop: 16, lineHeight: fs(20) },
-    aboutQuoteRef: { fontSize: fs(12), color: c.accent, fontWeight: 'bold', marginTop: 4 },
+    aboutQuoteRef: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', marginTop: 4 },
   });

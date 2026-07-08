@@ -178,7 +178,7 @@ const makeStyles = (c, fs) =>
       marginTop: 12,
     },
     primaryBtnText: { color: '#fff', fontSize: fs(16), fontWeight: 'bold' },
-    linkText: { color: c.accent, textAlign: 'center', fontSize: fs(14), fontWeight: '600' },
+    linkText: { color: c.accentText, textAlign: 'center', fontSize: fs(14), fontWeight: '600' },
     divider: { flexDirection: 'row', alignItems: 'center', marginVertical: 18 },
     dividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
     dividerText: { marginHorizontal: 12, color: c.textSubtle, fontSize: fs(12) },

@@ -41,5 +41,5 @@ const makeStyles = (c, fs) =>
     },
     title: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
     subtitle: { fontSize: fs(12), color: c.textMuted, marginTop: 2, lineHeight: fs(17) },
-    count: { fontSize: fs(10), color: c.accent, fontWeight: 'bold', marginTop: 4, textTransform: 'uppercase', letterSpacing: 0.5 },
+    count: { fontSize: fs(10), color: c.accentText, fontWeight: 'bold', marginTop: 4, textTransform: 'uppercase', letterSpacing: 0.5 },
   });

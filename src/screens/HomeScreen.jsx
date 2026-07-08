@@ -8,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
 import { DIALOGUES } from '../data/dialogues';
 import AppIcon from '../components/AppIcon';
+import CrossMark from '../components/CrossMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
@@ -65,7 +66,7 @@ export default function HomeScreen() {
       scrollEventThrottle={32}
     >
       <View style={styles.hero}>
-        <Text style={styles.heroIcon}>✝</Text>
+        <CrossMark size={fs(34)} color={colors.accent} opacity={1} />
         <Text style={styles.heroTitle}>APPologética</Text>
         <Text style={styles.heroSub}>{t('home.hero.verse')}</Text>
         <Text style={styles.heroRef}>{t('home.hero.ref')}</Text>
@@ -147,7 +148,6 @@ const makeStyles = (c, fs, topInset = 0) =>
       alignItems: 'center', backgroundColor: c.primary, borderRadius: 14,
       padding: 16, marginBottom: 12,
     },
-    heroIcon: { fontSize: fs(30), color: c.accent },
     heroTitle: { color: '#fff', fontSize: fs(20), fontWeight: 'bold', marginTop: 4 },
     heroSub: {
       color: c.heroSub,
@@ -177,7 +177,7 @@ const makeStyles = (c, fs, topInset = 0) =>
       justifyContent: 'center', alignItems: 'center', marginBottom: 10,
     },
     categoryName: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold', lineHeight: fs(19) },
-    categoryCount: { fontSize: fs(11), color: c.accent, fontWeight: 'bold', marginTop: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
+    categoryCount: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', marginTop: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
     card: {
       flexDirection: 'row', alignItems: 'center',
       backgroundColor: c.card, borderRadius: 10, padding: 13, marginBottom: 9, gap: 12,
@@ -194,10 +194,10 @@ const makeStyles = (c, fs, topInset = 0) =>
     },
     objectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
     objectionKicker: {
-      fontSize: fs(11), color: c.accent, fontWeight: 'bold',
+      fontSize: fs(11), color: c.accentText, fontWeight: 'bold',
       textTransform: 'uppercase', letterSpacing: 0.5,
     },
     objectionText: { fontSize: fs(15), color: c.text, fontWeight: '600', marginTop: 8, lineHeight: fs(21) },
     objectionCtaRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 10 },
-    objectionCta: { fontSize: fs(12.5), color: c.accent, fontWeight: 'bold' },
+    objectionCta: { fontSize: fs(12.5), color: c.accentText, fontWeight: 'bold' },
   });

@@ -239,6 +239,7 @@ export default function SearchScreen({ navigation }) {
             onPress={() => setQuery('')}
             accessibilityRole="button"
             accessibilityLabel={isEn ? 'Clear search' : 'Limpar busca'}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
           >
             <Ionicons name="close-circle" size={20} color={colors.textSubtle} />
           </TouchableOpacity>
@@ -315,7 +316,7 @@ const makeStyles = (c, fs) =>
     histBox: { paddingHorizontal: 16, paddingTop: 12 },
     histHead: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 },
     histLabel: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 'bold' },
-    histClear: { fontSize: fs(11), color: c.accent, fontWeight: '600' },
+    histClear: { fontSize: fs(11), color: c.accentText, fontWeight: '600' },
     histRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: c.divider },
     histText: { fontSize: fs(14), color: c.text, flex: 1 },
     container: { flex: 1, backgroundColor: c.bg },
@@ -351,7 +352,7 @@ const makeStyles = (c, fs) =>
       width: '100%',
     },
     suggestionLabel: { fontSize: fs(15), color: c.primaryText, fontWeight: 'bold', marginTop: 6 },
-    suggestionHint: { fontSize: fs(11), color: c.accent, marginTop: 4 },
+    suggestionHint: { fontSize: fs(11), color: c.accentText, marginTop: 4 },
     sectionHeader: {
       fontSize: fs(12), fontWeight: 'bold', color: c.textSubtle,
       textTransform: 'uppercase', letterSpacing: 1,
@@ -366,7 +367,7 @@ const makeStyles = (c, fs) =>
       justifyContent: 'center', alignItems: 'center',
     },
     cardCategory: {
-      fontSize: fs(10), color: c.accent, fontWeight: 'bold',
+      fontSize: fs(10), color: c.accentText, fontWeight: 'bold',
       textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2,
     },
     cardTitle: { fontSize: fs(15), color: c.text, fontWeight: '600', marginBottom: 2 },

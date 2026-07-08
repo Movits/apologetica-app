@@ -217,7 +217,7 @@ const makeStyles = (c, fs) =>
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
       paddingVertical: 12, borderRadius: 10, marginTop: 12, borderWidth: 1, borderColor: c.accent,
     },
-    readText: { color: c.accent, fontWeight: '600', fontSize: fs(14) },
+    readText: { color: c.accentText, fontWeight: '600', fontSize: fs(14) },
 
     backBtn: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,

@@ -104,7 +104,7 @@ const makeStyles = (c, fs) =>
     },
     verseRef: {
       fontSize: fs(12),
-      color: c.accent,
+      color: c.accentText,
       fontWeight: 'bold',
       marginBottom: 10,
     },
@@ -127,6 +127,6 @@ const makeStyles = (c, fs) =>
       flex: 1,
       justifyContent: 'center',
     },
-    actionText: { color: c.accent, fontSize: fs(12), fontWeight: '600' },
+    actionText: { color: c.accentText, fontSize: fs(12), fontWeight: '600' },
     offscreen: { position: 'absolute', left: -10000, top: -10000, opacity: 0 },
   });

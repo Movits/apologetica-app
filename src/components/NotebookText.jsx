@@ -65,5 +65,5 @@ export default function NotebookText({ text, onOpenVerse, onOpenArticle, onOpenR
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     base: { color: c.text, fontSize: fs(16), lineHeight: fs(26) },
-    link: { color: c.accent, textDecorationLine: 'underline', fontWeight: '600' },
+    link: { color: c.accentText, textDecorationLine: 'underline', fontWeight: '600' },
   });

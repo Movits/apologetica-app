@@ -48,7 +48,7 @@ const makeStyles = (c, fs) =>
       borderLeftColor: c.primary,
     },
     iconBox: { width: 36, height: 36, borderRadius: 9, backgroundColor: c.primary, justifyContent: 'center', alignItems: 'center' },
-    label: { fontSize: fs(10), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2 },
+    label: { fontSize: fs(10), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2 },
     name: { fontSize: fs(15), color: c.primaryText, fontWeight: 'bold', marginBottom: 4 },
     summary: { fontSize: fs(12), color: c.textMuted, lineHeight: fs(17) },
   });

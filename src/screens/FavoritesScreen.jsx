@@ -92,7 +92,7 @@ const makeStyles = (c, fs) =>
       flexDirection: 'row', alignItems: 'center', gap: 12,
       backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8,
     },
-    cardCat: { fontSize: fs(10), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 },
+    cardCat: { fontSize: fs(10), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 },
     cardTitle: { fontSize: fs(14), color: c.primaryText, fontWeight: '600', marginBottom: 2 },
     cardSummary: { fontSize: fs(12), color: c.textMuted, lineHeight: fs(17) },
   });

@@ -112,6 +112,7 @@ export default function NoteEditorScreen({ route, navigation }) {
           onPress={() => navigation.goBack()}
           accessibilityRole="button"
           accessibilityLabel={isEn ? 'Close' : 'Fechar'}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
         >
           <Ionicons name="close" size={26} color={colors.primaryText} />
         </TouchableOpacity>
@@ -121,6 +122,7 @@ export default function NoteEditorScreen({ route, navigation }) {
             <TouchableOpacity
               accessibilityRole="button"
               accessibilityLabel={isEn ? 'Share note' : 'Compartilhar nota'}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               onPress={() => {
                 const ch = getChapter(meta.bookId, meta.chapter, isEn ? 'en' : 'pt');
                 const verseText = ch?.verses?.find((v) => v.n === meta.verseStart)?.t || '';
@@ -186,7 +188,7 @@ const makeStyles = (c, fs) =>
       backgroundColor: c.card,
     },
     title: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    saveText: { fontSize: fs(15), color: c.accent, fontWeight: 'bold' },
+    saveText: { fontSize: fs(15), color: c.accentText, fontWeight: 'bold' },
     refBox: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -197,7 +199,7 @@ const makeStyles = (c, fs) =>
       backgroundColor: c.badgeBg,
       borderRadius: 8,
     },
-    refText: { fontSize: fs(13), color: c.accent, fontWeight: '600' },
+    refText: { fontSize: fs(13), color: c.accentText, fontWeight: '600' },
     editor: {
       flex: 1,
       padding: 16,

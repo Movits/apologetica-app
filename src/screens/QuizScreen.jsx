@@ -405,7 +405,7 @@ const makeStyles = (c, fs) =>
     header: { marginBottom: 18 },
     headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
     badge: { backgroundColor: c.badgeBg, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
-    badgeText: { color: c.accent, fontSize: fs(11), fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
+    badgeText: { color: c.accentText, fontSize: fs(11), fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
     streakRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
     streakText: { color: c.textMuted, fontSize: fs(13), fontWeight: '600' },
     question: { fontSize: fs(18), fontWeight: '600', color: c.primaryText, lineHeight: fs(26), marginTop: 6 },
@@ -421,7 +421,7 @@ const makeStyles = (c, fs) =>
     explainTitle: { fontWeight: 'bold', color: c.primaryText, fontSize: fs(14), marginBottom: 6 },
     explainText: { color: c.text, fontSize: fs(14), lineHeight: fs(21) },
     relatedBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12 },
-    relatedText: { color: c.accent, fontSize: fs(13), fontWeight: '600' },
+    relatedText: { color: c.accentText, fontSize: fs(13), fontWeight: '600' },
     nextBtn: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
       backgroundColor: c.primary, paddingVertical: 14, borderRadius: 10, marginTop: 8,
@@ -437,5 +437,5 @@ const makeStyles = (c, fs) =>
       paddingVertical: 16, paddingHorizontal: 20, minHeight: 54,
       borderRadius: 10, marginTop: 12, borderWidth: 1.5, borderColor: c.accent,
     },
-    practiceText: { color: c.accent, fontSize: fs(15), fontWeight: '600' },
+    practiceText: { color: c.accentText, fontSize: fs(15), fontWeight: '600' },
   });

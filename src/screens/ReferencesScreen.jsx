@@ -352,7 +352,7 @@ const makeStyles = (c, fs) =>
     origHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
     origLabel: {
       fontSize: fs(10),
-      color: c.accent,
+      color: c.accentText,
       fontWeight: 'bold',
       textTransform: 'uppercase',
       letterSpacing: 1,
@@ -374,7 +374,7 @@ const makeStyles = (c, fs) =>
       alignSelf: 'flex-start',
     },
     actionBtnPrimary: { backgroundColor: c.accent, borderColor: c.accent },
-    actionText: { color: c.accent, fontSize: fs(13), fontWeight: '600' },
+    actionText: { color: c.accentText, fontSize: fs(13), fontWeight: '600' },
     actionTextPrimary: { color: '#fff', fontSize: fs(13), fontWeight: '600' },
     empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
     ptBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 8 },

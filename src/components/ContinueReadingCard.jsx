@@ -53,6 +53,6 @@ const makeStyles = (c, fs) =>
       marginBottom: 12,
     },
     iconBox: { width: 36, height: 36, borderRadius: 18, backgroundColor: c.accent, justifyContent: 'center', alignItems: 'center', paddingLeft: 2 },
-    label: { fontSize: fs(10), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2 },
+    label: { fontSize: fs(10), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2 },
     title: { fontSize: fs(14), color: c.primaryText, fontWeight: '600', lineHeight: fs(18) },
   });

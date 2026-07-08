@@ -108,6 +108,6 @@ const makeStyles = (c, fs) =>
     emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
     muted: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(20) },
     card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
-    ref: { fontSize: fs(13), fontWeight: 'bold', color: c.accent, marginBottom: 6 },
+    ref: { fontSize: fs(13), fontWeight: 'bold', color: c.accentText, marginBottom: 6 },
     body: { fontSize: fs(14), color: c.text, lineHeight: fs(20) },
   });

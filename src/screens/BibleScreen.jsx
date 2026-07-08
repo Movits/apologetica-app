@@ -591,6 +591,7 @@ export default function BibleScreen({ route, navigation }) {
                     onPress={() => applyHighlight(highlightsByVerse[actionVerse.n].color)}
                     accessibilityRole="button"
                     accessibilityLabel={isEn ? 'Remove highlight' : 'Remover marcação'}
+                    hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                   >
                     <Ionicons name="close-circle-outline" size={22} color={colors.textMuted} />
                   </TouchableOpacity>
@@ -671,7 +672,7 @@ const makeStyles = (c, fs) =>
     verseRow: { flexDirection: 'row', marginBottom: 10, padding: 8, borderRadius: 8 },
     verseRowDeepLink: { backgroundColor: c.deepLinkHl, borderLeftWidth: 3, borderLeftColor: c.accent },
     verseNum: {
-      fontSize: fs(11), color: c.accent, fontWeight: 'bold',
+      fontSize: fs(11), color: c.accentText, fontWeight: 'bold',
       marginRight: 8, minWidth: 24, paddingTop: 3,
     },
     verseNumHighlight: { color: c.primaryText },
@@ -696,7 +697,7 @@ const makeStyles = (c, fs) =>
       backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20,
       padding: 20, paddingBottom: 32,
     },
-    modalRef: { fontSize: fs(15), fontWeight: 'bold', color: c.accent, marginBottom: 4 },
+    modalRef: { fontSize: fs(15), fontWeight: 'bold', color: c.accentText, marginBottom: 4 },
     modalVerseText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginBottom: 16 },
     modalSection: { fontSize: fs(12), fontWeight: 'bold', color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 },
     colorRow: { flexDirection: 'row', gap: 12, marginBottom: 20, alignItems: 'center' },

@@ -376,7 +376,7 @@ const makeStyles = (c, fs) =>
     heroCredit: { fontSize: fs(10), color: c.textSubtle, marginTop: 4, fontStyle: 'italic', textAlign: 'right' },
     headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
     catBadge: { backgroundColor: c.badgeBg, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
-    category: { fontSize: fs(11), color: c.accent, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
+    category: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
     title: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, marginBottom: 16 },
     body: { fontSize: fs(16), color: c.text, lineHeight: fs(26) },
     translationNotice: {

@@ -220,6 +220,6 @@ const makeStyles = (c, fs) =>
     quoteText: { color: c.text, fontSize: fs(15), lineHeight: fs(24), fontStyle: 'italic' },
     list: { marginBottom: 14 },
     listItem: { flexDirection: 'row', marginBottom: 6, paddingRight: 8 },
-    bullet: { color: c.accent, fontSize: fs(16), marginRight: 8, lineHeight: fs(26) },
-    link: { color: c.accent, textDecorationLine: 'underline', fontSize: fs(16), lineHeight: fs(26) },
+    bullet: { color: c.accentText, fontSize: fs(16), marginRight: 8, lineHeight: fs(26) },
+    link: { color: c.accentText, textDecorationLine: 'underline', fontSize: fs(16), lineHeight: fs(26) },
   });

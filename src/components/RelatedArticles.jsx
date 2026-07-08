@@ -67,7 +67,7 @@ const makeStyles = (c, fs) =>
     },
     category: {
       fontSize: fs(10),
-      color: c.accent,
+      color: c.accentText,
       fontWeight: 'bold',
       textTransform: 'uppercase',
       letterSpacing: 0.3,

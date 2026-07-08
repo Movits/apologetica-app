@@ -6,6 +6,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 import AuthTopToggles from '../../components/AuthTopToggles';
+import CrossMark from '../../components/CrossMark';
 
 export default function LoginScreen({ navigation }) {
   const { signIn, continueAsGuest, linkGoogleToEmail } = useAuth();
@@ -60,7 +61,9 @@ export default function LoginScreen({ navigation }) {
       <AuthTopToggles />
 
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        <Text style={styles.cross}>✝</Text>
+        <View style={styles.crossWrap}>
+          <CrossMark size={fs(54)} color={colors.accent} opacity={1} />
+        </View>
         <Text style={styles.title}>APPologética</Text>
         <Text style={styles.subtitle}>{t('auth.subtitle')}</Text>
 
@@ -175,7 +178,7 @@ export default function LoginScreen({ navigation }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     content: { padding: 24, paddingTop: 60, alignItems: 'center' },
-    cross: { fontSize: fs(54), color: c.accent, marginBottom: 12 },
+    crossWrap: { marginBottom: 12 },
     title: { fontSize: fs(28), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
     subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 32, textAlign: 'center' },
     inputRow: {
@@ -190,7 +193,7 @@ const makeStyles = (c, fs) =>
     },
     input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null) },
     forgotLink: { alignSelf: 'flex-end', marginBottom: 16, marginTop: 4 },
-    forgotText: { fontSize: fs(13), color: c.accent, fontWeight: '600' },
+    forgotText: { fontSize: fs(13), color: c.accentText, fontWeight: '600' },
     error: { color: '#c0392b', fontSize: fs(13), marginBottom: 12, textAlign: 'center', width: '100%' },
     linkBox: { width: '100%', backgroundColor: c.badgeBg, borderRadius: 12, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: c.accent },
     linkTitle: { fontSize: fs(14), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
@@ -217,7 +220,7 @@ const makeStyles = (c, fs) =>
       alignItems: 'center',
       marginTop: 10,
     },
-    secondaryBtnText: { color: c.accent, fontSize: fs(15), fontWeight: 'bold' },
+    secondaryBtnText: { color: c.accentText, fontSize: fs(15), fontWeight: 'bold' },
     guestDivider: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 28, width: '100%' },
     guestDividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
     guestDividerText: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1 },

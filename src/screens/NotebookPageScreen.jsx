@@ -198,7 +198,7 @@ const makeStyles = (c, fs) =>
       borderWidth: 1, borderColor: c.accent, borderRadius: 18,
       paddingVertical: 6, paddingHorizontal: 12,
     },
-    atText: { color: c.accent, fontSize: fs(13), fontWeight: '600' },
+    atText: { color: c.accentText, fontSize: fs(13), fontWeight: '600' },
     bodyInput: {
       flex: 1, paddingHorizontal: 20, paddingTop: 4,
       fontSize: fs(16), color: c.text, lineHeight: fs(24),

@@ -7,7 +7,8 @@ const LIGHT = {
   mode: 'light',
   primary: '#1a3a5c',
   primaryText: '#1a3a5c',
-  accent: '#c9a84c',
+  accent: '#c9a84c',          // dourado para ícones e preenchimentos
+  accentText: '#806418',      // dourado escurecido com contraste AA (>=4.5:1) sobre creme e branco, para TEXTO
   bg: '#f5f0e8',
   card: '#ffffff',
   cardBorder: '#eee',
@@ -30,6 +31,7 @@ const DARK = {
   primary: '#142844',         // navy rico pro hero/header
   primaryText: '#e6c878',     // dourado claro pros títulos em cards
   accent: '#d4b86a',          // dourado pra botões e ícones
+  accentText: '#d4b86a',      // no escuro o proprio accent ja passa AA sobre navy (bg e card)
   bg: '#0d1722',              // navy bem escuro (mais cohesivo que black puro)
   card: '#172538',            // card visivelmente separado do bg
   cardBorder: '#243248',
@@ -143,7 +145,8 @@ export function ThemeProvider({ children }) {
       fontSize,
       setFontSize: setFontSizeState,
       scale,
-      fs: (n) => Math.round(n * scale),
+      // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
+      fs: (n) => Math.max(11, Math.round(n * scale)),
       hydrated,
     };
   }, [darkMode, fontSize, hydrated]);
