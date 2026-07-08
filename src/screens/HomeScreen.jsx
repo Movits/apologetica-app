@@ -8,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
 import { DIALOGUES } from '../data/dialogues';
 import { consumeStartIntent } from '../utils/onboarding';
+import { getLiturgicalSeason } from '../utils/liturgicalSeason';
 import AppIcon from '../components/AppIcon';
 import CrossMark from '../components/CrossMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
@@ -64,6 +65,7 @@ export default function HomeScreen() {
   const now = new Date();
   const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
   const dailyObjection = DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
+  const season = getLiturgicalSeason(now);
 
   return (
     <View style={styles.container}>
@@ -78,8 +80,18 @@ export default function HomeScreen() {
       <View style={styles.hero}>
         <CrossMark size={fs(34)} color={colors.accent} opacity={1} />
         <Text style={styles.heroTitle}>APPologética</Text>
+        <Text style={styles.heroWedge}>{isEn ? 'Know how to answer, with the source in hand.' : 'Saiba responder, com a fonte na mão.'}</Text>
         <Text style={styles.heroSub}>{t('home.hero.verse')}</Text>
         <Text style={styles.heroRef}>{t('home.hero.ref')}</Text>
+      </View>
+
+      {/* Banner da estacao liturgica (calculado localmente, offline). */}
+      <View style={[styles.seasonBanner, { borderLeftColor: season.color }]}>
+        <Ionicons name={season.icon} size={18} color={season.color} />
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.seasonName, { color: season.color }]}>{isEn ? season.en : season.pt}</Text>
+          <Text style={styles.seasonNote}>{isEn ? season.noteEn : season.notePt}</Text>
+        </View>
       </View>
 
       <TouchableOpacity style={styles.searchBar} onPress={openSearch}>
@@ -159,6 +171,14 @@ const makeStyles = (c, fs, topInset = 0) =>
       padding: 16, marginBottom: 12,
     },
     heroTitle: { color: '#fff', fontSize: fs(20), fontWeight: 'bold', marginTop: 4 },
+    heroWedge: { color: '#fff', fontSize: fs(13), fontWeight: '600', textAlign: 'center', marginTop: 6 },
+    seasonBanner: {
+      flexDirection: 'row', alignItems: 'center', gap: 12,
+      backgroundColor: c.card, borderRadius: 12, padding: 12, marginBottom: 12,
+      borderLeftWidth: 4,
+    },
+    seasonName: { fontSize: fs(13), fontWeight: 'bold' },
+    seasonNote: { fontSize: fs(12), color: c.textMuted, marginTop: 1 },
     heroSub: {
       color: c.heroSub,
       fontSize: fs(12),
