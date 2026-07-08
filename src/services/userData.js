@@ -1,5 +1,5 @@
 import {
-  collection, doc, addDoc, updateDoc, deleteDoc, getDoc,
+  collection, doc, addDoc, updateDoc, deleteDoc, getDoc, getDocs,
   query, where, orderBy, onSnapshot, serverTimestamp,
 } from 'firebase/firestore';
 import { db, auth } from './firebase';
@@ -9,6 +9,19 @@ const userCol = (sub) => {
   if (!uid) throw new Error('Usuário não autenticado');
   return collection(db, 'users', uid, sub);
 };
+
+// Apaga TODOS os dados do usuário no Firestore (usado na exclusão de conta).
+// As três únicas subcoleções são highlights, notes e notebook.
+async function wipeCollection(sub) {
+  const snap = await getDocs(userCol(sub));
+  await Promise.all(snap.docs.map((d) => deleteDoc(d.ref)));
+}
+
+export async function deleteAllUserData() {
+  await wipeCollection('highlights');
+  await wipeCollection('notes');
+  await wipeCollection('notebook');
+}
 
 // ============ HIGHLIGHTS ============
 // { bookId, chapter, verse, color, createdAt }

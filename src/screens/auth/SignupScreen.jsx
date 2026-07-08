@@ -19,6 +19,7 @@ export default function SignupScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [ageOk, setAgeOk] = useState(false);
 
   const isEn = lang === 'en';
   const msg = {
@@ -26,6 +27,7 @@ export default function SignupScreen({ navigation }) {
     needEmail: isEn ? 'Please enter your email.' : 'Informe seu e-mail.',
     pwShort: isEn ? 'Password must be at least 6 characters.' : 'A senha precisa ter pelo menos 6 caracteres.',
     pwMismatch: isEn ? 'Passwords do not match.' : 'As senhas não conferem.',
+    needAge: isEn ? 'Please confirm you are 13 or older.' : 'Confirme que você tem 13 anos ou mais.',
   };
 
   const handleSignup = async () => {
@@ -34,6 +36,7 @@ export default function SignupScreen({ navigation }) {
     if (!email.trim()) return setError(msg.needEmail);
     if (password.length < 6) return setError(msg.pwShort);
     if (password !== confirm) return setError(msg.pwMismatch);
+    if (!ageOk) return setError(msg.needAge);
 
     setBusy(true);
     const res = await signUp(email.trim().toLowerCase(), password, name.trim());
@@ -114,6 +117,21 @@ export default function SignupScreen({ navigation }) {
           />
         </View>
 
+        <TouchableOpacity
+          style={styles.ageRow}
+          onPress={() => setAgeOk((v) => !v)}
+          accessibilityRole="checkbox"
+          accessibilityState={{ checked: ageOk }}
+          accessibilityLabel={isEn ? 'I am 13 years or older' : 'Tenho 13 anos ou mais'}
+        >
+          <View style={[styles.checkbox, ageOk && styles.checkboxOn]}>
+            {ageOk && <Ionicons name="checkmark" size={16} color="#fff" />}
+          </View>
+          <Text style={styles.ageText}>
+            {isEn ? 'I am 13 years old or older.' : 'Tenho 13 anos ou mais.'}
+          </Text>
+        </TouchableOpacity>
+
         {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
 
         <TouchableOpacity style={styles.primaryBtn} onPress={handleSignup} disabled={busy}>
@@ -129,7 +147,7 @@ export default function SignupScreen({ navigation }) {
         {!google.unavailable && (
           <TouchableOpacity
             style={styles.googleBtn}
-            onPress={google.signIn}
+            onPress={() => { if (!ageOk) { setError(msg.needAge); return; } google.signIn(); }}
             disabled={!google.ready || google.busy}
           >
             {google.busy ? (
@@ -170,6 +188,10 @@ const makeStyles = (c, fs) =>
     },
     input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null) },
     error: { color: '#c0392b', fontSize: fs(13), marginVertical: 12, textAlign: 'center' },
+    ageRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 16, minHeight: 44 },
+    checkbox: { width: 24, height: 24, borderRadius: 6, borderWidth: 2, borderColor: c.accent, alignItems: 'center', justifyContent: 'center' },
+    checkboxOn: { backgroundColor: c.accent, borderColor: c.accent },
+    ageText: { flex: 1, fontSize: fs(14), color: c.text },
     primaryBtn: {
       backgroundColor: c.primary,
       paddingVertical: 14,

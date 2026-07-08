@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Linking, Modal, FlatList, Platform } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Linking, Modal, FlatList, Platform, TextInput, ActivityIndicator } from 'react-native';
 import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -36,7 +36,11 @@ export default function SettingsScreen() {
   const navigation = useNavigation();
   const { colors, darkMode, setDarkMode, fontSize, setFontSize, fs } = useTheme();
   const { lang, setLang, t, isEn } = useLanguage();
-  const { user, signOut, guest, exitGuest } = useAuth();
+  const { user, signOut, guest, exitGuest, deleteAccount } = useAuth();
+  const [delOpen, setDelOpen] = useState(false);
+  const [delPass, setDelPass] = useState('');
+  const [delBusy, setDelBusy] = useState(false);
+  const isPasswordUser = (user?.providerData || []).some((p) => p.providerId === 'password');
   const [notifPrefs, setNotifPrefs] = useState({ dailyVerse: false, sundayLiturgy: false, dailyQuiz: false, verseHour: 7, verseMinute: 0 });
 
   // TTS state
@@ -143,6 +147,35 @@ export default function SettingsScreen() {
       destructive: true,
       onConfirm: () => signOut(),
     });
+  };
+
+  const askDeleteAccount = () => {
+    confirmAction({
+      title: isEn ? 'Delete your account?' : 'Excluir sua conta?',
+      message: isEn
+        ? 'This permanently deletes your account and all your highlights and notes. This cannot be undone.'
+        : 'Isto apaga em definitivo sua conta e todas as suas marcações e notas. Não tem como desfazer.',
+      confirmText: isEn ? 'Continue' : 'Continuar',
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: () => { setDelPass(''); setDelOpen(true); },
+    });
+  };
+
+  const doDeleteAccount = async () => {
+    setDelBusy(true);
+    const res = await deleteAccount(isPasswordUser ? { password: delPass } : {});
+    setDelBusy(false);
+    if (res.needsPassword) {
+      notify(isEn ? 'Password required' : 'Senha necessária', isEn ? 'Enter your password to confirm.' : 'Digite sua senha para confirmar.');
+      return;
+    }
+    if (!res.ok) {
+      notify(isEn ? 'Could not delete' : 'Não foi possível excluir', res.error);
+      return;
+    }
+    setDelOpen(false);
+    // A troca de estado de auth leva de volta ao login automaticamente.
   };
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
@@ -429,8 +462,47 @@ export default function SettingsScreen() {
               <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{t('settings.logout')}</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.row} onPress={askDeleteAccount} accessibilityRole="button">
+            <View style={styles.rowLeft}>
+              <Ionicons name="trash-outline" size={22} color="#c0392b" />
+              <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{isEn ? 'Delete account' : 'Excluir conta'}</Text>
+            </View>
+          </TouchableOpacity>
         </>
       )}
+
+      <Modal visible={delOpen} transparent animationType="fade" onRequestClose={() => setDelOpen(false)}>
+        <View style={styles.delBackdrop}>
+          <View style={styles.delSheet}>
+            <Ionicons name="warning-outline" size={32} color="#c0392b" style={{ alignSelf: 'center', marginBottom: 8 }} />
+            <Text style={styles.delTitle}>{isEn ? 'Delete account permanently' : 'Excluir conta em definitivo'}</Text>
+            <Text style={styles.delMsg}>
+              {isEn
+                ? 'Your account, highlights and notes will be erased and cannot be recovered.'
+                : 'Sua conta, marcações e notas serão apagadas e não poderão ser recuperadas.'}
+            </Text>
+            {isPasswordUser && (
+              <TextInput
+                style={styles.delInput}
+                value={delPass}
+                onChangeText={setDelPass}
+                placeholder={isEn ? 'Your password' : 'Sua senha'}
+                placeholderTextColor={colors.textSubtle}
+                secureTextEntry
+                autoCapitalize="none"
+              />
+            )}
+            <View style={styles.delActions}>
+              <TouchableOpacity style={styles.delCancel} onPress={() => setDelOpen(false)} disabled={delBusy}>
+                <Text style={styles.delCancelText}>{t('common.cancel')}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.delConfirm} onPress={doDeleteAccount} disabled={delBusy || (isPasswordUser && !delPass)}>
+                {delBusy ? <ActivityIndicator color="#fff" /> : <Text style={styles.delConfirmText}>{isEn ? 'Delete' : 'Excluir'}</Text>}
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       <Text style={styles.section}>{t('settings.section.diagnostic')}</Text>
       <TouchableOpacity
@@ -720,4 +792,14 @@ const makeStyles = (c, fs) =>
     aboutText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginTop: 12 },
     aboutQuote: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', marginTop: 16, lineHeight: fs(20) },
     aboutQuoteRef: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', marginTop: 4 },
+    delBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', padding: 28 },
+    delSheet: { backgroundColor: c.card, borderRadius: 16, padding: 22 },
+    delTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 8 },
+    delMsg: { fontSize: fs(14), color: c.textMuted, textAlign: 'center', lineHeight: fs(20), marginBottom: 16 },
+    delInput: { borderWidth: 1, borderColor: c.divider, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 12, fontSize: fs(15), color: c.text, backgroundColor: c.inputBg, marginBottom: 16 },
+    delActions: { flexDirection: 'row', gap: 12 },
+    delCancel: { flex: 1, paddingVertical: 13, borderRadius: 10, borderWidth: 1, borderColor: c.divider, alignItems: 'center', minHeight: 48, justifyContent: 'center' },
+    delCancelText: { color: c.text, fontWeight: '600', fontSize: fs(15) },
+    delConfirm: { flex: 1, paddingVertical: 13, borderRadius: 10, backgroundColor: '#c0392b', alignItems: 'center', minHeight: 48, justifyContent: 'center' },
+    delConfirmText: { color: '#fff', fontWeight: 'bold', fontSize: fs(15) },
   });
