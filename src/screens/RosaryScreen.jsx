@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
-import Svg, { Ellipse, Circle, Line, Text as SvgText, G, Defs, RadialGradient, LinearGradient, Stop } from 'react-native-svg';
+import Svg, { Ellipse, Circle, Line, Text as SvgText, G, Defs, LinearGradient, Stop } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';

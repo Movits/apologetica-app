@@ -45,12 +45,3 @@ export function getChapter(bookId, chapter, language = 'pt') {
     language: 'pt',
   };
 }
-
-export function isEnglishBibleAvailable() {
-  return DRA !== null;
-}
-
-// Compatibilidade: alguns lugares ainda podem importar fetchChapter (assíncrono).
-export async function fetchChapter(bookId, chapter, language = 'pt') {
-  return getChapter(bookId, chapter, language);
-}

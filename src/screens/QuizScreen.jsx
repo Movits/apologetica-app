@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -17,14 +17,14 @@ export default function QuizScreen({ navigation, route }) {
   const mode = route?.params?.mode || 'menu'; // 'menu' | 'daily' | 'practice' | 'truefalse'
 
   // Tela inicial do Quiz com os modos disponíveis.
-  if (mode === 'menu') return <QuizMenu navigation={navigation} colors={colors} fs={fs} isEn={isEn} t={t} />;
+  if (mode === 'menu') return <QuizMenu navigation={navigation} colors={colors} fs={fs} isEn={isEn} />;
   if (mode === 'truefalse') return <TrueFalseGame navigation={navigation} colors={colors} fs={fs} isEn={isEn} t={t} />;
 
   return <MultipleChoiceGame mode={mode} navigation={navigation} colors={colors} fs={fs} isEn={isEn} t={t} />;
 }
 
 // ============== MENU DE MODOS ==============
-function QuizMenu({ navigation, colors, fs, isEn, t }) {
+function QuizMenu({ navigation, colors, fs, isEn }) {
   const styles = menuStyles(colors, fs);
   const MODES = [
     {

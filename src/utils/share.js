@@ -37,12 +37,6 @@ export function shareVerse({ bookName, chapter, verse, text }) {
   return doShare(msg);
 }
 
-export function shareVerseRange({ bookName, chapter, verseStart, verseEnd, text }) {
-  const range = verseStart === verseEnd ? `${verseStart}` : `${verseStart}-${verseEnd}`;
-  const msg = `"${text}"\n\n${bookName} ${chapter},${range}${APP_PROMO}`;
-  return doShare(msg);
-}
-
 export function shareHighlight({ bookName, chapter, verse, text }) {
   return shareVerse({ bookName, chapter, verse, text });
 }

@@ -15,7 +15,7 @@ import { getChapter } from '../services/bibleApi';
 //   artigo     -> @[Título](a:articleId)
 export default function ReferencePickerModal({ visible, onClose, onPick }) {
   const { colors, fs } = useTheme();
-  const { isEn, t } = useLanguage();
+  const { isEn } = useLanguage();
   const styles = makeStyles(colors, fs);
 
   const [tab, setTab] = useState('verse');

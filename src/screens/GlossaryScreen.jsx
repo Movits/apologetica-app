@@ -7,9 +7,9 @@ import { glossary, glossaryByTerm } from '../data/glossary';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 
-export default function GlossaryScreen({ route, navigation }) {
+export default function GlossaryScreen({ route }) {
   const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { isEn } = useLanguage();
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
   const listRef = useRef(null);

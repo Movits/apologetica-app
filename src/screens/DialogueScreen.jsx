@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, BackHandler } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, BackHandler } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
@@ -64,7 +64,6 @@ export default function DialogueScreen({ navigation, route }) {
     return <DialogueList navigation={navigation} isEn={isEn} onChoose={(id) => { openedFromListRef.current = true; setActiveId(id); setStepIndex(0); }} />;
   }
 
-  const step = dialogue.steps[stepIndex];
   const isLast = stepIndex + 1 >= dialogue.steps.length;
   const objection = isEn ? (dialogue.objectionEn || dialogue.objection) : dialogue.objection;
 
@@ -119,7 +118,7 @@ export default function DialogueScreen({ navigation, route }) {
   );
 }
 
-function DialogueList({ navigation, onChoose, isEn }) {
+function DialogueList({ onChoose, isEn }) {
   const { colors, fs } = useTheme();
   const styles = makeStyles(colors, fs);
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();

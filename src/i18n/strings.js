@@ -10,18 +10,8 @@ export const STRINGS = {
     'common.delete': 'Excluir',
     'common.remove': 'Remover',
     'common.share': 'Compartilhar',
-    'common.next': 'Próximo',
-    'common.prev': 'Anterior',
-    'common.back': 'Voltar',
-    'common.close': 'Fechar',
-    'common.open': 'Abrir',
-    'common.confirm': 'Confirmar',
     'common.loading': 'Carregando...',
-    'common.search': 'Buscar',
-    'common.notFound': 'Não encontrado.',
     'common.tryAgain': 'Tentar novamente',
-    'common.yes': 'Sim',
-    'common.no': 'Não',
 
     // === Tabs ===
     'tab.home': 'Início',
@@ -53,13 +43,11 @@ export const STRINGS = {
     'debate.example': 'Exemplo',
     'debate.respond': 'Como responder',
     'debate.use': 'Como usar',
-    'header.catechism': 'Catecismo',
     'header.bibleMap': 'Nos Passos de Jesus',
     'header.articles': 'Artigos',
     'header.tools': 'Ferramentas',
     'header.today': 'Dia de Hoje',
     'header.notebook': 'Caderno',
-    'header.noteEditor': 'Editar Nota',
 
     // === Home ===
     'home.search': 'Buscar em todo o app...',
@@ -69,18 +57,12 @@ export const STRINGS = {
     'home.section.spirituality': 'Espiritualidade',
     'home.section.training': 'Treino',
     'home.section.study': 'Meu Estudo',
-    'home.card.tools': 'Ferramentas',
-    'home.card.toolsSub': 'Orações, treino e estudo',
     'home.card.today': 'Dia de Hoje',
     'home.card.todaySub': 'Versículo e liturgia do dia',
     'home.card.notebook': 'Caderno',
     'home.card.notebookSub': 'Suas anotações livres com referências',
-    'home.card.articles': 'Artigos de Apologética',
-    'home.card.articlesSub': 'Textos para responder dúvidas',
     'home.card.references': 'Versículos e Referências',
     'home.card.referencesSub': 'Bíblia, Catecismo, documentos',
-    'home.card.bible': 'Bíblia Sagrada',
-    'home.card.bibleSub': 'Leia as Escrituras no app',
     'home.card.readingPlan': 'Plano de Leitura',
     'home.card.readingPlanSub': 'Dois trilhos: do zero ao avançado',
     'home.card.rosary': 'Santo Rosário',
@@ -110,25 +92,19 @@ export const STRINGS = {
     // === Settings ===
     'settings.section.appearance': 'Aparência',
     'settings.section.notifications': 'Notificações',
-    'settings.section.content': 'Conteúdo e devoção',
     'settings.section.language': 'Idioma',
     'settings.section.account': 'Conta',
     'settings.section.diagnostic': 'Diagnóstico',
     'settings.section.donate': 'Apoie o projeto',
     'settings.section.privacy': 'Privacidade e Termos',
     'settings.section.about': 'Sobre',
-    'settings.darkMode': 'Modo escuro',
-    'settings.fontSize': 'Tamanho da fonte',
     'settings.voice': 'Voz',
     'settings.speed': 'Velocidade',
     'settings.notif.daily': 'Versículo do dia',
     'settings.notif.sunday': 'Liturgia de domingo',
-    'settings.notif.friday': 'Sexta-feira de penitência',
     'settings.notif.quiz': 'Quiz apologético diário',
     'settings.notif.test': 'Enviar notificação de teste',
     'settings.language.label': 'Idioma do aplicativo',
-    'settings.language.pt': 'Português',
-    'settings.language.en': 'English',
     'settings.logout': 'Sair da conta',
     'settings.privacy': 'Política de Privacidade',
     'settings.terms': 'Termos de Uso',
@@ -138,43 +114,18 @@ export const STRINGS = {
     'settings.sentry.testSub': 'Confirma que o crash reporting está ligado',
 
     // === Bible ===
-    'bible.searchPlaceholder': 'Buscar versículo...',
-    'bible.chapter': 'Capítulo',
-    'bible.verse': 'Versículo',
-    'bible.book': 'Livro',
-    'bible.testament.ot': 'Antigo Testamento',
-    'bible.testament.nt': 'Novo Testamento',
 
     // === Articles ===
-    'articles.all': 'Todos',
     'articles.references': 'Referências',
     'articles.referencesHint': 'Toque em qualquer referência para abrir o texto completo.',
-    'articles.continueReading': 'Continue lendo em',
     'articles.relatedTitle': 'Ver também',
     'articles.notAvailable': 'A tradução deste artigo para o inglês está em andamento.',
 
     // === Catechism ===
-    'catechism.title': 'Catecismo da Igreja Católica',
-    'catechism.subtitle': 'Texto oficial do Magistério',
-    'catechism.searchPlaceholder': 'Buscar parágrafo ou tema...',
-    'catechism.section': 'Seção',
-    'catechism.paragraph': 'Parágrafo',
-    'catechism.partial': 'Texto completo (2865 parágrafos) disponível em inglês. Tradução para português curada em parágrafos chave; o restante mostra o texto em inglês com indicação.',
-    'catechism.openVatican': 'Abrir no site do Vaticano',
 
     // === Map ===
-    'map.title': 'Mapa Bíblico',
-    'map.subtitle': 'Toque em um lugar para ver detalhes',
-    'map.history': 'História',
-    'map.archaeology': 'Arqueologia',
-    'map.related': 'Textos relacionados',
 
     // === Quiz ===
-    'quiz.daily': 'Quiz do dia',
-    'quiz.practice': 'Praticar com 10 perguntas',
-    'quiz.streak': 'dias',
-    'quiz.correct': 'Acertou',
-    'quiz.wrong': 'Resposta correta:',
     'quiz.readArticle': 'Ler o artigo completo',
     'quiz.next': 'Próxima pergunta',
     'quiz.result': 'Resultado',
@@ -182,16 +133,11 @@ export const STRINGS = {
     'quiz.practiceAgain': 'Praticar mais 10',
 
     // === Dialogue ===
-    'dialogue.title': 'Modo Diálogo',
-    'dialogue.subtitle': 'Treine respostas para as objeções mais comuns.',
     'dialogue.someoneSays': 'Alguém te diz',
     'dialogue.nextStep': 'Próximo passo',
     'dialogue.chooseOther': 'Escolher outra objeção',
 
     // === Onboarding ===
-    'onboarding.skip': 'Pular',
-    'onboarding.next': 'Próximo',
-    'onboarding.start': 'Começar',
 
     // === Auth ===
     'auth.login': 'Entrar',
@@ -207,22 +153,18 @@ export const STRINGS = {
     'home.todayLiturgy': 'Liturgia de hoje',
     'news.title': 'Notícias católicas',
     'news.offline': 'Sem conexão para carregar as notícias de hoje.',
-    'home.saintToday': 'Santo do dia',
     'auth.subtitle': 'Entre na sua conta para continuar',
     'auth.recoverTitle': 'Recuperar senha',
     'auth.sendLink': 'Enviar link',
     'auth.backToLogin': 'Voltar ao login',
 
     // === Bible Screen ===
-    'bible.books': 'Livros',
     'bible.chapterPrep': 'Capítulo em preparação',
     'bible.markColor': 'Marcar com cor',
     'bible.annotate': 'Anotar',
     'bible.copy': 'Copiar',
 
     // === Catechism Screen ===
-    'catechism.structure': 'Estrutura',
-    'catechism.available': 'Parágrafos disponíveis',
 
     // === Search ===
     'search.recent': 'Buscas recentes',
@@ -289,18 +231,8 @@ export const STRINGS = {
     'common.delete': 'Delete',
     'common.remove': 'Remove',
     'common.share': 'Share',
-    'common.next': 'Next',
-    'common.prev': 'Previous',
-    'common.back': 'Back',
-    'common.close': 'Close',
-    'common.open': 'Open',
-    'common.confirm': 'Confirm',
     'common.loading': 'Loading...',
-    'common.search': 'Search',
-    'common.notFound': 'Not found.',
     'common.tryAgain': 'Try again',
-    'common.yes': 'Yes',
-    'common.no': 'No',
 
     // === Tabs ===
     'tab.home': 'Home',
@@ -332,13 +264,11 @@ export const STRINGS = {
     'debate.example': 'Example',
     'debate.respond': 'How to respond',
     'debate.use': 'How to use',
-    'header.catechism': 'Catechism',
     'header.bibleMap': 'In Jesus\' Footsteps',
     'header.articles': 'Articles',
     'header.tools': 'Tools',
     'header.today': 'Today',
     'header.notebook': 'Notebook',
-    'header.noteEditor': 'Edit Note',
 
     // === Home ===
     'home.search': 'Search in the app...',
@@ -348,18 +278,12 @@ export const STRINGS = {
     'home.section.spirituality': 'Spirituality',
     'home.section.training': 'Training',
     'home.section.study': 'My Study',
-    'home.card.tools': 'Tools',
-    'home.card.toolsSub': 'Prayers, practice and study',
     'home.card.today': 'Today',
     'home.card.todaySub': 'Verse and liturgy of the day',
     'home.card.notebook': 'Notebook',
     'home.card.notebookSub': 'Your free notes with references',
-    'home.card.articles': 'Apologetics Articles',
-    'home.card.articlesSub': 'Answers for common questions',
     'home.card.references': 'Verses and References',
     'home.card.referencesSub': 'Bible, Catechism, documents',
-    'home.card.bible': 'Holy Bible',
-    'home.card.bibleSub': 'Read Scripture in the app',
     'home.card.readingPlan': 'Reading Plan',
     'home.card.readingPlanSub': 'Two tracks: from zero to advanced',
     'home.card.rosary': 'Holy Rosary',
@@ -389,25 +313,19 @@ export const STRINGS = {
     // === Settings ===
     'settings.section.appearance': 'Appearance',
     'settings.section.notifications': 'Notifications',
-    'settings.section.content': 'Content and devotion',
     'settings.section.language': 'Language',
     'settings.section.account': 'Account',
     'settings.section.diagnostic': 'Diagnostic',
     'settings.section.donate': 'Support the project',
     'settings.section.privacy': 'Privacy and Terms',
     'settings.section.about': 'About',
-    'settings.darkMode': 'Dark mode',
-    'settings.fontSize': 'Font size',
     'settings.voice': 'Voice',
     'settings.speed': 'Speed',
     'settings.notif.daily': 'Verse of the day',
     'settings.notif.sunday': 'Sunday liturgy',
-    'settings.notif.friday': 'Friday penance',
     'settings.notif.quiz': 'Daily apologetics quiz',
     'settings.notif.test': 'Send test notification',
     'settings.language.label': 'App language',
-    'settings.language.pt': 'Português',
-    'settings.language.en': 'English',
     'settings.logout': 'Sign out',
     'settings.privacy': 'Privacy Policy',
     'settings.terms': 'Terms of Use',
@@ -417,43 +335,18 @@ export const STRINGS = {
     'settings.sentry.testSub': 'Confirms that crash reporting is enabled',
 
     // === Bible ===
-    'bible.searchPlaceholder': 'Search a verse...',
-    'bible.chapter': 'Chapter',
-    'bible.verse': 'Verse',
-    'bible.book': 'Book',
-    'bible.testament.ot': 'Old Testament',
-    'bible.testament.nt': 'New Testament',
 
     // === Articles ===
-    'articles.all': 'All',
     'articles.references': 'References',
     'articles.referencesHint': 'Tap any reference to see the full text.',
-    'articles.continueReading': 'Continue reading in',
     'articles.relatedTitle': 'See also',
     'articles.notAvailable': 'English translation of this article is in progress.',
 
     // === Catechism ===
-    'catechism.title': 'Catechism of the Catholic Church',
-    'catechism.subtitle': 'Official text of the Magisterium',
-    'catechism.searchPlaceholder': 'Search a paragraph or theme...',
-    'catechism.section': 'Section',
-    'catechism.paragraph': 'Paragraph',
-    'catechism.partial': 'Full text (2865 paragraphs) available in English. Portuguese translation curated for key paragraphs; the rest shows English with an indication.',
-    'catechism.openVatican': 'Open on the Vatican website',
 
     // === Map ===
-    'map.title': 'Biblical Map',
-    'map.subtitle': 'Tap a place to see details',
-    'map.history': 'History',
-    'map.archaeology': 'Archaeology',
-    'map.related': 'Related texts',
 
     // === Quiz ===
-    'quiz.daily': 'Daily quiz',
-    'quiz.practice': 'Practice with 10 questions',
-    'quiz.streak': 'days',
-    'quiz.correct': 'Correct',
-    'quiz.wrong': 'Correct answer:',
     'quiz.readArticle': 'Read the full article',
     'quiz.next': 'Next question',
     'quiz.result': 'Result',
@@ -461,16 +354,11 @@ export const STRINGS = {
     'quiz.practiceAgain': 'Practice 10 more',
 
     // === Dialogue ===
-    'dialogue.title': 'Dialogue Mode',
-    'dialogue.subtitle': 'Practice responses to the most common objections.',
     'dialogue.someoneSays': 'Someone tells you',
     'dialogue.nextStep': 'Next step',
     'dialogue.chooseOther': 'Choose another objection',
 
     // === Onboarding ===
-    'onboarding.skip': 'Skip',
-    'onboarding.next': 'Next',
-    'onboarding.start': 'Start',
 
     // === Auth ===
     'auth.login': 'Sign in',
@@ -486,22 +374,18 @@ export const STRINGS = {
     'home.todayLiturgy': 'Today\'s liturgy',
     'news.title': 'Catholic news',
     'news.offline': 'No connection to load today\'s news.',
-    'home.saintToday': 'Saint of the day',
     'auth.subtitle': 'Sign in to your account to continue',
     'auth.recoverTitle': 'Recover password',
     'auth.sendLink': 'Send link',
     'auth.backToLogin': 'Back to login',
 
     // === Bible Screen ===
-    'bible.books': 'Books',
     'bible.chapterPrep': 'Chapter in preparation',
     'bible.markColor': 'Mark with color',
     'bible.annotate': 'Note',
     'bible.copy': 'Copy',
 
     // === Catechism Screen ===
-    'catechism.structure': 'Structure',
-    'catechism.available': 'Available paragraphs',
 
     // === Search ===
     'search.recent': 'Recent searches',

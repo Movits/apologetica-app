@@ -16,7 +16,3 @@ export async function getLastRead() {
     return null;
   }
 }
-
-export async function clearLastRead() {
-  await AsyncStorage.removeItem(KEY).catch(() => {});
-}

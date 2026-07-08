@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { references, translateRef, translateAuthor, translateYear, BOOK_PT_TO_EN } from '../data/references';
+import { references, translateRef, translateAuthor, translateYear } from '../data/references';
 import { referencesEn } from '../data/references-en';
 import { REFERENCE_SOURCES } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';

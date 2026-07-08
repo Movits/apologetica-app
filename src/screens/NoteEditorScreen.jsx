@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
-import { collection, doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { addNote, updateNote, removeNote } from '../services/userData';

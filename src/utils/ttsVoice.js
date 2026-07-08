@@ -181,11 +181,6 @@ export async function listVoicesForLanguage(language = 'pt') {
   }
 }
 
-// Compatibilidade com chamadas antigas.
-export async function listPortugueseVoices() {
-  return listVoicesForLanguage('pt');
-}
-
 function storageKeyForLanguage(language) {
   return language === 'en' ? STORAGE_VOICE_EN : STORAGE_VOICE_PT;
 }
