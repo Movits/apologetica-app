@@ -1,4 +1,4 @@
-import { getBook } from '../data/bible';
+import { getBook, bookName } from '../data/bible';
 import { AVEMARIA } from '../data/bibleAveMaria';
 import { DRA } from '../data/bibleDouayRheims';
 
@@ -44,4 +44,49 @@ export function getChapter(bookId, chapter, language = 'pt') {
     source: 'avemaria',
     language: 'pt',
   };
+}
+
+// Normaliza para busca: minúsculas + remove acentos.
+function norm(s) {
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+// Busca full-text offline na Bíblia inteira (varredura por substring, não Fuse:
+// ~35 mil versículos por tradução, já residentes em memória). Retorna itens
+// prontos para deep-link: { bookId, chapter, verse, ref, text }.
+// `language`: 'en' → Douay-Rheims, senão Ave Maria (PT).
+export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
+  const q = norm(query).trim();
+  if (q.length < 3) return [];
+  const isEn = language === 'en';
+  const data = isEn ? DRA : AVEMARIA;
+  if (!data) return [];
+  const sep = isEn ? ':' : ',';
+  const results = [];
+  for (const bookId of Object.keys(data)) {
+    const chapters = data[bookId];
+    if (!chapters) continue;
+    const book = getBook(bookId);
+    if (!book) continue;
+    const name = bookName(book, isEn);
+    for (let ci = 0; ci < chapters.length; ci++) {
+      const verses = chapters[ci];
+      if (!verses) continue;
+      for (let vi = 0; vi < verses.length; vi++) {
+        if (norm(verses[vi]).includes(q)) {
+          const chapter = ci + 1;
+          const verse = vi + 1;
+          results.push({
+            bookId,
+            chapter,
+            verse,
+            ref: `${name} ${chapter}${sep}${verse}`,
+            text: verses[vi],
+          });
+          if (results.length >= limit) return results;
+        }
+      }
+    }
+  }
+  return results;
 }

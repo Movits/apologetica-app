@@ -5,6 +5,7 @@ import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
 import { references } from '../data/references';
 import { DAILY_VERSES } from '../data/dailyVerses';
+import { searchBible } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -104,15 +105,17 @@ export default function SearchScreen({ navigation }) {
 
   const results = useMemo(() => {
     const q = debouncedQuery.trim();
-    if (q.length < 3) return { articles: [], references: [], verses: [] };
+    if (q.length < 3) return { articles: [], references: [], verses: [], bible: [] };
     return {
       articles: articleIndex.search(q).slice(0, 8).map((h) => h.item),
       references: referenceIndex.search(q).slice(0, 10).map((h) => h.item),
       verses: verseIndex.search(q).slice(0, 8).map((h) => h.item),
+      // Busca full-text na Bíblia inteira (offline), no idioma ativo.
+      bible: searchBible(q, { language: isEn ? 'en' : 'pt', limit: 20 }),
     };
-  }, [debouncedQuery]);
+  }, [debouncedQuery, isEn]);
 
-  const totalHits = results.articles.length + results.references.length + results.verses.length;
+  const totalHits = results.articles.length + results.references.length + results.verses.length + results.bible.length;
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   // Para sugestão "Você quis dizer", usa threshold mais frouxo.
@@ -147,6 +150,8 @@ export default function SearchScreen({ navigation }) {
     ...results.articles.map((a) => ({ type: 'article', item: a })),
     ...(results.verses.length > 0 ? [{ type: 'header', label: isEn ? 'Verses' : 'Versículos' }] : []),
     ...results.verses.map((v) => ({ type: 'verse', item: v })),
+    ...(results.bible.length > 0 ? [{ type: 'header', label: isEn ? 'In the Bible' : 'Na Bíblia' }] : []),
+    ...results.bible.map((v) => ({ type: 'bibleVerse', item: v })),
     ...(results.references.length > 0 ? [{ type: 'header', label: isEn ? 'References' : 'Referências' }] : []),
     ...results.references.map((r) => ({ type: 'reference', item: r })),
   ], [results, isEn]);
@@ -195,6 +200,20 @@ export default function SearchScreen({ navigation }) {
           <View style={{ flex: 1 }}>
             <Text style={styles.cardCategory}>{refTxt}</Text>
             <Text style={styles.cardSub} numberOfLines={3}>"{txt}"</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+    if (item.type === 'bibleVerse') {
+      const v = item.item;
+      return (
+        <TouchableOpacity style={styles.card} onPress={() => openVerse(v)}>
+          <View style={styles.cardIcon}>
+            <Ionicons name="book" size={20} color={colors.primaryText} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.cardCategory}>{v.ref}</Text>
+            <Text style={styles.cardSub} numberOfLines={3}>"{v.text}"</Text>
           </View>
         </TouchableOpacity>
       );
