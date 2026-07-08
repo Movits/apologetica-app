@@ -12,14 +12,14 @@ Abra o Obsidian e aponte para a pasta do projeto (ou só para a pasta `brain/`, 
 
 ## Como navegar
 
-A partir de [[Início]], tudo se ramifica em 4 mapas:
+Quatro áreas, do mais vivo pro mais estável:
 
-- [[Mapa de Arquitetura]]: como o app é construído por dentro.
-- [[Mapa de Funcionalidades]]: cada recurso que o usuário vê.
-- [[Mapa de Conteúdo e Dados]]: Bíblia, artigos, referências e o resto do conteúdo.
-- [[Mapa do Projeto e Decisões]]: site, deploy, pesquisas, decisões e manutenção.
-
-Os textos em duplo colchete são links: clique para pular de nota em nota.
+1. `1-Memória`: diário de sessões, [[Aprendizados]] e pendências. É o que a IA
+   lê primeiro ao retomar o trabalho e atualiza ao terminar.
+2. `2-Projeto`: decisões, convenções, verificação, pesquisas, site e deploy.
+3. `3-App`: arquitetura e funcionalidades, com a tabela tela por tela.
+4. `4-Conteúdo`: catálogo curado + grafo gerado (pastas "... do App" e
+   "Termos do Glossário" são geradas por script, não editar à mão).
 
 ## Vocabulário de tags
 
@@ -37,7 +37,7 @@ As notas de artigos, referências e diálogos são GERADAS pelos dados do app, n
 node scripts/generate-brain.mjs
 ```
 
-A pasta 9-Conteúdo é recriada inteira. Por isso, nunca edite essas notas diretamente: anote ideias nas notas das pastas 1 a 8, ou mude os dados do app e regenere.
+As subpastas geradas de 4-Conteúdo são recriadas inteiras. Por isso, nunca edite essas notas diretamente: anote ideias nas áreas 1 a 3 (ou nas notas curadas de 4-Conteúdo), ou mude os dados do app e regenere.
 
 ## Detalhe técnico único
 

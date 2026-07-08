@@ -4,7 +4,7 @@
 //
 //   node scripts/generate-brain.mjs
 //
-// A pasta brain/9-Conteúdo é apagada e recriada inteira (não editar à mão:
+// As SUBPASTAS geradas de brain/4-Conteúdo são apagadas e recriadas (não editar à mão:
 // qualquer edição manual ali é perdida na próxima geração). As conexões vêm
 // dos próprios dados: references[] dos artigos, RELATED_ARTICLES, os
 // relatedArticle dos diálogos e os dias do plano de leitura.
@@ -15,7 +15,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = join(ROOT, 'brain', '9-Conteúdo');
+const OUT = join(ROOT, 'brain', '4-Conteúdo');
 const HOJE = new Date().toISOString().slice(0, 10);
 
 // ---------- carga dos dados ----------
@@ -149,7 +149,10 @@ for (const t of TRACKS) for (const d of t.days) {
 
 // ---------- geração ----------
 
-rmSync(OUT, { recursive: true, force: true });
+const GERADAS = ['Artigos do App', 'Referências do App', 'Diálogos do App', 'Termos do Glossário', 'Categorias', 'Planos de Leitura'];
+for (const d of GERADAS) rmSync(join(OUT, d), { recursive: true, force: true });
+rmSync(join(OUT, 'Conteúdo do App (gerado).md'), { force: true });
+mkdirSync(OUT, { recursive: true });
 
 const categorias = [...new Set(articles.map((a) => a.category))];
 
@@ -170,7 +173,7 @@ for (const a of articles) {
   if (rel.length) b += `\n## Artigos relacionados\n${rel.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
   if (dias.length) b += `\n## Diálogos que levam a este artigo\n${dias.map((d) => `- [[${diaTitle.get(d.id)}]]`).join('\n')}\n`;
   if (plano.length) b += `\n## No plano de leitura\n${plano.map((p) => `- [[${trackTitle.get(p.track.id)}]], dia ${p.day}: ${p.theme}`).join('\n')}\n`;
-  write('Artigos', artTitle.get(a.id), b);
+  write('Artigos do App', artTitle.get(a.id), b);
 }
 
 // Categorias
@@ -194,7 +197,7 @@ for (const r of references) {
   b += `Funcionalidade: [[Referências]]\n`;
   if (usada.length) b += `\n## Usada nos artigos\n${usada.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
   else b += `\nNenhum artigo usa esta referência hoje (candidata a revisão editorial).\n`;
-  write('Referências', refTitle.get(r.id), b);
+  write('Referências do App', refTitle.get(r.id), b);
 }
 
 // Diálogos
@@ -204,7 +207,7 @@ for (const d of DIALOGUES) {
   if (d.relatedArticle != null && artTitle.has(d.relatedArticle)) {
     b += `\nArtigo completo: [[${artTitle.get(d.relatedArticle)}]]\n`;
   }
-  write('Diálogos', diaTitle.get(d.id), b);
+  write('Diálogos do App', diaTitle.get(d.id), b);
 }
 
 // Trilhos do plano
@@ -212,7 +215,7 @@ for (const t of TRACKS) {
   let b = fm(['plano', 'conteudo-gerado']) + `# ${trackTitle.get(t.id)}\n${AVISO}\n`;
   b += `${t.descPt}\n\nFuncionalidade: [[Plano de Leitura]]\n\n## Dias\n`;
   b += t.days.map((d) => `- Dia ${d.day}: [[${artTitle.get(d.articleId) || '?'}]] (${d.theme})`).join('\n') + '\n';
-  write('Planos', trackTitle.get(t.id), b);
+  write('Planos de Leitura', trackTitle.get(t.id), b);
 }
 
 // Termos do glossário
@@ -221,7 +224,7 @@ for (const g of GLOSSARY) {
   let b = fm(['termo', 'conteudo-gerado']) + `# ${termTitle.get(g.id)}\n${AVISO}\n`;
   b += `${g.definition}\n\nFuncionalidade: [[Glossário]]\n`;
   if (usado.length) b += `\n## Aparece nos artigos\n${usado.map((id) => `- [[${artTitle.get(id)}]]`).join('\n')}\n`;
-  write('Glossário', termTitle.get(g.id), b);
+  write('Termos do Glossário', termTitle.get(g.id), b);
 }
 
 // Índice da seção gerada
@@ -234,4 +237,4 @@ for (const g of GLOSSARY) {
   writeFileSync(join(OUT, 'Conteúdo do App (gerado).md'), b);
 }
 
-console.log(`OK: ${articles.length} artigos, ${categorias.length} categorias, ${references.length} referências, ${DIALOGUES.length} diálogos, ${GLOSSARY.length} termos, ${TRACKS.length} trilhos + índice em brain/9-Conteúdo/`);
+console.log(`OK: ${articles.length} artigos, ${categorias.length} categorias, ${references.length} referências, ${DIALOGUES.length} diálogos, ${GLOSSARY.length} termos, ${TRACKS.length} trilhos + índice em brain/4-Conteúdo/`);

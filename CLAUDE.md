@@ -18,7 +18,7 @@ node scripts/convert-douay-rheims.mjs    # regera bibleDouayRheims.js (EN, fonte
 node scripts/sync-bible-refs.mjs         # sincroniza referências bíblicas
 node scripts/generate-icons.mjs          # gera ícones do app
 node scripts/merge-accounts.mjs          # admin: junta dados de duas contas (precisa .secrets/)
-node scripts/generate-brain.mjs          # regera brain/9-Conteúdo (grafo de artigos/refs/diálogos do vault)
+node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault (brain/4-Conteúdo)
 ```
 
 ## Architecture
@@ -99,7 +99,8 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 ### Pastas do usuário (não código)
 - `documentos/` — pesquisas e anotações do usuário (mercado, público, top100, créditos de imagens, previews antigos). Nada referencia no código.
 - `fotos/` — imagens do site adicionadas pelo usuário. `fotos/sao-miguel.jpg` é o fundo do hero da landing (`docs/index.html`); o deploy copia a pasta inteira pro site. Fallback remoto se o arquivo faltar.
-- `brain/` — second brain do projeto (vault do Obsidian, versionado): notas em português explicando arquitetura, funcionalidades, dados, decisões e manutenção. Atualizar as notas relevantes ao fazer mudanças estruturais. `brain/.obsidian/` fica fora do git.
+- `brain/` — second brain do projeto (vault do Obsidian, versionado), em 4 áreas: `1-Memória` (diário de sessões, aprendizados, backlog vivo), `2-Projeto` (decisões, convenções, pesquisas, site), `3-App` (arquitetura e funcionalidades), `4-Conteúdo` (catálogo + grafo gerado por `scripts/generate-brain.mjs`; as subpastas "... do App" e "Termos do Glossário" não se editam à mão). `brain/.obsidian/` fica fora do git.
+  - **Ritual de memória**: ao concluir uma sessão de trabalho significativa, criar `brain/1-Memória/Diário/AAAA-MM-DD - resumo.md` (o que foi feito, decisões, pendências) e acrescentar lições permanentes em `brain/1-Memória/Aprendizados.md`. Ao retomar trabalho, ler a entrada mais recente do Diário.
 - `GUIA-DO-PROJETO.md` — mapa da raiz em linguagem leiga; manter atualizado ao criar/mover pastas.
 
 ### Paleta
