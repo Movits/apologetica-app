@@ -55,3 +55,10 @@ export function shareArticle({ title, summary }) {
   const msg = `${title}\n\n${summary}${APP_PROMO}`;
   return doShare(msg);
 }
+
+export function shareDialogue({ objection, answer, source }) {
+  let msg = `"${objection}"\n\n${answer}`;
+  if (source) msg += `\n\n(${source})`;
+  msg += APP_PROMO;
+  return doShare(msg);
+}

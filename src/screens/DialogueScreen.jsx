@@ -1,12 +1,16 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, BackHandler } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, BackHandler, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES, getDialogueById } from '../data/dialogues';
+import { articles } from '../data/articles';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import DialogueAnswerCard from '../components/DialogueAnswerCard';
+import { captureAndShareImage } from '../utils/shareAsImage';
+import { shareDialogue } from '../utils/share';
 
 // Tela mestre: lista de objeções. Ao escolher uma, vira modo "conversa guiada".
 export default function DialogueScreen({ navigation, route }) {
@@ -20,6 +24,7 @@ export default function DialogueScreen({ navigation, route }) {
   // Quando veio por deep link (ex.: Objeção do dia na Home), o "voltar" deve
   // sair da tela direto, sem parada intermediária na lista.
   const openedFromListRef = useRef(false);
+  const shareCardRef = useRef(null);
 
   // Abre o diálogo certo quando a tela já está montada e chega um novo
   // dialogueId por navegação (ex.: card Objeção do dia na Home).
@@ -67,6 +72,20 @@ export default function DialogueScreen({ navigation, route }) {
   const isLast = stepIndex + 1 >= dialogue.steps.length;
   const objection = isEn ? (dialogue.objectionEn || dialogue.objection) : dialogue.objection;
 
+  // Card compartilhavel: objecao + o passo de fecho (resposta curta) + fonte.
+  const closeStep = dialogue.steps[dialogue.steps.length - 1];
+  const answer = closeStep ? (isEn ? (closeStep.textEn || closeStep.text) : closeStep.text) : '';
+  const relArticle = articles.find((a) => a.id === dialogue.relatedArticle);
+  const source = relArticle ? (isEn ? (relArticle.titleEn || relArticle.title) : relArticle.title) : '';
+
+  const shareAnswer = () => {
+    if (Platform.OS === 'web') {
+      shareDialogue({ objection, answer, source });
+    } else {
+      captureAndShareImage(shareCardRef, `"${objection}"\n\n${answer}${source ? `\n\n(${source})` : ''}`);
+    }
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView contentContainerStyle={styles.content}>
@@ -99,6 +118,13 @@ export default function DialogueScreen({ navigation, route }) {
           </TouchableOpacity>
         )}
 
+        {isLast && (
+          <TouchableOpacity style={styles.shareBtn} onPress={shareAnswer} accessibilityRole="button" accessibilityLabel={isEn ? 'Share this answer' : 'Compartilhar esta resposta'}>
+            <Ionicons name="share-social-outline" size={18} color="#fff" />
+            <Text style={styles.shareText}>{isEn ? 'Share this answer' : 'Compartilhar esta resposta'}</Text>
+          </TouchableOpacity>
+        )}
+
         {isLast && dialogue.relatedArticle && (
           <TouchableOpacity
             style={styles.readBtn}
@@ -114,6 +140,13 @@ export default function DialogueScreen({ navigation, route }) {
           <Text style={styles.backText}>{t('dialogue.chooseOther')}</Text>
         </TouchableOpacity>
       </ScrollView>
+
+      {/* Card renderizado fora da tela, so pra capturar como imagem (nativo). */}
+      {Platform.OS !== 'web' && (
+        <View style={styles.offscreen} pointerEvents="none">
+          <DialogueAnswerCard ref={shareCardRef} objection={objection} answer={answer} source={source} />
+        </View>
+      )}
     </View>
   );
 }
@@ -212,6 +245,13 @@ const makeStyles = (c, fs) =>
       backgroundColor: c.primary, paddingVertical: 14, borderRadius: 10, marginTop: 8,
     },
     nextBtnText: { color: '#fff', fontWeight: 'bold', fontSize: fs(15) },
+
+    shareBtn: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+      backgroundColor: c.primary, paddingVertical: 13, borderRadius: 10, marginTop: 14, minHeight: 48,
+    },
+    shareText: { color: '#fff', fontWeight: 'bold', fontSize: fs(14) },
+    offscreen: { position: 'absolute', left: -10000, top: -10000, opacity: 0 },
 
     readBtn: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
