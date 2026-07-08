@@ -13,7 +13,7 @@ import WebDownloadBanner from '../components/WebDownloadBanner';
 import {
   getPrefs, requestPermissions,
   setDailyVerseEnabled, setSundayLiturgyEnabled,
-  setDailyQuizEnabled,
+  setDailyQuizEnabled, setObjectionOfDayEnabled,
   sendTestNotification,
 } from '../services/notifications';
 import {
@@ -136,6 +136,15 @@ export default function SettingsScreen() {
     }
     setNotifPrefs((p) => ({ ...p, dailyQuiz: value }));
     await setDailyQuizEnabled(value);
+  };
+
+  const toggleObjectionOfDay = async (value) => {
+    if (value) {
+      const ok = await requestPermissions();
+      if (!ok) { notify(permTitle(), permMsg()); return; }
+    }
+    setNotifPrefs((p) => ({ ...p, objectionOfDay: value }));
+    await setObjectionOfDayEnabled(value);
   };
 
   const handleLogout = () => {
@@ -423,6 +432,24 @@ export default function SettingsScreen() {
         <Switch
           value={notifPrefs.dailyQuiz}
           onValueChange={toggleDailyQuiz}
+          trackColor={{ true: colors.accent, false: '#ccc' }}
+          thumbColor="#fff"
+        />
+      </View>
+
+      <View style={styles.row}>
+        <View style={styles.rowLeft}>
+          <Ionicons name="chatbubbles-outline" size={22} color={colors.primaryText} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.rowLabel}>{isEn ? 'Objection of the day' : 'Objeção do dia'}</Text>
+            <Text style={styles.rowSub}>
+              {isEn ? 'A common objection to answer, every day at noon' : 'Uma objeção comum pra responder, todo dia ao meio-dia'}
+            </Text>
+          </View>
+        </View>
+        <Switch
+          value={notifPrefs.objectionOfDay}
+          onValueChange={toggleObjectionOfDay}
           trackColor={{ true: colors.accent, false: '#ccc' }}
           thumbColor="#fff"
         />

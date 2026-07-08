@@ -2,6 +2,14 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getVerseOfDay } from '../data/dailyVerses';
+import { DIALOGUES } from '../data/dialogues';
+
+// Objeção do dia: mesma rotação determinística da Home.
+function objectionOfDay() {
+  const now = new Date();
+  const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+  return DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
+}
 
 // Como notificações aparecem com o app em foreground.
 Notifications.setNotificationHandler({
@@ -19,11 +27,13 @@ const ID_DAILY_VERSE = 'daily-verse';
 const ID_SUNDAY_LITURGY = 'sunday-liturgy';
 const ID_FRIDAY_FAST = 'friday-fast'; // mantido só para limpar agendamentos antigos
 const ID_DAILY_QUIZ = 'daily-quiz';
+const ID_OBJECTION = 'objection-of-day';
 
 const DEFAULT_PREFS = {
   dailyVerse: false,
   sundayLiturgy: false,
   dailyQuiz: false,
+  objectionOfDay: false,
   verseHour: 7,
   verseMinute: 0,
 };
@@ -56,7 +66,15 @@ async function cancelOurNotifications() {
     await Notifications.cancelScheduledNotificationAsync(ID_SUNDAY_LITURGY).catch(() => {});
     await Notifications.cancelScheduledNotificationAsync(ID_FRIDAY_FAST).catch(() => {});
     await Notifications.cancelScheduledNotificationAsync(ID_DAILY_QUIZ).catch(() => {});
+    await Notifications.cancelScheduledNotificationAsync(ID_OBJECTION).catch(() => {});
   } catch {}
+}
+
+export async function setObjectionOfDayEnabled(enabled) {
+  const prefs = await getPrefs();
+  prefs.objectionOfDay = enabled;
+  await savePrefs(prefs);
+  return rescheduleAll();
 }
 
 export async function setDailyQuizEnabled(enabled) {
@@ -135,6 +153,22 @@ export async function rescheduleAll() {
         trigger: {
           type: Notifications.SchedulableTriggerInputTypes.DAILY,
           hour: 19,
+          minute: 0,
+        },
+      });
+    }
+    if (prefs.objectionOfDay) {
+      const obj = objectionOfDay();
+      await Notifications.scheduleNotificationAsync({
+        identifier: ID_OBJECTION,
+        content: {
+          title: 'Objeção do dia',
+          body: obj?.objection || 'Uma objeção nova pra você saber responder hoje.',
+          data: { type: 'objection-of-day', dialogueId: obj?.id },
+        },
+        trigger: {
+          type: Notifications.SchedulableTriggerInputTypes.DAILY,
+          hour: 12,
           minute: 0,
         },
       });

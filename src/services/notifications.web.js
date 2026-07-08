@@ -7,6 +7,7 @@ const DEFAULT_PREFS = {
   dailyVerse: false,
   sundayLiturgy: false,
   dailyQuiz: false,
+  objectionOfDay: false,
   verseHour: 7,
   verseMinute: 0,
 };
@@ -28,6 +29,10 @@ export async function setSundayLiturgyEnabled() {
 }
 
 export async function setDailyQuizEnabled() {
+  return { ok: true };
+}
+
+export async function setObjectionOfDayEnabled() {
   return { ok: true };
 }
 
