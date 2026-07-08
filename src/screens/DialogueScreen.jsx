@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, BackHandler } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
@@ -16,12 +16,17 @@ export default function DialogueScreen({ navigation, route }) {
   const initialId = route?.params?.dialogueId;
   const [activeId, setActiveId] = useState(initialId || null);
   const [stepIndex, setStepIndex] = useState(0);
+  // Quando o diálogo foi aberto pela lista, o "voltar" retorna pra lista.
+  // Quando veio por deep link (ex.: Objeção do dia na Home), o "voltar" deve
+  // sair da tela direto, sem parada intermediária na lista.
+  const openedFromListRef = useRef(false);
 
   // Abre o diálogo certo quando a tela já está montada e chega um novo
   // dialogueId por navegação (ex.: card Objeção do dia na Home).
   useEffect(() => {
     const id = route?.params?.dialogueId;
     if (id) {
+      openedFromListRef.current = false;
       setActiveId(id);
       setStepIndex(0);
     }
@@ -33,7 +38,7 @@ export default function DialogueScreen({ navigation, route }) {
   // volta para a lista em vez de sair da tela.
   useFocusEffect(useCallback(() => {
     const sub = BackHandler.addEventListener('hardwareBackPress', () => {
-      if (activeId !== null) {
+      if (activeId !== null && openedFromListRef.current) {
         setActiveId(null);
         setStepIndex(0);
         return true;
@@ -46,7 +51,7 @@ export default function DialogueScreen({ navigation, route }) {
   // Intercepta o botão de voltar do header quando dentro de um diálogo.
   useEffect(() => {
     const unsub = navigation.addListener('beforeRemove', (e) => {
-      if (activeId !== null) {
+      if (activeId !== null && openedFromListRef.current) {
         e.preventDefault();
         setActiveId(null);
         setStepIndex(0);
@@ -56,7 +61,7 @@ export default function DialogueScreen({ navigation, route }) {
   }, [navigation, activeId]);
 
   if (!dialogue) {
-    return <DialogueList navigation={navigation} isEn={isEn} onChoose={(id) => { setActiveId(id); setStepIndex(0); }} />;
+    return <DialogueList navigation={navigation} isEn={isEn} onChoose={(id) => { openedFromListRef.current = true; setActiveId(id); setStepIndex(0); }} />;
   }
 
   const step = dialogue.steps[stepIndex];

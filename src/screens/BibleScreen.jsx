@@ -303,10 +303,19 @@ export default function BibleScreen({ route, navigation }) {
     }
   };
 
-  // Para TTS quando capítulo muda ou tela é desmontada.
+  // Para TTS quando capítulo muda, tela é desmontada ou perde o foco
+  // (a aba Bíblia nunca desmonta ao trocar de aba, então o blur é essencial).
   useEffect(() => {
     return () => { speakingRef.current = false; Speech.stop(); };
   }, []);
+  useEffect(() => {
+    const unsub = navigation.addListener('blur', () => {
+      speakingRef.current = false;
+      Speech.stop();
+      setSpeaking(false);
+    });
+    return unsub;
+  }, [navigation]);
   useEffect(() => {
     if (speaking) { speakingRef.current = false; Speech.stop(); setSpeaking(false); }
   // eslint-disable-next-line react-hooks/exhaustive-deps

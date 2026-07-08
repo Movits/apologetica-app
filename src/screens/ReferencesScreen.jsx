@@ -223,19 +223,6 @@ export default function ReferencesScreen({ route }) {
     };
   }, [route?.params?.highlightId, navigation, sections]);
 
-  // Volta ao topo quando o usuário aperta o tab Referências de novo
-  useEffect(() => {
-    const unsub = navigation.addListener('tabPress', () => {
-      if (navigation.isFocused()) {
-        setExpanded(null);
-        try {
-          listRef.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 0, animated: true });
-        } catch {}
-      }
-    });
-    return unsub;
-  }, [navigation]);
-
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   // Callbacks estáveis pra que props do RefCard não mudem desnecessariamente

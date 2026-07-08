@@ -71,6 +71,15 @@ export default function ArticleDetailScreen({ route, navigation }) {
     return () => { Speech.stop(); };
   }, [article?.id]);
 
+  // Para o TTS ao sair da tela (voltar, trocar de aba ou empurrar outra por cima).
+  useEffect(() => {
+    const unsub = navigation.addListener('blur', () => {
+      Speech.stop();
+      setSpeaking(false);
+    });
+    return unsub;
+  }, [navigation]);
+
   // Limpa marcadores de markdown que poluem a narração.
   const stripMarkdownForTts = (s) =>
     String(s || '')

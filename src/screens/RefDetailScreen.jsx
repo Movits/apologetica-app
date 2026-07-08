@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { references } from '../data/references';
+import { references, translateRef, translateAuthor, translateYear } from '../data/references';
+import { referencesEn } from '../data/references-en';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -17,6 +18,9 @@ export default function SearchedRefScreen({ route, navigation }) {
   const { t, isEn } = useLanguage();
   const refId = route?.params?.highlightId;
   const item = references.find((r) => r.id === refId);
+  // Traduções EN (mesmo padrão da lista de Referências): campo a campo com
+  // fallback pro português quando a tradução não existe.
+  const en = (item && referencesEn[item.id]) || {};
 
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
@@ -70,17 +74,21 @@ export default function SearchedRefScreen({ route, navigation }) {
               return isEn ? (m[item.source] || item.source) : item.source;
             })()}</Text>
           </View>
-          <Text style={styles.cardRef}>{item.ref}</Text>
-          <Text style={styles.cardFullSource}>{item.fullSource}</Text>
-          {(item.author || item.year) && (
-            <Text style={styles.cardMeta}>
-              {item.author}{item.author && item.year ? ' · ' : ''}{item.year}
-            </Text>
-          )}
-          <Text style={styles.cardTopic}>{item.topic}</Text>
+          <Text style={styles.cardRef}>{isEn ? (en.refEn || translateRef(item.ref, isEn)) : item.ref}</Text>
+          <Text style={styles.cardFullSource}>{isEn ? (en.fullSourceEn || item.fullSource) : item.fullSource}</Text>
+          {(item.author || item.year) && (() => {
+            const displayAuthor = isEn ? (en.authorEn || translateAuthor(item.author, isEn)) : item.author;
+            const displayYear = isEn ? (en.yearEn || translateYear(item.year, isEn)) : item.year;
+            return (
+              <Text style={styles.cardMeta}>
+                {displayAuthor}{displayAuthor && displayYear ? ' · ' : ''}{displayYear}
+              </Text>
+            );
+          })()}
+          <Text style={styles.cardTopic}>{isEn ? (en.topicEn || item.topic) : item.topic}</Text>
 
           <View style={styles.expanded}>
-            <Text style={styles.cardText}>{item.text}</Text>
+            <Text style={styles.cardText}>{isEn ? (en.textEn || item.text) : item.text}</Text>
 
             {item.originalLanguage && (
               <View style={styles.origBox}>
@@ -94,7 +102,7 @@ export default function SearchedRefScreen({ route, navigation }) {
                 <Text style={styles.origTransliteration}>
                   /{item.originalLanguage.transliteration}/
                 </Text>
-                <Text style={styles.origMeaning}>{item.originalLanguage.meaning}</Text>
+                <Text style={styles.origMeaning}>{isEn ? (en.meaningEn || item.originalLanguage.meaning) : item.originalLanguage.meaning}</Text>
                 <Text style={styles.origStrongs}>
                   {isEn ? `Strong's ${item.originalLanguage.strongs}` : `Concordância Strong ${item.originalLanguage.strongs}`}
                 </Text>
