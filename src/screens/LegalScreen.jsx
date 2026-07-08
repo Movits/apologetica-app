@@ -36,22 +36,22 @@ const PRIVACY = {
     {
       heading: { pt: 'O que coletamos', en: 'What we collect' },
       body: {
-        pt: 'Se você criar uma conta, coletamos seu e-mail e nome de exibição (opcional) para autenticação via Firebase Authentication. Seus favoritos, marcações na Bíblia e notas pessoais são salvos no Firestore associados ao seu UID. Se você usar o app como visitante, nenhum dado é enviado a servidores nossos: tudo fica só no aparelho.',
-        en: 'If you create an account, we collect your email and display name (optional) for authentication via Firebase Authentication. Your favorites, Bible highlights, and personal notes are stored in Firestore associated with your UID. If you use the app as a guest, no data is sent to our servers: everything stays only on the device.',
+        pt: 'Se você criar uma conta, coletamos seu e-mail e nome de exibição (opcional) para autenticação via Firebase Authentication. Suas marcações na Bíblia e notas pessoais são salvas no Firestore associadas ao seu UID. Seus favoritos ficam salvos apenas no aparelho. Se você usar o app como visitante, nenhum dado é enviado a servidores nossos: tudo fica só no aparelho.',
+        en: 'If you create an account, we collect your email and display name (optional) for authentication via Firebase Authentication. Your Bible highlights and personal notes are stored in Firestore associated with your UID. Your favorites are stored on the device only. If you use the app as a guest, no data is sent to our servers: everything stays only on the device.',
       },
     },
     {
       heading: { pt: 'Por que coletamos', en: 'Why we collect' },
       body: {
-        pt: 'Para que suas marcações, notas e favoritos fiquem sincronizados entre dispositivos quando você faz login. Não usamos seus dados para publicidade, marketing ou perfilamento.',
-        en: 'So that your highlights, notes, and favorites stay synced across devices when you sign in. We do not use your data for advertising, marketing, or profiling.',
+        pt: 'Para que suas marcações e notas fiquem sincronizadas entre dispositivos quando você faz login. Não usamos seus dados para publicidade, marketing ou perfilamento.',
+        en: 'So that your highlights and notes stay synced across devices when you sign in. We do not use your data for advertising, marketing, or profiling.',
       },
     },
     {
       heading: { pt: 'Crash reporting (Sentry)', en: 'Crash reporting (Sentry)' },
       body: {
-        pt: 'Usamos Sentry para receber relatórios automáticos quando o app trava ou apresenta erro. Esses relatórios contêm informações técnicas (versão do sistema, modelo do aparelho, trecho de código que falhou) e, conforme configuração padrão do Sentry, podem incluir IP. Não enviamos conteúdo de suas notas, marcações ou favoritos.',
-        en: 'We use Sentry to receive automatic reports when the app crashes or errors. These reports contain technical information (OS version, device model, code snippet that failed) and, per Sentry default configuration, may include IP. We do not send the content of your notes, highlights, or favorites.',
+        pt: 'Usamos Sentry apenas para relatórios de erro (crash reporting), sem gravação de sessão nem análise de comportamento. Esses relatórios contêm informações técnicas (versão do sistema, modelo do aparelho, trecho de código que falhou) e, conforme configuração padrão do Sentry, podem incluir IP. Não enviamos conteúdo de suas notas, marcações ou favoritos.',
+        en: 'We use Sentry only for crash reporting, with no session recording or behavior analytics. These reports contain technical information (OS version, device model, code snippet that failed) and, per Sentry default configuration, may include IP. We do not send the content of your notes, highlights, or favorites.',
       },
     },
     {

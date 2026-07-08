@@ -33,12 +33,12 @@
   <p>Se você decidir criar conta, coletamos:</p>
   <ul>
     <li><strong>Email</strong> e <strong>senha criptografada</strong> (gerenciados pelo Firebase Authentication, serviço do Google).</li>
-    <li><strong>Marcações, notas e favoritos</strong> que você cria nos seus estudos. Esses dados ficam armazenados no Firebase Firestore para sincronização entre seus dispositivos.</li>
+    <li><strong>Marcações e notas</strong> que você cria nos seus estudos. Esses dados ficam armazenados no Firebase Firestore para sincronização entre seus dispositivos. Seus <strong>favoritos</strong> ficam salvos apenas no próprio aparelho, não são enviados a servidores.</li>
   </ul>
   <p>Não pedimos nome completo, telefone, endereço, dados bancários nem qualquer outra informação pessoal.</p>
 
-  <h3>2.3 Diagnóstico anônimo (Sentry)</h3>
-  <p>Para detectar e corrigir bugs, usamos o serviço <strong>Sentry</strong>, que coleta automaticamente relatórios técnicos quando o aplicativo apresenta erros. Esses relatórios incluem dados anônimos sobre o aparelho (modelo, sistema operacional, versão do app) e o caminho do erro no código. Não contêm seu nome, email ou conteúdo de notas pessoais.</p>
+  <h3>2.3 Relatório de erros (Sentry)</h3>
+  <p>Para detectar e corrigir bugs, usamos o serviço <strong>Sentry</strong> apenas para relatórios de erro (crash reporting), sem gravação de sessão nem análise de comportamento. Ele coleta automaticamente relatórios técnicos quando o aplicativo apresenta erros. Esses relatórios incluem dados sobre o aparelho (modelo, sistema operacional, versão do app), o caminho do erro no código e, conforme a configuração padrão do Sentry, podem incluir o endereço IP. Não contêm seu nome, email ou conteúdo de notas pessoais.</p>
 
   <h3>2.4 Liturgia diária</h3>
   <p>O aplicativo consulta uma API pública (mantida pela comunidade) para baixar as leituras da Missa do dia, baseadas no calendário da CNBB. Essa consulta é feita pelo aparelho e não envia identificação pessoal.</p>
@@ -71,7 +71,7 @@
   <p>O aplicativo é classificado como Livre e pode ser usado por qualquer idade. Não coletamos conscientemente dados de menores de 13 anos. Se um pai ou responsável identificar que isso aconteceu, pode solicitar a exclusão pelo email acima.</p>
 
   <h2>7. Cookies, anúncios e rastreamento</h2>
-  <p>O aplicativo <strong>não exibe anúncios</strong>, não usa cookies de rastreamento, não tem pixel de Facebook, Google Ads ou similar. Não rastreamos seu comportamento de uso.</p>
+  <p>O aplicativo <strong>não exibe anúncios</strong>, não usa cookies de rastreamento, não tem pixel de Facebook, Google Ads ou similar. Não coletamos analytics de comportamento de uso. A única coleta automática é o relatório de erros descrito na seção 2.3.</p>
 
   <h2>8. Notificações</h2>
   <p>As notificações (versículo do dia, liturgia de domingo, lembretes opcionais) são agendadas localmente pelo aplicativo. Nada é enviado por servidores nossos. Você pode desativar a qualquer momento nas configurações do app ou do aparelho.</p>

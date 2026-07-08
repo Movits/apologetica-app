@@ -16,7 +16,7 @@ function getSlides(isEn) {
       title: isEn ? 'Welcome to APPologética' : 'Bem-vindo ao APPologética',
       body: isEn
         ? 'An app to defend and deepen your Catholic faith with historical, biblical and magisterial sources.'
-        : 'Um aplicativo para defender e aprofundar sua fé católica com fontes históricas, biblicas e magistério.',
+        : 'Um aplicativo para defender e aprofundar sua fé católica com fontes históricas, bíblicas e do magistério.',
       verse: isEn
         ? '"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have."'
         : '"Estai sempre prontos a responder a todo aquele que vos pedir razão da esperança que há em vós."',

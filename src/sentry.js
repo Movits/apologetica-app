@@ -13,11 +13,12 @@ export function initSentry() {
   try {
     Sentry.init({
       dsn: 'https://787cc318d8fe8083c42accd0e7866cc2@o4511423581650945.ingest.us.sentry.io/4511423587876864',
-      sendDefaultPii: true,
-      enableLogs: true,
-      replaysSessionSampleRate: 0.1,
-      replaysOnErrorSampleRate: 1,
-      integrations: [Sentry.mobileReplayIntegration(), Sentry.feedbackIntegration()],
+      // Crash-only: sem PII e sem gravacao de sessao, para bater com a politica
+      // de privacidade (o app nao rastreia comportamento de uso).
+      sendDefaultPii: false,
+      enableLogs: false,
+      replaysSessionSampleRate: 0,
+      replaysOnErrorSampleRate: 0,
     });
   } catch (e) {
     // Ignora: Sentry não está disponível neste ambiente
