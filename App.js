@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -59,6 +59,29 @@ const ArticlesNav = createNativeStackNavigator();
 const HomeNav = createNativeStackNavigator();
 const SettingsNav = createNativeStackNavigator();
 const ToolsNav = createNativeStackNavigator();
+
+// Deep links (apenas nativo). Espelha a arvore: MainTabs -> Inicio (HomeStack).
+// articleId/chapter viram numero (as telas comparam com ===). Ex.:
+//   appologetica://artigo/11  ·  .../dialogo/d-deus-criou  ·  .../biblia/jo/3
+const LINKING = Platform.OS === 'web' ? undefined : {
+  prefixes: ['appologetica://', 'https://movits.github.io/apologetica-app'],
+  config: {
+    screens: {
+      MainTabs: {
+        screens: {
+          'Início': {
+            screens: {
+              ArticleFromSearch: { path: 'artigo/:articleId', parse: { articleId: Number } },
+              RefDetail: 'referencia/:highlightId',
+              Dialogue: 'dialogo/:dialogueId',
+            },
+          },
+          'Bíblia': { path: 'biblia/:bookId/:chapter', parse: { chapter: Number } },
+        },
+      },
+    },
+  },
+};
 
 // Stack interno do tab Inicio: contem HomeScreen e as telas secundarias
 // (Favoritos, Glossario, Plano, Rosario, Exame, Highlights, Notes, Search, Liturgia).
@@ -372,6 +395,10 @@ function RootNavigation() {
   return (
     <NavigationContainer
       theme={navTheme}
+      // Deep links: abrir um artigo/referencia/dialogo/versiculo a partir de um
+      // link compartilhado (appologetica://... no app instalado). So no nativo,
+      // para nao interferir no roteamento por URL da versao web servida em /app.
+      linking={LINKING}
       // Título da aba do navegador (web): marca + seção, nunca o nome interno
       // da rota (ex.: "HomeMain"). No nativo é ignorado.
       documentTitle={{
