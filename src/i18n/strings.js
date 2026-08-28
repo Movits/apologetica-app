@@ -119,6 +119,7 @@ export const STRINGS = {
     'articles.references': 'Referências',
     'articles.referencesHint': 'Toque em qualquer referência para abrir o texto completo.',
     'articles.relatedTitle': 'Ver também',
+    'articles.objectionsTitle': 'Objeções respondidas',
     'articles.notAvailable': 'A tradução deste artigo para o inglês está em andamento.',
 
     // === Catechism ===
@@ -342,6 +343,7 @@ export const STRINGS = {
     'articles.references': 'References',
     'articles.referencesHint': 'Tap any reference to see the full text.',
     'articles.relatedTitle': 'See also',
+    'articles.objectionsTitle': 'Objections answered',
     'articles.notAvailable': 'English translation of this article is in progress.',
 
     // === Catechism ===

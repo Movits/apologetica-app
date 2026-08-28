@@ -166,6 +166,10 @@ function SettingsStackScreen() {
           não era tratado por nenhum navegador. */}
       <SettingsNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
       <SettingsNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
+      {/* O artigo lista no fim as objeções do Modo Diálogo que o respondem, e o tap
+          precisa resolver dentro da aba ativa. Mesma duplicação de rota já usada
+          para ArticleFromSearch e RefDetail. */}
+      <SettingsNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
     </SettingsNav.Navigator>
   );
 }
@@ -197,6 +201,12 @@ function ArticlesStackScreen() {
         name="RefDetail"
         component={RefDetailScreen}
         options={{ title: t('header.reference') }}
+      />
+      {/* Idem: as objeções respondidas no fim do artigo abrem aqui dentro. */}
+      <ArticlesNav.Screen
+        name="Dialogue"
+        component={DialogueScreen}
+        options={{ title: t('header.dialogue') }}
       />
       <ArticlesNav.Screen
         name="Glossary"
