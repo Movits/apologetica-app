@@ -10,12 +10,14 @@ npx expo start --lan           # iniciar (celular no mesmo Wi-Fi)
 npm run android                # abrir no emulador Android
 npm run ios                    # abrir no simulador iOS
 npm run web                    # abrir no navegador (react-native-web)
-npm run lint                   # ESLint em src/ (única verificação automatizada)
+npm run lint                   # ESLint em src/
+npm run check:refs             # valida os dados de referência (fonte, EN, urls)
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
-**Não há suíte de testes** (nem Jest, nem testes de nenhum tipo). `npm run lint`
-é a única checagem determinística disponível, então não procure por `npm test`.
+**Não há suíte de testes** (nem Jest, nem testes de nenhum tipo). `npm run lint` e
+`npm run check:refs` são as únicas checagens determinísticas, então não procure
+por `npm test`.
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
 disparados quando o usuário pedir explicitamente. Para revisar mudanças, prefira
@@ -98,9 +100,9 @@ mantenha esses dois em sincronia.
 - `articles/` — artigos divididos por categoria (existencia-deus, igreja-catolica, sagrada-escritura, moral, outras-religioes, historia-igreja). `articles/index.js` mescla tudo e aplica traduções EN. Cada artigo: `{ id (numérico, único no app inteiro), title, category, image (require local), imageAlt, imageCredit, imageAspect, imageHd (URL), summary, body (Markdown), references: [ids] }`.
 - `articles-en.js` — traduções em inglês dos artigos (`{ [id]: { titleEn, summaryEn, bodyEn } }`).
 - `articleRelations.js` — relações entre artigos para "Artigos relacionados".
-- `references.js` — versículos/Catecismo/documentos, com `id` em kebab-case (`'mt-16-18'`, `'cic-309'`). Refs bíblicas têm `bibleNav: { bookId, chapter, verse, verseEnd? }`; as não-bíblicas têm `url` para a fonte oficial. `originalLanguage` (opcional) traz palavra no original, transliteração, Strong's e significado.
+- `references.js` — versículos/Catecismo/documentos, com `id` em kebab-case (`'mt-16-18'`, `'cic-309'`). Refs bíblicas têm `bibleNav: { bookId, chapter, verse, verseEnd? }`; as não-bíblicas têm `url` para a fonte oficial. `originalLanguage` (opcional) traz palavra no original, transliteração, Strong's e significado. `citation` (opcional) traz os dados bibliográficos de um paper de forma estruturada e neutra de idioma (`{ kind, container, volume, pages, doi, arxiv, ... }`), e `media` (opcional) a ficha de uma foto ou vídeo histórico (`{ type, publishedIn, archive, license, viewUrl }`). O app não exibe a imagem: mídia é referência textual com link para o acervo.
 - `references-en.js` — traduções EN das referências (`{ [id]: { textEn, topicEn, ... } }`).
-- `referenceSources.js` — categorias de fonte das referências (Bíblia, Catecismo, ...).
+- `referenceSources.js` — as 7 categorias de fonte (Bíblia, Catecismo, Documentos, Teólogos, Ciência, Mídia, Outros) mais `translateSource` e `SOURCE_IDS`. **Uma referência com `source` fora dessa lista não aparece em lugar nenhum da tela, sem erro nem warning**, e é para isso que existe `npm run check:refs`.
 - `articleCategories.js` — categorias, ranking e "mais buscados" dos artigos.
 - `bible.js` — metadados dos 73 livros (id, apiId, name, short, testament, group, totalChapters, deutero).
 - `bibleAveMaria.js` — Bíblia Ave Maria completa. Formato: `{ bookId: [[v1,v2,...], ...] }`.
@@ -167,11 +169,16 @@ código": a verificação determinística aqui é o lint e o build, não scripts
 
 **1. Lint (verificação determinística):**
 ```bash
-npm run lint    # ESLint em src/ — precisa passar antes de commitar
+npm run lint          # ESLint em src/ — precisa passar antes de commitar
+npm run check:refs    # obrigatório ao mexer em references.js ou references-en.js
 ```
 Baseline atual: **0 erros e 14 warnings** (todos `react-hooks/exhaustive-deps`,
 pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
 contagem de warnings.
+
+`npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
+legada (hoje: 44 refs não bíblicas sem url, 75 sem tradução EN, 17 apontando para
+a Wikipédia). Esses números **só podem cair**.
 
 **2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**
 - `/code-review` — revisa o diff atual em busca de bugs de correção.

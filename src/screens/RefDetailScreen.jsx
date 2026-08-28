@@ -1,11 +1,13 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { references, translateRef, translateAuthor, translateYear } from '../data/references';
+import { references, translateRef, translateAuthor, translateYear, resolveRefUrl } from '../data/references';
 import { referencesEn } from '../data/references-en';
+import { translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
+import RefSourceBlock from '../components/RefSourceBlock';
 
 const VATICAN_BASE_PT = 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html';
 const VATICAN_BASE_EN = 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
@@ -50,6 +52,10 @@ export default function SearchedRefScreen({ route, navigation }) {
     if (!url) return;
     Linking.openURL(url).catch(() => {});
   };
+  // Resolve o destino do mesmo jeito que a lista de Referências. Antes esta tela
+  // abria item.url cru e ignorava urlEn, então a mesma referência levava a
+  // endereços diferentes conforme a tela de origem.
+  const sourceUrl = resolveRefUrl(item, en, isEn);
 
   // Catecismo: agora redireciona pro site do Vaticano (PT ou EN conforme idioma).
   const isCatechismRef = item.id?.startsWith('cic-');
@@ -69,10 +75,7 @@ export default function SearchedRefScreen({ route, navigation }) {
       >
         <View style={styles.card}>
           <View style={styles.badge}>
-            <Text style={styles.badgeText}>{(() => {
-              const m = { 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
-              return isEn ? (m[item.source] || item.source) : item.source;
-            })()}</Text>
+            <Text style={styles.badgeText}>{translateSource(item.source, isEn)}</Text>
           </View>
           <Text style={styles.cardRef}>{isEn ? (en.refEn || translateRef(item.ref, isEn)) : item.ref}</Text>
           <Text style={styles.cardFullSource}>{isEn ? (en.fullSourceEn || item.fullSource) : item.fullSource}</Text>
@@ -109,6 +112,8 @@ export default function SearchedRefScreen({ route, navigation }) {
               </View>
             )}
 
+            <RefSourceBlock item={item} />
+
             <View style={styles.actions}>
               {item.bibleNav && (
                 <TouchableOpacity
@@ -128,8 +133,8 @@ export default function SearchedRefScreen({ route, navigation }) {
                   <Text style={styles.actionTextPrimary}>{t('ref.openCatechism')}</Text>
                 </TouchableOpacity>
               )}
-              {item.url && !isCatechismRef && (
-                <TouchableOpacity style={styles.actionBtn} onPress={() => openUrl(item.url)}>
+              {sourceUrl && !isCatechismRef && (
+                <TouchableOpacity style={styles.actionBtn} onPress={() => openUrl(sourceUrl)}>
                   <Ionicons name="open-outline" size={16} color={colors.accent} />
                   <Text style={styles.actionText}>{t('ref.openSource')}</Text>
                 </TouchableOpacity>

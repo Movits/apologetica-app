@@ -221,6 +221,8 @@ export const STRINGS = {
     'source.Catecismo.desc': 'Catecismo da Igreja Católica',
     'source.Documentos.desc': 'Concílios, encíclicas e documentos',
     'source.Teólogos.desc': 'Padres, doutores e estudiosos',
+    'source.Ciência.desc': 'Artigos, estudos e achados científicos',
+    'source.Mídia.desc': 'Fotografias, filmagens e registros históricos',
     'source.Outros.desc': 'Fontes históricas e externas',
   },
 
@@ -442,6 +444,8 @@ export const STRINGS = {
     'source.Catecismo.desc': 'Catechism of the Catholic Church',
     'source.Documentos.desc': 'Councils, encyclicals and documents',
     'source.Teólogos.desc': 'Fathers, doctors and scholars',
+    'source.Ciência.desc': 'Papers, studies and scientific findings',
+    'source.Mídia.desc': 'Photographs, films and historical records',
     'source.Outros.desc': 'Historical and external sources',
   },
 };

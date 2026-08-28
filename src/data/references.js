@@ -3,6 +3,15 @@
 // Campo `url` aponta para fonte oficial (Vatican, etc.) para refs não-bíblicas.
 // Campo `originalLanguage` (opcional): palavra no original (grego/hebraico/aramaico)
 //   com transliteração, significado e número de Strong's Concordance.
+// Campo `citation` (opcional, fontes científicas): dados bibliográficos estruturados.
+//   { kind, container, volume, issue, pages, doi, arxiv, pmid, isbn, publisher,
+//     peerReviewed, openAccess }. São neutros de idioma de propósito: `Nature` e
+//   `306` não precisam de gêmeo `...En` em references-en.js, ao contrário do que
+//   acontece quando a citação vive dentro da prosa de `fullSource`.
+// Campo `media` (opcional, fotos e vídeos históricos): { type, publishedIn,
+//   archive, archiveId, license, viewUrl }. O app NÃO exibe a imagem: a
+//   referência é textual, `text` descreve o que a imagem mostra e `url` aponta
+//   para o acervo. Mesmo padrão de `arq-pilatos` e `ms-p52`.
 
 export const references = [
   // ============ BÍBLIA ============
@@ -2450,4 +2459,77 @@ export const translateYear = (year, isEn) => {
   y = y.replace(/\(conferência\)/g, '(lecture)');
   y = y.replace(/livro publicado em (\d{4})/g, 'book published in $1');
   return y;
+};
+
+// ---------- Citação científica ----------
+// Rótulo descritivo do tipo de publicação. É descrição da fonte, não nota de
+// credibilidade: o app não classifica o peso da alegação, só diz o que a fonte é.
+const CITATION_KIND_PT = {
+  'journal-article': 'Artigo em periódico revisado por pares',
+  'preprint': 'Preprint (ainda não revisado por pares)',
+  'book': 'Livro',
+  'chapter': 'Capítulo de livro',
+  'report': 'Relatório técnico',
+  'proceedings': 'Anais de congresso',
+  'thesis': 'Tese acadêmica',
+};
+const CITATION_KIND_EN = {
+  'journal-article': 'Peer-reviewed journal article',
+  'preprint': 'Preprint (not yet peer-reviewed)',
+  'book': 'Book',
+  'chapter': 'Book chapter',
+  'report': 'Technical report',
+  'proceedings': 'Conference proceedings',
+  'thesis': 'Academic thesis',
+};
+
+export const citationKindLabel = (c, isEn) =>
+  (c && ((isEn ? CITATION_KIND_EN : CITATION_KIND_PT)[c.kind] || null)) || null;
+
+// "Nature, vol. 306, p. 743-746 · doi:10.1038/306743a0"
+export const formatCitation = (c, isEn) => {
+  if (!c) return null;
+  const bits = [];
+  if (c.container) bits.push(c.container);
+  if (c.volume) bits.push(`vol. ${c.volume}`);
+  if (c.issue) bits.push(`${isEn ? 'no.' : 'n.'} ${c.issue}`);
+  if (c.pages) bits.push(`${isEn ? 'pp.' : 'p.'} ${c.pages}`);
+  if (c.publisher) bits.push(c.publisher);
+  const ids = [];
+  if (c.doi) ids.push(`doi:${c.doi}`);
+  if (c.arxiv) ids.push(`arXiv:${c.arxiv}`);
+  if (c.pmid) ids.push(`PMID ${c.pmid}`);
+  if (c.isbn) ids.push(`ISBN ${c.isbn}`);
+  return [bits.join(', '), ids.join(' · ')].filter(Boolean).join(' · ') || null;
+};
+
+// Link preferencial derivado do próprio dado: arXiv (texto livre) na frente do
+// DOI, que por sua vez sobrevive a migração de site da editora.
+export const citationUrl = (c) => {
+  if (!c) return null;
+  if (c.arxiv) return `https://arxiv.org/abs/${c.arxiv}`;
+  if (c.doi) return `https://doi.org/${c.doi}`;
+  if (c.pmid) return `https://pubmed.ncbi.nlm.nih.gov/${c.pmid}/`;
+  return null;
+};
+
+// ---------- Resolução de URL ----------
+// Fonte única para as duas telas. Antes ReferencesScreen reescrevia para inglês
+// e RefDetailScreen abria a url crua ignorando urlEn, então a mesma referência
+// abria destinos diferentes conforme a tela de origem.
+// As reescritas de idioma só valem para vatican.va e Wikipédia: aplicar /pt/ ou
+// _po.html a qualquer outro host quebraria a URL.
+export const resolveRefUrl = (item, en, isEn) => {
+  if (!item) return null;
+  const base = (isEn && en && en.urlEn) || item.url || citationUrl(item.citation)
+    || (item.media && item.media.viewUrl) || null;
+  if (!base || !isEn) return base;
+  if (base.includes('cathechism_po')) return 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
+  if (base.includes('vatican.va')) {
+    if (base.includes('_po.html')) return base.replace(/_po\.html/, '_en.html');
+    if (base.includes('/pt/')) return base.replace('/pt/', '/en/');
+    return base;
+  }
+  if (base.includes('pt.wikipedia.org')) return base.replace('pt.wikipedia.org', 'en.wikipedia.org');
+  return base;
 };
