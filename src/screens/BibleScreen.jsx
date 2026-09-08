@@ -29,7 +29,7 @@ import {
 // Por quanto tempo, depois de abrir um capitulo, ainda tentamos restaurar o
 // scroll salvo. Cobre o crescimento progressivo da FlatList sem atrapalhar
 // quem ja comecou a ler.
-const RESTORE_WINDOW_MS = 3000;
+const RESTORE_WINDOW_MS = 1500;
 
 const HIGHLIGHT_COLORS = [
   { key: 'yellow', value: '#fff3a6', labelPt: 'Marcar em amarelo', labelEn: 'Highlight in yellow' },
@@ -198,7 +198,22 @@ export default function BibleScreen({ route, navigation }) {
   // onLayout e por onContentSizeChange: a lista cresce em etapas, então não
   // desistimos na primeira tentativa — só quando o usuário arrasta ou a janela
   // de RESTORE_WINDOW_MS expira.
+  // Fallback de medição. No react-native-web, onLayout e onContentSizeChange
+  // só disparam quando o tamanho MUDA depois da montagem: um capítulo que já
+  // cabe inteiro na tela nunca cresce e portanto nunca é medido. Aqui lemos
+  // direto do nó de scroll. No nativo getScrollableNode devolve um handle
+  // numérico, sem clientHeight, então a checagem falha e caímos nos callbacks,
+  // que lá disparam normalmente.
+  const measureFromNode = useCallback(() => {
+    const node = verseListRef.current?.getScrollableNode?.();
+    if (!node || typeof node.clientHeight !== 'number' || node.clientHeight <= 0) return false;
+    verseLayoutH.current = node.clientHeight;
+    verseContentH.current = node.scrollHeight;
+    return true;
+  }, []);
+
   const tryRestore = useCallback(() => {
+    if (!verseLayoutH.current || !verseContentH.current) measureFromNode();
     const layout = verseLayoutH.current;
     const content = verseContentH.current;
     if (!layout || !content) return;
@@ -218,7 +233,7 @@ export default function BibleScreen({ route, navigation }) {
     }
     // Capítulo curto que cabe inteiro na tela: não há o que rolar, já está lido.
     if (scrollable <= 4) setChapterRatio(1);
-  }, []);
+  }, [measureFromNode]);
 
   // Recarrega "continue lendo" e estatísticas ao voltar para a lista de livros.
   useEffect(() => {
@@ -261,8 +276,11 @@ export default function BibleScreen({ route, navigation }) {
     verseContentH.current = 0;
     if (!shouldRestore) return undefined;
     // Rede de segurança: se as medidas chegarem antes da lista estar pronta,
-    // ainda tentamos algumas vezes dentro da janela.
-    const timers = [150, 500, 1200].map((ms) => setTimeout(tryRestore, ms));
+    // ainda tentamos algumas vezes dentro da janela. A última tentativa cai
+    // depois do fim da janela, para encerrar a pendência e acertar a barra em
+    // capítulos curtos, que cabem inteiros na tela e nunca crescem.
+    const timers = [150, 400, 900, RESTORE_WINDOW_MS + 100]
+      .map((ms) => setTimeout(tryRestore, ms));
     return () => timers.forEach(clearTimeout);
   }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore]);
 
