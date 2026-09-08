@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Platform } from 'react-native';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, TextInput, Modal, Platform, AppState } from 'react-native';
 import { notify } from '../utils/dialog';
 import * as Clipboard from 'expo-clipboard';
 import * as Speech from 'expo-speech';
@@ -18,6 +18,18 @@ import {
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
+import ReadingProgressBar from '../components/ReadingProgressBar';
+import ContinueBibleCard from '../components/ContinueBibleCard';
+import {
+  saveBiblePosition, getBiblePosition,
+  markChapterRead, getReadChapters, getBibleStats,
+  READ_THRESHOLD,
+} from '../utils/bibleProgress';
+
+// Por quanto tempo, depois de abrir um capitulo, ainda tentamos restaurar o
+// scroll salvo. Cobre o crescimento progressivo da FlatList sem atrapalhar
+// quem ja comecou a ler.
+const RESTORE_WINDOW_MS = 3000;
 
 const HIGHLIGHT_COLORS = [
   { key: 'yellow', value: '#fff3a6', labelPt: 'Marcar em amarelo', labelEn: 'Highlight in yellow' },
@@ -53,6 +65,31 @@ export default function BibleScreen({ route, navigation }) {
   const verseListRef = useRef(null);
   const booksScrollRef = useRef(null);
   const speakingRef = useRef(false);
+
+  // ===== Progresso de leitura (ver src/utils/bibleProgress.js) =====
+  // Quanto do capítulo atual já foi rolado (0..1), alimenta a barra do topo.
+  const [chapterRatio, setChapterRatio] = useState(0);
+  // Último ponto salvo, usado pelo card "Continue lendo" na lista de livros.
+  const [savedPosition, setSavedPosition] = useState(null);
+  // Capítulos já lidos DO LIVRO ABERTO (Set), para marcar a grade de capítulos.
+  const [readChapters, setReadChapters] = useState(new Set());
+  const [stats, setStats] = useState(null);
+  // Escrita em AsyncStorage é debounced: o scroll dispara dezenas de eventos.
+  const saveTimer = useRef(null);
+  const pendingSave = useRef(null);
+  // Altura da viewport e do conteúdo da lista. As duas chegam por callbacks
+  // independentes e em ordem imprevisível, por isso guardamos ambas e tentamos
+  // restaurar a partir de qualquer uma delas (ver tryRestore).
+  const verseLayoutH = useRef(0);
+  const verseContentH = useRef(0);
+  // Restauração de scroll pendente ({ ratio }) ao reabrir o capítulo onde parou.
+  // A FlatList renderiza por partes, então o alvo só é alcançável depois que a
+  // lista cresce: tentamos de novo a cada mudança de altura até o usuário rolar.
+  const pendingRestore = useRef(null);
+  // Marca que o scroll em curso fomos nós, para não confundir com o do usuário.
+  const programmaticScroll = useRef(false);
+  // Marcação de "lido": uma tentativa por capítulo.
+  const markedKey = useRef(null);
 
   // Scroll hints separados pra cada view (books / verses).
   // Só um deles está montado por vez, então não conflitam.
@@ -130,6 +167,173 @@ export default function BibleScreen({ route, navigation }) {
     if (view !== 'verses' || !book || !chapter) return null;
     return getChapter(book.id, chapter, lang);
   }, [view, book?.id, chapter, lang]);
+
+  // ===== Progresso de leitura =====
+  // bookId em variável própria (em vez de book?.id direto nas deps) para os
+  // hooks abaixo não dispararem o aviso de exhaustive-deps.
+  const bookId = book?.id ?? null;
+
+  // Debounced: o scroll dispara dezenas de eventos e cada um viraria uma escrita.
+  const queueSave = useCallback((bId, ch, ratio) => {
+    if (!bId || !ch) return;
+    pendingSave.current = { bookId: bId, chapter: ch, ratio };
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(() => {
+      saveTimer.current = null;
+      if (pendingSave.current) saveBiblePosition(pendingSave.current);
+    }, 500);
+  }, []);
+
+  // Grava na hora o que estiver pendente. Sem isso, quem fecha o app logo depois
+  // de rolar perderia os últimos 500 ms — justamente o ponto onde parou.
+  const flushSave = useCallback(() => {
+    if (saveTimer.current) { clearTimeout(saveTimer.current); saveTimer.current = null; }
+    if (pendingSave.current) {
+      saveBiblePosition(pendingSave.current);
+      pendingSave.current = null;
+    }
+  }, []);
+
+  // Tenta restaurar o scroll pendente com as medidas que já temos. Chamada por
+  // onLayout e por onContentSizeChange: a lista cresce em etapas, então não
+  // desistimos na primeira tentativa — só quando o usuário arrasta ou a janela
+  // de RESTORE_WINDOW_MS expira.
+  const tryRestore = useCallback(() => {
+    const layout = verseLayoutH.current;
+    const content = verseContentH.current;
+    if (!layout || !content) return;
+    const scrollable = content - layout;
+    const pending = pendingRestore.current;
+
+    if (pending) {
+      if (Date.now() <= pending.until) {
+        if (scrollable <= 4) return; // ainda não há o que rolar; tenta de novo depois
+        programmaticScroll.current = true;
+        setChapterRatio(pending.ratio);
+        verseListRef.current?.scrollToOffset({ offset: pending.ratio * scrollable, animated: false });
+        setTimeout(() => { programmaticScroll.current = false; }, 250);
+        return;
+      }
+      pendingRestore.current = null;
+    }
+    // Capítulo curto que cabe inteiro na tela: não há o que rolar, já está lido.
+    if (scrollable <= 4) setChapterRatio(1);
+  }, []);
+
+  // Recarrega "continue lendo" e estatísticas ao voltar para a lista de livros.
+  useEffect(() => {
+    if (view !== 'books') return;
+    let alive = true;
+    (async () => {
+      const [pos, st] = await Promise.all([getBiblePosition(), getBibleStats()]);
+      if (!alive) return;
+      setSavedPosition(pos);
+      setStats(st);
+    })();
+    return () => { alive = false; };
+  }, [view]);
+
+  // Capítulos já lidos do livro aberto, para pintar a grade de capítulos.
+  useEffect(() => {
+    if (!bookId) { setReadChapters(new Set()); return; }
+    let alive = true;
+    getReadChapters(bookId).then((s) => { if (alive) setReadChapters(s); });
+    return () => { alive = false; };
+  }, [bookId]);
+
+  // Troca de capítulo: grava o anterior, zera a barra e agenda a restauração
+  // do scroll se este for exatamente o capítulo onde o usuário havia parado.
+  // Deep link tem prioridade: com versículo destacado, quem rola é o outro efeito.
+  useEffect(() => {
+    flushSave();
+    setChapterRatio(0);
+    markedKey.current = null;
+    const pos = savedPosition;
+    const shouldRestore = pos && pos.bookId === bookId && pos.chapter === chapter
+      && pos.ratio > 0.01 && !highlightVerse;
+    // `until` limita a janela de tentativas: passado esse tempo a lista já parou
+    // de crescer, e insistir só atrapalharia quem começou a ler.
+    pendingRestore.current = shouldRestore
+      ? { ratio: pos.ratio, until: Date.now() + RESTORE_WINDOW_MS }
+      : null;
+    // Zera a altura do conteúdo para não restaurar com a medida do capítulo
+    // anterior enquanto o novo ainda não foi medido.
+    verseContentH.current = 0;
+    if (!shouldRestore) return undefined;
+    // Rede de segurança: se as medidas chegarem antes da lista estar pronta,
+    // ainda tentamos algumas vezes dentro da janela.
+    const timers = [150, 500, 1200].map((ms) => setTimeout(tryRestore, ms));
+    return () => timers.forEach(clearTimeout);
+  }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore]);
+
+  // Passou do limiar: marca como lido. Uma tentativa por capítulo (markedKey),
+  // já que o ratio continua mudando acima do limiar.
+  useEffect(() => {
+    if (view !== 'verses' || !bookId || !chapter) return;
+    if (chapterRatio < READ_THRESHOLD) return;
+    const key = `${bookId}:${chapter}`;
+    if (markedKey.current === key) return;
+    markedKey.current = key;
+    let alive = true;
+    markChapterRead(bookId, chapter).then((s) => { if (alive && s) setReadChapters(s); });
+    return () => { alive = false; };
+  }, [view, bookId, chapter, chapterRatio]);
+
+  // Sair da aba grava; sair do app também (blur não dispara ao ir pro background).
+  useEffect(() => {
+    const unsubBlur = navigation.addListener('blur', flushSave);
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state !== 'active') flushSave();
+    });
+    return () => { unsubBlur(); sub.remove(); };
+  }, [navigation, flushSave]);
+
+  useEffect(() => () => flushSave(), [flushSave]);
+
+  // Handlers da lista de versículos: compõem os do useScrollHints com o progresso.
+  // Arrasto do usuário cancela a restauração: a partir daí quem manda é ele.
+  // Fica em onScrollBeginDrag e não em onScroll porque a própria montagem da
+  // lista dispara um onScroll em offset 0, que cancelaria a restauração.
+  const onVerseScrollBeginDrag = useCallback(() => {
+    pendingRestore.current = null;
+  }, []);
+
+  const onVerseScroll = useCallback((e) => {
+    verseHints.onScroll(e);
+    const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
+    verseLayoutH.current = layoutMeasurement.height;
+    const scrollable = contentSize.height - layoutMeasurement.height;
+    const r = scrollable > 4 ? contentOffset.y / scrollable : 1;
+    const clamped = Math.max(0, Math.min(1, r));
+    setChapterRatio(clamped);
+    queueSave(bookId, chapter, clamped);
+  }, [verseHints, queueSave, bookId, chapter]);
+
+  const onVerseLayout = useCallback((e) => {
+    verseHints.onLayout(e);
+    verseLayoutH.current = e.nativeEvent.layout.height;
+    tryRestore();
+  }, [verseHints, tryRestore]);
+
+  const onVerseContentSize = useCallback((w, h) => {
+    verseHints.onContentSizeChange(w, h);
+    verseContentH.current = h;
+    tryRestore();
+  }, [verseHints, tryRestore]);
+
+  // Abre o capítulo salvo a partir do card "Continue lendo".
+  const resumeReading = useCallback(() => {
+    const pos = savedPosition;
+    if (!pos) return;
+    const b = BIBLE_BOOKS.find((x) => x.id === pos.bookId);
+    if (!b) return;
+    setBook(b);
+    setChapter(pos.chapter);
+    setHighlightVerse(null);
+    setHighlightVerseEnd(null);
+    setFromDeepLink(false);
+    setView('verses');
+  }, [savedPosition]);
 
   // Subscreve às marcações e notas deste capítulo
   useEffect(() => {
@@ -364,6 +568,19 @@ export default function BibleScreen({ route, navigation }) {
           />
         </View>
 
+        {savedPosition && !filterText.trim() && (() => {
+          const b = BIBLE_BOOKS.find((x) => x.id === savedPosition.bookId);
+          if (!b) return null;
+          return (
+            <ContinueBibleCard
+              label={`${bn(b)} ${savedPosition.chapter}`}
+              chapterRatio={savedPosition.ratio}
+              stats={stats}
+              onPress={resumeReading}
+            />
+          );
+        })()}
+
         <View style={{ flex: 1 }}>
         <ScrollView
           ref={booksScrollRef}
@@ -408,23 +625,44 @@ export default function BibleScreen({ route, navigation }) {
   // ===== CAPÍTULOS =====
   if (view === 'chapters' && book) {
     const allChapters = Array.from({ length: book.totalChapters }, (_, i) => i + 1);
+    const readCount = allChapters.filter((c) => readChapters.has(c)).length;
     return (
       <View style={styles.container}>
         <Text style={styles.bookHeader}>{bn(book)}</Text>
+        {readCount > 0 && (
+          <View style={styles.bookProgress}>
+            <View style={styles.bookProgressTrack}>
+              <View style={[styles.bookProgressFill, { width: `${(readCount / book.totalChapters) * 100}%` }]} />
+            </View>
+            <Text style={styles.bookProgressText}>
+              {readCount}/{book.totalChapters} {t('bible.chaptersRead')}
+            </Text>
+          </View>
+        )}
         <FlatList
           key="chapters-grid"
           data={allChapters}
           keyExtractor={(c) => String(c)}
           numColumns={5}
           contentContainerStyle={styles.chapterGrid}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.chapterCell}
-              onPress={() => { setChapter(item); setHighlightVerse(null); setView('verses'); setFromDeepLink(false); }}
-            >
-              <Text style={styles.chapterCellText}>{item}</Text>
-            </TouchableOpacity>
-          )}
+          renderItem={({ item }) => {
+            const isRead = readChapters.has(item);
+            return (
+              <TouchableOpacity
+                style={[styles.chapterCell, isRead && styles.chapterCellRead]}
+                onPress={() => { setChapter(item); setHighlightVerse(null); setView('verses'); setFromDeepLink(false); }}
+                accessibilityRole="button"
+                accessibilityLabel={isRead
+                  ? `${isEn ? 'Chapter' : 'Capítulo'} ${item}, ${t('bible.chapterDone')}`
+                  : `${isEn ? 'Chapter' : 'Capítulo'} ${item}`}
+              >
+                <Text style={[styles.chapterCellText, isRead && styles.chapterCellTextRead]}>{item}</Text>
+                {isRead && (
+                  <Ionicons name="checkmark" size={11} color={colors.accent} style={styles.chapterCheck} />
+                )}
+              </TouchableOpacity>
+            );
+          }}
         />
       </View>
     );
@@ -459,6 +697,9 @@ export default function BibleScreen({ route, navigation }) {
           </TouchableOpacity>
         </View>
 
+        {/* Progresso da leitura deste capítulo. Alimenta também o "continue lendo". */}
+        {!isEmpty && <ReadingProgressBar progress={chapterRatio} />}
+
         {isEmpty ? (
           <View style={styles.center}>
             <Ionicons name="time-outline" size={48} color={colors.textSubtle} />
@@ -478,9 +719,10 @@ export default function BibleScreen({ route, navigation }) {
             keyExtractor={(v) => String(v.n)}
             contentContainerStyle={styles.verseList}
             onScrollToIndexFailed={() => {}}
-            onScroll={verseHints.onScroll}
-            onContentSizeChange={verseHints.onContentSizeChange}
-            onLayout={verseHints.onLayout}
+            onScroll={onVerseScroll}
+            onScrollBeginDrag={onVerseScrollBeginDrag}
+            onContentSizeChange={onVerseContentSize}
+            onLayout={onVerseLayout}
             scrollEventThrottle={32}
             renderItem={({ item }) => {
               const isDeepLinked = highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse);
@@ -661,6 +903,15 @@ const makeStyles = (c, fs) =>
       borderWidth: 1, borderColor: c.accent,
     },
     chapterCellText: { color: c.primaryText, fontWeight: 'bold', fontSize: fs(15) },
+    // Capítulo já lido: fundo dourado suave + tique. A borda continua a mesma,
+    // então a grade não "pula" quando um capítulo muda de estado.
+    chapterCellRead: { backgroundColor: c.badgeBg },
+    chapterCellTextRead: { color: c.accent },
+    chapterCheck: { position: 'absolute', top: 3, right: 4 },
+    bookProgress: { paddingHorizontal: 16, marginBottom: 14 },
+    bookProgressTrack: { height: 4, borderRadius: 2, backgroundColor: c.divider, overflow: 'hidden' },
+    bookProgressFill: { height: '100%', backgroundColor: c.accent },
+    bookProgressText: { fontSize: fs(11), color: c.textSubtle, marginTop: 5 },
     verseHeader: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       paddingHorizontal: 16, paddingBottom: 8,
