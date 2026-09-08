@@ -128,7 +128,8 @@ mantenha esses dois em sincronia.
   - `notes` — `{ bookId, chapter, verseStart, verseEnd, text, createdAt, updatedAt }`.
   - `notebook` — `{ title, text, ... }` (páginas do caderno).
   - As funções `watch*` retornam `onSnapshot` em tempo real e devolvem o `unsubscribe`; sempre chame no cleanup do `useEffect`.
-- Favoritos e progresso de leitura NÃO estão no Firestore: são locais, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`).
+- Favoritos e progresso de leitura NÃO estão no Firestore: são locais, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`, `bibleProgress.js`). É de propósito: progresso muda a cada scroll, precisa valer no modo visitante e não vale uma escrita de rede.
+  - `readingProgress.js` e `lastRead.js` são de **artigos** (marcados como lidos, plano de leitura, último artigo aberto); `bibleProgress.js` é da **Bíblia** (capítulos lidos por livro e o ponto onde parou). São arquivos diferentes com nomes parecidos.
 - Modo visitante é suportado em todo o app: código que toca Firestore precisa tolerar `auth.currentUser === null` (as `watch*` já devolvem lista vazia).
 - Ao mudar a forma dos dados, revise `firestore.rules` junto.
 
