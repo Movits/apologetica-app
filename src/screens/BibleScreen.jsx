@@ -31,6 +31,17 @@ import {
 // quem ja comecou a ler.
 const RESTORE_WINDOW_MS = 1500;
 
+// Janela em que um scroll ainda conta como nosso, e nao como gesto do usuario.
+// O scroll suave do navegador leva ~300-500 ms; 1200 da folga sem engolir
+// gesto real, porque o toque promove por onTouchMove, independente do onScroll.
+const AUTO_SCROLL_WINDOW_MS = 1200;
+
+// Tempo minimo no capitulo antes de aceitar marca-lo como lido. Sem isto, um
+// capitulo curto que cabe inteiro na tela (Salmo 117 tem 2 versiculos) entra
+// como lido no instante em que abre, e um deep link que cai perto do fim
+// tambem. Nao existe forma de desmarcar, entao errar aqui e caro.
+const MARK_DWELL_MS = 2500;
+
 const HIGHLIGHT_COLORS = [
   { key: 'yellow', value: '#fff3a6', labelPt: 'Marcar em amarelo', labelEn: 'Highlight in yellow' },
   { key: 'green', value: '#c8f0c0', labelPt: 'Marcar em verde', labelEn: 'Highlight in green' },
@@ -73,6 +84,9 @@ export default function BibleScreen({ route, navigation }) {
   // no efeito seguinte, entao o efeito de marcacao via o capitulo NOVO com a
   // proporcao ANTIGA e marcava o capitulo como lido sozinho ao avancar.
   const [progresso, setProgresso] = useState({ chave: null, ratio: 0 });
+  // Vira true depois de MARK_DWELL_MS no capitulo; e dependencia do efeito de
+  // marcacao, entao a virada reavalia a marcacao sozinha.
+  const [passouTempoMinimo, setPassouTempoMinimo] = useState(false);
   // Último ponto salvo, usado pelo card "Continue lendo" na lista de livros.
   const [savedPosition, setSavedPosition] = useState(null);
   // Capítulos já lidos DO LIVRO ABERTO (Set), para marcar a grade de capítulos.
@@ -185,9 +199,9 @@ export default function BibleScreen({ route, navigation }) {
   const bookId = book?.id ?? null;
 
   // Debounced: o scroll dispara dezenas de eventos e cada um viraria uma escrita.
-  const queueSave = useCallback((bId, ch, ratio) => {
+  const queueSave = useCallback((bId, ch, ratio, lng) => {
     if (!bId || !ch) return;
-    pendingSave.current = { bookId: bId, chapter: ch, ratio };
+    pendingSave.current = { bookId: bId, chapter: ch, ratio, lang: lng };
     if (saveTimer.current) clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => {
       saveTimer.current = null;
@@ -280,9 +294,13 @@ export default function BibleScreen({ route, navigation }) {
     setProgresso({ chave: `${bookId}:${chapter}`, ratio: 0 });
     markedKey.current = null;
     userScrolled.current = false;
+    autoScroll.current = { target: -1, until: 0 };
     const pos = savedPosition;
     const shouldRestore = pos && pos.bookId === bookId && pos.chapter === chapter
-      && pos.ratio > 0.01 && !highlightVerse;
+      && pos.ratio > 0.01 && !highlightVerse
+      // O ratio e fracao do texto renderizado: restaurar 45% do portugues no
+      // ingles cai noutro versiculo. Posicao sem idioma e de antes desta versao.
+      && (!pos.lang || pos.lang === lang);
     // `until` limita a janela de tentativas: passado esse tempo a lista já parou
     // de crescer, e insistir só atrapalharia quem começou a ler.
     pendingRestore.current = shouldRestore
@@ -306,7 +324,15 @@ export default function BibleScreen({ route, navigation }) {
     const timers = [150, 400, 900, RESTORE_WINDOW_MS + 100]
       .map((ms) => setTimeout(tryRestore, ms));
     return () => timers.forEach(clearTimeout);
-  }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore]);
+  }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore, lang]);
+
+  // Conta o tempo de permanencia no capitulo aberto.
+  useEffect(() => {
+    setPassouTempoMinimo(false);
+    if (view !== 'verses' || !bookId || !chapter) return undefined;
+    const t = setTimeout(() => setPassouTempoMinimo(true), MARK_DWELL_MS);
+    return () => clearTimeout(t);
+  }, [view, bookId, chapter]);
 
   // Passou do limiar: marca como lido. Uma tentativa por capítulo (markedKey),
   // já que o ratio continua mudando acima do limiar.
@@ -315,6 +341,7 @@ export default function BibleScreen({ route, navigation }) {
     const chave = `${bookId}:${chapter}`;
     // A proporcao tem de ser DESTE capitulo, senao e sobra do anterior.
     if (progresso.chave !== chave || progresso.ratio < READ_THRESHOLD) return;
+    if (!passouTempoMinimo) return;
     // Abrir por link não conta como ler, senão cinco buscas viram cinco
     // capítulos com tique na grade e no contador do cânon. Um capítulo aberto
     // pela grade conta, mesmo sem arrasto: há curtos que cabem inteiros na tela.
@@ -325,7 +352,7 @@ export default function BibleScreen({ route, navigation }) {
     let alive = true;
     markChapterRead(bookId, chapter).then((s) => { if (alive && s) setReadChapters(s); });
     return () => { alive = false; };
-  }, [view, bookId, chapter, progresso, fromDeepLink]);
+  }, [view, bookId, chapter, progresso, fromDeepLink, passouTempoMinimo]);
 
   // Sair da aba grava; sair do app também (blur não dispara ao ir pro background).
   useEffect(() => {
@@ -333,7 +360,16 @@ export default function BibleScreen({ route, navigation }) {
     const sub = AppState.addEventListener('change', (state) => {
       if (state !== 'active') flushSave();
     });
-    return () => { unsubBlur(); sub.remove(); };
+    // Fechar a aba ou sair para outro site no Safari do iPhone nao dispara
+    // visibilitychange, que e o unico evento que o AppState da web escuta.
+    // So pagehide chega. Na web o AsyncStorage escreve sincrono, entao grava.
+    const naWeb = Platform.OS === 'web' && typeof window !== 'undefined';
+    if (naWeb) window.addEventListener('pagehide', flushSave);
+    return () => {
+      unsubBlur();
+      sub?.remove?.();
+      if (naWeb) window.removeEventListener('pagehide', flushSave);
+    };
   }, [navigation, flushSave]);
 
   useEffect(() => () => flushSave(), [flushSave]);
@@ -354,6 +390,11 @@ export default function BibleScreen({ route, navigation }) {
   const onVerseScroll = useCallback((e) => {
     verseHints.onScroll(e);
     const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
+    // O react-native-web dispara um onScroll atrasado (timer interno, sem
+    // cleanup no desmonte) que le o DOM na hora em que roda. Se a lista ja saiu
+    // de cena (troca de aba, volta pra grade), o no devolve tudo zero, e o
+    // fallback abaixo viraria ratio 1: capitulo marcado como lido sozinho.
+    if (!layoutMeasurement.height || !contentSize.height) return;
     verseLayoutH.current = layoutMeasurement.height;
     const scrollable = contentSize.height - layoutMeasurement.height;
     const r = scrollable > 4 ? contentOffset.y / scrollable : 1;
@@ -365,11 +406,13 @@ export default function BibleScreen({ route, navigation }) {
     // Scroll que nao veio de nos, e fora da janela do nosso proprio scroll, e
     // do usuario. Cobre roda do mouse, onde nao ha evento de toque.
     const auto = autoScroll.current;
-    const nossoScroll = Date.now() < auto.until && Math.abs(contentOffset.y - auto.target) < 8;
+    const naJanela = Date.now() < auto.until;
+    const nossoScroll = naJanela
+      && (auto.target == null || Math.abs(contentOffset.y - auto.target) < 8);
     if (!nossoScroll && contentOffset.y > 0) userScrolled.current = true;
 
-    if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped);
-  }, [verseHints, queueSave, bookId, chapter, fromDeepLink]);
+    if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped, lang);
+  }, [verseHints, queueSave, bookId, chapter, fromDeepLink, lang]);
 
   const onVerseLayout = useCallback((e) => {
     verseHints.onLayout(e);
@@ -440,15 +483,22 @@ export default function BibleScreen({ route, navigation }) {
     if (noteId) navigation.navigate('NoteEditor', { noteId });
   };
 
-  // Scroll até versículo destacado
+  // Scroll até versículo destacado (chegada por referência, busca, liturgia...).
+  // Este scroll é NOSSO e precisa armar o mesmo guarda da restauração, senão o
+  // onScroll que ele provoca é lido como gesto do usuário e a consulta passa a
+  // sobrescrever o "Continue lendo" — exatamente o que a separação entre ler e
+  // consultar existe para impedir.
   useEffect(() => {
-    if (!chapterData?.verses?.length || !highlightVerse) return;
+    if (!chapterData?.verses?.length || !highlightVerse) return undefined;
     const idx = chapterData.verses.findIndex((v) => v.n === highlightVerse);
-    if (idx >= 0 && verseListRef.current) {
-      setTimeout(() => {
-        verseListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.2 });
-      }, 350);
-    }
+    if (idx < 0 || !verseListRef.current) return undefined;
+    const timer = setTimeout(() => {
+      // Sem alvo em pixels: scrollToIndex resolve o offset por dentro, então
+      // dentro da janela qualquer posição conta como nossa.
+      autoScroll.current = { target: null, until: Date.now() + AUTO_SCROLL_WINDOW_MS };
+      verseListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.2 });
+    }, 350);
+    return () => clearTimeout(timer);
   }, [chapterData, highlightVerse]);
 
   const onLongPressVerse = (verse) => {
