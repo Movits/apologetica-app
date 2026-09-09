@@ -15,6 +15,7 @@ import CrossMark from '../components/CrossMark';
 import ImageZoomModal from '../components/ImageZoomModal';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
+import RelatedDialogues from '../components/RelatedDialogues';
 import MarkdownText from '../components/MarkdownText';
 import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
@@ -220,6 +221,10 @@ export default function ArticleDetailScreen({ route, navigation }) {
     hintScroll.onScroll(e);
   };
 
+  const openDialogue = (dialogueId) => {
+    navigation.navigate('Dialogue', { dialogueId });
+  };
+
   const openOtherArticle = (id) => {
     // push (não replace) pra preservar o histórico — voltar volta pro artigo anterior.
     navigation.push(route.name, { articleId: id });
@@ -346,6 +351,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
           </View>
         )}
 
+        <RelatedDialogues currentId={article.id} onOpen={openDialogue} />
         <RelatedArticles currentId={article.id} onOpen={openOtherArticle} />
         </View>
       </ScrollView>

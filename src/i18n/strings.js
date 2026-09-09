@@ -119,6 +119,7 @@ export const STRINGS = {
     'articles.references': 'Referências',
     'articles.referencesHint': 'Toque em qualquer referência para abrir o texto completo.',
     'articles.relatedTitle': 'Ver também',
+    'articles.objectionsTitle': 'Objeções respondidas',
     'articles.notAvailable': 'A tradução deste artigo para o inglês está em andamento.',
 
     // === Catechism ===
@@ -163,6 +164,14 @@ export const STRINGS = {
     'bible.markColor': 'Marcar com cor',
     'bible.annotate': 'Anotar',
     'bible.copy': 'Copiar',
+    'bible.continue': 'Continue lendo',
+    'bible.chaptersRead': 'capítulos lidos',
+    'bible.chapterDone': 'Capítulo lido',
+    'bible.markUnread': 'Marcar como não lido',
+    'bible.resetProgress': 'Zerar progresso da Bíblia',
+    'bible.resetProgressSub': 'Apaga os capítulos lidos e o ponto onde você parou',
+    'bible.resetConfirm': 'Zerar o progresso de leitura da Bíblia? Suas marcações e notas não são afetadas.',
+    'bible.resetDone': 'Progresso da Bíblia zerado.',
 
     // === Catechism Screen ===
 
@@ -223,6 +232,8 @@ export const STRINGS = {
     'source.Catecismo.desc': 'Catecismo da Igreja Católica',
     'source.Documentos.desc': 'Concílios, encíclicas e documentos',
     'source.Teólogos.desc': 'Padres, doutores e estudiosos',
+    'source.Ciência.desc': 'Artigos, estudos e achados científicos',
+    'source.Mídia.desc': 'Fotografias, filmagens e registros históricos',
     'source.Outros.desc': 'Fontes históricas e externas',
   },
 
@@ -342,6 +353,7 @@ export const STRINGS = {
     'articles.references': 'References',
     'articles.referencesHint': 'Tap any reference to see the full text.',
     'articles.relatedTitle': 'See also',
+    'articles.objectionsTitle': 'Objections answered',
     'articles.notAvailable': 'English translation of this article is in progress.',
 
     // === Catechism ===
@@ -386,6 +398,14 @@ export const STRINGS = {
     'bible.markColor': 'Mark with color',
     'bible.annotate': 'Note',
     'bible.copy': 'Copy',
+    'bible.continue': 'Continue reading',
+    'bible.chaptersRead': 'chapters read',
+    'bible.chapterDone': 'Chapter read',
+    'bible.markUnread': 'Mark as unread',
+    'bible.resetProgress': 'Reset Bible progress',
+    'bible.resetProgressSub': 'Clears read chapters and where you left off',
+    'bible.resetConfirm': 'Reset your Bible reading progress? Your highlights and notes are not affected.',
+    'bible.resetDone': 'Bible progress reset.',
 
     // === Catechism Screen ===
 
@@ -446,6 +466,8 @@ export const STRINGS = {
     'source.Catecismo.desc': 'Catechism of the Catholic Church',
     'source.Documentos.desc': 'Councils, encyclicals and documents',
     'source.Teólogos.desc': 'Fathers, doctors and scholars',
+    'source.Ciência.desc': 'Papers, studies and scientific findings',
+    'source.Mídia.desc': 'Photographs, films and historical records',
     'source.Outros.desc': 'Historical and external sources',
   },
 };

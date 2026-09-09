@@ -157,7 +157,7 @@ git push origin minha-melhoria
 
 ### Onde mexer no conteúdo
 - **Artigos:** `src/data/articles/<categoria>.js` (juntados por `src/data/articles/index.js`).
-- **Referências (versículos / Catecismo / documentos):** `src/data/references.js`.
+- **Referências (Bíblia, Catecismo, documentos, teólogos, ciência, mídia):** `src/data/references.js`, com as traduções em `src/data/references-en.js`. Depois de mexer, rode `npm run check:refs`.
 - **Traduções de textos da interface:** `src/i18n/strings.js`.
 
 ---

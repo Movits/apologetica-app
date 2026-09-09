@@ -2,18 +2,16 @@ import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { references, translateRef, translateAuthor, translateYear } from '../data/references';
+import { references, translateRef, translateAuthor, translateYear, resolveRefUrl } from '../data/references';
 import { referencesEn } from '../data/references-en';
-import { REFERENCE_SOURCES } from '../data/referenceSources';
+import { REFERENCE_SOURCES, translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
 import StickySectionList from '../components/StickySectionList';
 import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
-
-const SOURCES_EN = { 'Todos': 'All', 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
-const translateSource = (s, isEn) => (isEn ? (SOURCES_EN[s] || s) : s);
+import RefSourceBlock from '../components/RefSourceBlock';
 
 // Translate verbose Portuguese fullSource strings for Bible and Catechism entries.
 const FS_GOSPEL = {
@@ -143,6 +141,8 @@ const RefCard = memo(function RefCard({
             </View>
           )}
 
+          <RefSourceBlock item={item} />
+
           <View style={styles.actions}>
             {item.bibleNav && (
               <TouchableOpacity
@@ -153,8 +153,8 @@ const RefCard = memo(function RefCard({
                 <Text style={styles.actionTextPrimary}>{t('ref.readInApp')}</Text>
               </TouchableOpacity>
             )}
-            {item.url && (
-              <TouchableOpacity style={styles.actionBtn} onPress={() => onOpenUrl(isEn ? (item.urlEn || item.url) : item.url)}>
+            {resolveRefUrl(item, item, isEn) && (
+              <TouchableOpacity style={styles.actionBtn} onPress={() => onOpenUrl(resolveRefUrl(item, item, isEn))}>
                 <Ionicons name="open-outline" size={16} color={accent} />
                 <Text style={styles.actionText}>{t('ref.openSource')}</Text>
               </TouchableOpacity>
@@ -230,22 +230,11 @@ export default function ReferencesScreen({ route }) {
     setExpanded((prev) => (prev === id ? null : id));
   }, []);
 
+  // A resolução de idioma agora vive em resolveRefUrl, chamada no ponto de uso.
   const handleOpenUrl = useCallback((url) => {
     if (!url) return;
-    let finalUrl = url;
-    if (isEn) {
-      if (url.includes('cathechism_po')) {
-        finalUrl = 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
-      } else if (url.includes('_po.html')) {
-        finalUrl = url.replace(/_po\.html/, '_en.html');
-      } else if (url.includes('/pt/')) {
-        finalUrl = url.replace('/pt/', '/en/');
-      } else if (url.includes('pt.wikipedia.org')) {
-        finalUrl = url.replace('pt.wikipedia.org', 'en.wikipedia.org');
-      }
-    }
-    Linking.openURL(finalUrl).catch(() => {});
-  }, [isEn]);
+    Linking.openURL(url).catch(() => {});
+  }, []);
 
   const handleOpenInBible = useCallback(
     (nav) => {

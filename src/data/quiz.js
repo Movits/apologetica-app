@@ -975,7 +975,7 @@ export const QUIZ = [
     correct: 1,
     why: 'O Bureau Médico investiga cada caso com médicos especialistas, inclusive não-católicos. De 7.000 curas relatadas, apenas ~70 foram reconhecidas como milagres após exame rigoroso.',
     whyEn: 'The Medical Bureau investigates each case with specialist physicians, including non-Catholics. Of 7,000 reported cures, only ~70 were recognized as miracles after rigorous examination.',
-    relatedArticle: 30,
+    relatedArticle: 55,
   },
   {
     id: 'q-apologetica-ref',

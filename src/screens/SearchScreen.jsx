@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
 import { references } from '../data/references';
+import { translateSource } from '../data/referenceSources';
 import { DAILY_VERSES } from '../data/dailyVerses';
 import { searchBible } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
@@ -220,8 +221,7 @@ export default function SearchScreen({ navigation }) {
     }
     if (item.type === 'reference') {
       const r = item.item;
-      const srcMap = { 'Bíblia': 'Bible', 'Catecismo': 'Catechism', 'Documentos': 'Documents', 'Teólogos': 'Theologians', 'Outros': 'Others' };
-      const src = isEn ? (srcMap[r.source] || r.source) : r.source;
+      const src = translateSource(r.source, isEn);
       return (
         <TouchableOpacity style={styles.card} onPress={() => openReference(r.id)}>
           <View style={styles.cardIcon}>

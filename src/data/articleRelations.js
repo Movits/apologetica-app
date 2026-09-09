@@ -74,6 +74,10 @@ export const RELATED_ARTICLES = {
   34: [31, 5, 17],       // Ressurreição contradições → Contradições, Ressurreição (fato), Trilema
   35: [5, 17, 34],       // Jesus existiu → Ressurreição, Trilema, Ressurreição contradições
   36: [15, 16, 27, 35],  // Cristianismo copiou pagãs → Islã, Espiritismo, TJ, Jesus existiu
+
+  // PENDÊNCIA: os artigos 56 a 83 ainda não têm relações definidas, então o
+  // bloco "Ver também" aparece vazio neles (um terço do corpus).
+  76: [4, 49, 55],       // Canonização → Maria intercessora, Milagres Eucarísticos, Aparições como evidência
 };
 
 export function getRelatedArticles(articleId, allArticles) {

@@ -41,6 +41,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Pega referência com source inválido, que sumiria da tela sem nenhum erro.
+      - name: Check references data
+        run: node scripts/check-refs.mjs
+
       - name: Export web build
         env:
           PAGES_BASE_URL: /apologetica-app/app
