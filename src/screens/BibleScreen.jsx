@@ -19,6 +19,8 @@ import { useScrollHints } from '../hooks/useScrollHints';
 import ScrollHint from '../components/ScrollHint';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 import ReadingProgressBar from '../components/ReadingProgressBar';
+import BibleLoadingState from '../components/BibleLoadingState';
+import { useBibleReady } from '../hooks/useBibleReady';
 import ContinueBibleCard from '../components/ContinueBibleCard';
 import {
   saveBiblePosition, getBiblePosition,
@@ -57,6 +59,10 @@ export default function BibleScreen({ route, navigation }) {
   const bn = (b) => bookName(b, isEn);
   const bs = (b) => bookShort(b, isEn);
   const requireAccount = useRequireAccount();
+  // A tradução vem num pedaço separado na web (ver src/services/bibleApi.js).
+  // Enquanto ela não chega, getChapter devolve null: sem isto a tela mostraria
+  // "capítulo em preparação", que significa outra coisa.
+  const bibliaPronta = useBibleReady(lang);
   const [view, setView] = useState('books');
   const [book, setBook] = useState(null);
   const [chapter, setChapter] = useState(null);
@@ -190,8 +196,9 @@ export default function BibleScreen({ route, navigation }) {
 
   const chapterData = useMemo(() => {
     if (view !== 'verses' || !book || !chapter) return null;
+    if (!bibliaPronta.pronta) return null;
     return getChapter(book.id, chapter, lang);
-  }, [view, book?.id, chapter, lang]);
+  }, [view, book?.id, chapter, lang, bibliaPronta.pronta]);
 
   // ===== Progresso de leitura =====
   // bookId em variável própria (em vez de book?.id direto nas deps) para os
@@ -784,7 +791,11 @@ export default function BibleScreen({ route, navigation }) {
   if (view === 'verses' && book && chapter) {
     const hasPrev = chapter > 1;
     const hasNext = chapter < book.totalChapters;
-    const isEmpty = !chapterData?.verses?.length;
+    // Três situações diferentes, que antes cairiam todas no mesmo texto:
+    //   aguardando  -> a tradução ainda está sendo baixada (ou falhou)
+    //   isEmpty     -> a tradução está aqui, mas este capítulo não foi adicionado
+    const aguardando = !bibliaPronta.pronta;
+    const isEmpty = !aguardando && !chapterData?.verses?.length;
     const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter - 1); setFromDeepLink(false); } };
     const goNext = () => { if (hasNext) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter + 1); setFromDeepLink(false); } };
 
@@ -810,9 +821,11 @@ export default function BibleScreen({ route, navigation }) {
         </View>
 
         {/* Progresso da leitura deste capítulo. Alimenta também o "continue lendo". */}
-        {!isEmpty && <ReadingProgressBar progress={progresso.chave === `${bookId}:${chapter}` ? progresso.ratio : 0} />}
+        {!isEmpty && !aguardando && <ReadingProgressBar progress={progresso.chave === `${bookId}:${chapter}` ? progresso.ratio : 0} />}
 
-        {isEmpty ? (
+        {aguardando ? (
+          <BibleLoadingState erro={bibliaPronta.erro} onTentarDeNovo={bibliaPronta.tentarDeNovo} />
+        ) : isEmpty ? (
           <View style={styles.center}>
             <Ionicons name="time-outline" size={48} color={colors.textSubtle} />
             <Text style={styles.errorText}>{t('bible.chapterPrep')}</Text>

@@ -7,7 +7,7 @@ import { db, auth } from '../services/firebase';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { addNote, updateNote, removeNote } from '../services/userData';
 import { getBook, bookName } from '../data/bible';
-import { getChapter } from '../services/bibleApi';
+import { getChapter, ensureBible } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { shareNote } from '../utils/share';
@@ -18,6 +18,10 @@ import { shareNote } from '../utils/share';
 export default function NoteEditorScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
+  // O editor em si não precisa da Bíblia: só o compartilhar, que monta o texto
+  // do versículo. Como ele roda dentro do gesto do usuário (o navigator.share
+  // exige isso), não dá para esperar ali: carregamos antes, ao abrir a nota.
+  useEffect(() => { ensureBible(isEn ? 'en' : 'pt').catch(() => {}); }, [isEn]);
   const insets = useSafeAreaInsets();
   const { noteId, bookId, chapter, verseStart, verseEnd } = route.params || {};
   const [text, setText] = useState('');

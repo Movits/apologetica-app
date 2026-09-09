@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, Modal, Pressable, StyleSheet, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
@@ -7,7 +7,7 @@ import { articles } from '../data/articles';
 import { references, translateRef } from '../data/references';
 import { referencesEn } from '../data/references-en';
 import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
-import { getChapter } from '../services/bibleApi';
+import { getChapter, ensureBible } from '../services/bibleApi';
 
 // Modal para inserir uma referência no caderno. Retorna o token via onPick:
 //   versículo  -> @[Mt 16,18](v:mt/16/18)
@@ -16,6 +16,10 @@ import { getChapter } from '../services/bibleApi';
 export default function ReferencePickerModal({ visible, onClose, onPick }) {
   const { colors, fs } = useTheme();
   const { isEn } = useLanguage();
+  // Aqui a Bíblia serve só para validar o número máximo do versículo, e a
+  // validação já cai para "aceita qualquer um" se o dado não estiver lá. Então
+  // não vale bloquear a interface: basta pedir o carregamento e seguir.
+  useEffect(() => { ensureBible(isEn ? 'en' : 'pt').catch(() => {}); }, [isEn]);
   const styles = makeStyles(colors, fs);
 
   const [tab, setTab] = useState('verse');

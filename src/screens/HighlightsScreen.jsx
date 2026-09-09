@@ -5,6 +5,8 @@ import { watchHighlights, removeHighlight } from '../services/userData';
 import { confirmAction } from '../utils/dialog';
 import { getBook, bookName } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
+import { useBibleReady } from '../hooks/useBibleReady';
+import BibleLoadingState from '../components/BibleLoadingState';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
@@ -15,6 +17,9 @@ import ScrollHint from '../components/ScrollHint';
 export default function HighlightsScreen({ navigation }) {
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
+  // Cada linha mostra o texto do versículo marcado. Sem a tradução carregada
+  // as marcações apareceriam com o texto vazio, o que parece dado perdido.
+  const biblia = useBibleReady(isEn ? 'en' : 'pt');
   const { user, exitGuest } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -73,6 +78,16 @@ export default function HighlightsScreen({ navigation }) {
         >
           <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: fs(14) }}>{t('auth.signup')}</Text>
         </TouchableOpacity>
+      </View>
+    );
+  }
+
+  // Antes da lista: sem a tradução, cada marcação apareceria com o texto do
+  // versículo vazio, o que parece dado perdido em vez de carregamento.
+  if (!biblia.pronta) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <BibleLoadingState erro={biblia.erro} onTentarDeNovo={biblia.tentarDeNovo} />
       </View>
     );
   }

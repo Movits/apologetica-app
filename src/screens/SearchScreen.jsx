@@ -7,6 +7,7 @@ import { references } from '../data/references';
 import { translateSource } from '../data/referenceSources';
 import { DAILY_VERSES } from '../data/dailyVerses';
 import { searchBible } from '../services/bibleApi';
+import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -104,6 +105,11 @@ export default function SearchScreen({ navigation }) {
     setHistory([]);
   }, []);
 
+  // A busca full-text varre a tradução inteira, que na web é baixada sob
+  // demanda. Sem esperar, searchBible devolveria [] e a tela diria "Nada
+  // encontrado" por um motivo que não é esse.
+  const biblia = useBibleReady(isEn ? 'en' : 'pt');
+
   const results = useMemo(() => {
     const q = debouncedQuery.trim();
     if (q.length < 3) return { articles: [], references: [], verses: [], bible: [] };
@@ -112,9 +118,9 @@ export default function SearchScreen({ navigation }) {
       references: referenceIndex.search(q).slice(0, 10).map((h) => h.item),
       verses: verseIndex.search(q).slice(0, 8).map((h) => h.item),
       // Busca full-text na Bíblia inteira (offline), no idioma ativo.
-      bible: searchBible(q, { language: isEn ? 'en' : 'pt', limit: 20 }),
+      bible: biblia.pronta ? searchBible(q, { language: isEn ? 'en' : 'pt', limit: 20 }) : [],
     };
-  }, [debouncedQuery, isEn]);
+  }, [debouncedQuery, isEn, biblia.pronta]);
 
   const totalHits = results.articles.length + results.references.length + results.verses.length + results.bible.length;
   const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
@@ -293,7 +299,9 @@ export default function SearchScreen({ navigation }) {
       {!busy && debouncedQuery.length >= 3 && totalHits === 0 && (
         <View style={styles.empty}>
           <Ionicons name="search-outline" size={48} color={colors.textSubtle} />
-          <Text style={styles.emptyTitle}>{t('search.empty')}</Text>
+          <Text style={styles.emptyTitle}>
+            {biblia.pronta ? t('search.empty') : t('bible.loading')}
+          </Text>
           {suggestion ? (
             <TouchableOpacity onPress={openSuggestion} style={styles.suggestionBtn}>
               <Text style={styles.emptySub}>{isEn ? 'Did you mean:' : 'Você quis dizer:'}</Text>

@@ -70,13 +70,20 @@ jobs:
           BUNDLE=$(basename "$(ls _site/app/_expo/static/js/web/AppEntry-*.js | head -1)")
           printf '{"bundle":"%s"}\n' "$BUNDLE" > _site/app/version.json
           echo "version.json aponta para $BUNDLE"
-          # Sem isto o GitHub Pages devolve o proprio 404 em qualquer caminho
-          # abaixo de /app/, em vez de deixar o app abrir. O <base> e necessario
-          # porque o 404.html e servido NA URL pedida: sem ele, os caminhos
-          # relativos (manifest, icones, version.json) resolveriam a partir da
-          # pasta errada.
-          sed 's|<head>|<head><base href="/apologetica-app/app/">|' \
-            _site/app/index.html > _site/app/404.html
+          # Fallback de SPA. O GitHub Pages serve o 404.html da RAIZ do site
+          # publicado, nunca um aninhado: a versao anterior ficava em
+          # _site/app/404.html e por isso NUNCA era usada. Medido no ar: um
+          # caminho abaixo de /app/ devolvia a pagina de erro do proprio GitHub.
+          #
+          # O <base> e necessario porque este arquivo e servido NA URL PEDIDA:
+          # sem ele os caminhos relativos (manifest, icones, version.json)
+          # resolveriam a partir da pasta errada.
+          #
+          # O script manda para a landing quem caiu aqui por um endereco que nao
+          # e do app, para o 404 do site nao virar "abre o app pra qualquer
+          # caminho errado".
+          sed -e 's|<head>|<head><base href="/apologetica-app/app/"><script>if(!location.pathname.startsWith("/apologetica-app/app/")){location.replace("/apologetica-app/");}</script>|' \
+            _site/app/index.html > _site/404.html
           touch _site/.nojekyll
 
       - name: Upload Pages artifact

@@ -1,11 +1,51 @@
 import { getBook, bookName } from '../data/bible';
-import { AVEMARIA } from '../data/bibleAveMaria';
-import { DRA } from '../data/bibleDouayRheims';
 
-// Tudo bundled localmente:
-//   - Português: Bíblia Ave Maria completa (73 livros, ~4 MB)
-//   - Inglês: Douay-Rheims-Challoner (73 livros, ~4.5 MB)
-// Resposta síncrona, sem rede, sem cache.
+// As duas Bíblias pesavam 2,81 MB dos 4,44 MB que a versão web transferia: 63%
+// do download inicial, sempre as duas, mesmo para quem lê num idioma só, e tudo
+// isso antes de aparecer a primeira palavra na tela. Agora cada tradução é um
+// pedaço separado, carregado quando a Bíblia é aberta de verdade.
+//
+// getChapter e searchBible CONTINUAM SÍNCRONOS de propósito. Torná-los
+// assíncronos espalharia promessas por lugares onde isso é ruim: o renderItem
+// da tela de Marcações chamaria uma por linha, e o compartilhar de nota perderia
+// o gesto do usuário que o navigator.share exige. Em vez disso quem vai exibir
+// texto bíblico chama ensureBible(lang) antes (ver src/hooks/useBibleReady.js);
+// depois de carregado, o acesso é o mesmo de sempre.
+//
+// No nativo o import() é resolvido em tempo de build e o dado continua dentro do
+// app: nada de rede, o offline segue igual.
+
+let AVEMARIA = null;
+let DRA = null;
+// Uma promessa por idioma, guardada para que N telas pedindo ao mesmo tempo
+// gerem um download só.
+const carregando = {};
+
+function jaCarregada(lang) {
+  return lang === 'en' ? DRA !== null : AVEMARIA !== null;
+}
+
+export function isBibleLoaded(language = 'pt') {
+  return jaCarregada(language === 'en' ? 'en' : 'pt');
+}
+
+// Carrega a tradução do idioma pedido. Idempotente e seguro para chamadas
+// concorrentes. Rejeita se o pedaço não vier (rede caiu no meio), e nesse caso
+// a promessa é descartada para permitir nova tentativa.
+export function ensureBible(language = 'pt') {
+  const lang = language === 'en' ? 'en' : 'pt';
+  if (jaCarregada(lang)) return Promise.resolve();
+  if (!carregando[lang]) {
+    carregando[lang] = (lang === 'en'
+      ? import('../data/bibleDouayRheims').then((m) => { DRA = m.DRA; })
+      : import('../data/bibleAveMaria').then((m) => { AVEMARIA = m.AVEMARIA; })
+    ).catch((err) => {
+      delete carregando[lang];
+      throw err;
+    });
+  }
+  return carregando[lang];
+}
 
 // Retorna { total, verses: [{n, t}], source, language } ou null.
 // `language` pode ser 'pt' ou 'en'. Fallback automático para PT se EN não estiver disponível.
@@ -26,12 +66,15 @@ export function getChapter(bookId, chapter, language = 'pt') {
         };
       }
     }
-    // se EN pedido mas indisponível, devolve PT marcado como fallback
-    const fallback = getChapter(bookId, chapter, 'pt');
+    // se EN pedido mas indisponível, devolve PT marcado como fallback (só
+    // funciona se o PT também já tiver sido carregado; senão devolve null e a
+    // tela mostra o estado de carregamento).
+    const fallback = AVEMARIA ? getChapter(bookId, chapter, 'pt') : null;
     if (fallback) return { ...fallback, language: 'pt', fallback: true };
     return null;
   }
 
+  if (!AVEMARIA) return null;
   const bookData = AVEMARIA[bookId];
   if (!bookData) return null;
 
