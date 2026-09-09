@@ -5,6 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { captureException } from '../sentry';
 import * as Speech from 'expo-speech';
+import Constants from 'expo-constants';
+import { getBuildId } from '../utils/webUpdate';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useScrollHints } from '../hooks/useScrollHints';
@@ -31,6 +33,15 @@ const FONT_OPTIONS = [
   { key: 'grande', label: 'Grande', sample: 18 },
   { key: 'enorme', label: 'Enorme', sample: 21 },
 ];
+
+// Versao real do app.json (antes ficava '1.4.0' fixo aqui, e nem batia com a
+// config). No web, mostra tambem os 7 primeiros caracteres do commit publicado,
+// que e a unica forma de saber qual build o aparelho esta rodando.
+const appVersion = Constants.expoConfig?.version || '?';
+const buildLabel = (() => {
+  const id = getBuildId();
+  return id && id !== 'dev' ? id.slice(0, 7) : null;
+})();
 
 export default function SettingsScreen() {
   const navigation = useNavigation();
@@ -599,7 +610,10 @@ export default function SettingsScreen() {
 
       <View style={styles.aboutBox}>
         <Text style={styles.aboutTitle}>APPologética</Text>
-        <Text style={styles.aboutVersion}>{isEn ? 'Version' : 'Versão'} 1.4.0</Text>
+        <Text style={styles.aboutVersion}>
+          {isEn ? 'Version' : 'Versão'} {appVersion}
+          {buildLabel ? ` · ${buildLabel}` : ''}
+        </Text>
         <Text style={styles.aboutText}>
           {isEn
             ? 'App for study and evangelization. Apologetics articles, biblical references, complete Catholic Bible, synced highlights and notes.'

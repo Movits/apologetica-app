@@ -14,6 +14,12 @@ on:
       - 'app.config.js'
       - 'package.json'
       - 'package-lock.json'
+      - 'public/**'
+      # Estes mudam o bundle sem tocar em src/: sem eles, um ajuste de build
+      # nao chegava ao aparelho de ninguem.
+      - 'metro.config.js'
+      - 'babel.config.js'
+      - 'scripts/**'
       - '.github/workflows/deploy-web.yml'
   workflow_dispatch:
 
@@ -48,9 +54,6 @@ jobs:
       - name: Export web build
         env:
           PAGES_BASE_URL: /apologetica-app/app
-          # Vai parar em extra.buildId dentro do bundle (ver app.config.js) e no
-          # version.json publicado ao lado, que o app compara na abertura.
-          GITHUB_SHA: ${{ github.sha }}
         run: npx expo export -p web
 
       - name: Assemble Pages site
@@ -59,10 +62,14 @@ jobs:
           cp docs/*.html _site/
           if [ -d fotos ]; then cp -r fotos _site/fotos; fi
           cp -r dist _site/app
-          # Identidade deste build, servida ao lado do app. Se o Safari entregar
-          # um index.html velho do cache, o bundle antigo le este arquivo, ve um
-          # sha diferente do seu e recarrega uma vez.
-          printf '{"buildId":"%s"}\n' "${{ github.sha }}" > _site/app/version.json
+          # Identidade deste build: o NOME DO ARQUIVO DO BUNDLE, que carrega
+          # hash do conteudo e muda exatamente quando o codigo muda. Nao usamos
+          # o sha do commit porque o Metro cacheia a config resolvida e dois
+          # builds seguidos sairam com o mesmo id nos testes locais, o que
+          # deixaria a verificacao sempre calada.
+          BUNDLE=$(basename "$(ls _site/app/_expo/static/js/web/AppEntry-*.js | head -1)")
+          printf '{"bundle":"%s"}\n' "$BUNDLE" > _site/app/version.json
+          echo "version.json aponta para $BUNDLE"
           # Sem isto o GitHub Pages devolve o proprio 404 em qualquer caminho
           # abaixo de /app/, em vez de deixar o app abrir. O <base> e necessario
           # porque o 404.html e servido NA URL pedida: sem ele, os caminhos
