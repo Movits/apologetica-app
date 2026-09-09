@@ -165,6 +165,10 @@ export function AuthProvider({ children }) {
         'favorites:articles', 'reading:read', 'reading:plan',
         'reading:plan:fundamentos', 'reading:plan:aprofundamento',
         'notifications:prefs', 'search:history',
+        // Progresso da Bíblia: capítulos lidos e o ponto onde parou. Sem isto,
+        // depois de "excluir a conta em definitivo" o aparelho continuava
+        // mostrando "Continue lendo" e os tiques do usuário excluído.
+        'bible:position', 'bible:read',
       ]).catch(() => {});
       await deleteUser(u);
       setGuest(false);

@@ -68,7 +68,11 @@ export default function BibleScreen({ route, navigation }) {
 
   // ===== Progresso de leitura (ver src/utils/bibleProgress.js) =====
   // Quanto do capítulo atual já foi rolado (0..1), alimenta a barra do topo.
-  const [chapterRatio, setChapterRatio] = useState(0);
+  // A proporcao lida anda junto do capitulo a que pertence. Guardar so o numero
+  // abria uma corrida: `chapter` muda num render e o reset da proporcao so vinha
+  // no efeito seguinte, entao o efeito de marcacao via o capitulo NOVO com a
+  // proporcao ANTIGA e marcava o capitulo como lido sozinho ao avancar.
+  const [progresso, setProgresso] = useState({ chave: null, ratio: 0 });
   // Último ponto salvo, usado pelo card "Continue lendo" na lista de livros.
   const [savedPosition, setSavedPosition] = useState(null);
   // Capítulos já lidos DO LIVRO ABERTO (Set), para marcar a grade de capítulos.
@@ -86,8 +90,15 @@ export default function BibleScreen({ route, navigation }) {
   // A FlatList renderiza por partes, então o alvo só é alcançável depois que a
   // lista cresce: tentamos de novo a cada mudança de altura até o usuário rolar.
   const pendingRestore = useRef(null);
-  // Marca que o scroll em curso fomos nós, para não confundir com o do usuário.
-  const programmaticScroll = useRef(false);
+  // Leitura x consulta. Chegar num capítulo por busca, referência, liturgia ou
+  // qualquer deep link é CONSULTA: não move o "continue lendo" nem marca lido.
+  // Vira leitura no primeiro arrasto do usuário dentro do capítulo.
+  const userScrolled = useRef(false);
+  // Alvo e prazo do scroll que NOS disparamos (restauracao / deep link), para
+  // nao confundi-lo com o do usuario quando so temos o evento onScroll.
+  const autoScroll = useRef({ target: -1, until: 0 });
+  // Chave do capitulo aberto, para os callbacks de medicao que rodam fora do render.
+  const chaveAtual = useRef(null);
   // Marcação de "lido": uma tentativa por capítulo.
   const markedKey = useRef(null);
 
@@ -223,16 +234,21 @@ export default function BibleScreen({ route, navigation }) {
     if (pending) {
       if (Date.now() <= pending.until) {
         if (scrollable <= 4) return; // ainda não há o que rolar; tenta de novo depois
-        programmaticScroll.current = true;
-        setChapterRatio(pending.ratio);
-        verseListRef.current?.scrollToOffset({ offset: pending.ratio * scrollable, animated: false });
-        setTimeout(() => { programmaticScroll.current = false; }, 250);
+        setProgresso({ chave: chaveAtual.current, ratio: pending.ratio });
+        const alvo = pending.ratio * scrollable;
+        autoScroll.current = { target: alvo, until: Date.now() + 600 };
+        verseListRef.current?.scrollToOffset({ offset: alvo, animated: false });
+        // Consome a pendência: restaurada uma vez, não se repete. Sem isso,
+        // sair do capítulo e voltar rebobinava para o ponto antigo, porque
+        // savedPosition em memória continuava com o valor de quando a lista
+        // de livros foi montada.
+        pendingRestore.current = null;
         return;
       }
       pendingRestore.current = null;
     }
     // Capítulo curto que cabe inteiro na tela: não há o que rolar, já está lido.
-    if (scrollable <= 4) setChapterRatio(1);
+    if (scrollable <= 4) setProgresso({ chave: chaveAtual.current, ratio: 1 });
   }, [measureFromNode]);
 
   // Recarrega "continue lendo" e estatísticas ao voltar para a lista de livros.
@@ -261,8 +277,9 @@ export default function BibleScreen({ route, navigation }) {
   // Deep link tem prioridade: com versículo destacado, quem rola é o outro efeito.
   useEffect(() => {
     flushSave();
-    setChapterRatio(0);
+    setProgresso({ chave: `${bookId}:${chapter}`, ratio: 0 });
     markedKey.current = null;
+    userScrolled.current = false;
     const pos = savedPosition;
     const shouldRestore = pos && pos.bookId === bookId && pos.chapter === chapter
       && pos.ratio > 0.01 && !highlightVerse;
@@ -273,8 +290,15 @@ export default function BibleScreen({ route, navigation }) {
       : null;
     // Zera a altura do conteúdo para não restaurar com a medida do capítulo
     // anterior enquanto o novo ainda não foi medido.
+    chaveAtual.current = `${bookId}:${chapter}`;
     verseContentH.current = 0;
-    if (!shouldRestore) return undefined;
+    if (!shouldRestore) {
+      // Sem restauração pendente, começa do topo. Sem isso o offset do capítulo
+      // anterior vaza: indo de Salmos 118 (176 versículos) para o 119 (7), o
+      // scroll é truncado no novo máximo e o capítulo entra como lido sozinho.
+      if (!highlightVerse) verseListRef.current?.scrollToOffset({ offset: 0, animated: false });
+      return undefined;
+    }
     // Rede de segurança: se as medidas chegarem antes da lista estar pronta,
     // ainda tentamos algumas vezes dentro da janela. A última tentativa cai
     // depois do fim da janela, para encerrar a pendência e acertar a barra em
@@ -288,14 +312,20 @@ export default function BibleScreen({ route, navigation }) {
   // já que o ratio continua mudando acima do limiar.
   useEffect(() => {
     if (view !== 'verses' || !bookId || !chapter) return;
-    if (chapterRatio < READ_THRESHOLD) return;
+    const chave = `${bookId}:${chapter}`;
+    // A proporcao tem de ser DESTE capitulo, senao e sobra do anterior.
+    if (progresso.chave !== chave || progresso.ratio < READ_THRESHOLD) return;
+    // Abrir por link não conta como ler, senão cinco buscas viram cinco
+    // capítulos com tique na grade e no contador do cânon. Um capítulo aberto
+    // pela grade conta, mesmo sem arrasto: há curtos que cabem inteiros na tela.
+    if (fromDeepLink && !userScrolled.current) return;
     const key = `${bookId}:${chapter}`;
     if (markedKey.current === key) return;
     markedKey.current = key;
     let alive = true;
     markChapterRead(bookId, chapter).then((s) => { if (alive && s) setReadChapters(s); });
     return () => { alive = false; };
-  }, [view, bookId, chapter, chapterRatio]);
+  }, [view, bookId, chapter, progresso, fromDeepLink]);
 
   // Sair da aba grava; sair do app também (blur não dispara ao ir pro background).
   useEffect(() => {
@@ -312,8 +342,13 @@ export default function BibleScreen({ route, navigation }) {
   // Arrasto do usuário cancela a restauração: a partir daí quem manda é ele.
   // Fica em onScrollBeginDrag e não em onScroll porque a própria montagem da
   // lista dispara um onScroll em offset 0, que cancelaria a restauração.
-  const onVerseScrollBeginDrag = useCallback(() => {
+  // Promove consulta a leitura. Tres gatilhos porque nenhum cobre tudo:
+  //   onScrollBeginDrag  -> nativo (no react-native-web NAO dispara)
+  //   onTouchMove        -> toque, que e o caso do Safari no iPhone
+  //   heuristica no onScroll -> roda do mouse e trackpad no desktop
+  const marcarLeitura = useCallback(() => {
     pendingRestore.current = null;
+    userScrolled.current = true;
   }, []);
 
   const onVerseScroll = useCallback((e) => {
@@ -323,9 +358,18 @@ export default function BibleScreen({ route, navigation }) {
     const scrollable = contentSize.height - layoutMeasurement.height;
     const r = scrollable > 4 ? contentOffset.y / scrollable : 1;
     const clamped = Math.max(0, Math.min(1, r));
-    setChapterRatio(clamped);
-    queueSave(bookId, chapter, clamped);
-  }, [verseHints, queueSave, bookId, chapter]);
+    setProgresso({ chave: `${bookId}:${chapter}`, ratio: clamped });
+    // Consulta não move o "continue lendo": uma busca que cai em Apocalipse 22
+    // não pode apagar o ponto de quem estava lendo Gênesis 15. Ao arrastar, o
+    // usuário promove aquilo a leitura e a gravação passa a valer.
+    // Scroll que nao veio de nos, e fora da janela do nosso proprio scroll, e
+    // do usuario. Cobre roda do mouse, onde nao ha evento de toque.
+    const auto = autoScroll.current;
+    const nossoScroll = Date.now() < auto.until && Math.abs(contentOffset.y - auto.target) < 8;
+    if (!nossoScroll && contentOffset.y > 0) userScrolled.current = true;
+
+    if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped);
+  }, [verseHints, queueSave, bookId, chapter, fromDeepLink]);
 
   const onVerseLayout = useCallback((e) => {
     verseHints.onLayout(e);
@@ -676,7 +720,7 @@ export default function BibleScreen({ route, navigation }) {
               >
                 <Text style={[styles.chapterCellText, isRead && styles.chapterCellTextRead]}>{item}</Text>
                 {isRead && (
-                  <Ionicons name="checkmark" size={11} color={colors.accent} style={styles.chapterCheck} />
+                  <Ionicons name="checkmark" size={11} color={colors.accentText} style={styles.chapterCheck} />
                 )}
               </TouchableOpacity>
             );
@@ -716,7 +760,7 @@ export default function BibleScreen({ route, navigation }) {
         </View>
 
         {/* Progresso da leitura deste capítulo. Alimenta também o "continue lendo". */}
-        {!isEmpty && <ReadingProgressBar progress={chapterRatio} />}
+        {!isEmpty && <ReadingProgressBar progress={progresso.chave === `${bookId}:${chapter}` ? progresso.ratio : 0} />}
 
         {isEmpty ? (
           <View style={styles.center}>
@@ -738,7 +782,8 @@ export default function BibleScreen({ route, navigation }) {
             contentContainerStyle={styles.verseList}
             onScrollToIndexFailed={() => {}}
             onScroll={onVerseScroll}
-            onScrollBeginDrag={onVerseScrollBeginDrag}
+            onScrollBeginDrag={marcarLeitura}
+            onTouchMove={marcarLeitura}
             onContentSizeChange={onVerseContentSize}
             onLayout={onVerseLayout}
             scrollEventThrottle={32}
@@ -925,7 +970,7 @@ const makeStyles = (c, fs) =>
     // Capítulo já lido: fundo dourado suave + tique. A borda continua a mesma,
     // então a grade não "pula" quando um capítulo muda de estado.
     chapterCellRead: { backgroundColor: c.badgeBg },
-    chapterCellTextRead: { color: c.accent },
+    chapterCellTextRead: { color: c.accentText },
     chapterCheck: { position: 'absolute', top: 3, right: 4 },
     bookProgress: { paddingHorizontal: 16, marginBottom: 14 },
     bookProgressTrack: { height: 4, borderRadius: 2, backgroundColor: c.divider, overflow: 'hidden' },

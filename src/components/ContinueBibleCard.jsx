@@ -54,7 +54,7 @@ const makeStyles = (c, fs) =>
       justifyContent: 'center', alignItems: 'center', paddingLeft: 2,
     },
     label: {
-      fontSize: fs(10), color: c.accent, fontWeight: 'bold',
+      fontSize: fs(10), color: c.accentText, fontWeight: 'bold',
       textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2,
     },
     title: { fontSize: fs(14), color: c.primaryText, fontWeight: '600' },
