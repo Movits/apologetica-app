@@ -48,6 +48,9 @@ jobs:
       - name: Export web build
         env:
           PAGES_BASE_URL: /apologetica-app/app
+          # Vai parar em extra.buildId dentro do bundle (ver app.config.js) e no
+          # version.json publicado ao lado, que o app compara na abertura.
+          GITHUB_SHA: ${{ github.sha }}
         run: npx expo export -p web
 
       - name: Assemble Pages site
@@ -56,6 +59,17 @@ jobs:
           cp docs/*.html _site/
           if [ -d fotos ]; then cp -r fotos _site/fotos; fi
           cp -r dist _site/app
+          # Identidade deste build, servida ao lado do app. Se o Safari entregar
+          # um index.html velho do cache, o bundle antigo le este arquivo, ve um
+          # sha diferente do seu e recarrega uma vez.
+          printf '{"buildId":"%s"}\n' "${{ github.sha }}" > _site/app/version.json
+          # Sem isto o GitHub Pages devolve o proprio 404 em qualquer caminho
+          # abaixo de /app/, em vez de deixar o app abrir. O <base> e necessario
+          # porque o 404.html e servido NA URL pedida: sem ele, os caminhos
+          # relativos (manifest, icones, version.json) resolveriam a partir da
+          # pasta errada.
+          sed 's|<head>|<head><base href="/apologetica-app/app/">|' \
+            _site/app/index.html > _site/app/404.html
           touch _site/.nojekyll
 
       - name: Upload Pages artifact

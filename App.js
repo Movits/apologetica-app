@@ -49,9 +49,14 @@ import ErrorBoundary from './src/components/ErrorBoundary';
 import { AccountPromptProvider } from './src/components/AccountPrompt';
 import { useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
+import { checkForWebUpdate } from './src/utils/webUpdate';
 
 // Inicializa o Sentry (no-op na web e no Expo Go — ver src/sentry.js / sentry.web.js).
 initSentry();
+
+// No app web, confere logo na abertura se o Safari serviu uma versao velha do
+// cache (comum no atalho da tela de inicio do iPhone). No nativo e no-op.
+checkForWebUpdate();
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  Template do HTML do app web. O `expo export -p web` usa este arquivo e injeta
+  sozinho o <script> do bundle e o <link rel="icon">, respeitando o baseUrl.
+
+  Todos os caminhos daqui são RELATIVOS de propósito: em produção o app é
+  servido em /apologetica-app/app/ e em dev na raiz. Caminho absoluto quebraria
+  num dos dois.
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>APPologética</title>
+    <meta name="description" content="Evangelização e apologética católica: artigos com fontes, Bíblia completa, Catecismo, liturgia e ferramentas de estudo." />
+
+    <!-- Instalação na tela de início -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1a3a5c" />
+
+    <!-- iOS ignora o manifest para o ícone e para o modo standalone: precisa
+         destas metas próprias. O apple-touch-icon tem de ser PNG opaco, e o
+         iOS aplica o arredondamento sozinho. -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- "black" e nao "black-translucent" de proposito: translucent joga o
+         conteudo por baixo da barra de status, o que exige viewport-fit=cover
+         mais safe-area funcionando no modo standalone. Sem poder testar isso
+         num iPhone real, o translucent arriscaria esconder o header do app
+         atras do relogio. Com "black" a barra fica opaca e o app comeca abaixo. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="APPologética" />
+
+    <!-- O react-native-web recomenda este reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+      }
+      /* O scroll é sempre de um <ScrollView>/<FlatList>, nunca do body. */
+      body {
+        overflow: hidden;
+        /* Evita o realce cinza ao tocar, que no Safari do iPhone faz o app
+           parecer página em vez de aplicativo. */
+        -webkit-tap-highlight-color: transparent;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+      /* Pinta o fundo já no HTML com o navy da splash: sem isto o iPhone mostra
+         um retângulo branco entre abrir o ícone e o bundle montar a tela. */
+      html,
+      body,
+      #root {
+        background-color: #1a3a5c;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Este aplicativo precisa de JavaScript para funcionar.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

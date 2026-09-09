@@ -9,5 +9,13 @@ module.exports = ({ config }) => {
   if (baseUrl) {
     merged.experiments = { ...(merged.experiments || {}), baseUrl };
   }
+  // Identidade do build, gravada dentro do bundle. O app web compara com o
+  // version.json servido ao lado (ver src/utils/webUpdate.web.js) para saber
+  // que o Safari lhe entregou uma versão velha do cache, o que acontece
+  // principalmente no atalho da tela de início do iPhone.
+  merged.extra = {
+    ...(merged.extra || {}),
+    buildId: process.env.GITHUB_SHA || 'dev',
+  };
   return merged;
 };

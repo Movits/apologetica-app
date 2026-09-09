@@ -65,4 +65,20 @@ makeIcon({ size: 512, bg: NAVY, cross: GOLD, save: 'assets/splash-icon.png' });
 // Favicon (web, caso tenha — opcional)
 makeIcon({ size: 48, bg: NAVY, cross: GOLD, save: 'assets/favicon.png' });
 
-console.log('\nIcones gerados em assets/');
+// ===== Icones do app web (PWA) =====
+// Vao para public/, que o `expo export -p web` copia inteiro para dist/.
+// O iOS ignora o manifest para o icone da tela de inicio: ele usa
+// apple-touch-icon, que precisa ser PNG opaco de 180x180 e SEM cantos
+// arredondados (o proprio iOS arredonda e aplica o brilho).
+makeIcon({ size: 180, bg: NAVY, cross: GOLD, save: 'public/icons/apple-touch-icon.png' });
+
+// Android e o instalador do Chrome leem estes dois do manifest.
+makeIcon({ size: 192, bg: NAVY, cross: GOLD, save: 'public/icons/icon-192.png' });
+makeIcon({ size: 512, bg: NAVY, cross: GOLD, save: 'public/icons/icon-512.png' });
+
+// Maskable: o Android recorta em circulo/squircle e come as bordas, entao a
+// cruz precisa caber na zona segura (80% central). Como makeIcon desenha a
+// cruz a 66% da altura, ela ja cabe com folga.
+makeIcon({ size: 512, bg: NAVY, cross: GOLD, save: 'public/icons/icon-maskable-512.png' });
+
+console.log('\nIcones gerados em assets/ e public/icons/');
