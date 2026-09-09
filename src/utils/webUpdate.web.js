@@ -15,16 +15,37 @@
 
 const CHAVE_SESSAO = 'appg:updateReloaded';
 
-// Nome do arquivo do bundle que ESTA rodando, lido da própria tag <script>.
-function bundleEmExecucao() {
+// A tag <script> do bundle é a única referência estável que temos: o Expo a
+// escreve com caminho ABSOLUTO, já resolvido para o baseUrl do deploy.
+function tagDoBundle() {
   try {
     const tags = Array.from(document.querySelectorAll('script[src]'));
-    const tag = tags.find((s) => /AppEntry-[^/]+\.js$/.test(s.getAttribute('src') || ''));
-    if (!tag) return null;
-    return tag.getAttribute('src').split('/').pop();
+    return tags.find((s) => /AppEntry-[^/]+\.js$/.test(s.getAttribute('src') || '')) || null;
   } catch {
     return null;
   }
+}
+
+// Nome do arquivo do bundle que ESTA rodando.
+function bundleEmExecucao() {
+  const tag = tagDoBundle();
+  return tag ? tag.getAttribute('src').split('/').pop() : null;
+}
+
+// Raiz onde o app está servido, derivada do src do bundle
+// (.../app/_expo/static/js/web/AppEntry-x.js -> .../app/).
+//
+// Não dá para buscar 'version.json' relativo ao documento: assim que a
+// navegação por URL for ligada na web, o endereço ganha profundidade
+// (/app/MainTabs/Biblia) e o relativo passa a apontar para
+// /app/MainTabs/version.json, que não existe. A verificação morreria calada.
+function raizDoApp() {
+  const tag = tagDoBundle();
+  if (!tag) return null;
+  const src = tag.getAttribute('src') || '';
+  const corte = src.indexOf('_expo/');
+  if (corte < 0) return null;
+  return src.slice(0, corte);
 }
 
 // Usado na tela de Ajustes: os primeiros caracteres do hash identificam o build
@@ -45,9 +66,11 @@ export async function checkForWebUpdate() {
     // propósito: não existe caminho que leve a um laço de recarregamento.
     if (window.sessionStorage?.getItem(CHAVE_SESSAO)) return;
 
-    // Relativo ao documento (o app vive em /apologetica-app/app/), e no-store
-    // para não comparar cache com cache.
-    const resp = await fetch('version.json', { cache: 'no-store' });
+    // Ancorado na raiz do app, não no documento, e no-store para não comparar
+    // cache com cache.
+    const raiz = raizDoApp();
+    if (raiz === null) return;
+    const resp = await fetch(`${raiz}version.json`, { cache: 'no-store' });
     if (!resp.ok) return;
 
     const { bundle } = await resp.json();
