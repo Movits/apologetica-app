@@ -208,10 +208,9 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .pager svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
 /* onboarding e login */
-.full{position:absolute;inset:0;background:var(--bg) url("../../assets/design/luz-claro.jpg") center/cover no-repeat}
-:root[data-theme="dark"] .full{background-image:url("../../assets/design/luz-escuro.jpg")}
-.full::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,240,232,0) 40%,var(--bg) 78%)}
-:root[data-theme="dark"] .full::after{background:linear-gradient(180deg,rgba(13,23,34,0) 40%,var(--bg) 78%)}
+.full{position:absolute;inset:0;background:var(--bg)}
+.full::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 34% at 50% 0%,rgba(201,168,76,.10),rgba(201,168,76,0) 70%)}
+:root[data-theme="dark"] .full::after{background:radial-gradient(70% 34% at 50% 0%,rgba(212,184,106,.08),rgba(212,184,106,0) 70%)}
 .onb{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:60px var(--s6) 44px}
 .pills{display:flex;justify-content:flex-end;gap:var(--s2)}
 .pill{height:36px;padding:0 var(--s3);border-radius:999px;background:var(--material-strong);display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--text)}
@@ -220,7 +219,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .cross{width:28px;height:36px;position:relative;margin:0 0 var(--s2)}
 .cross::before,.cross::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
 .cross::before{left:11px;top:0;width:6px;height:36px}.cross::after{left:0;top:9px;width:28px;height:6px}
-.onb h1{font-family:var(--font-display);font-weight:600;font-size:44px;line-height:1;margin:0;letter-spacing:-.01em}
+.onb h1{font-family:var(--font-display);font-weight:600;font-size:40px;line-height:1;margin:0;letter-spacing:-.01em}
 .onb .lead{font-size:17px;line-height:24px;margin:0;color:var(--text)}
 .onb .quote{font-family:var(--font-reading);font-style:italic;font-size:17px;line-height:26px;color:var(--text-2);margin:var(--s2) 0 0;padding-left:var(--s4);border-left:2px solid var(--gold)}
 .onb .quote cite{display:block;font-style:normal;font-family:var(--font-ui);font-size:13px;margin-top:var(--s1)}
@@ -482,7 +481,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   <!-- ===================== ONBOARDING ===================== -->
   <section class="section" id="onboarding">
     <h2>Onboarding</h2>
-    <p class="lead">A luz gerada na Fase 3 é o fundo, e o texto é o que fala. Uma promessa que o app cumpre: “Saiba responder”, sem “em menos de um minuto”. O botão “Pular” tem 44 px de altura e a tela só aparece na primeira vez.</p>
+    <p class="lead">Quieto como o resto do app: fundo creme, um brilho quase imperceptível no topo e a tipografia falando sozinha. Uma promessa que o app cumpre: “Saiba responder”, sem “em menos de um minuto”. O botão “Pular” tem 44 px de altura e a tela só aparece na primeira vez.</p>
     <ul class="findings">
       <li>Antes: aparece em toda abertura para visitante; “Ver a resposta” cai no Login; pergunta do passo 2 descartada.</li>
       <li>Depois: uma vez só, “Ver a resposta” abre a resposta como visitante, passo 2 removido.</li>
@@ -513,7 +512,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
           </div>
           <div class="home-ind"></div>
         </div>
-        <p class="frame-note">Fundo: asset “luz” gerado na Fase 3 (versão creme no claro, navy no escuro). No aparelho, o loop de vídeo substitui a imagem quando reduce motion está desligado.</p>
+        <p class="frame-note">Sem imagem de fundo. Os assets de luz da Fase 3 ficam como opção só para o splash, se quiser.</p>
       </div>
     </div>
   </section>
@@ -607,7 +606,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
     </div>
     <h3 style="margin:32px 0 12px;font-family:var(--font-display);font-size:24px;font-weight:600">Assets da Fase 3</h3>
     <div class="assets">
-      <figure><img src="../../assets/design/luz-claro.jpg" alt=""><figcaption>Luz, versão creme (onboarding, login)</figcaption></figure>
+      <figure><img src="../../assets/design/luz-claro.jpg" alt=""><figcaption>Luz, versão creme (opcional: splash)</figcaption></figure>
       <figure><img src="../../assets/design/luz-escuro.jpg" alt=""><figcaption>Luz, versão navy</figcaption></figure>
       <figure><img src="../../assets/design/estacao-advento.jpg" alt=""><figcaption>Advento</figcaption></figure>
       <figure><img src="../../assets/design/estacao-natal.jpg" alt=""><figcaption>Natal</figcaption></figure>
