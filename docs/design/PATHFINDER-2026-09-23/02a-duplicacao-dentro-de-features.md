@@ -232,3 +232,160 @@ Fora do escopo interno: `searchRow`/`input`/botão limpar `:249-272` + `:350-366
 Fora do escopo interno: mensagens do gate em `AccountPrompt.jsx:18-22` (F2-11); `segment` do picker `:249-253` vs `ReadingPlanScreen.jsx:161-165` (F4); `contentContainerStyle` padding 16/40 (F4-9, F7-17); `useScrollHints` em 3 telas (F1); `#c0392b` (F2-8).
 
 ---
+
+## F11. Ajustes e Legal
+
+`screens/SettingsScreen.jsx` (846 linhas), `LegalScreen.jsx`, `components/WebDownloadBanner.jsx`.
+
+| ID | O que se repete | Locais | Divergências | Custo | Tipo |
+|---|---|---|---|---|---|
+| F11-1 | Linha de configuração montada à mão 16 vezes (`row` + `rowLeft` + ícone 22 + `rowLabel` + opcional `rowSub` + trailing) | `SettingsScreen.jsx:256`, `:269`, `:296`, `:329`, `:363`, `:395`, `:415`, `:433`, `:451`, `:470`, `:497`, `:503`, `:547`, `:574`, `:589`, `:599` (estilos `:815-821`) | Variantes: `row` puro com `Switch` (`:256`, `:395`, `:415`, `:433`, `:451`); coluna com override inline `{ flexDirection: 'column', alignItems: 'flex-start' \| 'stretch' }` (`:269`, `:296`, `:329`, `:363`); `TouchableOpacity` com chevron 18 (`:329`, `:589`, `:599`), com `open-outline` (`:574`) ou sem trailing (`:470`, `:497`, `:503`, `:547`); `rowLabel` com cor inline `#c0392b` (`:500`, `:506`) | Médio: `SettingsRow({ icon, label, sub, trailing, children, onPress, danger })`; é a tela inteira | Acidental |
+| F11-2 | `Switch` com `trackColor={{ true: colors.accent, false: '#ccc' }}` e `thumbColor="#fff"` | `:264`, `:410`, `:428`, `:446`, `:464` | Nenhuma; `'#ccc'` e `'#fff'` fora da paleta | Baixo: `ThemedSwitch` | Acidental |
+| F11-3 | Os chips `fontGrid`/`fontChip`/`fontChipActive`/`fontChipLabel` servem 3 grupos de escolha única com 3 formatos de opção | `:274-292` (fonte, `FONT_OPTIONS` com `label` PT fixo e `sample`), `:307-324` (idioma, dois botões escritos à mão), `:371-388` (velocidade, `RATE_OPTIONS` `:653-658` com `labelPt`/`labelEn`) | Nome do estilo é "font" para todos; o de idioma não passa por lista | Baixo: `ChoiceChips({ options, value, onChange })` com opções `{ key, label }` | Acidental |
+| F11-4 | Quatro toggles com o mesmo esqueleto (se ligar, pedir permissão; `setNotifPrefs` otimista; chamar `setXEnabled`) | `:123-131`, `:133-141`, `:143-150`, `:152-159` | Só versículo e liturgia checam `res.ok` (`:130`, `:140`); quiz e objeção ignoram | Baixo: `makeToggle(field, setter)` | Acidental |
+| F11-5 | Prévia de voz: `Speech.stop()` + `Speech.speak(frase, { language, voice, rate, pitch })` | `:96-104` (`previewVoice`), `:106-116` (`changeRate`) | Frase e velocidade | Baixo: `speakPreview(text, voice, rate)` | Acidental |
+| F11-6 | `confirmAction` com título/mensagem/`confirmText` inline PT/EN e `destructive: true` | `:161-170` (sair), `:172-183` (excluir) | Só os textos | Baixo | Legítima nos dois fluxos, forma copiada |
+| F11-7 | Dois modais na mesma tela com tratamento e estilo diferentes | Exclusão `:512-543` (estilos `:836-845`: backdrop `rgba(0,0,0,0.5)` centrado, sheet `card` raio 16; sem `useModalNavBar`, sem `statusBarTranslucent`) vs `VoicePickerModal` `:665-737` (`useModalNavBar` `:667`, `statusBarTranslucent` `:674`; `pickerStyles` `:741-751`: backdrop `rgba(13,23,34,0.75)` no rodapé, sheet `bg` raio 18) | Backdrop, posição, raio, cor de fundo e a barra Android | Médio: `AppModal` (no app há mais 4 modais com estilos próprios: `AccountPrompt.jsx`, `ReferencePickerModal.jsx:245-246`, `BibleMapScreen.jsx:209-213`, `BibleScreen.jsx:1076-1080`) | Acidental |
+| F11-8 | Card de perfil e card de visitante com o mesmo `profileCard`/`avatar` e overrides inline | `:227-239` vs `:241-252` (`borderWidth`/`borderColor`/`backgroundColor` inline no segundo) | Visitante tem borda `accent`, avatar `accent` e chevron | Baixo: `ProfileCard` com `variant` | Acidental |
+| F11-9 | Dica de plataforma na linha Voz com o mesmo markup e override inline | `:347-353` (iOS), `:354-360` (Android), ambos `[styles.rowSub, { marginTop: 8, marginLeft: 34 }]` | Só o texto | Baixo: um `Text` com o texto escolhido por `Platform.select` | Acidental |
+| F11-10 | Cerca de 38 ternários `isEn ? ... : ...` inline ao lado de 26 chaves `t('settings.*')` | `:89-121`, `:163-196`, `:303`, `:340`, `:350-358`, `:402-403`, `:421`, `:439`, `:455-457`, `:475-481`, `:506`, `:516-538`, `:552-558`, `:614-632`, `:679-689` | "Objeção do dia" (`:455`) é inline enquanto os três vizinhos usam `t()` (`:399`, `:419`, `:437`) | Médio: volume | Acidental |
+| F11-11 | Textos legais em três cópias divergentes | `LegalScreen.jsx:32-149` (PT+EN, data "23 de maio de 2026", contato `deusosfera@gmail.com`, 8 + 7 seções) vs `docs/privacy.html` e `docs/terms.html` (só PT, "22 de maio de 2026", 11 e 13 seções, contato `appologetica@proton.me`; linhas conforme o fluxograma 11, não reconferidas aqui) | Data, contato, número de seções e o processo de exclusão de conta (o app tem exclusão em Ajustes `:503-508`, o texto manda enviar e-mail) | Alto: conteúdo legal exige revisão humana e uma fonte única que sirva app e site | Legítima na existência das duas mídias, acidental nas divergências |
+
+Fora do escopo interno: rota `Legal` em dois stacks (F1-2); `FONT_OPTIONS` (F1-8); `DEFAULT_PREFS` parcial em `:55` (F13-4); `AuthTopToggles` (F2); `section` `:810-814` vs os outros cabeçalhos em caixa alta (F7-18, F9-5); `Linking.openURL` `:575` (F5-9); `try/catch` morto do diagnóstico `:549-560` (não é duplicação; registrado no fluxograma 11).
+
+---
+
+## F12. Compartilhamento
+
+`utils/share.js`, `shareAsImage.js`, `shareAsImage.web.js`, `components/ShareVerseCard.jsx`, `DialogueAnswerCard.jsx`, mais o código de share dentro dos consumidores (`VerseOfDayCard.jsx`, `DialogueScreen.jsx`).
+
+| ID | O que se repete | Locais | Divergências | Custo | Tipo |
+|---|---|---|---|---|---|
+| F12-1 | Dois cards offscreen 1080x1080 com estilos paralelos e cores literais | `ShareVerseCard.jsx:30-49` / `DialogueAnswerCard.jsx:28-39`: `card` `#1a3a5c`, padding 80, `space-between`; cruz `#c9a84c` (110 vs 34); `brand` "APPologética" `#c9a84c` bold `letterSpacing` 2 (28 vs 30); `footer` | O do versículo centraliza a cruz no miolo; o do diálogo põe cruz e marca no rodapé; `DialogueAnswerCard.jsx:11`, `:14` têm "Objeção"/"Resposta" só em PT | Baixo: `ShareCanvas` (fundo, rodapé com marca) e miolo por card | Acidental |
+| F12-2 | Wrapper offscreen `{ position: 'absolute', left: -10000, top: -10000, opacity: 0 }` + `pointerEvents="none"` + `collapsable={false}` | `VerseOfDayCard.jsx:65-67` + `:131`; `DialogueScreen.jsx:145-149` + `:254` | Diálogo só monta fora da web (`:145`); versículo monta sempre e esconde o botão na web (`:56`) | Baixo: `OffscreenCapture` | Acidental |
+| F12-3 | Texto de fallback da imagem montado à mão no consumidor, diferente do que `share.js` produz | `VerseOfDayCard.jsx:30` (`"${text}"\n\n${ref}`) vs `share.js:36` (`shareVerse`, com `APP_PROMO` e vírgula fixa); `DialogueScreen.jsx:85` vs `share.js:60-63` (`shareDialogue`) | Fallback sem promo; separador do versículo diferente | Baixo: exportar `buildVerseMessage`/`buildDialogueMessage` de `share.js` | Acidental |
+| F12-4 | Ramo web `navigator.share` ou `navigator.clipboard` escrito duas vezes | `share.js:15-33` (`doShare`, com `notify('Copiado')`) / `shareAsImage.web.js:5-17` (sem aviso) | `shareAsImage.web.js` é inalcançável (`:3-4`, `VerseOfDayCard.jsx:56`, `DialogueScreen.jsx:82`) | Baixo: o web reexportar `doShare` ou ser removido | Acidental |
+| F12-5 | `Share.share({ message: fallbackMessage }).catch(() => {})` três vezes na mesma função | `shareAsImage.js:28`, `:38`, `:47` | Nenhuma | Baixo: `const fallback = () => ...` | Acidental |
+| F12-6 | Separador fixo `,` nas mensagens, enquanto todos os chamadores escolhem por idioma | `share.js:36` (`shareVerse`), `:48` (`shareNote`) vs `isEn ? ':' : ','` em F6-4 e F10-5 | Em EN o compartilhado sai "Matthew 16,18" e o copiado "Matthew 16:18" | Baixo: `formatVerseRef` (F6-4) recebendo `isEn` | Acidental |
+| F12-7 | Código sem chamador ou com nome errado dentro de F12 | `share.js:40-42` (`shareHighlight` é alias puro de `shareVerse`), `ShareVerseCard.jsx:8-9` (`variant: 'story'` 1080x1920 sem chamador), `shareAsImage.js:42` (`dialogTitle: 'Compartilhar versículo'` também para o diálogo) | n/a | Baixo: limpeza | Acidental |
+| F12-8 | Cores da marca como literais nos artefatos de imagem | `ShareVerseCard.jsx:32`, `:37`, `:46`, `:48`; `DialogueAnswerCard.jsx:29`, `:31`, `:37`, `:38` (fora de F12: `ErrorBoundary.jsx:46-51`, `App.js:256-279`, `AccountPrompt.jsx:110`, `:198`, `DialogueScreen.jsx:239`, `RosaryScreen.jsx:329`, `bibleMap/mapHtml.js:28`) | Nenhuma no valor | Baixo: `brand.js` (`navy`, `gold`) | Legítima (a imagem não segue o tema), acidental na literalidade |
+
+Fora do escopo interno: `APP_PROMO_PT/EN` e `Share.share` direto em `LiturgyScreen.jsx:57-58`, `:115` (F8-5); intervalo `share.js:45` (F10-5); `expo-clipboard` em `BibleScreen.jsx:556` vs `navigator.clipboard` em `share.js:23` (dois clientes de clipboard, F6).
+
+---
+
+## F13. Notificações locais
+
+`services/notifications.js`, `notifications.web.js`; único consumidor `SettingsScreen.jsx:123-159`, `:470-483`.
+
+| ID | O que se repete | Locais | Divergências | Custo | Tipo |
+|---|---|---|---|---|---|
+| F13-1 | Quatro `setXEnabled` com o mesmo corpo (`getPrefs`, muda um campo, `savePrefs`, `rescheduleAll`) | `notifications.js:73-78`, `:80-85`, `:88-95`, `:97-102` | `setDailyVerseEnabled` também grava hora e minuto | Baixo: `setPref(patch)` | Acidental |
+| F13-2 | Quatro blocos de agendamento com a mesma forma (`identifier`, `content` com título/corpo/`data`, `trigger`) | `:111-126`, `:128-143`, `:145-159`, `:160-175` | Gatilho `DAILY` x3 e `WEEKLY` x1; corpo calculado no agendamento em dois (`getVerseOfDay` `:112`, `objectionOfDay` `:161`) | Baixo: tabela `SCHEDULES` percorrida por `rescheduleAll` | Acidental |
+| F13-3 | Cinco `cancelScheduledNotificationAsync(...).catch(() => {})` em sequência | `:65-69` | Nenhuma | Baixo: `Promise.all(IDS.map(...))` | Acidental |
+| F13-4 | `DEFAULT_PREFS` em três versões | `notifications.js:32-39`, `notifications.web.js:6-13` (idênticos), `SettingsScreen.jsx:55` (parcial, sem `objectionOfDay`, por isso o 4º `Switch` recebe `undefined` até `getPrefs` resolver, `:462`) | A do Settings falta um campo | Baixo: `notificationsPrefs.js` comum importado pelas duas variantes e pela tela | Legítima na variante web (precisa espelhar a interface), acidental no objeto copiado |
+| F13-5 | Títulos e corpos das notificações fixos em PT | `:116-118`, `:132-133`, `:149-151`, `:165-166`, `:196-197` | Nenhuma de forma | Médio: o serviço não tem `t()`; precisa do idioma cacheado (como `AuthContext.jsx:53-60`) | Acidental |
+
+Fora do escopo interno: `objectionOfDay` `:8-12` (F3); os 4 toggles de `SettingsScreen.jsx:123-159` (F11-4); `ensureScheduled` `:182-186` sem chamador (fato do fluxograma 12, não é duplicação).
+
+---
+
+## F14. Infra
+
+`services/firebase.js`, `sentry.js`, `sentry.web.js`, `components/ErrorBoundary.jsx`, `utils/webUpdate.js`, `webUpdate.web.js`, `app.config.js`.
+
+| ID | O que se repete | Locais | Divergências | Custo | Tipo |
+|---|---|---|---|---|---|
+| F14-1 | Dois caminhos para capturar exceção no Sentry, um deles morto | `ErrorBoundary.jsx:16-18` (`global.Sentry?.Native?.captureException`, nunca atribuído em `src/` ou `App.js`) vs `sentry.js:33-36` (`captureException` com guarda de Expo Go, único chamador `SettingsScreen.jsx:550`) | O `ErrorBoundary` não importa o wrapper porque fica acima dos providers, mas `sentry.web.js` já é no-op | Baixo: importar `captureException` de `../sentry` | Acidental |
+| F14-2 | Detecção de Expo Go | `sentry.js:9` e `hooks/useGoogleSignIn.js:17` (F2), ambos `Constants.executionEnvironment === 'storeClient'` | Nenhuma | Baixo: `utils/env.js` com `isExpoGo` | Acidental |
+| F14-3 | Tela fora do tema e do idioma com as mesmas cores fixas e textos PT | `ErrorBoundary.jsx:28-36`, `:46-51` vs `App.js:250-283` (`BrandedSplash`, F1) | Ambas antes de `LanguageProvider`/`ThemeProvider` (`App.js:433-436`); o Auth resolve o mesmo problema com `_cachedLang` (`AuthContext.jsx:53-60`) | Baixo: `brand.js` + idioma cacheado para os dois textos | Legítima na posição na árvore, acidental na literalidade |
+| F14-4 | Variantes `.web.js` que espelham a interface da nativa à mão | `sentry.web.js:3-9` (3 exports), `webUpdate.web.js` (2), `notifications.web.js:15-47` (8, F13), `shareAsImage.web.js:5` (1, F12), `useGoogleSignIn.web.js:40-48` (7 chaves, F2) | Sem teste que garanta que as assinaturas batem | Baixo para documentar, médio para automatizar (script que compara `export`s) | Legítima (convenção do Metro registrada no CLAUDE.md); registrada como risco de manutenção, não como cópia acidental |
+
+---
+
+## Ranking: as 15 duplicações internas que mais pesam para o redesign
+
+Critério: número de locais x impacto visual (o quanto o padrão aparece na tela e o quanto o redesign de tokens/chrome/telas esbarra nele). Os IDs remetem às tabelas.
+
+| # | Duplicação | Locais | Por que pesa |
+|---|---|---|---|
+| 1 | **F11-1** linha de Ajustes montada à mão | 16 na mesma tela | É a tela inteira de Ajustes; qualquer token de card, ícone ou chevron precisa ser trocado 16 vezes |
+| 2 | **F4-1** card de artigo em 5 telas (mais 2 fora de F4) | 5 (+2) | É o card mais visto do app (lista, categoria, favoritos, plano, relacionados, busca, continue lendo), com 5 combinações de padding/raio/`fs` |
+| 3 | **F7-5** botões primário e secundário reescritos | 10 só em F7 (mais F2-2, F8-11, F10-3) | Um `Button` com tokens é pré-requisito do redesign; hoje há `paddingVertical` de 10 a 16 e raio 8 ou 10 |
+| 4 | **F7-4** linha "ícone + rótulo + sub + chevron" | 5 layouts em F7 (+ Home, Bible `bookRow`, Settings) | É o padrão de navegação de todos os hubs; cinco escalas de ícone (28 a 48) |
+| 5 | **F8-1** os 4 cards do "Dia de hoje" | 4 (+ ContinueReading/ContinueBible) | Filete 3 ou 4 px, caixa de ícone 26 a 38, rótulo `fs` 10 ou 11: o mesmo card com 4 desenhos na mesma coluna |
+| 6 | **F2-1 a F2-4** input, botão, divisor e Google nas telas de auth | 11 blocos em 3 telas | Primeira impressão do app; dois visuais de "ou" na mesma tela de Login |
+| 7 | **F5-1 / F5-2** card de referência em duas cópias | 2 telas x cerca de 60 linhas de estilo | Redesenhar o card obriga a mexer nas duas cópias e ainda deixa as divergências (Strong, badge PT, Catecismo) |
+| 8 | **F1-1 / F1-7** header dos stacks e branco fixo | 6 + 7 | É o chrome de todas as telas; dark mode e tokens passam por aqui |
+| 9 | **F7-18 (+ F3-3, F8-1, F9-5)** rótulo em caixa alta | 11 variantes só em F7, 3 em F9, 2 em F3, 4 em F8 | `fs` 10 a 13, `letterSpacing` 0.5 a 1, três cores: a tipografia secundária não tem token |
+| 10 | **F10-3 / F10-4** tela gated + loading + lista + vazio | 3 telas x 3 blocos (+ F4-7, F9) | Estados vazios e de visitante aparecem em todo o "Meu Estudo"; o botão de criar conta é estilo inline literal |
+| 11 | **F7-1 / F7-2** campo de busca e card expansível | 2 + 3 em F7 (mais F6, F9, F10 no campo) | Sete `TextInput` de busca no app com 4 combinações de raio/altura; um `SearchField` resolve a maioria |
+| 12 | **F11-7** modais com tratamento e estilo próprios | 2 em F11 (+ 4 no app) | Backdrop, raio e barra Android divergem; um `AppModal` afeta 6 pontos |
+| 13 | **F7-6** caixa de introdução com filete | 5 em F7 (+ Bible, Onboarding `verseBox`, ArticleDetail `translationNotice`) | Mesmo desenho com padding 14 ou 16, raio 10 ou 12 |
+| 14 | **F11-3 / F7-7** chips de escolha única e de filtro | 3 + 2 | Dois visuais de "ativo" (dourado-claro com borda vs azul cheio) e nomes de estilo errados (`fontChip` para idioma e velocidade) |
+| 15 | **F6-1 / F4-11** barras de progresso | 3 + 1 | Altura 3, 4 ou 6 e raio 0, 2 ou 3 para a mesma barra; pequeno, mas aparece na Bíblia, no artigo, no plano e no "continue lendo" |
+
+Logo abaixo da linha de corte, pelo mesmo critério: F10-8 (dois editores), F12-1 (dois cards de imagem com cores literais), F9-1 (quatro renderers da busca), F7-9 (cores de acerto e erro fora da paleta), F7-10 (múltipla escolha vs V ou F), F8-2 (cache-first duplicado, sem impacto visual mas alto em manutenção).
+
+---
+
+## Confiança e lacunas
+
+- **Alta** para todo `file:line` das tabelas: cada faixa foi lida com `sed -n` nesta sessão no commit `114a08b`, e as contagens (`Switch`, `styles.row`, `borderLeftWidth`, `outlineStyle`, `contentContainerStyle`, `chevron-forward`, `textTransform: 'uppercase', letterSpacing: 1`) vieram de `grep -n`/`grep -c` no código atual. Onde meu número difere do fluxograma em 1 a 2 linhas (por exemplo `QuizMenu` card, `DialogueScreen` botão avançar, `NotebookScreen` estilos), vale o número daqui.
+- **Média** para F11-11 (textos legais): `docs/privacy.html` e `docs/terms.html` não foram reabertos; datas, contatos e contagem de seções vêm do fluxograma 11.
+- **Média** para F6-8 (restauração de scroll): as linhas foram conferidas por `grep`, mas o corpo de `tryRestore` (`:247-273`) e `onVerseScroll` (`:397-421`) não foi relido inteiro nesta sessão; a descrição segue o fluxograma 06.
+- **Não lidos** nesta sessão: `components/BibleLoadingState.jsx`, `MarkdownText.jsx`, `ImageZoomModal.jsx`, `RefSourceBlock.jsx`, `utils/favorites.js`, `lastRead.js`, `readingProgress.js`, `bibleProgress.js`, `ttsVoice.js`, `data/*` além dos trechos citados. Pode haver duplicação interna de F4 nos três utilitários de AsyncStorage (mesmo esqueleto `getItem` + `JSON.parse` + `catch`) que não entrou na contagem por falta de leitura.
+- **Julgamentos de custo** são estimativas de leitura, sem executar nada nem medir lint. "Legítima" registra que existe uma razão técnica visível no código ou em comentário; não é recomendação de manter.
+- Nada foi executado; nenhum arquivo além deste foi criado ou alterado.
+
+## Fontes consultadas
+
+| Arquivo | Faixas lidas nesta sessão |
+|---|---|
+| `docs/design/PATHFINDER-2026-09-23/00-features.md` | íntegra |
+| `docs/design/PATHFINDER-2026-09-23/01-flowcharts/01` a `12` | íntegra (12 arquivos, 4080 linhas) |
+| `App.js` | 94-104, 248-284, 286-332, 350-360, 390-400; grep de `headerStyle`, `LABELS`, `ICONS`, `name="Legal"`, `name="CategoryArticles"` |
+| `src/context/ThemeContext.jsx` | 60-140; grep |
+| `src/context/LanguageContext.jsx`, `AuthContext.jsx` | grep; `AuthContext.jsx:95-135`, `150-185` |
+| `src/hooks/useScrollHints.js` | 1-66 |
+| `src/hooks/useModalNavBar.js`, `useGoogleSignIn(.web).js` | grep |
+| `src/screens/auth/LoginScreen.jsx` | 55-100, 125-175, 180-251 |
+| `src/screens/auth/SignupScreen.jsx` | 48-120, 138-170, 176-219 |
+| `src/screens/auth/ForgotPasswordScreen.jsx` | 15-115 |
+| `src/screens/OnboardingScreen.jsx` | 60-100, 155-225; grep |
+| `src/components/AuthTopToggles.jsx`, `GuestGate.jsx` | íntegra |
+| `src/components/AccountPrompt.jsx` | 1-48, 85-130; grep de estilos |
+| `src/screens/HomeScreen.jsx` | 55-70, 80-95, 95-160, 165-233 |
+| `src/screens/ArticlesScreen.jsx` | 45-124 |
+| `src/screens/CategoryArticlesScreen.jsx` | 18-80 |
+| `src/screens/FavoritesScreen.jsx` | 34-98 |
+| `src/screens/ReadingPlanScreen.jsx` | 100-185 |
+| `src/screens/ArticleDetailScreen.jsx` | 59-82, 96-127, 199-214, 320-355, 370-409; grep |
+| `src/components/RelatedArticles.jsx`, `RelatedDialogues.jsx`, `ContinueReadingCard.jsx`, `ContinueBibleCard.jsx` (20-67), `ReadingProgressBar.jsx`, `SectionBanner.jsx` (9-45) | íntegra ou faixa indicada |
+| `src/screens/ReferencesScreen.jsx` | 14-80, 84-168, 226-252, 312-371 |
+| `src/screens/RefDetailScreen.jsx` | 10-70, 74-148, 150-215 |
+| `src/data/references.js` | 2365-2400, 2516-2535 |
+| `src/screens/BibleScreen.jsx` | 360-384, 511-524, 550-567, 568-646, 665-690, 712-735, 745-760, 800-826, 925-990, 993-1093; grep de refs, listeners, estilos |
+| `src/screens/ToolsScreen.jsx` | 10-140 |
+| `src/screens/QuizScreen.jsx` | 25-72, 80-116, 118-270, 276-390, 390-441; grep |
+| `src/screens/DialogueScreen.jsx` | 72-150, 154-267; grep |
+| `src/screens/DebateStrategiesScreen.jsx` | 10-162 |
+| `src/screens/GlossaryScreen.jsx` | 30-126 |
+| `src/screens/ExamConscienceScreen.jsx` | 15-102 |
+| `src/screens/RosaryScreen.jsx` | 140-300, 482-529; grep |
+| `src/screens/BibleMapScreen.jsx` | 20-150, 206-271; grep |
+| `src/components/NewsCard.jsx` (170-211), `LiturgyCard.jsx` (24-101), `SaintTodayCard.jsx` (14-54), `VerseOfDayCard.jsx` (10-36, 36-132) | faixas indicadas |
+| `src/services/liturgyApi.js` (10-62), `newsApi.js` (26-56, 143-203) | faixas indicadas |
+| `src/screens/LiturgyScreen.jsx` | 14-16, 40-60, 104-150, 200-275, 345-449; grep |
+| `src/screens/TodayScreen.jsx` | 28-58 |
+| `src/screens/SearchScreen.jsx` | 153-246, 248-300, 337-402 |
+| `src/services/userData.js` | íntegra |
+| `src/screens/HighlightsScreen.jsx` (20-172), `NotesScreen.jsx` (15-113), `NotebookScreen.jsx` (1-126), `NoteEditorScreen.jsx` (20-224), `NotebookPageScreen.jsx` (20-213) | faixas indicadas |
+| `src/components/NotebookText.jsx` (1-20), `ReferencePickerModal.jsx` (30-100, 130-200, 236-273) | faixas indicadas; grep |
+| `src/screens/SettingsScreen.jsx` | 26-60, 116-200, 225-330, 330-495, 495-640, 640-846; grep |
+| `src/screens/LegalScreen.jsx` | 1-32, 150-158 |
+| `src/utils/share.js`, `shareAsImage.js`, `shareAsImage.web.js`, `dialog.js` | íntegra |
+| `src/components/ShareVerseCard.jsx`, `DialogueAnswerCard.jsx`, `ErrorBoundary.jsx` | íntegra |
+| `src/services/notifications.js`, `notifications.web.js` | íntegra |
+| `src/sentry.js`, `sentry.web.js` | íntegra |
+| Greps em `src/` e `App.js` | `articles.find(`, `titleEn \|\|`, `t(\`category.`, `Linking.openURL`, `#c0392b`, `#1a3a5c\|#c9a84c`, `executionEnvironment`, `trackColor`, `styles.row`, `Speech.`, `useModalNavBar`, `contentContainerStyle={{ padding: 16, paddingBottom: 40 }}`, `empty: { textAlign`, `center: { flex: 1`, `lock-closed-outline" size={56}`, `marginTop: 16, backgroundColor: colors.accent`, `common.loading`, `textTransform: 'uppercase', letterSpacing: 1`, `chevron-forward" size={1[68]}`, `borderLeftWidth`, `outlineStyle`, `offscreen:`, `behavior={Platform.OS === 'ios'`, `backgroundColor: c.badgeBg` com `width`, `card: {`, `backgroundColor: c.primary` em botões, `getLiturgy\|semana`, `function easterDate`, `getFullYear() \* 7`, `section: {\|sectionTitle: {`, `<FlatList\|maxHeight: 320\|styles.listRow`, `headerRight\|color="#fff"`, `<ScrollHint`, `scrollEventThrottle` |
