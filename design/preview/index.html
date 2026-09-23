@@ -27,7 +27,7 @@
   --gold-text:#806418;     /* dourado legível sobre claro (AA) */
   --sep:rgba(26,58,92,.14);
   --hairline:rgba(0,0,0,.14);
-  --material:rgba(245,240,232,.78);
+  --material:rgba(245,240,232,.72);
   --material-strong:rgba(245,240,232,.92);
   --shadow-lg:0 12px 32px rgba(26,58,92,.12);
   --danger:#b3261e;
@@ -40,11 +40,11 @@
   /* espaço: grade de 4 pt */
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;
   /* raio: três valores */
-  --r-sm:8px;--r-md:12px;--r-lg:20px;
+  --r-xs:4px;--r-sm:8px;--r-md:12px;--r-lg:18px;
   /* movimento */
-  --ease-out:cubic-bezier(.2,.8,.2,1);
+  --ease-out:cubic-bezier(.25,.1,.25,1);
   --ease-spring:cubic-bezier(.34,1.4,.64,1);
-  --d-touch:120ms;--d-layout:250ms;--d-screen:350ms;
+  --d-touch:150ms;--d-layout:350ms;--d-screen:350ms;
 
   /* página do protótipo (não é o app) */
   --page-bg:#e9e4da;--page-text:#1f1d19;--page-muted:#6b665c;--page-card:#fffdf9;
@@ -55,7 +55,7 @@
   --tint:#d4b86a;--on-tint:#0d1722;
   --gold:#d4b86a;--gold-text:#d4b86a;
   --sep:rgba(236,232,216,.14);--hairline:rgba(255,255,255,.14);
-  --material:rgba(13,23,34,.72);--material-strong:rgba(13,23,34,.9);
+  --material:rgba(13,23,34,.72);--material-strong:rgba(13,23,34,.92);
   --shadow-lg:0 12px 32px rgba(0,0,0,.45);
   --danger:#f28b82;
   --page-bg:#151a20;--page-text:#ece8d8;--page-muted:#a8a395;--page-card:#1c2330;
@@ -105,7 +105,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 /* barra de navegação com large title próprio */
 .nav{position:sticky;top:0;z-index:20;height:91px;padding:47px var(--s2) 0;display:flex;align-items:center;justify-content:space-between;
   background:transparent;border-bottom:.5px solid transparent;transition:background var(--d-layout) var(--ease-out),border-color var(--d-layout) var(--ease-out)}
-.nav.collapsed{background:var(--material);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-bottom-color:var(--hairline)}
+.nav.collapsed{background:var(--material);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border-bottom-color:var(--hairline)}
 .nav .inline-title{position:absolute;left:50%;top:47px;height:44px;line-height:44px;transform:translateX(-50%) translateY(6px);font-weight:600;font-size:17px;opacity:0;transition:opacity var(--d-layout) var(--ease-out),transform var(--d-layout) var(--ease-out);white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}
 .nav.collapsed .inline-title{opacity:1;transform:translateX(-50%) translateY(0)}
 .nav .side{display:flex;align-items:center;gap:0;min-width:44px}
@@ -167,7 +167,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 
 /* tab bar translúcida */
 .tabbar{position:absolute;left:0;right:0;bottom:0;height:83px;padding:6px 0 34px;z-index:25;display:flex;
-  background:var(--material);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-top:.5px solid var(--hairline)}
+  background:var(--material);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border-top:.5px solid var(--hairline)}
 .tab{text-decoration:none;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--text-2);font-size:10.5px;font-weight:500;letter-spacing:.01em}
 .tab svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .tab.on{color:var(--tint)}
@@ -203,7 +203,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .verse .txt{font-family:var(--font-reading);font-size:19px;line-height:30px}
 .verse.pressable:active{background:var(--surface)}
 .pager{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;align-items:center;gap:var(--s4);height:44px;padding:0 var(--s4);border-radius:999px;
-  background:var(--material-strong);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 4px 16px rgba(0,0,0,.14);z-index:24;font-size:15px;font-weight:600;color:var(--tint)}
+  background:var(--material-strong);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);box-shadow:0 4px 16px rgba(0,0,0,.14);z-index:24;font-size:15px;font-weight:600;color:var(--tint)}
 .pager .mid{color:var(--text-2);font-weight:500}
 .pager svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
@@ -573,7 +573,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
         <tr><td><span class="sw" style="background:#6a6457"></span>secundário</td><td>#6a6457 / #a8a395</td><td>marca, AA</td></tr>
         <tr><td><span class="sw" style="background:#1a3a5c"></span>tint</td><td>#1a3a5c / #d4b86a</td><td>navy no claro, dourado no escuro (escolha nossa)</td></tr>
         <tr><td><span class="sw" style="background:#c9a84c"></span>dourado</td><td>#c9a84c / #d4b86a</td><td>só sobre navy, progresso e números de versículo em #806418</td></tr>
-        <tr><td>material</td><td>fundo a 78% + blur 20 px</td><td>HIG materials</td></tr>
+        <tr><td>material</td><td>fundo a 72% + blur 16 px, saturação 180%</td><td>HIG materials, valores calibrados (pesquisa §12.7)</td></tr>
       </table></div>
       <div class="tok"><h3>Tipo</h3><table>
         <tr><td>Large title</td><td>Cormorant 600, 38/40</td><td>HIG 34 pt, +4 pela altura de x da Cormorant (escolha nossa)</td></tr>
@@ -589,15 +589,16 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
       <div class="tok"><h3>Espaço, raio, sombra</h3><table>
         <tr><td>Grade</td><td>4, 8, 12, 16, 20, 24, 32, 40</td><td>HIG 8 pt com meio passo</td></tr>
         <tr><td>Margem lateral</td><td>20</td><td>HIG layout margins (iPhone)</td></tr>
-        <tr><td>Raio pequeno</td><td>8</td><td>chips, miniaturas</td></tr>
+        <tr><td>Raio mínimo</td><td>4</td><td>barra de progresso, marcador (pesquisa §12.3)</td></tr>
+        <tr><td>Raio pequeno</td><td>8</td><td>chips, miniaturas, imagem dentro de card</td></tr>
         <tr><td>Raio médio</td><td>12</td><td>botões, campos, listas agrupadas (HIG inset grouped 10, +2 escolha nossa)</td></tr>
-        <tr><td>Raio grande</td><td>20</td><td>sheets, imagens, objeção do dia</td></tr>
+        <tr><td>Raio grande</td><td>18</td><td>sheets, imagens, objeção do dia (pesquisa §12.3)</td></tr>
         <tr><td>Sombra</td><td>nenhuma no claro; só sheets e pílulas flutuantes</td><td>escolha nossa</td></tr>
         <tr><td>Alvo mínimo</td><td>44 x 44</td><td>HIG</td></tr>
       </table></div>
       <div class="tok"><h3>Movimento e haptics</h3><table>
-        <tr><td>Toque</td><td>120 ms, escala 0,97, volta em spring</td><td>escolha nossa</td></tr>
-        <tr><td>Layout</td><td>250 ms, cubic-bezier(.2,.8,.2,1)</td><td>UIKit ease-out</td></tr>
+        <tr><td>Toque</td><td>150 ms, escala 0,97, volta em spring</td><td>interactiveSpring 0,15 s (pesquisa §12.6)</td></tr>
+        <tr><td>Layout</td><td>350 ms, cubic-bezier(.25,.1,.25,1)</td><td>easing padrão do Core Animation e 0,35 s do SwiftUI (pesquisa §12.6)</td></tr>
         <tr><td>Tela (push)</td><td>350 ms, ios_from_right, tela anterior recua 28%</td><td>UINavigationController</td></tr>
         <tr><td>Sheet</td><td>350 ms, spring(damping 0,8)</td><td>UISheetPresentationController</td></tr>
         <tr><td>Reduce motion</td><td>crossfade no lugar de deslocamento</td><td>HIG accessibility</td></tr>

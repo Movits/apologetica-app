@@ -44,3 +44,20 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
   `npx expo export -p web` verde. O trio pegou tudo até hoje.
 - Relatórios de agentes exploradores podem errar em detalhe. Reverificar cada
   achado no código atual antes de corrigir (dois "bugs" já estavam corrigidos).
+
+## Sobre design e auditorias (2026-09-23)
+
+- O container de sessão tem 4 núcleos: um Workflow roda só 2 agentes por vez.
+  Coletas grandes rendem mais com o Agent tool em paralelo (12 rodaram juntos).
+- Agentes herdam o diretório de trabalho da sessão no momento em que nascem.
+  Fazer `cd` numa pasta do repositório antes de lançar agentes faz downloads
+  deles caírem lá (aconteceu com JSONs da Apple em `design/preview/antes/`).
+- O ffmpeg do Playwright é uma build enxuta: não abre PNG nem MP4. Para
+  converter e redimensionar imagem sem PIL, o canvas do Chromium via Playwright
+  resolve (PNG 2K de 4 MB vira JPEG de 40 KB).
+- O Chromium do container não decodifica H.264: vídeo gerado só se confere no
+  navegador do usuário ou no widget do Higgsfield.
+- Na web, `hitSlop` não tem efeito no react-native-web 0.21: alvo pequeno
+  precisa de `minHeight`/`minWidth` de 44 de verdade.
+- Dourado `#c9a84c` sobre branco dá 2,29:1: nunca como texto ou rótulo de aba
+  ativa no tema claro. O token `accentText` (`#806418`) existe para isso.
