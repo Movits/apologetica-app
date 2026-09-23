@@ -32,7 +32,7 @@ Duas pesquisas complementares alimentaram as seções 10 e 11: uma leitura do c�
 - Números que vêm da Apple estão sempre ligados à fonte. Números que são decisão do projeto vêm marcados com **(escolha nossa)**. Quando a Apple não publica um valor, o documento diz isso em vez de inventar.
 - "Large" é o tamanho padrão do Dynamic Type no iOS. Todas as tabelas de tipografia usam esse tamanho, salvo indicação.
 - "pt" é ponto do iOS. Na web e no React Native, 1 pt equivale a 1 unidade de layout (1 px CSS na web, 1 dp no Android).
-- As decisões já tomadas na Fase 0 (tokens primeiro, chrome global depois, microinterações por último, iOS como referência, identidade mantida) não são rediscutidas aqui. O documento serve para embasar essas decisões e dar os números.
+- As decisões já tomadas na Fase 0 (tokens primeiro, barras e navegação globais depois, microinterações por último, iOS como referência, identidade mantida) não são rediscutidas aqui. O documento serve para embasar essas decisões e dar os números.
 
 ---
 
@@ -55,12 +55,14 @@ As regras abaixo são as que mais mudam o app, em ordem de impacto. Cada uma vem
 | 11 | Com **Reduce Motion**, trocar deslocamento por fade, apertar as molas, não animar zoom nem blur. | Toda animação passa a ler `useReducedMotion()` e a transição de tela vira fade. | [2](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json) |
 | 12 | Todo botão e card tocável tem **estado pressionado** visível. Feedback animado é breve e preciso. Não se adiciona movimento a interações frequentes. | `TouchableOpacity` em 41 arquivos vira um `Touchable` único com `Pressable`, ripple no Android e opacidade no iOS. | [13](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/buttons.json), [11](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/motion.json) |
 | 13 | Haptics em três geradores com significado fixo (notification, impact, selection), sempre opcionais e nunca sozinhos. | Helper único `haptics.js` com ajuste "Vibração" em Ajustes. Hoje só o Rosário vibra. | [12](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/playing-haptics.json) |
-| 14 | Carregamento: mostrar algo o mais cedo possível (placeholder que mantém tamanho e forma), nunca tela vazia, nunca rótulo vago como "carregando". | Skeleton no lugar dos spinners de liturgia e notícias. | [17](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/loading.json), [77](https://developer.apple.com/tutorials/data/documentation/swiftui/redactionreasons/placeholder.json) |
+| 14 | Carregamento: mostrar algo o mais cedo possível (placeholder que mantém tamanho e forma), nunca tela vazia, nunca rótulo vago como "carregando". | Placeholders com a forma do card no lugar dos spinners de liturgia e notícias. | [17](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/loading.json), [77](https://developer.apple.com/tutorials/data/documentation/swiftui/redactionreasons/placeholder.json) |
 | 15 | Listas agrupadas em **inset grouped**: seções recuadas da borda com cantos arredondados, separadores que não vão até a borda, cabeçalhos e rodapés. | Ajustes, Ferramentas e listas de referência ganham um `GroupedList` único. | [22](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/lists-and-tables.json), [33](https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/style-swift.enum/insetgrouped.json) |
 
 ---
 
 ## 2. Tipografia e Dynamic Type
+
+A seção percorre as famílias do sistema, a tabela de estilos de texto, pesos, tracking, entrelinha, Dynamic Type, largura de leitura e contraste, e termina com a forma como tudo isso se compõe com o `fs()` do app. É a base dos tokens `text.*` da seção 12.4.
 
 ### 2.1 As famílias do sistema e o que a Apple faz com elas
 
@@ -85,7 +87,7 @@ Por que Cormorant só a partir de 20 pt: a fronteira entre os tamanhos ópticos 
 
 ### 2.2 A tabela completa de estilos de texto do iOS (tamanho Large)
 
-Um text style é uma combinação fixa de peso, tamanho em pontos e leading para cada tamanho de texto. Juntos formam a hierarquia tipográfica, e escalam proporcionalmente quando a pessoa muda o tamanho do texto [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). A variante enfatizada (trait bold) é mais um nível de hierarquia. Os pesos enfatizados possíveis são Medium, Semibold, Bold ou Heavy, e a tabela do iOS usa Bold para Large Title, Title 1 e Title 2, e Semibold para os demais [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). A coluna "Emphasized weight" foi acrescentada à tabela em 16 de dezembro de 2025. Tamanhos e leading não mudaram.
+Um text style é uma combinação fixa de peso, tamanho em pontos e leading para cada tamanho de texto. Juntos formam a hierarquia tipográfica, e escalam proporcionalmente quando a pessoa muda o tamanho do texto [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). A variante enfatizada (trait bold) é mais um nível de hierarquia. Os pesos enfatizados possíveis são Medium, Semibold, Bold ou Heavy, e a tabela do iOS usa Bold para Large Title, Title 1 e Title 2, e Semibold para os demais [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). A coluna "Emphasized weight" foi acrescentada à tabela na revisão de 16 de dezembro de 2025, registrada no histórico de mudanças da própria página [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). Tamanhos e leading não mudaram.
 
 Todos os valores da tabela abaixo vêm de [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json). O tracking vem da tabela de SF Pro da mesma página. A última coluna é escolha nossa.
 
@@ -134,10 +136,10 @@ Como isso entra no React Native: `letterSpacing` é um número em unidades de la
 
 ### 2.5 Leading (entrelinha)
 
-- Usar loose leading em colunas largas e passagens longas, porque ajuda a não perder a linha, e tight leading em áreas de altura limitada, como linhas de lista. Nunca usar tight leading com três ou mais linhas [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json).
-- No iOS e no macOS, tight leading reduz a altura de linha em 2 pt e loose leading aumenta em 2 pt. Body 17 pt passa de 22 para 20 ou 24 pt [82](https://developer.apple.com/videos/play/wwdc2020/10175/).
+- Usar entrelinha folgada em colunas largas e passagens longas, porque ajuda a não perder a linha, e entrelinha apertada em áreas de altura limitada, como linhas de lista. Nunca usar entrelinha apertada com três ou mais linhas [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json).
+- No iOS e no macOS, a entrelinha apertada reduz a altura de linha em 2 pt e a folgada aumenta em 2 pt. Body 17 pt passa de 22 para 20 ou 24 pt [82](https://developer.apple.com/videos/play/wwdc2020/10175/).
 
-Aplicação no app (escolha nossa): corpo de artigo e versículos usam Body com loose leading, 17/24 na sans e 17/26 na serifa (a Georgia tem olho menor e pede um pouco mais de ar, valor nosso). Linhas de lista de uma linha só podem usar tight (Headline 17/20). Qualquer texto que possa quebrar em três linhas usa o leading padrão.
+Aplicação no app (escolha nossa): corpo de artigo e versículos usam Body com entrelinha folgada, 17/24 na sans (token `text.bodyLoose`) e 17/26 na serifa (token `text.bodySerif`, a Georgia tem olho menor e pede um pouco mais de ar, valor nosso). Linhas de lista de uma linha só podem usar a entrelinha apertada (Headline 17/20). Qualquer texto que possa quebrar em três linhas usa a entrelinha padrão.
 
 ### 2.6 Dynamic Type
 
@@ -185,6 +187,8 @@ Hoje: `fs(n) = max(11, round(n * scale))`, com `scale` em {0,85, 1, 1,15, 1,35}.
 
 ## 3. Layout, espaçamento e hierarquia visual
 
+Aqui entram as três guias de layout da Apple, a ordem e o agrupamento, a hierarquia sem decoração do iOS 26, os alvos de toque, as listas e os cantos. Os números desta seção viram os tokens `space.*`, `radius.*` e `tap.*` da seção 12.
+
 ### 3.1 As três guias: safe area, layout margins e readable content guide
 
 A Apple estrutura o layout em três guias aninhadas.
@@ -193,11 +197,13 @@ A Apple estrutura o layout em três guias aninhadas.
 
 **Layout margins.** Numa view comum, as margens padrão são 8 pt por lado. Na view raiz do view controller, as margens refletem o mínimo do sistema mais os insets da safe area [29](https://developer.apple.com/tutorials/data/documentation/uikit/uiview/layoutmargins.json). Se o app define uma margem menor que o mínimo do sistema, vale o maior dos dois. O exemplo oficial usa 20 pt como margem mínima [30](https://developer.apple.com/tutorials/data/documentation/uikit/uiviewcontroller/systemminimumlayoutmargins.json). No guia de Auto Layout, o exemplo canônico usa 8 pt entre views adjacentes e 20 pt até as bordas da superview [31](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html). A Apple não formaliza uma "grade de 8 pt", mas o 8 aparece como padrão de margem interna e como espaçamento canônico do Auto Layout.
 
-Os 16 pt de margem lateral em iPhones compactos e 20 pt nos maiores não estão em documento oficial atual. Vêm de relatos de desenvolvedores, e por isso entram aqui como convenção conhecida, não como regra citável (ver seção 13).
+Os 16 e 20 pt de margem lateral têm uma fonte Apple, ainda que arquivada: o Auto Layout Guide (atualizado em março de 2016, era iOS 9 e 10) diz que as margens laterais da view raiz de um view controller são definidas pelo sistema e "podem ser 16 ou 20 pontos", conforme como e onde o controller é apresentado, e que as margens de topo e base são 0 para o conteúdo poder se estender sob as barras [146](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithConstraintsinInterfaceBuidler.html). A documentação atual não republica os números: desde o iOS 11 a margem da raiz reflete `systemMinimumLayoutMargins` mais os insets da safe area, para as outras views o padrão é 8 pt por lado (maior se a view não está inteira na safe area ou se `preservesSuperviewLayoutMargins` é verdadeiro) [147](https://developer.apple.com/documentation/uikit/uiview/directionallayoutmargins), e o mínimo do sistema só deixa de valer com `viewRespectsSystemMinimumLayoutMargins = false`, quando as margens passam a vir apenas de `directionalLayoutMargins` e podem chegar a 0 [148](https://developer.apple.com/documentation/uikit/uiviewcontroller/viewrespectssystemminimumlayoutmargins). O HIG atual (iOS 26) não dá número de margem lateral para iOS e iPadOS: a regra é usar os layout guides do sistema para aplicar as margens padrão e limitar a largura do texto [3](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json). O único número de margem do HIG é para tvOS (60 pt de topo e base, 80 pt nas laterais, por causa do overscan) e não se aplica ao app [3](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json). Os Apple Design Resources listam hoje o kit "iOS 27 and iPadOS 27 UI Kit" para Figma e Sketch [149](https://developer.apple.com/design/resources/), mas o arquivo não pôde ser aberto nesta rodada (o Figma bloqueia o acesso automatizado), então a medição direta das margens do kit fica para a Fase 4 (seção 13.3).
+
+Decisão (escolha nossa): 16 pt em largura compacta e 20 pt de 600 pt para cima, os dois valores do guia arquivado, alinhados à grade de 4 e ao exemplo oficial de 20 pt como mínimo do sistema.
 
 **Readable content guide.** Largura confortável de leitura de uma coluna de texto. Nunca excede as layout margins, é centrada nelas, e sua largura é no máximo a largura legível definida para o tamanho de texto dinâmico atual [28](https://developer.apple.com/tutorials/data/documentation/uikit/uiview/readablecontentguide.json). Em tabelas, `cellLayoutMarginsFollowReadableWidth` faz as margens da célula derivarem da largura da readable content guide [32](https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/rowheight.json).
 
-Aplicação no app (escolha nossa): margem de tela 16 pt (grade de 4), gutter interno de card 16 pt, espaçamento entre elementos irmãos 8 pt, coluna de leitura de 680 pt centralizada. Os números estão na seção 12.
+Aplicação no app (escolha nossa): margem de tela 16 pt (20 de 600 pt de largura para cima), gutter interno de card 16 pt, espaçamento entre elementos irmãos 8 pt, coluna de leitura de 680 pt centralizada. Os números estão na seção 12.
 
 ### 3.2 Ordem, alinhamento e agrupamento
 
@@ -215,7 +221,7 @@ Aplicação no app (escolha nossa): margem de tela 16 pt (grade de 4), gutter in
 - Scroll edge effects não são decorativos: não bloqueiam nem escurecem como overlays, só esclarecem onde a UI encontra o conteúdo, e não devem ser usados onde não há elementos flutuantes [85](https://developer.apple.com/videos/play/wwdc2025/356/).
 - Se uma imagem de fundo em tela cheia ficaria coberta por sidebar ou inspector, o background extension effect espelha e desfoca a imagem sob os componentes adjacentes em vez de recortar [3](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json).
 - Hierarquia tipográfica: ajustar peso, tamanho e cor para enfatizar, manter a hierarquia relativa quando o texto muda de tamanho e minimizar o número de typefaces [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json).
-- Evitar pesos leves (Regular a Bold) e tight leading com três ou mais linhas, como já dito na seção 2 [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json).
+- Evitar pesos leves (Regular a Bold) e entrelinha apertada com três ou mais linhas, como já dito na seção 2 [1](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json).
 
 O que isso muda no app: os `cardBorder` de 1 px e os `divider` sólidos deixam de ser o jeito principal de separar. Separação vem de fundo (card sobre grouped background), de espaço (12 e 16 pt) e, nas barras, do scroll edge effect. Bordas ficam para o modo escuro, onde a Apple mesma usa fundo mais claro em vez de sombra (seção 4).
 
@@ -250,12 +256,27 @@ Os 44 pt aparecem hoje na documentação da Apple só como tamanho de controle, 
 - O iOS 26 usa três tipos de forma: fixa (raio constante), cápsula (raio igual à metade da altura) e concêntrica (raio do container pai menos o padding). Cápsulas aparecem em barras, botões e nos cantos das listas agrupadas [85](https://developer.apple.com/videos/play/wwdc2025/356/).
 - Cantos aninhados devem ser concêntricos: o canto interno compartilha o centro do raio com o canto do container [38](https://developer.apple.com/tutorials/data/documentation/swiftui/concentricrectangle.json). Isso evita cantos internos "apertados" ou "abertos" em cards com imagem.
 - Componentes customizados dentro de uma toolbar devem ter raio concêntrico com os cantos da barra [7](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/toolbars.json).
+- Componentes que vivem tanto dentro de um container quanto sozinhos usam forma concêntrica com raio de fallback: o valor concêntrico vale quando aninhado, o fallback quando o componente está isolado [85](https://developer.apple.com/videos/play/wwdc2025/356/). É o que justifica manter um token fixo no app mesmo com a regra de concentricidade.
+- Perto da borda da tela, no iPhone usa-se cápsula com margem extra. No iPad e no Mac, forma concêntrica alinhada à borda da janela [85](https://developer.apple.com/videos/play/wwdc2025/356/). Em ambientes densos como o macOS a cápsula fica reservada a ações de destaque: controles Mini, Small e Medium continuam com retângulos arredondados, só Large e X-Large viram cápsula [85](https://developer.apple.com/videos/play/wwdc2025/356/). Vale para a web em desktop.
+- Sheets e popovers do sistema têm, no iOS 26, cantos concêntricos com a curvatura da tela automaticamente. Cantos longe da borda do container resolvem para raio zero, por isso existe o raio mínimo. Exemplo da Apple: a sheet de formato do Notes tem cantos inferiores concêntricos com o aparelho e cantos superiores com raio fixo [38](https://developer.apple.com/tutorials/data/documentation/swiftui/concentricrectangle.json). É um bom modelo para bottom sheets no app.
 
-No React Native não existe curva contínua: `borderRadius` é sempre circular nas três plataformas. A regra que dá para seguir é a de concentricidade (raio da imagem dentro do card = raio do card menos o padding) e a de poucos raios semânticos. A seção 12 mapeia os 20 valores literais de `borderRadius` encontrados hoje em `src/` para quatro tokens.
+**O raio das listas agrupadas e dos cards.** A Apple define o inset grouped só qualitativamente ("seções recuadas com cantos arredondados") [33](https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/style-swift.enum/insetgrouped.json), e `preferredCornerRadius` das sheets tem default `nil`, sem publicar o raio que o sistema usa [144](https://developer.apple.com/documentation/uikit/uisheetpresentationcontroller/preferredcornerradius-3mb5). O que existe são fontes de terceiros:
+
+| Fonte | Valor | Ressalva |
+|---|---|---|
+| Post de 2020 sobre a chave privada `sectionCornerRadius` | 10 pt como raio padrão das seções inset grouped | Terceiro, cobre iOS 11 a 13. Usa a chave para escrever (`setValue`), não para ler. [142](https://www.codingmeswiftly.com/post/a-thing-about-tableviews/) |
+| Reprodução da tabela do Wallet no iOS 12.2 (2019), precursora do inset grouped do iOS 13 | 12 pt nas seções de várias linhas, 10 pt nas de uma linha | Estimativa a olho de um desenvolvedor, internamente inconsistente. [143](https://wilson-gramer-blog.github.io/posts/2019-02-20-recreating-the-ios-12-2-wallet-table-view.html) |
+| Revisão do iOS 26 | Células "mais arredondadas", grupos mais espaçados e recuados, half sheets recuadas da borda, raios de menus, janelas, sheets e grupos casando com a curvatura da tela | Sem número publicado. [145](https://www.macstories.net/stories/ios-and-ipados-26-the-macstories-review/3/) |
+
+Com isso, `radius.md = 12` (seção 12.3) fica entre os 10 pt do iOS 13 a 18 e os cantos maiores do iOS 26, e é o único dos dois valores de terceiros que cabe na grade de 4 (escolha nossa). A medição no kit oficial iOS 27 fica para a Fase 4 (seção 13.3).
+
+No React Native não existe curva contínua: `borderRadius` é sempre circular nas três plataformas. A regra que dá para seguir é a de concentricidade (raio da imagem dentro do card = raio do card menos o padding) e a de poucos raios semânticos. A seção 12 mapeia os 20 valores literais de `borderRadius` encontrados hoje em `src/` para cinco tokens.
 
 ---
 
 ## 4. Cor semântica, hierarquia de texto e modo escuro
+
+A seção trata da cor por papel semântico, dos quatro níveis de texto, do contraste, do modo escuro e dos valores publicados do sistema, e fecha com o mapeamento para a paleta navy, dourado e creme do app. O que a Apple não publica (as opacidades dos labels) vem de medições de terceiros, marcadas como tal.
 
 ### 4.1 Cor por papel, não por valor
 
@@ -265,7 +286,7 @@ Cada cor dinâmica do sistema é definida pelo papel semântico, não pela apar�
 
 **Separadores.** `separator` é parcialmente transparente para deixar o conteúdo aparecer, e `opaqueSeparator` é sempre opaco. Ambos se adaptam ao ambiente [41](https://developer.apple.com/tutorials/data/documentation/uikit/uicolor/separator.json).
 
-**Fundos em duas famílias e três níveis.** Usar as cores grouped quando a tela é uma tabela agrupada, e a família system nos outros casos [4](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json). Primário para a view inteira, secundário para agrupar conteúdo dentro dela, terciário para agrupar dentro de elementos secundários [4](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json). O `systemBackground` é branco puro no claro e preto puro no escuro [83](https://developer.apple.com/videos/play/wwdc2019/214/). `systemGroupedBackground` serve a conteúdo agrupado, incluindo table views e designs com platter [42](https://developer.apple.com/tutorials/data/documentation/uikit/uicolor/systemgroupedbackground.json).
+**Fundos em duas famílias e três níveis.** Usar as cores grouped quando a tela é uma tabela agrupada, e a família system nos outros casos [4](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json). Primário para a view inteira, secundário para agrupar conteúdo dentro dela, terciário para agrupar dentro de elementos secundários [4](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json). O `systemBackground` é branco puro no claro e preto puro no escuro [83](https://developer.apple.com/videos/play/wwdc2019/214/). `systemGroupedBackground` serve a conteúdo agrupado, incluindo table views e designs com painéis destacados sobre o fundo [42](https://developer.apple.com/tutorials/data/documentation/uikit/uicolor/systemgroupedbackground.json).
 
 Mapeamento para o app (escolha nossa). O APPologética é quase todo listas e cards sobre um fundo creme, ou seja, a família grouped. Os papéis:
 
@@ -276,14 +297,42 @@ Mapeamento para o app (escolha nossa). O APPologética é quase todo listas e ca
 | tertiarySystemGroupedBackground | `badgeBg`, `inputBg` | #eef2f7 | #243248 | Agrupamento dentro de card (badge, input). |
 | elevated (só no escuro) | não existe | igual ao claro | #1e2f47 | Modal, sheet e menu no escuro. Ver 4.3. |
 | label | `text` | #222222 | #ece8d8 | |
-| secondaryLabel | `textSubtle` | #6a6457 | #938d7e | Já tem AA sobre creme e navy. |
-| tertiaryLabel | `textMuted` | #6a6457 a 60 por cento de alfa (a conferir) | #938d7e a 60 por cento (a conferir) | Placeholder e metadados. Contraste precisa ser medido antes de virar token. |
+| secondaryLabel | `textSubtle` (#6a6457 claro, #938d7e escuro) e os usos legíveis de `textMuted` (hoje #666666 claro, #a8a395 escuro) | #6a6457 | #938d7e | 5,18:1 sobre creme, 5,88:1 sobre card branco, 5,46:1 sobre o fundo escuro. Hoje `textMuted` e `textSubtle` são cores diferentes com o mesmo papel: as duas viram este token. |
+| tertiaryLabel | os usos de `textMuted` em placeholder e texto desabilitado | #6a6457 a 0,60 de alfa (compõe #a29c91 sobre creme) | #938d7e a 0,60 (compõe #5d5e59 sobre o fundo) | Placeholder e desabilitado, nunca metadado que precise ser lido. 2,40:1 no claro e 2,76:1 no escuro, abaixo de AA de propósito, como o terciário da Apple (ver abaixo). Alfa 0,60 é escolha nossa. |
+| placeholderText | `inputBg` com texto `textMuted` | igual a tertiaryLabel | igual a tertiaryLabel | No iOS os dois resolvem para o mesmo valor por medição de terceiros. Apontar um para o outro é escolha nossa, não regra da Apple. |
+| quaternaryLabel | não existe | não criar | não criar | A Apple o descreve como texto de marca d'água. O app não tem esse caso. |
 | separator | `divider`, `cardBorder` | rgba(26,58,92,0.16) | rgba(236,232,216,0.14) | Translúcido, como o `separator` do sistema. |
 | tint (acento) | `accent` | #c9a84c | #d4b86a | Ícones e preenchimentos. |
 | tint em texto | `accentText` | #806418 | #d4b86a | Dourado escurecido para passar AA sobre creme e branco. |
 | navy como acento e base | `primary` | #1a3a5c | #142844 | Hero, header, base do dark. |
 
 `primary` e `primaryText` continuam como aliases enquanto as telas migram, para não quebrar 40 `makeStyles` de uma vez.
+
+**Os valores resolvidos dos labels do iOS.** A Apple define cada cor de label pelo papel, não pelo valor: a web da Apple lista `label`, `secondaryLabel`, `tertiaryLabel`, `quaternaryLabel` e `placeholderText` só com descrição semântica, sem RGB nem alfa [4](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json), [40](https://developer.apple.com/tutorials/data/documentation/uikit/ui-element-colors.json). Os valores abaixo vêm de duas fontes de terceiros que leram o `UIColor` resolvido num app compilado (a primeira no iOS 13, em 2019; a segunda já com a paleta do iOS 26 e os mesmos hex, o que indica que não mudaram) [140](https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/), [141](https://swiftuicolors.com/swiftui-colors-guide). Não são fonte oficial.
+
+| Papel | Claro | Escuro | Alfa |
+|---|---|---|---|
+| label | #000000 | #ffffff | 1,00 |
+| secondaryLabel | rgb(60,60,67), #3c3c4399 | rgb(235,235,245), #ebebf599 | 0,60 |
+| tertiaryLabel | rgb(60,60,67), #3c3c434c | rgb(235,235,245), #ebebf54c | 0,30 |
+| quaternaryLabel | rgb(60,60,67), #3c3c432d (ou 2e) | rgb(235,235,245), #ebebf52d (ou 2e) | 0,18 |
+| placeholderText | igual ao tertiaryLabel | igual ao tertiaryLabel | 0,30 |
+| separator | rgb(60,60,67) a 0,29 | rgb(84,84,88) a 0,60 | 0,29 e 0,60 |
+
+A escala do macOS é outra (0,85, 0,50 ou 0,55, 0,26 ou 0,25, 0,10) e lá `placeholderTextColor` e `tertiaryLabelColor` divergem, então ela não serve de referência para o app nem para a web [141](https://swiftuicolors.com/swiftui-colors-guide). No escuro a Apple compõe esses alfas sobre fundos bem mais escuros que os nossos (#000000, #1c1c1e e #2c2c2e) [140](https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/), o que explica por que os mesmos alfas dão contraste mais folgado no app.
+
+O que esses valores dão de contraste (WCAG, composição do alfa sobre o fundo, calculado por nós):
+
+| Cor composta | Sobre branco | Sobre creme #f5f0e8 | Sobre card escuro #172538 | Sobre fundo escuro #0d1722 | Sobre navy #1a3a5c |
+|---|---|---|---|---|---|
+| secondaryLabel da Apple (0,60) | 3,44:1 | 3,27:1 | 5,61:1 | 6,11:1 | 4,61:1 |
+| tertiaryLabel da Apple (0,30) | 1,74:1 | 1,70:1 | 2,44:1 | 2,47:1 | 2,25:1 |
+| quaternaryLabel da Apple (0,18) | cerca de 1,35:1 | 1,35:1 | cerca de 1,65:1 | cerca de 1,69:1 | cerca de 1,64:1 |
+| `secondaryLabel` do app, sólido (#6a6457 e #938d7e) | 5,88:1 | 5,18:1 | 4,68:1 | 5,46:1 | 3,52:1 |
+| `tertiaryLabel` do app (0,60 do secundário) | 2,54:1 | 2,40:1 | 2,55:1 | 2,76:1 | 2,17:1 |
+| creme #ece8d8 a 0,60 (alternativa para o escuro) | | | 5,44:1 | 5,91:1 | 4,47:1 |
+
+Duas conclusões. Primeira: o `secondaryLabel` da Apple no claro fica abaixo de 4,5:1 sobre branco. A Apple não afirma em lugar nenhum que aceita contraste abaixo de AA em texto secundário. O HIG pede 4,5:1 no mínimo e manda "buscar" 7:1 em cores customizadas [5](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/dark-mode.json), e a tabela do Accessibility Inspector é 4,5:1 até 17 pt e 3:1 a partir de 18 pt ou em bold [2](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json). O que dá para inferir dos valores medidos é que o sistema trata o terciário e o quaternário como texto que não precisa ser lido com esforço. Segunda: por isso o app mantém o `secondaryLabel` sólido (AA nos dois modos, exceto sobre navy no escuro, onde entra o creme a 0,60 ou o próprio `label`) e reserva o `tertiaryLabel` a placeholder e desabilitado. O `textMuted` de hoje, que é AA (5,06:1 no claro, 7,17:1 no escuro) e é usado como metadado legível, migra para `secondaryLabel`, não para o terciário. Sobre a superfície `elevated` #1e2f47 proposta na tabela acima (cor nova, não existe hoje em `src/`), o secundário da Apple a 0,60 daria 5,15:1.
 
 ### 4.2 Contraste e uso de cor
 
@@ -332,7 +381,7 @@ Escala de cinzas UIKit [4](https://developer.apple.com/tutorials/data/design/hum
 | systemGray5 | 229, 229, 234 (#E5E5EA) | 44, 44, 46 (#2C2C2E) | 216, 216, 220 | 54, 54, 56 |
 | systemGray6 | 242, 242, 247 (#F2F2F7) | 28, 28, 30 (#1C1C1E) | 235, 235, 240 (#EBEBF0) | 36, 36, 38 (#242426) |
 
-A fonte não associa `systemGray6` a fundo agrupado nem a superfície elevada. Os valores de `secondaryLabel` e demais níveis (as opacidades 0,60, 0,30 e 0,18 que circulam) não estão publicados na web da Apple, só nos Apple Design Resources, e ficam como pergunta aberta na seção 13.
+A fonte não associa `systemGray6` a fundo agrupado nem a superfície elevada. Os valores de `secondaryLabel` e demais níveis (0,60, 0,30 e 0,18) não estão publicados na web da Apple. A seção 4.1 os registra a partir de medições de terceiros [140](https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/), [141](https://swiftuicolors.com/swiftui-colors-guide), e a conferência no kit oficial fica para a Fase 4 (seção 13.3).
 
 ### 4.5 Cor sobre materiais
 
