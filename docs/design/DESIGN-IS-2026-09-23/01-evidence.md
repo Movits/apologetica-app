@@ -300,3 +300,71 @@ Animações no código da superfície: `ScrollHint.jsx:15-19` fade 220 ms + `:26
 
 ### H. Lacunas (visual)
 Chromium/Linux com Liberation Sans (em iOS/Android muda fonte, hinting e peso 600); `insets.bottom = 0`; estados não renderizados (chip selecionado, passos 2-3, carregando/desabilitado do login, carregando/erro da Bíblia, marcação, erro no escuro); hover e pressed não medidos; contraste sobre imagem não medido; CDP de fontes amostrou ~25 nós; transição do native-stack na web inferida. Versões: @react-navigation/native 6.1.18, bottom-tabs 6.6.1, native-stack 6.11.0, elements 1.3.31, react-native-web 0.21.2, expo 54.0.34.
+
+## 5. Acessibilidade
+
+Medições com Playwright/Chromium (scripts `scratchpad/pw/a11y*.js`, `contrast.js`, `count-touch.js`), 390x844 (alvos, contraste, landmarks) e 1280x800 (teclado), visitante, pt.
+
+### A. Contraste por token (`ThemeContext.jsx:6-47`)
+Todos os pares previstos pela paleta passam AA nos dois temas (text/bg 14,02 e 14,71; textMuted/bg 5,06 e 7,17; textSubtle/card 5,88 e 4,68; accentText/bg 4,93 e 9,34; accent/primary 5,09 e 7,67; `#fff`/primary 11,64 e 14,82; badgeText/badgeBg 10,36 e 7,94; primaryText/card 11,64 e 9,50). **Pares que reprovam**: `accent`/card no claro (**2,29**, texto da aba ativa, `App.js:315` sobre `:318`); `accent`/bg no claro (2,01); `#fff`/`accent` (2,29 claro, 1,93 escuro; botão "Vincular Google", `LoginScreen.jsx:210-211`); `textSubtle`/primary (1,98 claro, 4,48 escuro).
+**Renderizado, piores por tela**: rótulo da aba ativa no claro 2,29 (Início, Artigo, Bíblia); "Tempo Comum" no escuro **3,10** (`liturgicalSeason.js:35`, cor fixa fora do tema); `textSubtle` sobre card no escuro 4,68 (abas inativas, placeholder, hints); números de versículo 4,93; "Esqueci a senha" 4,93; badge de categoria 4,98. Ícones: `accent` sobre card 2,29 (11 no Artigo, 4 na Início, ícone da aba ativa); ScrollHint a opacidade 0,55 = 2,21 claro / 2,52 escuro; "G" do Google 4,29 / 3,60; chevron desabilitado (opacity 0,3, `BibleScreen.jsx:1068`) 1,53.
+
+### B. Ordem de foco (desktop, teclado)
+- **Início** (25 Tabs): busca → objeção → 6 tiles → referências → 5 links da tab bar → body → repete. **Segue a ordem visual** (sem header, `App.js:105, :336`).
+- **Artigo**: "Ampliar imagem" → 6 itens de referência → diálogo relacionado → **só então o header** ("Go back", Ouvir, Compartilhar, Favoritar) → tab bar. **Não segue a ordem visual**: o header vem depois de todo o conteúdo no DOM. O corpo Markdown não tem paradas (termos do glossário são `<Text onPress>` sem role, `MarkdownText.jsx:110-116`; o RNW só dá `tabIndex=0` a roles button/link/etc., `react-native-web/dist/modules/createDOMProps/index.js:790-800`).
+- **Bíblia**: "Ouvir capítulo" → 36 linhas de versículo → anterior → próximo → header ("Voltar", h1) → tab bar.
+
+### C. Alcance por teclado
+| Ação | Alcançável | Observação |
+|---|---|---|
+| Trocar de aba | sim | `<a role="link" href="/MainTabs/Artigos">`, Enter funciona |
+| Abrir busca, categoria, objeção, artigo na lista | sim | div `tabindex=0`; **Enter funciona, Space não** (`PressResponder.js:66-71` aceita Space só em button/role=button) |
+| Voltar no header do Artigo | sim | `<button aria-label="Go back">` 30x30, **em inglês** (`@react-navigation/elements/.../HeaderBackButton.js:22`), parada 9 depois do conteúdo |
+| Voltar custom da Bíblia, próximo/anterior capítulo | sim | `aria-label` em PT; em João 1 o anterior fica `aria-disabled`, `tabindex=-1`, opacity 0,3 |
+| Onboarding "Começar"/"Pular"; chips | sim | `<button>`; chips aceitam Space (`OnboardingScreen.jsx:107`) |
+| "Entrar" no login | sim | div `tabindex=0`; **Enter dentro do input de senha não submete** (sem `<form>`, sem `onSubmitEditing`/`returnKeyType`, `LoginScreen.jsx:72-94`) |
+| Favoritar (header) | sim | abre `role=dialog` "Salvar nos favoritos?"; foco vai para o backdrop (div sem role) |
+| **Menu de ações do versículo** | **não** | linha é div `tabindex=0` só com `onLongPress` (`BibleScreen.jsx:858-861`); Enter/Space não abrem |
+
+### D. Landmarks ARIA (mobile, iguais nos dois temas)
+| Tela | main | navigation | banner | tablist / tab | headings | skip-link | `document.title` |
+|---|---|---|---|---|---|---|---|
+| Onboarding | 0 | 0 | 0 | 0 / 0 | 0 | não | "APPologética" |
+| Login | 0 | 0 | 0 | 0 / 0 | 0 | não | "APPologética" |
+| Início | 0 | 0 | 0 | 1 / 0 | 0 | não | "APPologética" |
+| Artigos (lista) | 0 | 0 | 0 | 1 / 0 | 1 (h1 "Artigos") | não | "APPologética · Artigos" |
+| Artigo | 0 | 0 | 0 | 1 / 0 | 1 exposto; h1 "Artigos" fica no DOM oculto sem `aria-hidden` | não | "APPologética · Artigo" |
+| Bíblia capítulo | 0 | 0 | 0 | 1 / 0 | 1 (h1 "João 3"); h1 de outras abas ocultos no DOM | não | "APPologética · Bíblia" |
+- Tab bar: `<div role="tablist">` com 5 `<a role="link">`, **sem `aria-selected`, `aria-current` ou `aria-label`** (`BottomTabItem.js:132-138` passa role tab, mas `useLinkProps.js:85` impõe link). Estado selecionado só por cor.
+- Headers são `<div>` (0 `banner`); título é `<h1>` 18 px fixos. `<html lang="pt-BR">` estático (`public/index.html:10`); nada altera `lang` ao trocar para EN.
+- Inputs do Login: 2 `<input>` **sem `aria-label`, sem `<label>`**, só placeholder. 24 glifos Ionicons na Início como `<div dir="auto">` sem `aria-hidden` nem role. Modal `AccountPrompt`: `role=dialog`; botões sem role (`AccountPrompt.jsx:109, :114`).
+
+### E. Alvos de toque (px CSS)
+| Elemento | Medida | < 44 |
+|---|---|---|
+| Itens da tab bar | 78x49 | não |
+| **Voltar do header (Artigo)** | **30x30** | sim |
+| **"Ouvir" / "Compartilhar" / "Favoritar" no header do Artigo** (`ArticleDetailScreen.jsx:133`, gap 14) | **22x24 cada** | sim |
+| Voltar custom da Bíblia (hitSlop 8, `:186`) | 48x34 | sim (altura) |
+| "Ouvir capítulo" (hitSlop 10) | 32x34 | sim |
+| Anterior/Próximo capítulo | 153x35 | sim (altura) |
+| Linha de versículo | 358x85 | não |
+| Onboarding "Pular" (`minHeight: 44`, `:222`) / "Começar" | 48,7x44 / 140x48 | não |
+| Toggle de tema / pílula de idioma (`AuthTopToggles`) | 36x29 / 80x29 | sim |
+| **Olho da senha** (`LoginScreen.jsx:96`, sem role/label) | **20x23** | sim |
+| **"Esqueci a senha"** | **102x15** | sim |
+| Inputs e botões do Login; busca, objeção, tiles da Início | 342x46 a 53; 358x44, 358x119, 174x115 | não |
+`hitSlop` **não tem implementação** no `TouchableOpacity`/`Pressable`/`usePressEvents` do react-native-web 0.21.2 (único uso: `dist/exports/Touchable/index.js:469`, mixin legado), logo `BibleScreen.jsx:187, :807`, `AuthTopToggles.jsx:18, :26`, `ImageZoomModal.jsx:234` não ampliam o alvo na web.
+
+### F. Semântica no código (superfície)
+- Touchables: **48 no total; 21 com `accessibilityRole`, 17 com `accessibilityLabel`, 27 sem nenhum dos dois**. Sem role nem label: `HomeScreen.jsx:97, :105, :128, :148`; `ArticlesScreen.jsx:91`; `ArticleDetailScreen.jsx:312, :330`; `BibleScreen.jsx:716, :858, :933, :969, :974, :979`; `LoginScreen.jsx:95, :100, :114, :127, :138, :154, :164`; `AuthTopToggles.jsx:26`; `ContinueReadingCard.jsx:34`; `RelatedArticles.jsx:23`; `RelatedDialogues.jsx:23`; `AccountPrompt.jsx:85, :109, :114`. Só role: `OnboardingScreen.jsx:161, :165, :170, :176`.
+- `outlineStyle: 'none'`: `LoginScreen.jsx:194` (medido com foco: `outline: none`, `box-shadow: none`, sem indicação visual), `BibleScreen.jsx:1007`; mais 9 fora da superfície (11 em `src/`).
+- Imagens: com alt `ArticleDetailScreen.jsx:276-281` (renderizado `alt="A Separação da Luz das Trevas, de Michelangelo"`), `ImageZoomModal.jsx:202`; sem alt `ImageZoomModal.jsx:204-210`.
+- `accessibilityState`: **0 usos na superfície** (único em `src/`: `SignupScreen.jsx:124`). Desabilitado via `disabled` (`LoginScreen.jsx:114, :127, :138`; `BibleScreen.jsx:902, :915`). Ionicons: 0 `aria-hidden`.
+
+### G. Escala de fonte e reduce motion
+- `fs(n) = Math.max(11, Math.round(n * scale))` (`ThemeContext.jsx:149`), `FONT_SCALES` 0,85 / 1 / 1,15 / 1,35 (`:49-54`). Medido em "enorme": seção da Início 16→22, hero 20→27, corpo do artigo 18, título 22; **rótulo da tab bar permanece 11 px** (`App.js:325`, sem `fs`); **título do header permanece 18 px** (`headerTitleStyle` só define peso, `App.js:102, :146, :182, :215, :314`); "Go back" permanece 30x30. Unidades só `px` (0 rem/em).
+- `isReduceMotionEnabled` / `AccessibilityInfo` / `prefers-reduced-motion`: **ausentes em `src/` e `App.js`**; 0 regras nas folhas da instância. `ScrollHint.jsx:15-40` (loop infinito, `pointerEvents="none"`, sem `aria-hidden`) e `AccountPrompt.jsx:53-61` sem condicional.
+
+### H. Lacunas (acessibilidade)
+Leitores de tela (anúncios), plataformas nativas, variante EN, modais da Bíblia e telas fora da superfície não verificados. Versões: react-native-web 0.21.2, @react-navigation/bottom-tabs 6.6.1, native 6.1.18, elements 1.3.31, Playwright 1.56.1.
