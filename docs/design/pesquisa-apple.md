@@ -757,11 +757,11 @@ Alternativa recomendada, sem dependência nova (escolha nossa): `src/navigation/
 
 **Tab bar.** O `@react-navigation/bottom-tabs` 6.x suporta `tabBarStyle: { position: 'absolute' }` e `tabBarBackground` devolvendo um elemento (a doc dá `BlurView` como exemplo literal), e lembra que com `position: 'absolute'` o conteúdo precisa de margem inferior via `useBottomTabBarHeight()` [122](https://reactnavigation.org/docs/6.x/bottom-tab-navigator/). Na web desktop, largura maior ou igual a 900 px, avaliar um `tabBar` customizado como sidebar, seguindo a regra de trocar tab bar por sidebar em espaços maiores (seção 3.2). Os nomes das rotas das tabs são API: só os labels mudam.
 
-**Sticky e scroll edge.** A react-native-web implementa `stickyHeaderIndices` com `position: sticky; top: 0` em CSS, e o `StickySectionList.web.jsx` já existe. Funciona porque `body { overflow: hidden }` faz o ScrollView ser o ancestral rolável mais próximo, exigência do sticky [96](https://developer.mozilla.org/en-US/docs/Web/CSS/position). Cuidado com wrappers `overflow: 'hidden'` intermediários em cards: o sticky "gruda" neles. Um scroll edge effect por view, sem repetir em cabeçalhos de seção. `overscroll-behavior-y: contain` nos ScrollViews de modais no Safari.
+**Sticky e scroll edge.** A react-native-web implementa `stickyHeaderIndices` com `position: sticky` e `top: 0` em CSS, e o `StickySectionList.web.jsx` já existe. Funciona porque `body { overflow: hidden }` faz o ScrollView ser o ancestral rolável mais próximo, exigência do sticky [96](https://developer.mozilla.org/en-US/docs/Web/CSS/position). Cuidado com wrappers `overflow: 'hidden'` intermediários em cards: o sticky "gruda" neles. Um scroll edge effect por view, sem repetir em cabeçalhos de seção. `overscroll-behavior-y: contain` nos ScrollViews de modais no Safari.
 
 ### 10.9 Hover, foco e toque
 
-A react-native-web expõe no `Pressable` o estado `hovered` e `onHoverIn`/`onHoverOut`, ativados só por mouse [105](https://necolas.github.io/react-native-web/docs/pressable/). Então `style={({ pressed, hovered, focused }) => [...]}` cobre os três estados: hover = fundo `fillQuaternary`, pressed = `opacity: 0.55` ou `scale: 0.97` com transição de saída de 150 ms. Para foco de teclado, a react-native-web não tem pseudo-classes nem media queries no sistema de estilos [106](https://necolas.github.io/react-native-web/docs/styling/), então entra um CSS global web-only (`import './src/styles/web.css'` em `App.js`, ignorado no nativo): `[role=button]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`, `@media (hover: hover) and (pointer: fine)` para efeitos só de mouse, `@media (pointer: coarse)` mantendo alvos de 44 px. Sem esse CSS o Chrome mostra o outline azul em todo clique de mouse em elemento com tabIndex, que parece bug. Hover nunca é a única pista de interatividade.
+A react-native-web expõe no `Pressable` o estado `hovered` e `onHoverIn`/`onHoverOut`, ativados só por mouse [105](https://necolas.github.io/react-native-web/docs/pressable/). Então `style={({ pressed, hovered, focused }) => [...]}` cobre os três estados: hover = fundo `fillQuaternary`, pressed = `opacity: 0.55` ou `scale: 0.97` com transição de saída de 150 ms. Para foco de teclado, a react-native-web não tem pseudo-classes nem media queries no sistema de estilos [106](https://necolas.github.io/react-native-web/docs/styling/), então entra um CSS global web-only (`import './src/styles/web.css'` em `App.js`, ignorado no nativo): `[role=button]:focus-visible { outline: 2px solid var(--accent) }` mais `outline-offset: 2px`, `@media (hover: hover) and (pointer: fine)` para efeitos só de mouse, `@media (pointer: coarse)` mantendo alvos de 44 px. Sem esse CSS o Chrome mostra o outline azul em todo clique de mouse em elemento com tabIndex, que parece bug. Hover nunca é a única pista de interatividade.
 
 `touch-action: manipulation` nos elementos interativos desliga o double-tap-to-zoom e remove a necessidade de o navegador atrasar o click [99](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action). O `-webkit-tap-highlight-color: transparent` já está em `public/index.html`. Não aplicar `touch-action` em containers com pinch (`ImageZoomModal`).
 
@@ -1212,3 +1212,150 @@ Estas entraram no documento, mas o verificador apontou que a fonte citada susten
 | acess-14, acess-23 | As páginas só definem as flags `prefersCrossFadeTransitions` e `buttonShapesEnabled`. O que fazer com elas é prática derivada. |
 
 ---
+
+## 14. Fontes
+
+As URLs da Apple são os endpoints JSON que alimentam o site do HIG e da documentação. A versão HTML equivalente troca `tutorials/data/design/human-interface-guidelines/<slug>.json` por `design/human-interface-guidelines/<slug>` e `tutorials/data/documentation/<caminho>.json` por `documentation/<caminho>`. Todas foram lidas em 2026-09-23.
+
+**Human Interface Guidelines**
+
+1. Typography: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json
+2. Accessibility: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.json
+3. Layout: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json
+4. Color: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json
+5. Dark Mode: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/dark-mode.json
+6. Materials: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/materials.json
+7. Toolbars (inclui navigation bars desde junho de 2025): https://developer.apple.com/tutorials/data/design/human-interface-guidelines/toolbars.json
+8. Tab bars: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/tab-bars.json
+9. Search fields: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/search-fields.json
+10. Scroll views: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/scroll-views.json
+11. Motion: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/motion.json
+12. Playing haptics: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/playing-haptics.json
+13. Buttons: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/buttons.json
+14. Feedback: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/feedback.json
+15. Alerts: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/alerts.json
+16. Action sheets: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/action-sheets.json
+17. Loading: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/loading.json
+18. Progress indicators: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/progress-indicators.json
+19. Sheets: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/sheets.json
+20. Toggles: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/toggles.json
+21. Segmented controls: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/segmented-controls.json
+22. Lists and tables: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/lists-and-tables.json
+23. Designing for iOS: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/designing-for-ios.json
+24. VoiceOver: https://developer.apple.com/tutorials/data/design/human-interface-guidelines/voiceover.json
+
+**Documentação de API e recursos da Apple**
+
+25. Fonts (SF Pro, New York): https://developer.apple.com/fonts/
+26. UIFont.TextStyle: https://developer.apple.com/tutorials/data/documentation/uikit/uifont/textstyle.json
+27. UIFontMetrics: https://developer.apple.com/tutorials/data/documentation/uikit/uifontmetrics.json
+28. UIView.readableContentGuide: https://developer.apple.com/tutorials/data/documentation/uikit/uiview/readablecontentguide.json
+29. UIView.layoutMargins: https://developer.apple.com/tutorials/data/documentation/uikit/uiview/layoutmargins.json
+30. UIViewController.systemMinimumLayoutMargins: https://developer.apple.com/tutorials/data/documentation/uikit/uiviewcontroller/systemminimumlayoutmargins.json
+31. Auto Layout Guide, Anatomy of a Constraint: https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html
+32. UITableView.rowHeight: https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/rowheight.json
+33. UITableView.Style.insetGrouped: https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/style-swift.enum/insetgrouped.json
+34. UITableView.separatorInset: https://developer.apple.com/tutorials/data/documentation/uikit/uitableview/separatorinset.json
+35. ListSectionSpacing: https://developer.apple.com/tutorials/data/documentation/swiftui/listsectionspacing.json
+36. EnvironmentValues.defaultMinListRowHeight: https://developer.apple.com/tutorials/data/documentation/swiftui/environmentvalues/defaultminlistrowheight.json
+37. RoundedCornerStyle.continuous: https://developer.apple.com/tutorials/data/documentation/swiftui/roundedcornerstyle/continuous.json
+38. ConcentricRectangle: https://developer.apple.com/tutorials/data/documentation/swiftui/concentricrectangle.json
+39. UIButton.Configuration.CornerStyle: https://developer.apple.com/tutorials/data/documentation/uikit/uibutton/configuration-swift.struct/cornerstyle-swift.enum.json
+40. UI element colors: https://developer.apple.com/tutorials/data/documentation/uikit/ui-element-colors.json
+41. UIColor.separator: https://developer.apple.com/tutorials/data/documentation/uikit/uicolor/separator.json
+42. UIColor.systemGroupedBackground: https://developer.apple.com/tutorials/data/documentation/uikit/uicolor/systemgroupedbackground.json
+43. UIBlurEffect.Style: https://developer.apple.com/tutorials/data/documentation/uikit/uiblureffect/style.json
+44. Material (SwiftUI): https://developer.apple.com/tutorials/data/documentation/swiftui/material.json
+45. Adopting Liquid Glass: https://developer.apple.com/tutorials/data/documentation/technologyoverviews/adopting-liquid-glass.json
+46. ScrollEdgeEffectStyle: https://developer.apple.com/tutorials/data/documentation/swiftui/scrolledgeeffectstyle.json
+47. EnvironmentValues.accessibilityReduceTransparency: https://developer.apple.com/tutorials/data/documentation/swiftui/environmentvalues/accessibilityreducetransparency.json
+48. UIVisualEffectView: https://developer.apple.com/tutorials/data/documentation/uikit/uivisualeffectview.json
+49. UINavigationItem.LargeTitleDisplayMode.automatic: https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationitem/largetitledisplaymode-swift.enum/automatic.json
+50. UINavigationItem.LargeTitleDisplayMode: https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationitem/largetitledisplaymode-swift.enum.json
+51. iOS 7 UI Transition Guide, Bars (arquivado): https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/TransitionGuide/Bars.html
+52. TabBarMinimizeBehavior: https://developer.apple.com/tutorials/data/documentation/swiftui/tabbarminimizebehavior.json
+53. UINavigationItem.hidesSearchBarWhenScrolling: https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationitem/hidessearchbarwhenscrolling.json
+54. UINavigationBar.scrollEdgeAppearance: https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationbar/scrolledgeappearance.json
+55. UINavigationItem.BackButtonDisplayMode: https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationitem/backbuttondisplaymode-swift.enum.json
+56. EnvironmentValues.accessibilityReduceMotion: https://developer.apple.com/tutorials/data/documentation/swiftui/environmentvalues/accessibilityreducemotion.json
+57. CAMediaTimingFunctionName.default: https://developer.apple.com/tutorials/data/documentation/quartzcore/camediatimingfunctionname/default.json
+58. CAMediaTimingFunctionName.easeInEaseOut: https://developer.apple.com/tutorials/data/documentation/quartzcore/camediatimingfunctionname/easeineaseout.json
+59. CAMediaTimingFunctionName.easeOut (e easeIn, linear na mesma família): https://developer.apple.com/tutorials/data/documentation/quartzcore/camediatimingfunctionname/easeout.json
+60. UIView.animate(withDuration:animations:): https://developer.apple.com/tutorials/data/documentation/uikit/uiview/animate(withduration:animations:).json
+61. Animation.easeInOut: https://developer.apple.com/tutorials/data/documentation/swiftui/animation/easeinout.json
+62. Animation.linear: https://developer.apple.com/tutorials/data/documentation/swiftui/animation/linear.json
+63. Animation.default: https://developer.apple.com/tutorials/data/documentation/swiftui/animation/default.json
+64. Animation.smooth(duration:extraBounce:): https://developer.apple.com/tutorials/data/documentation/swiftui/animation/smooth(duration:extrabounce:).json
+65. Animation.snappy(duration:extraBounce:): https://developer.apple.com/tutorials/data/documentation/swiftui/animation/snappy(duration:extrabounce:).json
+66. Animation.bouncy(duration:extraBounce:): https://developer.apple.com/tutorials/data/documentation/swiftui/animation/bouncy(duration:extrabounce:).json
+67. Animation.spring(duration:bounce:blendDuration:): https://developer.apple.com/tutorials/data/documentation/swiftui/animation/spring(duration:bounce:blendduration:).json
+68. Animation.spring(response:dampingFraction:blendDuration:): https://developer.apple.com/tutorials/data/documentation/swiftui/animation/spring(response:dampingfraction:blendduration:).json
+69. Animation.interactiveSpring: https://developer.apple.com/tutorials/data/documentation/swiftui/animation/interactivespring(response:dampingfraction:blendduration:).json
+70. Spring (SwiftUI): https://developer.apple.com/tutorials/data/documentation/swiftui/spring.json
+71. UIView.animate(springDuration:bounce:...): https://developer.apple.com/tutorials/data/documentation/uikit/uiview/animate(springduration:bounce:initialspringvelocity:delay:options:animations:completion:).json
+72. UIView.AnimationOptions.beginFromCurrentState: https://developer.apple.com/tutorials/data/documentation/uikit/uiview/animationoptions/beginfromcurrentstate.json
+73. UIImpactFeedbackGenerator.FeedbackStyle: https://developer.apple.com/tutorials/data/documentation/uikit/uiimpactfeedbackgenerator/feedbackstyle.json
+74. UISelectionFeedbackGenerator: https://developer.apple.com/tutorials/data/documentation/uikit/uiselectionfeedbackgenerator.json
+75. UIFeedbackGenerator.prepare(): https://developer.apple.com/tutorials/data/documentation/uikit/uifeedbackgenerator/prepare().json
+76. UIImpactFeedbackGenerator.impactOccurred(intensity:): https://developer.apple.com/tutorials/data/documentation/uikit/uiimpactfeedbackgenerator/impactoccurred(intensity:).json
+77. RedactionReasons.placeholder: https://developer.apple.com/tutorials/data/documentation/swiftui/redactionreasons/placeholder.json
+78. ContentUnavailableView: https://developer.apple.com/tutorials/data/documentation/swiftui/contentunavailableview.json
+79. UIAccessibility.prefersCrossFadeTransitions: https://developer.apple.com/tutorials/data/documentation/uikit/uiaccessibility/preferscrossfadetransitions.json
+80. UIAccessibility.isReduceTransparencyEnabled: https://developer.apple.com/tutorials/data/documentation/uikit/uiaccessibility/isreducetransparencyenabled.json
+81. UIAccessibility.buttonShapesEnabled: https://developer.apple.com/tutorials/data/documentation/uikit/uiaccessibility/buttonshapesenabled.json
+
+**Sessões da WWDC**
+
+82. WWDC 2020, 10175, The details of UI typography: https://developer.apple.com/videos/play/wwdc2020/10175/
+83. WWDC 2019, 214, Implementing Dark Mode on iOS: https://developer.apple.com/videos/play/wwdc2019/214/
+84. WWDC 2019, 808, What's New in iOS Design: https://developer.apple.com/videos/play/wwdc2019/808/
+85. WWDC 2025, 356, Get to know the new design system: https://developer.apple.com/videos/play/wwdc2025/356/
+86. WWDC 2025, 219, Meet Liquid Glass: https://developer.apple.com/videos/play/wwdc2025/219/
+87. WWDC 2025, 284, Build a UIKit app with the new design: https://developer.apple.com/videos/play/wwdc2025/284/
+88. WWDC 2025, 323, Build a SwiftUI app with the new design: https://developer.apple.com/videos/play/wwdc2025/323/
+89. WWDC 2023, 10158, Animate with springs: https://developer.apple.com/videos/play/wwdc2023/10158/
+90. WWDC 2018, 803, Designing Fluid Interfaces: https://developer.apple.com/videos/play/wwdc2018/803/
+91. WWDC 2024, 10145, Enhance your UI animations and transitions: https://developer.apple.com/videos/play/wwdc2024/10145/
+
+**Padrões web (W3C, MDN, caniuse)**
+
+92. WCAG 2.2: https://www.w3.org/TR/WCAG22/
+93. Understanding WCAG 2.2, Target Size (Minimum): https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+94. MDN, font-family: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+95. MDN, length (unidade ch): https://developer.mozilla.org/en-US/docs/Web/CSS/length
+96. MDN, position (sticky): https://developer.mozilla.org/en-US/docs/Web/CSS/position
+97. MDN, env() (safe-area-inset): https://developer.mozilla.org/en-US/docs/Web/CSS/env
+98. MDN, color-scheme: https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+99. MDN, touch-action: https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+100. caniuse, prefers-reduced-transparency: https://caniuse.com/mdn-css_at-rules_media_prefers-reduced-transparency
+101. caniuse, Vibration API: https://caniuse.com/vibration
+
+**React Native, Expo e bibliotecas (versões instaladas no projeto)**
+
+102. react-native-web 0.21.2, createReactDOMStyle.js (pilha System): https://github.com/necolas/react-native-web/blob/0.21.2/packages/react-native-web/src/exports/StyleSheet/compiler/createReactDOMStyle.js
+103. react-native-web 0.21.2, PixelRatio: https://github.com/necolas/react-native-web/blob/0.21.2/packages/react-native-web/src/exports/PixelRatio/index.js
+104. react-native-web 0.21.2, AccessibilityInfo: https://github.com/necolas/react-native-web/blob/0.21.2/packages/react-native-web/src/exports/AccessibilityInfo/index.js
+105. react-native-web, Pressable (hover): https://necolas.github.io/react-native-web/docs/pressable/
+106. react-native-web, Styling: https://necolas.github.io/react-native-web/docs/styling/
+107. React Native, Text style props: https://reactnative.dev/docs/text-style-props
+108. React Native, Pressable (android_ripple): https://reactnative.dev/docs/pressable
+109. React Native, AccessibilityInfo: https://reactnative.dev/docs/accessibilityinfo
+110. React Native 0.81, StatusBar: https://reactnative.dev/docs/0.81/statusbar
+111. React Native 0.81 (blog, SafeAreaView deprecado, edge-to-edge): https://reactnative.dev/blog/2025/08/12/react-native-0.81
+112. expo-blur (SDK 54), BlurView.web.tsx: https://github.com/expo/expo/blob/sdk-54/packages/expo-blur/src/BlurView.web.tsx
+113. Expo SDK 54, BlurView (Android experimental): https://docs.expo.dev/versions/v54.0.0/sdk/blur-view/
+114. expo-font (SDK 54), Font.types.ts (FontDisplay): https://github.com/expo/expo/blob/sdk-54/packages/expo-font/src/Font.types.ts
+115. Expo, Fonts: https://docs.expo.dev/develop/user-interface/fonts/
+116. Expo SDK 54, Haptics: https://docs.expo.dev/versions/v54.0.0/sdk/haptics/
+117. Expo SDK 54 changelog (edge-to-edge obrigatório): https://expo.dev/changelog/sdk-54
+118. Reanimated, Web support: https://docs.swmansion.com/react-native-reanimated/docs/guides/web-support/
+119. Reanimated, withSpring: https://docs.swmansion.com/react-native-reanimated/docs/animations/withSpring/
+120. Reanimated, Glossary (worklets): https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/glossary/
+121. React Navigation 6.x, Native Stack Navigator: https://reactnavigation.org/docs/6.x/native-stack-navigator/
+122. React Navigation 6.x, Bottom Tabs Navigator: https://reactnavigation.org/docs/6.x/bottom-tab-navigator/
+123. react-native-screens, discussão 2540 (predictive back): https://github.com/software-mansion/react-native-screens/discussions/2540
+124. react-native-screens, releases (ios_from_left, ios_from_right): https://github.com/software-mansion/react-native-screens/releases
+125. Android Developers, Haptic feedback: https://developer.android.com/develop/ui/views/haptics/haptic-feedback
+126. react-native-text-size, About Android Fonts (pesos antes da API 28): https://github.com/aMarCruz/react-native-text-size/wiki/About-Android-Fonts
+
+Fontes consultadas e descartadas (não usadas no texto, listadas só para rastreabilidade das claims da seção 13.2): fórum da Apple, thread 697910 (https://developer.apple.com/forums/thread/697910), blog zachsim.one sobre alturas do iPhone X (https://zachsim.one/blog/2017/9/13/updating-your-app-for-the-iphone-8-screen-size), espelho do HIG do iOS 10 sobre ícones customizados (https://codershigh.github.io/guidelines/ios/human-interface-guidelines/graphics/custom-icons/index.html).
