@@ -161,3 +161,84 @@ O bundle de 4,99 MB foi entregue em 76 ms (loopback), então os tempos medem par
 
 ### G. Lacunas (peso)
 Servidor local sem gzip/brotli e sem latência (tempos medem parse/execução); fluxo logado (Firebase) não medido; liturgia e notícias não exercitadas; favicon contado via PerformanceResourceTiming; animações detectadas por amostragem em 1,2 s mais contador de rAF; nativo não medido; tema escuro não remedido (mesmo bundle).
+
+## 3. Copy e honestidade
+
+Strings em `src/i18n/strings.js` (chave entre parênteses) ou inline (`isEn ? : `). Lista completa por tela no relatório do subagente; aqui ficam as strings que sustentam os fatos abaixo.
+
+### A. Strings visíveis (resumo por tela)
+- **Chrome**: abas `tab.home/articles/bible/tools/settings` (`strings.js:17-22`, `App.js:300-306`); ícones: Bíblia usa `bookmark`, Artigos usa `book` (`App.js:286-292`). Header "Artigo - {título}" composto em `ArticleDetailScreen.jsx:171`. Splash "✝ · APPologética · 1 Pedro 3,15" (`App.js:253-255`).
+- **Início**: "APPologética" (`HomeScreen.jsx:82`), "Saiba responder, com a fonte na mão." (`:83`), versículo `home.hero.verse` (`strings.js:89`), banner litúrgico (`liturgicalSeason.js:31-35`), "Buscar em todo o app..." (`strings.js:53`), "OBJEÇÃO DO DIA" (`:55`, uppercase `HomeScreen.jsx:228`), "Ver como responder" (`:56`), "O que você quer aprender?" (`:54`), 6 categorias (`articleCategories.js:8-15`), "{n} ARTIGOS" (`HomeScreen.jsx:140`), "Versículos e Referências / Bíblia, Catecismo, documentos" (`strings.js:64-65`).
+- **Artigo (chrome)**: a11y "Ouvir artigo / Parar narração" (`:137-145`), "Compartilhar artigo" (`:150-152`), "Favoritar artigo" (`:157-161`), "Ampliar imagem" (`:273`), badge de categoria uppercase (`:292`, `:385`), "Referências" + "Toque em qualquer referência para abrir o texto completo." (`strings.js:119-120`), "OBJEÇÕES RESPONDIDAS" (`RelatedDialogues.jsx:21`), "VER TAMBÉM" (`RelatedArticles.jsx:21`), modal "Salvar nos favoritos? ... crie uma conta gratuita. Seus favoritos ficam salvos e sincronizados entre dispositivos." (`:207-210`).
+- **Bíblia**: "Bíblia Sagrada" (`:669`), "73 livros do cânon católico, tradução Ave Maria. Toque e segure num versículo para marcar ou anotar." (`:673`), "Buscar livro..." (`:681`), "ANTIGO/NOVO TESTAMENTO" (`:660-661`), "CONTINUE LENDO" (`ContinueBibleCard.jsx:26`), "{Livro} {n}" também dentro do conteúdo (`:805`), menu long-press "MARCAR COM COR / Anotar / Compartilhar / Copiar" (`:940-981`), "Capítulo em preparação" (`:831`, `:835`).
+- **Onboarding**: "Saiba responder" (`:78`), "Quando questionarem a sua fé, tenha a resposta, com a fonte na mão. Vamos te preparar em menos de um minuto." (`:82`), citação 1 Pedro 3,15-16 (`:88-90`), "Pular / Começar / Voltar / Ver a resposta" (`:162-177`), "Qual tema mais te pega?" (`:97`), "Com quem você mais conversa sobre fé? / Só pra falarmos a sua língua." (`:122-123`), "Pronto. Aqui está sua primeira resposta" (`:147`).
+- **Login**: "Entre na sua conta para continuar" (`strings.js:157`, `:68`), "Entrar", "ou" e "OU" (`:133`, `:160`), "Continuar com Google" (`:148`), "Criar conta nova" (`:155`), "Continuar sem conta" (`:166`), "Você pode explorar artigos, Bíblia, liturgia e referências. Marcações e notas exigem conta." (`:169-171`).
+- **Modal de conta** (`AccountPrompt.jsx:19-20, 104-106, 111, 115`): "Criar uma conta? ... Marcações, notas e favoritos ficam salvos e sincronizados entre dispositivos." / "Sincronizado entre celulares" / "Seus favoritos protegidos" / "Criar conta grátis" / "Agora não".
+- **Banner web** (`WebDownloadBanner.jsx:15, 31, 36-40`, só em `SettingsScreen.jsx:225`): "Baixe o app" / "Leve o APPologética com você, 100% offline" / "EM BREVE App Store / Google Play".
+
+### B. Inflações (promessas sem lastro)
+| # | Texto | Onde | O que o código mostra |
+|---|---|---|---|
+| B1 | "Vamos te preparar em menos de um minuto." | `OnboardingScreen.jsx:82` | Sem medição. 4 passos (`:46`); "Ver a resposta" → `onDone` → `App.js:406-408` → `:425` cai no **Login** na primeira abertura (`guest=false`, `AuthContext.jsx:70`). A resposta só abre depois de entrar ou "Continuar sem conta" (`HomeScreen.jsx:35-41`). E o onboarding repete em toda abertura para visitante (`App.js:384-388`, "TEMPORÁRIO"). |
+| B2 | "Pronto. Aqui está sua primeira resposta" / "Preparamos uma resposta guiada" | `:147`, `:151` | A resposta não está nessa tela. `pickDialogue` (`:33-39`) escolhe o diálogo de menor `rank` da categoria: é a mesma para todos. Nada é "preparado" para a pessoa. |
+| B3 | "Com quem você mais conversa sobre fé? / Só pra falarmos a sua língua." | `:122-123` | A escolha é descartada: `onPress={() => setStep(3)}` (`:129`) não grava nada. Nenhum consumidor de `AUDIENCES` fora do arquivo. Comentário `:25` admite que seria "só para uma linha de copy personalizada", que não existe. |
+| B4 | "As perguntas que mais se buscam no Brasil" | `strings.js:232`, `ArticlesScreen.jsx:85` (fora da superfície) | Fonte é `documentos/top100-br.md:1-6`: compilação de listas de FAQs (Theolocast, Diocese de Formosa, GotQuestions PT, Opus Dei). Sem dado de volume de busca. `POPULAR_IDS` é "ids curados" (`articleCategories.js:31-32`). |
+| B5 | "Saiba responder, com a fonte na mão." | `HomeScreen.jsx:83`; `OnboardingScreen.jsx:82` | Artigos: lastro sim (83 artigos, todos com `references`). Diálogos (a "resposta" do onboarding e da Objeção do dia): 0 de 53 têm `references`; fontes só como texto solto nos passos (ex. `dialogues.js:29`). |
+| B6 | "Buscar em todo o app..." | `strings.js:53` | `SearchScreen.jsx` indexa artigos (`:24-35`), referências (`:37-48`), versículos do dia (`:51-60`) e Bíblia (`:121`). Não indexa glossário, diálogos, quiz, estratégias, santos, plano, caderno, liturgia. |
+| B7 | "{n} ARTIGOS" | `HomeScreen.jsx:140` | Calculado dos dados (23/15/7/14/10/14 = 83). Lastro OK. |
+| B8 | "73 livros do cânon católico, tradução Ave Maria" | `BibleScreen.jsx:673` | 73 livros, nenhum capítulo faltando (checado em node). Lastro OK. Consequência: "Capítulo em preparação" (`:831`, `:835`) é copy morta em PT. |
+| B9 | "100% offline" | `WebDownloadBanner.jsx:36` | Liturgia (`liturgyApi.js:33`), notícias (`newsApi.js:37, :112`) e auth usam rede. Na web a Bíblia é chunk sob demanda (`bibleApi.js:40-41`). |
+| B10 | "Baixe o app" + "Em breve" | `WebDownloadBanner.jsx:31, :15` | Caixas App Store/Google Play são `View` sem `onPress` (`:17-25`). `share.js:6` (`APP_PROMO_URL = ''`) confirma que o app não está nas lojas. Título promete download inexistente. |
+| B11 | "Criar conta grátis" | `strings.js:151` | Sem IAP, paywall ou anúncios (grep). Lastro OK. |
+| B12 | **"Seus favoritos ficam salvos e sincronizados entre dispositivos" / "Seus favoritos protegidos" / "Sincronizado entre celulares"** | `ArticleDetailScreen.jsx:210`; `AccountPrompt.jsx:20, :104, :106`; `ToolsScreen.jsx:84` | Favoritos vivem só em AsyncStorage (`src/utils/favorites.js:1-29`, chave `favorites:articles`), nunca vão ao Firestore. Criar conta não sincroniza favoritos. A estrela do artigo (`:199-214`) exige conta para um recurso local. **Afirmação falsa.** |
+| B13 | "Marcações e notas exigem conta." | `LoginScreen.jsx:171` | Incompleto: favoritar (`ArticleDetailScreen.jsx:201`) e itens de Ferramentas (`ToolsScreen.jsx:78`) também exigem. |
+| B14 | 1 Pedro 3,15 em três redações | `App.js:255`, `strings.js:89-90`, `OnboardingScreen.jsx:88-90` | Nenhuma é o texto da Ave Maria embarcada (`bibleAveMaria.js`, `1pd` 3,15: "Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito."). O onboarding atribui "3,15-16", mas "suavidade e respeito" está no v. 15; o v. 16 é "Tende uma consciência reta...". |
+
+### C. Padrões escuros
+| Padrão | Estado | Evidência |
+|---|---|---|
+| Continuidade forçada, custo escondido, escassez falsa | Ausentes | Sem código de assinatura; "Objeção do dia" é rotação determinística (`HomeScreen.jsx:63-67`). |
+| Confirmshaming | Ausente | Recusas neutras: "Agora não" (`AccountPrompt.jsx:115`), "Pular", "Continuar sem conta". |
+| Nag de conta | Presente, contido, com 4 problemas | Só em ação bloqueada (`GuestGate.jsx:16-22`): long-press em versículo (`BibleScreen.jsx:512`), estrela (`ArticleDetailScreen.jsx:201`), Ferramentas (`ToolsScreen.jsx:78`). (a) "Criar conta grátis" → `exitGuest` (`AccountPrompt.jsx:69-72`, `AuthContext.jsx:95-98`) derruba a pessoa no **Login**, não no cadastro (`App.js:371-379`). (b) Protege favoritos, que são locais (B12). (c) No Login, "Continuar sem conta" sem borda e em `textMuted` (`LoginScreen.jsx:227-237`) contra primário preenchido; subtítulo "Entre na sua conta para continuar" afirma obrigação que a tela dispensa. (d) Onboarding em toda abertura + card "Você está como visitante" em Ajustes (`strings.js:213-214`). |
+| Opt-in de notificação na abertura | Ausente | `requestPermissions` só nos toggles de Ajustes (`SettingsScreen.jsx:125-154`). |
+| Banner de download na web | Presente | `SettingsScreen.jsx:225`; sem fechar (`WebDownloadBanner.jsx:27-43`); sem ação (`:17-25`). |
+| Pergunta de personalização sem efeito | Presente | Passo 2 do onboarding (B3). |
+| Rabo promocional no compartilhar, não avisado | Presente | Todo compartilhamento anexa "Enviado pelo APPologética ✝" (`share.js:10, :55`), sem mostrar o texto final. |
+
+### D. Jargão e rótulos (leigo de 20 a 38 anos)
+DOMÍNIO = manter com explicação; INTERFACE = trocar.
+- Marca: "APPologética" nunca é explicada na superfície (só o wedge `HomeScreen.jsx:83`). "Quiz Apologético" (`strings.js:36`) → "Quiz de fé".
+- INTERFACE: "Objeção do dia" (`:55`) → "Pergunta difícil do dia" ou "Alguém te diz" (já usado em `:137`); "Referências / Versículos e Referências" (`:19, :64, :35, :119`) → "Fontes"; "Ferramentas" (aba com Rosário, Exame, Plano, Quiz, Diálogo, Caderno; `ToolsScreen.jsx:16-38`) → "Praticar"; "Modo Diálogo" (`:37`) → "Treinar uma resposta"; "Trilho" (`:196-198`) → "caminho"; "Marcações / Marcar com cor" (`:30, :83, :164`) → "Grifos / Grifar"; "Falácias" (`:38-41`) → "erros de argumento"; "Glossário Teológico" (`:72`) → "Glossário"; "Capítulo em preparação" (`:163`) morto em PT; "Continue lendo" com dois significados (`:153` vs `:167`); "Ler no app / Abrir no Catecismo" (`:202, :204`; o segundo abre vatican.va externo, `RefDetailScreen.jsx:62-65`) → "Abrir na Bíblia / Ler no site do Vaticano".
+- DOMÍNIO: Catecismo, deuterocanônico (`BibleScreen.jsx:728`), cânon católico, tradução Ave Maria (ambíguo com a oração), Tempo Comum/Pascal/Advento/Quaresma (nota atual não explica), Liturgia, Exame de Consciência, Santo Rosário.
+- Inconsistências de nome do mesmo tema: "Sagrada Escritura" (Início) vs "A Bíblia" (Onboarding `:19`); "Moral" vs "Moral e vida" (`:20`); chave `'História'` (`OnboardingScreen.jsx:22`, 5 diálogos) vs id `'História da Igreja'` (`articleCategories.js:13`), e `category.História` não existe em `strings.js:219-224`. "Outras religiões (evangélicos, espiritismo)" (`:21`) e "Amigos evangélicos" (`:27`): evangélicos são cristãos; a descrição da categoria (`strings.js:229`) lista "Islã, espiritismo, ateísmo". "Email" (`strings.js:147`) vs "e-mail" (`LoginScreen.jsx:32, :107`).
+
+### E. Descompasso rótulo → comportamento
+| # | Rótulo | Handler | O que acontece |
+|---|---|---|---|
+| E2 | "Continue lendo" na Início (`ContinueReadingCard.jsx:39`) | `getLastRead()` (`:18-25`), gravado em `ArticleDetailScreen.jsx:61` ao abrir | É "reabrir o último artigo aberto", sem posição nem progresso; aparece mesmo para artigo lido até o fim. O homônimo da Bíblia (`ContinueBibleCard.jsx:26`) restaura a posição de verdade (`BibleScreen.jsx:437-448`). Mesmo rótulo, dois comportamentos. |
+| E4 | "Pular" (`OnboardingScreen.jsx:162`) | `skip` (`:49-52`) → `App.js:425` AuthStack | Cai no Login, não no app. `hasSeenOnboarding` nunca é lido (`onboarding.js:6-12`). |
+| E5 | "Começar" (`:166`) | `setStep(1)` | Só avança para a escolha de tema. |
+| E6 | "Ver a resposta" (`:177`) | `start` (`:54-59`) → `App.js:425` | Na primeira abertura leva ao Login; a resposta só abre depois (`HomeScreen.jsx:35-41`). |
+| E8 | "Criar conta grátis" (`AccountPrompt.jsx:111`) | `exitGuest` → AuthStack, rota inicial Login (`App.js:373-374`) | Cai em "Entrar", não em "Criar conta". |
+| E9 | "Entre na sua conta para continuar" (`LoginScreen.jsx:68`) | n/a | A mesma tela oferece "Continuar sem conta" (`:166`). |
+| E10 | Ícone `volume-high-outline` na Bíblia (`BibleScreen.jsx:815-816`) e no artigo (`ArticleDetailScreen.jsx:142`) | `toggleChapterTts` (`:570-627`) | Lê o capítulo inteiro com voz do sistema; sem rótulo visível, sem progresso. Alto-falante lê como "som ligado/desligado". |
+| E11 | Estrela "Favoritar artigo" (`:159`) | `requireAccount` (`:199-214`) | Visitante recebe modal de conta para recurso local. |
+| E12 | "Compartilhar artigo" (`:150`) | `shareArticle` (`share.js:54-57`) | Título + resumo + "Enviado pelo APPologética ✝", sem link (`:6`). |
+| E13 | "Abrir no Catecismo" (`strings.js:204`) | `RefDetailScreen.jsx:62-65` | Abre vatican.va externamente, igual a "Abrir fonte oficial"; sugere tela interna que não existe. |
+| E14 | "Toque em qualquer referência para abrir o texto completo." (`strings.js:120`) | `openReference` (`:189-192`) | Para refs não bíblicas, `text` é um trecho (`references.js:570, :581, :704`), não o documento. |
+| E15 | Aba "Bíblia" com ícone `bookmark`; "Artigos" com `book` (`App.js:288-289`) | n/a | O livro está nos Artigos e o marcador na Bíblia. |
+| E16 | Header "Artigo - {título}" (`:171`) | n/a | O prefixo empurra o título para a elipse: "Artigo - Deus Existe? Os ..." em `artigo-claro.png`. |
+| E17 | Título do capítulo duas vezes (`BibleScreen.jsx:180`, `:805`) | n/a | "João 3" duas vezes em `biblia-capitulo-claro.png`. |
+| E18 | "Toque e segure num versículo para marcar ou anotar." (`:673`) | `onLongPress` (`:861`) único acesso | A instrução só está na lista de livros; na tela do capítulo não há dica. |
+| E19 | "Baixe o app" (`WebDownloadBanner.jsx:31`) | nenhum | Nada acontece. |
+
+### F. Consistência de voz
+- Você x vós x te: `strings.js:89` mistura "Esteja sempre pronto" com "vos pedir ... em vós"; "Vamos te preparar" (`OnboardingScreen.jsx:82`), "te pega" (`:97`), "Alguém te diz" (`strings.js:137`) contra o padrão dominante "você".
+- Caixa alta forçada (`textTransform: 'uppercase'`), 12 pontos na superfície: `HomeScreen.jsx:210, :228`; `ContinueReadingCard.jsx:56`; `ContinueBibleCard.jsx:58`; `ArticleDetailScreen.jsx:385`; `RelatedArticles.jsx:46, :72`; `RelatedDialogues.jsx:46`; `BibleScreen.jsx:1010, :1079`; `LoginScreen.jsx:226`; `WebDownloadBanner.jsx:65`.
+- Pontuação: placeholders com "..." ASCII (`strings.js:53, :13`; `BibleScreen.jsx:681`); subtítulos ora com ponto (`liturgicalSeason.js:31-35`) ora sem (`strings.js:61, :65, :67`); botões no infinitivo e um rótulo no imperativo ("Continue lendo").
+- Travessões: 0 em `strings.js` e no JSX, mas 7 das 53 objeções em `src/data/dialogues.js` (`:308, :321, :334, :386, :399, :412, :425`) têm "—" e são exibidas na Início e no fim dos artigos. Hífen fazendo papel de travessão em "Artigo - {título}".
+- Mesma ação, vários nomes: criar conta em 5 formas (`strings.js:145, :146, :151, :192, :214`); "Email" vs "e-mail".
+- PT fixo que vaza para EN: `ImageZoomModal.jsx:236` ("Fechar"), `share.js:24`, `dialog.js:23` ("Cancelar"), `AccountPrompt.jsx:19-20`.
+
+### G. Lacunas (copy)
+App não executado (TTS, cache da Bíblia na web e Signup → Home com intenção pendente não verificados em runtime). Douay-Rheims não checada. Estação litúrgica é aproximada por design (`liturgicalSeason.js:2-3`, Natal termina em 6 de janeiro, `:56`). Signup e ForgotPassword fora. Capturas conferidas: as 10 principais em claro; passos 1-3 do onboarding, modal de conta e menu long-press descritos pelo código.
