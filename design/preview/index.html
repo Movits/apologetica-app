@@ -215,11 +215,12 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .pills{display:flex;justify-content:flex-end;gap:var(--s2)}
 .pill{height:36px;padding:0 var(--s3);border-radius:999px;background:var(--material-strong);display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--text)}
 .pill svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-.onb-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--s4)}
-.cross{width:28px;height:36px;position:relative;margin:0 0 var(--s2)}
-.cross::before,.cross::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
-.cross::before{left:11px;top:0;width:6px;height:36px}.cross::after{left:0;top:9px;width:28px;height:6px}
-.onb h1{font-family:var(--font-display);font-weight:600;font-size:40px;line-height:1;margin:0;letter-spacing:-.01em}
+.onb-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--s3)}
+.wordmark{display:flex;align-items:center;gap:8px;font-size:13px;line-height:18px;letter-spacing:.02em;color:var(--text-2);margin:0 0 var(--s3)}
+.cross-xs{width:10px;height:13px;position:relative;flex:0 0 10px}
+.cross-xs::before,.cross-xs::after{content:"";position:absolute;background:var(--gold);border-radius:1px}
+.cross-xs::before{left:4px;top:0;width:2px;height:13px}.cross-xs::after{left:0;top:3px;width:10px;height:2px}
+.onb h1{font-family:var(--font-display);font-weight:600;font-size:40px;line-height:1;margin:0 0 var(--s1);letter-spacing:-.01em}
 .onb .lead{font-size:17px;line-height:24px;margin:0;color:var(--text)}
 .onb .quote{font-family:var(--font-reading);font-style:italic;font-size:17px;line-height:26px;color:var(--text-2);margin:var(--s2) 0 0;padding-left:var(--s4);border-left:2px solid var(--gold)}
 .onb .quote cite{display:block;font-style:normal;font-family:var(--font-ui);font-size:13px;margin-top:var(--s1)}
@@ -499,7 +500,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
               <button class="pill"><svg viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m2 0c-1 4-4 8-7 10m3-5c1 2 3 4 5 5M13 21l4-10 4 10M14.5 17h5"/></svg>English</button>
             </div>
             <div class="onb-body">
-              <div class="cross" aria-hidden="true"></div>
+              <p class="wordmark"><span class="cross-xs" aria-hidden="true"></span>APPologética</p>
               <h1>Saiba responder</h1>
               <p class="lead">Quando questionarem a sua fé, tenha a resposta com a fonte na mão.</p>
               <p class="quote">“Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito.”<cite>1 Pedro 3,15</cite></p>
@@ -537,7 +538,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
                 <button class="pill" aria-label="Tema escuro"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
                 <button class="pill"><svg viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m2 0c-1 4-4 8-7 10m3-5c1 2 3 4 5 5M13 21l4-10 4 10M14.5 17h5"/></svg>English</button>
               </div>
-              <div class="cross" aria-hidden="true"></div>
+              <p class="wordmark"><span class="cross-xs" aria-hidden="true"></span>APPologética</p>
               <h1 class="form-title">Entrar</h1>
               <p class="body muted" style="margin:0 0 20px">Sua conta guarda marcações e notas em todos os aparelhos.</p>
               <div class="group">
