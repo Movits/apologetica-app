@@ -118,6 +118,15 @@ export function webStackScreenOptions(colors, _tokens, extra) {
   };
 }
 
+// Para telas que já compensam a tab bar por dentro (LargeTitleScreen ou
+// contentContainerStyle próprio): zera o paddingBottom herdado do stack e
+// mantém o fundo. Use em `options` do Screen ou em navigation.setOptions().
+export function fullBleedContentOptions(colors) {
+  return Platform.OS === 'web'
+    ? { cardStyle: { flex: 1, backgroundColor: colors.bg, paddingBottom: 0 } }
+    : { contentStyle: { backgroundColor: colors.bg, paddingBottom: 0 } };
+}
+
 // Escolhe as opções certas para o navigator devolvido por createAppStack().
 // `extra` = { paddingBottom } vai para contentStyle (nativo) ou cardStyle (web).
 export function stackScreenOptionsForPlatform(colors, tokens, extra) {
