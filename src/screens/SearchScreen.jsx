@@ -293,7 +293,7 @@ export default function SearchScreen({ navigation }) {
     return (
       <View key={id}>
         <SectionTitle title={id === 'verses' ? t('search.section.verses') : t('search.section.bible')} />
-        <Group>
+        <Group style={groupStyle}>
           {data.map((v) => (
             <Row
               key={`${v.bookId}-${v.chapter}-${v.verse}`}
