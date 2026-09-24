@@ -8,13 +8,16 @@ import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/qu
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { addDays, todayKey } from '../utils/daily';
+import { recordDailyAnswer } from '../utils/quizHistory';
 import { haptics } from '../utils/haptics';
 import { Button, Group, PressScale, ProgressBar, Row, SectionTitle } from '../components/ui';
 
 const STREAK_KEY = 'quiz:streak';
-// { AAAA-MM-DD: { id, correct } }. As chaves antigas foram gravadas em UTC
-// e as novas em hora local (todayKey), no mesmo formato: o histórico continua
-// legível e o streak segue contando de onde estava.
+// { AAAA-MM-DD: { id, correct } }, chave em hora local (todayKey). As chaves
+// antigas foram gravadas em UTC, no mesmo formato, e à noite no Brasil isso
+// podia pôr a resposta de ontem sob a data de hoje: recordDailyAnswer
+// (src/utils/quizHistory.js) devolve essa entrada para ontem ao gravar a de
+// hoje, e o streak segue contando de onde estava.
 const HISTORY_KEY = 'quiz:history';
 const PRACTICE_SIZE = 10;
 
@@ -223,13 +226,14 @@ function MultipleChoiceGame({ mode, navigation }) {
       // Chave em hora local: a conversão para UTC, à noite no Brasil, já dava
       // o dia seguinte e quebrava o "ontem" do streak.
       const today = todayKey();
+      const yesterday = todayKey(addDays(new Date(), -1));
       try {
         const raw = await AsyncStorage.getItem(HISTORY_KEY);
-        const hist = raw ? JSON.parse(raw) : {};
-        hist[today] = { id: current.id, correct: ok };
+        const hist = recordDailyAnswer(raw ? JSON.parse(raw) : {}, {
+          today, yesterday, id: current.id, correct: ok,
+        });
         await AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
         if (ok) {
-          const yesterday = todayKey(addDays(new Date(), -1));
           const had = hist[yesterday];
           const newStreak = had && had.correct ? streak + 1 : 1;
           setStreak(newStreak);

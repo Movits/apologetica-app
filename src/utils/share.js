@@ -10,23 +10,30 @@ const APP_PROMO = APP_PROMO_URL
   ? `\n\nEnviado pelo APPologética ✝\nApologética católica e Bíblia, gratuito.\n${APP_PROMO_URL}`
   : '\n\nEnviado pelo APPologética ✝';
 
-// No nativo usa a folha de compartilhamento. Na web, Share.share só existe se o
-// navegador tiver Web Share API; senão (ex.: desktop) copia para a área de
-// transferência e avisa, para o botão nunca falhar em silêncio.
+// No nativo usa a folha de compartilhamento. Na web, navigator.share só existe
+// se o navegador tiver Web Share API e só funciona dentro do gesto do usuário:
+// fora dele (Safari, chamada vinda de um setTimeout) lança NotAllowedError.
+// Sem a API, ou se ela recusar por qualquer motivo que não seja a pessoa
+// cancelando a folha (AbortError), copia para a área de transferência e avisa,
+// para o botão nunca falhar em silêncio.
 async function doShare(message) {
   if (Platform.OS === 'web') {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        await navigator.share({ text: message });
+    const nav = typeof navigator !== 'undefined' ? navigator : null;
+    if (nav?.share) {
+      try {
+        await nav.share({ text: message });
         return;
+      } catch (err) {
+        if (err?.name === 'AbortError') return;
       }
-      if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        await navigator.clipboard.writeText(message);
+    }
+    try {
+      if (nav?.clipboard) {
+        await nav.clipboard.writeText(message);
         notify('Copiado', 'Texto copiado para a área de transferência.');
-        return;
       }
     } catch {
-      // usuário cancelou o share ou API indisponível, silencioso
+      // área de transferência indisponível (sem permissão ou fora do gesto), silencioso
     }
     return;
   }

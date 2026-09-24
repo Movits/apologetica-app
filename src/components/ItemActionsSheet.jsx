@@ -1,18 +1,28 @@
+import { Platform } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 import { Group, Row, Sheet } from './ui';
 
-// Folha de ações de um item das listas do usuário (uma marcação, uma nota):
-// título com a referência e uma lista agrupada de ações
-// { icon, label, onPress, danger }. A ação roda depois que a folha fechou
-// (duração de saída do Sheet mais uma folga), porque no nativo um Alert ou a
-// folha de compartilhar apresentados por cima de um Modal que ainda está
-// fechando podem não aparecer. Na web o atraso curto ainda cabe na janela de
-// ativação do usuário que o navigator.share exige.
+// Folha de ações de um item das listas do usuário (uma marcação, uma nota, um
+// favorito): título com a referência e uma lista agrupada de ações
+// { icon, label, onPress, danger }.
+//
+// Quando a ação roda depende da plataforma. Na web ela roda dentro do gesto e
+// antes de fechar a folha: o navigator.share exige a ativação do usuário e,
+// disparado de um setTimeout, o Safari recusa (NotAllowedError). Só as
+// destrutivas esperam a folha fechar, para a confirmação não abrir por cima
+// dela. No nativo tudo espera a saída do Sheet (duração mais uma folga): um
+// Alert ou a folha de compartilhar são apresentados a partir do Modal e, se
+// ele ainda está fechando, são descartados junto com ele.
 export default function ItemActionsSheet({ visible, title, actions, onClose }) {
   const { colors, tokens } = useTheme();
   const { motion } = tokens;
 
   const run = (action) => {
+    if (Platform.OS === 'web' && !action.danger) {
+      action.onPress?.();
+      onClose?.();
+      return;
+    }
     onClose?.();
     setTimeout(() => action.onPress?.(), motion.aba + motion.stagger);
   };

@@ -60,7 +60,7 @@ export default function DebateStrategiesScreen() {
         keyExtractor={(s) => s.id}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ padding: space.md, gap: space.sm }}
-        ListEmptyComponent={<EmptyState icon="search-outline" title={t('debate.empty')} message={t('glossary.emptyHint')} />}
+        ListEmptyComponent={<EmptyState icon="search-outline" title={t('debate.empty')} message={t('debate.emptyHint')} />}
         renderItem={({ item }) => (
           <StrategyCard
             item={item}

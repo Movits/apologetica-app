@@ -45,10 +45,11 @@ const getChipLabel = (ref) => {
 // (leituras alternativas). Fica com a primeira.
 const first = (arr) => (Array.isArray(arr) && arr.length > 0 ? arr[0] : arr);
 
-function formatTime(ts) {
+// Data e hora da última atualização no formato do idioma da interface.
+function formatTime(ts, isEn) {
   if (!ts) return '';
   const d = new Date(ts);
-  return d.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+  return d.toLocaleString(isEn ? 'en-US' : 'pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 }
 
 // Enquanto carrega: três cards com barras na forma do conteúdo, sem spinner.
@@ -154,13 +155,17 @@ export default function LiturgyScreen() {
     loadWithSpinner();
   }, [loadWithSpinner]);
 
+  // Lista de referências em inglês (USCCB) do dia. A flag `alive` descarta a
+  // resposta se a tela desmontou ou o idioma mudou antes de ela chegar.
   useEffect(() => {
-    if (!isEn) return;
+    if (!isEn) return undefined;
+    let alive = true;
     const [yyyy, mm, dd] = todayKey().split('-');
     fetch(`https://cpbjr.github.io/catholic-readings-api/readings/${yyyy}/${mm}-${dd}.json`)
       .then((r) => r.ok ? r.json() : null)
-      .then((data) => { if (data?.readings) setEnReadings(data.readings); })
+      .then((data) => { if (alive && data?.readings) setEnReadings(data.readings); })
       .catch(() => {});
+    return () => { alive = false; };
   }, [isEn]);
 
   const onRefresh = async () => {
@@ -349,7 +354,7 @@ export default function LiturgyScreen() {
       ) : null}
 
       <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.lg }]}>
-        {L.footer}: {formatTime(liturgy.fetchedAt)}.
+        {L.footer}: {formatTime(liturgy.fetchedAt, isEn)}.
       </Text>
     </ScrollView>
   );

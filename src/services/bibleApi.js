@@ -1,4 +1,5 @@
 import { getBook, bookName } from '../data/bible';
+import { formatVerseRef } from '../utils/verseRef';
 
 // As duas Bíblias pesavam 2,81 MB dos 4,44 MB que a versão web transferia: 63%
 // do download inicial, sempre as duas, mesmo para quem lê num idioma só, e tudo
@@ -96,7 +97,8 @@ function norm(s) {
 
 // Busca full-text offline na Bíblia inteira (varredura por substring, não Fuse:
 // ~35 mil versículos por tradução, já residentes em memória). Retorna itens
-// prontos para deep-link: { bookId, chapter, verse, ref, text }.
+// prontos para deep-link: { bookId, chapter, verse, ref, text }, com `ref` no
+// formato do idioma (formatVerseRef: "João 3,16" em PT, "John 3:16" em EN).
 // `language`: 'en' → Douay-Rheims, senão Ave Maria (PT).
 export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
   const q = norm(query).trim();
@@ -104,7 +106,6 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
   const isEn = language === 'en';
   const data = isEn ? DRA : AVEMARIA;
   if (!data) return [];
-  const sep = isEn ? ':' : ',';
   const results = [];
   for (const bookId of Object.keys(data)) {
     const chapters = data[bookId];
@@ -123,7 +124,7 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
             bookId,
             chapter,
             verse,
-            ref: `${name} ${chapter}${sep}${verse}`,
+            ref: formatVerseRef({ bookName: name, chapter, verse }, isEn),
             text: verses[vi],
           });
           if (results.length >= limit) return results;

@@ -148,20 +148,35 @@ export default function ReferencesScreen({ route }) {
   }, [query, source, isEn]);
 
   // Chegada por deep link (highlightId): limpa filtro e busca para o item
-  // existir na lista, destaca e rola até ele (tentativas porque a lista
-  // virtualizada pode ainda não ter medido o alvo).
+  // existir na lista e o destaca. O scroll fica no efeito seguinte, porque os
+  // índices precisam ser os das seções renderizadas.
   const highlightId = route?.params?.highlightId;
+  const pendingScroll = useRef(null);
   useEffect(() => {
-    if (!highlightId) return undefined;
+    if (!highlightId) return;
+    pendingScroll.current = highlightId;
     setQuery('');
     setSource(ALL);
     setHighlightedId(highlightId);
+  }, [highlightId]);
+
+  // Rola até o item pendente assim que `sections` for a lista completa (sem
+  // busca nem chip). Os índices vêm de `sections`, e não de REFERENCE_SOURCES:
+  // as seções descartam fontes vazias (Ciência e Mídia hoje), então a posição
+  // de uma fonte na lista não é a posição dela no catálogo de fontes.
+  // Tentativas porque a lista virtualizada pode ainda não ter medido o alvo.
+  // O pendente é consumido na primeira passada, então digitar depois não rola
+  // de novo nem apaga a busca.
+  useEffect(() => {
+    if (!highlightId || pendingScroll.current !== highlightId) return undefined;
+    if (query !== '' || source !== ALL) return undefined;
+    pendingScroll.current = null;
     let sectionIndex = -1;
     let itemIndex = -1;
-    REFERENCE_SOURCES.forEach((s, si) => {
-      if (sectionIndex >= 0) return;
-      const ii = refsWithEn.filter((r) => r.source === s.id).findIndex((r) => r.id === highlightId);
+    sections.some((s, si) => {
+      const ii = s.data.findIndex((r) => r.id === highlightId);
       if (ii >= 0) { sectionIndex = si; itemIndex = ii; }
+      return ii >= 0;
     });
     if (sectionIndex < 0) return undefined;
     const scrollTry = (animated) => {
@@ -171,7 +186,7 @@ export default function ReferencesScreen({ route }) {
     };
     const timers = [50, 300, 600].map((ms, i) => setTimeout(() => scrollTry(i > 0), ms));
     return () => timers.forEach(clearTimeout);
-  }, [highlightId]);
+  }, [highlightId, sections, query, source]);
 
   const handleOpen = useCallback((id) => navigation.navigate('RefDetail', { highlightId: id }), [navigation]);
   const handleOpenInBible = useCallback((nav) => openBible(navigation, nav), [navigation]);

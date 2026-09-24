@@ -11,6 +11,9 @@
 //   onDone    ao terminar o último pedaço
 //   onStopped se o sistema interromper a fala (perda de foco de áudio etc.)
 //   onError   no primeiro erro (a fila para)
+// speakLong para sozinha a narração anterior (Speech.stop() logo no começo),
+// seja desta tela ou de outra, e os callbacks dela ficam invalidados: quem
+// chama não precisa parar antes de começar uma nova.
 // stopSpeaking() interrompe a fila atual sem chamar callbacks: quem chamou já
 // sabe que parou (é o que as telas fazem hoje depois de Speech.stop()).
 
@@ -28,6 +31,10 @@ export function speakLong(text, opts = {}) {
   const { onStart, onDone, onStopped, onError, maxChunk = MAX_UTTERANCE, ...speechOpts } = opts;
   const chunks = chunkText(text, maxChunk);
   const mine = ++current;
+  // Para a narração anterior antes de começar. O onStopped que esse stop
+  // dispara é da narração antiga, já invalidada por `current`, e não chega
+  // aos callbacks de ninguém.
+  Speech.stop().catch(() => {});
   if (!chunks.length) {
     onDone?.();
     return;
