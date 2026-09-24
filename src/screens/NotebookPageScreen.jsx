@@ -131,11 +131,7 @@ export default function NotebookPageScreen({ route, navigation }) {
     onOpenRef: (refId) => navigation.navigate('RefDetail', { highlightId: refId }),
   };
   const refs = useMemo(() => extractRefs(body), [body]);
-  const kindLabel = {
-    v: isEn ? 'Verse' : 'Versículo',
-    a: isEn ? 'Article' : 'Artigo',
-    r: isEn ? 'Reference' : 'Referência',
-  };
+  const kindLabel = { v: t('common.verse'), a: t('header.article'), r: t('header.reference') };
   const readingLine = text('reading').lineHeight;
 
   const deleteButton = pageId ? (

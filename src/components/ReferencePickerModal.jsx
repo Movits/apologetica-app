@@ -13,7 +13,7 @@ import { getChapter, ensureBible } from '../services/bibleApi';
 import { pick } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { formatVerseRef } from '../utils/verseRef';
-import { Button, Chip, EmptyState, Field, Group, Row, SearchField } from './ui';
+import { Button, Chip, EmptyState, Field, Group, ListSeparator, Row, SearchField } from './ui';
 
 // Referências já mescladas com a tradução EN (refEn, topicEn...), lidas com
 // `pick` e `refLabel` para caírem no PT quando a tradução falta.
@@ -38,14 +38,14 @@ const norm = (s) => String(s ?? '').trim().toLowerCase();
 // o arrasto do Sheet capturaria o gesto.
 export default function ReferencePickerModal({ visible, onClose, onPick, onPickVerse, mode = 'token' }) {
   const { colors, tokens, text } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { t, isEn, lang } = useLanguage();
   const insets = useSafeAreaInsets();
   const { space, radius, icon } = tokens;
   const verseOnly = mode === 'verse';
   useModalNavBar(visible);
   // A Bíblia aqui só valida o número máximo do versículo, e a validação já
   // aceita qualquer um se o dado não estiver lá: basta pedir o carregamento.
-  useEffect(() => { ensureBible(isEn ? 'en' : 'pt').catch(() => {}); }, [isEn]);
+  useEffect(() => { ensureBible(lang).catch(() => {}); }, [lang]);
 
   const [tab, setTab] = useState('verse');
   const [articleQuery, setArticleQuery] = useState('');
@@ -97,12 +97,12 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
   const maxVerse = useMemo(() => {
     if (!book || !ch) return Infinity;
     try {
-      const data = getChapter(book.id, ch, isEn ? 'en' : 'pt');
+      const data = getChapter(book.id, ch, lang);
       return data?.verses?.length || Infinity;
     } catch {
       return Infinity;
     }
-  }, [book, ch, isEn]);
+  }, [book, ch, lang]);
   const canInsert = Boolean(book) && ch >= 1 && ch <= (book?.totalChapters ?? 0) && vs >= 1 && vs <= maxVerse;
 
   const confirmVerse = () => {
@@ -116,14 +116,9 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
     close();
   };
 
-  const tabLabel = {
-    verse: isEn ? 'Verse' : 'Versículo',
-    ref: isEn ? 'Reference' : 'Referência',
-    article: isEn ? 'Article' : 'Artigo',
-  };
+  const tabLabel = { verse: t('common.verse'), ref: t('header.reference'), article: t('header.article') };
   const title = verseOnly ? t('note.chooseVerse') : t('notebook.addReference');
 
-  const separator = { height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md };
   // A FlatList é o card da lista agrupada e encolhe para caber na folha
   // (maxHeight do painel), rolando por dentro.
   const listStyle = { flexShrink: 1, backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' };
@@ -133,8 +128,8 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
       keyExtractor={keyExtractor}
       keyboardShouldPersistTaps="handled"
       style={listStyle}
-      ItemSeparatorComponent={() => <View style={separator} />}
-      ListEmptyComponent={<EmptyState icon="search-outline" title={isEn ? 'Nothing found' : 'Nada encontrado'} />}
+      ItemSeparatorComponent={ListSeparator}
+      ListEmptyComponent={<EmptyState icon="search-outline" title={t('search.empty')} />}
       renderItem={renderItem}
     />
   );
@@ -206,7 +201,7 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
             autoFocus
           />
           <Field
-            label={isEn ? 'Verse' : 'Versículo'}
+            label={t('common.verse')}
             keyboardType="number-pad"
             value={verse}
             onChangeText={setVerse}

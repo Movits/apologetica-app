@@ -4,12 +4,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { confirmAction, notify } from '../utils/dialog';
 import { addNote, updateNote, removeNote, getNote } from '../services/userData';
 import { getBook, bookName } from '../data/bible';
-import { getChapter } from '../services/bibleApi';
+import { getVerse } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { shareNote } from '../utils/share';
-import { formatVerseRef } from '../utils/verseRef';
+import { verseLabel } from '../utils/refLabel';
 import HeaderButton from '../components/HeaderButton';
 import ReferencePickerModal from '../components/ReferencePickerModal';
 import { Button, Field, Group, Row } from '../components/ui';
@@ -23,10 +23,9 @@ import { Button, Field, Group, Row } from '../components/ui';
 // seletor só no modo versículo. Salvar é o botão primário no fim do texto.
 export default function NoteEditorScreen({ route, navigation }) {
   const { colors, tokens, text } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { t, isEn, lang } = useLanguage();
   const insets = useSafeAreaInsets();
   const { space } = tokens;
-  const lang = isEn ? 'en' : 'pt';
   // O editor em si não precisa da Bíblia: só a prévia do versículo e o
   // compartilhar, que monta o texto. O compartilhar roda dentro do gesto do
   // usuário (o navigator.share exige isso), então a tradução é pedida ao
@@ -57,12 +56,8 @@ export default function NoteEditorScreen({ route, navigation }) {
     return () => { alive = false; };
   }, [noteId]);
 
-  const book = getBook(meta.bookId);
-  const bn = bookName(book, isEn);
-  const refLabel = book ? formatVerseRef({ bookName: bn, ...meta }, isEn) : '';
-  const versePreview = book && biblia.pronta
-    ? getChapter(meta.bookId, meta.chapter, lang)?.verses?.find((v) => v.n === meta.verseStart)?.t || ''
-    : '';
+  const refLabel = verseLabel(meta, isEn);
+  const versePreview = biblia.pronta ? getVerse(meta.bookId, meta.chapter, meta.verseStart, lang) || '' : '';
 
   const handleSave = async () => {
     const trimmed = body.trim();
@@ -108,7 +103,7 @@ export default function NoteEditorScreen({ route, navigation }) {
 
   const handleShare = () => {
     shareNote({
-      bookName: bn,
+      bookName: bookName(getBook(meta.bookId), isEn),
       chapter: meta.chapter,
       verseStart: meta.verseStart,
       verseEnd: meta.verseEnd,
