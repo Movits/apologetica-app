@@ -146,6 +146,15 @@ O header dos stacks fica **opaco por padrão**, na cor do fundo (`colors.bg`), s
 
 **Tema em três estados (2026-09-24, revisão A da Fase 5).** O tema passa a ser `system | light | dark` (`src/utils/themeMode.js`, puro e testado em `tests/themeMode.test.mjs`), guardado na chave nova `settings:theme`. A chave legada `settings:darkMode` é ignorada de propósito: o código antigo a gravava em toda hidratação, então todo aparelho tinha `'false'` sem escolha de ninguém e o app nunca seguia o sistema; como estamos em pré-lançamento, não há migração (quem escolheu escolhe de novo em Ajustes). Precedência na abertura: `appg_theme` da landing web (`light`/`dark`) > `settings:theme` > sistema. O `ThemeContext` ouve `Appearance.addChangeListener`, então "Sistema" acompanha a troca do aparelho em tempo real; a escolha só é gravada quando a pessoa toca num chip (Ajustes) ou no toggle do login (`setDarkMode` virou atalho de `setThemeMode`). Na web, `setThemeMode('system')` remove `appg_theme`, e um modo explícito grava `light`/`dark`.
 
+### Desvios registrados na revisão final (2026-09-24)
+
+- Ícone da categoria "Igreja Católica": `home-outline` (Ionicons), alinhado ao ícone que o
+  onboarding já usava para o mesmo tema, em vez do `library-outline` cogitado na Onda 0b.
+- Header do Artigo: título completo à esquerda com reticências (e `headerTitleContainerStyle`
+  na web), em vez do "título curto de 3 palavras": o corte por palavras produzia frases
+  sem sentido e o header nativo já trunca.
+- `useReduceMotion` descartado (o reanimated respeita `ReduceMotion.System`).
+
 ## Onda 4: Início
 
 Objetivo: `HomeScreen.jsx` igual ao mock "Depois" da Início.
