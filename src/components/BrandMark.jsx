@@ -32,16 +32,17 @@ export default function BrandMark({ size = 'md', color, withName = false, decora
   const tint = color || colors.tint;
   const bar = { position: 'absolute', backgroundColor: tint, borderRadius: tokens.radius.xs };
 
-  // Sozinha, a cruz é uma imagem com o nome do app como rótulo. Ao lado do nome
-  // (ou marcada como decorativa) o leitor de tela pula a cruz (aria-hidden na
-  // web, accessibilityElementsHidden no iOS, importantForAccessibility no Android).
+  // Sozinha, a cruz é uma imagem (role="img", que o RN 0.81 e o react-native-web
+  // aceitam) com o nome do app como rótulo. Ao lado do nome (ou marcada como
+  // decorativa) o leitor de tela pula a cruz (aria-hidden na web,
+  // accessibilityElementsHidden no iOS, importantForAccessibility no Android).
   const a11y = withName || decorative
     ? {
         'aria-hidden': true,
         accessibilityElementsHidden: true,
         importantForAccessibility: 'no-hide-descendants',
       }
-    : { accessibilityRole: 'image', accessibilityLabel: APP_NAME };
+    : { role: 'img', 'aria-label': APP_NAME };
 
   const cross = (
     <View style={[{ width: box.width, height: box.height }, withName ? null : style]} {...a11y}>

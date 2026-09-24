@@ -5,6 +5,7 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withSpring, withTim
 import { scheduleOnRN } from 'react-native-worklets';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 // Folha inferior (bottom sheet) sobre um Modal transparente. Entra com mola
 // (translateY da altura da tela até 0) enquanto o backdrop escurece, e fecha
@@ -17,6 +18,7 @@ import { useTheme } from '../../context/ThemeContext';
 // e só então some. Se o pai ignorar o pedido, nada muda.
 export default function Sheet({ visible, onClose, title, children, style }) {
   const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
   const insets = useSafeAreaInsets();
   const { height: windowHeight } = useWindowDimensions();
   const { space, radius, motion, shadow } = tokens;
@@ -31,19 +33,27 @@ export default function Sheet({ visible, onClose, title, children, style }) {
     onClose?.();
   }, [onClose]);
 
+  // Entrada: só depende de `visible`. Fica num efeito próprio porque o
+  // setShown(true) daqui muda `shown`, e um efeito único que também dependesse
+  // de `shown` rodaria de novo e disparava a animação de entrada duas vezes.
   useEffect(() => {
-    if (visible) {
-      setShown(true);
-      backdrop.value = withTiming(1, { duration: motion.aba, easing });
-      translateY.value = withSpring(0, { duration: motion.spring, dampingRatio: 0.85 });
-    } else if (shown) {
-      const target = panelHeight.value > 0 ? panelHeight.value : windowHeight;
-      backdrop.value = withTiming(0, { duration: motion.aba, easing });
-      translateY.value = withTiming(target, { duration: motion.aba, easing }, (finished) => {
-        if (finished) scheduleOnRN(setShown, false);
-      });
-    }
-  }, [visible, shown, windowHeight, backdrop, translateY, panelHeight, motion.aba, motion.spring, easing]);
+    if (!visible) return;
+    setShown(true);
+    backdrop.value = withTiming(1, { duration: motion.aba, easing });
+    translateY.value = withSpring(0, { duration: motion.spring, dampingRatio: 0.85 });
+  }, [visible, backdrop, translateY, motion.aba, motion.spring, easing]);
+
+  // Saída: com `visible` em falso e a folha ainda montada, anima até sumir e
+  // só então desmonta o Modal. Se `visible` voltar no meio, a animação de
+  // entrada cancela esta (callback com finished=false) e nada desmonta.
+  useEffect(() => {
+    if (visible || !shown) return;
+    const target = panelHeight.value > 0 ? panelHeight.value : windowHeight;
+    backdrop.value = withTiming(0, { duration: motion.aba, easing });
+    translateY.value = withTiming(target, { duration: motion.aba, easing }, (finished) => {
+      if (finished) scheduleOnRN(setShown, false);
+    });
+  }, [visible, shown, windowHeight, backdrop, translateY, panelHeight, motion.aba, easing]);
 
   const pan = useMemo(
     () =>
@@ -75,7 +85,7 @@ export default function Sheet({ visible, onClose, title, children, style }) {
     >
       <GestureHandlerRootView style={styles.root}>
         <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay }, backdropStyle]}>
-          <Pressable role="button" aria-label="Fechar" onPress={requestClose} style={styles.fill} />
+          <Pressable role="button" aria-label={t('common.close')} onPress={requestClose} style={styles.fill} />
         </Animated.View>
         <GestureDetector gesture={pan}>
           <Animated.View

@@ -2,6 +2,7 @@ import { forwardRef, useState } from 'react';
 import { Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../context/LanguageContext';
 import PressScale from './PressScale';
 
 // Campo de busca: caixa `card` com lupa à esquerda, TextInput preenchendo a
@@ -20,15 +21,18 @@ const SearchField = forwardRef(function SearchField(
     returnKeyType = 'search',
     asButton,
     onPress,
-    clearLabel = 'Limpar',
+    clearLabel,
     style,
     ...rest
   },
   ref,
 ) {
   const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
   const { space, radius, icon } = tokens;
   const [focused, setFocused] = useState(false);
+  // Rótulo do botão de limpar no idioma do app, salvo se a tela passar outro.
+  const clearText = clearLabel ?? t('common.clear');
 
   const box = {
     minHeight: 44,
@@ -103,7 +107,7 @@ const SearchField = forwardRef(function SearchField(
       {hasValue ? (
         <Pressable
           role="button"
-          aria-label={clearLabel}
+          aria-label={clearText}
           onPress={() => onChangeText?.('')}
           style={{
             position: 'absolute',

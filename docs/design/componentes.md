@@ -5,7 +5,7 @@ nenhum número solto de espaço, raio ou fonte, sempre `tokens.space.*`, `tokens
 `tokens.icon.*`, `tokens.motion.*` e `text('papel')`. Importe pelo índice:
 
 ```jsx
-import { Group, Row, SectionTitle, Button, SearchField, Chip, ProgressBar, EmptyState, GateNotice, Sheet, PressScale } from '../components/ui';
+import { Group, Row, ContinueRow, SectionTitle, Button, SearchField, Field, Chip, ProgressBar, EmptyState, GateNotice, Sheet, PressScale, LargeTitleScreen } from '../components/ui';
 ```
 
 Regras comuns: o alvo de toque vem do tamanho do elemento (`minHeight`/`minWidth` 44), nunca de
@@ -66,8 +66,8 @@ Não fazer: usar fora de um `Group` (perde o card e os separadores); pôr botõe
 
 ## SectionTitle
 
-Título de seção em display (`text('section')`, `role="heading"`) com margens `space.xl` em cima,
-`space.sm` embaixo e `space.md` nas laterais. `action` opcional `{ label, onPress }` à direita
+Título de seção em display (`text('section')`, `role="heading"` com `aria-level={2}`, o título da
+tela é o nível 1) com margens `space.xl` em cima, `space.sm` embaixo e `space.md` nas laterais. `action` opcional `{ label, onPress }` à direita
 em subhead na cor `tint`, com alvo de 44 que não estica a linha. `title` ou `children`.
 
 ```jsx
@@ -99,7 +99,7 @@ cruzado do pai).
 ## SearchField
 
 Campo de busca: caixa `card` de 44 com lupa, `TextInput` em body e botão limpar (`close-circle`,
-44x44, `aria-label` de `clearLabel`, default "Limpar") quando há valor. Na web, o foco desenha
+44x44, `aria-label` de `clearLabel`, default `t('common.clear')`) quando há valor. Na web, o foco desenha
 `outlineWidth: 2` na cor `tint` sobre o próprio input, que preenche a caixa, então o anel
 contorna a caixa toda e substitui o do navegador. Props: `value`, `onChangeText`,
 `onSubmitEditing`, `placeholder`, `autoFocus`, `returnKeyType` (default `"search"`), `style` e o
@@ -120,7 +120,8 @@ solto ao lado de uma lupa em vez do componente; `asButton` sem `onPress`.
 Pílula selecionável: alvo externo de 44, pílula de 34 com `paddingHorizontal: space.md` e
 `radius.full`. `selected` pinta fundo `tint` e texto `onTint`, senão fundo `card`, texto normal
 e hairline. Rótulo em subhead peso 600, `icon` opcional, `haptic` (booleano, tique de seleção),
-`disabled`, `aria-selected` e `role="button"`.
+`disabled` e `role="button"`. O estado selecionado sai como `aria-pressed` na web (botão de
+alternância) e `aria-selected` no nativo, porque o RN 0.81 não aceita `aria-pressed`.
 
 ```jsx
 <View style={{ flexDirection: 'row', gap: tokens.space.xs }}>
@@ -175,8 +176,8 @@ Não fazer: bloquear a tela inteira com ele (é inline, o resto continua visíve
 
 Folha inferior sobre `Modal transparent`. Props: `visible`, `onClose`, `title` (headline),
 `children`, `style` (no painel). Entra com mola (`motion.spring`, dampingRatio 0,85) e backdrop
-`overlay` em `motion.aba` ms. Fecha por toque no backdrop (`aria-label="Fechar"`), arrasto para
-baixo (mais de 120 px ou mais de 800 px/s), botão voltar do Android e Escape na web. Painel em
+`overlay` em `motion.aba` ms. Fecha por toque no backdrop (`aria-label` de `t('common.close')`),
+arrasto para baixo (mais de 120 px ou mais de 800 px/s), botão voltar do Android e Escape na web. Painel em
 `elevated`, cantos `radius.lg`, pegador de 36x5, `paddingBottom` com o inset inferior,
 `boxShadow` do token `shadow.sheet`, `role="dialog"` e `aria-modal`. Reduce motion é respeitado
 pelo reanimated (`ReduceMotion.System` é o default).
@@ -198,3 +199,85 @@ Não fazer: `runOnJS` (é `scheduleOnRN` de `react-native-worklets`); tirar o
 `GestureHandlerRootView` de dentro do Modal (o gesto morre no Android); pôr um `ScrollView`
 longo dentro (o Pan do painel captura o arrasto; para conteúdo rolável use uma tela);
 esquecer de zerar `visible` no `onClose` (a folha não fecha sozinha).
+
+## Field
+
+Campo rotulado de formulário, para dentro de um `Group` (que dá o card e os separadores).
+`label` em footnote secundário acima do `TextInput` em body (o rótulo também vira `aria-label`),
+`error` em footnote na cor `danger` abaixo, `trailing` é um nó à direita do input (um botão de
+44x44, por exemplo). Senha: com `onToggleSecure` o campo desenha sozinho o botão de olho (alvo
+de 44, `aria-label` de `toggleSecureLabel`, `aria-pressed` quando o texto está visível), e o
+`secureTextEntry` continua controlado pela tela, para dois campos seguirem o mesmo
+interruptor. `multiline` alinha o texto ao topo (Android) e `inputStyle` entra por último no
+`TextInput`, para um editor trocar o papel de texto (caderno e nota escrevem em
+`text('reading')`) sem perder o anel de foco. Na web o foco desenha `outlineWidth: 2` em `tint`
+no próprio input, com o recuo repartido entre invólucro e input (xs + xs) para o anel caber
+dentro do `overflow: 'hidden'` do `Group`. `onFocus`/`onBlur` são repassados, `style` vai no
+invólucro e o resto (`placeholder`, `keyboardType`, `autoCapitalize`...) no `TextInput`. Aceita
+`ref` (vai para o `TextInput`), para um campo focar o próximo no Enter.
+
+```jsx
+<Group>
+  <Field label={t('auth.email')} value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" returnKeyType="next" onSubmitEditing={() => passRef.current?.focus()} />
+  <Field ref={passRef} label={t('auth.password')} value={pass} onChangeText={setPass} secureTextEntry={hide} onToggleSecure={() => setHide((h) => !h)} toggleSecureLabel={t('auth.showPassword')} error={erro} />
+</Group>
+<Field label={t('note.text')} value={texto} onChangeText={setTexto} multiline inputStyle={text('reading')} />
+```
+
+Não fazer: usar fora de um `Group` (perde o card); botão de olho próprio no `trailing` quando
+`onToggleSecure` resolve; `outlineStyle: 'none'`; esconder o `error` com opacidade (some de
+verdade, o espaço não é reservado).
+
+## ContinueRow
+
+Linha "continuar de onde parou" para dentro de um `Group`: `icon` (default `reader-outline`),
+`title` (até duas linhas), `subtitle`, chevron e `onPress`. Com `progress` numérico (0 a 1)
+desenha uma `ProgressBar` de 3 px abaixo do subtítulo, com `progressLabel` como rótulo; sem
+`progress` a barra não aparece, para não desenhar uma trilha vazia. `accessibilityLabel` e
+`style` seguem para a `Row`. Não lê armazenamento nenhum: quem chama resolve os dados (a Início
+lê `utils/lastRead.js`, a Bíblia o capítulo onde parou) e passa aqui.
+
+```jsx
+<Group header={t('home.continue')}>
+  <ContinueRow title={artigo.title} subtitle={t('home.article')} progress={lidos / total} progressLabel={t('home.progress')} onPress={() => openArticle(navigation, artigo.id)} />
+</Group>
+```
+
+Não fazer: passar porcentagem (0 a 100) em `progress`; usar para uma lista de itens (é uma linha
+só, a de "continuar"); ler AsyncStorage dentro dela.
+
+## LargeTitleScreen
+
+Contêiner de tela com large title próprio (Cormorant), igual nas três plataformas, sem o large
+title nativo do iOS. O título grande rola com o conteúdo; a barra do topo (`insets.top + 44`)
+fica transparente e, a partir de 40 pt de rolagem, ganha o `ChromeBackdrop` e o título inline em
+headline (reanimated: `useAnimatedScrollHandler` + `interpolate` com `Extrapolation.CLAMP`). A
+tela é usada com o header do stack desligado (`headerShown: false`) e com
+`fullBleedContentOptions()` nas `options`, porque compensa a tab bar por dentro
+(`paddingBottom: useBottomTabBarHeight() + space.xl`; fora das abas o padding é zero).
+
+Props: `title` e `subtitle` (large title e a linha abaixo dele); `back` `{ label?, onPress,
+a11yLabel? }` mostra chevron + rótulo à esquerda; `right` é um nó com as ações da direita (ícones
+de 44); `children` é o conteúdo rolável, dentro de um `Animated.ScrollView`; `renderList` é a
+alternativa a `children` para telas com FlatList própria, recebe `{ onScroll,
+scrollEventThrottle, contentContainerStyle, header }` e deve passar tudo à sua
+`Animated.FlatList` (o `header` em `ListHeaderComponent`); `scrollProps` são props extras para o
+`Animated.ScrollView` do caminho `children` (`keyboardShouldPersistTaps`, `refreshControl`,
+`ref`...), espalhadas antes das do componente, então `onScroll`, `scrollEventThrottle` e
+`contentContainerStyle` continuam os dele; `contentStyle` é o extra no `contentContainerStyle`
+(recuo lateral, padding).
+
+```jsx
+<LargeTitleScreen title={t('tab.tools')} subtitle={t('tools.subtitle')} right={<Pressable role="button" aria-label={t('header.search')} onPress={buscar} style={{ minWidth: 44, minHeight: 44 }}><Ionicons name="search-outline" size={tokens.icon.md} color={colors.tint} /></Pressable>} scrollProps={{ keyboardShouldPersistTaps: 'handled' }}>
+  <SectionTitle title={t('tools.practice')} />
+  <Group>...</Group>
+</LargeTitleScreen>
+
+<LargeTitleScreen title={t('header.articles')} renderList={({ header, ...listProps }) => (
+  <Animated.FlatList {...listProps} data={artigos} keyExtractor={(a) => String(a.id)} ListHeaderComponent={header} renderItem={renderItem} />
+)} />
+```
+
+Não fazer: `headerLargeTitle` nativo por cima; passar `onScroll` ou `contentContainerStyle` em
+`scrollProps` esperando que valham (use `contentStyle`); deixar o `paddingBottom` do stack ligado
+(a tela compensa a tab bar sozinha, senão o recuo dobra); `SectionTitle` como título da tela.

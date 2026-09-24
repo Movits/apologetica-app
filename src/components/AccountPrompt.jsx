@@ -4,6 +4,7 @@ import {
   StyleSheet, Animated, Easing,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { space } from '../theme/tokens';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -50,21 +51,23 @@ function AccountPromptModal({ visible, opts, onClose }) {
   const { colors, darkMode, tokens, text } = useTheme();
   const { exitGuest } = useAuth();
   const { t, isEn } = useLanguage();
+  // Entrada: o card sobe `space.lg` enquanto o véu aparece, em `motion.aba` ms.
+  const slideFrom = tokens.space.lg;
   const fade = useRef(new Animated.Value(0)).current;
-  const slide = useRef(new Animated.Value(20)).current;
+  const slide = useRef(new Animated.Value(slideFrom)).current;
   useModalNavBar(visible);
 
   useEffect(() => {
     if (visible) {
       Animated.parallel([
-        Animated.timing(fade, { toValue: 1, duration: 180, useNativeDriver: true }),
-        Animated.timing(slide, { toValue: 0, duration: 220, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(fade, { toValue: 1, duration: tokens.motion.aba, useNativeDriver: true }),
+        Animated.timing(slide, { toValue: 0, duration: tokens.motion.aba, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
       ]).start();
     } else {
       fade.setValue(0);
-      slide.setValue(20);
+      slide.setValue(slideFrom);
     }
-  }, [visible, fade, slide]);
+  }, [visible, fade, slide, slideFrom, tokens.motion.aba]);
 
   const onCreate = async () => {
     onClose();
@@ -88,7 +91,8 @@ function AccountPromptModal({ visible, opts, onClose }) {
 
         <Animated.View style={[styles.card, { transform: [{ translateY: slide }] }]}>
           <View style={styles.iconCircle}>
-            <Ionicons name={opts.icon} size={32} color={colors.accent} />
+            {/* O ícone ocupa metade do disco (proporção, não tamanho solto). */}
+            <Ionicons name={opts.icon} size={ICON_CIRCLE / 2} color={colors.accent} />
           </View>
 
           <Text style={styles.title}>
@@ -121,42 +125,48 @@ function AccountPromptModal({ visible, opts, onClose }) {
 }
 
 function Benefit({ icon, label }) {
-  const { colors, text } = useTheme();
+  const { colors, tokens, text } = useTheme();
+  const { space, icon: iconSize } = tokens;
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 3 }}>
-      <Ionicons name={icon} size={15} color={colors.accent} />
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xs, marginVertical: space.xxs / 2 }}>
+      <Ionicons name={icon} size={iconSize.sm} color={colors.accent} />
       <Text style={[text('footnote'), { color: colors.textMuted, flex: 1 }]}>{label}</Text>
     </View>
   );
 }
 
+// Disco do ícone (dois `space.xxl`, 64) e largura máxima do card em telas
+// largas (um limite de coluna, como READING_COLUMN no Artigo).
+const ICON_CIRCLE = space.xxl * 2;
+const CARD_MAX_WIDTH = 380;
+
 const makeStyles = (c, darkMode, tokens, text) =>
   StyleSheet.create({
     backdrop: {
       flex: 1,
-      backgroundColor: 'rgba(13, 23, 34, 0.75)',
+      backgroundColor: c.overlay,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: 24,
+      padding: tokens.space.xl,
     },
     card: {
       width: '100%',
-      maxWidth: 380,
+      maxWidth: CARD_MAX_WIDTH,
       backgroundColor: c.card,
-      borderRadius: 18,
-      paddingHorizontal: 24,
-      paddingTop: 28,
-      paddingBottom: 20,
+      borderRadius: tokens.radius.lg,
+      paddingHorizontal: tokens.space.xl,
+      paddingTop: tokens.space.xl,
+      paddingBottom: tokens.space.lg,
       alignItems: 'center',
-      borderWidth: darkMode ? 1 : 0,
+      borderWidth: darkMode ? StyleSheet.hairlineWidth : 0,
       borderColor: c.cardBorder,
       ...tokens.shadow.floating,
     },
     iconCircle: {
-      width: 64, height: 64, borderRadius: 32,
+      width: ICON_CIRCLE, height: ICON_CIRCLE, borderRadius: tokens.radius.full,
       backgroundColor: c.badgeBg,
       justifyContent: 'center', alignItems: 'center',
-      marginBottom: 16,
+      marginBottom: tokens.space.md,
       borderWidth: 2,
       borderColor: c.accent,
     },
@@ -164,30 +174,31 @@ const makeStyles = (c, darkMode, tokens, text) =>
       ...text('title3'),
       color: c.primaryText,
       textAlign: 'center',
-      marginBottom: 8,
+      marginBottom: tokens.space.xs,
     },
     message: {
       ...text('subhead'),
       color: c.textMuted,
       textAlign: 'center',
-      marginBottom: 18,
+      marginBottom: tokens.space.md,
     },
     benefits: {
       alignSelf: 'stretch',
       backgroundColor: c.badgeBg,
-      borderRadius: 10,
-      padding: 12,
-      marginBottom: 20,
+      borderRadius: tokens.radius.md,
+      padding: tokens.space.sm,
+      marginBottom: tokens.space.lg,
     },
     btnPrimary: {
       alignSelf: 'stretch',
       flexDirection: 'row',
       backgroundColor: c.accent,
-      paddingVertical: 14,
-      borderRadius: 10,
+      minHeight: 44,
+      paddingVertical: tokens.space.sm,
+      borderRadius: tokens.radius.md,
       alignItems: 'center',
       justifyContent: 'center',
-      marginBottom: 8,
+      marginBottom: tokens.space.xs,
     },
     btnPrimaryText: {
       ...text('subhead'),
@@ -195,7 +206,8 @@ const makeStyles = (c, darkMode, tokens, text) =>
       color: c.primary,
     },
     btnSecondary: {
-      paddingVertical: 12,
+      minHeight: 44,
+      paddingVertical: tokens.space.sm,
       alignItems: 'center',
       alignSelf: 'stretch',
     },

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabBarHeightCallbackContext } from '@react-navigation/bottom-tabs';
@@ -40,8 +40,16 @@ export default function TabBar({ state, descriptors, navigation, insets }) {
   const setHeight = useContext(BottomTabBarHeightCallbackContext);
 
   // Respeita tabBarStyle: { display: 'none' } da tela ativa, como a padrão.
+  // Escondida, reporta altura zero para as telas que compensam com
+  // useBottomTabBarHeight() não guardarem o recuo de uma barra que não está
+  // lá (ao voltar, o onLayout reporta a altura real de novo). O efeito fica
+  // antes do return para a ordem dos hooks não mudar entre renders.
   const focusedOptions = descriptors[state.routes[state.index].key].options;
-  if (StyleSheet.flatten(focusedOptions.tabBarStyle)?.display === 'none') return null;
+  const hidden = StyleSheet.flatten(focusedOptions.tabBarStyle)?.display === 'none';
+  useEffect(() => {
+    if (hidden) setHeight?.(0);
+  }, [hidden, setHeight]);
+  if (hidden) return null;
 
   const onLayout = (e) => setHeight?.(e.nativeEvent.layout.height);
   const labelStyle = text('tabLabel');

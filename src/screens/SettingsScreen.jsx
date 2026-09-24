@@ -10,6 +10,7 @@ import * as Speech from 'expo-speech';
 import Constants from 'expo-constants';
 import { getBuildId } from '../utils/webUpdate';
 import { pick } from '../utils/i18nData';
+import { THEME_MODES } from '../utils/themeMode';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import {
@@ -88,7 +89,7 @@ function ChipRow({ children }) {
 
 export default function SettingsScreen() {
   const navigation = useNavigation();
-  const { colors, tokens, text, darkMode, setDarkMode, fontSize, setFontSize } = useTheme();
+  const { colors, tokens, text, themeMode, setThemeMode, fontSize, setFontSize } = useTheme();
   const { lang, setLang, t, isEn } = useLanguage();
   const { user, signOut, guest, exitGuest, deleteAccount } = useAuth();
   const { space, radius, icon } = tokens;
@@ -365,14 +366,22 @@ export default function SettingsScreen() {
               />
             ) : null}
 
-            {/* Aparência: tema, tamanho da letra e idioma. */}
+            {/* Aparência: tema (sistema, claro, escuro), tamanho da letra e idioma. */}
             <SectionTitle title={t('settings.section.appearance')} />
             <Group>
-              <Row
-                icon="moon-outline"
-                title={t('settings.darkMode.label')}
-                trailing={<ThemedSwitch value={darkMode} onValueChange={setDarkMode} label={t('settings.darkMode.label')} />}
-              />
+              <Row icon="moon-outline" title={t('settings.theme.label')}>
+                <ChipRow>
+                  {THEME_MODES.map((mode) => (
+                    <Chip
+                      key={mode}
+                      label={t(`settings.theme.${mode}`)}
+                      selected={themeMode === mode}
+                      onPress={() => setThemeMode(mode)}
+                      haptic
+                    />
+                  ))}
+                </ChipRow>
+              </Row>
               <Row icon="text-outline" title={t('settings.font.label')}>
                 <ChipRow>
                   {FONT_KEYS.map((key) => (

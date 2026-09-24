@@ -3,6 +3,7 @@ import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
 import { space, radius, icon, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
+import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
 
 // As paletas são exportadas para quem vive fora do provider (o ErrorBoundary
 // em App.js embrulha o ThemeProvider). Dentro do app, use useTheme().colors.
@@ -106,37 +107,53 @@ const FONT_SCALES = {
 const FONT_FAMILY = FONT_FAMILY_BY_PLATFORM[Platform.OS] || FONT_FAMILY_BY_PLATFORM.ios;
 const TOKENS = { space, radius, icon, motion, shadow, fontFamily: FONT_FAMILY };
 
-const STORAGE_DARK = 'settings:darkMode';
+// Modo de tema escolhido: 'system' | 'light' | 'dark' (src/utils/themeMode.js).
+// A chave antiga 'settings:darkMode' é IGNORADA de propósito: o código anterior
+// a gravava em toda hidratação, não só na escolha, então todo aparelho já tem
+// 'false' guardado sem que ninguém tenha escolhido nada, e ler essa chave
+// impediria o app de seguir o sistema. Como o app está em pré-lançamento, não
+// há migração: quem tinha escolhido escolhe de novo em Ajustes.
+const STORAGE_THEME_MODE = 'settings:theme';
 const STORAGE_FONT = 'settings:fontSize';
 
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  // Sem preferência salva, o app nasce no tema do sistema (app.json usa
-  // userInterfaceStyle "automatic"). A hidratação abaixo sobrescreve se a
-  // pessoa já escolheu. Não há listener de mudança do sistema por enquanto.
-  const [darkMode, setDarkModeState] = useState(() => Appearance.getColorScheme() === 'dark');
+  // Tema em três estados: `themeMode` é a escolha da pessoa (hidratada abaixo;
+  // nasce em 'system', então o splash já sai no tema do aparelho, que app.json
+  // deixa em userInterfaceStyle "automatic") e `systemScheme` é o esquema atual
+  // do sistema. O tema efetivo combina os dois: 'system' segue o aparelho e
+  // acompanha a troca em tempo real pelo listener logo abaixo.
+  const [themeMode, setThemeModeState] = useState('system');
+  const [systemScheme, setSystemScheme] = useState(() => Appearance.getColorScheme());
   const [fontSize, setFontSizeState] = useState('normal');
   const [hydrated, setHydrated] = useState(false);
+  const darkMode = isDarkFor(themeMode, systemScheme);
+
+  // Appearance.addChangeListener recebe ({ colorScheme }) e devolve uma
+  // subscription com remove(), tanto no RN 0.81 (Libraries/Utilities/
+  // Appearance.d.ts: NativeEventSubscription) quanto no react-native-web
+  // (dist/exports/Appearance/index.js, sobre matchMedia prefers-color-scheme).
+  useEffect(() => {
+    const sub = Appearance.addChangeListener(({ colorScheme }) => setSystemScheme(colorScheme));
+    return () => sub.remove();
+  }, []);
 
   useEffect(() => {
     (async () => {
       try {
-        // Na web, a escolha feita na landing fica em localStorage (appg_theme),
-        // compartilhada com o app (mesmo domínio). Ela tem prioridade.
-        let webTheme = null;
+        // Na web, a escolha feita na landing fica em localStorage (appg_theme,
+        // só 'light' ou 'dark'), compartilhada com o app (mesmo domínio). Ela
+        // tem prioridade sobre a salva pelo app; sem nenhuma, segue o sistema.
+        let landing = null;
         if (Platform.OS === 'web') {
-          try { webTheme = window.localStorage.getItem('appg_theme'); } catch {}
+          try { landing = window.localStorage.getItem('appg_theme'); } catch {}
         }
-        const [dm, fs] = await Promise.all([
-          AsyncStorage.getItem(STORAGE_DARK),
+        const [saved, fs] = await Promise.all([
+          AsyncStorage.getItem(STORAGE_THEME_MODE),
           AsyncStorage.getItem(STORAGE_FONT),
         ]);
-        if (webTheme === 'dark' || webTheme === 'light') {
-          setDarkModeState(webTheme === 'dark');
-        } else if (dm !== null) {
-          setDarkModeState(dm === 'true');
-        }
+        setThemeModeState(resolveThemeMode({ landing, saved }));
         if (fs && FONT_SCALES[fs]) setFontSizeState(fs);
       } catch {
         // sem persistência, segue com padrão
@@ -146,18 +163,26 @@ export function ThemeProvider({ children }) {
     })();
   }, []);
 
-  // Grava a preferência de tema só quando a pessoa escolhe (toggle em Ajustes ou
-  // no topo do login). Sem escolha salva, o app segue o tema do sistema a cada
-  // abertura, por isso a hidratação acima não grava nada. Na web, mantém a chave
-  // compartilhada com a landing (appg_theme) em sincronia.
-  const setDarkMode = useCallback((next) => {
-    const on = Boolean(next);
-    setDarkModeState(on);
-    AsyncStorage.setItem(STORAGE_DARK, String(on)).catch(() => {});
+  // Grava o modo só quando a pessoa escolhe (chips em Ajustes ou o toggle no
+  // topo do login); a hidratação acima nunca grava, senão o app deixaria de
+  // seguir o sistema sem ninguém pedir. Na web, mantém a chave compartilhada
+  // com a landing (appg_theme) em sincronia: 'light'/'dark' quando explícito, e
+  // sem chave quando é 'system' (a landing só conhece os dois explícitos).
+  const setThemeMode = useCallback((mode) => {
+    const next = THEME_MODES.includes(mode) ? mode : 'system';
+    setThemeModeState(next);
+    AsyncStorage.setItem(STORAGE_THEME_MODE, next).catch(() => {});
     if (Platform.OS === 'web') {
-      try { window.localStorage.setItem('appg_theme', on ? 'dark' : 'light'); } catch {}
+      try {
+        if (next === 'system') window.localStorage.removeItem('appg_theme');
+        else window.localStorage.setItem('appg_theme', next);
+      } catch {}
     }
   }, []);
+
+  // Atalho booleano para quem só alterna claro/escuro (AuthTopToggles e
+  // chamadores antigos): vira sempre uma escolha explícita.
+  const setDarkMode = useCallback((next) => setThemeMode(next ? 'dark' : 'light'), [setThemeMode]);
 
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
@@ -167,8 +192,9 @@ export function ThemeProvider({ children }) {
   // barra do sistema não destoar do app no build nativo. O fundo acompanha a cor
   // da tab bar (card); os ícones invertem conforme claro/escuro.
   // Com edge-to-edge (Expo Go 54 e SDK 55) setBackgroundColorAsync vira no-op
-  // com aviso no console; a chamada sai quando o edge-to-edge for ligado na
-  // onda do chrome (Onda 3). Até lá ela ainda vale no build EAS.
+  // com aviso no console; a chamada sai quando `edgeToEdgeEnabled` for ligado
+  // no app.json (onda futura, depois de todas as telas migrarem). Até lá ela
+  // ainda vale no build EAS.
   useEffect(() => {
     if (Platform.OS !== 'android') return;
     const c = darkMode ? DARK : LIGHT;
@@ -207,6 +233,8 @@ export function ThemeProvider({ children }) {
       colors,
       darkMode,
       setDarkMode,
+      themeMode,
+      setThemeMode,
       fontSize,
       setFontSize: setFontSizeState,
       scale,
@@ -217,7 +245,7 @@ export function ThemeProvider({ children }) {
       // plataforma aplicadas. Lança para papel desconhecido.
       text: (role) => textStyle(role, fs, FONT_FAMILY),
     };
-  }, [darkMode, fontSize, hydrated, setDarkMode]);
+  }, [darkMode, themeMode, fontSize, hydrated, setDarkMode, setThemeMode]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }

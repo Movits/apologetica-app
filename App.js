@@ -191,8 +191,8 @@ function MainTabs() {
 
   // Os nomes de rota são PT fixo (API de navegação); o rótulo visível e os
   // ícones vêm de src/navigation/tabs.js, desenhados pela TabBar própria.
-  // O header do Tab só aparece na aba Bíblia (tela direta, sem stack); os
-  // stacks desligam o header do Tab e usam o próprio.
+  // Nenhuma aba usa o header do Tab (os stacks têm o próprio e a Bíblia tem o
+  // large title próprio); tabHeaderOptions fica só como padrão.
   return (
     <Tab.Navigator
       tabBar={(props) => <TabBar {...props} />}
@@ -268,14 +268,15 @@ function RootNavigation() {
 
   // Só cobre o que não recebe estilo explícito (o fundo do container e os
   // padrões de header/tab bar, que hoje src/navigation/chrome.js e TabBar.jsx
-  // sobrescrevem). card/text seguem o par navy + texto sobre navy.
+  // sobrescrevem). card/text seguem o fundo e o texto do tema, o mesmo par do
+  // header opaco de chrome.js, para nada nascer navy por engano.
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
     colors: {
       ...(darkMode ? DarkTheme.colors : DefaultTheme.colors),
       background: colors.bg,
-      card: colors.primary,
-      text: colors.onPrimary,
+      card: colors.bg,
+      text: colors.text,
       border: colors.divider,
       primary: colors.tint,
     },
@@ -303,9 +304,8 @@ function RootNavigation() {
           options?.title ? `APPologética · ${options.title}` : 'APPologética',
       }}
     >
-      {/* O chrome agora é na cor do fundo (claro no tema claro), então os
-          ícones da barra de status seguem o tema em vez de ficar sempre
-          brancos. A Início ainda tem o hero navy até a Onda 4. */}
+      {/* O chrome é na cor do fundo (claro no tema claro), então os ícones da
+          barra de status seguem o tema em vez de ficar sempre brancos. */}
       <StatusBar style={darkMode ? 'light' : 'dark'} />
       {signedInOrGuest ? <MainStack /> : <AuthStack />}
     </NavigationContainer>

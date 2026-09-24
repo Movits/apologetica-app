@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 // Título de seção em display (text('section')) com ação opcional à direita
 // ({ label, onPress }). A ação tem alvo de 44 sem esticar a linha: o excedente
 // vira margem negativa, então o espaçamento do título não muda com a ação.
+// O heading é de nível 2 (aria-level): o título da tela é o nível 1.
 export default function SectionTitle({ title, children, action, style }) {
   const { colors, tokens, text } = useTheme();
   const { space } = tokens;
@@ -23,7 +24,7 @@ export default function SectionTitle({ title, children, action, style }) {
         style,
       ]}
     >
-      <Text role="heading" style={[sectionText, { color: colors.text, flex: 1 }]}>
+      <Text role="heading" aria-level={2} style={[sectionText, { color: colors.text, flex: 1 }]}>
         {title ?? children}
       </Text>
       {action ? (

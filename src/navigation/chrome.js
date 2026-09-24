@@ -73,7 +73,9 @@ export function translucentHeaderOptions() {
   };
 }
 
-// Header do Tab.Navigator (hoje só a aba Bíblia, tela direta sem stack).
+// Header do Tab.Navigator. Hoje nenhuma aba o usa (as cinco desligam com
+// headerShown: false; a Bíblia tem o large title próprio): fica como padrão
+// do screenOptions para uma aba nova não nascer com o header sem estilo.
 export function tabHeaderOptions(colors) {
   return headerOptions(colors);
 }

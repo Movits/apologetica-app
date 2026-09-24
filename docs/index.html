@@ -607,9 +607,12 @@
       try { localStorage.setItem('appg_lang', lang); } catch (e) {}
     }
 
-    function applyTheme(theme) {
+    // `persist` só no clique: a escolha da landing tem prioridade no app, então
+    // gravar em toda visita prenderia o app no claro e anularia "seguir o sistema".
+    function applyTheme(theme, persist) {
       theme = theme === 'dark' ? 'dark' : 'light';
       document.documentElement.dataset.theme = theme;
+      if (!persist) return;
       try { localStorage.setItem('appg_theme', theme); } catch (e) {}
     }
 
@@ -619,7 +622,9 @@
       try { savedTheme = localStorage.getItem('appg_theme'); } catch (e) {}
       var nav = (navigator.language || '').toLowerCase();
       applyLang(savedLang || (nav.indexOf('en') === 0 ? 'en' : 'pt'));
-      applyTheme(savedTheme || (document.documentElement.dataset.theme || 'light'));
+      var prefersDark = false;
+      try { prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) {}
+      applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'), false);
     })();
 
     document.getElementById('langBtn').addEventListener('click', function () {
@@ -627,7 +632,7 @@
     });
     document.getElementById('themeBtn').addEventListener('click', function () {
       var t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      applyTheme(t);
+      applyTheme(t, true);
     });
 
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

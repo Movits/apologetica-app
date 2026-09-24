@@ -27,6 +27,11 @@ import ChromeBackdrop from '../../navigation/ChromeBackdrop';
 // - renderList: alternativa a children para telas com FlatList própria.
 //   Recebe { onScroll, scrollEventThrottle, contentContainerStyle, header } e
 //   deve passar tudo à sua Animated.FlatList (header em ListHeaderComponent).
+// - scrollProps: props extras para o Animated.ScrollView do caminho children
+//   (keyboardShouldPersistTaps, refreshControl, ref...). Entram ANTES das
+//   props do componente, então onScroll, scrollEventThrottle e
+//   contentContainerStyle continuam os daqui (para recuo, use contentStyle).
+//   Ignorado com renderList, que já recebe tudo pela função.
 // - contentStyle: extra no contentContainerStyle.
 //
 // A tela é usada com header nativo desligado (headerShown: false).
@@ -70,6 +75,7 @@ export default function LargeTitleScreen({
   right,
   children,
   renderList,
+  scrollProps,
   contentStyle,
 }) {
   const { colors, tokens, text } = useTheme();
@@ -113,7 +119,7 @@ export default function LargeTitleScreen({
       {renderList ? (
         renderList({ ...listProps, header })
       ) : (
-        <Animated.ScrollView {...listProps}>
+        <Animated.ScrollView {...scrollProps} {...listProps}>
           {header}
           {children}
         </Animated.ScrollView>
