@@ -220,7 +220,7 @@ function MainTabs() {
     >
       <Tab.Screen name="Início" component={HomeStackScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Artigos" component={ArticlesStackScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Bíblia" component={BibleScreen} />
+      <Tab.Screen name="Bíblia" component={BibleScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Ferramentas" component={ToolsStackScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Ajustes" component={SettingsStackScreen} options={{ headerShown: false }} />
     </Tab.Navigator>

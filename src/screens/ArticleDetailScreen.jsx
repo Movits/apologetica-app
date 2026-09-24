@@ -15,7 +15,7 @@ import { speakLong, stopSpeaking, isSpeaking } from '../utils/speakLong';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
-import { markPlanDay } from '../utils/readingProgress';
+import { markPlanDay, markAsRead } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
 import { translucentHeaderOptions, fullBleedContentOptions } from '../navigation/chrome';
 import { Button, Group, Row, SectionTitle, PressScale } from '../components/ui';
@@ -33,6 +33,8 @@ const ACTION_SIZE = 44;
 // ou quando avança 5 pontos percentuais, e sempre ao sair da tela.
 const PROGRESS_WRITE_MS = 1000;
 const PROGRESS_WRITE_STEP = 0.05;
+// Fração do artigo a partir da qual ele conta como lido.
+const READ_THRESHOLD = 0.9;
 
 // Coluna de leitura no desktop (web): largura máxima do texto e, a partir de
 // que sobra lateral (gutter) as cruzes decorativas aparecem. O BrandMark "lg"
@@ -169,6 +171,11 @@ export default function ArticleDetailScreen({ route, navigation }) {
     s.at = now;
     s.written = s.max;
     setLastRead(article.id, s.max);
+    // Chegou perto do fim: conta como lido (selo "Lido" na lista de Artigos).
+    if (s.max >= READ_THRESHOLD && !s.marked) {
+      s.marked = true;
+      markAsRead(article.id);
+    }
   }, [article]);
 
   useEffect(() => {
