@@ -9,6 +9,9 @@ import { useTheme } from '../context/ThemeContext';
 // `size`: 'sm' | 'md' | 'lg' (caixa 18x24, 28x36, 44x56).
 // `color`: cor das barras (default colors.tint).
 // `withName`: mostra "APPologética" ao lado, em text('headline').
+// `decorative`: esconde a cruz do leitor de tela. Para quando o nome do app já
+//   está escrito ao lado (o bloco de marca) ou a cruz é só enfeite (marca
+//   d'água nas laterais do desktop), senão "APPologética" é anunciado duas vezes.
 // `style`: aplicado ao elemento externo (a cruz, ou a linha cruz + nome).
 
 const APP_NAME = 'APPologética';
@@ -23,16 +26,16 @@ const SIZES = {
 // A travessa começa a 30% do topo (proporção da cruz latina).
 const CROSSBAR_TOP = 0.3;
 
-export default function BrandMark({ size = 'md', color, withName = false, style }) {
+export default function BrandMark({ size = 'md', color, withName = false, decorative = false, style }) {
   const { colors, tokens, text } = useTheme();
   const box = SIZES[size] || SIZES.md;
   const tint = color || colors.tint;
   const bar = { position: 'absolute', backgroundColor: tint, borderRadius: tokens.radius.xs };
 
   // Sozinha, a cruz é uma imagem com o nome do app como rótulo. Ao lado do nome
-  // ela é decorativa: o leitor de tela lê só o texto (aria-hidden na web,
-  // accessibilityElementsHidden no iOS, importantForAccessibility no Android).
-  const a11y = withName
+  // (ou marcada como decorativa) o leitor de tela pula a cruz (aria-hidden na
+  // web, accessibilityElementsHidden no iOS, importantForAccessibility no Android).
+  const a11y = withName || decorative
     ? {
         'aria-hidden': true,
         accessibilityElementsHidden: true,

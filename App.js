@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import HomeScreen from './src/screens/HomeScreen';
@@ -46,13 +47,14 @@ import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { LanguageProvider, useLanguage } from './src/context/LanguageContext';
 import ErrorBoundary from './src/components/ErrorBoundary';
+import BrandMark from './src/components/BrandMark';
 import { AccountPromptProvider } from './src/components/AccountPrompt';
 import { useEffect, useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
 import { checkForWebUpdate } from './src/utils/webUpdate';
 import { hasSeenOnboarding } from './src/utils/onboarding';
 
-// Inicializa o Sentry (no-op na web e no Expo Go — ver src/sentry.js / sentry.web.js).
+// Inicializa o Sentry (no-op na web e no Expo Go, ver src/sentry.js / sentry.web.js).
 initSentry();
 
 // No app web, confere logo na abertura se o Safari serviu uma versao velha do
@@ -246,12 +248,15 @@ function ArticlesStackScreen() {
   );
 }
 
-// Splash branded — usado durante hidratação do auth + tema.
-// Cores fixas (não dependem do ThemeContext) pra dar identidade visual consistente.
+// Splash branded: usado durante hidratação do auth + tema e o carregamento da
+// fonte de títulos. Fundo e textos em cores fixas (navy e dourado) pra dar
+// identidade visual consistente antes de o tema hidratar; a cruz é o BrandMark,
+// decorativa porque o nome do app já vem escrito logo abaixo.
 function BrandedSplash() {
+  const { colors } = useTheme();
   return (
     <View style={splashStyles.container}>
-      <Text style={splashStyles.cross}>✝</Text>
+      <BrandMark size="lg" color={colors.accent} decorative style={splashStyles.mark} />
       <Text style={splashStyles.title}>APPologética</Text>
       <Text style={splashStyles.verse}>1 Pedro 3,15</Text>
       <ActivityIndicator size="small" color="#c9a84c" style={splashStyles.spinner} />
@@ -267,7 +272,7 @@ const splashStyles = StyleSheet.create({
     backgroundColor: '#1a3a5c',
     paddingHorizontal: 32,
   },
-  cross: { fontSize: 72, color: '#c9a84c', marginBottom: 24 },
+  mark: { marginBottom: 24 },
   title: {
     fontSize: 30,
     color: '#ffffff',
@@ -386,6 +391,15 @@ function RootNavigation() {
   // `null` = ainda lendo o AsyncStorage (segura o splash para não piscar a tela).
   const [onboardingSeen, setOnboardingSeen] = useState(null);
 
+  // Fonte de títulos (Cormorant Garamond SemiBold, único peso empacotado). A
+  // chave precisa ser exatamente a de FONT_FAMILY_BY_PLATFORM.*.display em
+  // src/theme/tokens.js, que é o que text('largeTitle') etc. põem no fontFamily.
+  // O splash segura até ela carregar; se o carregamento falhar (fontsError), o
+  // app segue com a fonte do sistema em vez de ficar preso no splash.
+  const [fontsLoaded, fontsError] = useFonts({
+    'CormorantGaramond-SemiBold': require('./assets/fonts/CormorantGaramond-SemiBold.ttf'),
+  });
+
   useEffect(() => {
     let alive = true;
     hasSeenOnboarding().then((seen) => { if (alive) setOnboardingSeen(seen); });
@@ -411,7 +425,7 @@ function RootNavigation() {
     },
   };
 
-  if (loading || onboardingSeen === null) {
+  if (loading || onboardingSeen === null || (!fontsLoaded && !fontsError)) {
     return <BrandedSplash />;
   }
 

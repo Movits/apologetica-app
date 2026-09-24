@@ -215,6 +215,12 @@ export const STRINGS = {
     'settings.guest.sub': 'Toque para criar uma conta',
     'settings.darkMode.label': 'Modo escuro',
     'settings.font.label': 'Tamanho da letra',
+    'settings.font.pequeno': 'Pequeno',
+    'settings.font.normal': 'Normal',
+    'settings.font.grande': 'Grande',
+    'settings.font.enorme': 'Enorme',
+    'settings.font.muitoGrande': 'Muito grande',
+    'settings.font.maximo': 'Máximo',
 
     // === Categorias dos artigos ===
     'category.Existência de Deus': 'Existência de Deus',
@@ -454,6 +460,12 @@ export const STRINGS = {
     'settings.guest.sub': 'Tap to create an account',
     'settings.darkMode.label': 'Dark mode',
     'settings.font.label': 'Font size',
+    'settings.font.pequeno': 'Small',
+    'settings.font.normal': 'Normal',
+    'settings.font.grande': 'Large',
+    'settings.font.enorme': 'Huge',
+    'settings.font.muitoGrande': 'Extra large',
+    'settings.font.maximo': 'Maximum',
 
     // === Article categories ===
     'category.Existência de Deus': 'Existence of God',

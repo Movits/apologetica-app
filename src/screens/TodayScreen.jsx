@@ -8,10 +8,11 @@ import VerseOfDayCard from '../components/VerseOfDayCard';
 import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
-import CrossMark from '../components/CrossMark';
+import BrandMark from '../components/BrandMark';
 
 const COLUMN_MAX = 720;   // largura da coluna central no desktop
-const CROSS_SIZE = 160;   // altura da cruz decorativa das laterais
+const CROSS_W = 44;       // largura do BrandMark "lg" (marca d'água das laterais)
+const CROSS_OPACITY = 0.16;
 
 // Página "Dia de Hoje": reúne o conteúdo diário (Versículo, Santo, Liturgia)
 // que antes ficava na home. Acessível pela seção Espiritualidade (Ferramentas).
@@ -24,11 +25,11 @@ export default function TodayScreen() {
   const styles = makeStyles(colors, fs);
 
   // No desktop sobra espaço dos dois lados da coluna central: enche cada gutter
-  // com a cruz do app (marca d'água). Só na web e se o gutter for largo o bastante.
+  // com a cruz do app (marca d'água, decorativa: o leitor de tela pula). Só na
+  // web e se o gutter for largo o bastante.
   const gutter = (width - COLUMN_MAX) / 2;
   const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
-  const crossW = Math.round(CROSS_SIZE * 0.62);
-  const crossLeft = Math.max(0, gutter / 2 - crossW / 2);
+  const crossLeft = Math.max(0, gutter / 2 - CROSS_W / 2);
 
   const dateLabel = useMemo(() => {
     const d = new Date();
@@ -46,10 +47,10 @@ export default function TodayScreen() {
       {showSideCrosses && (
         <>
           <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
-            <CrossMark size={CROSS_SIZE} />
+            <BrandMark size="lg" decorative style={{ opacity: CROSS_OPACITY }} />
           </View>
           <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
-            <CrossMark size={CROSS_SIZE} />
+            <BrandMark size="lg" decorative style={{ opacity: CROSS_OPACITY }} />
           </View>
         </>
       )}

@@ -9,7 +9,7 @@ import { referenceById, translateRef } from '../data/references';
 import { referencesEn } from '../data/references-en';
 import { useTheme } from '../context/ThemeContext';
 import { shareArticle } from '../utils/share';
-import CrossMark from '../components/CrossMark';
+import BrandMark from '../components/BrandMark';
 import ImageZoomModal from '../components/ImageZoomModal';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
@@ -29,10 +29,11 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const { width: winWidth } = useWindowDimensions();
   const article = articles.find((a) => a.id === route.params?.articleId);
 
-  // Cruzes decorativas nos gutters da coluna central (só desktop), igual ao "Dia de hoje".
+  // Cruzes decorativas nos gutters da coluna central (só desktop), igual ao
+  // "Dia de hoje": BrandMark "lg" (44 de largura) esmaecido, escondido do leitor de tela.
   const gutter = (winWidth - 720) / 2;
   const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
-  const crossLeft = Math.max(0, gutter / 2 - 50);
+  const crossLeft = Math.max(0, gutter / 2 - 22);
 
   // Herói: mede a largura e dá altura explícita (sem corte em web/nativo).
   const [heroW, setHeroW] = useState(0);
@@ -212,7 +213,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
   };
 
   const openOtherArticle = (id) => {
-    // push (não replace) pra preservar o histórico — voltar volta pro artigo anterior.
+    // push (não replace) pra preservar o histórico: voltar volta pro artigo anterior.
     navigation.push(route.name, { articleId: id });
   };
 
@@ -232,10 +233,10 @@ export default function ArticleDetailScreen({ route, navigation }) {
       {showSideCrosses && (
         <>
           <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
-            <CrossMark size={160} />
+            <BrandMark size="lg" decorative style={{ opacity: 0.16 }} />
           </View>
           <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
-            <CrossMark size={160} />
+            <BrandMark size="lg" decorative style={{ opacity: 0.16 }} />
           </View>
         </>
       )}

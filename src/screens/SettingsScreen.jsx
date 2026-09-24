@@ -24,11 +24,16 @@ import { useLanguage } from '../context/LanguageContext';
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
+// Escalas de FONT_SCALES (ThemeContext). `sample` é o tamanho em que o rótulo
+// do chip aparece (16 vezes a escala), pra dar a prévia; o rótulo vem de
+// strings.js em `settings.font.<key>`.
 const FONT_OPTIONS = [
-  { key: 'pequeno', label: 'Pequeno', sample: 14 },
-  { key: 'normal', label: 'Normal', sample: 16 },
-  { key: 'grande', label: 'Grande', sample: 18 },
-  { key: 'enorme', label: 'Enorme', sample: 21 },
+  { key: 'pequeno', sample: 14 },
+  { key: 'normal', sample: 16 },
+  { key: 'grande', sample: 18 },
+  { key: 'enorme', sample: 21 },
+  { key: 'muitoGrande', sample: 26 },
+  { key: 'maximo', sample: 32 },
 ];
 
 // Versao real do app.json (antes ficava '1.4.0' fixo aqui, e nem batia com a
@@ -267,6 +272,8 @@ export default function SettingsScreen() {
               key={opt.key}
               style={[styles.fontChip, fontSize === opt.key && styles.fontChipActive]}
               onPress={() => setFontSize(opt.key)}
+              accessibilityRole="button"
+              aria-selected={fontSize === opt.key}
             >
               <Text
                 style={[
@@ -275,7 +282,7 @@ export default function SettingsScreen() {
                   fontSize === opt.key && styles.fontChipLabelActive,
                 ]}
               >
-                {opt.label}
+                {t(`settings.font.${opt.key}`)}
               </Text>
             </TouchableOpacity>
           ))}
@@ -808,8 +815,11 @@ const makeStyles = (c, fs) =>
     rowLabel: { fontSize: fs(15), color: c.text },
     rowSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
     fontGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 14 },
+    // Alvo de toque de 44 pt mesmo com o rótulo pequeno; a grade quebra linha
+    // (flexWrap) quando os seis chips de fonte não cabem em 390 pt.
     fontChip: {
-      paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10,
+      paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10, minHeight: 44,
+      justifyContent: 'center',
       borderWidth: 1, borderColor: c.divider, backgroundColor: c.bg,
     },
     fontChipActive: { backgroundColor: c.primary, borderColor: c.primary },

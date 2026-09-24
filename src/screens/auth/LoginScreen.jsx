@@ -6,7 +6,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
 import AuthTopToggles from '../../components/AuthTopToggles';
-import CrossMark from '../../components/CrossMark';
+import BrandMark from '../../components/BrandMark';
 
 export default function LoginScreen({ navigation }) {
   const { signIn, continueAsGuest, linkGoogleToEmail } = useAuth();
@@ -61,9 +61,8 @@ export default function LoginScreen({ navigation }) {
       <AuthTopToggles />
 
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        <View style={styles.crossWrap}>
-          <CrossMark size={fs(54)} color={colors.accent} opacity={1} />
-        </View>
+        {/* Decorativa: o nome do app vem escrito logo abaixo. */}
+        <BrandMark size="lg" color={colors.accent} decorative style={styles.mark} />
         <Text style={styles.title}>APPologética</Text>
         <Text style={styles.subtitle}>{t('auth.subtitle')}</Text>
 
@@ -178,7 +177,7 @@ export default function LoginScreen({ navigation }) {
 const makeStyles = (c, fs) =>
   StyleSheet.create({
     content: { padding: 24, paddingTop: 60, alignItems: 'center' },
-    crossWrap: { marginBottom: 12 },
+    mark: { marginBottom: 12 },
     title: { fontSize: fs(28), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
     subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 32, textAlign: 'center' },
     inputRow: {

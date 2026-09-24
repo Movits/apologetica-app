@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { setOnboardingDone, setStartIntent } from '../utils/onboarding';
 import { getDialoguesByCategory } from '../data/dialogues';
 import AuthTopToggles from '../components/AuthTopToggles';
-import CrossMark from '../components/CrossMark';
+import BrandMark from '../components/BrandMark';
 
 // Onboarding v2: ativação em vez de tour passivo. Em ate 60s o usuario
 // escolhe um tema e cai direto num dialogo de resposta relevante (o "aha"
@@ -66,7 +66,9 @@ export default function OnboardingScreen({ onDone }) {
 
         {step === 0 && (
           <View style={styles.center}>
-            <CrossMark size={fs(64)} color={colors.accent} opacity={1} style={{ marginBottom: 20 }} />
+            {/* Sem o nome do app escrito nesta tela, a cruz fica como imagem
+                rotulada "APPologética". O layout à esquerda do mock vem na Onda 7. */}
+            <BrandMark size="md" color={colors.tint} style={styles.mark} />
             <Text style={styles.h1}>{isEn ? 'Know how to answer' : 'Saiba responder'}</Text>
             <Text style={styles.lead}>
               {isEn
@@ -161,6 +163,7 @@ const makeStyles = (c, fs) =>
     pDot: { width: 26, height: 5, borderRadius: 3, backgroundColor: c.divider },
     pDotOn: { backgroundColor: c.accent },
     center: { alignItems: 'center' },
+    mark: { marginBottom: 20 },
     h1: { fontSize: fs(30), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 12 },
     h2: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 6 },
     sub: { fontSize: fs(14), color: c.textMuted, textAlign: 'center', marginBottom: 22 },

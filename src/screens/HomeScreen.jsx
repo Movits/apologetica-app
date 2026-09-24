@@ -10,7 +10,7 @@ import { DIALOGUES } from '../data/dialogues';
 import { consumeStartIntent } from '../utils/onboarding';
 import { getLiturgicalSeason } from '../utils/liturgicalSeason';
 import AppIcon from '../components/AppIcon';
-import CrossMark from '../components/CrossMark';
+import BrandMark from '../components/BrandMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
 
 export default function HomeScreen() {
@@ -73,7 +73,8 @@ export default function HomeScreen() {
       contentContainerStyle={styles.content}
     >
       <View style={styles.hero}>
-        <CrossMark size={fs(34)} color={colors.accent} opacity={1} />
+        {/* Decorativa: o nome do app vem escrito logo abaixo. */}
+        <BrandMark size="md" color={colors.accent} decorative />
         <Text style={styles.heroTitle}>APPologética</Text>
         <Text style={styles.heroWedge}>{isEn ? 'Know how to answer, with the source in hand.' : 'Saiba responder, com a fonte na mão.'}</Text>
         <Text style={styles.heroSub}>{t('home.hero.verse')}</Text>
