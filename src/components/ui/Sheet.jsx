@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
@@ -6,6 +6,12 @@ import { scheduleOnRN } from 'react-native-worklets';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { motion as motionTokens } from '../../theme/tokens';
+
+// Duração da animação de saída (o `motion.aba` dos tokens). O jeito certo de
+// encadear algo depois do fechamento é a prop `onDismissed`; a constante fica
+// para quem precisa do número (um teste, um atraso equivalente fora da folha).
+export const SHEET_EXIT_MS = motionTokens.aba;
 
 // Folha inferior (bottom sheet) sobre um Modal transparente. Entra com mola
 // (translateY da altura da tela até 0) enquanto o backdrop escurece, e fecha
@@ -15,8 +21,10 @@ import { useLanguage } from '../../context/LanguageContext';
 // Fechamento: o componente é controlado por `visible`. Qualquer pedido de
 // fechar só chama `onClose`, e é o pai que zera `visible`. Quando `visible`
 // cai, o Modal continua montado (`shown`) até a animação de saída terminar,
-// e só então some. Se o pai ignorar o pedido, nada muda.
-export default function Sheet({ visible, onClose, title, children, style }) {
+// e só então some. Se o pai ignorar o pedido, nada muda. `onDismissed` é
+// chamado quando a animação de saída termina e o Modal desmonta: é o ponto
+// para abrir outra folha ou navegar sem duas camadas modais se atropelarem.
+export default function Sheet({ visible, onClose, onDismissed, title, children, style }) {
   const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
   const insets = useSafeAreaInsets();
@@ -29,9 +37,16 @@ export default function Sheet({ visible, onClose, title, children, style }) {
   const panelHeight = useSharedValue(0);
   const easing = useMemo(() => Easing.bezier(...motion.easing), [motion.easing]);
 
-  const requestClose = useCallback(() => {
-    onClose?.();
-  }, [onClose]);
+  // `onDismissed` vive numa ref para o efeito de saída não reiniciar (e não
+  // reanimar) quando o pai passa uma função nova a cada render.
+  const onDismissedRef = useRef(onDismissed);
+  useEffect(() => {
+    onDismissedRef.current = onDismissed;
+  });
+  const finishExit = useCallback(() => {
+    setShown(false);
+    onDismissedRef.current?.();
+  }, []);
 
   // Entrada: só depende de `visible`. Fica num efeito próprio porque o
   // setShown(true) daqui muda `shown`, e um efeito único que também dependesse
@@ -51,9 +66,9 @@ export default function Sheet({ visible, onClose, title, children, style }) {
     const target = panelHeight.value > 0 ? panelHeight.value : windowHeight;
     backdrop.value = withTiming(0, { duration: motion.aba, easing });
     translateY.value = withTiming(target, { duration: motion.aba, easing }, (finished) => {
-      if (finished) scheduleOnRN(setShown, false);
+      if (finished) scheduleOnRN(finishExit);
     });
-  }, [visible, shown, windowHeight, backdrop, translateY, panelHeight, motion.aba, easing]);
+  }, [visible, shown, windowHeight, backdrop, translateY, panelHeight, motion.aba, easing, finishExit]);
 
   const pan = useMemo(
     () =>
@@ -64,12 +79,13 @@ export default function Sheet({ visible, onClose, title, children, style }) {
         })
         .onEnd((e) => {
           if (e.translationY > 120 || e.velocityY > 800) {
-            scheduleOnRN(requestClose);
+            // O pedido de fechar corre na thread JS (o worklet roda na UI).
+            if (onClose) scheduleOnRN(onClose);
           } else {
             translateY.value = withSpring(0, { duration: motion.spring, dampingRatio: 0.85 });
           }
         }),
-    [translateY, requestClose, motion.spring],
+    [translateY, onClose, motion.spring],
   );
 
   const backdropStyle = useAnimatedStyle(() => ({ opacity: backdrop.value }));
@@ -81,11 +97,11 @@ export default function Sheet({ visible, onClose, title, children, style }) {
       visible={shown}
       animationType="none"
       statusBarTranslucent
-      onRequestClose={requestClose}
+      onRequestClose={onClose}
     >
       <GestureHandlerRootView style={styles.root}>
         <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay }, backdropStyle]}>
-          <Pressable role="button" aria-label={t('common.close')} onPress={requestClose} style={styles.fill} />
+          <Pressable role="button" aria-label={t('common.close')} onPress={() => onClose?.()} style={styles.fill} />
         </Animated.View>
         <GestureDetector gesture={pan}>
           <Animated.View

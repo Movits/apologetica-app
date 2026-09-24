@@ -5,7 +5,8 @@ nenhum número solto de espaço, raio ou fonte, sempre `tokens.space.*`, `tokens
 `tokens.icon.*`, `tokens.motion.*` e `text('papel')`. Importe pelo índice:
 
 ```jsx
-import { Group, Row, ContinueRow, SectionTitle, Button, SearchField, Field, Chip, ProgressBar, EmptyState, GateNotice, Sheet, PressScale, LargeTitleScreen } from '../components/ui';
+import { Group, GroupList, ListSeparator, Row, ContinueRow, SectionTitle, Button, SearchField, Field, Chip, ChipRow, ProgressBar, EmptyState, GateNotice, GuestGate, Sheet, PressScale, LargeTitleScreen } from '../components/ui';
+import { SHEET_EXIT_MS, BAR_HEIGHT, useTabBarHeightSafe, webFocusRing, enterStagger } from '../components/ui';
 ```
 
 Regras comuns: o alvo de toque vem do tamanho do elemento (`minHeight`/`minWidth` 44), nunca de
@@ -47,24 +48,58 @@ Não fazer: `Group` com um único filho para "dar fundo" (use uma `View` com `co
 passar `null` no meio dos filhos esperando separador (nulos são ignorados, sem linha dupla);
 pôr margem no `Group` achando que é no card (é no invólucro).
 
+## ListSeparator
+
+A hairline do `Group` como componente: meia linha em `separator`, recuada à esquerda por
+`inset` (default `space.md`), `style` extra. É o que o `Group` põe entre os filhos e o
+`ItemSeparatorComponent` do `GroupList`; serve também numa `FlatList` própria que quer o mesmo
+traço.
+
+```jsx
+<FlatList data={itens} renderItem={renderItem} ItemSeparatorComponent={ListSeparator} />
+```
+
+Não fazer: desenhar a hairline à mão com `StyleSheet.hairlineWidth` e `colors.separator`
+(é este componente); usar como divisor de seção (isso é espaço, não linha).
+
+## GroupList
+
+`FlatList` com o visual do `Group`: o `contentContainerStyle` é o card (fundo `card`,
+`radius.md`, `overflow: 'hidden'`, `marginHorizontal` por prop, default `space.md`) e o separador
+entre itens é o `ListSeparator`. Para listas longas de `Row`s, onde o `Group` (que monta todos os
+filhos de uma vez) pesaria. `contentContainerStyle` extra entra depois do card (use para
+`paddingBottom`); o resto das props e a `ref` vão para a `FlatList`.
+
+```jsx
+<GroupList data={santos} keyExtractor={(s) => s.id} renderItem={({ item }) => <Row title={item.name} subtitle={item.date} trailing="chevron" onPress={() => abrir(item)} />} contentContainerStyle={{ paddingBottom: tabBarHeight }} />
+```
+
+Não fazer: usar para meia dúzia de linhas (é `Group`); `ListHeaderComponent` com fundo próprio
+dentro dela (o header fica dentro do card; título de seção vai fora, num `SectionTitle` acima).
+
 ## Row
 
-Linha de lista. Props: `icon` (nome Ionicons, cor `iconColor ?? colors.tint`, caixa de 28),
-`title` (body, 1 linha por default, `titleLines={0}` para quebrar, `titleColor` para uma ação
-destrutiva em `danger` junto com o `iconColor`), `subtitle` (subhead secundário, sem limite de
-linhas por default, `subtitleLines` para cortar), `trailing` (`'chevron'`, texto ou nó),
-`onPress` (vira `PressScale` com fundo escurecido enquanto pressionada), `disabled` (opacidade
-0,4 e `aria-disabled`), `accessibilityLabel` (vira `aria-label`), `children` (abaixo do
-subtítulo), `style`.
+Linha de lista. Props: `icon` (nome Ionicons, cor `iconColor ?? colors.tint`, caixa de 28) ou
+`leading` (nó no lugar da caixa de ícone: capa, avatar, disco colorido), `title` (body por
+default, `titleRole="headline"` para uma linha de destaque, 1 linha por default,
+`titleLines={0}` para quebrar, `titleColor` para uma ação destrutiva em `danger` junto com o
+`iconColor`), `subtitle` (subhead secundário, sem limite de linhas por default, `subtitleLines`
+para cortar), `trailing` (`'chevron'`, texto ou nó), `chevron` (booleano: desenha o chevron
+depois de um `trailing` próprio, contador + seta), `onPress` (vira `PressScale` com fundo
+escurecido enquanto pressionada), `onLongPress`, `disabled` (opacidade 0,4 e `aria-disabled`),
+`accessibilityLabel` (vira `aria-label`), `children` (abaixo do subtítulo), `style`. O resto
+(`role`, `aria-*`, `haptic`, `testID`) segue para o `PressScale` (ou para a `View`, sem toque).
 
 ```jsx
 <Row icon="bookmark-outline" title="Favoritos" subtitle="8 artigos" trailing="chevron" onPress={() => navigate('Favorites')} />
 <Row title="Versão" trailing="1.4.0" />
 <Row title="Sincronizar" trailing={<Switch value={on} onValueChange={setOn} />} />
+<Row leading={<Image source={capa} style={{ width: 56, height: 56, borderRadius: tokens.radius.sm }} />} titleRole="headline" title={artigo.title} trailing={<CountTrail count={3} />} chevron onPress={abrir} onLongPress={opcoes} haptic="selection" />
 ```
 
 Não fazer: usar fora de um `Group` (perde o card e os separadores); pôr botões dentro de uma
-`Row` que já tem `onPress` (toque aninhado); `trailing="chevron"` sem `onPress`.
+`Row` que já tem `onPress` (toque aninhado); `trailing="chevron"` sem `onPress`; `icon` e
+`leading` juntos (`leading` vence).
 
 ## SectionTitle
 
@@ -134,6 +169,29 @@ alternância) e `aria-selected` no nativo, porque o RN 0.81 não aceita `aria-pr
 Não fazer: usar como botão de ação (é filtro ou segmento); mais de 6 numa linha sem scroll
 horizontal; `accessibilityState={{ selected }}` no lugar de `selected`.
 
+## ChipRow
+
+Linha de `Chip`s. Por default quebra linha (`flexDirection: 'row'`, `flexWrap`, `gap:
+space.xs`), para segmentos curtos (tema e tamanho da letra em Ajustes). Com `scroll` vira um
+trilho horizontal sem barra de rolagem para filtros que não cabem numa linha (Busca,
+Referências): altura 44 com `flexGrow: 0, flexShrink: 0` (sem isso a web encolhe o `ScrollView`
+horizontal a quase nada), chips com recuo lateral `space.md` e `keyboardShouldPersistTaps=
+"handled"`. `style` vai no contêiner (margens); em modo `scroll`, `contentStyle` entra no
+`contentContainerStyle` e o resto das props vai ao `ScrollView`.
+
+```jsx
+<ChipRow style={{ marginTop: tokens.space.xxs }}>
+  {THEME_MODES.map((m) => <Chip key={m} label={t(`settings.theme.${m}`)} selected={m === themeMode} onPress={() => setThemeMode(m)} haptic />)}
+</ChipRow>
+<ChipRow scroll style={{ marginTop: tokens.space.xxs }}>
+  {FILTERS.map((f) => <Chip key={f.id} label={t(f.key)} selected={filter === f.id} onPress={() => setFilter(f.id)} haptic />)}
+</ChipRow>
+```
+
+Não fazer: `ScrollView horizontal` à mão em volta de chips (o ajuste de altura da web fica aqui);
+`scroll` com dois ou três chips (quebra de linha basta); `paddingHorizontal` no `style` em modo
+`scroll` (é no `contentStyle`, senão o primeiro chip corta na borda).
+
 ## ProgressBar
 
 Trilha de 3 px em `separator` com preenchimento em `accent` (dourado só como preenchimento,
@@ -164,8 +222,8 @@ texto longo em `message` (uma frase); ícone colorido (é discreto de propósito
 
 Aviso inline para o visitante: cadeado em `tint`, `message` em subhead e dois botões, `primary`
 com `primaryLabel`/`onPrimary` (entrar) e `plain` com `secondaryLabel`/`onSecondary`
-(alternativa). Fundo `card`, `radius.md`, `padding: space.md`. Os textos vêm por props; as
-strings `gate.*` entram noutra onda.
+(alternativa). Fundo `card`, `radius.md`, `padding: space.md`. Os textos vêm por props; para o
+caso comum do visitante (mensagem, "Criar conta", "Entrar") use o `GuestGate` abaixo.
 
 ```jsx
 <GateNotice message={t('gate.notes')} primaryLabel={t('gate.signIn')} onPrimary={abrirLogin} secondaryLabel={t('gate.later')} onSecondary={fechar} />
@@ -174,10 +232,28 @@ strings `gate.*` entram noutra onda.
 Não fazer: bloquear a tela inteira com ele (é inline, o resto continua visível); usar sem o
 `secondaryLabel` quando a pessoa tem como seguir sem conta; hardcode de texto em PT.
 
+## GuestGate
+
+`GateNotice` com os defaults do modo visitante: `message` = `t('settings.guest.message')`,
+`primaryLabel` = `t('auth.signup')`, `secondaryLabel` = `t('auth.login')`, e `onPrimary`/
+`onSecondary` = `exitGuest` de `useAuth()` (sai do modo visitante e cai na AuthStack). Cada prop
+pode ser trocada. Por default vem dentro da View de página (`flex: 1`, fundo `bg`, `padding:
+space.md`) que Marcações, Notas e Caderno desenham quando não há conta; `inline` devolve só o
+aviso, para viver no meio de uma tela (Ajustes). `style` vai na View de página, ou no aviso com
+`inline`.
+
+```jsx
+if (!user) return <GuestGate />;
+{guest ? <GuestGate inline /> : null}
+```
+
+Não fazer: repetir as cinco props do `GateNotice` com os mesmos `t(...)` (é este componente);
+usar fora dos providers de idioma e auth.
+
 ## Sheet
 
-Folha inferior sobre `Modal transparent`. Props: `visible`, `onClose`, `title` (headline),
-`children`, `style` (no painel). Entra com mola (`motion.spring`, dampingRatio 0,85) e backdrop
+Folha inferior sobre `Modal transparent`. Props: `visible`, `onClose`, `onDismissed`, `title`
+(headline), `children`, `style` (no painel). Entra com mola (`motion.spring`, dampingRatio 0,85) e backdrop
 `overlay` em `motion.aba` ms. Fecha por toque no backdrop (`aria-label` de `t('common.close')`),
 arrasto para baixo (mais de 120 px ou mais de 800 px/s), botão voltar do Android e Escape na web. Painel em
 `elevated`, cantos `radius.lg`, pegador de 36x5, `paddingBottom` com o inset inferior,
@@ -186,6 +262,10 @@ pelo reanimated (`ReduceMotion.System` é o default).
 
 Fechamento: o componente é controlado. Todo pedido de fechar só chama `onClose`, e é o pai que
 zera `visible`; o Modal continua montado até a animação de saída acabar e então some.
+`onDismissed` é chamado nesse momento (fim da saída, Modal desmontado): é o ponto para abrir
+outra folha ou navegar sem duas camadas modais se atropelarem. `SHEET_EXIT_MS` (= `motion.aba`)
+é a duração dessa saída, para quem precisa do número fora da folha (um teste); no app, use o
+callback.
 
 ```jsx
 const [aberto, setAberto] = useState(false);
@@ -200,7 +280,8 @@ const [aberto, setAberto] = useState(false);
 Não fazer: `runOnJS` (é `scheduleOnRN` de `react-native-worklets`); tirar o
 `GestureHandlerRootView` de dentro do Modal (o gesto morre no Android); pôr um `ScrollView`
 longo dentro (o Pan do painel captura o arrasto; para conteúdo rolável use uma tela);
-esquecer de zerar `visible` no `onClose` (a folha não fecha sozinha).
+esquecer de zerar `visible` no `onClose` (a folha não fecha sozinha); `setTimeout(...,
+SHEET_EXIT_MS)` no lugar de `onDismissed`.
 
 ## Field
 
@@ -280,6 +361,23 @@ scrollEventThrottle, contentContainerStyle, header }` e deve passar tudo à sua
 )} />
 ```
 
+`BAR_HEIGHT` (44) é exportado para quem precisa alinhar algo logo abaixo da barra (a altura
+total é `insets.top + BAR_HEIGHT`). Em App.js, a raiz de aba que usa esta tela recebe
+`largeTitleRootOptions(colors)` de `src/navigation/chrome.js` (`headerShown: false` mais
+`fullBleedContentOptions`).
+
 Não fazer: `headerLargeTitle` nativo por cima; passar `onScroll` ou `contentContainerStyle` em
 `scrollProps` esperando que valham (use `contentStyle`); deixar o `paddingBottom` do stack ligado
 (a tela compensa a tab bar sozinha, senão o recuo dobra); `SectionTitle` como título da tela.
+
+## Helpers
+
+- `useTabBarHeightSafe()`: a altura da tab bar, ou 0 fora das abas (modal, auth), sem lançar.
+- `webFocusRing(colors, focused)`: o anel de foco dos campos de texto na web (`outline` de 2 em
+  `tint`, `outlineOffset: 2`) quando `focused`, `null` no nativo ou sem foco. É o que `Field` e
+  `SearchField` usam; um campo próprio guarda `focused` em estado (`onFocus`/`onBlur`) e o
+  espalha no estilo do `TextInput`. Nunca `outlineStyle: 'none'`.
+- `enterStagger(i, tokens)`: a entrada em cascata dos blocos de uma tela,
+  `FadeInDown.duration(motion.layout).delay(min(i, 8) * motion.stagger)`, para
+  `<Animated.View entering={enterStagger(i, tokens)}>`. Reduce motion é respeitado pelo
+  reanimated.

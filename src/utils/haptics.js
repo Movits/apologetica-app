@@ -59,4 +59,3 @@ export function error() {
 }
 
 export const haptics = { selection, impact, success, warning, error };
-export default haptics;

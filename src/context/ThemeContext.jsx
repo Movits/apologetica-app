@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
-import { space, radius, icon, thumb, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
+import { space, radius, icon, thumb, motion, shadow, textStyle, fontFamilyFor } from '../theme/tokens';
 import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
 
 // As paletas são exportadas para quem vive fora do provider (o ErrorBoundary
@@ -104,7 +104,7 @@ const FONT_SCALES = {
 // Tokens puros (src/theme/tokens.js) com a família de fonte resolvida para a
 // plataforma atual. Platform.OS não muda em tempo de execução, então o objeto
 // é constante e mantém a mesma referência entre renders.
-const FONT_FAMILY = FONT_FAMILY_BY_PLATFORM[Platform.OS] || FONT_FAMILY_BY_PLATFORM.ios;
+const FONT_FAMILY = fontFamilyFor(Platform.OS);
 const TOKENS = { space, radius, icon, thumb, motion, shadow, fontFamily: FONT_FAMILY };
 
 // Modo de tema escolhido: 'system' | 'light' | 'dark' (src/utils/themeMode.js).
@@ -229,6 +229,10 @@ export function ThemeProvider({ children }) {
     const scale = FONT_SCALES[fontSize] ?? 1;
     // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
     const fs = (n) => Math.max(11, Math.round(n * scale));
+    // Cache por papel: `text('body')` devolve a MESMA referência entre renders
+    // (um `useMemo` na tela que dependa dela não recalcula à toa). O cache
+    // renasce com este useMemo, ou seja, quando a escala de fonte muda.
+    const cache = {};
     return {
       colors,
       darkMode,
@@ -243,7 +247,7 @@ export function ThemeProvider({ children }) {
       tokens: TOKENS,
       // Estilo de Text por papel (`text('body')`), já com a escala e a fonte da
       // plataforma aplicadas. Lança para papel desconhecido.
-      text: (role) => textStyle(role, fs, FONT_FAMILY),
+      text: (role) => cache[role] ?? (cache[role] = textStyle(role, fs, FONT_FAMILY)),
     };
   }, [darkMode, themeMode, fontSize, hydrated, setDarkMode, setThemeMode]);
 

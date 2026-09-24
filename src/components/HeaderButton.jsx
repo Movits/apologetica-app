@@ -22,7 +22,7 @@ export default function HeaderButton({ icon, label, onPress, loading, disabled, 
       aria-disabled={disabled || undefined}
       aria-busy={loading || undefined}
       disabled={blocked}
-      onPress={blocked ? undefined : onPress}
+      onPress={onPress}
       style={[
         {
           minWidth: 44,

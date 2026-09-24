@@ -159,7 +159,7 @@ async function listVoicesWeb(language) {
 }
 
 // Lista vozes para o idioma escolhido ('pt' ou 'en').
-// Retorna no máximo 4 vozes (2 por país, M + F) — exceto na web.
+// Retorna no máximo 4 vozes (2 por país, M + F), exceto na web.
 export async function listVoicesForLanguage(language = 'pt') {
   if (Platform.OS === 'web') return listVoicesWeb(language);
   try {

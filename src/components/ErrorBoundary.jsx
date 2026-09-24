@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Appearance, Platform } from 'react-native';
 import { LIGHT, DARK } from '../context/ThemeContext';
-import { space, radius, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
+import { space, radius, textStyle, fontFamilyFor } from '../theme/tokens';
 
 // Este boundary embrulha o ThemeProvider em App.js, então não pode usar
 // useTheme(): lê as paletas exportadas e escolhe pelo esquema do sistema, e
 // compõe os papéis de texto direto dos tokens, sem a escala de fonte do tema.
 // Só papéis em sans, porque a fonte de títulos pode não ter carregado quando o
 // erro acontece.
-const FAMILIES = FONT_FAMILY_BY_PLATFORM[Platform.OS] || FONT_FAMILY_BY_PLATFORM.ios;
+const FAMILIES = fontFamilyFor(Platform.OS);
 const semEscala = (n) => n;
 
 export default class ErrorBoundary extends Component {

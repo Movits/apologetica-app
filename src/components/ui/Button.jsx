@@ -47,7 +47,7 @@ export default function Button({
     <PressScale
       role="button"
       haptic={haptic}
-      onPress={blocked ? undefined : onPress}
+      onPress={onPress}
       disabled={blocked}
       aria-disabled={disabled || undefined}
       aria-busy={loading || undefined}

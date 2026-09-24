@@ -21,6 +21,13 @@ export const FONT_FAMILY_BY_PLATFORM = {
 // Default neutro (o ThemeContext escolhe por Platform.OS).
 export const FONT_FAMILY = FONT_FAMILY_BY_PLATFORM.ios;
 
+// Famílias da plataforma `os` ('ios' | 'android' | 'web'), caindo no default
+// neutro para qualquer outro valor. É o que ThemeContext e ErrorBoundary usam
+// com Platform.OS, sem cada um repetir o `|| FONT_FAMILY_BY_PLATFORM.ios`.
+export function fontFamilyFor(os) {
+  return FONT_FAMILY_BY_PLATFORM[os] || FONT_FAMILY_BY_PLATFORM.ios;
+}
+
 // Grade de 4 pt (§12.2).
 export const space = { xxs: 4, xs: 8, sm: 12, md: 16, lg: 20, xl: 24, xxl: 32, xxxl: 40 };
 

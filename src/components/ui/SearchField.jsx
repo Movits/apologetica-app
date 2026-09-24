@@ -1,9 +1,10 @@
 import { forwardRef, useState } from 'react';
-import { Platform, Pressable, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import PressScale from './PressScale';
+import { webFocusRing } from './focusRing';
 
 // Campo de busca: caixa `card` com lupa à esquerda, TextInput preenchendo a
 // caixa inteira e botão de limpar (44x44) quando há valor. O TextInput é o
@@ -58,9 +59,7 @@ const SearchField = forwardRef(function SearchField(
     );
   }
 
-  const focusRing = Platform.OS === 'web' && focused
-    ? { outlineWidth: 2, outlineColor: colors.tint, outlineStyle: 'solid', outlineOffset: 2 }
-    : null;
+  const focusRing = webFocusRing(colors, focused);
   const hasValue = Boolean(value);
 
   return (

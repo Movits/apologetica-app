@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, {
   Extrapolation,
@@ -37,7 +38,9 @@ import useTabBarHeightSafe from './useTabBarHeightSafe';
 // A tela é usada com header nativo desligado (headerShown: false).
 
 // Altura da barra de navegação (HIG) e ponto em que o título inline aparece.
-const BAR_HEIGHT = 44;
+// BAR_HEIGHT é exportado para quem precisa alinhar algo logo abaixo da barra
+// (a altura total é `insets.top + BAR_HEIGHT`).
+export const BAR_HEIGHT = 44;
 const COLLAPSE_AT = 40;
 
 function BackButton({ back, colors, tokens, text }) {
@@ -80,24 +83,34 @@ export default function LargeTitleScreen({
   }));
 
   const barHeight = insets.top + BAR_HEIGHT;
-  const contentContainerStyle = [
-    {
-      paddingTop: barHeight,
-      paddingBottom: tabBarHeight + tokens.space.xl,
-      paddingHorizontal: tokens.space.md,
-    },
-    contentStyle,
-  ];
+  // Memoizados porque vão para uma FlatList (renderList): um
+  // contentContainerStyle ou ListHeaderComponent novo a cada render faz a
+  // lista relayoutar sem nada ter mudado.
+  const { space } = tokens;
+  const contentContainerStyle = useMemo(
+    () => [
+      {
+        paddingTop: barHeight,
+        paddingBottom: tabBarHeight + space.xl,
+        paddingHorizontal: space.md,
+      },
+      contentStyle,
+    ],
+    [barHeight, tabBarHeight, space.xl, space.md, contentStyle],
+  );
 
-  const header = (
-    <View style={[styles.heading, { paddingTop: tokens.space.xxs, marginBottom: tokens.space.lg }]}>
-      <Text style={[text('largeTitle'), { color: colors.text }]}>{title}</Text>
-      {subtitle ? (
-        <Text style={[text('subhead'), { color: colors.textSubtle, marginTop: tokens.space.xxs }]}>
-          {subtitle}
-        </Text>
-      ) : null}
-    </View>
+  const header = useMemo(
+    () => (
+      <View style={[styles.heading, { paddingTop: space.xxs, marginBottom: space.lg }]}>
+        <Text style={[text('largeTitle'), { color: colors.text }]}>{title}</Text>
+        {subtitle ? (
+          <Text style={[text('subhead'), { color: colors.textSubtle, marginTop: space.xxs }]}>
+            {subtitle}
+          </Text>
+        ) : null}
+      </View>
+    ),
+    [title, subtitle, colors.text, colors.textSubtle, space.xxs, space.lg, text],
   );
 
   const listProps = { onScroll, scrollEventThrottle: 16, contentContainerStyle };

@@ -1,12 +1,16 @@
+import { useMemo } from 'react';
 import { Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { type } from '../theme/tokens';
+import { useTheme } from '../context/ThemeContext';
 import ChromeBackdrop from './ChromeBackdrop';
 
 // Opções de header dos stacks internos (Início, Artigos, Ferramentas, Ajustes)
-// e do Tab.Navigator num lugar só, no lugar das seis cópias de screenOptions
-// que App.js tinha.
+// num lugar só, no lugar das seis cópias de screenOptions que App.js tinha. O
+// Tab.Navigator não tem header (as cinco abas desligam com headerShown: false
+// e a Bíblia tem o large title próprio).
 //
 // Decisão da Onda 3: o header fica OPACO por padrão, na cor do fundo
 // (colors.bg), sem sombra e sem hairline. Um header transparente exige que
@@ -73,11 +77,23 @@ export function translucentHeaderOptions() {
   };
 }
 
-// Header do Tab.Navigator. Hoje nenhuma aba o usa (as cinco desligam com
-// headerShown: false; a Bíblia tem o large title próprio): fica como padrão
-// do screenOptions para uma aba nova não nascer com o header sem estilo.
-export function tabHeaderOptions(colors) {
-  return headerOptions(colors);
+// Título alinhado à esquerda (Artigo, que põe três ações à direita). Na web o
+// header do @react-navigation/elements centra o título com dois contêineres
+// laterais de `flexGrow: 1` (node_modules/@react-navigation/elements/src/
+// Header/Header.tsx); com três ações de 44 ele invadiria a direita. Aqui o
+// título encolhe (flexShrink) e o contêiner da direita fica com a largura do
+// conteúdo. No nativo o header é do sistema e cuida disso sozinho; as chaves
+// extras são ignoradas.
+export function leftTitleHeaderOptions() {
+  return {
+    headerTitleAlign: 'left',
+    ...(Platform.OS === 'web'
+      ? {
+          headerTitleContainerStyle: { flexGrow: 1, flexShrink: 1, flexBasis: 0, maxWidth: '100%' },
+          headerRightContainerStyle: { flexGrow: 0, flexBasis: 'auto' },
+        }
+      : {}),
+  };
 }
 
 // Fundo e recuo inferior do conteúdo de cada tela do stack. A tab bar nova é
@@ -89,9 +105,8 @@ function contentStyle(colors, { paddingBottom = 0 } = {}) {
   return { backgroundColor: colors.bg, paddingBottom };
 }
 
-// Opções do native-stack. `tokens` fica na assinatura para a cor e o espaço
-// de futuras opções sem mudar os chamadores.
-export function stackScreenOptions(colors, _tokens, extra) {
+// Opções do native-stack.
+function stackScreenOptions(colors, extra) {
   return {
     ...headerOptions(colors),
     animation: 'ios_from_right',
@@ -110,7 +125,7 @@ export function stackScreenOptions(colors, _tokens, extra) {
 // ScrollView de dentro nunca rolava (medido: Ajustes com 1760 px num viewport
 // de 844). O cardStyle vem depois do estilo da folha, então `flex: 1` limita a
 // altura ao contêiner e a rolagem volta a ser da ScrollView de cada tela.
-export function webStackScreenOptions(colors, _tokens, extra) {
+function webStackScreenOptions(colors, extra) {
   return {
     ...TransitionPresets.SlideFromRightIOS,
     animationEnabled: true,
@@ -129,12 +144,29 @@ export function fullBleedContentOptions(colors) {
     : { contentStyle: { backgroundColor: colors.bg, paddingBottom: 0 } };
 }
 
+// Raiz de aba desenhada com LargeTitleScreen: sem o header do stack e sem o
+// paddingBottom herdado (a tela compensa a tab bar por dentro). Vai nas
+// `options` do Screen raiz em App.js.
+export function largeTitleRootOptions(colors) {
+  return { headerShown: false, ...fullBleedContentOptions(colors) };
+}
+
 // Escolhe as opções certas para o navigator devolvido por createAppStack().
 // `extra` = { paddingBottom } vai para contentStyle (nativo) ou cardStyle (web).
-export function stackScreenOptionsForPlatform(colors, tokens, extra) {
+export function stackScreenOptionsForPlatform(colors, extra) {
   return Platform.OS === 'web'
-    ? webStackScreenOptions(colors, tokens, extra)
-    : stackScreenOptions(colors, tokens, extra);
+    ? webStackScreenOptions(colors, extra)
+    : stackScreenOptions(colors, extra);
+}
+
+// screenOptions dos quatro stacks de aba (Início, Artigos, Ferramentas,
+// Ajustes): as opções da plataforma com o recuo da tab bar. Só vale dentro de
+// uma tela do Tab.Navigator (useBottomTabBarHeight lança fora dele). O objeto
+// é memoizado para o navigator não reprocessar as opções a cada render.
+export function useTabStackScreenOptions() {
+  const { colors } = useTheme();
+  const paddingBottom = useBottomTabBarHeight();
+  return useMemo(() => stackScreenOptionsForPlatform(colors, { paddingBottom }), [colors, paddingBottom]);
 }
 
 // Cria o navigator de stack da plataforma: JS na web (anima), nativo no resto.

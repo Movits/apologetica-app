@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View, Text, ActivityIndicator, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createBottomTabNavigator, useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -27,7 +27,12 @@ import ReadingPlanScreen from './src/screens/ReadingPlanScreen';
 import ToolsScreen from './src/screens/ToolsScreen';
 import CategoryArticlesScreen from './src/screens/CategoryArticlesScreen';
 
-import { createAppStack, stackScreenOptionsForPlatform, tabHeaderOptions } from './src/navigation/chrome';
+import {
+  createAppStack,
+  largeTitleRootOptions,
+  stackScreenOptionsForPlatform,
+  useTabStackScreenOptions,
+} from './src/navigation/chrome';
 import TabBar from './src/navigation/TabBar';
 import { TAB_LABEL_KEYS } from './src/navigation/tabs';
 import { sharedScreens } from './src/navigation/sharedScreens';
@@ -41,6 +46,7 @@ import { useEffect, useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
 import { checkForWebUpdate } from './src/utils/webUpdate';
 import { hasSeenOnboarding } from './src/utils/onboarding';
+import { categoryLabel } from './src/utils/i18nData';
 
 // Inicializa o Sentry (no-op na web e no Expo Go, ver src/sentry.js / sentry.web.js).
 initSentry();
@@ -88,25 +94,25 @@ const LINKING = Platform.OS === 'web' ? undefined : {
 //
 // A tab bar (src/navigation/TabBar.jsx) é absoluta e translúcida: o conteúdo
 // passa por baixo dela, e cada stack compensa com paddingBottom igual à altura
-// que ela reporta (useBottomTabBarHeight funciona aqui porque estes
-// componentes são telas do Tab.Navigator). As telas que migrarem para
-// LargeTitleScreen zeram esse padding nas próprias options.
+// que ela reporta (useTabStackScreenOptions funciona aqui porque estes
+// componentes são telas do Tab.Navigator). As raízes desenhadas com
+// LargeTitleScreen zeram esse padding por largeTitleRootOptions().
 
 // Stack interno do tab Início: HomeScreen, Referências, Busca e a lista por
 // categoria (só a Início chama 'CategoryArticles').
 function HomeStackScreen() {
-  const { colors, tokens } = useTheme();
-  const { t, isEn } = useLanguage();
-  const tabBarHeight = useBottomTabBarHeight();
+  const { colors } = useTheme();
+  const { t } = useLanguage();
+  const screenOptions = useTabStackScreenOptions();
   return (
-    <HomeNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
-      <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ headerShown: false }} />
+    <HomeNav.Navigator screenOptions={screenOptions}>
+      <HomeNav.Screen name="HomeMain" component={HomeScreen} options={largeTitleRootOptions(colors)} />
       <HomeNav.Screen name="References" component={ReferencesScreen} options={{ title: t('tab.references') }} />
       <HomeNav.Screen name="Search" component={SearchScreen} options={{ title: t('header.search') }} />
       <HomeNav.Screen
         name="CategoryArticles"
         component={CategoryArticlesScreen}
-        options={({ route }) => ({ title: isEn ? t(`category.${route.params?.category}`) : route.params?.category })}
+        options={({ route }) => ({ title: categoryLabel(route.params?.category, t) })}
       />
       {sharedScreens(HomeNav, t)}
     </HomeNav.Navigator>
@@ -116,12 +122,12 @@ function HomeStackScreen() {
 // Stack interno do tab Ferramentas: raiz ToolsScreen + Favoritos e Plano de
 // Leitura (só o ToolsScreen os abre) + as compartilhadas.
 function ToolsStackScreen() {
-  const { colors, tokens } = useTheme();
+  const { colors } = useTheme();
   const { t } = useLanguage();
-  const tabBarHeight = useBottomTabBarHeight();
+  const screenOptions = useTabStackScreenOptions();
   return (
-    <ToolsNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
-      <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('header.tools') }} />
+    <ToolsNav.Navigator screenOptions={screenOptions}>
+      <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('header.tools'), ...largeTitleRootOptions(colors) }} />
       <ToolsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
       <ToolsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
       {sharedScreens(ToolsNav, t)}
@@ -132,12 +138,12 @@ function ToolsStackScreen() {
 // Stack interno do tab Ajustes: permite voltar para Ajustes a partir de
 // sub-telas (Legal etc.) sem saltar para o tab Início.
 function SettingsStackScreen() {
-  const { colors, tokens } = useTheme();
+  const { colors } = useTheme();
   const { t } = useLanguage();
-  const tabBarHeight = useBottomTabBarHeight();
+  const screenOptions = useTabStackScreenOptions();
   return (
-    <SettingsNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
-      <SettingsNav.Screen name="SettingsMain" component={SettingsScreen} options={{ title: t('tab.settings') }} />
+    <SettingsNav.Navigator screenOptions={screenOptions}>
+      <SettingsNav.Screen name="SettingsMain" component={SettingsScreen} options={{ title: t('tab.settings'), ...largeTitleRootOptions(colors) }} />
       {sharedScreens(SettingsNav, t)}
     </SettingsNav.Navigator>
   );
@@ -147,12 +153,12 @@ function SettingsStackScreen() {
 // componente de 'ArticleFromSearch' (compartilhada); ele faz push(route.name)
 // para funcionar sob os dois nomes.
 function ArticlesStackScreen() {
-  const { colors, tokens } = useTheme();
+  const { colors } = useTheme();
   const { t } = useLanguage();
-  const tabBarHeight = useBottomTabBarHeight();
+  const screenOptions = useTabStackScreenOptions();
   return (
-    <ArticlesNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
-      <ArticlesNav.Screen name="ArticlesList" component={ArticlesScreen} options={{ title: t('header.articles') }} />
+    <ArticlesNav.Navigator screenOptions={screenOptions}>
+      <ArticlesNav.Screen name="ArticlesList" component={ArticlesScreen} options={{ title: t('header.articles'), ...largeTitleRootOptions(colors) }} />
       <ArticlesNav.Screen name="ArticleDetail" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
       {sharedScreens(ArticlesNav, t)}
     </ArticlesNav.Navigator>
@@ -186,36 +192,33 @@ const splashStyles = StyleSheet.create({
 });
 
 function MainTabs() {
-  const { colors } = useTheme();
   const { t } = useLanguage();
 
   // Os nomes de rota são PT fixo (API de navegação); o rótulo visível e os
-  // ícones vêm de src/navigation/tabs.js, desenhados pela TabBar própria.
-  // Nenhuma aba usa o header do Tab (os stacks têm o próprio e a Bíblia tem o
-  // large title próprio); tabHeaderOptions fica só como padrão.
+  // ícones vêm de src/navigation/tabs.js, traduzidos e desenhados pela TabBar
+  // própria (não passam por tabBarLabel). Nenhuma aba usa o header do Tab (os
+  // stacks têm o próprio e a Bíblia tem o large title próprio). O `title`
+  // fica só pelo documentTitle do NavigationContainer, que lê options.title
+  // da tela focada: com a Bíblia aberta o navegador mostra "APPologética · Bíblia".
   return (
     <Tab.Navigator
       tabBar={(props) => <TabBar {...props} />}
       backBehavior="history"
-      screenOptions={({ route }) => ({
-        ...tabHeaderOptions(colors),
-        title: t(TAB_LABEL_KEYS[route.name]),
-        tabBarLabel: t(TAB_LABEL_KEYS[route.name]),
-      })}
+      screenOptions={({ route }) => ({ headerShown: false, title: t(TAB_LABEL_KEYS[route.name]) })}
     >
-      <Tab.Screen name="Início" component={HomeStackScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Artigos" component={ArticlesStackScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Bíblia" component={BibleScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Ferramentas" component={ToolsStackScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Ajustes" component={SettingsStackScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Início" component={HomeStackScreen} />
+      <Tab.Screen name="Artigos" component={ArticlesStackScreen} />
+      <Tab.Screen name="Bíblia" component={BibleScreen} />
+      <Tab.Screen name="Ferramentas" component={ToolsStackScreen} />
+      <Tab.Screen name="Ajustes" component={SettingsStackScreen} />
     </Tab.Navigator>
   );
 }
 
 function MainStack() {
-  const { colors, tokens } = useTheme();
+  const { colors } = useTheme();
   return (
-    <Stack.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens)}>
+    <Stack.Navigator screenOptions={stackScreenOptionsForPlatform(colors)}>
       <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
       {/* NoteEditor permanece em MainStack pq e modal full-screen sem tab bar */}
       <Stack.Screen
@@ -247,8 +250,11 @@ function RootNavigation() {
   // Fonte de títulos (Cormorant Garamond SemiBold, único peso empacotado). A
   // chave precisa ser exatamente a de FONT_FAMILY_BY_PLATFORM.*.display em
   // src/theme/tokens.js, que é o que text('largeTitle') etc. põem no fontFamily.
-  // O splash segura até ela carregar; se o carregamento falhar (fontsError), o
-  // app segue com a fonte do sistema em vez de ficar preso no splash.
+  // No nativo o splash segura até ela carregar; se o carregamento falhar
+  // (fontsError), o app segue com a fonte do sistema em vez de ficar preso no
+  // splash. Na web não espera: o expo-font injeta um @font-face e o navegador
+  // troca a fonte sozinho quando o arquivo chega, então segurar o splash só
+  // atrasaria a primeira pintura do site.
   const [fontsLoaded, fontsError] = useFonts({
     'CormorantGaramond-SemiBold': require('./assets/fonts/CormorantGaramond-SemiBold.ttf'),
   });
@@ -282,7 +288,8 @@ function RootNavigation() {
     },
   };
 
-  if (loading || onboardingSeen === null || (!fontsLoaded && !fontsError)) {
+  const waitingFont = Platform.OS !== 'web' && !fontsLoaded && !fontsError;
+  if (loading || onboardingSeen === null || waitingFont) {
     return <BrandedSplash />;
   }
 

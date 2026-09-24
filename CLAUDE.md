@@ -86,9 +86,11 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
   (`accentText` é a versão AA).
 - `src/components/ui/` são os blocos de tela (uso em `docs/design/componentes.md`):
   `LargeTitleScreen` (large title que encolhe, barra translúcida, compensa a tab
-  bar), `Group`/`Row` (listas agrupadas), `SectionTitle`, `Button`, `SearchField`,
-  `Field`, `Chip`, `ProgressBar`, `ContinueRow`, `EmptyState`, `GateNotice`, `Sheet`
-  (folha inferior com gesto) e `PressScale` (toque com mola). Acessibilidade portável
+  bar), `Group`/`Row`/`ListSeparator`/`GroupList` (listas agrupadas), `SectionTitle`,
+  `Button`, `SearchField`, `Field`, `Chip`/`ChipRow`, `ProgressBar`, `ContinueRow`,
+  `EmptyState`, `GateNotice`/`GuestGate`, `Sheet` (folha inferior com gesto) e
+  `PressScale` (toque com mola), mais os helpers `useTabBarHeightSafe`, `webFocusRing`
+  e `enterStagger`. Acessibilidade portável
   por `role` e `aria-*` (o react-native-web não converte `accessibilityState`); alvo de
   toque vem do tamanho, nunca de `hitSlop`.
 - `src/navigation/`: `chrome.js` (opções de header num lugar só: opaco na cor do

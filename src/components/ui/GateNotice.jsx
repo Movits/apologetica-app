@@ -4,8 +4,9 @@ import { useTheme } from '../../context/ThemeContext';
 import Button from './Button';
 
 // Aviso inline para o modo visitante: cadeado, mensagem e dois botões (entrar
-// em primary, alternativa em plain). Os rótulos chegam por props, as strings
-// `gate.*` entram noutra onda.
+// em primary, alternativa em plain). Os rótulos chegam por props; para o caso
+// comum (mensagem `settings.guest.message`, "Criar conta" e "Entrar" saindo do
+// modo visitante) use o GuestGate, que já traz esses defaults.
 export default function GateNotice({
   message,
   primaryLabel,

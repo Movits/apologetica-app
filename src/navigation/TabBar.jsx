@@ -3,8 +3,9 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabBarHeightCallbackContext } from '@react-navigation/bottom-tabs';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 import ChromeBackdrop from './ChromeBackdrop';
-import { TAB_ICONS } from './tabs';
+import { TAB_ICONS, TAB_LABEL_KEYS } from './tabs';
 
 // Tab bar translúcida do app, para <Tab.Navigator tabBar={(p) => <TabBar {...p} />}>.
 // Recebe { state, descriptors, navigation, insets } do bottom-tabs 6.6.
@@ -30,13 +31,18 @@ import { TAB_ICONS } from './tabs';
 const ITEM_HEIGHT = 49;
 const ICON_SIZE = 24;
 
-function tabLabel(options, route) {
+// Rótulo da aba: a chave de tabs.js traduzida; só uma rota fora da lista cai
+// nas opções do navigator (tabBarLabel, title) e por fim no nome da rota.
+function tabLabel(options, route, t) {
+  const key = TAB_LABEL_KEYS[route.name];
+  if (key) return t(key);
   const label = options.tabBarLabel ?? options.title ?? route.name;
   return typeof label === 'string' ? label : (options.title ?? route.name);
 }
 
 export default function TabBar({ state, descriptors, navigation, insets }) {
   const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
   const setHeight = useContext(BottomTabBarHeightCallbackContext);
 
   // Respeita tabBarStyle: { display: 'none' } da tela ativa, como a padrão.
@@ -67,7 +73,7 @@ export default function TabBar({ state, descriptors, navigation, insets }) {
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const focused = state.index === index;
-          const label = tabLabel(options, route);
+          const label = tabLabel(options, route, t);
           const icons = TAB_ICONS[route.name] ?? TAB_ICONS['Início'];
           const color = focused ? colors.tint : colors.textSubtle;
 

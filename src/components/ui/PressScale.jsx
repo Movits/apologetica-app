@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useTheme } from '../../context/ThemeContext';
@@ -27,25 +27,28 @@ export default function PressScale({
   const styleIsFn = typeof style === 'function';
   const [pressed, setPressed] = useState(false);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
-  const spring = { duration: tokens.motion.touch, dampingRatio: 0.9 };
+  // Os tokens são constantes, então a mola e os handlers mantêm a referência
+  // entre renders (o Pressable não religa os eventos a cada render do pai).
+  const { touch, press } = tokens.motion;
+  const spring = useMemo(() => ({ duration: touch, dampingRatio: 0.9 }), [touch]);
 
-  const handlePressIn = (e) => {
-    scale.value = withSpring(tokens.motion.press.scale, spring);
+  const handlePressIn = useCallback((e) => {
+    scale.value = withSpring(press.scale, spring);
     if (styleIsFn) setPressed(true);
     onPressIn?.(e);
-  };
+  }, [scale, press.scale, spring, styleIsFn, onPressIn]);
 
-  const handlePressOut = (e) => {
+  const handlePressOut = useCallback((e) => {
     scale.value = withSpring(1, spring);
     if (styleIsFn) setPressed(false);
     onPressOut?.(e);
-  };
+  }, [scale, spring, styleIsFn, onPressOut]);
 
-  const handlePress = (e) => {
+  const handlePress = useCallback((e) => {
     if (haptic === 'selection') haptics.selection();
     else if (haptic === 'impact') haptics.impact('light');
     onPress?.(e);
-  };
+  }, [haptic, onPress]);
 
   return (
     <AnimatedPressable

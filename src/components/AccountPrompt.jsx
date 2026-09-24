@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import {
-  View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback,
+  View, Text, Modal, TouchableWithoutFeedback,
   StyleSheet, Animated, Easing,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useModalNavBar } from '../hooks/useModalNavBar';
+import { Button } from './ui';
 
 // Modal "Criar uma conta?" customizado, no estilo visual do app.
 // Substitui o Alert.alert nativo. Controlado por contexto + hook
@@ -109,15 +110,9 @@ function AccountPromptModal({ visible, opts, onClose }) {
             <Benefit icon="bookmark-outline" label={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} />
           </View>
 
-          <TouchableOpacity style={styles.btnPrimary} onPress={onCreate} activeOpacity={0.85}>
-            {/* Navy da paleta sobre o botão dourado (accent). */}
-            <Ionicons name="person-add-outline" size={tokens.icon.sm} color={colors.primary} style={{ marginRight: tokens.space.xs }} />
-            <Text style={styles.btnPrimaryText}>{t('auth.createFree')}</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btnSecondary} onPress={onClose} activeOpacity={0.7}>
-            <Text style={styles.btnSecondaryText}>{t('auth.notNow')}</Text>
-          </TouchableOpacity>
+          {/* Os mesmos botões do resto do app: primary com ícone e plain. */}
+          <Button icon="person-add-outline" label={t('auth.createFree')} onPress={onCreate} style={{ marginBottom: tokens.space.xs }} />
+          <Button variant="plain" label={t('auth.notNow')} onPress={onClose} />
         </Animated.View>
       </Animated.View>
     </Modal>
@@ -188,32 +183,5 @@ const makeStyles = (c, darkMode, tokens, text) =>
       borderRadius: tokens.radius.md,
       padding: tokens.space.sm,
       marginBottom: tokens.space.lg,
-    },
-    btnPrimary: {
-      alignSelf: 'stretch',
-      flexDirection: 'row',
-      backgroundColor: c.accent,
-      minHeight: 44,
-      paddingVertical: tokens.space.sm,
-      borderRadius: tokens.radius.md,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: tokens.space.xs,
-    },
-    btnPrimaryText: {
-      ...text('subhead'),
-      fontWeight: '600',
-      color: c.primary,
-    },
-    btnSecondary: {
-      minHeight: 44,
-      paddingVertical: tokens.space.sm,
-      alignItems: 'center',
-      alignSelf: 'stretch',
-    },
-    btnSecondaryText: {
-      ...text('subhead'),
-      color: c.textSubtle,
-      fontWeight: '600',
     },
   });

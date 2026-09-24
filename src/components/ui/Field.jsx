@@ -1,7 +1,8 @@
 import { forwardRef, useState } from 'react';
-import { Platform, Pressable, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
+import { webFocusRing } from './focusRing';
 
 // Campo rotulado de formulário, feito para viver dentro de um Group (que dá o
 // card e os separadores). Rótulo em footnote secundário acima do TextInput em
@@ -44,10 +45,7 @@ const Field = forwardRef(function Field(
   const { colors, tokens, text } = useTheme();
   const { space, radius, icon } = tokens;
   const [focused, setFocused] = useState(false);
-
-  const focusRing = Platform.OS === 'web' && focused
-    ? { outlineWidth: 2, outlineColor: colors.tint, outlineStyle: 'solid', outlineOffset: 2 }
-    : null;
+  const focusRing = webFocusRing(colors, focused);
 
   let trail = trailing ?? null;
   if (!trail && onToggleSecure) {
