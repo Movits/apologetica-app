@@ -1,14 +1,13 @@
 import { useMemo } from 'react';
 import { View, Text, ScrollView, Linking } from 'react-native';
 import {
-  referenceById, translateAuthor, translateYear, translateFullSource, resolveRefUrl,
+  referenceById, withEn, translateAuthor, translateYear, translateFullSource, resolveRefUrl,
   formatCitation, citationKindLabel,
 } from '../data/references';
-import { referencesEn } from '../data/references-en';
 import { translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { pick } from '../utils/i18nData';
+import { pick, pickPair } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { shareReference } from '../utils/share';
 import { openBible } from '../navigation/links';
@@ -50,10 +49,7 @@ export default function RefDetailScreen({ route, navigation }) {
 
   // Mesclada com a tradução EN, campo a campo, para o `pick` cair no PT
   // quando a tradução não existe.
-  const item = useMemo(() => {
-    const base = referenceById(refId);
-    return base ? { ...base, ...(referencesEn[base.id] || {}) } : null;
-  }, [refId]);
+  const item = useMemo(() => withEn(referenceById(refId)), [refId]);
 
   if (!item) {
     return (
@@ -91,7 +87,7 @@ export default function RefDetailScreen({ route, navigation }) {
   const share = () => shareReference({ text: quote, label: credit ? `${label} (${credit})` : label });
 
   const ol = item.originalLanguage;
-  const meaning = ol ? pick({ meaning: ol.meaning, meaningEn: item.meaningEn }, 'meaning', isEn) : null;
+  const meaning = ol ? pickPair(ol.meaning, item.meaningEn, isEn) : null;
   const citationLine = formatCitation(item.citation, isEn);
   const kindLine = citationKindLabel(item.citation, isEn);
   const media = item.media;

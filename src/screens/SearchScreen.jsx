@@ -3,18 +3,15 @@ import { View, Text, ScrollView, Pressable, ActivityIndicator } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
-import { references } from '../data/references';
-import { referencesEn } from '../data/references-en';
+import { references, withEn } from '../data/references';
 import { translateSource } from '../data/referenceSources';
 import { DAILY_VERSES } from '../data/dailyVerses';
-import { getBook, bookName } from '../data/bible';
 import { searchBible } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { pick, categoryLabel } from '../utils/i18nData';
-import { formatVerseRef } from '../utils/verseRef';
-import { refLabel } from '../utils/refLabel';
+import { refLabel, verseLabel } from '../utils/refLabel';
 import { openBible, openArticle } from '../navigation/links';
 import {
   getSearchHistory,
@@ -22,7 +19,7 @@ import {
   removeSearchHistory,
   clearSearchHistory,
 } from '../utils/searchHistory';
-import { Chip, EmptyState, Group, PressScale, Row, SearchField, SectionTitle } from '../components/ui';
+import { Chip, ChipRow, EmptyState, Group, Row, SearchField, SectionTitle } from '../components/ui';
 
 // Busca (Onda 9c): campo com foco automático, filtros em chips, histórico e
 // resultados em grupos por tipo. O motor é o mesmo de antes: Fuse.js para
@@ -93,29 +90,14 @@ const FILTERS = [
 const MIN_QUERY = 3;
 const DEBOUNCE_MS = 400;
 
-// Referência de um versículo no formato do idioma, a partir de bookId/chapter/verse.
-const verseLabel = (v, isEn) => formatVerseRef({ bookName: bookName(getBook(v.bookId), isEn), chapter: v.chapter, verse: v.verse }, isEn);
-
-// Linha do histórico: a busca à esquerda (PressScale) e o "x" de 44 à direita
-// como irmão, não como filho, para não aninhar toques dentro de uma Row.
+// Linha do histórico: a busca à esquerda (Row) e o "x" de 44 à direita como
+// irmão, não como filho, para não aninhar toques dentro da Row.
 function HistoryRow({ query, onPick, onRemove, removeLabel }) {
-  const { colors, tokens, text } = useTheme();
-  const { space, icon } = tokens;
+  const { colors, tokens } = useTheme();
+  const { icon } = tokens;
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <PressScale
-        role="button"
-        onPress={onPick}
-        style={({ pressed }) => [
-          { flex: 1, flexDirection: 'row', alignItems: 'center', gap: space.sm, minHeight: 44, paddingLeft: space.md, paddingVertical: space.sm },
-          pressed ? { backgroundColor: colors.separator } : null,
-        ]}
-      >
-        <View style={{ width: 28, height: 28, alignItems: 'center', justifyContent: 'center' }}>
-          <Ionicons name="time-outline" size={icon.md} color={colors.tint} />
-        </View>
-        <Text style={[text('body'), { color: colors.text, flex: 1 }]} numberOfLines={1}>{query}</Text>
-      </PressScale>
+      <Row icon="time-outline" title={query} onPress={onPick} style={{ flex: 1 }} />
       <Pressable
         role="button"
         aria-label={removeLabel}
@@ -130,7 +112,7 @@ function HistoryRow({ query, onPick, onRemove, removeLabel }) {
 
 export default function SearchScreen({ navigation }) {
   const { colors, tokens, text } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { t, isEn, lang } = useLanguage();
   const { space } = tokens;
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
@@ -169,7 +151,7 @@ export default function SearchScreen({ navigation }) {
   useEffect(() => {
     setBusy(false);
     if (debouncedQuery.trim().length < MIN_QUERY) return;
-    addSearchHistory(debouncedQuery).then(() => getSearchHistory().then(setHistory));
+    addSearchHistory(debouncedQuery).then(setHistory);
   }, [debouncedQuery]);
 
   const submit = useCallback(() => setDebouncedQuery(query), [query]);
@@ -186,7 +168,7 @@ export default function SearchScreen({ navigation }) {
   // A busca full-text varre a tradução inteira, que na web é baixada sob
   // demanda. Sem esperar, searchBible devolveria [] e a tela diria "Nada
   // encontrado" por um motivo que não é esse.
-  const biblia = useBibleReady(isEn ? 'en' : 'pt');
+  const biblia = useBibleReady(lang);
 
   const results = useMemo(() => {
     const q = debouncedQuery.trim();
@@ -196,9 +178,9 @@ export default function SearchScreen({ navigation }) {
       references: referenceIndex.search(q).slice(0, 10).map((h) => h.item),
       verses: verseIndex.search(q).slice(0, 8).map((h) => h.item),
       // Busca full-text na Bíblia inteira (offline), no idioma ativo.
-      bible: biblia.pronta ? searchBible(q, { language: isEn ? 'en' : 'pt', limit: 20 }) : [],
+      bible: biblia.pronta ? searchBible(q, { language: lang, limit: 20 }) : [],
     };
-  }, [debouncedQuery, isEn, biblia.pronta]);
+  }, [debouncedQuery, lang, biblia.pronta]);
 
   const activeFilter = FILTERS.find((f) => f.id === filter) || FILTERS[0];
   const visibleHits = activeFilter.sections.reduce((n, s) => n + results[s].length, 0);
@@ -270,7 +252,7 @@ export default function SearchScreen({ navigation }) {
           <SectionTitle title={t('search.filter.references')} />
           <Group style={groupStyle}>
             {data.map((r) => {
-              const full = { ...r, ...(referencesEn[r.id] || {}) };
+              const full = withEn(r);
               const topic = pick(full, 'topic', isEn);
               return (
                 <Row
@@ -323,19 +305,11 @@ export default function SearchScreen({ navigation }) {
         autoCorrect={false}
         style={{ marginHorizontal: space.md, marginTop: space.sm }}
       />
-      {/* Trilho dos chips com a altura do alvo de toque: sem `height` e
-          `flexShrink: 0` a web encolhe o ScrollView horizontal a quase nada. */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ paddingHorizontal: space.md, gap: space.xs, alignItems: 'center' }}
-        style={{ flexGrow: 0, flexShrink: 0, height: 44, marginTop: space.xxs }}
-      >
+      <ChipRow scroll style={{ marginTop: space.xxs }}>
         {FILTERS.map((f) => (
           <Chip key={f.id} label={t(f.key)} selected={filter === f.id} onPress={() => setFilter(f.id)} haptic />
         ))}
-      </ScrollView>
+      </ChipRow>
 
       <ScrollView
         style={{ flex: 1 }}

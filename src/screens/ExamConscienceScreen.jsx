@@ -6,45 +6,35 @@ import { useLanguage } from '../context/LanguageContext';
 import { examConscience } from '../data/examConscience';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Group, PressScale, Row, SectionTitle } from '../components/ui';
+import { Button, Group, Row, SectionTitle } from '../components/ui';
 
 // Exame de consciência: os dez mandamentos como seções, cada pergunta numa
 // linha marcável. As marcações vivem só no estado desta tela (nada é gravado,
 // por privacidade: ver o cabeçalho de src/data/examConscience.js) e somem ao
 // sair. O artigo de apoio (id 83, os Mandamentos) abre pelo openArticle.
 
-// Linha de pergunta com papel de checkbox. Não usa o Row porque ele fixa
-// role="button" e não expõe aria-checked; a geometria é a mesma do Row
-// (alvo de 44, recuo space.md, gap space.sm, fundo separator ao pressionar).
+// Linha de pergunta com papel de checkbox: a Row repassa `role` e
+// `aria-checked` ao PressScale, e a marca vai em `trailing`.
 function CheckRow({ label, checked, onToggle }) {
-  const { colors, tokens, text } = useTheme();
-  const { space, icon } = tokens;
+  const { colors, tokens } = useTheme();
+  const { icon } = tokens;
   return (
-    <PressScale
+    <Row
       role="checkbox"
       aria-checked={checked}
-      aria-label={label}
+      accessibilityLabel={label}
       haptic="selection"
+      title={label}
+      titleLines={0}
+      trailing={(
+        <Ionicons
+          name={checked ? 'checkmark-circle' : 'ellipse-outline'}
+          size={icon.md}
+          color={checked ? colors.success : colors.textTertiary}
+        />
+      )}
       onPress={onToggle}
-      style={({ pressed }) => [
-        {
-          flexDirection: 'row',
-          alignItems: 'center',
-          minHeight: 44,
-          paddingHorizontal: space.md,
-          paddingVertical: space.sm,
-          gap: space.sm,
-        },
-        pressed ? { backgroundColor: colors.separator } : null,
-      ]}
-    >
-      <Text style={[text('body'), { color: colors.text, flex: 1 }]}>{label}</Text>
-      <Ionicons
-        name={checked ? 'checkmark-circle' : 'ellipse-outline'}
-        size={icon.md}
-        color={checked ? colors.success : colors.textTertiary}
-      />
-    </PressScale>
+    />
   );
 }
 

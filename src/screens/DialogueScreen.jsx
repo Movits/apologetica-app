@@ -123,7 +123,7 @@ export default function DialogueScreen({ navigation, route }) {
               <ProgressBar key={i} value={i <= stepIndex ? 1 : 0} style={{ flex: 1 }} />
             ))}
           </View>
-          <Text style={[caption, { textAlign: 'center' }]}>{t('dialogue.stepOf', { n: stepIndex + 1, total })}</Text>
+          <Text style={[caption, { textAlign: 'center' }]}>{t('common.stepOf', { n: stepIndex + 1, total })}</Text>
         </View>
 
         {!isLast ? (

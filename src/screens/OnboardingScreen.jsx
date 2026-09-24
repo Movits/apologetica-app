@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { setOnboardingDone, setStartIntent } from '../utils/onboarding';
 import { getDialoguesByCategory } from '../data/dialogues';
-import AuthTopToggles from '../components/AuthTopToggles';
+import AuthTopToggles, { TOGGLES_HEIGHT } from '../components/AuthTopToggles';
 import BrandMark from '../components/BrandMark';
-import { Button, Group, ProgressBar, Row } from '../components/ui';
+import { Button, Group, ProgressBar, Row, enterStagger } from '../components/ui';
 
 // Onboarding v2: ativação em vez de tour passivo. Em até 60 s a pessoa escolhe
 // um tema e cai direto num diálogo de resposta relevante (o "aha" de
@@ -54,7 +54,7 @@ export default function OnboardingScreen({ onDone }) {
   const { colors, tokens, text, darkMode } = useTheme();
   const { isEn } = useLanguage();
   const insets = useSafeAreaInsets();
-  const { space, icon, motion } = tokens;
+  const { space, icon } = tokens;
 
   const [step, setStep] = useState(0); // 0 intro, 1 tema, 2 pronto
   const [theme, setTheme] = useState(null);
@@ -72,10 +72,6 @@ export default function OnboardingScreen({ onDone }) {
   };
 
   const chosenTheme = THEMES.find((t) => t.key === theme);
-
-  // Entrada discreta dos blocos, em cascata. O reanimated respeita o "reduzir
-  // movimento" do sistema por padrão (ReduceMotion.System).
-  const enter = (i) => FadeInDown.duration(motion.layout).delay(i * motion.stagger);
 
   const title = [text('largeTitle'), { color: colors.text }];
   const subtitle = [text('title'), { color: colors.text }];
@@ -98,8 +94,8 @@ export default function OnboardingScreen({ onDone }) {
           flexGrow: 1,
           justifyContent: 'center',
           paddingHorizontal: space.xl,
-          // Abaixo das pílulas do topo (44 de alvo), com folga.
-          paddingTop: insets.top + space.xs + 44 + space.lg,
+          // Abaixo das pílulas do topo, com folga.
+          paddingTop: insets.top + space.xs + TOGGLES_HEIGHT + space.lg,
           paddingBottom: space.lg,
         }}
         showsVerticalScrollIndicator={false}
@@ -108,13 +104,13 @@ export default function OnboardingScreen({ onDone }) {
           <View style={{ gap: space.md }}>
             {/* Sem o nome do app escrito nesta tela, a cruz fica como imagem
                 rotulada "APPologética". */}
-            <Animated.View entering={enter(0)}>
+            <Animated.View entering={enterStagger(0, tokens)}>
               <BrandMark size="md" color={colors.accent} />
             </Animated.View>
-            <Animated.View entering={enter(1)}>
+            <Animated.View entering={enterStagger(1, tokens)}>
               <Text style={title}>{isEn ? 'Know how to answer' : 'Saiba responder'}</Text>
             </Animated.View>
-            <Animated.View entering={enter(2)}>
+            <Animated.View entering={enterStagger(2, tokens)}>
               <Text style={lead}>
                 {isEn
                   ? 'When someone questions your faith, have the answer with the source in hand.'
@@ -122,7 +118,7 @@ export default function OnboardingScreen({ onDone }) {
               </Text>
             </Animated.View>
             {/* Texto exato das Bíblias embarcadas (Ave Maria / Douay-Rheims), 1 Pedro 3,15. */}
-            <Animated.View entering={enter(3)} style={{ gap: space.xs }}>
+            <Animated.View entering={enterStagger(3, tokens)} style={{ gap: space.xs }}>
               <Text style={[text('reading'), { color: colors.text, fontStyle: 'italic' }]}>
                 {isEn
                   ? '"But sanctify the Lord Christ in your hearts, being ready always to satisfy every one that asketh you a reason of that hope which is in you."'
@@ -135,11 +131,11 @@ export default function OnboardingScreen({ onDone }) {
 
         {step === 1 && (
           <View style={{ gap: space.md }}>
-            <Animated.View entering={enter(0)} style={{ gap: space.xs }}>
+            <Animated.View entering={enterStagger(0, tokens)} style={{ gap: space.xs }}>
               <Text style={subtitle}>{isEn ? 'Which theme grabs you most?' : 'Qual tema mais te pega?'}</Text>
               <Text style={lead}>{isEn ? 'We will start with a real answer on it.' : 'Vamos começar com uma resposta real sobre ele.'}</Text>
             </Animated.View>
-            <Animated.View entering={enter(1)}>
+            <Animated.View entering={enterStagger(1, tokens)}>
               <Group>
                 {THEMES.map((tm) => (
                   <Row
@@ -158,13 +154,13 @@ export default function OnboardingScreen({ onDone }) {
 
         {step === 2 && (
           <View style={{ gap: space.md }}>
-            <Animated.View entering={enter(0)}>
+            <Animated.View entering={enterStagger(0, tokens)}>
               <Ionicons name="chatbubbles-outline" size={icon.lg} color={colors.tint} />
             </Animated.View>
-            <Animated.View entering={enter(1)}>
+            <Animated.View entering={enterStagger(1, tokens)}>
               <Text style={subtitle}>{isEn ? 'Ready. Here is your first answer' : 'Pronto. Aqui está sua primeira resposta'}</Text>
             </Animated.View>
-            <Animated.View entering={enter(2)}>
+            <Animated.View entering={enterStagger(2, tokens)}>
               <Text style={lead}>
                 {isEn
                   ? `We prepared a guided answer about ${chosenTheme ? chosenTheme.en.toLowerCase() : 'your faith'}. Read it and see how simple it is to respond.`

@@ -9,15 +9,19 @@ import { PressScale } from './ui';
 // telas de entrada: Onboarding, Login e Cadastro. Cada pílula tem 44 de altura
 // (o alvo vem do tamanho, sem área extra de toque), ícone `icon.md` na cor `tint` e rótulo
 // em `textSubtle`. O tema expõe `aria-pressed` (ligado = escuro).
+
+// Altura das pílulas (o alvo de toque): quem rola por baixo delas (FormScreen
+// do Login, Onboarding) soma isto ao recuo do topo.
+export const TOGGLES_HEIGHT = 44;
+
 export default function AuthTopToggles() {
   const { colors, tokens, text, darkMode, setDarkMode } = useTheme();
-  const { lang, setLang } = useLanguage();
+  const { isEn, setLang } = useLanguage();
   const insets = useSafeAreaInsets();
   const { space, radius, icon } = tokens;
-  const isEn = lang === 'en';
 
   const pill = {
-    minHeight: 44,
+    minHeight: TOGGLES_HEIGHT,
     minWidth: 44,
     paddingHorizontal: space.sm,
     borderRadius: radius.full,

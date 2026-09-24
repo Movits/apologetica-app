@@ -11,6 +11,7 @@ import {
   shadow,
   FONT_FAMILY,
   FONT_FAMILY_BY_PLATFORM,
+  fontFamilyFor,
 } from '../src/theme/tokens.js';
 
 // Os números vêm de docs/design/pesquisa-apple.md §12 e do plano da Fase 5
@@ -102,4 +103,13 @@ test('FONT_FAMILY_BY_PLATFORM resolve a serifa por plataforma', () => {
     assert.equal(FONT_FAMILY_BY_PLATFORM[os].display, 'CormorantGaramond-SemiBold', `${os}.display`);
     assert.equal(FONT_FAMILY_BY_PLATFORM[os].sans, undefined, `${os}.sans`);
   }
+});
+
+test('fontFamilyFor devolve as famílias da plataforma, com o iOS como fallback', () => {
+  assert.equal(fontFamilyFor('ios'), FONT_FAMILY_BY_PLATFORM.ios);
+  assert.equal(fontFamilyFor('android'), FONT_FAMILY_BY_PLATFORM.android);
+  assert.equal(fontFamilyFor('web'), FONT_FAMILY_BY_PLATFORM.web);
+  // Plataforma sem mapa próprio (windows, macos) e ausente caem no neutro.
+  assert.equal(fontFamilyFor('windows'), FONT_FAMILY_BY_PLATFORM.ios);
+  assert.equal(fontFamilyFor(undefined), FONT_FAMILY_BY_PLATFORM.ios);
 });

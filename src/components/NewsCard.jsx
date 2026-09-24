@@ -5,7 +5,7 @@ import * as WebBrowser from 'expo-web-browser';
 import { getNews } from '../services/newsApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { EmptyState, Group, PressScale } from './ui';
+import { EmptyState, Group, Row } from './ui';
 import Skeleton from './Skeleton';
 
 // Rótulo de data curto e relativo (hoje / ontem / 4 de jun).
@@ -24,8 +24,9 @@ function relDate(ts, t, isEn) {
 // Linhas de placeholder enquanto o feed carrega (mesma forma das notícias).
 const PLACEHOLDER_ROWS = 3;
 
-// Uma notícia: miniatura (do feed ou da og:image da matéria), título em
-// headline, fonte e data em footnote. Toque abre a matéria no navegador.
+// Uma notícia: Row com a miniatura (do feed ou da og:image da matéria) em
+// `leading`, título em headline, fonte e data em footnote. Toque abre a
+// matéria no navegador (`role="link"` segue pela Row ao PressScale).
 function NewsRow({ item, onPress }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
@@ -34,46 +35,46 @@ function NewsRow({ item, onPress }) {
   const hasImage = Boolean(item.image) && !failed;
   const meta = [item.source, item.pubDate ? relDate(item.pubDate, t, isEn) : null].filter(Boolean).join(' · ');
 
-  return (
-    <PressScale
-      role="link"
-      aria-label={`${item.title}, ${meta}`}
-      onPress={onPress}
-      style={({ pressed }) => [
-        { flexDirection: 'row', alignItems: 'center', gap: space.sm, paddingHorizontal: space.md, paddingVertical: space.sm, minHeight: 44 },
-        pressed ? { backgroundColor: colors.separator } : null,
-      ]}
+  const thumbnail = (
+    <View
+      aria-hidden
+      style={{
+        width: thumb.sm,
+        height: thumb.sm,
+        borderRadius: radius.sm,
+        overflow: 'hidden',
+        backgroundColor: colors.separator,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
     >
-      <View
-        aria-hidden
-        style={{
-          width: thumb.sm,
-          height: thumb.sm,
-          borderRadius: radius.sm,
-          overflow: 'hidden',
-          backgroundColor: colors.separator,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {hasImage ? (
-          <Image
-            source={{ uri: item.image }}
-            accessible={false}
-            resizeMode="cover"
-            style={{ width: thumb.sm, height: thumb.sm }}
-            onError={() => setFailed(true)}
-          />
-        ) : (
-          <Ionicons name="newspaper-outline" size={icon.md} color={colors.textTertiary} />
-        )}
-      </View>
-      <View style={{ flex: 1, minWidth: 0, gap: space.xxs }}>
-        <Text style={[text('headline'), { color: colors.text }]} numberOfLines={3}>{item.title}</Text>
-        {meta ? <Text style={[text('footnote'), { color: colors.textSubtle }]} numberOfLines={1}>{meta}</Text> : null}
-      </View>
-      <Ionicons name="open-outline" size={icon.sm} color={colors.textTertiary} />
-    </PressScale>
+      {hasImage ? (
+        <Image
+          source={{ uri: item.image }}
+          accessible={false}
+          resizeMode="cover"
+          style={{ width: thumb.sm, height: thumb.sm }}
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <Ionicons name="newspaper-outline" size={icon.md} color={colors.textTertiary} />
+      )}
+    </View>
+  );
+
+  return (
+    <Row
+      role="link"
+      accessibilityLabel={`${item.title}, ${meta}`}
+      leading={thumbnail}
+      title={item.title}
+      titleRole="headline"
+      titleLines={3}
+      trailing={<Ionicons name="open-outline" size={icon.sm} color={colors.textTertiary} />}
+      onPress={onPress}
+    >
+      {meta ? <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.xxs }]} numberOfLines={1}>{meta}</Text> : null}
+    </Row>
   );
 }
 

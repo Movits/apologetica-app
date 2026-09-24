@@ -1,27 +1,17 @@
 import { forwardRef } from 'react';
 import { Text, View } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
-import { textStyle } from '../theme/tokens';
+import { CANVAS, canvasMetrics } from './shareCanvas';
 
 // Card visual do versículo, usado pra capturar como imagem (quadrado ou story
 // do Instagram). Renderizado fora da tela com `collapsable={false}` pra que o
 // react-native-view-shot consiga capturar.
 //
-// A imagem é gerada num canvas de 1080 px de largura, e os papéis de texto dos
-// tokens valem para a largura de referência de um celular (390 pt). Cada
-// papel é ampliado nessa proporção (proporção de imagem, não medida de
-// interface), e as cores vêm do tema: fundo `primary`, texto `onPrimary`,
-// destaques em `accent`.
-const REFERENCE_WIDTH = 390;
-const CANVAS = { square: { width: 1080, height: 1080 }, story: { width: 1080, height: 1920 } };
-const SCALE = CANVAS.square.width / REFERENCE_WIDTH;
-
+// O canvas e a ampliação dos papéis de texto vêm de shareCanvas.js; as cores
+// vêm do tema: fundo `primary`, texto `onPrimary`, destaques em `accent`.
 const ShareVerseCard = forwardRef(({ text, passageRef, variant = 'square' }, captureRef) => {
   const { colors, tokens } = useTheme();
-  const { space, fontFamily } = tokens;
-  const big = (role) => textStyle(role, (n) => Math.round(n * SCALE), fontFamily);
-  const pad = Math.round(space.xxl * SCALE);
-  const gap = Math.round(space.md * SCALE);
+  const { big, pad, gap } = canvasMetrics(tokens);
 
   return (
     <View

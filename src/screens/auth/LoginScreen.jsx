@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
-import AuthTopToggles from '../../components/AuthTopToggles';
+import { TOGGLES_HEIGHT } from '../../components/AuthTopToggles';
 import BrandMark from '../../components/BrandMark';
+import FormScreen from '../../components/auth/FormScreen';
+import OrDivider from '../../components/auth/OrDivider';
 import { Button, Field, Group } from '../../components/ui';
 
 // Login com a pele da Onda 7 (mock aprovado): fundo do tema, cruz à esquerda,
@@ -15,8 +16,7 @@ import { Button, Field, Group } from '../../components/ui';
 export default function LoginScreen({ navigation }) {
   const { signIn, continueAsGuest, linkGoogleToEmail } = useAuth();
   const { colors, tokens, text } = useTheme();
-  const { t, lang } = useLanguage();
-  const insets = useSafeAreaInsets();
+  const { t, isEn } = useLanguage();
   const google = useGoogleSignIn();
   const passwordRef = useRef(null);
   const [email, setEmail] = useState('');
@@ -25,7 +25,6 @@ export default function LoginScreen({ navigation }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const { space, radius } = tokens;
-  const isEn = lang === 'en';
 
   const linkInfo = google.needsLink;
   // Quando o Google detecta conta existente, prefixa o email para o usuário só
@@ -61,120 +60,102 @@ export default function LoginScreen({ navigation }) {
 
   const shownError = error || google.error;
 
+  // O conteúdo começa abaixo das pílulas do topo, com folga.
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1, backgroundColor: colors.bg }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      <AuthTopToggles />
+    <FormScreen toggles topInset={TOGGLES_HEIGHT + space.lg}>
+      {/* Decorativa: a tela já se chama pelo título. */}
+      <BrandMark size="md" color={colors.accent} decorative style={{ marginBottom: space.md }} />
+      <Text style={[text('title'), { color: colors.text, marginBottom: space.xs }]}>{t('auth.login')}</Text>
+      <Text style={[text('body'), { color: colors.textSubtle, marginBottom: space.lg }]}>{t('auth.loginLead')}</Text>
 
-      <ScrollView
-        contentContainerStyle={{
-          paddingHorizontal: space.lg,
-          // Abaixo das pílulas do topo (44 de alvo), com folga.
-          paddingTop: insets.top + space.xs + 44 + space.lg,
-          paddingBottom: insets.bottom + space.xl,
-        }}
-        keyboardShouldPersistTaps="handled"
-      >
-        {/* Decorativa: a tela já se chama pelo título. */}
-        <BrandMark size="md" color={colors.accent} decorative style={{ marginBottom: space.md }} />
-        <Text style={[text('title'), { color: colors.text, marginBottom: space.xs }]}>{t('auth.login')}</Text>
-        <Text style={[text('body'), { color: colors.textSubtle, marginBottom: space.lg }]}>{t('auth.loginLead')}</Text>
+      <Group>
+        <Field
+          label={t('auth.emailLabel')}
+          placeholder={t('auth.emailPlaceholder')}
+          value={email}
+          onChangeText={setEmail}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          autoComplete="email"
+          textContentType="emailAddress"
+          returnKeyType="next"
+          onSubmitEditing={() => passwordRef.current?.focus()}
+          submitBehavior="submit"
+        />
+        <Field
+          ref={passwordRef}
+          label={t('auth.password')}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry={!showPassword}
+          onToggleSecure={() => setShowPassword((v) => !v)}
+          toggleSecureLabel={showPassword ? t('auth.hidePassword') : t('auth.showPassword')}
+          autoComplete="password"
+          textContentType="password"
+          returnKeyType="go"
+          onSubmitEditing={linkInfo ? handleLink : handleLogin}
+        />
+      </Group>
 
-        <Group>
-          <Field
-            label={t('auth.emailLabel')}
-            placeholder={t('auth.emailPlaceholder')}
-            value={email}
-            onChangeText={setEmail}
-            autoCapitalize="none"
-            keyboardType="email-address"
-            autoComplete="email"
-            textContentType="emailAddress"
-            returnKeyType="next"
-            onSubmitEditing={() => passwordRef.current?.focus()}
-            submitBehavior="submit"
+      {linkInfo ? (
+        <View
+          style={{
+            backgroundColor: colors.card,
+            borderRadius: radius.md,
+            borderWidth: StyleSheet.hairlineWidth,
+            borderColor: colors.separator,
+            padding: space.md,
+            marginTop: space.sm,
+            gap: space.xs,
+          }}
+        >
+          <Text style={[text('headline'), { color: colors.text }]}>
+            {isEn ? 'You already have an account with this email' : 'Você já tem uma conta com este e-mail'}
+          </Text>
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+            {isEn
+              ? `Enter the password for ${linkInfo.email} to link Google to that account.`
+              : `Digite a senha de ${linkInfo.email} para vincular o Google a essa conta.`}
+          </Text>
+          <Button
+            variant="secondary"
+            icon="link-outline"
+            label={isEn ? 'Link Google' : 'Vincular Google'}
+            onPress={handleLink}
+            loading={busy}
           />
-          <Field
-            ref={passwordRef}
-            label={t('auth.password')}
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={!showPassword}
-            onToggleSecure={() => setShowPassword((v) => !v)}
-            toggleSecureLabel={showPassword ? t('auth.hidePassword') : t('auth.showPassword')}
-            autoComplete="password"
-            textContentType="password"
-            returnKeyType="go"
-            onSubmitEditing={linkInfo ? handleLink : handleLogin}
+        </View>
+      ) : null}
+
+      {shownError ? (
+        <Text style={[text('footnote'), { color: colors.danger, marginTop: space.sm }]}>{shownError}</Text>
+      ) : null}
+
+      <Button label={t('auth.login')} onPress={handleLogin} loading={busy} style={{ marginTop: space.md }} />
+      <Button variant="plain" label={t('auth.forgotPassword')} onPress={() => navigation.navigate('ForgotPassword')} />
+
+      <OrDivider />
+
+      <View style={{ gap: space.xs }}>
+        {!google.unavailable && (
+          <Button
+            variant="secondary"
+            icon="logo-google"
+            label={isEn ? 'Continue with Google' : 'Continuar com Google'}
+            onPress={google.signIn}
+            disabled={!google.ready}
+            loading={google.busy}
           />
-        </Group>
+        )}
+        <Button variant="secondary" label={t('auth.signup')} onPress={() => navigation.navigate('Signup')} />
+        <Button variant="plain" label={t('auth.guest')} onPress={continueAsGuest} />
+      </View>
 
-        {linkInfo ? (
-          <View
-            style={{
-              backgroundColor: colors.card,
-              borderRadius: radius.md,
-              borderWidth: StyleSheet.hairlineWidth,
-              borderColor: colors.separator,
-              padding: space.md,
-              marginTop: space.sm,
-              gap: space.xs,
-            }}
-          >
-            <Text style={[text('headline'), { color: colors.text }]}>
-              {isEn ? 'You already have an account with this email' : 'Você já tem uma conta com este e-mail'}
-            </Text>
-            <Text style={[text('footnote'), { color: colors.textSubtle }]}>
-              {isEn
-                ? `Enter the password for ${linkInfo.email} to link Google to that account.`
-                : `Digite a senha de ${linkInfo.email} para vincular o Google a essa conta.`}
-            </Text>
-            <Button
-              variant="secondary"
-              icon="link-outline"
-              label={isEn ? 'Link Google' : 'Vincular Google'}
-              onPress={handleLink}
-              loading={busy}
-            />
-          </View>
-        ) : null}
-
-        {shownError ? (
-          <Text style={[text('footnote'), { color: colors.danger, marginTop: space.sm }]}>{shownError}</Text>
-        ) : null}
-
-        <Button label={t('auth.login')} onPress={handleLogin} loading={busy} style={{ marginTop: space.md }} />
-        <Button variant="plain" label={t('auth.forgotPassword')} onPress={() => navigation.navigate('ForgotPassword')} />
-
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, marginVertical: space.md }}>
-          <View style={{ flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: colors.separator }} />
-          <Text style={[text('footnote'), { color: colors.textSubtle }]}>{isEn ? 'or' : 'ou'}</Text>
-          <View style={{ flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: colors.separator }} />
-        </View>
-
-        <View style={{ gap: space.xs }}>
-          {!google.unavailable && (
-            <Button
-              variant="secondary"
-              icon="logo-google"
-              label={isEn ? 'Continue with Google' : 'Continuar com Google'}
-              onPress={google.signIn}
-              disabled={!google.ready}
-              loading={google.busy}
-            />
-          )}
-          <Button variant="secondary" label={t('auth.signup')} onPress={() => navigation.navigate('Signup')} />
-          <Button variant="plain" label={t('auth.guest')} onPress={continueAsGuest} />
-        </View>
-
-        <Text style={[text('caption1'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.xs }]}>
-          {isEn
-            ? 'You can explore articles, Bible, liturgy and references.\nHighlights and notes require an account.'
-            : 'Você pode explorar artigos, Bíblia, liturgia e referências.\nMarcações e notas exigem conta.'}
-        </Text>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      <Text style={[text('caption1'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.xs }]}>
+        {isEn
+          ? 'You can explore articles, Bible, liturgy and references.\nHighlights and notes require an account.'
+          : 'Você pode explorar artigos, Bíblia, liturgia e referências.\nMarcações e notas exigem conta.'}
+      </Text>
+    </FormScreen>
   );
 }

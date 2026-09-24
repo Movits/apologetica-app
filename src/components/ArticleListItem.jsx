@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
@@ -16,11 +17,15 @@ import PressScale from './ui/PressScale';
 //   category, image).
 // - read: mostra o checkmark de lido.
 // - showCategory: esconde a categoria quando a lista já é de uma categoria só.
-// - onPress: abre o artigo (a tela decide a rota).
+// - onPress: abre o artigo, recebe o id (a tela decide a rota).
+//
+// Memoizado: a lista da aba Artigos re-renderiza ao digitar e ao trocar o
+// filtro, e cada item só muda quando o artigo, o "lido" ou a categoria mudam
+// (a tela passa um onPress estável, com o id como argumento).
 
 // O lado da capa é tokens.thumb.md: a imagem do artigo é recortada em
 // quadrado (cover).
-export default function ArticleListItem({ article, read = false, showCategory = true, onPress }) {
+const ArticleListItem = memo(function ArticleListItem({ article, read = false, showCategory = true, onPress }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, radius, icon, thumb } = tokens;
@@ -37,7 +42,7 @@ export default function ArticleListItem({ article, read = false, showCategory = 
       role="button"
       aria-label={meta}
       testID="article-item"
-      onPress={onPress}
+      onPress={() => onPress?.(article.id)}
       style={{
         flexDirection: 'row',
         alignItems: 'flex-start',
@@ -85,7 +90,9 @@ export default function ArticleListItem({ article, read = false, showCategory = 
       </View>
     </PressScale>
   );
-}
+});
+
+export default ArticleListItem;
 
 // Separador de meia linha entre itens, recuado até o texto (capa + vão), como
 // o separatorInset das listas do iOS. Serve de ItemSeparatorComponent.

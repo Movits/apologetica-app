@@ -1,15 +1,14 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Switch, Pressable, Linking, Modal, FlatList, Platform } from 'react-native';
-import Animated from 'react-native-reanimated';
 import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useScrollToTop } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureException } from '../sentry';
 import * as Speech from 'expo-speech';
 import Constants from 'expo-constants';
 import { getBuildId } from '../utils/webUpdate';
-import { pick } from '../utils/i18nData';
+import { pick, pickPair } from '../utils/i18nData';
 import { THEME_MODES } from '../utils/themeMode';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
@@ -21,13 +20,11 @@ import {
 } from '../services/notifications';
 import {
   listVoicesForLanguage, getSavedVoiceId, saveVoiceId,
-  getSavedRate, saveRate, describeVoice, describeVoiceShort,
+  getSavedRate, saveRate, describeVoice, describeVoiceShort, ttsLocale,
 } from '../utils/ttsVoice';
 import { useModalNavBar } from '../hooks/useModalNavBar';
 import { useLanguage } from '../context/LanguageContext';
-import { fullBleedContentOptions } from '../navigation/chrome';
-import LargeTitleScreen from '../components/ui/LargeTitleScreen';
-import { Button, Chip, EmptyState, Field, GateNotice, Group, Row, SectionTitle } from '../components/ui';
+import { Button, Chip, ChipRow, EmptyState, Field, GuestGate, Group, LargeTitleScreen, Row, SectionTitle } from '../components/ui';
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
@@ -77,21 +74,11 @@ function ThemedSwitch({ value, onValueChange, label }) {
   );
 }
 
-// Linha de chips que quebra quando não cabe (seis tamanhos de letra em 390 pt).
-function ChipRow({ children }) {
-  const { tokens } = useTheme();
-  return (
-    <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: tokens.space.xs, marginTop: tokens.space.xxs }}>
-      {children}
-    </View>
-  );
-}
-
 export default function SettingsScreen() {
   const navigation = useNavigation();
   const { colors, tokens, text, themeMode, setThemeMode, fontSize, setFontSize } = useTheme();
   const { lang, setLang, t, isEn } = useLanguage();
-  const { user, signOut, guest, exitGuest, deleteAccount } = useAuth();
+  const { user, signOut, guest, deleteAccount } = useAuth();
   const { space, radius, icon } = tokens;
   const [delOpen, setDelOpen] = useState(false);
   const [delPass, setDelPass] = useState('');
@@ -105,12 +92,6 @@ export default function SettingsScreen() {
   const [ttsVoiceId, setTtsVoiceId] = useState(null);
   const [ttsRate, setTtsRate] = useState(0.95);
   const [voicePickerOpen, setVoicePickerOpen] = useState(false);
-
-  // A tela é raiz do stack da aba: o header do stack sai e o LargeTitleScreen
-  // compensa a barra do topo e a tab bar por dentro.
-  useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false, ...fullBleedContentOptions(colors) });
-  }, [navigation, colors]);
 
   useEffect(() => {
     getPrefs().then(setNotifPrefs);
@@ -132,17 +113,13 @@ export default function SettingsScreen() {
 
   const selectedVoice = ttsVoices.find((v) => v.identifier === ttsVoiceId) || ttsVoices[0] || null;
 
-  const previewPhrase = () => isEn
-    ? 'Always be prepared to give an answer.'
-    : 'Esteja sempre pronto para dar uma resposta.';
-
-  const ratePhrase = () => isEn ? 'Reading speed.' : 'Velocidade de leitura.';
-  const fallbackLang = () => isEn ? 'en-US' : 'pt-BR';
+  const previewPhrase = () => pickPair('Esteja sempre pronto para dar uma resposta.', 'Always be prepared to give an answer.', isEn);
+  const ratePhrase = () => pickPair('Velocidade de leitura.', 'Reading speed.', isEn);
 
   const previewVoice = (voice) => {
     Speech.stop();
     Speech.speak(previewPhrase(), {
-      language: voice?.language || fallbackLang(),
+      language: voice?.language || ttsLocale(lang),
       voice: voice?.identifier,
       rate: ttsRate,
       pitch: 1.0,
@@ -162,7 +139,7 @@ export default function SettingsScreen() {
     await saveRate(newRate);
     Speech.stop();
     Speech.speak(ratePhrase(), {
-      language: selectedVoice?.language || fallbackLang(),
+      language: selectedVoice?.language || ttsLocale(lang),
       voice: selectedVoice?.identifier,
       rate: newRate,
       pitch: 1.0,
@@ -285,268 +262,262 @@ export default function SettingsScreen() {
 
   // Rola ao topo quando a aba Ajustes é tocada de novo já focada.
   const scrollRef = useRef(null);
-  useEffect(() => {
-    const tabNav = navigation.getParent();
-    if (!tabNav) return;
-    const unsub = tabNav.addListener('tabPress', () => {
-      if (navigation.isFocused()) {
-        scrollRef.current?.scrollTo({ y: 0, animated: true });
-      }
-    });
-    return unsub;
-  }, [navigation]);
+  useScrollToTop(scrollRef);
 
   const notifTime = `${String(notifPrefs.verseHour).padStart(2, '0')}:${String(notifPrefs.verseMinute).padStart(2, '0')}`;
   const voiceSubtitle = ttsVoices.length === 0
     ? (isEn ? 'No voices found for this language' : 'Nenhuma voz encontrada para esse idioma')
     : describeVoiceShort(selectedVoice);
   const ttsTip = Platform.OS === 'ios'
-    ? (isEn
-      ? 'Tip: "Premium" voices can be downloaded in iOS Settings > Accessibility > Spoken Content > Voices.'
-      : 'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS > Acessibilidade > Conteúdo Falado > Vozes.')
+    ? pickPair(
+      'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS > Acessibilidade > Conteúdo Falado > Vozes.',
+      'Tip: "Premium" voices can be downloaded in iOS Settings > Accessibility > Spoken Content > Voices.',
+      isEn,
+    )
     : Platform.OS === 'android'
-      ? (isEn
-        ? 'Tip: install "Google Speech Services" from Play Store for more voices.'
-        : 'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.')
+      ? pickPair(
+        'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.',
+        'Tip: install "Google Speech Services" from Play Store for more voices.',
+        isEn,
+      )
       : null;
 
   const initial = (user?.displayName || user?.email || '?').charAt(0).toUpperCase();
   const caption = [text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md, marginTop: space.xs }];
+  // Os chips ficam abaixo do título da linha, com um respiro.
+  const chipRow = { marginTop: space.xxs };
 
   return (
     <>
       <LargeTitleScreen
         title={t('tab.settings')}
-        renderList={({ header, ...listProps }) => (
-          <Animated.ScrollView ref={scrollRef} keyboardShouldPersistTaps="handled" {...listProps}>
-            {header}
-
-            {/* Conta: perfil de quem está logado, ou o convite do visitante. */}
-            <SectionTitle title={t('settings.section.account')} style={{ marginTop: 0 }} />
-            {user ? (
-              <Group>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    minHeight: 44,
-                    paddingHorizontal: space.md,
-                    paddingVertical: space.sm,
-                    gap: space.sm,
-                  }}
-                >
-                  <View
-                    style={{
-                      width: space.xxxl,
-                      height: space.xxxl,
-                      borderRadius: radius.full,
-                      backgroundColor: colors.tint,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Text style={[text('headline'), { color: colors.onTint }]}>{initial}</Text>
-                  </View>
-                  <View style={{ flex: 1, minWidth: 0 }}>
-                    {user.displayName ? (
-                      <Text style={[text('body'), { color: colors.text }]} numberOfLines={1}>{user.displayName}</Text>
-                    ) : null}
-                    <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={1}>{user.email}</Text>
-                  </View>
-                </View>
-                {/* Ação destrutiva: ícone e rótulo na mesma cor, como "Excluir conta". */}
-                <Row icon="log-out-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.logout')} onPress={handleLogout} />
-              </Group>
-            ) : guest ? (
-              <GateNotice
-                message={t('settings.guest.message')}
-                primaryLabel={t('auth.signup')}
-                onPrimary={exitGuest}
-                secondaryLabel={t('auth.login')}
-                onSecondary={exitGuest}
-              />
-            ) : null}
-
-            {/* Aparência: tema (sistema, claro, escuro), tamanho da letra e idioma. */}
-            <SectionTitle title={t('settings.section.appearance')} />
-            <Group>
-              <Row icon="moon-outline" title={t('settings.theme.label')}>
-                <ChipRow>
-                  {THEME_MODES.map((mode) => (
-                    <Chip
-                      key={mode}
-                      label={t(`settings.theme.${mode}`)}
-                      selected={themeMode === mode}
-                      onPress={() => setThemeMode(mode)}
-                      haptic
-                    />
-                  ))}
-                </ChipRow>
-              </Row>
-              <Row icon="text-outline" title={t('settings.font.label')}>
-                <ChipRow>
-                  {FONT_KEYS.map((key) => (
-                    <Chip
-                      key={key}
-                      label={t(`settings.font.${key}`)}
-                      selected={fontSize === key}
-                      onPress={() => setFontSize(key)}
-                      haptic
-                    />
-                  ))}
-                </ChipRow>
-              </Row>
-              <Row
-                icon="language-outline"
-                title={t('settings.language.label')}
-                subtitle={isEn ? 'Bible (DRA) and most articles in English.' : 'Bíblia (DRA) e a maioria dos artigos em inglês quando ativado.'}
-              >
-                <ChipRow>
-                  <Chip label="Português" selected={lang === 'pt'} onPress={() => setLang('pt')} haptic />
-                  <Chip label="English" selected={lang === 'en'} onPress={() => setLang('en')} haptic />
-                </ChipRow>
-              </Row>
-            </Group>
-
-            {/* Leitura em voz alta: voz, velocidade e prévia. */}
-            <SectionTitle title={t('settings.section.tts')} />
-            <Group>
-              <Row
-                icon="mic-outline"
-                title={t('settings.voice')}
-                subtitle={voiceSubtitle}
-                trailing="chevron"
-                onPress={() => setVoicePickerOpen(true)}
-              />
-              <Row icon="speedometer-outline" title={t('settings.speed')} subtitle={rateLabel(ttsRate, isEn)}>
-                <ChipRow>
-                  {RATE_OPTIONS.map((opt) => (
-                    <Chip
-                      key={opt.value}
-                      label={pick(opt, 'label', isEn)}
-                      selected={sameRate(ttsRate, opt.value)}
-                      onPress={() => changeRate(opt.value)}
-                      haptic
-                    />
-                  ))}
-                </ChipRow>
-              </Row>
-            </Group>
-            <Button
-              variant="secondary"
-              icon="play-outline"
-              label={t('settings.voice.preview')}
-              onPress={() => previewVoice(selectedVoice)}
-              style={{ marginTop: space.sm }}
-            />
-            {ttsTip ? <Text style={caption}>{ttsTip}</Text> : null}
-
-            {/* Notificações: só no nativo. */}
-            {Platform.OS !== 'web' && (
-              <>
-                <SectionTitle title={t('settings.section.notifications')} />
-                <Group>
-                  <Row
-                    icon="sunny-outline"
-                    title={t('settings.notif.daily')}
-                    subtitle={notifPrefs.dailyVerse
-                      ? (isEn ? `Receive at ${notifTime}` : `Receber às ${notifTime}`)
-                      : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
-                    trailing={<ThemedSwitch value={notifPrefs.dailyVerse} onValueChange={toggleDailyVerse} label={t('settings.notif.daily')} />}
-                  />
-                  <Row
-                    icon="calendar-outline"
-                    title={t('settings.notif.sunday')}
-                    subtitle={isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
-                    trailing={<ThemedSwitch value={notifPrefs.sundayLiturgy} onValueChange={toggleSundayLiturgy} label={t('settings.notif.sunday')} />}
-                  />
-                  <Row
-                    icon="help-circle-outline"
-                    title={t('settings.notif.quiz')}
-                    subtitle={isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
-                    trailing={<ThemedSwitch value={notifPrefs.dailyQuiz} onValueChange={toggleDailyQuiz} label={t('settings.notif.quiz')} />}
-                  />
-                  <Row
-                    icon="chatbubbles-outline"
-                    title={isEn ? 'Objection of the day' : 'Objeção do dia'}
-                    subtitle={isEn ? 'A common objection to answer, every day at noon' : 'Uma objeção comum pra responder, todo dia ao meio-dia'}
-                    trailing={<ThemedSwitch value={notifPrefs.objectionOfDay} onValueChange={toggleObjectionOfDay} label={isEn ? 'Objection of the day' : 'Objeção do dia'} />}
-                  />
-                  <Row icon="notifications-outline" title={t('settings.notif.test')} onPress={sendTest} />
-                </Group>
-              </>
-            )}
-
-            {/* Diagnóstico */}
-            <SectionTitle title={t('settings.section.diagnostic')} />
-            <Group>
-              <Row icon="bug-outline" title={t('settings.sentry.test')} subtitle={t('settings.sentry.testSub')} onPress={sendSentryTest} />
-            </Group>
-
-            {/* Apoie o projeto */}
-            <SectionTitle title={t('settings.section.donate')} />
-            <Group>
-              <Row
-                icon="heart-outline"
-                title={t('settings.donate')}
-                subtitle={t('settings.donateSub')}
-                trailing={<Ionicons name="open-outline" size={icon.sm} color={colors.textTertiary} />}
-                onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
-              />
-            </Group>
-
-            {/* Sobre e legal */}
-            <SectionTitle title={t('settings.section.about')} />
-            <Group
-              footer={isEn
-                ? '"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have." (1 Peter 3:15)'
-                : '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós." (1 Pedro 3,15)'}
+        // A ref vai ao Animated.ScrollView do componente, para o useScrollToTop.
+        scrollProps={{ ref: scrollRef, keyboardShouldPersistTaps: 'handled' }}
+      >
+        {/* Conta: perfil de quem está logado, ou o convite do visitante. */}
+        <SectionTitle title={t('settings.section.account')} style={{ marginTop: 0 }} />
+        {user ? (
+          <Group>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                minHeight: 44,
+                paddingHorizontal: space.md,
+                paddingVertical: space.sm,
+                gap: space.sm,
+              }}
             >
+              <View
+                style={{
+                  width: space.xxxl,
+                  height: space.xxxl,
+                  borderRadius: radius.full,
+                  backgroundColor: colors.tint,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Text style={[text('headline'), { color: colors.onTint }]}>{initial}</Text>
+              </View>
+              <View style={{ flex: 1, minWidth: 0 }}>
+                {user.displayName ? (
+                  <Text style={[text('body'), { color: colors.text }]} numberOfLines={1}>{user.displayName}</Text>
+                ) : null}
+                <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={1}>{user.email}</Text>
+              </View>
+            </View>
+            {/* Ação destrutiva: ícone e rótulo na mesma cor, como "Excluir conta". */}
+            <Row icon="log-out-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.logout')} onPress={handleLogout} />
+          </Group>
+        ) : guest ? (
+          <GuestGate inline />
+        ) : null}
+
+        {/* Aparência: tema (sistema, claro, escuro), tamanho da letra e idioma. */}
+        <SectionTitle title={t('settings.section.appearance')} />
+        <Group>
+          <Row icon="moon-outline" title={t('settings.theme.label')}>
+            <ChipRow style={chipRow}>
+              {THEME_MODES.map((mode) => (
+                <Chip
+                  key={mode}
+                  label={t(`settings.theme.${mode}`)}
+                  selected={themeMode === mode}
+                  onPress={() => setThemeMode(mode)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+          <Row icon="text-outline" title={t('settings.font.label')}>
+            <ChipRow style={chipRow}>
+              {FONT_KEYS.map((key) => (
+                <Chip
+                  key={key}
+                  label={t(`settings.font.${key}`)}
+                  selected={fontSize === key}
+                  onPress={() => setFontSize(key)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+          <Row
+            icon="language-outline"
+            title={t('settings.language.label')}
+            subtitle={pickPair('Bíblia (DRA) e a maioria dos artigos em inglês quando ativado.', 'Bible (DRA) and most articles in English.', isEn)}
+          >
+            <ChipRow style={chipRow}>
+              <Chip label="Português" selected={lang === 'pt'} onPress={() => setLang('pt')} haptic />
+              <Chip label="English" selected={lang === 'en'} onPress={() => setLang('en')} haptic />
+            </ChipRow>
+          </Row>
+        </Group>
+
+        {/* Leitura em voz alta: voz, velocidade e prévia. */}
+        <SectionTitle title={t('settings.section.tts')} />
+        <Group>
+          <Row
+            icon="mic-outline"
+            title={t('settings.voice')}
+            subtitle={voiceSubtitle}
+            trailing="chevron"
+            onPress={() => setVoicePickerOpen(true)}
+          />
+          <Row icon="speedometer-outline" title={t('settings.speed')} subtitle={rateLabel(ttsRate, isEn)}>
+            <ChipRow style={chipRow}>
+              {RATE_OPTIONS.map((opt) => (
+                <Chip
+                  key={opt.value}
+                  label={pick(opt, 'label', isEn)}
+                  selected={sameRate(ttsRate, opt.value)}
+                  onPress={() => changeRate(opt.value)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+        </Group>
+        <Button
+          variant="secondary"
+          icon="play-outline"
+          label={t('settings.voice.preview')}
+          onPress={() => previewVoice(selectedVoice)}
+          style={{ marginTop: space.sm }}
+        />
+        {ttsTip ? <Text style={caption}>{ttsTip}</Text> : null}
+
+        {/* Notificações: só no nativo. */}
+        {Platform.OS !== 'web' && (
+          <>
+            <SectionTitle title={t('settings.section.notifications')} />
+            <Group>
               <Row
-                icon="information-circle-outline"
-                title="APPologética"
-                subtitle={isEn
-                  ? 'App for study and evangelization. Apologetics articles, biblical references, complete Catholic Bible, synced highlights and notes.'
-                  : 'App de estudo e evangelização. Artigos de apologética, referências bíblicas, Bíblia católica completa, marcações e notas sincronizadas.'}
+                icon="sunny-outline"
+                title={t('settings.notif.daily')}
+                subtitle={notifPrefs.dailyVerse
+                  ? (isEn ? `Receive at ${notifTime}` : `Receber às ${notifTime}`)
+                  : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
+                trailing={<ThemedSwitch value={notifPrefs.dailyVerse} onValueChange={toggleDailyVerse} label={t('settings.notif.daily')} />}
               />
               <Row
-                icon="book-outline"
-                title={isEn ? 'Bible translations' : 'Traduções bíblicas'}
-                subtitle={isEn
-                  ? 'Ave Maria (Portuguese) and Douay-Rheims-Challoner (English).'
-                  : 'Ave Maria (português) e Douay-Rheims-Challoner (inglês).'}
+                icon="calendar-outline"
+                title={t('settings.notif.sunday')}
+                subtitle={isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
+                trailing={<ThemedSwitch value={notifPrefs.sundayLiturgy} onValueChange={toggleSundayLiturgy} label={t('settings.notif.sunday')} />}
               />
               <Row
-                icon="shield-outline"
-                title={t('settings.privacy')}
-                trailing="chevron"
-                onPress={() => navigation.navigate('Legal', { kind: 'privacy' })}
+                icon="help-circle-outline"
+                title={t('settings.notif.quiz')}
+                subtitle={isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
+                trailing={<ThemedSwitch value={notifPrefs.dailyQuiz} onValueChange={toggleDailyQuiz} label={t('settings.notif.quiz')} />}
               />
               <Row
-                icon="document-text-outline"
-                title={t('settings.terms')}
-                trailing="chevron"
-                onPress={() => navigation.navigate('Legal', { kind: 'terms' })}
+                icon="chatbubbles-outline"
+                title={isEn ? 'Objection of the day' : 'Objeção do dia'}
+                subtitle={isEn ? 'A common objection to answer, every day at noon' : 'Uma objeção comum pra responder, todo dia ao meio-dia'}
+                trailing={<ThemedSwitch value={notifPrefs.objectionOfDay} onValueChange={toggleObjectionOfDay} label={isEn ? 'Objection of the day' : 'Objeção do dia'} />}
               />
+              <Row icon="notifications-outline" title={t('settings.notif.test')} onPress={sendTest} />
             </Group>
-
-            {user ? (
-              <Button
-                variant="plain"
-                label={isEn ? 'Delete account' : 'Excluir conta'}
-                onPress={askDeleteAccount}
-                textStyle={{ color: colors.danger }}
-                style={{ marginTop: space.lg }}
-              />
-            ) : null}
-
-            <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.xl }]}>
-              APPologética · {isEn ? 'Version' : 'Versão'} {appVersion}
-              {buildLabel ? ` · ${buildLabel}` : ''}
-            </Text>
-          </Animated.ScrollView>
+          </>
         )}
-      />
+
+        {/* Diagnóstico */}
+        <SectionTitle title={t('settings.section.diagnostic')} />
+        <Group>
+          <Row icon="bug-outline" title={t('settings.sentry.test')} subtitle={t('settings.sentry.testSub')} onPress={sendSentryTest} />
+        </Group>
+
+        {/* Apoie o projeto */}
+        <SectionTitle title={t('settings.section.donate')} />
+        <Group>
+          <Row
+            icon="heart-outline"
+            title={t('settings.donate')}
+            subtitle={t('settings.donateSub')}
+            trailing={<Ionicons name="open-outline" size={icon.sm} color={colors.textTertiary} />}
+            onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
+          />
+        </Group>
+
+        {/* Sobre e legal */}
+        <SectionTitle title={t('settings.section.about')} />
+        <Group
+          footer={pickPair(
+            '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós." (1 Pedro 3,15)',
+            '"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have." (1 Peter 3:15)',
+            isEn,
+          )}
+        >
+          <Row
+            icon="information-circle-outline"
+            title="APPologética"
+            subtitle={pickPair(
+              'App de estudo e evangelização. Artigos de apologética, referências bíblicas, Bíblia católica completa, marcações e notas sincronizadas.',
+              'App for study and evangelization. Apologetics articles, biblical references, complete Catholic Bible, synced highlights and notes.',
+              isEn,
+            )}
+          />
+          <Row
+            icon="book-outline"
+            title={pickPair('Traduções bíblicas', 'Bible translations', isEn)}
+            subtitle={pickPair(
+              'Ave Maria (português) e Douay-Rheims-Challoner (inglês).',
+              'Ave Maria (Portuguese) and Douay-Rheims-Challoner (English).',
+              isEn,
+            )}
+          />
+          <Row
+            icon="shield-outline"
+            title={t('settings.privacy')}
+            trailing="chevron"
+            onPress={() => navigation.navigate('Legal', { kind: 'privacy' })}
+          />
+          <Row
+            icon="document-text-outline"
+            title={t('settings.terms')}
+            trailing="chevron"
+            onPress={() => navigation.navigate('Legal', { kind: 'terms' })}
+          />
+        </Group>
+
+        {user ? (
+          <Button
+            variant="plain"
+            label={isEn ? 'Delete account' : 'Excluir conta'}
+            onPress={askDeleteAccount}
+            textStyle={{ color: colors.danger }}
+            style={{ marginTop: space.lg }}
+          />
+        ) : null}
+
+        <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.xl }]}>
+          APPologética · {isEn ? 'Version' : 'Versão'} {appVersion}
+          {buildLabel ? ` · ${buildLabel}` : ''}
+        </Text>
+      </LargeTitleScreen>
 
       {/* Confirmação final da exclusão da conta (com senha para conta de e-mail). */}
       <Modal visible={delOpen} transparent animationType="fade" onRequestClose={() => setDelOpen(false)}>

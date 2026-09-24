@@ -1,15 +1,11 @@
-import { useLayoutEffect } from 'react';
-import { View } from 'react-native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useRequireAccount } from '../components/GuestGate';
-import { fullBleedContentOptions } from '../navigation/chrome';
-import LargeTitleScreen from '../components/ui/LargeTitleScreen';
-import { Group, Row, SectionTitle } from '../components/ui';
+import { Group, LargeTitleScreen, Row, SectionTitle, enterStagger } from '../components/ui';
 
 // Hub "Praticar": agrupa as telas secundárias que antes lotavam a Home, em
 // listas agrupadas (SectionTitle + Group com Rows), sob o large title próprio.
@@ -50,21 +46,11 @@ export default function ToolsScreen() {
   const { user } = useAuth();
   const { t, isEn } = useLanguage();
   const requireAccount = useRequireAccount();
-  const { space, icon, motion } = tokens;
-
-  // A tela é raiz do stack da aba: o header do stack sai e o LargeTitleScreen
-  // compensa a barra do topo e a tab bar por dentro.
-  useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false, ...fullBleedContentOptions(colors) });
-  }, [navigation, colors]);
+  const { icon } = tokens;
 
   const SPIRITUALITY = buildSpirituality(t);
   const TRAINING = buildTraining(t);
   const STUDY = buildStudy(t);
-
-  // Entrada discreta dos grupos, em cascata. O reanimated respeita o "reduzir
-  // movimento" do sistema por padrão.
-  const enter = (i) => FadeInDown.duration(motion.layout).delay(i * motion.stagger);
 
   const renderRow = (item) => (
     <Row
@@ -94,14 +80,10 @@ export default function ToolsScreen() {
     );
   };
 
-  // Cadeado pequeno antes do chevron nos itens que exigem conta, só para o
-  // visitante. O toque continua passando pelo requireAccount.
-  const gatedTrailing = (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
-      <Ionicons name="lock-closed-outline" size={icon.sm} color={colors.textTertiary} />
-      <Ionicons name="chevron-forward" size={icon.sm} color={colors.textTertiary} />
-    </View>
-  );
+  // Cadeado pequeno antes do chevron (prop `chevron` da Row) nos itens que
+  // exigem conta, só para o visitante. O toque continua passando pelo
+  // requireAccount.
+  const lock = <Ionicons name="lock-closed-outline" size={icon.sm} color={colors.textTertiary} />;
 
   const renderStudyRow = (item) => {
     const gated = !user && !item.local;
@@ -111,7 +93,8 @@ export default function ToolsScreen() {
         icon={item.icon}
         title={item.label}
         subtitle={item.sub}
-        trailing={gated ? gatedTrailing : 'chevron'}
+        trailing={gated ? lock : null}
+        chevron
         accessibilityLabel={gated ? `${item.label}, ${t('tools.requiresAccount')}` : undefined}
         onPress={() => openStudy(item)}
       />
@@ -120,19 +103,19 @@ export default function ToolsScreen() {
 
   return (
     <LargeTitleScreen title={t('tab.tools')}>
-      <Animated.View entering={enter(0)}>
+      <Animated.View entering={enterStagger(0, tokens)}>
         {/* O large title já dá o respiro de baixo, então a primeira seção não
             repete a margem de cima. */}
         <SectionTitle title={t('home.section.spirituality')} style={{ marginTop: 0 }} />
         <Group>{SPIRITUALITY.map(renderRow)}</Group>
       </Animated.View>
 
-      <Animated.View entering={enter(1)}>
+      <Animated.View entering={enterStagger(1, tokens)}>
         <SectionTitle title={t('home.section.training')} />
         <Group>{TRAINING.map(renderRow)}</Group>
       </Animated.View>
 
-      <Animated.View entering={enter(2)}>
+      <Animated.View entering={enterStagger(2, tokens)}>
         <SectionTitle title={t('home.section.study')} />
         <Group>{STUDY.map(renderStudyRow)}</Group>
       </Animated.View>

@@ -58,7 +58,7 @@ export default function BibleMapScreen({ navigation }) {
   // HTML do mapa, com dados injetados.
   const mapHtml = useMemo(() => buildMapHtml(isEn), [isEn]);
 
-  const stepLabel = isEn ? `Stop ${step + 1} of ${total}` : `Parada ${step + 1} de ${total}`;
+  const stepLabel = t('common.stopOf', { n: step + 1, total });
   const currentRef = pick(current, 'ref', isEn);
 
   return (

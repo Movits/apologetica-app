@@ -1,28 +1,20 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, StyleSheet, SectionList, ScrollView, Linking } from 'react-native';
+import { View, Text, StyleSheet, SectionList, Linking } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
-import { references, resolveRefUrl } from '../data/references';
-import { referencesEn } from '../data/references-en';
+import { referencesWithEn, resolveRefUrl } from '../data/references';
 import { REFERENCE_SOURCES, translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { pick } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { openBible } from '../navigation/links';
-import { Button, Chip, EmptyState, PressScale, SearchField } from '../components/ui';
+import { Button, Chip, ChipRow, EmptyState, ListSeparator, PressScale, SearchField } from '../components/ui';
 
 // Catálogo de referências (Onda 9c): busca por texto, filtro por fonte em
 // chips e lista agrupada por fonte. Cada linha mostra a citação e abre o
 // RefDetail; "Ler no app" e "Fonte" ficam como botões irmãos da linha, e não
 // dentro dela, para não aninhar toques.
-
-// Dados já mesclados com a tradução EN (textEn, topicEn, refEn...), lidos com
-// `pick` para caírem no PT quando a tradução falta.
-const refsWithEn = references.map((r) => {
-  const en = referencesEn[r.id];
-  return en ? { ...r, ...en } : r;
-});
 
 // Chave de filtro "todas as fontes".
 const ALL = 'all';
@@ -30,20 +22,42 @@ const ALL = 'all';
 // Tempo em que o destaque da chegada por deep link fica cheio antes de sumir.
 const HIGHLIGHT_HOLD_MS = 1500;
 
-// Busca sem acento e sem caixa, nos campos que a pessoa enxerga.
+// Busca sem acento e sem caixa, nos campos que a pessoa enxerga. O texto de
+// cada referência (rótulo, ref, citação, tema, fonte, autor) é normalizado uma
+// vez por idioma, aqui no módulo, e a busca só compara `includes` nele (antes
+// normalizava os seis campos das 200 referências a cada tecla).
 const norm = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-const matches = (item, q, isEn) => {
-  if (!q) return true;
-  const fields = [
-    refLabel(item, isEn),
-    item.ref,
-    pick(item, 'text', isEn),
-    pick(item, 'topic', isEn),
-    pick(item, 'fullSource', isEn),
-    pick(item, 'author', isEn),
-  ];
-  return fields.some((f) => norm(f).includes(q));
+const haystack = (item, isEn) => norm([
+  refLabel(item, isEn),
+  item.ref,
+  pick(item, 'text', isEn),
+  pick(item, 'topic', isEn),
+  pick(item, 'fullSource', isEn),
+  pick(item, 'author', isEn),
+].join('\n'));
+const HAYSTACK = {
+  pt: new Map(referencesWithEn.map((r) => [r.id, haystack(r, false)])),
+  en: new Map(referencesWithEn.map((r) => [r.id, haystack(r, true)])),
 };
+
+// Destaque da chegada por deep link: fundo deepLinkHl cheio por um instante e
+// depois desvanece. Fica atrás do conteúdo (renderizado antes dele) e só é
+// montado na linha destacada, para as outras 200 não carregarem um shared
+// value e um estilo animado cada.
+function HighlightBackdrop() {
+  const { colors, tokens } = useTheme();
+  const hl = useSharedValue(1);
+  useEffect(() => {
+    hl.value = withDelay(HIGHLIGHT_HOLD_MS, withTiming(0, { duration: tokens.motion.heavy }));
+  }, [hl, tokens.motion.heavy]);
+  const hlStyle = useAnimatedStyle(() => ({ opacity: hl.value }));
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={[StyleSheet.absoluteFill, { backgroundColor: colors.deepLinkHl }, hlStyle]}
+    />
+  );
+}
 
 // Uma referência da lista. Memoizada: o SectionList re-renderiza ao digitar
 // e a lista tem 200 itens. `first`/`last` dão os cantos do card do grupo,
@@ -57,19 +71,6 @@ const RefItem = memo(function RefItem({
   const topic = pick(item, 'topic', isEn);
   const url = resolveRefUrl(item, item, isEn);
 
-  // Destaque da chegada por deep link: fundo deepLinkHl cheio por um instante
-  // e depois desvanece. Fica atrás do conteúdo (renderizado antes dele).
-  const hl = useSharedValue(0);
-  useEffect(() => {
-    if (!highlighted) {
-      hl.value = 0;
-      return;
-    }
-    hl.value = 1;
-    hl.value = withDelay(HIGHLIGHT_HOLD_MS, withTiming(0, { duration: tokens.motion.heavy }));
-  }, [highlighted, hl, tokens.motion.heavy]);
-  const hlStyle = useAnimatedStyle(() => ({ opacity: hl.value }));
-
   return (
     <View
       style={{
@@ -82,10 +83,7 @@ const RefItem = memo(function RefItem({
         overflow: 'hidden',
       }}
     >
-      <Animated.View
-        pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { backgroundColor: colors.deepLinkHl }, hlStyle]}
-      />
+      {highlighted ? <HighlightBackdrop /> : null}
       <PressScale
         role="button"
         onPress={() => onOpen(item.id)}
@@ -141,9 +139,10 @@ export default function ReferencesScreen({ route }) {
   // pela busca (seções vazias somem).
   const sections = useMemo(() => {
     const q = norm(query.trim());
+    const hay = HAYSTACK[isEn ? 'en' : 'pt'];
     return REFERENCE_SOURCES
       .filter((s) => source === ALL || s.id === source)
-      .map((s) => ({ meta: s, data: refsWithEn.filter((r) => r.source === s.id && matches(r, q, isEn)) }))
+      .map((s) => ({ meta: s, data: referencesWithEn.filter((r) => r.source === s.id && (!q || hay.get(r.id).includes(q))) }))
       .filter((s) => s.data.length > 0);
   }, [query, source, isEn]);
 
@@ -226,15 +225,15 @@ export default function ReferencesScreen({ route }) {
     [t, text, colors.textSubtle, space, isEn]
   );
 
-  // Separador de meia linha entre itens, sobre o fundo do card para os cantos
-  // do grupo continuarem contínuos.
+  // A hairline do Group (ListSeparator) sobre o fundo do card, para os cantos
+  // do grupo continuarem contínuos (o card é virtualizado).
   const Separator = useCallback(
     () => (
       <View style={{ marginHorizontal: space.md, backgroundColor: colors.card }}>
-        <View style={{ height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md }} />
+        <ListSeparator />
       </View>
     ),
-    [space.md, colors.card, colors.separator]
+    [space.md, colors.card]
   );
 
   const chips = [{ id: ALL, label: t('ref.all') }, ...REFERENCE_SOURCES.map((s) => ({ id: s.id, label: translateSource(s.id, isEn), icon: s.icon }))];
@@ -249,15 +248,7 @@ export default function ReferencesScreen({ route }) {
         autoCorrect={false}
         style={{ marginHorizontal: space.md, marginTop: space.sm }}
       />
-      {/* Trilho dos chips com a altura do alvo de toque: sem `height` e
-          `flexShrink: 0` a web encolhe o ScrollView horizontal a quase nada. */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ paddingHorizontal: space.md, gap: space.xs, alignItems: 'center' }}
-        style={{ flexGrow: 0, flexShrink: 0, height: 44, marginTop: space.xxs }}
-      >
+      <ChipRow scroll style={{ marginTop: space.xxs }}>
         {chips.map((c) => (
           <Chip
             key={c.id}
@@ -268,7 +259,7 @@ export default function ReferencesScreen({ route }) {
             haptic
           />
         ))}
-      </ScrollView>
+      </ChipRow>
       <SectionList
         ref={listRef}
         sections={sections}

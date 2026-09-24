@@ -163,7 +163,7 @@ function detectTodayMystery() {
 
 export default function RosaryScreen() {
   const { colors, tokens, text } = useTheme();
-  const { isEn } = useLanguage();
+  const { t, isEn } = useLanguage();
   const navigation = useNavigation();
   const { space, radius } = tokens;
   const [tipo, setTipo] = useState(detectTodayMystery());
@@ -243,7 +243,7 @@ export default function RosaryScreen() {
       {/* Passo atual: contador, nome do passo e a oração por escrito. */}
       <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, gap: space.xs, marginTop: space.md }}>
         <Text style={[text('footnote'), { color: colors.textSubtle }]}>
-          {isEn ? `Step ${stepIndex + 1} of ${sequence.length}` : `Passo ${stepIndex + 1} de ${sequence.length}`}
+          {t('common.stepOf', { n: stepIndex + 1, total: sequence.length })}
         </Text>
         <Text role="heading" style={[text('headline'), { color: colors.text }]}>{currentStep?.label}</Text>
         {(currentStep?.prayers || []).map((key) => (

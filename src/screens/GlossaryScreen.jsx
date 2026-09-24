@@ -1,14 +1,18 @@
-import { useState, useMemo, useEffect, useRef } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { useState, useMemo, useEffect, useRef, useCallback, memo } from 'react';
+import { View, Text, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { glossary, glossaryByTerm } from '../data/glossary';
 import { pick } from '../utils/i18nData';
-import { EmptyState, PressScale, SearchField } from '../components/ui';
+import { EmptyState, ListSeparator, Row, SearchField } from '../components/ui';
 
 // Posição do termo na tela ao rolar até ele (fração da altura visível).
 const SCROLL_VIEW_POSITION = 0.12;
+
+// Termo e definição (PT e EN) em minúsculas, na ordem de `glossary`, calculados
+// uma vez no módulo: a busca só compara `includes` neles a cada tecla.
+const HAYSTACKS = glossary.map((g) => [g.term, g.definition, g.termEn, g.definitionEn].filter(Boolean).join('\n').toLowerCase());
 
 // Glossário apologético: busca no topo e a lista como uma única lista
 // agrupada (a FlatList é o card, para manter a virtualização e o
@@ -41,17 +45,13 @@ export default function GlossaryScreen({ route }) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return glossary;
-    return glossary.filter(
-      (g) =>
-        g.term.toLowerCase().includes(q) ||
-        g.definition.toLowerCase().includes(q) ||
-        g.termEn?.toLowerCase().includes(q) ||
-        g.definitionEn?.toLowerCase().includes(q)
-    );
+    return glossary.filter((_, i) => HAYSTACKS[i].includes(q));
   }, [query]);
 
+  // Estável entre renders: o TermRow é memoizado e passa o id no toque.
+  const toggle = useCallback((id) => setExpanded((cur) => (cur === id ? null : id)), []);
+
   const empty = filtered.length === 0;
-  const separator = { height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -74,58 +74,42 @@ export default function GlossaryScreen({ route }) {
           { margin: space.md, marginTop: space.xs },
           empty ? null : { backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' },
         ]}
-        ItemSeparatorComponent={() => <View style={separator} />}
+        ItemSeparatorComponent={ListSeparator}
         onScrollToIndexFailed={(info) => {
           listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
           setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: SCROLL_VIEW_POSITION, animated: false }), 80);
         }}
         ListEmptyComponent={<EmptyState icon="search-outline" title={t('glossary.empty')} message={t('glossary.emptyHint')} />}
-        renderItem={({ item }) => (
-          <TermRow
-            item={item}
-            open={expanded === item.id}
-            onToggle={() => setExpanded(expanded === item.id ? null : item.id)}
-          />
-        )}
+        renderItem={({ item }) => <TermRow item={item} open={expanded === item.id} onToggle={toggle} />}
       />
     </View>
   );
 }
 
-// Linha de termo: headline com o termo, definição em subhead (duas linhas
-// fechada, inteira aberta) e chevron. `aria-expanded` acompanha o estado.
-function TermRow({ item, open, onToggle }) {
+// Linha de termo: Row com o termo em headline, a definição em subhead (duas
+// linhas fechada, inteira e na cor do texto aberta) e chevron; `aria-expanded`
+// segue pela Row ao PressScale. Memoizada: a lista re-renderiza a cada tecla
+// e ao expandir, e só a linha tocada muda de props.
+const TermRow = memo(function TermRow({ item, open, onToggle }) {
   const { colors, tokens, text } = useTheme();
   const { isEn } = useLanguage();
   const { space, icon } = tokens;
 
   return (
-    <PressScale
-      role="button"
+    <Row
       aria-expanded={open}
-      onPress={onToggle}
-      style={({ pressed }) => [
-        {
-          flexDirection: 'row',
-          alignItems: 'center',
-          minHeight: 44,
-          paddingHorizontal: space.md,
-          paddingVertical: space.sm,
-          gap: space.sm,
-        },
-        pressed ? { backgroundColor: colors.separator } : null,
-      ]}
+      title={pick(item, 'term', isEn)}
+      titleRole="headline"
+      titleLines={0}
+      trailing={<Ionicons name={open ? 'chevron-up' : 'chevron-down'} size={icon.sm} color={colors.textTertiary} />}
+      onPress={() => onToggle(item.id)}
     >
-      <View style={{ flex: 1, minWidth: 0, gap: space.xxs }}>
-        <Text style={[text('headline'), { color: colors.text }]}>{pick(item, 'term', isEn)}</Text>
-        <Text
-          style={[text('subhead'), { color: open ? colors.text : colors.textSubtle }]}
-          numberOfLines={open ? undefined : 2}
-        >
-          {pick(item, 'definition', isEn)}
-        </Text>
-      </View>
-      <Ionicons name={open ? 'chevron-up' : 'chevron-down'} size={icon.sm} color={colors.textTertiary} />
-    </PressScale>
+      <Text
+        style={[text('subhead'), { color: open ? colors.text : colors.textSubtle, marginTop: space.xxs }]}
+        numberOfLines={open ? undefined : 2}
+      >
+        {pick(item, 'definition', isEn)}
+      </Text>
+    </Row>
   );
-}
+});
