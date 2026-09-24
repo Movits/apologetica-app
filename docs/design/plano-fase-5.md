@@ -140,6 +140,10 @@ Tarefas:
 Verificação: `npm test` (links); lint; export web; Playwright: Início → Artigos → artigo: header translúcido, botão voltar em PT ("Voltar" via `headerBackTitle`? só iOS; usar `headerBackAccessibilityLabel`... conferir em `types.d.ts`; na web o elements usa "Go back" fixo: aceitar e registrar), tab bar com `role="tablist"` e `aria-selected="true"` no item ativo (medir com `page.locator('[role=tab][aria-selected=true]').count() === 1`), transição visível na web (stack JS); Android: gesto de voltar funciona (só com o usuário; registrar como pendência de smoke).
 Antipadrões: `<SharedScreens />` como componente; `useNavigation()` dentro do `tabBar`; `tabBar` custom sem reportar altura; `headerLargeTitle` nativo; `accessibilityState`; renderizar o `BlurView` antes do conteúdo.
 
+### Decisão tomada na integração da Onda 3 (2026-09-24)
+
+O header dos stacks fica **opaco por padrão**, na cor do fundo (`colors.bg`), sem sombra: dezenas de telas ainda não compensam um header transparente com `useHeaderHeight()`. A variante translúcida (`translucentHeaderOptions()` em `chrome.js`, com `ChromeBackdrop`) é opt-in por tela, para as que fazem essa compensação (Artigo na Onda 5, RefDetail na Onda 9). As telas raiz das abas migram para `LargeTitleScreen` e desligam o header do stack. A tab bar translúcida entra para todas as abas de uma vez, com `paddingBottom` da altura da barra no `contentStyle` (nativo) ou `cardStyle` (stack JS na web) de cada stack; as telas migradas zeram esse padding nas próprias `options` e rolam por baixo da barra. `edgeToEdgeEnabled` e a remoção de `setBackgroundColorAsync` ficam para quando a Onda 9 fechar todas as telas.
+
 ## Onda 4: Início
 
 Objetivo: `HomeScreen.jsx` igual ao mock "Depois" da Início.
