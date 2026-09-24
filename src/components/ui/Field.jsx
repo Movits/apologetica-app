@@ -19,6 +19,10 @@ import { useTheme } from '../../context/ThemeContext';
 // para o anel, com `outlineOffset: 2`, caber dentro do `overflow: 'hidden'`
 // do Group em vez de ser cortado na borda do card.
 //
+// Texto longo: `multiline` alinha o texto ao topo (Android) e `inputStyle`
+// entra por último no TextInput, para um editor trocar o papel de texto (o
+// caderno e a nota escrevem em text('reading')) sem perder o anel de foco.
+//
 // A `ref` vai para o TextInput, para um campo focar o próximo no Enter.
 const Field = forwardRef(function Field(
   {
@@ -30,6 +34,8 @@ const Field = forwardRef(function Field(
     toggleSecureLabel,
     onFocus,
     onBlur,
+    multiline,
+    inputStyle,
     style,
     ...rest
   },
@@ -69,6 +75,7 @@ const Field = forwardRef(function Field(
           aria-label={label}
           placeholderTextColor={colors.textSubtle}
           secureTextEntry={secureTextEntry}
+          multiline={multiline}
           onFocus={(e) => { setFocused(true); onFocus?.(e); }}
           onBlur={(e) => { setFocused(false); onBlur?.(e); }}
           style={[
@@ -82,9 +89,10 @@ const Field = forwardRef(function Field(
               paddingVertical: space.xs,
               borderRadius: radius.sm,
               backgroundColor: 'transparent',
-              textAlignVertical: 'center',
+              textAlignVertical: multiline ? 'top' : 'center',
             },
             focusRing,
+            inputStyle,
           ]}
           {...rest}
         />

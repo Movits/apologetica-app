@@ -367,6 +367,22 @@ export const STRINGS = {
     'bible.removeHighlight': 'Remover marcação',
     'bible.translation': 'Tradução {{name}}',
 
+    // === Dados do usuário (Onda 9f: Favoritos, Marcações, Notas, Caderno) ===
+    'favorites.emptyHint': 'Toque em Guardar num artigo para vê-lo aqui.',
+    'favorites.explore': 'Explorar artigos',
+    'highlights.emptyHint': 'Toque num versículo na Bíblia para marcá-lo com uma cor.',
+    'notes.emptyHint': 'Toque num versículo na Bíblia e escolha Anotar para criar a primeira nota.',
+    'notebook.empty': 'Seu caderno está vazio',
+    'notebook.emptyHint': 'Crie uma página, escreva à vontade e use @ para citar versículos e artigos.',
+    'notebook.newPage': 'Nova página',
+    'notebook.addReference': 'Inserir referência',
+    'notebook.references': 'Referências citadas',
+    'notebook.deletePage': 'Excluir página',
+    'note.change': 'Trocar',
+    'note.chooseVerse': 'Escolher versículo',
+    'common.edit': 'Editar',
+    'common.moreActions': 'Mais ações',
+
     // === Categorias dos artigos ===
     'category.Existência de Deus': 'Existência de Deus',
     'category.Igreja Católica': 'Igreja Católica',
@@ -772,6 +788,22 @@ export const STRINGS = {
     'bible.openNote': 'Open note',
     'bible.removeHighlight': 'Remove highlight',
     'bible.translation': '{{name}} translation',
+
+    // === User data (Wave 9f: Favorites, Highlights, Notes, Notebook) ===
+    'favorites.emptyHint': 'Tap Save on an article to see it here.',
+    'favorites.explore': 'Browse articles',
+    'highlights.emptyHint': 'Tap a verse in the Bible to highlight it with a color.',
+    'notes.emptyHint': 'Tap a verse in the Bible and choose Note to create your first note.',
+    'notebook.empty': 'Your notebook is empty',
+    'notebook.emptyHint': 'Create a page, write freely and use @ to link verses and articles.',
+    'notebook.newPage': 'New page',
+    'notebook.addReference': 'Insert reference',
+    'notebook.references': 'Cited references',
+    'notebook.deletePage': 'Delete page',
+    'note.change': 'Change',
+    'note.chooseVerse': 'Choose a verse',
+    'common.edit': 'Edit',
+    'common.moreActions': 'More actions',
 
     // === Article categories ===
     'category.Existência de Deus': 'Existence of God',

@@ -1,102 +1,141 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { watchNotes } from '../services/userData';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { watchNotes, removeNote } from '../services/userData';
+import { confirmAction } from '../utils/dialog';
 import { getBook, bookName } from '../data/bible';
+import { getChapter, ensureBible } from '../services/bibleApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
+import { shareNote } from '../utils/share';
+import { formatVerseRef } from '../utils/verseRef';
+import { openBible } from '../navigation/links';
+import { EmptyState, GateNotice } from '../components/ui';
+import UserDataRow, { RowIconButton } from '../components/UserDataRow';
+import ItemActionsSheet from '../components/ItemActionsSheet';
 
+// Notas do usuário em tempo real (Firestore). O visitante vê o convite para
+// criar conta; com conta, a lista agrupada mostra a referência e o começo da
+// nota. Toque abre o editor; o botão de mais ações (ou o toque longo) abre a
+// folha com editar, ler na Bíblia, compartilhar e excluir.
 export default function NotesScreen({ navigation }) {
-  const { colors, fs } = useTheme();
+  const { colors, tokens } = useTheme();
   const { t, isEn } = useLanguage();
   const { user, exitGuest } = useAuth();
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { space, radius } = tokens;
+  const lang = isEn ? 'en' : 'pt';
+  const [items, setItems] = useState(null);
+  const [active, setActive] = useState(null);
+  const [sheetOpen, setSheetOpen] = useState(false);
+
+  // A lista não mostra texto bíblico, só o compartilhar monta o versículo, e
+  // ele roda dentro do gesto do usuário: carregamos antes, sem bloquear.
+  useEffect(() => { ensureBible(lang).catch(() => {}); }, [lang]);
 
   useEffect(() => {
     if (!user) {
-      setLoading(false);
-      return;
+      setItems([]);
+      return undefined;
     }
-    const unsub = watchNotes((list) => {
-      setItems(list);
-      setLoading(false);
-    });
-    return unsub;
+    return watchNotes(setItems);
   }, [user]);
 
-  const formatRef = (n) => {
-    const book = getBook(n.bookId);
-    const range = n.verseStart === n.verseEnd ? `${n.verseStart}` : `${n.verseStart}-${n.verseEnd}`;
-    const sep = isEn ? ':' : ',';
-    return `${bookName(book, isEn)} ${n.chapter}${sep}${range}`;
+  const refOf = (n) =>
+    formatVerseRef({ bookName: bookName(getBook(n.bookId), isEn), chapter: n.chapter, verseStart: n.verseStart, verseEnd: n.verseEnd }, isEn);
+
+  const edit = (n) => navigation.navigate('NoteEditor', { noteId: n.id });
+  const open = (n) => openBible(navigation, { bookId: n.bookId, chapter: n.chapter, verse: n.verseStart, verseEnd: n.verseEnd });
+
+  const share = (n) => {
+    const verseText = getChapter(n.bookId, n.chapter, lang)?.verses?.find((v) => v.n === n.verseStart)?.t || '';
+    shareNote({
+      bookName: bookName(getBook(n.bookId), isEn),
+      chapter: n.chapter,
+      verseStart: n.verseStart,
+      verseEnd: n.verseEnd,
+      verseText,
+      noteText: n.text,
+      isEn,
+    });
   };
 
-  const styles = makeStyles(colors, fs);
+  const confirmRemove = (n) => {
+    confirmAction({
+      title: isEn ? 'Delete note?' : 'Excluir nota?',
+      message: isEn ? 'The note will be permanently removed.' : 'A nota será removida permanentemente.',
+      confirmText: t('common.delete'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: () => removeNote(n.id),
+    });
+  };
 
-  if (loading) {
-    return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
-  }
+  const showActions = (n) => {
+    setActive(n);
+    setSheetOpen(true);
+  };
 
   if (!user) {
     return (
-      <View style={[styles.center, { backgroundColor: colors.bg }]}>
-        <Ionicons name="lock-closed-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>{t('empty.createAccount')}</Text>
-        <Text style={styles.muted}>
-          {isEn
-            ? 'Notes are saved and synced between devices when you have an account.'
-            : 'Notas ficam salvas e sincronizadas entre dispositivos quando você tem conta.'}
-        </Text>
-        <TouchableOpacity
-          style={{ marginTop: 16, backgroundColor: colors.accent, paddingVertical: 12, paddingHorizontal: 24, borderRadius: 10 }}
-          onPress={() => exitGuest()}
-        >
-          <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: fs(14) }}>{t('auth.signup')}</Text>
-        </TouchableOpacity>
+      <View style={{ flex: 1, backgroundColor: colors.bg, padding: space.md }}>
+        <GateNotice
+          message={t('settings.guest.message')}
+          primaryLabel={t('auth.signup')}
+          onPrimary={exitGuest}
+          secondaryLabel={t('auth.login')}
+          onSecondary={exitGuest}
+        />
       </View>
     );
   }
 
+  if (items === null) {
+    return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
+  }
+
+  if (items.length === 0) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, justifyContent: 'center' }}>
+        <EmptyState icon="document-text-outline" title={t('empty.notes')} message={t('notes.emptyHint')} />
+      </View>
+    );
+  }
+
+  const separator = { height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md };
+  const actions = active
+    ? [
+      { icon: 'create-outline', label: t('common.edit'), onPress: () => edit(active) },
+      { icon: 'book-outline', label: t('today.readInBible'), onPress: () => open(active) },
+      { icon: 'share-outline', label: t('common.share'), onPress: () => share(active) },
+      { icon: 'trash-outline', label: t('note.delete'), danger: true, onPress: () => confirmRemove(active) },
+    ]
+    : [];
+
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {items.length === 0 ? (
-        <View style={styles.center}>
-          <Ionicons name="document-text-outline" size={56} color={colors.textSubtle} />
-          <Text style={styles.emptyTitle}>{t('empty.notes')}</Text>
-          <Text style={styles.muted}>
-            {isEn
-              ? 'Touch and hold a verse in the Bible and choose "Note" to create your first note.'
-              : 'Toque e segure em um versículo na Bíblia e escolha "Anotar" para criar sua primeira nota.'}
-          </Text>
-        </View>
-      ) : (
-        <FlatList
-          data={items}
-          keyExtractor={(n) => n.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.card}
-              onPress={() => navigation.navigate('NoteEditor', { noteId: item.id })}
-            >
-              <Text style={styles.ref}>{formatRef(item)}</Text>
-              <Text style={styles.body} numberOfLines={4}>{item.text}</Text>
-            </TouchableOpacity>
-          )}
-        />
-      )}
-    </View>
+    <>
+      <FlatList
+        style={{ flex: 1, backgroundColor: colors.bg }}
+        data={items}
+        keyExtractor={(n) => n.id}
+        contentContainerStyle={{ margin: space.md, backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' }}
+        ItemSeparatorComponent={() => <View style={separator} />}
+        renderItem={({ item }) => (
+          <UserDataRow
+            title={refOf(item)}
+            subtitle={item.text}
+            subtitleLines={3}
+            onPress={() => edit(item)}
+            onLongPress={() => showActions(item)}
+            trailing={<RowIconButton icon="ellipsis-horizontal" label={t('common.moreActions')} onPress={() => showActions(item)} />}
+          />
+        )}
+      />
+      <ItemActionsSheet
+        visible={sheetOpen}
+        title={active ? refOf(active) : ''}
+        actions={actions}
+        onClose={() => setSheetOpen(false)}
+      />
+    </>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, gap: 12 },
-    emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    muted: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(20) },
-    card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
-    ref: { fontSize: fs(13), fontWeight: 'bold', color: c.accentText, marginBottom: 6 },
-    body: { fontSize: fs(14), color: c.text, lineHeight: fs(20) },
-  });
