@@ -6,11 +6,11 @@ import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useRequireAccount } from '../components/GuestGate';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 // Hub de ferramentas: agrupa as telas secundárias que antes lotavam a Home.
-// Espiritualidade e Treino são livres; Meu Estudo exige conta (sincroniza dados).
+// Espiritualidade e Treino são livres. Em Meu Estudo, marcações, notas e caderno
+// vivem no Firestore e exigem conta; favoritos ficam no aparelho (`local: true`)
+// e abrem sem conta.
 function buildSpirituality(t) {
   return [
     { icon: 'today-outline', label: t('home.card.today'), sub: t('home.card.todaySub'), screen: 'Today' },
@@ -33,7 +33,7 @@ function buildTraining(t) {
 function buildStudy(t) {
   return [
     { icon: 'journal-outline', label: t('home.card.notebook'), sub: t('home.card.notebookSub'), screen: 'Notebook' },
-    { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites' },
+    { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites', local: true },
     { icon: 'color-fill-outline', label: t('home.card.highlights'), screen: 'Highlights' },
     { icon: 'document-text-outline', label: t('home.card.notes'), screen: 'Notes' },
   ];
@@ -46,7 +46,6 @@ export default function ToolsScreen() {
   const { t, isEn } = useLanguage();
   const requireAccount = useRequireAccount();
   const insets = useSafeAreaInsets();
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   const SPIRITUALITY = buildSpirituality(t);
@@ -70,28 +69,34 @@ export default function ToolsScreen() {
     </TouchableOpacity>
   );
 
+  const openStudy = (item) => {
+    if (item.local) {
+      navigation.navigate(item.screen);
+      return;
+    }
+    requireAccount(
+      () => navigation.navigate(item.screen),
+      {
+        title: item.label,
+        message: isEn
+          ? `To use ${item.label.toLowerCase()}, create a free account. Highlights, notes and notebook stay saved in your account and synced across devices.`
+          : `Para usar ${item.label.toLowerCase()}, crie uma conta gratuita. Marcações, notas e caderno ficam salvos na sua conta e sincronizados entre aparelhos.`,
+        icon: item.icon,
+      }
+    );
+  };
+
   const renderStudyCard = (item) => (
     <TouchableOpacity
       key={item.screen}
       style={styles.card}
-      onPress={() =>
-        requireAccount(
-          () => navigation.navigate(item.screen),
-          {
-            title: item.label,
-            message: isEn
-              ? `To use ${item.label.toLowerCase()}, create a free account. Your data stays saved and synced across devices.`
-              : `Para usar ${item.label.toLowerCase()}, crie uma conta gratuita. Seus dados ficam salvos e sincronizados entre dispositivos.`,
-            icon: item.icon,
-          }
-        )
-      }
+      onPress={() => openStudy(item)}
     >
       <View style={styles.cardIcon}>
         <Ionicons name={item.icon} size={22} color={colors.primaryText} />
       </View>
       <Text style={[styles.cardLabel, { flex: 1 }]}>{item.label}</Text>
-      {!user && (
+      {!user && !item.local && (
         <Ionicons name="lock-closed" size={14} color={colors.textSubtle} style={{ marginRight: 6 }} />
       )}
       <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
@@ -102,10 +107,6 @@ export default function ToolsScreen() {
     <View style={styles.container}>
       <ScrollView
         contentContainerStyle={[styles.content, { paddingBottom: 30 + insets.bottom }]}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <Text style={[styles.sectionTitle, { marginTop: 4 }]}>{t('home.section.spirituality')}</Text>
         {SPIRITUALITY.map(renderCard)}
@@ -116,8 +117,6 @@ export default function ToolsScreen() {
         <Text style={styles.sectionTitle}>{t('home.section.study')}</Text>
         {STUDY.map(renderStudyCard)}
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

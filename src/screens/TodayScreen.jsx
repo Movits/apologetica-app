@@ -8,8 +8,6 @@ import VerseOfDayCard from '../components/VerseOfDayCard';
 import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import CrossMark from '../components/CrossMark';
 
 const COLUMN_MAX = 720;   // largura da coluna central no desktop
@@ -23,7 +21,6 @@ export default function TodayScreen() {
   const { isEn } = useLanguage();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   // No desktop sobra espaço dos dois lados da coluna central: enche cada gutter
@@ -58,10 +55,6 @@ export default function TodayScreen() {
       )}
       <ScrollView
         contentContainerStyle={[styles.content, { paddingBottom: 30 + insets.bottom }]}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <View style={styles.column}>
           <Text style={styles.dateLabel}>{dateLabel}</Text>
@@ -71,8 +64,6 @@ export default function TodayScreen() {
           <VerseOfDayCard onOpen={openVerse} />
         </View>
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

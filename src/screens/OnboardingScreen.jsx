@@ -22,14 +22,6 @@ const THEMES = [
   { key: 'História', icon: 'time-outline', pt: 'História da Igreja', en: 'Church history', subPt: 'Inquisição, Cruzadas', subEn: 'Inquisition, Crusades' },
 ];
 
-// Com quem a pessoa mais conversa: usado so para uma linha de copy personalizada.
-const AUDIENCES = [
-  { key: 'evangelicos', icon: 'chatbubbles-outline', pt: 'Amigos evangélicos', en: 'Protestant friends' },
-  { key: 'ateus', icon: 'help-circle-outline', pt: 'Ateus e céticos', en: 'Atheists and skeptics' },
-  { key: 'familia', icon: 'people-circle-outline', pt: 'Minha família', en: 'My family' },
-  { key: 'eu', icon: 'person-outline', pt: 'Comigo mesmo(a)', en: 'Myself' },
-];
-
 function pickDialogue(themeKey) {
   const list = getDialoguesByCategory(themeKey) || [];
   if (!list.length) return null;
@@ -43,7 +35,7 @@ export default function OnboardingScreen({ onDone }) {
   const { isEn } = useLanguage();
   const styles = makeStyles(colors, fs);
 
-  const [step, setStep] = useState(0); // 0 intro, 1 tema, 2 público, 3 pronto
+  const [step, setStep] = useState(0); // 0 intro, 1 tema, 2 pronto
   const [theme, setTheme] = useState(null);
 
   const skip = async () => {
@@ -67,7 +59,7 @@ export default function OnboardingScreen({ onDone }) {
 
         {/* barra de progresso simples */}
         <View style={styles.progress}>
-          {[0, 1, 2, 3].map((i) => (
+          {[0, 1, 2].map((i) => (
             <View key={i} style={[styles.pDot, i <= step && styles.pDotOn]} />
           ))}
         </View>
@@ -78,16 +70,17 @@ export default function OnboardingScreen({ onDone }) {
             <Text style={styles.h1}>{isEn ? 'Know how to answer' : 'Saiba responder'}</Text>
             <Text style={styles.lead}>
               {isEn
-                ? 'When someone questions your faith, have the answer, with the source in hand. Let us set you up in under a minute.'
-                : 'Quando questionarem a sua fé, tenha a resposta, com a fonte na mão. Vamos te preparar em menos de um minuto.'}
+                ? 'When someone questions your faith, have the answer with the source in hand.'
+                : 'Quando questionarem a sua fé, tenha a resposta com a fonte na mão.'}
             </Text>
+            {/* Texto exato das Bíblias embarcadas (Ave Maria / Douay-Rheims), 1 Pedro 3,15. */}
             <View style={styles.verseBox}>
               <Text style={styles.verse}>
                 {isEn
-                  ? '"Always be prepared to give an answer to everyone who asks you the reason for the hope that you have, but with gentleness and respect."'
-                  : '"Estai sempre prontos a responder a todo aquele que vos pedir razão da esperança que há em vós, mas com mansidão e respeito."'}
+                  ? '"But sanctify the Lord Christ in your hearts, being ready always to satisfy every one that asketh you a reason of that hope which is in you."'
+                  : '"Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito."'}
               </Text>
-              <Text style={styles.verseRef}>1 {isEn ? 'Peter' : 'Pedro'} 3,15-16</Text>
+              <Text style={styles.verseRef}>{isEn ? '1 Peter 3:15' : '1 Pedro 3,15'}</Text>
             </View>
           </View>
         )}
@@ -118,28 +111,6 @@ export default function OnboardingScreen({ onDone }) {
         )}
 
         {step === 2 && (
-          <View>
-            <Text style={styles.h2}>{isEn ? 'Who do you talk about faith with most?' : 'Com quem você mais conversa sobre fé?'}</Text>
-            <Text style={styles.sub}>{isEn ? 'Just so we speak your language.' : 'Só pra falarmos a sua língua.'}</Text>
-            <View style={styles.list}>
-              {AUDIENCES.map((a) => (
-                <TouchableOpacity
-                  key={a.key}
-                  style={styles.rowChip}
-                  onPress={() => setStep(3)}
-                  accessibilityRole="button"
-                  accessibilityLabel={isEn ? a.en : a.pt}
-                >
-                  <Ionicons name={a.icon} size={22} color={colors.accent} />
-                  <Text style={styles.rowChipText}>{isEn ? a.en : a.pt}</Text>
-                  <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-                </TouchableOpacity>
-              ))}
-            </View>
-          </View>
-        )}
-
-        {step === 3 && (
           <View style={styles.center}>
             <View style={styles.readyIcon}>
               <Ionicons name="chatbubbles" size={44} color={colors.accent} />
@@ -156,7 +127,7 @@ export default function OnboardingScreen({ onDone }) {
       </ScrollView>
 
       <View style={styles.footer}>
-        {step < 3 ? (
+        {step < 2 ? (
           <>
             <TouchableOpacity onPress={skip} accessibilityRole="button">
               <Text style={styles.skip}>{isEn ? 'Skip' : 'Pular'}</Text>
@@ -206,13 +177,6 @@ const makeStyles = (c, fs) =>
     chipTitle: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText, marginTop: 8 },
     chipTitleOn: { color: '#fff' },
     chipSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
-    list: { gap: 12 },
-    rowChip: {
-      flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56,
-      backgroundColor: c.card, borderRadius: 12, paddingHorizontal: 16,
-      borderWidth: 1, borderColor: c.cardBorder,
-    },
-    rowChipText: { flex: 1, fontSize: fs(16), color: c.text, fontWeight: '600' },
     readyIcon: {
       width: 88, height: 88, borderRadius: 44, backgroundColor: c.card,
       justifyContent: 'center', alignItems: 'center', marginBottom: 20,

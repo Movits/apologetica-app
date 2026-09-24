@@ -7,8 +7,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Share } from 'react-native';
 import ReadingText from '../components/ReadingText';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import { verseEndFromRef } from '../utils/verseRange';
 
 const EN_BOOK_ID = {
@@ -145,7 +143,6 @@ export default function LiturgyScreen() {
     error: 'Erro ao carregar liturgia',
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
@@ -198,10 +195,6 @@ export default function LiturgyScreen() {
     <ScrollView
       contentContainerStyle={styles.content}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.accent} />}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
     >
       <View style={[styles.headerCard, { borderLeftColor: corHex }]}>
         <Text style={styles.date}>{liturgy.data}</Text>
@@ -339,8 +332,6 @@ export default function LiturgyScreen() {
         {L.footer}: {formatTime(liturgy.fetchedAt)}.
       </Text>
     </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

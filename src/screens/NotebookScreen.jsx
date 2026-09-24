@@ -5,8 +5,6 @@ import { watchNotebook } from '../services/userData';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 // Remove tokens de referência do preview: @[Mt 16,18](v:..) -> Mt 16,18
 const stripRefs = (s) => String(s || '').replace(/@\[([^\]]+)\]\((?:v|a|r):[^)]+\)/g, '$1');
@@ -39,7 +37,6 @@ export default function NotebookScreen({ navigation }) {
     return unsub;
   }, [user]);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   if (loading) {
     return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
@@ -84,32 +81,24 @@ export default function NotebookScreen({ navigation }) {
           </TouchableOpacity>
         </View>
       ) : (
-        <>
-          <FlatList
-            data={items}
-            keyExtractor={(p) => p.id}
-            contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-            onScroll={onScroll}
-            onContentSizeChange={onContentSizeChange}
-            onLayout={onLayout}
-            scrollEventThrottle={32}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.card}
-                onPress={() => navigation.navigate('NotebookPage', { pageId: item.id })}
-              >
-                <Text style={styles.cardTitle} numberOfLines={1}>
-                  {item.title?.trim() || (isEn ? 'Untitled' : 'Sem título')}
-                </Text>
-                {item.text ? (
-                  <Text style={styles.cardBody} numberOfLines={3}>{stripRefs(item.text)}</Text>
-                ) : null}
-              </TouchableOpacity>
-            )}
-          />
-          <ScrollHint direction="up" visible={showTop} />
-          <ScrollHint direction="down" visible={showBottom} />
-        </>
+        <FlatList
+          data={items}
+          keyExtractor={(p) => p.id}
+          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigation.navigate('NotebookPage', { pageId: item.id })}
+            >
+              <Text style={styles.cardTitle} numberOfLines={1}>
+                {item.title?.trim() || (isEn ? 'Untitled' : 'Sem título')}
+              </Text>
+              {item.text ? (
+                <Text style={styles.cardBody} numberOfLines={3}>{stripRefs(item.text)}</Text>
+              ) : null}
+            </TouchableOpacity>
+          )}
+        />
       )}
     </View>
   );

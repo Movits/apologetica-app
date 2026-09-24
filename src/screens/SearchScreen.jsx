@@ -10,8 +10,6 @@ import { searchBible } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import {
   getSearchHistory,
   addSearchHistory,
@@ -123,7 +121,6 @@ export default function SearchScreen({ navigation }) {
   }, [debouncedQuery, isEn, biblia.pronta]);
 
   const totalHits = results.articles.length + results.references.length + results.verses.length + results.bible.length;
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   // Para sugestão "Você quis dizer", usa threshold mais frouxo.
   const suggestion = useMemo(() => {
@@ -316,24 +313,16 @@ export default function SearchScreen({ navigation }) {
         </View>
       )}
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={flatData}
-          keyExtractor={(item, i) => `${item.type}-${item.item?.id ?? item.item?.ref ?? item.label ?? i}`}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          renderItem={renderItem}
-          initialNumToRender={10}
-          maxToRenderPerBatch={6}
-          windowSize={8}
-          removeClippedSubviews
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <FlatList
+        data={flatData}
+        keyExtractor={(item, i) => `${item.type}-${item.item?.id ?? item.item?.ref ?? item.label ?? i}`}
+        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        renderItem={renderItem}
+        initialNumToRender={10}
+        maxToRenderPerBatch={6}
+        windowSize={8}
+        removeClippedSubviews
+      />
     </View>
   );
 }

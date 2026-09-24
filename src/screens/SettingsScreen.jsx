@@ -9,9 +9,6 @@ import Constants from 'expo-constants';
 import { getBuildId } from '../utils/webUpdate';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
-import WebDownloadBanner from '../components/WebDownloadBanner';
 import {
   getPrefs, requestPermissions,
   setDailyVerseEnabled, setSundayLiturgyEnabled,
@@ -198,7 +195,6 @@ export default function SettingsScreen() {
     // A troca de estado de auth leva de volta ao login automaticamente.
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const scrollRef = useRef(null);
   const styles = makeStyles(colors, fs);
 
@@ -217,13 +213,7 @@ export default function SettingsScreen() {
     <ScrollView
       ref={scrollRef}
       contentContainerStyle={styles.content}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
     >
-      <WebDownloadBanner />
-
       {user && (
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
@@ -632,8 +622,6 @@ export default function SettingsScreen() {
         <Text style={styles.aboutQuoteRef}>1 {isEn ? 'Peter' : 'Pedro'} 3,15</Text>
       </View>
     </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
 
       <VoicePickerModal
         visible={voicePickerOpen}

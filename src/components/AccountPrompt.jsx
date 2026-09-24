@@ -17,7 +17,7 @@ const AccountPromptContext = createContext(null);
 
 const DEFAULT_OPTS = {
   title: 'Criar uma conta?',
-  message: 'Esta funcionalidade exige uma conta. Marcações, notas e favoritos ficam salvos e sincronizados entre dispositivos.',
+  message: 'Esta funcionalidade exige uma conta. Marcações, notas e caderno ficam salvos na sua conta e sincronizados entre aparelhos.',
   icon: 'lock-closed-outline',
 };
 
@@ -96,14 +96,13 @@ function AccountPromptModal({ visible, opts, onClose }) {
           </Text>
           <Text style={styles.message}>
             {opts.message === DEFAULT_OPTS.message && isEn
-              ? 'This feature requires an account. Highlights, notes and favorites are saved and synced across devices.'
+              ? 'This feature requires an account. Highlights, notes and notebook are saved to your account and synced across devices.'
               : opts.message}
           </Text>
 
           <View style={styles.benefits}>
             <Benefit icon="cloud-done-outline" text={isEn ? 'Synced across devices' : 'Sincronizado entre celulares'} colors={colors} fs={fs} />
             <Benefit icon="bookmark-outline" text={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} colors={colors} fs={fs} />
-            <Benefit icon="star-outline" text={isEn ? 'Your favorites protected' : 'Seus favoritos protegidos'} colors={colors} fs={fs} />
           </View>
 
           <TouchableOpacity style={styles.btnPrimary} onPress={onCreate} activeOpacity={0.85}>

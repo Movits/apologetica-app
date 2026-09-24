@@ -50,7 +50,7 @@ export const STRINGS = {
     'header.notebook': 'Caderno',
 
     // === Home ===
-    'home.search': 'Buscar em todo o app...',
+    'home.search': 'Buscar',
     'home.section.learn': 'O que você quer aprender?',
     'home.objection.title': 'Objeção do dia',
     'home.objection.cta': 'Ver como responder',
@@ -86,7 +86,8 @@ export const STRINGS = {
     'home.verse.readContext': 'Ler',
     'home.verse.shareText': 'Texto',
     'home.verse.shareImage': 'Imagem',
-    'home.hero.verse': 'Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós.',
+    // Texto exato da Bíblia Ave Maria embarcada (1 Pedro 3,15, trecho final do versículo).
+    'home.hero.verse': 'Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito.',
     'home.hero.ref': '1 Pedro 3,15',
 
     // === Settings ===
@@ -288,7 +289,7 @@ export const STRINGS = {
     'header.notebook': 'Notebook',
 
     // === Home ===
-    'home.search': 'Search in the app...',
+    'home.search': 'Search',
     'home.section.learn': 'What do you want to learn?',
     'home.objection.title': 'Objection of the day',
     'home.objection.cta': 'See how to answer',
@@ -324,7 +325,8 @@ export const STRINGS = {
     'home.verse.readContext': 'Read',
     'home.verse.shareText': 'Text',
     'home.verse.shareImage': 'Image',
-    'home.hero.verse': 'Always be ready to give an answer to anyone who asks you the reason for the hope that is in you.',
+    // Texto exato da Douay-Rheims embarcada (1 Peter 3:15).
+    'home.hero.verse': 'But sanctify the Lord Christ in your hearts, being ready always to satisfy every one that asketh you a reason of that hope which is in you.',
     'home.hero.ref': '1 Peter 3:15',
 
     // === Settings ===

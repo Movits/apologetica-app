@@ -5,8 +5,6 @@ import { referencesEn } from '../data/references-en';
 import { translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import RefSourceBlock from '../components/RefSourceBlock';
 
 const VATICAN_BASE_PT = 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html';
@@ -24,7 +22,6 @@ export default function SearchedRefScreen({ route, navigation }) {
   // fallback pro português quando a tradução não existe.
   const en = (item && referencesEn[item.id]) || {};
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (!item) {
@@ -68,10 +65,6 @@ export default function SearchedRefScreen({ route, navigation }) {
     <View style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.content}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <View style={styles.card}>
           <View style={styles.badge}>
@@ -143,8 +136,6 @@ export default function SearchedRefScreen({ route, navigation }) {
           </View>
         </View>
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

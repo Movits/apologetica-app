@@ -5,8 +5,6 @@ import { ARTICLE_CATEGORIES, sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 // Tela dedicada a uma categoria de artigos. Recebe route.params.category
 // (nome PT, igual ao campo article.category). Mostra um banner com o tema e
@@ -21,7 +19,6 @@ export default function CategoryArticlesScreen({ route }) {
   const meta = ARTICLE_CATEGORIES.find((c) => c.id === category);
   const list = sortByRank(articles.filter((a) => a.category === category));
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   const countLabel = isEn
@@ -38,29 +35,21 @@ export default function CategoryArticlesScreen({ route }) {
         countLabel={countLabel}
       />
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={list}
-          keyExtractor={(a) => String(a.id)}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.card}
-              onPress={() => navigation.navigate('ArticleFromSearch', { articleId: item.id })}
-            >
-              <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
-              <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
-            </TouchableOpacity>
-          )}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <FlatList
+        data={list}
+        keyExtractor={(a) => String(a.id)}
+        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: item.id })}
+          >
+            <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
+            <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 }

@@ -6,8 +6,6 @@ import { articles } from '../data/articles';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getFavorites } from '../utils/favorites';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function FavoritesScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -31,7 +29,6 @@ export default function FavoritesScreen({ navigation }) {
     }, [])
   );
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
@@ -58,10 +55,6 @@ export default function FavoritesScreen({ navigation }) {
         data={items}
         keyExtractor={(a) => String(a.id)}
         contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
@@ -77,8 +70,6 @@ export default function FavoritesScreen({ navigation }) {
           </TouchableOpacity>
         )}
       />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

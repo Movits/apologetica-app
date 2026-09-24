@@ -4,8 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DEBATE_STRATEGIES } from '../data/debateStrategies';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 // Ferramenta de treino para debates: táticas que ajudam e falácias a identificar/rebater.
 export default function DebateStrategiesScreen() {
@@ -29,7 +27,6 @@ export default function DebateStrategiesScreen() {
     });
   }, [query, filter]);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const [focused, setFocused] = useState(false);
   const styles = makeStyles(colors, fs);
 
@@ -75,54 +72,46 @@ export default function DebateStrategiesScreen() {
         })}
       </View>
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={filtered}
-          keyExtractor={(s) => s.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'Nothing found.' : 'Nada encontrado.'}</Text>}
-          renderItem={({ item }) => {
-            const isOpen = expanded === item.id;
-            const isFallacy = item.section === 'falacia';
-            const badge = isFallacy
-              ? (isEn ? 'Fallacy' : 'Falácia')
-              : (isEn ? 'Tactic' : 'Tática');
-            return (
-              <TouchableOpacity
-                style={[styles.card, isOpen && styles.cardOpen]}
-                onPress={() => setExpanded(isOpen ? null : item.id)}
-              >
-                <View style={styles.headRow}>
-                  <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                    <View style={[styles.badge, isFallacy ? styles.badgeFallacy : styles.badgeTactic]}>
-                      <Text style={[styles.badgeText, isFallacy ? styles.badgeTextFallacy : styles.badgeTextTactic]}>
-                        {badge}
-                      </Text>
-                    </View>
-                    <Text style={styles.name}>{isEn ? (item.nameEn || item.name) : item.name}</Text>
+      <FlatList
+        data={filtered}
+        keyExtractor={(s) => s.id}
+        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'Nothing found.' : 'Nada encontrado.'}</Text>}
+        renderItem={({ item }) => {
+          const isOpen = expanded === item.id;
+          const isFallacy = item.section === 'falacia';
+          const badge = isFallacy
+            ? (isEn ? 'Fallacy' : 'Falácia')
+            : (isEn ? 'Tactic' : 'Tática');
+          return (
+            <TouchableOpacity
+              style={[styles.card, isOpen && styles.cardOpen]}
+              onPress={() => setExpanded(isOpen ? null : item.id)}
+            >
+              <View style={styles.headRow}>
+                <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                  <View style={[styles.badge, isFallacy ? styles.badgeFallacy : styles.badgeTactic]}>
+                    <Text style={[styles.badgeText, isFallacy ? styles.badgeTextFallacy : styles.badgeTextTactic]}>
+                      {badge}
+                    </Text>
                   </View>
-                  <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
+                  <Text style={styles.name}>{isEn ? (item.nameEn || item.name) : item.name}</Text>
                 </View>
-                {isOpen && (
-                  <View style={{ marginTop: 10 }}>
-                    <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
-                    <Text style={styles.fieldLabel}>{t('debate.example')}</Text>
-                    <Text style={styles.example}>{isEn ? (item.exampleEn || item.example) : item.example}</Text>
-                    <Text style={styles.fieldLabel}>{isFallacy ? t('debate.respond') : t('debate.use')}</Text>
-                    <Text style={styles.def}>{isEn ? (item.howToRespondEn || item.howToRespond) : item.howToRespond}</Text>
-                  </View>
-                )}
-              </TouchableOpacity>
-            );
-          }}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+                <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
+              </View>
+              {isOpen && (
+                <View style={{ marginTop: 10 }}>
+                  <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
+                  <Text style={styles.fieldLabel}>{t('debate.example')}</Text>
+                  <Text style={styles.example}>{isEn ? (item.exampleEn || item.example) : item.example}</Text>
+                  <Text style={styles.fieldLabel}>{isFallacy ? t('debate.respond') : t('debate.use')}</Text>
+                  <Text style={styles.def}>{isEn ? (item.howToRespondEn || item.howToRespond) : item.howToRespond}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 }

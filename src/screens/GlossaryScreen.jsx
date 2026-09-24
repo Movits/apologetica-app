@@ -4,8 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { glossary, glossaryByTerm } from '../data/glossary';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function GlossaryScreen({ route }) {
   const { colors, fs } = useTheme();
@@ -42,7 +40,6 @@ export default function GlossaryScreen({ route }) {
     );
   }, [query]);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const [focused, setFocused] = useState(false);
   const styles = makeStyles(colors, fs);
 
@@ -67,42 +64,34 @@ export default function GlossaryScreen({ route }) {
         )}
       </View>
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          ref={listRef}
-          data={filtered}
-          keyExtractor={(g) => g.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          onScrollToIndexFailed={(info) => {
-            listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
-            setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: 0.12, animated: false }), 80);
-          }}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No term found.' : 'Nenhum termo encontrado.'}</Text>}
-          renderItem={({ item }) => {
-            const isOpen = expanded === item.id;
-            return (
-              <TouchableOpacity
-                style={[styles.card, isOpen && styles.cardOpen]}
-                onPress={() => setExpanded(isOpen ? null : item.id)}
-              >
-                <View style={styles.headRow}>
-                  <Text style={styles.term}>{isEn ? (item.termEn || item.term) : item.term}</Text>
-                  <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
-                </View>
-                {isOpen && (
-                  <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
-                )}
-              </TouchableOpacity>
-            );
-          }}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <FlatList
+        ref={listRef}
+        data={filtered}
+        keyExtractor={(g) => g.id}
+        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        onScrollToIndexFailed={(info) => {
+          listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
+          setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: 0.12, animated: false }), 80);
+        }}
+        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No term found.' : 'Nenhum termo encontrado.'}</Text>}
+        renderItem={({ item }) => {
+          const isOpen = expanded === item.id;
+          return (
+            <TouchableOpacity
+              style={[styles.card, isOpen && styles.cardOpen]}
+              onPress={() => setExpanded(isOpen ? null : item.id)}
+            >
+              <View style={styles.headRow}>
+                <Text style={styles.term}>{isEn ? (item.termEn || item.term) : item.term}</Text>
+                <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
+              </View>
+              {isOpen && (
+                <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
+              )}
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 }

@@ -9,8 +9,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
 import StickySectionList from '../components/StickySectionList';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import RefSourceBlock from '../components/RefSourceBlock';
 
 // Translate verbose Portuguese fullSource strings for Bible and Catechism entries.
@@ -223,7 +221,6 @@ export default function ReferencesScreen({ route }) {
     };
   }, [route?.params?.highlightId, navigation, sections]);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   // Callbacks estáveis pra que props do RefCard não mudem desnecessariamente
   const handleToggle = useCallback((id) => {
@@ -300,13 +297,7 @@ export default function ReferencesScreen({ route }) {
         windowSize={7}
         removeClippedSubviews
         onScrollToIndexFailed={() => {}}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

@@ -8,8 +8,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { READING_TRACKS, getTrack } from '../data/readingPlan';
 import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function ReadingPlanScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -49,7 +47,6 @@ export default function ReadingPlanScreen({ navigation }) {
     });
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   const totalDone = progress.completed.length;
@@ -97,60 +94,52 @@ export default function ReadingPlanScreen({ navigation }) {
         )}
       </View>
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          key={trackId}
-          data={days}
-          extraData={progress}
-          keyExtractor={(d) => `${trackId}-${d.day}`}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          renderItem={({ item }) => {
-            const done = progress.completed.includes(item.day);
-            const article = articles.find((a) => a.id === item.articleId);
-            return (
-              <TouchableOpacity
-                style={[styles.card, done && styles.cardDone]}
-                onPress={() => {
-                  if (article) {
-                    navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day, fromPlanTrack: trackId });
-                  } else {
-                    notify(
-                      isEn ? 'In preparation' : 'Em preparação',
-                      isEn ? 'This article will be added in a future update.' : 'Este artigo ainda será adicionado em uma próxima atualização.'
-                    );
-                  }
-                }}
-              >
-                <View style={[styles.dayBubble, done && styles.dayBubbleDone]}>
-                  {done ? (
-                    <Ionicons name="checkmark" size={16} color="#fff" />
-                  ) : (
-                    <Text style={styles.dayNum}>{item.day}</Text>
-                  )}
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={[styles.cardLabel, done && styles.cardLabelDone]}>{isEn ? 'Day' : 'Dia'} {item.day}</Text>
-                  <Text style={styles.cardTitle} numberOfLines={2}>
-                    {article
-                      ? (isEn ? (article.titleEn || article.title) : article.title)
-                      : (isEn ? (item.themeEn || item.theme) : item.theme)}
-                  </Text>
-                  {!article && (
-                    <Text style={styles.pending}>{isEn ? '(in preparation)' : '(em preparação)'}</Text>
-                  )}
-                </View>
-                <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
-              </TouchableOpacity>
-            );
-          }}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <FlatList
+        key={trackId}
+        data={days}
+        extraData={progress}
+        keyExtractor={(d) => `${trackId}-${d.day}`}
+        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        renderItem={({ item }) => {
+          const done = progress.completed.includes(item.day);
+          const article = articles.find((a) => a.id === item.articleId);
+          return (
+            <TouchableOpacity
+              style={[styles.card, done && styles.cardDone]}
+              onPress={() => {
+                if (article) {
+                  navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day, fromPlanTrack: trackId });
+                } else {
+                  notify(
+                    isEn ? 'In preparation' : 'Em preparação',
+                    isEn ? 'This article will be added in a future update.' : 'Este artigo ainda será adicionado em uma próxima atualização.'
+                  );
+                }
+              }}
+            >
+              <View style={[styles.dayBubble, done && styles.dayBubbleDone]}>
+                {done ? (
+                  <Ionicons name="checkmark" size={16} color="#fff" />
+                ) : (
+                  <Text style={styles.dayNum}>{item.day}</Text>
+                )}
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.cardLabel, done && styles.cardLabelDone]}>{isEn ? 'Day' : 'Dia'} {item.day}</Text>
+                <Text style={styles.cardTitle} numberOfLines={2}>
+                  {article
+                    ? (isEn ? (article.titleEn || article.title) : article.title)
+                    : (isEn ? (item.themeEn || item.theme) : item.theme)}
+                </Text>
+                {!article && (
+                  <Text style={styles.pending}>{isEn ? '(in preparation)' : '(em preparação)'}</Text>
+                )}
+              </View>
+              <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 }

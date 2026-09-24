@@ -9,8 +9,6 @@ import { referenceById, translateRef } from '../data/references';
 import { referencesEn } from '../data/references-en';
 import { useTheme } from '../context/ThemeContext';
 import { shareArticle } from '../utils/share';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import CrossMark from '../components/CrossMark';
 import ImageZoomModal from '../components/ImageZoomModal';
 import ReadingProgressBar from '../components/ReadingProgressBar';
@@ -19,7 +17,6 @@ import RelatedDialogues from '../components/RelatedDialogues';
 import MarkdownText from '../components/MarkdownText';
 import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
-import { useRequireAccount } from '../components/GuestGate';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 import { useLanguage } from '../context/LanguageContext';
 import { markPlanDay } from '../utils/readingProgress';
@@ -27,7 +24,7 @@ import { planEntriesByArticle } from '../data/readingPlan';
 
 export default function ArticleDetailScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
-  const { lang, t, isEn } = useLanguage();
+  const { t, isEn } = useLanguage();
   const insets = useSafeAreaInsets();
   const { width: winWidth } = useWindowDimensions();
   const article = articles.find((a) => a.id === route.params?.articleId);
@@ -54,7 +51,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const scrollRef = useRef(null);
   const scrollYRef = useRef(0);
   const savedScrollRef = useRef(0);
-  const requireAccount = useRequireAccount();
 
   useEffect(() => {
     if (!article) return;
@@ -165,11 +161,11 @@ export default function ArticleDetailScreen({ route, navigation }) {
     });
   }, [navigation, fav, speaking, article?.id, colors.accent]);
 
-  // Header sempre "Artigo - Nome do artigo".
+  // Header mostra só o título do artigo, no idioma da interface, sem prefixo.
   useEffect(() => {
     if (!article) return;
-    navigation.setOptions({ headerTitle: `${t('header.article')} - ${displayTitle}` });
-  }, [navigation, article?.id, displayTitle, lang]);
+    navigation.setOptions({ headerTitle: displayTitle });
+  }, [navigation, article?.id, displayTitle]);
 
   // Restaura a posição de scroll ao voltar de uma referência/glossário (web reseta).
   // A posição é capturada no momento de navegar (savedScrollRef), porque eventos de
@@ -196,29 +192,19 @@ export default function ArticleDetailScreen({ route, navigation }) {
     shareArticle({ title: article.title, summary: article.summary });
   };
 
-  const onToggleFav = () => {
+  // Favoritos ficam no aparelho (AsyncStorage): funcionam sem conta.
+  const onToggleFav = async () => {
     if (!article) return;
-    requireAccount(
-      async () => {
-        await toggleFavorite(article.id);
-        setFav((f) => !f);
-      },
-      {
-        title: isEn ? 'Save to favorites?' : 'Salvar nos favoritos?',
-        message: isEn
-          ? 'To save this article to your favorites, create a free account. Your favorites stay saved and synced across devices.'
-          : 'Para guardar este artigo nos seus favoritos, crie uma conta gratuita. Seus favoritos ficam salvos e sincronizados entre dispositivos.',
-        icon: 'star-outline',
-      }
-    );
+    await toggleFavorite(article.id);
+    setFav((f) => !f);
   };
 
+  // Barra de progresso da leitura e posição para restaurar ao voltar.
   const handleScroll = (e) => {
     const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
     const max = Math.max(1, contentSize.height - layoutMeasurement.height);
     setProgress(contentOffset.y / max);
     scrollYRef.current = contentOffset.y;
-    hintScroll.onScroll(e);
   };
 
   const openDialogue = (dialogueId) => {
@@ -230,7 +216,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
     navigation.push(route.name, { articleId: id });
   };
 
-  const hintScroll = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (!article) {
@@ -258,8 +243,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
         ref={scrollRef}
         contentContainerStyle={styles.content}
         onScroll={handleScroll}
-        onContentSizeChange={hintScroll.onContentSizeChange}
-        onLayout={hintScroll.onLayout}
         scrollEventThrottle={16}
       >
         <View style={styles.column}>
@@ -355,8 +338,6 @@ export default function ArticleDetailScreen({ route, navigation }) {
         <RelatedArticles currentId={article.id} onOpen={openOtherArticle} />
         </View>
       </ScrollView>
-      <ScrollHint direction="up" visible={hintScroll.showTop} />
-      <ScrollHint direction="down" visible={hintScroll.showBottom} />
       <ImageZoomModal
         visible={zoomOpen}
         source={article.image}

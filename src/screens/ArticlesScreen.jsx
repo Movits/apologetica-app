@@ -8,8 +8,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
 import StickySectionList from '../components/StickySectionList';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 // Aba Artigos: página única com todos os artigos, separados por cabeçalho fixo
 // (SectionBanner) por categoria. O banner do topo gruda e troca ao rolar de uma
@@ -58,7 +56,6 @@ export default function ArticlesScreen({ route }) {
     return popular.data.length > 0 ? [popular, ...cats] : cats;
   }, []);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   const countLabel = (n) =>
@@ -72,10 +69,6 @@ export default function ArticlesScreen({ route }) {
         keyExtractor={(a) => (a._pop ? 'pop-' : '') + a.id}
         contentContainerStyle={{ paddingBottom: 40 }}
         ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
         onScrollToIndexFailed={() => {}}
         renderSectionHeader={({ section }) => (
           <SectionBanner
@@ -101,8 +94,6 @@ export default function ArticlesScreen({ route }) {
           </View>
         )}
       />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

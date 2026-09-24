@@ -12,15 +12,12 @@ import { getLiturgicalSeason } from '../utils/liturgicalSeason';
 import AppIcon from '../components/AppIcon';
 import CrossMark from '../components/CrossMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function HomeScreen() {
   const navigation = useNavigation();
   const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
   const insets = useSafeAreaInsets();
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const [refreshKey, setRefreshKey] = useState(0);
   const scrollRef = useRef(null);
   const styles = makeStyles(colors, fs, insets.top);
@@ -66,16 +63,14 @@ export default function HomeScreen() {
   const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
   const dailyObjection = DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
   const season = getLiturgicalSeason(now);
+  // A cor da estação vem da paleta do tema (muda com o modo escuro), não de um hex fixo.
+  const seasonColor = colors[season.colorKey];
 
   return (
     <View style={styles.container}>
     <ScrollView
       ref={scrollRef}
       contentContainerStyle={styles.content}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
     >
       <View style={styles.hero}>
         <CrossMark size={fs(34)} color={colors.accent} opacity={1} />
@@ -86,10 +81,10 @@ export default function HomeScreen() {
       </View>
 
       {/* Banner da estacao liturgica (calculado localmente, offline). */}
-      <View style={[styles.seasonBanner, { borderLeftColor: season.color }]}>
-        <Ionicons name={season.icon} size={18} color={season.color} />
+      <View style={[styles.seasonBanner, { borderLeftColor: seasonColor }]}>
+        <Ionicons name={season.icon} size={18} color={seasonColor} />
         <View style={{ flex: 1 }}>
-          <Text style={[styles.seasonName, { color: season.color }]}>{isEn ? season.en : season.pt}</Text>
+          <Text style={[styles.seasonName, { color: seasonColor }]}>{isEn ? season.en : season.pt}</Text>
           <Text style={styles.seasonNote}>{isEn ? season.noteEn : season.notePt}</Text>
         </View>
       </View>
@@ -156,8 +151,6 @@ export default function HomeScreen() {
         <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
       </TouchableOpacity>
     </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

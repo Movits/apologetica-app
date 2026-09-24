@@ -1,4 +1,5 @@
-// Metadados das categorias de artigos: ordem de exibição + ícone (Ionicons/MCI).
+// Metadados das categorias de artigos: ordem de exibição + ícone (só Ionicons;
+// `iconSet` fica por compatibilidade com AppIcon, que hoje ignora o valor).
 // Fonte única de verdade da ordem/ícone. Nome e descrição vêm do i18n
 // (category.<id> e category.<id>.desc). A contagem é calculada do array articles.
 
@@ -6,7 +7,8 @@ import { articles } from './articles';
 
 // Ordem das categorias por interesse de busca no Brasil (mais procuradas primeiro).
 export const ARTICLE_CATEGORIES = [
-  { id: 'Igreja Católica', icon: 'church', iconSet: 'mci' },
+  // Ionicons não tem igreja: a Igreja como assembleia (povo reunido).
+  { id: 'Igreja Católica', icon: 'home-outline', iconSet: 'ion' },
   { id: 'Existência de Deus', icon: 'planet-outline', iconSet: 'ion' },
   { id: 'Moral', icon: 'compass-outline', iconSet: 'ion' },
   { id: 'Sagrada Escritura', icon: 'book-outline', iconSet: 'ion' },

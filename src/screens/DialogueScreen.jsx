@@ -6,8 +6,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES, getDialogueById } from '../data/dialogues';
 import { articles } from '../data/articles';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import DialogueAnswerCard from '../components/DialogueAnswerCard';
 import { captureAndShareImage } from '../utils/shareAsImage';
 import { shareDialogue } from '../utils/share';
@@ -154,7 +152,6 @@ export default function DialogueScreen({ navigation, route }) {
 function DialogueList({ onChoose, isEn }) {
   const { colors, fs } = useTheme();
   const styles = makeStyles(colors, fs);
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   const grouped = useMemo(() => {
     const out = {};
@@ -174,10 +171,6 @@ function DialogueList({ onChoose, isEn }) {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView
         contentContainerStyle={styles.listContent}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <View style={styles.intro}>
           <Text style={styles.introTitle}>{isEn ? 'Dialogue Mode' : 'Modo Diálogo'}</Text>
@@ -200,8 +193,6 @@ function DialogueList({ onChoose, isEn }) {
           </View>
         ))}
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

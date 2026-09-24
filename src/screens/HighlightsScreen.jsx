@@ -11,8 +11,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { shareHighlight } from '../utils/share';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function HighlightsScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -55,7 +53,6 @@ export default function HighlightsScreen({ navigation }) {
     });
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
@@ -112,10 +109,6 @@ export default function HighlightsScreen({ navigation }) {
       data={items}
       keyExtractor={(h) => h.id}
       contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
       renderItem={({ item }) => {
         const book = getBook(item.bookId);
         const bn = bookName(book, isEn);
@@ -146,8 +139,6 @@ export default function HighlightsScreen({ navigation }) {
         );
       }}
     />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

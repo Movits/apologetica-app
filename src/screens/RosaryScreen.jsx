@@ -6,8 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import { verseEndFromRef } from '../utils/verseRange';
 
 // Mistérios com referência bíblica (bookId, chapter, verse) pra deep-link.
@@ -150,7 +148,6 @@ export default function RosaryScreen() {
   const sequence = useMemo(() => buildSequence(isEn), [isEn]);
   const mystery = MYSTERIES[tipo];
   const styles = makeStyles(colors, fs);
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
 
   const openInBible = (nav, ref) => {
     if (!nav) return;
@@ -176,10 +173,6 @@ export default function RosaryScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView
         contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <View style={styles.intro}>
           <Text style={styles.title}>{isEn ? 'Holy Rosary' : 'Santo Rosário'}</Text>
@@ -291,8 +284,6 @@ export default function RosaryScreen() {
           </View>
         )}
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

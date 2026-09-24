@@ -15,8 +15,6 @@ import {
   watchChapterHighlights, watchChapterNotes,
   addHighlight, removeHighlight,
 } from '../services/userData';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import BibleLoadingState from '../components/BibleLoadingState';
@@ -121,11 +119,6 @@ export default function BibleScreen({ route, navigation }) {
   const chaveAtual = useRef(null);
   // Marcação de "lido": uma tentativa por capítulo.
   const markedKey = useRef(null);
-
-  // Scroll hints separados pra cada view (books / verses).
-  // Só um deles está montado por vez, então não conflitam.
-  const bookHints = useScrollHints();
-  const verseHints = useScrollHints();
 
   // Deep link de uma referência
   useEffect(() => {
@@ -381,7 +374,7 @@ export default function BibleScreen({ route, navigation }) {
 
   useEffect(() => () => flushSave(), [flushSave]);
 
-  // Handlers da lista de versículos: compõem os do useScrollHints com o progresso.
+  // Handlers da lista de versículos: progresso de leitura, medição e restauração.
   // Arrasto do usuário cancela a restauração: a partir daí quem manda é ele.
   // Fica em onScrollBeginDrag e não em onScroll porque a própria montagem da
   // lista dispara um onScroll em offset 0, que cancelaria a restauração.
@@ -395,7 +388,6 @@ export default function BibleScreen({ route, navigation }) {
   }, []);
 
   const onVerseScroll = useCallback((e) => {
-    verseHints.onScroll(e);
     const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
     // O react-native-web dispara um onScroll atrasado (timer interno, sem
     // cleanup no desmonte) que le o DOM na hora em que roda. Se a lista ja saiu
@@ -419,19 +411,17 @@ export default function BibleScreen({ route, navigation }) {
     if (!nossoScroll && contentOffset.y > 0) userScrolled.current = true;
 
     if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped, lang);
-  }, [verseHints, queueSave, bookId, chapter, fromDeepLink, lang]);
+  }, [queueSave, bookId, chapter, fromDeepLink, lang]);
 
   const onVerseLayout = useCallback((e) => {
-    verseHints.onLayout(e);
     verseLayoutH.current = e.nativeEvent.layout.height;
     tryRestore();
-  }, [verseHints, tryRestore]);
+  }, [tryRestore]);
 
   const onVerseContentSize = useCallback((w, h) => {
-    verseHints.onContentSizeChange(w, h);
     verseContentH.current = h;
     tryRestore();
-  }, [verseHints, tryRestore]);
+  }, [tryRestore]);
 
   // Abre o capítulo salvo a partir do card "Continue lendo".
   const resumeReading = useCallback(() => {
@@ -700,14 +690,9 @@ export default function BibleScreen({ route, navigation }) {
           );
         })()}
 
-        <View style={{ flex: 1 }}>
         <ScrollView
           ref={booksScrollRef}
           contentContainerStyle={styles.content}
-          onScroll={bookHints.onScroll}
-          onContentSizeChange={bookHints.onContentSizeChange}
-          onLayout={bookHints.onLayout}
-          scrollEventThrottle={32}
         >
           {Object.entries(grouped).map(([groupName, books]) => (
             <View key={groupName}>
@@ -734,9 +719,6 @@ export default function BibleScreen({ route, navigation }) {
             </View>
           ))}
         </ScrollView>
-          <ScrollHint direction="up" visible={bookHints.showTop} />
-          <ScrollHint direction="down" visible={bookHints.showBottom} />
-        </View>
       </View>
     );
   }
@@ -836,7 +818,6 @@ export default function BibleScreen({ route, navigation }) {
             </Text>
           </View>
         ) : (
-          <View style={{ flex: 1 }}>
           <FlatList
             key="verses-list"
             ref={verseListRef}
@@ -890,9 +871,6 @@ export default function BibleScreen({ route, navigation }) {
               );
             }}
           />
-            <ScrollHint direction="up" visible={verseHints.showTop} />
-            <ScrollHint direction="down" visible={verseHints.showBottom} />
-          </View>
         )}
 
         <View style={styles.navBar}>

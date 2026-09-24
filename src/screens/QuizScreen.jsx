@@ -5,8 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/quiz';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 const STREAK_KEY = 'quiz:streak';
 const HISTORY_KEY = 'quiz:history'; // { YYYY-MM-DD: { id, correct } }
@@ -123,7 +121,6 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
     }
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (!current) return null;
@@ -139,10 +136,6 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView
         contentContainerStyle={styles.content}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
       >
         <View style={styles.header}>
           <View style={styles.headerRow}>
@@ -266,8 +259,6 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
           </TouchableOpacity>
         )}
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
     </View>
   );
 }

@@ -47,9 +47,10 @@ import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { LanguageProvider, useLanguage } from './src/context/LanguageContext';
 import ErrorBoundary from './src/components/ErrorBoundary';
 import { AccountPromptProvider } from './src/components/AccountPrompt';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
 import { checkForWebUpdate } from './src/utils/webUpdate';
+import { hasSeenOnboarding } from './src/utils/onboarding';
 
 // Inicializa o Sentry (no-op na web e no Expo Go — ver src/sentry.js / sentry.web.js).
 initSentry();
@@ -312,7 +313,7 @@ function MainTabs() {
         headerStyle: { backgroundColor: colors.primary },
         headerTintColor: '#fff',
         headerTitleStyle: { fontWeight: 'bold' },
-        tabBarActiveTintColor: colors.accent,
+        tabBarActiveTintColor: colors.tint,
         tabBarInactiveTintColor: colors.textSubtle,
         tabBarStyle: {
           backgroundColor: colors.card,
@@ -380,12 +381,23 @@ function AuthStack() {
 
 function RootNavigation() {
   const { colors, darkMode } = useTheme();
-  const { user, signedInOrGuest, loading } = useAuth();
-  // TEMPORÁRIO (pré-lançamento): mostra o onboarding em toda abertura enquanto
-  // não há conta logada, para o usuário poder revisar as telas de explicação.
-  // Estado de sessão (não persistido). Para voltar ao "uma vez só", basta
-  // regravar o gate usando hasSeenOnboarding/setOnboardingDone.
-  const [onboardingPassed, setOnboardingPassed] = useState(false);
+  const { user, signedInOrGuest, loading, continueAsGuest } = useAuth();
+  // Primeiro uso: o onboarding aparece uma vez só, enquanto não há conta logada.
+  // `null` = ainda lendo o AsyncStorage (segura o splash para não piscar a tela).
+  const [onboardingSeen, setOnboardingSeen] = useState(null);
+
+  useEffect(() => {
+    let alive = true;
+    hasSeenOnboarding().then((seen) => { if (alive) setOnboardingSeen(seen); });
+    return () => { alive = false; };
+  }, []);
+
+  // "Pular" e "Ver a resposta" caem direto no app como visitante; o Login
+  // continua acessível em Ajustes. O OnboardingScreen já gravou onboarding:done.
+  const onOnboardingDone = async () => {
+    if (!user && !signedInOrGuest) await continueAsGuest();
+    setOnboardingSeen(true);
+  };
 
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
@@ -395,16 +407,16 @@ function RootNavigation() {
       card: colors.primary,
       text: '#fff',
       border: colors.divider,
-      primary: colors.accent,
+      primary: colors.tint,
     },
   };
 
-  if (loading) {
+  if (loading || onboardingSeen === null) {
     return <BrandedSplash />;
   }
 
-  if (!user && !onboardingPassed) {
-    return <OnboardingScreen onDone={() => setOnboardingPassed(true)} />;
+  if (!user && onboardingSeen === false) {
+    return <OnboardingScreen onDone={onOnboardingDone} />;
   }
 
   return (

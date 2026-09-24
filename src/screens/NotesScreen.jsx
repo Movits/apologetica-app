@@ -6,8 +6,6 @@ import { getBook, bookName } from '../data/bible';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 
 export default function NotesScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -35,7 +33,6 @@ export default function NotesScreen({ navigation }) {
     return `${bookName(book, isEn)} ${n.chapter}${sep}${range}`;
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
   const styles = makeStyles(colors, fs);
 
   if (loading) {
@@ -75,28 +72,20 @@ export default function NotesScreen({ navigation }) {
           </Text>
         </View>
       ) : (
-        <>
-          <FlatList
-            data={items}
-            keyExtractor={(n) => n.id}
-            contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-            onScroll={onScroll}
-            onContentSizeChange={onContentSizeChange}
-            onLayout={onLayout}
-            scrollEventThrottle={32}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.card}
-                onPress={() => navigation.navigate('NoteEditor', { noteId: item.id })}
-              >
-                <Text style={styles.ref}>{formatRef(item)}</Text>
-                <Text style={styles.body} numberOfLines={4}>{item.text}</Text>
-              </TouchableOpacity>
-            )}
-          />
-          <ScrollHint direction="up" visible={showTop} />
-          <ScrollHint direction="down" visible={showBottom} />
-        </>
+        <FlatList
+          data={items}
+          keyExtractor={(n) => n.id}
+          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigation.navigate('NoteEditor', { noteId: item.id })}
+            >
+              <Text style={styles.ref}>{formatRef(item)}</Text>
+              <Text style={styles.body} numberOfLines={4}>{item.text}</Text>
+            </TouchableOpacity>
+          )}
+        />
       )}
     </View>
   );
