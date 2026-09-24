@@ -66,9 +66,10 @@ export default function RefDetailScreen({ route, navigation }) {
   const label = refLabel(item, isEn);
   const quote = pick(item, 'text', isEn);
   const topic = pick(item, 'topic', isEn);
-  const fullSource = isEn ? (item.fullSourceEn || translateFullSource(item.fullSource, isEn)) : item.fullSource;
-  const author = isEn ? (item.authorEn || translateAuthor(item.author, isEn)) : item.author;
-  const year = isEn ? (item.yearEn || translateYear(item.year, isEn)) : item.year;
+  // Sem tradução curada, os tradutores heurísticos entram como fallback.
+  const fullSource = pick(item, 'fullSource', isEn, translateFullSource);
+  const author = pick(item, 'author', isEn, translateAuthor);
+  const year = pick(item, 'year', isEn, translateYear);
   const credit = [author, year].filter(Boolean).join(' · ');
   const sourceName = translateSource(item.source, isEn);
 

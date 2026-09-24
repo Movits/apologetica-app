@@ -1,4 +1,5 @@
 import { JESUS_JOURNEY } from '../../data/jesusJourney';
+import { pick } from '../../utils/i18nData';
 
 // HTML do mapa Leaflet (CartoDB Voyager) com os dados da jornada injetados.
 // Funciona tanto dentro de react-native-webview (nativo) quanto de um <iframe> (web):
@@ -7,7 +8,7 @@ import { JESUS_JOURNEY } from '../../data/jesusJourney';
 export function buildMapHtml(isEn) {
   const journeyJson = JSON.stringify(
     JESUS_JOURNEY.map((p) => ({
-      name: isEn ? p.nameEn : p.name,
+      name: pick(p, 'name', isEn),
       lat: p.lat,
       lng: p.lng,
       waypointsToNext: p.waypointsToNext || [],

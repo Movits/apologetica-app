@@ -56,7 +56,6 @@ num desses módulos, **atualize as duas variantes**:
 | `src/services/notifications.js` | `src/services/notifications.web.js` (no-op) |
 | `src/hooks/useGoogleSignIn.js` | `src/hooks/useGoogleSignIn.web.js` |
 | `src/utils/shareAsImage.js` | `src/utils/shareAsImage.web.js` |
-| `src/components/StickySectionList.jsx` | `StickySectionList.web.jsx` |
 | `src/screens/bibleMap/MapView.native.jsx` | `MapView.web.jsx` |
 
 ### Navegação

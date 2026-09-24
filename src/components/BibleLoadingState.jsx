@@ -11,9 +11,9 @@ import { useLanguage } from '../context/LanguageContext';
 // coisa: aquele significa que um capítulo deuterocanônico ainda não foi
 // adicionado ao app, e nenhuma espera resolve.
 export default function BibleLoadingState({ erro, onTentarDeNovo, compacto = false }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
-  const styles = makeStyles(colors, fs, compacto);
+  const { colors, text } = useTheme();
+  const { t } = useLanguage();
+  const styles = makeStyles(colors, text, compacto);
 
   if (erro) {
     return (
@@ -25,8 +25,8 @@ export default function BibleLoadingState({ erro, onTentarDeNovo, compacto = fal
           <TouchableOpacity
             style={styles.botao}
             onPress={onTentarDeNovo}
-            accessibilityRole="button"
-            accessibilityLabel={isEn ? 'Try again' : 'Tentar novamente'}
+            role="button"
+            aria-label={t('common.tryAgain')}
           >
             <Text style={styles.botaoTexto}>{t('common.tryAgain')}</Text>
           </TouchableOpacity>
@@ -44,7 +44,7 @@ export default function BibleLoadingState({ erro, onTentarDeNovo, compacto = fal
   );
 }
 
-const makeStyles = (c, fs, compacto) =>
+const makeStyles = (c, text, compacto) =>
   StyleSheet.create({
     box: {
       flex: compacto ? 0 : 1,
@@ -55,17 +55,16 @@ const makeStyles = (c, fs, compacto) =>
       gap: 10,
     },
     titulo: {
-      fontSize: fs(compacto ? 13 : 16),
+      ...text(compacto ? 'footnote' : 'callout'),
       fontWeight: '600',
       color: c.primaryText,
       textAlign: 'center',
       marginTop: 4,
     },
     sub: {
-      fontSize: fs(12),
+      ...text('caption1'),
       color: c.textSubtle,
       textAlign: 'center',
-      lineHeight: fs(17),
     },
     botao: {
       marginTop: 10,
@@ -74,5 +73,5 @@ const makeStyles = (c, fs, compacto) =>
       borderRadius: 10,
       backgroundColor: c.primary,
     },
-    botaoTexto: { color: '#fff', fontWeight: 'bold', fontSize: fs(14) },
+    botaoTexto: { ...text('subhead'), fontWeight: '600', color: c.onPrimary },
   });

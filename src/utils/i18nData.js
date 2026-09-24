@@ -7,10 +7,15 @@
 
 // Campo `field` do item no idioma pedido, caindo para o PT se o EN não existe
 // ou está vazio. Item nulo ou campo inexistente devolvem undefined.
-export function pick(item, field, isEn = false) {
+// `fallback` (opcional) recebe `(valorPt, isEn)` e é aplicado quando não há
+// tradução curada: serve para os tradutores heurísticos de references.js
+// (`translateAuthor`, `translateYear`...), que devolvem o próprio valor
+// quando `isEn` é falso.
+export function pick(item, field, isEn = false, fallback) {
   if (!item) return undefined;
   const en = item[`${field}En`];
-  return isEn && en ? en : item[field];
+  if (isEn && en) return en;
+  return fallback ? fallback(item[field], isEn) : item[field];
 }
 
 // Vários campos de uma vez: pickAll(a, ['title', 'summary'], isEn)

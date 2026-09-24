@@ -160,44 +160,29 @@ function ArticlesStackScreen() {
 }
 
 // Splash branded: usado durante hidratação do auth + tema e o carregamento da
-// fonte de títulos. Fundo e textos em cores fixas (navy e dourado) pra dar
-// identidade visual consistente antes de o tema hidratar; a cruz é o BrandMark,
-// decorativa porque o nome do app já vem escrito logo abaixo.
+// fonte de títulos. Fundo `primary` e dourado `accent` da paleta (navy e
+// dourado nos dois temas) pra dar identidade visual consistente antes de o
+// tema hidratar; a cruz é o BrandMark, decorativa porque o nome do app já vem
+// escrito logo abaixo.
 function BrandedSplash() {
-  const { colors } = useTheme();
+  const { colors, tokens, text } = useTheme();
+  const { space } = tokens;
   return (
-    <View style={splashStyles.container}>
-      <BrandMark size="lg" color={colors.accent} decorative style={splashStyles.mark} />
-      <Text style={splashStyles.title}>APPologética</Text>
-      <Text style={splashStyles.verse}>1 Pedro 3,15</Text>
-      <ActivityIndicator size="small" color="#c9a84c" style={splashStyles.spinner} />
+    <View style={[splashStyles.container, { backgroundColor: colors.primary, paddingHorizontal: space.xxl }]}>
+      <BrandMark size="lg" color={colors.accent} decorative style={{ marginBottom: space.xl }} />
+      <Text style={[splashStyles.title, { color: colors.onPrimary, marginBottom: space.xs }]}>APPologética</Text>
+      <Text style={[text('footnote'), splashStyles.verse, { color: colors.accent }]}>1 Pedro 3,15</Text>
+      <ActivityIndicator size="small" color={colors.accent} style={{ marginTop: space.xxxl }} />
     </View>
   );
 }
 
 const splashStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1a3a5c',
-    paddingHorizontal: 32,
-  },
-  mark: { marginBottom: 24 },
-  title: {
-    fontSize: 30,
-    color: '#ffffff',
-    fontWeight: 'bold',
-    letterSpacing: 0.5,
-    marginBottom: 10,
-  },
-  verse: {
-    fontSize: 13,
-    color: '#c9a84c',
-    fontStyle: 'italic',
-    fontWeight: '600',
-  },
-  spinner: { marginTop: 48 },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  // O nome fica na sans do sistema com tamanho próprio: nenhum papel de título
+  // serve aqui, porque a fonte de display ainda está carregando durante o splash.
+  title: { fontSize: 30, fontWeight: '700', letterSpacing: 0.5 },
+  verse: { fontStyle: 'italic', fontWeight: '600' },
 });
 
 function MainTabs() {

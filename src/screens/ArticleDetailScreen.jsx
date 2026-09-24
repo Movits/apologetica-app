@@ -395,7 +395,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
           {article.tool && (
             <Button
               icon={article.tool.icon || 'open-outline'}
-              label={isEn ? (article.tool.labelEn || article.tool.labelPt) : article.tool.labelPt}
+              label={pick({ label: article.tool.labelPt, labelEn: article.tool.labelEn }, 'label', isEn)}
               onPress={() => navigation.navigate(article.tool.tab || 'Ferramentas', { screen: article.tool.screen })}
               style={styles.toolBtn}
             />
@@ -408,15 +408,15 @@ export default function ArticleDetailScreen({ route, navigation }) {
                 {article.references.map((refId) => {
                   const r = referenceById(refId);
                   if (!r) return null;
-                  // Mesmo padrão do RefDetail: campo a campo em EN, com
-                  // fallback para o PT quando a tradução não existe. O `ref`
-                  // já vem curado no formato do app (translateRef cuida do EN).
-                  const en = referencesEn[r.id] || {};
-                  const title = isEn ? (en.refEn || translateRef(r.ref, isEn)) : r.ref;
-                  const author = isEn ? (en.authorEn || translateAuthor(r.author, isEn)) : r.author;
-                  const year = isEn ? (en.yearEn || translateYear(r.year, isEn)) : r.year;
+                  // Mesmo padrão do RefDetail: mescla a tradução EN campo a
+                  // campo e o `pick` cai no PT quando ela não existe, com os
+                  // tradutores heurísticos (translateRef etc.) como fallback.
+                  const ref = { ...r, ...(referencesEn[r.id] || {}) };
+                  const title = pick(ref, 'ref', isEn, translateRef);
+                  const author = pick(ref, 'author', isEn, translateAuthor);
+                  const year = pick(ref, 'year', isEn, translateYear);
                   const credit = [author, year].filter(Boolean).join(', ');
-                  const subtitle = credit || (isEn ? (en.fullSourceEn || r.fullSource) : r.fullSource);
+                  const subtitle = credit || pick(ref, 'fullSource', isEn);
                   return (
                     <Row
                       key={refId}

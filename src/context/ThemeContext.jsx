@@ -4,7 +4,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
 import { space, radius, icon, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
 
-const LIGHT = {
+// As paletas são exportadas para quem vive fora do provider (o ErrorBoundary
+// em App.js embrulha o ThemeProvider). Dentro do app, use useTheme().colors.
+export const LIGHT = {
   mode: 'light',
   primary: '#1a3a5c',
   primaryText: '#1a3a5c',
@@ -48,7 +50,7 @@ const LIGHT = {
 // Paleta dark mode estilo "noite na catedral": navy profundo com dourado quente.
 // Tudo na mesma família de cor (azul-marinho) - cards, bg e hero coordenados.
 // Texto cor de creme (não branco puro) pra dar sensação de luz de vela.
-const DARK = {
+export const DARK = {
   mode: 'dark',
   primary: '#142844',         // navy rico pro hero/header
   primaryText: '#e6c878',     // dourado claro pros títulos em cards

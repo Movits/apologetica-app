@@ -7,7 +7,7 @@ import { PressScale } from './ui';
 
 // Pílulas de tema (claro/escuro) e idioma no canto superior direito, usadas nas
 // telas de entrada: Onboarding, Login e Cadastro. Cada pílula tem 44 de altura
-// (o alvo vem do tamanho, sem hitSlop), ícone `icon.md` na cor `tint` e rótulo
+// (o alvo vem do tamanho, sem área extra de toque), ícone `icon.md` na cor `tint` e rótulo
 // em `textSubtle`. O tema expõe `aria-pressed` (ligado = escuro).
 export default function AuthTopToggles() {
   const { colors, tokens, text, darkMode, setDarkMode } = useTheme();

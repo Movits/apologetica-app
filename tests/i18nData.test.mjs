@@ -35,6 +35,16 @@ test('pick tolera campo inexistente e item nulo', () => {
   assert.equal(pick(undefined, 'title', false), undefined);
 });
 
+test('pick aplica o fallback ao PT só quando falta a tradução curada', () => {
+  // Imita os translate* de references.js: mexe no valor só quando isEn.
+  const upper = (v, isEn) => (isEn && v ? v.toUpperCase() : v);
+  assert.equal(pick(item, 'title', true, upper), 'Title');
+  assert.equal(pick(item, 'summary', true, upper), 'RESUMO');
+  assert.equal(pick(item, 'summary', false, upper), 'Resumo');
+  assert.equal(pick(item, 'nope', true, upper), undefined);
+  assert.equal(pick(null, 'title', true, upper), undefined);
+});
+
 test('pickAll monta um objeto só com os campos pedidos', () => {
   assert.deepEqual(pickAll(item, ['title', 'summary'], true), { title: 'Title', summary: 'Resumo' });
   assert.deepEqual(pickAll(item, ['title', 'summary'], false), { title: 'Título', summary: 'Resumo' });

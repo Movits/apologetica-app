@@ -47,7 +47,7 @@ export function useAccountPrompt() {
 }
 
 function AccountPromptModal({ visible, opts, onClose }) {
-  const { colors, fs, darkMode } = useTheme();
+  const { colors, darkMode, tokens, text } = useTheme();
   const { exitGuest } = useAuth();
   const { t, isEn } = useLanguage();
   const fade = useRef(new Animated.Value(0)).current;
@@ -71,7 +71,7 @@ function AccountPromptModal({ visible, opts, onClose }) {
     await exitGuest();
   };
 
-  const styles = makeStyles(colors, fs, darkMode);
+  const styles = makeStyles(colors, darkMode, tokens, text);
 
   return (
     <Modal
@@ -101,12 +101,13 @@ function AccountPromptModal({ visible, opts, onClose }) {
           </Text>
 
           <View style={styles.benefits}>
-            <Benefit icon="cloud-done-outline" text={isEn ? 'Synced across devices' : 'Sincronizado entre celulares'} colors={colors} fs={fs} />
-            <Benefit icon="bookmark-outline" text={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} colors={colors} fs={fs} />
+            <Benefit icon="cloud-done-outline" label={isEn ? 'Synced across devices' : 'Sincronizado entre celulares'} />
+            <Benefit icon="bookmark-outline" label={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} />
           </View>
 
           <TouchableOpacity style={styles.btnPrimary} onPress={onCreate} activeOpacity={0.85}>
-            <Ionicons name="person-add-outline" size={18} color="#1a3a5c" style={{ marginRight: 8 }} />
+            {/* Navy da paleta sobre o botão dourado (accent). */}
+            <Ionicons name="person-add-outline" size={tokens.icon.sm} color={colors.primary} style={{ marginRight: tokens.space.xs }} />
             <Text style={styles.btnPrimaryText}>{t('auth.createFree')}</Text>
           </TouchableOpacity>
 
@@ -119,16 +120,17 @@ function AccountPromptModal({ visible, opts, onClose }) {
   );
 }
 
-function Benefit({ icon, text, colors, fs }) {
+function Benefit({ icon, label }) {
+  const { colors, text } = useTheme();
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 3 }}>
       <Ionicons name={icon} size={15} color={colors.accent} />
-      <Text style={{ color: colors.textMuted, fontSize: fs(13), flex: 1 }}>{text}</Text>
+      <Text style={[text('footnote'), { color: colors.textMuted, flex: 1 }]}>{label}</Text>
     </View>
   );
 }
 
-const makeStyles = (c, fs, darkMode) =>
+const makeStyles = (c, darkMode, tokens, text) =>
   StyleSheet.create({
     backdrop: {
       flex: 1,
@@ -148,11 +150,7 @@ const makeStyles = (c, fs, darkMode) =>
       alignItems: 'center',
       borderWidth: darkMode ? 1 : 0,
       borderColor: c.cardBorder,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.25,
-      shadowRadius: 16,
-      elevation: 12,
+      ...tokens.shadow.floating,
     },
     iconCircle: {
       width: 64, height: 64, borderRadius: 32,
@@ -163,17 +161,15 @@ const makeStyles = (c, fs, darkMode) =>
       borderColor: c.accent,
     },
     title: {
-      fontSize: fs(19),
-      fontWeight: 'bold',
+      ...text('title3'),
       color: c.primaryText,
       textAlign: 'center',
       marginBottom: 8,
     },
     message: {
-      fontSize: fs(14),
+      ...text('subhead'),
       color: c.textMuted,
       textAlign: 'center',
-      lineHeight: fs(20),
       marginBottom: 18,
     },
     benefits: {
@@ -194,9 +190,9 @@ const makeStyles = (c, fs, darkMode) =>
       marginBottom: 8,
     },
     btnPrimaryText: {
-      color: '#1a3a5c',
-      fontWeight: 'bold',
-      fontSize: fs(15),
+      ...text('subhead'),
+      fontWeight: '600',
+      color: c.primary,
     },
     btnSecondary: {
       paddingVertical: 12,
@@ -204,8 +200,8 @@ const makeStyles = (c, fs, darkMode) =>
       alignSelf: 'stretch',
     },
     btnSecondaryText: {
+      ...text('subhead'),
       color: c.textSubtle,
-      fontSize: fs(14),
       fontWeight: '600',
     },
   });

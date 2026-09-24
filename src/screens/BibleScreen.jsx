@@ -14,6 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { notify } from '../utils/dialog';
 import { shareVerse } from '../utils/share';
 import { formatVerseRef } from '../utils/verseRef';
+import { pick } from '../utils/i18nData';
 import { speakLong, stopSpeaking, isSpeaking } from '../utils/speakLong';
 import { BIBLE_BOOKS, bookName } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
@@ -866,7 +867,7 @@ export default function BibleScreen({ route, navigation }) {
     const goNext = () => { if (hasNext) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter + 1); setFromDeepLink(false); } };
 
     const title = `${bn(book)} ${chapter}`;
-    const subtitle = `${isEn ? book.groupEn : book.group}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
+    const subtitle = `${pick(book, 'group', isEn)}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
     const back = {
       label: fromDeepLink ? t('common.back') : bn(book),
       a11yLabel: t('common.back'),

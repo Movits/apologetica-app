@@ -4,13 +4,13 @@
 
 import { easterDate, addDays } from './daily';
 
-// `colorKey` é a chave da paleta do tema (ler com colors[season.colorKey]); `color` é o hex legado.
+// `colorKey` é a chave da paleta do tema (ler com colors[season.colorKey]), sem hex solto aqui.
 const SEASONS = {
-  advento: { pt: 'Advento', en: 'Advent', colorKey: 'seasonPurple', color: '#6b4c9a', icon: 'star-outline', notePt: 'Tempo de espera e esperança.', noteEn: 'A time of waiting and hope.' },
-  natal: { pt: 'Natal', en: 'Christmas', colorKey: 'accentText', color: '#c9a84c', icon: 'star', notePt: 'O Verbo se fez carne.', noteEn: 'The Word became flesh.' },
-  quaresma: { pt: 'Quaresma', en: 'Lent', colorKey: 'seasonPurple', color: '#6b4c9a', icon: 'flower-outline', notePt: 'Conversão, oração e penitência.', noteEn: 'Conversion, prayer and penance.' },
-  pascoa: { pt: 'Tempo Pascal', en: 'Easter', colorKey: 'accentText', color: '#c9a84c', icon: 'sunny', notePt: 'Cristo ressuscitou, aleluia.', noteEn: 'Christ is risen, alleluia.' },
-  comum: { pt: 'Tempo Comum', en: 'Ordinary Time', colorKey: 'seasonGreen', color: '#3a7d4b', icon: 'leaf', notePt: 'Caminhar na fé, dia após dia.', noteEn: 'Walking in faith, day by day.' },
+  advento: { pt: 'Advento', en: 'Advent', colorKey: 'seasonPurple', icon: 'star-outline', notePt: 'Tempo de espera e esperança.', noteEn: 'A time of waiting and hope.' },
+  natal: { pt: 'Natal', en: 'Christmas', colorKey: 'accentText', icon: 'star', notePt: 'O Verbo se fez carne.', noteEn: 'The Word became flesh.' },
+  quaresma: { pt: 'Quaresma', en: 'Lent', colorKey: 'seasonPurple', icon: 'flower-outline', notePt: 'Conversão, oração e penitência.', noteEn: 'Conversion, prayer and penance.' },
+  pascoa: { pt: 'Tempo Pascal', en: 'Easter', colorKey: 'accentText', icon: 'sunny', notePt: 'Cristo ressuscitou, aleluia.', noteEn: 'Christ is risen, alleluia.' },
+  comum: { pt: 'Tempo Comum', en: 'Ordinary Time', colorKey: 'seasonGreen', icon: 'leaf', notePt: 'Caminhar na fé, dia após dia.', noteEn: 'Walking in faith, day by day.' },
 };
 
 export function getLiturgicalSeason(now = new Date()) {

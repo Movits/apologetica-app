@@ -4,6 +4,8 @@ import { GestureHandlerRootView, Gesture, GestureDetector } from 'react-native-g
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 // Visualizador de imagem em tela cheia: obra inteira (contain) + zoom no ponto
 // tocado (pinça / duplo-toque / scroll) e arrastar.
@@ -20,6 +22,8 @@ const clamp = (v, a, b) => Math.max(a, Math.min(v, b));
 export default function ImageZoomModal({ visible, source, hdUri, caption, alt, onClose }) {
   const { width: W, height: H } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const { colors, tokens } = useTheme();
+  const { t } = useLanguage();
   const surfaceRef = useRef(null);
   const [hdReady, setHdReady] = useState(false);
   const [hdFailed, setHdFailed] = useState(false);
@@ -229,13 +233,14 @@ export default function ImageZoomModal({ visible, source, hdUri, caption, alt, o
           )}
 
           <Pressable
-            style={[styles.close, { top: insets.top + 8 }]}
+            style={[styles.close, { top: insets.top + tokens.space.xs }]}
             onPress={close}
-            hitSlop={12}
-            accessibilityRole="button"
-            accessibilityLabel="Fechar"
+            role="button"
+            aria-label={t('common.close')}
           >
-            <Ionicons name="close" size={26} color="#fff" />
+            {/* O véu é escuro nos dois temas, então o X vai na cor de texto
+                sobre fundo escuro da paleta. */}
+            <Ionicons name="close" size={tokens.icon.lg} color={colors.onPrimary} />
           </Pressable>
 
           {caption ? (
@@ -252,9 +257,10 @@ export default function ImageZoomModal({ visible, source, hdUri, caption, alt, o
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: 'rgba(0,0,0,0.96)' },
   center: { justifyContent: 'center', alignItems: 'center' },
+  // Alvo de toque de 44 pelo próprio tamanho, sem área extra de toque.
   close: {
     position: 'absolute', right: 12,
-    width: 40, height: 40, borderRadius: 20,
+    width: 44, height: 44, borderRadius: 22,
     backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center',
   },
   captionWrap: { position: 'absolute', left: 16, right: 16, alignItems: 'center' },
