@@ -27,7 +27,9 @@ const parseReadingRef = (ref) => {
   if (!ref) return null;
   const match = ref.match(/^(.+?)\s+(\d+):(\d+)/);
   if (!match) return null;
-  const bookId = EN_BOOK_ID[match[1].trim()];
+  const name = match[1].trim();
+  // Só chaves próprias: um nome vindo da API igual a 'constructor' não pode cair no protótipo.
+  const bookId = Object.hasOwn(EN_BOOK_ID, name) ? EN_BOOK_ID[name] : undefined;
   if (!bookId) return null;
   return { bookId, chapter: parseInt(match[2]), verse: parseInt(match[3]), verseEnd: verseEndFromRef(ref) };
 };
