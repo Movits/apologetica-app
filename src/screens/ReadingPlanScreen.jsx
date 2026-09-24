@@ -8,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { READING_TRACKS, getTrack } from '../data/readingPlan';
 import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
+import { openArticle } from '../navigation/links';
 
 export default function ReadingPlanScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -108,7 +109,7 @@ export default function ReadingPlanScreen({ navigation }) {
               style={[styles.card, done && styles.cardDone]}
               onPress={() => {
                 if (article) {
-                  navigation.navigate('ArticleFromSearch', { articleId: article.id, fromPlanDay: item.day, fromPlanTrack: trackId });
+                  openArticle(navigation, article.id, { fromPlanDay: item.day, fromPlanTrack: trackId });
                 } else {
                   notify(
                     isEn ? 'In preparation' : 'Em preparação',

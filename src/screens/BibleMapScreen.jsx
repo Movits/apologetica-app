@@ -7,6 +7,7 @@ import { JESUS_JOURNEY } from '../data/jesusJourney';
 import MapView from './bibleMap/MapView';
 import { buildMapHtml } from './bibleMap/mapHtml';
 import { verseEndFromRef } from '../utils/verseRange';
+import { openBible } from '../navigation/links';
 
 // Tela "Nos Passos de Jesus": mapa real (Leaflet + CartoDB Voyager).
 // O renderizador do mapa é plataforma-específico (MapView.native = WebView,
@@ -29,12 +30,7 @@ export default function BibleMapScreen({ navigation }) {
   const openInBible = (nav, ref) => {
     if (!nav) return;
     setSelected(null);
-    navigation.navigate('Bíblia', {
-      bookId: nav.bookId,
-      chapter: nav.chapter,
-      highlightVerse: nav.verse,
-      highlightVerseEnd: verseEndFromRef(ref),
-    });
+    openBible(navigation, { bookId: nav.bookId, chapter: nav.chapter, verse: nav.verse, verseEnd: verseEndFromRef(ref) });
   };
 
   // HTML do mapa, com dados injetados.

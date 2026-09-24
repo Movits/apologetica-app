@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/quiz';
+import { openArticle } from '../navigation/links';
 
 const STREAK_KEY = 'quiz:streak';
 const HISTORY_KEY = 'quiz:history'; // { YYYY-MM-DD: { id, correct } }
@@ -204,7 +205,7 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
             {current.relatedArticle && (
               <TouchableOpacity
                 style={styles.relatedBtn}
-                onPress={() => navigation.navigate('ArticleFromSearch', { articleId: current.relatedArticle })}
+                onPress={() => openArticle(navigation, current.relatedArticle)}
               >
                 <Ionicons name="book-outline" size={16} color={colors.accent} />
                 <Text style={styles.relatedText}>{t('quiz.readArticle')}</Text>

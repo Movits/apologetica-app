@@ -12,6 +12,7 @@ import { getLiturgicalSeason } from '../utils/liturgicalSeason';
 import AppIcon from '../components/AppIcon';
 import BrandMark from '../components/BrandMark';
 import ContinueReadingCard from '../components/ContinueReadingCard';
+import { openArticle as openArticleScreen } from '../navigation/links';
 
 export default function HomeScreen() {
   const navigation = useNavigation();
@@ -50,7 +51,7 @@ export default function HomeScreen() {
   }, [navigation]);
 
   const openArticle = (articleId) =>
-    navigation.navigate('ArticleFromSearch', { articleId });
+    openArticleScreen(navigation, articleId);
 
   const openSearch = () => navigation.navigate('Search');
 

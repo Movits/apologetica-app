@@ -4,6 +4,7 @@ import { notify } from '../utils/dialog';
 import * as Clipboard from 'expo-clipboard';
 import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { shareVerse } from '../utils/share';
 import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
 import { getChapter } from '../services/bibleApi';
@@ -52,6 +53,11 @@ const HIGHLIGHT_COLORS = [
 
 export default function BibleScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
+  // A tab bar é absoluta e translúcida (Onda 3), então o fim das listas de
+  // livros e capítulos e o rodapé fixo dos versículos compensam a altura dela
+  // para nada ficar escondido. Funciona aqui porque a tela é filha direta do
+  // Tab. A Onda 6 redesenha a tela.
+  const tabBarHeight = useBottomTabBarHeight();
   const { user } = useAuth();
   const { lang, t, isEn } = useLanguage();
   const bn = (b) => bookName(b, isEn);
@@ -161,7 +167,7 @@ export default function BibleScreen({ route, navigation }) {
     return unsub;
   }, [navigation, view]);
 
-  // Botão de voltar no header (navy), como no resto do app, em vez de um botão
+  // Botão de voltar no header, como no resto do app, em vez de um botão
   // dentro do conteúdo. Title reflete o nível (livro / livro+capítulo).
   useEffect(() => {
     const goBackLevel = () => {
@@ -181,11 +187,11 @@ export default function BibleScreen({ route, navigation }) {
           accessibilityRole="button"
           accessibilityLabel={isEn ? 'Back' : 'Voltar'}
         >
-          <Ionicons name="arrow-back" size={24} color="#fff" />
+          <Ionicons name="arrow-back" size={24} color={colors.tint} />
         </TouchableOpacity>
       ),
     });
-  }, [view, book, chapter, fromDeepLink, isEn, navigation]);
+  }, [view, book, chapter, fromDeepLink, isEn, navigation, colors]);
 
   const chapterData = useMemo(() => {
     if (view !== 'verses' || !book || !chapter) return null;
@@ -692,7 +698,7 @@ export default function BibleScreen({ route, navigation }) {
 
         <ScrollView
           ref={booksScrollRef}
-          contentContainerStyle={styles.content}
+          contentContainerStyle={[styles.content, { paddingBottom: 40 + tabBarHeight }]}
         >
           {Object.entries(grouped).map(([groupName, books]) => (
             <View key={groupName}>
@@ -745,7 +751,7 @@ export default function BibleScreen({ route, navigation }) {
           data={allChapters}
           keyExtractor={(c) => String(c)}
           numColumns={5}
-          contentContainerStyle={styles.chapterGrid}
+          contentContainerStyle={[styles.chapterGrid, { paddingBottom: 12 + tabBarHeight }]}
           renderItem={({ item }) => {
             const isRead = readChapters.has(item);
             return (
@@ -873,7 +879,9 @@ export default function BibleScreen({ route, navigation }) {
           />
         )}
 
-        <View style={styles.navBar}>
+        {/* Rodapé fixo entre a lista e a tab bar: é ele que compensa a altura
+            dela aqui (a lista termina onde ele começa). */}
+        <View style={[styles.navBar, { paddingBottom: 10 + tabBarHeight }]}>
           <TouchableOpacity
             style={[styles.navBtn, !hasPrev && styles.navBtnDisabled]}
             onPress={goPrev}

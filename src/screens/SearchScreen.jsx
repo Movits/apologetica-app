@@ -10,6 +10,7 @@ import { searchBible } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { openBible, openArticle as openArticleScreen } from '../navigation/links';
 import {
   getSearchHistory,
   addSearchHistory,
@@ -140,10 +141,10 @@ export default function SearchScreen({ navigation }) {
   const openSuggestion = useCallback(() => {
     if (!suggestion) return;
     if (suggestion.type === 'article') {
-      navigation.navigate('ArticleFromSearch', { articleId: suggestion.item.id });
+      openArticleScreen(navigation, suggestion.item.id);
     } else if (suggestion.type === 'verse') {
       const v = suggestion.item;
-      navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse });
+      openBible(navigation, { bookId: v.bookId, chapter: v.chapter, verse: v.verse });
     }
   }, [suggestion, navigation]);
 
@@ -161,11 +162,11 @@ export default function SearchScreen({ navigation }) {
   ], [results, isEn]);
 
   const openArticle = useCallback(
-    (id) => navigation.navigate('ArticleFromSearch', { articleId: id }),
+    (id) => openArticleScreen(navigation, id),
     [navigation]
   );
   const openVerse = useCallback(
-    (v) => navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse }),
+    (v) => openBible(navigation, { bookId: v.bookId, chapter: v.chapter, verse: v.verse }),
     [navigation]
   );
   const openReference = useCallback(

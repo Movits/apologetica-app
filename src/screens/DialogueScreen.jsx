@@ -9,6 +9,7 @@ import { articles } from '../data/articles';
 import DialogueAnswerCard from '../components/DialogueAnswerCard';
 import { captureAndShareImage } from '../utils/shareAsImage';
 import { shareDialogue } from '../utils/share';
+import { openArticle } from '../navigation/links';
 
 // Tela mestre: lista de objeções. Ao escolher uma, vira modo "conversa guiada".
 export default function DialogueScreen({ navigation, route }) {
@@ -126,7 +127,7 @@ export default function DialogueScreen({ navigation, route }) {
         {isLast && dialogue.relatedArticle && (
           <TouchableOpacity
             style={styles.readBtn}
-            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: dialogue.relatedArticle })}
+            onPress={() => openArticle(navigation, dialogue.relatedArticle)}
           >
             <Ionicons name="book-outline" size={18} color={colors.accent} />
             <Text style={styles.readText}>{t('quiz.readArticle')}</Text>

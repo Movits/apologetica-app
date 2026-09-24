@@ -13,6 +13,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import NotebookText from '../components/NotebookText';
 import ReferencePickerModal from '../components/ReferencePickerModal';
+import { openBible, openArticle as openArticleScreen } from '../navigation/links';
 
 export default function NotebookPageScreen({ route, navigation }) {
   const { colors, fs } = useTheme();
@@ -113,9 +114,9 @@ export default function NotebookPageScreen({ route, navigation }) {
   };
 
   const openVerse = (bookId, chapter, verse) =>
-    navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
+    openBible(navigation, { bookId, chapter, verse });
   const openArticle = (articleId) =>
-    navigation.navigate('ArticleFromSearch', { articleId });
+    openArticleScreen(navigation, articleId);
   const openRef = (refId) =>
     navigation.navigate('RefDetail', { highlightId: refId });
 

@@ -9,6 +9,7 @@ import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
 import BrandMark from '../components/BrandMark';
+import { openBible } from '../navigation/links';
 
 const COLUMN_MAX = 720;   // largura da coluna central no desktop
 const CROSS_W = 44;       // largura do BrandMark "lg" (marca d'água das laterais)
@@ -40,7 +41,7 @@ export default function TodayScreen() {
   }, [isEn]);
 
   const openVerse = ({ bookId, chapter, verse }) =>
-    navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
+    openBible(navigation, { bookId, chapter, verse });
 
   return (
     <View style={styles.container}>

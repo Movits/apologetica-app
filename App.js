@@ -2,47 +2,35 @@ import 'react-native-gesture-handler';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View, Text, ActivityIndicator, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator, useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+// Telas raiz das abas e as que só um stack registra. As telas secundárias
+// compartilhadas (Today, Rosário, RefDetail, Diálogo...) vivem em
+// src/navigation/sharedScreens.js e entram em cada stack via sharedScreens().
 import HomeScreen from './src/screens/HomeScreen';
 import ArticlesScreen from './src/screens/ArticlesScreen';
 import ReferencesScreen from './src/screens/ReferencesScreen';
-import RefDetailScreen from './src/screens/RefDetailScreen';
-// RefDetailScreen mostra uma unica referencia de forma fluida (sem lista, sem scroll-to).
-// Usado a partir de Search e a partir do ArticleDetail para evitar o pulo da lista.
 import BibleScreen from './src/screens/BibleScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import HighlightsScreen from './src/screens/HighlightsScreen';
-import NotesScreen from './src/screens/NotesScreen';
 import NoteEditorScreen from './src/screens/NoteEditorScreen';
 import SearchScreen from './src/screens/SearchScreen';
-import LiturgyScreen from './src/screens/LiturgyScreen';
 import ArticleDetailScreen from './src/screens/ArticleDetailScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import SignupScreen from './src/screens/auth/SignupScreen';
 import ForgotPasswordScreen from './src/screens/auth/ForgotPasswordScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
-import GlossaryScreen from './src/screens/GlossaryScreen';
 import ReadingPlanScreen from './src/screens/ReadingPlanScreen';
-import ExamConscienceScreen from './src/screens/ExamConscienceScreen';
-import RosaryScreen from './src/screens/RosaryScreen';
-import QuizScreen from './src/screens/QuizScreen';
-import DialogueScreen from './src/screens/DialogueScreen';
-import DebateStrategiesScreen from './src/screens/DebateStrategiesScreen';
-import BibleMapScreen from './src/screens/BibleMapScreen';
-import LegalScreen from './src/screens/LegalScreen';
 import ToolsScreen from './src/screens/ToolsScreen';
 import CategoryArticlesScreen from './src/screens/CategoryArticlesScreen';
-import TodayScreen from './src/screens/TodayScreen';
-import NotebookScreen from './src/screens/NotebookScreen';
-import NotebookPageScreen from './src/screens/NotebookPageScreen';
 
+import { createAppStack, stackScreenOptionsForPlatform, tabHeaderOptions } from './src/navigation/chrome';
+import TabBar from './src/navigation/TabBar';
+import { TAB_LABEL_KEYS } from './src/navigation/tabs';
+import { sharedScreens } from './src/navigation/sharedScreens';
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { LanguageProvider, useLanguage } from './src/context/LanguageContext';
@@ -61,12 +49,14 @@ initSentry();
 // cache (comum no atalho da tela de inicio do iPhone). No nativo e no-op.
 checkForWebUpdate();
 
+// createAppStack() devolve o native-stack no nativo e o stack JS na web (que
+// anima o push); as opções de header/conteúdo vêm de src/navigation/chrome.js.
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
-const ArticlesNav = createNativeStackNavigator();
-const HomeNav = createNativeStackNavigator();
-const SettingsNav = createNativeStackNavigator();
-const ToolsNav = createNativeStackNavigator();
+const Stack = createAppStack();
+const ArticlesNav = createAppStack();
+const HomeNav = createAppStack();
+const SettingsNav = createAppStack();
+const ToolsNav = createAppStack();
 
 // Deep links (apenas nativo). Espelha a arvore: MainTabs -> Inicio (HomeStack).
 // articleId/chapter viram numero (as telas comparam com ===). Ex.:
@@ -91,159 +81,80 @@ const LINKING = Platform.OS === 'web' ? undefined : {
   },
 };
 
-// Stack interno do tab Inicio: contem HomeScreen e as telas secundarias
-// (Favoritos, Glossario, Plano, Rosario, Exame, Highlights, Notes, Search, Liturgia).
-// Como esta DENTRO do Tab navigator, a tab bar continua visivel em todas elas.
+// Os quatro stacks de aba ficam DENTRO do Tab navigator, então a tab bar
+// continua visível em todas as telas secundárias. Cada um registra a própria
+// raiz, as telas que só ele abre e, por sharedScreens(), as telas que existem
+// em mais de uma aba (o tap resolve dentro da aba ativa).
+//
+// A tab bar (src/navigation/TabBar.jsx) é absoluta e translúcida: o conteúdo
+// passa por baixo dela, e cada stack compensa com paddingBottom igual à altura
+// que ela reporta (useBottomTabBarHeight funciona aqui porque estes
+// componentes são telas do Tab.Navigator). As telas que migrarem para
+// LargeTitleScreen zeram esse padding nas próprias options.
+
+// Stack interno do tab Início: HomeScreen, Referências, Busca e a lista por
+// categoria (só a Início chama 'CategoryArticles').
 function HomeStackScreen() {
-  const { colors } = useTheme();
+  const { colors, tokens } = useTheme();
   const { t, isEn } = useLanguage();
+  const tabBarHeight = useBottomTabBarHeight();
   return (
-    <HomeNav.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-      }}
-    >
+    <HomeNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
       <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ headerShown: false }} />
       <HomeNav.Screen name="References" component={ReferencesScreen} options={{ title: t('tab.references') }} />
-      <HomeNav.Screen name="Tools" component={ToolsScreen} options={{ title: t('header.tools') }} />
-      <HomeNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
-      <HomeNav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
-      <HomeNav.Screen name="NotebookPage" component={NotebookPageScreen} options={{ title: t('header.notebook') }} />
+      <HomeNav.Screen name="Search" component={SearchScreen} options={{ title: t('header.search') }} />
       <HomeNav.Screen
         name="CategoryArticles"
         component={CategoryArticlesScreen}
         options={({ route }) => ({ title: isEn ? t(`category.${route.params?.category}`) : route.params?.category })}
       />
-      <HomeNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
-      <HomeNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
-      <HomeNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
-      <HomeNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
-      <HomeNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
-      <HomeNav.Screen name="Highlights" component={HighlightsScreen} options={{ title: t('header.highlights') }} />
-      <HomeNav.Screen name="Notes" component={NotesScreen} options={{ title: t('header.notes') }} />
-      <HomeNav.Screen name="Search" component={SearchScreen} options={{ title: t('header.search') }} />
-      <HomeNav.Screen name="Liturgy" component={LiturgyScreen} options={{ title: t('header.liturgy') }} />
-      <HomeNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
-      <HomeNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
-      <HomeNav.Screen name="Quiz" component={QuizScreen} options={{ title: t('header.quiz') }} />
-      <HomeNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
-      <HomeNav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
-      <HomeNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
-      <HomeNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
+      {sharedScreens(HomeNav, t)}
     </HomeNav.Navigator>
   );
 }
 
-// Stack interno do tab Ferramentas: raiz ToolsScreen + as telas que ele abre.
-// Mantém a tab bar visível e dá header/voltar a cada sub-tela.
+// Stack interno do tab Ferramentas: raiz ToolsScreen + Favoritos e Plano de
+// Leitura (só o ToolsScreen os abre) + as compartilhadas.
 function ToolsStackScreen() {
-  const { colors } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens } = useTheme();
+  const { t } = useLanguage();
+  const tabBarHeight = useBottomTabBarHeight();
   return (
-    <ToolsNav.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-      }}
-    >
+    <ToolsNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
       <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('header.tools') }} />
-      <ToolsNav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
-      <ToolsNav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
-      <ToolsNav.Screen name="NotebookPage" component={NotebookPageScreen} options={{ title: t('header.notebook') }} />
-      <ToolsNav.Screen name="CategoryArticles" component={CategoryArticlesScreen} options={({ route }) => ({ title: isEn ? t(`category.${route.params?.category}`) : route.params?.category })} />
       <ToolsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
-      <ToolsNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
       <ToolsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
-      <ToolsNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
-      <ToolsNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
-      <ToolsNav.Screen name="Highlights" component={HighlightsScreen} options={{ title: t('header.highlights') }} />
-      <ToolsNav.Screen name="Notes" component={NotesScreen} options={{ title: t('header.notes') }} />
-      <ToolsNav.Screen name="Liturgy" component={LiturgyScreen} options={{ title: t('header.liturgy') }} />
-      <ToolsNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
-      <ToolsNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
-      <ToolsNav.Screen name="Quiz" component={QuizScreen} options={{ title: t('header.quiz') }} />
-      <ToolsNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
-      <ToolsNav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
-      <ToolsNav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
+      {sharedScreens(ToolsNav, t)}
     </ToolsNav.Navigator>
   );
 }
 
-// Stack interno do tab Ajustes: permite voltar para Ajustes a partir de sub-telas
-// (Legal, Glossary, etc.) sem saltar para o tab Início.
+// Stack interno do tab Ajustes: permite voltar para Ajustes a partir de
+// sub-telas (Legal etc.) sem saltar para o tab Início.
 function SettingsStackScreen() {
-  const { colors } = useTheme();
+  const { colors, tokens } = useTheme();
   const { t } = useLanguage();
+  const tabBarHeight = useBottomTabBarHeight();
   return (
-    <SettingsNav.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-      }}
-    >
+    <SettingsNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
       <SettingsNav.Screen name="SettingsMain" component={SettingsScreen} options={{ title: t('tab.settings') }} />
-      <SettingsNav.Screen name="Legal" component={LegalScreen} options={({ route }) => ({ title: route.params?.kind === 'terms' ? t('settings.terms') : t('settings.privacy') })} />
-      <SettingsNav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />
-      <SettingsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
-      <SettingsNav.Screen name="Rosary" component={RosaryScreen} options={{ title: t('header.rosary') }} />
-      <SettingsNav.Screen name="ExamConscience" component={ExamConscienceScreen} options={{ title: t('header.exam') }} />
-      <SettingsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
-      {/* Favoritos e Plano de Leitura abrem artigos via 'ArticleFromSearch' (que por sua
-          vez navega para RefDetail). Sem estas rotas, tocar num artigo pela aba Ajustes
-          não era tratado por nenhum navegador. */}
-      <SettingsNav.Screen name="ArticleFromSearch" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
-      <SettingsNav.Screen name="RefDetail" component={RefDetailScreen} options={{ title: t('header.reference') }} />
-      {/* O artigo lista no fim as objeções do Modo Diálogo que o respondem, e o tap
-          precisa resolver dentro da aba ativa. Mesma duplicação de rota já usada
-          para ArticleFromSearch e RefDetail. */}
-      <SettingsNav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
+      {sharedScreens(SettingsNav, t)}
     </SettingsNav.Navigator>
   );
 }
 
-// Stack interno do tab Artigos: lista -> detalhe. Mantém a tab bar visível
-// porque está DENTRO do tab navigator.
+// Stack interno do tab Artigos: lista -> detalhe. 'ArticleDetail' é o mesmo
+// componente de 'ArticleFromSearch' (compartilhada); ele faz push(route.name)
+// para funcionar sob os dois nomes.
 function ArticlesStackScreen() {
-  const { colors } = useTheme();
+  const { colors, tokens } = useTheme();
   const { t } = useLanguage();
+  const tabBarHeight = useBottomTabBarHeight();
   return (
-    <ArticlesNav.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-      }}
-    >
-      <ArticlesNav.Screen
-        name="ArticlesList"
-        component={ArticlesScreen}
-        options={{ title: t('header.articles') }}
-      />
-      <ArticlesNav.Screen
-        name="ArticleDetail"
-        component={ArticleDetailScreen}
-        options={{ title: t('header.article') }}
-      />
-      <ArticlesNav.Screen
-        name="RefDetail"
-        component={RefDetailScreen}
-        options={{ title: t('header.reference') }}
-      />
-      {/* Idem: as objeções respondidas no fim do artigo abrem aqui dentro. */}
-      <ArticlesNav.Screen
-        name="Dialogue"
-        component={DialogueScreen}
-        options={{ title: t('header.dialogue') }}
-      />
-      <ArticlesNav.Screen
-        name="Glossary"
-        component={GlossaryScreen}
-        options={{ title: t('header.glossary') }}
-      />
+    <ArticlesNav.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens, { paddingBottom: tabBarHeight })}>
+      <ArticlesNav.Screen name="ArticlesList" component={ArticlesScreen} options={{ title: t('header.articles') }} />
+      <ArticlesNav.Screen name="ArticleDetail" component={ArticleDetailScreen} options={{ title: t('header.article') }} />
+      {sharedScreens(ArticlesNav, t)}
     </ArticlesNav.Navigator>
   );
 }
@@ -289,63 +200,26 @@ const splashStyles = StyleSheet.create({
   spinner: { marginTop: 48 },
 });
 
-const ICONS = {
-  'Início': { on: 'home', off: 'home-outline' },
-  'Artigos': { on: 'book', off: 'book-outline' },
-  'Bíblia': { on: 'bookmark', off: 'bookmark-outline' },
-  'Ferramentas': { on: 'construct', off: 'construct-outline' },
-  'Ajustes': { on: 'settings', off: 'settings-outline' },
-};
-
 function MainTabs() {
   const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
   const { t } = useLanguage();
 
-  // Mapeia o route.name (PT fixo, usado pra navegação) ao label traduzido.
-  const LABELS = {
-    'Início': t('tab.home'),
-    'Artigos': t('tab.articles'),
-    'Bíblia': t('tab.bible'),
-    'Ferramentas': t('tab.tools'),
-    'Ajustes': t('tab.settings'),
-  };
-
+  // Os nomes de rota são PT fixo (API de navegação); o rótulo visível e os
+  // ícones vêm de src/navigation/tabs.js, desenhados pela TabBar própria.
+  // O header do Tab só aparece na aba Bíblia (tela direta, sem stack); os
+  // stacks desligam o header do Tab e usam o próprio.
   return (
     <Tab.Navigator
+      tabBar={(props) => <TabBar {...props} />}
       backBehavior="history"
       screenOptions={({ route }) => ({
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-        tabBarActiveTintColor: colors.tint,
-        tabBarInactiveTintColor: colors.textSubtle,
-        tabBarStyle: {
-          backgroundColor: colors.card,
-          borderTopColor: colors.divider,
-          paddingTop: 6,
-          paddingBottom: Math.max(insets.bottom, 8),
-          height: 56 + Math.max(insets.bottom, 8),
-        },
-        title: LABELS[route.name] || route.name,
-        tabBarLabelStyle: { fontSize: 11 },
-        tabBarLabel: LABELS[route.name] || route.name,
-        tabBarIcon: ({ focused, color, size }) => {
-          const cfg = ICONS[route.name];
-          return <Ionicons name={focused ? cfg.on : cfg.off} size={size} color={color} />;
-        },
+        ...tabHeaderOptions(colors),
+        title: t(TAB_LABEL_KEYS[route.name]),
+        tabBarLabel: t(TAB_LABEL_KEYS[route.name]),
       })}
     >
-      <Tab.Screen
-        name="Início"
-        component={HomeStackScreen}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Artigos"
-        component={ArticlesStackScreen}
-        options={{ headerShown: false }}
-      />
+      <Tab.Screen name="Início" component={HomeStackScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Artigos" component={ArticlesStackScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Bíblia" component={BibleScreen} />
       <Tab.Screen name="Ferramentas" component={ToolsStackScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Ajustes" component={SettingsStackScreen} options={{ headerShown: false }} />
@@ -354,15 +228,9 @@ function MainTabs() {
 }
 
 function MainStack() {
-  const { colors } = useTheme();
+  const { colors, tokens } = useTheme();
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: 'bold' },
-      }}
-    >
+    <Stack.Navigator screenOptions={stackScreenOptionsForPlatform(colors, tokens)}>
       <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
       {/* NoteEditor permanece em MainStack pq e modal full-screen sem tab bar */}
       <Stack.Screen
@@ -413,13 +281,16 @@ function RootNavigation() {
     setOnboardingSeen(true);
   };
 
+  // Só cobre o que não recebe estilo explícito (o fundo do container e os
+  // padrões de header/tab bar, que hoje src/navigation/chrome.js e TabBar.jsx
+  // sobrescrevem). card/text seguem o par navy + texto sobre navy.
   const navTheme = {
     ...(darkMode ? DarkTheme : DefaultTheme),
     colors: {
       ...(darkMode ? DarkTheme.colors : DefaultTheme.colors),
       background: colors.bg,
       card: colors.primary,
-      text: '#fff',
+      text: colors.onPrimary,
       border: colors.divider,
       primary: colors.tint,
     },
@@ -447,7 +318,10 @@ function RootNavigation() {
           options?.title ? `APPologética · ${options.title}` : 'APPologética',
       }}
     >
-      <StatusBar style="light" />
+      {/* O chrome agora é na cor do fundo (claro no tema claro), então os
+          ícones da barra de status seguem o tema em vez de ficar sempre
+          brancos. A Início ainda tem o hero navy até a Onda 4. */}
+      <StatusBar style={darkMode ? 'light' : 'dark'} />
       {signedInOrGuest ? <MainStack /> : <AuthStack />}
     </NavigationContainer>
   );

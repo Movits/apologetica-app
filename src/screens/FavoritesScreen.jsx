@@ -6,6 +6,7 @@ import { articles } from '../data/articles';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getFavorites } from '../utils/favorites';
+import { openArticle } from '../navigation/links';
 
 export default function FavoritesScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -58,7 +59,7 @@ export default function FavoritesScreen({ navigation }) {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
-            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: item.id })}
+            onPress={() => openArticle(navigation, item.id)}
           >
             <Ionicons name="star" size={18} color={colors.accent} />
             <View style={{ flex: 1 }}>

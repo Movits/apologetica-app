@@ -6,6 +6,7 @@ import { translateSource } from '../data/referenceSources';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import RefSourceBlock from '../components/RefSourceBlock';
+import { openBible } from '../navigation/links';
 
 const VATICAN_BASE_PT = 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html';
 const VATICAN_BASE_EN = 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
@@ -36,13 +37,7 @@ export default function SearchedRefScreen({ route, navigation }) {
     // Algumas referências divergem de capítulo/versículo entre a Bíblia PT
     // (Ave Maria) e EN (Douay-Rheims), ex.: Joel 3,4 (PT) = Joel 2,31 (EN).
     const nav = (isEn && item.bibleNavEn) || item.bibleNav;
-    if (!nav) return;
-    navigation.navigate('Bíblia', {
-      bookId: nav.bookId,
-      chapter: nav.chapter,
-      highlightVerse: nav.verse,
-      highlightVerseEnd: nav.verseEnd,
-    });
+    openBible(navigation, nav);
   };
 
   const openUrl = (url) => {

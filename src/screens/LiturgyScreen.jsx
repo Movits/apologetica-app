@@ -8,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Share } from 'react-native';
 import ReadingText from '../components/ReadingText';
 import { verseEndFromRef } from '../utils/verseRange';
+import { openBible } from '../navigation/links';
 
 const EN_BOOK_ID = {
   'Genesis': 'gn', 'Exodus': 'ex', 'Leviticus': 'lv', 'Numbers': 'nm',
@@ -250,9 +251,7 @@ export default function LiturgyScreen() {
               <TouchableOpacity
                 key={r.label}
                 style={[styles.enChip, !nav && styles.enChipDisabled]}
-                onPress={() => nav && navigation.navigate('Bíblia', {
-                  bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse, highlightVerseEnd: nav.verseEnd,
-                })}
+                onPress={() => openBible(navigation, nav)}
                 disabled={!nav}
               >
                 <View style={{ flex: 1 }}>

@@ -10,6 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
 import StickySectionList from '../components/StickySectionList';
 import RefSourceBlock from '../components/RefSourceBlock';
+import { openBible } from '../navigation/links';
 
 // Translate verbose Portuguese fullSource strings for Bible and Catechism entries.
 const FS_GOSPEL = {
@@ -234,15 +235,7 @@ export default function ReferencesScreen({ route }) {
   }, []);
 
   const handleOpenInBible = useCallback(
-    (nav) => {
-      if (!nav) return;
-      navigation.navigate('Bíblia', {
-        bookId: nav.bookId,
-        chapter: nav.chapter,
-        highlightVerse: nav.verse,
-        highlightVerseEnd: nav.verseEnd,
-      });
-    },
+    (nav) => openBible(navigation, nav),
     [navigation]
   );
 

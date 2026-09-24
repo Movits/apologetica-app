@@ -11,6 +11,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { shareHighlight } from '../utils/share';
+import { openBible } from '../navigation/links';
 
 export default function HighlightsScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -35,11 +36,7 @@ export default function HighlightsScreen({ navigation }) {
   }, [user]);
 
   const open = (h) => {
-    navigation.navigate('Bíblia', {
-      bookId: h.bookId,
-      chapter: h.chapter,
-      highlightVerse: h.verse,
-    });
+    openBible(navigation, { bookId: h.bookId, chapter: h.chapter, verse: h.verse });
   };
 
   const confirmRemove = (h) => {

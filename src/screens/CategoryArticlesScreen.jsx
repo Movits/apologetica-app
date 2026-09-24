@@ -5,6 +5,7 @@ import { ARTICLE_CATEGORIES, sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import SectionBanner from '../components/SectionBanner';
+import { openArticle } from '../navigation/links';
 
 // Tela dedicada a uma categoria de artigos. Recebe route.params.category
 // (nome PT, igual ao campo article.category). Mostra um banner com o tema e
@@ -43,7 +44,7 @@ export default function CategoryArticlesScreen({ route }) {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
-            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: item.id })}
+            onPress={() => openArticle(navigation, item.id)}
           >
             <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
             <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>

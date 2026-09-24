@@ -7,6 +7,7 @@ import * as Haptics from 'expo-haptics';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { verseEndFromRef } from '../utils/verseRange';
+import { openBible } from '../navigation/links';
 
 // Mistérios com referência bíblica (bookId, chapter, verse) pra deep-link.
 const MYSTERIES = {
@@ -151,7 +152,7 @@ export default function RosaryScreen() {
 
   const openInBible = (nav, ref) => {
     if (!nav) return;
-    navigation.navigate('Bíblia', { bookId: nav.bookId, chapter: nav.chapter, highlightVerse: nav.verse, highlightVerseEnd: verseEndFromRef(ref) });
+    openBible(navigation, { bookId: nav.bookId, chapter: nav.chapter, verse: nav.verse, verseEnd: verseEndFromRef(ref) });
   };
 
   const advanceStep = () => {

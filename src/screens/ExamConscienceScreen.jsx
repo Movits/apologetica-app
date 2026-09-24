@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { examConscience } from '../data/examConscience';
+import { openArticle } from '../navigation/links';
 
 export default function ExamConscienceScreen({ navigation }) {
   const { colors, fs } = useTheme();
@@ -32,7 +33,7 @@ export default function ExamConscienceScreen({ navigation }) {
           </Text>
           <TouchableOpacity
             style={styles.learnBtn}
-            onPress={() => navigation?.navigate('ArticleFromSearch', { articleId: 83 })}
+            onPress={() => navigation && openArticle(navigation, 83)}
           >
             <Ionicons name="book-outline" size={16} color={colors.accent} />
             <Text style={styles.learnText}>
