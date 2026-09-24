@@ -1,13 +1,16 @@
 import { useEffect, useState, useCallback } from 'react';
-import { View, Text, ScrollView, StyleSheet, RefreshControl } from 'react-native';
+import { View, Text, ScrollView, RefreshControl } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning, getLiturgicalColorName } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import ReadingText from '../components/ReadingText';
+import Skeleton from '../components/Skeleton';
+import { LiturgicalColorDot } from '../components/LiturgyCard';
 import { BIBLE_BOOKS } from '../data/bible';
 import { verseEndFromRef } from '../utils/verseRange';
+import { liturgyTitle } from '../utils/liturgyTitle';
 import { openBible } from '../navigation/links';
 import { shareText } from '../utils/share';
 import { todayKey } from '../utils/daily';
@@ -56,20 +59,15 @@ function formatTime(ts, isEn) {
 function LoadingPlaceholder({ label }) {
   const { colors, tokens, text } = useTheme();
   const { space, radius } = tokens;
-  const bar = (width, key) => (
-    <View
-      key={key}
-      style={{ height: text('subhead').lineHeight, width, borderRadius: radius.sm, backgroundColor: colors.separator }}
-    />
-  );
+  const line = text('subhead').lineHeight;
   return (
     <View aria-busy aria-label={label} style={{ padding: space.md, gap: space.md }}>
       {[0, 1, 2].map((i) => (
         <View key={i} style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.md, gap: space.sm }}>
-          {bar('40%', 'a')}
-          {bar('100%', 'b')}
-          {bar('90%', 'c')}
-          {bar('65%', 'd')}
+          <Skeleton width="40%" height={line} radius="sm" />
+          <Skeleton width="100%" height={line} radius="sm" />
+          <Skeleton width="90%" height={line} radius="sm" />
+          <Skeleton width="65%" height={line} radius="sm" />
         </View>
       ))}
     </View>
@@ -124,7 +122,7 @@ function ReadingGroup({ title, reading, onShare, isPsalm }) {
 
 export default function LiturgyScreen() {
   const { colors, tokens, text } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { t, lang, isEn } = useLanguage();
   const navigation = useNavigation();
   const { space, radius, icon } = tokens;
   const [liturgy, setLiturgy] = useState(null);
@@ -183,36 +181,8 @@ export default function LiturgyScreen() {
     shareText(msg);
   };
 
-  const L = isEn ? {
-    entrance: 'Entrance Antiphon',
-    collect: 'Collect',
-    first: 'First Reading',
-    psalm: 'Responsorial Psalm',
-    second: 'Second Reading',
-    gospel: 'Gospel',
-    offer: 'Prayer over the Offerings',
-    communionAnt: 'Communion Antiphon',
-    afterCommunion: 'Prayer After Communion',
-    color: 'Liturgical color',
-    stale: 'Showing saved data. No connection?',
-    footer: 'Liturgy provided by CNBB (in Portuguese). Last update',
-  } : {
-    entrance: 'Antífona de entrada',
-    collect: 'Oração da coleta',
-    first: 'Primeira Leitura',
-    psalm: 'Salmo Responsorial',
-    second: 'Segunda Leitura',
-    gospel: 'Evangelho',
-    offer: 'Oração sobre as oferendas',
-    communionAnt: 'Antífona de comunhão',
-    afterCommunion: 'Oração após a comunhão',
-    color: 'Cor litúrgica',
-    stale: 'Mostrando dados salvos. Sem conexão?',
-    footer: 'Liturgia fornecida pela CNBB. Última atualização',
-  };
-
   if (loading) {
-    return <LoadingPlaceholder label={isEn ? 'Loading liturgy' : 'Carregando liturgia'} />;
+    return <LoadingPlaceholder label={t('liturgy.loading')} />;
   }
 
   if (error && !liturgy) {
@@ -220,14 +190,8 @@ export default function LiturgyScreen() {
       <View style={{ flex: 1, justifyContent: 'center' }}>
         <EmptyState
           icon="cloud-offline-outline"
-          title={isOffline
-            ? (isEn ? 'Liturgy needs internet' : 'A liturgia precisa de internet')
-            : t('liturgy.errorTitle')}
-          message={isOffline
-            ? (isEn
-              ? 'The daily readings come from the CNBB online and are not yet saved on this device. Connect and try again.'
-              : 'As leituras do dia vêm da CNBB online e ainda não estão guardadas neste aparelho. Conecte e tente de novo.')
-            : (error?.message || (isEn ? 'Error loading liturgy' : 'Erro ao carregar a liturgia'))}
+          title={isOffline ? t('liturgy.offlineTitle') : t('liturgy.errorTitle')}
+          message={isOffline ? t('liturgy.offlineMessage') : (error?.message || t('liturgy.loadError'))}
           action={{ label: t('common.tryAgain'), onPress: loadWithSpinner }}
         />
       </View>
@@ -238,8 +202,7 @@ export default function LiturgyScreen() {
 
   const cor = liturgy.cor;
   const corHex = getLiturgicalColorHex(cor);
-  const langKey = isEn ? 'en' : 'pt';
-  const colorMeaning = cor ? getLiturgicalColorMeaning(cor, langKey) : '';
+  const colorMeaning = cor ? getLiturgicalColorMeaning(cor, lang) : '';
 
   const primeira = first(liturgy.leituras?.primeiraLeitura);
   const salmo = first(liturgy.leituras?.salmo);
@@ -248,16 +211,14 @@ export default function LiturgyScreen() {
 
   // Em inglês o título vem do dia da semana mais a semana e o tempo da USCCB,
   // quando a lista em inglês chegou; o texto da CNBB continua em português.
-  const title = (() => {
-    if (!isEn) return liturgy.liturgia;
-    const dayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-    const weekMatch = liturgy.liturgia?.match(/(\d+)[aª°]?\s*semana/i);
-    const weekNum = weekMatch ? weekMatch[1] : null;
-    const season = enReadings?.season;
-    if (season && weekNum) return `${dayName}, Week ${weekNum} of ${season}`;
-    if (season) return `${dayName}, ${season}`;
-    return dayName;
-  })();
+  const title = liturgyTitle(liturgy, isEn, enReadings?.season);
+
+  // Rótulos das leituras: o mesmo texto vai no título do card e no início do
+  // texto compartilhado.
+  const firstLabel = t('liturgy.firstReading');
+  const psalmLabel = t('liturgy.psalm');
+  const secondLabel = t('liturgy.secondReading');
+  const gospelLabel = t('liturgy.gospel');
 
   const enList = isEn && enReadings
     ? [
@@ -279,18 +240,9 @@ export default function LiturgyScreen() {
         <Text role="heading" style={[text('title'), { color: colors.text }]}>{title}</Text>
         {cor ? (
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xs, marginTop: space.xxs }}>
-            <View
-              style={{
-                width: space.md,
-                height: space.md,
-                borderRadius: radius.full,
-                backgroundColor: corHex,
-                borderWidth: StyleSheet.hairlineWidth,
-                borderColor: colors.separator,
-              }}
-            />
+            <LiturgicalColorDot hex={corHex} size={space.md} />
             <Text style={[text('subhead'), { color: colors.text }]}>
-              {L.color}: {getLiturgicalColorName(cor, langKey)}
+              {t('liturgy.color')}: {getLiturgicalColorName(cor, lang)}
             </Text>
           </View>
         ) : null}
@@ -300,7 +252,7 @@ export default function LiturgyScreen() {
         {liturgy.source === 'stale' ? (
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xs, marginTop: space.xxs }}>
             <Ionicons name="warning-outline" size={icon.sm} color={colors.accentText} />
-            <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]}>{L.stale}</Text>
+            <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]}>{t('liturgy.stale')}</Text>
           </View>
         ) : null}
       </View>
@@ -330,31 +282,31 @@ export default function LiturgyScreen() {
       ) : null}
 
       {liturgy.antifonas?.entrada ? (
-        <ReadingGroup title={L.entrance} reading={{ texto: liturgy.antifonas.entrada }} />
+        <ReadingGroup title={t('liturgy.entrance')} reading={{ texto: liturgy.antifonas.entrada }} />
       ) : null}
       {liturgy.oracoes?.coleta ? (
-        <ReadingGroup title={L.collect} reading={{ texto: liturgy.oracoes.coleta }} />
+        <ReadingGroup title={t('liturgy.collect')} reading={{ texto: liturgy.oracoes.coleta }} />
       ) : null}
 
-      <ReadingGroup title={L.first} reading={primeira} onShare={() => shareReading(L.first, primeira)} />
-      <ReadingGroup title={L.psalm} reading={salmo} onShare={() => shareReading(L.psalm, salmo)} isPsalm />
+      <ReadingGroup title={firstLabel} reading={primeira} onShare={() => shareReading(firstLabel, primeira)} />
+      <ReadingGroup title={psalmLabel} reading={salmo} onShare={() => shareReading(psalmLabel, salmo)} isPsalm />
       {segunda ? (
-        <ReadingGroup title={L.second} reading={segunda} onShare={() => shareReading(L.second, segunda)} />
+        <ReadingGroup title={secondLabel} reading={segunda} onShare={() => shareReading(secondLabel, segunda)} />
       ) : null}
-      <ReadingGroup title={L.gospel} reading={evangelho} onShare={() => shareReading(L.gospel, evangelho)} />
+      <ReadingGroup title={gospelLabel} reading={evangelho} onShare={() => shareReading(gospelLabel, evangelho)} />
 
       {liturgy.oracoes?.oferendas ? (
-        <ReadingGroup title={L.offer} reading={{ texto: liturgy.oracoes.oferendas }} />
+        <ReadingGroup title={t('liturgy.offerings')} reading={{ texto: liturgy.oracoes.oferendas }} />
       ) : null}
       {liturgy.antifonas?.comunhao ? (
-        <ReadingGroup title={L.communionAnt} reading={{ texto: liturgy.antifonas.comunhao }} />
+        <ReadingGroup title={t('liturgy.communionAntiphon')} reading={{ texto: liturgy.antifonas.comunhao }} />
       ) : null}
       {liturgy.oracoes?.comunhao ? (
-        <ReadingGroup title={L.afterCommunion} reading={{ texto: liturgy.oracoes.comunhao }} />
+        <ReadingGroup title={t('liturgy.afterCommunion')} reading={{ texto: liturgy.oracoes.comunhao }} />
       ) : null}
 
       <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.lg }]}>
-        {L.footer}: {formatTime(liturgy.fetchedAt, isEn)}.
+        {t('liturgy.footer')}: {formatTime(liturgy.fetchedAt, isEn)}.
       </Text>
     </ScrollView>
   );

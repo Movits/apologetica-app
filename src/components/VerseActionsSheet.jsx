@@ -7,7 +7,9 @@ import { Sheet, Group, Row, PressScale, Button } from './ui';
 // Folha de ações de um versículo (Onda 6): abre por toque simples ou longo na
 // tela da Bíblia. Linha com as cinco cores de marcação, depois Anotar, Copiar
 // e Compartilhar num Group, mais "Abrir nota" quando o versículo já tem nota
-// e "Remover marcação" quando já está marcado.
+// e "Remover marcação" quando já está marcado. `onDismissed` é o da Sheet
+// (fim da animação de saída, Modal desmontado): a tela usa para abrir o
+// convite de conta só depois de a folha sair de cena.
 //
 // As cores são DADOS: o valor vai para o Firestore como `color` da marcação
 // (src/services/userData.js) e é lido de volta pela tela de Marcações. Por isso
@@ -36,6 +38,7 @@ export default function VerseActionsSheet({
   onCopy,
   onShare,
   onClose,
+  onDismissed,
 }) {
   const { colors, tokens } = useTheme();
   const { t, isEn } = useLanguage();
@@ -49,7 +52,7 @@ export default function VerseActionsSheet({
   const dot = TARGET - space.xxs * 2;
 
   return (
-    <Sheet visible={Boolean(verse)} onClose={onClose} title={shown.title}>
+    <Sheet visible={Boolean(verse)} onClose={onClose} onDismissed={onDismissed} title={shown.title}>
       <View style={{ flexDirection: 'row', gap: space.sm, marginBottom: space.md }}>
         {HIGHLIGHT_COLORS.map((c) => {
           const active = shown.currentColor === c.value;

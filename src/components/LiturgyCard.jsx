@@ -3,17 +3,28 @@ import { StyleSheet, Text, View } from 'react-native';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning, getLiturgicalColorName } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { liturgyTitle } from '../utils/liturgyTitle';
 import { Row } from './ui';
 import Skeleton from './Skeleton';
 
-// Nome do dia litúrgico no idioma da interface. A API só fala PT ("Quarta-feira
-// da 25ª semana do Tempo Comum"); em EN mostra o dia da semana e o número da
-// semana quando existe.
-function liturgyTitle(liturgy, isEn) {
-  if (!isEn) return liturgy?.liturgia;
-  const day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-  const wm = liturgy?.liturgia?.match(/(\d+)[aª°]?\s*semana/i);
-  return wm ? `${day}, week ${wm[1]}` : day;
+// Ponto na cor litúrgica, com a hairline em `separator` para o branco não
+// sumir no fundo claro. Decorativo (o nome da cor vem escrito ao lado): o
+// leitor de tela pula. `size` é um token de espaço (xs no card, md na tela).
+export function LiturgicalColorDot({ hex, size }) {
+  const { colors, tokens } = useTheme();
+  return (
+    <View
+      aria-hidden
+      style={{
+        width: size,
+        height: size,
+        borderRadius: tokens.radius.full,
+        backgroundColor: hex,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: colors.separator,
+      }}
+    />
+  );
 }
 
 // Liturgia de hoje como uma linha de lista (para dentro do Group do Conteúdo
@@ -23,7 +34,7 @@ function liturgyTitle(liturgy, isEn) {
 // mensagem no lugar do subtítulo. Precisa de internet (liturgyApi tem cache).
 export default function LiturgyCard({ onOpen }) {
   const { colors, tokens, text } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { t, lang, isEn } = useLanguage();
   const { space } = tokens;
   const [liturgy, setLiturgy] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -73,7 +84,7 @@ export default function LiturgyCard({ onOpen }) {
     );
   }
 
-  const lang = isEn ? 'en' : 'pt';
+  const title = liturgyTitle(liturgy, isEn);
   const colorHex = liturgy.cor ? getLiturgicalColorHex(liturgy.cor) : null;
   const gospel = Array.isArray(liturgy.leituras?.evangelho) ? liturgy.leituras.evangelho[0] : liturgy.leituras?.evangelho;
   const meta = [liturgy.cor ? getLiturgicalColorName(liturgy.cor, lang) : null, gospel?.referencia].filter(Boolean).join(' · ');
@@ -82,27 +93,15 @@ export default function LiturgyCard({ onOpen }) {
   return (
     <Row
       icon="calendar-outline"
-      title={liturgyTitle(liturgy, isEn)}
+      title={title}
       titleLines={2}
       trailing="chevron"
       onPress={onOpen}
-      accessibilityLabel={[label, liturgyTitle(liturgy, isEn), meta].filter(Boolean).join(', ')}
+      accessibilityLabel={[label, title, meta].filter(Boolean).join(', ')}
     >
       {meta ? (
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs, marginTop: space.xxs }}>
-          {colorHex ? (
-            <View
-              aria-hidden
-              style={{
-                width: space.xs,
-                height: space.xs,
-                borderRadius: tokens.radius.full,
-                backgroundColor: colorHex,
-                borderWidth: StyleSheet.hairlineWidth,
-                borderColor: colors.separator,
-              }}
-            />
-          ) : null}
+          {colorHex ? <LiturgicalColorDot hex={colorHex} size={space.xs} /> : null}
           <Text style={[text('subhead'), { color: colors.textSubtle, flexShrink: 1 }]} numberOfLines={1}>{meta}</Text>
         </View>
       ) : null}

@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES } from '../data/dialogues';
 import { pick } from '../utils/i18nData';
@@ -7,11 +8,12 @@ import { Group, Row, SectionTitle } from './ui';
 // aberto, como lista agrupada (SectionTitle + Group + Row). A lista é derivada
 // do campo relatedArticle dos próprios diálogos, então não existe dado novo a
 // manter em sincronia: criar um diálogo apontando para um artigo já o faz
-// aparecer aqui. O subtítulo diz quantos passos o roteiro tem.
-export default function RelatedDialogues({ currentId, onOpen }) {
+// aparecer aqui. O subtítulo diz quantos passos o roteiro tem. memo: o artigo
+// re-renderiza ao narrar ou guardar, e a lista aqui só depende do id.
+function RelatedDialogues({ currentId, onOpen }) {
   const { t, isEn } = useLanguage();
 
-  const related = DIALOGUES.filter((d) => d.relatedArticle === currentId);
+  const related = useMemo(() => DIALOGUES.filter((d) => d.relatedArticle === currentId), [currentId]);
   if (related.length === 0) return null;
 
   return (
@@ -33,3 +35,5 @@ export default function RelatedDialogues({ currentId, onOpen }) {
     </>
   );
 }
+
+export default memo(RelatedDialogues);

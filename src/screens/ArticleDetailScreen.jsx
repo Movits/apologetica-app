@@ -1,32 +1,32 @@
 import { useEffect, useLayoutEffect, useMemo, useState, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, Image, Platform, useWindowDimensions } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useSharedValue } from 'react-native-reanimated';
 import { useFocusEffect } from '@react-navigation/native';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { articles } from '../data/articles';
-import { referenceById, translateRef, translateAuthor, translateYear } from '../data/references';
-import { referencesEn } from '../data/references-en';
+import { referenceById, withEn, translateRef, translateAuthor, translateYear } from '../data/references';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { shareArticle } from '../utils/share';
 import { pick, categoryLabel } from '../utils/i18nData';
 import { speakLong, stopSpeaking, isSpeaking } from '../utils/speakLong';
-import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
+import { resolveVoice, getSavedRate, ttsLocale } from '../utils/ttsVoice';
+import { stripMarkdownForSpeech } from '../utils/tts';
+import { scrollFraction, stepped } from '../utils/scrollProgress';
 import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
 import { markPlanDay, markAsRead } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
-import { translucentHeaderOptions, fullBleedContentOptions } from '../navigation/chrome';
-import { Button, Group, Row, SectionTitle, PressScale, useTabBarHeightSafe } from '../components/ui';
-import BrandMark from '../components/BrandMark';
+import { translucentHeaderOptions, fullBleedContentOptions, leftTitleHeaderOptions } from '../navigation/chrome';
+import { Button, Group, Row, SectionTitle, useTabBarHeightSafe } from '../components/ui';
+import HeaderButton from '../components/HeaderButton';
 import ImageZoomModal from '../components/ImageZoomModal';
+import ReadingColumn, { columnStyle, columnContentStyle } from '../components/ReadingColumn';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
 import RelatedDialogues from '../components/RelatedDialogues';
 import MarkdownText from '../components/MarkdownText';
-
-// Alvo de toque das ações do header (HIG), a única medida solta da tela.
-const ACTION_SIZE = 44;
 
 // Progresso de leitura persistido (lastRead.js): grava no máximo a cada 1 s
 // ou quando avança 5 pontos percentuais, e sempre ao sair da tela.
@@ -34,68 +34,23 @@ const PROGRESS_WRITE_MS = 1000;
 const PROGRESS_WRITE_STEP = 0.05;
 // Fração do artigo a partir da qual ele conta como lido.
 const READ_THRESHOLD = 0.9;
-// Variação mínima da fração para virar estado (a barra não percebe menos que
-// meio por cento, e o scroll deixa de re-renderizar a tela a cada evento).
+// Variação mínima da fração para chegar à barra (ela não percebe menos que
+// meio por cento).
 const PROGRESS_STEP = 0.005;
 // Conteúdo até esta folga mais alto que a viewport ainda "cabe na tela": não
 // há o que rolar, então o artigo já está inteiro à vista e conta como lido.
 const FITS_SLACK = 4;
 
-// Coluna de leitura no desktop (web): largura máxima do texto e, a partir de
-// que sobra lateral (gutter) as cruzes decorativas aparecem. O BrandMark "lg"
-// tem 44 de largura, e a cruz fica centrada no gutter.
-const READING_COLUMN = 720;
-const CROSS_MIN_GUTTER = 150;
-const CROSS_WIDTH = 44;
-
-// Só na web (stack JS, header do elements): com o título alinhado à esquerda o
-// Header calcula o maxWidth do título contando UM botão de 72 pt à direita
-// (node_modules/@react-navigation/elements/lib/module/Header/Header.js:197);
-// com três ações de 44 ele invadiria a direita. Aqui o título encolhe
-// (flexShrink) e o contêiner da direita fica com a largura do conteúdo. No
-// nativo o header é do sistema e cuida disso sozinho; as chaves são ignoradas.
-const WEB_HEADER_LAYOUT = Platform.OS === 'web'
-  ? {
-      headerTitleContainerStyle: { flexGrow: 1, flexShrink: 1, flexBasis: 0, maxWidth: '100%' },
-      headerRightContainerStyle: { flexGrow: 0, flexBasis: 'auto' },
-    }
-  : null;
-
-// Limpa marcadores de markdown que poluem a narração.
-const stripMarkdownForTts = (s) =>
-  String(s || '')
-    .replace(/\[\[([^\]]+)\]\]/g, '$1')        // [[termo]] → termo
-    .replace(/\*\*([^*]+)\*\*/g, '$1')         // **bold** → bold
-    .replace(/__([^_]+)__/g, '$1')             // __italic__ → italic
-    .replace(/\*([^*]+)\*/g, '$1')             // *italic* → italic
-    .replace(/_([^_]+)_/g, '$1')               // _italic_ → italic
-    .replace(/`([^`]+)`/g, '$1')               // `code` → code
-    .replace(/^#{1,6}\s*/gm, '')               // # headers
-    .replace(/[\u200B-\u200D\uFEFF]/g, '');    // zero-width chars
-
 // As três ações do header: ouvir/parar, compartilhar, guardar/remover. Cada
-// uma é um PressScale de 44x44 com o ícone em `tint`; o estado (narrando,
+// uma é um HeaderButton (44x44, ícone em `tint`); o estado (narrando,
 // guardado) aparece no ícone preenchido e no rótulo de acessibilidade.
 function HeaderActions({ speaking, fav, labels, onListen, onShare, onFav }) {
-  const { colors, tokens } = useTheme();
-  const btn = {
-    width: ACTION_SIZE,
-    height: ACTION_SIZE,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: tokens.radius.md,
-  };
+  const { tokens } = useTheme();
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', paddingRight: tokens.space.xxs }}>
-      <PressScale role="button" aria-label={speaking ? labels.stop : labels.listen} onPress={onListen} style={btn}>
-        <Ionicons name={speaking ? 'stop-circle' : 'volume-high-outline'} size={tokens.icon.md} color={colors.tint} />
-      </PressScale>
-      <PressScale role="button" aria-label={labels.share} onPress={onShare} style={btn}>
-        <Ionicons name="share-outline" size={tokens.icon.md} color={colors.tint} />
-      </PressScale>
-      <PressScale role="button" aria-label={fav ? labels.unsave : labels.save} onPress={onFav} style={btn}>
-        <Ionicons name={fav ? 'bookmark' : 'bookmark-outline'} size={tokens.icon.md} color={colors.tint} />
-      </PressScale>
+      <HeaderButton icon={speaking ? 'stop-circle' : 'volume-high-outline'} label={speaking ? labels.stop : labels.listen} onPress={onListen} />
+      <HeaderButton icon="share-outline" label={labels.share} onPress={onShare} />
+      <HeaderButton icon={fav ? 'bookmark' : 'bookmark-outline'} label={fav ? labels.unsave : labels.save} onPress={onFav} />
     </View>
   );
 }
@@ -103,16 +58,9 @@ function HeaderActions({ speaking, fav, labels, onListen, onShare, onFav }) {
 export default function ArticleDetailScreen({ route, navigation }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const { width: winWidth } = useWindowDimensions();
   const headerHeight = useHeaderHeight();
   const tabBarHeight = useTabBarHeightSafe();
   const article = articles.find((a) => a.id === route.params?.articleId);
-
-  // Cruzes decorativas nos gutters da coluna central (só desktop), igual ao
-  // "Dia de hoje": BrandMark "lg" esmaecido, escondido do leitor de tela.
-  const gutter = (winWidth - READING_COLUMN) / 2;
-  const showSideCrosses = Platform.OS === 'web' && gutter >= CROSS_MIN_GUTTER;
-  const crossLeft = Math.max(0, gutter / 2 - CROSS_WIDTH / 2);
 
   // Herói: mede a largura e dá altura explícita (sem corte em web/nativo).
   // As proporções são da imagem, não medidas de layout.
@@ -126,13 +74,16 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const displayBody = pick(article, 'body', isEn);
   const showTranslationNotice = isEn && !article?.bodyEn && !!article?.body;
 
-  const [progress, setProgress] = useState(0);
+  // Fração lida que a barra do topo desenha. É um shared value: o onScroll
+  // escreve nele sem re-renderizar a tela (nada aqui depende dela em estado;
+  // o "lido" e o lastRead vivem em progressRef).
+  const progressSv = useSharedValue(0);
   const [fav, setFav] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const scrollRef = useRef(null);
   const scrollYRef = useRef(0);
   const savedScrollRef = useRef(0);
-  // Espelho de `progress`, para só chamar setProgress quando andou de verdade.
+  // Espelho do que a barra mostra, para só escrever quando andou de verdade.
   const shownProgressRef = useRef(0);
   // Altura da viewport e do conteúdo do ScrollView, para saber se o artigo
   // cabe inteiro na tela (aí nunca haveria scroll para chegar aos 90%).
@@ -181,11 +132,11 @@ export default function ArticleDetailScreen({ route, navigation }) {
   }, [article, persistProgress]);
 
   const showProgress = useCallback((p) => {
-    const step = Math.abs(p - shownProgressRef.current);
-    if (step < PROGRESS_STEP && !(step > 0 && (p === 0 || p === 1))) return;
-    shownProgressRef.current = p;
-    setProgress(p);
-  }, []);
+    const next = stepped(shownProgressRef.current, p, PROGRESS_STEP);
+    if (next === shownProgressRef.current) return;
+    shownProgressRef.current = next;
+    progressSv.value = next;
+  }, [progressSv]);
 
   // Artigo que cabe inteiro na viewport: não há scroll, então o progresso vai
   // direto a 1 (grava o "continuar lendo" e o selo de lido). Chamado pelo
@@ -231,13 +182,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
     const textLang = useEnText ? 'en' : 'pt';
     const [voice, rate] = await Promise.all([resolveVoice(textLang), getSavedRate()]);
     const rawText = `${pick(article, 'title', useEnText)}. ${pick(article, 'body', useEnText)}`;
-    const speechText = stripMarkdownForTts(rawText);
-    const defaultLang = textLang === 'en' ? 'en-US' : 'pt-BR';
+    const speechText = stripMarkdownForSpeech(rawText);
 
     // speakLong fatia o texto (limite do Android) e chama os callbacks finais
     // uma vez só, para a narração inteira.
     speakLong(speechText, {
-      language: voice?.language || defaultLang,
+      language: voice?.language || ttsLocale(textLang),
       voice: voice?.identifier,
       rate,
       pitch: 1.0,
@@ -279,8 +229,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
     navigation.setOptions({
       ...translucentHeaderOptions(),
       ...fullBleedContentOptions(colors),
-      ...WEB_HEADER_LAYOUT,
-      headerTitleAlign: 'left',
+      ...leftTitleHeaderOptions(),
       headerTitle: displayTitle,
       headerRight: () => (
         <HeaderActions
@@ -333,12 +282,9 @@ export default function ArticleDetailScreen({ route, navigation }) {
   // Barra de progresso da leitura, posição para restaurar ao voltar e o
   // máximo alcançado para persistir.
   const handleScroll = (e) => {
-    const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
-    const fits = contentSize.height <= layoutMeasurement.height + FITS_SLACK;
-    const max = Math.max(1, contentSize.height - layoutMeasurement.height);
-    const p = fits ? 1 : Math.max(0, Math.min(1, contentOffset.y / max));
+    const p = scrollFraction(e.nativeEvent, FITS_SLACK);
     showProgress(p);
-    scrollYRef.current = contentOffset.y;
+    scrollYRef.current = e.nativeEvent.contentOffset.y;
     const s = progressRef.current;
     if (p > s.max) {
       s.max = p;
@@ -346,14 +292,32 @@ export default function ArticleDetailScreen({ route, navigation }) {
     }
   };
 
-  const openDialogue = (dialogueId) => {
+  // Estáveis para as seções relacionadas (memo) não re-renderizarem à toa.
+  const openDialogue = useCallback((dialogueId) => {
     navigation.navigate('Dialogue', { dialogueId });
-  };
+  }, [navigation]);
 
-  const openOtherArticle = (id) => {
+  const openOtherArticle = useCallback((id) => {
     // push (não replace) pra preservar o histórico: voltar volta pro artigo anterior.
     navigation.push(route.name, { articleId: id });
-  };
+  }, [navigation, route.name]);
+
+  // Fontes citadas, já com a tradução EN mesclada campo a campo (withEn) e o
+  // `pick` caindo no PT quando ela não existe, com os tradutores heurísticos
+  // (translateRef etc.) como fallback. Mesmo padrão do RefDetail.
+  const sources = useMemo(() => (article?.references || []).flatMap((refId) => {
+    const ref = withEn(referenceById(refId));
+    if (!ref) return [];
+    const author = pick(ref, 'author', isEn, translateAuthor);
+    const year = pick(ref, 'year', isEn, translateYear);
+    const credit = [author, year].filter(Boolean).join(', ');
+    // Obra e autoria juntas: "Suma Teológica, I, q. 2 · Tomás de Aquino, 1274".
+    return [{
+      id: refId,
+      title: pick(ref, 'ref', isEn, translateRef),
+      subtitle: [pick(ref, 'fullSource', isEn), credit].filter(Boolean).join(' · '),
+    }];
+  }), [article, isEn]);
 
   const styles = useMemo(() => makeStyles(colors, tokens, text), [colors, tokens, text]);
 
@@ -368,17 +332,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const imageCaption = pick(article, 'imageCredit', isEn) || pick(article, 'imageAlt', isEn);
 
   return (
-    <View style={styles.container}>
-      {showSideCrosses && (
-        <>
-          <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
-            <BrandMark size="lg" decorative style={styles.crossFade} />
-          </View>
-          <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
-            <BrandMark size="lg" decorative style={styles.crossFade} />
-          </View>
-        </>
-      )}
+    <ReadingColumn>
       <ScrollView
         ref={scrollRef}
         contentContainerStyle={[
@@ -434,35 +388,21 @@ export default function ArticleDetailScreen({ route, navigation }) {
             />
           )}
 
-          {article.references?.length > 0 && (
+          {sources.length > 0 && (
             <>
               <SectionTitle title={t('articles.sources')} style={styles.sectionTitle} />
               <Group>
-                {article.references.map((refId) => {
-                  const r = referenceById(refId);
-                  if (!r) return null;
-                  // Mesmo padrão do RefDetail: mescla a tradução EN campo a
-                  // campo e o `pick` cai no PT quando ela não existe, com os
-                  // tradutores heurísticos (translateRef etc.) como fallback.
-                  const ref = { ...r, ...(referencesEn[r.id] || {}) };
-                  const title = pick(ref, 'ref', isEn, translateRef);
-                  const author = pick(ref, 'author', isEn, translateAuthor);
-                  const year = pick(ref, 'year', isEn, translateYear);
-                  const credit = [author, year].filter(Boolean).join(', ');
-                  // Obra e autoria juntas: "Suma Teológica, I, q. 2 · Tomás de Aquino, 1274".
-                  const subtitle = [pick(ref, 'fullSource', isEn), credit].filter(Boolean).join(' · ');
-                  return (
-                    <Row
-                      key={refId}
-                      title={title}
-                      titleLines={2}
-                      subtitle={subtitle}
-                      subtitleLines={2}
-                      trailing="chevron"
-                      onPress={() => openReference(refId)}
-                    />
-                  );
-                })}
+                {sources.map((s) => (
+                  <Row
+                    key={s.id}
+                    title={s.title}
+                    titleLines={2}
+                    subtitle={s.subtitle}
+                    subtitleLines={2}
+                    trailing="chevron"
+                    onPress={() => openReference(s.id)}
+                  />
+                ))}
               </Group>
             </>
           )}
@@ -472,7 +412,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
         </View>
       </ScrollView>
       {/* Depois do ScrollView na árvore para ficar por cima do conteúdo. */}
-      <ReadingProgressBar progress={progress} top={headerHeight} />
+      <ReadingProgressBar progressValue={progressSv} top={headerHeight} />
       <ImageZoomModal
         visible={zoomOpen}
         source={article.image}
@@ -481,22 +421,19 @@ export default function ArticleDetailScreen({ route, navigation }) {
         alt={article.imageAlt}
         onClose={() => setZoomOpen(false)}
       />
-    </View>
+    </ReadingColumn>
   );
 }
 
 // Tudo em tokens: espaço e raio da grade de 4 pt, papéis de texto do tema.
 function makeStyles(c, { space, radius }, text) {
-  const web = Platform.OS === 'web';
   return {
-    container: { flex: 1, backgroundColor: c.bg },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: c.bg },
     notFound: [text('body'), { color: c.textSubtle }],
-    // No desktop centra o conteúdo numa coluna legível; no celular ocupa 100%.
-    content: { paddingHorizontal: space.lg, ...(web ? { alignItems: 'center' } : null) },
-    column: { width: '100%', ...(web ? { maxWidth: READING_COLUMN, alignSelf: 'center' } : null) },
-    sideCross: { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center' },
-    crossFade: { opacity: 0.16 },
+    // No desktop centra o conteúdo numa coluna legível; no celular ocupa 100%
+    // (ReadingColumn).
+    content: { paddingHorizontal: space.lg, ...columnContentStyle },
+    column: columnStyle,
     heroWrap: { marginBottom: space.lg },
     heroBox: {
       width: '100%',

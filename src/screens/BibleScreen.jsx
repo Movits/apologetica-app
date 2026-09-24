@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import { View, Text, Pressable, StyleSheet, Platform, AppState, useWindowDimensions } from 'react-native';
 import Animated, {
   Easing,
@@ -26,14 +26,15 @@ import {
   watchChapterHighlights, watchChapterNotes,
   addHighlight, removeHighlight,
 } from '../services/userData';
-import { resolveVoice, getSavedRate } from '../utils/ttsVoice';
+import { resolveVoice, getSavedRate, ttsLocale } from '../utils/ttsVoice';
+import { scrollFraction, stepped } from '../utils/scrollProgress';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import BibleLoadingState from '../components/BibleLoadingState';
 import { useBibleReady } from '../hooks/useBibleReady';
 import ContinueBibleCard from '../components/ContinueBibleCard';
 import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
-import LargeTitleScreen from '../components/ui/LargeTitleScreen';
+import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
 import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState } from '../components/ui';
 import {
   saveBiblePosition, getBiblePosition,
@@ -60,8 +61,9 @@ const MARK_DWELL_MS = 2500;
 // Toque longo num versículo (mesmo tempo de antes) abre a mesma folha do toque.
 const LONG_PRESS_MS = 350;
 
-// Alvo de toque (HIG) e altura da barra do LargeTitleScreen: a barra de
-// progresso do capítulo fica colada logo abaixo dela.
+// Alvo de toque (HIG): célula da grade de capítulos e botão de narração. A
+// barra de progresso do capítulo fica colada logo abaixo da barra do
+// LargeTitleScreen (BAR_HEIGHT).
 const TARGET = 44;
 
 // A pílula de capítulo só começa a sumir ao rolar para baixo depois deste
@@ -75,12 +77,63 @@ const SCROLL_DEADZONE = 2;
 // handler JS de progresso roda metade das vezes.
 const VERSE_SCROLL_THROTTLE_MS = 32;
 
-// Variação mínima da fração lida para virar estado: abaixo disso o scroll
-// não re-renderiza a tela (nem as células visíveis) por nada.
+// Variação mínima da fração lida para chegar à barra: abaixo disso o scroll
+// não escreve nada.
 const RATIO_STEP = 0.005;
 
 const keyByVerse = (v) => String(v.n);
 const noop = () => {};
+
+// Uma linha de versículo: número, texto e o ícone de nota. memo com props
+// primitivas (o objeto `verse` é o do capítulo memoizado e `s` é o objeto de
+// estilos, estável por tema), então abrir a folha ou receber uma marcação
+// nova re-renderiza só as linhas que mudaram.
+const VerseRow = memo(function VerseRow({ verse, bg, numColor, textColor, strong, hasNote, onPress, s }) {
+  return (
+    <Pressable
+      role="button"
+      onPress={() => onPress(verse)}
+      onLongPress={() => onPress(verse)}
+      delayLongPress={LONG_PRESS_MS}
+      style={({ pressed }) => [
+        s.row,
+        { backgroundColor: bg ?? (pressed ? s.pressedBg : 'transparent') },
+      ]}
+    >
+      <Text style={[s.numStyle, s.num, { color: numColor, paddingTop: s.numOffset }]}>{verse.n}</Text>
+      <Text style={[s.readingStyle, s.text, { color: textColor }, strong ? s.strong : null]}>{verse.t}</Text>
+      {hasNote ? <Ionicons name="document-text" size={s.iconSize} color={s.iconColor} style={s.noteIcon} /> : null}
+    </Pressable>
+  );
+});
+
+// Célula da grade de capítulos: Pressable simples (sem mola nem shared value
+// por célula, são até 150 numa tela) com o fundo escurecido enquanto
+// pressionada, como as linhas de lista. memo com props primitivas e o objeto
+// de estilos estável, para a grade não redesenhar tudo quando a tela muda por
+// outro motivo.
+const ChapterCell = memo(function ChapterCell({ n, isRead, size, label, onPress, s }) {
+  return (
+    <Pressable
+      role="button"
+      aria-label={label}
+      onPress={() => onPress(n)}
+      style={({ pressed }) => [
+        s.cell,
+        { width: size, height: size, backgroundColor: pressed ? s.pressedBg : isRead ? s.readBg : s.bg },
+      ]}
+    >
+      <Text style={[s.num, { color: isRead ? s.readColor : s.color }]}>{n}</Text>
+    </Pressable>
+  );
+});
+
+// Linha de livro: memo com o handler estável (recebe o livro), para os 73
+// livros não re-renderizarem a cada tecla do filtro nem quando o "continue
+// lendo" e as estatísticas chegam.
+const BookRow = memo(function BookRow({ book, title, subtitle, onPress }) {
+  return <Row title={title} subtitle={subtitle} trailing="chevron" onPress={() => onPress(book)} />;
+});
 
 // Lista de versículos: Animated.FlatList que recebe o onScroll do
 // LargeTitleScreen (título inline e backdrop) composto com o nosso, que
@@ -164,12 +217,12 @@ function VerseList({
 
 export default function BibleScreen({ route, navigation }) {
   const { colors, tokens, text, darkMode } = useTheme();
-  const { space, icon, motion } = tokens;
+  const { space, icon } = tokens;
   const insets = useSafeAreaInsets();
   const { width: windowWidth } = useWindowDimensions();
   const { user } = useAuth();
   const { lang, t, isEn } = useLanguage();
-  const bn = (b) => bookName(b, isEn);
+  const bn = useCallback((b) => bookName(b, isEn), [isEn]);
   const requireAccount = useRequireAccount();
   // A tradução vem num pedaço separado na web (ver src/services/bibleApi.js).
   // Enquanto ela não chega, getChapter devolve null: sem isto a tela mostraria
@@ -194,23 +247,24 @@ export default function BibleScreen({ route, navigation }) {
   const booksScrollRef = useRef(null);
   // 1 = pílula de capítulo visível, 0 = escondida (escrito pela VerseList).
   const pillVisible = useSharedValue(1);
-  // Pílula sempre à vista nos estados sem lista (carregando, capítulo em
-  // preparação): dali a pessoa ainda precisa poder avançar de capítulo.
-  const pillSempreVisivel = useSharedValue(1);
   // Espelho de autoScroll.until para o worklet da lista: até esse instante a
   // rolagem é nossa e não esconde a pílula.
   const autoUntil = useSharedValue(0);
 
   // ===== Progresso de leitura (ver src/utils/bibleProgress.js) =====
-  // Quanto do capítulo atual já foi rolado (0..1), alimenta a barra do topo.
+  // Quanto do capítulo atual já foi rolado (0..1). A barra do topo lê o shared
+  // value (o onScroll escreve nele sem re-renderizar a tela); o estado só
+  // muda quando a fração cruza READ_THRESHOLD ou o capítulo troca, que é o
+  // que o efeito de marcação observa.
+  const progressSv = useSharedValue(0);
   // A proporcao lida anda junto do capitulo a que pertence. Guardar so o numero
   // abria uma corrida: `chapter` muda num render e o reset da proporcao so vinha
   // no efeito seguinte, entao o efeito de marcacao via o capitulo NOVO com a
   // proporcao ANTIGA e marcava o capitulo como lido sozinho ao avancar.
   const [progresso, setProgresso] = useState({ chave: null, ratio: 0 });
-  // Espelho da fração em `progresso`, para o onScroll só chamar setProgresso
-  // quando a diferença passar de RATIO_STEP (senão cada evento re-renderizava
-  // a tela inteira). Quem muda `progresso` fora do scroll acerta o espelho.
+  // Última fração escrita na barra: o onScroll só escreve quando a diferença
+  // passa de RATIO_STEP, e é contra ela que se detecta o cruzamento do
+  // limiar. Quem muda a fração fora do scroll acerta o espelho.
   const ratioNaBarra = useRef(0);
   // Vira true depois de MARK_DWELL_MS no capitulo; e dependencia do efeito de
   // marcacao, entao a virada reavalia a marcacao sozinha.
@@ -244,46 +298,49 @@ export default function BibleScreen({ route, navigation }) {
   // Marcação de "lido": uma tentativa por capítulo.
   const markedKey = useRef(null);
 
+  // Toda mudança de nível (livros, capítulos, versículos) passa por aqui. O
+  // destaque de versículo e a marca de deep link são zerados a cada ida,
+  // salvo quando o chamador os passa (o deep link de uma referência). A barra
+  // de progresso zera junto, antes do efeito de troca de capítulo, para a
+  // fração do capítulo anterior não aparecer num quadro do novo.
+  const goTo = useCallback(({ view: v, book: b = null, chapter: c = null, highlight = null, highlightEnd = null, deepLink = false }) => {
+    setView(v);
+    setBook(b);
+    setChapter(c);
+    setHighlightVerse(highlight);
+    setHighlightVerseEnd(highlightEnd);
+    setFromDeepLink(deepLink);
+    progressSv.value = 0;
+  }, [progressSv]);
+
   // Deep link de uma referência
+  const { bookId: linkBookId, chapter: linkChapter, highlightVerse: linkVerse, highlightVerseEnd: linkVerseEnd } = route?.params || {};
   useEffect(() => {
-    const params = route?.params;
-    if (params?.bookId) {
-      const b = BIBLE_BOOKS.find((x) => x.id === params.bookId);
-      if (b) {
-        setBook(b);
-        setFromDeepLink(true);
-        if (params.chapter) {
-          setChapter(params.chapter);
-          setHighlightVerse(params.highlightVerse ?? null);
-          setHighlightVerseEnd(params.highlightVerseEnd ?? null);
-          setView('verses');
-        } else {
-          setView('chapters');
-        }
-        navigation?.setParams?.({ bookId: undefined, chapter: undefined, highlightVerse: undefined, highlightVerseEnd: undefined });
-      }
+    if (!linkBookId) return;
+    const b = BIBLE_BOOKS.find((x) => x.id === linkBookId);
+    if (!b) return;
+    if (linkChapter) {
+      goTo({ view: 'verses', book: b, chapter: linkChapter, highlight: linkVerse ?? null, highlightEnd: linkVerseEnd ?? null, deepLink: true });
+    } else {
+      goTo({ view: 'chapters', book: b, deepLink: true });
     }
-  }, [route?.params?.bookId, route?.params?.chapter, route?.params?.highlightVerse, route?.params?.highlightVerseEnd]);
+    navigation?.setParams?.({ bookId: undefined, chapter: undefined, highlightVerse: undefined, highlightVerseEnd: undefined });
+  }, [linkBookId, linkChapter, linkVerse, linkVerseEnd, goTo, navigation]);
 
   // Volta pro início da seção quando o usuário aperta o tab Bíblia de novo
   useEffect(() => {
     const unsub = navigation?.addListener?.('tabPress', () => {
       if (!navigation.isFocused?.()) return;
       if (view !== 'books') {
-        setView('books');
-        setBook(null);
-        setChapter(null);
-        setHighlightVerse(null);
-        setHighlightVerseEnd(null);
+        goTo({ view: 'books' });
         setFilterText('');
-        setFromDeepLink(false);
       } else {
         // Ja esta na view de livros: scroll pro topo
         booksScrollRef.current?.scrollTo({ y: 0, animated: true });
       }
     });
     return unsub;
-  }, [navigation, view]);
+  }, [navigation, view, goTo]);
 
   // Voltar um nível (o `back` do LargeTitleScreen). Chegando por deep link, a
   // volta é para a tela de origem, como antes. O botão físico do Android e o
@@ -291,20 +348,21 @@ export default function BibleScreen({ route, navigation }) {
   // entre abas do Tab.Navigator.
   const goBackLevel = () => {
     if (fromDeepLink && navigation.canGoBack()) { navigation.goBack(); return; }
-    if (view === 'verses') { setChapter(null); setHighlightVerse(null); setHighlightVerseEnd(null); setView('chapters'); }
-    else if (view === 'chapters') { setView('books'); setBook(null); }
+    if (view === 'verses') goTo({ view: 'chapters', book });
+    else if (view === 'chapters') goTo({ view: 'books' });
   };
 
-  const chapterData = useMemo(() => {
-    if (view !== 'verses' || !book || !chapter) return null;
-    if (!bibliaPronta.pronta) return null;
-    return getChapter(book.id, chapter, lang);
-  }, [view, book?.id, chapter, lang, bibliaPronta.pronta]);
-
-  // ===== Progresso de leitura =====
   // bookId em variável própria (em vez de book?.id direto nas deps) para os
   // hooks abaixo não dispararem o aviso de exhaustive-deps.
   const bookId = book?.id ?? null;
+
+  const chapterData = useMemo(() => {
+    if (view !== 'verses' || !bookId || !chapter) return null;
+    if (!bibliaPronta.pronta) return null;
+    return getChapter(bookId, chapter, lang);
+  }, [view, bookId, chapter, lang, bibliaPronta.pronta]);
+
+  // ===== Progresso de leitura =====
 
   // Debounced: o scroll dispara dezenas de eventos e cada um viraria uma escrita.
   const queueSave = useCallback((bId, ch, ratio, lng) => {
@@ -357,6 +415,7 @@ export default function BibleScreen({ route, navigation }) {
       if (Date.now() <= pending.until) {
         if (scrollable <= 4) return; // ainda não há o que rolar; tenta de novo depois
         ratioNaBarra.current = pending.ratio;
+        progressSv.value = pending.ratio;
         setProgresso({ chave: chaveAtual.current, ratio: pending.ratio });
         const alvo = pending.ratio * scrollable;
         autoScroll.current = { target: alvo, until: Date.now() + 600 };
@@ -374,9 +433,10 @@ export default function BibleScreen({ route, navigation }) {
     // Capítulo curto que cabe inteiro na tela: não há o que rolar, já está lido.
     if (scrollable <= 4) {
       ratioNaBarra.current = 1;
+      progressSv.value = 1;
       setProgresso({ chave: chaveAtual.current, ratio: 1 });
     }
-  }, [measureFromNode, autoUntil]);
+  }, [measureFromNode, autoUntil, progressSv]);
 
   // Recarrega "continue lendo" e estatísticas ao voltar para a lista de livros.
   useEffect(() => {
@@ -405,6 +465,7 @@ export default function BibleScreen({ route, navigation }) {
   useEffect(() => {
     flushSave();
     ratioNaBarra.current = 0;
+    progressSv.value = 0;
     setProgresso({ chave: `${bookId}:${chapter}`, ratio: 0 });
     markedKey.current = null;
     userScrolled.current = false;
@@ -438,7 +499,7 @@ export default function BibleScreen({ route, navigation }) {
     const timers = [150, 400, 900, RESTORE_WINDOW_MS + 100]
       .map((ms) => setTimeout(tryRestore, ms));
     return () => timers.forEach(clearTimeout);
-  }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore, lang]);
+  }, [bookId, chapter, flushSave, savedPosition, highlightVerse, tryRestore, lang, progressSv]);
 
   // Conta o tempo de permanencia no capitulo aberto.
   useEffect(() => {
@@ -508,16 +569,16 @@ export default function BibleScreen({ route, navigation }) {
     // fallback abaixo viraria ratio 1: capitulo marcado como lido sozinho.
     if (!layoutMeasurement.height || !contentSize.height) return;
     verseLayoutH.current = layoutMeasurement.height;
-    const scrollable = contentSize.height - layoutMeasurement.height;
-    const r = scrollable > 4 ? contentOffset.y / scrollable : 1;
-    const clamped = Math.max(0, Math.min(1, r));
-    // Só vira estado quando andou de verdade (ou cravou 0 ou 1): a barra e o
-    // "continue lendo" não percebem menos de meio por cento, e a tela deixa
-    // de re-renderizar a cada evento de scroll.
-    const passo = Math.abs(clamped - ratioNaBarra.current);
-    if (passo >= RATIO_STEP || (passo > 0 && (clamped === 0 || clamped === 1))) {
-      ratioNaBarra.current = clamped;
-      setProgresso({ chave: `${bookId}:${chapter}`, ratio: clamped });
+    const clamped = scrollFraction(e.nativeEvent);
+    // A barra lê o shared value (sem re-render) e só recebe o que andou de
+    // verdade (ou cravou 0 ou 1). Estado só ao cruzar o limiar de "lido",
+    // nos dois sentidos: é o que o efeito de marcação observa.
+    const next = stepped(ratioNaBarra.current, clamped, RATIO_STEP);
+    if (next !== ratioNaBarra.current) {
+      const cruzou = (next >= READ_THRESHOLD) !== (ratioNaBarra.current >= READ_THRESHOLD);
+      ratioNaBarra.current = next;
+      progressSv.value = next;
+      if (cruzou) setProgresso({ chave: `${bookId}:${chapter}`, ratio: next });
     }
     // Consulta não move o "continue lendo": uma busca que cai em Apocalipse 22
     // não pode apagar o ponto de quem estava lendo Gênesis 15. Ao arrastar, o
@@ -531,7 +592,7 @@ export default function BibleScreen({ route, navigation }) {
     if (!nossoScroll && contentOffset.y > 0) userScrolled.current = true;
 
     if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped, lang);
-  }, [queueSave, bookId, chapter, fromDeepLink, lang]);
+  }, [queueSave, bookId, chapter, fromDeepLink, lang, progressSv]);
 
   const onVerseLayout = useCallback((e) => {
     verseLayoutH.current = e.nativeEvent.layout.height;
@@ -549,26 +610,21 @@ export default function BibleScreen({ route, navigation }) {
     if (!pos) return;
     const b = BIBLE_BOOKS.find((x) => x.id === pos.bookId);
     if (!b) return;
-    setBook(b);
-    setChapter(pos.chapter);
-    setHighlightVerse(null);
-    setHighlightVerseEnd(null);
-    setFromDeepLink(false);
-    setView('verses');
-  }, [savedPosition]);
+    goTo({ view: 'verses', book: b, chapter: pos.chapter });
+  }, [savedPosition, goTo]);
 
   // Subscreve às marcações e notas deste capítulo. Visitante (user null) fica
   // com as listas vazias, sem tocar no Firestore.
   useEffect(() => {
-    if (view !== 'verses' || !book || !chapter || !user) {
+    if (view !== 'verses' || !bookId || !chapter || !user) {
       setChapterHighlights([]);
       setChapterNotes([]);
       return;
     }
-    const u1 = watchChapterHighlights(book.id, chapter, setChapterHighlights);
-    const u2 = watchChapterNotes(book.id, chapter, setChapterNotes);
+    const u1 = watchChapterHighlights(bookId, chapter, setChapterHighlights);
+    const u2 = watchChapterNotes(bookId, chapter, setChapterNotes);
     return () => { u1(); u2(); };
-  }, [view, book?.id, chapter, user]);
+  }, [view, bookId, chapter, user]);
 
   // Mapa: { verseNumber: highlight }
   const highlightsByVerse = useMemo(() => {
@@ -616,8 +672,19 @@ export default function BibleScreen({ route, navigation }) {
   }, [chapterData, highlightVerse, autoUntil]);
 
   // ===== Ações do versículo (folha) =====
-  const openActions = (verse) => setActionVerse(verse);
+  // Estável: é o onPress de todas as VerseRow (memo).
+  const openActions = useCallback((verse) => setActionVerse(verse), []);
   const closeActions = () => setActionVerse(null);
+
+  // Ação adiada até a folha sair de cena. O convite de conta é outro Modal, e
+  // o iOS não apresenta dois ao mesmo tempo: a folha chama onDismissed no fim
+  // da animação de saída, com o Modal já desmontado, e só aí o convite abre.
+  const afterSheet = useRef(null);
+  const onSheetDismissed = useCallback(() => {
+    const fn = afterSheet.current;
+    afterSheet.current = null;
+    fn?.();
+  }, []);
 
   const gateOpts = {
     title: isEn ? 'Highlight verse?' : 'Marcar versículo?',
@@ -628,12 +695,11 @@ export default function BibleScreen({ route, navigation }) {
   };
 
   // Fecha a folha e executa. Visitante vê o convite de conta, mas só depois
-  // que a folha saiu: o convite é outro Modal, e o iOS não apresenta dois ao
-  // mesmo tempo.
+  // que a folha saiu (onSheetDismissed).
   const withAccount = (fn) => {
     setActionVerse(null);
     if (user) { fn(); return; }
-    setTimeout(() => requireAccount(fn, gateOpts), motion.aba + motion.touch);
+    afterSheet.current = () => requireAccount(fn, gateOpts);
   };
 
   const applyHighlight = async (verseN, color) => {
@@ -710,12 +776,11 @@ export default function BibleScreen({ route, navigation }) {
     setSpeaking(true);
     const textLang = chapterData.language === 'en' ? 'en' : 'pt';
     const [voice, rate] = await Promise.all([resolveVoice(textLang), getSavedRate()]);
-    const defaultLang = textLang === 'en' ? 'en-US' : 'pt-BR';
     const intro = `${bn(book)} ${chapter}. `;
     const body = chapterData.verses.map((v) => `${v.n}. ${v.t}`).join(' ');
     const done = () => setSpeaking(false);
     speakLong(intro + body, {
-      language: voice?.language || defaultLang,
+      language: voice?.language || ttsLocale(textLang),
       voice: voice?.identifier,
       rate,
       pitch: 1.0,
@@ -751,10 +816,72 @@ export default function BibleScreen({ route, navigation }) {
   const styles = useMemo(() => makeStyles(colors, tokens), [colors, tokens]);
 
   // "50 capítulos · deuterocanônico", para a linha do livro e o subtítulo da grade.
-  const bookMeta = (b) => {
+  const bookMeta = useCallback((b) => {
     const count = b.totalChapters > 1 ? `${b.totalChapters} ${t('bible.chapters')}` : t('bible.oneChapter');
     return b.deutero ? `${count} · ${t('bible.deutero')}` : count;
-  };
+  }, [t]);
+
+  const openBook = useCallback((b) => goTo({ view: 'chapters', book: b }), [goTo]);
+  const openChapter = useCallback((c) => goTo({ view: 'verses', book, chapter: c }), [goTo, book]);
+
+  // Estilos da célula da grade, num objeto só e estável (ChapterCell é memo).
+  const cellStyles = useMemo(() => ({
+    cell: styles.cell,
+    num: text('body'),
+    bg: colors.card,
+    readBg: colors.separator,
+    pressedBg: colors.separator,
+    color: colors.text,
+    readColor: colors.accentText,
+  }), [styles.cell, text, colors.card, colors.separator, colors.text, colors.accentText]);
+
+  // Estilos da linha de versículo, idem (VerseRow é memo). O número fica
+  // centrado na primeira linha do texto.
+  const verseStyles = useMemo(() => {
+    const numStyle = text('caption1');
+    const readingStyle = text('readingBible');
+    const numOffset = Math.max(0, (readingStyle.lineHeight - numStyle.lineHeight) / 2);
+    return {
+      row: styles.verseRow,
+      num: styles.verseNum,
+      text: styles.verseText,
+      strong: styles.verseTextStrong,
+      numStyle,
+      readingStyle,
+      numOffset,
+      noteIcon: { marginTop: numOffset },
+      pressedBg: colors.card,
+      iconSize: icon.sm,
+      iconColor: colors.accent,
+    };
+  }, [styles, text, colors.card, colors.accent, icon.sm]);
+
+  // Texto sobre a cor de marcação (pastel): precisa ser escuro nos dois
+  // temas. No claro é o texto normal; no escuro o texto é creme, então usa a
+  // cor que já vai por cima do tint (navy).
+  const onHighlight = darkMode ? colors.onTint : colors.text;
+
+  const renderVerse = useCallback(({ item }) => {
+    const isDeepLinked = Boolean(highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse));
+    const userHighlight = highlightsByVerse[item.n];
+    return (
+      <VerseRow
+        verse={item}
+        bg={userHighlight ? userHighlight.color : isDeepLinked ? colors.deepLinkHl : null}
+        numColor={userHighlight ? onHighlight : isDeepLinked ? colors.text : colors.accentText}
+        textColor={userHighlight ? onHighlight : colors.text}
+        strong={isDeepLinked}
+        hasNote={versesWithNotes.has(item.n)}
+        onPress={openActions}
+        s={verseStyles}
+      />
+    );
+  }, [highlightVerse, highlightVerseEnd, highlightsByVerse, versesWithNotes, colors.deepLinkHl, colors.text, colors.accentText, onHighlight, openActions, verseStyles]);
+
+  const translation = chapterData?.language === 'en' ? 'Douay-Rheims-Challoner' : 'Ave Maria';
+  const footer = useMemo(() => (
+    <Text style={[text('footnote'), styles.footer]}>{t('bible.translation', { name: translation })}</Text>
+  ), [text, styles.footer, t, translation]);
 
   // ===== LIVROS =====
   if (view === 'books') {
@@ -772,7 +899,6 @@ export default function BibleScreen({ route, navigation }) {
       .map((tst) => ({ ...tst, books: filtered.filter((b) => b.testament === tst.key) }))
       .filter((tst) => tst.books.length > 0);
 
-    const openBook = (b) => { setBook(b); setView('chapters'); setFromDeepLink(false); };
     const continueBook = savedPosition && !q ? BIBLE_BOOKS.find((x) => x.id === savedPosition.bookId) : null;
 
     return (
@@ -810,13 +936,7 @@ export default function BibleScreen({ route, navigation }) {
                 <SectionTitle title={tst.title} style={styles.sectionTitle} />
                 <Group>
                   {tst.books.map((b) => (
-                    <Row
-                      key={b.id}
-                      title={bn(b)}
-                      subtitle={bookMeta(b)}
-                      trailing="chevron"
-                      onPress={() => openBook(b)}
-                    />
+                    <BookRow key={b.id} book={b} title={bn(b)} subtitle={bookMeta(b)} onPress={openBook} />
                   ))}
                 </Group>
               </View>
@@ -840,7 +960,6 @@ export default function BibleScreen({ route, navigation }) {
     const inner = windowWidth - space.md * 2;
     const cols = Math.max(1, Math.floor((inner + gap) / (TARGET + gap)));
     const cell = Math.floor((inner - gap * (cols - 1)) / cols);
-    const openChapter = (c) => { setChapter(c); setHighlightVerse(null); setHighlightVerseEnd(null); setView('verses'); setFromDeepLink(false); };
 
     return (
       <LargeTitleScreen
@@ -863,18 +982,15 @@ export default function BibleScreen({ route, navigation }) {
           {allChapters.map((c) => {
             const isRead = readChapters.has(c);
             return (
-              <PressScale
+              <ChapterCell
                 key={c}
-                role="button"
-                aria-label={isRead ? `${t('bible.chapter')} ${c}, ${t('bible.chapterDone')}` : `${t('bible.chapter')} ${c}`}
-                onPress={() => openChapter(c)}
-                style={[
-                  styles.cell,
-                  { width: cell, height: cell, backgroundColor: isRead ? colors.separator : colors.card },
-                ]}
-              >
-                <Text style={[text('body'), { color: isRead ? colors.accentText : colors.text }]}>{c}</Text>
-              </PressScale>
+                n={c}
+                isRead={isRead}
+                size={cell}
+                label={isRead ? `${t('bible.chapter')} ${c}, ${t('bible.chapterDone')}` : `${t('bible.chapter')} ${c}`}
+                onPress={openChapter}
+                s={cellStyles}
+              />
             );
           })}
         </View>
@@ -891,8 +1007,8 @@ export default function BibleScreen({ route, navigation }) {
     //   isEmpty     -> a tradução está aqui, mas este capítulo não foi adicionado
     const aguardando = !bibliaPronta.pronta;
     const isEmpty = !aguardando && !chapterData?.verses?.length;
-    const goPrev = () => { if (hasPrev) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter - 1); setFromDeepLink(false); } };
-    const goNext = () => { if (hasNext) { setHighlightVerse(null); setHighlightVerseEnd(null); setChapter(chapter + 1); setFromDeepLink(false); } };
+    const goPrev = () => { if (hasPrev) goTo({ view: 'verses', book, chapter: chapter - 1 }); };
+    const goNext = () => { if (hasNext) goTo({ view: 'verses', book, chapter: chapter + 1 }); };
 
     const title = `${bn(book)} ${chapter}`;
     const subtitle = `${pick(book, 'group', isEn)}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
@@ -918,8 +1034,21 @@ export default function BibleScreen({ route, navigation }) {
     );
 
     // Sem lista (carregando ou capítulo em preparação) a pílula fica fixa à
-    // vista: é por ela que se avança ao capítulo seguinte, como o rodapé
-    // antigo permitia.
+    // vista (sem `visible`): é por ela que se avança ao capítulo seguinte,
+    // como o rodapé antigo permitia.
+    const pill = (
+      <ChapterPill
+        label={t('bible.ofTotal', { n: chapter, total: book.totalChapters })}
+        hasPrev={hasPrev}
+        hasNext={hasNext}
+        onPrev={goPrev}
+        onNext={goNext}
+        prevLabel={t('bible.prevChapter')}
+        nextLabel={t('bible.nextChapter')}
+        visible={aguardando || isEmpty ? undefined : pillVisible}
+      />
+    );
+
     if (aguardando || isEmpty) {
       return (
         <View style={styles.screen}>
@@ -936,70 +1065,11 @@ export default function BibleScreen({ route, navigation }) {
               />
             )}
           </LargeTitleScreen>
-          <ChapterPill
-            label={t('bible.ofTotal', { n: chapter, total: book.totalChapters })}
-            hasPrev={hasPrev}
-            hasNext={hasNext}
-            onPrev={goPrev}
-            onNext={goNext}
-            prevLabel={t('bible.prevChapter')}
-            nextLabel={t('bible.nextChapter')}
-            visible={pillSempreVisivel}
-          />
+          {pill}
         </View>
       );
     }
 
-    const numStyle = text('caption1');
-    const readingStyle = text('readingBible');
-    // O número fica centrado na primeira linha do texto.
-    const numOffset = Math.max(0, (readingStyle.lineHeight - numStyle.lineHeight) / 2);
-    // Texto sobre a cor de marcação (pastel): precisa ser escuro nos dois
-    // temas. No claro é o texto normal; no escuro o texto é creme, então usa a
-    // cor que já vai por cima do tint (navy).
-    const onHighlight = darkMode ? colors.onTint : colors.text;
-
-    const renderVerse = ({ item }) => {
-      const isDeepLinked = highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse);
-      const userHighlight = highlightsByVerse[item.n];
-      const hasNote = versesWithNotes.has(item.n);
-      const bg = userHighlight ? userHighlight.color : isDeepLinked ? colors.deepLinkHl : null;
-      const numColor = userHighlight ? onHighlight : isDeepLinked ? colors.text : colors.accentText;
-      return (
-        <Pressable
-          role="button"
-          onPress={() => openActions(item)}
-          onLongPress={() => openActions(item)}
-          delayLongPress={LONG_PRESS_MS}
-          style={({ pressed }) => [
-            styles.verseRow,
-            { backgroundColor: bg ?? (pressed ? colors.card : 'transparent') },
-          ]}
-        >
-          <Text style={[numStyle, styles.verseNum, { color: numColor, paddingTop: numOffset }]}>{item.n}</Text>
-          <Text
-            style={[
-              readingStyle,
-              styles.verseText,
-              { color: userHighlight ? onHighlight : colors.text },
-              isDeepLinked ? styles.verseTextStrong : null,
-            ]}
-          >
-            {item.t}
-          </Text>
-          {hasNote ? (
-            <Ionicons name="document-text" size={icon.sm} color={colors.accent} style={{ marginTop: numOffset }} />
-          ) : null}
-        </Pressable>
-      );
-    };
-
-    const translation = chapterData.language === 'en' ? 'Douay-Rheims-Challoner' : 'Ave Maria';
-    const footer = (
-      <Text style={[text('footnote'), styles.footer]}>{t('bible.translation', { name: translation })}</Text>
-    );
-
-    const progress = progresso.chave === `${bookId}:${chapter}` ? progresso.ratio : 0;
     const current = actionVerse ? highlightsByVerse[actionVerse.n] : null;
 
     return (
@@ -1029,20 +1099,11 @@ export default function BibleScreen({ route, navigation }) {
 
         {/* Progresso da leitura deste capítulo, colado sob a barra do topo.
             Alimenta também o "continue lendo". */}
-        <View style={[styles.progress, { top: insets.top + TARGET }]}>
-          <ReadingProgressBar progress={progress} />
+        <View style={[styles.progress, { top: insets.top + BAR_HEIGHT }]}>
+          <ReadingProgressBar progressValue={progressSv} />
         </View>
 
-        <ChapterPill
-          label={t('bible.ofTotal', { n: chapter, total: book.totalChapters })}
-          hasPrev={hasPrev}
-          hasNext={hasNext}
-          onPrev={goPrev}
-          onNext={goNext}
-          prevLabel={t('bible.prevChapter')}
-          nextLabel={t('bible.nextChapter')}
-          visible={pillVisible}
-        />
+        {pill}
 
         <VerseActionsSheet
           verse={actionVerse}
@@ -1056,6 +1117,7 @@ export default function BibleScreen({ route, navigation }) {
           onCopy={onCopy}
           onShare={onShare}
           onClose={closeActions}
+          onDismissed={onSheetDismissed}
         />
       </View>
     );

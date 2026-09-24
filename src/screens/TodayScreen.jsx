@@ -1,34 +1,19 @@
 import { useMemo } from 'react';
-import { Platform, ScrollView, Text, View, useWindowDimensions } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES } from '../data/dialogues';
 import { getSaintToday } from '../data/saints';
-import { dailyIndex } from '../utils/daily';
+import { dailyIndex, todayLabel } from '../utils/daily';
 import { pick } from '../utils/i18nData';
 import { openBible } from '../navigation/links';
 import { Group, Row } from '../components/ui';
+import ReadingColumn, { columnStyle, columnContentStyle } from '../components/ReadingColumn';
 import VerseOfDayCard from '../components/VerseOfDayCard';
 import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
-import BrandMark from '../components/BrandMark';
-
-// Largura da coluna central no desktop e o gutter mínimo, de cada lado, para
-// a marca d'água aparecer (proporções da página, não medidas de interface).
-const COLUMN_MAX = 720;
-const MIN_GUTTER = 150;
-// Largura do BrandMark "lg" (a cruz das laterais) e a opacidade da marca d'água.
-const CROSS_W = 44;
-const CROSS_OPACITY = 0.16;
-
-// Data por extenso na língua da interface ("Quarta-feira, 24 de setembro"),
-// com a inicial maiúscula (o pt-BR devolve o dia da semana em minúsculas).
-function todayLabel(isEn, date) {
-  const s = date.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
 
 // Conteúdo do dia (Onda 9): header do stack mantido, conteúdo em Groups na
 // ordem versículo, liturgia (santo + leituras), objeção do dia e notícias.
@@ -38,14 +23,6 @@ export default function TodayScreen() {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space } = tokens;
-  const { width } = useWindowDimensions();
-
-  // No desktop sobra espaço dos dois lados da coluna central: enche cada gutter
-  // com a cruz do app (marca d'água, decorativa: o leitor de tela pula). Só na
-  // web e se o gutter for largo o bastante.
-  const gutter = (width - COLUMN_MAX) / 2;
-  const showSideCrosses = Platform.OS === 'web' && gutter >= MIN_GUTTER;
-  const crossLeft = Math.max(0, gutter / 2 - CROSS_W / 2);
 
   const now = useMemo(() => new Date(), []);
   const dateLabel = todayLabel(isEn, now);
@@ -61,23 +38,12 @@ export default function TodayScreen() {
   const openLiturgy = () => navigation.navigate('Liturgy');
 
   const block = { marginBottom: space.md };
-  const sideCross = { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center', opacity: CROSS_OPACITY };
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {showSideCrosses ? (
-        <>
-          <View pointerEvents="none" style={[sideCross, { left: crossLeft }]}>
-            <BrandMark size="lg" decorative />
-          </View>
-          <View pointerEvents="none" style={[sideCross, { right: crossLeft }]}>
-            <BrandMark size="lg" decorative />
-          </View>
-        </>
-      ) : null}
-      <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl, alignItems: 'center' }}>
+    <ReadingColumn>
+      <ScrollView contentContainerStyle={[columnContentStyle, { padding: space.md, paddingBottom: space.xl }]}>
         {/* No desktop a página vira uma coluna central; no celular ocupa 100%. */}
-        <View style={{ width: '100%', maxWidth: Platform.OS === 'web' ? COLUMN_MAX : undefined }}>
+        <View style={columnStyle}>
           <Text style={[text('subhead'), { color: colors.textSubtle, marginBottom: space.md }]}>{dateLabel}</Text>
 
           <VerseOfDayCard onOpen={openVerse} style={block} />
@@ -103,6 +69,6 @@ export default function TodayScreen() {
           <NewsCard style={block} />
         </View>
       </ScrollView>
-    </View>
+    </ReadingColumn>
   );
 }

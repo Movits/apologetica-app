@@ -11,8 +11,10 @@ import { PressScale } from './ui';
 // e a sombra `floating` só no tema claro. Quem decide se ela aparece é a
 // lista de versículos, pelo shared value `visible` (1 visível, 0 escondida):
 // ao esconder, além da opacidade ela desce até sair da tela, para não ficar
-// tocável onde não se vê. Usa useBottomTabBarHeight() direto porque a tela da
-// Bíblia é filha direta do Tab.
+// tocável onde não se vê. Sem `visible` (undefined) fica sempre à vista: é o
+// caso dos estados sem lista (carregando, capítulo em preparação), de onde a
+// pessoa ainda precisa poder avançar de capítulo. Usa useBottomTabBarHeight()
+// direto porque a tela da Bíblia é filha direta do Tab.
 const TARGET = 44;
 
 export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, prevLabel, nextLabel, visible }) {
@@ -22,10 +24,13 @@ export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, p
 
   const bottom = tabBarHeight + space.md;
   const hideDistance = bottom + TARGET;
-  const motionStyle = useAnimatedStyle(() => ({
-    opacity: visible.value,
-    transform: [{ translateY: (1 - visible.value) * hideDistance }],
-  }));
+  const motionStyle = useAnimatedStyle(() => {
+    const v = visible ? visible.value : 1;
+    return {
+      opacity: v,
+      transform: [{ translateY: (1 - v) * hideDistance }],
+    };
+  });
 
   const button = (name, a11y, enabled, onPress) => (
     <PressScale
