@@ -24,6 +24,7 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 | `assets/` | Imagens e ícones que vão DENTRO do app (ícone do app, obras dos artigos, mapa). Não renomear nada aqui: o código aponta para cada arquivo pelo nome. |
 | `assets/design/` | Fundos de luz e gradientes gerados para o redesign (Higgsfield), com a ficha de cada um em `CREDITOS.md`. |
 | `assets/fonts/` | A única fonte embarcada (Cormorant Garamond SemiBold, subset) com a licença OFL e a ficha em `CREDITOS.md`. |
+| `tests/` | Os testes automáticos (`npm test`): conferem os tokens de design, os links de navegação, as fórmulas do dia e os dados das referências. |
 | `App.js` | A "porta de entrada" do app: monta as abas e as telas. |
 | `scripts/` | Ferramentas internas usadas de vez em quando (converter a Bíblia, gerar ícones). Não rodam dentro do app. |
 
