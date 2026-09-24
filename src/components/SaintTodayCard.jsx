@@ -8,13 +8,17 @@ import { pick } from '../utils/i18nData';
 
 // Santo do dia: bloco para dentro do Group "Liturgia de hoje" (Conteúdo do
 // dia), na mesma grade da Row (ícone numa caixa de 28, texto ao lado). Grau
-// da celebração em footnote, nome em headline, resumo em subhead. Sem santo
-// no dia (féria), não renderiza nada e o Group segue só com a liturgia.
-export default function SaintTodayCard() {
+// da celebração em footnote, nome em headline, resumo em subhead.
+//
+// `saint` vem por prop quando a tela já resolveu o dia (a Conteúdo do dia
+// precisa saber antes se há santo, porque o Group conta os filhos e um null
+// deixaria uma hairline órfã); sem a prop o card lê getSaintToday() sozinho.
+// Sem santo no dia (féria), não renderiza nada.
+export default function SaintTodayCard({ saint: saintProp }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, icon } = tokens;
-  const saint = useMemo(() => getSaintToday(), []);
+  const saint = useMemo(() => (saintProp === undefined ? getSaintToday() : saintProp), [saintProp]);
 
   if (!saint) return null;
   const kind = t(`saint.kind.${saint.kind}`);

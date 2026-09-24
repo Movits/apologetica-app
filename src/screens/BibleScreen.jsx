@@ -70,6 +70,15 @@ const TARGET = 44;
 const PILL_HIDE_AFTER = 80;
 const SCROLL_DEADZONE = 2;
 
+// A lista de versículos recebe o onScroll a cada 32 ms (e não os 16 do
+// LargeTitleScreen): o título inline e a pílula continuam fluidos, e o
+// handler JS de progresso roda metade das vezes.
+const VERSE_SCROLL_THROTTLE_MS = 32;
+
+// Variação mínima da fração lida para virar estado: abaixo disso o scroll
+// não re-renderiza a tela (nem as células visíveis) por nada.
+const RATIO_STEP = 0.005;
+
 const keyByVerse = (v) => String(v.n);
 const noop = () => {};
 
@@ -143,7 +152,7 @@ function VerseList({
       ListFooterComponent={footer}
       contentContainerStyle={list.contentContainerStyle}
       onScroll={onScroll}
-      scrollEventThrottle={list.scrollEventThrottle}
+      scrollEventThrottle={VERSE_SCROLL_THROTTLE_MS}
       onScrollBeginDrag={onScrollBeginDrag}
       onTouchMove={onTouchMove}
       onContentSizeChange={onContentSizeChange}
@@ -185,6 +194,9 @@ export default function BibleScreen({ route, navigation }) {
   const booksScrollRef = useRef(null);
   // 1 = pílula de capítulo visível, 0 = escondida (escrito pela VerseList).
   const pillVisible = useSharedValue(1);
+  // Pílula sempre à vista nos estados sem lista (carregando, capítulo em
+  // preparação): dali a pessoa ainda precisa poder avançar de capítulo.
+  const pillSempreVisivel = useSharedValue(1);
   // Espelho de autoScroll.until para o worklet da lista: até esse instante a
   // rolagem é nossa e não esconde a pílula.
   const autoUntil = useSharedValue(0);
@@ -196,6 +208,10 @@ export default function BibleScreen({ route, navigation }) {
   // no efeito seguinte, entao o efeito de marcacao via o capitulo NOVO com a
   // proporcao ANTIGA e marcava o capitulo como lido sozinho ao avancar.
   const [progresso, setProgresso] = useState({ chave: null, ratio: 0 });
+  // Espelho da fração em `progresso`, para o onScroll só chamar setProgresso
+  // quando a diferença passar de RATIO_STEP (senão cada evento re-renderizava
+  // a tela inteira). Quem muda `progresso` fora do scroll acerta o espelho.
+  const ratioNaBarra = useRef(0);
   // Vira true depois de MARK_DWELL_MS no capitulo; e dependencia do efeito de
   // marcacao, entao a virada reavalia a marcacao sozinha.
   const [passouTempoMinimo, setPassouTempoMinimo] = useState(false);
@@ -340,6 +356,7 @@ export default function BibleScreen({ route, navigation }) {
     if (pending) {
       if (Date.now() <= pending.until) {
         if (scrollable <= 4) return; // ainda não há o que rolar; tenta de novo depois
+        ratioNaBarra.current = pending.ratio;
         setProgresso({ chave: chaveAtual.current, ratio: pending.ratio });
         const alvo = pending.ratio * scrollable;
         autoScroll.current = { target: alvo, until: Date.now() + 600 };
@@ -355,7 +372,10 @@ export default function BibleScreen({ route, navigation }) {
       pendingRestore.current = null;
     }
     // Capítulo curto que cabe inteiro na tela: não há o que rolar, já está lido.
-    if (scrollable <= 4) setProgresso({ chave: chaveAtual.current, ratio: 1 });
+    if (scrollable <= 4) {
+      ratioNaBarra.current = 1;
+      setProgresso({ chave: chaveAtual.current, ratio: 1 });
+    }
   }, [measureFromNode, autoUntil]);
 
   // Recarrega "continue lendo" e estatísticas ao voltar para a lista de livros.
@@ -384,6 +404,7 @@ export default function BibleScreen({ route, navigation }) {
   // Deep link tem prioridade: com versículo destacado, quem rola é o outro efeito.
   useEffect(() => {
     flushSave();
+    ratioNaBarra.current = 0;
     setProgresso({ chave: `${bookId}:${chapter}`, ratio: 0 });
     markedKey.current = null;
     userScrolled.current = false;
@@ -490,7 +511,14 @@ export default function BibleScreen({ route, navigation }) {
     const scrollable = contentSize.height - layoutMeasurement.height;
     const r = scrollable > 4 ? contentOffset.y / scrollable : 1;
     const clamped = Math.max(0, Math.min(1, r));
-    setProgresso({ chave: `${bookId}:${chapter}`, ratio: clamped });
+    // Só vira estado quando andou de verdade (ou cravou 0 ou 1): a barra e o
+    // "continue lendo" não percebem menos de meio por cento, e a tela deixa
+    // de re-renderizar a cada evento de scroll.
+    const passo = Math.abs(clamped - ratioNaBarra.current);
+    if (passo >= RATIO_STEP || (passo > 0 && (clamped === 0 || clamped === 1))) {
+      ratioNaBarra.current = clamped;
+      setProgresso({ chave: `${bookId}:${chapter}`, ratio: clamped });
+    }
     // Consulta não move o "continue lendo": uma busca que cai em Apocalipse 22
     // não pode apagar o ponto de quem estava lendo Gênesis 15. Ao arrastar, o
     // usuário promove aquilo a leitura e a gravação passa a valer.
@@ -812,7 +840,7 @@ export default function BibleScreen({ route, navigation }) {
     const inner = windowWidth - space.md * 2;
     const cols = Math.max(1, Math.floor((inner + gap) / (TARGET + gap)));
     const cell = Math.floor((inner - gap * (cols - 1)) / cols);
-    const openChapter = (c) => { setChapter(c); setHighlightVerse(null); setView('verses'); setFromDeepLink(false); };
+    const openChapter = (c) => { setChapter(c); setHighlightVerse(null); setHighlightVerseEnd(null); setView('verses'); setFromDeepLink(false); };
 
     return (
       <LargeTitleScreen
@@ -889,21 +917,36 @@ export default function BibleScreen({ route, navigation }) {
       </PressScale>
     );
 
+    // Sem lista (carregando ou capítulo em preparação) a pílula fica fixa à
+    // vista: é por ela que se avança ao capítulo seguinte, como o rodapé
+    // antigo permitia.
     if (aguardando || isEmpty) {
       return (
-        <LargeTitleScreen title={title} subtitle={subtitle} back={back} right={right}>
-          {aguardando ? (
-            <BibleLoadingState erro={bibliaPronta.erro} onTentarDeNovo={bibliaPronta.tentarDeNovo} />
-          ) : (
-            <EmptyState
-              icon="time-outline"
-              title={t('bible.chapterPrep')}
-              message={isEn
-                ? 'This chapter of the deuterocanonical books has not been added to the app yet.'
-                : 'Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app.'}
-            />
-          )}
-        </LargeTitleScreen>
+        <View style={styles.screen}>
+          <LargeTitleScreen title={title} subtitle={subtitle} back={back} right={right}>
+            {aguardando ? (
+              <BibleLoadingState erro={bibliaPronta.erro} onTentarDeNovo={bibliaPronta.tentarDeNovo} />
+            ) : (
+              <EmptyState
+                icon="time-outline"
+                title={t('bible.chapterPrep')}
+                message={isEn
+                  ? 'This chapter of the deuterocanonical books has not been added to the app yet.'
+                  : 'Este capítulo dos livros deuterocanônicos ainda não foi adicionado ao app.'}
+              />
+            )}
+          </LargeTitleScreen>
+          <ChapterPill
+            label={t('bible.ofTotal', { n: chapter, total: book.totalChapters })}
+            hasPrev={hasPrev}
+            hasNext={hasNext}
+            onPrev={goPrev}
+            onNext={goNext}
+            prevLabel={t('bible.prevChapter')}
+            nextLabel={t('bible.nextChapter')}
+            visible={pillSempreVisivel}
+          />
+        </View>
       );
     }
 

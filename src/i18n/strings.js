@@ -187,6 +187,7 @@ export const STRINGS = {
     'debate.empty': 'Nada encontrado',
     'debate.tactic': 'Tática',
     'debate.fallacy': 'Falácia',
+    'debate.emptyHint': 'Tente outra palavra ou limpe a busca.',
 
     // === Onboarding ===
 
@@ -386,6 +387,7 @@ export const STRINGS = {
     'note.chooseVerse': 'Escolher versículo',
     'common.edit': 'Editar',
     'common.moreActions': 'Mais ações',
+    'common.open': 'Abrir',
 
     // === Categorias dos artigos ===
     'category.Existência de Deus': 'Existência de Deus',
@@ -613,6 +615,7 @@ export const STRINGS = {
     'debate.empty': 'Nothing found',
     'debate.tactic': 'Tactic',
     'debate.fallacy': 'Fallacy',
+    'debate.emptyHint': 'Try another word or clear the search.',
 
     // === Onboarding ===
 
@@ -812,6 +815,7 @@ export const STRINGS = {
     'note.chooseVerse': 'Choose a verse',
     'common.edit': 'Edit',
     'common.moreActions': 'More actions',
+    'common.open': 'Open',
 
     // === Article categories ===
     'category.Existência de Deus': 'Existence of God',

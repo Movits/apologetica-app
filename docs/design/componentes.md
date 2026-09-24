@@ -50,10 +50,12 @@ pôr margem no `Group` achando que é no card (é no invólucro).
 ## Row
 
 Linha de lista. Props: `icon` (nome Ionicons, cor `iconColor ?? colors.tint`, caixa de 28),
-`title` (body, 1 linha por default, `titleLines={0}` para quebrar), `subtitle` (subhead
-secundário), `trailing` (`'chevron'`, texto ou nó), `onPress` (vira `PressScale` com fundo
-escurecido enquanto pressionada), `disabled` (opacidade 0,4 e `aria-disabled`),
-`accessibilityLabel` (vira `aria-label`), `children` (abaixo do subtítulo), `style`.
+`title` (body, 1 linha por default, `titleLines={0}` para quebrar, `titleColor` para uma ação
+destrutiva em `danger` junto com o `iconColor`), `subtitle` (subhead secundário, sem limite de
+linhas por default, `subtitleLines` para cortar), `trailing` (`'chevron'`, texto ou nó),
+`onPress` (vira `PressScale` com fundo escurecido enquanto pressionada), `disabled` (opacidade
+0,4 e `aria-disabled`), `accessibilityLabel` (vira `aria-label`), `children` (abaixo do
+subtítulo), `style`.
 
 ```jsx
 <Row icon="bookmark-outline" title="Favoritos" subtitle="8 artigos" trailing="chevron" onPress={() => navigate('Favorites')} />

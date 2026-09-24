@@ -94,7 +94,7 @@ export default function LoginScreen({ navigation }) {
             textContentType="emailAddress"
             returnKeyType="next"
             onSubmitEditing={() => passwordRef.current?.focus()}
-            blurOnSubmit={false}
+            submitBehavior="submit"
           />
           <Field
             ref={passwordRef}

@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES } from '../data/dialogues';
+import { getSaintToday } from '../data/saints';
 import { dailyIndex } from '../utils/daily';
 import { pick } from '../utils/i18nData';
 import { openBible } from '../navigation/links';
@@ -48,6 +49,9 @@ export default function TodayScreen() {
 
   const now = useMemo(() => new Date(), []);
   const dateLabel = todayLabel(isEn, now);
+  // Santo do dia resolvido aqui (e não dentro do card) porque o Group conta os
+  // filhos: um card que devolvesse null deixaria uma hairline órfã no topo.
+  const saint = useMemo(() => getSaintToday(now), [now]);
 
   // Objeção do dia: a mesma rotação determinística da Início (semente do dia
   // com o ano), com o roteiro de resposta na tela Diálogo.
@@ -79,9 +83,10 @@ export default function TodayScreen() {
           <VerseOfDayCard onOpen={openVerse} style={block} />
 
           {/* Santo e leituras do dia no mesmo Group: o santo é a memória da
-              liturgia de hoje. Sem santo, o SaintTodayCard devolve null. */}
+              liturgia de hoje. Em dia sem santo (féria) o Group fica só com a
+              liturgia, sem filho vazio nem separador sobrando. */}
           <Group header={t('home.todayLiturgy')} style={block}>
-            <SaintTodayCard />
+            {saint ? <SaintTodayCard saint={saint} /> : null}
             <LiturgyCard onOpen={openLiturgy} />
           </Group>
 

@@ -21,9 +21,6 @@ function relDate(ts, t, isEn) {
   return d.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', { day: 'numeric', month: 'short' });
 }
 
-// Lado da miniatura de cada notícia.
-const THUMB = 56;
-
 // Linhas de placeholder enquanto o feed carrega (mesma forma das notícias).
 const PLACEHOLDER_ROWS = 3;
 
@@ -32,7 +29,7 @@ const PLACEHOLDER_ROWS = 3;
 function NewsRow({ item, onPress }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const { space, radius, icon } = tokens;
+  const { space, radius, icon, thumb } = tokens;
   const [failed, setFailed] = useState(false);
   const hasImage = Boolean(item.image) && !failed;
   const meta = [item.source, item.pubDate ? relDate(item.pubDate, t, isEn) : null].filter(Boolean).join(' · ');
@@ -50,8 +47,8 @@ function NewsRow({ item, onPress }) {
       <View
         aria-hidden
         style={{
-          width: THUMB,
-          height: THUMB,
+          width: thumb.sm,
+          height: thumb.sm,
           borderRadius: radius.sm,
           overflow: 'hidden',
           backgroundColor: colors.separator,
@@ -64,7 +61,7 @@ function NewsRow({ item, onPress }) {
             source={{ uri: item.image }}
             accessible={false}
             resizeMode="cover"
-            style={{ width: THUMB, height: THUMB }}
+            style={{ width: thumb.sm, height: thumb.sm }}
             onError={() => setFailed(true)}
           />
         ) : (
@@ -82,10 +79,10 @@ function NewsRow({ item, onPress }) {
 
 function PlaceholderRow() {
   const { tokens, text } = useTheme();
-  const { space } = tokens;
+  const { space, thumb } = tokens;
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, paddingHorizontal: space.md, paddingVertical: space.sm }}>
-      <Skeleton width={THUMB} height={THUMB} radius="sm" />
+      <Skeleton width={thumb.sm} height={thumb.sm} radius="sm" />
       <View style={{ flex: 1, gap: space.xs }}>
         <Skeleton width="90%" height={text('headline').lineHeight} />
         <Skeleton width="55%" />
@@ -99,6 +96,7 @@ function PlaceholderRow() {
 // a forma do card, sem spinner. Sem rede: estado vazio com "Tentar de novo",
 // que força uma nova busca ignorando o cache.
 export default function NewsCard({ style }) {
+  const { colors, tokens, text } = useTheme();
   const { t, lang } = useLanguage();
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState('loading');
@@ -131,15 +129,20 @@ export default function NewsCard({ style }) {
     );
   }
 
+  // Sem rede: o EmptyState fica fora de um card (um Group com um único filho
+  // só daria fundo), com o mesmo cabeçalho em footnote que o Group desenharia.
   if (status === 'error') {
     return (
-      <Group header={t('news.title')} style={style}>
+      <View style={style}>
+        <Text style={[text('footnote'), { color: colors.textSubtle, marginHorizontal: tokens.space.md, marginBottom: tokens.space.xs }]}>
+          {t('news.title')}
+        </Text>
         <EmptyState
           icon="cloud-offline-outline"
           title={t('news.offline')}
           action={{ label: t('common.tryAgain'), onPress: retry }}
         />
-      </Group>
+      </View>
     );
   }
 

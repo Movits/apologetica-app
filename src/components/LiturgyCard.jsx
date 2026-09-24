@@ -47,9 +47,10 @@ export default function LiturgyCard({ onOpen }) {
         trailing="chevron"
         onPress={onOpen}
         accessibilityLabel={`${label}, ${t('common.loading')}`}
-        aria-busy
       >
-        <View style={{ gap: space.xs, paddingVertical: space.xxs }}>
+        {/* A Row não repassa aria-busy: o estado de carregamento vai na View
+            dos Skeleton, como no NewsCard. */}
+        <View aria-busy style={{ gap: space.xs, paddingVertical: space.xxs }}>
           <Skeleton width="70%" height={text('body').lineHeight} />
           <Skeleton width="45%" />
         </View>

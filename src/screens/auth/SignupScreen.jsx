@@ -100,7 +100,7 @@ export default function SignupScreen({ navigation }) {
             textContentType="name"
             returnKeyType="next"
             onSubmitEditing={() => emailRef.current?.focus()}
-            blurOnSubmit={false}
+            submitBehavior="submit"
           />
           <Field
             ref={emailRef}
@@ -114,7 +114,7 @@ export default function SignupScreen({ navigation }) {
             textContentType="emailAddress"
             returnKeyType="next"
             onSubmitEditing={() => passwordRef.current?.focus()}
-            blurOnSubmit={false}
+            submitBehavior="submit"
           />
           <Field
             ref={passwordRef}
@@ -129,7 +129,7 @@ export default function SignupScreen({ navigation }) {
             textContentType="newPassword"
             returnKeyType="next"
             onSubmitEditing={() => confirmRef.current?.focus()}
-            blurOnSubmit={false}
+            submitBehavior="submit"
           />
           <Field
             ref={confirmRef}

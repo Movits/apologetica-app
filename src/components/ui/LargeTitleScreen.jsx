@@ -8,9 +8,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useTheme } from '../../context/ThemeContext';
 import ChromeBackdrop from '../../navigation/ChromeBackdrop';
+import useTabBarHeightSafe from './useTabBarHeightSafe';
 
 // Contêiner de tela com large title próprio (Cormorant), igual nas três
 // plataformas, sem o large title nativo do iOS. O título grande rola com
@@ -39,18 +39,6 @@ import ChromeBackdrop from '../../navigation/ChromeBackdrop';
 // Altura da barra de navegação (HIG) e ponto em que o título inline aparece.
 const BAR_HEIGHT = 44;
 const COLLAPSE_AT = 40;
-
-// useBottomTabBarHeight() lança quando não há tab navigator por cima
-// (node_modules/@react-navigation/bottom-tabs/src/utils/
-// useBottomTabBarHeight.tsx:8-12: contexto undefined vira Error). Fora das
-// abas (modal, auth) a tab bar não existe, então o padding é zero.
-function useTabBarHeightSafe() {
-  try {
-    return useBottomTabBarHeight();
-  } catch {
-    return 0;
-  }
-}
 
 function BackButton({ back, colors, tokens, text }) {
   return (

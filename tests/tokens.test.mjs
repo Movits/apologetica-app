@@ -6,6 +6,7 @@ import {
   type,
   textStyle,
   icon,
+  thumb,
   motion,
   shadow,
   FONT_FAMILY,
@@ -63,6 +64,10 @@ test('textStyle lança Error para papel desconhecido', () => {
 
 test('icon tem três tamanhos', () => {
   assert.deepEqual(icon, { sm: 18, md: 22, lg: 26 });
+});
+
+test('thumb traz os lados das miniaturas (notícia, capa de artigo e estação 7:5)', () => {
+  assert.deepEqual(thumb, { sm: 56, md: 72, seasonW: 56, seasonH: 40 });
 });
 
 test('motion traz durações, curva e escala de press', () => {

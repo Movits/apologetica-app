@@ -7,11 +7,15 @@ import PressScale from './PressScale';
 // título e subtítulo no meio, `trailing` à direita ('chevron', texto ou nó).
 // Com `onPress` vira um PressScale com role de botão e fundo levemente
 // escurecido enquanto pressionada, sem `onPress` é uma View estática.
+// `titleColor` pinta o título (uma ação destrutiva usa `danger` no ícone e
+// no rótulo); `subtitleLines` limita o subtítulo (default: sem limite).
 export default function Row({
   icon,
   iconColor,
   title,
+  titleColor,
   subtitle,
+  subtitleLines,
   trailing,
   onPress,
   disabled,
@@ -51,12 +55,14 @@ export default function Row({
       ) : null}
       <View style={{ flex: 1, minWidth: 0 }}>
         {title ? (
-          <Text style={[text('body'), { color: colors.text }]} numberOfLines={titleLines || undefined}>
+          <Text style={[text('body'), { color: titleColor ?? colors.text }]} numberOfLines={titleLines || undefined}>
             {title}
           </Text>
         ) : null}
         {subtitle ? (
-          <Text style={[text('subhead'), { color: colors.textSubtle }]}>{subtitle}</Text>
+          <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={subtitleLines || undefined}>
+            {subtitle}
+          </Text>
         ) : null}
         {children}
       </View>

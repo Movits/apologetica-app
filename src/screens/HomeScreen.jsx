@@ -29,9 +29,6 @@ const SEASON_IMAGES = {
   comum: require('../../assets/design/estacao-comum.jpg'),
 };
 
-// Miniatura da estação (7:5), no lugar da caixa de ícone da Row.
-const SEASON_THUMB = { width: 56, height: 40 };
-
 // Data por extenso na língua da interface ("Quarta-feira, 24 de setembro"),
 // com a inicial maiúscula (o pt-BR devolve o dia da semana em minúsculas).
 function todayLabel(isEn, date) {
@@ -48,7 +45,7 @@ function todayLabel(isEn, date) {
 // toque.
 function SeasonRow({ season, isEn }) {
   const { colors, tokens, text } = useTheme();
-  const { space, radius } = tokens;
+  const { space, radius, thumb } = tokens;
   return (
     <View
       style={{
@@ -60,12 +57,13 @@ function SeasonRow({ season, isEn }) {
         gap: space.sm,
       }}
     >
-      {/* Decorativa: o nome da estação vem escrito ao lado. */}
+      {/* Decorativa: o nome da estação vem escrito ao lado. Miniatura 7:5
+          (tokens.thumb) no lugar da caixa de ícone da Row. */}
       <Image
         source={SEASON_IMAGES[season.key]}
         aria-hidden
         accessible={false}
-        style={[SEASON_THUMB, { borderRadius: radius.sm, backgroundColor: colors.separator }]}
+        style={{ width: thumb.seasonW, height: thumb.seasonH, borderRadius: radius.sm, backgroundColor: colors.separator }}
       />
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text style={[text('body'), { color: colors.text }]}>{isEn ? season.en : season.pt}</Text>

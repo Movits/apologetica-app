@@ -354,7 +354,8 @@ export default function SettingsScreen() {
                     <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={1}>{user.email}</Text>
                   </View>
                 </View>
-                <Row icon="log-out-outline" iconColor={colors.danger} title={t('settings.logout')} onPress={handleLogout} />
+                {/* Ação destrutiva: ícone e rótulo na mesma cor, como "Excluir conta". */}
+                <Row icon="log-out-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.logout')} onPress={handleLogout} />
               </Group>
             ) : guest ? (
               <GateNotice

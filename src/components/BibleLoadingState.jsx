@@ -1,77 +1,61 @@
-import { View, Text, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { Button } from './ui';
 
 // Estado enquanto a tradução da Bíblia está sendo baixada, e o de falha com
-// nova tentativa. Fica num componente só porque cinco telas mostram texto
-// bíblico e todas precisam do mesmo par.
+// nova tentativa. Fica num componente só porque mais de uma tela mostra texto
+// bíblico e todas precisam do mesmo par. Mesma gramática do EmptyState (ícone
+// discreto, título em headline, mensagem em subhead, botão secundário), sem
+// ser um EmptyState porque o erro de rede é erro, não lista vazia.
 //
 // Importa que isto NÃO se confunda com "capítulo em preparação", que é outra
 // coisa: aquele significa que um capítulo deuterocanônico ainda não foi
 // adicionado ao app, e nenhuma espera resolve.
+//
+// `compacto`: versão menor para dentro de uma lista (título em footnote,
+// recuo vertical menor e sem a linha de explicação).
 export default function BibleLoadingState({ erro, onTentarDeNovo, compacto = false }) {
-  const { colors, text } = useTheme();
+  const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
-  const styles = makeStyles(colors, text, compacto);
+  const { space, icon } = tokens;
+
+  const box = {
+    flex: compacto ? 0 : 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: compacto ? space.lg : space.xxxl,
+    paddingHorizontal: space.xl,
+    gap: space.xs,
+  };
+  const title = [text(compacto ? 'footnote' : 'headline'), { color: colors.text, textAlign: 'center' }];
+  const sub = [text('subhead'), { color: colors.textSubtle, textAlign: 'center' }];
 
   if (erro) {
     return (
-      <View style={styles.box}>
-        <Ionicons name="cloud-offline-outline" size={compacto ? 28 : 44} color={colors.textSubtle} />
-        <Text style={styles.titulo}>{t('bible.loadError')}</Text>
-        <Text style={styles.sub}>{t('bible.loadErrorSub')}</Text>
-        {onTentarDeNovo && (
-          <TouchableOpacity
-            style={styles.botao}
+      <View style={box}>
+        <Ionicons name="cloud-offline-outline" size={compacto ? icon.md : icon.lg} color={colors.textTertiary} />
+        <Text style={title}>{t('bible.loadError')}</Text>
+        <Text style={sub}>{t('bible.loadErrorSub')}</Text>
+        {onTentarDeNovo ? (
+          <Button
+            variant="secondary"
+            full={false}
+            label={t('common.tryAgain')}
             onPress={onTentarDeNovo}
-            role="button"
-            aria-label={t('common.tryAgain')}
-          >
-            <Text style={styles.botaoTexto}>{t('common.tryAgain')}</Text>
-          </TouchableOpacity>
-        )}
+            style={{ marginTop: space.sm }}
+          />
+        ) : null}
       </View>
     );
   }
 
   return (
-    <View style={styles.box}>
+    <View style={box} aria-busy aria-label={t('bible.loading')}>
       <ActivityIndicator size={compacto ? 'small' : 'large'} color={colors.accent} />
-      <Text style={styles.titulo}>{t('bible.loading')}</Text>
-      {!compacto && <Text style={styles.sub}>{t('bible.loadingSub')}</Text>}
+      <Text style={title}>{t('bible.loading')}</Text>
+      {!compacto ? <Text style={sub}>{t('bible.loadingSub')}</Text> : null}
     </View>
   );
 }
-
-const makeStyles = (c, text, compacto) =>
-  StyleSheet.create({
-    box: {
-      flex: compacto ? 0 : 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: compacto ? 20 : 40,
-      paddingHorizontal: 28,
-      gap: 10,
-    },
-    titulo: {
-      ...text(compacto ? 'footnote' : 'callout'),
-      fontWeight: '600',
-      color: c.primaryText,
-      textAlign: 'center',
-      marginTop: 4,
-    },
-    sub: {
-      ...text('caption1'),
-      color: c.textSubtle,
-      textAlign: 'center',
-    },
-    botao: {
-      marginTop: 10,
-      paddingVertical: 11,
-      paddingHorizontal: 22,
-      borderRadius: 10,
-      backgroundColor: c.primary,
-    },
-    botaoTexto: { ...text('subhead'), fontWeight: '600', color: c.onPrimary },
-  });

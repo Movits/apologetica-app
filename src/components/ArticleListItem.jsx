@@ -18,13 +18,12 @@ import PressScale from './ui/PressScale';
 // - showCategory: esconde a categoria quando a lista já é de uma categoria só.
 // - onPress: abre o artigo (a tela decide a rota).
 
-// Lado da capa. A imagem do artigo é recortada em quadrado (cover).
-export const ARTICLE_COVER = 72;
-
+// O lado da capa é tokens.thumb.md: a imagem do artigo é recortada em
+// quadrado (cover).
 export default function ArticleListItem({ article, read = false, showCategory = true, onPress }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const { space, radius, icon } = tokens;
+  const { space, radius, icon, thumb } = tokens;
 
   const title = pick(article, 'title', isEn);
   const summary = pick(article, 'summary', isEn);
@@ -54,8 +53,8 @@ export default function ArticleListItem({ article, read = false, showCategory = 
         accessible={false}
         resizeMode="cover"
         style={{
-          width: ARTICLE_COVER,
-          height: ARTICLE_COVER,
+          width: thumb.md,
+          height: thumb.md,
           borderRadius: radius.md,
           backgroundColor: colors.separator,
         }}
@@ -97,7 +96,7 @@ export function ArticleListSeparator() {
       style={{
         height: StyleSheet.hairlineWidth,
         backgroundColor: colors.separator,
-        marginLeft: ARTICLE_COVER + tokens.space.sm,
+        marginLeft: tokens.thumb.md + tokens.space.sm,
       }}
     />
   );

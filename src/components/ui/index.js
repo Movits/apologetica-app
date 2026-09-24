@@ -14,3 +14,4 @@ export { default as EmptyState } from './EmptyState';
 export { default as GateNotice } from './GateNotice';
 export { default as Sheet } from './Sheet';
 export { default as LargeTitleScreen } from './LargeTitleScreen';
+export { default as useTabBarHeightSafe } from './useTabBarHeightSafe';

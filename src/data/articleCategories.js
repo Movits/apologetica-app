@@ -1,5 +1,6 @@
 // Metadados das categorias de artigos: ordem de exibição + ícone (só Ionicons;
-// `iconSet` fica por compatibilidade com AppIcon, que hoje ignora o valor).
+// `iconSet` é legado de quando havia um segundo conjunto de ícones e hoje
+// ninguém lê o valor).
 // Fonte única de verdade da ordem/ícone. Nome e descrição vêm do i18n
 // (category.<id> e category.<id>.desc). A contagem é calculada do array articles.
 

@@ -30,6 +30,10 @@ export const radius = { xs: 4, sm: 8, md: 12, lg: 18, full: 9999 };
 // Tamanhos de ícone (Ionicons) por contexto: linha de lista, ação, destaque.
 export const icon = { sm: 18, md: 22, lg: 26 };
 
+// Lados das miniaturas: `sm` (notícia), `md` (capa de artigo na lista) e a
+// foto da estação litúrgica na Início, em 7:5 (`seasonW` x `seasonH`).
+export const thumb = { sm: 56, md: 72, seasonW: 56, seasonH: 40 };
+
 // Papéis de texto (§12.4, tamanhos do iOS no Large). `size` e `lineHeight` são
 // os valores sem escala. `fixed: true` faz o papel ignorar a escala de fonte
 // (só o rótulo da tab bar, que não cresce).

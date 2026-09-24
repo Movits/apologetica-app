@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
-import { space, radius, icon, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
+import { space, radius, icon, thumb, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
 import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
 
 // As paletas são exportadas para quem vive fora do provider (o ErrorBoundary
@@ -105,7 +105,7 @@ const FONT_SCALES = {
 // plataforma atual. Platform.OS não muda em tempo de execução, então o objeto
 // é constante e mantém a mesma referência entre renders.
 const FONT_FAMILY = FONT_FAMILY_BY_PLATFORM[Platform.OS] || FONT_FAMILY_BY_PLATFORM.ios;
-const TOKENS = { space, radius, icon, motion, shadow, fontFamily: FONT_FAMILY };
+const TOKENS = { space, radius, icon, thumb, motion, shadow, fontFamily: FONT_FAMILY };
 
 // Modo de tema escolhido: 'system' | 'light' | 'dark' (src/utils/themeMode.js).
 // A chave antiga 'settings:darkMode' é IGNORADA de propósito: o código anterior

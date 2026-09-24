@@ -3,7 +3,6 @@ import { View, Text, ScrollView, Pressable, Image, Platform, useWindowDimensions
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 import { useHeaderHeight } from '@react-navigation/elements';
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { articles } from '../data/articles';
 import { referenceById, translateRef, translateAuthor, translateYear } from '../data/references';
 import { referencesEn } from '../data/references-en';
@@ -18,7 +17,7 @@ import { isFavorite, toggleFavorite } from '../utils/favorites';
 import { markPlanDay, markAsRead } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
 import { translucentHeaderOptions, fullBleedContentOptions } from '../navigation/chrome';
-import { Button, Group, Row, SectionTitle, PressScale } from '../components/ui';
+import { Button, Group, Row, SectionTitle, PressScale, useTabBarHeightSafe } from '../components/ui';
 import BrandMark from '../components/BrandMark';
 import ImageZoomModal from '../components/ImageZoomModal';
 import ReadingProgressBar from '../components/ReadingProgressBar';
@@ -35,6 +34,12 @@ const PROGRESS_WRITE_MS = 1000;
 const PROGRESS_WRITE_STEP = 0.05;
 // Fração do artigo a partir da qual ele conta como lido.
 const READ_THRESHOLD = 0.9;
+// Variação mínima da fração para virar estado (a barra não percebe menos que
+// meio por cento, e o scroll deixa de re-renderizar a tela a cada evento).
+const PROGRESS_STEP = 0.005;
+// Conteúdo até esta folga mais alto que a viewport ainda "cabe na tela": não
+// há o que rolar, então o artigo já está inteiro à vista e conta como lido.
+const FITS_SLACK = 4;
 
 // Coluna de leitura no desktop (web): largura máxima do texto e, a partir de
 // que sobra lateral (gutter) as cruzes decorativas aparecem. O BrandMark "lg"
@@ -67,20 +72,6 @@ const stripMarkdownForTts = (s) =>
     .replace(/`([^`]+)`/g, '$1')               // `code` → code
     .replace(/^#{1,6}\s*/gm, '')               // # headers
     .replace(/[\u200B-\u200D\uFEFF]/g, '');    // zero-width chars
-
-// Cópia do useTabBarHeightSafe de src/components/ui/LargeTitleScreen.jsx
-// (arquivo de outra onda): useBottomTabBarHeight() lança quando não há tab
-// navigator por cima (node_modules/@react-navigation/bottom-tabs/src/utils/
-// useBottomTabBarHeight.tsx:8-12). Esta tela vive nos stacks das abas, mas o
-// mesmo componente responde por 'ArticleFromSearch' em qualquer stack, então
-// fora das abas o recuo é zero.
-function useTabBarHeightSafe() {
-  try {
-    return useBottomTabBarHeight();
-  } catch {
-    return 0;
-  }
-}
 
 // As três ações do header: ouvir/parar, compartilhar, guardar/remover. Cada
 // uma é um PressScale de 44x44 com o ícone em `tint`; o estado (narrando,
@@ -141,10 +132,15 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const scrollRef = useRef(null);
   const scrollYRef = useRef(0);
   const savedScrollRef = useRef(0);
+  // Espelho de `progress`, para só chamar setProgress quando andou de verdade.
+  const shownProgressRef = useRef(0);
+  // Altura da viewport e do conteúdo do ScrollView, para saber se o artigo
+  // cabe inteiro na tela (aí nunca haveria scroll para chegar aos 90%).
+  const layoutHRef = useRef(0);
+  const contentHRef = useRef(0);
 
   useEffect(() => {
     if (!article) return undefined;
-    setLastRead(article.id);
     // Vindo do plano: credita o trilho/dia exatos. Fora do plano: credita
     // todos os dias (em qualquer trilho) que contêm este artigo.
     const { fromPlanTrack, fromPlanDay } = route.params || {};
@@ -183,6 +179,31 @@ export default function ArticleDetailScreen({ route, navigation }) {
     // Ao desmontar (ou trocar de artigo na mesma tela) grava o que faltou.
     return () => persistProgress(true);
   }, [article, persistProgress]);
+
+  const showProgress = useCallback((p) => {
+    const step = Math.abs(p - shownProgressRef.current);
+    if (step < PROGRESS_STEP && !(step > 0 && (p === 0 || p === 1))) return;
+    shownProgressRef.current = p;
+    setProgress(p);
+  }, []);
+
+  // Artigo que cabe inteiro na viewport: não há scroll, então o progresso vai
+  // direto a 1 (grava o "continuar lendo" e o selo de lido). Chamado pelo
+  // onLayout e pelo onContentSizeChange, que chegam em qualquer ordem. Com
+  // herói, só decide depois de ele ter sido medido: antes disso o conteúdo
+  // está sem a imagem e pareceria caber; medido, o onContentSizeChange volta.
+  const checkFits = useCallback(() => {
+    if (article?.image && heroW <= 0) return;
+    const layout = layoutHRef.current;
+    const content = contentHRef.current;
+    if (!layout || !content || content > layout + FITS_SLACK) return;
+    showProgress(1);
+    const s = progressRef.current;
+    if (s.max < 1) {
+      s.max = 1;
+      persistProgress(false);
+    }
+  }, [article, heroW, showProgress, persistProgress]);
 
   // Ao sair da tela (voltar, trocar de aba ou empurrar outra por cima): para o
   // TTS e grava o progresso.
@@ -274,6 +295,15 @@ export default function ArticleDetailScreen({ route, navigation }) {
     });
   }, [navigation, article, displayTitle, colors, fav, speaking, t]);
 
+  // Ao ganhar foco (abrir, ou voltar de um artigo relacionado, referência ou
+  // glossário) este passa a ser o "Continuar lendo" da Início, com o progresso
+  // que já tinha: sem isso, voltar de um artigo relacionado deixava o outro lá.
+  useFocusEffect(
+    useCallback(() => {
+      if (article) setLastRead(article.id, progressRef.current.max || undefined);
+    }, [article])
+  );
+
   // Restaura a posição de scroll ao voltar de uma referência/glossário (web reseta).
   // A posição é capturada no momento de navegar (savedScrollRef), porque eventos de
   // scroll durante a transição corrompiam o valor (a página voltava no fim).
@@ -304,9 +334,10 @@ export default function ArticleDetailScreen({ route, navigation }) {
   // máximo alcançado para persistir.
   const handleScroll = (e) => {
     const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
+    const fits = contentSize.height <= layoutMeasurement.height + FITS_SLACK;
     const max = Math.max(1, contentSize.height - layoutMeasurement.height);
-    const p = Math.max(0, Math.min(1, contentOffset.y / max));
-    setProgress(p);
+    const p = fits ? 1 : Math.max(0, Math.min(1, contentOffset.y / max));
+    showProgress(p);
     scrollYRef.current = contentOffset.y;
     const s = progressRef.current;
     if (p > s.max) {
@@ -356,6 +387,8 @@ export default function ArticleDetailScreen({ route, navigation }) {
         ]}
         onScroll={handleScroll}
         scrollEventThrottle={16}
+        onLayout={(e) => { layoutHRef.current = e.nativeEvent.layout.height; checkFits(); }}
+        onContentSizeChange={(w, h) => { contentHRef.current = h; checkFits(); }}
       >
         <View style={styles.column}>
           {article.image && (
@@ -416,13 +449,15 @@ export default function ArticleDetailScreen({ route, navigation }) {
                   const author = pick(ref, 'author', isEn, translateAuthor);
                   const year = pick(ref, 'year', isEn, translateYear);
                   const credit = [author, year].filter(Boolean).join(', ');
-                  const subtitle = credit || pick(ref, 'fullSource', isEn);
+                  // Obra e autoria juntas: "Suma Teológica, I, q. 2 · Tomás de Aquino, 1274".
+                  const subtitle = [pick(ref, 'fullSource', isEn), credit].filter(Boolean).join(' · ');
                   return (
                     <Row
                       key={refId}
                       title={title}
                       titleLines={2}
                       subtitle={subtitle}
+                      subtitleLines={2}
                       trailing="chevron"
                       onPress={() => openReference(refId)}
                     />
