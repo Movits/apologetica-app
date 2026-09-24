@@ -1,0 +1,106 @@
+{
+  "screens": {},
+  "checks": {
+    "loginFocusOutline": {
+      "tag": "BUTTON",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto"
+    },
+    "rafIdle-claro-390": 0,
+    "tabs-claro-390": {
+      "count": 5,
+      "selected": 1,
+      "selectedLabel": "Início",
+      "labelColor": "rgb(26, 58, 92)",
+      "barBg": "rgba(0, 0, 0, 0)",
+      "backdrop": "blur(16px) saturate(1.8)",
+      "heights": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ],
+      "labelContrast": 10.26
+    },
+    "homeButtons-claro-390": {
+      "count": 10,
+      "under44": 0
+    },
+    "artigoActions-claro-390": [
+      {
+        "label": "Ouvir o artigo",
+        "h": 44
+      },
+      {
+        "label": "Compartilhar",
+        "h": 44
+      },
+      {
+        "label": "Guardar nos favoritos",
+        "h": 44
+      }
+    ],
+    "biblia-claro-390": {
+      "verse16": true,
+      "dialogs": 0
+    },
+    "rafIdle-escuro-390": 0,
+    "tabs-escuro-390": {
+      "count": 5,
+      "selected": 1,
+      "selectedLabel": "Início",
+      "labelColor": "rgb(212, 184, 106)",
+      "barBg": "rgba(0, 0, 0, 0)",
+      "backdrop": "blur(16px) saturate(1.8)",
+      "heights": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ],
+      "labelContrast": 9.34
+    },
+    "homeButtons-escuro-390": {
+      "count": 10,
+      "under44": 0
+    },
+    "artigoActions-escuro-390": [
+      {
+        "label": "Ouvir o artigo",
+        "h": 44
+      },
+      {
+        "label": "Compartilhar",
+        "h": 44
+      },
+      {
+        "label": "Guardar nos favoritos",
+        "h": 44
+      }
+    ],
+    "biblia-escuro-390": {
+      "verse16": true,
+      "dialogs": 0
+    }
+  },
+  "errors": {
+    "onboarding-claro-390": [],
+    "login-claro-390": [],
+    "app-claro-390": [],
+    "onboarding-claro-1280": [],
+    "login-claro-1280": [],
+    "app-claro-1280": [],
+    "onboarding-escuro-390": [],
+    "login-escuro-390": [],
+    "app-escuro-390": [],
+    "onboarding-escuro-1280": [],
+    "login-escuro-1280": [],
+    "app-escuro-1280": []
+  },
+  "summary": {
+    "pageErrors": 0,
+    "shots": 26
+  }
+}
