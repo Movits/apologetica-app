@@ -7,19 +7,6 @@
     "icon": "./assets/icon.png",
     "scheme": "appologetica",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "backgroundColor": "#1a3a5c",
-      "resizeMode": "contain"
-    },
-    "androidNavigationBar": {
-      "backgroundColor": "#ffffff",
-      "barStyle": "dark-content"
-    },
-    "notification": {
-      "icon": "./assets/notification-icon.png",
-      "color": "#c9a84c"
-    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.appologetica.app"
@@ -29,8 +16,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1a3a5c"
-      },
-      "edgeToEdgeEnabled": false
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,14 +24,35 @@
     "plugins": [
       "expo-web-browser",
       [
-        "@sentry/react-native/expo",
+        "@sentry/react-native",
         {
           "url": "https://sentry.io/",
           "project": "react-native",
           "organization": "appologetica"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-sharing",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#1a3a5c",
+          "dark": {
+            "backgroundColor": "#142844"
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#c9a84c"
+        }
+      ]
     ],
     "extra": {
       "eas": {

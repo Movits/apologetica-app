@@ -83,3 +83,21 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - Cada agente deve exportar para o próprio `--output-dir` e servir numa porta
   própria: um `expo export` concorrente apaga os assets com hash do `dist/` que
   outro Playwright está lendo.
+
+## Sobre versões do Expo (2026-09-24)
+
+- O Expo Go da App Store e da Play Store só abre o SDK mais recente. Ficar um
+  SDK atrás já obriga a instalar um Expo Go antigo (Android) ou a usar build
+  de desenvolvimento (iPhone). Manter o SDK atualizado é o que deixa o teste no
+  celular barato.
+- Upgrade em três passos: `npx expo install expo@^N.0.0 --fix`, depois
+  `npx expo-doctor@latest` (é ele que aponta os campos removidos do `app.json`),
+  depois ler o módulo em `node_modules` antes de trocar uma chamada (o
+  changelog diz "deprecado", o código diz se a função ainda existe).
+- Com `app.config.js` dinâmico a CLI não consegue gravar plugins sozinha: ela
+  lista o que quer e o plugin entra à mão no `app.json`.
+- Prova barata de que um upgrade não mudou nada visível: as capturas do
+  Playwright saírem byte a byte iguais (`cmp`) às da versão anterior.
+- `npx expo export -p ios -p android` compila os bundles nativos sem Xcode nem
+  Android Studio: pega import quebrado em módulo só nativo que o export web
+  nunca vê.

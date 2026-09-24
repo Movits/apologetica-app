@@ -40,7 +40,10 @@ node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault 
 
 ## Architecture
 
-**React Native + Expo SDK 54** com 5 tabs no bottom navigator. **Tudo funciona offline** — sem chamadas de rede em tempo de execução (exceto auth Firebase, liturgia e notícias, que têm fallback).
+**React Native + Expo SDK 57** (React Native 0.86, React 19.2, New Architecture e
+edge-to-edge obrigatórios no Android; splash, notificações, barra de status e
+Sentry configurados por plugins em `app.json`, não por campos soltos) com 5 tabs
+no bottom navigator. **Tudo funciona offline** — sem chamadas de rede em tempo de execução (exceto auth Firebase, liturgia e notícias, que têm fallback).
 
 O mesmo código roda em **Android, iOS e web** (react-native-web). Toda mudança
 precisa continuar funcionando nas três plataformas.

@@ -3,7 +3,7 @@ import { BlurView } from 'expo-blur';
 import { useTheme } from '../context/ThemeContext';
 
 // Fundo translúcido do chrome (header e tab bar) no nativo: no iOS, BlurView
-// do expo-blur 15.0.8 (props tint e intensity em node_modules/expo-blur/build/
+// do expo-blur 57 (props tint e intensity em node_modules/expo-blur/build/
 // BlurView.types.d.ts) sobre a cor `material` do tema, com uma hairline na
 // borda que encosta no conteúdo.
 //

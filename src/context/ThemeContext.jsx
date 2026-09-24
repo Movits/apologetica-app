@@ -188,18 +188,16 @@ export function ThemeProvider({ children }) {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
   }, [fontSize, hydrated]);
 
-  // Sincroniza a navigation bar do Android (fundo + ícones) com o tema, para a
-  // barra do sistema não destoar do app no build nativo. O fundo acompanha a cor
-  // da tab bar (card); os ícones invertem conforme claro/escuro.
-  // Com edge-to-edge (Expo Go 54 e SDK 55) setBackgroundColorAsync vira no-op
-  // com aviso no console; a chamada sai quando `edgeToEdgeEnabled` for ligado
-  // no app.json (onda futura, depois de todas as telas migrarem). Até lá ela
-  // ainda vale no build EAS.
+  // Sincroniza os ícones da navigation bar do Android com o tema. Desde o SDK
+  // 55 o edge-to-edge é obrigatório: a barra é transparente sobre o app (não
+  // existe mais cor de fundo para pintar) e a API é `NavigationBar.setStyle`
+  // (node_modules/expo-navigation-bar/build/NavigationBar.android.js), síncrona.
+  // `style` é a cor dos botões: 'light' sobre o tema escuro, 'dark' sobre o claro.
   useEffect(() => {
     if (Platform.OS !== 'android') return;
-    const c = darkMode ? DARK : LIGHT;
-    NavigationBar.setBackgroundColorAsync(c.card).catch(() => {});
-    NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
+    try {
+      NavigationBar.setStyle(darkMode ? 'light' : 'dark');
+    } catch {}
   }, [darkMode]);
 
   // Web: o autofill do navegador pinta um fundo azul/amarelo só no <input> interno,

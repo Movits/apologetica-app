@@ -11,7 +11,7 @@ O APPologetica é um app de apologética católica bilíngue (PT/EN) feito em Re
 
 | Peça | Versão | Papel |
 | --- | --- | --- |
-| Expo SDK | 54 | build, dev server e módulos nativos |
+| Expo SDK | 57 | build, dev server e módulos nativos (React Native 0.86, edge-to-edge obrigatório) |
 | React | 19.1 | biblioteca de UI |
 | React Native | 0.81 | runtime nativo (na web via react-native-web) |
 | React Navigation | 6 | abas e stacks de navegação |

@@ -212,3 +212,14 @@ Verificação por commit: lint, export web, captura da tela, `grep` de números 
 - `grep -rn "setBackgroundColorAsync\|'Artigo - '\|Artigo - " src/ App.js` → 0.
 - `grep -rn "\"type\": \"module\"" package.json` → 0. `grep -rn "expo-font\", {" app.json` → 0 (plugin sem opções).
 - Nada de `<SharedScreens` como JSX; nada de `headerLargeTitle`; nada de `shadowColor|shadowOpacity|elevation:` nos componentes novos.
+
+## Adendo de 2026-09-24: Expo SDK 57
+
+O projeto subiu do SDK 54 para o 57 depois da Fase 5 (diário
+`2026-09-24 - Upgrade para o Expo SDK 57.md`). Isso fechou a "onda futura" do
+edge-to-edge: no SDK 55+ ele é obrigatório no Android, `edgeToEdgeEnabled` saiu
+do `app.json` e `setBackgroundColorAsync`/`setButtonStyleAsync` deixaram de
+existir (`ThemeContext.jsx` e `useModalNavBar.js` usam `NavigationBar.setStyle`).
+Splash, notificações, barra de status, compartilhamento e Sentry passaram a ser
+plugins no `app.json`. As 26 capturas de verificação saíram idênticas às do
+SDK 54.

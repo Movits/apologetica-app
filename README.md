@@ -113,7 +113,7 @@ npm run ios       # simulador iOS (somente macOS, com Xcode)
 
 | Camada | Tecnologia |
 |--------|------------|
-| Framework | React Native + **Expo SDK 54** |
+| Framework | React Native + **Expo SDK 57** |
 | Navegação | React Navigation (bottom tabs + native stack) |
 | Estado | Context API (tema, idioma, autenticação) |
 | Auth / dados do usuário | Firebase (Auth + Firestore) |
