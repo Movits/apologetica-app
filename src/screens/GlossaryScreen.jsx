@@ -1,13 +1,23 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { glossary, glossaryByTerm } from '../data/glossary';
+import { pick } from '../utils/i18nData';
+import { EmptyState, PressScale, SearchField } from '../components/ui';
 
+// Posição do termo na tela ao rolar até ele (fração da altura visível).
+const SCROLL_VIEW_POSITION = 0.12;
+
+// Glossário apologético: busca no topo e a lista como uma única lista
+// agrupada (a FlatList é o card, para manter a virtualização e o
+// scrollToIndex do link [[termo]] vindo do artigo). Cada termo mostra duas
+// linhas da definição e expande ao toque.
 export default function GlossaryScreen({ route }) {
-  const { colors, fs } = useTheme();
-  const { isEn } = useLanguage();
+  const { colors, tokens } = useTheme();
+  const { t } = useLanguage();
+  const { space, radius } = tokens;
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
   const listRef = useRef(null);
@@ -23,7 +33,7 @@ export default function GlossaryScreen({ route }) {
     const index = glossary.findIndex((g) => g.id === entry.id);
     if (index < 0) return;
     const id = setTimeout(() => {
-      listRef.current?.scrollToIndex({ index, viewPosition: 0.12, animated: false });
+      listRef.current?.scrollToIndex({ index, viewPosition: SCROLL_VIEW_POSITION, animated: false });
     }, 150);
     return () => clearTimeout(id);
   }, [route?.params?.highlightTerm]);
@@ -40,76 +50,82 @@ export default function GlossaryScreen({ route }) {
     );
   }, [query]);
 
-  const [focused, setFocused] = useState(false);
-  const styles = makeStyles(colors, fs);
+  const empty = filtered.length === 0;
+  const separator = { height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={[styles.searchRow, focused && styles.searchRowFocused]}>
-        <Ionicons name="search-outline" size={18} color={colors.textSubtle} />
-        <TextInput
-          style={styles.input}
+      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, paddingBottom: space.xs }}>
+        <SearchField
           value={query}
           onChangeText={setQuery}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder={isEn ? 'Search term...' : 'Buscar termo...'}
-          placeholderTextColor={colors.textSubtle}
+          placeholder={t('glossary.search')}
+          clearLabel={t('common.clear')}
           autoCorrect={false}
         />
-        {query.length > 0 && (
-          <TouchableOpacity onPress={() => setQuery('')}>
-            <Ionicons name="close-circle" size={18} color={colors.textSubtle} />
-          </TouchableOpacity>
-        )}
       </View>
 
       <FlatList
         ref={listRef}
         data={filtered}
         keyExtractor={(g) => g.id}
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={[
+          { margin: space.md, marginTop: space.xs },
+          empty ? null : { backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' },
+        ]}
+        ItemSeparatorComponent={() => <View style={separator} />}
         onScrollToIndexFailed={(info) => {
           listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
-          setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: 0.12, animated: false }), 80);
+          setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: SCROLL_VIEW_POSITION, animated: false }), 80);
         }}
-        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No term found.' : 'Nenhum termo encontrado.'}</Text>}
-        renderItem={({ item }) => {
-          const isOpen = expanded === item.id;
-          return (
-            <TouchableOpacity
-              style={[styles.card, isOpen && styles.cardOpen]}
-              onPress={() => setExpanded(isOpen ? null : item.id)}
-            >
-              <View style={styles.headRow}>
-                <Text style={styles.term}>{isEn ? (item.termEn || item.term) : item.term}</Text>
-                <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
-              </View>
-              {isOpen && (
-                <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
-              )}
-            </TouchableOpacity>
-          );
-        }}
+        ListEmptyComponent={<EmptyState icon="search-outline" title={t('glossary.empty')} message={t('glossary.emptyHint')} />}
+        renderItem={({ item }) => (
+          <TermRow
+            item={item}
+            open={expanded === item.id}
+            onToggle={() => setExpanded(expanded === item.id ? null : item.id)}
+          />
+        )}
       />
     </View>
   );
 }
 
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    searchRow: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      backgroundColor: c.card, margin: 16, paddingHorizontal: 14,
-      borderRadius: 12, minHeight: 48,
-      borderWidth: 1.5, borderColor: 'transparent',
-    },
-    searchRowFocused: { borderColor: c.accent },
-    input: { flex: 1, color: c.text, fontSize: fs(14), paddingVertical: 10, ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null) },
-    card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
-    cardOpen: { borderWidth: 1, borderColor: c.accent },
-    headRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-    term: { fontSize: fs(15), color: c.primaryText, fontWeight: 'bold' },
-    def: { marginTop: 8, fontSize: fs(13), color: c.text, lineHeight: fs(20) },
-    empty: { textAlign: 'center', color: c.textSubtle, fontSize: fs(14), marginTop: 40 },
-  });
+// Linha de termo: headline com o termo, definição em subhead (duas linhas
+// fechada, inteira aberta) e chevron. `aria-expanded` acompanha o estado.
+function TermRow({ item, open, onToggle }) {
+  const { colors, tokens, text } = useTheme();
+  const { isEn } = useLanguage();
+  const { space, icon } = tokens;
+
+  return (
+    <PressScale
+      role="button"
+      aria-expanded={open}
+      onPress={onToggle}
+      style={({ pressed }) => [
+        {
+          flexDirection: 'row',
+          alignItems: 'center',
+          minHeight: 44,
+          paddingHorizontal: space.md,
+          paddingVertical: space.sm,
+          gap: space.sm,
+        },
+        pressed ? { backgroundColor: colors.separator } : null,
+      ]}
+    >
+      <View style={{ flex: 1, minWidth: 0, gap: space.xxs }}>
+        <Text style={[text('headline'), { color: colors.text }]}>{pick(item, 'term', isEn)}</Text>
+        <Text
+          style={[text('subhead'), { color: open ? colors.text : colors.textSubtle }]}
+          numberOfLines={open ? undefined : 2}
+        >
+          {pick(item, 'definition', isEn)}
+        </Text>
+      </View>
+      <Ionicons name={open ? 'chevron-up' : 'chevron-down'} size={icon.sm} color={colors.textTertiary} />
+    </PressScale>
+  );
+}
