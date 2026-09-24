@@ -26,7 +26,7 @@ async function doShare(message) {
         return;
       }
     } catch {
-      // usuário cancelou o share ou API indisponível — silencioso
+      // usuário cancelou o share ou API indisponível, silencioso
     }
     return;
   }
@@ -46,6 +46,13 @@ export function shareHighlight(params) {
   return shareVerse(params);
 }
 
+// Referência do catálogo (versículo, Catecismo, documento, estudo): a citação
+// entre aspas e a procedência já pronta na linha de baixo ("Mateus 16,18-19
+// (Apóstolo Mateus, séc. I d.C.)").
+export function shareReference({ text, label }) {
+  return doShare(`"${text}"\n\n${label}${APP_PROMO}`);
+}
+
 export function shareNote({ bookName, chapter, verseStart, verseEnd, verseText, noteText, isEn = false }) {
   let msg = '';
   if (verseText) msg += `"${verseText}"\n\n`;
@@ -58,6 +65,13 @@ export function shareNote({ bookName, chapter, verseStart, verseEnd, verseText, 
 export function shareArticle({ title, summary }) {
   const msg = `${title}\n\n${summary}${APP_PROMO}`;
   return doShare(msg);
+}
+
+// Texto pronto (uma leitura da liturgia, por exemplo) com a promoção no fim.
+// Quem monta a mensagem é a tela; aqui só entra o rodapé e a folha de
+// compartilhamento certa por plataforma.
+export function shareText(message) {
+  return doShare(`${message}${APP_PROMO}`);
 }
 
 export function shareDialogue({ objection, answer, source }) {

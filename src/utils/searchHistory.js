@@ -22,6 +22,16 @@ export async function addSearchHistory(query) {
   await AsyncStorage.setItem(KEY, JSON.stringify(next));
 }
 
+// Apaga uma busca só (o "x" de cada linha do histórico) e devolve a lista
+// que sobrou, para a tela não precisar reler.
+export async function removeSearchHistory(query) {
+  const q = String(query ?? '').trim().toLowerCase();
+  const list = await getSearchHistory();
+  const next = list.filter((x) => x.toLowerCase() !== q);
+  await AsyncStorage.setItem(KEY, JSON.stringify(next)).catch(() => {});
+  return next;
+}
+
 export async function clearSearchHistory() {
   await AsyncStorage.removeItem(KEY).catch(() => {});
 }

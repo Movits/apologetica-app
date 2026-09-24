@@ -2461,6 +2461,62 @@ export const translateYear = (year, isEn) => {
   return y;
 };
 
+// ---------- fullSource em inglês ----------
+// Traduz as descrições longas em português das entradas da Bíblia e do
+// Catecismo ("Evangelho segundo São Mateus, capítulo 16, versículos 18-19")
+// quando a referência não tem `fullSourceEn` curado. Vivia dentro de
+// ReferencesScreen (Onda 8 pediu a mudança para cá) e agora serve também ao
+// RefDetail.
+const FS_GOSPEL = {
+  'São Mateus': 'Matthew', 'São Marcos': 'Mark', 'São Lucas': 'Luke', 'São João': 'John',
+};
+const FS_BIBLE_PREFIXES = [
+  ['Primeira Carta a Timóteo', 'First Letter to Timothy'],
+  ['Segunda Carta a Timóteo', 'Second Letter to Timothy'],
+  ['Primeira Carta aos Coríntios', 'First Letter to the Corinthians'],
+  ['Segunda Carta aos Coríntios', 'Second Letter to the Corinthians'],
+  ['Primeira Carta de São Pedro', 'First Letter of Peter'],
+  ['Segunda Carta de São Pedro', 'Second Letter of Peter'],
+  ['Primeira Carta de São João', 'First Letter of John'],
+  ['Carta de São Tiago', 'Letter of James'],
+  ['Carta aos Romanos', 'Letter to the Romans'],
+  ['Carta aos Hebreus', 'Letter to the Hebrews'],
+  ['Carta aos Gálatas', 'Letter to the Galatians'],
+  ['Carta aos Efésios', 'Letter to the Ephesians'],
+  ['Carta aos Filipenses', 'Letter to the Philippians'],
+  ['Carta aos Colossenses', 'Letter to the Colossians'],
+  ['Carta aos Tessalonicenses', 'Letter to the Thessalonians'],
+  ['Segunda Carta aos Tessalonicenses', 'Second Letter to the Thessalonians'],
+  ['Livro do Gênesis', 'Book of Genesis'],
+  ['Livro do Êxodo', 'Book of Exodus'],
+  ['Livro do Deuteronômio', 'Book of Deuteronomy'],
+  ['Segundo Livro dos Macabeus', 'Second Book of Maccabees'],
+  ['Apocalipse de São João', 'Book of Revelation'],
+  ['Atos dos Apóstolos', 'Acts of the Apostles'],
+];
+const translateChapterVerse = (s) => s
+  .replace(/,?\s*capítulo\s*/gi, ', chapter ')
+  .replace(/,?\s*versículos?\s*/gi, ', verse')
+  .replace(/\s+a\s+(\d)/g, '-$1');
+
+export const translateFullSource = (fs, isEn) => {
+  if (!isEn || !fs) return fs;
+  if (fs.startsWith('Catecismo da Igreja Católica')) {
+    return fs
+      .replace('Catecismo da Igreja Católica', 'Catechism of the Catholic Church')
+      .replace(/,?\s*parágrafos?\s*/gi, ' §')
+      .replace(/\s+a\s+(\d)/g, '-$1');
+  }
+  for (const [ptName, enName] of Object.entries(FS_GOSPEL)) {
+    const prefix = `Evangelho segundo ${ptName}`;
+    if (fs.startsWith(prefix)) return translateChapterVerse(fs.replace(prefix, `Gospel of ${enName}`));
+  }
+  for (const [pt, en] of FS_BIBLE_PREFIXES) {
+    if (fs.startsWith(pt)) return translateChapterVerse(fs.replace(pt, en));
+  }
+  return fs;
+};
+
 // ---------- Citação científica ----------
 // Rótulo descritivo do tipo de publicação. É descrição da fonte, não nota de
 // credibilidade: o app não classifica o peso da alegação, só diz o que a fonte é.
