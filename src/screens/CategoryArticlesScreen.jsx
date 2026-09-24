@@ -1,70 +1,65 @@
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useCallback, useMemo, useState } from 'react';
+import { FlatList, Text, View } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES, sortByRank } from '../data/articleCategories';
+import { sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import SectionBanner from '../components/SectionBanner';
+import { getReadSet } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
+import { EmptyState } from '../components/ui';
+import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
 
 // Tela dedicada a uma categoria de artigos. Recebe route.params.category
-// (nome PT, igual ao campo article.category). Mostra um banner com o tema e
-// a lista de artigos daquela categoria. Abre o detalhe via ArticleFromSearch
-// (instância de ArticleDetailScreen já registrada no HomeStack).
+// (nome PT, igual ao campo article.category). O título vem do header do stack
+// (options em App.js); aqui ficam a descrição do tema, a contagem e a lista no
+// mesmo item da aba Artigos (ArticleListItem), sem repetir a categoria em cada
+// linha. Abre o detalhe via ArticleFromSearch (openArticle), instância de
+// ArticleDetailScreen registrada no HomeStack. O recuo da tab bar já vem do
+// contentStyle do stack.
 export default function CategoryArticlesScreen({ route }) {
   const navigation = useNavigation();
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
+  const { space } = tokens;
+  const [readSet, setReadSet] = useState(() => new Set());
 
   const category = route?.params?.category;
-  const meta = ARTICLE_CATEGORIES.find((c) => c.id === category);
-  const list = sortByRank(articles.filter((a) => a.category === category));
+  const list = useMemo(() => sortByRank(articles.filter((a) => a.category === category)), [category]);
 
-  const styles = makeStyles(colors, fs);
+  // Artigos marcados como lidos (AsyncStorage), relidos a cada foco da tela.
+  useFocusEffect(
+    useCallback(() => {
+      let alive = true;
+      getReadSet().then((set) => { if (alive) setReadSet(set); });
+      return () => { alive = false; };
+    }, [])
+  );
 
-  const countLabel = isEn
-    ? `${list.length} ${list.length === 1 ? 'article' : 'articles'}`
-    : `${list.length} ${list.length === 1 ? 'artigo' : 'artigos'}`;
+  const description = t(`category.${category}.desc`);
+  const countLabel = list.length === 1 ? t('articles.count.one') : t('articles.count', { n: list.length });
 
   return (
-    <View style={styles.container}>
-      <SectionBanner
-        iconSet={meta?.iconSet}
-        icon={meta?.icon || 'book-outline'}
-        title={isEn ? t(`category.${category}`) : category}
-        subtitle={t(`category.${category}.desc`)}
-        countLabel={countLabel}
-      />
-
-      <FlatList
-        data={list}
-        keyExtractor={(a) => String(a.id)}
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => openArticle(navigation, item.id)}
-          >
-            <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
-            <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    <FlatList
+      data={list}
+      keyExtractor={(a) => String(a.id)}
+      contentContainerStyle={{ paddingHorizontal: space.md, paddingBottom: space.xl }}
+      ListHeaderComponent={
+        <View style={{ paddingTop: space.sm, paddingBottom: space.xs, gap: space.xxs }}>
+          <Text style={[text('subhead'), { color: colors.textSubtle }]}>{description}</Text>
+          <Text style={[text('footnote'), { color: colors.textTertiary }]}>{countLabel}</Text>
+        </View>
+      }
+      ItemSeparatorComponent={ArticleListSeparator}
+      ListEmptyComponent={<EmptyState icon="newspaper-outline" title={t('articles.empty')} />}
+      renderItem={({ item }) => (
+        <ArticleListItem
+          article={item}
+          read={readSet.has(item.id)}
+          showCategory={false}
+          onPress={() => openArticle(navigation, item.id)}
+        />
+      )}
+    />
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    card: {
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 16,
-      marginBottom: 12,
-    },
-    cardTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
-    cardSummary: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18) },
-    empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
-  });

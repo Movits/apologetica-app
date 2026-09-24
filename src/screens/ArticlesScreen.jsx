@@ -1,115 +1,169 @@
-import { useEffect, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ScrollView, View } from 'react-native';
+import Animated from 'react-native-reanimated';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES, POPULAR_IDS, POPULAR_META, sortByRank } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, POPULAR_IDS, sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import SectionBanner from '../components/SectionBanner';
-import StickySectionList from '../components/StickySectionList';
+import { getReadSet } from '../utils/readingProgress';
+import { categoryLabel, pick } from '../utils/i18nData';
+import { fullBleedContentOptions } from '../navigation/chrome';
+import { Chip, EmptyState, LargeTitleScreen, SearchField } from '../components/ui';
+import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
 
-// Aba Artigos: página única com todos os artigos, separados por cabeçalho fixo
-// (SectionBanner) por categoria. O banner do topo gruda e troca ao rolar de uma
-// seção para outra, tanto no mobile quanto na web (ver StickySectionList).
+// Filtros fixos da linha de chips, antes das categorias. Os ids das categorias
+// são os nomes em PT (campo article.category), como em articleCategories.js.
+const FILTER_ALL = 'all';
+const FILTER_POPULAR = 'popular';
+
+// Busca sem acento nem caixa ("Igreja" acha "igreja", "Maria" acha "María").
+const fold = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+// Lista base de cada filtro: tudo por relevância, os "mais buscados" na ordem
+// curada, ou uma categoria por relevância.
+function articlesFor(filter) {
+  if (filter === FILTER_POPULAR) {
+    return POPULAR_IDS.map((id) => articles.find((a) => a.id === id)).filter(Boolean);
+  }
+  if (filter === FILTER_ALL) return sortByRank(articles);
+  return sortByRank(articles.filter((a) => a.category === filter));
+}
+
+// Aba Artigos (Onda 9): large title próprio, campo de busca por texto, linha
+// de chips com os filtros (tudo, mais buscados, categorias) e a lista no
+// estilo Apple Books (ArticleListItem). Rola por baixo da tab bar translúcida
+// (LargeTitleScreen compensa a altura por dentro).
 export default function ArticlesScreen({ route }) {
   const navigation = useNavigation();
-  const { colors, fs } = useTheme();
+  const { colors, tokens } = useTheme();
   const { t, isEn } = useLanguage();
+  const { space } = tokens;
   const listRef = useRef(null);
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState(FILTER_ALL);
+  const [readSet, setReadSet] = useState(() => new Set());
 
-  // Abre artigo específico via deep link (da busca global ou outra tela)
+  // O header do stack sai (o large title é da tela) e o recuo da tab bar que o
+  // stack põe em toda tela também, porque a lista já compensa por dentro.
+  useLayoutEffect(() => {
+    navigation.setOptions({ headerShown: false, ...fullBleedContentOptions(colors) });
+  }, [navigation, colors]);
+
+  // Abre artigo específico via deep link (da busca global ou outra tela).
   useEffect(() => {
     const articleId = route?.params?.articleId || route?.params?.openId;
     if (articleId) {
       navigation.navigate('ArticleDetail', { articleId });
       navigation.setParams?.({ openId: undefined, articleId: undefined });
     }
-  }, [route?.params?.openId, route?.params?.articleId]);
+  }, [navigation, route?.params?.openId, route?.params?.articleId]);
 
-  // Volta ao topo ao tocar no tab de novo (o popToTop pro detalhe é automático)
+  // Volta ao topo ao tocar no tab de novo (o popToTop pro detalhe é automático).
   useEffect(() => {
     const tabNav = navigation.getParent();
     if (!tabNav) return;
     const unsub = tabNav.addListener('tabPress', () => {
       if (navigation.isFocused()) {
-        try {
-          listRef.current?.scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 0, animated: true });
-        } catch {}
+        listRef.current?.scrollToOffset?.({ offset: 0, animated: true });
       }
     });
     return unsub;
   }, [navigation]);
 
-  // "Mais buscados" no topo + categorias na ordem definida, cada uma ordenada
-  // por relevância. Os itens populares são clones marcados com _pop para manter
-  // as keys do SectionList únicas (eles também aparecem na própria categoria).
-  const sections = useMemo(() => {
-    const byId = (id) => articles.find((a) => a.id === id);
-    const popular = {
-      meta: POPULAR_META,
-      data: POPULAR_IDS.map(byId).filter(Boolean).map((a) => ({ ...a, _pop: true })),
-    };
-    const cats = ARTICLE_CATEGORIES
-      .map((cat) => ({ meta: cat, data: sortByRank(articles.filter((a) => a.category === cat.id)) }))
-      .filter((s) => s.data.length > 0);
-    return popular.data.length > 0 ? [popular, ...cats] : cats;
-  }, []);
+  // Artigos marcados como lidos (AsyncStorage), relidos a cada foco da aba.
+  useFocusEffect(
+    useCallback(() => {
+      let alive = true;
+      getReadSet().then((set) => { if (alive) setReadSet(set); });
+      return () => { alive = false; };
+    }, [])
+  );
 
-  const styles = makeStyles(colors, fs);
+  const filters = useMemo(
+    () => [
+      { id: FILTER_ALL, label: t('articles.filter.all') },
+      { id: FILTER_POPULAR, label: t('category.popular'), icon: 'star-outline' },
+      ...ARTICLE_CATEGORIES.map((cat) => ({ id: cat.id, label: categoryLabel(cat.id, t), icon: cat.icon })),
+    ],
+    [t]
+  );
 
-  const countLabel = (n) =>
-    isEn ? `${n} ${n === 1 ? 'article' : 'articles'}` : `${n} ${n === 1 ? 'artigo' : 'artigos'}`;
+  // Filtro por chip e, por cima, a busca por texto no título e no resumo do
+  // idioma em uso.
+  const data = useMemo(() => {
+    const base = articlesFor(filter);
+    const q = fold(query.trim());
+    if (!q) return base;
+    return base.filter((a) => fold(pick(a, 'title', isEn)).includes(q) || fold(pick(a, 'summary', isEn)).includes(q));
+  }, [filter, query, isEn]);
+
+  const showCategory = filter === FILTER_ALL || filter === FILTER_POPULAR;
+  const openArticle = (articleId) => navigation.navigate('ArticleDetail', { articleId });
+  const clearFilters = () => { setQuery(''); setFilter(FILTER_ALL); };
 
   return (
-    <View style={styles.container}>
-      <StickySectionList
-        ref={listRef}
-        sections={sections}
-        keyExtractor={(a) => (a._pop ? 'pop-' : '') + a.id}
-        contentContainerStyle={{ paddingBottom: 40 }}
-        ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'No articles found.' : 'Nenhum artigo encontrado.'}</Text>}
-        onScrollToIndexFailed={() => {}}
-        renderSectionHeader={({ section }) => (
-          <SectionBanner
-            iconSet={section.meta.iconSet}
-            icon={section.meta.icon}
-            title={(isEn || section.meta.id === 'popular') ? t(`category.${section.meta.id}`) : section.meta.id}
-            subtitle={t(`category.${section.meta.id}.desc`)}
-            countLabel={countLabel(section.data.length)}
-          />
-        )}
-        renderItem={({ item }) => (
-          <View style={styles.itemWrap}>
-            <TouchableOpacity
-              style={styles.card}
-              onPress={() => navigation.navigate('ArticleDetail', { articleId: item.id })}
-            >
-              <View style={styles.cardHeader}>
-                <Text style={styles.cardTitle}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
-                <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
-              </View>
-              <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-      />
-    </View>
+    <LargeTitleScreen
+      title={t('header.articles')}
+      subtitle={t('articles.count', { n: articles.length })}
+      renderList={({ header, ...listProps }) => (
+        <Animated.FlatList
+          ref={listRef}
+          {...listProps}
+          data={data}
+          keyExtractor={(a) => String(a.id)}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+          ListHeaderComponent={
+            <View>
+              {header}
+              <SearchField
+                value={query}
+                onChangeText={setQuery}
+                placeholder={t('articles.searchPlaceholder')}
+                clearLabel={t('common.clear')}
+              />
+              {/* Chips sangram até as bordas da tela (a lista tem recuo
+                  lateral), com o mesmo recuo dentro do conteúdo rolável. */}
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                keyboardShouldPersistTaps="handled"
+                style={{ marginHorizontal: -space.md, marginTop: space.sm, marginBottom: space.xs }}
+                contentContainerStyle={{ paddingHorizontal: space.md, gap: space.xs }}
+              >
+                {filters.map((f) => (
+                  <Chip
+                    key={f.id}
+                    label={f.label}
+                    icon={f.icon}
+                    selected={filter === f.id}
+                    onPress={() => setFilter(f.id)}
+                    haptic
+                  />
+                ))}
+              </ScrollView>
+            </View>
+          }
+          ItemSeparatorComponent={ArticleListSeparator}
+          ListEmptyComponent={
+            <EmptyState
+              icon="search-outline"
+              title={t('articles.empty')}
+              message={t('articles.emptyHint')}
+              action={{ label: t('articles.clearFilters'), onPress: clearFilters }}
+            />
+          }
+          renderItem={({ item }) => (
+            <ArticleListItem
+              article={item}
+              read={readSet.has(item.id)}
+              showCategory={showCategory}
+              onPress={() => openArticle(item.id)}
+            />
+          )}
+        />
+      )}
+    />
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    itemWrap: { paddingHorizontal: 16 },
-    card: {
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 16,
-      marginTop: 12,
-    },
-    cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, gap: 8 },
-    cardTitle: { flex: 1, fontSize: fs(16), fontWeight: 'bold', color: c.primaryText },
-    cardSummary: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18) },
-    empty: { textAlign: 'center', color: c.textSubtle, marginTop: 40, fontSize: fs(15) },
-  });
