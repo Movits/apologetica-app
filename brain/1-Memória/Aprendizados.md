@@ -61,3 +61,25 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
   precisa de `minHeight`/`minWidth` de 44 de verdade.
 - Dourado `#c9a84c` sobre branco dá 2,29:1: nunca como texto ou rótulo de aba
   ativa no tema claro. O token `accentText` (`#806418`) existe para isso.
+
+## Sobre execução em ondas com subagentes (2026-09-24)
+
+- Subagentes paralelos só funcionam com conjuntos de arquivos disjuntos
+  declarados no prompt. `strings.js` e `ui/index.js` são os pontos de colisão:
+  regra "só acrescentar, numa edição, relendo antes" resolveu.
+- `git add` de caminhos específicos não protege de um `git rm` que outro agente
+  deixou no índice: o commit leva a exclusão junto (aconteceu com `CrossMark`).
+  Conferir `git diff --cached --stat` antes de cada commit parcial.
+- O modo plano do harness volta a ficar ativo depois de um reinício do container
+  e bloqueia os subagentes (eles escrevem o roteiro num arquivo e param). O Bash
+  do orquestrador não é bloqueado, mas o caminho certo é `ExitPlanMode` de novo.
+- O `native-stack` não anima na web; para o push deslizar é preciso o stack JS
+  com `animationEnabled: true` e `cardStyle: { flex: 1 }`, senão as ScrollViews
+  param de rolar dentro do CardSheet.
+- O `Header` do elements com título centrado reserva só 72 pt à direita: três
+  ações de 44 exigem `headerTitleAlign: 'left'`.
+- Testes de caracterização antes de extrair uma fórmula (índice do dia, Páscoa)
+  são a única prova de que "o item do dia não mudou".
+- Cada agente deve exportar para o próprio `--output-dir` e servir numa porta
+  própria: um `expo export` concorrente apaga os assets com hash do `dist/` que
+  outro Playwright está lendo.
