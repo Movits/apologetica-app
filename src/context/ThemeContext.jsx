@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
+import { space, radius, icon, motion, shadow, textStyle, FONT_FAMILY_BY_PLATFORM } from '../theme/tokens';
 
 const LIGHT = {
   mode: 'light',
@@ -93,7 +94,15 @@ const FONT_SCALES = {
   normal: 1,
   grande: 1.15,
   enorme: 1.35,
+  muitoGrande: 1.65,
+  maximo: 2.0,
 };
+
+// Tokens puros (src/theme/tokens.js) com a família de fonte resolvida para a
+// plataforma atual. Platform.OS não muda em tempo de execução, então o objeto
+// é constante e mantém a mesma referência entre renders.
+const FONT_FAMILY = FONT_FAMILY_BY_PLATFORM[Platform.OS] || FONT_FAMILY_BY_PLATFORM.ios;
+const TOKENS = { space, radius, icon, motion, shadow, fontFamily: FONT_FAMILY };
 
 const STORAGE_DARK = 'settings:darkMode';
 const STORAGE_FONT = 'settings:fontSize';
@@ -190,6 +199,8 @@ export function ThemeProvider({ children }) {
   const value = useMemo(() => {
     const colors = darkMode ? DARK : LIGHT;
     const scale = FONT_SCALES[fontSize] ?? 1;
+    // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
+    const fs = (n) => Math.max(11, Math.round(n * scale));
     return {
       colors,
       darkMode,
@@ -197,9 +208,12 @@ export function ThemeProvider({ children }) {
       fontSize,
       setFontSize: setFontSizeState,
       scale,
-      // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
-      fs: (n) => Math.max(11, Math.round(n * scale)),
+      fs,
       hydrated,
+      tokens: TOKENS,
+      // Estilo de Text por papel (`text('body')`), já com a escala e a fonte da
+      // plataforma aplicadas. Lança para papel desconhecido.
+      text: (role) => textStyle(role, fs, FONT_FAMILY),
     };
   }, [darkMode, fontSize, hydrated, setDarkMode]);
 
