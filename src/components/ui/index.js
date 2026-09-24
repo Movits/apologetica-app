@@ -6,6 +6,7 @@ export { default as Row } from './Row';
 export { default as SectionTitle } from './SectionTitle';
 export { default as Button } from './Button';
 export { default as SearchField } from './SearchField';
+export { default as Field } from './Field';
 export { default as Chip } from './Chip';
 export { default as ProgressBar } from './ProgressBar';
 export { default as EmptyState } from './EmptyState';

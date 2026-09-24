@@ -18,7 +18,7 @@ export const STRINGS = {
     'tab.articles': 'Artigos',
     'tab.references': 'Referências',
     'tab.bible': 'Bíblia',
-    'tab.tools': 'Ferramentas',
+    'tab.tools': 'Praticar',
     'tab.settings': 'Ajustes',
 
     // === Headers de rotas (mostrados na navigation bar) ===
@@ -246,9 +246,25 @@ export const STRINGS = {
     'source.Ciência.desc': 'Artigos, estudos e achados científicos',
     'source.Mídia.desc': 'Fotografias, filmagens e registros históricos',
     'source.Outros.desc': 'Fontes históricas e externas',
+
+    // === Entrada (Onda 7: Login, Cadastro, Recuperar senha) ===
+    'common.back': 'Voltar',
+    'auth.emailLabel': 'E-mail',
+    'auth.emailPlaceholder': 'voce@exemplo.com',
+    'auth.loginLead': 'Sua conta guarda marcações e notas em todos os aparelhos.',
+    'auth.showPassword': 'Mostrar senha',
+    'auth.hidePassword': 'Ocultar senha',
   },
 
   en: {
+    // === Sign-in (Onda 7: Login, Signup, Forgot password) ===
+    'common.back': 'Back',
+    'auth.emailLabel': 'Email',
+    'auth.emailPlaceholder': 'you@example.com',
+    'auth.loginLead': 'Your account keeps your highlights and notes on every device.',
+    'auth.showPassword': 'Show password',
+    'auth.hidePassword': 'Hide password',
+
     // === Common ===
     'common.save': 'Save',
     'common.cancel': 'Cancel',
@@ -263,7 +279,7 @@ export const STRINGS = {
     'tab.articles': 'Articles',
     'tab.references': 'References',
     'tab.bible': 'Bible',
-    'tab.tools': 'Tools',
+    'tab.tools': 'Practice',
     'tab.settings': 'Settings',
 
     // === Route headers ===
