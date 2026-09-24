@@ -18,13 +18,9 @@ export default function VerseOfDayCard({ onOpen }) {
   const text = isEn ? (verse.textEn || verse.text) : verse.text;
   const ref = isEn ? (verse.refEn || verse.ref) : verse.ref;
 
-  const handleShare = () =>
-    shareVerse({
-      bookName: ref.split(/[\s:,]/).slice(0, -1).join(' '),
-      chapter: ref.match(/[:,](\d+)/)?.[1],
-      verse: verse.verse,
-      text,
-    });
+  // Compartilha a referência exatamente como o card exibe (o `ref` curado, já
+  // no idioma certo), em vez de remontá-la por regex, que gerava "Salmo 23 1,1".
+  const handleShare = () => shareVerse({ ref, text, isEn });
 
   const handleShareAsImage = () =>
     captureAndShareImage(shareCardRef, `"${text}"\n\n${ref}`);

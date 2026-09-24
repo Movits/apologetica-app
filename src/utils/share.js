@@ -1,5 +1,6 @@
 import { Platform, Share } from 'react-native';
 import { notify } from './dialog';
+import { formatVerseRef } from './verseRef';
 
 // Mensagem de promoção sutil incluída no fim de cada compartilhamento.
 // URL fica em branco até o app estar nas lojas (Play Store / App Store).
@@ -32,21 +33,24 @@ async function doShare(message) {
   return Share.share({ message }).catch(() => {});
 }
 
-export function shareVerse({ bookName, chapter, verse, text }) {
-  const msg = `"${text}"\n\n${bookName} ${chapter},${verse}${APP_PROMO}`;
+// A referência sai no formato do idioma (PT "João 3,16", EN "John 3:16"). Um
+// `ref` pronto (ex.: o "Salmo 23,1" curado do versículo do dia) tem prioridade
+// sobre bookName/chapter/verse. Sem `isEn`, o formato é o PT, como antes.
+export function shareVerse({ bookName, chapter, verse, text, ref, isEn = false }) {
+  const label = ref || formatVerseRef({ bookName, chapter, verse }, isEn);
+  const msg = `"${text}"\n\n${label}${APP_PROMO}`;
   return doShare(msg);
 }
 
-export function shareHighlight({ bookName, chapter, verse, text }) {
-  return shareVerse({ bookName, chapter, verse, text });
+export function shareHighlight(params) {
+  return shareVerse(params);
 }
 
-export function shareNote({ bookName, chapter, verseStart, verseEnd, verseText, noteText }) {
-  const range = verseStart === verseEnd ? `${verseStart}` : `${verseStart}-${verseEnd}`;
+export function shareNote({ bookName, chapter, verseStart, verseEnd, verseText, noteText, isEn = false }) {
   let msg = '';
   if (verseText) msg += `"${verseText}"\n\n`;
-  msg += `${bookName} ${chapter},${range}\n\n`;
-  msg += `Reflexão:\n${noteText}`;
+  msg += `${formatVerseRef({ bookName, chapter, verseStart, verseEnd }, isEn)}\n\n`;
+  msg += `${isEn ? 'Reflection' : 'Reflexão'}:\n${noteText}`;
   msg += APP_PROMO;
   return doShare(msg);
 }
