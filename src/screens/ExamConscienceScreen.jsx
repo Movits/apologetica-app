@@ -1,94 +1,135 @@
-import { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Fragment, useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { examConscience } from '../data/examConscience';
 import { openArticle } from '../navigation/links';
+import { pick } from '../utils/i18nData';
+import { Button, Group, PressScale, Row, SectionTitle } from '../components/ui';
 
-export default function ExamConscienceScreen({ navigation }) {
-  const { colors, fs } = useTheme();
-  const { isEn } = useLanguage();
-  const [expanded, setExpanded] = useState(null);
-  const styles = makeStyles(colors, fs);
+// Exame de consciência: os dez mandamentos como seções, cada pergunta numa
+// linha marcável. As marcações vivem só no estado desta tela (nada é gravado,
+// por privacidade: ver o cabeçalho de src/data/examConscience.js) e somem ao
+// sair. O artigo de apoio (id 83, os Mandamentos) abre pelo openArticle.
 
+// Linha de pergunta com papel de checkbox. Não usa o Row porque ele fixa
+// role="button" e não expõe aria-checked; a geometria é a mesma do Row
+// (alvo de 44, recuo space.md, gap space.sm, fundo separator ao pressionar).
+function CheckRow({ label, checked, onToggle }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, icon } = tokens;
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-      >
-        <View style={styles.intro}>
-          <Text style={styles.introTitle}>
-            {isEn ? 'Examination of Conscience' : 'Exame de Consciência'}
-          </Text>
-          <Text style={styles.introBody}>
-            {isEn
-              ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God.'
-              : 'Preparação para o Sacramento da Reconciliação. Use estas perguntas para examinar sua vida diante de Deus.'}
-          </Text>
-          <Text style={styles.introHint}>
-            {isEn
-              ? '"If we confess our sins, he is faithful and just to forgive us." (1 John 1,9)'
-              : '"Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar." (1 João 1,9)'}
-          </Text>
-          <TouchableOpacity
-            style={styles.learnBtn}
-            onPress={() => navigation && openArticle(navigation, 83)}
-          >
-            <Ionicons name="book-outline" size={16} color={colors.accent} />
-            <Text style={styles.learnText}>
-              {isEn ? 'Understand and defend the Commandments' : 'Entenda e defenda os Mandamentos'}
-            </Text>
-            <Ionicons name="chevron-forward" size={16} color={colors.accent} />
-          </TouchableOpacity>
-        </View>
-
-        {examConscience.map((section) => {
-          const isOpen = expanded === section.id;
-          return (
-            <View key={section.id} style={[styles.card, isOpen && styles.cardOpen]}>
-              <TouchableOpacity
-                onPress={() => setExpanded(isOpen ? null : section.id)}
-                style={styles.cardHead}
-              >
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.cardLabel}>{isEn ? (section.mandamentoEn || section.mandamento) : section.mandamento}</Text>
-                  <Text style={styles.cardTitle}>{isEn ? (section.tituloEn || section.titulo) : section.titulo}</Text>
-                </View>
-                <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={18} color={colors.textSubtle} />
-              </TouchableOpacity>
-              {isOpen && (
-                <View style={styles.body}>
-                  {(isEn && section.questoesEn ? section.questoesEn : section.questoes).map((q, i) => (
-                    <View key={i} style={styles.questionRow}>
-                      <Ionicons name="help-circle-outline" size={16} color={colors.accent} style={{ marginTop: 2 }} />
-                      <Text style={styles.question}>{q}</Text>
-                    </View>
-                  ))}
-                </View>
-              )}
-            </View>
-          );
-        })}
-      </ScrollView>
-    </View>
+    <PressScale
+      role="checkbox"
+      aria-checked={checked}
+      aria-label={label}
+      haptic="selection"
+      onPress={onToggle}
+      style={({ pressed }) => [
+        {
+          flexDirection: 'row',
+          alignItems: 'center',
+          minHeight: 44,
+          paddingHorizontal: space.md,
+          paddingVertical: space.sm,
+          gap: space.sm,
+        },
+        pressed ? { backgroundColor: colors.separator } : null,
+      ]}
+    >
+      <Text style={[text('body'), { color: colors.text, flex: 1 }]}>{label}</Text>
+      <Ionicons
+        name={checked ? 'checkmark-circle' : 'ellipse-outline'}
+        size={icon.md}
+        color={checked ? colors.success : colors.textTertiary}
+      />
+    </PressScale>
   );
 }
 
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    intro: { padding: 16, backgroundColor: c.card, borderRadius: 12, marginBottom: 14, borderLeftWidth: 3, borderLeftColor: c.accent },
-    introTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, marginBottom: 8 },
-    introBody: { fontSize: fs(13), color: c.text, lineHeight: fs(20), marginBottom: 10 },
-    introHint: { fontSize: fs(12), color: c.textMuted, fontStyle: 'italic', lineHeight: fs(18) },
-    learnBtn: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: c.divider },
-    learnText: { flex: 1, fontSize: fs(13), color: c.accentText, fontWeight: '600' },
-    card: { backgroundColor: c.card, borderRadius: 12, marginBottom: 8 },
-    cardOpen: { borderWidth: 1, borderColor: c.accent },
-    cardHead: { flexDirection: 'row', alignItems: 'center', padding: 14 },
-    cardLabel: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4 },
-    cardTitle: { fontSize: fs(14), color: c.primaryText, fontWeight: '600' },
-    body: { paddingHorizontal: 14, paddingBottom: 14, borderTopWidth: 1, borderTopColor: c.divider, paddingTop: 10, gap: 10 },
-    questionRow: { flexDirection: 'row', gap: 8, alignItems: 'flex-start' },
-    question: { flex: 1, fontSize: fs(13), color: c.text, lineHeight: fs(19) },
-  });
+export default function ExamConscienceScreen({ navigation }) {
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space } = tokens;
+  // Chaves "id-da-seção:índice-da-pergunta" marcadas.
+  const [checked, setChecked] = useState(() => new Set());
+
+  const toggle = (key) => {
+    setChecked((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  return (
+    <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+      <Text style={[text('body'), { color: colors.text }]}>
+        {isEn
+          ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God.'
+          : 'Preparação para o Sacramento da Reconciliação. Use estas perguntas para examinar sua vida diante de Deus.'}
+      </Text>
+      <Text style={[text('reading'), { color: colors.textSubtle, marginTop: space.sm }]}>
+        {isEn
+          ? '"If we confess our sins, he is faithful and just to forgive us." (1 John 1:9)'
+          : '"Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar." (1 João 1,9)'}
+      </Text>
+      <Text style={[text('footnote'), { color: colors.textTertiary, marginTop: space.sm }]}>
+        {isEn
+          ? 'Marks stay on this screen only and are cleared when you leave. Nothing is saved.'
+          : 'As marcações ficam só nesta tela e somem ao sair. Nada é gravado.'}
+      </Text>
+
+      <Group style={{ marginTop: space.md }}>
+        <Row
+          icon="book-outline"
+          title={isEn ? 'Understand and defend the Commandments' : 'Entenda e defenda os Mandamentos'}
+          titleLines={2}
+          trailing="chevron"
+          onPress={() => navigation && openArticle(navigation, 83)}
+        />
+      </Group>
+
+      {checked.size > 0 ? (
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginTop: space.md,
+            paddingLeft: space.md,
+          }}
+        >
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+            {t('exam.markedCount', { n: checked.size })}
+          </Text>
+          <Button variant="plain" full={false} label={t('exam.clear')} onPress={() => setChecked(new Set())} />
+        </View>
+      ) : null}
+
+      {examConscience.map((section) => {
+        const questions = pick(section, 'questoes', isEn) || [];
+        return (
+          <Fragment key={section.id}>
+            <SectionTitle title={pick(section, 'titulo', isEn)} />
+            <Group header={pick(section, 'mandamento', isEn)}>
+              {questions.map((q, i) => {
+                const key = `${section.id}:${i}`;
+                return (
+                  <CheckRow
+                    key={key}
+                    label={q}
+                    checked={checked.has(key)}
+                    onToggle={() => toggle(key)}
+                  />
+                );
+              })}
+            </Group>
+          </Fragment>
+        );
+      })}
+    </ScrollView>
+  );
+}

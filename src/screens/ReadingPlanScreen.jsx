@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { useCallback, useMemo, useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 import { confirmAction, notify } from '../utils/dialog';
@@ -9,16 +9,30 @@ import { READING_TRACKS, getTrack } from '../data/readingPlan';
 import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
+import { pick } from '../utils/i18nData';
+import { Button, Chip, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
 
+// Plano de leitura: trilhos (Fundamentos, Aprofundamento e a trilha temática)
+// como chips, resumo com barra de progresso e streak num Group, e os dias em
+// linhas agrupadas. O artigo abre por openArticle com fromPlanDay/fromPlanTrack,
+// que é o que o ArticleDetailScreen usa para marcar o dia como lido.
 export default function ReadingPlanScreen({ navigation }) {
-  const { colors, fs } = useTheme();
+  const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
+  const { space, icon } = tokens;
   const [trackId, setTrackId] = useState('fundamentos');
   const [progress, setProgress] = useState({ completed: [], lastDay: 0 });
   const [streak, setStreak] = useState(0);
 
   const track = getTrack(trackId);
   const days = track.days;
+  // readingPlan.js guarda o PT com sufixo "Pt" (titlePt/descPt), fora da
+  // convenção campo/campoEn que o `pick` lê, então a escolha é direta aqui.
+  const trackTitle = isEn ? track.titleEn : track.titlePt;
+  const trackDesc = isEn ? track.descEn : track.descPt;
+
+  // Artigo por id, montado uma vez em vez de um find por dia a cada render.
+  const articleById = useMemo(() => new Map(articles.map((a) => [a.id, a])), []);
 
   useFocusEffect(
     useCallback(() => {
@@ -48,128 +62,96 @@ export default function ReadingPlanScreen({ navigation }) {
     });
   };
 
-  const styles = makeStyles(colors, fs);
+  const openDay = (item, article) => {
+    if (article) {
+      openArticle(navigation, article.id, { fromPlanDay: item.day, fromPlanTrack: trackId });
+      return;
+    }
+    notify(
+      isEn ? 'In preparation' : 'Em preparação',
+      isEn ? 'This article will be added in a future update.' : 'Este artigo ainda será adicionado em uma próxima atualização.'
+    );
+  };
 
   const totalDone = progress.completed.length;
-  const pct = days.length ? Math.round((totalDone / days.length) * 100) : 0;
+  const readLabel = isEn ? 'read' : 'lido';
 
-  return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={styles.header}>
-        <View style={styles.segment}>
-          {READING_TRACKS.map((tr) => {
-            const activeTrack = tr.id === trackId;
-            return (
-              <TouchableOpacity
-                key={tr.id}
-                style={[styles.segmentBtn, activeTrack && styles.segmentBtnActive]}
-                onPress={() => setTrackId(tr.id)}
-              >
-                <Text style={[styles.segmentText, activeTrack && styles.segmentTextActive]}>
-                  {t(`plan.track.${tr.id}`)}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-
-        <Text style={styles.title}>{isEn ? track.titleEn : track.titlePt}</Text>
-        <Text style={styles.sub}>{isEn ? track.descEn : track.descPt}</Text>
-        <View style={styles.progressRow}>
-          <View style={styles.bar}>
-            <View style={[styles.barFill, { width: `${pct}%` }]} />
-          </View>
-          <Text style={styles.pctText}>{totalDone}/{days.length}</Text>
-        </View>
-        {streak > 0 && (
-          <View style={styles.streakRow}>
-            <Ionicons name="flame" size={15} color={colors.accent} />
-            <Text style={styles.streakText}>{streak} {t('plan.streak')}</Text>
-          </View>
-        )}
-        {totalDone > 0 && (
-          <TouchableOpacity onPress={onReset} style={styles.resetBtn}>
-            <Ionicons name="refresh-outline" size={14} color={colors.accent} />
-            <Text style={styles.resetText}>{t('plan.reset')}</Text>
-          </TouchableOpacity>
-        )}
-      </View>
-
-      <FlatList
-        key={trackId}
-        data={days}
-        extraData={progress}
-        keyExtractor={(d) => `${trackId}-${d.day}`}
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        renderItem={({ item }) => {
-          const done = progress.completed.includes(item.day);
-          const article = articles.find((a) => a.id === item.articleId);
-          return (
-            <TouchableOpacity
-              style={[styles.card, done && styles.cardDone]}
-              onPress={() => {
-                if (article) {
-                  openArticle(navigation, article.id, { fromPlanDay: item.day, fromPlanTrack: trackId });
-                } else {
-                  notify(
-                    isEn ? 'In preparation' : 'Em preparação',
-                    isEn ? 'This article will be added in a future update.' : 'Este artigo ainda será adicionado em uma próxima atualização.'
-                  );
-                }
-              }}
-            >
-              <View style={[styles.dayBubble, done && styles.dayBubbleDone]}>
-                {done ? (
-                  <Ionicons name="checkmark" size={16} color="#fff" />
-                ) : (
-                  <Text style={styles.dayNum}>{item.day}</Text>
-                )}
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.cardLabel, done && styles.cardLabelDone]}>{isEn ? 'Day' : 'Dia'} {item.day}</Text>
-                <Text style={styles.cardTitle} numberOfLines={2}>
-                  {article
-                    ? (isEn ? (article.titleEn || article.title) : article.title)
-                    : (isEn ? (item.themeEn || item.theme) : item.theme)}
-                </Text>
-                {!article && (
-                  <Text style={styles.pending}>{isEn ? '(in preparation)' : '(em preparação)'}</Text>
-                )}
-              </View>
-              <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
-            </TouchableOpacity>
-          );
-        }}
-      />
+  // Dia concluído: marca de sucesso antes do chevron.
+  const doneTrailing = (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
+      <Ionicons name="checkmark-circle" size={icon.md} color={colors.success} />
+      <Ionicons name="chevron-forward" size={icon.sm} color={colors.textTertiary} />
     </View>
   );
-}
 
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    header: { padding: 16, borderBottomWidth: 1, borderBottomColor: c.divider, backgroundColor: c.card },
-    segment: { flexDirection: 'row', backgroundColor: c.badgeBg, borderRadius: 10, padding: 3, marginBottom: 12 },
-    segmentBtn: { flex: 1, paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
-    segmentBtnActive: { backgroundColor: c.accent },
-    segmentText: { fontSize: fs(13), fontWeight: '600', color: c.textMuted },
-    segmentTextActive: { color: '#fff' },
-    title: { fontSize: fs(18), color: c.primaryText, fontWeight: 'bold', marginBottom: 6 },
-    sub: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18), marginBottom: 12 },
-    progressRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-    bar: { flex: 1, height: 6, backgroundColor: c.divider, borderRadius: 3, overflow: 'hidden' },
-    barFill: { height: '100%', backgroundColor: c.accent },
-    pctText: { fontSize: fs(12), color: c.textMuted, fontWeight: '600' },
-    streakRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 8 },
-    streakText: { fontSize: fs(12), color: c.accentText, fontWeight: '700' },
-    resetBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, alignSelf: 'flex-start', marginTop: 10, paddingVertical: 4 },
-    resetText: { fontSize: fs(11), color: c.accentText, fontWeight: '600' },
-    card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.card, borderRadius: 12, padding: 13, marginBottom: 8 },
-    cardDone: { opacity: 0.7 },
-    dayBubble: { width: 36, height: 36, borderRadius: 18, backgroundColor: c.badgeBg, justifyContent: 'center', alignItems: 'center' },
-    dayBubbleDone: { backgroundColor: c.accent },
-    dayNum: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold' },
-    cardLabel: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 },
-    cardLabelDone: { color: c.textSubtle },
-    cardTitle: { fontSize: fs(14), color: c.primaryText, fontWeight: '600', lineHeight: fs(18) },
-    pending: { fontSize: fs(11), color: c.textSubtle, fontStyle: 'italic', marginTop: 2 },
-  });
+  return (
+    <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.xs }}>
+        {READING_TRACKS.map((tr) => (
+          <Chip
+            key={tr.id}
+            label={t(`plan.track.${tr.id}`)}
+            selected={tr.id === trackId}
+            onPress={() => setTrackId(tr.id)}
+            haptic
+          />
+        ))}
+      </View>
+
+      {/* Resumo do trilho: título, descrição, progresso e streak. */}
+      <Group style={{ marginTop: space.md }}>
+        <View style={{ padding: space.md, gap: space.xs }}>
+          <Text style={[text('headline'), { color: colors.text }]}>{trackTitle}</Text>
+          <Text style={[text('subhead'), { color: colors.textSubtle }]}>{trackDesc}</Text>
+          <ProgressBar
+            value={days.length ? totalDone / days.length : 0}
+            accessibilityLabel={t('plan.daysRead', { done: totalDone, total: days.length })}
+            style={{ marginTop: space.xs }}
+          />
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+            {t('plan.daysRead', { done: totalDone, total: days.length })}
+          </Text>
+        </View>
+        {streak > 0 ? (
+          <Row icon="flame-outline" iconColor={colors.accentText} title={`${streak} ${t('plan.streak')}`} />
+        ) : null}
+      </Group>
+
+      {totalDone > 0 ? (
+        <Button
+          variant="plain"
+          label={t('plan.reset')}
+          onPress={onReset}
+          textStyle={{ color: colors.danger }}
+          style={{ marginTop: space.xs }}
+        />
+      ) : null}
+
+      <SectionTitle title={isEn ? 'Days' : 'Dias'} />
+      <Group>
+        {days.map((item) => {
+          const done = progress.completed.includes(item.day);
+          const article = articleById.get(item.articleId);
+          const title = article ? pick(article, 'title', isEn) : pick(item, 'theme', isEn);
+          const dayLabel = `${t('plan.day')} ${item.day}`;
+          return (
+            <Row
+              key={`${trackId}-${item.day}`}
+              trailing={done ? doneTrailing : 'chevron'}
+              accessibilityLabel={`${dayLabel}, ${title}${done ? `, ${readLabel}` : ''}`}
+              onPress={() => openDay(item, article)}
+            >
+              <Text style={[text('caption1'), { color: colors.accentText }]}>{dayLabel}</Text>
+              <Text style={[text('headline'), { color: colors.text }]} numberOfLines={2}>{title}</Text>
+              {!article ? (
+                <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+                  {isEn ? '(in preparation)' : '(em preparação)'}
+                </Text>
+              ) : null}
+            </Row>
+          );
+        })}
+      </Group>
+    </ScrollView>
+  );
+}
