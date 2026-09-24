@@ -1,92 +1,74 @@
 import { useMemo } from 'react';
-import { View, Text, ScrollView, StyleSheet, Platform, useWindowDimensions } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { DIALOGUES } from '../data/dialogues';
+import { getSaintToday } from '../data/saints';
+import { dailyIndex, todayLabel } from '../utils/daily';
+import { pick } from '../utils/i18nData';
+import { openBible } from '../navigation/links';
+import { Group, Row } from '../components/ui';
+import ReadingColumn, { columnStyle, columnContentStyle } from '../components/ReadingColumn';
 import VerseOfDayCard from '../components/VerseOfDayCard';
 import SaintTodayCard from '../components/SaintTodayCard';
 import LiturgyCard from '../components/LiturgyCard';
 import NewsCard from '../components/NewsCard';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
-import CrossMark from '../components/CrossMark';
 
-const COLUMN_MAX = 720;   // largura da coluna central no desktop
-const CROSS_SIZE = 160;   // altura da cruz decorativa das laterais
-
-// Página "Dia de Hoje": reúne o conteúdo diário (Versículo, Santo, Liturgia)
-// que antes ficava na home. Acessível pela seção Espiritualidade (Ferramentas).
+// Conteúdo do dia (Onda 9): header do stack mantido, conteúdo em Groups na
+// ordem versículo, liturgia (santo + leituras), objeção do dia e notícias.
+// Acessível por Praticar → Dia de Hoje. O recuo da tab bar vem do stack.
 export default function TodayScreen() {
   const navigation = useNavigation();
-  const { colors, fs } = useTheme();
-  const { isEn } = useLanguage();
-  const insets = useSafeAreaInsets();
-  const { width } = useWindowDimensions();
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space } = tokens;
 
-  // No desktop sobra espaço dos dois lados da coluna central: enche cada gutter
-  // com a cruz do app (marca d'água). Só na web e se o gutter for largo o bastante.
-  const gutter = (width - COLUMN_MAX) / 2;
-  const showSideCrosses = Platform.OS === 'web' && gutter >= 150;
-  const crossW = Math.round(CROSS_SIZE * 0.62);
-  const crossLeft = Math.max(0, gutter / 2 - crossW / 2);
+  const now = useMemo(() => new Date(), []);
+  const dateLabel = todayLabel(isEn, now);
+  // Santo do dia resolvido aqui (e não dentro do card) porque o Group conta os
+  // filhos: um card que devolvesse null deixaria uma hairline órfã no topo.
+  const saint = useMemo(() => getSaintToday(now), [now]);
 
-  const dateLabel = useMemo(() => {
-    const d = new Date();
-    const formatted = d.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', {
-      weekday: 'long', day: 'numeric', month: 'long',
-    });
-    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
-  }, [isEn]);
+  // Objeção do dia: a mesma rotação determinística da Início (semente do dia
+  // com o ano), com o roteiro de resposta na tela Diálogo.
+  const objection = DIALOGUES[dailyIndex(DIALOGUES.length, now)];
+  const openObjection = () => navigation.navigate('Dialogue', { dialogueId: objection.id });
+  const openVerse = ({ bookId, chapter, verse }) => openBible(navigation, { bookId, chapter, verse });
+  const openLiturgy = () => navigation.navigate('Liturgy');
 
-  const openVerse = ({ bookId, chapter, verse }) =>
-    navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
+  const block = { marginBottom: space.md };
 
   return (
-    <View style={styles.container}>
-      {showSideCrosses && (
-        <>
-          <View pointerEvents="none" style={[styles.sideCross, { left: crossLeft }]}>
-            <CrossMark size={CROSS_SIZE} />
-          </View>
-          <View pointerEvents="none" style={[styles.sideCross, { right: crossLeft }]}>
-            <CrossMark size={CROSS_SIZE} />
-          </View>
-        </>
-      )}
-      <ScrollView
-        contentContainerStyle={[styles.content, { paddingBottom: 30 + insets.bottom }]}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
-      >
-        <View style={styles.column}>
-          <Text style={styles.dateLabel}>{dateLabel}</Text>
-          <NewsCard />
-          <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
-          <SaintTodayCard />
-          <VerseOfDayCard onOpen={openVerse} />
+    <ReadingColumn>
+      <ScrollView contentContainerStyle={[columnContentStyle, { padding: space.md, paddingBottom: space.xl }]}>
+        {/* No desktop a página vira uma coluna central; no celular ocupa 100%. */}
+        <View style={columnStyle}>
+          <Text style={[text('subhead'), { color: colors.textSubtle, marginBottom: space.md }]}>{dateLabel}</Text>
+
+          <VerseOfDayCard onOpen={openVerse} style={block} />
+
+          {/* Santo e leituras do dia no mesmo Group: o santo é a memória da
+              liturgia de hoje. Em dia sem santo (féria) o Group fica só com a
+              liturgia, sem filho vazio nem separador sobrando. */}
+          <Group header={t('home.todayLiturgy')} style={block}>
+            {saint ? <SaintTodayCard saint={saint} /> : null}
+            <LiturgyCard onOpen={openLiturgy} />
+          </Group>
+
+          <Group header={t('home.objection.title')} style={block}>
+            <View style={{ padding: space.md, gap: space.xxs }}>
+              <Text style={[text('title3'), { color: colors.text }]}>{pick(objection, 'objection', isEn)}</Text>
+              <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+                {t('home.objection.steps', { n: objection.steps.length })}
+              </Text>
+            </View>
+            <Row icon="chatbubbles-outline" title={t('home.objection.cta')} trailing="chevron" onPress={openObjection} />
+          </Group>
+
+          <NewsCard style={block} />
         </View>
       </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+    </ReadingColumn>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 16, alignItems: 'center' },
-    // No desktop a página vira uma coluna central; no celular ocupa 100%.
-    column: { width: '100%', ...(Platform.OS === 'web' ? { maxWidth: COLUMN_MAX } : null) },
-    // Cruz decorativa nas laterais (só desktop): centralizada verticalmente.
-    sideCross: { position: 'absolute', top: 0, bottom: 0, justifyContent: 'center' },
-    dateLabel: {
-      fontSize: fs(13), color: c.textSubtle, fontWeight: 'bold',
-      textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12,
-    },
-  });

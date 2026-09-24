@@ -1,5 +1,15 @@
 import { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Appearance, Platform } from 'react-native';
+import { LIGHT, DARK } from '../context/ThemeContext';
+import { space, radius, textStyle, fontFamilyFor } from '../theme/tokens';
+
+// Este boundary embrulha o ThemeProvider em App.js, então não pode usar
+// useTheme(): lê as paletas exportadas e escolhe pelo esquema do sistema, e
+// compõe os papéis de texto direto dos tokens, sem a escala de fonte do tema.
+// Só papéis em sans, porque a fonte de títulos pode não ter carregado quando o
+// erro acontece.
+const FAMILIES = fontFamilyFor(Platform.OS);
+const semEscala = (n) => n;
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -23,6 +33,7 @@ export default class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
+      const styles = makeStyles(Appearance.getColorScheme() === 'dark' ? DARK : LIGHT);
       return (
         <View style={styles.container}>
           <Text style={styles.title}>Ops, algo deu errado</Text>
@@ -32,7 +43,7 @@ export default class ErrorBoundary extends Component {
           {__DEV__ && this.state.error ? (
             <Text style={styles.err}>{String(this.state.error?.message || this.state.error)}</Text>
           ) : null}
-          <TouchableOpacity style={styles.btn} onPress={this.reset}>
+          <TouchableOpacity style={styles.btn} onPress={this.reset} role="button">
             <Text style={styles.btnText}>Tentar novamente</Text>
           </TouchableOpacity>
         </View>
@@ -42,11 +53,13 @@ export default class ErrorBoundary extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, backgroundColor: '#1a3a5c' },
-  title: { fontSize: 22, fontWeight: 'bold', color: '#fff', marginBottom: 12 },
-  body: { fontSize: 14, color: '#c9a84c', textAlign: 'center', marginBottom: 16, lineHeight: 22 },
-  err: { fontSize: 11, color: '#ffd', textAlign: 'center', marginBottom: 16, fontFamily: 'monospace' },
-  btn: { backgroundColor: '#c9a84c', paddingHorizontal: 24, paddingVertical: 12, borderRadius: 10 },
-  btnText: { color: '#1a3a5c', fontWeight: 'bold', fontSize: 15 },
-});
+// Fundo navy (primary) com texto e botão em dourado (accent), nos dois temas.
+const makeStyles = (c) =>
+  StyleSheet.create({
+    container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: space.xxl, backgroundColor: c.primary },
+    title: { ...textStyle('title3', semEscala, FAMILIES), color: c.onPrimary, marginBottom: space.sm },
+    body: { ...textStyle('subhead', semEscala, FAMILIES), color: c.accent, textAlign: 'center', marginBottom: space.md },
+    err: { ...textStyle('caption2', semEscala, FAMILIES), color: c.heroSub, textAlign: 'center', marginBottom: space.md, fontFamily: 'monospace' },
+    btn: { backgroundColor: c.accent, paddingHorizontal: space.xl, paddingVertical: space.sm, borderRadius: radius.md },
+    btnText: { ...textStyle('headline', semEscala, FAMILIES), color: c.primary },
+  });

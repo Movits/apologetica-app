@@ -1,13 +1,41 @@
 import { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
 import { getLiturgy, getLiturgicalColorHex, getLiturgicalColorMeaning, getLiturgicalColorName } from '../services/liturgyApi';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { liturgyTitle } from '../utils/liturgyTitle';
+import { Row } from './ui';
+import Skeleton from './Skeleton';
 
+// Ponto na cor litúrgica, com a hairline em `separator` para o branco não
+// sumir no fundo claro. Decorativo (o nome da cor vem escrito ao lado): o
+// leitor de tela pula. `size` é um token de espaço (xs no card, md na tela).
+export function LiturgicalColorDot({ hex, size }) {
+  const { colors, tokens } = useTheme();
+  return (
+    <View
+      aria-hidden
+      style={{
+        width: size,
+        height: size,
+        borderRadius: tokens.radius.full,
+        backgroundColor: hex,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: colors.separator,
+      }}
+    />
+  );
+}
+
+// Liturgia de hoje como uma linha de lista (para dentro do Group do Conteúdo
+// do dia): nome do dia, ponto na cor litúrgica com o nome dela e a referência
+// do Evangelho, e o significado da cor em footnote. Toque abre as leituras.
+// Enquanto carrega, barras com a forma do texto (sem spinner); sem rede, a
+// mensagem no lugar do subtítulo. Precisa de internet (liturgyApi tem cache).
 export default function LiturgyCard({ onOpen }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens, text } = useTheme();
+  const { t, lang, isEn } = useLanguage();
+  const { space } = tokens;
   const [liturgy, setLiturgy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -21,81 +49,67 @@ export default function LiturgyCard({ onOpen }) {
     return () => { mounted = false; };
   }, []);
 
-  const styles = makeStyles(colors, fs);
-  const corHex = liturgy?.cor ? getLiturgicalColorHex(liturgy.cor) : colors.accent;
+  const label = t('home.todayLiturgy');
+
+  if (loading) {
+    return (
+      <Row
+        icon="calendar-outline"
+        trailing="chevron"
+        onPress={onOpen}
+        accessibilityLabel={`${label}, ${t('common.loading')}`}
+      >
+        {/* A Row não repassa aria-busy: o estado de carregamento vai na View
+            dos Skeleton, como no NewsCard. */}
+        <View aria-busy style={{ gap: space.xs, paddingVertical: space.xxs }}>
+          <Skeleton width="70%" height={text('body').lineHeight} />
+          <Skeleton width="45%" />
+        </View>
+      </Row>
+    );
+  }
+
+  // Sem rede: o título do erro no lugar do nome do dia (o header do Group já
+  // diz "Liturgia de hoje") e a explicação como subtítulo.
+  if (error || !liturgy) {
+    return (
+      <Row
+        icon="calendar-outline"
+        title={t('liturgy.errorTitle')}
+        subtitle={t('liturgy.needsInternet')}
+        trailing="chevron"
+        onPress={onOpen}
+        accessibilityLabel={`${label}, ${t('liturgy.errorTitle')}. ${t('liturgy.needsInternet')}`}
+      />
+    );
+  }
+
+  const title = liturgyTitle(liturgy, isEn);
+  const colorHex = liturgy.cor ? getLiturgicalColorHex(liturgy.cor) : null;
+  const gospel = Array.isArray(liturgy.leituras?.evangelho) ? liturgy.leituras.evangelho[0] : liturgy.leituras?.evangelho;
+  const meta = [liturgy.cor ? getLiturgicalColorName(liturgy.cor, lang) : null, gospel?.referencia].filter(Boolean).join(' · ');
+  const meaning = liturgy.cor ? getLiturgicalColorMeaning(liturgy.cor, lang) : null;
 
   return (
-    <TouchableOpacity style={[styles.card, { borderLeftColor: corHex }]} onPress={onOpen}>
-      <View style={styles.row}>
-        <View style={styles.icon}>
-          <Ionicons name="calendar-outline" size={20} color={colors.primaryText} />
+    <Row
+      icon="calendar-outline"
+      title={title}
+      titleLines={2}
+      trailing="chevron"
+      onPress={onOpen}
+      accessibilityLabel={[label, title, meta].filter(Boolean).join(', ')}
+    >
+      {meta ? (
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs, marginTop: space.xxs }}>
+          {colorHex ? <LiturgicalColorDot hex={colorHex} size={space.xs} /> : null}
+          <Text style={[text('subhead'), { color: colors.textSubtle, flexShrink: 1 }]} numberOfLines={1}>{meta}</Text>
         </View>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.label}>{t('home.todayLiturgy')}</Text>
-          {loading ? (
-            <ActivityIndicator size="small" color={colors.accent} style={{ alignSelf: 'flex-start', marginTop: 6 }} />
-          ) : error ? (
-            <Text style={styles.error}>
-              {isEn ? 'Liturgy needs internet to download today\'s readings.' : 'Liturgia precisa de internet para baixar as leituras de hoje.'}
-            </Text>
-          ) : (
-            <>
-              <Text style={styles.title} numberOfLines={2}>{(() => {
-                if (!isEn) return liturgy?.liturgia;
-                const day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-                const wm = liturgy?.liturgia?.match(/(\d+)[aª°]?\s*semana/i);
-                return wm ? `${day} – Week ${wm[1]}` : day;
-              })()}</Text>
-              <View style={styles.metaRow}>
-                {liturgy?.cor && (
-                  <View style={styles.colorPill}>
-                    <View style={[styles.colorDot, { backgroundColor: corHex }]} />
-                    <Text style={styles.metaText}>{getLiturgicalColorName(liturgy.cor, isEn ? 'en' : 'pt')}</Text>
-                  </View>
-                )}
-                {(() => {
-                  const ev = liturgy?.leituras?.evangelho;
-                  const evObj = Array.isArray(ev) ? ev[0] : ev;
-                  return evObj?.referencia ? (
-                    <Text style={styles.metaText}>{evObj.referencia}</Text>
-                  ) : null;
-                })()}
-              </View>
-              {liturgy?.cor && getLiturgicalColorMeaning(liturgy.cor, isEn ? 'en' : 'pt') ? (
-                <Text style={styles.colorMeaning} numberOfLines={3}>
-                  {getLiturgicalColorMeaning(liturgy.cor, isEn ? 'en' : 'pt')}
-                </Text>
-              ) : null}
-            </>
-          )}
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </View>
-    </TouchableOpacity>
+      ) : null}
+      {meaning ? (
+        <Text style={[text('footnote'), { color: colors.textTertiary, marginTop: space.xxs }]} numberOfLines={2}>
+          {meaning}
+        </Text>
+      ) : null}
+    </Row>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    card: {
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 12,
-      marginBottom: 10,
-      borderLeftWidth: 4,
-    },
-    row: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-    icon: {
-      width: 38, height: 38, borderRadius: 9,
-      backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    label: { fontSize: fs(11), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1 },
-    title: { fontSize: fs(13), color: c.text, fontWeight: '600', marginTop: 3, lineHeight: fs(18) },
-    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 5 },
-    colorPill: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-    colorDot: { width: 10, height: 10, borderRadius: 5, borderWidth: 1, borderColor: c.divider },
-    metaText: { fontSize: fs(11), color: c.textMuted },
-    colorMeaning: { fontSize: fs(11), color: c.textMuted, marginTop: 6, lineHeight: fs(15), fontStyle: 'italic' },
-    error: { fontSize: fs(12), color: c.textMuted, marginTop: 4, fontStyle: 'italic' },
-  });

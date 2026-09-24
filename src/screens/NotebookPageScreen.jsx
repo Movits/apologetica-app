@@ -1,46 +1,60 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import {
-  View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView,
-  KeyboardAvoidingView, Platform, ActivityIndicator,
-} from 'react-native';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
 import { confirmAction, notify } from '../utils/dialog';
-import { Ionicons } from '@expo/vector-icons';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   addNotebookPage, updateNotebookPage, removeNotebookPage, getNotebookPage,
 } from '../services/userData';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import NotebookText from '../components/NotebookText';
+import NotebookText, { extractRefs, openRef } from '../components/NotebookText';
 import ReferencePickerModal from '../components/ReferencePickerModal';
+import HeaderButton from '../components/HeaderButton';
+import { openBible, openArticle as openArticleScreen } from '../navigation/links';
+import { Button, Field, Group, Row, SectionTitle } from '../components/ui';
 
+// Ícone da linha de cada referência citada, por tipo de token.
+const REF_ICON = { v: 'book-outline', a: 'document-text-outline', r: 'bookmark-outline' };
+
+// Uma página do caderno em dois modos. Leitura: título em display, o texto
+// em text('reading') com os tokens virando links, e as referências citadas
+// listadas como linhas abaixo. Edição: título e texto em Fields dentro de um
+// Group, botão para inserir referência (o "@" digitado também abre o
+// seletor) e "Salvar" no header. Página nova começa em edição.
 export default function NotebookPageScreen({ route, navigation }) {
-  const { colors, fs } = useTheme();
+  const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const insets = useSafeAreaInsets();
-  const styles = makeStyles(colors, fs);
+  const { space } = tokens;
 
-  const [pageId, setPageId] = useState(route.params?.pageId || null);
+  const initialId = route.params?.pageId || null;
+  const [pageId, setPageId] = useState(initialId);
   const [title, setTitle] = useState('');
-  const [text, setText] = useState('');
-  const [mode, setMode] = useState(pageId ? 'read' : 'edit'); // página nova começa em edição
-  const [loading, setLoading] = useState(!!pageId);
+  const [body, setBody] = useState('');
+  const [mode, setMode] = useState(initialId ? 'read' : 'edit');
+  const [loading, setLoading] = useState(Boolean(initialId));
   const [busy, setBusy] = useState(false);
   const [picker, setPicker] = useState({ open: false, pos: 0, replace: false });
   const selRef = useRef({ start: 0, end: 0 });
 
-  // Carrega página existente.
+  // Carrega a página existente (só a que chegou pelos params: depois de
+  // salvar uma nova, o id muda mas o texto já está em memória).
   useEffect(() => {
-    if (!pageId) return;
-    (async () => {
-      const page = await getNotebookPage(pageId);
-      if (page) { setTitle(page.title || ''); setText(page.text || ''); }
-      setLoading(false);
-    })();
-  }, []);
+    if (!initialId) return undefined;
+    let alive = true;
+    getNotebookPage(initialId)
+      .then((page) => {
+        if (!alive) return;
+        if (page) {
+          setTitle(page.title || '');
+          setBody(page.text || '');
+        }
+        setLoading(false);
+      })
+      .catch(() => { if (alive) setLoading(false); });
+    return () => { alive = false; };
+  }, [initialId]);
 
   const save = async () => {
-    if (!title.trim() && !text.trim()) {
+    if (!title.trim() && !body.trim()) {
       // nada a salvar: volta sem criar página vazia
       navigation.goBack();
       return;
@@ -48,9 +62,9 @@ export default function NotebookPageScreen({ route, navigation }) {
     setBusy(true);
     try {
       if (pageId) {
-        await updateNotebookPage(pageId, { title: title.trim(), text });
+        await updateNotebookPage(pageId, { title: title.trim(), text: body });
       } else {
-        const ref = await addNotebookPage({ title: title.trim(), text });
+        const ref = await addNotebookPage({ title: title.trim(), text: body });
         setPageId(ref.id);
       }
       setMode('read');
@@ -60,6 +74,10 @@ export default function NotebookPageScreen({ route, navigation }) {
       setBusy(false);
     }
   };
+  // O header lê a versão atual pela ref, então o efeito abaixo só depende do
+  // que muda o visual (modo e ocupado), sem closure velha nem re-set por render.
+  const saveRef = useRef(save);
+  saveRef.current = save;
 
   const confirmDelete = () => {
     if (!pageId) return navigation.goBack();
@@ -78,33 +96,28 @@ export default function NotebookPageScreen({ route, navigation }) {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: t('header.notebook'),
       headerRight: () =>
         mode === 'edit' ? (
-          <TouchableOpacity onPress={save} disabled={busy} hitSlop={10} style={{ paddingRight: 4 }}>
-            {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.headerBtn}>{t('common.save')}</Text>}
-          </TouchableOpacity>
+          <HeaderButton label={t('common.save')} loading={busy} onPress={() => saveRef.current()} />
         ) : (
-          <TouchableOpacity onPress={() => setMode('edit')} hitSlop={10} style={{ paddingRight: 4 }}>
-            <Ionicons name="create-outline" size={22} color="#fff" />
-          </TouchableOpacity>
+          <HeaderButton icon="create-outline" label={t('common.edit')} onPress={() => setMode('edit')} />
         ),
     });
-  }, [navigation, mode, busy, title, text, isEn]);
+  }, [navigation, mode, busy, t]);
 
   // Detecta '@' digitado para abrir o seletor de referência.
   const onChangeText = (next) => {
-    if (next.length === text.length + 1) {
+    if (next.length === body.length + 1) {
       const pos = selRef.current.start; // cursor antes da inserção
       if (next[pos] === '@') {
         setPicker({ open: true, pos, replace: true });
       }
     }
-    setText(next);
+    setBody(next);
   };
 
   const insertReference = (token) => {
-    setText((prev) => {
+    setBody((prev) => {
       const pos = Math.min(picker.pos, prev.length);
       const before = prev.slice(0, pos);
       const after = prev.slice(pos + (picker.replace ? 1 : 0)); // remove o '@' se for o caso
@@ -112,15 +125,31 @@ export default function NotebookPageScreen({ route, navigation }) {
     });
   };
 
-  const openVerse = (bookId, chapter, verse) =>
-    navigation.navigate('Bíblia', { bookId, chapter, highlightVerse: verse });
-  const openArticle = (articleId) =>
-    navigation.navigate('ArticleFromSearch', { articleId });
-  const openRef = (refId) =>
-    navigation.navigate('RefDetail', { highlightId: refId });
+  const handlers = {
+    onOpenVerse: (bookId, chapter, verse) => openBible(navigation, { bookId, chapter, verse }),
+    onOpenArticle: (articleId) => openArticleScreen(navigation, articleId),
+    onOpenRef: (refId) => navigation.navigate('RefDetail', { highlightId: refId }),
+  };
+  const refs = useMemo(() => extractRefs(body), [body]);
+  const kindLabel = { v: t('common.verse'), a: t('header.article'), r: t('header.reference') };
+  const readingLine = text('reading').lineHeight;
+
+  const deleteButton = pageId ? (
+    <Button
+      variant="plain"
+      label={t('notebook.deletePage')}
+      textStyle={{ color: colors.danger }}
+      onPress={confirmDelete}
+      disabled={busy}
+    />
+  ) : null;
 
   if (loading) {
-    return <View style={styles.center}><ActivityIndicator color={colors.accent} /></View>;
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.bg }}>
+        <ActivityIndicator color={colors.tint} />
+      </View>
+    );
   }
 
   return (
@@ -128,51 +157,66 @@ export default function NotebookPageScreen({ route, navigation }) {
       style={{ flex: 1, backgroundColor: colors.bg }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      {mode === 'edit' ? (
-        <>
-          <TextInput
-            style={styles.titleInput}
-            value={title}
-            onChangeText={setTitle}
-            placeholder={isEn ? 'Title' : 'Título'}
-            placeholderTextColor={colors.textSubtle}
-          />
-          <View style={styles.toolbar}>
-            <TouchableOpacity
-              style={styles.atBtn}
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ padding: space.md, paddingBottom: space.xxl, gap: space.md }}
+      >
+        {mode === 'edit' ? (
+          <>
+            <Group>
+              <Field
+                label={isEn ? 'Title' : 'Título'}
+                value={title}
+                onChangeText={setTitle}
+                inputStyle={text('headline')}
+                returnKeyType="next"
+              />
+              <Field
+                aria-label={isEn ? 'Page text' : 'Texto da página'}
+                value={body}
+                onChangeText={onChangeText}
+                onSelectionChange={(e) => { selRef.current = e.nativeEvent.selection; }}
+                placeholder={isEn ? 'Write freely. Type @ to link a verse or article.' : 'Escreva à vontade. Digite @ para citar um versículo ou artigo.'}
+                multiline
+                autoFocus={!initialId}
+                inputStyle={[text('reading'), { minHeight: readingLine * 8 }]}
+              />
+            </Group>
+            <Button
+              variant="secondary"
+              icon="at-outline"
+              label={t('notebook.addReference')}
               onPress={() => setPicker({ open: true, pos: selRef.current.start, replace: false })}
-            >
-              <Ionicons name="at" size={18} color={colors.accent} />
-              <Text style={styles.atText}>{isEn ? 'Add reference' : 'Inserir referência'}</Text>
-            </TouchableOpacity>
-          </View>
-          <TextInput
-            style={styles.bodyInput}
-            value={text}
-            onChangeText={onChangeText}
-            onSelectionChange={(e) => { selRef.current = e.nativeEvent.selection; }}
-            placeholder={isEn ? 'Write freely. Type @ to link a verse or article…' : 'Escreva à vontade. Digite @ para citar um versículo ou artigo…'}
-            placeholderTextColor={colors.textSubtle}
-            multiline
-            autoFocus={!pageId}
-            textAlignVertical="top"
-          />
-          {pageId && (
-            <TouchableOpacity
-              style={[styles.deleteBtn, { paddingBottom: 14 + Math.max(insets.bottom, 8) }]}
-              onPress={confirmDelete}
-            >
-              <Ionicons name="trash-outline" size={18} color="#c0392b" />
-              <Text style={styles.deleteText}>{isEn ? 'Delete page' : 'Excluir página'}</Text>
-            </TouchableOpacity>
-          )}
-        </>
-      ) : (
-        <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 40 }}>
-          {title.trim() ? <Text style={styles.readTitle}>{title}</Text> : null}
-          <NotebookText text={text} onOpenVerse={openVerse} onOpenArticle={openArticle} onOpenRef={openRef} />
-        </ScrollView>
-      )}
+            />
+            {deleteButton}
+          </>
+        ) : (
+          <>
+            {title.trim() ? (
+              <Text role="heading" style={[text('title'), { color: colors.text }]}>{title}</Text>
+            ) : null}
+            <NotebookText text={body} {...handlers} />
+            {refs.length ? (
+              <View>
+                <SectionTitle title={t('notebook.references')} style={{ marginHorizontal: 0, marginTop: 0 }} />
+                <Group>
+                  {refs.map((r) => (
+                    <Row
+                      key={`${r.kind}:${r.payload}`}
+                      icon={REF_ICON[r.kind]}
+                      title={r.label}
+                      subtitle={kindLabel[r.kind]}
+                      trailing="chevron"
+                      onPress={() => openRef(r, handlers)}
+                    />
+                  ))}
+                </Group>
+              </View>
+            ) : null}
+            {deleteButton}
+          </>
+        )}
+      </ScrollView>
 
       <ReferencePickerModal
         visible={picker.open}
@@ -182,32 +226,3 @@ export default function NotebookPageScreen({ route, navigation }) {
     </KeyboardAvoidingView>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: c.bg },
-    headerBtn: { fontSize: fs(15), color: '#fff', fontWeight: 'bold' },
-    titleInput: {
-      fontSize: fs(20), fontWeight: 'bold', color: c.primaryText,
-      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 8,
-      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
-    },
-    toolbar: { flexDirection: 'row', paddingHorizontal: 20, paddingBottom: 8 },
-    atBtn: {
-      flexDirection: 'row', alignItems: 'center', gap: 6,
-      borderWidth: 1, borderColor: c.accent, borderRadius: 18,
-      paddingVertical: 6, paddingHorizontal: 12,
-    },
-    atText: { color: c.accentText, fontSize: fs(13), fontWeight: '600' },
-    bodyInput: {
-      flex: 1, paddingHorizontal: 20, paddingTop: 4,
-      fontSize: fs(16), color: c.text, lineHeight: fs(24),
-      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
-    },
-    readTitle: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, marginBottom: 14 },
-    deleteBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
-      padding: 14, borderTopWidth: 1, borderTopColor: c.divider,
-    },
-    deleteText: { fontSize: fs(14), color: '#c0392b', fontWeight: '600' },
-  });

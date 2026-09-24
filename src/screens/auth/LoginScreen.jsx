@@ -1,23 +1,30 @@
-import { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { useState, useEffect, useRef } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn';
-import AuthTopToggles from '../../components/AuthTopToggles';
-import CrossMark from '../../components/CrossMark';
+import { TOGGLES_HEIGHT } from '../../components/AuthTopToggles';
+import BrandMark from '../../components/BrandMark';
+import FormScreen from '../../components/auth/FormScreen';
+import OrDivider from '../../components/auth/OrDivider';
+import { Button, Field, Group } from '../../components/ui';
 
+// Login com a pele da Onda 7 (mock aprovado): fundo do tema, cruz à esquerda,
+// título "Entrar", lista agrupada de campos rotulados com anel de foco, um só
+// divisor "ou" e "Continuar sem conta" com o mesmo peso das outras opções.
 export default function LoginScreen({ navigation }) {
   const { signIn, continueAsGuest, linkGoogleToEmail } = useAuth();
-  const { colors, fs } = useTheme();
-  const { t, lang } = useLanguage();
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
   const google = useGoogleSignIn();
+  const passwordRef = useRef(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const { space, radius } = tokens;
 
   const linkInfo = google.needsLink;
   // Quando o Google detecta conta existente, prefixa o email para o usuário só
@@ -29,7 +36,7 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     setError('');
     if (!email.trim() || !password) {
-      setError(lang === 'en' ? 'Fill in email and password.' : 'Preencha e-mail e senha.');
+      setError(isEn ? 'Fill in email and password.' : 'Preencha e-mail e senha.');
       return;
     }
     setBusy(true);
@@ -41,7 +48,7 @@ export default function LoginScreen({ navigation }) {
   const handleLink = async () => {
     setError('');
     if (!password) {
-      setError(lang === 'en' ? 'Enter your password.' : 'Digite sua senha.');
+      setError(isEn ? 'Enter your password.' : 'Digite sua senha.');
       return;
     }
     setBusy(true);
@@ -51,201 +58,104 @@ export default function LoginScreen({ navigation }) {
     else google.clearLink?.();
   };
 
-  const styles = makeStyles(colors, fs);
+  const shownError = error || google.error;
 
+  // O conteúdo começa abaixo das pílulas do topo, com folga.
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1, backgroundColor: colors.bg }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      <AuthTopToggles />
+    <FormScreen toggles topInset={TOGGLES_HEIGHT + space.lg}>
+      {/* Decorativa: a tela já se chama pelo título. */}
+      <BrandMark size="md" color={colors.accent} decorative style={{ marginBottom: space.md }} />
+      <Text style={[text('title'), { color: colors.text, marginBottom: space.xs }]}>{t('auth.login')}</Text>
+      <Text style={[text('body'), { color: colors.textSubtle, marginBottom: space.lg }]}>{t('auth.loginLead')}</Text>
 
-      <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        <View style={styles.crossWrap}>
-          <CrossMark size={fs(54)} color={colors.accent} opacity={1} />
-        </View>
-        <Text style={styles.title}>APPologética</Text>
-        <Text style={styles.subtitle}>{t('auth.subtitle')}</Text>
+      <Group>
+        <Field
+          label={t('auth.emailLabel')}
+          placeholder={t('auth.emailPlaceholder')}
+          value={email}
+          onChangeText={setEmail}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          autoComplete="email"
+          textContentType="emailAddress"
+          returnKeyType="next"
+          onSubmitEditing={() => passwordRef.current?.focus()}
+          submitBehavior="submit"
+        />
+        <Field
+          ref={passwordRef}
+          label={t('auth.password')}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry={!showPassword}
+          onToggleSecure={() => setShowPassword((v) => !v)}
+          toggleSecureLabel={showPassword ? t('auth.hidePassword') : t('auth.showPassword')}
+          autoComplete="password"
+          textContentType="password"
+          returnKeyType="go"
+          onSubmitEditing={linkInfo ? handleLink : handleLogin}
+        />
+      </Group>
 
-        <View style={styles.inputRow}>
-          <Ionicons name="mail-outline" size={20} color={colors.textSubtle} />
-          <TextInput
-            style={styles.input}
-            placeholder={t('auth.email')}
-            value={email}
-            onChangeText={setEmail}
-            placeholderTextColor={colors.textSubtle}
-            autoCapitalize="none"
-            keyboardType="email-address"
-            autoComplete="email"
+      {linkInfo ? (
+        <View
+          style={{
+            backgroundColor: colors.card,
+            borderRadius: radius.md,
+            borderWidth: StyleSheet.hairlineWidth,
+            borderColor: colors.separator,
+            padding: space.md,
+            marginTop: space.sm,
+            gap: space.xs,
+          }}
+        >
+          <Text style={[text('headline'), { color: colors.text }]}>
+            {isEn ? 'You already have an account with this email' : 'Você já tem uma conta com este e-mail'}
+          </Text>
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+            {isEn
+              ? `Enter the password for ${linkInfo.email} to link Google to that account.`
+              : `Digite a senha de ${linkInfo.email} para vincular o Google a essa conta.`}
+          </Text>
+          <Button
+            variant="secondary"
+            icon="link-outline"
+            label={isEn ? 'Link Google' : 'Vincular Google'}
+            onPress={handleLink}
+            loading={busy}
           />
         </View>
+      ) : null}
 
-        <View style={styles.inputRow}>
-          <Ionicons name="lock-closed-outline" size={20} color={colors.textSubtle} />
-          <TextInput
-            style={styles.input}
-            placeholder={t('auth.password')}
-            value={password}
-            onChangeText={setPassword}
-            placeholderTextColor={colors.textSubtle}
-            secureTextEntry={!showPassword}
-            autoComplete="password"
-          />
-          <TouchableOpacity onPress={() => setShowPassword((v) => !v)}>
-            <Ionicons name={showPassword ? 'eye-off-outline' : 'eye-outline'} size={20} color={colors.textSubtle} />
-          </TouchableOpacity>
-        </View>
+      {shownError ? (
+        <Text style={[text('footnote'), { color: colors.danger, marginTop: space.sm }]}>{shownError}</Text>
+      ) : null}
 
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')} style={styles.forgotLink}>
-          <Text style={styles.forgotText}>{t('auth.forgotPassword')}</Text>
-        </TouchableOpacity>
+      <Button label={t('auth.login')} onPress={handleLogin} loading={busy} style={{ marginTop: space.md }} />
+      <Button variant="plain" label={t('auth.forgotPassword')} onPress={() => navigation.navigate('ForgotPassword')} />
 
-        {linkInfo ? (
-          <View style={styles.linkBox}>
-            <Text style={styles.linkTitle}>
-              {lang === 'en' ? 'You already have an account with this email' : 'Você já tem uma conta com este e-mail'}
-            </Text>
-            <Text style={styles.linkBody}>
-              {lang === 'en'
-                ? `Enter the password for ${linkInfo.email} to link Google to that account.`
-                : `Digite a senha de ${linkInfo.email} para vincular o Google a essa conta.`}
-            </Text>
-            <TouchableOpacity style={styles.linkBtn} onPress={handleLink} disabled={busy}>
-              {busy ? <ActivityIndicator color="#fff" /> : (
-                <>
-                  <Ionicons name="link-outline" size={18} color="#fff" />
-                  <Text style={styles.linkBtnText}>{lang === 'en' ? 'Link Google' : 'Vincular Google'}</Text>
-                </>
-              )}
-            </TouchableOpacity>
-          </View>
-        ) : null}
+      <OrDivider />
 
-        {error || google.error ? <Text style={styles.error}>{error || google.error}</Text> : null}
-
-        <TouchableOpacity style={styles.primaryBtn} onPress={handleLogin} disabled={busy}>
-          {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryBtnText}>{t('auth.login')}</Text>}
-        </TouchableOpacity>
-
-        <View style={styles.divider}>
-          <View style={styles.dividerLine} />
-          <Text style={styles.dividerText}>{lang === 'en' ? 'or' : 'ou'}</Text>
-          <View style={styles.dividerLine} />
-        </View>
-
+      <View style={{ gap: space.xs }}>
         {!google.unavailable && (
-          <TouchableOpacity
-            style={styles.googleBtn}
+          <Button
+            variant="secondary"
+            icon="logo-google"
+            label={isEn ? 'Continue with Google' : 'Continuar com Google'}
             onPress={google.signIn}
-            disabled={!google.ready || google.busy}
-          >
-            {google.busy ? (
-              <ActivityIndicator color={colors.text} />
-            ) : (
-              <>
-                <Ionicons name="logo-google" size={20} color="#DB4437" />
-                <Text style={styles.googleBtnText}>{lang === 'en' ? 'Continue with Google' : 'Continuar com Google'}</Text>
-              </>
-            )}
-          </TouchableOpacity>
+            disabled={!google.ready}
+            loading={google.busy}
+          />
         )}
+        <Button variant="secondary" label={t('auth.signup')} onPress={() => navigation.navigate('Signup')} />
+        <Button variant="plain" label={t('auth.guest')} onPress={continueAsGuest} />
+      </View>
 
-        <TouchableOpacity style={styles.secondaryBtn} onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.secondaryBtnText}>{t('auth.signupNew')}</Text>
-        </TouchableOpacity>
-
-        <View style={styles.guestDivider}>
-          <View style={styles.guestDividerLine} />
-          <Text style={styles.guestDividerText}>{lang === 'en' ? 'or' : 'ou'}</Text>
-          <View style={styles.guestDividerLine} />
-        </View>
-
-        <TouchableOpacity style={styles.guestBtn} onPress={continueAsGuest}>
-          <Ionicons name="enter-outline" size={18} color={colors.textMuted} />
-          <Text style={styles.guestBtnText}>{t('auth.guest')}</Text>
-        </TouchableOpacity>
-        <Text style={styles.guestHint}>
-          {lang === 'en'
-            ? 'You can explore articles, Bible, liturgy and references.\nHighlights and notes require an account.'
-            : 'Você pode explorar artigos, Bíblia, liturgia e referências.\nMarcações e notas exigem conta.'}
-        </Text>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      <Text style={[text('caption1'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.xs }]}>
+        {isEn
+          ? 'You can explore articles, Bible, liturgy and references.\nHighlights and notes require an account.'
+          : 'Você pode explorar artigos, Bíblia, liturgia e referências.\nMarcações e notas exigem conta.'}
+      </Text>
+    </FormScreen>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    content: { padding: 24, paddingTop: 60, alignItems: 'center' },
-    crossWrap: { marginBottom: 12 },
-    title: { fontSize: fs(28), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
-    subtitle: { fontSize: fs(14), color: c.textMuted, marginBottom: 32, textAlign: 'center' },
-    inputRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: c.card,
-      borderRadius: 12,
-      paddingHorizontal: 16,
-      marginBottom: 12,
-      width: '100%',
-      gap: 12,
-    },
-    input: { flex: 1, height: 48, fontSize: fs(15), color: c.text, ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null) },
-    forgotLink: { alignSelf: 'flex-end', marginBottom: 16, marginTop: 4 },
-    forgotText: { fontSize: fs(13), color: c.accentText, fontWeight: '600' },
-    error: { color: '#c0392b', fontSize: fs(13), marginBottom: 12, textAlign: 'center', width: '100%' },
-    linkBox: { width: '100%', backgroundColor: c.badgeBg, borderRadius: 12, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: c.accent },
-    linkTitle: { fontSize: fs(14), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
-    linkBody: { fontSize: fs(13), color: c.textMuted, lineHeight: fs(18), marginBottom: 12 },
-    linkBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: c.accent, paddingVertical: 12, borderRadius: 10 },
-    linkBtnText: { color: '#fff', fontSize: fs(14), fontWeight: 'bold' },
-    primaryBtn: {
-      backgroundColor: c.primary,
-      paddingVertical: 14,
-      borderRadius: 12,
-      width: '100%',
-      alignItems: 'center',
-    },
-    primaryBtnText: { color: '#fff', fontSize: fs(16), fontWeight: 'bold' },
-    divider: { flexDirection: 'row', alignItems: 'center', width: '100%', marginVertical: 20 },
-    dividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
-    dividerText: { marginHorizontal: 12, color: c.textSubtle, fontSize: fs(12) },
-    secondaryBtn: {
-      borderWidth: 1.5,
-      borderColor: c.accent,
-      paddingVertical: 14,
-      borderRadius: 12,
-      width: '100%',
-      alignItems: 'center',
-      marginTop: 10,
-    },
-    secondaryBtnText: { color: c.accentText, fontSize: fs(15), fontWeight: 'bold' },
-    guestDivider: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 28, width: '100%' },
-    guestDividerLine: { flex: 1, height: 1, backgroundColor: c.divider },
-    guestDividerText: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1 },
-    guestBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
-      width: '100%',
-      paddingVertical: 14,
-      marginTop: 16,
-    },
-    guestBtnText: { color: c.textMuted, fontSize: fs(14), fontWeight: '600' },
-    guestHint: { fontSize: fs(11), color: c.textSubtle, textAlign: 'center', marginTop: 4, lineHeight: fs(16) },
-    googleBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 10,
-      borderWidth: 1,
-      borderColor: c.divider,
-      backgroundColor: c.card,
-      paddingVertical: 14,
-      borderRadius: 12,
-      width: '100%',
-    },
-    googleBtnText: { color: c.text, fontSize: fs(15), fontWeight: '600' },
-  });

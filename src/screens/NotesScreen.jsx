@@ -1,113 +1,107 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { watchNotes } from '../services/userData';
+import { watchNotes, removeNote } from '../services/userData';
+import { confirmAction } from '../utils/dialog';
 import { getBook, bookName } from '../data/bible';
-import { useTheme } from '../context/ThemeContext';
+import { getVerse, ensureBible } from '../services/bibleApi';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { shareNote } from '../utils/share';
+import { verseLabel } from '../utils/refLabel';
+import { openBible } from '../navigation/links';
+import { EmptyState, Row } from '../components/ui';
+import RowIconButton from '../components/RowIconButton';
+import UserDataList from '../components/UserDataList';
+import ItemActionsSheet from '../components/ItemActionsSheet';
 
+// Notas do usuário em tempo real (Firestore). O visitante vê o convite para
+// criar conta; com conta, a lista agrupada mostra a referência e o começo da
+// nota. Toque abre o editor; o botão de mais ações (ou o toque longo) abre a
+// folha com editar, ler na Bíblia, compartilhar e excluir.
 export default function NotesScreen({ navigation }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
-  const { user, exitGuest } = useAuth();
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { t, isEn, lang } = useLanguage();
+  const { user } = useAuth();
+  const [items, setItems] = useState(null);
+  // A nota da folha de ações; null fecha a folha.
+  const [active, setActive] = useState(null);
 
   useEffect(() => {
     if (!user) {
-      setLoading(false);
-      return;
+      setItems([]);
+      return undefined;
     }
-    const unsub = watchNotes((list) => {
-      setItems(list);
-      setLoading(false);
-    });
-    return unsub;
+    return watchNotes(setItems);
   }, [user]);
 
-  const formatRef = (n) => {
-    const book = getBook(n.bookId);
-    const range = n.verseStart === n.verseEnd ? `${n.verseStart}` : `${n.verseStart}-${n.verseEnd}`;
-    const sep = isEn ? ':' : ',';
-    return `${bookName(book, isEn)} ${n.chapter}${sep}${range}`;
+  const edit = (n) => navigation.navigate('NoteEditor', { noteId: n.id });
+  const open = (n) => openBible(navigation, { bookId: n.bookId, chapter: n.chapter, verse: n.verseStart, verseEnd: n.verseEnd });
+
+  const share = (n) => {
+    shareNote({
+      bookName: bookName(getBook(n.bookId), isEn),
+      chapter: n.chapter,
+      verseStart: n.verseStart,
+      verseEnd: n.verseEnd,
+      verseText: getVerse(n.bookId, n.chapter, n.verseStart, lang) || '',
+      noteText: n.text,
+      isEn,
+    });
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
+  const confirmRemove = (n) => {
+    confirmAction({
+      title: isEn ? 'Delete note?' : 'Excluir nota?',
+      message: isEn ? 'The note will be permanently removed.' : 'A nota será removida permanentemente.',
+      confirmText: t('common.delete'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: () => removeNote(n.id),
+    });
+  };
 
-  if (loading) {
-    return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
-  }
+  // A lista não mostra texto bíblico, só o compartilhar monta o versículo, e
+  // ele roda dentro do gesto do usuário (o navigator.share exige isso): a
+  // tradução é pedida ao abrir a folha de ações, sem bloquear, para já estar
+  // em memória quando a pessoa tocar em Compartilhar.
+  const showActions = (n) => {
+    ensureBible(lang).catch(() => {});
+    setActive(n);
+  };
 
-  if (!user) {
-    return (
-      <View style={[styles.center, { backgroundColor: colors.bg }]}>
-        <Ionicons name="lock-closed-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>{t('empty.createAccount')}</Text>
-        <Text style={styles.muted}>
-          {isEn
-            ? 'Notes are saved and synced between devices when you have an account.'
-            : 'Notas ficam salvas e sincronizadas entre dispositivos quando você tem conta.'}
-        </Text>
-        <TouchableOpacity
-          style={{ marginTop: 16, backgroundColor: colors.accent, paddingVertical: 12, paddingHorizontal: 24, borderRadius: 10 }}
-          onPress={() => exitGuest()}
-        >
-          <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: fs(14) }}>{t('auth.signup')}</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+  const actions = active
+    ? [
+      { icon: 'create-outline', label: t('common.edit'), onPress: () => edit(active) },
+      { icon: 'book-outline', label: t('today.readInBible'), onPress: () => open(active) },
+      { icon: 'share-outline', label: t('common.share'), onPress: () => share(active) },
+      { icon: 'trash-outline', label: t('note.delete'), danger: true, onPress: () => confirmRemove(active) },
+    ]
+    : [];
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {items.length === 0 ? (
-        <View style={styles.center}>
-          <Ionicons name="document-text-outline" size={56} color={colors.textSubtle} />
-          <Text style={styles.emptyTitle}>{t('empty.notes')}</Text>
-          <Text style={styles.muted}>
-            {isEn
-              ? 'Touch and hold a verse in the Bible and choose "Note" to create your first note.'
-              : 'Toque e segure em um versículo na Bíblia e escolha "Anotar" para criar sua primeira nota.'}
-          </Text>
-        </View>
-      ) : (
-        <>
-          <FlatList
-            data={items}
-            keyExtractor={(n) => n.id}
-            contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-            onScroll={onScroll}
-            onContentSizeChange={onContentSizeChange}
-            onLayout={onLayout}
-            scrollEventThrottle={32}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.card}
-                onPress={() => navigation.navigate('NoteEditor', { noteId: item.id })}
-              >
-                <Text style={styles.ref}>{formatRef(item)}</Text>
-                <Text style={styles.body} numberOfLines={4}>{item.text}</Text>
-              </TouchableOpacity>
-            )}
+    <>
+      <UserDataList
+        user={user}
+        items={items}
+        empty={<EmptyState icon="document-text-outline" title={t('empty.notes')} message={t('notes.emptyHint')} />}
+        keyExtractor={(n) => n.id}
+        renderItem={({ item }) => (
+          <Row
+            titleRole="headline"
+            title={verseLabel(item, isEn)}
+            subtitle={item.text}
+            subtitleLines={3}
+            trailing={<RowIconButton icon="ellipsis-horizontal" label={t('common.moreActions')} onPress={() => showActions(item)} />}
+            chevron
+            onPress={() => edit(item)}
+            onLongPress={() => showActions(item)}
           />
-          <ScrollHint direction="up" visible={showTop} />
-          <ScrollHint direction="down" visible={showBottom} />
-        </>
-      )}
-    </View>
+        )}
+      />
+      <ItemActionsSheet
+        item={active}
+        title={active ? verseLabel(active, isEn) : ''}
+        actions={actions}
+        onClose={() => setActive(null)}
+      />
+    </>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, gap: 12 },
-    emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    muted: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(20) },
-    card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
-    ref: { fontSize: fs(13), fontWeight: 'bold', color: c.accentText, marginBottom: 6 },
-    body: { fontSize: fs(14), color: c.text, lineHeight: fs(20) },
-  });

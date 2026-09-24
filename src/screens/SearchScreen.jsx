@@ -1,26 +1,33 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, Platform } from 'react-native';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
+import { View, Text, ScrollView, Pressable, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Fuse from 'fuse.js';
 import { articles } from '../data/articles';
-import { references } from '../data/references';
+import { references, withEn } from '../data/references';
 import { translateSource } from '../data/referenceSources';
 import { DAILY_VERSES } from '../data/dailyVerses';
 import { searchBible } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { pick, categoryLabel } from '../utils/i18nData';
+import { refLabel, verseLabel } from '../utils/refLabel';
+import { openBible, openArticle } from '../navigation/links';
 import {
   getSearchHistory,
   addSearchHistory,
+  removeSearchHistory,
   clearSearchHistory,
 } from '../utils/searchHistory';
+import { Chip, ChipRow, EmptyState, Group, Row, SearchField, SectionTitle } from '../components/ui';
+
+// Busca (Onda 9c): campo com foco automático, filtros em chips, histórico e
+// resultados em grupos por tipo. O motor é o mesmo de antes: Fuse.js para
+// artigos, referências e versículos curados, e a varredura full-text da
+// Bíblia offline no idioma ativo.
 
 // Threshold mais estrito (0.35) pra evitar matches absurdos.
 // Fuse.js: 0.0 = match exato, 1.0 = qualquer coisa.
-
 const articleIndex = new Fuse(articles, {
   keys: [
     { name: 'title', weight: 3 },
@@ -72,331 +79,282 @@ const looseVerseIndex = new Fuse(DAILY_VERSES, {
   includeScore: true,
 });
 
+// Filtros dos chips e as seções de resultado que cada um mostra.
+const FILTERS = [
+  { id: 'all', key: 'search.filter.all', sections: ['articles', 'verses', 'bible', 'references'] },
+  { id: 'articles', key: 'search.filter.articles', sections: ['articles'] },
+  { id: 'references', key: 'search.filter.references', sections: ['references'] },
+  { id: 'bible', key: 'search.filter.bible', sections: ['verses', 'bible'] },
+];
+
+const MIN_QUERY = 3;
+const DEBOUNCE_MS = 400;
+
+// Linha do histórico: a busca à esquerda (Row) e o "x" de 44 à direita como
+// irmão, não como filho, para não aninhar toques dentro da Row.
+function HistoryRow({ query, onPick, onRemove, removeLabel }) {
+  const { colors, tokens } = useTheme();
+  const { icon } = tokens;
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Row icon="time-outline" title={query} onPress={onPick} style={{ flex: 1 }} />
+      <Pressable
+        role="button"
+        aria-label={removeLabel}
+        onPress={onRemove}
+        style={{ width: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+      >
+        <Ionicons name="close" size={icon.md} color={colors.textSubtle} />
+      </Pressable>
+    </View>
+  );
+}
+
 export default function SearchScreen({ navigation }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn, lang } = useLanguage();
+  const { space } = tokens;
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [busy, setBusy] = useState(false);
   const [history, setHistory] = useState([]);
-  const [focused, setFocused] = useState(false);
-
-  // Memoiza styles pra que ref não mude por render
-  const styles = useMemo(() => makeStyles(colors, fs), [colors, fs]);
+  const [filter, setFilter] = useState('all');
+  const inputRef = useRef(null);
 
   useEffect(() => {
     getSearchHistory().then(setHistory);
   }, []);
 
+  // Na web o campo ganha o foco ao montar (autoFocus) e o perde um instante
+  // depois, quando a transição do stack JS esconde e mostra o card (medido:
+  // focusin aos 49 ms, focusout aos 50 ms). Refoca quando a transição de
+  // entrada termina. No nativo o autoFocus basta e isto só repete o foco.
+  useEffect(
+    () => navigation.addListener('transitionEnd', (e) => {
+      if (!e?.data?.closing) inputRef.current?.focus();
+    }),
+    [navigation]
+  );
+
+  // Debounce da digitação; Enter no campo dispara na hora.
   useEffect(() => {
-    setBusy(true);
-    const t = setTimeout(() => {
-      setDebouncedQuery(query);
+    if (query === debouncedQuery) {
       setBusy(false);
-      if (query.trim().length >= 3) {
-        addSearchHistory(query).then(() => getSearchHistory().then(setHistory));
-      }
-    }, 400);
-    return () => clearTimeout(t);
-  }, [query]);
+      return undefined;
+    }
+    setBusy(true);
+    const timer = setTimeout(() => setDebouncedQuery(query), DEBOUNCE_MS);
+    return () => clearTimeout(timer);
+  }, [query, debouncedQuery]);
+
+  // Toda busca efetiva (com 3+ letras) entra no histórico.
+  useEffect(() => {
+    setBusy(false);
+    if (debouncedQuery.trim().length < MIN_QUERY) return;
+    addSearchHistory(debouncedQuery).then(setHistory);
+  }, [debouncedQuery]);
+
+  const submit = useCallback(() => setDebouncedQuery(query), [query]);
 
   const clearHistory = useCallback(async () => {
     await clearSearchHistory();
     setHistory([]);
   }, []);
 
+  const removeFromHistory = useCallback(async (q) => {
+    setHistory(await removeSearchHistory(q));
+  }, []);
+
   // A busca full-text varre a tradução inteira, que na web é baixada sob
   // demanda. Sem esperar, searchBible devolveria [] e a tela diria "Nada
   // encontrado" por um motivo que não é esse.
-  const biblia = useBibleReady(isEn ? 'en' : 'pt');
+  const biblia = useBibleReady(lang);
 
   const results = useMemo(() => {
     const q = debouncedQuery.trim();
-    if (q.length < 3) return { articles: [], references: [], verses: [], bible: [] };
+    if (q.length < MIN_QUERY) return { articles: [], references: [], verses: [], bible: [] };
     return {
       articles: articleIndex.search(q).slice(0, 8).map((h) => h.item),
       references: referenceIndex.search(q).slice(0, 10).map((h) => h.item),
       verses: verseIndex.search(q).slice(0, 8).map((h) => h.item),
       // Busca full-text na Bíblia inteira (offline), no idioma ativo.
-      bible: biblia.pronta ? searchBible(q, { language: isEn ? 'en' : 'pt', limit: 20 }) : [],
+      bible: biblia.pronta ? searchBible(q, { language: lang, limit: 20 }) : [],
     };
-  }, [debouncedQuery, isEn, biblia.pronta]);
+  }, [debouncedQuery, lang, biblia.pronta]);
 
-  const totalHits = results.articles.length + results.references.length + results.verses.length + results.bible.length;
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
+  const activeFilter = FILTERS.find((f) => f.id === filter) || FILTERS[0];
+  const visibleHits = activeFilter.sections.reduce((n, s) => n + results[s].length, 0);
+  const searching = debouncedQuery.trim().length >= MIN_QUERY;
 
   // Para sugestão "Você quis dizer", usa threshold mais frouxo.
   const suggestion = useMemo(() => {
-    if (totalHits > 0 || debouncedQuery.trim().length < 3) return null;
+    if (!searching || visibleHits > 0) return null;
     const q = debouncedQuery.trim();
     const a = looseArticleIndex.search(q)[0];
     const v = looseVerseIndex.search(q)[0];
     const candidates = [
-      a && { type: 'article', label: a.item.title, item: a.item, score: a.score },
-      v && { type: 'verse', label: v.item.ref, item: v.item, score: v.score },
+      a && { type: 'article', label: pick(a.item, 'title', isEn), item: a.item, score: a.score },
+      v && { type: 'verse', label: verseLabel(v.item, isEn), item: v.item, score: v.score },
     ].filter(Boolean);
     if (candidates.length === 0) return null;
     candidates.sort((x, y) => x.score - y.score);
     return candidates[0];
-  }, [debouncedQuery, totalHits]);
+  }, [debouncedQuery, searching, visibleHits, isEn]);
 
-  const openSuggestion = useCallback(() => {
-    if (!suggestion) return;
-    if (suggestion.type === 'article') {
-      navigation.navigate('ArticleFromSearch', { articleId: suggestion.item.id });
-    } else if (suggestion.type === 'verse') {
-      const v = suggestion.item;
-      navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse });
-    }
-  }, [suggestion, navigation]);
-
-  // Memoiza a lista achatada de resultados pra que a ref não mude
-  // a cada keystroke / scroll. Sem isso o FlatList re-renderiza todos os itens.
-  const flatData = useMemo(() => [
-    ...(results.articles.length > 0 ? [{ type: 'header', label: isEn ? 'Articles' : 'Artigos' }] : []),
-    ...results.articles.map((a) => ({ type: 'article', item: a })),
-    ...(results.verses.length > 0 ? [{ type: 'header', label: isEn ? 'Verses' : 'Versículos' }] : []),
-    ...results.verses.map((v) => ({ type: 'verse', item: v })),
-    ...(results.bible.length > 0 ? [{ type: 'header', label: isEn ? 'In the Bible' : 'Na Bíblia' }] : []),
-    ...results.bible.map((v) => ({ type: 'bibleVerse', item: v })),
-    ...(results.references.length > 0 ? [{ type: 'header', label: isEn ? 'References' : 'Referências' }] : []),
-    ...results.references.map((r) => ({ type: 'reference', item: r })),
-  ], [results, isEn]);
-
-  const openArticle = useCallback(
-    (id) => navigation.navigate('ArticleFromSearch', { articleId: id }),
-    [navigation]
-  );
   const openVerse = useCallback(
-    (v) => navigation.navigate('Bíblia', { bookId: v.bookId, chapter: v.chapter, highlightVerse: v.verse }),
+    (v) => openBible(navigation, { bookId: v.bookId, chapter: v.chapter, verse: v.verse }),
     [navigation]
   );
   const openReference = useCallback(
     (id) => navigation.navigate('RefDetail', { highlightId: id }),
     [navigation]
   );
+  const openSuggestion = useCallback(() => {
+    if (!suggestion) return;
+    if (suggestion.type === 'article') openArticle(navigation, suggestion.item.id);
+    else openVerse(suggestion.item);
+  }, [suggestion, navigation, openVerse]);
 
-  const renderItem = useCallback(({ item }) => {
-    if (item.type === 'header') {
-      return <Text style={styles.sectionHeader}>{item.label}</Text>;
-    }
-    if (item.type === 'article') {
-      const a = item.item;
+  const quoteStyle = [text('bodySerif'), { color: colors.text, marginTop: space.xxs }];
+  const summaryStyle = [text('subhead'), { color: colors.textSubtle, marginTop: space.xxs }];
+  // O SectionTitle já traz a margem lateral; os grupos alinham por esta.
+  const groupStyle = { marginHorizontal: space.md };
+
+  // Cada seção de resultado: título de seção + grupo de linhas.
+  const renderSection = (id) => {
+    const data = results[id];
+    if (!data.length) return null;
+    if (id === 'articles') {
       return (
-        <TouchableOpacity style={styles.card} onPress={() => openArticle(a.id)}>
-          <View style={styles.cardIcon}>
-            <Ionicons name="book-outline" size={20} color={colors.primaryText} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.cardCategory}>{isEn ? t(`category.${a.category}`) : a.category}</Text>
-            <Text style={styles.cardTitle}>{isEn ? (a.titleEn || a.title) : a.title}</Text>
-            <Text style={styles.cardSub} numberOfLines={2}>{isEn ? (a.summaryEn || a.summary) : a.summary}</Text>
-          </View>
-        </TouchableOpacity>
+        <View key={id}>
+          <SectionTitle title={t('search.filter.articles')} />
+          <Group style={groupStyle}>
+            {data.map((a) => (
+              <Row
+                key={a.id}
+                icon="newspaper-outline"
+                title={pick(a, 'title', isEn)}
+                titleLines={2}
+                subtitle={categoryLabel(a.category, t)}
+                trailing="chevron"
+                onPress={() => openArticle(navigation, a.id)}
+              >
+                <Text style={summaryStyle} numberOfLines={2}>{pick(a, 'summary', isEn)}</Text>
+              </Row>
+            ))}
+          </Group>
+        </View>
       );
     }
-    if (item.type === 'verse') {
-      const v = item.item;
-      const refTxt = isEn ? (v.refEn || v.ref) : v.ref;
-      const txt = isEn ? (v.textEn || v.text) : v.text;
+    if (id === 'references') {
       return (
-        <TouchableOpacity style={styles.card} onPress={() => openVerse(v)}>
-          <View style={styles.cardIcon}>
-            <Ionicons name="bookmark-outline" size={20} color={colors.primaryText} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.cardCategory}>{refTxt}</Text>
-            <Text style={styles.cardSub} numberOfLines={3}>"{txt}"</Text>
-          </View>
-        </TouchableOpacity>
+        <View key={id}>
+          <SectionTitle title={t('search.filter.references')} />
+          <Group style={groupStyle}>
+            {data.map((r) => {
+              const full = withEn(r);
+              const topic = pick(full, 'topic', isEn);
+              return (
+                <Row
+                  key={r.id}
+                  icon="library-outline"
+                  title={refLabel(full, isEn)}
+                  subtitle={`${translateSource(r.source, isEn)}${topic ? ` · ${topic}` : ''}`}
+                  trailing="chevron"
+                  onPress={() => openReference(r.id)}
+                >
+                  <Text style={quoteStyle} numberOfLines={2}>{pick(full, 'text', isEn)}</Text>
+                </Row>
+              );
+            })}
+          </Group>
+        </View>
       );
     }
-    if (item.type === 'bibleVerse') {
-      const v = item.item;
-      return (
-        <TouchableOpacity style={styles.card} onPress={() => openVerse(v)}>
-          <View style={styles.cardIcon}>
-            <Ionicons name="book" size={20} color={colors.primaryText} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.cardCategory}>{v.ref}</Text>
-            <Text style={styles.cardSub} numberOfLines={3}>"{v.text}"</Text>
-          </View>
-        </TouchableOpacity>
-      );
-    }
-    if (item.type === 'reference') {
-      const r = item.item;
-      const src = translateSource(r.source, isEn);
-      return (
-        <TouchableOpacity style={styles.card} onPress={() => openReference(r.id)}>
-          <View style={styles.cardIcon}>
-            <Ionicons name="library-outline" size={20} color={colors.primaryText} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.cardCategory}>{src}</Text>
-            <Text style={styles.cardTitle}>{r.ref}</Text>
-            <Text style={styles.cardSub} numberOfLines={2}>{r.topic}</Text>
-          </View>
-        </TouchableOpacity>
-      );
-    }
-    return null;
-  }, [styles, colors.primaryText, openArticle, openVerse, openReference, isEn, t]);
+    // 'verses' (curados, bilíngues) e 'bible' (varredura no idioma ativo).
+    return (
+      <View key={id}>
+        <SectionTitle title={id === 'verses' ? t('search.section.verses') : t('search.section.bible')} />
+        <Group style={groupStyle}>
+          {data.map((v) => (
+            <Row
+              key={`${v.bookId}-${v.chapter}-${v.verse}`}
+              icon="book-outline"
+              title={verseLabel(v, isEn)}
+              trailing="chevron"
+              onPress={() => openVerse(v)}
+            >
+              <Text style={quoteStyle} numberOfLines={3}>{id === 'verses' ? pick(v, 'text', isEn) : v.text}</Text>
+            </Row>
+          ))}
+        </Group>
+      </View>
+    );
+  };
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.searchRow, focused && styles.searchRowFocused]}>
-        <Ionicons name="search-outline" size={20} color={colors.textSubtle} />
-        <TextInput
-          style={styles.input}
-          value={query}
-          onChangeText={setQuery}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder={isEn ? 'What are you looking for?' : 'O que você procura?'}
-          placeholderTextColor={colors.textSubtle}
-          autoFocus
-          autoCorrect={false}
-        />
-        {query.length > 0 && (
-          <TouchableOpacity
-            onPress={() => setQuery('')}
-            accessibilityRole="button"
-            accessibilityLabel={isEn ? 'Clear search' : 'Limpar busca'}
-            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          >
-            <Ionicons name="close-circle" size={20} color={colors.textSubtle} />
-          </TouchableOpacity>
-        )}
-      </View>
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <SearchField
+        ref={inputRef}
+        value={query}
+        onChangeText={setQuery}
+        onSubmitEditing={submit}
+        placeholder={t('search.placeholder')}
+        clearLabel={t('search.clearSearch')}
+        autoFocus
+        autoCorrect={false}
+        style={{ marginHorizontal: space.md, marginTop: space.sm }}
+      />
+      <ChipRow scroll style={{ marginTop: space.xxs }}>
+        {FILTERS.map((f) => (
+          <Chip key={f.id} label={t(f.key)} selected={filter === f.id} onPress={() => setFilter(f.id)} haptic />
+        ))}
+      </ChipRow>
 
-      {busy && query.length >= 3 && (
-        <ActivityIndicator color={colors.accent} style={{ marginTop: 20 }} />
-      )}
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: space.xl }}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
+        {busy && query.trim().length >= MIN_QUERY ? (
+          <ActivityIndicator color={colors.tint} style={{ marginTop: space.lg }} />
+        ) : null}
 
-      {query.length < 3 && history.length > 0 && (
-        <View style={styles.histBox}>
-          <View style={styles.histHead}>
-            <Text style={styles.histLabel}>{t('search.recent')}</Text>
-            <TouchableOpacity onPress={clearHistory}>
-              <Text style={styles.histClear}>{t('search.clear')}</Text>
-            </TouchableOpacity>
-          </View>
-          {history.map((q) => (
-            <TouchableOpacity
-              key={q}
-              style={styles.histRow}
-              onPress={() => setQuery(q)}
-            >
-              <Ionicons name="time-outline" size={16} color={colors.textSubtle} />
-              <Text style={styles.histText}>{q}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      )}
+        {/* Histórico: só enquanto não há busca ativa. */}
+        {!searching && history.length > 0 ? (
+          <>
+            <SectionTitle title={t('search.recent')} action={{ label: t('search.clear'), onPress: clearHistory }} />
+            <Group style={groupStyle}>
+              {history.map((q) => (
+                <HistoryRow
+                  key={q}
+                  query={q}
+                  onPick={() => { setQuery(q); setDebouncedQuery(q); }}
+                  onRemove={() => removeFromHistory(q)}
+                  removeLabel={t('search.removeRecent', { q })}
+                />
+              ))}
+            </Group>
+          </>
+        ) : null}
 
-      {!busy && debouncedQuery.length >= 3 && totalHits === 0 && (
-        <View style={styles.empty}>
-          <Ionicons name="search-outline" size={48} color={colors.textSubtle} />
-          <Text style={styles.emptyTitle}>
-            {biblia.pronta ? t('search.empty') : t('bible.loading')}
-          </Text>
-          {suggestion ? (
-            <TouchableOpacity onPress={openSuggestion} style={styles.suggestionBtn}>
-              <Text style={styles.emptySub}>{isEn ? 'Did you mean:' : 'Você quis dizer:'}</Text>
-              <Text style={styles.suggestionLabel}>{suggestion.label}</Text>
-              <Text style={styles.suggestionHint}>{t('search.tapToOpen')}</Text>
-            </TouchableOpacity>
-          ) : (
-            <Text style={styles.emptySub}>
-              {isEn ? 'Try different words or exact phrases.' : 'Tente palavras diferentes ou trechos exatos.'}
-            </Text>
-          )}
-        </View>
-      )}
+        {!searching && history.length === 0 ? (
+          <EmptyState icon="search-outline" title={t('search.intro.title')} message={t('search.intro.message')} style={{ marginTop: space.xl }} />
+        ) : null}
 
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={flatData}
-          keyExtractor={(item, i) => `${item.type}-${item.item?.id ?? item.item?.ref ?? item.label ?? i}`}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          renderItem={renderItem}
-          initialNumToRender={10}
-          maxToRenderPerBatch={6}
-          windowSize={8}
-          removeClippedSubviews
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+        {searching && !busy && visibleHits === 0 ? (
+          <EmptyState
+            icon="search-outline"
+            title={biblia.pronta ? t('search.empty') : t('bible.loading')}
+            message={suggestion ? t('search.didYouMean') : t('search.tryOther')}
+            action={suggestion ? { label: suggestion.label, onPress: openSuggestion } : undefined}
+            style={{ marginTop: space.xl }}
+          />
+        ) : null}
+
+        {searching ? activeFilter.sections.map(renderSection) : null}
+      </ScrollView>
     </View>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    histBox: { paddingHorizontal: 16, paddingTop: 12 },
-    histHead: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 },
-    histLabel: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 'bold' },
-    histClear: { fontSize: fs(11), color: c.accentText, fontWeight: '600' },
-    histRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: c.divider },
-    histText: { fontSize: fs(14), color: c.text, flex: 1 },
-    container: { flex: 1, backgroundColor: c.bg },
-    searchRow: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      backgroundColor: c.card, margin: 16, paddingHorizontal: 14,
-      borderRadius: 12,
-      minHeight: 52,
-      borderWidth: 1.5, borderColor: 'transparent',
-    },
-    searchRowFocused: { borderColor: c.accent },
-    input: {
-      flex: 1,
-      fontSize: fs(15),
-      color: c.text,
-      paddingVertical: 12,
-      textAlignVertical: 'center',
-      // remove o outline preto padrão do navegador (web); a borda fica na caixa
-      ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null),
-    },
-    empty: { alignItems: 'center', padding: 40, gap: 10 },
-    emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },
-    emptySub: { fontSize: fs(13), color: c.textMuted, textAlign: 'center' },
-    suggestionBtn: {
-      backgroundColor: c.card,
-      paddingVertical: 14,
-      paddingHorizontal: 18,
-      borderRadius: 12,
-      borderWidth: 1,
-      borderColor: c.accent,
-      marginTop: 12,
-      alignItems: 'center',
-      width: '100%',
-    },
-    suggestionLabel: { fontSize: fs(15), color: c.primaryText, fontWeight: 'bold', marginTop: 6 },
-    suggestionHint: { fontSize: fs(11), color: c.accentText, marginTop: 4 },
-    sectionHeader: {
-      fontSize: fs(12), fontWeight: 'bold', color: c.textSubtle,
-      textTransform: 'uppercase', letterSpacing: 1,
-      marginTop: 8, marginBottom: 8,
-    },
-    card: {
-      flexDirection: 'row', alignItems: 'center', gap: 12,
-      backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8,
-    },
-    cardIcon: {
-      width: 40, height: 40, borderRadius: 10, backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    cardCategory: {
-      fontSize: fs(10), color: c.accentText, fontWeight: 'bold',
-      textTransform: 'uppercase', letterSpacing: 1, marginBottom: 2,
-    },
-    cardTitle: { fontSize: fs(15), color: c.text, fontWeight: '600', marginBottom: 2 },
-    cardSub: { fontSize: fs(12), color: c.textMuted, lineHeight: fs(17) },
-  });

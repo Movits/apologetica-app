@@ -14,6 +14,7 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 | `fotos/` | Fotos que VOCÊ adiciona para o site (a landing page). Tem um LEIA-ME dentro explicando. |
 | `documentos/` | Suas pesquisas e anotações: pesquisa de mercado, pesquisa de público, lista dos 100 tópicos, créditos das imagens, rascunhos. Nada daqui afeta o app. |
 | `brain/` | Seu segundo cérebro: notas em português que explicam o projeto inteiro, conectadas entre si. Abra com o Obsidian apontando para esta pasta (ou para a raiz do projeto). Comece pela nota `Início`. |
+| `design/` | O redesign do app: `design/preview/index.html` é o protótipo navegável (abra no navegador) com o antes e o depois das telas, e `design/preview/antes/` guarda as capturas de como o app era. |
 
 ## O aplicativo
 
@@ -21,6 +22,9 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 |---|---|
 | `src/` | O código do aplicativo em si: telas, navegação, Bíblia, artigos, quiz, tudo. |
 | `assets/` | Imagens e ícones que vão DENTRO do app (ícone do app, obras dos artigos, mapa). Não renomear nada aqui: o código aponta para cada arquivo pelo nome. |
+| `assets/design/` | Fundos de luz e gradientes gerados para o redesign (Higgsfield), com a ficha de cada um em `CREDITOS.md`. |
+| `assets/fonts/` | A única fonte embarcada (Cormorant Garamond SemiBold, subset) com a licença OFL e a ficha em `CREDITOS.md`. |
+| `tests/` | Os testes automáticos (`npm test`): conferem os tokens de design, os links de navegação, as fórmulas do dia e os dados das referências. |
 | `App.js` | A "porta de entrada" do app: monta as abas e as telas. |
 | `scripts/` | Ferramentas internas usadas de vez em quando (converter a Bíblia, gerar ícones). Não rodam dentro do app. |
 
@@ -29,6 +33,7 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 | Item | O que é |
 |---|---|
 | `docs/` | As páginas do site: landing (`index.html`), privacidade, termos e doação. |
+| `docs/design/` | Documentos do redesign, só leitura: pesquisa das convenções da Apple, auditoria de design (Rams) e mapa do código (pathfinder). Não vão para o site. |
 | `.github/` | O "robô" do GitHub: a cada push no master, ele monta e publica o site sozinho. |
 
 ## Configurações (não mexer sem avisar)

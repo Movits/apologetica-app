@@ -1,77 +1,197 @@
 import { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/quiz';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { openArticle } from '../navigation/links';
+import { pick } from '../utils/i18nData';
+import { addDays, todayKey } from '../utils/daily';
+import { recordDailyAnswer } from '../utils/quizHistory';
+import { haptics } from '../utils/haptics';
+import { Button, Group, PressScale, ProgressBar, Row, SectionTitle } from '../components/ui';
 
 const STREAK_KEY = 'quiz:streak';
-const HISTORY_KEY = 'quiz:history'; // { YYYY-MM-DD: { id, correct } }
+// { AAAA-MM-DD: { id, correct } }, chave em hora local (todayKey). As chaves
+// antigas foram gravadas em UTC, no mesmo formato, e à noite no Brasil isso
+// podia pôr a resposta de ontem sob a data de hoje: recordDailyAnswer
+// (src/utils/quizHistory.js) devolve essa entrada para ontem ao gravar a de
+// hoje, e o streak segue contando de onde estava.
+const HISTORY_KEY = 'quiz:history';
+const PRACTICE_SIZE = 10;
 
+// Quiz Apologético em três modos: pergunta diária (com streak em AsyncStorage),
+// prática livre de 10 perguntas e verdadeiro ou falso. O header opaco do stack
+// traz o título e o recuo da tab bar vem do próprio stack.
 export default function QuizScreen({ navigation, route }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
   const mode = route?.params?.mode || 'menu'; // 'menu' | 'daily' | 'practice' | 'truefalse'
 
-  // Tela inicial do Quiz com os modos disponíveis.
-  if (mode === 'menu') return <QuizMenu navigation={navigation} colors={colors} fs={fs} isEn={isEn} />;
-  if (mode === 'truefalse') return <TrueFalseGame navigation={navigation} colors={colors} fs={fs} isEn={isEn} t={t} />;
-
-  return <MultipleChoiceGame mode={mode} navigation={navigation} colors={colors} fs={fs} isEn={isEn} t={t} />;
+  if (mode === 'menu') return <QuizMenu navigation={navigation} />;
+  if (mode === 'truefalse') return <TrueFalseGame navigation={navigation} />;
+  return <MultipleChoiceGame mode={mode} navigation={navigation} />;
 }
 
 // ============== MENU DE MODOS ==============
-function QuizMenu({ navigation, colors, fs, isEn }) {
-  const styles = menuStyles(colors, fs);
+// Escolher um modo é navegação (push da mesma tela com outro `mode`), por isso
+// a lista é um Group de Rows com chevron, e não Chips (que são filtro).
+function QuizMenu({ navigation }) {
+  const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
+  const { space } = tokens;
+
   const MODES = [
-    {
-      key: 'daily', icon: 'today-outline',
-      label: isEn ? 'Daily Question' : 'Pergunta Diária',
-      sub: isEn ? 'A new question every day. Build a streak.' : 'Uma pergunta nova todo dia. Construa uma sequência.',
-    },
-    {
-      key: 'practice', icon: 'trophy-outline',
-      label: isEn ? 'Practice' : 'Praticar',
-      sub: isEn ? 'Mixed questions across all topics.' : 'Perguntas misturadas de todos os temas.',
-    },
-    {
-      key: 'truefalse', icon: 'checkmark-circle-outline',
-      label: isEn ? 'True or False' : 'Verdadeiro ou Falso',
-      sub: isEn ? 'Quick statements about Catholic teaching.' : 'Afirmações rápidas sobre a doutrina católica.',
-    },
+    { key: 'daily', icon: 'today-outline', label: t('quiz.mode.daily'), sub: t('quiz.mode.dailySub') },
+    { key: 'practice', icon: 'trophy-outline', label: t('quiz.mode.practice'), sub: t('quiz.mode.practiceSub') },
+    { key: 'truefalse', icon: 'checkmark-circle-outline', label: t('quiz.mode.trueFalse'), sub: t('quiz.mode.trueFalseSub') },
   ];
+
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, padding: 16 }}>
-      <Text style={styles.title}>{isEn ? 'Choose a game' : 'Escolha um jogo'}</Text>
-      <Text style={styles.sub}>
-        {isEn ? 'Learn apologetics by playing. Each mode focuses on a different skill.' : 'Aprenda apologética jogando. Cada modo trabalha uma habilidade diferente.'}
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md }}>
+      <SectionTitle title={t('quiz.chooseGame')} style={{ marginTop: 0 }} />
+      <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md, marginBottom: space.sm }]}>
+        {t('quiz.chooseGameSub')}
       </Text>
-      {MODES.map((m) => (
-        <TouchableOpacity
-          key={m.key}
-          style={styles.card}
-          onPress={() => navigation.push('Quiz', { mode: m.key })}
-        >
-          <View style={styles.iconBox}>
-            <Ionicons name={m.icon} size={26} color={colors.accent} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.cardLabel}>{m.label}</Text>
-            <Text style={styles.cardSub}>{m.sub}</Text>
-          </View>
-          <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-        </TouchableOpacity>
-      ))}
+      <Group style={{ marginHorizontal: space.md }}>
+        {MODES.map((m) => (
+          <Row
+            key={m.key}
+            icon={m.icon}
+            title={m.label}
+            subtitle={m.sub}
+            trailing="chevron"
+            onPress={() => navigation.push('Quiz', { mode: m.key })}
+          />
+        ))}
+      </Group>
+    </ScrollView>
+  );
+}
+
+// ============== PEÇAS COMPARTILHADAS PELOS DOIS JOGOS ==============
+
+// Bloco da pergunta: categoria e um dado à direita (streak ou "Pergunta 2 de
+// 10") em footnote, e o enunciado em display (title).
+function QuestionCard({ category, meta, question }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, radius } = tokens;
+  return (
+    <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm }}>
+      {category || meta ? (
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space.sm }}>
+          {category ? (
+            <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]} numberOfLines={1}>{category}</Text>
+          ) : <View style={{ flex: 1 }} />}
+          {meta}
+        </View>
+      ) : null}
+      <Text role="heading" style={[text('title'), { color: colors.text }]}>{question}</Text>
     </View>
   );
 }
 
+// Texto pequeno à direita do bloco da pergunta, com ícone opcional.
+function Meta({ icon, iconColor, children }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, icon: iconSize } = tokens;
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
+      {icon ? <Ionicons name={icon} size={iconSize.sm} color={iconColor ?? colors.textSubtle} /> : null}
+      <Text style={[text('footnote'), { color: colors.textSubtle }]}>{children}</Text>
+    </View>
+  );
+}
+
+// Alternativa de resposta. `state`: 'idle' | 'correct' | 'wrong'. Certo e
+// errado aparecem só no ícone e na hairline (success/danger), o fundo continua
+// `card`. É um rádio: `aria-checked` marca a escolhida.
+function OptionButton({ label, state = 'idle', checked, disabled, onPress, centered, style }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, radius, icon } = tokens;
+  const tone = state === 'correct' ? colors.success : state === 'wrong' ? colors.danger : null;
+  const iconName = state === 'correct' ? 'checkmark-circle' : state === 'wrong' ? 'close-circle' : null;
+
+  return (
+    <PressScale
+      role="radio"
+      aria-checked={Boolean(checked)}
+      aria-disabled={disabled || undefined}
+      disabled={disabled}
+      onPress={onPress}
+      style={({ pressed }) => [
+        {
+          minHeight: 44,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: centered ? 'center' : 'flex-start',
+          gap: space.sm,
+          paddingHorizontal: space.md,
+          paddingVertical: space.sm,
+          borderRadius: radius.md,
+          backgroundColor: pressed ? colors.separator : colors.card,
+          borderWidth: StyleSheet.hairlineWidth,
+          borderColor: tone ?? colors.separator,
+        },
+        style,
+      ]}
+    >
+      <Text
+        style={[
+          centered ? text('headline') : text('body'),
+          { color: colors.text, textAlign: centered ? 'center' : 'left' },
+          centered ? null : { flex: 1 },
+        ]}
+      >
+        {label}
+      </Text>
+      {iconName ? <Ionicons name={iconName} size={icon.md} color={tone} /> : null}
+    </PressScale>
+  );
+}
+
+// Veredito e explicação depois de responder, mais o artigo relacionado.
+function Verdict({ ok, title, explanation, onReadArticle }) {
+  const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
+  const { space, icon } = tokens;
+  return (
+    <Group>
+      <View style={{ padding: space.md, gap: space.xs }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xs }}>
+          <Ionicons
+            name={ok ? 'checkmark-circle' : 'close-circle'}
+            size={icon.md}
+            color={ok ? colors.success : colors.danger}
+          />
+          <Text style={[text('headline'), { color: colors.text, flex: 1 }]}>{title}</Text>
+        </View>
+        {explanation ? <Text style={[text('subhead'), { color: colors.text }]}>{explanation}</Text> : null}
+      </View>
+      {onReadArticle ? (
+        <Row icon="book-outline" title={t('quiz.readArticle')} trailing="chevron" onPress={onReadArticle} />
+      ) : null}
+    </Group>
+  );
+}
+
+// Placar do fim da rodada.
+function ScoreGroup({ score, total }) {
+  const { colors } = useTheme();
+  const { t } = useLanguage();
+  const pct = total ? Math.round((score / total) * 100) : 0;
+  return (
+    <Group header={t('quiz.result')}>
+      <Row icon="trophy-outline" title={t('quiz.hits')} trailing={t('quiz.scoreText', { score, total })} />
+      <Row icon="stats-chart-outline" iconColor={colors.accent} title={t('quiz.rate')} trailing={`${pct}%`} />
+    </Group>
+  );
+}
+
 // ============== MÚLTIPLA ESCOLHA (daily + practice) ==============
-function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
-  const { darkMode } = useTheme();
+function MultipleChoiceGame({ mode, navigation }) {
+  const { colors, tokens } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space } = tokens;
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -83,7 +203,7 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
     if (mode === 'daily') {
       setQuestions([getQuizOfDay()]);
     } else {
-      setQuestions(getRandomQuestions(10));
+      setQuestions(getRandomQuestions(PRACTICE_SIZE));
     }
     AsyncStorage.getItem(STREAK_KEY).then((v) => setStreak(parseInt(v) || 0));
   }, [mode]);
@@ -92,20 +212,28 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
 
   const choose = async (i) => {
     if (showResult) return;
+    const ok = i === current.correct;
     setSelected(i);
     setShowResult(true);
-    if (i === current.correct) setScore((s) => s + 1);
+    if (ok) {
+      setScore((s) => s + 1);
+      haptics.success();
+    } else {
+      haptics.error();
+    }
 
     if (mode === 'daily') {
-      const today = new Date().toISOString().slice(0, 10);
-      const ok = i === current.correct;
+      // Chave em hora local: a conversão para UTC, à noite no Brasil, já dava
+      // o dia seguinte e quebrava o "ontem" do streak.
+      const today = todayKey();
+      const yesterday = todayKey(addDays(new Date(), -1));
       try {
         const raw = await AsyncStorage.getItem(HISTORY_KEY);
-        const hist = raw ? JSON.parse(raw) : {};
-        hist[today] = { id: current.id, correct: ok };
+        const hist = recordDailyAnswer(raw ? JSON.parse(raw) : {}, {
+          today, yesterday, id: current.id, correct: ok,
+        });
         await AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
         if (ok) {
-          const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
           const had = hist[yesterday];
           const newStreak = had && had.correct ? streak + 1 : 1;
           setStreak(newStreak);
@@ -123,177 +251,126 @@ function MultipleChoiceGame({ mode, navigation, colors, fs, isEn, t }) {
     }
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
+  const restart = () => {
+    setQuestions(getRandomQuestions(PRACTICE_SIZE));
+    setIndex(0);
+    setSelected(null);
+    setShowResult(false);
+    setScore(0);
+  };
 
   if (!current) return null;
 
-  const qText = isEn ? (current.questionEn || current.question) : current.question;
-  const opts = isEn ? (current.optionsEn || current.options) : current.options;
-  const whyText = isEn ? (current.whyEn || current.why) : current.why;
-  const catText = isEn ? (current.categoryEn || current.category) : current.category;
-  const isLast = index + 1 >= questions.length;
+  const qText = pick(current, 'question', isEn);
+  const opts = pick(current, 'options', isEn);
+  const whyText = pick(current, 'why', isEn);
+  const catText = pick(current, 'category', isEn);
   const total = questions.length;
+  const isLast = index + 1 >= total;
+  const ok = selected === current.correct;
+
+  let meta = null;
+  if (mode === 'daily' && streak > 0) {
+    meta = <Meta icon="flame" iconColor={colors.accent}>{t('quiz.streakDays', { n: streak })}</Meta>;
+  } else if (mode === 'practice') {
+    meta = <Meta>{t('quiz.questionOf', { n: index + 1, total })}</Meta>;
+  }
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView
-        contentContainerStyle={styles.content}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
-      >
-        <View style={styles.header}>
-          <View style={styles.headerRow}>
-            {catText ? (
-              <View style={styles.badge}>
-                <Text style={styles.badgeText}>{catText}</Text>
-              </View>
-            ) : <View />}
-            {mode === 'daily' && streak > 0 && (
-              <View style={styles.streakRow}>
-                <Ionicons name="flame" size={16} color={colors.accent} />
-                <Text style={styles.streakText}>{streak} {isEn ? 'days' : 'dias'}</Text>
-              </View>
-            )}
-            {mode === 'practice' && (
-              <Text style={styles.streakText}>{index + 1} / {total}</Text>
-            )}
-          </View>
-          <Text style={styles.question}>{qText}</Text>
-        </View>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+      {mode === 'practice' ? (
+        <ProgressBar
+          value={(index + (showResult ? 1 : 0)) / total}
+          accessibilityLabel={t('quiz.questionOf', { n: index + 1, total })}
+        />
+      ) : null}
 
+      <QuestionCard category={catText} meta={meta} question={qText} />
+
+      <View role="radiogroup" aria-label={t('quiz.options')} style={{ gap: space.xs }}>
         {opts.map((opt, i) => {
           const isCorrect = i === current.correct;
           const isPicked = i === selected;
-          let bg = colors.card;
-          let border = colors.divider;
-          let icon = null;
-          if (showResult) {
-            if (isCorrect) {
-              bg = darkMode ? '#1f3a28' : '#e6f4ea';
-              border = '#3a7d4b';
-              icon = 'checkmark-circle';
-            } else if (isPicked) {
-              bg = darkMode ? '#3a1f1f' : '#f8d7da';
-              border = '#a02020';
-              icon = 'close-circle';
-            }
-          }
+          const state = showResult && isCorrect ? 'correct' : showResult && isPicked ? 'wrong' : 'idle';
           return (
-            <TouchableOpacity
+            <OptionButton
               key={i}
-              style={[styles.option, { backgroundColor: bg, borderColor: border }]}
-              onPress={() => choose(i)}
-              activeOpacity={0.7}
+              label={opt}
+              state={state}
+              checked={isPicked}
               disabled={showResult}
-            >
-              <Text style={styles.optionText}>{opt}</Text>
-              {icon && <Ionicons name={icon} size={20} color={icon === 'checkmark-circle' ? '#3a7d4b' : '#a02020'} />}
-            </TouchableOpacity>
+              onPress={() => choose(i)}
+            />
           );
         })}
+      </View>
 
-        {showResult && (
-          <View style={styles.explainBox}>
-            <Text style={styles.explainTitle}>
-              {selected === current.correct
-                ? (isEn ? 'Correct' : 'Acertou')
-                : (isEn ? 'Correct answer:' : 'Resposta correta:')}
-            </Text>
-            <Text style={styles.explainText}>
-              {selected !== current.correct && (
-                <Text style={{ fontWeight: 'bold' }}>{opts[current.correct]}{'. '}</Text>
-              )}
-              {whyText}
-            </Text>
-            {current.relatedArticle && (
-              <TouchableOpacity
-                style={styles.relatedBtn}
-                onPress={() => navigation.navigate('ArticleFromSearch', { articleId: current.relatedArticle })}
-              >
-                <Ionicons name="book-outline" size={16} color={colors.accent} />
-                <Text style={styles.relatedText}>{t('quiz.readArticle')}</Text>
-              </TouchableOpacity>
-            )}
-          </View>
-        )}
+      {showResult ? (
+        <Verdict
+          ok={ok}
+          title={ok ? t('quiz.correct') : `${t('quiz.correctAnswer')}: ${opts[current.correct]}`}
+          explanation={whyText}
+          onReadArticle={current.relatedArticle ? () => openArticle(navigation, current.relatedArticle) : null}
+        />
+      ) : null}
 
-        {showResult && !isLast && (
-          <TouchableOpacity style={styles.nextBtn} onPress={next}>
-            <Text style={styles.nextBtnText}>{t('quiz.next')}</Text>
-            <Ionicons name="arrow-forward" size={18} color="#fff" />
-          </TouchableOpacity>
-        )}
+      {showResult && mode === 'daily' && streak > 0 ? (
+        <Group>
+          <Row icon="flame" iconColor={colors.accent} title={t('quiz.streak')} trailing={t('quiz.streakDays', { n: streak })} />
+        </Group>
+      ) : null}
 
-        {showResult && isLast && mode === 'practice' && (
-          <View style={styles.scoreBox}>
-            <Text style={styles.scoreTitle}>{t('quiz.result')}</Text>
-            <Text style={styles.scoreText}>
-              {t('quiz.scoreText', { score, total })} ({Math.round((score / total) * 100)}%)
-            </Text>
-            <TouchableOpacity
-              style={styles.nextBtn}
-              onPress={() => {
-                setQuestions(getRandomQuestions(10));
-                setIndex(0);
-                setSelected(null);
-                setShowResult(false);
-                setScore(0);
-              }}
-            >
-              <Text style={styles.nextBtnText}>{t('quiz.practiceAgain')}</Text>
-              <Ionicons name="refresh" size={18} color="#fff" />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.practiceBtn}
-              onPress={() => navigation.goBack()}
-            >
-              <Ionicons name="grid-outline" size={18} color={colors.accent} />
-              <Text style={styles.practiceText}>{isEn ? 'Other game modes' : 'Outros modos'}</Text>
-            </TouchableOpacity>
-          </View>
-        )}
+      {showResult && !isLast ? (
+        <Button label={t('quiz.next')} icon="arrow-forward" onPress={next} haptic="impact" style={{ marginTop: space.xs }} />
+      ) : null}
 
-        {mode === 'daily' && showResult && (
-          <TouchableOpacity
-            style={styles.practiceBtn}
-            onPress={() => navigation.goBack()}
-          >
-            <Ionicons name="grid-outline" size={18} color={colors.accent} />
-            <Text style={styles.practiceText}>{isEn ? 'See other game modes' : 'Ver outros modos de jogo'}</Text>
-          </TouchableOpacity>
-        )}
-      </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+      {showResult && isLast && mode === 'practice' ? (
+        <>
+          <ScoreGroup score={score} total={total} />
+          <Button label={t('quiz.practiceAgain')} icon="refresh" onPress={restart} haptic="impact" style={{ marginTop: space.xs }} />
+          <Button variant="secondary" icon="grid-outline" label={t('quiz.otherModes')} onPress={() => navigation.goBack()} />
+        </>
+      ) : null}
+
+      {showResult && mode === 'daily' ? (
+        <Button variant="secondary" icon="grid-outline" label={t('quiz.otherModes')} onPress={() => navigation.goBack()} style={{ marginTop: space.xs }} />
+      ) : null}
+    </ScrollView>
   );
 }
 
 // ============== VERDADEIRO / FALSO ==============
-function TrueFalseGame({ navigation, colors, fs, isEn, t }) {
-  const { darkMode } = useTheme();
+function TrueFalseGame({ navigation }) {
+  const { colors, tokens } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space } = tokens;
   const [items, setItems] = useState([]);
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
   const [score, setScore] = useState(0);
 
-  useEffect(() => { setItems(getRandomTrueFalse(10)); }, []);
+  useEffect(() => { setItems(getRandomTrueFalse(PRACTICE_SIZE)); }, []);
   const current = items[idx];
-  const styles = makeStyles(colors, fs);
 
   if (!current) return null;
-  const text = isEn ? (current.statementEn || current.statement) : current.statement;
-  const explain = isEn ? (current.explanationEn || current.explanation) : current.explanation;
+
+  const statement = pick(current, 'statement', isEn);
+  const explain = pick(current, 'explanation', isEn);
   const total = items.length;
   const isLast = idx + 1 >= total;
+  const answered = picked !== null;
+  const ok = picked === current.answer;
+  const labelOf = (val) => (val ? t('quiz.true') : t('quiz.false'));
 
   const choose = (val) => {
-    if (picked !== null) return;
+    if (answered) return;
     setPicked(val);
-    if (val === current.answer) setScore((s) => s + 1);
+    if (val === current.answer) {
+      setScore((s) => s + 1);
+      haptics.success();
+    } else {
+      haptics.error();
+    }
   };
 
   const next = () => {
@@ -303,139 +380,60 @@ function TrueFalseGame({ navigation, colors, fs, isEn, t }) {
   };
 
   const restart = () => {
-    setItems(getRandomTrueFalse(10));
+    setItems(getRandomTrueFalse(PRACTICE_SIZE));
     setIdx(0);
     setPicked(null);
     setScore(0);
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView contentContainerStyle={styles.content}>
-        <View style={styles.header}>
-          <Text style={styles.streakText}>{idx + 1} / {total}</Text>
-          <Text style={styles.question}>{text}</Text>
-        </View>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+      <ProgressBar
+        value={(idx + (answered ? 1 : 0)) / total}
+        accessibilityLabel={t('quiz.questionOf', { n: idx + 1, total })}
+      />
 
-        <View style={{ flexDirection: 'row', gap: 10 }}>
-          {[true, false].map((val) => {
-            const isCorrect = val === current.answer;
-            const isPicked = val === picked;
-            let bg = colors.card; let border = colors.divider;
-            if (picked !== null) {
-              if (isCorrect) { bg = darkMode ? '#1f3a28' : '#e6f4ea'; border = '#3a7d4b'; }
-              else if (isPicked) { bg = darkMode ? '#3a1f1f' : '#f8d7da'; border = '#a02020'; }
-            }
-            return (
-              <TouchableOpacity
-                key={String(val)}
-                style={[styles.option, { backgroundColor: bg, borderColor: border, flex: 1, justifyContent: 'center' }]}
-                onPress={() => choose(val)}
-                disabled={picked !== null}
-              >
-                <Text style={[styles.optionText, { textAlign: 'center', fontWeight: 'bold' }]}>
-                  {val ? (isEn ? 'TRUE' : 'VERDADEIRO') : (isEn ? 'FALSE' : 'FALSO')}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+      <QuestionCard meta={<Meta>{t('quiz.questionOf', { n: idx + 1, total })}</Meta>} question={statement} />
 
-        {picked !== null && (
-          <View style={styles.explainBox}>
-            <Text style={styles.explainTitle}>
-              {picked === current.answer
-                ? (isEn ? 'Correct' : 'Acertou')
-                : (isEn ? 'Wrong — correct answer:' : 'Errou. Correto:')}
-              {picked !== current.answer && (
-                <Text>{' '}{current.answer ? (isEn ? 'TRUE' : 'VERDADEIRO') : (isEn ? 'FALSE' : 'FALSO')}</Text>
-              )}
-            </Text>
-            <Text style={styles.explainText}>{explain}</Text>
-          </View>
-        )}
+      <View role="radiogroup" aria-label={t('quiz.options')} style={{ flexDirection: 'row', gap: space.xs }}>
+        {[true, false].map((val) => {
+          const isCorrect = val === current.answer;
+          const isPicked = val === picked;
+          const state = answered && isCorrect ? 'correct' : answered && isPicked ? 'wrong' : 'idle';
+          return (
+            <OptionButton
+              key={String(val)}
+              label={labelOf(val)}
+              state={state}
+              checked={isPicked}
+              disabled={answered}
+              onPress={() => choose(val)}
+              centered
+              style={{ flex: 1 }}
+            />
+          );
+        })}
+      </View>
 
-        {picked !== null && !isLast && (
-          <TouchableOpacity style={styles.nextBtn} onPress={next}>
-            <Text style={styles.nextBtnText}>{isEn ? 'Next' : 'Próximo'}</Text>
-            <Ionicons name="arrow-forward" size={18} color="#fff" />
-          </TouchableOpacity>
-        )}
+      {answered ? (
+        <Verdict
+          ok={ok}
+          title={ok ? t('quiz.correct') : `${t('quiz.wrong')}. ${t('quiz.correctAnswer')}: ${labelOf(current.answer)}`}
+          explanation={explain}
+        />
+      ) : null}
 
-        {picked !== null && isLast && (
-          <View style={styles.scoreBox}>
-            <Text style={styles.scoreTitle}>{t('quiz.result')}</Text>
-            <Text style={styles.scoreText}>
-              {t('quiz.scoreText', { score, total })} ({Math.round((score / total) * 100)}%)
-            </Text>
-            <TouchableOpacity style={styles.nextBtn} onPress={restart}>
-              <Text style={styles.nextBtnText}>{isEn ? 'Play again' : 'Jogar de novo'}</Text>
-              <Ionicons name="refresh" size={18} color="#fff" />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.practiceBtn}
-              onPress={() => navigation.goBack()}
-            >
-              <Ionicons name="grid-outline" size={18} color={colors.accent} />
-              <Text style={styles.practiceText}>{isEn ? 'Other game modes' : 'Outros modos'}</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-      </ScrollView>
-    </View>
+      {answered && !isLast ? (
+        <Button label={t('quiz.next')} icon="arrow-forward" onPress={next} haptic="impact" style={{ marginTop: space.xs }} />
+      ) : null}
+
+      {answered && isLast ? (
+        <>
+          <ScoreGroup score={score} total={total} />
+          <Button label={t('quiz.playAgain')} icon="refresh" onPress={restart} haptic="impact" style={{ marginTop: space.xs }} />
+          <Button variant="secondary" icon="grid-outline" label={t('quiz.otherModes')} onPress={() => navigation.goBack()} />
+        </>
+      ) : null}
+    </ScrollView>
   );
 }
-
-const menuStyles = (c, fs) =>
-  StyleSheet.create({
-    title: { fontSize: fs(20), color: c.primaryText, fontWeight: 'bold', marginBottom: 6 },
-    sub: { fontSize: fs(13), color: c.textMuted, marginBottom: 16, lineHeight: fs(19) },
-    card: {
-      flexDirection: 'row', alignItems: 'center', gap: 12,
-      backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 10,
-    },
-    iconBox: { width: 48, height: 48, borderRadius: 12, backgroundColor: c.badgeBg, justifyContent: 'center', alignItems: 'center' },
-    cardLabel: { fontSize: fs(15), color: c.primaryText, fontWeight: '600' },
-    cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 3, lineHeight: fs(16) },
-  });
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    content: { padding: 16, paddingBottom: 40 },
-    header: { marginBottom: 18 },
-    headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
-    badge: { backgroundColor: c.badgeBg, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
-    badgeText: { color: c.accentText, fontSize: fs(11), fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5 },
-    streakRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-    streakText: { color: c.textMuted, fontSize: fs(13), fontWeight: '600' },
-    question: { fontSize: fs(18), fontWeight: '600', color: c.primaryText, lineHeight: fs(26), marginTop: 6 },
-    option: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-      borderWidth: 1, borderRadius: 10, padding: 14, marginBottom: 10,
-    },
-    optionText: { color: c.text, fontSize: fs(15), flex: 1, marginRight: 8 },
-    explainBox: {
-      backgroundColor: c.card, borderRadius: 10, padding: 14, marginTop: 8, marginBottom: 12,
-      borderLeftWidth: 3, borderLeftColor: c.accent,
-    },
-    explainTitle: { fontWeight: 'bold', color: c.primaryText, fontSize: fs(14), marginBottom: 6 },
-    explainText: { color: c.text, fontSize: fs(14), lineHeight: fs(21) },
-    relatedBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12 },
-    relatedText: { color: c.accentText, fontSize: fs(13), fontWeight: '600' },
-    nextBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      backgroundColor: c.primary, paddingVertical: 14, borderRadius: 10, marginTop: 8,
-    },
-    nextBtnText: { color: '#fff', fontWeight: 'bold', fontSize: fs(15) },
-    scoreBox: {
-      backgroundColor: c.card, borderRadius: 12, padding: 18, marginTop: 16, alignItems: 'center',
-    },
-    scoreTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginBottom: 6 },
-    scoreText: { fontSize: fs(15), color: c.text, marginBottom: 14 },
-    practiceBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      paddingVertical: 16, paddingHorizontal: 20, minHeight: 54,
-      borderRadius: 10, marginTop: 12, borderWidth: 1.5, borderColor: c.accent,
-    },
-    practiceText: { color: c.accentText, fontSize: fs(15), fontWeight: '600' },
-  });

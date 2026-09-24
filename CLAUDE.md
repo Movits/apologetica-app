@@ -10,14 +10,19 @@ npx expo start --lan           # iniciar (celular no mesmo Wi-Fi)
 npm run android                # abrir no emulador Android
 npm run ios                    # abrir no simulador iOS
 npm run web                    # abrir no navegador (react-native-web)
-npm run lint                   # ESLint em src/
+npm run lint                   # ESLint em src/ (App.js e src/navigation entram via npx eslint App.js src/navigation)
 npm run check:refs             # valida os dados de referência (fonte, EN, urls)
+npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
-**Não há suíte de testes** (nem Jest, nem testes de nenhum tipo). `npm run lint` e
-`npm run check:refs` são as únicas checagens determinísticas, então não procure
-por `npm test`.
+**Testes**: `npm test` roda o `node --test` nativo (Node 20+) sobre `tests/*.test.mjs`,
+com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
+extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
+`expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
+`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts}.js` e os dados
+de `src/data/references.js`. Lógica nova pura nasce com o teste antes (TDD). Não
+adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
 disparados quando o usuário pedir explicitamente. Para revisar mudanças, prefira
@@ -35,7 +40,10 @@ node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault 
 
 ## Architecture
 
-**React Native + Expo SDK 54** com 5 tabs no bottom navigator. **Tudo funciona offline** — sem chamadas de rede em tempo de execução (exceto auth Firebase, liturgia e notícias, que têm fallback).
+**React Native + Expo SDK 57** (React Native 0.86, React 19.2, New Architecture e
+edge-to-edge obrigatórios no Android; splash, notificações, barra de status e
+Sentry configurados por plugins em `app.json`, não por campos soltos) com 5 tabs
+no bottom navigator. **Tudo funciona offline** — sem chamadas de rede em tempo de execução (exceto auth Firebase, liturgia e notícias, que têm fallback).
 
 O mesmo código roda em **Android, iOS e web** (react-native-web). Toda mudança
 precisa continuar funcionando nas três plataformas.
@@ -51,7 +59,6 @@ num desses módulos, **atualize as duas variantes**:
 | `src/services/notifications.js` | `src/services/notifications.web.js` (no-op) |
 | `src/hooks/useGoogleSignIn.js` | `src/hooks/useGoogleSignIn.web.js` |
 | `src/utils/shareAsImage.js` | `src/utils/shareAsImage.web.js` |
-| `src/components/StickySectionList.jsx` | `StickySectionList.web.jsx` |
 | `src/screens/bibleMap/MapView.native.jsx` | `MapView.web.jsx` |
 
 ### Navegação
@@ -67,6 +74,42 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 - Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa.
 - **Os nomes das tabs são strings em português e fazem parte da API de navegação**: `'Início'`, `'Artigos'`, `'Bíblia'`, `'Ferramentas'`, `'Ajustes'`. É por isso que existe `navigate('Bíblia', ...)`. O label visível vem do `LABELS`/`ICONS` em `App.js` via `t('tab.*')`. Renomear a rota quebra todos os deep links; para traduzir, mexa só no label.
 - `Tab.Navigator` usa `backBehavior="history"`, então o botão voltar percorre o histórico entre abas, não a ordem das abas.
+
+### Design system (`src/theme/`, `src/components/ui/`, `src/navigation/`)
+- `src/theme/tokens.js` é puro e é a única fonte de números de layout: `space`
+  (grade de 4), `radius`, `type` + `textStyle(role, fs)`, `icon`, `motion`, `shadow`
+  (formato `boxShadow` do RN 0.81). `useTheme()` expõe `tokens` (com `fontFamily`
+  resolvida por plataforma) e `text(role)` já escalado pelo tamanho de letra. Nas
+  telas não entram números soltos de tamanho, raio ou cor, nem hex fora da paleta
+  (exceções: `flex`, `opacity`, proporções, o alvo de toque 44 e as 5 cores de
+  marcação de versículo, que são dados).
+- Fonte de títulos: Cormorant Garamond SemiBold embarcada em `assets/fonts/`
+  (`useFonts` em `App.js`, chave `CormorantGaramond-SemiBold`). UI na sans do sistema,
+  leitura na serifa do sistema. Dourado nunca como texto sobre fundo claro
+  (`accentText` é a versão AA).
+- `src/components/ui/` são os blocos de tela (uso em `docs/design/componentes.md`):
+  `LargeTitleScreen` (large title que encolhe, barra translúcida, compensa a tab
+  bar), `Group`/`Row`/`ListSeparator`/`GroupList` (listas agrupadas), `SectionTitle`,
+  `Button`, `SearchField`, `Field`, `Chip`/`ChipRow`, `ProgressBar`, `ContinueRow`,
+  `EmptyState`, `GateNotice`/`GuestGate`, `Sheet` (folha inferior com gesto) e
+  `PressScale` (toque com mola), mais os helpers `useTabBarHeightSafe`, `webFocusRing`
+  e `enterStagger`. Acessibilidade portável
+  por `role` e `aria-*` (o react-native-web não converte `accessibilityState`); alvo de
+  toque vem do tamanho, nunca de `hitSlop`.
+- `src/navigation/`: `chrome.js` (opções de header num lugar só: opaco na cor do
+  fundo por padrão, `translucentHeaderOptions()` opt-in para telas que compensam com
+  `useHeaderHeight()`, `fullBleedContentOptions()` para telas que compensam a tab bar
+  por dentro, `createAppStack()` que usa o stack JS na web para animar o push),
+  `TabBar.jsx` (tab bar própria translúcida, absoluta, reporta a altura ao
+  bottom-tabs), `tabs.js` (ícones e chaves de rótulo), `sharedScreens.js` (as telas
+  registradas em mais de um stack, chamada inline `{sharedScreens(Nav, t)}`) e
+  `links.js` (`openBible`, `openArticle`, `bibleParams`): todo `navigate('Bíblia')` e
+  `navigate('ArticleFromSearch')` passa por aqui.
+- Movimento: só reanimated 4 (`withSpring` com `duration`/`dampingRatio`, `withTiming`
+  com a curva de `tokens.motion.easing`, `FadeInDown` em cascata com
+  `tokens.motion.stagger`, `scheduleOnRN` em vez de `runOnJS`). Reduce motion é
+  respeitado pelo `ReduceMotion.System` padrão. Haptics via `src/utils/haptics.js`
+  (no-op na web).
 
 ### Estado global (`src/context/`)
 Ordem dos providers em `App.js` (de fora pra dentro): `Language → Theme → Auth →
@@ -120,6 +163,11 @@ mantenha esses dois em sincronia.
 ### Serviços (`src/services/`)
 - **Únicos serviços que usam rede**: `liturgyApi.js` (liturgia do dia, com cache e fallback offline) e `newsApi.js` (notícias católicas via RSS, cache de 3h por idioma). Todo o resto é local.
 - `userData.js` cobre marcações, notas e caderno. **Favoritos NÃO estão aqui**, ver abaixo.
+- Helpers puros de `src/utils/`: `daily.js` (índice do dia, `todayKey` em hora local,
+  Páscoa), `verseRef.js` (`formatVerseRef`: "João 3,16" em PT, "John 3:16" em EN),
+  `i18nData.js` (`pick(item, campo, isEn)` com fallback PT), `tts.js` (`chunkText`) e
+  `speakLong.js` (fala em pedaços via expo-speech). Não reimplemente essas fórmulas
+  nas telas.
 
 ### Firebase e dados do usuário
 - `src/services/firebase.js` — projeto `appologetica7`. As chaves do client são públicas por design; a segurança está em `firestore.rules` (raiz do repo). A persistência do auth muda por plataforma: IndexedDB/localStorage na web (com `popupRedirectResolver`, senão `signInWithPopup` quebra), AsyncStorage no nativo.
@@ -168,13 +216,14 @@ Antes de dar uma mudança como concluída, siga este fluxo leve. Ele substitui, 
 forma adaptada ao app (JS/RN), a ideia de "agentes para verificar e aperfeiçoar o
 código": a verificação determinística aqui é o lint e o build, não scripts Python.
 
-**1. Lint (verificação determinística):**
+**1. Lint e testes (verificação determinística):**
 ```bash
-npm run lint          # ESLint em src/ — precisa passar antes de commitar
+npm run lint          # ESLint em src/, precisa passar antes de commitar
+npm test              # node --test, precisa terminar com fail 0
 npm run check:refs    # obrigatório ao mexer em references.js ou references-en.js
 ```
-Baseline atual: **0 erros e 14 warnings** (todos `react-hooks/exhaustive-deps`,
-pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
+Baseline atual: **0 erros e 2 warnings** (os dois `react-hooks/exhaustive-deps`
+de `ImageZoomModal.jsx`, pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
 contagem de warnings.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida

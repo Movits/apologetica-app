@@ -1,22 +1,27 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, BackHandler, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, Text, ScrollView, BackHandler, Platform } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES, getDialogueById } from '../data/dialogues';
 import { articles } from '../data/articles';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
 import DialogueAnswerCard from '../components/DialogueAnswerCard';
 import { captureAndShareImage } from '../utils/shareAsImage';
 import { shareDialogue } from '../utils/share';
+import { openArticle } from '../navigation/links';
+import { pick } from '../utils/i18nData';
+import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+
+// O card de compartilhar (1080x1080) fica montado fora da tela, só para o
+// view-shot capturar. É um deslocamento, não uma medida de layout.
+const OFFSCREEN = { position: 'absolute', left: -10000, top: -10000, opacity: 0 };
 
 // Tela mestre: lista de objeções. Ao escolher uma, vira modo "conversa guiada".
 export default function DialogueScreen({ navigation, route }) {
-  const { colors, fs } = useTheme();
+  const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const styles = makeStyles(colors, fs);
+  const { space, motion } = tokens;
   const initialId = route?.params?.dialogueId;
   const [activeId, setActiveId] = useState(initialId || null);
   const [stepIndex, setStepIndex] = useState(0);
@@ -66,17 +71,18 @@ export default function DialogueScreen({ navigation, route }) {
   }, [navigation, activeId]);
 
   if (!dialogue) {
-    return <DialogueList navigation={navigation} isEn={isEn} onChoose={(id) => { openedFromListRef.current = true; setActiveId(id); setStepIndex(0); }} />;
+    return <DialogueList onChoose={(id) => { openedFromListRef.current = true; setActiveId(id); setStepIndex(0); }} />;
   }
 
-  const isLast = stepIndex + 1 >= dialogue.steps.length;
-  const objection = isEn ? (dialogue.objectionEn || dialogue.objection) : dialogue.objection;
+  const total = dialogue.steps.length;
+  const isLast = stepIndex + 1 >= total;
+  const objection = pick(dialogue, 'objection', isEn);
 
-  // Card compartilhavel: objecao + o passo de fecho (resposta curta) + fonte.
-  const closeStep = dialogue.steps[dialogue.steps.length - 1];
-  const answer = closeStep ? (isEn ? (closeStep.textEn || closeStep.text) : closeStep.text) : '';
+  // Card compartilhável: objeção + o passo de fecho (resposta curta) + fonte.
+  const closeStep = dialogue.steps[total - 1];
+  const answer = closeStep ? pick(closeStep, 'text', isEn) : '';
   const relArticle = articles.find((a) => a.id === dialogue.relatedArticle);
-  const source = relArticle ? (isEn ? (relArticle.titleEn || relArticle.title) : relArticle.title) : '';
+  const source = relArticle ? pick(relArticle, 'title', isEn) : '';
 
   const shareAnswer = () => {
     if (Platform.OS === 'web') {
@@ -86,64 +92,65 @@ export default function DialogueScreen({ navigation, route }) {
     }
   };
 
+  const chooseOther = () => { setActiveId(null); setStepIndex(0); };
+  const caption = [text('footnote'), { color: colors.textSubtle }];
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView contentContainerStyle={styles.content}>
-        <View style={styles.objBox}>
-          <View style={styles.objHeader}>
-            <Ionicons name="chatbubble-ellipses" size={18} color={colors.accent} />
-            <Text style={styles.objLabel}>{t('dialogue.someoneSays')}</Text>
-          </View>
-          <Text style={styles.objText}>{objection}</Text>
-        </View>
+      <ScrollView contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+        <Text style={caption}>{t('dialogue.someoneSays')}</Text>
+        <Text role="heading" style={[text('title'), { color: colors.tint, fontStyle: 'italic' }]}>
+          {objection}
+        </Text>
 
-        <View style={styles.stepsCol}>
-          {dialogue.steps.slice(0, stepIndex + 1).map((s, i) => (
-            <View key={i} style={[styles.stepBox, i === stepIndex && styles.stepBoxActive]}>
-              <View style={styles.stepHeader}>
-                <View style={styles.stepIcon}>
-                  <Text style={styles.stepIconText}>{i + 1}</Text>
-                </View>
-                <Text style={styles.stepLabel}>{isEn ? (s.labelEn || s.label) : s.label}</Text>
+        <Text style={[caption, { marginTop: space.sm }]}>{t('dialogue.youAnswer')}</Text>
+        {/* Um Group por passo revelado, com o rótulo do passo como cabeçalho e
+            o texto em serifa de leitura. O passo novo entra de baixo. */}
+        {dialogue.steps.slice(0, stepIndex + 1).map((s, i) => (
+          <Animated.View key={i} entering={FadeInDown.duration(motion.layout)}>
+            <Group header={`${i + 1}. ${pick(s, 'label', isEn)}`}>
+              <View style={{ padding: space.md }}>
+                <Text style={[text('reading'), { color: colors.text }]}>{pick(s, 'text', isEn)}</Text>
               </View>
-              <Text style={styles.stepText}>{isEn ? (s.textEn || s.text) : s.text}</Text>
-            </View>
-          ))}
+            </Group>
+          </Animated.View>
+        ))}
+
+        {/* Indicador de passos: segmentos de 3 px como no onboarding. */}
+        <View style={{ marginTop: space.sm, gap: space.xs }}>
+          <View aria-hidden style={{ flexDirection: 'row', gap: space.xs }}>
+            {dialogue.steps.map((_, i) => (
+              <ProgressBar key={i} value={i <= stepIndex ? 1 : 0} style={{ flex: 1 }} />
+            ))}
+          </View>
+          <Text style={[caption, { textAlign: 'center' }]}>{t('common.stepOf', { n: stepIndex + 1, total })}</Text>
         </View>
 
-        {!isLast && (
-          <TouchableOpacity style={styles.nextBtn} onPress={() => setStepIndex(stepIndex + 1)}>
-            <Text style={styles.nextBtnText}>{t('dialogue.nextStep')}</Text>
-            <Ionicons name="arrow-down" size={18} color="#fff" />
-          </TouchableOpacity>
+        {!isLast ? (
+          <Button label={t('dialogue.nextStep')} icon="arrow-down" onPress={() => setStepIndex(stepIndex + 1)} haptic="impact" />
+        ) : (
+          <Button label={t('dialogue.share')} icon="share-social-outline" onPress={shareAnswer} haptic="impact" />
         )}
 
-        {isLast && (
-          <TouchableOpacity style={styles.shareBtn} onPress={shareAnswer} accessibilityRole="button" accessibilityLabel={isEn ? 'Share this answer' : 'Compartilhar esta resposta'}>
-            <Ionicons name="share-social-outline" size={18} color="#fff" />
-            <Text style={styles.shareText}>{isEn ? 'Share this answer' : 'Compartilhar esta resposta'}</Text>
-          </TouchableOpacity>
-        )}
+        {isLast && dialogue.relatedArticle ? (
+          <Group header={t('dialogue.relatedArticle')}>
+            <Row
+              icon="book-outline"
+              title={source || t('quiz.readArticle')}
+              subtitle={source ? t('quiz.readArticle') : undefined}
+              titleLines={2}
+              trailing="chevron"
+              onPress={() => openArticle(navigation, dialogue.relatedArticle)}
+            />
+          </Group>
+        ) : null}
 
-        {isLast && dialogue.relatedArticle && (
-          <TouchableOpacity
-            style={styles.readBtn}
-            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: dialogue.relatedArticle })}
-          >
-            <Ionicons name="book-outline" size={18} color={colors.accent} />
-            <Text style={styles.readText}>{t('quiz.readArticle')}</Text>
-          </TouchableOpacity>
-        )}
-
-        <TouchableOpacity style={styles.backBtn} onPress={() => { setActiveId(null); setStepIndex(0); }}>
-          <Ionicons name="arrow-back" size={16} color={colors.textMuted} />
-          <Text style={styles.backText}>{t('dialogue.chooseOther')}</Text>
-        </TouchableOpacity>
+        <Button variant="plain" label={t('dialogue.chooseOther')} onPress={chooseOther} />
       </ScrollView>
 
-      {/* Card renderizado fora da tela, so pra capturar como imagem (nativo). */}
+      {/* Card renderizado fora da tela, só pra capturar como imagem (nativo). */}
       {Platform.OS !== 'web' && (
-        <View style={styles.offscreen} pointerEvents="none">
+        <View style={OFFSCREEN} pointerEvents="none">
           <DialogueAnswerCard ref={shareCardRef} objection={objection} answer={answer} source={source} />
         </View>
       )}
@@ -151,15 +158,16 @@ export default function DialogueScreen({ navigation, route }) {
   );
 }
 
-function DialogueList({ onChoose, isEn }) {
-  const { colors, fs } = useTheme();
-  const styles = makeStyles(colors, fs);
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
+// Lista de objeções agrupadas por categoria, as mais comuns primeiro.
+function DialogueList({ onChoose }) {
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space } = tokens;
 
   const grouped = useMemo(() => {
     const out = {};
     DIALOGUES.forEach((d) => {
-      const catKey = isEn ? (d.categoryEn || d.category) : d.category;
+      const catKey = pick(d, 'category', isEn);
       if (!out[catKey]) out[catKey] = [];
       out[catKey].push(d);
     });
@@ -171,97 +179,27 @@ function DialogueList({ onChoose, isEn }) {
   const sections = Object.keys(grouped);
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView
-        contentContainerStyle={styles.listContent}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
-      >
-        <View style={styles.intro}>
-          <Text style={styles.introTitle}>{isEn ? 'Dialogue Mode' : 'Modo Diálogo'}</Text>
-          <Text style={styles.introBody}>
-            {isEn
-              ? 'Practice answers to the most common objections. Each scenario has 4 steps: agree with what makes sense, reframe, present the argument, close. You move at your own pace.'
-              : 'Treine respostas para as objeções mais comuns. Cada cenário tem 4 passos: concordar com o que faz sentido, reformular, apresentar o argumento, fechar. Você avança no seu ritmo.'}
-          </Text>
-        </View>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md }}>
+      <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md }]}>
+        {t('dialogue.intro')}
+      </Text>
 
-        {sections.map((cat) => (
-          <View key={cat} style={{ marginBottom: 16 }}>
-            <Text style={styles.section}>{cat}</Text>
+      {sections.map((cat) => (
+        <View key={cat}>
+          <SectionTitle title={cat} />
+          <Group style={{ marginHorizontal: space.md }}>
             {grouped[cat].map((d) => (
-              <TouchableOpacity key={d.id} style={styles.card} onPress={() => onChoose(d.id)}>
-                <Text style={styles.cardText}>{isEn ? (d.objectionEn || d.objection) : d.objection}</Text>
-                <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-              </TouchableOpacity>
+              <Row
+                key={d.id}
+                title={pick(d, 'objection', isEn)}
+                titleLines={0}
+                trailing="chevron"
+                onPress={() => onChoose(d.id)}
+              />
             ))}
-          </View>
-        ))}
-      </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+          </Group>
+        </View>
+      ))}
+    </ScrollView>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    content: { padding: 16, paddingBottom: 40 },
-    listContent: { padding: 16, paddingBottom: 40 },
-    intro: { marginBottom: 18 },
-    introTitle: { fontSize: fs(20), fontWeight: 'bold', color: c.primaryText, marginBottom: 8 },
-    introBody: { fontSize: fs(14), color: c.textMuted, lineHeight: fs(20) },
-    section: { fontSize: fs(12), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 'bold', marginBottom: 8, marginTop: 4 },
-    card: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10,
-      backgroundColor: c.card, padding: 14, borderRadius: 10, marginBottom: 8,
-    },
-    cardText: { color: c.text, fontSize: fs(14), flex: 1, fontStyle: 'italic' },
-
-    objBox: {
-      backgroundColor: c.card, borderRadius: 10, padding: 14, marginBottom: 16,
-      borderLeftWidth: 3, borderLeftColor: c.accent,
-    },
-    objHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
-    objLabel: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 'bold' },
-    objText: { fontSize: fs(16), color: c.primaryText, fontStyle: 'italic', lineHeight: fs(24) },
-
-    stepsCol: { gap: 10 },
-    stepBox: { backgroundColor: c.card, borderRadius: 10, padding: 14, marginBottom: 10, opacity: 0.8 },
-    stepBoxActive: { opacity: 1, borderWidth: 1, borderColor: c.accent },
-    stepHeader: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
-    stepIcon: {
-      width: 24, height: 24, borderRadius: 12, backgroundColor: c.accent,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    stepIconText: { color: '#1a3a5c', fontWeight: 'bold', fontSize: fs(13) },
-    stepLabel: { color: c.textMuted, fontSize: fs(12), textTransform: 'uppercase', letterSpacing: 1, fontWeight: 'bold' },
-    stepText: { color: c.text, fontSize: fs(15), lineHeight: fs(22) },
-
-    nextBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      backgroundColor: c.primary, paddingVertical: 14, borderRadius: 10, marginTop: 8,
-    },
-    nextBtnText: { color: '#fff', fontWeight: 'bold', fontSize: fs(15) },
-
-    shareBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      backgroundColor: c.primary, paddingVertical: 13, borderRadius: 10, marginTop: 14, minHeight: 48,
-    },
-    shareText: { color: '#fff', fontWeight: 'bold', fontSize: fs(14) },
-    offscreen: { position: 'absolute', left: -10000, top: -10000, opacity: 0 },
-
-    readBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-      paddingVertical: 12, borderRadius: 10, marginTop: 12, borderWidth: 1, borderColor: c.accent,
-    },
-    readText: { color: c.accentText, fontWeight: '600', fontSize: fs(14) },
-
-    backBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
-      paddingVertical: 12, marginTop: 8,
-    },
-    backText: { color: c.textMuted, fontSize: fs(13) },
-  });

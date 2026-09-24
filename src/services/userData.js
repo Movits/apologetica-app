@@ -88,13 +88,29 @@ export async function addNote({ bookId, chapter, verseStart, verseEnd, text }) {
   });
 }
 
-export async function updateNote(noteId, text) {
+// `ref` é opcional ({ bookId, chapter, verseStart, verseEnd }): só entra
+// quando o editor trocou o versículo da nota. Os campos são os mesmos do
+// addNote, a forma do documento não muda.
+export async function updateNote(noteId, text, ref) {
   const uid = auth.currentUser?.uid;
   if (!uid) throw new Error('Usuário não autenticado');
-  return updateDoc(doc(db, 'users', uid, 'notes', noteId), {
-    text,
-    updatedAt: serverTimestamp(),
-  });
+  const patch = { text, updatedAt: serverTimestamp() };
+  if (ref?.bookId) {
+    patch.bookId = ref.bookId;
+    patch.chapter = ref.chapter;
+    patch.verseStart = ref.verseStart;
+    patch.verseEnd = ref.verseEnd ?? ref.verseStart;
+  }
+  return updateDoc(doc(db, 'users', uid, 'notes', noteId), patch);
+}
+
+// Uma nota pelo id, para o editor abrir uma nota existente. Sem usuário
+// devolve null, como getNotebookPage.
+export async function getNote(noteId) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) return null;
+  const snap = await getDoc(doc(db, 'users', uid, 'notes', noteId));
+  return snap.exists() ? { id: snap.id, ...snap.data() } : null;
 }
 
 export async function removeNote(noteId) {

@@ -1,16 +1,17 @@
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import Animated from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useRequireAccount } from '../components/GuestGate';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { Group, LargeTitleScreen, Row, SectionTitle, enterStagger } from '../components/ui';
 
-// Hub de ferramentas: agrupa as telas secundárias que antes lotavam a Home.
-// Espiritualidade e Treino são livres; Meu Estudo exige conta (sincroniza dados).
+// Hub "Praticar": agrupa as telas secundárias que antes lotavam a Home, em
+// listas agrupadas (SectionTitle + Group com Rows), sob o large title próprio.
+// Espiritualidade e Treino são livres. Em Meu Estudo, marcações, notas e caderno
+// vivem no Firestore e exigem conta; favoritos ficam no aparelho (`local: true`)
+// e abrem sem conta.
 function buildSpirituality(t) {
   return [
     { icon: 'today-outline', label: t('home.card.today'), sub: t('home.card.todaySub'), screen: 'Today' },
@@ -33,7 +34,7 @@ function buildTraining(t) {
 function buildStudy(t) {
   return [
     { icon: 'journal-outline', label: t('home.card.notebook'), sub: t('home.card.notebookSub'), screen: 'Notebook' },
-    { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites' },
+    { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites', local: true },
     { icon: 'color-fill-outline', label: t('home.card.highlights'), screen: 'Highlights' },
     { icon: 'document-text-outline', label: t('home.card.notes'), screen: 'Notes' },
   ];
@@ -41,100 +42,83 @@ function buildStudy(t) {
 
 export default function ToolsScreen() {
   const navigation = useNavigation();
-  const { colors, fs } = useTheme();
+  const { colors, tokens } = useTheme();
   const { user } = useAuth();
   const { t, isEn } = useLanguage();
   const requireAccount = useRequireAccount();
-  const insets = useSafeAreaInsets();
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
+  const { icon } = tokens;
 
   const SPIRITUALITY = buildSpirituality(t);
   const TRAINING = buildTraining(t);
   const STUDY = buildStudy(t);
 
-  const renderCard = (item) => (
-    <TouchableOpacity
+  const renderRow = (item) => (
+    <Row
       key={item.screen}
-      style={styles.card}
+      icon={item.icon}
+      title={item.label}
+      subtitle={item.sub}
+      trailing="chevron"
       onPress={() => navigation.navigate(item.screen)}
-    >
-      <View style={styles.cardIcon}>
-        <Ionicons name={item.icon} size={22} color={colors.primaryText} />
-      </View>
-      <View style={{ flex: 1 }}>
-        <Text style={styles.cardLabel}>{item.label}</Text>
-        {item.sub && <Text style={styles.cardSub}>{item.sub}</Text>}
-      </View>
-      <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-    </TouchableOpacity>
+    />
   );
 
-  const renderStudyCard = (item) => (
-    <TouchableOpacity
-      key={item.screen}
-      style={styles.card}
-      onPress={() =>
-        requireAccount(
-          () => navigation.navigate(item.screen),
-          {
-            title: item.label,
-            message: isEn
-              ? `To use ${item.label.toLowerCase()}, create a free account. Your data stays saved and synced across devices.`
-              : `Para usar ${item.label.toLowerCase()}, crie uma conta gratuita. Seus dados ficam salvos e sincronizados entre dispositivos.`,
-            icon: item.icon,
-          }
-        )
+  const openStudy = (item) => {
+    if (item.local) {
+      navigation.navigate(item.screen);
+      return;
+    }
+    requireAccount(
+      () => navigation.navigate(item.screen),
+      {
+        title: item.label,
+        message: isEn
+          ? `To use ${item.label.toLowerCase()}, create a free account. Highlights, notes and notebook stay saved in your account and synced across devices.`
+          : `Para usar ${item.label.toLowerCase()}, crie uma conta gratuita. Marcações, notas e caderno ficam salvos na sua conta e sincronizados entre aparelhos.`,
+        icon: item.icon,
       }
-    >
-      <View style={styles.cardIcon}>
-        <Ionicons name={item.icon} size={22} color={colors.primaryText} />
-      </View>
-      <Text style={[styles.cardLabel, { flex: 1 }]}>{item.label}</Text>
-      {!user && (
-        <Ionicons name="lock-closed" size={14} color={colors.textSubtle} style={{ marginRight: 6 }} />
-      )}
-      <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-    </TouchableOpacity>
-  );
+    );
+  };
+
+  // Cadeado pequeno antes do chevron (prop `chevron` da Row) nos itens que
+  // exigem conta, só para o visitante. O toque continua passando pelo
+  // requireAccount.
+  const lock = <Ionicons name="lock-closed-outline" size={icon.sm} color={colors.textTertiary} />;
+
+  const renderStudyRow = (item) => {
+    const gated = !user && !item.local;
+    return (
+      <Row
+        key={item.screen}
+        icon={item.icon}
+        title={item.label}
+        subtitle={item.sub}
+        trailing={gated ? lock : null}
+        chevron
+        accessibilityLabel={gated ? `${item.label}, ${t('tools.requiresAccount')}` : undefined}
+        onPress={() => openStudy(item)}
+      />
+    );
+  };
 
   return (
-    <View style={styles.container}>
-      <ScrollView
-        contentContainerStyle={[styles.content, { paddingBottom: 30 + insets.bottom }]}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
-      >
-        <Text style={[styles.sectionTitle, { marginTop: 4 }]}>{t('home.section.spirituality')}</Text>
-        {SPIRITUALITY.map(renderCard)}
+    <LargeTitleScreen title={t('tab.tools')}>
+      <Animated.View entering={enterStagger(0, tokens)}>
+        {/* O large title já dá o respiro de baixo, então a primeira seção não
+            repete a margem de cima. */}
+        <SectionTitle title={t('home.section.spirituality')} style={{ marginTop: 0 }} />
+        <Group>{SPIRITUALITY.map(renderRow)}</Group>
+      </Animated.View>
 
-        <Text style={styles.sectionTitle}>{t('home.section.training')}</Text>
-        {TRAINING.map(renderCard)}
+      <Animated.View entering={enterStagger(1, tokens)}>
+        <SectionTitle title={t('home.section.training')} />
+        <Group>{TRAINING.map(renderRow)}</Group>
+      </Animated.View>
 
-        <Text style={styles.sectionTitle}>{t('home.section.study')}</Text>
-        {STUDY.map(renderStudyCard)}
-      </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+      <Animated.View entering={enterStagger(2, tokens)}>
+        <SectionTitle title={t('home.section.study')} />
+        <Group>{STUDY.map(renderStudyRow)}</Group>
+      </Animated.View>
+    </LargeTitleScreen>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 16 },
-    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 10, marginTop: 18 },
-    card: {
-      flexDirection: 'row', alignItems: 'center',
-      backgroundColor: c.card, borderRadius: 10, padding: 13, marginBottom: 9, gap: 12,
-    },
-    cardIcon: {
-      width: 40, height: 40, borderRadius: 9, backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    cardLabel: { fontSize: fs(15), color: c.text, fontWeight: '600' },
-    cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
-  });

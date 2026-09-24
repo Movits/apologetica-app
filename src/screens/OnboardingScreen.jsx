@@ -1,18 +1,26 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { setOnboardingDone, setStartIntent } from '../utils/onboarding';
 import { getDialoguesByCategory } from '../data/dialogues';
-import AuthTopToggles from '../components/AuthTopToggles';
-import CrossMark from '../components/CrossMark';
+import AuthTopToggles, { TOGGLES_HEIGHT } from '../components/AuthTopToggles';
+import BrandMark from '../components/BrandMark';
+import { Button, Group, ProgressBar, Row, enterStagger } from '../components/ui';
 
-// Onboarding v2: ativação em vez de tour passivo. Em ate 60s o usuario
-// escolhe um tema e cai direto num dialogo de resposta relevante (o "aha"
-// de apologetica: "eu ja consigo responder isso"). Ver Conselho, Onda 3.
+// Onboarding v2: ativação em vez de tour passivo. Em até 60 s a pessoa escolhe
+// um tema e cai direto num diálogo de resposta relevante (o "aha" de
+// apologética: "eu já consigo responder isso"). Ver Conselho, Onda 3.
+//
+// Pele da Onda 7 (mock aprovado): fundo quieto do tema, um brilho dourado bem
+// suave no topo, a cruz à esquerda e a tipografia falando sozinha. Os três
+// passos e a lógica (setOnboardingDone, setStartIntent, onDone) são os mesmos.
 
-// Temas = categorias reais dos dialogos (string exata usada em dialogues.js).
+// Temas = categorias reais dos diálogos (string exata usada em dialogues.js).
 const THEMES = [
   { key: 'Existência de Deus', icon: 'planet-outline', pt: 'A existência de Deus', en: 'The existence of God', subPt: 'ateísmo, ciência e fé', subEn: 'atheism, science and faith' },
   { key: 'Igreja Católica', icon: 'home-outline', pt: 'A Igreja Católica', en: 'The Catholic Church', subPt: 'papa, Maria, sacramentos', subEn: 'pope, Mary, sacraments' },
@@ -22,13 +30,17 @@ const THEMES = [
   { key: 'História', icon: 'time-outline', pt: 'História da Igreja', en: 'Church history', subPt: 'Inquisição, Cruzadas', subEn: 'Inquisition, Crusades' },
 ];
 
-// Com quem a pessoa mais conversa: usado so para uma linha de copy personalizada.
-const AUDIENCES = [
-  { key: 'evangelicos', icon: 'chatbubbles-outline', pt: 'Amigos evangélicos', en: 'Protestant friends' },
-  { key: 'ateus', icon: 'help-circle-outline', pt: 'Ateus e céticos', en: 'Atheists and skeptics' },
-  { key: 'familia', icon: 'people-circle-outline', pt: 'Minha família', en: 'My family' },
-  { key: 'eu', icon: 'person-outline', pt: 'Comigo mesmo(a)', en: 'Myself' },
-];
+const STEPS = [0, 1, 2];
+
+// O brilho do topo é o dourado do tema com alfa (o mock usa um radial a 10%;
+// aqui um linear vertical que morre em 34% da altura, a aproximação decidida).
+// A cor vem de colors.accent, sem hex novo.
+function withAlpha(hex, alpha) {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${alpha})`;
+}
 
 function pickDialogue(themeKey) {
   const list = getDialoguesByCategory(themeKey) || [];
@@ -39,11 +51,12 @@ function pickDialogue(themeKey) {
 }
 
 export default function OnboardingScreen({ onDone }) {
-  const { colors, fs } = useTheme();
+  const { colors, tokens, text, darkMode } = useTheme();
   const { isEn } = useLanguage();
-  const styles = makeStyles(colors, fs);
+  const insets = useSafeAreaInsets();
+  const { space, icon } = tokens;
 
-  const [step, setStep] = useState(0); // 0 intro, 1 tema, 2 público, 3 pronto
+  const [step, setStep] = useState(0); // 0 intro, 1 tema, 2 pronto
   const [theme, setTheme] = useState(null);
 
   const skip = async () => {
@@ -60,166 +73,129 @@ export default function OnboardingScreen({ onDone }) {
 
   const chosenTheme = THEMES.find((t) => t.key === theme);
 
+  const title = [text('largeTitle'), { color: colors.text }];
+  const subtitle = [text('title'), { color: colors.text }];
+  const lead = [text('body'), { color: colors.text }];
+  const glow = darkMode ? 0.08 : 0.12;
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <LinearGradient
+        colors={[withAlpha(colors.accent, glow), withAlpha(colors.accent, 0)]}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
+        pointerEvents="none"
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '34%' }}
+      />
       <AuthTopToggles />
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
 
-        {/* barra de progresso simples */}
-        <View style={styles.progress}>
-          {[0, 1, 2, 3].map((i) => (
-            <View key={i} style={[styles.pDot, i <= step && styles.pDotOn]} />
-          ))}
-        </View>
-
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          paddingHorizontal: space.xl,
+          // Abaixo das pílulas do topo, com folga.
+          paddingTop: insets.top + space.xs + TOGGLES_HEIGHT + space.lg,
+          paddingBottom: space.lg,
+        }}
+        showsVerticalScrollIndicator={false}
+      >
         {step === 0 && (
-          <View style={styles.center}>
-            <CrossMark size={fs(64)} color={colors.accent} opacity={1} style={{ marginBottom: 20 }} />
-            <Text style={styles.h1}>{isEn ? 'Know how to answer' : 'Saiba responder'}</Text>
-            <Text style={styles.lead}>
-              {isEn
-                ? 'When someone questions your faith, have the answer, with the source in hand. Let us set you up in under a minute.'
-                : 'Quando questionarem a sua fé, tenha a resposta, com a fonte na mão. Vamos te preparar em menos de um minuto.'}
-            </Text>
-            <View style={styles.verseBox}>
-              <Text style={styles.verse}>
+          <View style={{ gap: space.md }}>
+            {/* Sem o nome do app escrito nesta tela, a cruz fica como imagem
+                rotulada "APPologética". */}
+            <Animated.View entering={enterStagger(0, tokens)}>
+              <BrandMark size="md" color={colors.accent} />
+            </Animated.View>
+            <Animated.View entering={enterStagger(1, tokens)}>
+              <Text style={title}>{isEn ? 'Know how to answer' : 'Saiba responder'}</Text>
+            </Animated.View>
+            <Animated.View entering={enterStagger(2, tokens)}>
+              <Text style={lead}>
                 {isEn
-                  ? '"Always be prepared to give an answer to everyone who asks you the reason for the hope that you have, but with gentleness and respect."'
-                  : '"Estai sempre prontos a responder a todo aquele que vos pedir razão da esperança que há em vós, mas com mansidão e respeito."'}
+                  ? 'When someone questions your faith, have the answer with the source in hand.'
+                  : 'Quando questionarem a sua fé, tenha a resposta com a fonte na mão.'}
               </Text>
-              <Text style={styles.verseRef}>1 {isEn ? 'Peter' : 'Pedro'} 3,15-16</Text>
-            </View>
+            </Animated.View>
+            {/* Texto exato das Bíblias embarcadas (Ave Maria / Douay-Rheims), 1 Pedro 3,15. */}
+            <Animated.View entering={enterStagger(3, tokens)} style={{ gap: space.xs }}>
+              <Text style={[text('reading'), { color: colors.text, fontStyle: 'italic' }]}>
+                {isEn
+                  ? '"But sanctify the Lord Christ in your hearts, being ready always to satisfy every one that asketh you a reason of that hope which is in you."'
+                  : '"Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito."'}
+              </Text>
+              <Text style={[text('footnote'), { color: colors.textSubtle }]}>{isEn ? '1 Peter 3:15' : '1 Pedro 3,15'}</Text>
+            </Animated.View>
           </View>
         )}
 
         {step === 1 && (
-          <View>
-            <Text style={styles.h2}>{isEn ? 'Which theme grabs you most?' : 'Qual tema mais te pega?'}</Text>
-            <Text style={styles.sub}>{isEn ? 'We will start with a real answer on it.' : 'Vamos começar com uma resposta real sobre ele.'}</Text>
-            <View style={styles.grid}>
-              {THEMES.map((tm) => {
-                const on = theme === tm.key;
-                return (
-                  <TouchableOpacity
+          <View style={{ gap: space.md }}>
+            <Animated.View entering={enterStagger(0, tokens)} style={{ gap: space.xs }}>
+              <Text style={subtitle}>{isEn ? 'Which theme grabs you most?' : 'Qual tema mais te pega?'}</Text>
+              <Text style={lead}>{isEn ? 'We will start with a real answer on it.' : 'Vamos começar com uma resposta real sobre ele.'}</Text>
+            </Animated.View>
+            <Animated.View entering={enterStagger(1, tokens)}>
+              <Group>
+                {THEMES.map((tm) => (
+                  <Row
                     key={tm.key}
-                    style={[styles.chip, on && styles.chipOn]}
+                    icon={tm.icon}
+                    title={isEn ? tm.en : tm.pt}
+                    subtitle={isEn ? tm.subEn : tm.subPt}
+                    trailing="chevron"
                     onPress={() => { setTheme(tm.key); setStep(2); }}
-                    accessibilityRole="button"
-                    accessibilityLabel={isEn ? tm.en : tm.pt}
-                  >
-                    <Ionicons name={tm.icon} size={26} color={on ? '#fff' : colors.accent} />
-                    <Text style={[styles.chipTitle, on && styles.chipTitleOn]}>{isEn ? tm.en : tm.pt}</Text>
-                    <Text style={[styles.chipSub, on && styles.chipTitleOn]}>{isEn ? tm.subEn : tm.subPt}</Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
+                  />
+                ))}
+              </Group>
+            </Animated.View>
           </View>
         )}
 
         {step === 2 && (
-          <View>
-            <Text style={styles.h2}>{isEn ? 'Who do you talk about faith with most?' : 'Com quem você mais conversa sobre fé?'}</Text>
-            <Text style={styles.sub}>{isEn ? 'Just so we speak your language.' : 'Só pra falarmos a sua língua.'}</Text>
-            <View style={styles.list}>
-              {AUDIENCES.map((a) => (
-                <TouchableOpacity
-                  key={a.key}
-                  style={styles.rowChip}
-                  onPress={() => setStep(3)}
-                  accessibilityRole="button"
-                  accessibilityLabel={isEn ? a.en : a.pt}
-                >
-                  <Ionicons name={a.icon} size={22} color={colors.accent} />
-                  <Text style={styles.rowChipText}>{isEn ? a.en : a.pt}</Text>
-                  <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-                </TouchableOpacity>
-              ))}
-            </View>
+          <View style={{ gap: space.md }}>
+            <Animated.View entering={enterStagger(0, tokens)}>
+              <Ionicons name="chatbubbles-outline" size={icon.lg} color={colors.tint} />
+            </Animated.View>
+            <Animated.View entering={enterStagger(1, tokens)}>
+              <Text style={subtitle}>{isEn ? 'Ready. Here is your first answer' : 'Pronto. Aqui está sua primeira resposta'}</Text>
+            </Animated.View>
+            <Animated.View entering={enterStagger(2, tokens)}>
+              <Text style={lead}>
+                {isEn
+                  ? `We prepared a guided answer about ${chosenTheme ? chosenTheme.en.toLowerCase() : 'your faith'}. Read it and see how simple it is to respond.`
+                  : `Preparamos uma resposta guiada sobre ${chosenTheme ? chosenTheme.pt.toLowerCase() : 'a sua fé'}. Leia e veja como é simples responder.`}
+              </Text>
+            </Animated.View>
           </View>
         )}
-
-        {step === 3 && (
-          <View style={styles.center}>
-            <View style={styles.readyIcon}>
-              <Ionicons name="chatbubbles" size={44} color={colors.accent} />
-            </View>
-            <Text style={styles.h2}>{isEn ? 'Ready. Here is your first answer' : 'Pronto. Aqui está sua primeira resposta'}</Text>
-            <Text style={styles.lead}>
-              {isEn
-                ? `We prepared a guided answer about ${chosenTheme ? chosenTheme.en.toLowerCase() : 'your faith'}. Read it and see how simple it is to respond.`
-                : `Preparamos uma resposta guiada sobre ${chosenTheme ? chosenTheme.pt.toLowerCase() : 'a sua fé'}. Leia e veja como é simples responder.`}
-            </Text>
-          </View>
-        )}
-
       </ScrollView>
 
-      <View style={styles.footer}>
-        {step < 3 ? (
+      <View style={{ paddingHorizontal: space.xl, paddingBottom: insets.bottom + space.md, gap: space.xs }}>
+        {/* Três segmentos (a ProgressBar dá os 3 px e o dourado de progresso). O
+            passo atual já está no título, por isso a barra fica fora do leitor. */}
+        <View aria-hidden style={{ flexDirection: 'row', gap: space.xs, marginBottom: space.sm }}>
+          {STEPS.map((i) => (
+            <ProgressBar key={i} value={i <= step ? 1 : 0} style={{ flex: 1 }} />
+          ))}
+        </View>
+
+        {step === 0 && (
           <>
-            <TouchableOpacity onPress={skip} accessibilityRole="button">
-              <Text style={styles.skip}>{isEn ? 'Skip' : 'Pular'}</Text>
-            </TouchableOpacity>
-            {step === 0 ? (
-              <TouchableOpacity style={styles.primaryBtn} onPress={() => setStep(1)} accessibilityRole="button">
-                <Text style={styles.primaryText}>{isEn ? 'Start' : 'Começar'}</Text>
-                <Ionicons name="arrow-forward" size={16} color="#fff" />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity onPress={() => setStep(step - 1)} accessibilityRole="button">
-                <Text style={styles.skip}>{isEn ? 'Back' : 'Voltar'}</Text>
-              </TouchableOpacity>
-            )}
+            <Button label={isEn ? 'Start' : 'Começar'} onPress={() => setStep(1)} />
+            <Button variant="plain" label={isEn ? 'Skip' : 'Pular'} onPress={skip} />
           </>
-        ) : (
-          <TouchableOpacity style={[styles.primaryBtn, { width: '100%', justifyContent: 'center' }]} onPress={start} accessibilityRole="button">
-            <Text style={styles.primaryText}>{isEn ? 'See the answer' : 'Ver a resposta'}</Text>
-            <Ionicons name="arrow-forward" size={18} color="#fff" />
-          </TouchableOpacity>
+        )}
+        {step === 1 && (
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Button variant="plain" full={false} label={isEn ? 'Back' : 'Voltar'} onPress={() => setStep(0)} />
+            <Button variant="plain" full={false} label={isEn ? 'Skip' : 'Pular'} onPress={skip} />
+          </View>
+        )}
+        {step === 2 && (
+          <Button label={isEn ? 'See the answer' : 'Ver a resposta'} onPress={start} />
         )}
       </View>
     </View>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    scroll: { padding: 24, paddingTop: 64, flexGrow: 1, justifyContent: 'center' },
-    progress: { flexDirection: 'row', gap: 8, justifyContent: 'center', marginBottom: 28 },
-    pDot: { width: 26, height: 5, borderRadius: 3, backgroundColor: c.divider },
-    pDotOn: { backgroundColor: c.accent },
-    center: { alignItems: 'center' },
-    h1: { fontSize: fs(30), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 12 },
-    h2: { fontSize: fs(22), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 6 },
-    sub: { fontSize: fs(14), color: c.textMuted, textAlign: 'center', marginBottom: 22 },
-    lead: { fontSize: fs(15), color: c.text, lineHeight: fs(23), textAlign: 'center', marginBottom: 18 },
-    verseBox: { marginTop: 8, paddingHorizontal: 20, paddingVertical: 16, backgroundColor: c.card, borderRadius: 12, borderLeftWidth: 3, borderLeftColor: c.accent },
-    verse: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', textAlign: 'center', lineHeight: fs(21) },
-    verseRef: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', textAlign: 'center', marginTop: 8 },
-    grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12, justifyContent: 'space-between' },
-    chip: {
-      width: '47%', minHeight: 108, backgroundColor: c.card, borderRadius: 14, padding: 14,
-      borderWidth: 1, borderColor: c.cardBorder, justifyContent: 'center',
-    },
-    chipOn: { backgroundColor: c.primary, borderColor: c.primary },
-    chipTitle: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText, marginTop: 8 },
-    chipTitleOn: { color: '#fff' },
-    chipSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
-    list: { gap: 12 },
-    rowChip: {
-      flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56,
-      backgroundColor: c.card, borderRadius: 12, paddingHorizontal: 16,
-      borderWidth: 1, borderColor: c.cardBorder,
-    },
-    rowChipText: { flex: 1, fontSize: fs(16), color: c.text, fontWeight: '600' },
-    readyIcon: {
-      width: 88, height: 88, borderRadius: 44, backgroundColor: c.card,
-      justifyContent: 'center', alignItems: 'center', marginBottom: 20,
-      borderWidth: 2, borderColor: c.accent,
-    },
-    footer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 24, paddingBottom: 40, gap: 16 },
-    skip: { color: c.textMuted, fontSize: fs(14), padding: 8, minHeight: 44, textAlignVertical: 'center' },
-    primaryBtn: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: c.primary, paddingVertical: 14, paddingHorizontal: 26, borderRadius: 12, minHeight: 48 },
-    primaryText: { color: '#fff', fontSize: fs(15), fontWeight: 'bold' },
-  });

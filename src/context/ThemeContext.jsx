@@ -1,9 +1,13 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { Platform } from 'react-native';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
+import { space, radius, icon, thumb, motion, shadow, textStyle, fontFamilyFor } from '../theme/tokens';
+import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
 
-const LIGHT = {
+// As paletas são exportadas para quem vive fora do provider (o ErrorBoundary
+// em App.js embrulha o ThemeProvider). Dentro do app, use useTheme().colors.
+export const LIGHT = {
   mode: 'light',
   primary: '#1a3a5c',
   primaryText: '#1a3a5c',
@@ -21,12 +25,33 @@ const LIGHT = {
   badgeText: '#1a3a5c',
   heroSub: '#ccd9e8',
   deepLinkHl: '#f6e6b0',      // destaque temporário (chegada por referência) bem visível
+  // Cor de ação (botões, links, aba ativa) e o texto que vai por cima dela.
+  tint: '#1a3a5c',
+  onTint: '#ffffff',
+  // Texto sobre o fundo principal (primary).
+  onPrimary: '#ffffff',
+  // Terceiro nível de texto (legendas e metadados), abaixo de textSubtle.
+  textTertiary: '#948c7c',
+  // Linhas finas: separator entre linhas de lista, hairline na borda das barras.
+  separator: 'rgba(26,58,92,0.14)',
+  hairline: 'rgba(0,0,0,0.14)',
+  // Fundo translúcido das barras (header e tab bar) por cima do conteúdo.
+  material: 'rgba(245,240,232,0.72)',
+  // Superfície elevada (sheets, menus) e véu escuro atrás dos modais.
+  elevated: '#ffffff',
+  overlay: 'rgba(0,0,0,0.4)',
+  // Semânticas: ação destrutiva ou erro, e sucesso.
+  danger: '#b3261e',
+  success: '#2f7a4a',
+  // Cores litúrgicas (tempo comum, e advento/quaresma).
+  seasonGreen: '#2f7a4a',
+  seasonPurple: '#5b3f8a',
 };
 
 // Paleta dark mode estilo "noite na catedral": navy profundo com dourado quente.
 // Tudo na mesma família de cor (azul-marinho) - cards, bg e hero coordenados.
 // Texto cor de creme (não branco puro) pra dar sensação de luz de vela.
-const DARK = {
+export const DARK = {
   mode: 'dark',
   primary: '#142844',         // navy rico pro hero/header
   primaryText: '#e6c878',     // dourado claro pros títulos em cards
@@ -44,6 +69,27 @@ const DARK = {
   badgeText: '#e6c878',
   heroSub: '#b8c4d8',
   deepLinkHl: '#3a3320',      // destaque temporário (chegada por referência) bem visível
+  // Cor de ação (botões, links, aba ativa) e o texto que vai por cima dela.
+  tint: '#d4b86a',
+  onTint: '#0d1722',
+  // Texto sobre o fundo principal (primary).
+  onPrimary: '#ffffff',
+  // Terceiro nível de texto (legendas e metadados), abaixo de textSubtle.
+  textTertiary: '#7d7767',
+  // Linhas finas: separator entre linhas de lista, hairline na borda das barras.
+  separator: 'rgba(236,232,216,0.14)',
+  hairline: 'rgba(255,255,255,0.14)',
+  // Fundo translúcido das barras (header e tab bar) por cima do conteúdo.
+  material: 'rgba(13,23,34,0.72)',
+  // Superfície elevada (sheets, menus) e véu escuro atrás dos modais.
+  elevated: '#1e2f47',
+  overlay: 'rgba(0,0,0,0.4)',
+  // Semânticas: ação destrutiva ou erro, e sucesso.
+  danger: '#f28b82',
+  success: '#8fd19e',
+  // Cores litúrgicas (tempo comum, e advento/quaresma).
+  seasonGreen: '#8fd19e',
+  seasonPurple: '#b59ae6',
 };
 
 const FONT_SCALES = {
@@ -51,36 +97,63 @@ const FONT_SCALES = {
   normal: 1,
   grande: 1.15,
   enorme: 1.35,
+  muitoGrande: 1.65,
+  maximo: 2.0,
 };
 
-const STORAGE_DARK = 'settings:darkMode';
+// Tokens puros (src/theme/tokens.js) com a família de fonte resolvida para a
+// plataforma atual. Platform.OS não muda em tempo de execução, então o objeto
+// é constante e mantém a mesma referência entre renders.
+const FONT_FAMILY = fontFamilyFor(Platform.OS);
+const TOKENS = { space, radius, icon, thumb, motion, shadow, fontFamily: FONT_FAMILY };
+
+// Modo de tema escolhido: 'system' | 'light' | 'dark' (src/utils/themeMode.js).
+// A chave antiga 'settings:darkMode' é IGNORADA de propósito: o código anterior
+// a gravava em toda hidratação, não só na escolha, então todo aparelho já tem
+// 'false' guardado sem que ninguém tenha escolhido nada, e ler essa chave
+// impediria o app de seguir o sistema. Como o app está em pré-lançamento, não
+// há migração: quem tinha escolhido escolhe de novo em Ajustes.
+const STORAGE_THEME_MODE = 'settings:theme';
 const STORAGE_FONT = 'settings:fontSize';
 
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkModeState] = useState(false);
+  // Tema em três estados: `themeMode` é a escolha da pessoa (hidratada abaixo;
+  // nasce em 'system', então o splash já sai no tema do aparelho, que app.json
+  // deixa em userInterfaceStyle "automatic") e `systemScheme` é o esquema atual
+  // do sistema. O tema efetivo combina os dois: 'system' segue o aparelho e
+  // acompanha a troca em tempo real pelo listener logo abaixo.
+  const [themeMode, setThemeModeState] = useState('system');
+  const [systemScheme, setSystemScheme] = useState(() => Appearance.getColorScheme());
   const [fontSize, setFontSizeState] = useState('normal');
   const [hydrated, setHydrated] = useState(false);
+  const darkMode = isDarkFor(themeMode, systemScheme);
+
+  // Appearance.addChangeListener recebe ({ colorScheme }) e devolve uma
+  // subscription com remove(), tanto no RN 0.81 (Libraries/Utilities/
+  // Appearance.d.ts: NativeEventSubscription) quanto no react-native-web
+  // (dist/exports/Appearance/index.js, sobre matchMedia prefers-color-scheme).
+  useEffect(() => {
+    const sub = Appearance.addChangeListener(({ colorScheme }) => setSystemScheme(colorScheme));
+    return () => sub.remove();
+  }, []);
 
   useEffect(() => {
     (async () => {
       try {
-        // Na web, a escolha feita na landing fica em localStorage (appg_theme),
-        // compartilhada com o app (mesmo domínio). Ela tem prioridade.
-        let webTheme = null;
+        // Na web, a escolha feita na landing fica em localStorage (appg_theme,
+        // só 'light' ou 'dark'), compartilhada com o app (mesmo domínio). Ela
+        // tem prioridade sobre a salva pelo app; sem nenhuma, segue o sistema.
+        let landing = null;
         if (Platform.OS === 'web') {
-          try { webTheme = window.localStorage.getItem('appg_theme'); } catch {}
+          try { landing = window.localStorage.getItem('appg_theme'); } catch {}
         }
-        const [dm, fs] = await Promise.all([
-          AsyncStorage.getItem(STORAGE_DARK),
+        const [saved, fs] = await Promise.all([
+          AsyncStorage.getItem(STORAGE_THEME_MODE),
           AsyncStorage.getItem(STORAGE_FONT),
         ]);
-        if (webTheme === 'dark' || webTheme === 'light') {
-          setDarkModeState(webTheme === 'dark');
-        } else if (dm !== null) {
-          setDarkModeState(dm === 'true');
-        }
+        setThemeModeState(resolveThemeMode({ landing, saved }));
         if (fs && FONT_SCALES[fs]) setFontSizeState(fs);
       } catch {
         // sem persistência, segue com padrão
@@ -90,27 +163,41 @@ export function ThemeProvider({ children }) {
     })();
   }, []);
 
-  useEffect(() => {
-    if (!hydrated) return;
-    AsyncStorage.setItem(STORAGE_DARK, String(darkMode)).catch(() => {});
-    // Mantém a chave compartilhada com a landing (web) em sincronia.
+  // Grava o modo só quando a pessoa escolhe (chips em Ajustes ou o toggle no
+  // topo do login); a hidratação acima nunca grava, senão o app deixaria de
+  // seguir o sistema sem ninguém pedir. Na web, mantém a chave compartilhada
+  // com a landing (appg_theme) em sincronia: 'light'/'dark' quando explícito, e
+  // sem chave quando é 'system' (a landing só conhece os dois explícitos).
+  const setThemeMode = useCallback((mode) => {
+    const next = THEME_MODES.includes(mode) ? mode : 'system';
+    setThemeModeState(next);
+    AsyncStorage.setItem(STORAGE_THEME_MODE, next).catch(() => {});
     if (Platform.OS === 'web') {
-      try { window.localStorage.setItem('appg_theme', darkMode ? 'dark' : 'light'); } catch {}
+      try {
+        if (next === 'system') window.localStorage.removeItem('appg_theme');
+        else window.localStorage.setItem('appg_theme', next);
+      } catch {}
     }
-  }, [darkMode, hydrated]);
+  }, []);
+
+  // Atalho booleano para quem só alterna claro/escuro (AuthTopToggles e
+  // chamadores antigos): vira sempre uma escolha explícita.
+  const setDarkMode = useCallback((next) => setThemeMode(next ? 'dark' : 'light'), [setThemeMode]);
 
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
   }, [fontSize, hydrated]);
 
-  // Sincroniza a navigation bar do Android (fundo + ícones) com o tema, para a
-  // barra do sistema não destoar do app no build nativo. O fundo acompanha a cor
-  // da tab bar (card); os ícones invertem conforme claro/escuro.
+  // Sincroniza os ícones da navigation bar do Android com o tema. Desde o SDK
+  // 55 o edge-to-edge é obrigatório: a barra é transparente sobre o app (não
+  // existe mais cor de fundo para pintar) e a API é `NavigationBar.setStyle`
+  // (node_modules/expo-navigation-bar/build/NavigationBar.android.js), síncrona.
+  // `style` é a cor dos botões: 'light' sobre o tema escuro, 'dark' sobre o claro.
   useEffect(() => {
     if (Platform.OS !== 'android') return;
-    const c = darkMode ? DARK : LIGHT;
-    NavigationBar.setBackgroundColorAsync(c.card).catch(() => {});
-    NavigationBar.setButtonStyleAsync(darkMode ? 'light' : 'dark').catch(() => {});
+    try {
+      NavigationBar.setStyle(darkMode ? 'light' : 'dark');
+    } catch {}
   }, [darkMode]);
 
   // Web: o autofill do navegador pinta um fundo azul/amarelo só no <input> interno,
@@ -138,18 +225,29 @@ export function ThemeProvider({ children }) {
   const value = useMemo(() => {
     const colors = darkMode ? DARK : LIGHT;
     const scale = FONT_SCALES[fontSize] ?? 1;
+    // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
+    const fs = (n) => Math.max(11, Math.round(n * scale));
+    // Cache por papel: `text('body')` devolve a MESMA referência entre renders
+    // (um `useMemo` na tela que dependa dela não recalcula à toa). O cache
+    // renasce com este useMemo, ou seja, quando a escala de fonte muda.
+    const cache = {};
     return {
       colors,
       darkMode,
-      setDarkMode: setDarkModeState,
+      setDarkMode,
+      themeMode,
+      setThemeMode,
       fontSize,
       setFontSize: setFontSizeState,
       scale,
-      // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
-      fs: (n) => Math.max(11, Math.round(n * scale)),
+      fs,
       hydrated,
+      tokens: TOKENS,
+      // Estilo de Text por papel (`text('body')`), já com a escala e a fonte da
+      // plataforma aplicadas. Lança para papel desconhecido.
+      text: (role) => cache[role] ?? (cache[role] = textStyle(role, fs, FONT_FAMILY)),
     };
-  }, [darkMode, fontSize, hydrated]);
+  }, [darkMode, themeMode, fontSize, hydrated, setDarkMode, setThemeMode]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }

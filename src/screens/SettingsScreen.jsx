@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, Linking, Modal, FlatList, Platform, TextInput, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Switch, Pressable, Linking, Modal, FlatList, Platform } from 'react-native';
 import { confirmAction, notify } from '../utils/dialog';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useScrollToTop } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureException } from '../sentry';
 import * as Speech from 'expo-speech';
 import Constants from 'expo-constants';
 import { getBuildId } from '../utils/webUpdate';
+import { pick, pickPair } from '../utils/i18nData';
+import { THEME_MODES } from '../utils/themeMode';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
-import WebDownloadBanner from '../components/WebDownloadBanner';
 import {
   getPrefs, requestPermissions,
   setDailyVerseEnabled, setSundayLiturgyEnabled,
@@ -20,41 +20,74 @@ import {
 } from '../services/notifications';
 import {
   listVoicesForLanguage, getSavedVoiceId, saveVoiceId,
-  getSavedRate, saveRate, describeVoice, describeVoiceShort,
+  getSavedRate, saveRate, describeVoice, describeVoiceShort, ttsLocale,
 } from '../utils/ttsVoice';
 import { useModalNavBar } from '../hooks/useModalNavBar';
 import { useLanguage } from '../context/LanguageContext';
+import { Button, Chip, ChipRow, EmptyState, Field, GuestGate, Group, LargeTitleScreen, Row, SectionTitle } from '../components/ui';
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
-const FONT_OPTIONS = [
-  { key: 'pequeno', label: 'Pequeno', sample: 14 },
-  { key: 'normal', label: 'Normal', sample: 16 },
-  { key: 'grande', label: 'Grande', sample: 18 },
-  { key: 'enorme', label: 'Enorme', sample: 21 },
+// Escalas de FONT_SCALES (ThemeContext); o rótulo vem de strings.js em
+// `settings.font.<key>`. A prévia é o próprio app, que reescala na hora.
+const FONT_KEYS = ['pequeno', 'normal', 'grande', 'enorme', 'muitoGrande', 'maximo'];
+
+// Velocidades da narração. `label` em PT e `labelEn` seguem a convenção dos
+// dados bilíngues, lidos por `pick`.
+const RATE_OPTIONS = [
+  { value: 0.75, label: 'Lenta', labelEn: 'Slow' },
+  { value: 0.95, label: 'Normal', labelEn: 'Normal' },
+  { value: 1.15, label: 'Rápida', labelEn: 'Fast' },
+  { value: 1.35, label: 'Muito rápida', labelEn: 'Very fast' },
 ];
 
-// Versao real do app.json (antes ficava '1.4.0' fixo aqui, e nem batia com a
-// config). No web, mostra tambem os 7 primeiros caracteres do commit publicado,
-// que e a unica forma de saber qual build o aparelho esta rodando.
+const sameRate = (a, b) => Math.abs(a - b) < 0.01;
+
+function rateLabel(r, isEn = false) {
+  const found = RATE_OPTIONS.find((o) => sameRate(o.value, r));
+  return found ? pick(found, 'label', isEn) : `${r.toFixed(2)}x`;
+}
+
+// Versão real do app.json. No web, mostra também os 7 primeiros caracteres do
+// commit publicado, que é a única forma de saber qual build o aparelho roda.
 const appVersion = Constants.expoConfig?.version || '?';
 const buildLabel = (() => {
   const id = getBuildId();
   return id && id !== 'dev' ? id.slice(0, 7) : null;
 })();
 
+// Switch nas cores do tema: trilho em `tint` quando ligado, `separator` quando
+// desligado, bolinha em `elevated`. Na web o react-native-web pinta a bolinha
+// ligada com uma cor própria, por isso o `activeThumbColor` só ali.
+function ThemedSwitch({ value, onValueChange, label }) {
+  const { colors } = useTheme();
+  const webProps = Platform.OS === 'web' ? { activeThumbColor: colors.elevated } : null;
+  return (
+    <Switch
+      value={Boolean(value)}
+      onValueChange={onValueChange}
+      aria-label={label}
+      trackColor={{ true: colors.tint, false: colors.separator }}
+      thumbColor={colors.elevated}
+      {...webProps}
+    />
+  );
+}
+
 export default function SettingsScreen() {
   const navigation = useNavigation();
-  const { colors, darkMode, setDarkMode, fontSize, setFontSize, fs } = useTheme();
+  const { colors, tokens, text, themeMode, setThemeMode, fontSize, setFontSize } = useTheme();
   const { lang, setLang, t, isEn } = useLanguage();
-  const { user, signOut, guest, exitGuest, deleteAccount } = useAuth();
+  const { user, signOut, guest, deleteAccount } = useAuth();
+  const { space, radius, icon } = tokens;
   const [delOpen, setDelOpen] = useState(false);
   const [delPass, setDelPass] = useState('');
+  const [showDelPass, setShowDelPass] = useState(false);
   const [delBusy, setDelBusy] = useState(false);
   const isPasswordUser = (user?.providerData || []).some((p) => p.providerId === 'password');
   const [notifPrefs, setNotifPrefs] = useState({ dailyVerse: false, sundayLiturgy: false, dailyQuiz: false, verseHour: 7, verseMinute: 0 });
 
-  // TTS state
+  // Narração (TTS)
   const [ttsVoices, setTtsVoices] = useState([]);
   const [ttsVoiceId, setTtsVoiceId] = useState(null);
   const [ttsRate, setTtsRate] = useState(0.95);
@@ -80,27 +113,25 @@ export default function SettingsScreen() {
 
   const selectedVoice = ttsVoices.find((v) => v.identifier === ttsVoiceId) || ttsVoices[0] || null;
 
-  const chooseVoice = async (id) => {
-    setTtsVoiceId(id);
-    setVoicePickerOpen(false);
-    await saveVoiceId(id, lang);
-  };
-
-  const previewPhrase = () => isEn
-    ? 'Always be prepared to give an answer.'
-    : 'Esteja sempre pronto para dar uma resposta.';
-
-  const ratePhrase = () => isEn ? 'Reading speed.' : 'Velocidade de leitura.';
-  const fallbackLang = () => isEn ? 'en-US' : 'pt-BR';
+  const previewPhrase = () => pickPair('Esteja sempre pronto para dar uma resposta.', 'Always be prepared to give an answer.', isEn);
+  const ratePhrase = () => pickPair('Velocidade de leitura.', 'Reading speed.', isEn);
 
   const previewVoice = (voice) => {
     Speech.stop();
     Speech.speak(previewPhrase(), {
-      language: voice?.language || fallbackLang(),
+      language: voice?.language || ttsLocale(lang),
       voice: voice?.identifier,
       rate: ttsRate,
       pitch: 1.0,
     });
+  };
+
+  // Escolher uma voz na lista já toca a prévia dela, e a lista fica aberta
+  // para comparar; fecha pelo X, pelo fundo ou pelo botão voltar.
+  const chooseVoice = async (voice) => {
+    setTtsVoiceId(voice.identifier);
+    previewVoice(voice);
+    await saveVoiceId(voice.identifier, lang);
   };
 
   const changeRate = async (newRate) => {
@@ -108,7 +139,7 @@ export default function SettingsScreen() {
     await saveRate(newRate);
     Speech.stop();
     Speech.speak(ratePhrase(), {
-      language: selectedVoice?.language || fallbackLang(),
+      language: selectedVoice?.language || ttsLocale(lang),
       voice: selectedVoice?.identifier,
       rate: newRate,
       pitch: 1.0,
@@ -158,6 +189,36 @@ export default function SettingsScreen() {
     await setObjectionOfDayEnabled(value);
   };
 
+  const sendTest = async () => {
+    const res = await sendTestNotification();
+    if (!res.ok) {
+      notify(
+        isEn ? 'Error' : 'Erro',
+        res.error || (isEn ? 'Could not schedule notification.' : 'Não consegui agendar a notificação.')
+      );
+    } else {
+      notify(
+        isEn ? 'Notification scheduled' : 'Notificação agendada',
+        isEn ? 'It will arrive in ~5 seconds. You can minimize the app to see it better.' : 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.'
+      );
+    }
+  };
+
+  const sendSentryTest = () => {
+    try {
+      captureException(new Error('Teste manual do Sentry, APPologetica'));
+      notify(
+        isEn ? 'Test error sent' : 'Erro de teste enviado',
+        isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'
+      );
+    } catch (e) {
+      notify(
+        isEn ? 'Failed' : 'Falha',
+        isEn ? 'Sentry is not available in this build.' : 'Sentry não está disponível neste build.'
+      );
+    }
+  };
+
   const handleLogout = () => {
     confirmAction({
       title: isEn ? 'Sign out?' : 'Sair da conta?',
@@ -178,11 +239,12 @@ export default function SettingsScreen() {
       confirmText: isEn ? 'Continue' : 'Continuar',
       cancelText: t('common.cancel'),
       destructive: true,
-      onConfirm: () => { setDelPass(''); setDelOpen(true); },
+      onConfirm: () => { setDelPass(''); setShowDelPass(false); setDelOpen(true); },
     });
   };
 
   const doDeleteAccount = async () => {
+    if (delBusy || (isPasswordUser && !delPass)) return;
     setDelBusy(true);
     const res = await deleteAccount(isPasswordUser ? { password: delPass } : {});
     setDelBusy(false);
@@ -198,473 +260,333 @@ export default function SettingsScreen() {
     // A troca de estado de auth leva de volta ao login automaticamente.
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
+  // Rola ao topo quando a aba Ajustes é tocada de novo já focada.
   const scrollRef = useRef(null);
-  const styles = makeStyles(colors, fs);
+  useScrollToTop(scrollRef);
 
-  // Scroll to top quando tap no tab Ajustes de novo
-  useEffect(() => {
-    const unsub = navigation.addListener?.('tabPress', () => {
-      if (navigation.isFocused?.()) {
-        scrollRef.current?.scrollTo({ y: 0, animated: true });
-      }
-    });
-    return unsub;
-  }, [navigation]);
+  const notifTime = `${String(notifPrefs.verseHour).padStart(2, '0')}:${String(notifPrefs.verseMinute).padStart(2, '0')}`;
+  const voiceSubtitle = ttsVoices.length === 0
+    ? (isEn ? 'No voices found for this language' : 'Nenhuma voz encontrada para esse idioma')
+    : describeVoiceShort(selectedVoice);
+  const ttsTip = Platform.OS === 'ios'
+    ? pickPair(
+      'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS > Acessibilidade > Conteúdo Falado > Vozes.',
+      'Tip: "Premium" voices can be downloaded in iOS Settings > Accessibility > Spoken Content > Voices.',
+      isEn,
+    )
+    : Platform.OS === 'android'
+      ? pickPair(
+        'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.',
+        'Tip: install "Google Speech Services" from Play Store for more voices.',
+        isEn,
+      )
+      : null;
+
+  const initial = (user?.displayName || user?.email || '?').charAt(0).toUpperCase();
+  const caption = [text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md, marginTop: space.xs }];
+  // Os chips ficam abaixo do título da linha, com um respiro.
+  const chipRow = { marginTop: space.xxs };
 
   return (
-    <View style={styles.container}>
-    <ScrollView
-      ref={scrollRef}
-      contentContainerStyle={styles.content}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
-    >
-      <WebDownloadBanner />
-
-      {user && (
-        <View style={styles.profileCard}>
-          <View style={styles.avatar}>
-            <Text style={styles.avatarText}>
-              {(user.displayName || user.email || '?').charAt(0).toUpperCase()}
-            </Text>
-          </View>
-          <View style={{ flex: 1 }}>
-            {user.displayName && <Text style={styles.profileName}>{user.displayName}</Text>}
-            <Text style={styles.profileEmail}>{user.email}</Text>
-          </View>
-        </View>
-      )}
-
-      {!user && guest && (
-        <TouchableOpacity style={[styles.profileCard, { borderWidth: 1, borderColor: colors.accent }]} onPress={exitGuest}>
-          <View style={[styles.avatar, { backgroundColor: colors.accent }]}>
-            <Ionicons name="person-add-outline" size={22} color="#fff" />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.profileName}>{t('settings.guest.title')}</Text>
-            <Text style={styles.profileEmail}>{t('settings.guest.sub')}</Text>
-          </View>
-          <Ionicons name="chevron-forward" size={18} color={colors.accent} />
-        </TouchableOpacity>
-      )}
-
-      <Text style={styles.section}>{t('settings.section.appearance')}</Text>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="moon-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.darkMode.label')}</Text>
-        </View>
-        <Switch
-          value={darkMode}
-          onValueChange={setDarkMode}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={[styles.row, { flexDirection: 'column', alignItems: 'flex-start' }]}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="text-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.font.label')}</Text>
-        </View>
-        <View style={styles.fontGrid}>
-          {FONT_OPTIONS.map((opt) => (
-            <TouchableOpacity
-              key={opt.key}
-              style={[styles.fontChip, fontSize === opt.key && styles.fontChipActive]}
-              onPress={() => setFontSize(opt.key)}
-            >
-              <Text
-                style={[
-                  styles.fontChipLabel,
-                  { fontSize: opt.sample },
-                  fontSize === opt.key && styles.fontChipLabelActive,
-                ]}
-              >
-                {opt.label}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
-      <Text style={styles.section}>{t('settings.section.language')}</Text>
-      <View style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="language-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.language.label')}</Text>
-            <Text style={styles.rowSub}>
-              {lang === 'pt' ? 'Português' : 'English'}.{' '}
-              {isEn ? 'UI translated. Bible (DRA) and most articles in English.' : 'UI traduzida. Bíblia (DRA) e a maioria dos artigos em inglês quando ativado.'}
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fontGrid}>
-          <TouchableOpacity
-            style={[styles.fontChip, lang === 'pt' && styles.fontChipActive]}
-            onPress={() => setLang('pt')}
-          >
-            <Text style={[styles.fontChipLabel, lang === 'pt' && styles.fontChipLabelActive]}>
-              Português
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.fontChip, lang === 'en' && styles.fontChipActive]}
-            onPress={() => setLang('en')}
-          >
-            <Text style={[styles.fontChipLabel, lang === 'en' && styles.fontChipLabelActive]}>
-              English
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* Voz e velocidade da narração (TTS) agrupadas com o idioma. */}
-      <TouchableOpacity
-        style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}
-        onPress={() => setVoicePickerOpen(true)}
-        activeOpacity={0.7}
+    <>
+      <LargeTitleScreen
+        title={t('tab.settings')}
+        // A ref vai ao Animated.ScrollView do componente, para o useScrollToTop.
+        scrollProps={{ ref: scrollRef, keyboardShouldPersistTaps: 'handled' }}
       >
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <View style={styles.rowLeft}>
-            <Ionicons name="mic-outline" size={22} color={colors.primaryText} />
-            <View style={{ flex: 1 }}>
-              <Text style={styles.rowLabel}>{t('settings.voice')}</Text>
-              <Text style={styles.rowSub} numberOfLines={1}>
-                {ttsVoices.length === 0
-                  ? (isEn ? 'No voices found for this language' : 'Nenhuma voz encontrada para esse idioma')
-                  : describeVoiceShort(selectedVoice)}
-              </Text>
-            </View>
-          </View>
-          <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-        </View>
-        {Platform.OS === 'ios' && (
-          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
-            {isEn
-              ? 'Tip: "Premium" voices can be downloaded in iOS Settings → Accessibility → Spoken Content → Voices.'
-              : 'Dica: vozes "Premium" podem ser baixadas em Ajustes do iOS → Acessibilidade → Conteúdo Falado → Vozes.'}
-          </Text>
-        )}
-        {Platform.OS === 'android' && (
-          <Text style={[styles.rowSub, { marginTop: 8, marginLeft: 34 }]}>
-            {isEn
-              ? 'Tip: install "Google Speech Services" from Play Store for more voices.'
-              : 'Dica: instale "Google Serviços de Fala" na Play Store para mais vozes.'}
-          </Text>
-        )}
-      </TouchableOpacity>
-
-      <View style={[styles.row, { flexDirection: 'column', alignItems: 'stretch' }]}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="speedometer-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.speed')}</Text>
-            <Text style={styles.rowSub}>{rateLabel(ttsRate, isEn)}</Text>
-          </View>
-        </View>
-        <View style={styles.fontGrid}>
-          {RATE_OPTIONS.map((opt) => (
-            <TouchableOpacity
-              key={opt.value}
-              style={[styles.fontChip, Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipActive]}
-              onPress={() => changeRate(opt.value)}
+        {/* Conta: perfil de quem está logado, ou o convite do visitante. */}
+        <SectionTitle title={t('settings.section.account')} style={{ marginTop: 0 }} />
+        {user ? (
+          <Group>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                minHeight: 44,
+                paddingHorizontal: space.md,
+                paddingVertical: space.sm,
+                gap: space.sm,
+              }}
             >
-              <Text
-                style={[
-                  styles.fontChipLabel,
-                  Math.abs(ttsRate - opt.value) < 0.01 && styles.fontChipLabelActive,
-                ]}
+              <View
+                style={{
+                  width: space.xxxl,
+                  height: space.xxxl,
+                  borderRadius: radius.full,
+                  backgroundColor: colors.tint,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
               >
-                {isEn ? opt.labelEn : opt.labelPt}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
-      {Platform.OS !== 'web' && (
-       <>
-      <Text style={styles.section}>{t('settings.section.notifications')}</Text>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="sunny-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.daily')}</Text>
-            <Text style={styles.rowSub}>
-              {notifPrefs.dailyVerse
-                ? (isEn ? `Receive at ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}` : `Receber às ${String(notifPrefs.verseHour).padStart(2,'0')}:${String(notifPrefs.verseMinute).padStart(2,'0')}`)
-                : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.dailyVerse}
-          onValueChange={toggleDailyVerse}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="calendar-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.sunday')}</Text>
-            <Text style={styles.rowSub}>
-              {isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.sundayLiturgy}
-          onValueChange={toggleSundayLiturgy}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="help-circle-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.notif.quiz')}</Text>
-            <Text style={styles.rowSub}>
-              {isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.dailyQuiz}
-          onValueChange={toggleDailyQuiz}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Ionicons name="chatbubbles-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{isEn ? 'Objection of the day' : 'Objeção do dia'}</Text>
-            <Text style={styles.rowSub}>
-              {isEn ? 'A common objection to answer, every day at noon' : 'Uma objeção comum pra responder, todo dia ao meio-dia'}
-            </Text>
-          </View>
-        </View>
-        <Switch
-          value={notifPrefs.objectionOfDay}
-          onValueChange={toggleObjectionOfDay}
-          trackColor={{ true: colors.accent, false: '#ccc' }}
-          thumbColor="#fff"
-        />
-      </View>
-
-      <TouchableOpacity
-        style={styles.row}
-        onPress={async () => {
-          const res = await sendTestNotification();
-          if (!res.ok) {
-            notify(
-              isEn ? 'Error' : 'Erro',
-              res.error || (isEn ? 'Could not schedule notification.' : 'Não consegui agendar a notificação.')
-            );
-          } else {
-            notify(
-              isEn ? 'Notification scheduled' : 'Notificação agendada',
-              isEn ? 'It will arrive in ~5 seconds. You can minimize the app to see it better.' : 'Vai chegar em ~5 segundos. Pode minimizar o app pra ver melhor.'
-            );
-          }
-        }}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="notifications-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.notif.test')}</Text>
-        </View>
-      </TouchableOpacity>
-       </>
-      )}
-
-      {user && (
-        <>
-          <Text style={styles.section}>{t('settings.section.account')}</Text>
-          <TouchableOpacity style={styles.row} onPress={handleLogout}>
-            <View style={styles.rowLeft}>
-              <Ionicons name="log-out-outline" size={22} color="#c0392b" />
-              <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{t('settings.logout')}</Text>
+                <Text style={[text('headline'), { color: colors.onTint }]}>{initial}</Text>
+              </View>
+              <View style={{ flex: 1, minWidth: 0 }}>
+                {user.displayName ? (
+                  <Text style={[text('body'), { color: colors.text }]} numberOfLines={1}>{user.displayName}</Text>
+                ) : null}
+                <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={1}>{user.email}</Text>
+              </View>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.row} onPress={askDeleteAccount} accessibilityRole="button">
-            <View style={styles.rowLeft}>
-              <Ionicons name="trash-outline" size={22} color="#c0392b" />
-              <Text style={[styles.rowLabel, { color: '#c0392b' }]}>{isEn ? 'Delete account' : 'Excluir conta'}</Text>
-            </View>
-          </TouchableOpacity>
-        </>
-      )}
+            {/* Ação destrutiva: ícone e rótulo na mesma cor, como "Excluir conta". */}
+            <Row icon="log-out-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.logout')} onPress={handleLogout} />
+          </Group>
+        ) : guest ? (
+          <GuestGate inline />
+        ) : null}
 
+        {/* Aparência: tema (sistema, claro, escuro), tamanho da letra e idioma. */}
+        <SectionTitle title={t('settings.section.appearance')} />
+        <Group>
+          <Row icon="moon-outline" title={t('settings.theme.label')}>
+            <ChipRow style={chipRow}>
+              {THEME_MODES.map((mode) => (
+                <Chip
+                  key={mode}
+                  label={t(`settings.theme.${mode}`)}
+                  selected={themeMode === mode}
+                  onPress={() => setThemeMode(mode)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+          <Row icon="text-outline" title={t('settings.font.label')}>
+            <ChipRow style={chipRow}>
+              {FONT_KEYS.map((key) => (
+                <Chip
+                  key={key}
+                  label={t(`settings.font.${key}`)}
+                  selected={fontSize === key}
+                  onPress={() => setFontSize(key)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+          <Row
+            icon="language-outline"
+            title={t('settings.language.label')}
+            subtitle={pickPair('Bíblia (DRA) e a maioria dos artigos em inglês quando ativado.', 'Bible (DRA) and most articles in English.', isEn)}
+          >
+            <ChipRow style={chipRow}>
+              <Chip label="Português" selected={lang === 'pt'} onPress={() => setLang('pt')} haptic />
+              <Chip label="English" selected={lang === 'en'} onPress={() => setLang('en')} haptic />
+            </ChipRow>
+          </Row>
+        </Group>
+
+        {/* Leitura em voz alta: voz, velocidade e prévia. */}
+        <SectionTitle title={t('settings.section.tts')} />
+        <Group>
+          <Row
+            icon="mic-outline"
+            title={t('settings.voice')}
+            subtitle={voiceSubtitle}
+            trailing="chevron"
+            onPress={() => setVoicePickerOpen(true)}
+          />
+          <Row icon="speedometer-outline" title={t('settings.speed')} subtitle={rateLabel(ttsRate, isEn)}>
+            <ChipRow style={chipRow}>
+              {RATE_OPTIONS.map((opt) => (
+                <Chip
+                  key={opt.value}
+                  label={pick(opt, 'label', isEn)}
+                  selected={sameRate(ttsRate, opt.value)}
+                  onPress={() => changeRate(opt.value)}
+                  haptic
+                />
+              ))}
+            </ChipRow>
+          </Row>
+        </Group>
+        <Button
+          variant="secondary"
+          icon="play-outline"
+          label={t('settings.voice.preview')}
+          onPress={() => previewVoice(selectedVoice)}
+          style={{ marginTop: space.sm }}
+        />
+        {ttsTip ? <Text style={caption}>{ttsTip}</Text> : null}
+
+        {/* Notificações: só no nativo. */}
+        {Platform.OS !== 'web' && (
+          <>
+            <SectionTitle title={t('settings.section.notifications')} />
+            <Group>
+              <Row
+                icon="sunny-outline"
+                title={t('settings.notif.daily')}
+                subtitle={notifPrefs.dailyVerse
+                  ? (isEn ? `Receive at ${notifTime}` : `Receber às ${notifTime}`)
+                  : (isEn ? 'Daily reminder' : 'Receber lembrete diário')}
+                trailing={<ThemedSwitch value={notifPrefs.dailyVerse} onValueChange={toggleDailyVerse} label={t('settings.notif.daily')} />}
+              />
+              <Row
+                icon="calendar-outline"
+                title={t('settings.notif.sunday')}
+                subtitle={isEn ? 'Liturgy reminder every Sunday morning' : 'Lembrete da liturgia toda manhã de domingo'}
+                trailing={<ThemedSwitch value={notifPrefs.sundayLiturgy} onValueChange={toggleSundayLiturgy} label={t('settings.notif.sunday')} />}
+              />
+              <Row
+                icon="help-circle-outline"
+                title={t('settings.notif.quiz')}
+                subtitle={isEn ? 'A new question every day at 7 PM' : 'Uma pergunta nova todo dia às 19h'}
+                trailing={<ThemedSwitch value={notifPrefs.dailyQuiz} onValueChange={toggleDailyQuiz} label={t('settings.notif.quiz')} />}
+              />
+              <Row
+                icon="chatbubbles-outline"
+                title={isEn ? 'Objection of the day' : 'Objeção do dia'}
+                subtitle={isEn ? 'A common objection to answer, every day at noon' : 'Uma objeção comum pra responder, todo dia ao meio-dia'}
+                trailing={<ThemedSwitch value={notifPrefs.objectionOfDay} onValueChange={toggleObjectionOfDay} label={isEn ? 'Objection of the day' : 'Objeção do dia'} />}
+              />
+              <Row icon="notifications-outline" title={t('settings.notif.test')} onPress={sendTest} />
+            </Group>
+          </>
+        )}
+
+        {/* Diagnóstico */}
+        <SectionTitle title={t('settings.section.diagnostic')} />
+        <Group>
+          <Row icon="bug-outline" title={t('settings.sentry.test')} subtitle={t('settings.sentry.testSub')} onPress={sendSentryTest} />
+        </Group>
+
+        {/* Apoie o projeto */}
+        <SectionTitle title={t('settings.section.donate')} />
+        <Group>
+          <Row
+            icon="heart-outline"
+            title={t('settings.donate')}
+            subtitle={t('settings.donateSub')}
+            trailing={<Ionicons name="open-outline" size={icon.sm} color={colors.textTertiary} />}
+            onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
+          />
+        </Group>
+
+        {/* Sobre e legal */}
+        <SectionTitle title={t('settings.section.about')} />
+        <Group
+          footer={pickPair(
+            '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós." (1 Pedro 3,15)',
+            '"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have." (1 Peter 3:15)',
+            isEn,
+          )}
+        >
+          <Row
+            icon="information-circle-outline"
+            title="APPologética"
+            subtitle={pickPair(
+              'App de estudo e evangelização. Artigos de apologética, referências bíblicas, Bíblia católica completa, marcações e notas sincronizadas.',
+              'App for study and evangelization. Apologetics articles, biblical references, complete Catholic Bible, synced highlights and notes.',
+              isEn,
+            )}
+          />
+          <Row
+            icon="book-outline"
+            title={pickPair('Traduções bíblicas', 'Bible translations', isEn)}
+            subtitle={pickPair(
+              'Ave Maria (português) e Douay-Rheims-Challoner (inglês).',
+              'Ave Maria (Portuguese) and Douay-Rheims-Challoner (English).',
+              isEn,
+            )}
+          />
+          <Row
+            icon="shield-outline"
+            title={t('settings.privacy')}
+            trailing="chevron"
+            onPress={() => navigation.navigate('Legal', { kind: 'privacy' })}
+          />
+          <Row
+            icon="document-text-outline"
+            title={t('settings.terms')}
+            trailing="chevron"
+            onPress={() => navigation.navigate('Legal', { kind: 'terms' })}
+          />
+        </Group>
+
+        {user ? (
+          <Button
+            variant="plain"
+            label={isEn ? 'Delete account' : 'Excluir conta'}
+            onPress={askDeleteAccount}
+            textStyle={{ color: colors.danger }}
+            style={{ marginTop: space.lg }}
+          />
+        ) : null}
+
+        <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.xl }]}>
+          APPologética · {isEn ? 'Version' : 'Versão'} {appVersion}
+          {buildLabel ? ` · ${buildLabel}` : ''}
+        </Text>
+      </LargeTitleScreen>
+
+      {/* Confirmação final da exclusão da conta (com senha para conta de e-mail). */}
       <Modal visible={delOpen} transparent animationType="fade" onRequestClose={() => setDelOpen(false)}>
-        <View style={styles.delBackdrop}>
-          <View style={styles.delSheet}>
-            <Ionicons name="warning-outline" size={32} color="#c0392b" style={{ alignSelf: 'center', marginBottom: 8 }} />
-            <Text style={styles.delTitle}>{isEn ? 'Delete account permanently' : 'Excluir conta em definitivo'}</Text>
-            <Text style={styles.delMsg}>
+        <View style={{ flex: 1, backgroundColor: colors.overlay, justifyContent: 'center', padding: space.xl }}>
+          <View
+            role="dialog"
+            aria-modal
+            style={{ backgroundColor: colors.elevated, borderRadius: radius.lg, padding: space.lg, gap: space.sm }}
+          >
+            <Ionicons name="warning-outline" size={icon.lg} color={colors.danger} style={{ alignSelf: 'center' }} />
+            <Text style={[text('headline'), { color: colors.text, textAlign: 'center' }]}>
+              {isEn ? 'Delete account permanently' : 'Excluir conta em definitivo'}
+            </Text>
+            <Text style={[text('subhead'), { color: colors.textSubtle, textAlign: 'center' }]}>
               {isEn
                 ? 'Your account, highlights and notes will be erased and cannot be recovered.'
                 : 'Sua conta, marcações e notas serão apagadas e não poderão ser recuperadas.'}
             </Text>
             {isPasswordUser && (
-              <TextInput
-                style={styles.delInput}
-                value={delPass}
-                onChangeText={setDelPass}
-                placeholder={isEn ? 'Your password' : 'Sua senha'}
-                placeholderTextColor={colors.textSubtle}
-                secureTextEntry
-                autoCapitalize="none"
-              />
+              <Group style={{ borderWidth: StyleSheet.hairlineWidth, borderColor: colors.separator, borderRadius: radius.md }}>
+                <Field
+                  label={isEn ? 'Your password' : 'Sua senha'}
+                  value={delPass}
+                  onChangeText={setDelPass}
+                  secureTextEntry={!showDelPass}
+                  onToggleSecure={() => setShowDelPass((v) => !v)}
+                  toggleSecureLabel={showDelPass ? t('auth.hidePassword') : t('auth.showPassword')}
+                  autoCapitalize="none"
+                  autoComplete="current-password"
+                  textContentType="password"
+                  returnKeyType="go"
+                  onSubmitEditing={doDeleteAccount}
+                />
+              </Group>
             )}
-            <View style={styles.delActions}>
-              <TouchableOpacity style={styles.delCancel} onPress={() => setDelOpen(false)} disabled={delBusy}>
-                <Text style={styles.delCancelText}>{t('common.cancel')}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.delConfirm} onPress={doDeleteAccount} disabled={delBusy || (isPasswordUser && !delPass)}>
-                {delBusy ? <ActivityIndicator color="#fff" /> : <Text style={styles.delConfirmText}>{isEn ? 'Delete' : 'Excluir'}</Text>}
-              </TouchableOpacity>
-            </View>
+            <Button
+              label={isEn ? 'Delete' : 'Excluir'}
+              onPress={doDeleteAccount}
+              loading={delBusy}
+              disabled={isPasswordUser && !delPass}
+              style={{ backgroundColor: colors.danger, marginTop: space.xs }}
+            />
+            <Button variant="plain" label={t('common.cancel')} onPress={() => setDelOpen(false)} disabled={delBusy} />
           </View>
         </View>
       </Modal>
-
-      <Text style={styles.section}>{t('settings.section.diagnostic')}</Text>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => {
-          try {
-            captureException(new Error('Teste manual do Sentry, APPologetica'));
-            notify(
-              isEn ? 'Test error sent' : 'Erro de teste enviado',
-              isEn ? 'Check at https://appologetica.sentry.io/issues. The event should appear in a few seconds.' : 'Verifique em https://appologetica.sentry.io/issues. O evento deve aparecer em alguns segundos.'
-            );
-          } catch (e) {
-            notify(
-              isEn ? 'Failed' : 'Falha',
-              isEn ? 'Sentry is not available in this build.' : 'Sentry não está disponível neste build.'
-            );
-          }
-        }}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="bug-outline" size={22} color={colors.primaryText} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.sentry.test')}</Text>
-            <Text style={styles.rowSub}>{t('settings.sentry.testSub')}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-
-      <Text style={styles.section}>{t('settings.section.donate')}</Text>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => Linking.openURL(DONATE_URL).catch(() => {})}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="heart-outline" size={22} color={colors.accent} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.rowLabel}>{t('settings.donate')}</Text>
-            <Text style={styles.rowSub}>{t('settings.donateSub')}</Text>
-          </View>
-        </View>
-        <Ionicons name="open-outline" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <Text style={styles.section}>{t('settings.section.privacy')}</Text>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => navigation.navigate('Legal', { kind: 'privacy' })}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="shield-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.privacy')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.row}
-        onPress={() => navigation.navigate('Legal', { kind: 'terms' })}
-      >
-        <View style={styles.rowLeft}>
-          <Ionicons name="document-text-outline" size={22} color={colors.primaryText} />
-          <Text style={styles.rowLabel}>{t('settings.terms')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-
-      <Text style={styles.section}>{t('settings.section.about')}</Text>
-
-      <View style={styles.aboutBox}>
-        <Text style={styles.aboutTitle}>APPologética</Text>
-        <Text style={styles.aboutVersion}>
-          {isEn ? 'Version' : 'Versão'} {appVersion}
-          {buildLabel ? ` · ${buildLabel}` : ''}
-        </Text>
-        <Text style={styles.aboutText}>
-          {isEn
-            ? 'App for study and evangelization. Apologetics articles, biblical references, complete Catholic Bible, synced highlights and notes.'
-            : 'App de estudo e evangelização. Artigos de apologética, referências bíblicas, Bíblia católica completa, marcações e notas sincronizadas.'}
-        </Text>
-        <Text style={styles.aboutText}>
-          {isEn
-            ? 'Bible translations: Ave Maria (Portuguese) and Douay-Rheims-Challoner (English).'
-            : 'Tradução bíblica: Ave Maria (português) e Douay-Rheims-Challoner (inglês).'}
-        </Text>
-        <Text style={styles.aboutQuote}>
-          {isEn
-            ? '"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have."'
-            : '"Esteja sempre pronto para dar uma resposta a qualquer pessoa que vos pedir razão da esperança que há em vós."'}
-        </Text>
-        <Text style={styles.aboutQuoteRef}>1 {isEn ? 'Peter' : 'Pedro'} 3,15</Text>
-      </View>
-    </ScrollView>
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
 
       <VoicePickerModal
         visible={voicePickerOpen}
         voices={ttsVoices}
         selectedId={ttsVoiceId}
         onSelect={chooseVoice}
-        onPreview={previewVoice}
         onClose={() => { setVoicePickerOpen(false); Speech.stop(); }}
-        colors={colors}
-        fs={fs}
-        isEn={isEn}
       />
-    </View>
+    </>
   );
 }
 
-const RATE_OPTIONS = [
-  { value: 0.75, labelPt: 'Lenta', labelEn: 'Slow' },
-  { value: 0.95, labelPt: 'Normal', labelEn: 'Normal' },
-  { value: 1.15, labelPt: 'Rápida', labelEn: 'Fast' },
-  { value: 1.35, labelPt: 'Muito rápida', labelEn: 'Very fast' },
-];
-
-function rateLabel(r, isEn = false) {
-  const found = RATE_OPTIONS.find((o) => Math.abs(o.value - r) < 0.01);
-  return found ? (isEn ? found.labelEn : found.labelPt) : `${r.toFixed(2)}x`;
-}
-
-function VoicePickerModal({ visible, voices, selectedId, onSelect, onPreview, onClose, colors, fs, isEn }) {
-  const s = pickerStyles(colors, fs);
+// Lista de vozes numa folha inferior. É um Modal simples (não o Sheet do
+// design system) porque a lista rola: o arrasto do Sheet capturaria o gesto.
+function VoicePickerModal({ visible, voices, selectedId, onSelect, onClose }) {
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
+  const insets = useSafeAreaInsets();
+  const { space, radius, icon } = tokens;
   useModalNavBar(visible);
+
+  const separator = { height: StyleSheet.hairlineWidth, backgroundColor: colors.separator, marginLeft: space.md };
+
   return (
     <Modal
       visible={visible}
@@ -673,59 +595,54 @@ function VoicePickerModal({ visible, voices, selectedId, onSelect, onPreview, on
       onRequestClose={onClose}
       statusBarTranslucent
     >
-      <View style={s.backdrop}>
-        <View style={s.sheet}>
-          <View style={s.header}>
-            <Text style={s.title}>{isEn ? 'Choose voice' : 'Escolher voz'}</Text>
-            <TouchableOpacity onPress={onClose} hitSlop={10}>
-              <Ionicons name="close" size={24} color={colors.text} />
-            </TouchableOpacity>
+      <View style={{ flex: 1, backgroundColor: colors.overlay, justifyContent: 'flex-end' }}>
+        <Pressable role="button" aria-label={t('common.close')} onPress={onClose} style={StyleSheet.absoluteFill} />
+        <View
+          role="dialog"
+          aria-modal
+          style={{
+            backgroundColor: colors.elevated,
+            borderTopLeftRadius: radius.lg,
+            borderTopRightRadius: radius.lg,
+            maxHeight: '75%',
+            paddingBottom: insets.bottom + space.md,
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center', paddingLeft: space.md, paddingRight: space.xs, paddingVertical: space.xs }}>
+            <Text style={[text('headline'), { color: colors.text, flex: 1 }]}>{t('settings.voice.choose')}</Text>
+            <Pressable
+              role="button"
+              aria-label={t('common.close')}
+              onPress={onClose}
+              style={{ minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+            >
+              <Ionicons name="close" size={icon.md} color={colors.text} />
+            </Pressable>
           </View>
           {voices.length === 0 ? (
-            <View style={{ padding: 24 }}>
-              <Text style={s.empty}>
-                {isEn
-                  ? 'No voices found for this language. Check your device system settings for installed TTS engines.'
-                  : 'Nenhuma voz foi encontrada para este idioma. Verifique nas configurações do sistema se há motores de TTS instalados.'}
-              </Text>
-            </View>
+            <EmptyState
+              icon="mic-off-outline"
+              title={isEn ? 'No voices found' : 'Nenhuma voz encontrada'}
+              message={isEn
+                ? 'Check your device system settings for installed speech engines.'
+                : 'Verifique nas configurações do sistema se há motores de voz instalados.'}
+            />
           ) : (
             <FlatList
               data={voices}
               keyExtractor={(v) => v.identifier}
-              contentContainerStyle={{ paddingBottom: 32 }}
+              style={{ marginHorizontal: space.md, backgroundColor: colors.card, borderRadius: radius.md }}
+              ItemSeparatorComponent={() => <View style={separator} />}
               renderItem={({ item }) => {
                 const selected = item.identifier === selectedId;
                 const info = describeVoice(item);
                 return (
-                  <TouchableOpacity
-                    style={[s.item, selected && s.itemSelected]}
-                    onPress={() => onSelect(item.identifier)}
-                    activeOpacity={0.7}
-                  >
-                    <View style={{ flex: 1 }}>
-                      <Text style={s.itemTitle}>{info.name}</Text>
-                      {info.badges.length > 0 && (
-                        <View style={s.badgeRow}>
-                          {info.badges.map((b) => (
-                            <View key={b} style={s.badge}>
-                              <Text style={s.badgeText}>{b}</Text>
-                            </View>
-                          ))}
-                        </View>
-                      )}
-                    </View>
-                    <TouchableOpacity
-                      onPress={() => onPreview(item)}
-                      hitSlop={8}
-                      style={s.previewBtn}
-                    >
-                      <Ionicons name="play" size={16} color={colors.accent} />
-                    </TouchableOpacity>
-                    {selected && (
-                      <Ionicons name="checkmark-circle" size={22} color={colors.accent} style={{ marginLeft: 8 }} />
-                    )}
-                  </TouchableOpacity>
+                  <Row
+                    title={info.name}
+                    subtitle={info.badges.length ? info.badges.join(', ') : undefined}
+                    trailing={selected ? <Ionicons name="checkmark-circle" size={icon.md} color={colors.tint} /> : null}
+                    onPress={() => onSelect(item)}
+                  />
                 );
               }}
             />
@@ -735,112 +652,3 @@ function VoicePickerModal({ visible, voices, selectedId, onSelect, onPreview, on
     </Modal>
   );
 }
-
-const pickerStyles = (c, fs) =>
-  StyleSheet.create({
-    backdrop: {
-      flex: 1,
-      backgroundColor: 'rgba(13, 23, 34, 0.75)',
-      justifyContent: 'flex-end',
-    },
-    sheet: {
-      backgroundColor: c.bg,
-      borderTopLeftRadius: 18,
-      borderTopRightRadius: 18,
-      maxHeight: '75%',
-      paddingBottom: 16,
-    },
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingHorizontal: 18,
-      paddingVertical: 16,
-      borderBottomWidth: 1,
-      borderBottomColor: c.divider,
-    },
-    title: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    empty: { fontSize: fs(14), color: c.textMuted, lineHeight: fs(20), textAlign: 'center' },
-    item: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingHorizontal: 18,
-      paddingVertical: 14,
-      borderBottomWidth: 1,
-      borderBottomColor: c.divider,
-      backgroundColor: c.bg,
-    },
-    itemSelected: { backgroundColor: c.badgeBg },
-    itemTitle: { fontSize: fs(15), color: c.text, fontWeight: '600' },
-    itemSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
-    badgeRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 6 },
-    badge: {
-      paddingHorizontal: 8, paddingVertical: 2,
-      borderRadius: 6,
-      backgroundColor: c.badgeBg,
-      borderWidth: 1,
-      borderColor: c.divider,
-    },
-    badgeText: { fontSize: fs(10), color: c.accentText, fontWeight: '600', letterSpacing: 0.3 },
-    previewBtn: {
-      width: 36, height: 36, borderRadius: 18,
-      backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center',
-      marginLeft: 8,
-      borderWidth: 1,
-      borderColor: c.accent,
-    },
-  });
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 16, paddingBottom: 40 },
-    profileCard: {
-      flexDirection: 'row', alignItems: 'center', gap: 14,
-      backgroundColor: c.card, borderRadius: 12, padding: 16, marginBottom: 8,
-    },
-    avatar: {
-      width: 52, height: 52, borderRadius: 26, backgroundColor: c.primary,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    avatarText: { color: '#fff', fontSize: fs(22), fontWeight: 'bold' },
-    profileName: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText },
-    profileEmail: { fontSize: fs(13), color: c.textMuted, marginTop: 2 },
-    section: {
-      fontSize: fs(13), fontWeight: 'bold', color: c.textSubtle,
-      textTransform: 'uppercase', letterSpacing: 1,
-      marginTop: 16, marginBottom: 8, paddingHorizontal: 4,
-    },
-    row: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-      backgroundColor: c.card, padding: 16, borderRadius: 12, marginBottom: 8,
-    },
-    rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flex: 1 },
-    rowLabel: { fontSize: fs(15), color: c.text },
-    rowSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
-    fontGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 14 },
-    fontChip: {
-      paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10,
-      borderWidth: 1, borderColor: c.divider, backgroundColor: c.bg,
-    },
-    fontChipActive: { backgroundColor: c.primary, borderColor: c.primary },
-    fontChipLabel: { color: c.text },
-    fontChipLabelActive: { color: '#fff', fontWeight: 'bold' },
-    aboutBox: { backgroundColor: c.card, borderRadius: 12, padding: 18, marginTop: 4 },
-    aboutTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    aboutVersion: { fontSize: fs(12), color: c.textSubtle, marginTop: 2 },
-    aboutText: { fontSize: fs(14), color: c.text, lineHeight: fs(20), marginTop: 12 },
-    aboutQuote: { fontSize: fs(14), color: c.textMuted, fontStyle: 'italic', marginTop: 16, lineHeight: fs(20) },
-    aboutQuoteRef: { fontSize: fs(12), color: c.accentText, fontWeight: 'bold', marginTop: 4 },
-    delBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', padding: 28 },
-    delSheet: { backgroundColor: c.card, borderRadius: 16, padding: 22 },
-    delTitle: { fontSize: fs(18), fontWeight: 'bold', color: c.primaryText, textAlign: 'center', marginBottom: 8 },
-    delMsg: { fontSize: fs(14), color: c.textMuted, textAlign: 'center', lineHeight: fs(20), marginBottom: 16 },
-    delInput: { borderWidth: 1, borderColor: c.divider, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 12, fontSize: fs(15), color: c.text, backgroundColor: c.inputBg, marginBottom: 16 },
-    delActions: { flexDirection: 'row', gap: 12 },
-    delCancel: { flex: 1, paddingVertical: 13, borderRadius: 10, borderWidth: 1, borderColor: c.divider, alignItems: 'center', minHeight: 48, justifyContent: 'center' },
-    delCancelText: { color: c.text, fontWeight: '600', fontSize: fs(15) },
-    delConfirm: { flex: 1, paddingVertical: 13, borderRadius: 10, backgroundColor: '#c0392b', alignItems: 'center', minHeight: 48, justifyContent: 'center' },
-    delConfirmText: { color: '#fff', fontWeight: 'bold', fontSize: fs(15) },
-  });

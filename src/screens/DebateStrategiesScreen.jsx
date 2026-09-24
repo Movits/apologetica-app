@@ -1,37 +1,37 @@
-import { useState, useMemo } from 'react';
-import { View, Text, FlatList, TextInput, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { useState, useMemo, useCallback, memo } from 'react';
+import { View, Text, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DEBATE_STRATEGIES } from '../data/debateStrategies';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { pick } from '../utils/i18nData';
+import { Chip, ChipRow, EmptyState, Group, Row, SearchField } from '../components/ui';
 
-// Ferramenta de treino para debates: táticas que ajudam e falácias a identificar/rebater.
+// Nome e definição (PT e EN) em minúsculas, na ordem de DEBATE_STRATEGIES,
+// calculados uma vez no módulo: a busca só compara `includes` neles a cada tecla.
+const HAYSTACKS = DEBATE_STRATEGIES.map((s) => [s.name, s.definition, s.nameEn, s.definitionEn].filter(Boolean).join('\n').toLowerCase());
+
+// Ferramenta de treino para debates: táticas que ajudam e falácias a
+// identificar e rebater. Busca no topo, filtro por tipo em Chips e cada item
+// como um Group que expande ao toque.
 export default function DebateStrategiesScreen() {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens } = useTheme();
+  const { t } = useLanguage();
+  const { space } = tokens;
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('all'); // all | tatica | falacia
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return DEBATE_STRATEGIES.filter((s) => {
+    return DEBATE_STRATEGIES.filter((s, i) => {
       if (filter !== 'all' && s.section !== filter) return false;
-      if (!q) return true;
-      return (
-        s.name.toLowerCase().includes(q) ||
-        s.definition.toLowerCase().includes(q) ||
-        s.nameEn?.toLowerCase().includes(q) ||
-        s.definitionEn?.toLowerCase().includes(q)
-      );
+      return !q || HAYSTACKS[i].includes(q);
     });
   }, [query, filter]);
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const [focused, setFocused] = useState(false);
-  const styles = makeStyles(colors, fs);
+  // Estável entre renders: o StrategyCard é memoizado e passa o id no toque.
+  const toggle = useCallback((id) => setExpanded((cur) => (cur === id ? null : id)), []);
 
   const chips = [
     { key: 'all', label: t('debate.all') },
@@ -41,122 +41,79 @@ export default function DebateStrategiesScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={[styles.searchRow, focused && styles.searchRowFocused]}>
-        <Ionicons name="search-outline" size={18} color={colors.textSubtle} />
-        <TextInput
-          style={styles.input}
+      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, gap: space.xs }}>
+        <SearchField
           value={query}
           onChangeText={setQuery}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
           placeholder={t('debate.search')}
-          placeholderTextColor={colors.textSubtle}
+          clearLabel={t('common.clear')}
           autoCorrect={false}
         />
-        {query.length > 0 && (
-          <TouchableOpacity onPress={() => setQuery('')}>
-            <Ionicons name="close-circle" size={18} color={colors.textSubtle} />
-          </TouchableOpacity>
-        )}
+        <ChipRow>
+          {chips.map((c) => (
+            <Chip key={c.key} label={c.label} selected={filter === c.key} onPress={() => setFilter(c.key)} haptic />
+          ))}
+        </ChipRow>
       </View>
 
-      <View style={styles.chipsRow}>
-        {chips.map((c) => {
-          const active = filter === c.key;
-          return (
-            <TouchableOpacity
-              key={c.key}
-              style={[styles.chip, active && styles.chipActive]}
-              onPress={() => setFilter(c.key)}
-            >
-              <Text style={[styles.chipText, active && styles.chipTextActive]}>{c.label}</Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={filtered}
-          keyExtractor={(s) => s.id}
-          contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-          onScroll={onScroll}
-          onContentSizeChange={onContentSizeChange}
-          onLayout={onLayout}
-          scrollEventThrottle={32}
-          ListEmptyComponent={<Text style={styles.empty}>{isEn ? 'Nothing found.' : 'Nada encontrado.'}</Text>}
-          renderItem={({ item }) => {
-            const isOpen = expanded === item.id;
-            const isFallacy = item.section === 'falacia';
-            const badge = isFallacy
-              ? (isEn ? 'Fallacy' : 'Falácia')
-              : (isEn ? 'Tactic' : 'Tática');
-            return (
-              <TouchableOpacity
-                style={[styles.card, isOpen && styles.cardOpen]}
-                onPress={() => setExpanded(isOpen ? null : item.id)}
-              >
-                <View style={styles.headRow}>
-                  <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                    <View style={[styles.badge, isFallacy ? styles.badgeFallacy : styles.badgeTactic]}>
-                      <Text style={[styles.badgeText, isFallacy ? styles.badgeTextFallacy : styles.badgeTextTactic]}>
-                        {badge}
-                      </Text>
-                    </View>
-                    <Text style={styles.name}>{isEn ? (item.nameEn || item.name) : item.name}</Text>
-                  </View>
-                  <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={colors.textSubtle} />
-                </View>
-                {isOpen && (
-                  <View style={{ marginTop: 10 }}>
-                    <Text style={styles.def}>{isEn ? (item.definitionEn || item.definition) : item.definition}</Text>
-                    <Text style={styles.fieldLabel}>{t('debate.example')}</Text>
-                    <Text style={styles.example}>{isEn ? (item.exampleEn || item.example) : item.example}</Text>
-                    <Text style={styles.fieldLabel}>{isFallacy ? t('debate.respond') : t('debate.use')}</Text>
-                    <Text style={styles.def}>{isEn ? (item.howToRespondEn || item.howToRespond) : item.howToRespond}</Text>
-                  </View>
-                )}
-              </TouchableOpacity>
-            );
-          }}
-        />
-        <ScrollHint direction="up" visible={showTop} />
-        <ScrollHint direction="down" visible={showBottom} />
-      </View>
+      <FlatList
+        data={filtered}
+        keyExtractor={(s) => s.id}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ padding: space.md, gap: space.sm }}
+        ListEmptyComponent={<EmptyState icon="search-outline" title={t('debate.empty')} message={t('debate.emptyHint')} />}
+        renderItem={({ item }) => <StrategyCard item={item} open={expanded === item.id} onToggle={toggle} />}
+      />
     </View>
   );
 }
 
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    searchRow: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      backgroundColor: c.card, margin: 16, marginBottom: 8, paddingHorizontal: 14,
-      borderRadius: 12, minHeight: 48,
-      borderWidth: 1.5, borderColor: 'transparent',
-    },
-    searchRowFocused: { borderColor: c.accent },
-    input: { flex: 1, color: c.text, fontSize: fs(14), paddingVertical: 10, ...(Platform.OS === 'web' ? { outlineStyle: 'none' } : null) },
-    chipsRow: { flexDirection: 'row', gap: 8, paddingHorizontal: 16, marginBottom: 4 },
-    chip: {
-      paddingVertical: 7, paddingHorizontal: 14, borderRadius: 20,
-      backgroundColor: c.card, borderWidth: 1, borderColor: c.card,
-    },
-    chipActive: { backgroundColor: c.badgeBg, borderColor: c.accent },
-    chipText: { fontSize: fs(13), color: c.textMuted, fontWeight: '600' },
-    chipTextActive: { color: c.primaryText },
-    card: { backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8 },
-    cardOpen: { borderWidth: 1, borderColor: c.accent },
-    headRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-    name: { flex: 1, fontSize: fs(15), color: c.primaryText, fontWeight: 'bold' },
-    badge: { paddingVertical: 2, paddingHorizontal: 8, borderRadius: 6 },
-    badgeTactic: { backgroundColor: c.badgeBg },
-    badgeFallacy: { backgroundColor: c.badgeBg },
-    badgeText: { fontSize: fs(10), fontWeight: 'bold' },
-    badgeTextTactic: { color: c.accentText },
-    badgeTextFallacy: { color: c.primaryText },
-    def: { fontSize: fs(13), color: c.text, lineHeight: fs(20) },
-    fieldLabel: { fontSize: fs(11), color: c.textSubtle, fontWeight: 'bold', textTransform: 'uppercase', marginTop: 12, marginBottom: 3, letterSpacing: 0.5 },
-    example: { fontSize: fs(13), color: c.text, lineHeight: fs(20), fontStyle: 'italic' },
-    empty: { textAlign: 'center', color: c.textSubtle, fontSize: fs(14), marginTop: 40 },
-  });
+// Um item: cabeçalho pressionável (Row: nome em headline, tipo em subhead,
+// chevron, `aria-expanded`) e, aberto, três blocos separados pela hairline do
+// Group: definição em body, exemplo em serifa e como usar ou responder.
+// Memoizado: a lista re-renderiza a cada tecla e ao expandir, e só o item
+// tocado muda de props.
+const StrategyCard = memo(function StrategyCard({ item, open, onToggle }) {
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn } = useLanguage();
+  const { space, icon } = tokens;
+  const isFallacy = item.section === 'falacia';
+  const label = [text('footnote'), { color: colors.textSubtle }];
+  const block = { padding: space.md, gap: space.xxs };
+
+  return (
+    <Group>
+      <Row
+        aria-expanded={open}
+        title={pick(item, 'name', isEn)}
+        titleRole="headline"
+        titleLines={0}
+        subtitle={isFallacy ? t('debate.fallacy') : t('debate.tactic')}
+        trailing={<Ionicons name={open ? 'chevron-up' : 'chevron-down'} size={icon.sm} color={colors.textTertiary} />}
+        onPress={() => onToggle(item.id)}
+      />
+
+      {open ? (
+        <View style={block}>
+          <Text style={[text('body'), { color: colors.text }]}>{pick(item, 'definition', isEn)}</Text>
+        </View>
+      ) : null}
+
+      {open ? (
+        <View style={block}>
+          <Text style={label}>{t('debate.example')}</Text>
+          <Text style={[text('bodySerif'), { color: colors.text, fontStyle: 'italic' }]}>
+            {pick(item, 'example', isEn)}
+          </Text>
+        </View>
+      ) : null}
+
+      {open ? (
+        <View style={block}>
+          <Text style={label}>{isFallacy ? t('debate.respond') : t('debate.use')}</Text>
+          <Text style={[text('body'), { color: colors.text }]}>{pick(item, 'howToRespond', isEn)}</Text>
+        </View>
+      ) : null}
+    </Group>
+  );
+});

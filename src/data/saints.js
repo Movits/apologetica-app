@@ -4,6 +4,8 @@
 // Formato: { 'MM-DD': { name, nameEn, kind, summary, summaryEn } }
 // kind: 'solenidade' | 'festa' | 'memoria' | 'opcional' | 'feria'
 
+import { easterDate, addDays } from '../utils/daily';
+
 export const saints = {
   // ============ JANEIRO ============
   '01-01': { name: 'Santa Maria, Mãe de Deus', nameEn: 'Mary, Mother of God', kind: 'solenidade', summary: 'Oitava do Natal. Maternidade divina de Maria, definida em Éfeso (431).', summaryEn: 'Octave of Christmas. The divine motherhood of Mary, defined at Ephesus (431).' },
@@ -161,32 +163,8 @@ export const saints = {
   '12-31': { name: 'São Silvestre I', nameEn: 'St. Sylvester I', kind: 'opcional', summary: 'Papa durante o reinado de Constantino, no início da paz da Igreja.', summaryEn: 'Pope during the reign of Constantine, at the dawn of the Church\'s peace.' },
 };
 
-// Algoritmo da Páscoa (Meeus/Jones/Butcher, calendário gregoriano).
-// Retorna um Date com a Páscoa do ano dado.
-function easterDate(year) {
-  const a = year % 19;
-  const b = Math.floor(year / 100);
-  const c = year % 100;
-  const d = Math.floor(b / 4);
-  const e = b % 4;
-  const f = Math.floor((b + 8) / 25);
-  const g = Math.floor((b - f + 1) / 3);
-  const h = (19 * a + b - d - g + 15) % 30;
-  const i = Math.floor(c / 4);
-  const k = c % 4;
-  const l = (32 + 2 * e + 2 * i - h - k) % 7;
-  const m = Math.floor((a + 11 * h + 22 * l) / 451);
-  const month = Math.floor((h + l - 7 * m + 114) / 31);
-  const day = ((h + l - 7 * m + 114) % 31) + 1;
-  return new Date(year, month - 1, day);
-}
-
-function addDays(d, n) {
-  const r = new Date(d);
-  r.setDate(d.getDate() + n);
-  return r;
-}
-
+// A Páscoa (easterDate) e addDays vêm de utils/daily.js, compartilhadas com a
+// estação litúrgica.
 function md(d) {
   return `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }

@@ -1,74 +1,79 @@
 import { useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
-import { confirmAction, notify } from '../utils/dialog';
-import { Ionicons } from '@expo/vector-icons';
-import { doc, getDoc } from 'firebase/firestore';
-import { db, auth } from '../services/firebase';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { addNote, updateNote, removeNote } from '../services/userData';
+import { confirmAction, notify } from '../utils/dialog';
+import { addNote, updateNote, removeNote, getNote } from '../services/userData';
 import { getBook, bookName } from '../data/bible';
-import { getChapter, ensureBible } from '../services/bibleApi';
+import { getVerse } from '../services/bibleApi';
+import { useBibleReady } from '../hooks/useBibleReady';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { shareNote } from '../utils/share';
+import { verseLabel } from '../utils/refLabel';
+import HeaderButton from '../components/HeaderButton';
+import ReferencePickerModal from '../components/ReferencePickerModal';
+import { Button, Field, Group, Row } from '../components/ui';
 
+// Editor de nota. É modal na raiz (MainStack, sem header do stack e sem tab
+// bar), por isso desenha a própria barra: fechar, título e compartilhar.
 // route.params:
 //   - noteId (edição) OU
 //   - bookId/chapter/verseStart/verseEnd (criação)
+// O versículo da nota aparece como uma linha com "Trocar", que abre o
+// seletor só no modo versículo. Salvar é o botão primário no fim do texto.
 export default function NoteEditorScreen({ route, navigation }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
-  // O editor em si não precisa da Bíblia: só o compartilhar, que monta o texto
-  // do versículo. Como ele roda dentro do gesto do usuário (o navigator.share
-  // exige isso), não dá para esperar ali: carregamos antes, ao abrir a nota.
-  useEffect(() => { ensureBible(isEn ? 'en' : 'pt').catch(() => {}); }, [isEn]);
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn, lang } = useLanguage();
   const insets = useSafeAreaInsets();
+  const { space } = tokens;
+  // O editor em si não precisa da Bíblia: só a prévia do versículo e o
+  // compartilhar, que monta o texto. O compartilhar roda dentro do gesto do
+  // usuário (o navigator.share exige isso), então a tradução é pedida ao
+  // abrir a nota e a prévia aparece quando ela chega.
+  const biblia = useBibleReady(lang);
+
   const { noteId, bookId, chapter, verseStart, verseEnd } = route.params || {};
-  const [text, setText] = useState('');
+  const [body, setBody] = useState('');
   const [meta, setMeta] = useState({ bookId, chapter, verseStart, verseEnd });
+  const [refChanged, setRefChanged] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [loading, setLoading] = useState(!!noteId);
+  const [loading, setLoading] = useState(Boolean(noteId));
+  const [pickerOpen, setPickerOpen] = useState(false);
 
   useEffect(() => {
-    if (!noteId) return;
-    const uid = auth.currentUser?.uid;
-    if (!uid) return;
-    (async () => {
-      const snap = await getDoc(doc(db, 'users', uid, 'notes', noteId));
-      if (snap.exists()) {
-        const data = snap.data();
-        setText(data.text || '');
-        setMeta({
-          bookId: data.bookId,
-          chapter: data.chapter,
-          verseStart: data.verseStart,
-          verseEnd: data.verseEnd,
-        });
-      }
-      setLoading(false);
-    })();
+    if (!noteId) return undefined;
+    let alive = true;
+    getNote(noteId)
+      .then((note) => {
+        if (!alive) return;
+        if (note) {
+          setBody(note.text || '');
+          setMeta({ bookId: note.bookId, chapter: note.chapter, verseStart: note.verseStart, verseEnd: note.verseEnd });
+        }
+        setLoading(false);
+      })
+      .catch(() => { if (alive) setLoading(false); });
+    return () => { alive = false; };
   }, [noteId]);
 
-  const book = getBook(meta.bookId);
-  const bn = bookName(book, isEn);
-  const sep = isEn ? ':' : ',';
-  const refLabel = book
-    ? `${bn} ${meta.chapter}${sep}${meta.verseStart === meta.verseEnd ? meta.verseStart : `${meta.verseStart}-${meta.verseEnd}`}`
-    : '';
+  const refLabel = verseLabel(meta, isEn);
+  const versePreview = biblia.pronta ? getVerse(meta.bookId, meta.chapter, meta.verseStart, lang) || '' : '';
 
   const handleSave = async () => {
-    if (!text.trim()) {
-      return notify(
+    const trimmed = body.trim();
+    if (!trimmed) {
+      notify(
         isEn ? 'Empty note' : 'Nota vazia',
         isEn ? 'Write something before saving.' : 'Escreva alguma coisa antes de salvar.'
       );
+      return;
     }
     setBusy(true);
     try {
       if (noteId) {
-        await updateNote(noteId, text.trim());
+        await updateNote(noteId, trimmed, refChanged ? meta : undefined);
       } else {
-        await addNote({ ...meta, text: text.trim() });
+        await addNote({ ...meta, text: trimmed });
       }
       navigation.goBack();
     } catch (e) {
@@ -96,12 +101,30 @@ export default function NoteEditorScreen({ route, navigation }) {
     });
   };
 
-  const styles = makeStyles(colors, fs);
+  const handleShare = () => {
+    shareNote({
+      bookName: bookName(getBook(meta.bookId), isEn),
+      chapter: meta.chapter,
+      verseStart: meta.verseStart,
+      verseEnd: meta.verseEnd,
+      verseText: versePreview,
+      noteText: body.trim(),
+      isEn,
+    });
+  };
+
+  const pickVerse = ({ bookId: b, chapter: c, verse: v }) => {
+    setMeta({ bookId: b, chapter: c, verseStart: v, verseEnd: v });
+    setRefChanged(true);
+  };
+
+  const canShare = Boolean(noteId && body.trim());
+  const heading = noteId ? (isEn ? 'Edit note' : 'Editar nota') : (isEn ? 'New note' : 'Nova nota');
 
   if (loading) {
     return (
-      <View style={styles.center}>
-        <ActivityIndicator color={colors.accent} />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.bg }}>
+        <ActivityIndicator color={colors.tint} />
       </View>
     );
   }
@@ -111,114 +134,78 @@ export default function NoteEditorScreen({ route, navigation }) {
       style={{ flex: 1, backgroundColor: colors.bg }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          accessibilityRole="button"
-          accessibilityLabel={isEn ? 'Close' : 'Fechar'}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-        >
-          <Ionicons name="close" size={26} color={colors.primaryText} />
-        </TouchableOpacity>
-        <Text style={styles.title}>{noteId ? (isEn ? 'Edit note' : 'Editar nota') : (isEn ? 'New note' : 'Nova nota')}</Text>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
-          {noteId && text.trim() ? (
-            <TouchableOpacity
-              accessibilityRole="button"
-              accessibilityLabel={isEn ? 'Share note' : 'Compartilhar nota'}
-              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-              onPress={() => {
-                const ch = getChapter(meta.bookId, meta.chapter, isEn ? 'en' : 'pt');
-                const verseText = ch?.verses?.find((v) => v.n === meta.verseStart)?.t || '';
-                shareNote({
-                  bookName: bn,
-                  chapter: meta.chapter,
-                  verseStart: meta.verseStart,
-                  verseEnd: meta.verseEnd,
-                  verseText,
-                  noteText: text.trim(),
-                });
-              }}
-            >
-              <Ionicons name="share-social-outline" size={22} color={colors.accent} />
-            </TouchableOpacity>
-          ) : null}
-          <TouchableOpacity onPress={handleSave} disabled={busy}>
-            {busy ? <ActivityIndicator color={colors.accent} /> : (
-              <Text style={styles.saveText}>{t('common.save')}</Text>
-            )}
-          </TouchableOpacity>
-        </View>
+      {/* Barra própria: fechar à esquerda, título no meio, compartilhar à direita
+          (ou um espaço do mesmo tamanho, para o título ficar centrado). */}
+      <View
+        style={{
+          paddingTop: insets.top,
+          paddingHorizontal: space.xs,
+          flexDirection: 'row',
+          alignItems: 'center',
+          minHeight: 44,
+        }}
+      >
+        <HeaderButton icon="close" label={t('common.close')} onPress={() => navigation.goBack()} />
+        <Text role="heading" style={[text('headline'), { color: colors.text, flex: 1, textAlign: 'center' }]} numberOfLines={1}>
+          {heading}
+        </Text>
+        {canShare ? (
+          <HeaderButton icon="share-outline" label={isEn ? 'Share note' : 'Compartilhar nota'} onPress={handleShare} />
+        ) : (
+          <View style={{ width: 44, height: 44 }} />
+        )}
       </View>
 
-      <View style={styles.refBox}>
-        <Ionicons name="bookmark-outline" size={16} color={colors.accent} />
-        <Text style={styles.refText}>{refLabel}</Text>
-      </View>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ padding: space.md, paddingBottom: insets.bottom + space.xxl, gap: space.md }}
+      >
+        <Group>
+          <Row
+            icon="book-outline"
+            title={refLabel}
+            trailing={<Text style={[text('body'), { color: colors.tint }]}>{t('note.change')}</Text>}
+            accessibilityLabel={`${refLabel}, ${t('note.change')}`}
+            onPress={() => setPickerOpen(true)}
+          >
+            {versePreview ? (
+              <Text style={[text('subhead'), { color: colors.textSubtle }]} numberOfLines={2}>{versePreview}</Text>
+            ) : null}
+          </Row>
+        </Group>
 
-      <TextInput
-        style={styles.editor}
-        value={text}
-        onChangeText={setText}
-        placeholder={isEn ? 'Write your note...' : 'Escreva sua anotação...'}
-        placeholderTextColor={colors.textSubtle}
-        multiline
-        autoFocus={!noteId}
-        textAlignVertical="top"
+        <Group>
+          <Field
+            aria-label={heading}
+            value={body}
+            onChangeText={setBody}
+            placeholder={isEn ? 'Write your note' : 'Escreva sua anotação'}
+            multiline
+            autoFocus={!noteId}
+            inputStyle={[text('reading'), { minHeight: text('reading').lineHeight * 8 }]}
+          />
+        </Group>
+
+        <Button label={t('common.save')} onPress={handleSave} loading={busy} haptic="impact" />
+        {noteId ? (
+          <Button
+            variant="plain"
+            label={t('note.delete')}
+            textStyle={{ color: colors.danger }}
+            onPress={handleDelete}
+            disabled={busy}
+          />
+        ) : (
+          <Button variant="plain" label={t('common.cancel')} onPress={() => navigation.goBack()} disabled={busy} />
+        )}
+      </ScrollView>
+
+      <ReferencePickerModal
+        mode="verse"
+        visible={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPickVerse={pickVerse}
       />
-
-      {noteId && (
-        <TouchableOpacity
-          style={[styles.deleteBtn, { paddingBottom: 14 + Math.max(insets.bottom, 8) }]}
-          onPress={handleDelete}
-        >
-          <Ionicons name="trash-outline" size={18} color="#c0392b" />
-          <Text style={styles.deleteText}>{t('note.delete')}</Text>
-        </TouchableOpacity>
-      )}
     </KeyboardAvoidingView>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: c.bg },
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: 16,
-      paddingTop: 50,
-      backgroundColor: c.card,
-    },
-    title: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    saveText: { fontSize: fs(15), color: c.accentText, fontWeight: 'bold' },
-    refBox: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 6,
-      padding: 12,
-      marginHorizontal: 16,
-      marginTop: 16,
-      backgroundColor: c.badgeBg,
-      borderRadius: 8,
-    },
-    refText: { fontSize: fs(13), color: c.accentText, fontWeight: '600' },
-    editor: {
-      flex: 1,
-      padding: 16,
-      fontSize: fs(15),
-      color: c.text,
-      lineHeight: fs(22),
-    },
-    deleteBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 6,
-      padding: 14,
-      borderTopWidth: 1,
-      borderTopColor: c.divider,
-    },
-    deleteText: { fontSize: fs(14), color: '#c0392b', fontWeight: '600' },
-  });

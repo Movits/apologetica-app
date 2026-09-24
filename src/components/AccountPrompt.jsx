@@ -1,13 +1,15 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import {
-  View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback,
+  View, Text, Modal, TouchableWithoutFeedback,
   StyleSheet, Animated, Easing,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { space } from '../theme/tokens';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useModalNavBar } from '../hooks/useModalNavBar';
+import { Button } from './ui';
 
 // Modal "Criar uma conta?" customizado, no estilo visual do app.
 // Substitui o Alert.alert nativo. Controlado por contexto + hook
@@ -17,7 +19,7 @@ const AccountPromptContext = createContext(null);
 
 const DEFAULT_OPTS = {
   title: 'Criar uma conta?',
-  message: 'Esta funcionalidade exige uma conta. Marcações, notas e favoritos ficam salvos e sincronizados entre dispositivos.',
+  message: 'Esta funcionalidade exige uma conta. Marcações, notas e caderno ficam salvos na sua conta e sincronizados entre aparelhos.',
   icon: 'lock-closed-outline',
 };
 
@@ -47,31 +49,33 @@ export function useAccountPrompt() {
 }
 
 function AccountPromptModal({ visible, opts, onClose }) {
-  const { colors, fs, darkMode } = useTheme();
+  const { colors, darkMode, tokens, text } = useTheme();
   const { exitGuest } = useAuth();
   const { t, isEn } = useLanguage();
+  // Entrada: o card sobe `space.lg` enquanto o véu aparece, em `motion.aba` ms.
+  const slideFrom = tokens.space.lg;
   const fade = useRef(new Animated.Value(0)).current;
-  const slide = useRef(new Animated.Value(20)).current;
+  const slide = useRef(new Animated.Value(slideFrom)).current;
   useModalNavBar(visible);
 
   useEffect(() => {
     if (visible) {
       Animated.parallel([
-        Animated.timing(fade, { toValue: 1, duration: 180, useNativeDriver: true }),
-        Animated.timing(slide, { toValue: 0, duration: 220, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(fade, { toValue: 1, duration: tokens.motion.aba, useNativeDriver: true }),
+        Animated.timing(slide, { toValue: 0, duration: tokens.motion.aba, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
       ]).start();
     } else {
       fade.setValue(0);
-      slide.setValue(20);
+      slide.setValue(slideFrom);
     }
-  }, [visible, fade, slide]);
+  }, [visible, fade, slide, slideFrom, tokens.motion.aba]);
 
   const onCreate = async () => {
     onClose();
     await exitGuest();
   };
 
-  const styles = makeStyles(colors, fs, darkMode);
+  const styles = makeStyles(colors, darkMode, tokens, text);
 
   return (
     <Modal
@@ -88,7 +92,8 @@ function AccountPromptModal({ visible, opts, onClose }) {
 
         <Animated.View style={[styles.card, { transform: [{ translateY: slide }] }]}>
           <View style={styles.iconCircle}>
-            <Ionicons name={opts.icon} size={32} color={colors.accent} />
+            {/* O ícone ocupa metade do disco (proporção, não tamanho solto). */}
+            <Ionicons name={opts.icon} size={ICON_CIRCLE / 2} color={colors.accent} />
           </View>
 
           <Text style={styles.title}>
@@ -96,117 +101,87 @@ function AccountPromptModal({ visible, opts, onClose }) {
           </Text>
           <Text style={styles.message}>
             {opts.message === DEFAULT_OPTS.message && isEn
-              ? 'This feature requires an account. Highlights, notes and favorites are saved and synced across devices.'
+              ? 'This feature requires an account. Highlights, notes and notebook are saved to your account and synced across devices.'
               : opts.message}
           </Text>
 
           <View style={styles.benefits}>
-            <Benefit icon="cloud-done-outline" text={isEn ? 'Synced across devices' : 'Sincronizado entre celulares'} colors={colors} fs={fs} />
-            <Benefit icon="bookmark-outline" text={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} colors={colors} fs={fs} />
-            <Benefit icon="star-outline" text={isEn ? 'Your favorites protected' : 'Seus favoritos protegidos'} colors={colors} fs={fs} />
+            <Benefit icon="cloud-done-outline" label={isEn ? 'Synced across devices' : 'Sincronizado entre celulares'} />
+            <Benefit icon="bookmark-outline" label={isEn ? 'Saved highlights and notes' : 'Marcações e notas salvas'} />
           </View>
 
-          <TouchableOpacity style={styles.btnPrimary} onPress={onCreate} activeOpacity={0.85}>
-            <Ionicons name="person-add-outline" size={18} color="#1a3a5c" style={{ marginRight: 8 }} />
-            <Text style={styles.btnPrimaryText}>{t('auth.createFree')}</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btnSecondary} onPress={onClose} activeOpacity={0.7}>
-            <Text style={styles.btnSecondaryText}>{t('auth.notNow')}</Text>
-          </TouchableOpacity>
+          {/* Os mesmos botões do resto do app: primary com ícone e plain. */}
+          <Button icon="person-add-outline" label={t('auth.createFree')} onPress={onCreate} style={{ marginBottom: tokens.space.xs }} />
+          <Button variant="plain" label={t('auth.notNow')} onPress={onClose} />
         </Animated.View>
       </Animated.View>
     </Modal>
   );
 }
 
-function Benefit({ icon, text, colors, fs }) {
+function Benefit({ icon, label }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, icon: iconSize } = tokens;
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 3 }}>
-      <Ionicons name={icon} size={15} color={colors.accent} />
-      <Text style={{ color: colors.textMuted, fontSize: fs(13), flex: 1 }}>{text}</Text>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xs, marginVertical: space.xxs / 2 }}>
+      <Ionicons name={icon} size={iconSize.sm} color={colors.accent} />
+      <Text style={[text('footnote'), { color: colors.textMuted, flex: 1 }]}>{label}</Text>
     </View>
   );
 }
 
-const makeStyles = (c, fs, darkMode) =>
+// Disco do ícone (dois `space.xxl`, 64) e largura máxima do card em telas
+// largas (um limite de coluna, como READING_COLUMN no Artigo).
+const ICON_CIRCLE = space.xxl * 2;
+const CARD_MAX_WIDTH = 380;
+
+const makeStyles = (c, darkMode, tokens, text) =>
   StyleSheet.create({
     backdrop: {
       flex: 1,
-      backgroundColor: 'rgba(13, 23, 34, 0.75)',
+      backgroundColor: c.overlay,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: 24,
+      padding: tokens.space.xl,
     },
     card: {
       width: '100%',
-      maxWidth: 380,
+      maxWidth: CARD_MAX_WIDTH,
       backgroundColor: c.card,
-      borderRadius: 18,
-      paddingHorizontal: 24,
-      paddingTop: 28,
-      paddingBottom: 20,
+      borderRadius: tokens.radius.lg,
+      paddingHorizontal: tokens.space.xl,
+      paddingTop: tokens.space.xl,
+      paddingBottom: tokens.space.lg,
       alignItems: 'center',
-      borderWidth: darkMode ? 1 : 0,
+      borderWidth: darkMode ? StyleSheet.hairlineWidth : 0,
       borderColor: c.cardBorder,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.25,
-      shadowRadius: 16,
-      elevation: 12,
+      ...tokens.shadow.floating,
     },
     iconCircle: {
-      width: 64, height: 64, borderRadius: 32,
+      width: ICON_CIRCLE, height: ICON_CIRCLE, borderRadius: tokens.radius.full,
       backgroundColor: c.badgeBg,
       justifyContent: 'center', alignItems: 'center',
-      marginBottom: 16,
+      marginBottom: tokens.space.md,
       borderWidth: 2,
       borderColor: c.accent,
     },
     title: {
-      fontSize: fs(19),
-      fontWeight: 'bold',
+      ...text('title3'),
       color: c.primaryText,
       textAlign: 'center',
-      marginBottom: 8,
+      marginBottom: tokens.space.xs,
     },
     message: {
-      fontSize: fs(14),
+      ...text('subhead'),
       color: c.textMuted,
       textAlign: 'center',
-      lineHeight: fs(20),
-      marginBottom: 18,
+      marginBottom: tokens.space.md,
     },
     benefits: {
       alignSelf: 'stretch',
       backgroundColor: c.badgeBg,
-      borderRadius: 10,
-      padding: 12,
-      marginBottom: 20,
-    },
-    btnPrimary: {
-      alignSelf: 'stretch',
-      flexDirection: 'row',
-      backgroundColor: c.accent,
-      paddingVertical: 14,
-      borderRadius: 10,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 8,
-    },
-    btnPrimaryText: {
-      color: '#1a3a5c',
-      fontWeight: 'bold',
-      fontSize: fs(15),
-    },
-    btnSecondary: {
-      paddingVertical: 12,
-      alignItems: 'center',
-      alignSelf: 'stretch',
-    },
-    btnSecondaryText: {
-      color: c.textSubtle,
-      fontSize: fs(14),
-      fontWeight: '600',
+      borderRadius: tokens.radius.md,
+      padding: tokens.space.sm,
+      marginBottom: tokens.space.lg,
     },
   });
