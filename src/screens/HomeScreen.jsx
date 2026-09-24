@@ -1,27 +1,108 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Image, Text, View } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { ARTICLE_CATEGORIES, countByCategory } from '../data/articleCategories';
 import { DIALOGUES } from '../data/dialogues';
+import { articles } from '../data/articles';
 import { consumeStartIntent } from '../utils/onboarding';
 import { getLiturgicalSeason } from '../utils/liturgicalSeason';
-import AppIcon from '../components/AppIcon';
-import BrandMark from '../components/BrandMark';
-import ContinueReadingCard from '../components/ContinueReadingCard';
+import { getLastRead } from '../utils/lastRead';
+import { dailyIndex } from '../utils/daily';
+import { categoryLabel, pick } from '../utils/i18nData';
+import { fullBleedContentOptions } from '../navigation/chrome';
 import { openArticle as openArticleScreen } from '../navigation/links';
+import { Button, ContinueRow, Group, Row, SearchField, SectionTitle } from '../components/ui';
+import LargeTitleScreen from '../components/ui/LargeTitleScreen';
+
+// Miniatura da estação litúrgica por chave de getLiturgicalSeason(). O mapa é
+// estático porque o Metro só empacota o que está escrito literalmente num
+// require().
+const SEASON_IMAGES = {
+  advento: require('../../assets/design/estacao-advento.jpg'),
+  natal: require('../../assets/design/estacao-natal.jpg'),
+  quaresma: require('../../assets/design/estacao-quaresma.jpg'),
+  pascoa: require('../../assets/design/estacao-pascoa.jpg'),
+  comum: require('../../assets/design/estacao-comum.jpg'),
+};
+
+// Miniatura da estação (7:5), no lugar da caixa de ícone da Row.
+const SEASON_THUMB = { width: 56, height: 40 };
+
+// Data por extenso na língua da interface ("Quarta-feira, 24 de setembro"),
+// com a inicial maiúscula (o pt-BR devolve o dia da semana em minúsculas).
+function todayLabel(isEn, date) {
+  const s = date.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  });
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+// Linha da estação litúrgica: mesma grade da Row (44 de altura mínima, recuos
+// e vão da lista), com a foto da estação no lugar do ícone. Informativa, sem
+// toque.
+function SeasonRow({ season, isEn }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, radius } = tokens;
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        minHeight: 44,
+        paddingHorizontal: space.md,
+        paddingVertical: space.sm,
+        gap: space.sm,
+      }}
+    >
+      {/* Decorativa: o nome da estação vem escrito ao lado. */}
+      <Image
+        source={SEASON_IMAGES[season.key]}
+        aria-hidden
+        accessible={false}
+        style={[SEASON_THUMB, { borderRadius: radius.sm, backgroundColor: colors.separator }]}
+      />
+      <View style={{ flex: 1, minWidth: 0 }}>
+        <Text style={[text('body'), { color: colors.text }]}>{isEn ? season.en : season.pt}</Text>
+        <Text style={[text('subhead'), { color: colors.textSubtle }]}>
+          {isEn ? season.noteEn : season.notePt}
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+// Cauda das linhas de tema: contagem de artigos em texto secundário e o
+// chevron, como no mock ("23 >").
+function CountTrail({ count }) {
+  const { colors, tokens, text } = useTheme();
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: tokens.space.xxs }}>
+      <Text style={[text('subhead'), { color: colors.textSubtle }]}>{count}</Text>
+      <Ionicons name="chevron-forward" size={tokens.icon.sm} color={colors.textTertiary} />
+    </View>
+  );
+}
 
 export default function HomeScreen() {
   const navigation = useNavigation();
-  const { colors, fs } = useTheme();
+  const { colors, tokens, text, darkMode } = useTheme();
   const { t, isEn } = useLanguage();
-  const insets = useSafeAreaInsets();
+  const { space, radius, motion } = tokens;
   const [refreshKey, setRefreshKey] = useState(0);
+  const [last, setLast] = useState(null);
   const scrollRef = useRef(null);
-  const styles = makeStyles(colors, fs, insets.top);
+
+  // O LargeTitleScreen já compensa a tab bar translúcida por dentro (padding
+  // no fim do conteúdo), então o recuo que o stack põe em toda tela sai daqui.
+  useLayoutEffect(() => {
+    navigation.setOptions(fullBleedContentOptions(colors));
+  }, [navigation, colors]);
 
   useFocusEffect(
     useCallback(() => {
@@ -29,7 +110,7 @@ export default function HomeScreen() {
     }, [])
   );
 
-  // Ativacao do onboarding v2: abre o dialogo que o usuario escolheu, uma vez.
+  // Ativação do onboarding: abre o diálogo que o usuário escolheu, uma vez.
   useEffect(() => {
     let alive = true;
     consumeStartIntent().then((dialogueId) => {
@@ -38,7 +119,7 @@ export default function HomeScreen() {
     return () => { alive = false; };
   }, [navigation]);
 
-  // Scroll to top quando o usuario toca novamente no tab Inicio
+  // Toque de novo na aba Início já focada: volta ao topo.
   useEffect(() => {
     const tabNav = navigation.getParent();
     if (!tabNav) return;
@@ -50,179 +131,140 @@ export default function HomeScreen() {
     return unsub;
   }, [navigation]);
 
-  const openArticle = (articleId) =>
-    openArticleScreen(navigation, articleId);
+  // Último artigo aberto (AsyncStorage), relido a cada foco da aba. O registro
+  // de lastRead.js hoje só tem articleId e data; `progress` (0 a 1) é opcional
+  // e, quando a tela do artigo passar a gravá-lo, a barra da linha aparece.
+  useEffect(() => {
+    let alive = true;
+    getLastRead().then((data) => {
+      if (!alive) return;
+      const article = data?.articleId ? articles.find((a) => a.id === data.articleId) : null;
+      setLast(article ? { article, progress: data.progress } : null);
+    });
+    return () => { alive = false; };
+  }, [refreshKey]);
 
+  const openArticle = (articleId) => openArticleScreen(navigation, articleId);
   const openSearch = () => navigation.navigate('Search');
+  const openCategory = (category) => navigation.navigate('CategoryArticles', { category });
 
-  const openCategory = (category) =>
-    navigation.navigate('CategoryArticles', { category });
-
-  // Objeção do dia: rotação determinística (mesma pra todos no dia), com o
-  // ano na semente pra variar entre anos, igual ao getVerseOfDay.
+  // Objeção do dia: rotação determinística (a mesma para todos no dia), com o
+  // ano na semente para variar entre anos, igual ao versículo do dia.
   const now = new Date();
-  const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
-  const dailyObjection = DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
+  const dailyObjection = DIALOGUES[dailyIndex(DIALOGUES.length, now)];
   const season = getLiturgicalSeason(now);
-  // A cor da estação vem da paleta do tema (muda com o modo escuro), não de um hex fixo.
-  const seasonColor = colors[season.colorKey];
+  const openObjection = () => navigation.navigate('Dialogue', { dialogueId: dailyObjection.id });
+
+  // Entrada discreta dos blocos, em cascata (o reanimated respeita o "reduzir
+  // movimento" do sistema por padrão). Só na montagem, nada em loop.
+  const enter = (i) => FadeInDown.duration(motion.layout).delay(Math.min(i, 8) * motion.stagger);
+  const block = { marginBottom: space.md };
+
+  const articleCount = (n) => (isEn ? (n === 1 ? 'article' : 'articles') : (n === 1 ? 'artigo' : 'artigos'));
+  const continueSubtitle = typeof last?.progress === 'number'
+    ? `${t('home.continueReading')} (${Math.round(last.progress * 100)}%)`
+    : t('home.continueReading');
 
   return (
-    <View style={styles.container}>
-    <ScrollView
-      ref={scrollRef}
-      contentContainerStyle={styles.content}
-    >
-      <View style={styles.hero}>
-        {/* Decorativa: o nome do app vem escrito logo abaixo. */}
-        <BrandMark size="md" color={colors.accent} decorative />
-        <Text style={styles.heroTitle}>APPologética</Text>
-        <Text style={styles.heroWedge}>{isEn ? 'Know how to answer, with the source in hand.' : 'Saiba responder, com a fonte na mão.'}</Text>
-        <Text style={styles.heroSub}>{t('home.hero.verse')}</Text>
-        <Text style={styles.heroRef}>{t('home.hero.ref')}</Text>
-      </View>
+    <LargeTitleScreen
+      title={t('tab.home')}
+      subtitle={todayLabel(isEn, now)}
+      // O ScrollView fica aqui (e não em children) para a tela guardar a ref
+      // que o toque na aba usa para voltar ao topo.
+      renderList={({ header, ...listProps }) => (
+        <Animated.ScrollView ref={scrollRef} {...listProps}>
+          {header}
 
-      {/* Banner da estacao liturgica (calculado localmente, offline). */}
-      <View style={[styles.seasonBanner, { borderLeftColor: seasonColor }]}>
-        <Ionicons name={season.icon} size={18} color={seasonColor} />
-        <View style={{ flex: 1 }}>
-          <Text style={[styles.seasonName, { color: seasonColor }]}>{isEn ? season.en : season.pt}</Text>
-          <Text style={styles.seasonNote}>{isEn ? season.noteEn : season.notePt}</Text>
-        </View>
-      </View>
+          <Animated.View entering={enter(0)} style={block}>
+            <SearchField asButton placeholder={t('home.search')} onPress={openSearch} />
+          </Animated.View>
 
-      <TouchableOpacity style={styles.searchBar} onPress={openSearch}>
-        <Ionicons name="search-outline" size={18} color={colors.textSubtle} />
-        <Text style={styles.searchPlaceholder}>{t('home.search')}</Text>
-      </TouchableOpacity>
+          {/* Objeção do dia: o único bloco que fala alto na tela. Uma pergunta
+              difícil e o roteiro de resposta em passos (tela Diálogo). */}
+          <Animated.View
+            entering={enter(1)}
+            style={[
+              { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm },
+              block,
+            ]}
+          >
+            <Text style={[text('footnote'), { color: colors.textSubtle }]}>{t('home.objection.title')}</Text>
+            {/* No escuro a objeção fica na cor do texto (o dourado do tint é
+                para ações), como no mock aprovado. */}
+            <Text style={[text('title'), { color: darkMode ? colors.text : colors.tint }]}>
+              {pick(dailyObjection, 'objection', isEn)}
+            </Text>
+            <Text style={[text('footnote'), { color: colors.textSubtle, marginBottom: space.xs }]}>
+              {t('home.objection.steps', { n: dailyObjection.steps.length })}
+            </Text>
+            <Button variant="primary" label={t('home.objection.cta')} onPress={openObjection} haptic="impact" />
+          </Animated.View>
 
-      <ContinueReadingCard onOpen={openArticle} refreshKey={refreshKey} />
+          {/* Estação litúrgica (calculada localmente, offline) e o último
+              artigo aberto, quando há. */}
+          <Animated.View entering={enter(2)}>
+            <Group style={block}>
+              <SeasonRow season={season} isEn={isEn} />
+              {last ? (
+                <ContinueRow
+                  title={pick(last.article, 'title', isEn)}
+                  subtitle={continueSubtitle}
+                  progress={last.progress}
+                  progressLabel={t('home.continueReading')}
+                  onPress={() => openArticle(last.article.id)}
+                />
+              ) : null}
+            </Group>
+          </Animated.View>
 
-      {/* Objeção do dia: uma pergunta difícil com roteiro de resposta rápido. */}
-      <TouchableOpacity
-        style={styles.objectionCard}
-        onPress={() => navigation.navigate('Dialogue', { dialogueId: dailyObjection.id })}
-      >
-        <View style={styles.objectionHeader}>
-          <Ionicons name="chatbubbles-outline" size={15} color={colors.accent} />
-          <Text style={styles.objectionKicker}>{t('home.objection.title')}</Text>
-        </View>
-        <Text style={styles.objectionText}>
-          {isEn ? dailyObjection.objectionEn : dailyObjection.objection}
-        </Text>
-        <View style={styles.objectionCtaRow}>
-          <Text style={styles.objectionCta}>{t('home.objection.cta')}</Text>
-          <Ionicons name="arrow-forward" size={14} color={colors.accent} />
-        </View>
-      </TouchableOpacity>
+          {/* Centro da Início: os temas dos artigos de apologética. */}
+          <Animated.View entering={enter(3)}>
+            <SectionTitle title={t('home.section.topics')} />
+          </Animated.View>
+          <Animated.View entering={enter(4)}>
+            <Group style={block}>
+              {ARTICLE_CATEGORIES.map((cat) => {
+                const count = countByCategory(cat.id);
+                const label = categoryLabel(cat.id, t);
+                return (
+                  <Row
+                    key={cat.id}
+                    icon={cat.icon}
+                    title={label}
+                    trailing={<CountTrail count={count} />}
+                    accessibilityLabel={`${label}, ${count} ${articleCount(count)}`}
+                    onPress={() => openCategory(cat.id)}
+                  />
+                );
+              })}
+            </Group>
+          </Animated.View>
 
-      {/* Centro da Home: categorias de artigos de apologética. */}
-      <Text style={styles.sectionTitle}>{t('home.section.learn')}</Text>
-      <View style={styles.categoryGrid}>
-        {ARTICLE_CATEGORIES.map((cat) => {
-          const count = countByCategory(cat.id);
-          return (
-            <TouchableOpacity
-              key={cat.id}
-              style={styles.categoryTile}
-              onPress={() => openCategory(cat.id)}
-            >
-              <View style={styles.categoryIcon}>
-                <AppIcon set={cat.iconSet} name={cat.icon} size={22} color={colors.primaryText} />
-              </View>
-              <Text style={styles.categoryName} numberOfLines={2}>
-                {isEn ? t(`category.${cat.id}`) : cat.id}
-              </Text>
-              <Text style={styles.categoryCount}>
-                {count} {isEn ? (count === 1 ? 'article' : 'articles') : (count === 1 ? 'artigo' : 'artigos')}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-
-      {/* Acesso às referências (versículos, Catecismo, documentos). */}
-      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('References')}>
-        <View style={styles.cardIcon}>
-          <Ionicons name="library-outline" size={22} color={colors.primaryText} />
-        </View>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.cardLabel}>{t('home.card.references')}</Text>
-          <Text style={styles.cardSub}>{t('home.card.referencesSub')}</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} />
-      </TouchableOpacity>
-    </ScrollView>
-    </View>
+          {/* Fontes: referências (versículos, Catecismo, documentos) e a
+              Bíblia completa. */}
+          <Animated.View entering={enter(5)}>
+            <SectionTitle title={t('home.section.sources')} />
+          </Animated.View>
+          <Animated.View entering={enter(6)}>
+            <Group style={block}>
+              <Row
+                icon="library-outline"
+                title={t('tab.references')}
+                subtitle={t('home.card.referencesSub')}
+                trailing="chevron"
+                onPress={() => navigation.navigate('References')}
+              />
+              <Row
+                icon="book-outline"
+                title={t('tab.bible')}
+                subtitle={t('home.card.bibleSub')}
+                trailing="chevron"
+                onPress={() => navigation.navigate('Bíblia')}
+              />
+            </Group>
+          </Animated.View>
+        </Animated.ScrollView>
+      )}
+    />
   );
 }
-
-const makeStyles = (c, fs, topInset = 0) =>
-  StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
-    content: { padding: 16, paddingTop: 16 + topInset, paddingBottom: 30 },
-    hero: {
-      alignItems: 'center', backgroundColor: c.primary, borderRadius: 14,
-      padding: 16, marginBottom: 12,
-    },
-    heroTitle: { color: '#fff', fontSize: fs(20), fontWeight: 'bold', marginTop: 4 },
-    heroWedge: { color: '#fff', fontSize: fs(13), fontWeight: '600', textAlign: 'center', marginTop: 6 },
-    seasonBanner: {
-      flexDirection: 'row', alignItems: 'center', gap: 12,
-      backgroundColor: c.card, borderRadius: 12, padding: 12, marginBottom: 12,
-      borderLeftWidth: 4,
-    },
-    seasonName: { fontSize: fs(13), fontWeight: 'bold' },
-    seasonNote: { fontSize: fs(12), color: c.textMuted, marginTop: 1 },
-    heroSub: {
-      color: c.heroSub,
-      fontSize: fs(12),
-      textAlign: 'center',
-      marginTop: 6,
-      lineHeight: fs(17),
-    },
-    heroRef: { color: c.accent, fontSize: fs(11), marginTop: 6, fontStyle: 'italic', fontWeight: 'bold' },
-    searchBar: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 12,
-      marginBottom: 12,
-    },
-    searchPlaceholder: { color: c.textSubtle, fontSize: fs(14) },
-    sectionTitle: { fontSize: fs(16), fontWeight: 'bold', color: c.primaryText, marginBottom: 10, marginTop: 0 },
-    categoryGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
-    categoryTile: {
-      width: '48.5%',
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 14,
-      marginBottom: 12,
-    },
-    categoryIcon: {
-      width: 40, height: 40, borderRadius: 9, backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center', marginBottom: 10,
-    },
-    categoryName: { fontSize: fs(14), color: c.primaryText, fontWeight: 'bold', lineHeight: fs(19) },
-    categoryCount: { fontSize: fs(11), color: c.accentText, fontWeight: 'bold', marginTop: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
-    card: {
-      flexDirection: 'row', alignItems: 'center',
-      backgroundColor: c.card, borderRadius: 10, padding: 13, marginBottom: 9, gap: 12,
-    },
-    cardIcon: {
-      width: 40, height: 40, borderRadius: 9, backgroundColor: c.badgeBg,
-      justifyContent: 'center', alignItems: 'center',
-    },
-    cardLabel: { fontSize: fs(15), color: c.text, fontWeight: '600' },
-    cardSub: { fontSize: fs(12), color: c.textMuted, marginTop: 2 },
-    objectionCard: {
-      backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 12,
-      borderLeftWidth: 4, borderLeftColor: c.accent,
-    },
-    objectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-    objectionKicker: {
-      fontSize: fs(11), color: c.accentText, fontWeight: 'bold',
-      textTransform: 'uppercase', letterSpacing: 0.5,
-    },
-    objectionText: { fontSize: fs(15), color: c.text, fontWeight: '600', marginTop: 8, lineHeight: fs(21) },
-    objectionCtaRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 10 },
-    objectionCta: { fontSize: fs(12.5), color: c.accentText, fontWeight: 'bold' },
-  });

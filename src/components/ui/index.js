@@ -3,6 +3,7 @@
 export { default as PressScale } from './PressScale';
 export { default as Group } from './Group';
 export { default as Row } from './Row';
+export { default as ContinueRow } from './ContinueRow';
 export { default as SectionTitle } from './SectionTitle';
 export { default as Button } from './Button';
 export { default as SearchField } from './SearchField';
@@ -12,3 +13,4 @@ export { default as ProgressBar } from './ProgressBar';
 export { default as EmptyState } from './EmptyState';
 export { default as GateNotice } from './GateNotice';
 export { default as Sheet } from './Sheet';
+export { default as LargeTitleScreen } from './LargeTitleScreen';

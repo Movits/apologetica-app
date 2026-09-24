@@ -54,6 +54,10 @@ export const STRINGS = {
     'home.section.learn': 'O que você quer aprender?',
     'home.objection.title': 'Objeção do dia',
     'home.objection.cta': 'Ver como responder',
+    'home.objection.steps': 'Resposta guiada em {{n}} passos, com fontes',
+    'home.section.topics': 'Temas',
+    'home.section.sources': 'Versículos e fontes',
+    'home.card.bibleSub': 'Ave Maria, 73 livros, offline',
     'home.section.spirituality': 'Espiritualidade',
     'home.section.training': 'Treino',
     'home.section.study': 'Meu Estudo',
@@ -122,6 +126,15 @@ export const STRINGS = {
     'articles.relatedTitle': 'Ver também',
     'articles.objectionsTitle': 'Objeções respondidas',
     'articles.notAvailable': 'A tradução deste artigo para o inglês está em andamento.',
+    // Tela do artigo (Onda 5): ações do header, seções e legendas
+    'articles.listen': 'Ouvir o artigo',
+    'articles.stopListening': 'Parar a narração',
+    'articles.save': 'Guardar nos favoritos',
+    'articles.unsave': 'Remover dos favoritos',
+    'articles.sources': 'Fontes citadas',
+    'articles.dialogueSteps': 'Diálogo em {{n}} passos',
+    'articles.expandImage': 'Ampliar imagem',
+    'articles.notFound': 'Artigo não encontrado.',
 
     // === Catechism ===
 
@@ -221,6 +234,13 @@ export const STRINGS = {
     'settings.font.enorme': 'Enorme',
     'settings.font.muitoGrande': 'Muito grande',
     'settings.font.maximo': 'Máximo',
+    // Onda 9 (Ajustes e Praticar em listas agrupadas)
+    'settings.section.tts': 'Leitura em voz alta',
+    'settings.voice.preview': 'Ouvir prévia',
+    'settings.voice.choose': 'Escolher voz',
+    'settings.guest.message': 'Você está como visitante. Crie uma conta para guardar marcações, notas e caderno em todos os aparelhos.',
+    'tools.requiresAccount': 'exige conta',
+    'common.close': 'Fechar',
 
     // === Categorias dos artigos ===
     'category.Existência de Deus': 'Existência de Deus',
@@ -315,6 +335,10 @@ export const STRINGS = {
     'home.section.learn': 'What do you want to learn?',
     'home.objection.title': 'Objection of the day',
     'home.objection.cta': 'See how to answer',
+    'home.objection.steps': 'Guided answer in {{n}} steps, with sources',
+    'home.section.topics': 'Topics',
+    'home.section.sources': 'Verses and sources',
+    'home.card.bibleSub': 'Douay-Rheims, 73 books, offline',
     'home.section.spirituality': 'Spirituality',
     'home.section.training': 'Training',
     'home.section.study': 'My Study',
@@ -383,6 +407,15 @@ export const STRINGS = {
     'articles.relatedTitle': 'See also',
     'articles.objectionsTitle': 'Objections answered',
     'articles.notAvailable': 'English translation of this article is in progress.',
+    // Article screen (Onda 5): header actions, sections and captions
+    'articles.listen': 'Listen to the article',
+    'articles.stopListening': 'Stop narration',
+    'articles.save': 'Save to favorites',
+    'articles.unsave': 'Remove from favorites',
+    'articles.sources': 'Sources cited',
+    'articles.dialogueSteps': 'Dialogue in {{n}} steps',
+    'articles.expandImage': 'Expand image',
+    'articles.notFound': 'Article not found.',
 
     // === Catechism ===
 
@@ -482,6 +515,13 @@ export const STRINGS = {
     'settings.font.enorme': 'Huge',
     'settings.font.muitoGrande': 'Extra large',
     'settings.font.maximo': 'Maximum',
+    // Onda 9 (Settings and Practice as grouped lists)
+    'settings.section.tts': 'Read aloud',
+    'settings.voice.preview': 'Play sample',
+    'settings.voice.choose': 'Choose voice',
+    'settings.guest.message': 'You are browsing as a guest. Create an account to keep highlights, notes and notebook on every device.',
+    'tools.requiresAccount': 'requires an account',
+    'common.close': 'Close',
 
     // === Article categories ===
     'category.Existência de Deus': 'Existence of God',
