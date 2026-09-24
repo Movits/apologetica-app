@@ -51,6 +51,9 @@ jobs:
       - name: Check references data
         run: node scripts/check-refs.mjs
 
+      - name: Run unit tests
+        run: npm test
+
       - name: Export web build
         env:
           PAGES_BASE_URL: /apologetica-app/app

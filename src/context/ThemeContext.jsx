@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { Platform } from 'react-native';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
 
@@ -21,6 +21,27 @@ const LIGHT = {
   badgeText: '#1a3a5c',
   heroSub: '#ccd9e8',
   deepLinkHl: '#f6e6b0',      // destaque temporário (chegada por referência) bem visível
+  // Cor de ação (botões, links, aba ativa) e o texto que vai por cima dela.
+  tint: '#1a3a5c',
+  onTint: '#ffffff',
+  // Texto sobre o fundo principal (primary).
+  onPrimary: '#ffffff',
+  // Terceiro nível de texto (legendas e metadados), abaixo de textSubtle.
+  textTertiary: '#948c7c',
+  // Linhas finas: separator entre linhas de lista, hairline na borda das barras.
+  separator: 'rgba(26,58,92,0.14)',
+  hairline: 'rgba(0,0,0,0.14)',
+  // Fundo translúcido das barras (header e tab bar) por cima do conteúdo.
+  material: 'rgba(245,240,232,0.72)',
+  // Superfície elevada (sheets, menus) e véu escuro atrás dos modais.
+  elevated: '#ffffff',
+  overlay: 'rgba(0,0,0,0.4)',
+  // Semânticas: ação destrutiva ou erro, e sucesso.
+  danger: '#b3261e',
+  success: '#2f7a4a',
+  // Cores litúrgicas (tempo comum, e advento/quaresma).
+  seasonGreen: '#2f7a4a',
+  seasonPurple: '#5b3f8a',
 };
 
 // Paleta dark mode estilo "noite na catedral": navy profundo com dourado quente.
@@ -44,6 +65,27 @@ const DARK = {
   badgeText: '#e6c878',
   heroSub: '#b8c4d8',
   deepLinkHl: '#3a3320',      // destaque temporário (chegada por referência) bem visível
+  // Cor de ação (botões, links, aba ativa) e o texto que vai por cima dela.
+  tint: '#d4b86a',
+  onTint: '#0d1722',
+  // Texto sobre o fundo principal (primary).
+  onPrimary: '#ffffff',
+  // Terceiro nível de texto (legendas e metadados), abaixo de textSubtle.
+  textTertiary: '#7d7767',
+  // Linhas finas: separator entre linhas de lista, hairline na borda das barras.
+  separator: 'rgba(236,232,216,0.14)',
+  hairline: 'rgba(255,255,255,0.14)',
+  // Fundo translúcido das barras (header e tab bar) por cima do conteúdo.
+  material: 'rgba(13,23,34,0.72)',
+  // Superfície elevada (sheets, menus) e véu escuro atrás dos modais.
+  elevated: '#1e2f47',
+  overlay: 'rgba(0,0,0,0.4)',
+  // Semânticas: ação destrutiva ou erro, e sucesso.
+  danger: '#f28b82',
+  success: '#8fd19e',
+  // Cores litúrgicas (tempo comum, e advento/quaresma).
+  seasonGreen: '#8fd19e',
+  seasonPurple: '#b59ae6',
 };
 
 const FONT_SCALES = {
@@ -59,7 +101,10 @@ const STORAGE_FONT = 'settings:fontSize';
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkModeState] = useState(false);
+  // Sem preferência salva, o app nasce no tema do sistema (app.json usa
+  // userInterfaceStyle "automatic"). A hidratação abaixo sobrescreve se a
+  // pessoa já escolheu. Não há listener de mudança do sistema por enquanto.
+  const [darkMode, setDarkModeState] = useState(() => Appearance.getColorScheme() === 'dark');
   const [fontSize, setFontSizeState] = useState('normal');
   const [hydrated, setHydrated] = useState(false);
 
@@ -90,14 +135,18 @@ export function ThemeProvider({ children }) {
     })();
   }, []);
 
-  useEffect(() => {
-    if (!hydrated) return;
-    AsyncStorage.setItem(STORAGE_DARK, String(darkMode)).catch(() => {});
-    // Mantém a chave compartilhada com a landing (web) em sincronia.
+  // Grava a preferência de tema só quando a pessoa escolhe (toggle em Ajustes ou
+  // no topo do login). Sem escolha salva, o app segue o tema do sistema a cada
+  // abertura, por isso a hidratação acima não grava nada. Na web, mantém a chave
+  // compartilhada com a landing (appg_theme) em sincronia.
+  const setDarkMode = useCallback((next) => {
+    const on = Boolean(next);
+    setDarkModeState(on);
+    AsyncStorage.setItem(STORAGE_DARK, String(on)).catch(() => {});
     if (Platform.OS === 'web') {
-      try { window.localStorage.setItem('appg_theme', darkMode ? 'dark' : 'light'); } catch {}
+      try { window.localStorage.setItem('appg_theme', on ? 'dark' : 'light'); } catch {}
     }
-  }, [darkMode, hydrated]);
+  }, []);
 
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
@@ -106,6 +155,9 @@ export function ThemeProvider({ children }) {
   // Sincroniza a navigation bar do Android (fundo + ícones) com o tema, para a
   // barra do sistema não destoar do app no build nativo. O fundo acompanha a cor
   // da tab bar (card); os ícones invertem conforme claro/escuro.
+  // Com edge-to-edge (Expo Go 54 e SDK 55) setBackgroundColorAsync vira no-op
+  // com aviso no console; a chamada sai quando o edge-to-edge for ligado na
+  // onda do chrome (Onda 3). Até lá ela ainda vale no build EAS.
   useEffect(() => {
     if (Platform.OS !== 'android') return;
     const c = darkMode ? DARK : LIGHT;
@@ -141,7 +193,7 @@ export function ThemeProvider({ children }) {
     return {
       colors,
       darkMode,
-      setDarkMode: setDarkModeState,
+      setDarkMode,
       fontSize,
       setFontSize: setFontSizeState,
       scale,
@@ -149,7 +201,7 @@ export function ThemeProvider({ children }) {
       fs: (n) => Math.max(11, Math.round(n * scale)),
       hydrated,
     };
-  }, [darkMode, fontSize, hydrated]);
+  }, [darkMode, fontSize, hydrated, setDarkMode]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
