@@ -11,8 +11,8 @@ import { useLanguage } from '../context/LanguageContext';
 // tocado (pinça / duplo-toque / scroll) e arrastar.
 //
 // IMPORTANTE: na WEB os gestos são feitos por eventos DOM (mouse/touch/wheel)
-// escrevendo direto nos shared values (o gesture-handlertem latência de Pan na
-// web (arrasto travado). No NATIVO usamos gesture-handler (fluido na UI thread).
+// escrevendo direto nos shared values, porque o gesture-handler tem latência de
+// Pan na web (arrasto travado). No NATIVO usamos gesture-handler (fluido na UI thread).
 // A renderização (Animated.View + useAnimatedStyle) é comum e já é lisa.
 const MAX_SCALE = 6;
 const DOUBLE_TAP_SCALE = 2.5;
