@@ -381,3 +381,23 @@ Não fazer: `headerLargeTitle` nativo por cima; passar `onScroll` ou `contentCon
   `FadeInDown.duration(motion.layout).delay(min(i, 8) * motion.stagger)`, para
   `<Animated.View entering={enterStagger(i, tokens)}>`. Reduce motion é respeitado pelo
   reanimated.
+
+## Fora de `ui/`: componentes de apoio criados na limpeza final
+
+- `src/components/UserDataList.jsx`: `{ user, items, empty, renderItem, keyExtractor, ...rest }`. Visitante
+  (`user === null`) vira `GuestGate`; `items === null` vira vazio silencioso; lista vazia mostra `empty`;
+  senão `GroupList`. Usado por Favoritos, Marcações, Notas e Caderno.
+- `src/components/RowIconButton.jsx`: botão de 44 para viver dentro de uma `Row` (não é `PressScale`, para
+  não dobrar a mola). `icon`, `label` (vira `aria-label`), `onPress`, `color`.
+- `src/components/ItemActionsSheet.jsx`: recebe `item` (visível quando existe), faz o snapshot interno e
+  dispara a ação destrutiva no `onDismissed` do `Sheet`. Chamadores guardam só `useState(null)`.
+- `src/components/ReadingColumn.jsx`: coluna de leitura da web (largura máxima e cruzes decorativas nos
+  gutters); exporta `columnStyle` e `columnContentStyle` para a ScrollView da tela. Usado por Artigo e Hoje.
+- `src/components/auth/{FormScreen,OrDivider,BackChevron}.jsx`: casca das telas de conta
+  (KeyboardAvoidingView + ScrollView + insets, `topInset` para passar sob o `AuthTopToggles`, que exporta
+  `TOGGLES_HEIGHT`), o divisor "ou" e o chevron de voltar de 44.
+- `src/components/shareCanvas.js`: `CANVAS`, `SCALE` e `canvasMetrics(tokens)` para os cards de captura
+  (`ShareVerseCard`, `DialogueAnswerCard`).
+- `src/components/LiturgyCard.jsx` exporta `LiturgicalColorDot({ hex, size })`; `ReadingProgressBar`
+  aceita `progressValue` (shared value do reanimated) além de `progress` numérico;
+  `VerseActionsSheet` repassa `onDismissed`.

@@ -219,8 +219,8 @@ npm run lint          # ESLint em src/, precisa passar antes de commitar
 npm test              # node --test, precisa terminar com fail 0
 npm run check:refs    # obrigatório ao mexer em references.js ou references-en.js
 ```
-Baseline atual: **0 erros e 8 warnings** (todos `react-hooks/exhaustive-deps`,
-pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
+Baseline atual: **0 erros e 2 warnings** (os dois `react-hooks/exhaustive-deps`
+de `ImageZoomModal.jsx`, pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
 contagem de warnings.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida

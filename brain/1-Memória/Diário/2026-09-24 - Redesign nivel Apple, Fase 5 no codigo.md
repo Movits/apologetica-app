@@ -63,3 +63,23 @@ export -p web`, Playwright no Chromium) e commit pelo orquestrador.
 - `edgeToEdgeEnabled: true` + remoção de `setBackgroundColorAsync` (onda futura).
 - ~150 strings de UI ainda inline em `isEn ? :` (onda de i18n própria).
 - PR #2 fica em rascunho até o dono pedir para abrir.
+
+## Fechamento (revisões e limpeza)
+
+- Três revisores de código por fatia (base, telas principais, helpers e dados): nada
+  crítico; as correções importantes entraram (tema em três estados com listener do
+  sistema e chave nova, rótulos de acessibilidade traduzidos, hairline órfã no card
+  da liturgia, re-renders da lista de versículos, pílula em capítulo vazio, índice de
+  seção do deep link das Referências, compartilhar dentro do gesto na web).
+- Revisão de segurança: nenhuma vulnerabilidade acima do limiar (a fronteira de
+  segurança não mudou); um endurecimento no mapa de livros da liturgia.
+- `/code-review` do repositório: um ajuste visual na Busca.
+- `/simplify` em duas rodadas (fundação e helpers puros; depois as telas): Row com
+  `leading`/`chevron`/`onLongPress`, `ListSeparator`/`GroupList`/`GuestGate`/`ChipRow`,
+  `text(role)` com cache, `Sheet.onDismissed`, opções de raiz de aba em `chrome.js`,
+  blur só no iOS, helpers `todayLabel`, `stripMarkdownForSpeech`, `scrollFraction`,
+  `verseLabel`, `referencesWithEn`, `liturgyTitle`, `getVerse`; itens de lista
+  memoizados; barras de progresso por shared value. Lint terminou em 0 erros e 2
+  warnings (eram 14); 99 testes.
+- Verificação final refeita depois de tudo: 26 capturas, 0 erros de página, bundle
+  web +21 KB gzip.
