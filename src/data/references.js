@@ -13,6 +13,11 @@
 //   referência é textual, `text` descreve o que a imagem mostra e `url` aponta
 //   para o acervo. Mesmo padrão de `arq-pilatos` e `ms-p52`.
 
+// Com extensão de propósito: scripts/check-refs.mjs e generate-brain.mjs
+// importam este arquivo no Node puro, sem o hook que resolve os sufixos do
+// Metro (o Metro aceita a extensão explícita).
+import { referencesEn } from './references-en.js';
+
 export const references = [
   // ============ BÍBLIA ============
   {
@@ -2589,3 +2594,10 @@ export const resolveRefUrl = (item, en, isEn) => {
   if (base.includes('pt.wikipedia.org')) return base.replace('pt.wikipedia.org', 'en.wikipedia.org');
   return base;
 };
+
+// Referência mesclada com a tradução EN campo a campo (refEn, textEn,
+// topicEn...), para o `pick` cair no PT quando a tradução falta. Cinco telas
+// refaziam esta mescla; `referencesWithEn` é o catálogo inteiro já mesclado,
+// calculado uma vez. `ref` nulo devolve null (referenceById que não achou).
+export const withEn = (ref) => (ref ? { ...ref, ...(referencesEn[ref.id] || {}) } : null);
+export const referencesWithEn = references.map(withEn);

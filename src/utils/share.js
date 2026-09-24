@@ -49,9 +49,8 @@ export function shareVerse({ bookName, chapter, verse, text, ref, isEn = false }
   return doShare(msg);
 }
 
-export function shareHighlight(params) {
-  return shareVerse(params);
-}
+// Marcação compartilhada é um versículo: mesmo texto, mesma folha.
+export const shareHighlight = shareVerse;
 
 // Referência do catálogo (versículo, Catecismo, documento, estudo): a citação
 // entre aspas e a procedência já pronta na linha de baixo ("Mateus 16,18-19

@@ -46,5 +46,11 @@ export const sortByRank = (list) =>
     .sort(([a, ia], [b, ib]) => rankOf(a.id) - rankOf(b.id) || ia - ib)
     .map(([a]) => a);
 
-export const countByCategory = (cat) =>
-  articles.filter((a) => a.category === cat).length;
+// Artigos por categoria, contados uma vez (a Início mostra o número ao lado
+// de cada tema). Map, e não objeto, para um id nunca cair no protótipo.
+export const ARTICLE_COUNT_BY_CATEGORY = articles.reduce(
+  (acc, a) => acc.set(a.category, (acc.get(a.category) || 0) + 1),
+  new Map()
+);
+
+export const countByCategory = (cat) => ARTICLE_COUNT_BY_CATEGORY.get(cat) || 0;

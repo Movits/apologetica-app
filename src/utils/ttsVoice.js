@@ -6,6 +6,10 @@ const STORAGE_VOICE_PT = 'settings:ttsVoice';
 const STORAGE_VOICE_EN = 'settings:ttsVoiceEn';
 const STORAGE_RATE = 'settings:ttsRate';
 
+// Locale de fala pelo idioma do TEXTO ('en' ou 'pt'), usado quando a voz
+// escolhida não traz o próprio `language`.
+export const ttsLocale = (lang) => (lang === 'en' ? 'en-US' : 'pt-BR');
+
 // Padrões do Google TTS Android para português.
 const PT_BR_PATTERNS = [
   { re: /-x-ptd/i, name: 'Bruno',   gender: 'M' },

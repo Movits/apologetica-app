@@ -26,6 +26,10 @@ export function extractRefs(text) {
   return out;
 }
 
+// Tira os tokens de referência e deixa só o rótulo: "@[Mt 16,18](v:mt/16/18)"
+// vira "Mt 16,18". É a prévia de uma página na lista do caderno.
+export const stripRefs = (text) => String(text || '').replace(REF_RE, '$1');
+
 // Despacha uma referência para o handler do tipo dela.
 export function openRef({ kind, payload }, { onOpenVerse, onOpenArticle, onOpenRef }) {
   if (kind === 'v') {

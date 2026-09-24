@@ -8,13 +8,20 @@ import { getBook, bookName } from '../data/bible';
 import { translateRef } from '../data/references';
 import { formatVerseRef } from './verseRef';
 
+// Rótulo de um versículo solto ({ bookId, chapter, verse | verseStart,
+// verseEnd? }): "João 3,16" em PT, "John 3:16" em EN. Vazio se o livro não
+// existe. É o que marcações, notas e busca montavam à mão com
+// formatVerseRef + bookName + getBook.
+export function verseLabel(nav, isEn = false) {
+  const book = nav ? getBook(nav.bookId) : null;
+  if (!book) return '';
+  return formatVerseRef({ ...nav, bookName: bookName(book, isEn) }, isEn);
+}
+
 export function refLabel(item, isEn = false) {
   if (!item) return '';
-  const nav = (isEn && item.bibleNavEn) || item.bibleNav;
-  const book = nav ? getBook(nav.bookId) : null;
-  if (book) {
-    return formatVerseRef({ bookName: bookName(book, isEn), ...nav }, isEn);
-  }
+  const label = verseLabel((isEn && item.bibleNavEn) || item.bibleNav, isEn);
+  if (label) return label;
   if (isEn && item.refEn) return item.refEn;
   return translateRef(item.ref, isEn) || '';
 }

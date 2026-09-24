@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { dayOfYear, dailyIndex, todayKey, easterDate, addDays } from '../src/utils/daily.js';
+import { dayOfYear, dailyIndex, todayKey, easterDate, addDays, todayLabel } from '../src/utils/daily.js';
 import { getVerseOfDay, DAILY_VERSES } from '../src/data/dailyVerses.js';
 import { getQuizOfDay, DAILY_QUESTIONS } from '../src/data/quiz.js';
 import { DIALOGUES } from '../src/data/dialogues.js';
@@ -149,4 +149,23 @@ test('caracterização: festas móveis do santoral em datas fixas', () => {
   for (const [y, m, d, name] of FEASTS) {
     assert.equal(getSaintToday(new Date(y, m, d))?.name, name, `${y}-${m + 1}-${d}`);
   }
+});
+
+// ---------------------------------------------------------------------------
+// todayLabel (Fase 5): a data por extenso que HomeScreen e TodayScreen
+// montavam cada uma por conta própria. Precisa do ICU completo do Node
+// (`node -e "new Intl.DateTimeFormat('pt-BR')"` devolve os nomes em português).
+// ---------------------------------------------------------------------------
+
+test('todayLabel escreve a data por extenso no idioma, com inicial maiúscula', () => {
+  const d = new Date(2026, 8, 24);
+  assert.equal(todayLabel(false, d), 'Quinta-feira, 24 de setembro');
+  assert.equal(todayLabel(true, d), 'Thursday, September 24');
+  assert.equal(todayLabel(false, new Date(2026, 0, 1)), 'Quinta-feira, 1 de janeiro');
+  assert.equal(todayLabel(true, new Date(2026, 11, 25)), 'Friday, December 25');
+});
+
+test('todayLabel usa a data de hoje por padrão', () => {
+  assert.equal(todayLabel(false), todayLabel(false, new Date()));
+  assert.equal(todayLabel(true), todayLabel(true, new Date()));
 });

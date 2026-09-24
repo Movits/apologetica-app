@@ -72,3 +72,18 @@ export function chunkText(text, max = DEFAULT_MAX) {
   }
   return chunks;
 }
+
+// Limpa marcadores de markdown que poluem a narração (era o stripMarkdownForTts
+// de ArticleDetailScreen.jsx, regex idêntico). Marcador de lista ("- ") e link
+// [x](y) passam como estão: o TTS não lê o traço e nenhum artigo usa link em
+// markdown.
+export const stripMarkdownForSpeech = (s) =>
+  String(s || '')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')        // [[termo]] -> termo
+    .replace(/\*\*([^*]+)\*\*/g, '$1')         // **negrito** -> negrito
+    .replace(/__([^_]+)__/g, '$1')             // __itálico__ -> itálico
+    .replace(/\*([^*]+)\*/g, '$1')             // *itálico* -> itálico
+    .replace(/_([^_]+)_/g, '$1')               // _itálico_ -> itálico
+    .replace(/`([^`]+)`/g, '$1')               // `código` -> código
+    .replace(/^#{1,6}\s*/gm, '')               // # títulos
+    .replace(/[\u200B-\u200D\uFEFF]/g, '');    // caracteres de largura zero

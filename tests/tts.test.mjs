@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { chunkText } from '../src/utils/tts.js';
+import { chunkText, stripMarkdownForSpeech } from '../src/utils/tts.js';
 
 // Regra do fatiamento (ver src/utils/tts.js): os pedaços são fatias exatas do
 // texto, então `chunks.join('')` reconstitui a entrada sem perder nem duplicar
@@ -80,4 +80,35 @@ test('espaço no início do texto não vira pedaço em branco', () => {
   const text = '   ' + 'x'.repeat(5000);
   const chunks = chunkText(text);
   assertChunks(chunks, text);
+});
+
+// ---------------------------------------------------------------------------
+// stripMarkdownForSpeech (Fase 5): a limpeza que ArticleDetailScreen fazia
+// antes de narrar. O regex é o da tela, sem mudança: o que a tela não tirava
+// (marcador de lista, link [x](y), que nenhum artigo usa) continua passando.
+// ---------------------------------------------------------------------------
+
+test('stripMarkdownForSpeech tira títulos, ênfase, código e [[termo]]', () => {
+  assert.equal(stripMarkdownForSpeech('## Título\n### Menor\ntexto'), 'Título\nMenor\ntexto');
+  assert.equal(stripMarkdownForSpeech('**negrito** e __forte__'), 'negrito e forte');
+  assert.equal(stripMarkdownForSpeech('*itálico* e _leve_'), 'itálico e leve');
+  assert.equal(stripMarkdownForSpeech('use `código` aqui'), 'use código aqui');
+  assert.equal(stripMarkdownForSpeech('a [[Theotokos]] é Maria'), 'a Theotokos é Maria');
+  assert.equal(stripMarkdownForSpeech('# A **fé** e a *razão*'), 'A fé e a razão');
+});
+
+test('stripMarkdownForSpeech remove caracteres de largura zero', () => {
+  assert.equal(stripMarkdownForSpeech('a\u200Bb\u200Cc\u200Dd\uFEFFe'), 'abcde');
+});
+
+test('stripMarkdownForSpeech preserva listas e linhas em branco', () => {
+  const md = 'Intro.\n\n- primeiro **item**\n- segundo\n\nFim.';
+  assert.equal(stripMarkdownForSpeech(md), 'Intro.\n\n- primeiro item\n- segundo\n\nFim.');
+});
+
+test('stripMarkdownForSpeech tolera vazio e nulo', () => {
+  assert.equal(stripMarkdownForSpeech(''), '');
+  assert.equal(stripMarkdownForSpeech(null), '');
+  assert.equal(stripMarkdownForSpeech(undefined), '');
+  assert.equal(stripMarkdownForSpeech('sem marcação'), 'sem marcação');
 });

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pick, pickAll, categoryLabel } from '../src/utils/i18nData.js';
+import { pick, pickAll, categoryLabel, pickPair, tOr } from '../src/utils/i18nData.js';
 import { translate } from '../src/i18n/strings.js';
 
 // Padrão que o app repete em dezenas de lugares: `isEn ? (a.titleEn || a.title)
@@ -69,4 +69,24 @@ test('categoryLabel cai no próprio id quando não há tradução', () => {
   assert.equal(categoryLabel('Moral', () => ''), 'Moral');
   assert.equal(categoryLabel('Moral', null), 'Moral');
   assert.equal(categoryLabel('', tEn), '');
+});
+
+// pickPair e tOr (Fase 5): o `isEn ? en : pt` de valores soltos e o "t ou
+// fallback" que categoryLabel já fazia por dentro.
+test('pickPair escolhe o EN só quando pedido e existente', () => {
+  assert.equal(pickPair('Olá', 'Hello', true), 'Hello');
+  assert.equal(pickPair('Olá', 'Hello', false), 'Olá');
+  assert.equal(pickPair('Olá', 'Hello'), 'Olá');
+  assert.equal(pickPair('Olá', '', true), 'Olá');
+  assert.equal(pickPair('Olá', undefined, true), 'Olá');
+  assert.equal(pickPair(undefined, undefined, true), undefined);
+});
+
+test('tOr devolve a tradução, ou o fallback quando a chave não existe', () => {
+  const tEn = (k) => translate('en', k);
+  assert.equal(tOr(tEn, 'common.save', 'x'), 'Save');
+  assert.equal(tOr(tEn, 'chave.inexistente', 'padrão'), 'padrão');
+  assert.equal(tOr(() => '', 'k', 'padrão'), 'padrão');
+  assert.equal(tOr(null, 'k', 'padrão'), 'padrão');
+  assert.equal(tOr(undefined, 'k'), undefined);
 });

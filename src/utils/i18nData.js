@@ -26,11 +26,22 @@ export function pickAll(item, fields, isEn = false) {
   return out;
 }
 
-// Rótulo de categoria de artigo. As chaves em strings.js são o próprio id em
-// PT ("category.Existência de Deus", "category.popular"); quando a chave não
-// existe, `t` devolve a chave inteira, e aí o rótulo cai no id.
-export function categoryLabel(categoryId, t) {
-  const key = `category.${categoryId}`;
+// Par de valores soltos (não um item com campo/campoEn): o EN quando pedido e
+// existente, senão o PT. É o `isEn ? en : pt` das telas, com o fallback.
+export function pickPair(pt, en, isEn = false) {
+  return isEn && en ? en : pt;
+}
+
+// Tradução de `key` por `t`, ou `fallback` quando a chave não existe (o `t`
+// do app devolve a própria chave nesse caso), está vazia ou não há `t`.
+export function tOr(t, key, fallback) {
   const label = typeof t === 'function' ? t(key) : '';
-  return label && label !== key ? label : categoryId;
+  return label && label !== key ? label : fallback;
+}
+
+// Rótulo de categoria de artigo. As chaves em strings.js são o próprio id em
+// PT ("category.Existência de Deus", "category.popular"); sem chave, o rótulo
+// cai no id.
+export function categoryLabel(categoryId, t) {
+  return tOr(t, `category.${categoryId}`, categoryId);
 }

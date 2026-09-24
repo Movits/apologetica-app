@@ -90,6 +90,22 @@ export function getChapter(bookId, chapter, language = 'pt') {
   };
 }
 
+// Texto de UM versículo, ou null se o livro, o capítulo ou o versículo não
+// existem. Mesmas regras de fallback de getChapter: EN pedido com a
+// Douay-Rheims carregada lê nela e só cai para o PT se o CAPÍTULO faltar (um
+// versículo a menos na numeração inglesa devolve null, como o `find` nas telas
+// devolvia undefined); EN pedido sem a Douay-Rheims lê o PT. Substitui
+// getChapter(...)?.verses?.find((v) => v.n === n)?.t nas telas de marcações e
+// notas, sem montar o capítulo inteiro a cada linha.
+export function getVerse(bookId, chapter, verse, language = 'pt') {
+  if (!getBook(bookId)) return null;
+  if (language === 'en' && DRA) {
+    const chapterArr = DRA[bookId]?.[chapter - 1];
+    if (chapterArr) return chapterArr[verse - 1] ?? null;
+  }
+  return AVEMARIA?.[bookId]?.[chapter - 1]?.[verse - 1] ?? null;
+}
+
 // Normaliza para busca: minúsculas + remove acentos.
 function norm(s) {
   return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');

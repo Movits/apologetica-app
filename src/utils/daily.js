@@ -59,3 +59,15 @@ export function addDays(base, n) {
   x.setDate(x.getDate() + n);
   return x;
 }
+
+// Data por extenso na língua da interface ("Quinta-feira, 24 de setembro"),
+// com a inicial maiúscula (o pt-BR devolve o dia da semana em minúsculas).
+// Era duplicada em HomeScreen.jsx e TodayScreen.jsx.
+export function todayLabel(isEn, date = new Date()) {
+  const s = date.toLocaleDateString(isEn ? 'en-US' : 'pt-BR', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  });
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
