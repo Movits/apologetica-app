@@ -1,186 +1,108 @@
-// GERADO por scripts/generate-artworks-index.mjs. Não editar à mão: crie ou
-// apague a lição na pasta e rode o script.
-import aConfissaoCrespi from './a-confissao-crespi';
-import adaoEEvaNoParaiso from './adao-e-eva-no-paraiso';
-import adoracaoDosPastoresKrezias from './adoracao-dos-pastores-krezias';
-import anjoLibertaAlmasDoPurgatorio from './anjo-liberta-almas-do-purgatorio';
-import arvoreDeJesseLivroDeHoras from './arvore-de-jesse-livro-de-horas';
-import assuncaoDeRubens from './assuncao-de-rubens';
-import assuncaoDeTiciano from './assuncao-de-ticiano';
-import autoDeFeBerruguete from './auto-de-fe-berruguete';
-import basilicaDeAparecida from './basilica-de-aparecida';
-import batuqueRugendas from './batuque-rugendas';
-import bodasDeCana from './bodas-de-cana';
-import casamentoDePoussin from './casamento-de-poussin';
-import ceiaEmEmaus from './ceia-em-emaus';
-import chavesDoReinoPerugino from './chaves-do-reino-perugino';
-import codiceSinaitico from './codice-sinaitico';
-import criacaoDeAdao from './criacao-de-adao';
-import criacaoDeEva from './criacao-de-eva';
-import criacaoDoSolEDaLua from './criacao-do-sol-e-da-lua';
-import cristoAbencoaAsCriancas from './cristo-abencoa-as-criancas';
-import cristoDianteDePilatos from './cristo-diante-de-pilatos';
-import cristoNaTempestade from './cristo-na-tempestade';
-import cristoNoMarDeTiberiades from './cristo-no-mar-de-tiberiades';
-import crucificacaoDeEmileBernard from './crucificacao-de-emile-bernard';
-import crucificacaoTintoretto from './crucificacao-tintoretto';
-import disputaDoSacramento from './disputa-do-sacramento';
-import entregaDasChaves from './entrega-das-chaves';
-import estampaDosCemFlorins from './estampa-dos-cem-florins';
-import galileuDianteDaInquisicao from './galileu-diante-da-inquisicao';
-import grandeBudaDeKamakura from './grande-buda-de-kamakura';
-import grandeDiaDaSuaIra from './grande-dia-da-sua-ira';
-import gravuraDeFlammarion from './gravura-de-flammarion';
-import imaculadaConceicaoTovar from './imaculada-conceicao-tovar';
-import inspiracaoDeSaoMateus from './inspiracao-de-sao-mateus';
-import interiorDeSaoPedroPanini from './interior-de-sao-pedro-panini';
-import israelitasSaindoDoEgito from './israelitas-saindo-do-egito';
-import joESeusAmigos from './jo-e-seus-amigos';
-import juizoFinalFraAngelico from './juizo-final-fra-angelico';
-import krishnaEArjuna from './krishna-e-arjuna';
-import luteroEmWorms from './lutero-em-worms';
-import madonaComOMeninoEAnjos from './madona-com-o-menino-e-anjos';
-import maeDeDeusDeVladimir from './mae-de-deus-de-vladimir';
-import maestaDeCimabue from './maesta-de-cimabue';
-import mesquitaAzul from './mesquita-azul';
-import milagreDoSol from './milagre-do-sol';
-import missaDeSaoGregorio from './missa-de-sao-gregorio';
-import moisesComAsTabuasDaLei from './moises-com-as-tabuas-da-lei';
-import muroDasLamentacoesGerome from './muro-das-lamentacoes-gerome';
-import noiteEstrelada from './noite-estrelada';
-import nossaSenhoraDeGuadalupe from './nossa-senhora-de-guadalupe';
-import oAngelus from './o-angelus';
-import oTributoMasaccio from './o-tributo-masaccio';
-import oracaoNoHortoBellini from './oracao-no-horto-bellini';
-import paisagemComOBomSamaritano from './paisagem-com-o-bom-samaritano';
-import pantocratorDeCefalu from './pantocrator-de-cefalu';
-import pedraDePilatos from './pedra-de-pilatos';
-import pracaDeSaoPedroVanWittel from './praca-de-sao-pedro-van-wittel';
-import precursoresDeCristoFraAngelico from './precursores-de-cristo-fra-angelico';
-import primeiraVisaoRamsey from './primeira-visao-ramsey';
-import profetaIsaias from './profeta-isaias';
-import quatroEvangelistasJordaens from './quatro-evangelistas-jordaens';
-import quedaDosAnjosRebeldes from './queda-dos-anjos-rebeldes';
-import quedaEExpulsaoDoParaiso from './queda-e-expulsao-do-paraiso';
-import relevoDeMitra from './relevo-de-mitra';
-import ressurreicaoDePiero from './ressurreicao-de-piero';
-import sagradaFamiliaComSaoJoao from './sagrada-familia-com-sao-joao';
-import sagradaFamiliaDoCordeiro from './sagrada-familia-do-cordeiro';
-import saoJeronimoEmMeditacao from './sao-jeronimo-em-meditacao';
-import saoJeronimoEscrevendo from './sao-jeronimo-escrevendo';
-import saulEAFeiticeiraDeEndor from './saul-e-a-feiticeira-de-endor';
-import separacaoDaLuzEDasTrevas from './separacao-da-luz-e-das-trevas';
-import seteObrasDeMisericordia from './sete-obras-de-misericordia';
-import seteSacramentos from './sete-sacramentos';
-import sombraDeSamuelInvocadaPorSaul from './sombra-de-samuel-invocada-por-saul';
-import sudarioDeTurim from './sudario-de-turim';
-import tentacoesDeCristo from './tentacoes-de-cristo';
-import tomadaDeJerusalem from './tomada-de-jerusalem';
-import torreDeBabel from './torre-de-babel';
-import trindadeAdoradaPelosGonzaga from './trindade-adorada-pelos-gonzaga';
-import trindadeDeRublev from './trindade-de-rublev';
-import ultimaCeia from './ultima-ceia';
-import virgemDoRosarioMurillo from './virgem-do-rosario-murillo';
-import vocacaoDosApostolos from './vocacao-dos-apostolos';
-
+// GERADO por scripts/generate-artworks-index.mjs. Não editar à mão.
+//
 // Lições de obras de arte (placa, aula e lupas) mostradas no visualizador de
-// obras quando o leitor toca na imagem de um artigo. Cada lição diz em
-// `articles` quais artigos a usam. As que têm `museum` vieram do Museu Virtual
-// e trazem a pirâmide Deep Zoom (`dzi`) do acervo; as demais usam a pirâmide
-// de miniaturas da Commons (src/data/artImages.js), e as coordenadas das lupas
-// valem sobre o arquivo da Commons.
-export const ARTWORKS = [
-  aConfissaoCrespi,
-  adaoEEvaNoParaiso,
-  adoracaoDosPastoresKrezias,
-  anjoLibertaAlmasDoPurgatorio,
-  arvoreDeJesseLivroDeHoras,
-  assuncaoDeRubens,
-  assuncaoDeTiciano,
-  autoDeFeBerruguete,
-  basilicaDeAparecida,
-  batuqueRugendas,
-  bodasDeCana,
-  casamentoDePoussin,
-  ceiaEmEmaus,
-  chavesDoReinoPerugino,
-  codiceSinaitico,
-  criacaoDeAdao,
-  criacaoDeEva,
-  criacaoDoSolEDaLua,
-  cristoAbencoaAsCriancas,
-  cristoDianteDePilatos,
-  cristoNaTempestade,
-  cristoNoMarDeTiberiades,
-  crucificacaoDeEmileBernard,
-  crucificacaoTintoretto,
-  disputaDoSacramento,
-  entregaDasChaves,
-  estampaDosCemFlorins,
-  galileuDianteDaInquisicao,
-  grandeBudaDeKamakura,
-  grandeDiaDaSuaIra,
-  gravuraDeFlammarion,
-  imaculadaConceicaoTovar,
-  inspiracaoDeSaoMateus,
-  interiorDeSaoPedroPanini,
-  israelitasSaindoDoEgito,
-  joESeusAmigos,
-  juizoFinalFraAngelico,
-  krishnaEArjuna,
-  luteroEmWorms,
-  madonaComOMeninoEAnjos,
-  maeDeDeusDeVladimir,
-  maestaDeCimabue,
-  mesquitaAzul,
-  milagreDoSol,
-  missaDeSaoGregorio,
-  moisesComAsTabuasDaLei,
-  muroDasLamentacoesGerome,
-  noiteEstrelada,
-  nossaSenhoraDeGuadalupe,
-  oAngelus,
-  oTributoMasaccio,
-  oracaoNoHortoBellini,
-  paisagemComOBomSamaritano,
-  pantocratorDeCefalu,
-  pedraDePilatos,
-  pracaDeSaoPedroVanWittel,
-  precursoresDeCristoFraAngelico,
-  primeiraVisaoRamsey,
-  profetaIsaias,
-  quatroEvangelistasJordaens,
-  quedaDosAnjosRebeldes,
-  quedaEExpulsaoDoParaiso,
-  relevoDeMitra,
-  ressurreicaoDePiero,
-  sagradaFamiliaComSaoJoao,
-  sagradaFamiliaDoCordeiro,
-  saoJeronimoEmMeditacao,
-  saoJeronimoEscrevendo,
-  saulEAFeiticeiraDeEndor,
-  separacaoDaLuzEDasTrevas,
-  seteObrasDeMisericordia,
-  seteSacramentos,
-  sombraDeSamuelInvocadaPorSaul,
-  sudarioDeTurim,
-  tentacoesDeCristo,
-  tomadaDeJerusalem,
-  torreDeBabel,
-  trindadeAdoradaPelosGonzaga,
-  trindadeDeRublev,
-  ultimaCeia,
-  virgemDoRosarioMurillo,
-  vocacaoDosApostolos,
-];
+// obras quando o leitor toca na imagem de um artigo. Este arquivo é o resumo
+// leve que o app importa (o selo "Explorar a obra · N detalhes" do artigo);
+// o conteúdo vem de all.js por loadArtwork(), só quando o visualizador abre.
+// As lições com `museum` vieram do Museu Virtual e trazem a pirâmide Deep Zoom
+// (`dzi`) do acervo; as demais usam a pirâmide de miniaturas da Commons
+// (src/data/artImages.js), e as coordenadas das lupas valem sobre ela.
 
-const BY_ARTICLE = new Map();
-for (const art of ARTWORKS) {
-  for (const id of art.articles) BY_ARTICLE.set(id, art);
+export const ARTWORK_SUMMARY = {
+  1: { slug: 'criacao-de-adao', lupas: 5, museum: true },
+  2: { slug: 'entrega-das-chaves', lupas: 6 },
+  3: { slug: 'sao-jeronimo-escrevendo', lupas: 6 },
+  4: { slug: 'bodas-de-cana', lupas: 5, museum: true },
+  5: { slug: 'ceia-em-emaus', lupas: 5, museum: true },
+  6: { slug: 'jo-e-seus-amigos', lupas: 6 },
+  7: { slug: 'ultima-ceia', lupas: 6, museum: true },
+  8: { slug: 'criacao-de-eva', lupas: 6 },
+  9: { slug: 'noite-estrelada', lupas: 5, museum: true },
+  10: { slug: 'paisagem-com-o-bom-samaritano', lupas: 6 },
+  11: { slug: 'criacao-do-sol-e-da-lua', lupas: 6 },
+  12: { slug: 'imaculada-conceicao-tovar', lupas: 6 },
+  13: { slug: 'sagrada-familia-com-sao-joao', lupas: 5 },
+  14: { slug: 'maesta-de-cimabue', lupas: 5 },
+  15: { slug: 'mesquita-azul', lupas: 6 },
+  16: { slug: 'saul-e-a-feiticeira-de-endor', lupas: 6 },
+  17: { slug: 'pantocrator-de-cefalu', lupas: 6 },
+  18: { slug: 'sao-jeronimo-em-meditacao', lupas: 6 },
+  19: { slug: 'chaves-do-reino-perugino', lupas: 6 },
+  20: { slug: 'sete-sacramentos', lupas: 6 },
+  21: { slug: 'a-confissao-crespi', lupas: 5 },
+  22: { slug: 'assuncao-de-ticiano', lupas: 6 },
+  23: { slug: 'anjo-liberta-almas-do-purgatorio', lupas: 6 },
+  24: { slug: 'sete-obras-de-misericordia', lupas: 6 },
+  25: { slug: 'madona-com-o-menino-e-anjos', lupas: 6 },
+  26: { slug: 'sagrada-familia-do-cordeiro', lupas: 6 },
+  27: { slug: 'trindade-de-rublev', lupas: 6 },
+  28: { slug: 'auto-de-fe-berruguete', lupas: 6 },
+  29: { slug: 'tomada-de-jerusalem', lupas: 6 },
+  30: { slug: 'galileu-diante-da-inquisicao', lupas: 6 },
+  31: { slug: 'inspiracao-de-sao-mateus', lupas: 5 },
+  32: { slug: 'adoracao-dos-pastores-krezias', lupas: 6 },
+  33: { slug: 'arvore-de-jesse-livro-de-horas', lupas: 5 },
+  34: { slug: 'ressurreicao-de-piero', lupas: 6 },
+  35: { slug: 'cristo-diante-de-pilatos', lupas: 6 },
+  36: { slug: 'relevo-de-mitra', lupas: 6 },
+  37: { slug: 'lutero-em-worms', lupas: 6 },
+  38: { slug: 'muro-das-lamentacoes-gerome', lupas: 5 },
+  39: { slug: 'grande-buda-de-kamakura', lupas: 6 },
+  40: { slug: 'krishna-e-arjuna', lupas: 6 },
+  41: { slug: 'primeira-visao-ramsey', lupas: 5 },
+  42: { slug: 'criacao-de-adao', lupas: 5, museum: true },
+  43: { slug: 'gravura-de-flammarion', lupas: 6 },
+  44: { slug: 'batuque-rugendas', lupas: 5 },
+  45: { slug: 'crucificacao-de-emile-bernard', lupas: 5 },
+  46: { slug: 'profeta-isaias', lupas: 6 },
+  47: { slug: 'pedra-de-pilatos', lupas: 6 },
+  48: { slug: 'codice-sinaitico', lupas: 6 },
+  49: { slug: 'missa-de-sao-gregorio', lupas: 6 },
+  50: { slug: 'sudario-de-turim', lupas: 6 },
+  51: { slug: 'milagre-do-sol', lupas: 6 },
+  52: { slug: 'nossa-senhora-de-guadalupe', lupas: 6 },
+  53: { slug: 'mae-de-deus-de-vladimir', lupas: 6 },
+  54: { slug: 'basilica-de-aparecida', lupas: 5 },
+  55: { slug: 'assuncao-de-rubens', lupas: 6 },
+  56: { slug: 'separacao-da-luz-e-das-trevas', lupas: 6 },
+  57: { slug: 'cristo-na-tempestade', lupas: 6 },
+  58: { slug: 'trindade-adorada-pelos-gonzaga', lupas: 6 },
+  59: { slug: 'queda-e-expulsao-do-paraiso', lupas: 6 },
+  60: { slug: 'disputa-do-sacramento', lupas: 6 },
+  61: { slug: 'juizo-final-fra-angelico', lupas: 6 },
+  62: { slug: 'o-angelus', lupas: 5, museum: true },
+  63: { slug: 'vocacao-dos-apostolos', lupas: 6 },
+  64: { slug: 'casamento-de-poussin', lupas: 6 },
+  65: { slug: 'sombra-de-samuel-invocada-por-saul', lupas: 5 },
+  66: { slug: 'queda-dos-anjos-rebeldes', lupas: 6 },
+  67: { slug: 'crucificacao-tintoretto', lupas: 6 },
+  68: { slug: 'quatro-evangelistas-jordaens', lupas: 6 },
+  69: { slug: 'israelitas-saindo-do-egito', lupas: 6 },
+  70: { slug: 'grande-dia-da-sua-ira', lupas: 6 },
+  71: { slug: 'estampa-dos-cem-florins', lupas: 6 },
+  72: { slug: 'adao-e-eva-no-paraiso', lupas: 6 },
+  73: { slug: 'oracao-no-horto-bellini', lupas: 6 },
+  74: { slug: 'virgem-do-rosario-murillo', lupas: 5 },
+  75: { slug: 'o-tributo-masaccio', lupas: 6 },
+  76: { slug: 'precursores-de-cristo-fra-angelico', lupas: 6 },
+  77: { slug: 'torre-de-babel', lupas: 6, museum: true },
+  78: { slug: 'cristo-no-mar-de-tiberiades', lupas: 6 },
+  79: { slug: 'tentacoes-de-cristo', lupas: 6 },
+  80: { slug: 'interior-de-sao-pedro-panini', lupas: 5 },
+  81: { slug: 'cristo-abencoa-as-criancas', lupas: 5 },
+  82: { slug: 'praca-de-sao-pedro-van-wittel', lupas: 6 },
+  83: { slug: 'moises-com-as-tabuas-da-lei', lupas: 5 },
+};
+
+export function artworkSummary(articleId) {
+  return ARTWORK_SUMMARY[articleId] ?? null;
 }
 
-export function artworkForArticle(articleId) {
-  return BY_ARTICLE.get(articleId) ?? null;
+// Lição completa do artigo (ou null). No nativo resolve na hora; na web
+// baixa o pedaço das lições na primeira vez.
+export function loadArtwork(articleId) {
+  if (!ARTWORK_SUMMARY[articleId]) return Promise.resolve(null);
+  return import('./all').then((m) => m.artworkForArticle(articleId));
 }
 
 export const MUSEUM_URL = 'https://movits.github.io/museu-virtual/';

@@ -24,7 +24,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GALLERY, useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { ART_IMAGES } from '../../data/artImages';
-import { artworkForArticle, museumUrl } from '../../data/artworks';
+import { artworkSummary, loadArtwork, museumUrl } from '../../data/artworks';
 import { pick } from '../../utils/i18nData';
 import { commonsPyramid, commonsUrl, lupaBounds } from '../../utils/artImage';
 import { selection as tick } from '../../utils/haptics';
@@ -127,7 +127,25 @@ export default function ArtViewer({ visible, article, onClose }) {
   const reduceMotion = useReducedMotion();
   const { space, radius } = tokens;
 
-  const art = article ? artworkForArticle(article.id) : null;
+  // A lição vem sob demanda (na web é um pedaço separado do bundle). Até
+  // chegar, a página da obra não é montada: montá-la sem as lupas e de novo
+  // com elas baixaria a obra duas vezes.
+  const hasLesson = Boolean(article && artworkSummary(article.id));
+  const [artEntry, setArtEntry] = useState({ id: null, art: null });
+  useEffect(() => {
+    if (!visible || !article) return undefined;
+    if (!hasLesson) {
+      setArtEntry({ id: article.id, art: null });
+      return undefined;
+    }
+    let alive = true;
+    loadArtwork(article.id)
+      .then((a) => { if (alive) setArtEntry({ id: article.id, art: a }); })
+      .catch(() => { if (alive) setArtEntry({ id: article.id, art: null }); });
+    return () => { alive = false; };
+  }, [visible, article, hasLesson]);
+  const artReady = artEntry.id === article?.id;
+  const art = artReady ? artEntry.art : null;
   const img = article ? ART_IMAGES[article.id] : null;
   const lupas = useMemo(() => art?.lupas ?? [], [art]);
   const total = lupas.length;
@@ -139,7 +157,7 @@ export default function ArtViewer({ visible, article, onClose }) {
   }, [art, img]);
 
   const html = useMemo(
-    () => (source
+    () => (artReady && source
       ? buildArtViewerHtml({
         source,
         lupas: lupas.map((l) => ({ ...l, title: pick(l, 'title', isEn) })),
@@ -149,7 +167,7 @@ export default function ArtViewer({ visible, article, onClose }) {
         lupaLabel: t('art.lupa'),
       })
       : null),
-    [source, lupas, isEn, reduceMotion, t],
+    [artReady, source, lupas, isEn, reduceMotion, t],
   );
 
   const canvasRef = useRef(null);

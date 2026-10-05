@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ARTWORKS, artworkForArticle, museumUrl } from '../src/data/artworks/index.js';
+import { ARTWORKS, artworkForArticle } from '../src/data/artworks/all.js';
+import { ARTWORK_SUMMARY, artworkSummary, loadArtwork, museumUrl } from '../src/data/artworks/index.js';
 import { ART_IMAGES } from '../src/data/artImages.js';
 
 // Lições de obras (src/data/artworks): o visualizador confia nestes dados sem
@@ -74,4 +75,18 @@ test('cada artigo tem no máximo uma aula', () => {
       seen.set(id, art.slug);
     }
   }
+});
+
+test('o resumo leve bate com as lições (selo do artigo e loadArtwork)', async () => {
+  const fromLessons = {};
+  for (const art of ARTWORKS) {
+    for (const id of art.articles) fromLessons[id] = { slug: art.slug, lupas: art.lupas.length, museum: Boolean(art.museum) };
+  }
+  const fromSummary = {};
+  for (const [id, s] of Object.entries(ARTWORK_SUMMARY)) fromSummary[id] = { slug: s.slug, lupas: s.lupas, museum: Boolean(s.museum) };
+  assert.deepEqual(fromSummary, fromLessons, 'rode node scripts/generate-artworks-index.mjs');
+  assert.equal(artworkSummary(7)?.lupas, 6);
+  assert.equal(artworkSummary(-1), null);
+  assert.equal((await loadArtwork(7))?.slug, 'ultima-ceia');
+  assert.equal(await loadArtwork(-1), null);
 });

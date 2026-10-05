@@ -19,7 +19,7 @@ import { isFavorite, toggleFavorite } from '../utils/favorites';
 import { markPlanDay, markAsRead } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
 import { ART_IMAGES } from '../data/artImages';
-import { artworkForArticle } from '../data/artworks';
+import { artworkSummary } from '../data/artworks';
 import { commonsUrl } from '../utils/artImage';
 import { translucentHeaderOptions, fullBleedContentOptions, leftTitleHeaderOptions } from '../navigation/chrome';
 import { Button, Group, Row, SectionTitle, useTabBarHeightSafe } from '../components/ui';
@@ -73,7 +73,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
   // A imagem local tem ~1000 px; com rede, a da Commons no tamanho que a tela
   // pede (densidade incluída) entra por cima quando termina de carregar.
   const artImage = article ? ART_IMAGES[article.id] : null;
-  const artwork = article ? artworkForArticle(article.id) : null;
+  const artwork = article ? artworkSummary(article.id) : null;
   const heroHdUri = artImage && heroW > 0 ? commonsUrl(artImage, heroW * PixelRatio.get()) : null;
   const boxAspect = Math.max(article?.imageAspect || 1.6, 1.3);
   const heroH = heroW > 0 ? Math.round(heroW / boxAspect) : 0;
@@ -387,8 +387,8 @@ export default function ArticleDetailScreen({ route, navigation }) {
                 <View style={styles.exploreBadge} pointerEvents="none">
                   <Ionicons name="search" size={tokens.icon.sm} color={colors.onPrimary} />
                   <Text style={styles.exploreText}>
-                    {artwork?.lupas?.length
-                      ? t('art.exploreDetails', { n: artwork.lupas.length })
+                    {artwork?.lupas
+                      ? t('art.exploreDetails', { n: artwork.lupas })
                       : t('art.explore')}
                   </Text>
                 </View>
