@@ -1,12 +1,12 @@
 import { useEffect, useLayoutEffect, useMemo, useState, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, Image } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image, PixelRatio, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSharedValue } from 'react-native-reanimated';
 import { useFocusEffect } from '@react-navigation/native';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { articles } from '../data/articles';
 import { referenceById, withEn, translateRef, translateAuthor, translateYear } from '../data/references';
-import { useTheme } from '../context/ThemeContext';
+import { GALLERY, useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { shareArticle } from '../utils/share';
 import { pick, categoryLabel } from '../utils/i18nData';
@@ -18,10 +18,13 @@ import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
 import { markPlanDay, markAsRead } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
+import { ART_IMAGES } from '../data/artImages';
+import { artworkForArticle } from '../data/artworks';
+import { commonsUrl } from '../utils/artImage';
 import { translucentHeaderOptions, fullBleedContentOptions, leftTitleHeaderOptions } from '../navigation/chrome';
 import { Button, Group, Row, SectionTitle, useTabBarHeightSafe } from '../components/ui';
 import HeaderButton from '../components/HeaderButton';
-import ImageZoomModal from '../components/ImageZoomModal';
+import ArtViewer from '../components/art/ArtViewer';
 import ReadingColumn, { columnStyle, columnContentStyle } from '../components/ReadingColumn';
 import ReadingProgressBar from '../components/ReadingProgressBar';
 import RelatedArticles from '../components/RelatedArticles';
@@ -66,6 +69,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
   // As proporções são da imagem, não medidas de layout.
   const [heroW, setHeroW] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
+  const [heroHdReady, setHeroHdReady] = useState(false);
+  // A imagem local tem ~1000 px; com rede, a da Commons no tamanho que a tela
+  // pede (densidade incluída) entra por cima quando termina de carregar.
+  const artImage = article ? ART_IMAGES[article.id] : null;
+  const artwork = article ? artworkForArticle(article.id) : null;
+  const heroHdUri = artImage && heroW > 0 ? commonsUrl(artImage, heroW * PixelRatio.get()) : null;
   const boxAspect = Math.max(article?.imageAspect || 1.6, 1.3);
   const heroH = heroW > 0 ? Math.round(heroW / boxAspect) : 0;
 
@@ -337,7 +346,9 @@ export default function ArticleDetailScreen({ route, navigation }) {
         ref={scrollRef}
         contentContainerStyle={[
           styles.content,
-          { paddingTop: headerHeight, paddingBottom: tabBarHeight + tokens.space.xl },
+          // O header é translúcido e o conteúdo começa sob ele: o respiro
+          // extra impede que a imagem fique colada na barra.
+          { paddingTop: headerHeight + tokens.space.md, paddingBottom: tabBarHeight + tokens.space.xl },
         ]}
         onScroll={handleScroll}
         scrollEventThrottle={16}
@@ -362,6 +373,25 @@ export default function ArticleDetailScreen({ route, navigation }) {
                     alt={article.imageAlt || displayTitle}
                   />
                 )}
+                {heroHdUri ? (
+                  <Image
+                    source={{ uri: heroHdUri }}
+                    style={[StyleSheet.absoluteFill, { opacity: heroHdReady ? 1 : 0 }]}
+                    resizeMode="contain"
+                    onLoad={() => setHeroHdReady(true)}
+                    aria-hidden
+                  />
+                ) : null}
+                {/* Selo com a lupa: avisa que a imagem abre com zoom e,
+                    quando a obra tem aula, quantos detalhes ela comenta. */}
+                <View style={styles.exploreBadge} pointerEvents="none">
+                  <Ionicons name="search" size={tokens.icon.sm} color={colors.onPrimary} />
+                  <Text style={styles.exploreText}>
+                    {artwork?.lupas?.length
+                      ? t('art.exploreDetails', { n: artwork.lupas.length })
+                      : t('art.explore')}
+                  </Text>
+                </View>
               </Pressable>
               {imageCaption ? <Text style={styles.caption}>{imageCaption}</Text> : null}
             </View>
@@ -390,7 +420,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
 
           {sources.length > 0 && (
             <>
-              <SectionTitle title={t('articles.sources')} style={styles.sectionTitle} />
+              <SectionTitle title={t('articles.sources')} />
               <Group>
                 {sources.map((s) => (
                   <Row
@@ -413,14 +443,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
       </ScrollView>
       {/* Depois do ScrollView na árvore para ficar por cima do conteúdo. */}
       <ReadingProgressBar progressValue={progressSv} top={headerHeight} />
-      <ImageZoomModal
-        visible={zoomOpen}
-        source={article.image}
-        hdUri={article.imageHd}
-        caption={article.imageCredit}
-        alt={article.imageAlt}
-        onClose={() => setZoomOpen(false)}
-      />
+      <ArtViewer visible={zoomOpen} article={article} onClose={() => setZoomOpen(false)} />
     </ReadingColumn>
   );
 }
@@ -444,6 +467,21 @@ function makeStyles(c, { space, radius }, text) {
       justifyContent: 'center',
     },
     caption: [text('caption1'), { color: c.textSubtle, marginTop: space.xs }],
+    // Véu escuro fixo da sala de obras (a imagem pode ser clara ou escura),
+    // então o texto usa onPrimary nos dois temas.
+    exploreBadge: {
+      position: 'absolute',
+      left: space.sm,
+      bottom: space.sm,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: space.xxs,
+      paddingHorizontal: space.sm,
+      paddingVertical: space.xxs + 2,
+      borderRadius: radius.full,
+      backgroundColor: GALLERY.chip,
+    },
+    exploreText: [text('caption1'), { color: c.onPrimary, fontWeight: '600' }],
     category: [text('footnote'), { color: c.textSubtle }],
     title: [text('title'), { color: c.text, marginTop: space.xxs, marginBottom: space.md }],
     translationNotice: {
@@ -457,8 +495,5 @@ function makeStyles(c, { space, radius }, text) {
     },
     translationNoticeText: [text('footnote'), { color: c.textSubtle, flex: 1, fontStyle: 'italic' }],
     toolBtn: { marginTop: space.xl },
-    // O título de seção alinha com a coluna do artigo (o padrão do componente
-    // recua space.md para as listas do LargeTitleScreen).
-    sectionTitle: { marginHorizontal: 0 },
   };
 }

@@ -92,6 +92,21 @@ export const DARK = {
   seasonPurple: '#b59ae6',
 };
 
+// Sala escura do visualizador de obras (src/components/art/): igual nos dois
+// temas, como uma galeria com a luz apagada, na família do Museu Virtual
+// (preto quente, marfim e dourado). A obra é a única coisa iluminada.
+export const GALLERY = {
+  bg: '#0b0906',
+  panel: 'rgba(20,16,10,0.94)',
+  chip: 'rgba(12,10,6,0.62)',
+  bar: 'rgba(11,9,6,0.55)',
+  text: '#ece4d4',
+  textSubtle: '#b8ac92',
+  accent: '#d4b86a',
+  hairline: 'rgba(212,184,106,0.26)',
+  plate: 'rgba(212,184,106,0.06)',
+};
+
 const FONT_SCALES = {
   pequeno: 0.85,
   normal: 1,
