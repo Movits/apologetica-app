@@ -65,15 +65,23 @@ export const type = {
 
 // Compõe o estilo de Text do RN para um papel. `fs` é a função de escala do
 // tema (fontSize e lineHeight escalam juntos, salvo `fixed`). `families` é o
-// mapa de fontes da plataforma atual.
-export function textStyle(role, fs, families = FONT_FAMILY) {
+// mapa de fontes da plataforma atual. `display` vem da identidade visual
+// (src/theme/identities.js) e só mexe nos papéis de família display:
+// `scale` iguala a largura de fontes diferentes da Cormorant e `weight` é o
+// peso que o arquivo da fonte realmente tem (pedir 600 a uma fonte de peso
+// único faz o navegador engrossar as letras à força).
+export function textStyle(role, fs, families = FONT_FAMILY, display = {}) {
   const t = type[role];
   if (!t) throw new Error(`textStyle: papel de texto desconhecido "${role}"`);
   const scale = t.fixed ? (n) => n : fs;
+  const isDisplay = t.family === 'display';
+  const k = isDisplay ? display.scale ?? 1 : 1;
+  const size = k === 1 ? t.size : Math.round(t.size * k);
+  const lineHeight = k === 1 ? t.lineHeight : Math.round(t.lineHeight * k);
   return {
-    fontSize: scale(t.size),
-    lineHeight: scale(t.lineHeight),
-    fontWeight: t.weight,
+    fontSize: scale(size),
+    lineHeight: scale(lineHeight),
+    fontWeight: isDisplay && display.weight ? display.weight : t.weight,
     fontFamily: families[t.family],
   };
 }

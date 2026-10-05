@@ -96,6 +96,9 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Aparência',
+    'settings.section.identity': 'Identidade visual',
+    'settings.identity.footer': 'Propostas em avaliação. A Clássica é a identidade de sempre. Escolha outra para ver o app inteiro com ela, e volte quando quiser.',
+    'settings.identity.selected': 'Em uso',
     'settings.section.notifications': 'Notificações',
     'settings.section.language': 'Idioma',
     'settings.section.account': 'Conta',
@@ -195,6 +198,7 @@ export const STRINGS = {
     'quiz.mode.trueFalseSub': 'Afirmações rápidas sobre a doutrina católica.',
     'quiz.questionOf': 'Pergunta {{n}} de {{total}}',
     'quiz.streakDays': '{{n}} dias seguidos',
+    'quiz.streakDays.one': '{{n}} dia seguido',
     'quiz.streak': 'Sequência',
     'quiz.correct': 'Acertou',
     'quiz.wrong': 'Errou',
@@ -280,6 +284,11 @@ export const STRINGS = {
     'plan.daysRead': '{{done}} de {{total}} dias lidos',
     'exam.markedCount': 'Marcados: {{n}}',
     'exam.clear': 'Limpar marcações',
+    // Contagens com singular (o `t` não flexiona): a tela escolhe `.one` para 1.
+    'plan.streakDays': '{{n}} dias seguidos',
+    'plan.streakDays.one': '{{n}} dia seguido',
+    'exam.marked': '{{n}} perguntas marcadas',
+    'exam.marked.one': '{{n}} pergunta marcada',
 
     // === References ===
     'ref.readInApp': 'Ler no app',
@@ -353,6 +362,11 @@ export const STRINGS = {
     'settings.voice.choose': 'Escolher voz',
     'settings.guest.message': 'Você está como visitante. Crie uma conta para guardar marcações, notas e caderno em todos os aparelhos.',
     'tools.requiresAccount': 'exige conta',
+    // Convite do visitante, um por item de Meu Estudo (Praticar).
+    'tools.gate.notebook': 'O Caderno fica salvo na sua conta. Crie uma conta gratuita para escrever suas páginas de estudo e abri-las em qualquer aparelho.',
+    'tools.gate.highlights': 'Suas marcações na Bíblia ficam salvas na sua conta. Crie uma conta gratuita para ver todas num só lugar, em qualquer aparelho.',
+    'tools.gate.notes': 'Suas notas sobre os versículos ficam salvas na sua conta. Crie uma conta gratuita para escrever e reler suas notas em qualquer aparelho.',
+    'legal.emailA11y': 'Escrever para {{email}}',
     'common.close': 'Fechar',
     'common.clear': 'Limpar',
     // Onda 9B (Artigos, categoria e Conteúdo do dia)
@@ -573,6 +587,9 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Appearance',
+    'settings.section.identity': 'Visual identity',
+    'settings.identity.footer': 'Proposals under review. Classic is the original identity. Pick another to see the whole app with it, and switch back any time.',
+    'settings.identity.selected': 'In use',
     'settings.section.notifications': 'Notifications',
     'settings.section.language': 'Language',
     'settings.section.account': 'Account',
@@ -672,6 +689,7 @@ export const STRINGS = {
     'quiz.mode.trueFalseSub': 'Quick statements about Catholic teaching.',
     'quiz.questionOf': 'Question {{n}} of {{total}}',
     'quiz.streakDays': '{{n}} days in a row',
+    'quiz.streakDays.one': '{{n}} day in a row',
     'quiz.streak': 'Streak',
     'quiz.correct': 'Correct',
     'quiz.wrong': 'Wrong',
@@ -757,6 +775,11 @@ export const STRINGS = {
     'plan.daysRead': '{{done}} of {{total}} days read',
     'exam.markedCount': 'Marked: {{n}}',
     'exam.clear': 'Clear marks',
+    // Counts with a singular form (`t` does not inflect): the screen picks `.one` for 1.
+    'plan.streakDays': '{{n}}-day streak',
+    'plan.streakDays.one': '{{n}}-day streak',
+    'exam.marked': '{{n}} questions marked',
+    'exam.marked.one': '{{n}} question marked',
 
     // === References ===
     'ref.readInApp': 'Read in app',
@@ -830,6 +853,11 @@ export const STRINGS = {
     'settings.voice.choose': 'Choose voice',
     'settings.guest.message': 'You are browsing as a guest. Create an account to keep highlights, notes and notebook on every device.',
     'tools.requiresAccount': 'requires an account',
+    // Guest invitation, one per item in My Study (Practice).
+    'tools.gate.notebook': 'Your Notebook is saved to your account. Create a free account to write your study pages and open them on any device.',
+    'tools.gate.highlights': 'Your Bible highlights are saved to your account. Create a free account to see them all in one place, on any device.',
+    'tools.gate.notes': 'Your notes on the verses are saved to your account. Create a free account to write and revisit your notes on any device.',
+    'legal.emailA11y': 'Email {{email}}',
     'common.close': 'Close',
     'common.clear': 'Clear',
     // Wave 9B (Articles, category and Today)

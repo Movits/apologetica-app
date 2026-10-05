@@ -1,40 +1,91 @@
 import { Text, View } from 'react-native';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { useTheme } from '../context/ThemeContext';
 
-// Marca do app: cruz latina desenhada com duas Views (haste vertical e
-// travessa), sem imagem nem texto. Nítida em qualquer densidade, pinta com a
-// cor do tema e custa zero. Substitui o CrossMark nos blocos de marca (header,
-// Início, Login e Onboarding) na Onda 1.
+// Marca do app, desenhada pela identidade visual ativa (src/theme/identities.js):
+// - cross: cruz latina (Clássica).
+// - anchor: cruz-âncora das catacumbas (Âncora).
+// - chirho: Chi-Rho num ladrilho (Basílica).
+// - bubble: balão de fala com a cruz recortada, "a resposta" (Lumen).
+// Os desenhos são os mesmos de assets/brand/mark-*.svg (caixa 64 x 64), aqui
+// em react-native-svg para pintar com a cor do tema em qualquer densidade.
 //
-// `size`: 'sm' | 'md' | 'lg' (caixa 18x24, 28x36, 44x56).
-// `color`: cor das barras (default colors.tint).
+// `size`: 'sm' | 'md' | 'lg' (24, 36 e 56 de altura).
+// `color`: cor do traço (default colors.tint).
 // `withName`: mostra "APPologética" ao lado, em text('headline').
-// `decorative`: esconde a cruz do leitor de tela. Para quando o nome do app já
-//   está escrito ao lado (o bloco de marca) ou a cruz é só enfeite (marca
-//   d'água nas laterais do desktop), senão "APPologética" é anunciado duas vezes.
-// `style`: aplicado ao elemento externo (a cruz, ou a linha cruz + nome).
+// `decorative`: esconde a marca do leitor de tela. Para quando o nome do app já
+//   está escrito ao lado (o bloco de marca) ou a marca é só enfeite, senão
+//   "APPologética" é anunciado duas vezes.
+// `style`: aplicado ao elemento externo (a marca, ou a linha marca + nome).
 
 const APP_NAME = 'APPologética';
 
-// Caixa da cruz por tamanho: largura, altura e espessura das barras.
-const SIZES = {
-  sm: { width: 18, height: 24, bar: 2 },
-  md: { width: 28, height: 36, bar: 3 },
-  lg: { width: 44, height: 56, bar: 4 },
-};
+const SIZES = { sm: 24, md: 36, lg: 56 };
 
-// A travessa começa a 30% do topo (proporção da cruz latina).
-const CROSSBAR_TOP = 0.3;
+function Mark({ kind, color }) {
+  if (kind === 'anchor') {
+    return (
+      <>
+        <Circle cx="32" cy="10.5" r="5" fill="none" stroke={color} strokeWidth="4.5" />
+        <Path
+          d="M32 15.5V57 M19 25H45 M11 39c1.5 11 9.5 18 21 18s19.5-7 21-18 M6.5 43.5L11 39l5 3.5 M57.5 43.5L53 39l-5 3.5"
+          fill="none"
+          stroke={color}
+          strokeWidth="4.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </>
+    );
+  }
+  if (kind === 'chirho') {
+    return (
+      <>
+        <Rect x="3" y="3" width="58" height="58" rx="14" fill="none" stroke={color} strokeWidth="3" />
+        <Path
+          d="M30 12V54 M30 13h7a7.5 7.5 0 0 1 0 15h-7 M19 32L41 52 M41 32L19 52"
+          fill="none"
+          stroke={color}
+          strokeWidth="4.5"
+          strokeLinecap="square"
+        />
+      </>
+    );
+  }
+  if (kind === 'bubble') {
+    return (
+      <Path
+        fill={color}
+        fillRule="evenodd"
+        d="M15 46L8.5 59L22 50.8A24 24 0 1 0 15 46Z M29 13H35V22H44V28H35V45H29V28H20V22H29Z"
+      />
+    );
+  }
+  // cross: haste e travessa a 30% do topo (proporção da cruz latina).
+  return (
+    <>
+      <Rect x="29" y="5" width="6" height="54" rx="1.5" fill={color} />
+      <Rect x="14" y="19" width="36" height="6" rx="1.5" fill={color} />
+    </>
+  );
+}
+
+// Glifo solto de qualquer identidade (prévia no seletor de Ajustes).
+export function MarkGlyph({ kind, color, size = 32 }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 64 64">
+      <Mark kind={kind} color={color} />
+    </Svg>
+  );
+}
 
 export default function BrandMark({ size = 'md', color, withName = false, decorative = false, style }) {
-  const { colors, tokens, text } = useTheme();
-  const box = SIZES[size] || SIZES.md;
+  const { colors, tokens, text, identity } = useTheme();
+  const side = SIZES[size] || SIZES.md;
   const tint = color || colors.tint;
-  const bar = { position: 'absolute', backgroundColor: tint, borderRadius: tokens.radius.xs };
 
-  // Sozinha, a cruz é uma imagem (role="img", que o RN 0.81 e o react-native-web
-  // aceitam) com o nome do app como rótulo. Ao lado do nome (ou marcada como
-  // decorativa) o leitor de tela pula a cruz (aria-hidden na web,
+  // Sozinha, a marca é uma imagem com o nome do app como rótulo. Ao lado do
+  // nome (ou decorativa) o leitor de tela a pula (aria-hidden na web,
   // accessibilityElementsHidden no iOS, importantForAccessibility no Android).
   const a11y = withName || decorative
     ? {
@@ -44,18 +95,19 @@ export default function BrandMark({ size = 'md', color, withName = false, decora
       }
     : { role: 'img', 'aria-label': APP_NAME };
 
-  const cross = (
-    <View style={[{ width: box.width, height: box.height }, withName ? null : style]} {...a11y}>
-      <View style={[bar, { left: (box.width - box.bar) / 2, top: 0, width: box.bar, height: box.height }]} />
-      <View style={[bar, { left: 0, top: Math.round(box.height * CROSSBAR_TOP), width: box.width, height: box.bar }]} />
+  const mark = (
+    <View style={[{ width: side, height: side }, withName ? null : style]} {...a11y}>
+      <Svg width={side} height={side} viewBox="0 0 64 64">
+        <Mark kind={identity?.mark} color={tint} />
+      </Svg>
     </View>
   );
 
-  if (!withName) return cross;
+  if (!withName) return mark;
 
   return (
     <View style={[{ flexDirection: 'row', alignItems: 'center', gap: tokens.space.sm }, style]}>
-      {cross}
+      {mark}
       <Text style={[text('headline'), { color: colors.text }]}>{APP_NAME}</Text>
     </View>
   );

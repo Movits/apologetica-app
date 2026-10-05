@@ -113,3 +113,14 @@ test('fontFamilyFor devolve as famílias da plataforma, com o iOS como fallback'
   assert.equal(fontFamilyFor('windows'), FONT_FAMILY_BY_PLATFORM.ios);
   assert.equal(fontFamilyFor(undefined), FONT_FAMILY_BY_PLATFORM.ios);
 });
+
+test('textStyle ajusta só os papéis display pela identidade (escala e peso)', () => {
+  const families = { display: 'Cinzel-SemiBold', sans: undefined, serif: 'Georgia' };
+  const big = textStyle('largeTitle', (n) => n, families, { scale: 0.8, weight: '400' });
+  assert.equal(big.fontSize, Math.round(34 * 0.8));
+  assert.equal(big.lineHeight, Math.round(41 * 0.8));
+  assert.equal(big.fontWeight, '400');
+  assert.equal(big.fontFamily, 'Cinzel-SemiBold');
+  // Papel que não é display fica igual.
+  assert.deepEqual(textStyle('body', (n) => n, families, { scale: 0.8, weight: '400' }), textStyle('body', (n) => n, families));
+});
