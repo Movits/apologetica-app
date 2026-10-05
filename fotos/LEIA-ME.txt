@@ -1,26 +1,40 @@
 PASTA DE FOTOS DO SITE
 ======================
 
-Esta pasta guarda as fotos usadas no site (a landing page).
+Esta pasta guarda as fotos usadas no site (a landing page e as páginas
+de Privacidade, Termos, Apoiar e Por que é grátis).
 Tudo que estiver aqui é publicado junto com o site a cada push.
 
-FOTO DE SÃO MIGUEL (fundo da landing page)
-------------------------------------------
+FOTO DE SÃO MIGUEL (obra do topo da landing page)
+-------------------------------------------------
 
-1. Baixe a obra em alta resolução abrindo este link no navegador
-   (ele baixa o arquivo original direto):
-
-   https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg
-
-2. Salve o arquivo com EXATAMENTE este nome, dentro desta pasta:
-
-   sao-miguel.jpg
-
-3. Faça o commit e o push (no VS Code: Source Control, botão +, Commit, Sync).
-
-Pronto. O site passa a carregar a imagem do nosso próprio servidor,
-bem mais rápido. Enquanto o arquivo não existir, o site continua
-buscando a imagem da internet como antes (não quebra nada).
+sao-miguel.jpg          original (1576 x 2358), usado só se o navegador
+                        não abrir WebP
+sao-miguel-720.webp     versão leve para celular
+sao-miguel-1200.webp    versão para telas grandes e retina
 
 Obra: Guido Reni, São Miguel Arcanjo derrotando Satanás (1635).
-Domínio público.
+Domínio público. Fonte:
+https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20031.jpg
+
+Se trocar o sao-miguel.jpg, gere de novo as duas versões WebP com a mesma
+largura (720 e 1200 px), senão o site continua mostrando a imagem antiga.
+
+TELAS DO APP (pasta app/)
+-------------------------
+
+Capturas reais do app, 600 px de largura, uma versão clara e uma escura
+de cada tela (a página mostra a que combina com o tema escolhido):
+
+inicio-*.webp      Início, com a objeção do dia
+artigo-*.webp      artigo sobre a Eucaristia
+biblia-*.webp      Bíblia em João 3
+mapa-*.webp        Nos Passos de Jesus
+dialogo-*.webp     Modo diálogo
+
+aula-lupas.webp e aula-arte.webp vêm do visualizador do Museu Virtual
+(https://movits.github.io/museu-virtual/), o mesmo usado nas aulas de
+arte do app: A Ceia em Emaús, de Caravaggio, com as lupas e o painel
+de um detalhe.
+
+As capturas originais em PNG ficam em design/preview/auditoria/.
