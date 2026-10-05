@@ -13,6 +13,7 @@ npm run web                    # abrir no navegador (react-native-web)
 npm run lint                   # ESLint em src/ (App.js e src/navigation entram via npx eslint App.js src/navigation)
 npm run check:refs             # valida os dados de referência (fonte, EN, urls)
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
+npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
@@ -20,8 +21,8 @@ npx expo export -p web         # gera dist/ (o que o deploy publica)
 com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
-`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts}.js` e os dados
-de `src/data/references.js`. Lógica nova pura nasce com o teste antes (TDD). Não
+`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage}.js`,
+`src/theme/identities.js` e os dados de `src/data/references.js` e `src/data/artworks/`. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -36,6 +37,9 @@ node scripts/sync-bible-refs.mjs         # sincroniza referências bíblicas
 node scripts/generate-icons.mjs          # gera ícones do app
 node scripts/merge-accounts.mjs          # admin: junta dados de duas contas (precisa .secrets/)
 node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault (brain/4-Conteúdo)
+node scripts/generate-art-images.mjs     # regera src/data/artImages.js (imagem da Commons de cada artigo)
+node scripts/generate-artworks-index.mjs # regera index.js e all.js das aulas de arte (depois de criar ou mudar uma lição)
+node scripts/import-museum-artworks.mjs  # importa do ../museu-virtual as obras que também ilustram artigos
 ```
 
 ## Architecture
@@ -110,6 +114,18 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
   `tokens.motion.stagger`, `scheduleOnRN` em vez de `runOnJS`). Reduce motion é
   respeitado pelo `ReduceMotion.System` padrão. Haptics via `src/utils/haptics.js`
   (no-op na web).
+
+### Identidades visuais e visualizador de obras
+- `src/theme/identities.js` (puro, testado): Clássica (padrão), Âncora, Basílica e Lumen,
+  cada uma com paleta clara e escura, fonte de títulos (carregada sob demanda no
+  ThemeContext) e marca (`BrandMark`, SVGs em `assets/brand/`). O dono troca em Ajustes;
+  na web, `?identidade=ancora` abre o app (e a landing) com ela. Paleta nova sempre com
+  as mesmas chaves e contraste AA (o teste cobra). Ver `brain/2-Projeto/Decisões`.
+- Visualizador de obras: `src/components/art/` (OpenSeadragon em WebView/iframe, lupas,
+  aula). Dados em `src/data/artworks/` (gerados os índices) e `src/data/artImages.js`.
+  Ver `brain/3-App/Funcionalidades/Visualizador de Obras.md`.
+- Desktop: o site é instalável como app (PWA) e se atualiza sozinho; Ajustes mostra
+  "Instalar como aplicativo" quando o navegador permite (`src/utils/pwaInstall*.js`).
 
 ### Estado global (`src/context/`)
 Ordem dos providers em `App.js` (de fora pra dentro): `Language → Theme → Auth →
@@ -222,9 +238,9 @@ npm run lint          # ESLint em src/, precisa passar antes de commitar
 npm test              # node --test, precisa terminar com fail 0
 npm run check:refs    # obrigatório ao mexer em references.js ou references-en.js
 ```
-Baseline atual: **0 erros e 2 warnings** (os dois `react-hooks/exhaustive-deps`
-de `ImageZoomModal.jsx`, pré-existentes). O que não pode subir é erro, e sua mudança não deve aumentar a
-contagem de warnings.
+Baseline atual: **0 erros e 0 warnings** (os dois antigos do `ImageZoomModal.jsx` sumiram
+na reescrita de outubro de 2026). O que não pode subir é erro, e sua mudança não deve criar
+warning.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
 legada (hoje: 44 refs não bíblicas sem url, 75 sem tradução EN, 17 apontando para

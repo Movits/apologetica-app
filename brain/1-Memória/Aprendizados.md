@@ -101,3 +101,26 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - `npx expo export -p ios -p android` compila os bundles nativos sem Xcode nem
   Android Studio: pega import quebrado em módulo só nativo que o export web
   nunca vê.
+
+## Sobre imagens, mapas e conteúdo gerado (2026-10-05)
+
+- Serviços externos mudam sem aviso: a CARTO passou a exigir chave (o mapa
+  mostrava "API key required" nos ladrilhos) e a Wikimedia passou a limitar o
+  wsrv.nl (429). Teste de fumaça barato: `curl` num ladrilho e numa imagem antes
+  de culpar o código.
+- A Commons só serve miniaturas nos tamanhos-padrão (500, 960, 1280, 1920,
+  3840) e pelo host thumb.wikimedia.org; o /thumb do upload.wikimedia.org dá 429.
+- Função chamada dentro de callback do gesture-handler precisa de `'worklet'`,
+  senão o nativo lança "Tried to synchronously call a Remote Function". A web
+  não acusa nada.
+- Gesto exclusivo com toque duplo (`Gesture.Exclusive(doubleTap, ...)`) faz
+  todo arrasto esperar o toque duplo falhar: é o "delay" que o dono sentiu.
+- Conteúdo pesado (aulas) vai por `import()` dinâmico: na web vira pedaço
+  separado do bundle, no nativo continua embutido. Um resumo leve gerado
+  atende quem só precisa de contagens.
+- Agentes de conteúdo em lote acharam 13 créditos de imagem errados ao
+  pesquisar as obras. Vale pedir sempre "aponte o que está errado nos dados
+  existentes" junto da tarefa.
+- O Fast Refresh com vários agentes editando reinicia a navegação do app web
+  e rerroda efeitos: testes manuais no painel do navegador ficam instáveis.
+  Para verificar fluxo, script de Playwright direto no servidor.
