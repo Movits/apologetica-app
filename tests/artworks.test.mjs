@@ -65,3 +65,13 @@ test('artworkForArticle e museumUrl', () => {
   assert.equal(museumUrl(ceia, 'judas-na-sombra'), 'https://movits.github.io/museu-virtual/#/obra/ultima-ceia?lupa=judas-na-sombra');
   assert.equal(museumUrl({ slug: 'x' }), null);
 });
+
+test('cada artigo tem no máximo uma aula', () => {
+  const seen = new Map();
+  for (const art of ARTWORKS) {
+    for (const id of art.articles) {
+      assert.ok(!seen.has(id), `artigo ${id} em ${seen.get(id)} e ${art.slug}`);
+      seen.set(id, art.slug);
+    }
+  }
+});
