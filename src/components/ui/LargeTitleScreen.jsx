@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Animated, {
   Extrapolation,
   interpolate,
@@ -7,10 +7,11 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../../context/ThemeContext';
 import ChromeBackdrop from '../../navigation/ChromeBackdrop';
+import { BackButton } from '../HeaderButton';
+import { COLUMN_MAX, centeredColumn } from '../ReadingColumn';
 import useTabBarHeightSafe from './useTabBarHeightSafe';
 
 // Contêiner de tela com large title próprio (Cormorant), igual nas três
@@ -22,7 +23,8 @@ import useTabBarHeightSafe from './useTabBarHeightSafe';
 //
 // Props:
 // - title, subtitle: large title e linha abaixo dele.
-// - back: { label?, onPress, a11yLabel? } mostra chevron + rótulo à esquerda.
+// - back: { label?, onPress, a11yLabel? } mostra o BackButton do app
+//   (chevron + rótulo opcional) à esquerda.
 // - right: nó com as ações da direita (ícones de 44 pt).
 // - children: conteúdo rolável, dentro de um Animated.ScrollView.
 // - renderList: alternativa a children para telas com FlatList própria.
@@ -34,6 +36,12 @@ import useTabBarHeightSafe from './useTabBarHeightSafe';
 //   contentContainerStyle continuam os daqui (para recuo, use contentStyle).
 //   Ignorado com renderList, que já recebe tudo pela função.
 // - contentStyle: extra no contentContainerStyle.
+// - maxWidth: largura máxima do conteúdo em janela larga (padrão COLUMN_MAX,
+//   720). O conteúdo rolável e a linha da barra ficam numa coluna centrada
+//   (centeredColumn de ReadingColumn.jsx): large title, títulos de seção,
+//   cards e o botão voltar dividem a mesma borda esquerda. No celular a
+//   coluna é a tela inteira e nada muda. O fundo da barra continua de ponta a
+//   ponta.
 //
 // A tela é usada com header nativo desligado (headerShown: false).
 
@@ -42,22 +50,6 @@ import useTabBarHeightSafe from './useTabBarHeightSafe';
 // (a altura total é `insets.top + BAR_HEIGHT`).
 export const BAR_HEIGHT = 44;
 const COLLAPSE_AT = 40;
-
-function BackButton({ back, colors, tokens, text }) {
-  return (
-    <Pressable
-      role="button"
-      aria-label={back.a11yLabel ?? back.label}
-      onPress={back.onPress}
-      style={[styles.back, { paddingLeft: tokens.space.xxs, paddingRight: tokens.space.xs }]}
-    >
-      <Ionicons name="chevron-back" size={tokens.icon.lg} color={colors.tint} />
-      {back.label ? (
-        <Text numberOfLines={1} style={[text('body'), { color: colors.tint }]}>{back.label}</Text>
-      ) : null}
-    </Pressable>
-  );
-}
 
 export default function LargeTitleScreen({
   title,
@@ -68,6 +60,7 @@ export default function LargeTitleScreen({
   renderList,
   scrollProps,
   contentStyle,
+  maxWidth = COLUMN_MAX,
 }) {
   const { colors, tokens, text } = useTheme();
   const insets = useSafeAreaInsets();
@@ -93,11 +86,19 @@ export default function LargeTitleScreen({
         paddingTop: barHeight,
         paddingBottom: tabBarHeight + space.xl,
         paddingHorizontal: space.md,
+        ...centeredColumn(maxWidth, space.md),
       },
       contentStyle,
     ],
-    [barHeight, tabBarHeight, space.xl, space.md, contentStyle],
+    [barHeight, tabBarHeight, space.xl, space.md, contentStyle, maxWidth],
   );
+  const rowStyle = useMemo(
+    () => [styles.row, { paddingHorizontal: space.xs, ...centeredColumn(maxWidth, space.md) }],
+    [space.xs, space.md, maxWidth],
+  );
+  // O voltar encosta na borda da coluna (o recuo do chevron já vem do próprio
+  // BackButton); o recuo simétrico da linha mantém o título inline centrado.
+  const backStyle = useMemo(() => [styles.back, { marginLeft: -space.xs }], [space.xs]);
 
   const header = useMemo(
     () => (
@@ -132,9 +133,11 @@ export default function LargeTitleScreen({
         <Animated.View style={[StyleSheet.absoluteFill, styles.passThrough, chromeStyle]}>
           <ChromeBackdrop edge="bottom" />
         </Animated.View>
-        <View style={[styles.row, { paddingHorizontal: tokens.space.xs }]}>
+        <View style={rowStyle}>
           <View style={[styles.side, styles.passThrough]}>
-            {back ? <BackButton back={back} colors={colors} tokens={tokens} text={text} /> : null}
+            {back ? (
+              <BackButton label={back.label} a11yLabel={back.a11yLabel} onPress={back.onPress} style={backStyle} />
+            ) : null}
           </View>
           <Animated.Text
             numberOfLines={1}
@@ -180,10 +183,6 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     textAlign: 'center',
   },
-  back: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    minHeight: BAR_HEIGHT,
-    minWidth: BAR_HEIGHT,
-  },
+  // O rótulo do voltar encolhe antes de invadir o título inline.
+  back: { flexShrink: 1 },
 });

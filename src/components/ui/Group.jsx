@@ -6,14 +6,17 @@ import ListSeparator from './ListSeparator';
 // Lista agrupada (inset grouped): card com fundo `card`, cantos `radius.md` e
 // um separador de meia linha (ListSeparator) entre cada par de filhos,
 // recuado à esquerda por `insetLeft`.
-// `header` e `footer` ficam fora do card, em footnote secundário. `style` vai
-// no invólucro externo (use para margens), o visual do card é fixo.
+// `header` e `footer` ficam fora do card, em footnote secundário, alinhados
+// com a borda esquerda do card (sem o recuo extra do estilo iOS, que deixava a
+// legenda 16 pt para dentro do título de seção e da borda: reprovado pelo
+// dono, igual ao SectionTitle). `style` vai no invólucro externo (use para
+// margens), o visual do card é fixo.
 export default function Group({ children, header, footer, insetLeft, style }) {
   const { colors, tokens, text } = useTheme();
   const { space, radius } = tokens;
   const items = Children.toArray(children);
 
-  const caption = [text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md }];
+  const caption = [text('footnote'), { color: colors.textSubtle }];
 
   return (
     <View style={style}>

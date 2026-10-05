@@ -31,12 +31,14 @@ function buildTraining(t) {
   ];
 }
 
+// `gate` é o convite do visitante, escrito por item: montar a frase com o
+// rótulo em minúsculas ("Para usar minhas notas...") soava estranho.
 function buildStudy(t) {
   return [
-    { icon: 'journal-outline', label: t('home.card.notebook'), sub: t('home.card.notebookSub'), screen: 'Notebook' },
+    { icon: 'journal-outline', label: t('home.card.notebook'), sub: t('home.card.notebookSub'), screen: 'Notebook', gate: t('tools.gate.notebook') },
     { icon: 'star-outline', label: t('home.card.favorites'), screen: 'Favorites', local: true },
-    { icon: 'color-fill-outline', label: t('home.card.highlights'), screen: 'Highlights' },
-    { icon: 'document-text-outline', label: t('home.card.notes'), screen: 'Notes' },
+    { icon: 'color-fill-outline', label: t('home.card.highlights'), screen: 'Highlights', gate: t('tools.gate.highlights') },
+    { icon: 'document-text-outline', label: t('home.card.notes'), screen: 'Notes', gate: t('tools.gate.notes') },
   ];
 }
 
@@ -44,7 +46,7 @@ export default function ToolsScreen() {
   const navigation = useNavigation();
   const { colors, tokens } = useTheme();
   const { user } = useAuth();
-  const { t, isEn } = useLanguage();
+  const { t } = useLanguage();
   const requireAccount = useRequireAccount();
   const { icon } = tokens;
 
@@ -70,13 +72,7 @@ export default function ToolsScreen() {
     }
     requireAccount(
       () => navigation.navigate(item.screen),
-      {
-        title: item.label,
-        message: isEn
-          ? `To use ${item.label.toLowerCase()}, create a free account. Highlights, notes and notebook stay saved in your account and synced across devices.`
-          : `Para usar ${item.label.toLowerCase()}, crie uma conta gratuita. Marcações, notas e caderno ficam salvos na sua conta e sincronizados entre aparelhos.`,
-        icon: item.icon,
-      }
+      { title: item.label, message: item.gate, icon: item.icon }
     );
   };
 

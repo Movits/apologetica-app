@@ -9,6 +9,7 @@ import { getReadSet } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
 import { EmptyState } from '../components/ui';
 import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Tela dedicada a uma categoria de artigos. Recebe route.params.category
 // (nome PT, igual ao campo article.category). O título vem do header do stack
@@ -16,7 +17,7 @@ import ArticleListItem, { ArticleListSeparator } from '../components/ArticleList
 // mesmo item da aba Artigos (ArticleListItem), sem repetir a categoria em cada
 // linha. Abre o detalhe via ArticleFromSearch (openArticle), instância de
 // ArticleDetailScreen registrada no HomeStack. O recuo da tab bar já vem do
-// contentStyle do stack.
+// contentStyle do stack. Em janela larga a lista fica na coluna central.
 export default function CategoryArticlesScreen({ route }) {
   const navigation = useNavigation();
   const { colors, tokens, text } = useTheme();
@@ -43,11 +44,11 @@ export default function CategoryArticlesScreen({ route }) {
     <FlatList
       data={list}
       keyExtractor={(a) => String(a.id)}
-      contentContainerStyle={{ paddingHorizontal: space.md, paddingBottom: space.xl }}
+      contentContainerStyle={{ paddingHorizontal: space.md, paddingBottom: space.xl, ...centeredColumn(undefined, space.md) }}
       ListHeaderComponent={
         <View style={{ paddingTop: space.sm, paddingBottom: space.xs, gap: space.xxs }}>
           <Text style={[text('subhead'), { color: colors.textSubtle }]}>{description}</Text>
-          <Text style={[text('footnote'), { color: colors.textTertiary }]}>{countLabel}</Text>
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>{countLabel}</Text>
         </View>
       }
       ItemSeparatorComponent={ArticleListSeparator}

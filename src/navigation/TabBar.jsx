@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabBarHeightCallbackContext } from '@react-navigation/bottom-tabs';
 import { useTheme } from '../context/ThemeContext';
@@ -31,6 +31,16 @@ import { TAB_ICONS, TAB_LABEL_KEYS } from './tabs';
 const ITEM_HEIGHT = 49;
 const ICON_SIZE = 24;
 
+// Janela larga (desktop na web, iPad): em vez da faixa de ponta a ponta, com
+// os cinco itens a 256 px um do outro numa janela de 1280, a barra vira uma
+// cápsula flutuante centrada, no mesmo material translúcido, com hairline em
+// volta e a sombra `floating`. WIDE_AT é a largura de janela a partir da qual
+// isso acontece e FLOATING_MAX a largura da cápsula (proporções da página).
+// A altura reportada inclui a folga embaixo, então as telas que compensam
+// com useBottomTabBarHeight() continuam terminando acima da barra.
+const WIDE_AT = 768;
+const FLOATING_MAX = 560;
+
 // Rótulo da aba: a chave de tabs.js traduzida; só uma rota fora da lista cai
 // nas opções do navigator (tabBarLabel, title) e por fim no nome da rota.
 function tabLabel(options, route, t) {
@@ -43,6 +53,7 @@ function tabLabel(options, route, t) {
 export default function TabBar({ state, descriptors, navigation, insets }) {
   const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
+  const { width } = useWindowDimensions();
   const setHeight = useContext(BottomTabBarHeightCallbackContext);
 
   // Respeita tabBarStyle: { display: 'none' } da tela ativa, como a padrão.
@@ -59,58 +70,88 @@ export default function TabBar({ state, descriptors, navigation, insets }) {
 
   const onLayout = (e) => setHeight?.(e.nativeEvent.layout.height);
   const labelStyle = text('tabLabel');
+  const floating = width >= WIDE_AT;
+  const { space, radius, shadow } = tokens;
+  const bottomInset = insets?.bottom ?? 0;
+
+  const items = (
+    <View style={styles.items}>
+      {state.routes.map((route, index) => {
+        const { options } = descriptors[route.key];
+        const focused = state.index === index;
+        const label = tabLabel(options, route, t);
+        const icons = TAB_ICONS[route.name] ?? TAB_ICONS['Início'];
+        const color = focused ? colors.tint : colors.textSubtle;
+
+        const onPress = () => {
+          const event = navigation.emit({ type: 'tabPress', target: route.key, canPreventDefault: true });
+          if (!focused && !event.defaultPrevented) {
+            // merge mantém os params da aba (o navigate sem merge os apaga:
+            // node_modules/@react-navigation/routers/lib/module/TabRouter.js:208-211).
+            navigation.navigate({ name: route.name, merge: true });
+          }
+        };
+        const onLongPress = () => {
+          navigation.emit({ type: 'tabLongPress', target: route.key });
+        };
+
+        return (
+          <Pressable
+            key={route.key}
+            role="tab"
+            aria-selected={focused}
+            aria-label={label}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            style={styles.item}
+          >
+            <Ionicons name={focused ? icons.on : icons.off} size={ICON_SIZE} color={color} />
+            <Text
+              numberOfLines={1}
+              style={[labelStyle, { color, marginTop: tokens.space.xxs / 2 }]}
+            >
+              {label}
+            </Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+
+  if (floating) {
+    // A faixa invisível de ponta a ponta só posiciona e mede (box-none: os
+    // toques fora da cápsula seguem para o conteúdo); a cápsula é o tablist.
+    return (
+      <View
+        onLayout={onLayout}
+        style={[styles.bar, styles.passThrough, { alignItems: 'center', paddingBottom: bottomInset + space.md }]}
+      >
+        <View
+          role="tablist"
+          style={[
+            styles.capsule,
+            { maxWidth: FLOATING_MAX, borderRadius: radius.lg, paddingHorizontal: space.xs },
+            shadow.floating,
+          ]}
+        >
+          <ChromeBackdrop edge="all" radius={radius.lg} />
+          {items}
+        </View>
+      </View>
+    );
+  }
 
   return (
     <View
       role="tablist"
       onLayout={onLayout}
-      style={[styles.bar, { paddingBottom: insets?.bottom ?? 0 }]}
+      style={[styles.bar, { paddingBottom: bottomInset }]}
     >
       {/* Vem depois das telas na árvore do BottomTabView, então desfoca o
           conteúdo que passa por baixo; os itens abaixo ficam por cima dele. */}
       <ChromeBackdrop edge="top" />
-      <View style={styles.items}>
-        {state.routes.map((route, index) => {
-          const { options } = descriptors[route.key];
-          const focused = state.index === index;
-          const label = tabLabel(options, route, t);
-          const icons = TAB_ICONS[route.name] ?? TAB_ICONS['Início'];
-          const color = focused ? colors.tint : colors.textSubtle;
-
-          const onPress = () => {
-            const event = navigation.emit({ type: 'tabPress', target: route.key, canPreventDefault: true });
-            if (!focused && !event.defaultPrevented) {
-              // merge mantém os params da aba (o navigate sem merge os apaga:
-              // node_modules/@react-navigation/routers/lib/module/TabRouter.js:208-211).
-              navigation.navigate({ name: route.name, merge: true });
-            }
-          };
-          const onLongPress = () => {
-            navigation.emit({ type: 'tabLongPress', target: route.key });
-          };
-
-          return (
-            <Pressable
-              key={route.key}
-              role="tab"
-              aria-selected={focused}
-              aria-label={label}
-              testID={options.tabBarTestID}
-              onPress={onPress}
-              onLongPress={onLongPress}
-              style={styles.item}
-            >
-              <Ionicons name={focused ? icons.on : icons.off} size={ICON_SIZE} color={color} />
-              <Text
-                numberOfLines={1}
-                style={[labelStyle, { color, marginTop: tokens.space.xxs / 2 }]}
-              >
-                {label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </View>
+      {items}
     </View>
   );
 }
@@ -122,6 +163,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
+  passThrough: { pointerEvents: 'box-none' },
+  capsule: { width: '100%' },
   items: {
     flexDirection: 'row',
     height: ITEM_HEIGHT,

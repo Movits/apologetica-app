@@ -7,8 +7,10 @@ import ChromeBackdrop from '../navigation/ChromeBackdrop';
 import { PressScale } from './ui';
 
 // Pílula flutuante de capítulo da Bíblia (Onda 6): anterior, "3 de 21" e
-// próximo, centrada logo acima da tab bar, com o fundo translúcido do chrome
-// e a sombra `floating` só no tema claro. Quem decide se ela aparece é a
+// próximo, centrada logo acima da tab bar. Ela flutua sobre o texto dos
+// versículos, então o material é o do chrome no tom `elevated` (no escuro, um
+// navy mais claro que o fundo, e a forma não se perde no texto), com hairline
+// em volta e a sombra `floating` nos dois temas. Quem decide se ela aparece é a
 // lista de versículos, pelo shared value `visible` (1 visível, 0 escondida):
 // ao esconder, além da opacidade ela desce até sair da tela, para não ficar
 // tocável onde não se vê. Sem `visible` (undefined) fica sempre à vista: é o
@@ -18,7 +20,7 @@ import { PressScale } from './ui';
 const TARGET = 44;
 
 export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, prevLabel, nextLabel, visible }) {
-  const { colors, tokens, text, darkMode } = useTheme();
+  const { colors, tokens, text } = useTheme();
   const tabBarHeight = useBottomTabBarHeight();
   const { space, radius, icon, shadow } = tokens;
 
@@ -48,16 +50,9 @@ export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, p
   return (
     <View style={[styles.host, { bottom }]}>
       <Animated.View
-        style={[
-          styles.pill,
-          { borderRadius: radius.full },
-          darkMode ? null : { boxShadow: shadow.floating.boxShadow },
-          motionStyle,
-        ]}
+        style={[styles.pill, { borderRadius: radius.full }, shadow.floating, motionStyle]}
       >
-        <View style={[StyleSheet.absoluteFill, styles.clip, { borderRadius: radius.full }]}>
-          <ChromeBackdrop />
-        </View>
+        <ChromeBackdrop edge="all" tone="elevated" radius={radius.full} />
         {button('chevron-back', prevLabel, hasPrev, onPrev)}
         <Text style={[text('subhead'), styles.label, { color: colors.text, paddingHorizontal: space.xs }]}>
           {label}
@@ -82,7 +77,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: TARGET,
   },
-  clip: { overflow: 'hidden' },
   button: {
     width: TARGET,
     height: TARGET,

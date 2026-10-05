@@ -20,6 +20,7 @@ import {
   clearSearchHistory,
 } from '../utils/searchHistory';
 import { Chip, ChipRow, EmptyState, Group, Row, SearchField, SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Busca (Onda 9c): campo com foco automático, filtros em chips, histórico e
 // resultados em grupos por tipo. O motor é o mesmo de antes: Fuse.js para
@@ -292,28 +293,34 @@ export default function SearchScreen({ navigation }) {
     );
   };
 
+  // Janela larga: campo, chips e resultados numa coluna central (a caixa
+  // não tem recuo próprio: cada bloco já traz o `space.md` dos lados).
+  const column = centeredColumn(undefined, space.md);
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <SearchField
-        ref={inputRef}
-        value={query}
-        onChangeText={setQuery}
-        onSubmitEditing={submit}
-        placeholder={t('search.placeholder')}
-        clearLabel={t('search.clearSearch')}
-        autoFocus
-        autoCorrect={false}
-        style={{ marginHorizontal: space.md, marginTop: space.sm }}
-      />
-      <ChipRow scroll style={{ marginTop: space.xxs }}>
-        {FILTERS.map((f) => (
-          <Chip key={f.id} label={t(f.key)} selected={filter === f.id} onPress={() => setFilter(f.id)} haptic />
-        ))}
-      </ChipRow>
+      <View style={column}>
+        <SearchField
+          ref={inputRef}
+          value={query}
+          onChangeText={setQuery}
+          onSubmitEditing={submit}
+          placeholder={t('search.placeholder')}
+          clearLabel={t('search.clearSearch')}
+          autoFocus
+          autoCorrect={false}
+          style={{ marginHorizontal: space.md, marginTop: space.sm }}
+        />
+        <ChipRow scroll style={{ marginTop: space.xxs }}>
+          {FILTERS.map((f) => (
+            <Chip key={f.id} label={t(f.key)} selected={filter === f.id} onPress={() => setFilter(f.id)} haptic />
+          ))}
+        </ChipRow>
+      </View>
 
       <ScrollView
         style={{ flex: 1 }}
-        contentContainerStyle={{ paddingBottom: space.xl }}
+        contentContainerStyle={{ paddingBottom: space.xl, ...column }}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >

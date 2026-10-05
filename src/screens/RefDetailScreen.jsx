@@ -12,6 +12,7 @@ import { refLabel } from '../utils/refLabel';
 import { shareReference } from '../utils/share';
 import { openBible } from '../navigation/links';
 import { Button, EmptyState, Group, Row } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 const VATICAN_BASE_PT = 'https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html';
 const VATICAN_BASE_EN = 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
@@ -96,7 +97,7 @@ export default function RefDetailScreen({ route, navigation }) {
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.bg }}
-      contentContainerStyle={{ padding: space.md, paddingBottom: space.xl, gap: space.md }}
+      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl, gap: space.md }, centeredColumn(undefined, space.md)]}
     >
       {/* Citação */}
       <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.md }}>

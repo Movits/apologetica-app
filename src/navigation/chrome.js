@@ -1,10 +1,13 @@
 import { useMemo } from 'react';
-import { Platform } from 'react-native';
+import { Dimensions, Platform, useWindowDimensions } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
-import { type } from '../theme/tokens';
+import { space, type } from '../theme/tokens';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { BackButton } from '../components/HeaderButton';
+import { COLUMN_MAX } from '../components/ReadingColumn';
 import ChromeBackdrop from './ChromeBackdrop';
 
 // Opções de header dos stacks internos (Início, Artigos, Ferramentas, Ajustes)
@@ -50,7 +53,19 @@ import ChromeBackdrop from './ChromeBackdrop';
 
 // Parte comum a tudo: header opaco na cor do fundo, sem sombra, título inline
 // no papel headline (17/600) na cor do texto, ícones e botão voltar no tint.
-function headerOptions(colors) {
+//
+// Botão voltar (`backLabel` = t('common.back'), quando quem chama tem o t):
+// - Web (stack JS): o HeaderBackButton do @react-navigation/elements é uma
+//   seta "←" de 30x30 com área extra de toque (que a web descarta) e nome
+//   acessível "<rota anterior>, back" em inglês, que vazava "HomeMain, back".
+//   Aqui o `headerLeft` desenha o BackButton do app (o mesmo chevron do
+//   LargeTitleScreen e das telas de entrada, alvo de 44) com o nome "Voltar".
+//   O stack JS chama headerLeft com { canGoBack, onPress } (node_modules/
+//   @react-navigation/stack/src/views/Header/HeaderSegment.tsx:153-169).
+// - Nativo: o voltar continua o do sistema (chevron no iOS, com o gesto e o
+//   menu de toque longo). `headerBackTitle` só dá o nome que o VoiceOver lê;
+//   com headerBackTitleVisible: false ele não aparece na barra.
+function headerOptions(colors, backLabel) {
   return {
     headerStyle: { backgroundColor: colors.bg },
     headerShadowVisible: false,
@@ -62,7 +77,23 @@ function headerOptions(colors) {
     },
     headerBackTitleVisible: false,
     headerTitleAlign: 'center',
+    ...(backLabel
+      ? Platform.OS === 'web'
+        ? {
+            headerBackAccessibilityLabel: backLabel,
+            headerLeft: ({ canGoBack, onPress }) =>
+              canGoBack ? <BackButton a11yLabel={backLabel} onPress={onPress} /> : null,
+          }
+        : { headerBackTitle: backLabel }
+      : {}),
   };
+}
+
+// Recuo lateral dos botões do header na web para eles caírem na borda da
+// coluna central (a mesma do LargeTitleScreen: COLUMN_MAX mais o recuo
+// `space.md` de cada lado) quando a janela é larga. No celular é zero.
+function headerGutter(windowWidth) {
+  return Math.max(0, (windowWidth - (COLUMN_MAX + space.md * 2)) / 2);
 }
 
 // Variante translúcida, opt-in por tela nas `options` do Screen (ou em
@@ -84,13 +115,22 @@ export function translucentHeaderOptions() {
 // título encolhe (flexShrink) e o contêiner da direita fica com a largura do
 // conteúdo. No nativo o header é do sistema e cuida disso sozinho; as chaves
 // extras são ignoradas.
+//
+// O contêiner da direita refaz aqui o recuo da coluna (headerGutter), que as
+// opções de tela substituiriam. A largura vem de Dimensions no momento da
+// chamada (a tela chama no setOptions; um redimensionamento depois só
+// desalinha as ações até a próxima chamada, sem quebrar nada).
 export function leftTitleHeaderOptions() {
   return {
     headerTitleAlign: 'left',
     ...(Platform.OS === 'web'
       ? {
           headerTitleContainerStyle: { flexGrow: 1, flexShrink: 1, flexBasis: 0, maxWidth: '100%' },
-          headerRightContainerStyle: { flexGrow: 0, flexBasis: 'auto' },
+          headerRightContainerStyle: {
+            flexGrow: 0,
+            flexBasis: 'auto',
+            paddingRight: headerGutter(Dimensions.get('window').width),
+          },
         }
       : {}),
   };
@@ -106,9 +146,9 @@ function contentStyle(colors, { paddingBottom = 0 } = {}) {
 }
 
 // Opções do native-stack.
-function stackScreenOptions(colors, extra) {
+function stackScreenOptions(colors, extra, backLabel) {
   return {
-    ...headerOptions(colors),
+    ...headerOptions(colors, backLabel),
     animation: 'ios_from_right',
     contentStyle: contentStyle(colors, extra),
   };
@@ -125,12 +165,14 @@ function stackScreenOptions(colors, extra) {
 // ScrollView de dentro nunca rolava (medido: Ajustes com 1760 px num viewport
 // de 844). O cardStyle vem depois do estilo da folha, então `flex: 1` limita a
 // altura ao contêiner e a rolagem volta a ser da ScrollView de cada tela.
-function webStackScreenOptions(colors, extra) {
+function webStackScreenOptions(colors, extra, backLabel, gutter = 0) {
   return {
     ...TransitionPresets.SlideFromRightIOS,
     animationEnabled: true,
     headerMode: 'screen',
-    ...headerOptions(colors),
+    ...headerOptions(colors, backLabel),
+    headerLeftContainerStyle: { paddingLeft: gutter },
+    headerRightContainerStyle: { paddingRight: gutter },
     cardStyle: { flex: 1, ...contentStyle(colors, extra) },
   };
 }
@@ -153,20 +195,31 @@ export function largeTitleRootOptions(colors) {
 
 // Escolhe as opções certas para o navigator devolvido por createAppStack().
 // `extra` = { paddingBottom } vai para contentStyle (nativo) ou cardStyle (web).
-export function stackScreenOptionsForPlatform(colors, extra) {
+// `backLabel` (opcional) é o nome acessível do botão voltar e `gutter` (só
+// web) o recuo dos botões do header até a coluna central.
+export function stackScreenOptionsForPlatform(colors, extra, backLabel, gutter) {
   return Platform.OS === 'web'
-    ? webStackScreenOptions(colors, extra)
-    : stackScreenOptions(colors, extra);
+    ? webStackScreenOptions(colors, extra, backLabel, gutter)
+    : stackScreenOptions(colors, extra, backLabel);
 }
 
 // screenOptions dos quatro stacks de aba (Início, Artigos, Ferramentas,
 // Ajustes): as opções da plataforma com o recuo da tab bar. Só vale dentro de
 // uma tela do Tab.Navigator (useBottomTabBarHeight lança fora dele). O objeto
 // é memoizado para o navigator não reprocessar as opções a cada render.
+// Também traz o nome do voltar no idioma do app e, na web, o recuo dos botões
+// do header até a coluna central (acompanha o redimensionamento da janela).
 export function useTabStackScreenOptions() {
   const { colors } = useTheme();
+  const { t } = useLanguage();
+  const { width } = useWindowDimensions();
   const paddingBottom = useBottomTabBarHeight();
-  return useMemo(() => stackScreenOptionsForPlatform(colors, { paddingBottom }), [colors, paddingBottom]);
+  const backLabel = t('common.back');
+  const gutter = Platform.OS === 'web' ? headerGutter(width) : 0;
+  return useMemo(
+    () => stackScreenOptionsForPlatform(colors, { paddingBottom }, backLabel, gutter),
+    [colors, paddingBottom, backLabel, gutter],
+  );
 }
 
 // Cria o navigator de stack da plataforma: JS na web (anima), nativo no resto.

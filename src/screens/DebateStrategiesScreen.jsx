@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { DEBATE_STRATEGIES } from '../data/debateStrategies';
 import { pick } from '../utils/i18nData';
 import { Chip, ChipRow, EmptyState, Group, Row, SearchField } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Nome e definição (PT e EN) em minúsculas, na ordem de DEBATE_STRATEGIES,
 // calculados uma vez no módulo: a busca só compara `includes` neles a cada tecla.
@@ -41,7 +42,7 @@ export default function DebateStrategiesScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, gap: space.xs }}>
+      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, gap: space.xs }, centeredColumn(undefined, space.md)]}>
         <SearchField
           value={query}
           onChangeText={setQuery}
@@ -49,7 +50,7 @@ export default function DebateStrategiesScreen() {
           clearLabel={t('common.clear')}
           autoCorrect={false}
         />
-        <ChipRow>
+        <ChipRow scroll style={{ marginHorizontal: -space.md }}>
           {chips.map((c) => (
             <Chip key={c.key} label={c.label} selected={filter === c.key} onPress={() => setFilter(c.key)} haptic />
           ))}
@@ -60,7 +61,7 @@ export default function DebateStrategiesScreen() {
         data={filtered}
         keyExtractor={(s) => s.id}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ padding: space.md, gap: space.sm }}
+        contentContainerStyle={[{ padding: space.md, gap: space.sm }, centeredColumn(undefined, space.md)]}
         ListEmptyComponent={<EmptyState icon="search-outline" title={t('debate.empty')} message={t('debate.emptyHint')} />}
         renderItem={({ item }) => <StrategyCard item={item} open={expanded === item.id} onToggle={toggle} />}
       />

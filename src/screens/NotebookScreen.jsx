@@ -67,7 +67,7 @@ export default function NotebookScreen({ navigation }) {
             onPress={() => navigation.navigate('NotebookPage', { pageId: item.id })}
           >
             {date ? (
-              <Text style={[text('footnote'), { color: colors.textTertiary }]} numberOfLines={1}>{date}</Text>
+              <Text style={[text('footnote'), { color: colors.textSubtle }]} numberOfLines={1}>{date}</Text>
             ) : null}
           </Row>
         );

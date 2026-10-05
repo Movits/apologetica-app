@@ -1,8 +1,10 @@
 import { Linking, ScrollView, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { pick } from '../utils/i18nData';
-import { SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
+import { PressScale, SectionTitle } from '../components/ui';
 
 // E-mails e endereços citados no texto viram links (mailto: / https://).
 const LINK_RE = /([\w.+-]+@[\w-]+\.[\w.-]*\w|(?:https?:\/\/)?[a-z0-9-]+(?:\.[a-z0-9-]+)+\.(?:app|com|org|net|io|br)\b\S*)/gi;
@@ -36,31 +38,54 @@ function LinkedText({ children, style }) {
   );
 }
 
+// O e-mail de contato como alvo de toque de verdade (44 de altura, ícone e
+// endereço em tint), alinhado com o texto. Dentro do parágrafo ele era um
+// link de 22 px, difícil de acertar com o dedo.
+function EmailLink({ email }) {
+  const { colors, tokens, text } = useTheme();
+  const { t } = useLanguage();
+  const { space, icon } = tokens;
+  return (
+    <PressScale
+      role="link"
+      aria-label={t('legal.emailA11y', { email })}
+      onPress={() => Linking.openURL(`mailto:${email}`).catch(() => {})}
+      style={{ minHeight: 44, flexDirection: 'row', alignItems: 'center', gap: space.xs, alignSelf: 'flex-start' }}
+    >
+      <Ionicons name="mail-outline" size={icon.sm} color={colors.tint} />
+      <Text style={[text('body'), { color: colors.tint }]}>{email}</Text>
+    </PressScale>
+  );
+}
+
 // Tela única que renderiza Política de Privacidade OU Termos de Uso,
 // conforme o param `kind` (privacy | terms). Conteúdo embarcado para não
 // depender de hospedagem externa; bilíngue no padrão campo/campoEn, lido
-// com `pick`.
+// com `pick`. O título do documento é o do header do stack (as opções da
+// rota Legal em sharedScreens): repeti-lo aqui em display mostrava o nome
+// duas vezes, então a página abre direto na data de atualização. Em janela
+// larga o texto fica numa coluna de leitura centrada.
 export default function LegalScreen({ route }) {
   const { colors, tokens, text } = useTheme();
   const { isEn } = useLanguage();
   const { space } = tokens;
   const kind = route?.params?.kind || 'privacy';
   const content = kind === 'terms' ? TERMS : PRIVACY;
-  const inset = { marginHorizontal: space.md };
 
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.bg }}
-      contentContainerStyle={{ paddingTop: space.lg, paddingBottom: space.xxl }}
+      contentContainerStyle={[
+        { paddingHorizontal: space.md, paddingTop: space.md, paddingBottom: space.xxl },
+        centeredColumn(undefined, space.md),
+      ]}
     >
-      <Text role="heading" style={[text('title'), { color: colors.text }, inset]}>{pick(content, 'title', isEn)}</Text>
-      <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.xxs }, inset]}>
-        {pick(content, 'updated', isEn)}
-      </Text>
+      <Text style={[text('footnote'), { color: colors.textSubtle }]}>{pick(content, 'updated', isEn)}</Text>
       {content.sections.map((s, i) => (
         <View key={i}>
-          <SectionTitle title={pick(s, 'heading', isEn)} style={inset} />
-          <LinkedText style={[text('body'), { color: colors.text }, inset]}>{pick(s, 'body', isEn)}</LinkedText>
+          <SectionTitle title={pick(s, 'heading', isEn)} />
+          <LinkedText style={[text('body'), { color: colors.text }]}>{pick(s, 'body', isEn)}</LinkedText>
+          {s.email ? <EmailLink email={s.email} /> : null}
         </View>
       ))}
     </ScrollView>
@@ -118,8 +143,9 @@ const PRIVACY = {
     {
       heading: 'Contato',
       headingEn: 'Contact',
-      body: 'Dúvidas sobre privacidade ou solicitações de exclusão: deusosfera@gmail.com',
-      bodyEn: 'Privacy questions or deletion requests: deusosfera@gmail.com',
+      body: 'Dúvidas sobre privacidade ou solicitações de exclusão:',
+      bodyEn: 'Privacy questions or deletion requests:',
+      email: 'deusosfera@gmail.com',
     },
   ],
 };
@@ -169,8 +195,9 @@ const TERMS = {
     {
       heading: 'Contato',
       headingEn: 'Contact',
-      body: 'Para dúvidas legais ou sugestões: deusosfera@gmail.com',
-      bodyEn: 'For legal questions or suggestions: deusosfera@gmail.com',
+      body: 'Para dúvidas legais ou sugestões:',
+      bodyEn: 'For legal questions or suggestions:',
+      email: 'deusosfera@gmail.com',
     },
   ],
 };

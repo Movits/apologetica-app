@@ -12,6 +12,7 @@ import { shareDialogue } from '../utils/share';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // O card de compartilhar (1080x1080) fica montado fora da tela, só para o
 // view-shot capturar. É um deslocamento, não uma medida de layout.
@@ -97,7 +98,7 @@ export default function DialogueScreen({ navigation, route }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+      <ScrollView contentContainerStyle={[{ padding: space.md, gap: space.sm }, centeredColumn(undefined, space.md)]}>
         <Text style={caption}>{t('dialogue.someoneSays')}</Text>
         <Text role="heading" style={[text('title'), { color: colors.tint, fontStyle: 'italic' }]}>
           {objection}
@@ -179,15 +180,18 @@ function DialogueList({ onChoose }) {
   const sections = Object.keys(grouped);
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md }}>
-      <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md }]}>
+    <ScrollView
+      style={{ flex: 1, backgroundColor: colors.bg }}
+      contentContainerStyle={[{ padding: space.md }, centeredColumn(undefined, space.md)]}
+    >
+      <Text style={[text('subhead'), { color: colors.textSubtle }]}>
         {t('dialogue.intro')}
       </Text>
 
       {sections.map((cat) => (
         <View key={cat}>
-          <SectionTitle title={cat} style={{ marginHorizontal: space.md }} />
-          <Group style={{ marginHorizontal: space.md }}>
+          <SectionTitle title={cat} />
+          <Group>
             {grouped[cat].map((d) => (
               <Row
                 key={d.id}

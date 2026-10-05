@@ -109,7 +109,7 @@ function HomeStackScreen() {
   const screenOptions = useTabStackScreenOptions();
   return (
     <HomeNav.Navigator screenOptions={screenOptions}>
-      <HomeNav.Screen name="HomeMain" component={HomeScreen} options={largeTitleRootOptions(colors)} />
+      <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ title: t('tab.home'), ...largeTitleRootOptions(colors) }} />
       <HomeNav.Screen name="References" component={ReferencesScreen} options={{ title: t('tab.references') }} />
       <HomeNav.Screen name="Search" component={SearchScreen} options={{ title: t('header.search') }} />
       <HomeNav.Screen

@@ -7,6 +7,7 @@ import { examConscience } from '../data/examConscience';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { Button, Group, Row, SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Exame de consciência: os dez mandamentos como seções, cada pergunta numa
 // linha marcável. As marcações vivem só no estado desta tela (nada é gravado,
@@ -55,7 +56,7 @@ export default function ExamConscienceScreen({ navigation }) {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
       <Text style={[text('body'), { color: colors.text }]}>
         {isEn
           ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God.'
@@ -66,7 +67,7 @@ export default function ExamConscienceScreen({ navigation }) {
           ? '"If we confess our sins, he is faithful and just to forgive us." (1 John 1:9)'
           : '"Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar." (1 João 1,9)'}
       </Text>
-      <Text style={[text('footnote'), { color: colors.textTertiary, marginTop: space.sm }]}>
+      <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.sm }]}>
         {isEn
           ? 'Marks stay on this screen only and are cleared when you leave. Nothing is saved.'
           : 'As marcações ficam só nesta tela e somem ao sair. Nada é gravado.'}
@@ -89,11 +90,10 @@ export default function ExamConscienceScreen({ navigation }) {
             alignItems: 'center',
             justifyContent: 'space-between',
             marginTop: space.md,
-            paddingLeft: space.md,
           }}
         >
           <Text style={[text('footnote'), { color: colors.textSubtle }]}>
-            {t('exam.markedCount', { n: checked.size })}
+            {t(checked.size === 1 ? 'exam.marked.one' : 'exam.marked', { n: checked.size })}
           </Text>
           <Button variant="plain" full={false} label={t('exam.clear')} onPress={() => setChecked(new Set())} />
         </View>

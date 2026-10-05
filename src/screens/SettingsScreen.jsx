@@ -367,7 +367,9 @@ export default function SettingsScreen() {
             </ChipRow>
           </Row>
           <Row icon="text-outline" title={t('settings.font.label')}>
-            <ChipRow style={chipRow}>
+            {/* Seis tamanhos não cabem numa linha: em trilho rolável, sem o
+                "Máximo" sozinho numa terceira linha. */}
+            <ChipRow scroll style={chipRow} contentStyle={{ paddingHorizontal: 0 }}>
               {FONT_KEYS.map((key) => (
                 <Chip
                   key={key}

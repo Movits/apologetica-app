@@ -35,6 +35,7 @@ import ContinueBibleCard from '../components/ContinueBibleCard';
 import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
 import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
+import { columnInnerWidth } from '../components/ReadingColumn';
 import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState } from '../components/ui';
 import {
   saveBiblePosition, getBiblePosition,
@@ -954,10 +955,11 @@ export default function BibleScreen({ route, navigation }) {
   if (view === 'chapters' && book) {
     const allChapters = Array.from({ length: book.totalChapters }, (_, i) => i + 1);
     const readCount = allChapters.filter((c) => readChapters.has(c)).length;
-    // Grade de quadrados de pelo menos 44, quantos couberem na largura útil,
+    // Grade de quadrados de pelo menos 44, quantos couberem na largura útil
+    // (a da coluna do LargeTitleScreen, que em janela larga para em 720),
     // esticados para fechar a linha sem sobra à direita.
     const gap = space.xs;
-    const inner = windowWidth - space.md * 2;
+    const inner = columnInnerWidth(windowWidth, undefined, space.md);
     const cols = Math.max(1, Math.floor((inner + gap) / (TARGET + gap)));
     const cell = Math.floor((inner - gap * (cols - 1)) / cols);
 

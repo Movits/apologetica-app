@@ -15,6 +15,7 @@ import { openBible } from '../navigation/links';
 import { shareText } from '../utils/share';
 import { todayKey } from '../utils/daily';
 import { Button, EmptyState, Group, Row } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Liturgia do dia: cabeçalho com a cor litúrgica, leituras em grupos (título
 // em headline, referência em footnote, texto em serifa de leitura) e
@@ -45,8 +46,14 @@ const getChipLabel = (ref) => {
 };
 
 // A API devolve primeiraLeitura/salmo/segundaLeitura/evangelho como arrays
-// (leituras alternativas). Fica com a primeira.
-const first = (arr) => (Array.isArray(arr) && arr.length > 0 ? arr[0] : arr);
+// (leituras alternativas). Fica com a primeira, e devolve null quando não há
+// leitura: em dia de semana `segundaLeitura` vem como [], e um array vazio é
+// truthy (devolvê-lo desenhava um card "Segunda Leitura" vazio).
+const first = (v) => (Array.isArray(v) ? (v[0] ?? null) : (v ?? null));
+
+// Uma leitura só vira card se tem o que mostrar: um objeto sem texto,
+// referência nem título (a API às vezes manda o esqueleto vazio) é ausência.
+const hasReading = (r) => Boolean(r && (r.texto || r.referencia || r.titulo));
 
 // Data e hora da última atualização no formato do idioma da interface.
 function formatTime(ts, isEn) {
@@ -80,7 +87,7 @@ function ReadingGroup({ title, reading, onShare, isPsalm }) {
   const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
   const { space } = tokens;
-  if (!reading) return null;
+  if (!hasReading(reading)) return null;
   return (
     <Group style={{ marginTop: space.md }}>
       <View
@@ -173,7 +180,7 @@ export default function LiturgyScreen() {
   };
 
   const shareReading = (label, reading) => {
-    if (!reading) return;
+    if (!hasReading(reading)) return;
     let msg = `${label}\n\n`;
     if (reading.referencia) msg += `${reading.referencia}\n\n`;
     if (reading.titulo) msg += `${reading.titulo}\n\n`;
@@ -231,7 +238,7 @@ export default function LiturgyScreen() {
 
   return (
     <ScrollView
-      contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}
+      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.tint} />}
     >
       {/* Cabeçalho do dia: data, título e cor litúrgica. */}
@@ -258,7 +265,7 @@ export default function LiturgyScreen() {
       </View>
 
       {isEn ? (
-        <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.md, marginHorizontal: space.md }]}>
+        <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.md }]}>
           Full liturgy text is in Portuguese (CNBB). Tap a reading below to open it in English (Douay-Rheims).
         </Text>
       ) : null}
@@ -288,11 +295,11 @@ export default function LiturgyScreen() {
         <ReadingGroup title={t('liturgy.collect')} reading={{ texto: liturgy.oracoes.coleta }} />
       ) : null}
 
+      {/* Cada ReadingGroup some sozinho sem leitura (hasReading): a segunda
+          leitura só existe em domingos e solenidades. */}
       <ReadingGroup title={firstLabel} reading={primeira} onShare={() => shareReading(firstLabel, primeira)} />
       <ReadingGroup title={psalmLabel} reading={salmo} onShare={() => shareReading(psalmLabel, salmo)} isPsalm />
-      {segunda ? (
-        <ReadingGroup title={secondLabel} reading={segunda} onShare={() => shareReading(secondLabel, segunda)} />
-      ) : null}
+      <ReadingGroup title={secondLabel} reading={segunda} onShare={() => shareReading(secondLabel, segunda)} />
       <ReadingGroup title={gospelLabel} reading={evangelho} onShare={() => shareReading(gospelLabel, evangelho)} />
 
       {liturgy.oracoes?.oferendas ? (
@@ -305,7 +312,7 @@ export default function LiturgyScreen() {
         <ReadingGroup title={t('liturgy.afterCommunion')} reading={{ texto: liturgy.oracoes.comunhao }} />
       ) : null}
 
-      <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.lg }]}>
+      <Text style={[text('footnote'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.lg }]}>
         {t('liturgy.footer')}: {formatTime(liturgy.fetchedAt, isEn)}.
       </Text>
     </ScrollView>

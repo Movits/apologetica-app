@@ -10,7 +10,8 @@ import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Chip, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { Button, Chip, ChipRow, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Plano de leitura: trilhos (Fundamentos, Aprofundamento e a trilha temática)
 // como chips, resumo com barra de progresso e streak num Group, e os dias em
@@ -85,8 +86,10 @@ export default function ReadingPlanScreen({ navigation }) {
   );
 
   return (
-    <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.xs }}>
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
+      {/* Trilhos num trilho horizontal de borda a borda (o padrão dos filtros):
+          quebrando linha, "Objeções protestantes" ficava sozinho embaixo. */}
+      <ChipRow scroll style={{ marginHorizontal: -space.md }}>
         {READING_TRACKS.map((tr) => (
           <Chip
             key={tr.id}
@@ -96,7 +99,7 @@ export default function ReadingPlanScreen({ navigation }) {
             haptic
           />
         ))}
-      </View>
+      </ChipRow>
 
       {/* Resumo do trilho: título, descrição, progresso e streak. */}
       <Group style={{ marginTop: space.md }}>
@@ -113,7 +116,11 @@ export default function ReadingPlanScreen({ navigation }) {
           </Text>
         </View>
         {streak > 0 ? (
-          <Row icon="flame-outline" iconColor={colors.accentText} title={`${streak} ${t('plan.streak')}`} />
+          <Row
+            icon="flame-outline"
+            iconColor={colors.accentText}
+            title={t(streak === 1 ? 'plan.streakDays.one' : 'plan.streakDays', { n: streak })}
+          />
         ) : null}
       </Group>
 

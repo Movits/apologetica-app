@@ -8,7 +8,8 @@ import { verseEndFromRef } from '../utils/verseRange';
 import { openBible } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { haptics } from '../utils/haptics';
-import { Button, Chip, Group, Row } from '../components/ui';
+import { Button, Chip, ChipRow, Group, Row } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Santo Rosário: mistérios do dia (chips), as cinco dezenas em linhas com
 // deep link para a Bíblia, o passo atual com a oração escrita, os botões de
@@ -201,18 +202,21 @@ export default function RosaryScreen() {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
       <Text style={[text('subhead'), { color: colors.textSubtle }]}>
         {isEn
           ? 'Meditation on the mysteries of Christ\'s and Mary\'s lives. Use "Next bead" to advance. Your phone vibrates lightly at each step so you can pray with eyes closed.'
           : 'Meditação dos mistérios da vida de Cristo e de Maria. Use "Próxima conta" para avançar. O celular vibra levemente a cada passo para você rezar de olhos fechados.'}
       </Text>
 
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.xs, marginTop: space.md }}>
+      {/* Trilho de borda a borda, como os filtros das outras telas: quebrando
+          linha, "Gloriosos" ficava sozinho embaixo. O ChipRow mantém o
+          mistério do dia à vista mesmo quando é o último. */}
+      <ChipRow scroll style={{ marginHorizontal: -space.md, marginTop: space.md }}>
         {Object.entries(MYSTERIES).map(([key, val]) => (
           <Chip key={key} label={chipLabel(val)} selected={tipo === key} onPress={() => setTipo(key)} haptic />
         ))}
-      </View>
+      </ChipRow>
 
       <Group
         header={`${pick(mystery, 'label', isEn)} · ${pick(mystery, 'days', isEn)}`}
@@ -241,7 +245,7 @@ export default function RosaryScreen() {
       </Group>
 
       {/* Passo atual: contador, nome do passo e a oração por escrito. */}
-      <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, gap: space.xs, marginTop: space.md }}>
+      <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.md, gap: space.xs, marginTop: space.md }}>
         <Text style={[text('footnote'), { color: colors.textSubtle }]}>
           {t('common.stepOf', { n: stepIndex + 1, total: sequence.length })}
         </Text>
@@ -266,7 +270,7 @@ export default function RosaryScreen() {
         <Button variant="secondary" icon="refresh" label={isEn ? 'Restart' : 'Reiniciar'} onPress={resetSteps} />
       </View>
 
-      <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.sm, marginTop: space.md, alignItems: 'center' }}>
+      <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.sm, marginTop: space.md, alignItems: 'center' }}>
         <RosaryVisual sequence={sequence} stepIndex={stepIndex} />
       </View>
 

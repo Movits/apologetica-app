@@ -10,6 +10,7 @@ import { pick } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { openBible } from '../navigation/links';
 import { Button, Chip, ChipRow, EmptyState, ListSeparator, PressScale, SearchField } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 // Catálogo de referências (Onda 9c): busca por texto, filtro por fonte em
 // chips e lista agrupada por fonte. Cada linha mostra a citação e abre o
@@ -237,29 +238,34 @@ export default function ReferencesScreen({ route }) {
   );
 
   const chips = [{ id: ALL, label: t('ref.all') }, ...REFERENCE_SOURCES.map((s) => ({ id: s.id, label: translateSource(s.id, isEn), icon: s.icon }))];
+  // Janela larga: busca, chips e lista numa coluna central (cada bloco já
+  // traz o recuo `space.md` dos lados, então a caixa só limita e centra).
+  const column = centeredColumn(undefined, space.md);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <SearchField
-        value={query}
-        onChangeText={setQuery}
-        placeholder={t('ref.search')}
-        clearLabel={t('common.clear')}
-        autoCorrect={false}
-        style={{ marginHorizontal: space.md, marginTop: space.sm }}
-      />
-      <ChipRow scroll style={{ marginTop: space.xxs }}>
-        {chips.map((c) => (
-          <Chip
-            key={c.id}
-            label={c.label}
-            icon={c.icon}
-            selected={source === c.id}
-            onPress={() => setSource(c.id)}
-            haptic
-          />
-        ))}
-      </ChipRow>
+      <View style={column}>
+        <SearchField
+          value={query}
+          onChangeText={setQuery}
+          placeholder={t('ref.search')}
+          clearLabel={t('common.clear')}
+          autoCorrect={false}
+          style={{ marginHorizontal: space.md, marginTop: space.sm }}
+        />
+        <ChipRow scroll style={{ marginTop: space.xxs }}>
+          {chips.map((c) => (
+            <Chip
+              key={c.id}
+              label={c.label}
+              icon={c.icon}
+              selected={source === c.id}
+              onPress={() => setSource(c.id)}
+              haptic
+            />
+          ))}
+        </ChipRow>
+      </View>
       <SectionList
         ref={listRef}
         sections={sections}
@@ -270,7 +276,7 @@ export default function ReferencesScreen({ route }) {
         stickySectionHeadersEnabled={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
-        contentContainerStyle={{ paddingBottom: space.xl }}
+        contentContainerStyle={{ paddingBottom: space.xl, ...column }}
         ListEmptyComponent={
           <EmptyState icon="library-outline" title={t('ref.empty')} message={t('ref.emptyHint')} style={{ marginTop: space.xl }} />
         }

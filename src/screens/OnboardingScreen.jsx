@@ -8,8 +8,10 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { setOnboardingDone, setStartIntent } from '../utils/onboarding';
 import { getDialoguesByCategory } from '../data/dialogues';
-import AuthTopToggles, { TOGGLES_HEIGHT } from '../components/AuthTopToggles';
+import { TOGGLES_HEIGHT } from '../components/AuthTopToggles';
+import { TopToggles, topGap } from '../components/auth/FormScreen';
 import BrandMark from '../components/BrandMark';
+import { FORM_MAX, centeredColumn } from '../components/ReadingColumn';
 import { Button, Group, ProgressBar, Row, enterStagger } from '../components/ui';
 
 // Onboarding v2: ativação em vez de tour passivo. Em até 60 s a pessoa escolhe
@@ -19,6 +21,13 @@ import { Button, Group, ProgressBar, Row, enterStagger } from '../components/ui'
 // Pele da Onda 7 (mock aprovado): fundo quieto do tema, um brilho dourado bem
 // suave no topo, a cruz à esquerda e a tipografia falando sozinha. Os três
 // passos e a lógica (setOnboardingDone, setStartIntent, onDone) são os mesmos.
+//
+// Composição: o conteúdo de cada passo fica no quarto de cima do espaço livre
+// (dois espaçadores flexíveis, 1 em cima e 3 embaixo), não centrado, que
+// deixava um vão vazio grande no topo; os botões ficam no rodapé. Em janela
+// larga tudo vive numa coluna centrada de FORM_MAX, a mesma das telas de
+// entrada. Quando o passo não cabe (a lista de temas), os espaçadores somem e
+// a tela rola.
 
 // Temas = categorias reais dos diálogos (string exata usada em dialogues.js).
 const THEMES = [
@@ -87,19 +96,20 @@ export default function OnboardingScreen({ onDone }) {
         pointerEvents="none"
         style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '34%' }}
       />
-      <AuthTopToggles />
+      <TopToggles max={FORM_MAX} />
 
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
-          justifyContent: 'center',
           paddingHorizontal: space.xl,
           // Abaixo das pílulas do topo, com folga.
-          paddingTop: insets.top + space.xs + TOGGLES_HEIGHT + space.lg,
+          paddingTop: insets.top + space.xs + topGap(insets.top, space) + TOGGLES_HEIGHT + space.lg,
           paddingBottom: space.lg,
+          ...centeredColumn(FORM_MAX, space.xl),
         }}
         showsVerticalScrollIndicator={false}
       >
+        <View style={{ flex: 1 }} />
         {step === 0 && (
           <View style={{ gap: space.md }}>
             {/* Sem o nome do app escrito nesta tela, a cruz fica como imagem
@@ -169,9 +179,17 @@ export default function OnboardingScreen({ onDone }) {
             </Animated.View>
           </View>
         )}
+        <View style={{ flex: 3 }} />
       </ScrollView>
 
-      <View style={{ paddingHorizontal: space.xl, paddingBottom: insets.bottom + space.md, gap: space.xs }}>
+      <View
+        style={{
+          paddingHorizontal: space.xl,
+          paddingBottom: insets.bottom + space.md,
+          gap: space.xs,
+          ...centeredColumn(FORM_MAX, space.xl),
+        }}
+      >
         {/* Três segmentos (a ProgressBar dá os 3 px e o dourado de progresso). O
             passo atual já está no título, por isso a barra fica fora do leitor. */}
         <View aria-hidden style={{ flexDirection: 'row', gap: space.xs, marginBottom: space.sm }}>

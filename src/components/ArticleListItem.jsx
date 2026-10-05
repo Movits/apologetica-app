@@ -35,7 +35,7 @@ const ArticleListItem = memo(function ArticleListItem({ article, read = false, s
   const category = showCategory ? categoryLabel(article.category, t) : null;
   const readLabel = t('articles.read');
   const meta = [title, category, read ? readLabel : null].filter(Boolean).join(', ');
-  const footnote = [text('footnote'), { color: colors.textTertiary }];
+  const footnote = [text('footnote'), { color: colors.textSubtle }];
 
   return (
     <PressScale

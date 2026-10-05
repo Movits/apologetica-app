@@ -11,6 +11,7 @@ import { addDays, todayKey } from '../utils/daily';
 import { recordDailyAnswer } from '../utils/quizHistory';
 import { haptics } from '../utils/haptics';
 import { Button, Group, PressScale, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { centeredColumn } from '../components/ReadingColumn';
 
 const STREAK_KEY = 'quiz:streak';
 // { AAAA-MM-DD: { id, correct } }, chave em hora local (todayKey). As chaves
@@ -23,7 +24,8 @@ const PRACTICE_SIZE = 10;
 
 // Quiz Apologético em três modos: pergunta diária (com streak em AsyncStorage),
 // prática livre de 10 perguntas e verdadeiro ou falso. O header opaco do stack
-// traz o título e o recuo da tab bar vem do próprio stack.
+// traz o título e o recuo da tab bar vem do próprio stack. Em janela larga o
+// conteúdo fica na coluna central (centeredColumn).
 export default function QuizScreen({ navigation, route }) {
   const mode = route?.params?.mode || 'menu'; // 'menu' | 'daily' | 'practice' | 'truefalse'
 
@@ -47,7 +49,7 @@ function QuizMenu({ navigation }) {
   ];
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md }}>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md, ...centeredColumn(undefined, space.md) }}>
       <SectionTitle title={t('quiz.chooseGame')} style={{ marginTop: 0, marginHorizontal: space.md }} />
       <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md, marginBottom: space.sm }]}>
         {t('quiz.chooseGameSub')}
@@ -271,13 +273,13 @@ function MultipleChoiceGame({ mode, navigation }) {
 
   let meta = null;
   if (mode === 'daily' && streak > 0) {
-    meta = <Meta icon="flame" iconColor={colors.accent}>{t('quiz.streakDays', { n: streak })}</Meta>;
+    meta = <Meta icon="flame" iconColor={colors.accent}>{t(streak === 1 ? 'quiz.streakDays.one' : 'quiz.streakDays', { n: streak })}</Meta>;
   } else if (mode === 'practice') {
     meta = <Meta>{t('quiz.questionOf', { n: index + 1, total })}</Meta>;
   }
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm, ...centeredColumn(undefined, space.md) }}>
       {mode === 'practice' ? (
         <ProgressBar
           value={(index + (showResult ? 1 : 0)) / total}
@@ -316,7 +318,7 @@ function MultipleChoiceGame({ mode, navigation }) {
 
       {showResult && mode === 'daily' && streak > 0 ? (
         <Group>
-          <Row icon="flame" iconColor={colors.accent} title={t('quiz.streak')} trailing={t('quiz.streakDays', { n: streak })} />
+          <Row icon="flame" iconColor={colors.accent} title={t('quiz.streak')} trailing={t(streak === 1 ? 'quiz.streakDays.one' : 'quiz.streakDays', { n: streak })} />
         </Group>
       ) : null}
 
@@ -387,7 +389,7 @@ function TrueFalseGame({ navigation }) {
   };
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm }}>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: space.md, gap: space.sm, ...centeredColumn(undefined, space.md) }}>
       <ProgressBar
         value={(idx + (answered ? 1 : 0)) / total}
         accessibilityLabel={t('quiz.questionOf', { n: idx + 1, total })}

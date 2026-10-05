@@ -1,11 +1,12 @@
 import { useState, useMemo, useEffect, useRef, useCallback, memo } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { glossary, glossaryByTerm } from '../data/glossary';
 import { pick } from '../utils/i18nData';
 import { EmptyState, ListSeparator, Row, SearchField } from '../components/ui';
+import { COLUMN_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Posição do termo na tela ao rolar até ele (fração da altura visível).
 const SCROLL_VIEW_POSITION = 0.12;
@@ -25,6 +26,10 @@ export default function GlossaryScreen({ route }) {
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
   const listRef = useRef(null);
+  // A lista é o card (contentContainer com fundo), então a coluna de janela
+  // larga vem da margem lateral: 16 no celular, o que sobrar de 720 no desktop.
+  const { width } = useWindowDimensions();
+  const side = Math.max(space.md, (width - COLUMN_MAX) / 2);
 
   // Quando aberto via link de um artigo, expande E rola até o termo.
   useEffect(() => {
@@ -55,7 +60,7 @@ export default function GlossaryScreen({ route }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, paddingBottom: space.xs }}>
+      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, paddingBottom: space.xs }, centeredColumn(undefined, space.md)]}>
         <SearchField
           value={query}
           onChangeText={setQuery}
@@ -71,7 +76,7 @@ export default function GlossaryScreen({ route }) {
         keyExtractor={(g) => g.id}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={[
-          { margin: space.md, marginTop: space.xs },
+          { marginHorizontal: side, marginTop: space.xs, marginBottom: space.md },
           empty ? null : { backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' },
         ]}
         ItemSeparatorComponent={ListSeparator}

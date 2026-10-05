@@ -85,6 +85,7 @@ export default function LoginScreen({ navigation }) {
         <Field
           ref={passwordRef}
           label={t('auth.password')}
+          placeholder={isEn ? 'Your password' : 'Sua senha'}
           value={password}
           onChangeText={setPassword}
           secureTextEntry={!showPassword}

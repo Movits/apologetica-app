@@ -113,9 +113,12 @@ export default function SignupScreen({ navigation }) {
         <Field
           ref={confirmRef}
           label={isEn ? 'Confirm password' : 'Confirme a senha'}
+          placeholder={isEn ? 'Repeat the password' : 'Repita a senha'}
           value={confirm}
           onChangeText={setConfirm}
           secureTextEntry={!showPassword}
+          onToggleSecure={() => setShowPassword((v) => !v)}
+          toggleSecureLabel={toggleSecureLabel}
           autoComplete="new-password"
           textContentType="newPassword"
           returnKeyType="go"

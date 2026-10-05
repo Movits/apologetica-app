@@ -106,7 +106,7 @@ export default function LiturgyCard({ onOpen }) {
         </View>
       ) : null}
       {meaning ? (
-        <Text style={[text('footnote'), { color: colors.textTertiary, marginTop: space.xxs }]} numberOfLines={2}>
+        <Text style={[text('footnote'), { color: colors.textSubtle, marginTop: space.xxs }]} numberOfLines={2}>
           {meaning}
         </Text>
       ) : null}
