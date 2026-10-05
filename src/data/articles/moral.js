@@ -47,7 +47,7 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqu
     category: 'Moral',
     image: require('../../../assets/articles/8-homossexualidade.jpg'),
     imageAlt: 'A Criação de Eva',
-    imageCredit: 'A Criação de Eva (arte renascentista). Domínio público.',
+    imageCredit: 'Michelangelo, A Criação de Eva (Capela Sistina, 1508 a 1512). Domínio público.',
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCreacionEva.jpg&w=2200&output=jpg&q=80',
     summary: 'A Igreja distingue entre a inclinação e o ato, e chama todos a viver em dignidade e castidade.',

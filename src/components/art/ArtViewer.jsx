@@ -91,8 +91,8 @@ function Plate({ art, isEn, t }) {
   const { tokens, text } = useTheme();
   const { space, radius } = tokens;
   const rows = [
-    ['art.plate.artist', art.artistLife ? `${art.artist} (${art.artistLife})` : art.artist],
-    ['art.plate.date', art.date],
+    ['art.plate.artist', art.artistLife ? `${pick(art, 'artist', isEn)} (${art.artistLife})` : pick(art, 'artist', isEn)],
+    ['art.plate.date', pick(art, 'date', isEn)],
     ['art.plate.technique', pick(art, 'technique', isEn)],
     ['art.plate.dimensions', art.dimensions],
     ['art.plate.location', pick(art, 'location', isEn)],
@@ -244,7 +244,7 @@ export default function ArtViewer({ visible, article, onClose }) {
   if (!article) return null;
 
   const title = art ? pick(art, 'title', isEn) : pick(article, 'imageAlt', isEn) || '';
-  const subtitle = art ? [art.artist, art.date].filter(Boolean).join(', ') : '';
+  const subtitle = art ? [pick(art, 'artist', isEn), pick(art, 'date', isEn)].filter(Boolean).join(', ') : '';
   const credit = pick(article, 'imageCredit', isEn);
   const note = art ? (isEn ? art.notesEn?.[article.id] : null) || art.notes?.[article.id] : null;
   const intro = art ? pick(art, 'intro', isEn) : [];
@@ -374,7 +374,7 @@ export default function ArtViewer({ visible, article, onClose }) {
                 <ScrollView contentContainerStyle={{ paddingHorizontal: space.lg, paddingBottom: insets.bottom + space.xl, gap: space.md }}>
                   <View>
                     <Text role="heading" style={[text('title'), { color: GALLERY.text }]}>{title}</Text>
-                    <Text style={[text('subhead'), { color: GALLERY.textSubtle, marginTop: space.xxs }]}>{art.artist}</Text>
+                    <Text style={[text('subhead'), { color: GALLERY.textSubtle, marginTop: space.xxs }]}>{pick(art, 'artist', isEn)}</Text>
                   </View>
                   <Plate art={art} isEn={isEn} t={t} />
                   {note ? (

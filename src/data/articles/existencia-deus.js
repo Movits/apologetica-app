@@ -356,7 +356,7 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. T
     category: 'Existência de Deus',
     image: require('../../../assets/articles/55-aparicoes-maria.jpg'),
     imageAlt: 'A Assunção da Virgem',
-    imageCredit: 'Pedro Paulo Rubens, A Assunção da Virgem (c. 1626). Domínio público.',
+    imageCredit: 'Pedro Paulo Rubens, A Assunção da Virgem (c. 1616 a 1618, Düsseldorf). Domínio público.',
     imageAspect: 0.67,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPeter%2520Paul%2520Rubens%2520-%2520The%2520Assumption%2520of%2520the%2520Virgin%2520Mary%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'Aparições marianas com milhares de testemunhas, sinais anunciados e até fotografias são dados difíceis para o ateu. E ao protestante que as chama de demoníacas, há uma resposta clara: pelos frutos se conhece a árvore.',

@@ -308,7 +308,7 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
     category: 'Sagrada Escritura',
     image: require('../../../assets/articles/45-escuridao-cruz.jpg'),
     imageAlt: 'A Crucificação',
-    imageCredit: 'A Crucificação (pintura, 1896). Domínio público.',
+    imageCredit: 'Émile Bernard, A Crucificação (1896). Domínio público.',
     imageAspect: 0.73,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCrucifixion-1896.jpg&w=2200&output=jpg&q=80',
     summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Fontes pagãs a registraram, e a astronomia moderna ajudou a datar a crucificação no ano 33.',
