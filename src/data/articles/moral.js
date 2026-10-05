@@ -245,9 +245,9 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
     category: 'Moral',
     image: require('../../../assets/articles/64-castidade.jpg'),
     imageAlt: 'O Matrimônio, de Poussin',
-    imageCredit: 'Nicolas Poussin, O Matrimônio (Os Sete Sacramentos, c. 1640). Domínio público.',
-    imageAspect: 1.3,
-    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2F7--marriage.jpg&w=2200&output=jpg&q=80',
+    imageCredit: 'Nicolas Poussin, O Matrimônio (Os Sete Sacramentos, segunda série, 1647 a 1648). Domínio público.',
+    imageAspect: 1.53,
+    imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FSeven%2520Sacraments%2520-%2520Marriage%2520II%2520(1647-1648)%2520Nicolas%2520Poussin.jpg&w=2200&output=jpg&q=80',
     summary: 'A Igreja não é contra o sexo. Ela o tem em altíssima conta. Por isso ensina que o seu lugar é o matrimônio, e propõe a castidade como caminho de amor verdadeiro, não de repressão.',
     body: `Poucos ensinamentos da Igreja são tão incompreendidos quanto este. Diz-se que a Igreja é "contra o sexo", "reprimida", "atrasada". A verdade é quase o oposto: o cristianismo tem o sexo em altíssima conta, alto demais para tratá-lo como um passatempo. Justamente por levá-lo a sério, reserva-lhe um lugar à altura.
 

@@ -66,7 +66,7 @@ export const ART_IMAGES = {
   61: { path: '8/8d', file: "1450_Fra_Angelico_Last_Judgement_anagoria.JPG", width: 4036, height: 3064 },
   62: { path: '2/2f', file: "Angelus_MET_DP827872.jpg", width: 3654, height: 3309 },
   63: { path: '1/10', file: "Calling_of_the_apostles_by_Domenico_Ghirlandaio_Roma.jpg", width: 6816, height: 4545 },
-  64: { path: 'e/eb', file: "7--marriage.jpg", width: 3801, height: 2920 },
+  64: { path: '7/7e', file: "Seven_Sacraments_-_Marriage_II_%281647-1648%29_Nicolas_Poussin.jpg", width: 1227, height: 800 },
   65: { path: '1/1f', file: "The_Shade_of_Samuel_Invoked_by_Saul.jpg", width: 4388, height: 3145 },
   66: { path: '9/9d', file: "Pieter_Bruegel_the_Elder_-_The_Fall_of_the_Rebel_Angels_-_Google_Art_Project.jpg", width: 30000, height: 21654 },
   67: { path: '5/56', file: "Crucifixion%2C_Scuola_Grande_di_San_Rocco.jpg", width: 5344, height: 3008 },
