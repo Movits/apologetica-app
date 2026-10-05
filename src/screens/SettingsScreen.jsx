@@ -12,6 +12,7 @@ import { pick, pickPair } from '../utils/i18nData';
 import { THEME_MODES } from '../utils/themeMode';
 import { IDENTITIES, IDENTITY_IDS } from '../theme/identities';
 import { MarkGlyph } from '../components/BrandMark';
+import { canInstallApp, onInstallAvailabilityChange, promptInstallApp } from '../utils/pwaInstall';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import {
@@ -86,6 +87,9 @@ export default function SettingsScreen() {
   const [delPass, setDelPass] = useState('');
   const [showDelPass, setShowDelPass] = useState(false);
   const [delBusy, setDelBusy] = useState(false);
+  // Web: o navegador permite instalar o app (PWA)? Some ao instalar.
+  const [installable, setInstallable] = useState(canInstallApp);
+  useEffect(() => onInstallAvailabilityChange(setInstallable), []);
   const isPasswordUser = (user?.providerData || []).some((p) => p.providerId === 'password');
   const [notifPrefs, setNotifPrefs] = useState({ dailyVerse: false, sundayLiturgy: false, dailyQuiz: false, verseHour: 7, verseMinute: 0 });
 
@@ -423,6 +427,18 @@ export default function SettingsScreen() {
             );
           })}
         </Group>
+
+        {installable ? (
+          <Group style={{ marginTop: space.lg }}>
+            <Row
+              icon="download-outline"
+              title={t('settings.install.title')}
+              subtitle={t('settings.install.sub')}
+              trailing="chevron"
+              onPress={promptInstallApp}
+            />
+          </Group>
+        ) : null}
 
         {/* Leitura em voz alta: voz, velocidade e prévia. */}
         <SectionTitle title={t('settings.section.tts')} />
