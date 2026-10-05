@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "lint": "eslint src --ext .js,.jsx",
     "check:refs": "node scripts/check-refs.mjs",
-    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tests/resolve-hook.mjs --test"
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tests/resolve-hook.mjs --test",
+    "capture": "node scripts/capture-screens.mjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~57.0.16",
@@ -59,6 +60,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "firebase-admin": "^13.10.0"
+    "firebase-admin": "^13.10.0",
+    "playwright": "^1.63.0"
   }
 }
