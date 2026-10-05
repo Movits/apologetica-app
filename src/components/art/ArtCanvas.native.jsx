@@ -6,7 +6,7 @@ import { WebView } from 'react-native-webview';
 // Comandos -> injectJavaScript(window.__art); eventos da página -> onMessage.
 // O baseUrl dá à página uma origem https, para os pedidos de ladrilho saírem
 // com cabeçalho Origin normal (o acervo e a Commons respondem CORS *).
-const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent }, ref) {
+const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent, title }, ref) {
   const webRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
@@ -20,6 +20,7 @@ const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent }, ref) {
     <WebView
       ref={webRef}
       originWhitelist={['*']}
+      accessibilityLabel={title}
       source={{ html, baseUrl: 'https://movits.github.io/' }}
       style={styles.web}
       containerStyle={styles.web}

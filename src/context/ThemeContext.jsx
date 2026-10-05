@@ -104,10 +104,19 @@ export function ThemeProvider({ children }) {
           AsyncStorage.getItem(STORAGE_FONT),
           AsyncStorage.getItem(STORAGE_IDENTITY),
         ]);
-        // Link de prévia da web (?identidade=ancora): vale e fica salvo.
+        // Link de prévia da web (?identidade=ancora): vale e fica salvo. O
+        // parâmetro sai da URL logo em seguida, senão um recarregar da página
+        // desfaria a escolha feita depois em Ajustes.
         let fromUrl = null;
         if (Platform.OS === 'web') {
-          try { fromUrl = new URLSearchParams(window.location.search).get('identidade'); } catch {}
+          try {
+            const url = new URL(window.location.href);
+            fromUrl = url.searchParams.get('identidade');
+            if (fromUrl !== null) {
+              url.searchParams.delete('identidade');
+              window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+            }
+          } catch {}
         }
         const nextIdentity = [fromUrl, savedIdentity].find((v) => IDENTITY_IDS.includes(v));
         if (nextIdentity) {

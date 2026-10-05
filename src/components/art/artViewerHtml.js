@@ -45,7 +45,10 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
     -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
     box-shadow: 0 0 0 0 rgba(201,168,76,.35); animation: pulse 4s ease-out infinite;
     transition: transform .25s cubic-bezier(.22,1,.36,1), background-color .25s, opacity .3s; }
-  .lupa svg { width: 20px; height: 20px; display: block; pointer-events: none; }
+  /* margin auto: o OSD põe display:block inline no elemento do overlay
+     (Overlay.drawHTML), o que desliga o flex do .lupa; sem isso o ícone
+     encosta na esquerda do círculo. */
+  .lupa svg { width: 20px; height: 20px; display: block; margin: 0 auto; pointer-events: none; }
   /* A lupa aberta some: o leitor está olhando para o que ela cobria. */
   .lupa.is-active { opacity: 0; pointer-events: none; animation: none; }
   .lupas-off .lupa { opacity: 0; pointer-events: none; }
@@ -70,7 +73,7 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
     '<circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.4" y1="15.4" x2="21" y2="21"/>' +
     '<line x1="10.5" y1="8" x2="10.5" y2="13" opacity=".55"/><line x1="8" y1="10.5" x2="13" y2="10.5" opacity=".55"/></svg>';
 
-  var viewer = null, markers = {}, anyTile = false, failed = false;
+  var viewer = null, markers = {}, anyTile = false, failed = false, tileFails = 0, tapTimer = null;
 
   function fail() { if (failed) return; failed = true; post({ type: 'error' }); }
 
@@ -112,6 +115,9 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
           element: btn,
           clickHandler: function (e) { if (e.quick !== false) select(l.id, true); }
         });
+        // Teclado (Enter/Espaço no botão focado): o MouseTracker só trata
+        // ponteiro, e o click de teclado chega com detail 0.
+        btn.addEventListener('click', function (ev) { if (ev.detail === 0) select(l.id, true); });
         viewer.addOverlay({ element: btn, location: rect.getCenter(), placement: OpenSeadragon.Placement.CENTER, checkResize: false });
         markers[l.id] = btn;
       });
@@ -121,8 +127,18 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
     });
     viewer.addHandler('open-failed', fail);
     viewer.addHandler('tile-loaded', function () { if (!anyTile) { anyTile = true; post({ type: 'loaded' }); } });
-    viewer.addHandler('tile-load-failed', function () { if (!anyTile) fail(); });
-    viewer.addHandler('canvas-click', function (e) { if (e.quick) post({ type: 'tap' }); });
+    // Uma falha isolada antes do primeiro ladrilho não derruba a obra (a
+    // Commons às vezes responde 429 a um pedido e serve os seguintes): só
+    // várias seguidas, ou o tempo-limite abaixo, voltam para a imagem local.
+    viewer.addHandler('tile-load-failed', function () { tileFails += 1; if (!anyTile && tileFails >= 4) fail(); });
+    // Toque simples só vale depois do prazo do toque duplo: senão o primeiro
+    // toque de um zoom duplo já escondia a barra ou fechava o painel.
+    viewer.addHandler('canvas-click', function (e) {
+      if (!e.quick) return;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(function () { post({ type: 'tap' }); }, viewer.dblClickTimeThreshold || 300);
+    });
+    viewer.addHandler('canvas-double-click', function () { clearTimeout(tapTimer); });
     viewer.addHandler('zoom', fitMarkers);
     viewer.addHandler('resize', fitMarkers);
     // Sem nenhum ladrilho em 20 s (rede muito lenta ou bloqueada): o app
@@ -134,7 +150,10 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
   // partir de 2x de zoom ou em telas largas.
   function fitMarkers() {
     if (!viewer || !viewer.viewport) return;
-    var rel = viewer.viewport.getZoom(true) / viewer.viewport.getHomeZoom();
+    // Zoom ALVO, não o atual: o evento 'zoom' sai no início da animação
+    // (Viewport.zoomTo), quando o atual ainda é o de antes; a transição de
+    // transform do .lupa anima a mudança.
+    var rel = viewer.viewport.getZoom() / viewer.viewport.getHomeZoom();
     var narrow = document.documentElement.clientWidth < 600;
     var base = narrow ? 0.65 : 0.85;
     var k = Math.max(base, Math.min(1, base + (1 - base) * (rel - 1)));

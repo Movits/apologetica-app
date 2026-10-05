@@ -82,6 +82,11 @@ export function MarkGlyph({ kind, color, size = 32 }) {
 export default function BrandMark({ size = 'md', color, withName = false, decorative = false, style }) {
   const { colors, tokens, text, identity } = useTheme();
   const side = SIZES[size] || SIZES.md;
+  // A cruz é estreita: a caixa é recortada ao desenho (40 x 58 do viewBox)
+  // para manter a altura e a largura que ela sempre teve.
+  const box = identity?.mark === 'cross' || !identity
+    ? { width: Math.round((side * 40) / 58), height: side, viewBox: '12 3 40 58' }
+    : { width: side, height: side, viewBox: '0 0 64 64' };
   const tint = color || colors.tint;
 
   // Sozinha, a marca é uma imagem com o nome do app como rótulo. Ao lado do
@@ -96,8 +101,8 @@ export default function BrandMark({ size = 'md', color, withName = false, decora
     : { role: 'img', 'aria-label': APP_NAME };
 
   const mark = (
-    <View style={[{ width: side, height: side }, withName ? null : style]} {...a11y}>
-      <Svg width={side} height={side} viewBox="0 0 64 64">
+    <View style={[{ width: box.width, height: box.height }, withName ? null : style]} {...a11y}>
+      <Svg width={box.width} height={box.height} viewBox={box.viewBox}>
         <Mark kind={identity?.mark} color={tint} />
       </Svg>
     </View>

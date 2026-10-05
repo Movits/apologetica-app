@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 // Comandos -> postMessage({__art, cmd, arg}) para o iframe; eventos da página
 // chegam como 'message' na janela, marcados com __artViewer e conferidos pela
 // origem (o próprio iframe).
-const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent }, ref) {
+const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent, title }, ref) {
   const frameRef = useRef(null);
   const onEventRef = useRef(onEvent);
   useEffect(() => {
@@ -34,7 +34,7 @@ const ArtCanvas = forwardRef(function ArtCanvas({ html, onEvent }, ref) {
   return (
     <iframe
       ref={frameRef}
-      title="artwork"
+      title={title}
       srcDoc={html}
       allow="fullscreen"
       style={{ border: 'none', width: '100%', height: '100%', display: 'block', background: 'transparent' }}

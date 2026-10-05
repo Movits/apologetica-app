@@ -279,7 +279,7 @@ export default function ArtViewer({ visible, article, onClose }) {
               alt={pick(article, 'imageAlt', isEn)}
             />
           ) : html ? (
-            <ArtCanvas ref={canvasRef} html={html} onEvent={onEvent} />
+            <ArtCanvas ref={canvasRef} html={html} onEvent={onEvent} title={title} />
           ) : null}
 
           {status !== 'fallback' && !loaded ? (
