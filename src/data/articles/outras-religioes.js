@@ -339,7 +339,7 @@ As diferenças, porém, são de fundo.
     category: 'Outras Religiões',
     image: require('../../../assets/articles/40-hinduismo.jpg'),
     imageAlt: 'Relevo do Bhagavad Gita (Krishna e Arjuna)',
-    imageCredit: 'Relevo do Bhagavad Gita, templo de Bishnupur, Índia. Foto via Wikimedia Commons.',
+    imageCredit: 'Krishna e Arjuna, relevo na decoração de uma casa em Bishnupur, Índia. Foto via Wikimedia Commons.',
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBhagavata%2520Gita%2520Bishnupur%2520Arnab%2520Dutta%25202011.JPG&w=2200&output=jpg&q=80',
     summary: 'O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.',
