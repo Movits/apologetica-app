@@ -93,11 +93,16 @@ export default function Row({
   // nessa linha. Um `leading` próprio ganha uma faixa da mesma altura mínima:
   // o que for menor que a linha (o ponto de cor das Marcações) se centra
   // nela, o que for maior (a miniatura das Notícias) começa no topo do texto.
+  // O invólucro do `leading` existe nos dois estados (só o estilo muda): se
+  // ele aparecesse só na linha alta, a troca alta/baixa depois da medição
+  // remontaria o `leading` (a miniatura remota das Notícias recarregava).
   let lead = null;
   if (leading) {
-    lead = top
-      ? <View style={{ alignSelf: 'flex-start', minHeight: firstLine, justifyContent: 'center' }}>{leading}</View>
-      : leading;
+    lead = (
+      <View style={top ? { alignSelf: 'flex-start', minHeight: firstLine, justifyContent: 'center' } : null}>
+        {leading}
+      </View>
+    );
   } else if (icon) {
     lead = (
       <View
