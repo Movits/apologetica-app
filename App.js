@@ -45,6 +45,9 @@ import { AccountPromptProvider } from './src/components/AccountPrompt';
 import { useEffect, useState } from 'react';
 import { initSentry, wrap } from './src/sentry';
 import { checkForWebUpdate } from './src/utils/webUpdate';
+// Na web, guarda o convite de instalação (PWA) que o navegador dispara na
+// abertura; Ajustes oferece "Instalar neste computador". No nativo é no-op.
+import './src/utils/pwaInstall';
 import { hasSeenOnboarding } from './src/utils/onboarding';
 import { categoryLabel } from './src/utils/i18nData';
 
@@ -127,7 +130,7 @@ function ToolsStackScreen() {
   const screenOptions = useTabStackScreenOptions();
   return (
     <ToolsNav.Navigator screenOptions={screenOptions}>
-      <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('header.tools'), ...largeTitleRootOptions(colors) }} />
+      <ToolsNav.Screen name="ToolsMain" component={ToolsScreen} options={{ title: t('tab.tools'), ...largeTitleRootOptions(colors) }} />
       <ToolsNav.Screen name="Favorites" component={FavoritesScreen} options={{ title: t('header.favorites') }} />
       <ToolsNav.Screen name="ReadingPlan" component={ReadingPlanScreen} options={{ title: t('header.readingPlan') }} />
       {sharedScreens(ToolsNav, t)}
