@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -11,7 +11,7 @@ import { openBible } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
 
-// Tela "Nos Passos de Jesus": mapa real (Leaflet + CartoDB Voyager) com as 21
+// Tela "Nos Passos de Jesus": mapa real (Leaflet + mapa físico da Esri) com as 21
 // paradas. O renderizador é por plataforma (MapView.native = WebView,
 // MapView.web = iframe) e a rota cresce a cada passo. Abaixo do mapa fica a
 // parada atual (foto, descrição e "Ler no app") e a lista de todas as paradas.
@@ -22,17 +22,37 @@ const MAP_HEIGHT = 480;
 
 // Foto da parada. O estado de erro é por foto (a chave no chamador é o id da
 // parada), então uma imagem que falhou não esconde a da parada seguinte.
-function PlacePhoto({ source }) {
-  const { colors, tokens } = useTheme();
+// A moldura 3:2 é que define o tamanho e a imagem só preenche por dentro: com
+// width '100%' + aspectRatio na própria Image, o nativo às vezes usava o
+// tamanho intrínseco do arquivo (3264 px) e a foto vazava da tela.
+function PlacePhoto({ source, credit }) {
+  const { colors, tokens, text } = useTheme();
   const [failed, setFailed] = useState(false);
   if (!source || failed) return null;
   return (
-    <Image
-      source={source}
-      resizeMode="cover"
-      onError={() => setFailed(true)}
-      style={{ width: '100%', aspectRatio: 3 / 2, borderRadius: tokens.radius.md, backgroundColor: colors.separator }}
-    />
+    <View style={{ gap: tokens.space.xxs }}>
+      <View
+        style={{
+          width: '100%',
+          aspectRatio: 3 / 2,
+          borderRadius: tokens.radius.md,
+          overflow: 'hidden',
+          backgroundColor: colors.separator,
+        }}
+      >
+        <Image
+          source={source}
+          resizeMode="cover"
+          onError={() => setFailed(true)}
+          style={StyleSheet.absoluteFill}
+        />
+      </View>
+      {credit ? (
+        <Text style={[text('caption2'), { color: colors.textSubtle }]} numberOfLines={2}>
+          {credit}
+        </Text>
+      ) : null}
+    </View>
   );
 }
 
@@ -87,7 +107,7 @@ export default function BibleMapScreen({ navigation }) {
       <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, gap: space.sm, marginTop: space.md }}>
         <Text style={[text('footnote'), { color: colors.textSubtle }]}>{stepLabel}</Text>
         <ProgressBar value={(step + 1) / total} accessibilityLabel={stepLabel} />
-        <PlacePhoto key={current.id} source={current.photo} />
+        <PlacePhoto key={current.id} source={current.photo} credit={current.photoCredit} />
         <View style={{ gap: space.xxs }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
             <Ionicons name="location" size={icon.sm} color={colors.accentText} />
