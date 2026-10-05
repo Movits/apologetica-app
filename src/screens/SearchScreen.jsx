@@ -217,7 +217,7 @@ export default function SearchScreen({ navigation }) {
 
   const quoteStyle = [text('bodySerif'), { color: colors.text, marginTop: space.xxs }];
   const summaryStyle = [text('subhead'), { color: colors.textSubtle, marginTop: space.xxs }];
-  // O SectionTitle já traz a margem lateral; os grupos alinham por esta.
+  // A lista não tem recuo no contêiner: títulos e grupos levam a mesma margem.
   const groupStyle = { marginHorizontal: space.md };
 
   // Cada seção de resultado: título de seção + grupo de linhas.
@@ -227,7 +227,7 @@ export default function SearchScreen({ navigation }) {
     if (id === 'articles') {
       return (
         <View key={id}>
-          <SectionTitle title={t('search.filter.articles')} />
+          <SectionTitle title={t('search.filter.articles')} style={groupStyle} />
           <Group style={groupStyle}>
             {data.map((a) => (
               <Row
@@ -249,7 +249,7 @@ export default function SearchScreen({ navigation }) {
     if (id === 'references') {
       return (
         <View key={id}>
-          <SectionTitle title={t('search.filter.references')} />
+          <SectionTitle title={t('search.filter.references')} style={groupStyle} />
           <Group style={groupStyle}>
             {data.map((r) => {
               const full = withEn(r);
@@ -274,7 +274,7 @@ export default function SearchScreen({ navigation }) {
     // 'verses' (curados, bilíngues) e 'bible' (varredura no idioma ativo).
     return (
       <View key={id}>
-        <SectionTitle title={id === 'verses' ? t('search.section.verses') : t('search.section.bible')} />
+        <SectionTitle title={id === 'verses' ? t('search.section.verses') : t('search.section.bible')} style={groupStyle} />
         <Group style={groupStyle}>
           {data.map((v) => (
             <Row
@@ -324,7 +324,7 @@ export default function SearchScreen({ navigation }) {
         {/* Histórico: só enquanto não há busca ativa. */}
         {!searching && history.length > 0 ? (
           <>
-            <SectionTitle title={t('search.recent')} action={{ label: t('search.clear'), onPress: clearHistory }} />
+            <SectionTitle title={t('search.recent')} action={{ label: t('search.clear'), onPress: clearHistory }} style={groupStyle} />
             <Group style={groupStyle}>
               {history.map((q) => (
                 <HistoryRow

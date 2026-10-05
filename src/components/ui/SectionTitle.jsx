@@ -5,6 +5,12 @@ import { useTheme } from '../../context/ThemeContext';
 // ({ label, onPress }). A ação tem alvo de 44 sem esticar a linha: o excedente
 // vira margem negativa, então o espaçamento do título não muda com a ação.
 // O heading é de nível 2 (aria-level): o título da tela é o nível 1.
+//
+// Sem margem lateral própria: o título começa onde começa o conteúdo (a borda
+// dos cards e o large title da tela). O recuo extra do estilo iOS deixava
+// "Conta" 16 pt para dentro de "Ajustes" e foi reprovado pelo dono. Telas
+// cujo contêiner não tem recuo e põem a margem em cada bloco passam
+// `style={{ marginHorizontal: space.md }}`, igual aos blocos delas.
 export default function SectionTitle({ title, children, action, style }) {
   const { colors, tokens, text } = useTheme();
   const { space } = tokens;
@@ -19,7 +25,6 @@ export default function SectionTitle({ title, children, action, style }) {
           alignItems: 'center',
           marginTop: space.xl,
           marginBottom: space.sm,
-          marginHorizontal: space.md,
         },
         style,
       ]}

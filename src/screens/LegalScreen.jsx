@@ -59,7 +59,7 @@ export default function LegalScreen({ route }) {
       </Text>
       {content.sections.map((s, i) => (
         <View key={i}>
-          <SectionTitle title={pick(s, 'heading', isEn)} />
+          <SectionTitle title={pick(s, 'heading', isEn)} style={inset} />
           <LinkedText style={[text('body'), { color: colors.text }, inset]}>{pick(s, 'body', isEn)}</LinkedText>
         </View>
       ))}

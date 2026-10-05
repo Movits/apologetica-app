@@ -933,7 +933,7 @@ export default function BibleScreen({ route, navigation }) {
             ) : null}
             {testaments.map((tst) => (
               <View key={tst.key}>
-                <SectionTitle title={tst.title} style={styles.sectionTitle} />
+                <SectionTitle title={tst.title} />
                 <Group>
                   {tst.books.map((b) => (
                     <BookRow key={b.id} book={b} title={bn(b)} subtitle={bookMeta(b)} onPress={openBook} />
@@ -1131,8 +1131,6 @@ const makeStyles = (c, { space, radius }) =>
     screen: { flex: 1, backgroundColor: c.bg },
     search: { marginBottom: space.md },
     continueCard: { marginBottom: space.xs },
-    // O conteúdo do LargeTitleScreen já tem o recuo lateral.
-    sectionTitle: { marginHorizontal: 0 },
     bookProgress: { marginBottom: space.lg },
     bookProgressText: { color: c.textSubtle, marginTop: space.xs },
     grid: { flexDirection: 'row', flexWrap: 'wrap' },

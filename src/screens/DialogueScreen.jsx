@@ -186,7 +186,7 @@ function DialogueList({ onChoose }) {
 
       {sections.map((cat) => (
         <View key={cat}>
-          <SectionTitle title={cat} />
+          <SectionTitle title={cat} style={{ marginHorizontal: space.md }} />
           <Group style={{ marginHorizontal: space.md }}>
             {grouped[cat].map((d) => (
               <Row

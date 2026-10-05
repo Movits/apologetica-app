@@ -18,7 +18,7 @@ function RelatedDialogues({ currentId, onOpen }) {
 
   return (
     <>
-      <SectionTitle title={t('articles.objectionsTitle')} style={{ marginHorizontal: 0 }} />
+      <SectionTitle title={t('articles.objectionsTitle')} />
       <Group>
         {related.map((d) => (
           <Row

@@ -198,7 +198,7 @@ export default function NotebookPageScreen({ route, navigation }) {
             <NotebookText text={body} {...handlers} />
             {refs.length ? (
               <View>
-                <SectionTitle title={t('notebook.references')} style={{ marginHorizontal: 0, marginTop: 0 }} />
+                <SectionTitle title={t('notebook.references')} style={{ marginTop: 0 }} />
                 <Group>
                   {refs.map((r) => (
                     <Row

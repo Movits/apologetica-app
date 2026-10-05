@@ -7,8 +7,7 @@ import { Group, Row, SectionTitle } from './ui';
 
 // Seção "Ver também" no fim do artigo: artigos tematicamente relacionados (de
 // qualquer categoria), como lista agrupada (SectionTitle + Group + Row), no
-// mesmo desenho das fontes citadas. O título fica alinhado à coluna do artigo,
-// por isso zera a margem lateral padrão do SectionTitle. memo: o artigo
+// mesmo desenho das fontes citadas, alinhada à coluna do artigo. memo: o artigo
 // re-renderiza ao narrar ou guardar, e a lista aqui só depende do id.
 function RelatedArticles({ currentId, onOpen }) {
   const { t, isEn } = useLanguage();
@@ -18,7 +17,7 @@ function RelatedArticles({ currentId, onOpen }) {
 
   return (
     <>
-      <SectionTitle title={t('articles.relatedTitle')} style={{ marginHorizontal: 0 }} />
+      <SectionTitle title={t('articles.relatedTitle')} />
       <Group>
         {related.map((a) => (
           <Row

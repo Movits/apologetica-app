@@ -48,7 +48,7 @@ function QuizMenu({ navigation }) {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md }}>
-      <SectionTitle title={t('quiz.chooseGame')} style={{ marginTop: 0 }} />
+      <SectionTitle title={t('quiz.chooseGame')} style={{ marginTop: 0, marginHorizontal: space.md }} />
       <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md, marginBottom: space.sm }]}>
         {t('quiz.chooseGameSub')}
       </Text>
