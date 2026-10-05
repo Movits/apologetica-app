@@ -1,0 +1,23 @@
+// Componentes base do design system (Onda 2 do plano da Fase 5).
+// Uso: import { Group, Row, Button } from '../components/ui';
+export { default as PressScale } from './PressScale';
+export { default as Group } from './Group';
+export { default as GroupList } from './GroupList';
+export { default as ListSeparator } from './ListSeparator';
+export { default as Row } from './Row';
+export { default as ContinueRow } from './ContinueRow';
+export { default as SectionTitle } from './SectionTitle';
+export { default as Button } from './Button';
+export { default as SearchField } from './SearchField';
+export { default as Field } from './Field';
+export { default as Chip } from './Chip';
+export { default as ChipRow } from './ChipRow';
+export { default as ProgressBar } from './ProgressBar';
+export { default as EmptyState } from './EmptyState';
+export { default as GateNotice } from './GateNotice';
+export { default as GuestGate } from './GuestGate';
+export { default as Sheet, SHEET_EXIT_MS } from './Sheet';
+export { default as LargeTitleScreen, BAR_HEIGHT } from './LargeTitleScreen';
+export { default as useTabBarHeightSafe } from './useTabBarHeightSafe';
+export { webFocusRing } from './focusRing';
+export { enterStagger } from './motion';

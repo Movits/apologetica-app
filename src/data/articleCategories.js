@@ -1,4 +1,6 @@
-// Metadados das categorias de artigos: ordem de exibição + ícone (Ionicons/MCI).
+// Metadados das categorias de artigos: ordem de exibição + ícone (só Ionicons;
+// `iconSet` é legado de quando havia um segundo conjunto de ícones e hoje
+// ninguém lê o valor).
 // Fonte única de verdade da ordem/ícone. Nome e descrição vêm do i18n
 // (category.<id> e category.<id>.desc). A contagem é calculada do array articles.
 
@@ -6,7 +8,8 @@ import { articles } from './articles';
 
 // Ordem das categorias por interesse de busca no Brasil (mais procuradas primeiro).
 export const ARTICLE_CATEGORIES = [
-  { id: 'Igreja Católica', icon: 'church', iconSet: 'mci' },
+  // Ionicons não tem igreja: a Igreja como assembleia (povo reunido).
+  { id: 'Igreja Católica', icon: 'home-outline', iconSet: 'ion' },
   { id: 'Existência de Deus', icon: 'planet-outline', iconSet: 'ion' },
   { id: 'Moral', icon: 'compass-outline', iconSet: 'ion' },
   { id: 'Sagrada Escritura', icon: 'book-outline', iconSet: 'ion' },
@@ -43,5 +46,11 @@ export const sortByRank = (list) =>
     .sort(([a, ia], [b, ib]) => rankOf(a.id) - rankOf(b.id) || ia - ib)
     .map(([a]) => a);
 
-export const countByCategory = (cat) =>
-  articles.filter((a) => a.category === cat).length;
+// Artigos por categoria, contados uma vez (a Início mostra o número ao lado
+// de cada tema). Map, e não objeto, para um id nunca cair no protótipo.
+export const ARTICLE_COUNT_BY_CATEGORY = articles.reduce(
+  (acc, a) => acc.set(a.category, (acc.get(a.category) || 0) + 1),
+  new Map()
+);
+
+export const countByCategory = (cat) => ARTICLE_COUNT_BY_CATEGORY.get(cat) || 0;

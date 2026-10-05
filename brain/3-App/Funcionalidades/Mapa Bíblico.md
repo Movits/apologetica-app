@@ -1,6 +1,6 @@
 ---
 tags: [funcionalidade]
-atualizado: 2026-07-08
+atualizado: 2026-10-05
 aliases: [Nos Passos de Jesus]
 ---
 # Mapa Bíblico
@@ -16,11 +16,11 @@ Mapa interativo "Nos Passos de Jesus" que percorre a vida de Cristo em paradas g
 
 - [[Catálogo de Dados]]
 - `src/data/jesusJourney.js` com 21 paradas em julho de 2026, cada uma com coordenadas GPS reais, descrição bilíngue, referência bíblica com navegação (`nav`) e waypoints intermediários para a rota seguir caminhos terrestres
-- Fotos locais em `assets/jesus-journey/` (uma por parada)
+- Fotos locais em `assets/jesus-journey/` (uma por parada, 1600 x 1066, da Wikimedia Commons desde outubro de 2026), com `photoCredit` e `photoSource` em cada parada e a tabela em `documentos/creditos-fotos-jornada.md`
 
 ## Serviços e utilitários
 
-- Leaflet com tiles CartoDB Voyager, gerado como HTML em `mapHtml.js` com os dados da jornada injetados
+- Leaflet com o mapa físico da Esri (sem chave de API, sem fronteiras modernas) e o relevo sombreado por cima a partir do zoom 9, gerado como HTML em `mapHtml.js` com os dados da jornada injetados. A CARTO passou a exigir chave em 2026 e mostrava "API key required" nos ladrilhos.
 - No celular o HTML roda dentro de `react-native-webview`, na web dentro de um `iframe` com `srcDoc`, ver [[Utilitários e Componentes]]
 
 ## Como funciona

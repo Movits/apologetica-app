@@ -1,202 +1,529 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-identity="classica">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Apoie o APPologética</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1722" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a3a5c'/%3E%3Cg fill='%23c9a84c'%3E%3Crect x='29' y='12' width='6' height='40' rx='1.5'/%3E%3Crect x='19' y='22' width='26' height='6' rx='1.5'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="app/icons/apple-touch-icon.png">
+  <!-- Antes da pintura: identidade visual (?identidade=ancora|basilica|lumen, só
+       para pré-visualizar, nada é gravado) e tema (appg_theme, compartilhado com o app). -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var ok = { classica: 1, ancora: 1, basilica: 1, lumen: 1 };
+      d.className += ' js';
+      try {
+        var q = new URLSearchParams(location.search).get('identidade');
+        if (q && ok[q]) d.setAttribute('data-identity', q);
+      } catch (e) {}
+      try {
+        var t = localStorage.getItem('appg_theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Uma espessura de cada família de título. O navegador só baixa a fonte
+       da identidade ativa, as outras ficam só declaradas. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@600&family=EB+Garamond:wght@600&family=Instrument+Serif:ital@0;1&display=swap">
   <style>
-    :root {
-      --primary: #1a3a5c;
-      --accent: #c9a84c;
-      --bg: #f5f0e8;
-      --card: #ffffff;
-      --text: #222;
-      --muted: #666;
+    /* ===== BLOCO COMPARTILHADO: igual em index, donate, privacy, terms e
+       por-que-e-gratis (o deploy só publica docs/*.html, sem CSS externo).
+       Mudou aqui, copie para as outras quatro páginas. ===== */
+
+    /* =====================================================================
+       IDENTIDADES. Cada uma define paleta clara (--l-*) e escura (--d-*),
+       fonte de título, raios e a moldura da obra. Trocar a identidade é
+       trocar o atributo data-identity do <html>.
+       ===================================================================== */
+    :root, :root[data-identity="classica"] {
+      --l-bg: #f5f0e8; --l-surface: #ffffff; --l-sunk: #ede6da;
+      --l-text: #222222; --l-text-2: #5f5a50; --l-heading: #1a3a5c;
+      --l-brand: #1a3a5c; --l-on-brand: #ffffff;
+      --l-accent: #c9a84c; --l-accent-text: #806418;
+      --l-mark: #c9a84c; --l-mark-sm: #1a3a5c;
+      --l-line: rgba(26, 58, 92, 0.14); --l-line-strong: rgba(26, 58, 92, 0.34); --l-tint: 26 58 92;
+      --d-bg: #0d1722; --d-surface: #172538; --d-sunk: #0a121b;
+      --d-text: #ece8d8; --d-text-2: #a9a596; --d-heading: #f2ede0;
+      --d-brand: #d4b86a; --d-on-brand: #14202e;
+      --d-accent: #d4b86a; --d-accent-text: #d4b86a;
+      --d-mark: #d4b86a; --d-mark-sm: #d4b86a;
+      --d-line: rgba(236, 232, 216, 0.12); --d-line-strong: rgba(236, 232, 216, 0.3); --d-tint: 2 6 12;
+
+      --f-display: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+      --display-weight: 600; --display-scale: 1.1; --display-track: -0.01em; --display-lh: 1.02;
+      --tag-style: normal;
+      --r-btn: 12px; --r-card: 18px; --r-shot: 28px;
+      --art-pad: 10px; --art-bg: var(--surface); --art-border: 1px solid var(--line);
+      --art-r-out: 4px; --art-r-img: 2px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root[data-identity="ancora"] {
+      --l-bg: #f1e8d8; --l-surface: #fbf6ec; --l-sunk: #e8ddc9;
+      --l-text: #1d2a2e; --l-text-2: #5a5f5c; --l-heading: #0f2f3a;
+      --l-brand: #0f2f3a; --l-on-brand: #f7f0e3;
+      --l-accent: #b5532f; --l-accent-text: #9a4426;
+      --l-mark: #b5532f; --l-mark-sm: #0f2f3a;
+      --l-line: rgba(15, 47, 58, 0.14); --l-line-strong: rgba(15, 47, 58, 0.34); --l-tint: 15 47 58;
+      --d-bg: #0b1c22; --d-surface: #12303a; --d-sunk: #08161b;
+      --d-text: #efe6d6; --d-text-2: #a9b0a8; --d-heading: #efe6d6;
+      --d-brand: #d8aa5e; --d-on-brand: #0b1c22;
+      --d-accent: #d8aa5e; --d-accent-text: #d8aa5e;
+      --d-mark: #d8aa5e; --d-mark-sm: #d8aa5e;
+      --d-line: rgba(239, 230, 214, 0.12); --d-line-strong: rgba(239, 230, 214, 0.3); --d-tint: 1 8 10;
+
+      --f-display: "EB Garamond", Garamond, "Times New Roman", serif;
+      --display-weight: 600; --display-scale: 1; --display-track: -0.015em; --display-lh: 1.06;
+      --tag-style: normal;
+      --r-btn: 999px; --r-card: 12px; --r-shot: 28px;
+      --art-pad: 0px; --art-bg: transparent; --art-border: 0 solid transparent;
+      --art-r-out: 50% 50% 8px 8px / 26% 26% 8px 8px; --art-r-img: 50% 50% 8px 8px / 26% 26% 8px 8px;
+    }
+    :root[data-identity="basilica"] {
+      --l-bg: #f4f1ea; --l-surface: #ffffff; --l-sunk: #ebe6da;
+      --l-text: #14172a; --l-text-2: #565a6b; --l-heading: #1d3a8a;
+      --l-brand: #1d3a8a; --l-on-brand: #ffffff;
+      --l-accent: #d4a73a; --l-accent-text: #8a6516;
+      --l-mark: #d4a73a; --l-mark-sm: #1d3a8a;
+      --l-line: rgba(29, 58, 138, 0.14); --l-line-strong: rgba(29, 58, 138, 0.34); --l-tint: 29 58 138;
+      --d-bg: #0d0f1a; --d-surface: #161a2e; --d-sunk: #090b13;
+      --d-text: #f1ede2; --d-text-2: #a7a6b0; --d-heading: #d4a73a;
+      --d-brand: #d4a73a; --d-on-brand: #0d0f1a;
+      --d-accent: #d4a73a; --d-accent-text: #d4a73a;
+      --d-mark: #d4a73a; --d-mark-sm: #d4a73a;
+      --d-line: rgba(241, 237, 226, 0.12); --d-line-strong: rgba(241, 237, 226, 0.3); --d-tint: 2 3 10;
+
+      --f-display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+      --display-weight: 600; --display-scale: 0.74; --display-track: 0.02em; --display-lh: 1.16;
+      --tag-style: normal;
+      --r-btn: 999px; --r-card: 22px; --r-shot: 28px;
+      --art-pad: 6px; --art-bg: var(--bg); --art-border: 1px solid var(--accent);
+      --art-r-out: 30px; --art-r-img: 24px;
+    }
+    :root[data-identity="lumen"] {
+      --l-bg: #f6f3ee; --l-surface: #ffffff; --l-sunk: #eeeae3;
+      --l-text: #16171b; --l-text-2: #5d6068; --l-heading: #16171b;
+      --l-brand: #16171b; --l-on-brand: #f6f3ee;
+      --l-accent: #e09a2d; --l-accent-text: #9a5f0e;
+      --l-mark: #16171b; --l-mark-sm: #16171b;
+      --l-line: rgba(22, 23, 27, 0.12); --l-line-strong: rgba(22, 23, 27, 0.32); --l-tint: 22 23 27;
+      --d-bg: #121316; --d-surface: #1c1d22; --d-sunk: #0d0e10;
+      --d-text: #f2efe9; --d-text-2: #a3a5ab; --d-heading: #f2efe9;
+      --d-brand: #e9a23b; --d-on-brand: #16171b;
+      --d-accent: #e9a23b; --d-accent-text: #e9a23b;
+      --d-mark: #e9a23b; --d-mark-sm: #f2efe9;
+      --d-line: rgba(242, 239, 233, 0.12); --d-line-strong: rgba(242, 239, 233, 0.3); --d-tint: 0 0 0;
+
+      --f-display: "Instrument Serif", "Times New Roman", serif;
+      --display-weight: 400; --display-scale: 1.06; --display-track: -0.012em; --display-lh: 1;
+      --tag-style: italic;
+      --r-btn: 999px; --r-card: 20px; --r-shot: 28px;
+      --art-pad: 0px; --art-bg: transparent; --art-border: 0 solid transparent;
+      --art-r-out: 20px; --art-r-img: 20px;
+    }
+
+    /* ---------- Modo: claro por padrão, escuro por atributo ou pelo sistema ---------- */
+    :root {
+      --bg: var(--l-bg); --surface: var(--l-surface); --sunk: var(--l-sunk);
+      --text: var(--l-text); --text-2: var(--l-text-2); --heading: var(--l-heading);
+      --brand: var(--l-brand); --on-brand: var(--l-on-brand);
+      --accent: var(--l-accent); --accent-text: var(--l-accent-text);
+      --mark: var(--l-mark); --mark-sm: var(--l-mark-sm);
+      --line: var(--l-line); --line-strong: var(--l-line-strong); --tint: var(--l-tint);
+      --show-light: block; --show-dark: none;
+      --art-filter: none;
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --bg: var(--d-bg); --surface: var(--d-surface); --sunk: var(--d-sunk);
+      --text: var(--d-text); --text-2: var(--d-text-2); --heading: var(--d-heading);
+      --brand: var(--d-brand); --on-brand: var(--d-on-brand);
+      --accent: var(--d-accent); --accent-text: var(--d-accent-text);
+      --mark: var(--d-mark); --mark-sm: var(--d-mark-sm);
+      --line: var(--d-line); --line-strong: var(--d-line-strong); --tint: var(--d-tint);
+      --show-light: none; --show-dark: block;
+      --art-filter: brightness(0.94);
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: var(--d-bg); --surface: var(--d-surface); --sunk: var(--d-sunk);
+        --text: var(--d-text); --text-2: var(--d-text-2); --heading: var(--d-heading);
+        --brand: var(--d-brand); --on-brand: var(--d-on-brand);
+        --accent: var(--d-accent); --accent-text: var(--d-accent-text);
+        --mark: var(--d-mark); --mark-sm: var(--d-mark-sm);
+        --line: var(--d-line); --line-strong: var(--d-line-strong); --tint: var(--d-tint);
+        --show-light: none; --show-dark: block;
+        --art-filter: brightness(0.94);
+        color-scheme: dark;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    :root {
+      --f-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --f-read: "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --wrap: 1160px;
+      --gutter: 16px;
+      --section-y: clamp(64px, 9vw, 128px);
+      --fs-h1: calc(clamp(3.1rem, 1.9rem + 4.6vw, 5.6rem) * var(--display-scale));
+      --fs-tag: calc(clamp(1.65rem, 1.25rem + 1.5vw, 2.35rem) * var(--display-scale));
+      --fs-h2: calc(clamp(2rem, 1.45rem + 2.1vw, 3.1rem) * var(--display-scale));
+      --fs-h3: calc(clamp(1.3rem, 1.18rem + 0.4vw, 1.5rem) * var(--display-scale));
+      --shadow-soft: 0 1px 2px rgb(var(--tint) / 0.06), 0 24px 48px -28px rgb(var(--tint) / 0.38);
+    }
+    @media (min-width: 768px) { :root { --gutter: 32px; } }
+    @media (min-width: 1100px) { :root { --gutter: 40px; } }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      scroll-padding-top: 88px;
+    }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: var(--f-sans);
+      font-size: 1.0625rem;
+      line-height: 1.6;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 24px 16px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 480px;
-      width: 100%;
-      background: var(--card);
-      border-radius: 20px;
-      padding: 36px 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      text-align: center;
-      margin-top: 20px;
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    ul { list-style: none; }
+    p, li { text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+    :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 4px; }
+    .wrap { width: 100%; max-width: calc(var(--wrap) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+    .visually-hidden {
+      position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
     }
-    .cross {
-      font-size: 56px;
-      color: var(--accent);
-      margin-bottom: 8px;
-      line-height: 1;
+    .skip {
+      position: absolute; left: var(--gutter); top: -60px; z-index: 30;
+      background: var(--brand); color: var(--on-brand); padding: 10px 16px;
+      border-radius: var(--r-btn); font-weight: 600; text-decoration: none;
     }
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--primary);
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .skip:focus { top: 10px; }
+
+    /* Marca: os quatro símbolos ficam definidos uma vez e cada uso mostra
+       só o da identidade ativa. Todos herdam a cor por currentColor. */
+    .mark { display: inline-block; flex: none; }
+    .mark use { display: none; }
+    :root[data-identity="classica"] .mark .u-classica,
+    :root[data-identity="ancora"] .mark .u-ancora,
+    :root[data-identity="basilica"] .mark .u-basilica,
+    :root[data-identity="lumen"] .mark .u-lumen { display: inline; }
+
+    .display {
+      font-family: var(--f-display);
+      font-weight: var(--display-weight);
+      letter-spacing: var(--display-track);
+      line-height: var(--display-lh);
+      color: var(--heading);
     }
-    .subtitle {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 28px;
-      line-height: 1.5;
+
+    /* ---------- Botões ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 24px;
+      border-radius: var(--r-btn);
+      font: 600 1rem/1.2 var(--f-sans);
+      text-decoration: none; white-space: nowrap;
+      border: 1px solid transparent;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none; -webkit-user-select: none;
+      transition: transform 160ms var(--ease-out), background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
     }
-    .intro {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 28px;
-      text-align: left;
+    .btn:active { transform: scale(0.97); }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn-primary { background: var(--brand); color: var(--on-brand); }
+    .btn-secondary { background: transparent; color: var(--heading); border-color: var(--line-strong); }
+    @media (hover: hover) and (pointer: fine) {
+      .btn-primary:hover { box-shadow: inset 0 0 0 100vmax rgb(255 255 255 / 0.1), 0 10px 24px -14px rgb(var(--tint) / 0.6); }
+      .btn-secondary:hover { border-color: var(--heading); }
+      .btn:hover .arrow { transform: translateX(3px); }
     }
-    .pix-section {
+    .arrow { transition: transform 200ms var(--ease-out); }
+
+    .text-link {
+      color: var(--heading); font-weight: 600; text-decoration: underline;
+      text-decoration-color: var(--line-strong); text-underline-offset: 0.22em; text-decoration-thickness: 1px;
+      transition: text-decoration-color 200ms ease;
+    }
+    @media (hover: hover) and (pointer: fine) { .text-link:hover { text-decoration-color: currentColor; } }
+
+    /* ---------- Cabeçalho ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
       background: var(--bg);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      .site-header {
+        background: color-mix(in srgb, var(--bg) 84%, transparent);
+        -webkit-backdrop-filter: saturate(150%) blur(14px);
+        backdrop-filter: saturate(150%) blur(14px);
+      }
+    }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
+    .brand {
+      display: inline-flex; align-items: center; gap: 9px;
+      text-decoration: none; color: var(--heading); min-height: 44px; flex: none;
+    }
+    .brand .mark { width: 24px; height: 24px; color: var(--mark-sm); }
+    .brand-name {
+      font-family: var(--f-display); font-weight: var(--display-weight);
+      font-size: calc(1.4rem * var(--display-scale)); letter-spacing: var(--display-track);
+      line-height: 1; white-space: nowrap;
+      padding-top: 2px;
+    }
+    .header-actions { display: flex; align-items: center; gap: 2px; }
+    .icon-btn {
+      display: inline-grid; place-items: center;
+      width: 40px; height: 44px; border: 0; border-radius: 10px;
+      background: transparent; color: var(--text-2);
+      font: 600 0.8125rem/1 var(--f-sans); letter-spacing: 0.04em;
+      cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none;
+      transition: color 160ms ease, background-color 160ms ease, transform 160ms var(--ease-out);
+    }
+    .icon-btn:active { transform: scale(0.94); }
+    html:not(.js) .js-only { display: none; }
+    .icon-btn svg { width: 20px; height: 20px; }
+    @media (hover: hover) and (pointer: fine) { .icon-btn:hover { color: var(--heading); background: var(--sunk); } }
+    .header-cta { min-height: 40px; padding: 0 16px; margin-left: 8px; font-size: 0.9375rem; }
+    @media (max-width: 420px) {
+      .header-row { gap: 8px; }
+      .brand-name { font-size: calc(1.3rem * var(--display-scale)); }
+      .header-cta { padding: 0 12px; margin-left: 4px; }
+      .icon-btn { width: 38px; }
+    }
+    /* Em telas estreitas o botão do topo vira só "Abrir" (o texto completo segue
+       disponível para leitores de tela). */
+    .cta-short { display: none; }
+    @media (max-width: 380px) {
+      .header-cta { position: relative; }
+      .header-cta .cta-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      .header-cta .cta-short { display: inline; }
+    }
+    @media (max-width: 370px) {
+      .brand-name { font-size: calc(1.2rem * var(--display-scale)); }
+      .brand { gap: 7px; }
+      .icon-btn { width: 34px; }
+    }
+
+    /* ---------- Rodapé ---------- */
+    .site-footer { border-top: 1px solid var(--line); padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); }
+    .foot { display: grid; gap: 22px; }
+    @media (min-width: 820px) { .foot { grid-template-columns: auto 1fr auto; align-items: center; gap: 40px; } }
+    .foot nav ul { display: grid; grid-template-columns: repeat(2, max-content); gap: 0 32px; }
+    @media (min-width: 520px) { .foot nav ul { display: flex; flex-wrap: wrap; gap: 0 24px; } }
+    @media (min-width: 820px) { .foot nav ul { justify-content: center; } }
+    .foot-note a { color: var(--text); text-underline-offset: 0.22em; text-decoration-color: var(--line-strong); }
+    .foot nav a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: var(--text); text-decoration: none; font-size: 0.9375rem;
+    }
+    @media (hover: hover) and (pointer: fine) { .foot nav a:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 0.22em; } }
+    .foot-note { font-size: 0.875rem; color: var(--text-2); }
+
+    /* ===== FIM DO BLOCO COMPARTILHADO ===== */
+
+    /* ---------- Apoiar ---------- */
+    .page { padding: clamp(40px, 7vw, 88px) 0 clamp(72px, 9vw, 120px); }
+    .donate { max-width: 560px; margin: 0 auto; }
+    .donate-head { text-align: center; }
+    .donate-head .mark { width: 44px; height: 44px; color: var(--mark); margin-bottom: 20px; }
+    .donate-head h1 { font-size: var(--fs-h2); }
+    .donate-head .subtitle { margin-top: 10px; color: var(--text-2); }
+    .intro { margin-top: 32px; line-height: 1.7; }
+    .pix {
+      margin-top: 32px; padding: 28px 24px; text-align: center;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card);
+      box-shadow: var(--shadow-soft);
     }
     .pix-label {
-      font-size: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      margin-bottom: 12px;
+      font: 600 0.8125rem/1.3 var(--f-sans); letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent-text);
     }
     .pix-key {
-      font-family: 'Courier New', monospace;
-      font-size: 16px;
-      word-break: break-all;
-      background: var(--card);
-      padding: 14px;
-      border-radius: 8px;
-      border: 1px dashed var(--accent);
-      margin-bottom: 12px;
-      color: var(--primary);
-      font-weight: 700;
+      margin-top: 14px; padding: 14px; word-break: break-all;
+      font: 600 1.0625rem/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+      color: var(--heading); background: var(--sunk);
+      border: 1px dashed var(--accent); border-radius: 10px;
+      user-select: all; -webkit-user-select: all;
     }
-    .pix-name {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 16px;
+    .pix-name { margin-top: 10px; font-size: 0.875rem; color: var(--text-2); }
+    .pix .btn { width: 100%; margin-top: 20px; }
+    .steps { margin-top: 32px; padding-left: 1.4em; }
+    .steps li { margin-top: 10px; line-height: 1.55; padding-left: 0.2em; }
+    .steps li::marker { color: var(--accent-text); font-weight: 600; }
+    .quote { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); text-align: center; }
+    .quote p { font-family: var(--f-read); font-size: 1.125rem; line-height: 1.65; }
+    .quote cite {
+      display: block; margin-top: 10px; font: 600 0.8125rem/1.3 var(--f-sans); font-style: normal;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text);
     }
-    button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      font-size: 15px;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s;
-      font-family: 'Lato', sans-serif;
-    }
-    button:hover { background: #143049; }
-    button.copied { background: var(--accent); color: white; }
-    .steps {
-      text-align: left;
-      margin: 24px 0;
-      padding-left: 20px;
-    }
-    .steps li {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
-    }
-    .quote-ref {
-      display: block;
-      margin-top: 8px;
-      font-style: normal;
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 700;
-      font-family: 'Lato', sans-serif;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-    }
-    .back-link:hover { color: var(--primary); }
+    .more { margin-top: 32px; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cross">✝</div>
-    <h1>APPologética</h1>
-    <p class="subtitle">Apoie este projeto</p>
+  <!-- Os quatro símbolos, um por identidade (assets/brand/mark-*.svg). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="mark-classica" viewBox="0 0 64 64"><g fill="currentColor"><rect x="29" y="5" width="6" height="54" rx="1.5"/><rect x="14" y="19" width="36" height="6" rx="1.5"/></g></symbol>
+    <symbol id="mark-ancora" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="10.5" r="5"/><path d="M32 15.5V57"/><path d="M19 25H45"/><path d="M11 39c1.5 11 9.5 18 21 18s19.5-7 21-18"/><path d="M6.5 43.5L11 39l5 3.5"/><path d="M57.5 43.5L53 39l-5 3.5"/></g></symbol>
+    <symbol id="mark-basilica" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-linecap="square"><rect x="3" y="3" width="58" height="58" rx="14" stroke-width="3"/><g stroke-width="4.5"><path d="M30 12V54"/><path d="M30 13h7a7.5 7.5 0 0 1 0 15h-7"/><path d="M19 32L41 52"/><path d="M41 32L19 52"/></g></g></symbol>
+    <symbol id="mark-lumen" viewBox="0 0 64 64"><path fill="currentColor" fill-rule="evenodd" d="M15 46L8.5 59L22 50.8A24 24 0 1 0 15 46Z M29 13H35V22H44V28H35V45H29V28H20V22H29Z"/></symbol>
+  </svg>
 
-    <p class="intro">
-      Obrigado por considerar apoiar este projeto. Sua contribuição ajuda a manter o app gratuito, expandir o conteúdo e levar a apologética católica a mais pessoas.
-    </p>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-    <div class="pix-section">
-      <div class="pix-label">Chave PIX</div>
-      <div class="pix-key" id="pixKey">deusosfera@gmail.com</div>
-      <div class="pix-name" id="pixName">APPologética</div>
-      <button onclick="copyKey()" id="copyBtn">Copiar chave</button>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="APPologética, início">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use class="u-classica" href="#mark-classica"/><use class="u-ancora" href="#mark-ancora"/><use class="u-basilica" href="#mark-basilica"/><use class="u-lumen" href="#mark-lumen"/></svg>
+        <span class="brand-name">APPologética</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn js-only" id="themeBtn" type="button" aria-label="Usar tema escuro">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 3.75a8.25 8.25 0 0 1 0 16.5z" fill="currentColor"/></svg>
+        </button>
+        <a class="btn btn-primary header-cta" href="app/">Abrir o app</a>
+      </div>
     </div>
+  </header>
 
-    <ol class="steps">
-      <li>Abra o app do seu banco</li>
-      <li>Vá em <strong>PIX</strong> → <strong>Transferir</strong></li>
-      <li>Cole a chave acima</li>
-      <li>Escolha o valor que quiser doar</li>
-      <li>Confirme a transferência</li>
-    </ol>
+  <main id="conteudo" class="page">
+    <div class="wrap">
+      <article class="donate">
+        <header class="donate-head">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use class="u-classica" href="#mark-classica"/><use class="u-ancora" href="#mark-ancora"/><use class="u-basilica" href="#mark-basilica"/><use class="u-lumen" href="#mark-lumen"/></svg>
+          <h1 class="display">APPologética</h1>
+          <p class="subtitle">Apoie este projeto</p>
+        </header>
 
-    <p class="quote">
-      Cada um dê conforme propôs no seu coração, não com tristeza ou por necessidade; porque Deus ama ao que dá com alegria.
-      <span class="quote-ref">2 Coríntios 9,7</span>
-    </p>
+        <p class="intro">
+          Obrigado por considerar apoiar este projeto. Sua contribuição ajuda a manter o app gratuito, expandir o conteúdo e levar a apologética católica a mais pessoas.
+        </p>
 
-    <a href="https://github.com/Movits/apologetica-app" class="back-link">Saiba mais sobre o projeto →</a>
-  </div>
+        <section class="pix" aria-labelledby="pixLabel">
+          <h2 class="pix-label" id="pixLabel">Chave PIX</h2>
+          <div class="pix-key" id="pixKey">deusosfera@gmail.com</div>
+          <div class="pix-name" id="pixName">APPologética</div>
+          <button class="btn btn-primary" type="button" id="copyBtn">Copiar chave</button>
+          <p class="visually-hidden" id="copyStatus" role="status" aria-live="polite"></p>
+        </section>
+
+        <ol class="steps">
+          <li>Abra o app do seu banco</li>
+          <li>Vá em <strong>PIX</strong> → <strong>Transferir</strong></li>
+          <li>Cole a chave acima</li>
+          <li>Escolha o valor que quiser doar</li>
+          <li>Confirme a transferência</li>
+        </ol>
+
+        <blockquote class="quote">
+          <p>Cada um dê conforme propôs no seu coração, não com tristeza ou por necessidade; porque Deus ama ao que dá com alegria.</p>
+          <cite>2 Coríntios 9,7</cite>
+        </blockquote>
+
+        <p class="more"><a class="text-link" href="https://github.com/Movits/apologetica-app" rel="noopener">Saiba mais sobre o projeto →</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <a class="brand" href="index.html" aria-label="APPologética, início">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use class="u-classica" href="#mark-classica"/><use class="u-ancora" href="#mark-ancora"/><use class="u-basilica" href="#mark-basilica"/><use class="u-lumen" href="#mark-lumen"/></svg>
+        <span class="brand-name">APPologética</span>
+      </a>
+      <nav aria-label="Links do site">
+        <ul>
+          <li><a href="privacy.html">Privacidade</a></li>
+          <li><a href="terms.html">Termos</a></li>
+          <li><a href="por-que-e-gratis.html">Por que é grátis</a></li>
+          <li><a href="donate.html" aria-current="page">Apoiar</a></li>
+        </ul>
+      </nav>
+      <p class="foot-note">Feito com fé. Código aberto no <a href="https://github.com/Movits/apologetica-app" rel="noopener">GitHub</a>.</p>
+    </div>
+  </footer>
 
   <script>
-    function copyKey() {
-      const key = document.getElementById('pixKey').textContent.trim();
-      const btn = document.getElementById('copyBtn');
-      navigator.clipboard.writeText(key).then(() => {
-        btn.textContent = 'Chave copiada!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.textContent = 'Copiar chave';
-          btn.classList.remove('copied');
-        }, 2000);
-      }).catch(() => {
-        alert('Chave: ' + key);
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeBtn');
+      function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+      // Cor da barra do navegador = fundo atual. Rótulo do botão = ação que ele faz.
+      function sync() {
+        var bg = getComputedStyle(root).getPropertyValue('--bg').trim();
+        document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+          m.removeAttribute('media');
+          m.setAttribute('content', bg);
+        });
+        btn.setAttribute('aria-label', isDark() ? 'Usar tema claro' : 'Usar tema escuro');
+      }
+      sync();
+      // Grava só no clique (appg_theme é lido também pelo app).
+      btn.addEventListener('click', function () {
+        var t = isDark() ? 'light' : 'dark';
+        root.setAttribute('data-theme', t);
+        try { localStorage.setItem('appg_theme', t); } catch (e) {}
+        sync();
       });
-    }
+      var id = root.getAttribute('data-identity');
+      if (id && id !== 'classica') {
+        document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+          a.setAttribute('href', a.getAttribute('href') + '?identidade=' + id);
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var btn = document.getElementById('copyBtn');
+      var keyEl = document.getElementById('pixKey');
+      var status = document.getElementById('copyStatus');
+      function done(label) {
+        btn.textContent = label;
+        status.textContent = label;
+        setTimeout(function () { btn.textContent = 'Copiar chave'; }, 2000);
+      }
+      // Sem acesso à área de transferência, seleciona a chave para copiar à mão.
+      function selectKey() {
+        var r = document.createRange();
+        r.selectNodeContents(keyEl);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        done('Chave selecionada, copie');
+      }
+      btn.addEventListener('click', function () {
+        var key = keyEl.textContent.trim();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(key).then(function () { done('Chave copiada!'); }, selectKey);
+        } else {
+          selectKey();
+        }
+      });
+    })();
   </script>
 </body>
 </html>

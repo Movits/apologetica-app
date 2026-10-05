@@ -1,4 +1,5 @@
 import { getBook, bookName } from '../data/bible';
+import { formatVerseRef } from '../utils/verseRef';
 
 // As duas Bíblias pesavam 2,81 MB dos 4,44 MB que a versão web transferia: 63%
 // do download inicial, sempre as duas, mesmo para quem lê num idioma só, e tudo
@@ -89,6 +90,22 @@ export function getChapter(bookId, chapter, language = 'pt') {
   };
 }
 
+// Texto de UM versículo, ou null se o livro, o capítulo ou o versículo não
+// existem. Mesmas regras de fallback de getChapter: EN pedido com a
+// Douay-Rheims carregada lê nela e só cai para o PT se o CAPÍTULO faltar (um
+// versículo a menos na numeração inglesa devolve null, como o `find` nas telas
+// devolvia undefined); EN pedido sem a Douay-Rheims lê o PT. Substitui
+// getChapter(...)?.verses?.find((v) => v.n === n)?.t nas telas de marcações e
+// notas, sem montar o capítulo inteiro a cada linha.
+export function getVerse(bookId, chapter, verse, language = 'pt') {
+  if (!getBook(bookId)) return null;
+  if (language === 'en' && DRA) {
+    const chapterArr = DRA[bookId]?.[chapter - 1];
+    if (chapterArr) return chapterArr[verse - 1] ?? null;
+  }
+  return AVEMARIA?.[bookId]?.[chapter - 1]?.[verse - 1] ?? null;
+}
+
 // Normaliza para busca: minúsculas + remove acentos.
 function norm(s) {
   return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -96,7 +113,8 @@ function norm(s) {
 
 // Busca full-text offline na Bíblia inteira (varredura por substring, não Fuse:
 // ~35 mil versículos por tradução, já residentes em memória). Retorna itens
-// prontos para deep-link: { bookId, chapter, verse, ref, text }.
+// prontos para deep-link: { bookId, chapter, verse, ref, text }, com `ref` no
+// formato do idioma (formatVerseRef: "João 3,16" em PT, "John 3:16" em EN).
 // `language`: 'en' → Douay-Rheims, senão Ave Maria (PT).
 export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
   const q = norm(query).trim();
@@ -104,7 +122,6 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
   const isEn = language === 'en';
   const data = isEn ? DRA : AVEMARIA;
   if (!data) return [];
-  const sep = isEn ? ':' : ',';
   const results = [];
   for (const bookId of Object.keys(data)) {
     const chapters = data[bookId];
@@ -123,7 +140,7 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
             bookId,
             chapter,
             verse,
-            ref: `${name} ${chapter}${sep}${verse}`,
+            ref: formatVerseRef({ bookName: name, chapter, verse }, isEn),
             text: verses[vi],
           });
           if (results.length >= limit) return results;

@@ -2,6 +2,8 @@
 // A escolha é determinística pelo dia do ano (mesmo verso pra todos no mesmo dia).
 // Texto PT vem da Bíblia Ave Maria, EN da Douay-Rheims-Challoner.
 
+import { dailyIndex } from '../utils/daily';
+
 export const DAILY_VERSES = [
   { bookId: 'sl', chapter: 23, verse: 1, ref: 'Salmo 23,1', refEn: 'Psalm 23:1', text: 'O Senhor é meu pastor: nada me faltará.', textEn: 'The Lord ruleth me: and I shall want nothing.' },
   { bookId: 'jo', chapter: 14, verse: 6, ref: 'João 14,6', refEn: 'John 14:6', text: 'Eu sou o caminho, a verdade e a vida. Ninguém vai ao Pai senão por mim.', textEn: 'I am the way, and the truth, and the life. No man cometh to the Father, but by me.' },
@@ -96,9 +98,5 @@ export const DAILY_VERSES = [
 
 // Escolhe o versículo do dia baseado no dia do ano + ano (mesma escolha pra todos no mesmo dia).
 export function getVerseOfDay(date = new Date()) {
-  const start = new Date(date.getFullYear(), 0, 0);
-  const diff = date - start;
-  const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const seed = (dayOfYear + date.getFullYear() * 7) % DAILY_VERSES.length;
-  return DAILY_VERSES[seed];
+  return DAILY_VERSES[dailyIndex(DAILY_VERSES.length, date)];
 }

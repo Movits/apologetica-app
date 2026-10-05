@@ -1,132 +1,52 @@
-import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useMemo, useRef } from 'react';
+import { Platform, Text, View } from 'react-native';
 import { getVerseOfDay } from '../data/dailyVerses';
 import { shareVerse } from '../utils/share';
 import { captureAndShareImage } from '../utils/shareAsImage';
-import ShareVerseCard from './ShareVerseCard';
+import { pick } from '../utils/i18nData';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { Group, Row } from './ui';
+import ShareVerseCard from './ShareVerseCard';
 
-export default function VerseOfDayCard({ onOpen }) {
-  const { colors, fs } = useTheme();
+// Versículo do dia (Conteúdo do dia): um Group com o texto em serifa de
+// leitura, a referência em footnote e as ações como linhas (ler na Bíblia,
+// compartilhar o texto e, no nativo, compartilhar como imagem). O card de
+// captura fica fora do Group, senão ganharia um separador.
+export default function VerseOfDayCard({ onOpen, style }) {
+  const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
+  const { space } = tokens;
   const verse = useMemo(() => getVerseOfDay(), []);
-  const styles = makeStyles(colors, fs);
   const shareCardRef = useRef(null);
 
-  const text = isEn ? (verse.textEn || verse.text) : verse.text;
-  const ref = isEn ? (verse.refEn || verse.ref) : verse.ref;
+  const verseText = pick(verse, 'text', isEn);
+  const ref = pick(verse, 'ref', isEn);
 
-  const handleShare = () =>
-    shareVerse({
-      bookName: ref.split(/[\s:,]/).slice(0, -1).join(' '),
-      chapter: ref.match(/[:,](\d+)/)?.[1],
-      verse: verse.verse,
-      text,
-    });
-
-  const handleShareAsImage = () =>
-    captureAndShareImage(shareCardRef, `"${text}"\n\n${ref}`);
-
-  const openVerse = () =>
-    onOpen?.({ bookId: verse.bookId, chapter: verse.chapter, verse: verse.verse });
+  // Compartilha a referência exatamente como o card exibe (o `ref` curado, já
+  // no idioma certo), em vez de remontá-la por regex, que gerava "Salmo 23 1,1".
+  const handleShare = () => shareVerse({ ref, text: verseText, isEn });
+  const handleShareAsImage = () => captureAndShareImage(shareCardRef, `"${verseText}"\n\n${ref}`);
+  const openVerse = () => onOpen?.({ bookId: verse.bookId, chapter: verse.chapter, verse: verse.verse });
 
   return (
-    <View style={styles.card}>
-      <View style={styles.headerRow}>
-        <View style={styles.headerIcon}>
-          <Ionicons name="sunny-outline" size={18} color={colors.accent} />
+    <>
+      <Group header={t('home.verse.label')} style={style}>
+        <View style={{ padding: space.md, gap: space.xs }}>
+          <Text style={[text('reading'), { color: colors.text }]}>“{verseText}”</Text>
+          <Text style={[text('footnote'), { color: colors.textSubtle }]}>{ref}</Text>
         </View>
-        <Text style={styles.headerLabel}>{t('home.verse.label')}</Text>
-      </View>
-
-      <Text style={styles.verseText}>"{text}"</Text>
-      <Text style={styles.verseRef}>{ref}</Text>
-
-      <View style={styles.actions}>
-        <TouchableOpacity style={styles.actionBtn} onPress={openVerse}>
-          <Ionicons name="book-outline" size={16} color={colors.accent} />
-          <Text style={styles.actionText}>{t('home.verse.readContext')}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionBtn} onPress={handleShare}>
-          <Ionicons name="share-social-outline" size={16} color={colors.accent} />
-          <Text style={styles.actionText}>{t('home.verse.shareText')}</Text>
-        </TouchableOpacity>
-        {Platform.OS !== 'web' && (
-          <TouchableOpacity style={styles.actionBtn} onPress={handleShareAsImage}>
-            <Ionicons name="image-outline" size={16} color={colors.accent} />
-            <Text style={styles.actionText}>{t('home.verse.shareImage')}</Text>
-          </TouchableOpacity>
-        )}
-      </View>
+        <Row icon="book-outline" title={t('today.readInBible')} trailing="chevron" onPress={openVerse} />
+        <Row icon="share-social-outline" title={t('today.shareText')} onPress={handleShare} />
+        {Platform.OS !== 'web' ? (
+          <Row icon="image-outline" title={t('today.shareImage')} onPress={handleShareAsImage} />
+        ) : null}
+      </Group>
 
       {/* Card offscreen renderizado para captura como imagem. */}
-      <View style={styles.offscreen} pointerEvents="none">
-        <ShareVerseCard ref={shareCardRef} text={text} passageRef={ref} />
+      <View style={{ position: 'absolute', left: -10000, top: -10000, opacity: 0 }} pointerEvents="none">
+        <ShareVerseCard ref={shareCardRef} text={verseText} passageRef={ref} />
       </View>
-    </View>
+    </>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    card: {
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 14,
-      marginBottom: 10,
-      borderLeftWidth: 4,
-      borderLeftColor: c.accent,
-    },
-    headerRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 },
-    headerIcon: {
-      width: 26,
-      height: 26,
-      borderRadius: 13,
-      backgroundColor: c.badgeBg,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    headerLabel: {
-      fontSize: fs(11),
-      color: c.textSubtle,
-      fontWeight: 'bold',
-      textTransform: 'uppercase',
-      letterSpacing: 1,
-    },
-    verseText: {
-      fontSize: fs(14),
-      color: c.text,
-      lineHeight: fs(21),
-      fontStyle: 'italic',
-      marginBottom: 6,
-    },
-    verseRef: {
-      fontSize: fs(12),
-      color: c.accentText,
-      fontWeight: 'bold',
-      marginBottom: 10,
-    },
-    actions: {
-      flexDirection: 'row',
-      gap: 8,
-      borderTopWidth: 1,
-      borderTopColor: c.divider,
-      paddingTop: 10,
-    },
-    actionBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingVertical: 6,
-      paddingHorizontal: 10,
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: c.accent,
-      flex: 1,
-      justifyContent: 'center',
-    },
-    actionText: { color: c.accentText, fontSize: fs(12), fontWeight: '600' },
-    offscreen: { position: 'absolute', left: -10000, top: -10000, opacity: 0 },
-  });

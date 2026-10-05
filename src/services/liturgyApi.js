@@ -1,5 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Nome do dia no idioma da interface: helper puro (testável) em src/utils.
+export { liturgyTitle } from '../utils/liturgyTitle';
+
 // API community-mantida que faz scraping da CNBB:
 // https://github.com/Dancrf/liturgia-diaria
 const API_URL = 'https://liturgia.up.railway.app/v2/';

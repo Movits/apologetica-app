@@ -339,7 +339,7 @@ As diferenças, porém, são de fundo.
     category: 'Outras Religiões',
     image: require('../../../assets/articles/40-hinduismo.jpg'),
     imageAlt: 'Relevo do Bhagavad Gita (Krishna e Arjuna)',
-    imageCredit: 'Relevo do Bhagavad Gita, templo de Bishnupur, Índia. Foto via Wikimedia Commons.',
+    imageCredit: 'Krishna e Arjuna, relevo na decoração de uma casa em Bishnupur, Índia. Foto via Wikimedia Commons.',
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBhagavata%2520Gita%2520Bishnupur%2520Arnab%2520Dutta%25202011.JPG&w=2200&output=jpg&q=80',
     summary: 'O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.',
@@ -565,8 +565,8 @@ Dito isso, há diferenças que não se resolvem só com simpatia.
     title: 'Horóscopo, Ocultismo e Superstição: O Que a Igreja Ensina',
     category: 'Outras Religiões',
     image: require('../../../assets/articles/65-ocultismo.jpg'),
-    imageAlt: 'A Sombra de Samuel invocada por Saul, de Salvator Rosa',
-    imageCredit: 'Salvator Rosa, A Sombra de Samuel Invocada por Saul (1668). Domínio público.',
+    imageAlt: 'A Sombra de Samuel invocada por Saul, de Bernardo Cavallino',
+    imageCredit: 'Bernardo Cavallino, A Sombra de Samuel Invocada por Saul (c. 1650 a 1656, Museu Getty). Domínio público.',
     imageAspect: 1.4,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Shade%2520of%2520Samuel%2520Invoked%2520by%2520Saul.jpg&w=2200&output=jpg&q=80',
     summary: 'Horóscopo, tarô, búzios, amuletos, simpatias. Práticas comuns que a Igreja, seguindo a Bíblia, considera incompatíveis com a fé. Entenda por quê, sem fanatismo nem medo.',
@@ -578,7 +578,7 @@ O primeiro de todos os mandamentos é "não terás outros deuses diante de mim" 
 
 ## O que a Bíblia diz
 
-A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a adivinhação, a magia, o feitiço e a consulta aos mortos: "não se ache no meio de ti quem pratique adivinhação, magia ou consulte os espíritos" (Deuteronômio 18,10-12). O quadro de Salvator Rosa retrata um caso bíblico: o rei Saul, em vez de confiar em Deus, procura uma necromante para invocar o espírito de Samuel, e isso é apresentado como a sua ruína. O profeta Isaías ironiza: "consultar os mortos a respeito dos vivos? Recorram antes à lei e ao testemunho" (Isaías 8,19-20).
+A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a adivinhação, a magia, o feitiço e a consulta aos mortos: "não se ache no meio de ti quem pratique adivinhação, magia ou consulte os espíritos" (Deuteronômio 18,10-12). O quadro de Bernardo Cavallino retrata um caso bíblico: o rei Saul, em vez de confiar em Deus, procura uma necromante para invocar o espírito de Samuel, e isso é apresentado como a sua ruína. O profeta Isaías ironiza: "consultar os mortos a respeito dos vivos? Recorram antes à lei e ao testemunho" (Isaías 8,19-20).
 
 ## Por que é perigoso, mesmo "de brincadeira"
 

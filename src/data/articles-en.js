@@ -592,7 +592,7 @@ The first of all commandments is "you shall have no other gods before me" (Exodu
 
 ## What the Bible says
 
-Scripture is direct. The book of Deuteronomy lists and expressly forbids divination, magic, sorcery, and consulting the dead: "let there not be found among you anyone who practices divination, magic, or consults spirits" (Deuteronomy 18,10-12). The painting by Salvator Rosa depicts a biblical case: King Saul, instead of trusting in God, seeks a medium to summon the spirit of Samuel, and this is presented as his ruin. The prophet Isaiah is ironic: "should they consult the dead on behalf of the living? To the law and to the testimony!" (Isaiah 8,19-20).
+Scripture is direct. The book of Deuteronomy lists and expressly forbids divination, magic, sorcery, and consulting the dead: "let there not be found among you anyone who practices divination, magic, or consults spirits" (Deuteronomy 18,10-12). The painting by Bernardo Cavallino depicts a biblical case: King Saul, instead of trusting in God, seeks a medium to summon the spirit of Samuel, and this is presented as his ruin. The prophet Isaiah is ironic: "should they consult the dead on behalf of the living? To the law and to the testimony!" (Isaiah 8,19-20).
 
 ## Why it is dangerous, even "for fun"
 

@@ -6,6 +6,10 @@ const STORAGE_VOICE_PT = 'settings:ttsVoice';
 const STORAGE_VOICE_EN = 'settings:ttsVoiceEn';
 const STORAGE_RATE = 'settings:ttsRate';
 
+// Locale de fala pelo idioma do TEXTO ('en' ou 'pt'), usado quando a voz
+// escolhida não traz o próprio `language`.
+export const ttsLocale = (lang) => (lang === 'en' ? 'en-US' : 'pt-BR');
+
 // Padrões do Google TTS Android para português.
 const PT_BR_PATTERNS = [
   { re: /-x-ptd/i, name: 'Bruno',   gender: 'M' },
@@ -155,7 +159,7 @@ async function listVoicesWeb(language) {
 }
 
 // Lista vozes para o idioma escolhido ('pt' ou 'en').
-// Retorna no máximo 4 vozes (2 por país, M + F) — exceto na web.
+// Retorna no máximo 4 vozes (2 por país, M + F), exceto na web.
 export async function listVoicesForLanguage(language = 'pt') {
   if (Platform.OS === 'web') return listVoicesWeb(language);
   try {

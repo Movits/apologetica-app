@@ -8,7 +8,7 @@ Como o APPologetica é construído por dentro. Este mapa reúne as 7 notas da pa
 
 ## Comece por aqui
 
-- [[Visão Geral]]: o retrato do app em uma página, stack (Expo SDK 54, React Native, Firebase), princípio offline-first e fluxo geral.
+- [[Visão Geral]]: o retrato do app em uma página, stack (Expo SDK 57, React Native, Firebase), princípio offline-first e fluxo geral.
 - [[Navegação e Telas]]: as 5 abas, os stacks internos montados em `App.js` e por que algumas rotas existem duplicadas de propósito.
 
 ## Estado e idioma

@@ -34,3 +34,8 @@ brain/.obsidian/
 
 # Config local do Obsidian na raiz (vault aberto no projeto inteiro)
 .obsidian/
+
+# Capturas da auditoria visual (npm run capture): regeráveis e pesadas (~90 MB)
+design/preview/auditoria/
+# Capturas da landing (regeráveis, ~50 MB)
+design/preview/landing/

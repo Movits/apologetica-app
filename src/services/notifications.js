@@ -3,12 +3,12 @@ import * as Device from 'expo-device';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getVerseOfDay } from '../data/dailyVerses';
 import { DIALOGUES } from '../data/dialogues';
+import { dailyIndex } from '../utils/daily';
 
-// Objeção do dia: mesma rotação determinística da Home.
+// Objeção do dia: mesma rotação determinística da Home (HomeScreen.jsx), agora
+// garantida pelo mesmo dailyIndex e não por cópia da fórmula.
 function objectionOfDay() {
-  const now = new Date();
-  const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
-  return DIALOGUES[(dayOfYear + now.getFullYear() * 7) % DIALOGUES.length];
+  return DIALOGUES[dailyIndex(DIALOGUES.length)];
 }
 
 // Como notificações aparecem com o app em foreground.

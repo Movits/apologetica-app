@@ -45,12 +45,8 @@ Duas pastas de apoio às telas: `src/utils/` (helpers sem UI, aprox. 11 arquivos
 | `RelatedArticles.jsx` | Seção "Ver também" no fim do artigo | `ArticleDetailScreen` |
 | `SaintTodayCard.jsx` | Santo do dia | `TodayScreen` |
 | `ScrollHint.jsx` | Setinha discreta indicando conteúdo abaixo | quase todas as telas com lista |
-| `SectionBanner.jsx` | Cabeçalho de seção com ícone, título e contagem, opaco para sticky | `ArticlesScreen`, `ReferencesScreen`, `CategoryArticlesScreen` |
 | `ShareVerseCard.jsx` | Card visual do versículo renderizado offscreen para virar imagem | `VerseOfDayCard` |
-| `StickySectionList.jsx` | SectionList com cabeçalhos fixos (comportamento nativo) | `ArticlesScreen`, `ReferencesScreen` |
-| `StickySectionList.web.jsx` | Recria o sticky nativo na web com position sticky por seção | os mesmos, na web |
 | `VerseOfDayCard.jsx` | Versículo do dia com compartilhar texto ou imagem | `TodayScreen` |
-| `WebDownloadBanner.jsx` | Banner só na web convidando a baixar o app | `SettingsScreen` |
 
 ## Relacionadas
 

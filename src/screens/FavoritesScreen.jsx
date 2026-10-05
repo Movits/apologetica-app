@@ -1,98 +1,87 @@
-import { useState, useCallback } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { useCallback, useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { articles } from '../data/articles';
-import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { getFavorites } from '../utils/favorites';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { getFavorites, toggleFavorite } from '../utils/favorites';
+import { categoryLabel, pick } from '../utils/i18nData';
+import { haptics } from '../utils/haptics';
+import { openArticle } from '../navigation/links';
+import { EmptyState, Row } from '../components/ui';
+import RowIconButton from '../components/RowIconButton';
+import UserDataList from '../components/UserDataList';
+import ItemActionsSheet from '../components/ItemActionsSheet';
 
+// Ids guardados -> artigos, na ordem em que foram guardados (o mais novo
+// primeiro), ignorando ids que não existem mais.
+const fromIds = (ids) => ids.map((id) => articles.find((a) => a.id === id)).filter(Boolean);
+
+// Favoritos ficam no aparelho (AsyncStorage) e valem no modo visitante. A
+// lista recarrega a cada foco, porque o artigo guarda e remove por conta
+// própria. A lista é o card da lista agrupada (padrão do Glossário): título
+// em headline, categoria em subhead, o chevron abre o artigo e o marcador de
+// 44 remove. O toque longo abre a folha de ações (abrir, remover), como nas
+// outras listas do usuário, em vez de remover na hora.
 export default function FavoritesScreen({ navigation }) {
-  const { colors, fs } = useTheme();
   const { t, isEn } = useLanguage();
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // null enquanto carrega, para não piscar o estado vazio antes da leitura.
+  const [items, setItems] = useState(null);
+  // O artigo da folha de ações; null fecha a folha.
+  const [active, setActive] = useState(null);
 
   useFocusEffect(
     useCallback(() => {
       let active = true;
-      (async () => {
-        const ids = await getFavorites();
-        if (!active) return;
-        const ordered = ids
-          .map((id) => articles.find((a) => a.id === id))
-          .filter(Boolean);
-        setItems(ordered);
-        setLoading(false);
-      })();
+      getFavorites().then((ids) => { if (active) setItems(fromIds(ids)); });
       return () => { active = false; };
     }, [])
   );
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
+  const remove = async (article) => {
+    haptics.impact('light');
+    const ids = await toggleFavorite(article.id);
+    setItems(fromIds(ids));
+  };
 
-  if (loading) {
-    return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
-  }
-
-  if (items.length === 0) {
-    return (
-      <View style={styles.center}>
-        <Ionicons name="star-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>{t('empty.favorites')}</Text>
-        <Text style={styles.muted}>
-          {isEn
-            ? 'Tap the star at the top of an article to save it here.'
-            : 'Toque na estrela no topo de um artigo para salvá-lo aqui.'}
-        </Text>
-      </View>
-    );
-  }
+  const actions = active
+    ? [
+      { icon: 'reader-outline', label: t('common.open'), onPress: () => openArticle(navigation, active.id) },
+      { icon: 'bookmark-outline', label: t('articles.unsave'), danger: true, onPress: () => remove(active) },
+    ]
+    : [];
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <FlatList
-        data={items}
+    <>
+      <UserDataList
+        items={items}
+        empty={(
+          <EmptyState
+            icon="bookmark-outline"
+            title={t('empty.favorites')}
+            message={t('favorites.emptyHint')}
+            action={{ label: t('favorites.explore'), onPress: () => navigation.navigate('Artigos') }}
+          />
+        )}
         keyExtractor={(a) => String(a.id)}
-        contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        onLayout={onLayout}
-        scrollEventThrottle={32}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => navigation.navigate('ArticleFromSearch', { articleId: item.id })}
-          >
-            <Ionicons name="star" size={18} color={colors.accent} />
-            <View style={{ flex: 1 }}>
-              <Text style={styles.cardCat}>{isEn ? t(`category.${item.category}`) : item.category}</Text>
-              <Text style={styles.cardTitle} numberOfLines={2}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
-              <Text style={styles.cardSummary} numberOfLines={2}>{isEn ? (item.summaryEn || item.summary) : item.summary}</Text>
-            </View>
-            <Ionicons name="chevron-forward" size={16} color={colors.textSubtle} />
-          </TouchableOpacity>
+          <Row
+            titleRole="headline"
+            title={pick(item, 'title', isEn)}
+            titleLines={2}
+            subtitle={categoryLabel(item.category, t)}
+            subtitleLines={1}
+            trailing={<RowIconButton icon="bookmark" label={t('articles.unsave')} onPress={() => remove(item)} />}
+            chevron
+            onPress={() => openArticle(navigation, item.id)}
+            onLongPress={() => setActive(item)}
+          />
         )}
       />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+      <ItemActionsSheet
+        item={active}
+        title={active ? pick(active, 'title', isEn) : ''}
+        actions={actions}
+        onClose={() => setActive(null)}
+      />
+    </>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, gap: 10, backgroundColor: c.bg },
-    emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText, marginTop: 12 },
-    muted: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(20) },
-    card: {
-      flexDirection: 'row', alignItems: 'center', gap: 12,
-      backgroundColor: c.card, borderRadius: 12, padding: 14, marginBottom: 8,
-    },
-    cardCat: { fontSize: fs(10), color: c.accentText, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 },
-    cardTitle: { fontSize: fs(14), color: c.primaryText, fontWeight: '600', marginBottom: 2 },
-    cardSummary: { fontSize: fs(12), color: c.textMuted, lineHeight: fs(17) },
-  });

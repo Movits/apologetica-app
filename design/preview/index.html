@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APPologética, antes e depois</title>
+<meta name="description" content="Protótipo navegável do redesign do APPologética: as cinco telas prioritárias e o chrome global, antes e depois, claro e escuro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Tokens propostos (Fase 1 + Fase 0). Os mesmos valores vão para
+   src/theme/tokens.js na Fase 5. Tudo que é escolha nossa está marcado.
+   ========================================================================== */
+:root{
+  /* cor, tema claro */
+  --bg:#f5f0e8;            /* Pergaminho: fundo (marca) */
+  --surface:#ffffff;       /* Papel: superfícies e linhas de lista (marca) */
+  --surface-2:#ece6da;     /* campo de busca e trilhos (escolha nossa) */
+  --text:#222222;          /* tinta (marca) */
+  --text-2:#6a6457;        /* secundário (marca, 5,2:1 sobre fundo) */
+  --text-3:#948c7c;        /* terciário (escolha nossa, só em ícones e trilhos) */
+  --tint:#1a3a5c;          /* navy vira o tint: botões, aba ativa, links */
+  --on-tint:#ffffff;
+  --gold:#c9a84c;          /* dourado só sobre navy ou como progresso (2,3:1 sobre branco: nunca em texto) */
+  --gold-text:#806418;     /* dourado legível sobre claro (AA) */
+  --sep:rgba(26,58,92,.14);
+  --hairline:rgba(0,0,0,.14);
+  --material:rgba(245,240,232,.72);
+  --material-strong:rgba(245,240,232,.92);
+  --shadow-lg:0 12px 32px rgba(26,58,92,.12);
+  --danger:#b3261e;
+
+  /* tipo */
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:"Cormorant Garamond","Times New Roman",serif;
+  --font-reading:"New York",Georgia,"Times New Roman",serif;
+
+  /* espaço: grade de 4 pt */
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;
+  /* raio: três valores */
+  --r-xs:4px;--r-sm:8px;--r-md:12px;--r-lg:18px;
+  /* movimento */
+  --ease-out:cubic-bezier(.25,.1,.25,1);
+  --ease-spring:cubic-bezier(.34,1.4,.64,1);
+  --d-touch:150ms;--d-layout:350ms;--d-screen:350ms;
+
+  /* página do protótipo (não é o app) */
+  --page-bg:#e9e4da;--page-text:#1f1d19;--page-muted:#6b665c;--page-card:#fffdf9;
+}
+:root[data-theme="dark"]{
+  --bg:#0d1722;--surface:#172538;--surface-2:#213248;
+  --text:#ece8d8;--text-2:#a8a395;--text-3:#7d7767;
+  --tint:#d4b86a;--on-tint:#0d1722;
+  --gold:#d4b86a;--gold-text:#d4b86a;
+  --sep:rgba(236,232,216,.14);--hairline:rgba(255,255,255,.14);
+  --material:rgba(13,23,34,.72);--material-strong:rgba(13,23,34,.92);
+  --shadow-lg:0 12px 32px rgba(0,0,0,.45);
+  --danger:#f28b82;
+  --page-bg:#151a20;--page-text:#ece8d8;--page-muted:#a8a395;--page-card:#1c2330;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page-bg);color:var(--page-text);font-family:var(--font-ui);font-size:16px;line-height:1.5}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--tint);outline-offset:2px}
+
+/* ---------- página ---------- */
+.page{max-width:1120px;margin:0 auto;padding:32px 16px 96px}
+.page-head{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:24px}
+.page-head h1{font-family:var(--font-display);font-weight:600;font-size:44px;line-height:1;margin:0 0 8px;letter-spacing:-.01em}
+.page-head p{margin:0;color:var(--page-muted);max-width:60ch}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.ctrl{border:1px solid var(--hairline);border-radius:999px;padding:8px 14px;background:var(--page-card);font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.ctrl[aria-pressed="true"]{background:var(--tint);color:var(--on-tint);border-color:transparent}
+.toc{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 40px;padding:0;list-style:none}
+.toc a{font-size:14px;text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--page-card);border:1px solid var(--hairline)}
+.section{margin:0 0 72px}
+.section h2{font-family:var(--font-display);font-weight:600;font-size:32px;line-height:1.1;margin:0 0 8px}
+.section .lead{color:var(--page-muted);max-width:70ch;margin:0 0 20px}
+.findings{margin:0 0 20px;padding:0 0 0 18px;color:var(--page-muted);font-size:14px;max-width:80ch}
+.findings li{margin:2px 0}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media (max-width:860px){.pair{grid-template-columns:1fr}}
+.frame-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.frame-label{font-size:13px;font-weight:600;color:var(--page-muted);letter-spacing:.01em}
+.frame-note{font-size:13px;color:var(--page-muted);max-width:390px;text-align:center}
+.frame-scale{transform-origin:top center}
+@media (max-width:440px){.page{padding:24px 8px 64px}.frame-wrap{width:100%;overflow:hidden}.phone.frame-scale{transform:scale(.9);transform-origin:top center;margin-bottom:-84px}.tok{overflow-x:auto}}
+
+/* ---------- moldura do celular ---------- */
+.phone{width:390px;height:844px;border-radius:48px;position:relative;overflow:hidden;background:var(--bg);color:var(--text);
+  box-shadow:0 0 0 9px #14161a,0 0 0 11px #2b2f36,0 28px 56px rgba(0,0,0,.28);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}
+.phone img.antes{display:block;width:390px;height:844px;object-fit:cover}
+.status{position:absolute;top:0;left:0;right:0;height:47px;z-index:30;pointer-events:none;display:flex;align-items:center;justify-content:space-between;padding:12px 30px 0;font-size:15px;font-weight:600;color:var(--text)}
+.island{position:absolute;z-index:31;top:11px;left:50%;transform:translateX(-50%);width:120px;height:36px;border-radius:20px;background:#0b0c0e}
+.home-ind{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:var(--text);opacity:.85;z-index:31}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.screen::-webkit-scrollbar{display:none}
+.content{padding:0 var(--s5) 120px}
+
+/* barra de navegação com large title próprio */
+.nav{position:sticky;top:0;z-index:20;height:91px;padding:47px var(--s2) 0;display:flex;align-items:center;justify-content:space-between;
+  background:transparent;border-bottom:.5px solid transparent;transition:background var(--d-layout) var(--ease-out),border-color var(--d-layout) var(--ease-out)}
+.nav.collapsed{background:var(--material);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border-bottom-color:var(--hairline)}
+.nav .inline-title{position:absolute;left:50%;top:47px;height:44px;line-height:44px;transform:translateX(-50%) translateY(6px);font-weight:600;font-size:17px;opacity:0;transition:opacity var(--d-layout) var(--ease-out),transform var(--d-layout) var(--ease-out);white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.nav.collapsed .inline-title{opacity:1;transform:translateX(-50%) translateY(0)}
+.nav .side{display:flex;align-items:center;gap:0;min-width:44px}
+.nav .side.right{justify-content:flex-end}
+.icon-btn{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tint);border-radius:var(--r-md)}
+.icon-btn svg,.back svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.back{display:inline-flex;align-items:center;height:44px;padding:0 var(--s2) 0 var(--s1);color:var(--tint);font-size:17px;gap:2px;border-radius:var(--r-md)}
+.back svg{width:22px;height:22px;stroke-width:2.4}
+.large-title{font-family:var(--font-display);font-weight:600;font-size:38px;line-height:1.05;letter-spacing:-.01em;margin:0;padding:2px 0 0}
+.subtitle{font-size:13px;line-height:18px;color:var(--text-2);margin:var(--s1) 0 0}
+.section-title{font-family:var(--font-display);font-weight:600;font-size:24px;line-height:1.1;margin:var(--s8) 0 var(--s3)}
+.body{font-size:17px;line-height:22px}
+.callout{font-size:16px;line-height:21px}
+.subhead{font-size:15px;line-height:20px}
+.footnote{font-size:13px;line-height:18px}
+.caption{font-size:12px;line-height:16px}
+.muted{color:var(--text-2)}
+
+/* lista agrupada (iOS inset grouped) */
+.group{background:var(--surface);border-radius:var(--r-md);overflow:hidden;margin:0 0 var(--s4)}
+.row{display:flex;align-items:center;gap:var(--s3);min-height:44px;padding:var(--s3) var(--s4);position:relative;text-align:left;width:100%;color:var(--text)}
+.row + .row::before{content:"";position:absolute;left:var(--s4);right:0;top:0;height:.5px;background:var(--sep)}
+.row .lead-icon{width:28px;height:28px;flex:0 0 28px;display:inline-flex;align-items:center;justify-content:center;color:var(--tint)}
+.row .lead-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.row .thumb{width:44px;height:44px;flex:0 0 44px;border-radius:var(--r-sm);background:linear-gradient(135deg,#8fb996,#e6e0c8);background-size:cover;background-position:center}
+.row .main{flex:1;min-width:0}
+.row .main .t{font-size:17px;line-height:22px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .main .s{font-size:13px;line-height:18px;color:var(--text-2);display:block}
+.row .trail{color:var(--text-2);font-size:15px;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto}
+.row .trail svg{width:16px;height:16px;stroke:var(--text-3);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.row.reading-row .main .t{white-space:normal}
+
+/* pressionável: resposta ao toque com spring */
+.pressable{transition:transform var(--d-layout) var(--ease-spring),opacity var(--d-touch) linear;cursor:pointer}
+.pressable:active{transform:scale(.97);transition-duration:var(--d-touch)}
+.row.pressable:active{background:var(--surface-2)}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 var(--s5);border-radius:var(--r-md);font-size:17px;font-weight:600;width:100%}
+.btn-primary{background:var(--tint);color:var(--on-tint)}
+.btn-secondary{background:transparent;color:var(--tint);box-shadow:inset 0 0 0 1.5px var(--tint)}
+.btn-plain{background:transparent;color:var(--tint);min-height:44px;font-weight:500}
+.btn[disabled]{opacity:.4}
+
+/* busca */
+.search{display:flex;align-items:center;gap:var(--s2);height:36px;border-radius:var(--r-md);background:var(--surface-2);padding:0 var(--s3);color:var(--text-2);font-size:17px;margin:var(--s3) 0 var(--s4)}
+.search svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
+
+/* objeção do dia: o único elemento memorável */
+.objecao{background:var(--surface);border-radius:var(--r-lg);padding:var(--s5);margin:0 0 var(--s4)}
+.objecao .k{font-size:13px;line-height:18px;color:var(--text-2);margin:0 0 var(--s2)}
+.objecao blockquote{margin:0 0 var(--s3);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:27px;line-height:1.2;color:var(--tint);letter-spacing:-.005em}
+:root[data-theme="dark"] .objecao blockquote{color:var(--text)}
+.objecao .src{font-size:13px;line-height:18px;color:var(--text-2);margin:0 0 var(--s4)}
+
+/* progresso */
+.progress{height:3px;border-radius:2px;background:var(--surface-2);overflow:hidden}
+.progress i{display:block;height:100%;width:38%;background:var(--gold);border-radius:2px}
+
+/* tab bar translúcida */
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:83px;padding:6px 0 34px;z-index:25;display:flex;
+  background:var(--material);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border-top:.5px solid var(--hairline)}
+.tab{text-decoration:none;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--text-2);font-size:10.5px;font-weight:500;letter-spacing:.01em}
+.tab svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tab.on{color:var(--tint)}
+.tab.on svg{fill:var(--tint);fill-opacity:.18}
+
+/* push de tela (ios_from_right) */
+.push-screen{position:absolute;inset:0;background:var(--bg);z-index:22;transform:translateX(100%);transition:transform var(--d-screen) var(--ease-out);overflow-y:auto;scrollbar-width:none;box-shadow:-8px 0 24px rgba(0,0,0,.12)}
+.push-screen::-webkit-scrollbar{display:none}
+.push-screen.in{transform:translateX(0)}
+.base{transition:transform var(--d-screen) var(--ease-out),filter var(--d-screen) var(--ease-out)}
+.base.pushed{transform:translateX(-28%);filter:brightness(.92)}
+
+/* sheet com detent */
+.sheet-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity var(--d-layout) var(--ease-out);z-index:26}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--surface);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:var(--s2) var(--s4) 44px;transform:translateY(105%);transition:transform var(--d-screen) var(--ease-spring);z-index:27;box-shadow:var(--shadow-lg)}
+.sheet .grab{width:36px;height:5px;border-radius:3px;background:var(--text-3);margin:0 auto var(--s3);opacity:.5}
+.sheet.open{transform:translateY(0)}
+.sheet-backdrop.open{opacity:1;pointer-events:auto}
+.sheet h4{margin:0 0 var(--s3);font-size:17px;font-weight:600}
+.colors{display:flex;gap:var(--s3);margin:0 0 var(--s3)}
+.dot{width:34px;height:34px;border-radius:50%;border:2px solid transparent}
+.dot.on{border-color:var(--tint)}
+
+/* leitura */
+.reading{font-family:var(--font-reading);font-size:18px;line-height:28px}
+.reading p{margin:0 0 var(--s4)}
+.reading h3{font-family:var(--font-display);font-weight:600;font-size:24px;line-height:1.15;margin:var(--s6) 0 var(--s3)}
+.hero-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r-lg);display:block;background:var(--surface-2)}
+.credit{font-size:12px;line-height:16px;color:var(--text-2);margin:var(--s2) 0 var(--s5)}
+.article-title{font-family:var(--font-display);font-weight:600;font-size:32px;line-height:1.08;margin:var(--s1) 0 var(--s4);letter-spacing:-.01em}
+.verse{display:flex;gap:var(--s3);padding:var(--s2) 0;border-radius:var(--r-sm);text-align:left;width:100%;color:var(--text)}
+.verse .n{font-family:var(--font-ui);font-size:12px;line-height:20px;font-weight:600;color:var(--gold-text);min-width:18px;padding-top:4px}
+.verse .txt{font-family:var(--font-reading);font-size:19px;line-height:30px}
+.verse.pressable:active{background:var(--surface)}
+.pager{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;align-items:center;gap:var(--s4);height:44px;padding:0 var(--s4);border-radius:999px;
+  background:var(--material-strong);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);box-shadow:0 4px 16px rgba(0,0,0,.14);z-index:24;font-size:15px;font-weight:600;color:var(--tint)}
+.pager .mid{color:var(--text-2);font-weight:500}
+.pager svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* onboarding e login */
+.full{position:absolute;inset:0;background:var(--bg)}
+.full::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 34% at 50% 0%,rgba(201,168,76,.10),rgba(201,168,76,0) 70%)}
+:root[data-theme="dark"] .full::after{background:radial-gradient(70% 34% at 50% 0%,rgba(212,184,106,.08),rgba(212,184,106,0) 70%)}
+.onb{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:60px var(--s6) 44px}
+.pills{display:flex;justify-content:flex-end;gap:var(--s2)}
+.pill{height:36px;padding:0 var(--s3);border-radius:999px;background:var(--material-strong);display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--text)}
+.pill svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.onb-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--s4)}
+.cross{width:28px;height:36px;position:relative;margin:0 0 var(--s2)}
+.cross::before,.cross::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
+.cross::before{left:11px;top:0;width:6px;height:36px}.cross::after{left:0;top:9px;width:28px;height:6px}
+.onb h1{font-family:var(--font-display);font-weight:600;font-size:40px;line-height:1;margin:0;letter-spacing:-.01em}
+.onb .lead{font-size:17px;line-height:24px;margin:0;color:var(--text)}
+.onb .quote{font-family:var(--font-reading);font-style:italic;font-size:17px;line-height:26px;color:var(--text-2);margin:var(--s2) 0 0;padding-left:var(--s4);border-left:2px solid var(--gold)}
+.onb .quote cite{display:block;font-style:normal;font-family:var(--font-ui);font-size:13px;margin-top:var(--s1)}
+.segments{display:flex;gap:6px;margin:0 0 var(--s4)}
+.segments i{flex:1;height:4px;border-radius:2px;background:var(--surface-2)}
+.segments i.on{background:var(--gold)}
+.onb-actions{display:flex;flex-direction:column;gap:var(--s2)}
+.form-title{font-family:var(--font-display);font-weight:600;font-size:36px;line-height:1.05;margin:var(--s4) 0 var(--s2)}
+.field{display:flex;align-items:center;gap:var(--s3);min-height:50px;padding:0 var(--s4);position:relative}
+.field + .field::before{content:"";position:absolute;left:var(--s4);right:0;top:0;height:.5px;background:var(--sep)}
+.field label{width:76px;flex:0 0 76px;font-size:17px;color:var(--text)}
+.field input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:17px;color:var(--text);height:44px;outline:none;border-radius:var(--r-sm)}
+.field:focus-within{box-shadow:inset 0 0 0 2px var(--tint);border-radius:var(--r-md)}
+.field input::placeholder{color:var(--text-3)}
+.hint{font-size:13px;line-height:18px;color:var(--text-2);text-align:center;margin:var(--s2) 0 0}
+.or{display:flex;align-items:center;gap:var(--s3);color:var(--text-2);font-size:13px;margin:var(--s4) 0}
+.or::before,.or::after{content:"";flex:1;height:.5px;background:var(--sep)}
+
+/* tokens (página) */
+.tokens{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tok{background:var(--page-card);border:1px solid var(--hairline);border-radius:12px;padding:16px}
+.tok h3{margin:0 0 10px;font-size:15px}
+.tok table{width:100%;border-collapse:collapse;font-size:13px}
+.tok td{padding:5px 4px;border-top:1px solid var(--hairline);vertical-align:top}
+.sw{display:inline-block;width:18px;height:18px;border-radius:5px;vertical-align:middle;margin-right:6px;border:1px solid rgba(0,0,0,.12)}
+.assets{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.assets figure{margin:0}
+.assets img,.assets video{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;background:#c9c2b3;display:block}
+.assets figcaption{font-size:12px;color:var(--page-muted);margin-top:4px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-head">
+    <div>
+      <h1>APPologética, antes e depois</h1>
+      <p>Protótipo da Fase 4. Esquerda: captura real do app hoje. Direita: mock em HTML com os tokens propostos. Role dentro dos aparelhos, toque nos cards e nos versículos: o título encolhe, a tela empurra da direita, o menu sobe como sheet. No aparelho, cada toque desses vem com haptic leve.</p>
+    </div>
+    <div class="controls">
+      <button class="ctrl" id="themeBtn" aria-pressed="false">Modo escuro</button>
+      <span class="ctrl" style="cursor:default">Movimento: respeita reduce motion</span>
+    </div>
+  </header>
+  <ul class="toc">
+    <li><a href="#inicio">Início e chrome</a></li><li><a href="#artigo">Artigo</a></li><li><a href="#biblia">Bíblia</a></li>
+    <li><a href="#onboarding">Onboarding</a></li><li><a href="#login">Login</a></li><li><a href="#tokens">Tokens e assets</a></li>
+  </ul>
+
+  <!-- ===================== INÍCIO + CHROME ===================== -->
+  <section class="section" id="inicio">
+    <h2>Início e chrome global</h2>
+    <p class="lead">O chrome recua: tab bar translúcida com o conteúdo passando por baixo, large title que encolhe e vira barra com blur, sem seta de scroll animada. A objeção do dia é o único elemento que fala alto. As seis caixas de categoria viram uma lista agrupada.</p>
+    <ul class="findings">
+      <li>Antes: rótulo da aba ativa a 2,29:1 (dourado sobre branco), 4 raios diferentes na primeira dobra, seta pulando a 60 quadros por segundo, contadores em caixa alta.</li>
+      <li>Depois: aba ativa em navy (11,6:1), um raio por papel, nenhuma animação ociosa, contagem em texto secundário.</li>
+    </ul>
+    <div class="pair">
+      <div class="frame-wrap"><div class="frame-label">Antes</div>
+        <div class="phone frame-scale"><img class="antes" data-antes="inicio" src="antes/inicio-claro.png" alt="Início hoje"></div></div>
+      <div class="frame-wrap"><div class="frame-label">Depois</div>
+        <div class="phone frame-scale">
+          <div class="status"><span>9:41</span><span aria-hidden="true">●●●● ᯤ ▮</span></div><div class="island"></div>
+          <div class="screen base" data-collapse>
+            <div class="nav"><div class="side"></div><div class="inline-title">Início</div><div class="side right"></div></div>
+            <div class="content">
+              <h1 class="large-title">Início</h1>
+              <p class="subtitle">terça-feira, 23 de setembro</p>
+              <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar</div>
+
+              <div class="objecao">
+                <p class="k">Objeção do dia</p>
+                <blockquote>“Ateus podem ser pessoas morais, não precisam de Deus para ter ética.”</blockquote>
+                <p class="src">Resposta guiada em 6 passos, com fontes</p>
+                <button class="btn btn-primary pressable" data-push="#dlg1">Ver como responder</button>
+              </div>
+
+              <div class="group">
+                <button class="row pressable"><span class="thumb" style="background-image:url('../../assets/design/estacao-comum.jpg')"></span>
+                  <span class="main"><span class="t">Tempo Comum</span><span class="s">Caminhar na fé, dia após dia</span></span></button>
+                <button class="row pressable reading-row"><span class="lead-icon"><svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></svg></span>
+                  <span class="main"><span class="t">Continuar: Quem Criou Deus? A Objeção do Ateísmo</span><span class="s">Você parou na metade</span><span class="progress" style="margin-top:8px"><i></i></span></span>
+                  <span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+
+              <h2 class="section-title">Temas</h2>
+              <div class="group">
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M12 4v3M10 7h4"/><path d="M9 21v-6h6v6"/></svg></span><span class="main"><span class="t">Igreja Católica</span></span><span class="trail">23 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M4 9c-2 5 12 11 16 6M20 15c2-5-12-11-16-6"/></svg></span><span class="main"><span class="t">Existência de Deus</span></span><span class="trail">15 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 6-4 2 2-6z"/></svg></span><span class="main"><span class="t">Moral e vida</span></span><span class="trail">7 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"/></svg></span><span class="main"><span class="t">A Bíblia</span></span><span class="trail">14 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="main"><span class="t">História da Igreja</span></span><span class="trail">10 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="main"><span class="t">Outras crenças</span></span><span class="trail">14 <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+              <div class="group">
+                <button class="row pressable"><span class="lead-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-3-6 3z"/></svg></span><span class="main"><span class="t">Versículos e fontes</span><span class="s">Bíblia, Catecismo, documentos</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- tela empurrada: Diálogo -->
+          <div class="push-screen" id="dlg1" data-collapse>
+            <div class="nav collapsed"><div class="side"><button class="back" data-pop><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>Início</button></div><div class="inline-title">Diálogo</div><div class="side right"></div></div>
+            <div class="content">
+              <p class="footnote muted" style="margin:16px 0 4px">Alguém te diz</p>
+              <p class="objecao-inline" style="font-family:var(--font-display);font-style:italic;font-size:26px;line-height:1.2;color:var(--tint);margin:0 0 20px">“Ateus podem ser pessoas morais, não precisam de Deus para ter ética.”</p>
+              <p class="footnote muted" style="margin:0 0 6px">Você responde</p>
+              <div class="reading">
+                <p>Concordo: dá para ser bom sem acreditar em Deus. A pergunta é outra. Sem Deus, de onde vem a obrigação de ser bom? Se a moral é só preferência ou acordo social, ela muda com a maioria. Se ela obriga a todos, precisa de um fundamento que não muda.</p>
+              </div>
+              <div class="group">
+                <button class="row pressable"><span class="main"><span class="t">Catecismo, 1954 a 1960</span><span class="s">A lei moral natural</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="main"><span class="t">Romanos 2,14-15</span><span class="s">Ler na Bíblia</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+              <button class="btn btn-secondary pressable" style="margin-top:8px">Próximo passo, 2 de 6</button>
+            </div>
+          </div>
+
+          <nav class="tabbar" aria-label="Abas">
+            <a class="tab on" href="#inicio"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>Início</a>
+            <a class="tab" href="#artigo"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"/><path d="M9 9h6M9 13h6"/></svg>Artigos</a>
+            <a class="tab" href="#biblia"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2z"/><path d="M12 4v7"/><path d="M9.5 7.5h5"/></svg>Bíblia</a>
+            <a class="tab" href="#biblia"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Praticar</a>
+            <a class="tab" href="#login"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Ajustes</a>
+          </nav>
+          <div class="home-ind"></div>
+        </div>
+        <p class="frame-note">Toque em “Ver como responder” para ver a transição de tela. Role para ver o título encolher e a tab bar deixar o conteúdo passar por baixo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARTIGO ===================== -->
+  <section class="section" id="artigo">
+    <h2>Artigo, a leitura</h2>
+    <p class="lead">Um título só, na página. O header vira translúcido e mostra o nome curto quando o título sai de cena. O corpo em serifa de leitura com medida curta e entrelinha generosa. As fontes citadas viram uma lista agrupada com o mesmo desenho do resto do app.</p>
+    <ul class="findings">
+      <li>Antes: header “Artigo - Deus Existe? Os …” cortado e sobrepondo o botão de ouvir em 22 px; badge de categoria em caixa alta; ícones do header com 22x24 px de alvo.</li>
+      <li>Depois: categoria em texto, três ações com 44 px cada, barra de progresso no lugar da seta animada, referências como “Fontes citadas”.</li>
+    </ul>
+    <div class="pair">
+      <div class="frame-wrap"><div class="frame-label">Antes</div>
+        <div class="phone frame-scale"><img class="antes" data-antes="artigo" src="antes/artigo-claro.png" alt="Artigo hoje"></div></div>
+      <div class="frame-wrap"><div class="frame-label">Depois</div>
+        <div class="phone frame-scale">
+          <div class="status"><span>9:41</span><span aria-hidden="true">●●●● ᯤ ▮</span></div><div class="island"></div>
+          <div class="screen" data-collapse>
+            <div class="nav">
+              <div class="side"><button class="back"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>Artigos</button></div>
+              <div class="inline-title">Deus existe?</div>
+              <div class="side right">
+                <button class="icon-btn" aria-label="Ouvir o artigo"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l4 4V6L7 10z"/><path d="M15 9a4 4 0 0 1 0 6M17.5 6.5a8 8 0 0 1 0 11"/></svg></button>
+                <button class="icon-btn" aria-label="Compartilhar"><svg viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/></svg></button>
+                <button class="icon-btn" aria-label="Guardar nos favoritos"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-3-6 3z"/></svg></button>
+              </div>
+            </div>
+            <div class="content">
+              <img class="hero-img" src="../../assets/articles/56-deus-existe-2.jpg" alt="A Separação da Luz das Trevas, de Michelangelo">
+              <p class="credit">Michelangelo, A Separação da Luz das Trevas (Capela Sistina, 1512). Domínio público.</p>
+              <p class="footnote muted" style="margin:0">Existência de Deus</p>
+              <h1 class="article-title">Deus existe? Os melhores argumentos da razão</h1>
+              <div class="reading">
+                <p>“Deus existe?” é, provavelmente, a pergunta mais importante que alguém pode fazer, porque a resposta muda tudo o mais. Muita gente acha que é só questão de sentimento ou de costume familiar. Não é. Existem argumentos racionais sérios, discutidos por filósofos há milênios, que apontam para a existência de Deus.</p>
+                <h3>Fé e razão não são inimigas</h3>
+                <p>A Igreja sempre ensinou que a razão pode chegar a Deus. O Catecismo diz que, partindo do movimento e do devir, da contingência, da ordem e da beleza do mundo, pode-se chegar ao conhecimento de Deus como origem e fim do universo.</p>
+              </div>
+              <h2 class="section-title">Fontes citadas</h2>
+              <div class="group">
+                <button class="row pressable"><span class="main"><span class="t">Suma Teológica I, q. 2, a. 3</span><span class="s">Tomás de Aquino, 1265</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="main"><span class="t">Romanos 1,20</span><span class="s">Ler na Bíblia</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+                <button class="row pressable"><span class="main"><span class="t">Catecismo, 31 a 35</span><span class="s">Os caminhos de acesso ao conhecimento de Deus</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+              <h2 class="section-title">Objeções respondidas</h2>
+              <div class="group">
+                <button class="row pressable"><span class="main"><span class="t">“Quem criou Deus?”</span><span class="s">Diálogo em 5 passos</span></span><span class="trail"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="progress" style="position:absolute;top:91px;left:0;right:0;height:2px;border-radius:0;background:transparent;z-index:21"><i style="width:35%"></i></div>
+          <nav class="tabbar" aria-label="Abas">
+            <a class="tab" href="#inicio"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>Início</a>
+            <a class="tab on" href="#artigo"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"/><path d="M9 9h6M9 13h6"/></svg>Artigos</a>
+            <a class="tab" href="#biblia"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2z"/><path d="M12 4v7"/><path d="M9.5 7.5h5"/></svg>Bíblia</a>
+            <a class="tab" href="#biblia"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Praticar</a>
+            <a class="tab" href="#login"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Ajustes</a>
+          </nav>
+          <div class="home-ind"></div>
+        </div>
+        <p class="frame-note">Role o artigo: o nome curto aparece no header quando o título sai. A linha dourada no header é o progresso de leitura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BÍBLIA ===================== -->
+  <section class="section" id="biblia">
+    <h2>Bíblia, o capítulo</h2>
+    <p class="lead">O capítulo ocupa a tela. O título aparece uma vez, os números de versículo ficam pequenos em dourado, o texto em serifa de leitura. Anterior e próximo viram uma pílula flutuante. Toque simples abre o menu como sheet, com teclado também.</p>
+    <ul class="findings">
+      <li>Antes: “João 3” duas vezes (header e conteúdo), leitura em 73% da altura, menu só por toque longo e sem dica na tela.</li>
+      <li>Depois: um título, leitura em mais de 85% da altura, sheet com detent em resposta ao toque.</li>
+    </ul>
+    <div class="pair">
+      <div class="frame-wrap"><div class="frame-label">Antes</div>
+        <div class="phone frame-scale"><img class="antes" data-antes="biblia-capitulo" src="antes/biblia-capitulo-claro.png" alt="Bíblia hoje"></div></div>
+      <div class="frame-wrap"><div class="frame-label">Depois</div>
+        <div class="phone frame-scale">
+          <div class="status"><span>9:41</span><span aria-hidden="true">●●●● ᯤ ▮</span></div><div class="island"></div>
+          <div class="screen" data-collapse>
+            <div class="nav">
+              <div class="side"><button class="back"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>João</button></div>
+              <div class="inline-title">João 3</div>
+              <div class="side right"><button class="icon-btn" aria-label="Ouvir o capítulo"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l4 4V6L7 10z"/><path d="M15 9a4 4 0 0 1 0 6M17.5 6.5a8 8 0 0 1 0 11"/></svg></button></div>
+            </div>
+            <div class="content" style="padding-bottom:160px">
+              <h1 class="large-title">João 3</h1>
+              <p class="subtitle">Evangelho segundo João, capítulo 3 de 21</p>
+              <div style="height:12px"></div>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">1</span><span class="txt">Havia um homem entre os fariseus, chamado Nicodemos, príncipe dos judeus.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">2</span><span class="txt">Este foi ter com Jesus, de noite, e disse-lhe: “Rabi, sabemos que és um Mestre vindo de Deus. Ninguém pode fazer esses milagres que fazes, se Deus não estiver com ele”.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">3</span><span class="txt">Jesus replicou-lhe: “Em verdade, em verdade te digo: quem não nascer de novo não poderá ver o Reino de Deus”.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">4</span><span class="txt">Nicodemos perguntou-lhe: “Como pode um homem renascer, sendo velho? Porventura pode tornar a entrar no seio de sua mãe e nascer pela segunda vez?”.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">5</span><span class="txt">Respondeu Jesus: “Em verdade, em verdade te digo: quem não renascer da água e do Espírito não poderá entrar no Reino de Deus.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">6</span><span class="txt">O que nasceu da carne é carne, e o que nasceu do Espírito é espírito.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">7</span><span class="txt">Não te maravilhes de que eu te tenha dito: necessário vos é nascer de novo.</span></button>
+              <button class="verse pressable" data-sheet="#sheet1"><span class="n">8</span><span class="txt">O vento sopra onde quer; ouves-lhe o ruído, mas não sabes de onde vem, nem para onde vai. Assim acontece com aquele que nasceu do Espírito”.</span></button>
+              <p class="footnote muted" style="text-align:center;margin-top:24px">Tradução Ave Maria</p>
+            </div>
+          </div>
+          <div class="pager"><span><svg viewBox="0 0 24 24" style="vertical-align:-3px"><path d="m15 5-7 7 7 7"/></svg> Jo 2</span><span class="mid">3 de 21</span><span>Jo 4 <svg viewBox="0 0 24 24" style="vertical-align:-3px"><path d="m9 5 7 7-7 7"/></svg></span></div>
+          <div class="sheet-backdrop" data-close="#sheet1"></div>
+          <div class="sheet" id="sheet1" role="dialog" aria-label="Ações do versículo">
+            <div class="grab"></div>
+            <h4>João 3,3</h4>
+            <div class="colors"><span class="dot on" style="background:#fff3a6"></span><span class="dot" style="background:#c8f0c0"></span><span class="dot" style="background:#c4dffb"></span><span class="dot" style="background:#f8c4d3"></span><span class="dot" style="background:#ffd9a8"></span></div>
+            <div class="group" style="margin:0">
+              <button class="row pressable"><span class="main"><span class="t">Anotar</span></span></button>
+              <button class="row pressable"><span class="main"><span class="t">Copiar</span></span></button>
+              <button class="row pressable"><span class="main"><span class="t">Compartilhar</span></span></button>
+            </div>
+            <button class="btn btn-plain pressable" data-close="#sheet1" style="margin-top:8px">Fechar</button>
+          </div>
+          <nav class="tabbar" aria-label="Abas">
+            <a class="tab" href="#inicio"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>Início</a>
+            <a class="tab" href="#artigo"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"/><path d="M9 9h6M9 13h6"/></svg>Artigos</a>
+            <a class="tab on" href="#biblia"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2z"/><path d="M12 4v7"/><path d="M9.5 7.5h5"/></svg>Bíblia</a>
+            <a class="tab" href="#biblia"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Praticar</a>
+            <a class="tab" href="#login"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Ajustes</a>
+          </nav>
+          <div class="home-ind"></div>
+        </div>
+        <p class="frame-note">Toque num versículo para abrir o menu como sheet. A pílula “Jo 2 · 3 de 21 · Jo 4” flutua sobre o texto e some ao rolar para baixo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ONBOARDING ===================== -->
+  <section class="section" id="onboarding">
+    <h2>Onboarding</h2>
+    <p class="lead">Quieto como o resto do app: fundo creme, um brilho quase imperceptível no topo e a tipografia falando sozinha. Uma promessa que o app cumpre: “Saiba responder”, sem “em menos de um minuto”. O botão “Pular” tem 44 px de altura e a tela só aparece na primeira vez.</p>
+    <ul class="findings">
+      <li>Antes: aparece em toda abertura para visitante; “Ver a resposta” cai no Login; pergunta do passo 2 descartada.</li>
+      <li>Depois: uma vez só, “Ver a resposta” abre a resposta como visitante, passo 2 removido.</li>
+    </ul>
+    <div class="pair">
+      <div class="frame-wrap"><div class="frame-label">Antes</div>
+        <div class="phone frame-scale"><img class="antes" data-antes="onboarding" src="antes/onboarding-claro.png" alt="Onboarding hoje"></div></div>
+      <div class="frame-wrap"><div class="frame-label">Depois</div>
+        <div class="phone frame-scale">
+          <div class="status"><span>9:41</span><span aria-hidden="true">●●●● ᯤ ▮</span></div><div class="island"></div>
+          <div class="full"></div>
+          <div class="onb">
+            <div class="pills">
+              <button class="pill" aria-label="Tema escuro"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+              <button class="pill"><svg viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m2 0c-1 4-4 8-7 10m3-5c1 2 3 4 5 5M13 21l4-10 4 10M14.5 17h5"/></svg>English</button>
+            </div>
+            <div class="onb-body">
+              <div class="cross" aria-hidden="true"></div>
+              <h1>Saiba responder</h1>
+              <p class="lead">Quando questionarem a sua fé, tenha a resposta com a fonte na mão.</p>
+              <p class="quote">“Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito.”<cite>1 Pedro 3,15</cite></p>
+            </div>
+            <div class="segments"><i class="on"></i><i></i><i></i></div>
+            <div class="onb-actions">
+              <button class="btn btn-primary pressable">Começar</button>
+              <button class="btn btn-plain pressable">Pular</button>
+            </div>
+          </div>
+          <div class="home-ind"></div>
+        </div>
+        <p class="frame-note">Sem imagem de fundo. Os assets de luz da Fase 3 ficam como opção só para o splash, se quiser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOGIN ===================== -->
+  <section class="section" id="login">
+    <h2>Login</h2>
+    <p class="lead">Campos com rótulo, anel de foco visível, um só divisor, e “Continuar sem conta” com o mesmo peso visual das outras opções. O subtítulo não afirma uma obrigação que a tela dispensa.</p>
+    <ul class="findings">
+      <li>Antes: inputs sem rótulo nem anel de foco (outlineStyle none), “ou” e “OU” na mesma tela, “Esqueci a senha” com 15 px de altura, botão de visitante apagado.</li>
+      <li>Depois: lista agrupada de campos, foco com 2 px em navy, todos os alvos com 44 px ou mais.</li>
+    </ul>
+    <div class="pair">
+      <div class="frame-wrap"><div class="frame-label">Antes</div>
+        <div class="phone frame-scale"><img class="antes" data-antes="login" src="antes/login-claro.png" alt="Login hoje"></div></div>
+      <div class="frame-wrap"><div class="frame-label">Depois</div>
+        <div class="phone frame-scale">
+          <div class="status"><span>9:41</span><span aria-hidden="true">●●●● ᯤ ▮</span></div><div class="island"></div>
+          <div class="screen">
+            <div class="content" style="padding-top:60px">
+              <div class="pills" style="margin-bottom:24px">
+                <button class="pill" aria-label="Tema escuro"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+                <button class="pill"><svg viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m2 0c-1 4-4 8-7 10m3-5c1 2 3 4 5 5M13 21l4-10 4 10M14.5 17h5"/></svg>English</button>
+              </div>
+              <div class="cross" aria-hidden="true"></div>
+              <h1 class="form-title">Entrar</h1>
+              <p class="body muted" style="margin:0 0 20px">Sua conta guarda marcações e notas em todos os aparelhos.</p>
+              <div class="group">
+                <div class="field"><label for="em">E-mail</label><input id="em" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
+                <div class="field"><label for="pw">Senha</label><input id="pw" type="password" placeholder="••••••••" autocomplete="current-password"><button class="icon-btn" aria-label="Mostrar senha" style="margin-right:-12px"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+              </div>
+              <button class="btn btn-primary pressable">Entrar</button>
+              <button class="btn btn-plain pressable">Esqueci a senha</button>
+              <div class="or">ou</div>
+              <button class="btn btn-secondary pressable" style="margin-bottom:8px"><svg viewBox="0 0 24 24" style="width:18px;height:18px;margin-right:8px;fill:currentColor"><path d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.7h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3.1a10 10 0 0 0 0 9z"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5l3.3 2.6C7.2 7.7 9.4 5.9 12 5.9z"/></svg>Continuar com Google</button>
+              <button class="btn btn-secondary pressable" style="margin-bottom:8px">Criar conta</button>
+              <button class="btn btn-plain pressable">Continuar sem conta</button>
+              <p class="hint">Sem conta você lê tudo. Marcações, notas e caderno pedem conta.</p>
+            </div>
+          </div>
+          <div class="home-ind"></div>
+        </div>
+        <p class="frame-note">Clique num campo para ver o anel de foco. Todos os botões têm 44 px ou mais de altura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOKENS ===================== -->
+  <section class="section" id="tokens">
+    <h2>Tokens e assets</h2>
+    <p class="lead">Os valores que o mock usa e que a Fase 5 leva para <code>src/theme/tokens.js</code>. Regra da Apple quando há; escolha nossa quando marcada.</p>
+    <div class="tokens">
+      <div class="tok"><h3>Cor (claro / escuro)</h3><table>
+        <tr><td><span class="sw" style="background:#f5f0e8"></span>fundo</td><td>#f5f0e8 / #0d1722</td><td>marca</td></tr>
+        <tr><td><span class="sw" style="background:#ffffff"></span>superfície</td><td>#ffffff / #172538</td><td>marca</td></tr>
+        <tr><td><span class="sw" style="background:#222222"></span>texto</td><td>#222222 / #ece8d8</td><td>marca</td></tr>
+        <tr><td><span class="sw" style="background:#6a6457"></span>secundário</td><td>#6a6457 / #a8a395</td><td>marca, AA</td></tr>
+        <tr><td><span class="sw" style="background:#1a3a5c"></span>tint</td><td>#1a3a5c / #d4b86a</td><td>navy no claro, dourado no escuro (escolha nossa)</td></tr>
+        <tr><td><span class="sw" style="background:#c9a84c"></span>dourado</td><td>#c9a84c / #d4b86a</td><td>só sobre navy, progresso e números de versículo em #806418</td></tr>
+        <tr><td>material</td><td>fundo a 72% + blur 16 px, saturação 180%</td><td>HIG materials, valores calibrados (pesquisa §12.7)</td></tr>
+      </table></div>
+      <div class="tok"><h3>Tipo</h3><table>
+        <tr><td>Large title</td><td>Cormorant 600, 38/40</td><td>HIG 34 pt, +4 pela altura de x da Cormorant (escolha nossa)</td></tr>
+        <tr><td>Título de seção</td><td>Cormorant 600, 24/26</td><td>HIG title 2, 22 pt</td></tr>
+        <tr><td>Headline</td><td>sistema 600, 17/22</td><td>HIG</td></tr>
+        <tr><td>Body</td><td>sistema 400, 17/22</td><td>HIG</td></tr>
+        <tr><td>Subhead</td><td>sistema 400, 15/20</td><td>HIG</td></tr>
+        <tr><td>Footnote</td><td>sistema 400, 13/18</td><td>HIG</td></tr>
+        <tr><td>Caption</td><td>sistema 400, 12/16 e 11/13</td><td>HIG</td></tr>
+        <tr><td>Leitura</td><td>Georgia / New York, 18/28 artigo, 19/30 Bíblia</td><td>escolha nossa, medida de 58 a 66 caracteres</td></tr>
+        <tr><td>Rótulo de aba</td><td>sistema 500, 10,5/13</td><td>HIG 10 pt</td></tr>
+      </table></div>
+      <div class="tok"><h3>Espaço, raio, sombra</h3><table>
+        <tr><td>Grade</td><td>4, 8, 12, 16, 20, 24, 32, 40</td><td>HIG 8 pt com meio passo</td></tr>
+        <tr><td>Margem lateral</td><td>20</td><td>HIG layout margins (iPhone)</td></tr>
+        <tr><td>Raio mínimo</td><td>4</td><td>barra de progresso, marcador (pesquisa §12.3)</td></tr>
+        <tr><td>Raio pequeno</td><td>8</td><td>chips, miniaturas, imagem dentro de card</td></tr>
+        <tr><td>Raio médio</td><td>12</td><td>botões, campos, listas agrupadas (HIG inset grouped 10, +2 escolha nossa)</td></tr>
+        <tr><td>Raio grande</td><td>18</td><td>sheets, imagens, objeção do dia (pesquisa §12.3)</td></tr>
+        <tr><td>Sombra</td><td>nenhuma no claro; só sheets e pílulas flutuantes</td><td>escolha nossa</td></tr>
+        <tr><td>Alvo mínimo</td><td>44 x 44</td><td>HIG</td></tr>
+      </table></div>
+      <div class="tok"><h3>Movimento e haptics</h3><table>
+        <tr><td>Toque</td><td>150 ms, escala 0,97, volta em spring</td><td>interactiveSpring 0,15 s (pesquisa §12.6)</td></tr>
+        <tr><td>Layout</td><td>350 ms, cubic-bezier(.25,.1,.25,1)</td><td>easing padrão do Core Animation e 0,35 s do SwiftUI (pesquisa §12.6)</td></tr>
+        <tr><td>Tela (push)</td><td>350 ms, ios_from_right, tela anterior recua 28%</td><td>UINavigationController</td></tr>
+        <tr><td>Sheet</td><td>350 ms, spring(damping 0,8)</td><td>UISheetPresentationController</td></tr>
+        <tr><td>Reduce motion</td><td>crossfade no lugar de deslocamento</td><td>HIG accessibility</td></tr>
+        <tr><td>Haptics</td><td>leve em seleção, médio em sucesso e long press, nenhum na troca de aba</td><td>HIG playing haptics</td></tr>
+      </table></div>
+    </div>
+    <h3 style="margin:32px 0 12px;font-family:var(--font-display);font-size:24px;font-weight:600">Assets da Fase 3</h3>
+    <div class="assets">
+      <figure><img src="../../assets/design/luz-claro.jpg" alt=""><figcaption>Luz, versão creme (opcional: splash)</figcaption></figure>
+      <figure><img src="../../assets/design/luz-escuro.jpg" alt=""><figcaption>Luz, versão navy</figcaption></figure>
+      <figure><img src="../../assets/design/estacao-advento.jpg" alt=""><figcaption>Advento</figcaption></figure>
+      <figure><img src="../../assets/design/estacao-natal.jpg" alt=""><figcaption>Natal</figcaption></figure>
+      <figure><img src="../../assets/design/estacao-quaresma.jpg" alt=""><figcaption>Quaresma</figcaption></figure>
+      <figure><img src="../../assets/design/estacao-pascoa.jpg" alt=""><figcaption>Páscoa</figcaption></figure>
+      <figure><img src="../../assets/design/estacao-comum.jpg" alt=""><figcaption>Tempo Comum</figcaption></figure>
+      <figure><img src="../../assets/design/capa-reserva.jpg" alt=""><figcaption>Capa de reserva para artigo sem imagem</figcaption></figure>
+      <figure><video src="../../assets/design/splash-loop.mp4" muted loop playsinline autoplay></video><figcaption>Loop de luz para o splash (5 s, sem som)</figcaption></figure>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // tema: segue o sistema até o usuário escolher
+  var saved=null; try{saved=localStorage.getItem('appg_proto_theme');}catch(e){}
+  var dark=saved?saved==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var btn=document.getElementById('themeBtn');
+  function apply(){
+    root.setAttribute('data-theme',dark?'dark':'light');
+    btn.setAttribute('aria-pressed',dark?'true':'false');
+    btn.textContent=dark?'Modo claro':'Modo escuro';
+    document.querySelectorAll('img.antes').forEach(function(img){img.src='antes/'+img.dataset.antes+'-'+(dark?'escuro':'claro')+'.png';});
+  }
+  btn.addEventListener('click',function(){dark=!dark;try{localStorage.setItem('appg_proto_theme',dark?'dark':'light');}catch(e){}apply();});
+  apply();
+
+  // large title que encolhe: a barra ganha material quando o título sai
+  document.querySelectorAll('[data-collapse]').forEach(function(sc){
+    var nav=sc.querySelector('.nav'); if(!nav) return;
+    var fixed=nav.classList.contains('collapsed');
+    function upd(){ if(fixed) return; nav.classList.toggle('collapsed', sc.scrollTop>40); }
+    sc.addEventListener('scroll',upd,{passive:true}); upd();
+  });
+
+  // push de tela
+  document.querySelectorAll('[data-push]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.querySelector(b.dataset.push); if(!t) return;
+      var base=t.parentElement.querySelector('.base');
+      if(reduce){t.style.transition='opacity 200ms';t.style.opacity='0';t.style.transform='none';requestAnimationFrame(function(){t.style.opacity='1';});}
+      t.classList.add('in'); if(base) base.classList.add('pushed');
+      t.scrollTop=0;
+    });
+  });
+  document.querySelectorAll('[data-pop]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.closest('.push-screen'); var base=t.parentElement.querySelector('.base');
+      t.classList.remove('in'); if(base) base.classList.remove('pushed');
+      if(reduce){t.style.opacity='';t.style.transform='';t.style.transition='';}
+    });
+  });
+
+  // sheet
+  document.querySelectorAll('[data-sheet]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var s=document.querySelector(b.dataset.sheet); var bd=s.parentElement.querySelector('.sheet-backdrop');
+      s.classList.add('open'); if(bd) bd.classList.add('open');
+      var n=b.querySelector('.n'); if(n) s.querySelector('h4').textContent='João 3,'+n.textContent;
+    });
+  });
+  document.querySelectorAll('[data-close]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var s=document.querySelector(b.dataset.close); var bd=s.parentElement.querySelector('.sheet-backdrop');
+      s.classList.remove('open'); if(bd) bd.classList.remove('open');
+    });
+  });
+
+  // pílula da Bíblia some ao rolar para baixo e volta ao rolar para cima
+  var bible=document.querySelector('#biblia .screen'); var pager=document.querySelector('.pager');
+  if(bible&&pager){ var last=0; bible.addEventListener('scroll',function(){ var y=bible.scrollTop; pager.style.opacity=(y>last&&y>80)?'0':'1'; pager.style.transition='opacity 250ms'; last=y; },{passive:true}); }
+})();
+</script>
+</body>
+</html>

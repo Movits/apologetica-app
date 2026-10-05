@@ -1,47 +1,54 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Text, View } from 'react-native';
 import { watchHighlights, removeHighlight } from '../services/userData';
 import { confirmAction } from '../utils/dialog';
 import { getBook, bookName } from '../data/bible';
-import { getChapter } from '../services/bibleApi';
+import { getVerse } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import BibleLoadingState from '../components/BibleLoadingState';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import { shareHighlight } from '../utils/share';
-import { useScrollHints } from '../hooks/useScrollHints';
-import ScrollHint from '../components/ScrollHint';
+import { shareVerse } from '../utils/share';
+import { verseLabel } from '../utils/refLabel';
+import { openBible } from '../navigation/links';
+import { EmptyState, Row } from '../components/ui';
+import RowIconButton from '../components/RowIconButton';
+import UserDataList from '../components/UserDataList';
+import ItemActionsSheet from '../components/ItemActionsSheet';
 
+// Marcações do usuário em tempo real (Firestore). O visitante vê o convite
+// para criar conta; com conta, a lista agrupada mostra cada marcação com o
+// ponto da cor, a referência e o texto do versículo. Toque abre na Bíblia; o
+// botão de mais ações (ou o toque longo) abre a folha com ler, compartilhar
+// e remover. A cor da marcação é dado do documento, não do tema.
 export default function HighlightsScreen({ navigation }) {
-  const { colors, fs } = useTheme();
-  const { t, isEn } = useLanguage();
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn, lang } = useLanguage();
+  const { user } = useAuth();
+  const { space, radius } = tokens;
   // Cada linha mostra o texto do versículo marcado. Sem a tradução carregada
   // as marcações apareceriam com o texto vazio, o que parece dado perdido.
-  const biblia = useBibleReady(isEn ? 'en' : 'pt');
-  const { user, exitGuest } = useAuth();
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const biblia = useBibleReady(lang);
+  // null enquanto o primeiro snapshot não chega.
+  const [items, setItems] = useState(null);
+  // A marcação da folha de ações; null fecha a folha.
+  const [active, setActive] = useState(null);
 
   useEffect(() => {
     if (!user) {
-      setLoading(false);
-      return;
+      setItems([]);
+      return undefined;
     }
-    const unsub = watchHighlights((list) => {
-      setItems(list);
-      setLoading(false);
-    });
-    return unsub;
+    return watchHighlights(setItems);
   }, [user]);
 
-  const open = (h) => {
-    navigation.navigate('Bíblia', {
-      bookId: h.bookId,
-      chapter: h.chapter,
-      highlightVerse: h.verse,
-    });
+  const verseText = (h) => getVerse(h.bookId, h.chapter, h.verse, lang) || '';
+
+  const open = (h) => openBible(navigation, { bookId: h.bookId, chapter: h.chapter, verse: h.verse });
+
+  const share = (h) => {
+    shareVerse({ bookName: bookName(getBook(h.bookId), isEn), chapter: h.chapter, verse: h.verse, text: verseText(h), isEn });
   };
 
   const confirmRemove = (h) => {
@@ -55,36 +62,7 @@ export default function HighlightsScreen({ navigation }) {
     });
   };
 
-  const { showTop, showBottom, onScroll, onContentSizeChange, onLayout } = useScrollHints();
-  const styles = makeStyles(colors, fs);
-
-  if (loading) {
-    return <View style={styles.center}><Text style={styles.muted}>{t('common.loading')}</Text></View>;
-  }
-
-  if (!user) {
-    return (
-      <View style={styles.center}>
-        <Ionicons name="lock-closed-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>{t('empty.createAccount')}</Text>
-        <Text style={styles.muted}>
-          {isEn
-            ? 'Highlights are saved and synced between devices when you have an account.'
-            : 'Marcações ficam salvas e sincronizadas entre dispositivos quando você tem conta.'}
-        </Text>
-        <TouchableOpacity
-          style={{ marginTop: 16, backgroundColor: colors.accent, paddingVertical: 12, paddingHorizontal: 24, borderRadius: 10 }}
-          onPress={() => exitGuest()}
-        >
-          <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: fs(14) }}>{t('auth.signup')}</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  // Antes da lista: sem a tradução, cada marcação apareceria com o texto do
-  // versículo vazio, o que parece dado perdido em vez de carregamento.
-  if (!biblia.pronta) {
+  if (user && !biblia.pronta) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <BibleLoadingState erro={biblia.erro} onTentarDeNovo={biblia.tentarDeNovo} />
@@ -92,81 +70,46 @@ export default function HighlightsScreen({ navigation }) {
     );
   }
 
-  if (items.length === 0) {
-    return (
-      <View style={styles.center}>
-        <Ionicons name="bookmark-outline" size={56} color={colors.textSubtle} />
-        <Text style={styles.emptyTitle}>{t('empty.highlights')}</Text>
-        <Text style={styles.muted}>
-          {isEn
-            ? 'Touch and hold a verse in the Bible to create a highlight.'
-            : 'Toque e segure em um versículo na Bíblia para criar uma marcação.'}
-        </Text>
-      </View>
-    );
-  }
+  const actions = active
+    ? [
+      { icon: 'book-outline', label: t('today.readInBible'), onPress: () => open(active) },
+      { icon: 'share-outline', label: t('common.share'), onPress: () => share(active) },
+      { icon: 'trash-outline', label: t('bible.removeHighlight'), danger: true, onPress: () => confirmRemove(active) },
+    ]
+    : [];
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-    <FlatList
-      data={items}
-      keyExtractor={(h) => h.id}
-      contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
-      onScroll={onScroll}
-      onContentSizeChange={onContentSizeChange}
-      onLayout={onLayout}
-      scrollEventThrottle={32}
-      renderItem={({ item }) => {
-        const book = getBook(item.bookId);
-        const bn = bookName(book, isEn);
-        const ch = getChapter(item.bookId, item.chapter, isEn ? 'en' : 'pt');
-        const verseText = ch?.verses?.find((v) => v.n === item.verse)?.t || '';
-        const sep = isEn ? ':' : ',';
-        const onShare = () => shareHighlight({
-          bookName: bn,
-          chapter: item.chapter,
-          verse: item.verse,
-          text: verseText,
-        });
-        return (
-          <TouchableOpacity style={styles.card} onPress={() => open(item)} onLongPress={() => confirmRemove(item)}>
-            <View style={[styles.colorBar, { backgroundColor: item.color }]} />
-            <View style={{ flex: 1, paddingLeft: 12 }}>
-              <Text style={styles.ref}>
-                {bn} {item.chapter}{sep}{item.verse}
-              </Text>
-              {verseText ? (
-                <Text style={styles.verseText} numberOfLines={3}>{verseText}</Text>
+    <>
+      <UserDataList
+        user={user}
+        items={items}
+        empty={<EmptyState icon="color-fill-outline" title={t('empty.highlights')} message={t('highlights.emptyHint')} />}
+        keyExtractor={(h) => h.id}
+        renderItem={({ item }) => {
+          const verse = verseText(item);
+          return (
+            <Row
+              leading={<View style={{ width: space.sm, height: space.sm, borderRadius: radius.full, backgroundColor: item.color }} />}
+              titleRole="headline"
+              title={verseLabel(item, isEn)}
+              trailing={<RowIconButton icon="ellipsis-horizontal" label={t('common.moreActions')} onPress={() => setActive(item)} />}
+              chevron
+              onPress={() => open(item)}
+              onLongPress={() => setActive(item)}
+            >
+              {verse ? (
+                <Text style={[text('bodySerif'), { color: colors.text }]} numberOfLines={3}>{verse}</Text>
               ) : null}
-            </View>
-            <TouchableOpacity style={styles.shareBtn} onPress={onShare}>
-              <Ionicons name="share-social-outline" size={18} color={colors.accent} />
-            </TouchableOpacity>
-          </TouchableOpacity>
-        );
-      }}
-    />
-      <ScrollHint direction="up" visible={showTop} />
-      <ScrollHint direction="down" visible={showBottom} />
-    </View>
+            </Row>
+          );
+        }}
+      />
+      <ItemActionsSheet
+        item={active}
+        title={active ? verseLabel(active, isEn) : ''}
+        actions={actions}
+        onClose={() => setActive(null)}
+      />
+    </>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32, gap: 12, backgroundColor: c.bg },
-    emptyTitle: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    muted: { fontSize: fs(13), color: c.textMuted, textAlign: 'center', lineHeight: fs(20) },
-    card: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: c.card,
-      borderRadius: 12,
-      padding: 12,
-      marginBottom: 8,
-    },
-    colorBar: { width: 6, alignSelf: 'stretch', borderRadius: 3 },
-    ref: { fontSize: fs(14), fontWeight: 'bold', color: c.primaryText, marginBottom: 4 },
-    verseText: { fontSize: fs(13), color: c.text, lineHeight: fs(18) },
-    shareBtn: { padding: 8 },
-  });

@@ -1,26 +1,51 @@
-import { useMemo, useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Modal, Pressable, StyleSheet, Platform } from 'react-native';
+import { useEffect, useMemo, useState } from 'react';
+import { FlatList, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useModalNavBar } from '../hooks/useModalNavBar';
 import { articles } from '../data/articles';
-import { references, translateRef } from '../data/references';
+import { references } from '../data/references';
 import { referencesEn } from '../data/references-en';
 import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
 import { getChapter, ensureBible } from '../services/bibleApi';
+import { pick } from '../utils/i18nData';
+import { refLabel } from '../utils/refLabel';
+import { formatVerseRef } from '../utils/verseRef';
+import { Button, Chip, EmptyState, Field, Group, ListSeparator, Row, SearchField } from './ui';
 
-// Modal para inserir uma referência no caderno. Retorna o token via onPick:
-//   versículo  -> @[Mt 16,18](v:mt/16/18)
-//   referência -> @[Mt 16,18](r:refId)   (referências curadas do app)
-//   artigo     -> @[Título](a:articleId)
-export default function ReferencePickerModal({ visible, onClose, onPick }) {
-  const { colors, fs } = useTheme();
-  const { isEn } = useLanguage();
-  // Aqui a Bíblia serve só para validar o número máximo do versículo, e a
-  // validação já cai para "aceita qualquer um" se o dado não estiver lá. Então
-  // não vale bloquear a interface: basta pedir o carregamento e seguir.
-  useEffect(() => { ensureBible(isEn ? 'en' : 'pt').catch(() => {}); }, [isEn]);
-  const styles = makeStyles(colors, fs);
+// Referências já mescladas com a tradução EN (refEn, topicEn...), lidas com
+// `pick` e `refLabel` para caírem no PT quando a tradução falta.
+const refsWithEn = references.map((r) => {
+  const en = referencesEn[r.id];
+  return en ? { ...r, ...en } : r;
+});
+
+const TABS = ['verse', 'ref', 'article'];
+
+const norm = (s) => String(s ?? '').trim().toLowerCase();
+
+// Folha para escolher uma referência. Dois modos:
+// - 'token' (caderno): abas versículo / referência / artigo, e `onPick`
+//   recebe o token que entra no texto:
+//     versículo  -> @[Mt 16,18](v:mt/16/18)
+//     referência -> @[Mt 16,18](r:refId)   (referências curadas do app)
+//     artigo     -> @[Título](a:articleId)
+// - 'verse' (editor de nota): só o fluxo de versículo, e `onPickVerse`
+//   recebe { bookId, chapter, verse }.
+// É um Modal simples, não o Sheet do design system, porque as listas rolam e
+// o arrasto do Sheet capturaria o gesto.
+export default function ReferencePickerModal({ visible, onClose, onPick, onPickVerse, mode = 'token' }) {
+  const { colors, tokens, text } = useTheme();
+  const { t, isEn, lang } = useLanguage();
+  const insets = useSafeAreaInsets();
+  const { space, radius, icon } = tokens;
+  const verseOnly = mode === 'verse';
+  useModalNavBar(visible);
+  // A Bíblia aqui só valida o número máximo do versículo, e a validação já
+  // aceita qualquer um se o dado não estiver lá: basta pedir o carregamento.
+  useEffect(() => { ensureBible(lang).catch(() => {}); }, [lang]);
 
   const [tab, setTab] = useState('verse');
   const [articleQuery, setArticleQuery] = useState('');
@@ -36,238 +61,200 @@ export default function ReferencePickerModal({ visible, onClose, onPick }) {
   };
   const close = () => { reset(); onClose?.(); };
 
-  const refLabel = (item) => {
-    if (isEn) {
-      const en = referencesEn[item.id];
-      return en?.refEn || translateRef(item.ref, true);
-    }
-    return item.ref;
-  };
-
   const filteredArticles = useMemo(() => {
-    const q = articleQuery.trim().toLowerCase();
-    return articles.filter((a) => {
-      const title = isEn ? (a.titleEn || a.title) : a.title;
-      return !q || title.toLowerCase().includes(q);
-    });
+    const q = norm(articleQuery);
+    return articles.filter((a) => !q || norm(pick(a, 'title', isEn)).includes(q));
   }, [articleQuery, isEn]);
 
   const filteredRefs = useMemo(() => {
-    const q = refQuery.trim().toLowerCase();
-    if (!q) return references;
-    return references.filter((r) => {
-      const hay = `${r.ref} ${r.topic || ''} ${r.fullSource || ''} ${r.source || ''} ${refLabel(r)}`.toLowerCase();
-      return hay.includes(q);
+    const q = norm(refQuery);
+    if (!q) return refsWithEn;
+    return refsWithEn.filter((r) => {
+      const hay = `${r.ref} ${pick(r, 'topic', isEn) || ''} ${r.fullSource || ''} ${r.source || ''} ${refLabel(r, isEn)}`;
+      return norm(hay).includes(q);
     });
   }, [refQuery, isEn]);
 
   const filteredBooks = useMemo(() => {
-    const q = bookQuery.trim().toLowerCase();
-    return BIBLE_BOOKS.filter((b) => {
-      const n = bookName(b, isEn).toLowerCase();
-      return !q || n.includes(q) || b.id.includes(q);
-    });
+    const q = norm(bookQuery);
+    return BIBLE_BOOKS.filter((b) => !q || norm(bookName(b, isEn)).includes(q) || b.id.includes(q));
   }, [bookQuery, isEn]);
 
   const pickArticle = (a) => {
-    const title = isEn ? (a.titleEn || a.title) : a.title;
-    onPick?.(`@[${title}](a:${a.id})`);
+    onPick?.(`@[${pick(a, 'title', isEn)}](a:${a.id})`);
     close();
   };
 
   const pickRef = (r) => {
-    onPick?.(`@[${refLabel(r)}](r:${r.id})`);
+    onPick?.(`@[${refLabel(r, isEn)}](r:${r.id})`);
     close();
   };
+
+  // Valida capítulo pelo livro e versículo pela contagem do capítulo (cai
+  // para "qualquer um a partir de 1" se a Bíblia ainda não carregou).
+  const ch = parseInt(chapter, 10);
+  const vs = parseInt(verse, 10);
+  const maxVerse = useMemo(() => {
+    if (!book || !ch) return Infinity;
+    try {
+      const data = getChapter(book.id, ch, lang);
+      return data?.verses?.length || Infinity;
+    } catch {
+      return Infinity;
+    }
+  }, [book, ch, lang]);
+  const canInsert = Boolean(book) && ch >= 1 && ch <= (book?.totalChapters ?? 0) && vs >= 1 && vs <= maxVerse;
 
   const confirmVerse = () => {
-    if (!book) return;
-    const ch = parseInt(chapter, 10);
-    const vs = parseInt(verse, 10);
-    if (!ch || ch < 1 || ch > book.totalChapters) return;
-    // valida o verso pela contagem do capítulo (cai pra >=1 se não conseguir ler)
-    let maxVerse = Infinity;
-    try {
-      const data = getChapter(book.id, ch, isEn ? 'en' : 'pt');
-      if (data?.verses?.length) maxVerse = data.verses.length;
-    } catch {}
-    if (!vs || vs < 1 || vs > maxVerse) return;
-    const sep = isEn ? ':' : ',';
-    const label = `${bookShort(book, isEn)} ${ch}${sep}${vs}`;
-    onPick?.(`@[${label}](v:${book.id}/${ch}/${vs})`);
+    if (!canInsert) return;
+    if (verseOnly) {
+      onPickVerse?.({ bookId: book.id, chapter: ch, verse: vs });
+    } else {
+      const label = formatVerseRef({ bookName: bookShort(book, isEn), chapter: ch, verse: vs }, isEn);
+      onPick?.(`@[${label}](v:${book.id}/${ch}/${vs})`);
+    }
     close();
   };
 
+  const tabLabel = { verse: t('common.verse'), ref: t('header.reference'), article: t('header.article') };
+  const title = verseOnly ? t('note.chooseVerse') : t('notebook.addReference');
+
+  // A FlatList é o card da lista agrupada e encolhe para caber na folha
+  // (maxHeight do painel), rolando por dentro.
+  const listStyle = { flexShrink: 1, backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' };
+  const renderList = (data, keyExtractor, renderItem) => (
+    <FlatList
+      data={data}
+      keyExtractor={keyExtractor}
+      keyboardShouldPersistTaps="handled"
+      style={listStyle}
+      ItemSeparatorComponent={ListSeparator}
+      ListEmptyComponent={<EmptyState icon="search-outline" title={t('search.empty')} />}
+      renderItem={renderItem}
+    />
+  );
+
+  let body;
+  if (!verseOnly && tab === 'article') {
+    body = (
+      <>
+        <SearchField
+          value={articleQuery}
+          onChangeText={setArticleQuery}
+          placeholder={isEn ? 'Search article' : 'Buscar artigo'}
+          clearLabel={t('common.clear')}
+          autoCorrect={false}
+        />
+        {renderList(filteredArticles, (a) => String(a.id), ({ item }) => (
+          <Row icon="document-text-outline" title={pick(item, 'title', isEn)} onPress={() => pickArticle(item)} />
+        ))}
+      </>
+    );
+  } else if (!verseOnly && tab === 'ref') {
+    body = (
+      <>
+        <SearchField
+          value={refQuery}
+          onChangeText={setRefQuery}
+          placeholder={isEn ? 'Search reference (verse, Catechism, document)' : 'Buscar referência (versículo, Catecismo, documento)'}
+          clearLabel={t('common.clear')}
+          autoCorrect={false}
+        />
+        {renderList(filteredRefs, (r) => r.id, ({ item }) => (
+          <Row icon="bookmark-outline" title={refLabel(item, isEn)} subtitle={pick(item, 'topic', isEn)} onPress={() => pickRef(item)} />
+        ))}
+      </>
+    );
+  } else if (!book) {
+    body = (
+      <>
+        <SearchField
+          value={bookQuery}
+          onChangeText={setBookQuery}
+          placeholder={t('bible.searchBook')}
+          clearLabel={t('common.clear')}
+          autoCorrect={false}
+        />
+        {renderList(filteredBooks, (b) => b.id, ({ item }) => (
+          <Row icon="book-outline" title={bookName(item, isEn)} onPress={() => setBook(item)} />
+        ))}
+      </>
+    );
+  } else {
+    body = (
+      <>
+        <Group>
+          <Row
+            icon="book-outline"
+            title={bookName(book, isEn)}
+            trailing={<Text style={[text('body'), { color: colors.tint }]}>{t('note.change')}</Text>}
+            accessibilityLabel={`${bookName(book, isEn)}, ${t('note.change')}`}
+            onPress={() => setBook(null)}
+          />
+          <Field
+            label={t('bible.chapter')}
+            keyboardType="number-pad"
+            value={chapter}
+            onChangeText={setChapter}
+            placeholder={`1-${book.totalChapters}`}
+            returnKeyType="next"
+            autoFocus
+          />
+          <Field
+            label={t('common.verse')}
+            keyboardType="number-pad"
+            value={verse}
+            onChangeText={setVerse}
+            placeholder="1"
+            returnKeyType="done"
+            onSubmitEditing={confirmVerse}
+          />
+        </Group>
+        <Button label={isEn ? 'Insert' : 'Inserir'} onPress={confirmVerse} disabled={!canInsert} haptic="impact" />
+      </>
+    );
+  }
+
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={close}>
-      <Pressable style={styles.backdrop} onPress={close}>
-        <Pressable style={styles.sheet} onPress={(e) => e.stopPropagation()}>
-          <View style={styles.header}>
-            <Text style={styles.title}>{isEn ? 'Insert reference' : 'Inserir referência'}</Text>
-            <TouchableOpacity onPress={close} hitSlop={10}>
-              <Ionicons name="close" size={24} color={colors.text} />
-            </TouchableOpacity>
+    <Modal visible={visible} transparent animationType="slide" onRequestClose={close} statusBarTranslucent>
+      <View style={{ flex: 1, backgroundColor: colors.overlay, justifyContent: 'flex-end' }}>
+        <Pressable role="button" aria-label={t('common.close')} onPress={close} style={StyleSheet.absoluteFill} />
+        <View
+          role="dialog"
+          aria-modal
+          aria-label={title}
+          style={{
+            backgroundColor: colors.elevated,
+            borderTopLeftRadius: radius.lg,
+            borderTopRightRadius: radius.lg,
+            maxHeight: '85%',
+            paddingHorizontal: space.md,
+            paddingTop: space.xs,
+            paddingBottom: insets.bottom + space.md,
+            gap: space.sm,
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={[text('headline'), { color: colors.text, flex: 1 }]}>{title}</Text>
+            <Pressable
+              role="button"
+              aria-label={t('common.close')}
+              onPress={close}
+              style={{ minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center', marginRight: -space.xs }}
+            >
+              <Ionicons name="close" size={icon.md} color={colors.text} />
+            </Pressable>
           </View>
-
-          <View style={styles.segment}>
-            <TouchableOpacity
-              style={[styles.segBtn, tab === 'verse' && styles.segBtnActive]}
-              onPress={() => setTab('verse')}
-            >
-              <Text style={[styles.segText, tab === 'verse' && styles.segTextActive]}>{isEn ? 'Verse' : 'Versículo'}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.segBtn, tab === 'ref' && styles.segBtnActive]}
-              onPress={() => setTab('ref')}
-            >
-              <Text style={[styles.segText, tab === 'ref' && styles.segTextActive]}>{isEn ? 'Reference' : 'Referência'}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.segBtn, tab === 'article' && styles.segBtnActive]}
-              onPress={() => setTab('article')}
-            >
-              <Text style={[styles.segText, tab === 'article' && styles.segTextActive]}>{isEn ? 'Article' : 'Artigo'}</Text>
-            </TouchableOpacity>
-          </View>
-
-          {tab === 'article' ? (
-            <>
-              <TextInput
-                style={styles.input}
-                placeholder={isEn ? 'Search article...' : 'Buscar artigo...'}
-                placeholderTextColor={colors.textSubtle}
-                value={articleQuery}
-                onChangeText={setArticleQuery}
-              />
-              <FlatList
-                data={filteredArticles}
-                keyExtractor={(a) => String(a.id)}
-                keyboardShouldPersistTaps="handled"
-                style={{ maxHeight: 320 }}
-                renderItem={({ item }) => (
-                  <TouchableOpacity style={styles.listRow} onPress={() => pickArticle(item)}>
-                    <Ionicons name="document-text-outline" size={18} color={colors.accent} />
-                    <Text style={styles.listText} numberOfLines={1}>{isEn ? (item.titleEn || item.title) : item.title}</Text>
-                  </TouchableOpacity>
-                )}
-              />
-            </>
-          ) : tab === 'ref' ? (
-            <>
-              <TextInput
-                style={styles.input}
-                placeholder={isEn ? 'Search reference (verse, Catechism, document...)' : 'Buscar referência (versículo, Catecismo, documento...)'}
-                placeholderTextColor={colors.textSubtle}
-                value={refQuery}
-                onChangeText={setRefQuery}
-              />
-              <FlatList
-                data={filteredRefs}
-                keyExtractor={(r) => r.id}
-                keyboardShouldPersistTaps="handled"
-                style={{ maxHeight: 320 }}
-                renderItem={({ item }) => (
-                  <TouchableOpacity style={styles.listRow} onPress={() => pickRef(item)}>
-                    <Ionicons name="bookmark-outline" size={18} color={colors.accent} />
-                    <View style={{ flex: 1 }}>
-                      <Text style={styles.listText} numberOfLines={1}>{refLabel(item)}</Text>
-                      <Text style={styles.listSub} numberOfLines={1}>{isEn ? (referencesEn[item.id]?.topicEn || item.topic) : item.topic}</Text>
-                    </View>
-                  </TouchableOpacity>
-                )}
-              />
-            </>
-          ) : !book ? (
-            <>
-              <TextInput
-                style={styles.input}
-                placeholder={isEn ? 'Search book...' : 'Buscar livro...'}
-                placeholderTextColor={colors.textSubtle}
-                value={bookQuery}
-                onChangeText={setBookQuery}
-              />
-              <FlatList
-                data={filteredBooks}
-                keyExtractor={(b) => b.id}
-                keyboardShouldPersistTaps="handled"
-                style={{ maxHeight: 320 }}
-                renderItem={({ item }) => (
-                  <TouchableOpacity style={styles.listRow} onPress={() => setBook(item)}>
-                    <Ionicons name="book-outline" size={18} color={colors.accent} />
-                    <Text style={styles.listText}>{bookName(item, isEn)}</Text>
-                  </TouchableOpacity>
-                )}
-              />
-            </>
-          ) : (
-            <View style={{ paddingTop: 4 }}>
-              <TouchableOpacity style={styles.backRow} onPress={() => setBook(null)}>
-                <Ionicons name="chevron-back" size={18} color={colors.accent} />
-                <Text style={styles.backText}>{bookName(book, isEn)}</Text>
-              </TouchableOpacity>
-              <View style={styles.numRow}>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.numLabel}>{isEn ? 'Chapter' : 'Capítulo'}</Text>
-                  <TextInput
-                    style={styles.numInput}
-                    keyboardType="number-pad"
-                    value={chapter}
-                    onChangeText={setChapter}
-                    placeholder={`1-${book.totalChapters}`}
-                    placeholderTextColor={colors.textSubtle}
-                  />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.numLabel}>{isEn ? 'Verse' : 'Versículo'}</Text>
-                  <TextInput
-                    style={styles.numInput}
-                    keyboardType="number-pad"
-                    value={verse}
-                    onChangeText={setVerse}
-                    placeholder="1"
-                    placeholderTextColor={colors.textSubtle}
-                  />
-                </View>
-              </View>
-              <TouchableOpacity style={styles.confirmBtn} onPress={confirmVerse}>
-                <Text style={styles.confirmText}>{isEn ? 'Insert' : 'Inserir'}</Text>
-              </TouchableOpacity>
+          {verseOnly ? null : (
+            <View style={{ flexDirection: 'row', gap: space.xs }}>
+              {TABS.map((k) => (
+                <Chip key={k} label={tabLabel[k]} selected={tab === k} onPress={() => setTab(k)} haptic />
+              ))}
             </View>
           )}
-        </Pressable>
-      </Pressable>
+          {body}
+        </View>
+      </View>
     </Modal>
   );
 }
-
-const makeStyles = (c, fs) =>
-  StyleSheet.create({
-    backdrop: { flex: 1, backgroundColor: 'rgba(13, 23, 34, 0.7)', justifyContent: 'flex-end' },
-    sheet: { backgroundColor: c.bg, borderTopLeftRadius: 18, borderTopRightRadius: 18, padding: 16, paddingBottom: 28, maxHeight: '85%' },
-    header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
-    title: { fontSize: fs(17), fontWeight: 'bold', color: c.primaryText },
-    segment: { flexDirection: 'row', backgroundColor: c.card, borderRadius: 10, padding: 4, marginBottom: 12 },
-    segBtn: { flex: 1, paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
-    segBtnActive: { backgroundColor: c.primary },
-    segText: { fontSize: fs(13), color: c.textMuted, fontWeight: '600' },
-    segTextActive: { color: '#fff' },
-    input: {
-      backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 14, height: 46,
-      fontSize: fs(15), color: c.text, marginBottom: 8,
-      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
-    },
-    listRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.divider },
-    listText: { flex: 1, fontSize: fs(14), color: c.text },
-    listSub: { fontSize: fs(11), color: c.textSubtle, marginTop: 2 },
-    backRow: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingVertical: 8, marginBottom: 4 },
-    backText: { fontSize: fs(15), fontWeight: 'bold', color: c.primaryText },
-    numRow: { flexDirection: 'row', gap: 12, marginBottom: 16 },
-    numLabel: { fontSize: fs(11), color: c.textSubtle, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4 },
-    numInput: {
-      backgroundColor: c.card, borderRadius: 10, paddingHorizontal: 14, height: 46,
-      fontSize: fs(16), color: c.text,
-      ...(Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null),
-    },
-    confirmBtn: { backgroundColor: c.primary, borderRadius: 10, paddingVertical: 14, alignItems: 'center' },
-    confirmText: { color: '#fff', fontSize: fs(15), fontWeight: 'bold' },
-  });

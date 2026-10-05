@@ -16,6 +16,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 2,1-20', refEn: 'Luke 2:1-20',
     nav: { bookId: 'lc', chapter: 2, verse: 1 },
     photo: require('../../assets/jesus-journey/01-bethlehem.jpg'),
+    photoCredit: 'Dennis G. Jarvis, CC BY-SA 2.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Palestine-06329_-_Birth_Place_(34932749115).jpg',
     // Belém → Egito (Matariyya): sul por Hebron, Beersheba, deserto do Negev, Sinai
     waypointsToNext: [[31.53, 35.10], [31.25, 34.79], [31.10, 34.40], [30.85, 33.50], [30.50, 32.50]],
   },
@@ -29,6 +31,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 2,13-15', refEn: 'Matthew 2:13-15',
     nav: { bookId: 'mt', chapter: 2, verse: 13 },
     photo: require('../../assets/jesus-journey/02-egypt.jpg'),
+    photoCredit: 'Matson Collection, domínio público (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Cairo,_etc._LOC_matpc.16392.jpg',
     // Egito → Nazaré: norte pelo Sinai, costa do Mediterrâneo, depois leste pra Galileia
     waypointsToNext: [[30.50, 32.50], [31.10, 33.50], [31.50, 34.20], [31.80, 34.65], [32.20, 34.85], [32.50, 35.00], [32.70, 35.20]],
   },
@@ -42,6 +46,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 2,39-52', refEn: 'Luke 2:39-52',
     nav: { bookId: 'lc', chapter: 2, verse: 39 },
     photo: require('../../assets/jesus-journey/03-nazareth.jpg'),
+    photoCredit: 'Zairon, CC BY-SA 4.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Nazareth_Verk%C3%BCndigungskirche_Kuppel_2.JPG',
     // Nazaré → Al-Maghtas (Jordão): sul pela Galileia, vale do Jordão
     waypointsToNext: [[32.50, 35.40], [32.10, 35.50], [31.85, 35.54]],
   },
@@ -55,6 +61,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 3,13-17', refEn: 'Matthew 3:13-17',
     nav: { bookId: 'mt', chapter: 3, verse: 13 },
     photo: require('../../assets/jesus-journey/04-jordan.jpg'),
+    photoCredit: 'Berthold Werner, CC BY 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Jordan_Baptism_site_BW_3.JPG',
     // Jordão → Monte da Quarentena: oeste, curto
     waypointsToNext: [[31.85, 35.50]],
   },
@@ -68,6 +76,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 4,1-11', refEn: 'Matthew 4:1-11',
     nav: { bookId: 'mt', chapter: 4, verse: 1 },
     photo: require('../../assets/jesus-journey/05-temptation.jpg'),
+    photoCredit: 'Tamar Hayardeni, CC BY 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Jericho_-_Quarantal_Monastery7.jpg',
     // Quarentena → Caná (Khirbet Qana): norte voltando pra Galileia
     waypointsToNext: [[32.10, 35.45], [32.40, 35.40], [32.65, 35.32], [32.75, 35.30]],
   },
@@ -76,11 +86,13 @@ export const JESUS_JOURNEY = [
     name: 'Caná (Khirbet Qana)', nameEn: 'Cana (Khirbet Qana)',
     lat: 32.8202, lng: 35.3068,
     title: 'Primeiro milagre', titleEn: 'First miracle',
-    desc: 'Sítio arqueológico de Khirbet Qana, 14 km ao norte de Nazaré. Identificado por Eusébio (séc. IV) e confirmado por escavações com cerâmica, moedas e banhos rituais judaicos do séc. I. Jesus transforma água em vinho.',
-    descEn: 'Archaeological site of Khirbet Qana, 14 km north of Nazareth. Identified by Eusebius (4th century) and confirmed by excavations with 1st-century pottery, coins, and Jewish ritual baths. Jesus turns water into wine.',
+    desc: 'Dois lugares disputam Caná: Khirbet Qana, sítio arqueológico 14 km ao norte de Nazaré, com cerâmica, moedas e banhos rituais judaicos do séc. I, e Kafr Kanna, onde a Igreja das Bodas (na foto) guarda a tradição dos peregrinos. Jesus transforma água em vinho.',
+    descEn: 'Two places claim Cana: Khirbet Qana, an archaeological site 14 km north of Nazareth with 1st-century pottery, coins and Jewish ritual baths, and Kafr Kanna, where the Wedding Church (pictured) keeps the tradition of the pilgrims. Jesus turns water into wine.',
     ref: 'João 2,1-11', refEn: 'John 2:1-11',
     nav: { bookId: 'jo', chapter: 2, verse: 1 },
     photo: require('../../assets/jesus-journey/06-cana.jpg'),
+    photoCredit: 'Dr. Avishai Teicher, CC BY 2.5 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_40276_The_cana_cahtholic_wedding_church.JPG',
     // Caná → Cafarnaum: leste
     waypointsToNext: [[32.84, 35.42]],
   },
@@ -94,6 +106,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 4,12-25', refEn: 'Matthew 4:12-25',
     nav: { bookId: 'mt', chapter: 4, verse: 12 },
     photo: require('../../assets/jesus-journey/07-capernaum.jpg'),
+    photoCredit: 'Ruby1619, CC BY-SA 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Kefar_Nahum_Capernaum_Talhum.jpg',
     // Cafarnaum → Mt. Bem-Aventuranças: logo ao lado
     waypointsToNext: [],
   },
@@ -107,6 +121,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 5–7', refEn: 'Matthew 5–7',
     nav: { bookId: 'mt', chapter: 5, verse: 1 },
     photo: require('../../assets/jesus-journey/08-beatitudes.jpg'),
+    photoCredit: 'Berthold Werner, domínio público (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Berg_der_Seligpreisungen_BW_4.JPG',
     // Bem-Aventuranças → Mar Galileia: desce pra orla
     waypointsToNext: [],
   },
@@ -120,6 +136,8 @@ export const JESUS_JOURNEY = [
     ref: 'Marcos 4,35-41', refEn: 'Mark 4:35-41',
     nav: { bookId: 'mc', chapter: 4, verse: 35 },
     photo: require('../../assets/jesus-journey/09-galilee.jpg'),
+    photoCredit: 'Grant Barclay, CC BY 2.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Israel_Sunrise_over_Sea_of_Galilee_(16037234180).jpg',
     // Mar Galileia → Cesareia de Filipe: norte, contornando o lago
     waypointsToNext: [[32.92, 35.65], [33.05, 35.68], [33.18, 35.70]],
   },
@@ -133,6 +151,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 16,13-20', refEn: 'Matthew 16:13-20',
     nav: { bookId: 'mt', chapter: 16, verse: 13 },
     photo: require('../../assets/jesus-journey/10-caesarea.jpg'),
+    photoCredit: 'Berthold Werner, CC BY-SA 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Banyas_BW_11.JPG',
     // Cesareia → Tabor: sul atravessando Galileia
     waypointsToNext: [[33.05, 35.60], [32.90, 35.55], [32.78, 35.45]],
   },
@@ -146,6 +166,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 9,28-36', refEn: 'Luke 9:28-36',
     nav: { bookId: 'lc', chapter: 9, verse: 28 },
     photo: require('../../assets/jesus-journey/11-tabor.jpg'),
+    photoCredit: 'Mboesch, CC BY-SA 4.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Tabor-basilica-der-verklaerung-b.JPG',
     // Tabor → Jericó (Herodiana): sul pelo vale do Jordão
     waypointsToNext: [[32.55, 35.40], [32.20, 35.50], [31.95, 35.50]],
   },
@@ -159,6 +181,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 19,1-10', refEn: 'Luke 19:1-10',
     nav: { bookId: 'lc', chapter: 19, verse: 1 },
     photo: require('../../assets/jesus-journey/12-jericho.jpg'),
+    photoCredit: 'Ovedc, CC BY-SA 4.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:By_Ovedc_-_Tulul_al-Alaiq,_Herod%27s_winter_palaces,_Jericho_44.jpg',
     // Jericó → Betânia: oeste subindo as montanhas de Jerusalém
     waypointsToNext: [[31.83, 35.38], [31.79, 35.30]],
   },
@@ -172,6 +196,8 @@ export const JESUS_JOURNEY = [
     ref: 'João 11,1-45', refEn: 'John 11:1-45',
     nav: { bookId: 'jo', chapter: 11, verse: 1 },
     photo: require('../../assets/jesus-journey/13-bethany.jpg'),
+    photoCredit: 'Abraham, CC BY 4.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Lazarus_Tomb_Bethany_2006_Lee.jpeg',
     // Betânia → Jerusalém (Porta Dourada): oeste curto
     waypointsToNext: [],
   },
@@ -185,6 +211,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 21,1-11', refEn: 'Matthew 21:1-11',
     nav: { bookId: 'mt', chapter: 21, verse: 1 },
     photo: require('../../assets/jesus-journey/14-golden-gate.jpg'),
+    photoCredit: 'Berthold Werner, CC BY-SA 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Jerusalem_Golden_Gate_BW_2010-09-20_08-49-56.JPG',
     // Porta Dourada → Cenáculo: curto, dentro de Jerusalém
     waypointsToNext: [],
   },
@@ -198,6 +226,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 26,17-30', refEn: 'Matthew 26:17-30',
     nav: { bookId: 'mt', chapter: 26, verse: 17 },
     photo: require('../../assets/jesus-journey/15-cenacle.jpg'),
+    photoCredit: 'Heritage Conservation Jerusalem (PikiWiki Israel), CC BY 2.5 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_73793_mount_zion_jerusalem.jpg',
     // Cenáculo → Getsêmani: leste, atravessando Cidade Velha
     waypointsToNext: [],
   },
@@ -211,6 +241,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 22,39-53', refEn: 'Luke 22:39-53',
     nav: { bookId: 'lc', chapter: 22, verse: 39 },
     photo: require('../../assets/jesus-journey/16-gethsemane.jpg'),
+    photoCredit: 'Fallaner, CC BY-SA 4.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Holy_Land_2016_P0138_Olive_trees_in_Gethsemane.jpg',
     // Getsêmani → Pretório: oeste, atravessando Cidade Velha
     waypointsToNext: [],
   },
@@ -224,6 +256,8 @@ export const JESUS_JOURNEY = [
     ref: 'João 18,28–19,16', refEn: 'John 18:28–19:16',
     nav: { bookId: 'jo', chapter: 18, verse: 28 },
     photo: require('../../assets/jesus-journey/17-praetorium.jpg'),
+    photoCredit: 'Udi Steinwell, CC BY 2.5 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_34473_Religion_in_Israel.JPG',
     // Pretório → Calvário: curto, dentro da Cidade Velha
     waypointsToNext: [],
   },
@@ -237,6 +271,8 @@ export const JESUS_JOURNEY = [
     ref: 'João 19,17-37', refEn: 'John 19:17-37',
     nav: { bookId: 'jo', chapter: 19, verse: 17 },
     photo: require('../../assets/jesus-journey/18-calvary.jpg'),
+    photoCredit: 'Berthold Werner, CC BY-SA 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Jerusalem_Holy_Sepulchre_BW_18.JPG',
     // Calvário → Sepulcro: mesmo prédio
     waypointsToNext: [],
   },
@@ -250,6 +286,8 @@ export const JESUS_JOURNEY = [
     ref: 'Mateus 27,57–28,10', refEn: 'Matthew 27:57–28:10',
     nav: { bookId: 'mt', chapter: 28, verse: 1 },
     photo: require('../../assets/jesus-journey/19-sepulchre.jpg'),
+    photoCredit: 'MDGovpics, CC BY 2.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Boyd_Rutherford_visit_to_Jerusalem,_2020_42.jpg',
     // Sepulcro → Emaús: oeste pra fora de Jerusalém
     waypointsToNext: [[31.80, 35.15], [31.82, 35.07]],
   },
@@ -263,6 +301,8 @@ export const JESUS_JOURNEY = [
     ref: 'Lucas 24,13-35', refEn: 'Luke 24:13-35',
     nav: { bookId: 'lc', chapter: 24, verse: 13 },
     photo: require('../../assets/jesus-journey/20-emmaus.jpg'),
+    photoCredit: 'Mujaddara, CC BY-SA 3.0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Emmaus_-_panoramio_(3).jpg',
     // Emaús → Monte das Oliveiras: volta pra Jerusalém leste
     waypointsToNext: [[31.80, 35.10], [31.79, 35.18]],
   },
@@ -276,6 +316,8 @@ export const JESUS_JOURNEY = [
     ref: 'Atos 1,9-11', refEn: 'Acts 1:9-11',
     nav: { bookId: 'at', chapter: 1, verse: 9 },
     photo: require('../../assets/jesus-journey/21-mount-olives.jpg'),
+    photoCredit: 'David Castor, CC0 (Wikimedia Commons)',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:Chapel_of_the_Ascension_in_Jerusalem.jpg',
     waypointsToNext: [],
   },
 ];

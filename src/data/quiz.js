@@ -3,6 +3,8 @@
 // e explicação (`why`) que aparece após responder.
 // Tudo com versão EN. Foco em conceitos centrais — não trivia.
 
+import { dailyIndex } from '../utils/daily';
+
 export const QUIZ = [
   // === Existência de Deus ===
   {
@@ -1961,11 +1963,9 @@ export const DAILY_QUESTIONS = [
 ];
 
 // Escolhe quiz determinístico por dia (mesmo quiz pra todo mundo no mesmo dia).
+// Semente 13 (e não a 7 padrão) para não cair no mesmo índice do versículo do dia.
 export function getQuizOfDay(date = new Date()) {
-  const start = new Date(date.getFullYear(), 0, 0);
-  const dayOfYear = Math.floor((date - start) / (1000 * 60 * 60 * 24));
-  const seed = (dayOfYear + date.getFullYear() * 13) % DAILY_QUESTIONS.length;
-  return DAILY_QUESTIONS[seed];
+  return DAILY_QUESTIONS[dailyIndex(DAILY_QUESTIONS.length, date, 13)];
 }
 
 // Escolhe N perguntas aleatórias (modo "praticar") sem repetir.
