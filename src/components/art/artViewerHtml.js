@@ -36,7 +36,10 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
     -webkit-touch-callout: none; overscroll-behavior: none; }
   #viewer { position: absolute; inset: 0; opacity: 0; transition: opacity .6s cubic-bezier(.22,1,.36,1); }
   #viewer.is-open { opacity: 1; }
-  .lupa { width: 40px; height: 40px; border-radius: 50%; padding: 0; margin: 0; cursor: pointer;
+  /* --lupa-scale cresce com o zoom (ver fitMarkers): na visão geral de uma
+     tela estreita as lupas ficam menores e não se amontoam. */
+  :root { --lupa-scale: 1; --lupa-hover: 1; }
+  .lupa { width: 40px; height: 40px; transform: scale(calc(var(--lupa-scale) * var(--lupa-hover))); border-radius: 50%; padding: 0; margin: 0; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     color: ${accent}; background: rgba(10,8,5,.58); border: 1px solid rgba(201,168,76,.55);
     -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
@@ -47,7 +50,7 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
   .lupa.is-active { opacity: 0; pointer-events: none; animation: none; }
   .lupas-off .lupa { opacity: 0; pointer-events: none; }
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,168,76,.4); } 70%, 100% { box-shadow: 0 0 0 14px rgba(201,168,76,0); } }
-  @media (hover: hover) { .lupa:hover { transform: scale(1.15); animation-play-state: paused; } }
+  @media (hover: hover) { .lupa:hover { --lupa-hover: 1.15; animation-play-state: paused; } }
   @media (prefers-reduced-motion: reduce) { .lupa { animation: none; } #viewer { transition: none; } }
 </style>
 </head>
@@ -112,6 +115,7 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
         viewer.addOverlay({ element: btn, location: rect.getCenter(), placement: OpenSeadragon.Placement.CENTER, checkResize: false });
         markers[l.id] = btn;
       });
+      fitMarkers();
       document.getElementById('viewer').classList.add('is-open');
       post({ type: 'ready', aspect: size.x / size.y });
     });
@@ -119,9 +123,22 @@ export function buildArtViewerHtml({ source, lupas = [], background, accent, red
     viewer.addHandler('tile-loaded', function () { if (!anyTile) { anyTile = true; post({ type: 'loaded' }); } });
     viewer.addHandler('tile-load-failed', function () { if (!anyTile) fail(); });
     viewer.addHandler('canvas-click', function (e) { if (e.quick) post({ type: 'tap' }); });
+    viewer.addHandler('zoom', fitMarkers);
+    viewer.addHandler('resize', fitMarkers);
     // Sem nenhum ladrilho em 20 s (rede muito lenta ou bloqueada): o app
     // volta para a imagem local.
     setTimeout(function () { if (!anyTile) fail(); }, 20000);
+  }
+
+  // Escala das lupas: 0,65 na visão geral de uma tela de celular, cheia a
+  // partir de 2x de zoom ou em telas largas.
+  function fitMarkers() {
+    if (!viewer || !viewer.viewport) return;
+    var rel = viewer.viewport.getZoom(true) / viewer.viewport.getHomeZoom();
+    var narrow = document.documentElement.clientWidth < 600;
+    var base = narrow ? 0.65 : 0.85;
+    var k = Math.max(base, Math.min(1, base + (1 - base) * (rel - 1)));
+    document.documentElement.style.setProperty('--lupa-scale', k.toFixed(3));
   }
 
   function setActive(id) {
