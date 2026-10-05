@@ -7,6 +7,7 @@ export default {
   title: 'Cristo Pantocrator',
   titleEn: 'Christ Pantocrator',
   artist: 'Mosaicistas bizantinos de Constantinopla',
+  artistEn: 'Byzantine mosaicists from Constantinople',
   artistLife: '',
   date: '1148',
   technique: 'Mosaico de tesselas de vidro e ouro',

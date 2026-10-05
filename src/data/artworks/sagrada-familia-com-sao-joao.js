@@ -7,6 +7,7 @@ export default {
   title: 'A Sagrada Família com São João Batista (segundo Murillo)',
   titleEn: 'The Holy Family with Saint John the Baptist (after Murillo)',
   artist: 'Agustín Esteve, segundo Bartolomé Esteban Murillo',
+  artistEn: 'Agustín Esteve, after Bartolomé Esteban Murillo',
   artistLife: '1753-c. 1820',
   date: '1779',
   technique: 'Óleo sobre tela',

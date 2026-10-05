@@ -7,6 +7,7 @@ export default {
   title: 'A Adoração dos Pastores',
   titleEn: 'The Adoration of the Shepherds',
   artist: 'Círculo de Apostolos Krezias',
+  artistEn: 'Circle of Apostolos Krezias',
   artistLife: '',
   date: 'c. 1750-1800',
   technique: 'Têmpera e ouro sobre madeira (ícone)',

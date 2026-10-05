@@ -8,6 +8,7 @@ export default {
   title: 'A Mãe de Deus de Vladímir (cópia)',
   titleEn: 'The Theotokos of Vladimir (copy)',
   artist: 'Iconógrafo desconhecido, segundo o original bizantino',
+  artistEn: 'Unknown icon painter, after the Byzantine original',
   artistLife: '',
   date: 'c. 1131 (original)',
   technique: 'Ícone em moldura de madeira com vidro',

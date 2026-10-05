@@ -7,6 +7,7 @@ export default {
   title: 'Paisagem com Cristo e os Apóstolos no Mar de Tiberíades',
   titleEn: 'Landscape with Christ and the Apostles at the Sea of Tiberias',
   artist: 'Pieter Bruegel, o Velho',
+  artistEn: 'Pieter Bruegel the Elder',
   artistLife: 'c. 1525-1569',
   date: '1553',
   technique: 'Óleo sobre madeira',

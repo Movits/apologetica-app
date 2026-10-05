@@ -7,6 +7,7 @@ export default {
   title: 'A Sagrada Família do Cordeiro',
   titleEn: 'The Holy Family with a Lamb',
   artist: 'Rafael Sanzio',
+  artistEn: 'Raphael (Raffaello Sanzio)',
   artistLife: '1483-1520',
   date: '1507',
   technique: 'Óleo sobre madeira',

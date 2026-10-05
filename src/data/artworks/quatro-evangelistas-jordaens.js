@@ -9,6 +9,7 @@ export default {
   artist: 'Jacob Jordaens',
   artistLife: '1593-1678',
   date: 'Década de 1630',
+  dateEn: '1630s',
   technique: 'Óleo sobre tela (conhecida por fotografia)',
   techniqueEn: 'Oil on canvas (known from a photograph)',
   dimensions: '123 × 151 cm',

@@ -8,6 +8,7 @@ export default {
   title: 'O Grande Buda de Kamakura (Amida)',
   titleEn: 'The Great Buddha of Kamakura (Amida)',
   artist: 'Autor desconhecido',
+  artistEn: 'Unknown artist',
   artistLife: '',
   date: 'c. 1252',
   technique: 'Bronze fundido',

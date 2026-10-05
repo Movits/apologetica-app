@@ -7,6 +7,7 @@ export default {
   title: 'A Disputa do Santíssimo Sacramento',
   titleEn: 'The Disputation of the Holy Sacrament',
   artist: 'Rafael Sanzio',
+  artistEn: 'Raphael (Raffaello Sanzio)',
   artistLife: '1483-1520',
   date: '1509-1510',
   technique: 'Afresco',

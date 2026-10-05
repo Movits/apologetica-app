@@ -7,6 +7,7 @@ export default {
   title: 'Nossa Senhora de Guadalupe',
   titleEn: 'Our Lady of Guadalupe',
   artist: 'Autoria desconhecida',
+  artistEn: 'Unknown authorship',
   artistLife: '',
   date: '1531',
   technique: 'Imagem sobre tilma de fibra vegetal',

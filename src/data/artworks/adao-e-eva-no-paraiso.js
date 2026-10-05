@@ -7,6 +7,7 @@ export default {
   title: 'Adão e Eva no Paraíso',
   titleEn: 'Adam and Eve in Paradise',
   artist: 'Jan Brueghel, o Jovem',
+  artistEn: 'Jan Brueghel the Younger',
   artistLife: '1601-1678',
   date: '1618',
   technique: 'Óleo sobre madeira',

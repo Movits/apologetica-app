@@ -9,6 +9,7 @@ export default {
   title: 'A Torre de Babel',
   titleEn: 'The Tower of Babel',
   artist: 'Pieter Bruegel, o Velho',
+  artistEn: 'Pieter Bruegel the Elder',
   artistLife: 'c. 1525-1569',
   date: '1563',
   technique: 'Óleo sobre madeira de carvalho',

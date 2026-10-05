@@ -7,6 +7,7 @@ export default {
   title: 'A Missa de São Gregório',
   titleEn: 'The Mass of Saint Gregory',
   artist: 'Mestre anônimo dos Países Baixos',
+  artistEn: 'Anonymous Netherlandish master',
   artistLife: '',
   date: 'c. 1515-1520',
   technique: 'Óleo sobre madeira (tríptico)',

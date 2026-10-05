@@ -7,6 +7,7 @@ export default {
   title: 'A Queda dos Anjos Rebeldes',
   titleEn: 'The Fall of the Rebel Angels',
   artist: 'Pieter Bruegel, o Velho',
+  artistEn: 'Pieter Bruegel the Elder',
   artistLife: 'c. 1525-1569',
   date: '1562',
   technique: 'Óleo sobre madeira de carvalho',

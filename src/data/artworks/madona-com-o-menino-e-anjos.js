@@ -9,6 +9,7 @@ export default {
   artist: 'Giovanni Battista Salvi, il Sassoferrato',
   artistLife: '1609-1685',
   date: 'séc. XVII',
+  dateEn: '17th century',
   technique: 'Pintura a óleo',
   techniqueEn: 'Oil painting',
   dimensions: '',

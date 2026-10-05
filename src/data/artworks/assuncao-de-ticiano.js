@@ -7,6 +7,7 @@ export default {
   title: 'A Assunção da Virgem',
   titleEn: 'The Assumption of the Virgin',
   artist: 'Ticiano',
+  artistEn: 'Titian',
   artistLife: 'c. 1488-1576',
   date: '1516-1518',
   technique: 'Óleo sobre madeira',

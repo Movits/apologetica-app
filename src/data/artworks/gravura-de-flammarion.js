@@ -7,6 +7,7 @@ export default {
   title: 'A gravura de Flammarion',
   titleEn: 'The Flammarion engraving',
   artist: 'Autor desconhecido',
+  artistEn: 'Unknown artist',
   artistLife: '',
   date: '1888',
   technique: 'Gravura em madeira',

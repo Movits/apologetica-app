@@ -11,6 +11,7 @@ import autoDeFeBerruguete from './auto-de-fe-berruguete';
 import basilicaDeAparecida from './basilica-de-aparecida';
 import batuqueRugendas from './batuque-rugendas';
 import bodasDeCana from './bodas-de-cana';
+import casamentoDePoussin from './casamento-de-poussin';
 import ceiaEmEmaus from './ceia-em-emaus';
 import chavesDoReinoPerugino from './chaves-do-reino-perugino';
 import codiceSinaitico from './codice-sinaitico';
@@ -100,6 +101,7 @@ export const ARTWORKS = [
   basilicaDeAparecida,
   batuqueRugendas,
   bodasDeCana,
+  casamentoDePoussin,
   ceiaEmEmaus,
   chavesDoReinoPerugino,
   codiceSinaitico,

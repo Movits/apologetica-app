@@ -7,6 +7,7 @@ export default {
   title: 'Códice Sinaítico: Hebreus 12,27-28',
   titleEn: 'Codex Sinaiticus: Hebrews 12:27-28',
   artist: 'Escribas anônimos (fac-símile da Nordisk familjebok)',
+  artistEn: 'Anonymous scribes (facsimile from the Nordisk familjebok)',
   artistLife: '',
   date: 'c. 330-360',
   technique: 'Fac-símile impresso (1905) de manuscrito em pergaminho',
