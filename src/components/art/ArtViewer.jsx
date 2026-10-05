@@ -259,7 +259,16 @@ export default function ArtViewer({ visible, article, onClose }) {
   const reading = [text('bodySerif'), { color: GALLERY.text }];
 
   return (
-    <Modal visible={visible} transparent={false} animationType="fade" onRequestClose={panel ? () => setPanel(null) : onClose} statusBarTranslucent>
+    <Modal
+      visible={visible}
+      transparent={false}
+      animationType="fade"
+      // Voltar do Android (e Esc na web) fecha o painel aberto antes da sala.
+      // O do detalhe sai como o X dele (overview): sem limpar a lupa ativa, o
+      // marcador dela continuava invisível e sem toque sobre a obra.
+      onRequestClose={panel === 'lupa' ? overview : panel ? () => setPanel(null) : onClose}
+      statusBarTranslucent
+    >
       <GestureHandlerRootView style={{ flex: 1 }}>
         <View style={[styles.root, { backgroundColor: GALLERY.bg }]}>
           {/* A obra */}

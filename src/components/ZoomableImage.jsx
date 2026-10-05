@@ -18,7 +18,14 @@ import Animated, { useAnimatedStyle, useSharedValue, withDecay, withTiming } fro
 const MAX_SCALE = 6;
 const DOUBLE_TAP_SCALE = 2.5;
 const isWeb = Platform.OS === 'web';
-const clamp = (v, a, b) => Math.max(a, Math.min(v, b));
+// Worklet: é chamada dentro dos callbacks do gesture-handler, que rodam na UI
+// thread. Sem a diretiva, o reanimated a trata como função remota e a pinça,
+// o arrasto e o toque duplo lançam "Tried to synchronously call a Remote
+// Function" no celular.
+function clamp(v, a, b) {
+  'worklet';
+  return Math.max(a, Math.min(v, b));
+}
 
 // Proporção (largura / altura) de uma imagem local; 1,5 enquanto não se sabe.
 function localAspect(source) {
@@ -29,6 +36,18 @@ function localAspect(source) {
     // Fonte remota ou formato desconhecido.
   }
   return 1.5;
+}
+
+// Proporção da imagem que acabou de carregar. No nativo o onLoad traz
+// nativeEvent.source { width, height }; no react-native-web o nativeEvent é o
+// evento `load` do DOM e o tamanho fica em target.naturalWidth/naturalHeight
+// (lá o Image.resolveAssetSource nem existe, e sem isto os limites do arrasto
+// ficavam calculados para 3:2 em qualquer obra).
+function aspectFromLoad(e) {
+  const ne = e?.nativeEvent;
+  const w = ne?.source?.width ?? ne?.target?.naturalWidth;
+  const h = ne?.source?.height ?? ne?.target?.naturalHeight;
+  return w && h ? w / h : null;
 }
 
 export default function ZoomableImage({ source, hdUri, alt }) {
@@ -247,15 +266,24 @@ export default function ZoomableImage({ source, hdUri, alt }) {
   const imgStyle = { width: W, height: H, pointerEvents: 'none' };
   const content = (
     <Animated.View style={[StyleSheet.absoluteFill, styles.center, aStyle]}>
-      <Image source={source} style={imgStyle} resizeMode="contain" accessibilityLabel={alt} />
+      <Image
+        source={source}
+        style={imgStyle}
+        resizeMode="contain"
+        accessibilityLabel={alt}
+        onLoad={(e) => {
+          const a = aspectFromLoad(e);
+          if (a) setAspect(a);
+        }}
+      />
       {hdUri && !hdFailed ? (
         <Image
           source={{ uri: hdUri }}
           style={[imgStyle, StyleSheet.absoluteFill, { opacity: hdReady ? 1 : 0 }]}
           resizeMode="contain"
           onLoad={(e) => {
-            const src = e?.nativeEvent?.source;
-            if (src?.width && src?.height) setAspect(src.width / src.height);
+            const a = aspectFromLoad(e);
+            if (a) setAspect(a);
             setHdReady(true);
           }}
           onError={() => setHdFailed(true)}
