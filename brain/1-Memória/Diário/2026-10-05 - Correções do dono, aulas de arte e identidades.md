@@ -59,3 +59,14 @@ no computador (não só no Expo Go).
   pelo original exige refazer as lupas.
 - ChipRow: rolar até um chip que aparece depois da montagem (achado baixo da
   revisão, aberto).
+
+## Publicação (fim do dia)
+
+- O dono adiou a escolha da identidade ("vou testar e te digo") e autorizou
+  "publicar tudo, inclusive para build. Quando for mudar algo tem que mudar em
+  todo lugar."
+- PR #2 saiu do rascunho e entrou no master (merge `09c0e4e`). O deploy do
+  GitHub Pages passou (build e deploy verdes) e o teste de fumaça no site
+  publicado abriu a Última Ceia com as lupas, sem erro de página.
+- Build EAS Android `preview` (APK, mesmo perfil dos builds de junho):
+  `5e41da1c`, concluído. O iOS segue sem credenciais (Expo Go cobre o iPhone).
