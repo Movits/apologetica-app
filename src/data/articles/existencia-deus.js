@@ -30,7 +30,7 @@ O filósofo Gottfried Leibniz formulou a mesma intuição no chamado princípio 
 
 A versão contemporânea mais discutida é o argumento Kalam, popularizado pelo filósofo William Lane Craig. Ele tem três passos simples: tudo o que começa a existir tem uma causa. O universo começou a existir. Logo, o universo tem uma causa.
 
-A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo em expansão média positiva, incluindo a maioria dos modelos de multiverso, teve um começo absoluto no tempo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
+A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo que, em média, esteve em expansão, incluindo a maioria dos modelos de multiverso, não pode ser eterno no passado: precisa ter tido um começo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
 
 ## "Veio do nada", "veio do vácuo quântico"
 
@@ -49,7 +49,7 @@ Se o universo, isto é, todo o espaço, o tempo e a matéria, tem uma causa, ess
 3. Se você acredita num multiverso eterno, qual é a evidência empírica disso, e ele próprio não precisaria de uma causa?
 
 4. Some quantas coisas contingentes quiser. De onde vem a existência do conjunto, se cada parte poderia não existir?`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam', 'lemaitre-bigbang'],
+    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam', 'lemaitre-bigbang', 'bgv-teorema'],
   },
   {
     id: 9,
@@ -155,7 +155,7 @@ Santo Tomás de Aquino fez essa distinção há quase oitocentos anos. Há seres
 
 ## Uma confusão de categorias
 
-A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Causalidade é uma relação entre coisas no universo. Aplicá-la a Deus é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
+A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Ser causado é próprio do que começa a existir, do que é contingente. Exigir isso de Deus, que é necessário e eterno, é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
 
 O argumento Kalam formaliza isso bem. William Lane Craig mostra que tudo que começa a existir tem causa. O universo começou a existir, como indica a cosmologia atual: o teorema de Borde-Guth-Vilenkin, demonstrado em 2003 pelos físicos Arvind Borde, Alan Guth e Alexander Vilenkin, prova que qualquer universo que em média esteve em expansão não pode ser eterno no passado, ele precisa ter tido um começo. Logo, o universo tem causa. Deus não começou, então não cai sob essa regra. Atribuir a Deus o predicado "começou a existir" é negar o conceito mesmo de Deus.
 
@@ -192,17 +192,17 @@ O túmulo estava vazio. Tanto judeus quanto romanos tinham interesse claro em pr
 
 ## As aparições
 
-As aparições foram públicas e múltiplas. São Paulo lista mais de quinhentas pessoas que viram Cristo ressuscitado em 1 Coríntios 15,3-8, muitas delas ainda vivas quando ele escreveu a carta. Podiam ser interrogadas. Ele convida o leitor a verificar.
+As aparições foram públicas e múltiplas. São Paulo menciona, em 1 Coríntios 15,3-8, uma aparição a mais de quinhentas pessoas de uma só vez, muitas delas ainda vivas quando ele escreveu a carta. Podiam ser interrogadas. Ele convida o leitor a verificar.
 
 ## A transformação dos apóstolos
 
-A transformação dos apóstolos é talvez a evidência mais forte. Homens que fugiram com medo na noite da prisão de Jesus, todos exceto João morreram mártires proclamando a ressurreição. Ninguém morre torturado por algo que sabe ser mentira.
+A transformação dos apóstolos é talvez a evidência mais forte. Homens que fugiram com medo na noite da prisão de Jesus passaram a proclamar a ressurreição sob ameaça de morte e, segundo a tradição mais antiga, quase todos, exceto João, morreram mártires por isso. Ninguém morre torturado por algo que sabe ser mentira.
 
 Mesmo fontes pagãs e judaicas hostis ao cristianismo atestam a existência e a execução de Jesus. O historiador judeu Flávio Josefo, em Antiguidades Judaicas (c. 93-94), menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Vale uma nota importante aqui: a palavra grega adelphós usada para "irmão" tinha sentido amplo no judaísmo helenístico, designando irmão biológico, primo ou parente próximo (vide Gênesis 14,14 onde Ló é chamado adelphós de Abraão, sendo seu sobrinho). Tiago, "o irmão do Senhor" mencionado também por São Paulo em Gálatas 1,19, é parente de Jesus, não filho biológico de Maria. A Virgindade Perpétua de Maria é doutrina constante da Igreja, e os "irmãos de Jesus" nos Evangelhos seguem o uso amplo do termo (mais detalhes no artigo "A Virgindade Perpétua de Maria").
 
 ## Os fatos mínimos
 
-Gary Habermas, pesquisador especializado no tema e professor de Liberty University, identificou em "O Caso da Ressurreição de Jesus" (2004) o que chama de "fatos mínimos" sobre a ressurreição. São eventos aceitos por cerca de 95% dos historiadores críticos do tema, mesmo os não-crentes: morte por crucificação, túmulo vazio, aparições percebidas como reais pelos discípulos, conversão de Paulo de perseguidor a apóstolo, e conversão de Tiago (parente de Jesus), que antes não cria nele. Mesmo o historiador agnóstico Bart Ehrman aceita a maior parte desses fatos.
+Gary Habermas, pesquisador especializado no tema e professor de Liberty University, identificou em "O Caso da Ressurreição de Jesus" (2004) o que chama de "fatos mínimos" sobre a ressurreição. São eventos aceitos pela grande maioria dos historiadores críticos do tema, mesmo os não crentes (o túmulo vazio, com cerca de 75% de aceitação no levantamento de Habermas, é o menos consensual): morte por crucificação, túmulo vazio, aparições percebidas como reais pelos discípulos, conversão de Paulo de perseguidor a apóstolo, e conversão de Tiago (parente de Jesus), que antes não cria nele. Mesmo o historiador agnóstico Bart Ehrman aceita a maior parte desses fatos.
 
 A questão histórica não é "houve evidências?", mas "qual explicação dá conta de todas elas?". As teorias alternativas (alucinação coletiva, roubo do corpo, morte aparente, mito tardio) falham em explicar pelo menos um desses cinco fatos cada. A única hipótese que dá conta de todos é a ressurreição corporal.
 
@@ -215,7 +215,7 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
 3. O que faz uma pessoa morrer torturada por algo que ela sabe ser mentira?
 
 4. Como a fé na ressurreição surgiu tão cedo? O credo de 1 Coríntios 15,3-8 é datado pelos próprios estudiosos críticos como anterior a três anos da crucificação, deixando pouco tempo para "evolução mítica".`,
-    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19'],
+    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19', 'gn-14-14'],
   },
   {
     id: 17,
@@ -231,7 +231,7 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
 
 ## Jesus afirmou ser Deus
 
-Jesus afirmou repetidamente ser Deus. Em João 10,30 diz "eu e o Pai somos um". Em João 8,58, aplicando a si o nome divino YHWH revelado a Moisés, declara "antes que Abraão fosse, eu sou". Em Marcos 2,5-7 perdoa pecados, prerrogativa exclusiva de Deus segundo os próprios escribas presentes. Em João 14,9 diz "quem me viu, viu o Pai". Em João 5,18 os judeus tentam matá-lo porque "se igualava a Deus".
+Jesus afirmou repetidamente ser Deus. Em João 10,30 diz "eu e o Pai somos um". Em João 8,58, aplicando a si o nome divino YHWH revelado a Moisés, declara "antes que Abraão fosse, eu sou". Em Marcos 2,5-7 perdoa pecados, prerrogativa exclusiva de Deus segundo os próprios escribas presentes. Em João 14,9 diz "quem me viu, viu o Pai". Em João 5,18 os judeus tentam matá-lo porque "se igualava a Deus". Diante do Sinédrio, à pergunta se era o Filho de Deus, responde "Eu sou" (Marcos 14,61-62), e Tomé, diante do Ressuscitado, o confessa "meu Senhor e meu Deus" (João 20,28).
 
 ## Três opções, e só três
 
@@ -304,7 +304,7 @@ A tese mítica precisa explicar como, em poucos anos após a suposta "criação 
 
 1. Você sabe quantos historiadores acadêmicos de universidades reconhecidas defendem que Jesus não existiu? (Resposta: praticamente nenhum.)
 
-2. Como você explica as menções de Tácito, Plínio o Jovem, Suetônio e Josefo, todos não-cristãos, todos no primeiro século depois de Cristo?
+2. Como você explica as menções de Tácito, Plínio o Jovem, Suetônio e Josefo, todos não cristãos, todos escrevendo a menos de cem anos da crucificação?
 
 3. Se Jesus foi invenção literária, como existiam comunidades cristãs em Roma já em 49 d.C., a ponto de Cláudio precisar expulsar judeus por causa de agitações sobre "Chrestus"?
 
@@ -333,7 +333,7 @@ Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com inst
 
 ## E a datação por carbono-14?
 
-É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores apontaram que a amostra foi retirada de um canto do pano que havia sido remendado e costurado em épocas posteriores a um incêndio, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
+É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores, como o do químico Raymond Rogers (2005), apontaram que a amostra foi retirada de um canto do pano que havia sido remendado com fios mais novos, tingidos para disfarçar o conserto, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
 
 ## O que a Igreja diz
 
@@ -345,10 +345,10 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. T
 
 2. A imagem não tem tinta nem pinceladas e guarda informação tridimensional. Que falsário medieval teria feito isso, e como?
 
-3. A amostra do carbono-14 saiu de um canto remendado do pano. Faz sentido datar o lençol inteiro por um pedaço costurado depois de um incêndio?
+3. A amostra do carbono-14 saiu de um canto remendado do pano. Faz sentido datar o lençol inteiro por um pedaço que pode ter sido remendado séculos depois?
 
 4. O tipo sanguíneo do Sudário é AB, o mesmo dos milagres eucarísticos e do Sudário de Oviedo. É só coincidência?`,
-    references: ['sudario-turim', 'milagre-lanciano', 'mt-28-1'],
+    references: ['sudario-turim', 'milagre-lanciano', 'sudario-oviedo', 'mt-28-1'],
   },
   {
     id: 55,
@@ -462,7 +462,7 @@ Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, soma
 
 ## O que Jesus afirmava de si
 
-Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em seu próprio nome, algo que só Deus pode fazer. Aceitou ser adorado. Disse: "antes que Abraão existisse, eu sou" (João 8,58), tomando para si o nome divino revelado a Moisés, "Eu Sou" (Êxodo 3,14). Afirmou: "eu e o Pai somos um" (João 10,30), e por isso quiseram apedrejá-lo por blasfêmia. Diante do Sumo Sacerdote, sob juramento, à pergunta se era o Filho de Deus, respondeu "Eu sou" (Marcos 14,62), e foi condenado à morte exatamente por essa afirmação.
+Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em seu próprio nome, algo que só Deus pode fazer. Aceitou ser adorado. Disse: "antes que Abraão existisse, eu sou" (João 8,58), tomando para si o nome divino revelado a Moisés, "Eu Sou" (Êxodo 3,14). Afirmou: "eu e o Pai somos um" (João 10,30), e por isso quiseram apedrejá-lo por blasfêmia. Diante do Sumo Sacerdote, conjurado a dizer se era o Filho de Deus (Mateus 26,63), respondeu "Eu sou" (Marcos 14,62), e foi condenado à morte exatamente por essa afirmação.
 
 ## O trilema
 

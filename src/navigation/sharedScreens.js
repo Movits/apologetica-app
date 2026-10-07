@@ -14,6 +14,9 @@ import DialogueScreen from '../screens/DialogueScreen';
 import DebateStrategiesScreen from '../screens/DebateStrategiesScreen';
 import BibleMapScreen from '../screens/BibleMapScreen';
 import LegalScreen from '../screens/LegalScreen';
+import JourneyScreen from '../screens/JourneyScreen';
+import CategoryArticlesScreen from '../screens/CategoryArticlesScreen';
+import { categoryLabel } from '../utils/i18nData';
 
 // Telas secundárias registradas em mais de um stack de aba. Cada stack (Início,
 // Artigos, Ferramentas, Ajustes) chama isto dentro do próprio Navigator:
@@ -35,8 +38,9 @@ import LegalScreen from '../screens/LegalScreen';
 // <Nav.Group>, que é aceito.
 //
 // Ficam de fora: as raízes (HomeMain, ToolsMain, SettingsMain, ArticlesList,
-// ArticleDetail), as que existem num stack só (References, Tools, Search em
-// Início) e CategoryArticles, que precisa de isEn e só tem chamador em Início.
+// ArticleDetail) e as que existem num stack só (References, Tools, Search em
+// Início). CategoryArticles entrou aqui quando Minha Jornada (que vive em
+// todas as abas) passou a abrir a lista de um tema.
 export function sharedScreens(Nav, t) {
   return (
     <Nav.Group>
@@ -57,6 +61,12 @@ export function sharedScreens(Nav, t) {
       <Nav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
       <Nav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
       <Nav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
+      <Nav.Screen name="Journey" component={JourneyScreen} options={{ title: t('header.journey') }} />
+      <Nav.Screen
+        name="CategoryArticles"
+        component={CategoryArticlesScreen}
+        options={({ route }) => ({ title: categoryLabel(route.params?.category, t) })}
+      />
       <Nav.Screen
         name="Legal"
         component={LegalScreen}

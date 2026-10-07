@@ -22,7 +22,7 @@ O Islã foi fundado por Maomé (Muhammad), nascido em Meca por volta do ano 570 
 
 O centro de tudo é o tawhid, a unicidade absoluta de Deus. Allah é único, criador de todas as coisas, onisciente, todo-poderoso e juiz final. O pecado mais grave que existe é o shirk, associar a Allah qualquer parceiro ou igual. A vida religiosa se organiza em torno dos cinco pilares: a profissão de fé (não há divindade senão Allah, e Maomé é o seu mensageiro), as cinco orações diárias, a esmola obrigatória (zakat), o jejum do mês do Ramadã e a peregrinação a Meca (hajj).
 
-O muçulmano reverencia uma longa linha de profetas que inclui Adão, Noé, Abraão, Moisés e Jesus. E aqui há algo que surpreende muitos cristãos: o Islã tem grande respeito por Jesus, a quem chama Isa, o Messias. O Alcorão afirma que ele nasceu de uma virgem, Maria, a única mulher nomeada no livro e a quem é dedicada a sura 19. Afirma que Jesus fez milagres pela permissão de Allah e que voltará no fim dos tempos. O que o Islã nega é que Jesus seja Deus ou Filho de Deus, que tenha morrido na cruz, e a própria Trindade.
+O muçulmano reverencia uma longa linha de profetas que inclui Adão, Noé, Abraão, Moisés e Jesus. E aqui há algo que surpreende muitos cristãos: o Islã tem grande respeito por Jesus, a quem chama Isa, o Messias. O Alcorão afirma que ele nasceu de uma virgem, Maria, a única mulher nomeada no livro e a quem é dedicada a sura 19. Afirma que Jesus fez milagres pela permissão de Allah e que voltará no fim dos tempos. O que o Islã nega é que Jesus seja Deus ou Filho de Deus, que tenha morrido na cruz, e a própria Trindade (sura 4,171 e 5,72).
 
 ## Pontos de convergência
 
@@ -32,7 +32,7 @@ Cristãos e muçulmanos afirmam juntos muita coisa. Cremos em um só Deus, criad
 
 As dificuldades começam justamente onde está a maior reverência islâmica: na pessoa de Jesus. Não é um único problema, mas vários, e juntos eles formam uma tensão difícil de sustentar.
 
-1. O Dilema Islâmico. Jesus, segundo os Evangelhos, afirmou repetidas vezes ser Deus. Em João 8,58 declara "antes que Abraão existisse, eu sou", aplicando a si o nome divino revelado a Moisés. Os ouvintes entenderam tão bem que pegaram pedras para apedrejá-lo por blasfêmia. Em João 10,30 diz "eu e o Pai somos um", e de novo tentam apedrejá-lo "porque, sendo homem, te fazes Deus". Diante do sumo sacerdote, sob juramento, confirma ser o Filho do Bendito, e é condenado à morte por isso. O muçulmano tem então duas saídas, e nenhuma o satisfaz. Ou aceita que Jesus disse essas coisas, e então Jesus é Deus (e o Alcorão erra ao negá-lo) ou é blasfemo (e não pode ser profeta). Ou nega que ele disse, alegando que os Evangelhos foram corrompidos, mas isso contradiz o próprio Alcorão, que manda julgar pelo Evangelho (sura 5,46-47).
+1. O Dilema Islâmico. Jesus, segundo os Evangelhos, afirmou repetidas vezes ser Deus. Em João 8,58 declara "antes que Abraão existisse, eu sou", aplicando a si o nome divino revelado a Moisés. Os ouvintes entenderam tão bem que pegaram pedras para apedrejá-lo por blasfêmia. Em João 10,30 diz "eu e o Pai somos um", e de novo tentam apedrejá-lo "porque, sendo homem, te fazes Deus". Diante do sumo sacerdote, sob juramento, confirma ser o Filho do Bendito, e é condenado à morte por isso. O muçulmano tem então duas saídas, e nenhuma o satisfaz. Ou aceita que Jesus disse essas coisas, e então Jesus é Deus (e o Alcorão erra ao negá-lo) ou é blasfemo (e não pode ser profeta). Ou nega que ele disse, alegando que os Evangelhos foram corrompidos, mas isso contradiz o próprio Alcorão, que confirma a Torá e o Evangelho (sura 3,3) e manda julgar pelo Evangelho (sura 5,46-47).
 
 2. A negação da crucificação. A sura 4,157 afirma que os judeus "não o mataram nem o crucificaram, mas apenas lhes pareceu". Ora, a morte de Jesus por crucificação é um dos fatos mais bem estabelecidos de toda a história antiga. É atestada pelos quatro Evangelhos, por Paulo poucos anos depois do evento, e também por fontes não cristãs e hostis, como o historiador romano Tácito, que registra a execução de Cristo sob Pôncio Pilatos, e o judeu Flávio Josefo. Um texto do século VII está negando um acontecimento documentado por testemunhas do século I.
 
@@ -112,7 +112,7 @@ As diferenças, porém, atingem o coração da fé.
 
 O movimento foi fundado por Charles Taze Russell nos Estados Unidos, no fim do século XIX, e é dirigido pela Sociedade Torre de Vigia (Watch Tower). As Testemunhas de Jeová creem num Deus de uma só pessoa, chamado Jeová, e negam a Trindade. Para elas, Jesus não é Deus, mas a primeira criatura de Jeová, identificada com o arcanjo Miguel, e o Espírito Santo não é uma pessoa, e sim a "força ativa" de Deus.
 
-Esperam o Armagedom iminente, creem que apenas 144 mil irão ao céu enquanto os demais fiéis viverão num paraíso terrestre, recusam transfusões de sangue, não participam de guerras, política nem festas, e se dedicam intensamente à pregação de casa em casa. Usam uma Bíblia própria, a Tradução do Novo Mundo, publicada em 1950.
+Esperam o Armagedom iminente, creem que apenas 144 mil irão ao céu enquanto os demais fiéis viverão num paraíso terrestre, recusam transfusões de sangue, não participam de guerras, política nem festas, e se dedicam intensamente à pregação de casa em casa. Usam uma Bíblia própria, a Tradução do Novo Mundo, cujo Novo Testamento saiu em 1950 e a Bíblia completa em 1961.
 
 ## Pontos de convergência
 
@@ -124,7 +124,7 @@ O problema é que a doutrina central, a negação da divindade de Cristo, não v
 
 1. A tradução de João 1,1. O texto grego diz: "no princípio era o Verbo (Lógos), e o Verbo estava com Deus, e o Verbo era Deus". A Tradução do Novo Mundo verte o fim como "o Verbo era um deus", acrescentando um artigo que não existe no grego. A construção (predicado sem artigo antes do verbo) indica natureza, não indefinição: em João 1,14 a mesma forma aparece com "carne", e ninguém traduz "se fez uma carne". Quase nenhuma tradução da história verte João 1,1 como a Torre de Vigia.
 
-2. Títulos divinos dados a Jesus. Em João 20,28 Tomé chama Jesus de "Senhor meu e Deus meu", e Jesus aceita. Em Tito 2,13 e 2 Pedro 1,1 ele é "nosso grande Deus e Salvador". Em Hebreus 1,8 o Pai chama o Filho de "Deus". Em Filipenses 2,6 Cristo é de "condição divina".
+2. Títulos divinos dados a Jesus. Em João 20,28 Tomé chama Jesus de "Senhor meu e Deus meu", e Jesus aceita. Em Tito 2,13 e 2 Pedro 1,1 ele é "nosso grande Deus e Salvador". Em Hebreus 1,8 o Pai chama o Filho de "Deus". Em Filipenses 2,6 Cristo é de "condição divina". Foi para guardar esse dado bíblico que o Concílio de Niceia, em 325, condenou Ário, que, como as Testemunhas hoje, dizia que o Filho era uma criatura: o Credo responde "gerado, não criado, consubstancial ao Pai".
 
 3. Jesus não é o arcanjo Miguel. Em Hebreus 1, o autor mostra a superioridade do Filho justamente comparando-o aos anjos: "a qual dos anjos disse Deus alguma vez: tu és meu Filho?" e "todos os anjos de Deus o adorem" (Hebreus 1,5-6). Jesus é adorado pelos anjos, não é um deles.
 
@@ -167,7 +167,7 @@ Krishna na tradição hindu nasceu de um casal real, Vasudeva e Devaki, depois d
 
 ## A cronologia não fecha
 
-Segundo problema: cronologia. Os elementos verdadeiramente paralelos entre cristianismo e religiões de mistério aparecem nas religiões de mistério apenas depois do cristianismo já estar formado. Ronald Nash, em "The Gospel and the Greeks" (1992), faz a análise textual exaustiva mostrando que as alegações populares de plágio cristão são anacrônicas. As religiões de mistério que se assemelham parcialmente ao cristianismo (mitraísmo, alguns cultos de Ísis) atingem essas formas no séc. II d.C. ou depois, época em que o cristianismo já tinha cânon do Novo Testamento praticamente completo, comunidades em todo o Império, e fórmulas litúrgicas estabelecidas.
+Segundo problema: cronologia. Os elementos verdadeiramente paralelos entre cristianismo e religiões de mistério aparecem nas religiões de mistério apenas depois do cristianismo já estar formado. Ronald Nash, em "The Gospel and the Greeks" (1992), faz a análise textual exaustiva mostrando que as alegações populares de plágio cristão são anacrônicas. As religiões de mistério que se assemelham parcialmente ao cristianismo (mitraísmo, alguns cultos de Ísis) atingem essas formas no séc. II d.C. ou depois, época em que os escritos do Novo Testamento já estavam todos redigidos, as comunidades espalhadas por todo o Império e as fórmulas litúrgicas estabelecidas.
 
 ## Diferenças fundamentais
 
@@ -179,7 +179,7 @@ Quarto problema: o argumento se autorrefuta. Se as semelhanças entre cristianis
 
 ## O mito que se fez fato
 
-C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intensamente sobre a relação entre mitos pagãos e cristianismo. Em conversa com J. R. R. Tolkien (também católico) e Hugo Dyson em 19 de setembro de 1931, sua resistência ao cristianismo se quebrou quando entendeu que o problema não era "o cristianismo se parece com mitos pagãos" mas o oposto: "os mitos pagãos eram intuições verdadeiras (sonhos de Deus) preparando a humanidade para o fato histórico que se cumpriria em Cristo". Lewis escreveu depois que "o mito se fez fato" no cristianismo: as intuições humanas universais (necessidade de salvação, sacrifício redentor, vitória sobre a morte) foram realizadas concretamente em uma pessoa histórica datável.
+C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intensamente sobre a relação entre mitos pagãos e cristianismo. Em conversa com J. R. R. Tolkien (católico) e Hugo Dyson em 19 de setembro de 1931, sua resistência ao cristianismo se quebrou quando entendeu que o problema não era "o cristianismo se parece com mitos pagãos" mas o oposto: os mitos pagãos eram intuições verdadeiras que preparavam a humanidade para o fato histórico que se cumpriria em Cristo. Em Cristianismo Puro e Simples (1952), Lewis dirá que Deus enviou à humanidade "bons sonhos", aquelas "histórias estranhas, espalhadas por todas as religiões pagãs, sobre um deus que morre e volta à vida". E no ensaio Myth Became Fact (1944) escreveu que "o mito se fez fato" no cristianismo: as intuições humanas universais (necessidade de salvação, sacrifício redentor, vitória sobre a morte) foram realizadas concretamente em uma pessoa histórica datável.
 
 O argumento católico clássico aceita as similaridades reais (que existem, sim) e as interpreta como providência. Deus preparou a humanidade pagã para receber o Evangelho através de intuições parciais da verdade nas religiões anteriores. Quando o Verbo se fez carne, essas intuições encontraram seu cumprimento real, não em mais um mito, mas em uma pessoa histórica viva.
 
@@ -192,7 +192,7 @@ O argumento católico clássico aceita as similaridades reais (que existem, sim)
 3. Religiões mitológicas falam de eventos intemporais, sem testemunhas datáveis. O cristianismo afirma evento histórico com testemunhas vivas em Jerusalém. Por que isso é detalhe menor?
 
 4. Se semelhanças provassem plágio, qualquer duas religiões "plagiariam" uma à outra. Como você distingue plágio de coincidência ou de convergência humana universal?`,
-    references: ['nash-grecos', 'lewis-mere-christianity', 'lewis-problema-dor'],
+    references: ['nash-grecos', 'lewis-mere-christianity'],
   },
   {
     id: 37,
@@ -237,7 +237,7 @@ As diferenças brotam de dois lemas, e ambos têm um problema interno.
 3. Tiago 2,24 diz que o homem não é justificado "somente pela fé". Como conciliar isso com o Sola Fide?
 
 4. Se "só a Bíblia" bastasse, por que cinco séculos de Reforma geraram milhares de igrejas que discordam entre si sobre o que a Bíblia ensina?`,
-    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', '2pd-1-20', '2pd-3-16', 'tg-2-24', 'jo-6-53', 'agostinho-evangelho', 'lutero-rm-3-28', 'concilio-trento', 'csgc-denominacoes'],
+    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', '2pd-1-20', '2pd-3-16', 'tg-2-24', 'rm-3-28', 'jo-17-20', 'hipona-393', 'cartago-397', 'jo-6-53', 'agostinho-evangelho', 'lutero-rm-3-28', 'concilio-trento', 'inacio-esmirnenses-7', 'justino-apologia-1', 'csgc-denominacoes'],
   },
   {
     id: 38,
@@ -320,7 +320,7 @@ As diferenças, porém, são de fundo.
 
 4. Libertar-se por método ou ser salvo por dom? O Buda oferece um caminho para que você mesmo se liberte pelo próprio esforço. Cristo não oferece um método, oferece a si mesmo: "Deus tanto amou o mundo que lhe deu o seu Filho único" (João 3,16). Para quem carrega culpa real, a diferença é enorme: a salvação vem de fora, como presente gratuito, não como conquista.
 
-5. Renascer ou ressuscitar? O samsara é um ciclo de renascimentos do qual se deseja escapar para o nada do nirvana. O cristianismo anuncia uma vida só (Hebreus 9,27) e, no fim, a ressurreição do corpo e a comunhão eterna com Deus. Não a extinção do eu, mas a sua plenitude.
+5. Renascer ou ressuscitar? O samsara é um ciclo de renascimentos do qual se deseja escapar para o nirvana, em que o eu individual se extingue. O cristianismo anuncia uma vida só (Hebreus 9,27) e, no fim, a ressurreição do corpo e a comunhão eterna com Deus. Não a extinção do eu, mas a sua plenitude.
 
 ## Perguntas-chave
 
@@ -535,7 +535,7 @@ A Umbanda nasceu no Brasil no início do século XX e é uma síntese: combina e
 
 ## Pontos de convergência
 
-Há pontos de contato sinceros. Essas religiões afirmam a existência de um Deus supremo, têm forte senso do sagrado, profundo respeito pelos ancestrais e um grande valor de comunidade e acolhimento. E há uma verdade histórica que o cristão precisa afirmar com firmeza: a escravidão e a perseguição religiosa que recaíram sobre os negros foram um pecado grave, e o racismo, em qualquer forma, é incompatível com o Evangelho. A dignidade dessas pessoas é inteira e inviolável.
+Há pontos de contato sinceros. Essas religiões afirmam a existência de um Deus supremo, têm forte senso do sagrado, profundo respeito pelos ancestrais e um grande valor de comunidade e acolhimento. O Concílio Vaticano II, em Nostra Aetate, ensina que a Igreja não rejeita nada do que há de verdadeiro e santo nas outras religiões. E há uma verdade histórica que o cristão precisa afirmar com firmeza: a escravidão e a perseguição religiosa que recaíram sobre os negros foram um pecado grave, e o racismo, em qualquer forma, é incompatível com o Evangelho. A dignidade dessas pessoas é inteira e inviolável.
 
 ## Pontos de confronto
 
@@ -621,7 +621,7 @@ No fundo, a mensagem cristã aqui é libertadora. O cristão não precisa viver 
 
 ## O que a Igreja decidiu
 
-Desde 1738, com o Papa Clemente XII, a Igreja proíbe os católicos de se filiarem à Maçonaria. Em 1983, a Congregação para a Doutrina da Fé, com a aprovação de São João Paulo II, reafirmou de forma direta que os fiéis que aderem a associações maçônicas estão em pecado grave e não podem receber a comunhão. Não é a opinião de um padre mais rigoroso. É uma posição firme e constante do Magistério.
+Desde 1738, com o Papa Clemente XII, a Igreja proíbe os católicos de se filiarem à Maçonaria. Em 1983, a Congregação para a Doutrina da Fé, com a aprovação de São João Paulo II, reafirmou de forma direta que os fiéis que aderem a associações maçônicas estão em pecado grave e não podem receber a comunhão. Em 2023, o Dicastério para a Doutrina da Fé, com a aprovação do Papa Francisco, reafirmou a mesma posição. Não é a opinião de um padre mais rigoroso. É uma posição firme e constante do Magistério.
 
 ## Por quê: não é perseguição, é coerência
 

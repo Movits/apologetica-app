@@ -25,6 +25,7 @@ function buildSpirituality(t) {
 
 function buildTraining(t) {
   return [
+    { icon: 'trophy-outline', label: t('home.card.journey'), sub: t('home.card.journeySub'), screen: 'Journey' },
     { icon: 'help-circle-outline', label: t('home.card.quiz'), sub: t('home.card.quizSub'), screen: 'Quiz' },
     { icon: 'chatbubbles-outline', label: t('home.card.dialogue'), sub: t('home.card.dialogueSub'), screen: 'Dialogue' },
     { icon: 'shield-half-outline', label: t('home.card.debate'), sub: t('home.card.debateSub'), screen: 'DebateStrategies' },

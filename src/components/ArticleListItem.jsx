@@ -16,6 +16,8 @@ import PressScale from './ui/PressScale';
 // - article: item de src/data/articles (title/titleEn, summary/summaryEn,
 //   category, image).
 // - read: mostra o checkmark de lido.
+// - completed: lição concluída (lido e teste feito), mostra a fita no lugar
+//   do checkmark.
 // - showCategory: esconde a categoria quando a lista já é de uma categoria só.
 // - onPress: abre o artigo, recebe o id (a tela decide a rota).
 //
@@ -25,7 +27,7 @@ import PressScale from './ui/PressScale';
 
 // O lado da capa é tokens.thumb.md: a imagem do artigo é recortada em
 // quadrado (cover).
-const ArticleListItem = memo(function ArticleListItem({ article, read = false, showCategory = true, onPress }) {
+const ArticleListItem = memo(function ArticleListItem({ article, read = false, completed = false, showCategory = true, onPress }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, radius, icon, thumb } = tokens;
@@ -33,8 +35,9 @@ const ArticleListItem = memo(function ArticleListItem({ article, read = false, s
   const title = pick(article, 'title', isEn);
   const summary = pick(article, 'summary', isEn);
   const category = showCategory ? categoryLabel(article.category, t) : null;
-  const readLabel = t('articles.read');
-  const meta = [title, category, read ? readLabel : null].filter(Boolean).join(', ');
+  const readLabel = completed ? t('articles.completed') : t('articles.read');
+  const done = read || completed;
+  const meta = [title, category, done ? readLabel : null].filter(Boolean).join(', ');
   const footnote = [text('footnote'), { color: colors.textSubtle }];
 
   return (
@@ -73,16 +76,16 @@ const ArticleListItem = memo(function ArticleListItem({ article, read = false, s
             {summary}
           </Text>
         ) : null}
-        {category || read ? (
+        {category || done ? (
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
             {category ? (
               <Text style={[footnote, { flexShrink: 1 }]} numberOfLines={1}>{category}</Text>
             ) : null}
-            {category && read ? <Text style={footnote}>·</Text> : null}
-            {read ? (
+            {category && done ? <Text style={footnote}>·</Text> : null}
+            {done ? (
               <>
-                <Ionicons name="checkmark-circle" size={icon.sm} color={colors.success} />
-                <Text style={[text('footnote'), { color: colors.success }]}>{readLabel}</Text>
+                <Ionicons name={completed ? 'ribbon' : 'checkmark-circle'} size={icon.sm} color={completed ? colors.accentText : colors.success} />
+                <Text style={[text('footnote'), { color: completed ? colors.accentText : colors.success }]}>{readLabel}</Text>
               </>
             ) : null}
           </View>

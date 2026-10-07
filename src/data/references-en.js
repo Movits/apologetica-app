@@ -471,7 +471,7 @@ export const referencesEn = {
   },
   'tertuliano-de-carne': {
     topicEn: 'Incarnation / virginity of Mary',
-    textEn: "Christ was born of a virgin; and this was necessary so that he who came to destroy death by life was not born through the same gate through which death had entered. Mary remained a virgin after the birth, according to apostolic tradition.",
+    textEn: "Christ was born of a virgin, and this was necessary so that he who came to destroy death by life was not born through the same gate through which death had entered. Tertullian defends the virginal conception but denies Mary's virginity after the birth (De Carne Christi 23), a position Saint Jerome censures in Against Helvidius (383).",
     refEn: 'De Carne Christi',
     fullSourceEn: 'De Carne Christi (On the Flesh of Christ) and De Monogamia',
     authorEn: 'Tertullian',

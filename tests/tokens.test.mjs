@@ -7,6 +7,7 @@ import {
   textStyle,
   icon,
   thumb,
+  seal,
   motion,
   shadow,
   FONT_FAMILY,
@@ -65,6 +66,13 @@ test('textStyle lança Error para papel desconhecido', () => {
 
 test('icon tem três tamanhos', () => {
   assert.deepEqual(icon, { sm: 18, md: 22, lg: 26 });
+});
+
+test('seal traz os lados dos selos da Jornada, crescentes e na grade de 4', () => {
+  const sides = Object.values(seal);
+  assert.deepEqual(Object.keys(seal), ['xs', 'sm', 'md', 'lg', 'xl']);
+  for (let i = 1; i < sides.length; i++) assert.ok(sides[i] > sides[i - 1]);
+  for (const n of sides) assert.equal(n % 4, 0, `${n} fora da grade de 4`);
 });
 
 test('thumb traz os lados das miniaturas (notícia, capa de artigo e estação 7:5)', () => {

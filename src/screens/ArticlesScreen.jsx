@@ -7,6 +7,8 @@ import { ARTICLE_CATEGORIES, POPULAR_IDS, sortByRank } from '../data/articleCate
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getReadSet } from '../utils/readingProgress';
+import { useJourney } from '../hooks/useJourney';
+import { isLessonComplete, lessonOf } from '../utils/journey';
 import { categoryLabel, pick } from '../utils/i18nData';
 import { Chip, ChipRow, EmptyState, LargeTitleScreen, SearchField } from '../components/ui';
 import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
@@ -53,6 +55,7 @@ export default function ArticlesScreen({ route }) {
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState(FILTER_ALL);
   const [readSet, setReadSet] = useState(() => new Set());
+  const journey = useJourney();
 
   // Volta ao topo ao tocar no tab de novo (o popToTop pro detalhe é automático).
   useScrollToTop(listRef);
@@ -102,9 +105,15 @@ export default function ArticlesScreen({ route }) {
   // ou o filtro mudam.
   const renderItem = useCallback(
     ({ item }) => (
-      <ArticleListItem article={item} read={readSet.has(item.id)} showCategory={showCategory} onPress={openArticle} />
+      <ArticleListItem
+        article={item}
+        read={readSet.has(item.id)}
+        completed={isLessonComplete(lessonOf(journey, item.id))}
+        showCategory={showCategory}
+        onPress={openArticle}
+      />
     ),
-    [readSet, showCategory, openArticle]
+    [readSet, journey, showCategory, openArticle]
   );
 
   return (

@@ -401,3 +401,26 @@ Não fazer: `headerLargeTitle` nativo por cima; passar `onScroll` ou `contentCon
 - `src/components/LiturgyCard.jsx` exporta `LiturgicalColorDot({ hex, size })`; `ReadingProgressBar`
   aceita `progressValue` (shared value do reanimated) além de `progress` numérico;
   `VerseActionsSheet` repassa `onDismissed`.
+
+## Fora de `ui/`: blocos da Jornada (`src/components/lesson/`)
+
+Peças das lições dos artigos e de Minha Jornada (ver `brain/3-App/Funcionalidades/Jornada.md`).
+Todas leem o tema pelos tokens, como as de `ui/`.
+
+- `OptionButton`: alternativa de resposta (`role="radio"`, `aria-checked`), `state` `'idle' |
+  'correct' | 'wrong'` só no ícone e na hairline, `centered` para "verdadeiro ou falso" lado a
+  lado. Usada pelo quiz, pela previsão e pelo teste rápido.
+- `XpRing`: anel de progresso em SVG (`value` 0 a 1, `size` de `tokens.seal`, `stroke` opcional,
+  um doze avos do lado por default, `delay`), trilha em `separator` e preenchimento em `accent`,
+  animado por `animatedProps` do reanimated; o centro é `children`. `role="progressbar"` com
+  `aria-value*`.
+- `XpChip`: pílula "+N XP" em `badgeBg`/`badgeText`; `animated` entra com FadeInDown.
+- `BadgeEmblem`: disco de conquista ou nível (`id`, `icon`, `size` `'sm' | 'md' | 'lg'` de
+  `tokens.seal`, `locked`): imagem de `src/data/journeyArt.js` quando existe, senão o Ionicons em
+  `accentText` sobre `badgeBg` com hairline `accent`. Decorativo (o nome vem escrito ao lado).
+- `LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`: os quatro blocos da lição, na
+  ordem em que aparecem no artigo; `BadgeUnlockSheet` é a folha (`Sheet`) de conquista ou nível.
+
+Não fazer: anel com `Animated` legado ou largura em porcentagem (é o `XpRing`); dourado como texto
+no chip (é `badgeText`); emblema com `require` solto na tela (o mapa é `journeyArt.js`); lado de
+anel ou emblema em número solto (é `tokens.seal`).

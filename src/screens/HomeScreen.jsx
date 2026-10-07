@@ -10,6 +10,9 @@ import { articles } from '../data/articles';
 import { consumeStartIntent } from '../utils/onboarding';
 import { getLiturgicalSeason } from '../utils/liturgicalSeason';
 import { getLastRead } from '../utils/lastRead';
+import { getLiveStreak } from '../utils/readingProgress';
+import { useJourney } from '../hooks/useJourney';
+import JourneyCard from '../components/JourneyCard';
 import { dailyIndex, todayLabel } from '../utils/daily';
 import { categoryLabel, pick } from '../utils/i18nData';
 import { openArticle as openArticleScreen } from '../navigation/links';
@@ -67,6 +70,8 @@ export default function HomeScreen() {
   const { t, isEn } = useLanguage();
   const { space, radius } = tokens;
   const [last, setLast] = useState(null);
+  const [streak, setStreak] = useState(0);
+  const journey = useJourney();
   const scrollRef = useRef(null);
 
   // Toque de novo na aba Início já focada: volta ao topo (o hook escuta o
@@ -84,6 +89,7 @@ export default function HomeScreen() {
         const article = data?.articleId ? articles.find((a) => a.id === data.articleId) : null;
         setLast(article ? { article, progress: data.progress } : null);
       });
+      getLiveStreak().then((n) => { if (alive) setStreak(n); });
       return () => { alive = false; };
     }, [])
   );
@@ -125,10 +131,18 @@ export default function HomeScreen() {
         <SearchField asButton placeholder={t('home.search')} onPress={openSearch} />
       </Animated.View>
 
+      {/* Jornada: nível, lições concluídas e sequência, num cartão que abre
+          Minha Jornada. Só aparece depois de o estado carregar. */}
+      {journey ? (
+        <Animated.View entering={enterStagger(1, tokens)} style={block}>
+          <JourneyCard journey={journey} streak={streak} onPress={() => navigation.navigate('Journey')} />
+        </Animated.View>
+      ) : null}
+
       {/* Objeção do dia: o único bloco que fala alto na tela. Uma pergunta
           difícil e o roteiro de resposta em passos (tela Diálogo). */}
       <Animated.View
-        entering={enterStagger(1, tokens)}
+        entering={enterStagger(2, tokens)}
         style={[
           { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm },
           block,
@@ -148,7 +162,7 @@ export default function HomeScreen() {
 
       {/* Estação litúrgica (calculada localmente, offline) e o último
           artigo aberto, quando há. */}
-      <Animated.View entering={enterStagger(2, tokens)}>
+      <Animated.View entering={enterStagger(3, tokens)}>
         <Group style={block}>
           <SeasonRow season={season} isEn={isEn} />
           {last ? (
@@ -164,10 +178,10 @@ export default function HomeScreen() {
       </Animated.View>
 
       {/* Centro da Início: os temas dos artigos de apologética. */}
-      <Animated.View entering={enterStagger(3, tokens)}>
+      <Animated.View entering={enterStagger(4, tokens)}>
         <SectionTitle title={t('home.section.topics')} />
       </Animated.View>
-      <Animated.View entering={enterStagger(4, tokens)}>
+      <Animated.View entering={enterStagger(5, tokens)}>
         <Group style={block}>
           {ARTICLE_CATEGORIES.map((cat) => {
             const count = ARTICLE_COUNT_BY_CATEGORY.get(cat.id) || 0;
@@ -190,10 +204,10 @@ export default function HomeScreen() {
 
       {/* Fontes: referências (versículos, Catecismo, documentos) e a
           Bíblia completa. */}
-      <Animated.View entering={enterStagger(5, tokens)}>
+      <Animated.View entering={enterStagger(6, tokens)}>
         <SectionTitle title={t('home.section.sources')} />
       </Animated.View>
-      <Animated.View entering={enterStagger(6, tokens)}>
+      <Animated.View entering={enterStagger(7, tokens)}>
         <Group style={block}>
           <Row
             icon="library-outline"

@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { liveStreak } from './journey';
 
 const KEY_READ = 'reading:read';
 const KEY_PLAN = 'reading:plan';
@@ -6,7 +7,10 @@ const KEY_STREAK = 'reading:streak';
 
 // Sequencia de dias (streak) de leitura, mecanismo de retencao apontado pela
 // pesquisa (Capela/Hallow). Global: qualquer dia de plano concluido conta.
-function localDateStr(d = new Date()) {
+// Chave de dia da sequência (sem zero à esquerda, formato histórico das
+// gravações: não trocar por todayKey, senão o "ontem" de quem já tem
+// sequência deixa de bater).
+export function localDateStr(d = new Date()) {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 }
 
@@ -17,6 +21,15 @@ export async function getStreak() {
   } catch {
     return { count: 0, lastDate: null };
   }
+}
+
+// A sequência que ainda vale: a contagem gravada se o último dia foi hoje ou
+// ontem, senão 0 (a chama da Início e as conquistas de sequência leem daqui).
+export async function getLiveStreak(now = new Date()) {
+  const s = await getStreak();
+  const y = new Date(now);
+  y.setDate(y.getDate() - 1);
+  return liveStreak(s, localDateStr(now), localDateStr(y));
 }
 
 // Registra atividade de hoje: mantem se ja marcou hoje, +1 se foi ontem,
