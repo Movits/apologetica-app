@@ -67,7 +67,7 @@ Em mil anos não houve cristão sério defendendo que fosse apenas símbolo. A l
 
 ## Milagres eucarísticos comprovados
 
-Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vários submetidos a análise científica rigorosa, com resultados convergentes: tecido cardíaco humano, vivo, do tipo sanguíneo AB. O mais famoso é o de Lanciano, na Itália. Por seu peso como evidência, esse tema é tratado em artigo próprio, com os estudos médicos de Lanciano, Buenos Aires, Sokolka e Tixtla e o catálogo do Bem-Aventurado Carlo Acutis.
+Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vários submetidos a análise científica rigorosa, com resultados convergentes: tecido cardíaco humano, vivo, do tipo sanguíneo AB. O mais famoso é o de Lanciano, na Itália. Por seu peso como evidência, esse tema é tratado em artigo próprio, com os estudos médicos de Lanciano, Buenos Aires, Sokolka e Tixtla e o catálogo de São Carlo Acutis.
 
 ## Perguntas-chave
 
@@ -94,7 +94,7 @@ Ao longo da história, a Igreja reconhece dezenas de milagres eucarísticos, vá
 
 ## Mediação e intercessão
 
-Essa objeção confunde mediação com intercessão. Cristo é o único mediador entre Deus e os homens, como ensina São Paulo em 1 Timóteo 2,5. Ele é a fonte de toda graça. Mas assim como pedimos a um amigo aqui na terra que ore por nós, podemos pedir aos santos no céu que intercedam junto a Deus. Isso não substitui Cristo, depende dele.
+Essa objeção confunde mediação com intercessão. Cristo é o único mediador entre Deus e os homens, como ensina São Paulo em 1 Timóteo 2,5. Ele é a fonte de toda graça. Mas assim como pedimos a um amigo aqui na terra que ore por nós, podemos pedir aos santos no céu que intercedam junto a Deus. Isso não substitui Cristo, depende dele. Por isso a própria Igreja pode chamar Maria de Medianeira (Lumen Gentium §62): uma mediação subordinada, que nada tira nem acrescenta à de Cristo, único Mediador.
 
 ## Os santos estão vivos
 
@@ -145,7 +145,7 @@ Há também Gênesis 3,15, o chamado "Protoevangelho". Deus diz à serpente "por
 
 A primeira testemunha cristã do tema é Justino Mártir, na metade do séc. II, ao contrastar Eva (que disse não a Deus) com Maria (que disse sim). Santo Irineu de Lyon (c. 180), em "Contra as Heresias" livro III, desenvolveu o paralelo de modo decisivo. Maria é a "nova Eva", e como a primeira Eva foi criada sem pecado original, a nova Eva foi preservada dele. Irineu escreve: "o nó da desobediência de Eva foi desatado pela obediência de Maria". Os Padres orientais e ocidentais discutiram o tema por séculos, e o dogma foi solenemente definido pelo Beato Pio IX em 8 de dezembro de 1854, na bula Ineffabilis Deus.
 
-A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogma. Em Portugal e no Brasil, ela é Padroeira oficial.
+A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogma. Em Portugal, ela é Padroeira desde 1646, por voto de D. João IV. No Brasil, é Padroeira sob o título de Nossa Senhora da Conceição Aparecida, proclamada por Pio XI em 1930.
 
 ## Perguntas-chave
 
@@ -170,21 +170,21 @@ A devoção a Nossa Senhora da Conceição é a expressão litúrgica desse dogm
 
 ## Os "irmãos de Jesus"
 
-A objeção principal vem dos textos que falam dos "irmãos de Jesus" (Mateus 13,55. Marcos 6,3). A palavra grega adelphós, usada nesses textos, tinha sentido bem mais amplo do que o irmão biológico de mesma mãe. Designava também primos, parentes próximos e até membros da mesma comunidade. Na Septuaginta (a tradução grega do Antigo Testamento usada pelos apóstolos), Abraão e Ló são chamados adelphoi, embora Ló fosse sobrinho de Abraão segundo Gênesis 14,14. Hebraico e aramaico, línguas faladas por Jesus, não tinham palavra específica para primo, usavam "irmão" no sentido amplo. Esse uso passou naturalmente para o grego dos Evangelhos.
+A objeção principal vem dos textos que falam dos "irmãos de Jesus" (Mateus 13,55. Marcos 6,3). A palavra grega adelphós, usada nesses textos, tinha sentido bem mais amplo do que o irmão biológico de mesma mãe. Designava também primos, parentes próximos e até membros da mesma comunidade. Na Septuaginta (a tradução grega do Antigo Testamento usada pelos apóstolos), Ló é chamado adelphós (irmão) de Abraão em Gênesis 14,14, embora fosse seu sobrinho (Gênesis 14,12). Hebraico e aramaico, línguas faladas por Jesus, não tinham palavra específica para primo, usavam "irmão" no sentido amplo. Esse uso passou naturalmente para o grego dos Evangelhos.
 
 ## A pergunta de Maria
 
 Quando Lucas 1,34 narra a Anunciação, Maria, já noiva de José, pergunta ao anjo "como acontecerá isso, pois não conheço varão?". A pergunta só faz sentido se ela já tivesse o propósito firme de permanecer virgem. Caso contrário, sendo prometida em matrimônio, a notícia de que conceberia teria sido normal.
 
-Em João 19,26-27, Jesus crucificado entrega Maria aos cuidados do apóstolo João. No costume judaico, isso não aconteceria se houvesse outros filhos biológicos vivos para cuidar dela. Tiago, "o irmão do Senhor", mencionado por Paulo em Gálatas 1,19, é o mesmo Tiago filho de Alfeu (cf. Mt 10,3. Mc 15,40), parente próximo, não filho de Maria.
+Em João 19,26-27, Jesus crucificado entrega Maria aos cuidados do apóstolo João. No costume judaico, isso não aconteceria se houvesse outros filhos biológicos vivos para cuidar dela. Tiago, "o irmão do Senhor", mencionado por Paulo em Gálatas 1,19, é tradicionalmente identificado com Tiago filho de Alfeu (cf. Mt 10,3 e Mc 15,40), parente próximo, não filho de Maria.
 
-A objeção do "primogênito" em Lucas 2,7 também não procede. Em hebraico, bekhor (traduzido por prōtótokos em grego) significava simplesmente o primeiro a abrir o ventre, com direitos rituais específicos (Êxodo 13,2), independente de haver outros depois. Era termo técnico ritual, não comparativo. Existem inscrições funerárias judaicas usando "primogênita" para mulheres que morreram no primeiro parto, sem outros filhos.
+A objeção do "primogênito" em Lucas 2,7 também não procede. Em hebraico, bekhor (traduzido por prōtótokos em grego) significava simplesmente o primeiro a abrir o ventre, com direitos rituais específicos (Êxodo 13,2), independente de haver outros depois. Era termo técnico ritual, não comparativo. Há uma inscrição funerária judaica de 5 a.C. (Tell el-Yehudieh, Egito) de uma mulher que morreu dando à luz seu "primogênito", sem que houvesse outros filhos.
 
 ## Padres e reformadores
 
-Os Padres confirmam a doutrina já no séc. II e III. Tertuliano, em "De Carne Christi" (c. 207), defende a concepção virginal e a integridade de Maria. Origenes, Atanásio, Gregório de Nissa, Ambrósio e Jerônimo são unânimes. O título "Aeiparthenos" (Sempre Virgem) é fixado no V Concílio Ecumênico de Constantinopla II em 553.
+Os Padres confirmam a doutrina desde cedo. O Protoevangelho de Tiago (c. 150) já a pressupõe, e Orígenes, no Comentário a Mateus (c. 248), afirma que Maria não teve outros filhos. Atanásio, Gregório de Nissa, Ambrósio e Jerônimo (Contra Helvídio, 383) são unânimes. Tertuliano é a exceção isolada: defendeu a concepção virginal, mas não a virgindade após o parto, e por isso Jerônimo o censura. O título "Aeiparthenos" (Sempre Virgem) é fixado no V Concílio Ecumênico de Constantinopla II em 553.
 
-Vale notar uma curiosidade histórica. Os próprios Reformadores Martinho Lutero, João Calvino e Ulrico Zwínglio aceitavam a virgindade perpétua de Maria. A negação dessa doutrina é fenômeno bem posterior na história protestante. A Igreja Católica ensina hoje o que sempre se ensinou desde Santo Inácio de Antioquia, Justino Mártir e Tertuliano.
+Vale notar uma curiosidade histórica. Os próprios Reformadores Martinho Lutero, João Calvino e Ulrico Zwínglio aceitavam a virgindade perpétua de Maria. A negação dessa doutrina é fenômeno bem posterior na história protestante. A Igreja Católica ensina hoje o que se ensinou desde os primeiros séculos, de Orígenes e Atanásio a Jerônimo e Agostinho.
 
 ## Perguntas-chave
 
@@ -223,7 +223,7 @@ O Concílio de Éfeso afirmou solenemente "se alguém não confessar que o Emanu
 
 A distinção mais útil aqui é entre maternidade da natureza divina (que Maria não tem, pois Deus é eterno, sem origem) e maternidade da pessoa que é Deus (que Maria tem, porque é mãe de Jesus, e Jesus é a Segunda Pessoa da Santíssima Trindade encarnada). Toda mãe é mãe de uma pessoa, não de uma natureza isolada. Maria é mãe da pessoa do Verbo, e essa pessoa é Deus.
 
-A festa litúrgica de Maria, Mãe de Deus, é celebrada em 1º de janeiro, oitavo dia depois do Natal, encerrando a oitava da festa principal. É também dia de oração pela paz mundial, conforme estabelecido pelo Beato Paulo VI em 1968.
+A festa litúrgica de Maria, Mãe de Deus, é celebrada em 1º de janeiro, oitavo dia depois do Natal, encerrando a oitava da festa principal. É também dia de oração pela paz mundial, conforme estabelecido por São Paulo VI em 1968.
 
 Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
 
@@ -233,7 +233,7 @@ Negar a Theotokos de Maria não é uma objeção menor. É negar quem é Jesus.
 
 2. Em Lucas 1,43 Isabel chama Maria de "mãe do meu Senhor". Se Senhor (Kyrios) é título divino, como negar Theotokos?
 
-3. Se você nega que Maria é Mãe de Deus, você está dizendo que Jesus tem duas pessoas (uma humana, mãe de Maria. Outra divina, eterna)? Isso é nestorianismo, condenado em Éfeso.
+3. Se você nega que Maria é Mãe de Deus, você está dizendo que Jesus tem duas pessoas (uma humana, nascida de Maria, e outra divina, eterna)? Isso é nestorianismo, condenado em Éfeso.
 
 4. Toda mãe é mãe de uma pessoa. Você concorda? Maria é mãe de qual pessoa? Da pessoa do Verbo Eterno, que é Deus. Logo, Maria é Mãe de Deus.`,
     references: ['lc-1-43', 'efeso-anatema', 'cic-466'],
@@ -317,7 +317,7 @@ Matrimônio entre dois batizados é elevado por Cristo à dignidade sacramental 
 
 ## Matéria, forma e ministro
 
-Cada sacramento tem três elementos: matéria (sinal sensível, como água ou óleo), forma (palavras precisas) e ministro qualificado. Quando estes três estão presentes corretamente, o sacramento é válido e produz objetivamente o que significa, independentemente da virtude do ministro (princípio ex opere operato).
+Cada sacramento tem três elementos: matéria (sinal sensível, como água ou óleo), forma (palavras precisas) e ministro qualificado, com a intenção de fazer o que a Igreja faz. Quando estes três estão presentes corretamente, o sacramento é válido e produz objetivamente o que significa, independentemente da virtude do ministro (princípio ex opere operato).
 
 ## Perguntas-chave
 
@@ -395,7 +395,7 @@ A definição é cuidadosa: "Maria, terminado o curso da vida terrena, foi assum
 
 ## A base bíblica e o argumento de conveniência
 
-A base bíblica é indireta, mas convergente. Em Lucas 1,28, o anjo a chama kecharitōménē (totalmente agraciada). Em Lucas 1,42, Isabel a declara "bendita entre as mulheres". O salmo messiânico aplica a Maria: "A Rainha está à tua direita" (Sl 45,10). Apocalipse 12,1 mostra "uma mulher vestida do sol, com a lua sob os pés e na cabeça uma coroa de doze estrelas" - imagem que a Tradição vê como Maria glorificada no céu.
+A base bíblica é indireta, mas convergente. Em Lucas 1,28, o anjo a chama kecharitōménē (totalmente agraciada). Em Lucas 1,42, Isabel a declara "bendita entre as mulheres". O salmo messiânico aplica a Maria: "A Rainha está à tua direita" (Sl 45,10). Apocalipse 12,1 mostra "uma mulher vestida do sol, com a lua sob os pés e na cabeça uma coroa de doze estrelas", imagem que a Tradição vê como Maria glorificada no céu.
 
 O argumento de conveniência é forte. Maria foi preservada do pecado original (Imaculada Conceição) e nunca cometeu pecado pessoal. A corrupção do corpo é consequência do pecado (Gn 3,19. Rm 6,23). Se Maria foi isenta da causa, por que sofreria a consequência? Era conveniente que a Mãe de Deus, livre do pecado, não conhecesse a decomposição do túmulo. Foi unida em vida ao corpo de Cristo (que ela gestou) e foi unida na glória ao Cristo ressuscitado.
 
@@ -418,7 +418,7 @@ Pio XII, antes de definir o dogma, consultou os bispos do mundo inteiro. A esmag
 3. Como você interpreta a "mulher vestida de sol" em Apocalipse 12, se não como Maria?
 
 4. Se a Assunção é "invenção tardia", por que igrejas orientais (não em comunhão com Roma) também a confessam desde antiguidade?`,
-    references: ['cic-966', 'lc-1-28', 'ap-5-8', 'lumen-gentium-60', 'munificentissimus-deus'],
+    references: ['cic-966', 'lc-1-28', 'ap-12-1', 'lumen-gentium-60', 'munificentissimus-deus'],
   },
   {
     id: 23,
@@ -440,7 +440,7 @@ A resposta católica é o Purgatório: estado de purificação que prepara para 
 
 ## A base bíblica
 
-A base bíblica é encontrada em duas vertentes. Primeira: 2 Macabeus 12,44-46. Judas Macabeu, depois de uma batalha, descobre que alguns dos seus soldados mortos carregavam amuletos pagãos (pecado contra o primeiro mandamento). Ele organiza uma coleta e manda oferecer sacrifícios pelos mortos, "para que fossem absolvidos dos seus pecados". O texto comenta: "é santa e salutar a ideia de orar pelos defuntos, para que sejam libertos de seus pecados". Esse versículo é tão claro que Lutero, sem encontrar como conciliá-lo com sua doutrina, removeu o livro do cânon protestante.
+A base bíblica é encontrada em duas vertentes. Primeira: 2 Macabeus 12,44-46. Judas Macabeu, depois de uma batalha, descobre que alguns dos seus soldados mortos carregavam amuletos pagãos (pecado contra o primeiro mandamento). Ele organiza uma coleta e manda oferecer sacrifícios pelos mortos, "para que fossem absolvidos dos seus pecados". O texto comenta: "é santa e salutar a ideia de orar pelos defuntos, para que sejam libertos de seus pecados". Esse texto é tão claro que Lutero, na disputa de Leipzig (1519), quando Eck o citou a favor do Purgatório, negou a canonicidade de 2 Macabeus, e sua Bíblia de 1534 relegou os deuterocanônicos a um apêndice.
 
 Segunda vertente: 1 Coríntios 3,12-15. São Paulo escreve que cada um construirá sobre o fundamento de Cristo "ouro, prata, pedras preciosas, madeira, feno, palha", e o dia do Senhor mostrará a obra de cada um, sendo "provada pelo fogo". Continua: "se a obra de alguém for queimada, ele sofrerá perda. Ele próprio, porém, será salvo, como que através do fogo". A pessoa é salva, mas atravessa um "fogo" purificador. Essa é a imagem clássica do Purgatório.
 
@@ -450,7 +450,7 @@ Outras passagens convergem. Mateus 12,32 fala em pecados "que não serão perdoa
 
 A história da Igreja confirma. As inscrições nas catacumbas romanas (séc. II) trazem orações pelos defuntos. Tertuliano, no séc. III, descreve oferendas anuais pelo aniversário de morte dos cristãos. Santo Agostinho, em "Confissões" livro IX, ora longamente por sua mãe Mônica falecida. Toda a liturgia cristã, desde o início, contém orações pelos mortos. Se não há Purgatório, essas orações de dois mil anos não fazem sentido.
 
-A doutrina foi formalmente definida pelos Concílios de Florença (1439) e Trento (1563), em resposta às negações protestantes.
+A doutrina foi formalmente definida pelos Concílios de Lyon II (1274) e Florença (1439), no diálogo com os cristãos orientais, e reafirmada por Trento (1563) contra as negações protestantes.
 
 ## O que o Purgatório realmente é
 
@@ -538,7 +538,7 @@ Entre 1970 e 1971, o anatomopatologista Dr. Edoardo Linoli, com o Dr. Ruggero Be
 
 ## Buenos Aires, Sokolka, Tixtla
 
-O caso de Lanciano não está sozinho. Em Buenos Aires, em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi analisada anos depois, com a autorização do então arcebispo, o cardeal Jorge Bergoglio, hoje Papa Francisco. O resultado: tecido do músculo cardíaco, com sinais de inflamação, como o de um coração que sofreu. Em Sokolka, na Polônia, em 2008, e em Tixtla, no México, em 2006, exames independentes chegaram ao mesmo tipo de achado: tecido cardíaco humano, vivo, do tipo AB.
+O caso de Lanciano não está sozinho. Em Buenos Aires, em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi analisada anos depois, com a autorização do então arcebispo, Jorge Bergoglio, depois Papa Francisco. O resultado: tecido do músculo cardíaco, com sinais de inflamação, como o de um coração que sofreu. Em Sokolka, na Polônia, em 2008, e em Tixtla, no México, em 2006, exames independentes chegaram ao mesmo tipo de achado: tecido cardíaco humano, vivo, do tipo AB.
 
 A convergência é o que mais impressiona. Casos separados por séculos e continentes, analisados por equipes diferentes, apontam todos para a mesma coisa: o músculo de um coração humano, do mesmo tipo sanguíneo, em estado de quem agoniza.
 
@@ -548,7 +548,7 @@ Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o 
 
 ## O que isso prova e o que pede fé
 
-É preciso honestidade. Esses milagres não substituem a fé nem a tornam desnecessária. A Presença Real se crê pela palavra de Cristo, não por exames de laboratório. Mas os milagres eucarísticos são sinais: confirmações sensíveis, dadas por Deus, de uma verdade que já estava na Escritura e na Tradição. O Bem-Aventurado Carlo Acutis, jovem italiano canonizado em 2025, dedicou a adolescência a catalogar mais de uma centena desses casos aprovados pela Igreja, justamente para ajudar as pessoas a crer.
+É preciso honestidade. Esses milagres não substituem a fé nem a tornam desnecessária. A Presença Real se crê pela palavra de Cristo, não por exames de laboratório. Mas os milagres eucarísticos são sinais: confirmações sensíveis, dadas por Deus, de uma verdade que já estava na Escritura e na Tradição. São Carlo Acutis, jovem italiano canonizado em 2025, dedicou a adolescência a catalogar mais de uma centena desses casos aprovados pela Igreja, justamente para ajudar as pessoas a crer.
 
 ## Perguntas-chave
 
@@ -575,7 +575,7 @@ Um detalhe chama a atenção. O tipo sanguíneo encontrado nesses milagres é o 
 
 ## Não é uma repetição, é uma re-presentação
 
-Há um mal-entendido comum: o de que a Missa "repete" o sacrifício de Jesus, como se a cruz não tivesse bastado. Não é isso. A Carta aos Hebreus é clara: Cristo se ofereceu "uma vez por todas" (Hebreus 9,28). A Missa não repete esse sacrifício. Ela o torna presente. O único sacrifício do Calvário, fora do tempo, é trazido ao altar aqui e agora, para que cada geração possa participar dele. O Concílio de Trento definiu que na Missa "se contém e se imola de modo incruento o mesmo Cristo que se ofereceu uma só vez de modo cruento na cruz".
+Há um mal-entendido comum: o de que a Missa "repete" o sacrifício de Jesus, como se a cruz não tivesse bastado. Não é isso. A Carta aos Hebreus é clara: Cristo se ofereceu "uma só vez" (Hebreus 9,28). A Missa não repete esse sacrifício. Ela o torna presente (Catecismo §1367). O único sacrifício do Calvário, fora do tempo, é trazido ao altar aqui e agora, para que cada geração possa participar dele. O Concílio de Trento (sessão XXII, 1562) definiu que na Missa "se contém e se imola de modo incruento o mesmo Cristo que se ofereceu uma só vez de modo cruento na cruz".
 
 ## As duas mesas: a Palavra e a Eucaristia
 
@@ -630,7 +630,7 @@ O céu não é um lugar de nuvens e harpas, mas o estado de felicidade perfeita 
 
 ## O Inferno
 
-O inferno é a verdade que mais se evita, mas Jesus falou dele mais do que qualquer outro no Novo Testamento. Ele é real e eterno. E é importante entender o que ele é: não um castigo que Deus, vingativo, impõe a quem queria salvar, mas a consequência de uma recusa livre e definitiva do amor de Deus. Deus não manda ninguém para o inferno. Ele respeita a liberdade de quem, até o fim, diz não. Como se costuma resumir, as portas do inferno estão trancadas por dentro. O inferno existe porque o amor de Deus é a sério, e o amor que não pode ser recusado não é amor.
+O inferno é a verdade que mais se evita, mas Jesus falou dele mais do que qualquer outro no Novo Testamento. Ele é real e eterno. E é importante entender o que ele é: não um castigo que Deus, vingativo, impõe a quem queria salvar, mas a consequência de uma recusa livre e definitiva do amor de Deus. Deus não predestina ninguém para o inferno (Catecismo §1037). Ele respeita a liberdade de quem, até o fim, diz não. Como resumiu C. S. Lewis (O Problema da Dor, 1940), as portas do inferno estão trancadas por dentro. O inferno existe porque o amor de Deus é a sério, e o amor que não pode ser recusado não é amor.
 
 ## O Purgatório
 
@@ -638,7 +638,7 @@ Entre os que morrem em pecado mortal e os já perfeitamente santos, há uma terc
 
 ## O suicídio e a confiança na misericórdia
 
-Um ponto exige delicadeza. Por muito tempo, espalhou-se a ideia de que quem se suicida está automaticamente condenado. Não é o que a Igreja ensina. O suicídio é objetivamente um mal grave, mas a culpabilidade da pessoa pode ser muito diminuída por sofrimento psíquico, angústia ou doença. Por isso, "não se deve desesperar da salvação eterna" dessas pessoas: a Igreja confia que Deus, por caminhos que só ele conhece, pode lhes oferecer a graça do arrependimento, e reza por elas. Diante da morte, a última palavra cristã não é o medo, mas a misericórdia.
+Um ponto exige delicadeza. Por muito tempo, espalhou-se a ideia de que quem se suicida está automaticamente condenado. Não é o que a Igreja ensina. O suicídio é objetivamente um mal grave, mas a culpabilidade da pessoa pode ser muito diminuída por sofrimento psíquico, angústia ou doença. Por isso, diz o Catecismo (§2283), "não se deve desesperar da salvação eterna" dessas pessoas: a Igreja confia que Deus, por caminhos que só ele conhece, pode lhes oferecer a graça do arrependimento, e reza por elas. Diante da morte, a última palavra cristã não é o medo, mas a misericórdia.
 
 ## O juízo final e a ressurreição da carne
 
@@ -653,7 +653,7 @@ No fim da história, haverá o juízo final, quando Cristo voltar "na sua glóri
 3. A Escritura elogia rezar pelos mortos "para que sejam libertados dos pecados". Isso faria sentido se, ao morrer, só houvesse céu ou inferno?
 
 4. A Igreja proíbe julgar a salvação de quem se suicida e reza por essas pessoas. Isso combina com a fama de que ela "condena" automaticamente?`,
-    references: ['hb-9-27', 'mt-25-31', 'ap-21-27', 'cic-1030', '2mc-12-44', '1cor-3-12'],
+    references: ['hb-9-27', 'mt-25-31', 'ap-21-27', 'cic-1030', '2mc-12-44', '1cor-3-12', 'lewis-problema-dor'],
   },
   {
     id: 63,
@@ -665,7 +665,7 @@ No fim da história, haverá o juízo final, quando Cristo voltar "na sua glóri
     imageAspect: 1.5,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCalling%2520of%2520the%2520apostles%2520by%2520Domenico%2520Ghirlandaio%2520Roma.jpg&w=2200&output=jpg&q=80',
     summary: 'Católicos e evangélicos creem em Cristo, mas divergem em pontos centrais: autoridade, salvação, sacramentos e a própria Igreja. Um mapa honesto e respeitoso das diferenças.',
-    body: `Católicos e evangélicos têm muito em comum: creem em Jesus Cristo, Filho de Deus, leem a mesma figura central, rezam, buscam viver o Evangelho. Por isso o católico vê no evangélico um irmão, em geral validamente batizado. Mas seria desonesto fingir que não há diferenças, e elas não são pequenas. Conhecê-las com clareza não serve para brigar, mas para buscar a verdade com caridade.
+    body: `Católicos e evangélicos têm muito em comum: creem em Jesus Cristo, Filho de Deus, leem a Bíblia, rezam, buscam viver o Evangelho. Por isso o católico vê no evangélico um irmão, em geral validamente batizado. Mas seria desonesto fingir que não há diferenças, e elas não são pequenas. Conhecê-las com clareza não serve para brigar, mas para buscar a verdade com caridade.
 
 ## A autoridade: só a Bíblia, ou Bíblia e Igreja?
 
@@ -700,7 +700,7 @@ Nada disso autoriza desprezo. O caminho não é a polêmica raivosa, mas o teste
 3. Jesus rezou para que todos fossem um. Dezenas de milhares de denominações divididas combinam com esse pedido?
 
 4. Diante de tantas interpretações opostas da mesma Bíblia, como saber qual é a verdadeira sem uma autoridade que Cristo tenha deixado para isso?`,
-    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', 'jo-17-20', 'csgc-denominacoes', 'hipona-393'],
+    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', 'jo-17-20', 'tg-2-24', 'gl-5-6', 'csgc-denominacoes', 'hipona-393'],
   },
   {
     id: 66,
@@ -724,7 +724,7 @@ Os demônios não são o oposto eterno de Deus, como se houvesse dois princípio
 
 ## Como o demônio age: a tentação
 
-No dia a dia, a ação do demônio quase nunca é a possessão espetacular do cinema. É algo mais discreto e mais perigoso: a tentação, a mentira, o desânimo, a divisão. Jesus o chamou de "pai da mentira", e São Paulo adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A sua arma preferida é convencer alguém de que ele não existe, ou de que o mal é bem. Resistir a ele é, antes de tudo, viver na verdade e na graça.
+No dia a dia, a ação do demônio quase nunca é a possessão espetacular do cinema. É algo mais discreto e mais perigoso: a tentação, a mentira, o desânimo, a divisão. Jesus o chamou de "pai da mentira" (João 8,44), e São Paulo adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A sua arma preferida é convencer alguém de que ele não existe, ou de que o mal é bem. Resistir a ele é, antes de tudo, viver na verdade e na graça.
 
 ## Possessão e exorcismo
 
@@ -736,7 +736,7 @@ O cristão não vive obcecado pelo demônio, nem o ignora. Vive uma vigilância 
 
 ## O perigo dos dois extremos
 
-C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: que neguemos a sua existência, ou que tenhamos por ele um interesse doentio e amedrontado. O equilíbrio católico é justamente este: levar a sério a realidade do mal espiritual, sem medo e sem obsessão, com os olhos postos não no demônio, mas em Cristo vencedor.
+C. S. Lewis, no prefácio de Cartas de um Diabo a seu Aprendiz (1942), observou que o diabo se alegra igualmente com dois erros opostos: que neguemos a sua existência, ou que tenhamos por ele um interesse doentio e amedrontado. O equilíbrio católico é justamente este: levar a sério a realidade do mal espiritual, sem medo e sem obsessão, com os olhos postos não no demônio, mas em Cristo vencedor.
 
 ## Perguntas-chave
 
@@ -763,7 +763,7 @@ C. S. Lewis observou que o diabo se alegra igualmente com dois erros opostos: qu
 
 ## O que é rezar
 
-Rezar não é dobrar a vontade de Deus com fórmulas, como se Ele fosse uma máquina de atender pedidos. É a relação viva com um Pai que ama você. A tradição define a oração como "a elevação da alma a Deus". E o mais importante: a iniciativa é dele. Você só procura porque já foi procurado primeiro. Não é você que precisa convencer Deus a aparecer. É Ele que já está esperando, e a oração é abrir a porta.
+Rezar não é dobrar a vontade de Deus com fórmulas, como se Ele fosse uma máquina de atender pedidos. É a relação viva com um Pai que ama você. São João Damasceno define a oração como "a elevação da alma a Deus" (Catecismo §2559). E o mais importante: a iniciativa é dele. Você só procura porque já foi procurado primeiro. Não é você que precisa convencer Deus a aparecer. É Ele que já está esperando, e a oração é abrir a porta.
 
 ## Não é só pedir
 
@@ -804,7 +804,7 @@ Antes de tudo, um esclarecimento: rezar o Rosário não é adorar Maria. É medi
 
 ## Não é "repetição vazia"
 
-A objeção mais comum é a das "vãs repetições". Mas a repetição feita por amor não é vã. Quem ama diz "eu te amo" mil vezes, e nem por isso são palavras ocas. Além disso, a Ave-Maria é, em boa parte, palavra de Deus: a saudação do anjo e as palavras de Isabel (Lucas 1,28.42). Enquanto os lábios repetem, o coração medita os fatos da salvação. Não é a boca que reza o Rosário, é a mente que contempla.
+A objeção mais comum é a das "vãs repetições" (Mateus 6,7). Mas a repetição feita por amor não é vã. Quem ama diz "eu te amo" mil vezes, e nem por isso são palavras ocas. Além disso, a Ave-Maria é, em boa parte, palavra de Deus: a saudação do anjo e as palavras de Isabel (Lucas 1,28.42). Enquanto os lábios repetem, o coração medita os fatos da salvação. Não é a boca que reza o Rosário, é a mente que contempla.
 
 ## Como rezar, passo a passo
 
@@ -840,7 +840,7 @@ A palavra "dízimo" significa a décima parte. No Antigo Testamento, era uma pr�
 
 ## A Igreja obriga dez por cento?
 
-Não existe uma lei católica universal que fixe o dízimo em dez por cento sob pena de pecado. O que a Igreja ensina é que o fiel deve contribuir, segundo as suas posses, para o sustento da obra de Deus e dos pobres. O "dez por cento" é uma referência saudável e generosa, um bom parâmetro, não um imposto que compra a salvação. Quem dá não está pagando uma taxa. Está participando de uma missão.
+Não existe uma lei católica universal que fixe o dízimo em dez por cento sob pena de pecado. O que a Igreja ensina é que o fiel deve contribuir, segundo as suas posses, para o sustento da obra de Deus e dos pobres (Catecismo §2043, Código de Direito Canônico, cânon 222). O "dez por cento" é uma referência saudável e generosa, um bom parâmetro, não um imposto que compra a salvação. Quem dá não está pagando uma taxa. Está participando de uma missão.
 
 ## O perigo dos dois extremos
 
@@ -883,7 +883,7 @@ Os milagres não servem para "provar" que a pessoa mereceu o céu, como se fosse
 
 ## Para que servem os santos
 
-Os santos não substituem Cristo nem competem com ele. São amigos no céu que intercedem por nós, como os anciãos do Apocalipse que oferecem a Deus "as orações dos santos" (Apocalipse 5,8). E são, sobretudo, a prova viva de que a santidade é possível, em toda época e condição: operários, reis, mães, jovens, sábios e analfabetos. Eles mostram que o Evangelho funciona, porque "Deus não é Deus de mortos, mas de vivos" (Mateus 22,32).
+Os santos não substituem Cristo nem competem com ele. São amigos no céu que intercedem por nós, como os anciãos do Apocalipse que oferecem a Deus "as orações dos santos" (Apocalipse 5,8). E são, sobretudo, a prova viva de que a santidade, "sem a qual ninguém pode ver o Senhor" (Hebreus 12,14), é possível, em toda época e condição: operários, reis, mães, jovens, sábios e analfabetos. Eles mostram que o Evangelho funciona, porque "Deus não é Deus de mortos, mas de vivos" (Mateus 22,32).
 
 ## Perguntas-chave
 
@@ -906,7 +906,7 @@ Os santos não substituem Cristo nem competem com ele. São amigos no céu que i
 
 ## A fé é dom e é resposta
 
-Ninguém crê apenas pela força do próprio esforço. A fé é, antes de tudo, graça, algo que Deus oferece. Por isso a primeira atitude é pedir, com a humildade daquele pai do Evangelho que disse a Jesus: "creio, Senhor, ajudai a minha falta de fé" (Marcos 9,24). Mas Deus respeita a liberdade: o dom precisa ser acolhido, e isso exige querer e dar passos concretos. A fé não cai pronta do céu sobre quem fica parado.
+Ninguém crê apenas pela força do próprio esforço. A fé é, antes de tudo, graça, algo que Deus oferece (Catecismo §153). Por isso a primeira atitude é pedir, com a humildade daquele pai do Evangelho que disse a Jesus: "creio, Senhor, ajudai a minha falta de fé" (Marcos 9,24). Mas Deus respeita a liberdade: o dom precisa ser acolhido, e isso exige querer e dar passos concretos. A fé não cai pronta do céu sobre quem fica parado.
 
 ## Caminhos concretos
 
@@ -941,7 +941,7 @@ Crises e períodos de aridez são normais, até nos santos. O erro é justamente
 
 ## O que é e o que não é
 
-Jejuar não é emagrecer nem testar a própria força de vontade. É um ato de amor e de penitência: dizer não ao corpo, em algo legítimo, para dizer um sim maior a Deus. É treinar a liberdade, lembrando que "nem só de pão vive o homem". O próprio Jesus jejuou quarenta dias no deserto antes de iniciar sua missão (Mateus 4,2), e a Quaresma reproduz justamente esse tempo.
+Jejuar não é emagrecer nem testar a própria força de vontade. É um ato de amor e de penitência: dizer não ao corpo, em algo legítimo, para dizer um sim maior a Deus. É treinar a liberdade, lembrando que "nem só de pão vive o homem" (Mateus 4,4). O próprio Jesus jejuou quarenta dias no deserto antes de iniciar sua missão (Mateus 4,2), e a Quaresma reproduz justamente esse tempo.
 
 ## Quaresma: os quarenta dias
 
@@ -949,7 +949,7 @@ A Quaresma são os quarenta dias de preparação para a Páscoa, a maior festa c
 
 ## As regras concretas
 
-Na Igreja Católica, as exigências mínimas são poucas e razoáveis. Há jejum (fazer uma refeição mais leve) na Quarta-Feira de Cinzas e na Sexta-Feira Santa. E há abstinência de carne nessas duas datas e em todas as sextas-feiras da Quaresma. São mínimos, abertos a quem quiser ser mais generoso, e doentes, idosos, gestantes e crianças estão dispensados. A Igreja pede saúde do corpo, não masoquismo.
+Na Igreja Católica, as exigências mínimas são poucas e razoáveis. Há jejum (uma só refeição completa no dia, e no máximo duas pequenas) na Quarta-Feira de Cinzas e na Sexta-Feira Santa, para quem tem de 18 a 59 anos. E há abstinência de carne, a partir dos 14 anos, nessas duas datas e em todas as sextas-feiras da Quaresma. Nas demais sextas do ano a lei universal também pede abstinência, mas as conferências episcopais, como a CNBB, permitem substituí-la por outra penitência. São mínimos, abertos a quem quiser ser mais generoso, e doentes, idosos, gestantes e crianças estão dispensados. A Igreja pede saúde do corpo, não masoquismo.
 
 ## Por que justo na sexta-feira
 

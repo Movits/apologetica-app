@@ -8,7 +8,7 @@ import { articles } from '../data/articles';
 import { referenceById, withEn, translateRef, translateAuthor, translateYear } from '../data/references';
 import { GALLERY, useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { shareArticle } from '../utils/share';
+import { shareArticle, shareText } from '../utils/share';
 import { pick, categoryLabel } from '../utils/i18nData';
 import { speakLong, stopSpeaking, isSpeaking } from '../utils/speakLong';
 import { resolveVoice, getSavedRate, ttsLocale } from '../utils/ttsVoice';
@@ -16,10 +16,15 @@ import { stripMarkdownForSpeech } from '../utils/tts';
 import { scrollFraction, stepped } from '../utils/scrollProgress';
 import { setLastRead } from '../utils/lastRead';
 import { isFavorite, toggleFavorite } from '../utils/favorites';
-import { markPlanDay, markAsRead } from '../utils/readingProgress';
+import { markPlanDay } from '../utils/readingProgress';
 import { planEntriesByArticle } from '../data/readingPlan';
 import { ART_IMAGES } from '../data/artImages';
 import { artworkSummary } from '../data/artworks';
+import { LESSONS } from '../data/lessons';
+import { useJourney } from '../hooks/useJourney';
+import { lessonOf } from '../utils/journey';
+import { dispatchJourney } from '../utils/journeyStore';
+import { LessonCheck, LessonHook, LessonSummary, PocketAnswer } from '../components/lesson';
 import { commonsUrl } from '../utils/artImage';
 import { translucentHeaderOptions, fullBleedContentOptions, leftTitleHeaderOptions } from '../navigation/chrome';
 import { Button, Group, Row, SectionTitle, useTabBarHeightSafe } from '../components/ui';
@@ -60,10 +65,17 @@ function HeaderActions({ speaking, fav, labels, onListen, onShare, onFav }) {
 
 export default function ArticleDetailScreen({ route, navigation }) {
   const { colors, tokens, text } = useTheme();
+  const { space } = tokens;
   const { t, isEn } = useLanguage();
   const headerHeight = useHeaderHeight();
   const tabBarHeight = useTabBarHeightSafe();
   const article = articles.find((a) => a.id === route.params?.articleId);
+  // Lição da Jornada deste artigo (previsão, resumo, resposta de bolso e
+  // teste) e o que a pessoa já fez nela.  é null até carregar: os
+  // blocos interativos só aparecem depois, para não piscar do estado vazio.
+  const lesson = article ? LESSONS[article.id] : null;
+  const journey = useJourney();
+  const lessonState = article && journey ? lessonOf(journey, article.id) : null;
 
   // Herói: mede a largura e dá altura explícita (sem corte em web/nativo).
   // As proporções são da imagem, não medidas de layout.
@@ -130,7 +142,9 @@ export default function ArticleDetailScreen({ route, navigation }) {
     // Chegou perto do fim: conta como lido (selo "Lido" na lista de Artigos).
     if (s.max >= READ_THRESHOLD && !s.marked) {
       s.marked = true;
-      markAsRead(article.id);
+      // Conta na Jornada (XP de leitura, uma vez por artigo); o store também
+      // grava o selo "Lido" das listas (readingProgress.markAsRead).
+      dispatchJourney({ type: 'read', articleId: article.id }).catch(() => {});
     }
   }, [article]);
 
@@ -306,6 +320,18 @@ export default function ArticleDetailScreen({ route, navigation }) {
     navigation.navigate('Dialogue', { dialogueId });
   }, [navigation]);
 
+  const openJourney = useCallback(() => navigation.navigate('Journey'), [navigation]);
+
+  const onAnswerHook = useCallback((choice) => {
+    if (!article || !lesson?.hook) return;
+    dispatchJourney({ type: 'hook', articleId: article.id, choice, correct: choice === lesson.hook.correct }).catch(() => {});
+  }, [article, lesson]);
+
+  const sharePocket = useCallback(() => {
+    if (!article || !lesson) return;
+    shareText(`"${pick(lesson, 'oneLiner', isEn)}"\n\n${pick(article, 'title', isEn)}`);
+  }, [article, lesson, isEn]);
+
   const openOtherArticle = useCallback((id) => {
     // push (não replace) pra preservar o histórico: voltar volta pro artigo anterior.
     navigation.push(route.name, { articleId: id });
@@ -407,7 +433,19 @@ export default function ArticleDetailScreen({ route, navigation }) {
             </View>
           )}
 
+          {lesson?.hook && journey ? (
+            <LessonHook hook={lesson.hook} choice={lessonState?.hook ?? null} onAnswer={onAnswerHook} style={{ marginBottom: space.lg }} />
+          ) : null}
+
           <MarkdownText text={displayBody} onOpenGlossary={openGlossary} />
+
+          {lesson ? (
+            <>
+              <LessonSummary points={pick(lesson, 'keyPoints', isEn)} />
+              <PocketAnswer sentence={pick(lesson, 'oneLiner', isEn)} onShare={sharePocket} style={{ marginTop: space.md }} />
+              <LessonCheck articleId={article.id} questions={lesson.check} journey={journey} onOpenJourney={openJourney} />
+            </>
+          ) : null}
 
           {article.tool && (
             <Button

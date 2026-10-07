@@ -858,7 +858,7 @@ export const references = [
     author: 'Tertuliano',
     year: 'c. 207 a 212 d.C.',
     topic: 'Encarnação / virgindade de Maria',
-    text: '"Cristo nasceu de uma virgem; e foi necessário ser assim, para que aquele que veio para destruir a morte pela vida não nascesse pela mesma porta pela qual a morte havia entrado. Maria permaneceu virgem após o parto, conforme a tradição apostólica."',
+    text: '"Cristo nasceu de uma virgem, e foi necessário ser assim, para que aquele que veio destruir a morte pela vida não nascesse pela mesma porta pela qual a morte havia entrado." Tertuliano defende a concepção virginal, mas nega a virgindade de Maria depois do parto (De Carne Christi 23), posição que São Jerônimo censura no Contra Helvídio (383).',
   },
   {
     id: 'cirilo-jerusalem',

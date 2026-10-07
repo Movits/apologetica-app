@@ -28,9 +28,9 @@ Terceiro, o cristianismo não ignora o sofrimento, ele o transforma. Deus mesmo 
 
 ## A objeção que se volta contra si
 
-Há ainda um problema filosófico que ateus raramente percebem. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, não há padrão objetivo. O próprio argumento colapsa: o ateísmo não tem base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis observou em "O Problema da Dor" (1940), quando tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. A objeção do mal, levada a sério, prova justamente a existência do padrão moral objetivo, ou seja, de Deus.
+Há ainda um problema filosófico que ateus raramente percebem. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, não há padrão objetivo. O próprio argumento colapsa: o ateísmo não tem base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis contou em "Cristianismo Puro e Simples" (1952), quando, ainda ateu, tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. A objeção do mal, levada a sério, prova justamente a existência do padrão moral objetivo, ou seja, de Deus.
 
-São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção.
+São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. O Catecismo resume: Deus permite o mal porque respeita a liberdade da criatura e, misteriosamente, sabe tirar dele o bem (Catecismo §311). A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção.
 
 ## Perguntas-chave
 
@@ -65,7 +65,7 @@ A distinção crucial é entre a inclinação e o ato. A Igreja não condena a t
 
 São Paulo trata do tema em Romanos 1,26-27 e em 1 Coríntios 6,9-11. Esta última passagem é importante porque, depois de listar várias condutas (incluindo atos homossexuais) que excluem do Reino, conclui: "E tais éreis vós, alguns de vós. Mas fostes lavados, mas fostes santificados, mas fostes justificados em nome do Senhor Jesus Cristo". O ensinamento apostólico não é de exclusão, é de transformação possível pela graça.
 
-Essa posição não é discriminação. A Igreja pede castidade a todos, casados e solteiros. Um homem ou mulher heterossexual solteiro também é chamado à castidade. O ensinamento é universal, exigente, e o mesmo para todos. Não há um padrão moral para uns e outro para outros.
+Essa posição não é discriminação. A Igreja pede castidade a todos, casados e solteiros (Catecismo §2348 e 2359). Um homem ou mulher heterossexual solteiro também é chamado à castidade. O ensinamento é universal, exigente, e o mesmo para todos. Não há um padrão moral para uns e outro para outros.
 
 ## "Amor é amor"?
 
@@ -92,11 +92,11 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
     imageAspect: 1.24,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FMadonna%2520with%2520child%2520and%2520angels.jpg&w=2200&output=jpg&q=80',
     summary: 'A vida humana começa na concepção. A ciência confirma o que a fé sempre ensinou.',
-    body: `A doutrina católica sobre o aborto é constante desde o século I: é gravemente imoral, equivalente ao homicídio. A objeção comum é que se trata de "imposição religiosa" sobre tema secular. A resposta é que a ciência confirma o que a fé sempre afirmou.
+    body: `A doutrina católica sobre o aborto é constante desde o século I: é gravemente imoral, equivalente ao homicídio (Catecismo §2270-2271). A objeção comum é que se trata de "imposição religiosa" sobre tema secular. A resposta é que a ciência confirma o que a fé sempre afirmou.
 
 ## O que a ciência diz
 
-O que a ciência embriológica estabelece sem disputa: na fecundação (encontro do espermatozoide com o óvulo), forma-se um novo organismo humano completo. Não "pedaço de tecido da mãe", não "potencial vida": um ser humano individual, geneticamente distinto, com cromossomos próprios, capaz de auto-organização e desenvolvimento contínuo. O coração começa a bater entre 18 e 21 dias. O sistema nervoso central inicia formação entre 18 e 27 dias. Em 8 semanas, todos os órgãos principais estão formados.
+O que a ciência embriológica estabelece sem disputa: na fecundação (encontro do espermatozoide com o óvulo), forma-se um novo organismo humano completo. Não "pedaço de tecido da mãe", não "potencial vida": um ser humano individual, geneticamente distinto, com cromossomos próprios, capaz de auto-organização e desenvolvimento contínuo. O coração começa a bater por volta da terceira semana (cerca de 21 a 22 dias). O sistema nervoso central inicia formação entre 18 e 27 dias. Em 8 semanas, todos os órgãos principais estão formados.
 
 Esses são fatos científicos, não opiniões religiosas. Qualquer livro de embriologia médica os afirma. A questão é exclusivamente filosófica e ética: esse ser humano tem direito à vida?
 
@@ -124,7 +124,7 @@ Em caso de malformação fetal: nenhuma deficiência justifica execução. Bebê
 
 A jurisprudência católica é firme: o aborto direto é objetivamente um pecado mortal. Aqueles que cooperam (a mulher que aborta, o médico que executa, quem força a mulher a abortar) incorrem em excomunhão automática (Cânone 1397).
 
-Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a quem se arrepende. O Papa Francisco autorizou todos os sacerdotes a absolverem o pecado do aborto (antes era reservado a bispos em alguns lugares). Existe pastoral específica para mulheres que abortaram, com acompanhamento espiritual, oração, reconciliação. Como em todo pecado: condenação clara do ato, misericórdia plena para a pessoa.
+Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a quem se arrepende. O Papa Francisco, na carta apostólica Misericordia et Misera (2016), autorizou todos os sacerdotes a absolverem o pecado do aborto (antes era reservado a bispos em alguns lugares). Existe pastoral específica para mulheres que abortaram, com acompanhamento espiritual, oração, reconciliação. Como em todo pecado: condenação clara do ato, misericórdia plena para a pessoa.
 
 ## Perguntas-chave
 
@@ -147,11 +147,11 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
     imageAspect: 0.75,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRaffael%2520015.jpg&w=2200&output=jpg&q=80',
     summary: 'A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.',
-    body: `Em 25 de julho de 1968, o Beato Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, as previsões de Paulo VI sobre as consequências sociais se cumpriram com precisão profética.
+    body: `Em 25 de julho de 1968, São Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, as previsões de Paulo VI sobre as consequências sociais se cumpriram com precisão profética.
 
 ## Os dois sentidos do ato conjugal
 
-O ensinamento básico é simples. A sexualidade humana, segundo a teologia católica, tem dois significados inseparáveis: unitivo (expressão de amor entre os esposos) e procriativo (abertura à transmissão da vida). Esses dois aspectos foram instituídos pelo Criador e estão unidos pela própria natureza do ato. Separá-los artificialmente é violar a verdade do ato conjugal.
+O ensinamento básico é simples. A sexualidade humana, segundo a teologia católica, tem dois significados inseparáveis: unitivo (expressão de amor entre os esposos) e procriativo (abertura à transmissão da vida), como ensinam Humanae Vitae §12 e o Catecismo §2366-2370. Esses dois aspectos foram instituídos pelo Criador e estão unidos pela própria natureza do ato. Separá-los artificialmente é violar a verdade do ato conjugal.
 
 A contracepção artificial separa esses dois aspectos: mantém o prazer e a união física, mas elimina deliberadamente a abertura à vida. O ato conjugal deixa de ser totalmente verdadeiro. Transforma-se em algo diferente do que naturalmente é.
 
@@ -163,7 +163,7 @@ A Igreja não condena o planejamento familiar responsável. Ao contrário, ensin
 
 Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São cientificamente comprovados (eficácia superior a 98% quando bem usados), respeitam o corpo da mulher, exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal.
 
-Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laqueadura, vasectomia) separam artificialmente os dois aspectos. Cada método tem problemas específicos. A pílula tem efeitos abortivos em pelo menos parte dos casos (impede a implantação do embrião já formado). O DIU funciona principalmente como abortivo. A laqueadura mutila um órgão saudável. O preservativo introduz uma barreira artificial no ato.
+Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laqueadura, vasectomia) separam artificialmente os dois aspectos. Cada método tem problemas específicos. A pílula tem efeitos abortivos em pelo menos parte dos casos (impede a implantação do embrião já formado). O DIU, além de dificultar a fecundação, pode impedir a implantação do embrião já formado. A laqueadura mutila um órgão saudável. O preservativo introduz uma barreira artificial no ato.
 
 ## As quatro previsões de Paulo VI
 
@@ -214,11 +214,11 @@ Pecado não é desobedecer a uma regra arbitrária, como quem é multado por est
 
 ## Pecado mortal e pecado venial
 
-Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue "pecado que leva à morte" e pecado que não leva (1 João 5,16-17). A Igreja precisou isso com clareza. O pecado mortal rompe a amizade com Deus e exige três condições juntas: matéria grave, plena consciência de que é grave e consentimento deliberado da vontade. Faltando uma delas, não há pecado mortal. O pecado venial é a falta mais leve, que não rompe, mas esfria e enfraquece a caridade, como uma doença que não mata mas debilita. A distinção é libertadora: ela impede tanto a frouxidão ("nada é grave") quanto o escrúpulo ("tudo me condena").
+Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue "pecado que leva à morte" e pecado que não leva (1 João 5,16-17). A Igreja precisou isso com clareza. O pecado mortal rompe a amizade com Deus e exige três condições juntas: matéria grave, plena consciência de que é grave e consentimento deliberado da vontade (Catecismo §1857). Faltando uma delas, não há pecado mortal. O pecado venial é a falta mais leve, que não rompe, mas esfria e enfraquece a caridade, como uma doença que não mata mas debilita. A distinção é libertadora: ela impede tanto a frouxidão ("nada é grave") quanto o escrúpulo ("tudo me condena").
 
 ## Os sete pecados capitais
 
-Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça. "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade, à avareza, a generosidade, à inveja, a caridade, à ira, a mansidão, à luxúria, a castidade, à gula, a temperança, à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
+Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça (Catecismo §1866). "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade, à avareza, a generosidade, à inveja, a caridade, à ira, a mansidão, à luxúria, a castidade, à gula, a temperança, à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
 
 ## O pecado contra o Espírito Santo
 
@@ -253,7 +253,7 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
 
 ## O que a Igreja realmente ensina
 
-O sexo não é sujo nem vergonhoso. É um dom bom, criado por Deus, que disse "macho e fêmea os criou" e os abençoou (Gênesis 1,27-28). A doutrina católica reconhece nele dois sentidos inseparáveis: a união profunda entre duas pessoas e a abertura à vida. E ensina que o seu lugar próprio é o matrimônio, a aliança total e definitiva entre um homem e uma mulher.
+O sexo não é sujo nem vergonhoso. É um dom bom, criado por Deus, que disse "macho e fêmea os criou" e os abençoou (Gênesis 1,27-28). A doutrina católica reconhece nele dois sentidos inseparáveis: a união profunda entre duas pessoas e a abertura à vida. E ensina que o seu lugar próprio é o matrimônio, a aliança total e definitiva entre um homem e uma mulher, "uma só carne" que São Paulo chama de grande mistério (Efésios 5,31-32).
 
 ## Por que reservar ao casamento?
 
@@ -261,7 +261,7 @@ A razão não é um tabu, é a coerência. O ato sexual fala uma linguagem do co
 
 ## Castidade não é repressão
 
-Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida. É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda. Para o casado, que é fiel. Para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
+Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida (Catecismo §2337 e 2348-2349). É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda. Para o casado, que é fiel. Para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
 
 ## Pornografia e masturbação
 
@@ -312,11 +312,11 @@ Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar
 
 ## Os mais contestados hoje
 
-Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses") condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
+Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses", Êxodo 20,3) condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
 
 ## Caminho de liberdade, não jaula
 
-No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir. Protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmo chama a Lei de "delícia" e "luz para os meus passos".
+No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir. Protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmista chama a Lei de "delícia" e a palavra de Deus de "lâmpada para os meus pés" (Salmo 119,77 e 105).
 
 ## Perguntas-chave
 

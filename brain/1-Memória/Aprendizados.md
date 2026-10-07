@@ -124,3 +124,29 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - O Fast Refresh com vários agentes editando reinicia a navegação do app web
   e rerroda efeitos: testes manuais no painel do navegador ficam instáveis.
   Para verificar fluxo, script de Playwright direto no servidor.
+
+## Sobre revisão de conteúdo em lote e gamificação (2026-10-07)
+
+- Agentes de revisão devolvem propostas, não edições: pedir um bloco JSON
+  `{ file, find, replace, reason }` com o trecho exato e aplicar por script que
+  exige o `find` uma vez só. 231 substituições entraram sem um erro de
+  posição, e cada uma foi lida antes.
+- Dividir uma categoria grande entre dois agentes exige dois arquivos de saída
+  (juntar depois é um script de dez linhas) e proibir os dois de editar o
+  arquivo compartilhado.
+- Conteúdo gerado por IA que cita santos e papas envelhece rápido: Carlo
+  Acutis e Paulo VI eram "beatos" em artigos escritos depois das canonizações.
+  Rever títulos e "hoje Papa X" a cada revisão.
+- Imagem gerada por IA não entra no app, nem como emblema pequeno: o dono
+  reconhece a "cara de IA" (medalhão 3D brilhante, filigrana, luz de render) e
+  rejeita. Ícone e emblema se desenham no sistema do `BrandMark` (SVG, traço
+  4,5, uma cor do tema). O Higgsfield serve para painéis de referência e
+  marketing, não para elementos de interface.
+- Para desenhar um conjunto de marcas vetoriais com agentes: folha de contato
+  renderizada com Playwright (vários tamanhos, dois temas, as marcas do app
+  como referência), cada designer olha a própria folha e corrige, juízes com
+  lentes diferentes pontuam, uma síntese fecha a "mão" única.
+- A política de rede do ambiente de nuvem bloqueava o CDN do Higgsfield
+  (cloudfront); contornar por Action no GitHub é recusado pelo classificador
+  (e com razão). O `sandbox_exec` do Higgsfield mostra a imagem gerada ao
+  modelo mesmo quando o container não consegue baixá-la.

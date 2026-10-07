@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
@@ -10,7 +10,9 @@ import { pick } from '../utils/i18nData';
 import { addDays, todayKey } from '../utils/daily';
 import { recordDailyAnswer } from '../utils/quizHistory';
 import { haptics } from '../utils/haptics';
-import { Button, Group, PressScale, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { OptionButton } from '../components/lesson';
+import { dispatchJourney } from '../utils/journeyStore';
 import { centeredColumn } from '../components/ReadingColumn';
 
 const STREAK_KEY = 'quiz:streak';
@@ -101,53 +103,6 @@ function Meta({ icon, iconColor, children }) {
       {icon ? <Ionicons name={icon} size={iconSize.sm} color={iconColor ?? colors.textSubtle} /> : null}
       <Text style={[text('footnote'), { color: colors.textSubtle }]}>{children}</Text>
     </View>
-  );
-}
-
-// Alternativa de resposta. `state`: 'idle' | 'correct' | 'wrong'. Certo e
-// errado aparecem só no ícone e na hairline (success/danger), o fundo continua
-// `card`. É um rádio: `aria-checked` marca a escolhida.
-function OptionButton({ label, state = 'idle', checked, disabled, onPress, centered, style }) {
-  const { colors, tokens, text } = useTheme();
-  const { space, radius, icon } = tokens;
-  const tone = state === 'correct' ? colors.success : state === 'wrong' ? colors.danger : null;
-  const iconName = state === 'correct' ? 'checkmark-circle' : state === 'wrong' ? 'close-circle' : null;
-
-  return (
-    <PressScale
-      role="radio"
-      aria-checked={Boolean(checked)}
-      aria-disabled={disabled || undefined}
-      disabled={disabled}
-      onPress={onPress}
-      style={({ pressed }) => [
-        {
-          minHeight: 44,
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: centered ? 'center' : 'flex-start',
-          gap: space.sm,
-          paddingHorizontal: space.md,
-          paddingVertical: space.sm,
-          borderRadius: radius.md,
-          backgroundColor: pressed ? colors.separator : colors.card,
-          borderWidth: StyleSheet.hairlineWidth,
-          borderColor: tone ?? colors.separator,
-        },
-        style,
-      ]}
-    >
-      <Text
-        style={[
-          centered ? text('headline') : text('body'),
-          { color: colors.text, textAlign: centered ? 'center' : 'left' },
-          centered ? null : { flex: 1 },
-        ]}
-      >
-        {label}
-      </Text>
-      {iconName ? <Ionicons name={iconName} size={icon.md} color={tone} /> : null}
-    </PressScale>
   );
 }
 
@@ -242,6 +197,8 @@ function MultipleChoiceGame({ mode, navigation }) {
           await AsyncStorage.setItem(STREAK_KEY, String(newStreak));
         }
       } catch {}
+      // A pergunta do dia também rende XP na Jornada (uma vez por dia).
+      dispatchJourney({ type: 'dailyQuiz', dateKey: today, correct: ok }).catch(() => {});
     }
   };
 

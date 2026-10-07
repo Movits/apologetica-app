@@ -20,11 +20,11 @@ O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, S
 
 ## Quem interpreta?
 
-O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity estima mais de 45.000), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação particular".
+O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity conta mais de 45.000 denominações cristãs no mundo, a imensa maioria protestante ou independente), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação particular".
 
 ## Foi a Igreja que definiu o cânon
 
-O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concílio de Hipona em 393 e o Concílio de Cartago em 397 fixaram pela primeira vez a lista dos 73 livros do cânon católico, com a participação de Santo Agostinho. Antes desses concílios, ninguém sabia oficialmente quais livros pertenciam à Bíblia. Sem confiar na autoridade da Igreja, não há como saber quais livros pertencem à Bíblia. O próprio livro não traz índice.
+O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concílio de Hipona em 393 e o Concílio de Cartago em 397 fixaram pela primeira vez a lista dos 73 livros do cânon católico, com a participação de Santo Agostinho. Antes desses concílios não havia uma lista oficial fechada: listas de bispos e igrejas locais circulavam e divergiam entre si. Sem confiar na autoridade da Igreja, não há como saber quais livros pertencem à Bíblia. O próprio livro não traz índice.
 
 ## Uma novidade do século XVI
 
@@ -40,12 +40,12 @@ A solução católica é coerente: a Revelação de Deus se transmite pela Sagra
 
 2. Quem definiu quais livros pertencem ao Novo Testamento, e por que você aceita essa decisão se desconfia da autoridade da Igreja que a tomou?
 
-3. Se a Bíblia se interpreta a si mesma claramente, por que existem mais de 45.000 denominações protestantes em conflito sobre interpretação?
+3. Se a Bíblia se interpreta a si mesma claramente, por que existem dezenas de milhares de denominações em conflito sobre interpretação?
 
 4. Em 2 Tessalonicenses 2,15 Paulo manda guardar tradições "por palavra ou por carta". Onde está agora a tradição oral apostólica que não foi escrita? Se ela se perdeu, parte da Revelação se perdeu?
 
 5. A Igreja antes do séc. XVI, que produziu mártires, doutores, santos, missionários, definiu o cânon, formulou a Trindade e a divindade de Cristo, estava em erro fundamental sobre como Deus se revela?`,
-    references: ['2ts-2-15', '2pd-1-20', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397'],
+    references: ['2ts-2-15', '2pd-1-20', 'mt-16-18', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397'],
   },
   {
     id: 18,
@@ -69,11 +69,11 @@ Os apóstolos pregaram em grego no mundo greco-romano, usando a Septuaginta como
 
 ## O que mudou: o cânon de Jâmnia
 
-O que mudou? Em 90 d.C., depois da destruição do Templo, líderes rabínicos judeus reunidos no chamado "Concílio de Jâmnia" fixaram um cânon hebraico mais estreito, excluindo os livros escritos em grego ou de cujo original hebraico não restavam cópias. Eles tinham razões pastorais (combater o cristianismo, que usava esses livros como prova) e linguísticas. Foi um cânon judaico pós-cristão, não a Bíblia que Cristo e os apóstolos receberam.
+O que mudou? Por volta do ano 90, depois da destruição do Templo, o judaísmo rabínico (a tradição fala numa reunião de sábios em Jâmnia, embora os historiadores hoje duvidem de um "concílio" formal) consolidou um cânon hebraico mais estreito, deixando de fora os livros conhecidos em grego ou sem texto hebraico corrente. Pesavam razões linguísticas e também a polêmica com o cristianismo, que usava esses livros. Foi um cânon judaico pós-cristão, não a Bíblia que Cristo e os apóstolos receberam.
 
 ## Lutero remove sete livros
 
-No século XVI, Martinho Lutero adotou o cânon judaico de Jâmnia, removendo os deuterocanônicos das Bíblias protestantes. Fez isso por motivos teológicos: livros como 2 Macabeus 12,45 falam explicitamente em rezar pelos mortos, fundamentando a doutrina católica do Purgatório, que Lutero rejeitava. Foi uma decisão posterior, contra mil e quinhentos anos de tradição cristã unânime.
+No século XVI, Martinho Lutero adotou o cânon hebraico mais estreito e, na sua Bíblia de 1534, tirou os deuterocanônicos do corpo do Antigo Testamento, deixando-os num apêndice de "apócrifos", úteis de ler mas não Escritura. Com o tempo, as Bíblias protestantes passaram a omiti-los de vez. Fez isso por motivos teológicos: livros como 2 Macabeus 12,45 falam explicitamente em rezar pelos mortos, fundamentando a doutrina católica do Purgatório, que Lutero rejeitava. Foi uma decisão posterior, contra mil e quinhentos anos de uso constante na Igreja (mesmo quando um ou outro Padre, como São Jerônimo, teve reservas, a liturgia e os concílios sempre os acolheram).
 
 ## Trento confirma o cânon
 
@@ -89,10 +89,10 @@ Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob
 
 2. Por que a Bíblia de Lutero seguiu o cânon judaico de 90 d.C., feito depois do cristianismo, e não a Bíblia dos apóstolos?
 
-3. Se os deuterocanônicos não são inspirados, por que Hebreus 11,35 cita explicitamente o martírio de 2 Macabeus 7?
+3. Se os deuterocanônicos não são inspirados, por que Hebreus 11,35 alude claramente ao martírio de 2 Macabeus 7?
 
 4. Por que protestantes admitem que sua Bíblia tem livros que a Igreja decidiu incluir, mas rejeitam outros que a mesma Igreja decidiu incluir?`,
-    references: ['hipona-393', 'cartago-397', 'cic-80-83', 'dei-verbum-9'],
+    references: ['hipona-393', 'cartago-397', '2mc-12-44', 'cic-80-83', 'dei-verbum-9'],
   },
   {
     id: 31,
@@ -124,7 +124,7 @@ Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-roma
 
 As Cartas (Paulo, Tiago, Pedro, João, Judas, Hebreus) são correspondência ocasional. Foram escritas para problemas concretos de comunidades específicas. Paulo não está escrevendo um sistema teológico fechado. Está respondendo a questões. Por isso 1 Coríntios passa de discussão sobre carnes de ídolos a regulamento de Eucaristia em poucas páginas: refletem a pauta dos coríntios, não um índice de teologia sistemática.
 
-Os Profetas (Isaías, Jeremias, Ezequiel, os 12 menores) misturam denúncia social, oráculo de juízo, promessa messiânica e visão simbólica. Isaías é o profeta de imagens mais densas: a "Águia das Águias" do capítulo 31, o Servo Sofredor do 53, o céu novo do 65. As datas e cenários históricos importam muito ali, mas o que está em jogo são padrões teológicos repetíveis, não fotografias documentais de cada inimigo histórico.
+Os Profetas (Isaías, Jeremias, Ezequiel, os 12 menores) misturam denúncia social, oráculo de juízo, promessa messiânica e visão simbólica. Isaías é o profeta de imagens mais densas: a vinha do Senhor do capítulo 5, o Servo Sofredor do 53, o céu novo do 65. As datas e cenários históricos importam muito ali, mas o que está em jogo são padrões teológicos repetíveis, não fotografias documentais de cada inimigo histórico.
 
 O Apocalipse é o ápice do gênero apocalíptico, comum no judaísmo do séc. II a.C. ao séc. II d.C. (Daniel também é apocalíptico em parte). Esse gênero usa símbolos densos: números (7, 12, 1000), animais, cores, partes do corpo, ciclos repetidos. Tudo é figura. Tentar ler o Apocalipse como roteiro literal de eventos futuros (como faz uma certa escatologia evangélica popular) é o oposto da intenção do autor. João escreve sob perseguição romana para encorajar cristãos a perseverar, mostrando em linguagem simbólica a vitória final do Cordeiro. Os números de animais e cabeças são código judaico do séc. I, não previsões de eventos políticos modernos.
 
@@ -138,7 +138,7 @@ O terceiro princípio é o testemunho parcial. Quando quatro pessoas relatam o m
 
 Primeiro tipo: omissões interpretadas como negações. Mateus 28,5 menciona um anjo no túmulo, Lucas 24,4 menciona dois. Não há contradição: quando há dois, sempre há um. Mateus foca no que falou.
 
-Segundo tipo: arredondamentos e estimativas. Marcos 6,44 fala em "cinco mil homens" da multidão multiplicada dos pães. Outros relatos não contam mulheres e crianças. São números de estimativa popular, não censo demográfico.
+Segundo tipo: arredondamentos e estimativas. Marcos 6,44 fala em "cinco mil homens" na multiplicação dos pães, e Mateus 14,21 esclarece: "sem contar mulheres e crianças". São números de estimativa popular, não censo demográfico.
 
 Terceiro tipo: ordem narrativa não-cronológica. Os Evangelhos frequentemente organizam por tema, não por sequência temporal. As tentações no deserto aparecem em ordem diferente em Mateus 4 e Lucas 4 porque cada evangelista organiza por sua finalidade teológica.
 
@@ -175,7 +175,7 @@ A solução envolve duas vias complementares: uma linguística e uma histórica.
 
 ## A via linguística
 
-Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "haute apographe prṓtē egeneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 e 15,18 trazem esse uso explícito: prṓtós mou ("antes de mim"), referindo-se a Jesus em relação a João Batista. Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". O gramático Daniel Wallace, autor da gramática grega "Greek Grammar Beyond the Basics" (1996), referência em estudos do Novo Testamento, defende essa tradução como gramaticalmente legítima e historicamente coerente.
+Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "haute apographe prṓtē egeneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 traz esse uso explícito: prṓtós mou ("antes de mim"), Jesus em relação a João Batista, e João 15,18 repete a construção ("antes de vós"). Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". O gramático Daniel Wallace, autor da gramática grega "Greek Grammar Beyond the Basics" (1996), referência em estudos do Novo Testamento, defende essa tradução como gramaticalmente legítima e historicamente coerente.
 
 ## A via histórica
 
@@ -216,7 +216,7 @@ A explicação católica clássica, sustentada desde os Padres, distingue geneal
 
 ## Linha legal e linha biológica
 
-Primeira hipótese: Mateus dá a linha legal de José, Lucas dá a linha biológica de Maria. Mateus escreve para um público judeu e enfatiza Jesus como Messias filho de Davi pela linha real (Salomão), legalmente herdeiro do trono através de José, esposo de Maria. Lucas escreve para um público mais amplo (greco-romano) e traça a ascendência humana de Jesus por sua mãe biológica, que também era da casa de Davi (pela linha de Natã, filho menor de Davi). O versículo Lucas 3,23 começa com "Jesus, como se cria filho de José, filho de Heli". A construção grega permite ler que Heli era pai de Maria, sogro de José, sendo a linha lucana a maternal.
+Primeira hipótese: Mateus dá a linha legal de José, Lucas dá a linha biológica de Maria. Mateus escreve para um público judeu e enfatiza Jesus como Messias filho de Davi pela linha real (Salomão), legalmente herdeiro do trono através de José, esposo de Maria. Lucas escreve para um público mais amplo (greco-romano) e traça a ascendência humana de Jesus por sua mãe biológica, que também era da casa de Davi (pela linha de Natã, outro filho de Davi e Betsabeia). O versículo Lucas 3,23 começa com "Jesus, como se cria filho de José, filho de Heli". A construção grega permite ler que Heli era pai de Maria, sogro de José, sendo a linha lucana a maternal.
 
 ## A explicação do levirato
 
@@ -262,7 +262,7 @@ Marcos 16,1: "Maria Madalena, Maria, mãe de Tiago, e Salomé".
 Lucas 24,10: "Maria Madalena, Joana, Maria, mãe de Tiago, e as outras".
 João 20,1: "Maria Madalena" (mas no versículo 2 ela diz "não sabemos onde o puseram", o plural indicando que não estava sozinha).
 
-Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona apenas duas testemunhas oficiais (o suficiente conforme Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três, Salomé e Joana em dois cada.
+Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona apenas duas testemunhas oficiais (o suficiente conforme Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três, Salomé só em Marcos e Joana só em Lucas.
 
 ## Quantos anjos no túmulo?
 
@@ -285,7 +285,7 @@ Atos 1,3 dá a chave: Jesus apareceu aos discípulos durante quarenta dias após
 
 O princípio fundamental: testemunho parcial não é falso. Quatro testemunhas honestas de um evento mencionam detalhes diferentes, e isso é normal. Em qualquer tribunal, divergências em periferia somadas a convergência no essencial é sinal de testemunho independente, não de mentira.
 
-O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram a mulheres e discípulos, Pedro e João foram ao túmulo, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
+O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram a mulheres e discípulos, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
 
 Gary Habermas, no estudo já citado sobre "fatos mínimos" da Ressurreição, mostra que mesmo historiadores agnósticos aceitam o núcleo central. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
 
@@ -367,7 +367,7 @@ Isaías anunciou ainda o sinal da concepção virginal: "a virgem conceberá e d
 
 ## Como morreria
 
-Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22, escrito séculos antes de a crucificação existir como forma de execução, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", as primeiras palavras de Jesus na cruz, tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os quatro Evangelhos descrevem exatamente isso na crucificação.
+Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22, escrito séculos antes de a crucificação existir como forma de execução, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", palavras que Jesus pronuncia na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os quatro Evangelhos descrevem exatamente isso na crucificação.
 
 O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "ferido por causa de nossas iniquidades", levado "como cordeiro ao matadouro", que "não abriu a boca", e cuja morte traz cura "por suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
 
@@ -375,7 +375,7 @@ Zacarias acrescenta um detalhe singular: "olharão para mim, a quem traspassaram
 
 ## Quando viria
 
-O profeta Daniel, no capítulo 9, fixa um prazo: depois de um período de "setenta semanas", o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
+O profeta Daniel, no capítulo 9, fixa um prazo: dentro de um prazo de "setenta semanas" (de anos), o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
 
 ## A força do conjunto
 
@@ -406,7 +406,7 @@ Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Q
 
 ## Pôncio Pilatos existiu, e era prefeito
 
-Por séculos, a menção a Pôncio Pilatos vinha sobretudo dos Evangelhos e de poucas fontes antigas, e alguns duvidavam dele. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
+Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos autores antigos (Josefo, Fílon, Tácito), sem nenhum vestígio material. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
 
 ## O ossuário de Caifás
 
@@ -594,7 +594,7 @@ Sobre o quando, Jesus foi categórico: "daquele dia e hora ninguém sabe, nem os
 
 ## O 666 e o anticristo
 
-O número 666 é, com grande probabilidade, uma cifra: nas letras-número do hebraico, corresponde ao nome do imperador Nero, o perseguidor da época. Não é um código para celulares ou códigos de barra modernos. Quanto ao "anticristo", o Novo Testamento fala mais de um espírito de oposição a Cristo, presente em todas as épocas, do que de um único personagem a ser identificado. A história está cheia de gente que apontou o dedo para este ou aquele como o anticristo, e sempre errou. Caçar anticristos é perder tempo e paz.
+O número 666 é, com grande probabilidade, uma cifra: nas letras-número do hebraico, corresponde ao nome do imperador Nero, o perseguidor da época. Não é um código para celulares ou códigos de barra modernos. Quanto ao "anticristo", o Novo Testamento fala de "muitos anticristos" já presentes (1 João 2,18), um espírito de oposição a Cristo em todas as épocas, e também de uma prova final, que o Catecismo §675 chama de "impostura do Anticristo". O que a Igreja não faz é apontar nomes. A história está cheia de gente que apontou o dedo para este ou aquele como o anticristo, e sempre errou. Caçar anticristos é perder tempo e paz.
 
 ## E o "arrebatamento"?
 

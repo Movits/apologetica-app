@@ -3,7 +3,7 @@ import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
 import * as Font from 'expo-font';
-import { space, radius, icon, thumb, motion, shadow, textStyle, fontFamilyFor } from '../theme/tokens';
+import { space, radius, icon, thumb, seal, motion, shadow, textStyle, fontFamilyFor } from '../theme/tokens';
 import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
 import { DEFAULT_IDENTITY, IDENTITIES, IDENTITY_IDS, identityFor } from '../theme/identities';
 
@@ -41,7 +41,7 @@ const FONT_SCALES = {
 // plataforma atual. Platform.OS não muda em tempo de execução, então o objeto
 // é constante e mantém a mesma referência entre renders.
 const FONT_FAMILY = fontFamilyFor(Platform.OS);
-const TOKENS = { space, radius, icon, thumb, motion, shadow, fontFamily: FONT_FAMILY };
+const TOKENS = { space, radius, icon, thumb, seal, motion, shadow, fontFamily: FONT_FAMILY };
 
 // Modo de tema escolhido: 'system' | 'light' | 'dark' (src/utils/themeMode.js).
 // A chave antiga 'settings:darkMode' é IGNORADA de propósito: o código anterior
