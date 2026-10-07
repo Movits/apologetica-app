@@ -3,109 +3,130 @@
 // EmblemMark.jsx no mesmo sistema do BrandMark: caixa 64 x 64, traço de 4,5
 // com pontas redondas, uma cor só (a do tema), tudo dentro do círculo de raio
 // 27 em volta do centro, no máximo quatro elementos por marca. A cor nunca é
-// escrita aqui. `fill: true` preenche o elemento em vez de traçar; um caminho
-// de comprimento quase zero (M32 24v0.01) vira um ponto redondo.
+// escrita aqui. `fill: true` preenche o elemento em vez de traçar (áreas
+// pequenas e sólidas, como as barras da cruz do BrandMark); um caminho de
+// comprimento quase zero (M32 24v0.01) vira um ponto redondo.
 //
-// Decisão de outubro de 2026: nada de imagem gerada por IA como emblema. As
-// marcas são desenhadas à mão (por pessoa ou agente) e conferidas numa folha
-// de contato em 28, 40, 56 e 96 px nos dois temas. Integridade em
-// tests/journeyMarks.test.mjs.
+// Decisão de outubro de 2026: nada de imagem gerada por IA como emblema. Este
+// conjunto saiu de um painel (três designers com ângulos diferentes, três
+// juízes por candidato, síntese), conferido numa folha de contato em 28, 40,
+// 56 e 96 px nos dois temas, com as marcas do app como referência. Os seis
+// níveis leem como uma escada: portal, vieira, peixe, escudo, torre, coroa.
+// Integridade em tests/journeyMarks.test.mjs.
 
 export const MARKS = {
+  // Broto: haste e duas folhas, a semente que acabou de abrir.
   'primeiro-passo': [
-    { tag: 'path', d: 'M32 56V30 M32 30c-10 0-16-6-18-14 10 0 16 4 18 14z M32 36c10 0 16-6 18-14-10 0-16 4-18 14z' },
+    { tag: 'path', d: 'M32 56V34' },
+    { tag: 'path', d: 'M32 34C32 24 24 18 14 20C16 30 22 34 32 34Z' },
+    { tag: 'path', d: 'M32 30C32 20 40 14 50 16C48 26 42 30 32 30Z' },
   ],
+  // Sol em esplendor: disco e oito raios alternados, o resplendor do ostensório.
   'categoria-existencia-deus': [
     { tag: 'circle', cx: 32, cy: 32, r: 9 },
-    { tag: 'path', d: 'M47 32h7 M32 47v7 M17 32h-7 M32 17v-7 M42.6 42.6l5 5 M21.4 42.6l-5 5 M21.4 21.4l-5-5 M42.6 21.4l5-5' },
+    { tag: 'path', d: 'M47.5 32L56.5 32 M32 47.5L32 56.5 M16.5 32L7.5 32 M32 16.5L32 7.5 M43 43L46.8 46.8 M21 43L17.2 46.8 M21 21L17.2 17.2 M43 21L46.8 17.2' },
   ],
+  // Chaves de Pedro: argolas embaixo, hastes cruzadas, palhetões cheios.
   'categoria-igreja-catolica': [
-    { tag: 'circle', cx: 18, cy: 46, r: 6 },
-    { tag: 'path', d: 'M22 42L45 19 M45 19l5 5 M39 25l5 5' },
-    { tag: 'circle', cx: 46, cy: 46, r: 6 },
-    { tag: 'path', d: 'M42 42L19 19 M19 19l-5 5 M25 25l-5 5' },
+    { tag: 'circle', cx: 19, cy: 45, r: 6 },
+    { tag: 'circle', cx: 45, cy: 45, r: 6 },
+    { tag: 'path', d: 'M23.2 40.8L46 18 M40.8 40.8L18 18' },
+    { tag: 'path', d: 'M46 18L53 25L49.5 28.5L46.5 25.5L43.5 28.5L38.5 23.5Z M18 18L11 25L14.5 28.5L17.5 25.5L20.5 28.5L25.5 23.5Z', fill: true },
   ],
+  // Livro aberto com lombada.
   'categoria-sagrada-escritura': [
-    { tag: 'path', d: 'M32 20c-6-4-13-4-20-2v28c7-2 14-2 20 2 6-4 13-4 20-2V18c-7-2-14-2-20 2z' },
-    { tag: 'path', d: 'M32 20v28' },
+    { tag: 'path', d: 'M32 22C26 18 19.5 17.5 12.5 19.5V45.5C19.5 43.5 26 44 32 48C38 44 44.5 43.5 51.5 45.5V19.5C44.5 17.5 38 18 32 22Z' },
+    { tag: 'path', d: 'M32 22V48' },
   ],
+  // Balança de coluna, travessão e dois pratos.
   'categoria-moral': [
-    { tag: 'path', d: 'M32 12v40 M22 52h20 M14 22h36' },
-    { tag: 'path', d: 'M14 22l-6 14h12z M50 22l-6 14h12z' },
-    { tag: 'path', d: 'M8 36a6 6 0 0 0 12 0 M44 36a6 6 0 0 0 12 0' },
+    { tag: 'path', d: 'M32 10.5V53 M22 53H42 M13 19H51' },
+    { tag: 'path', d: 'M15 19V32 M7.5 32a7.5 7.5 0 0 0 15 0 M49 19V32 M41.5 32a7.5 7.5 0 0 0 15 0' },
   ],
+  // Globo de meridianos, neutro: o diálogo com as nações.
   'categoria-outras-religioes': [
     { tag: 'circle', cx: 32, cy: 32, r: 20 },
     { tag: 'path', d: 'M12 32h40 M32 12c-9 5-9 35 0 40 M32 12c9 5 9 35 0 40' },
   ],
+  // Ampulheta de paredes curvas, o tempo da Igreja.
   'categoria-historia-igreja': [
-    { tag: 'path', d: 'M20 12h24 M20 52h24' },
-    { tag: 'path', d: 'M22 12c0 12 10 14 10 20s-10 8-10 20 M42 12c0 12-10 14-10 20s10 8 10 20' },
-    { tag: 'path', d: 'M32 45v0.01' },
+    { tag: 'path', d: 'M18 12.5H46 M18 51.5H46' },
+    { tag: 'path', d: 'M21 12.5C21 24 30 28 30 32C30 36 21 40 21 51.5 M43 12.5C43 24 34 28 34 32C34 36 43 40 43 51.5' },
   ],
+  // Uma vela acesa.
   'sequencia-3': [
-    { tag: 'path', d: 'M32 12c-8 8-14 14-14 24a14 14 0 0 0 28 0c0-10-6-16-14-24z' },
-    { tag: 'path', d: 'M32 33c-3 3-5 6-5 9a5 5 0 0 0 10 0c0-3-2-6-5-9z' },
+    { tag: 'path', d: 'M28 30h8a1.5 1.5 0 0 1 1.5 1.5v22a1.5 1.5 0 0 1 -1.5 1.5h-8a1.5 1.5 0 0 1 -1.5 -1.5v-22a1.5 1.5 0 0 1 1.5 -1.5z', fill: true },
+    { tag: 'path', d: 'M34.2 8C26 16 26 15.6 26 21A6 6 0 0 0 38 21C38 12 35.6 13.7 34.2 8Z', fill: true },
   ],
+  // Duas velas acesas.
   'sequencia-7': [
-    { tag: 'rect', x: 25, y: 28, width: 14, height: 26, rx: 2 },
-    { tag: 'path', d: 'M32 8c-5 6-7 9-7 13a7 7 0 0 0 14 0c0-4-2-7-7-13z M32 23v5' },
+    { tag: 'path', d: 'M19.5 32h6a1.5 1.5 0 0 1 1.5 1.5v19a1.5 1.5 0 0 1 -1.5 1.5h-6a1.5 1.5 0 0 1 -1.5 -1.5v-19a1.5 1.5 0 0 1 1.5 -1.5zM38.5 32h6a1.5 1.5 0 0 1 1.5 1.5v19a1.5 1.5 0 0 1 -1.5 1.5h-6a1.5 1.5 0 0 1 -1.5 -1.5v-19a1.5 1.5 0 0 1 1.5 -1.5z', fill: true },
+    { tag: 'path', d: 'M24.3 13C17.5 19.7 17.5 19.5 17.5 24A5 5 0 0 0 27.5 24C27.5 16.5 25.5 17.8 24.3 13ZM43.3 13C36.5 19.7 36.5 19.5 36.5 24A5 5 0 0 0 46.5 24C46.5 16.5 44.5 17.8 43.3 13Z', fill: true },
   ],
+  // Três velas acesas (a contagem é a progressão).
   'sequencia-30': [
-    { tag: 'rect', x: 20, y: 22, width: 24, height: 30, rx: 3 },
-    { tag: 'path', d: 'M26 22v-6h12v6 M32 30c-4 4-6 7-6 10a6 6 0 0 0 12 0c0-3-2-6-6-10z' },
+    { tag: 'path', d: 'M14.8 35h4.5a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1 -1.5 1.5h-4.5a1.5 1.5 0 0 1 -1.5 -1.5v-14a1.5 1.5 0 0 1 1.5 -1.5zM29.8 35h4.5a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1 -1.5 1.5h-4.5a1.5 1.5 0 0 1 -1.5 -1.5v-14a1.5 1.5 0 0 1 1.5 -1.5zM44.8 35h4.5a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1 -1.5 1.5h-4.5a1.5 1.5 0 0 1 -1.5 -1.5v-14a1.5 1.5 0 0 1 1.5 -1.5z', fill: true },
+    { tag: 'path', d: 'M18.5 19C12.8 24.5 12.8 23.9 12.8 27.8A4.25 4.25 0 0 0 21.3 27.8C21.3 21.4 19.6 22.9 18.5 19ZM33.5 19C27.8 24.5 27.8 23.9 27.8 27.8A4.25 4.25 0 0 0 36.3 27.8C36.3 21.4 34.6 22.9 33.5 19ZM48.5 19C42.8 24.5 42.8 23.9 42.8 27.8A4.25 4.25 0 0 0 51.3 27.8C51.3 21.4 49.6 22.9 48.5 19Z', fill: true },
   ],
+  // Estrela de Belém de oito pontas, cheia.
   'dez-perfeitos': [
-    { tag: 'path', d: 'M21 8l11 15 11-15' },
-    { tag: 'circle', cx: 32, cy: 38, r: 13 },
-    { tag: 'path', d: 'M32 38v0.01' },
+    { tag: 'polygon', points: '32,6.5 35.6,23.2 42.6,21.4 40.8,28.4 57.5,32 40.8,35.6 42.6,42.6 35.6,40.8 32,57.5 28.4,40.8 21.4,42.6 23.2,35.6 6.5,32 23.2,28.4 21.4,21.4 28.4,23.2', fill: true },
   ],
+  // Pilha de três volumes, o de cima pousado de lado.
   'trinta-artigos': [
-    { tag: 'rect', x: 14, y: 40, width: 36, height: 9, rx: 2 },
-    { tag: 'rect', x: 18, y: 29, width: 28, height: 9, rx: 2 },
-    { tag: 'rect', x: 16, y: 18, width: 32, height: 9, rx: 2 },
+    { tag: 'rect', x: 15.5, y: 33, width: 33, height: 17, rx: 1.5 },
+    { tag: 'path', d: 'M15.5 41.5H48.5' },
+    { tag: 'polygon', points: '15.1,17.5 47.8,13.5 48.9,22.5 16.2,26.5' },
   ],
+  // Rosácea: quadrifólio que ocupa o disco e deixa o óculo vazio.
   'todos-os-artigos': [
-    { tag: 'circle', cx: 32, cy: 32, r: 22 },
-    { tag: 'circle', cx: 32, cy: 32, r: 6 },
-    { tag: 'path', d: 'M41 32h11 M32 41v11 M23 32H12 M32 23V12 M38.4 38.4l7.7 7.7 M25.6 38.4l-7.7 7.7 M25.6 25.6l-7.7-7.7 M38.4 25.6l7.7-7.7' },
+    { tag: 'path', d: 'M27.5 27.5A10.5 10.5 0 1 1 36.5 27.5A10.5 10.5 0 1 1 36.5 36.5A10.5 10.5 0 1 1 27.5 36.5A10.5 10.5 0 1 1 27.5 27.5Z' },
   ],
+  // Igreja sobre a rocha: empena com cruz sobre laje cheia (Mateus 16,18).
   'trilho-fundamentos': [
-    { tag: 'rect', x: 10, y: 22, width: 44, height: 28, rx: 2 },
-    { tag: 'path', d: 'M10 31h44 M10 41h44' },
-    { tag: 'path', d: 'M24 22v9 M40 22v9 M18 31v10 M32 31v10 M46 31v10 M26 41v9 M38 41v9' },
+    { tag: 'path', d: 'M17 43V32L32 20L47 32V43' },
+    { tag: 'path', d: 'M32 20V9 M27.5 13.5H36.5' },
+    { tag: 'rect', x: 15, y: 47, width: 34, height: 6, rx: 1.5, fill: true },
   ],
+  // Calvário: a cruz plantada no monte sobre a linha do chão.
   'trilho-aprofundamento': [
-    { tag: 'path', d: 'M22 10v44 M42 10v44' },
-    { tag: 'path', d: 'M22 20h20 M22 32h20 M22 44h20' },
+    { tag: 'path', d: 'M32 9V38 M23 18H41' },
+    { tag: 'path', d: 'M16 48A17.5 17.5 0 0 1 48 48 M14 48H50' },
   ],
+  // Ponto de interrogação, a pergunta do dia.
   'quiz-7': [
-    { tag: 'path', d: 'M22 24a10 10 0 1 1 14 9c-3 2-4 4-4 8' },
-    { tag: 'path', d: 'M32 50v0.01' },
+    { tag: 'path', d: 'M18.5 21.5a13.5 13.5 0 1 1 20.3 11.7C35 35.5 32 38.5 32 44.5' },
+    { tag: 'circle', cx: 32, cy: 54.5, r: 4.2, fill: true },
   ],
+  // Portal ogival: arco em ponta sobre ombreiras e soleira, a porta da igreja.
   catecumeno: [
-    { tag: 'path', d: 'M16 54V30a16 16 0 0 1 32 0v24' },
-    { tag: 'path', d: 'M10 54h44' },
+    { tag: 'path', d: 'M18 48V30A19 19 0 0 1 32 11.7A19 19 0 0 1 46 30V48' },
+    { tag: 'path', d: 'M13.5 48H50.5' },
   ],
+  // Vieira batismal com três nervuras.
   neofito: [
-    { tag: 'path', d: 'M32 54L14 36a18 18 0 0 1 36 0z' },
-    { tag: 'path', d: 'M32 54V18 M32 54L20 22 M32 54L44 22' },
-    { tag: 'path', d: 'M24 10v0.01 M32 7v0.01 M40 10v0.01' },
+    { tag: 'path', d: 'M10 36A22 22 0 0 1 54 36L32 55Z' },
+    { tag: 'path', d: 'M32 45V14 M27.9 45.9L16.4 20.4 M36.1 45.9L47.6 20.4' },
   ],
+  // Ichthys: dois arcos cruzados na cauda.
   discipulo: [
-    { tag: 'path', d: 'M10 32C20 19 36 19 46 30L56 40 M10 32c10 13 26 13 36 2l10-10' },
-    { tag: 'path', d: 'M20 29v0.01' },
+    { tag: 'path', d: 'M10 32C19.5 16 37 16 53 43.5 M10 32C19.5 48 37 48 53 20.5' },
   ],
+  // Escudo heráldico com a cruz latina cheia.
   apologista: [
-    { tag: 'path', d: 'M32 10l18 6v14c0 12-8 20-18 24-10-4-18-12-18-24V16z' },
-    { tag: 'path', d: 'M32 22v18 M24 30h16' },
+    { tag: 'path', d: 'M16 14H48V30C48 42 40 50 32 54C24 50 16 42 16 30Z' },
+    { tag: 'rect', x: 29.5, y: 20, width: 5, height: 24, rx: 1.5, fill: true },
+    { tag: 'rect', x: 24, y: 26, width: 16, height: 5, rx: 1.5, fill: true },
   ],
+  // Torre ameada com porta em arco (Provérbios 18,10).
   defensor: [
-    { tag: 'path', d: 'M32 10l18 6v14c0 12-8 20-18 24-10-4-18-12-18-24V16z' },
-    { tag: 'path', d: 'M32 20v26 M26 28h12 M29 46h6' },
+    { tag: 'path', d: 'M19 50V12H26V18H38V12H45V50' },
+    { tag: 'path', d: 'M27 50V41A5 5 0 0 1 37 41V50' },
+    { tag: 'path', d: 'M16 50H48' },
   ],
+  // Coroa de três pontas com a cruz na ponta central (2 Timóteo 4,8).
   mestre: [
-    { tag: 'path', d: 'M13 45h38l3-23-11 9-11-13-11 13-11-9z' },
-    { tag: 'path', d: 'M15 53h34' },
+    { tag: 'polygon', points: '12,29 21,38 32,23 43,38 52,29 48,50 16,50' },
+    { tag: 'path', d: 'M32 22V9 M27 13.5H37' },
   ],
 };

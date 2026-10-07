@@ -40,11 +40,17 @@ Plano de origem: [[Plano - Jornada gamificada dos artigos]].
   artigo, tamanhos, 3 e 4 opções, correta válida e variada, sem travessão.
 - `src/data/journeyMarks.js`: a marca vetorial de cada conquista e nível
   (elementos SVG numa caixa 64 x 64, traço 4,5, uma cor do tema), no mesmo
-  sistema do `BrandMark`. Desenhadas por três agentes com ângulos diferentes,
-  julgadas por um painel (legibilidade a 28 px, coerência com o app, iconografia
-  católica) e fechadas por uma síntese. O dono rejeitou os medalhões gerados
-  no Higgsfield ("cara de IA"): nenhuma imagem gerada entra como emblema.
-  `tests/journeyMarks.test.mjs` cobra uma marca por id e o formato.
+  sistema do `BrandMark`. Desenhadas por três agentes com ângulos diferentes
+  (linha, catacumbas, geométrico), julgadas por três juízes cada (legibilidade
+  a 28 px, coerência com o app sem cara de IA, iconografia católica) e fechadas
+  por uma síntese: broto, sol em esplendor, chaves de Pedro, livro, balança,
+  globo, ampulheta, uma/duas/três velas, estrela de Belém, pilha de livros,
+  quadrifólio, igreja sobre a rocha, Calvário, interrogação; níveis em escada:
+  portal ogival, vieira, ichthys, escudo com cruz, torre, coroa com cruz. O
+  dono rejeitou os medalhões gerados no Higgsfield ("cara de IA"): nenhuma
+  imagem gerada entra como emblema. `tests/journeyMarks.test.mjs` cobra uma
+  marca por id e o formato. A folha de contato se gera com o script
+  `render-sheet.mjs` guardado no diário da sessão (scratchpad).
 
 ## Motor (`src/utils/journey.js`, puro, `tests/journey.test.mjs`)
 

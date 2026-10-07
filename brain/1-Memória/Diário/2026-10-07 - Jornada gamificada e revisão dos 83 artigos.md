@@ -40,7 +40,11 @@ preciso, usando Higgsfield e o que mais houvesse. Plano gravado em
    uma cor do tema), desenhadas por um painel de agentes (três designers com
    ângulos diferentes, três juízes por candidato, síntese) a partir de uma
    folha de contato renderizada com Playwright em 28/40/56/96 px nos dois
-   temas. O script de download e o mapa de PNGs foram removidos.
+   temas. Os três candidatos tiraram 6,5 a 7,3 dos juízes; a síntese
+   redesenhou onde eles convergiram (chaves com palhetão cheio, velas que
+   contam 1, 2 e 3, torre no lugar de cinco espadas que liam mal a 28 px). O
+   orquestrador trocou só o globo com cruz do "Diálogo" pelo globo neutro de
+   meridianos. O script de download e o mapa de PNGs foram removidos.
 
 ## Decisões
 
