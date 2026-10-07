@@ -71,8 +71,8 @@ const categoryBadge = (category, name, nameEn, desc, descEn, icon) => ({
   descEn,
 });
 
-// Catálogo de conquistas. `icon` é um Ionicons (o emblema ilustrado, quando
-// existe, vem de src/data/journeyArt.js pelo mesmo id).
+// Catálogo de conquistas. `icon` é o Ionicons de reserva; a marca vetorial
+// desenhada para cada id vive em src/data/journeyMarks.js.
 export const BADGES = [
   {
     id: 'primeiro-passo', kind: 'milestone', icon: 'footsteps-outline',

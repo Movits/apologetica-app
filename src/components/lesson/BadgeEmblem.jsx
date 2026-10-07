@@ -1,24 +1,29 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
-import { JOURNEY_ART, LEVEL_ART } from '../../data/journeyArt';
+import { MARKS } from '../../data/journeyMarks';
+import EmblemMark from './EmblemMark';
 
-// Emblema redondo de uma conquista ou nível: o desenho ilustrado de
-// src/data/journeyArt.js quando existe, senão o ícone Ionicons num disco
-// `badgeBg` com hairline dourada. `locked` apaga o disco (card, separator,
-// ícone terciário) e põe um cadeado pequeno no canto.
+// Emblema redondo de uma conquista ou nível: a marca vetorial de
+// src/data/journeyMarks.js (mesmo sistema do BrandMark, uma cor do tema)
+// num disco `badgeBg` com hairline dourada; sem marca, o ícone Ionicons.
+// `locked` apaga o disco (card, separator, traço terciário) e põe um cadeado
+// pequeno no canto. O traço ocupa 62% do disco, como na folha de contato em
+// que as marcas foram desenhadas.
 //
 // `size`: 'sm' | 'md' | 'lg' (tokens.seal). Decorativo: o nome vem escrito
 // ao lado ou abaixo, então fica escondido do leitor de tela.
 // O ícone do emblema grande cresce na proporção do disco (1,6 x o ícone lg).
 const ICON = { sm: 'sm', md: 'md', lg: 'lg' };
 const LARGE_ICON_RATIO = 1.6;
+const MARK_RATIO = 0.62;
 
 export default function BadgeEmblem({ id, icon, size = 'md', locked = false, style }) {
   const { colors, tokens } = useTheme();
   const { icon: iconSize, radius, seal } = tokens;
   const side = seal[size] ?? seal.md;
-  const art = JOURNEY_ART[id] || LEVEL_ART[id];
+  const mark = MARKS[id];
+  const ink = locked ? colors.textTertiary : colors.accentText;
   const lockSide = Math.max(iconSize.sm, Math.round(side / 3));
 
   return (
@@ -39,13 +44,13 @@ export default function BadgeEmblem({ id, icon, size = 'md', locked = false, sty
         style,
       ]}
     >
-      {art && !locked ? (
-        <Image source={art} style={{ width: side, height: side, borderRadius: radius.full }} resizeMode="cover" />
+      {mark ? (
+        <EmblemMark elements={mark} color={ink} size={Math.round(side * MARK_RATIO)} />
       ) : (
         <Ionicons
           name={icon || 'ribbon-outline'}
           size={size === 'lg' ? Math.round(iconSize.lg * LARGE_ICON_RATIO) : iconSize[ICON[size]]}
-          color={locked ? colors.textTertiary : colors.accentText}
+          color={ink}
         />
       )}
       {locked ? (

@@ -416,11 +416,15 @@ Todas leem o tema pelos tokens, como as de `ui/`.
   `aria-value*`.
 - `XpChip`: pílula "+N XP" em `badgeBg`/`badgeText`; `animated` entra com FadeInDown.
 - `BadgeEmblem`: disco de conquista ou nível (`id`, `icon`, `size` `'sm' | 'md' | 'lg'` de
-  `tokens.seal`, `locked`): imagem de `src/data/journeyArt.js` quando existe, senão o Ionicons em
-  `accentText` sobre `badgeBg` com hairline `accent`. Decorativo (o nome vem escrito ao lado).
+  `tokens.seal`, `locked`): a marca vetorial de `src/data/journeyMarks.js` (via `EmblemMark`) em
+  `accentText` sobre `badgeBg` com hairline `accent`, ou o Ionicons quando não há marca.
+  Decorativo (o nome vem escrito ao lado).
+- `EmblemMark`: desenha uma lista de elementos (`path`, `circle`, `rect`, `line`, `polyline`,
+  `polygon`, caixa 64 x 64) em `react-native-svg` com traço 4,5, pontas redondas e uma cor. É o
+  mesmo sistema do `BrandMark`; nada de imagem gerada por IA no lugar.
 - `LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`: os quatro blocos da lição, na
   ordem em que aparecem no artigo; `BadgeUnlockSheet` é a folha (`Sheet`) de conquista ou nível.
 
 Não fazer: anel com `Animated` legado ou largura em porcentagem (é o `XpRing`); dourado como texto
-no chip (é `badgeText`); emblema com `require` solto na tela (o mapa é `journeyArt.js`); lado de
-anel ou emblema em número solto (é `tokens.seal`).
+no chip (é `badgeText`); emblema como imagem (PNG gerado ou não) no lugar da marca vetorial de
+`journeyMarks.js`; lado de anel ou emblema em número solto (é `tokens.seal`).

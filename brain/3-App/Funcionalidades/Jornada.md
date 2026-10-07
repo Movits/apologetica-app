@@ -28,8 +28,8 @@ Plano de origem: [[Plano - Jornada gamificada dos artigos]].
   mostra a barra de progresso do tema.
 - Peças em `src/components/lesson/`: `OptionButton` (também usado pelo quiz),
   `XpRing` (anel SVG animado por `animatedProps`), `XpChip` ("+N XP"),
-  `BadgeEmblem` (emblema ilustrado ou ícone num disco dourado, com cadeado
-  quando bloqueada).
+  `BadgeEmblem` (a marca vetorial, via `EmblemMark`, num disco dourado, com
+  cadeado quando bloqueada).
 
 ## Dados
 
@@ -38,10 +38,13 @@ Plano de origem: [[Plano - Jornada gamificada dos artigos]].
   de 4 opções com `why`), tudo PT/EN pelo padrão campo/campoEn. `index.js`
   junta e `tests/lessons.test.mjs` cobra: todo artigo tem lição, toda lição tem
   artigo, tamanhos, 3 e 4 opções, correta válida e variada, sem travessão.
-- `src/data/journeyArt.js`: mapa estático de emblemas ilustrados por id de
-  conquista e de nível (vazio até os PNGs entrarem em `assets/journey/`; o
-  `BadgeEmblem` cai no ícone). Os 12 emblemas foram gerados no Higgsfield e
-  `scripts/fetch-journey-emblems.mjs` os baixa e reduz.
+- `src/data/journeyMarks.js`: a marca vetorial de cada conquista e nível
+  (elementos SVG numa caixa 64 x 64, traço 4,5, uma cor do tema), no mesmo
+  sistema do `BrandMark`. Desenhadas por três agentes com ângulos diferentes,
+  julgadas por um painel (legibilidade a 28 px, coerência com o app, iconografia
+  católica) e fechadas por uma síntese. O dono rejeitou os medalhões gerados
+  no Higgsfield ("cara de IA"): nenhuma imagem gerada entra como emblema.
+  `tests/journeyMarks.test.mjs` cobra uma marca por id e o formato.
 
 ## Motor (`src/utils/journey.js`, puro, `tests/journey.test.mjs`)
 

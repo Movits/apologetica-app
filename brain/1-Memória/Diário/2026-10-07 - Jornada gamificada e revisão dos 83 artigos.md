@@ -33,10 +33,14 @@ preciso, usando Higgsfield e o que mais houvesse. Plano gravado em
 4. **Telas**: blocos da lição no artigo, Minha Jornada, cartão na Início,
    linha em Ferramentas, "Concluído" nas listas, progresso por categoria. A
    pergunta do dia do quiz rende XP. `OptionButton` virou peça compartilhada.
-5. **Emblemas**: 12 medalhões gerados no Higgsfield (gpt_image_2_5, fundo
-   transparente, meio crédito cada). O container não alcança o CDN deles
-   (política de rede): `scripts/fetch-journey-emblems.mjs` baixa e reduz em
-   qualquer máquina com rede. Até lá o `BadgeEmblem` usa o ícone.
+5. **Emblemas**: a primeira tentativa foram 12 medalhões gerados no
+   Higgsfield (gpt_image_2_5, meio crédito cada). O dono rejeitou: "cara de
+   IA", e nada no app pode ter isso. Substituídos por marcas vetoriais em
+   `src/data/journeyMarks.js`, no sistema do `BrandMark` (caixa 64, traço 4,5,
+   uma cor do tema), desenhadas por um painel de agentes (três designers com
+   ângulos diferentes, três juízes por candidato, síntese) a partir de uma
+   folha de contato renderizada com Playwright em 28/40/56/96 px nos dois
+   temas. O script de download e o mapa de PNGs foram removidos.
 
 ## Decisões
 
@@ -65,9 +69,6 @@ preciso, usando Higgsfield e o que mais houvesse. Plano gravado em
 
 ## Pendências
 
-- Rodar `node scripts/fetch-journey-emblems.mjs` numa máquina com rede (ou
-  liberar `d8j0ntlcm91z4.cloudfront.net` no ambiente) e commitar
-  `assets/journey/` e `src/data/journeyArt.js`.
 - Referências novas sugeridas pelos relatórios (ids que não existem:
   `1jo-4-8`, `humani-generis`, `jo-19-34`, `mc-2-5`, `jo-5-18`, `hb-9-28`,
   `cic-1367`, `cic-2283`, `jo-8-44`, `mt-6-7`, `cic-2043`, `cic-153`, `mt-4-4`,

@@ -23,8 +23,8 @@ com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
 `src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey}.js`,
-`src/theme/identities.js` e os dados de `src/data/references.js`, `src/data/artworks/` e
-`src/data/lessons/` (integridade das lições da Jornada). Lógica nova pura nasce com o teste antes (TDD). Não
+`src/theme/identities.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
+`src/data/lessons/` (integridade das lições da Jornada) e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -42,7 +42,6 @@ node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault 
 node scripts/generate-art-images.mjs     # regera src/data/artImages.js (imagem da Commons de cada artigo)
 node scripts/generate-artworks-index.mjs # regera index.js e all.js das aulas de arte (depois de criar ou mudar uma lição)
 node scripts/import-museum-artworks.mjs  # importa do ../museu-virtual as obras que também ilustram artigos
-node scripts/fetch-journey-emblems.mjs   # baixa do Higgsfield os emblemas da Jornada (assets/journey/ + journeyArt.js)
 ```
 
 ## Architecture
@@ -121,7 +120,7 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 
 ### Jornada (gamificação dos artigos)
 - Cada artigo tem uma lição em `src/data/lessons/<categoria>.js` (`hook` de previsão, `keyPoints`, `oneLiner`, `check` com 3 perguntas, PT/EN). `tests/lessons.test.mjs` cobra que todo artigo tem lição e vice-versa: **artigo novo exige lição nova**.
-- Motor puro em `src/utils/journey.js` (XP, `LEVELS`, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Emblemas ilustrados em `src/data/journeyArt.js` (mapa estático; sem PNG o emblema cai no ícone). Ver `brain/3-App/Funcionalidades/Jornada.md`.
+- Motor puro em `src/utils/journey.js` (XP, `LEVELS`, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `EmblemMark`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Os emblemas são marcas vetoriais em `src/data/journeyMarks.js` (mesmo sistema do `BrandMark`: caixa 64, traço 4,5, uma cor do tema; **nunca imagem gerada por IA**), desenhadas por `EmblemMark`. Ver `brain/3-App/Funcionalidades/Jornada.md`.
 
 ### Identidades visuais e visualizador de obras
 - `src/theme/identities.js` (puro, testado): Clássica (padrão), Âncora, Basílica e Lumen,
@@ -184,7 +183,7 @@ mantenha esses dois em sincronia.
 - `jesusJourney.js` — mapa da jornada de Jesus (21 paradas, usado pelo BibleMapScreen).
 - `debateStrategies.js` — táticas de debate e falácias.
 - `lessons/` — lições da Jornada por categoria (ver "Jornada").
-- `journeyArt.js` — emblemas ilustrados da Jornada por id.
+- `journeyMarks.js` — marcas vetoriais das conquistas e níveis da Jornada (elementos SVG por id).
 
 ### Serviços (`src/services/`)
 - **Únicos serviços que usam rede**: `liturgyApi.js` (liturgia do dia, com cache e fallback offline) e `newsApi.js` (notícias católicas via RSS, cache de 3h por idioma). Todo o resto é local.
