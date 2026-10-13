@@ -1,5 +1,17 @@
 // Converte _avemaria_raw.json (fidalgobr/bibliaAveMariaJSON) para o formato compacto do app.
 // Saida: src/data/bibleAveMaria.js exportando AVEMARIA = { bookId: [[v1, v2, ...], ...] }
+//
+// Fonte: o arquivo bibliaAveMaria.json de github.com/fidalgobr/bibliaAveMariaJSON
+// (commit bb8c7ac), copiado para src/data/_avemaria_raw.json (gitignored).
+//
+// A fonte perde a numeração em alguns capítulos: versículos grudados com o
+// número no meio do texto ("...se manchar, 30 ou quando..."), blocos da edição
+// impressa (Josué 19,2-7) achatados num versículo só e alguns versículos que
+// faltam (Atos 3,1). Tudo depois do primeiro defeito ficava com o número
+// errado. scripts/source/avemaria-correcoes.json traz esses capítulos já
+// recortados nas fronteiras certas, conferidas contra a mesma edição publicada
+// em bibliaonline.com.br/avm (ver o _doc do arquivo). Um bloco guarda o texto
+// no primeiro número e '' nos seguintes (src/services/bibleApi.js: chapterVerses).
 import fs from 'node:fs';
 
 let txt = fs.readFileSync('./src/data/_avemaria_raw.json', 'utf8');
@@ -94,6 +106,7 @@ const chapterCounts = {};
 // porque o JSON original não inclui o texto das notas.
 function cleanVerse(text) {
   return text
+    .replace(/\u00AD/g, '')        // tira o hífen invisível da diagramação ("en­trando")
     .replace(/\*+/g, '')           // tira asteriscos (notas de rodapé)
     .replace(/\s+([.,;:!?])/g, '$1') // tira espaço antes de pontuação
     .replace(/\s{2,}/g, ' ')       // colapsa espaços duplos
@@ -111,12 +124,22 @@ for (const book of allBooks) {
   chapterCounts[id] = result[id].length;
 }
 
+// Capítulos com a numeração consertada (ver o cabeçalho).
+const correcoes = JSON.parse(fs.readFileSync('./scripts/source/avemaria-correcoes.json', 'utf8'));
+for (const [ref, verses] of Object.entries(correcoes.capitulos)) {
+  const [id, ch] = ref.split(' ');
+  if (!result[id]?.[ch - 1]) throw new Error(`Correção para capítulo inexistente: ${ref}`);
+  result[id][ch - 1] = verses;
+}
+console.log(`Capítulos consertados: ${Object.keys(correcoes.capitulos).length}`);
+
 const mappedCount = Object.keys(result).length;
 console.log(`Livros mapeados: ${mappedCount}/73`);
 console.log('Contagem de capítulos:', JSON.stringify(chapterCounts, null, 2));
 
 const header = `// Biblia Sagrada Ave Maria - 73 livros do canon catolico completo.
-// Fonte: github.com/fidalgobr/bibliaAveMariaJSON (Paulinas Editora).
+// Fonte: github.com/fidalgobr/bibliaAveMariaJSON (Editora Ave-Maria), com a
+// numeração consertada por scripts/source/avemaria-correcoes.json.
 // Formato compacto: { bookId: [[v1, v2, ...], ...] } - capitulos 0-indexed.
 
 `;
