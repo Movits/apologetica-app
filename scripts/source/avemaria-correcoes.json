@@ -5,13 +5,22 @@
   "Como foi feito (outubro de 2026): o texto da fonte foi recortado nas fronteiras de versículo da mesma edição publicada em bibliaonline.com.br/avm, sem trocar a redação. Nenhum texto se perdeu nem se repetiu (conferido capítulo a capítulo).",
   "Versículos que faltavam na fonte vieram do bibliaonline e foram conferidos palavra por palavra em cantaramissa.com.br e salvaimerainha.org.br: ver 'inseridos'.",
   "Isaías 41,6-7: a edição imprime esses dois versículos dentro de 40,19 (transposição, marcada '(41,6)' e '(41,7)'). Aqui eles ficam também no lugar canônico, com o mesmo texto, para que um link para Isaías 41,6 funcione. Em 40,19 o '4l' da digitação virou '41'.",
-  "Diferenças que são da própria edição e ficaram como estão (quatro fontes concordam): Gálatas 1 com 23 versículos, 2 Tessalonicenses 2 com 16, Hebreus 12 com 28, 1 Pedro 1 com 24, Apocalipse 7 com 16, Romanos 7 com 26, 1 Coríntios 16 com 25, Atos 15 com 40."
+  "Diferenças que são da própria edição e ficaram como estão (quatro fontes concordam): Gálatas 1 com 23 versículos, 2 Tessalonicenses 2 com 16, Hebreus 12 com 28, 1 Pedro 1 com 24, Apocalipse 7 com 16, Romanos 7 com 26, 1 Coríntios 16 com 25, Atos 15 com 40.",
+  "'textos': erros de digitação da fonte, trocados no versículo indicado (conferidos numa digitação independente, cantaramissa.com.br)."
  ],
  "inseridos": {
   "2cr 2,1": "https://www.bibliaonline.com.br/avm/2cr/2",
   "sl 88,11": "https://www.bibliaonline.com.br/avm/sl/88",
   "jn_at 1,12": "https://www.bibliaonline.com.br/avm/jn/1",
   "at 3,1": "https://www.bibliaonline.com.br/avm/atos/3"
+ },
+ "textos": {
+  "mt 22,37": [
+   [
+    "de todo o teu o coração",
+    "de todo o teu coração"
+   ]
+  ]
  },
  "capitulos": {
   "nm 5": [

@@ -131,6 +131,16 @@ for (const [ref, verses] of Object.entries(correcoes.capitulos)) {
   if (!result[id]?.[ch - 1]) throw new Error(`Correção para capítulo inexistente: ${ref}`);
   result[id][ch - 1] = verses;
 }
+// Erros de digitação da fonte, trocados só no versículo indicado.
+for (const [ref, trocas] of Object.entries(correcoes.textos || {})) {
+  const [id, cv] = ref.split(' ');
+  const [ch, v] = cv.split(',').map(Number);
+  for (const [de, para] of trocas) {
+    const atual = result[id]?.[ch - 1]?.[v - 1];
+    if (!atual || !atual.includes(de)) throw new Error(`Correção de texto não encontrada em ${ref}: ${de}`);
+    result[id][ch - 1][v - 1] = atual.replace(de, para);
+  }
+}
 console.log(`Capítulos consertados: ${Object.keys(correcoes.capitulos).length}`);
 
 const mappedCount = Object.keys(result).length;

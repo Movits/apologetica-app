@@ -34,7 +34,7 @@ export default function TodayScreen() {
   // com o ano), com o roteiro de resposta na tela Diálogo.
   const objection = DIALOGUES[dailyIndex(DIALOGUES.length, now)];
   const openObjection = () => navigation.navigate('Dialogue', { dialogueId: objection.id });
-  const openVerse = ({ bookId, chapter, verse }) => openBible(navigation, { bookId, chapter, verse });
+  const openVerse = (nav) => openBible(navigation, nav);
   const openLiturgy = () => navigation.navigate('Liturgy');
 
   const block = { marginBottom: space.md };
