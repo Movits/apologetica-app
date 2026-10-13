@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { watchHighlights, removeHighlight } from '../services/userData';
 import { confirmAction } from '../utils/dialog';
-import { getBook, bookName } from '../data/bible';
-import { getVerse } from '../services/bibleApi';
+import { getVerse, getVerseSpan } from '../services/bibleApi';
 import { useBibleReady } from '../hooks/useBibleReady';
 import BibleLoadingState from '../components/BibleLoadingState';
 import { useTheme } from '../context/ThemeContext';
@@ -44,11 +43,17 @@ export default function HighlightsScreen({ navigation }) {
   }, [user]);
 
   const verseText = (h) => getVerse(h.bookId, h.chapter, h.verse, lang) || '';
+  // Marcação num bloco da edição ("Josué 19,17-23"): o rótulo leva o bloco
+  // inteiro, porque o texto mostrado é o do bloco.
+  const navOf = (h) => {
+    const span = getVerseSpan(h.bookId, h.chapter, h.verse, lang);
+    return { bookId: h.bookId, chapter: h.chapter, verse: span ? span.start : h.verse, verseEnd: span && span.end > span.start ? span.end : undefined };
+  };
 
-  const open = (h) => openBible(navigation, { bookId: h.bookId, chapter: h.chapter, verse: h.verse });
+  const open = (h) => openBible(navigation, navOf(h));
 
   const share = (h) => {
-    shareVerse({ bookName: bookName(getBook(h.bookId), isEn), chapter: h.chapter, verse: h.verse, text: verseText(h), isEn });
+    shareVerse({ ref: verseLabel(navOf(h), isEn), text: verseText(h), isEn });
   };
 
   const confirmRemove = (h) => {
@@ -91,7 +96,7 @@ export default function HighlightsScreen({ navigation }) {
             <Row
               leading={<View style={{ width: space.sm, height: space.sm, borderRadius: radius.full, backgroundColor: item.color }} />}
               titleRole="headline"
-              title={verseLabel(item, isEn)}
+              title={verseLabel(navOf(item), isEn)}
               trailing={<RowIconButton icon="ellipsis-horizontal" label={t('common.moreActions')} onPress={() => setActive(item)} />}
               chevron
               onPress={() => open(item)}

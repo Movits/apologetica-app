@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # O Sudário de Turim e o projeto STURP
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Equipes científicas internacionais (STURP e outros) (1978 (STURP); 1988 (carbono-14, contestado); estudos posteriores)
 Tema: A imagem do homem crucificado no Sudário de Turim
 
-> O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. O sangue é humano, do tipo AB. O STURP concl...
+> O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. O sangue é humano e, segundo as análises do ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

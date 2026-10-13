@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Concílio de Trento (1545-1563)
@@ -13,4 +13,5 @@ Tema: Resposta católica à Reforma: Escritura, Tradição e justificação
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[18 - O Cânon Bíblico Por que 73 Livros]]
 - [[37 - Protestantismo]]

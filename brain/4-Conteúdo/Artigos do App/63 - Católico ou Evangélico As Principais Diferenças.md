@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 63 - Católico ou Evangélico As Principais Diferenças
@@ -31,6 +31,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[2 Tessalonicenses 2,15]]
 - [[1 Timóteo 3,15]]
 - [[João 17,20-21]]
+- [[Tiago 2,14-26]]
+- [[Gálatas 5,6]]
 - [[World Christian Encyclopedia]]
 - [[Concílio de Hipona]]
 

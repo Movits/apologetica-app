@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Os hititas (Hattusa)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (Escavações a partir de 1906)
 Tema: De suposta invenção bíblica a império histórico
 
-> A Bíblia menciona os hititas dezenas de vezes. Como nenhuma outra fonte antiga os citava, eram tidos por lenda no séc. XIX. A descoberta de Hattusa e de milhares de tabuinhas mostrou que os hititas foram um grande impéri...
+> A Bíblia menciona os hititas dezenas de vezes. Até o séc. XIX quase nada se sabia deles fora da Bíblia, e alguns estudiosos duvidavam que tivessem sido um povo importante. A descoberta de Hattusa e de milhares de tabuinh...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Mateus 2,1
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
 Tema: Nascimento de Jesus no reinado de Herodes
 
-> Tendo, pois, nascido Jesus em Belém de Judá, no tempo do rei Herodes, eis que magos vieram do Oriente a Jerusalém.
+> Tendo, pois, Jesus nascido em Belém de Judá, no tempo do rei Herodes, eis que magos vieram do Oriente a Jerusalém.
 
 Abre no app em `mt 2,1`.
 Funcionalidade: [[Referências]]

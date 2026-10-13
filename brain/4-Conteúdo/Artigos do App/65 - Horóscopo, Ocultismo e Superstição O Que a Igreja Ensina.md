@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 65 - Horóscopo, Ocultismo e Superstição O Que a Igreja Ensina
@@ -25,7 +25,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Catecismo §2116-2117]]
 - [[Isaías 8,19]]
 - [[Êxodo 20,3-5]]
-- [[2 Coríntios 11,14]]
+- [[2 Coríntios 11,14-15]]
+- [[1 Samuel 28,7-8]]
+- [[1 Crônicas 10,13-14]]
 
 ## Diálogos que levam a este artigo
 - [[Ler horóscopo é inofensivo, é só diversão]]

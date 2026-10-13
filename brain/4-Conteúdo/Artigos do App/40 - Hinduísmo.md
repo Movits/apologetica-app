@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 40 - Hinduísmo
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.
+Em muitas de suas escolas, o Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.
 
 Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`

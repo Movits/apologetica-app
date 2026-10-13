@@ -27,7 +27,8 @@ export default function VerseOfDayCard({ onOpen, style }) {
   // no idioma certo), em vez de remontá-la por regex, que gerava "Salmo 23 1,1".
   const handleShare = () => shareVerse({ ref, text: verseText, isEn });
   const handleShareAsImage = () => captureAndShareImage(shareCardRef, `"${verseText}"\n\n${ref}`);
-  const openVerse = () => onOpen?.({ bookId: verse.bookId, chapter: verse.chapter, verse: verse.verse });
+  // Em inglês, a Douay-Rheims às vezes numera diferente (bibleNavEn).
+  const openVerse = () => onOpen?.((isEn && verse.bibleNavEn) || { bookId: verse.bookId, chapter: verse.chapter, verse: verse.verse, verseEnd: verse.verseEnd });
 
   return (
     <>

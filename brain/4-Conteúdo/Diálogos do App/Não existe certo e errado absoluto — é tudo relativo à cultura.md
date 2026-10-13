@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Não existe certo e errado absoluto — é tudo relativo à cultura

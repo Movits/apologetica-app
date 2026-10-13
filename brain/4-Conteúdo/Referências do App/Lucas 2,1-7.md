@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Lucas 2,1-7
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Lucas (séc. I d.C.)
 Tema: Censo de Quirino / nascimento de Jesus
 
-> Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do que se efetuou quando Quirino era governador da Síria. Iam todos alistar-se, cada um ...
+> Naqueles tempos, apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Esse recenseamento foi feito antes do governo de Quirino, na Síria. Todos iam alistar-se, cada um na sua cidade. Também Jo...
 
 Abre no app em `lc 2,1`.
 Funcionalidade: [[Referências]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 15 - Islamismo
@@ -30,8 +30,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuteronômio 18,18]]
 - [[João 14,16-17]]
 - [[Anais, livro XV, 44]]
-- [[Antiguidades Judaicas, livro 20]]
 - [[Sahih al-Bukhari 6,61,510]]
+- [[Nostra Aetate]]
+- [[Antiguidades Judaicas 18,3,3]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]

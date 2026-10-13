@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 56 - Deus Existe Os Melhores Argumentos da Razão
@@ -23,11 +23,11 @@ Arquivo: `src/data/articles/existencia-deus.js`
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]
-- [[Romanos 1,20]]
 - [[Fides et Ratio]]
 - [[O Argumento Cosmológico Kalam]]
 - [[Argumento evolutivo contra o naturalismo]]
 - [[Catecismo §31-35]]
+- [[Mateus 7,7]]
 
 ## Diálogos que levam a este artigo
 - [[Não existe nenhuma prova de que Deus existe, é tudo fé cega]]

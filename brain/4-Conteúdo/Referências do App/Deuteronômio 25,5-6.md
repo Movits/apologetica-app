@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Deuteronômio 25,5-6
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Tradicionalmente atribuído a Moisés (redação final c. séc. VI a.C.)
 Tema: Lei do Levirato / casamento da viúva sem filhos
 
-> Quando irmãos morarem juntos e um deles morrer sem ter filho, a mulher do falecido não se casará fora, com um estrangeiro; seu cunhado a tomará por mulher, e cumprirá com ela o dever de cunhado. O primogênito que ela con...
+> Se alguns irmãos habitarem juntos, e um deles morrer sem deixar filhos, a mulher do defunto não se casará fora com um estranho: seu cunhado a desposará e se aproximará dela, observando o costume do levirato. Ao primeiro ...
 
 Abre no app em `dt 25,5`.
 Funcionalidade: [[Referências]]

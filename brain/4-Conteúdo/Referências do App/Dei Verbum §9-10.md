@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Dei Verbum §9-10
@@ -14,8 +14,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]
-- [[18 - O Cânon Bíblico Por que 73 Livros]]
-- [[31 - Como Lidar com Supostas Contradições na Bíblia]]
-- [[68 - Quem Escreveu a Bíblia]]
-- [[69 - A Bíblia, a Escravidão e a Violência no Antigo Testamento]]
-- [[71 - Como Começar a Ler a Bíblia]]

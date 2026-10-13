@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # O Sudário de Oviedo
@@ -14,3 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
+- [[50 - O Sudário de Turim]]

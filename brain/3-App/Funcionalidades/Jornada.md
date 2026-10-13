@@ -92,6 +92,13 @@ caixas de Leitner:
   previsões e em 73 das 100 perguntas da prática: o padrão entregava a
   resposta. A ordem é determinística pela semente (`shuffledOrder`), muda a
   cada tentativa e a cada dia.
+- **A certa não se entrega pelo tamanho.** Em 92% das perguntas das lições a
+  certa era a opção mais longa (a mais "completa"), e embaralhar não resolve
+  isso. Regra em `tests/optionBalance.mjs`, cobrada nas lições e no quiz: a
+  certa tem no máximo 25% ou 8 caracteres a mais que a maior errada, e no
+  conjunto é a mais longa (ou a mais curta) em no máximo 40% das perguntas.
+  Errada boa é um equívoco real ou uma meia-verdade que o artigo corrige,
+  nunca uma opção absurda que ninguém escolheria.
 
 Lógica pura em `src/utils/review.js` (`tests/review.test.mjs`) e
 `src/utils/reviewItems.js` (`tests/reviewItems.test.mjs`, toda pergunta de

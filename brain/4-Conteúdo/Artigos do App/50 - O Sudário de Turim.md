@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 50 - O Sudário de Turim
@@ -21,7 +21,8 @@ Arquivo: `src/data/articles/existencia-deus.js`
 ## Referências usadas
 - [[O Sudário de Turim e o projeto STURP]]
 - [[Milagre Eucarístico de Lanciano]]
-- [[Mateus 28,1-10]]
+- [[O Sudário de Oviedo]]
+- [[João 19,33-34]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

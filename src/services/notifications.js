@@ -114,7 +114,7 @@ export async function rescheduleAll() {
         identifier: ID_DAILY_VERSE,
         content: {
           title: 'Versículo do dia',
-          body: `${verse.text} (${verse.ref})`,
+          body: `${verse.text} · ${verse.ref}`,
           data: { type: 'verse-of-day' },
         },
         trigger: {
@@ -194,7 +194,7 @@ export async function sendTestNotification() {
     await Notifications.scheduleNotificationAsync({
       content: {
         title: 'Versículo do dia (teste)',
-        body: `${verse.text} (${verse.ref})`,
+        body: `${verse.text} · ${verse.ref}`,
       },
       trigger: {
         type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,

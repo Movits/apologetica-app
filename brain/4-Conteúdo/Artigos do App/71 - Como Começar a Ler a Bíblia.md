@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 71 - Como Começar a Ler a Bíblia
@@ -23,8 +23,8 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[2 Pedro 1,20-21]]
 - [[2 Pedro 3,16]]
-- [[Dei Verbum §9-10]]
 - [[1 Timóteo 3,15]]
+- [[Dei Verbum §25]]
 
 ## Diálogos que levam a este artigo
 - [[Não preciso de igreja nem de padre leio a Bíblia e Deus me ilumina]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Gênesis 14,14
@@ -15,4 +15,5 @@ Abre no app em `gn 14,14`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[05 - A Ressurreição de Jesus Fato Histórico]]
 - [[13 - A Virgindade Perpétua de Maria]]

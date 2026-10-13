@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Milagre eucarístico de Tixtla (2006)

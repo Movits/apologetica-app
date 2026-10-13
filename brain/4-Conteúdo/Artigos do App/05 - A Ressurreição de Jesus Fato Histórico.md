@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 05 - A Ressurreição de Jesus Fato Histórico
@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[O Caso da Ressurreição de Jesus]]
 - [[Mateus 13,55-56]]
 - [[Gálatas 1,19]]
+- [[Gênesis 14,14]]
 
 ## Artigos relacionados
 - [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]

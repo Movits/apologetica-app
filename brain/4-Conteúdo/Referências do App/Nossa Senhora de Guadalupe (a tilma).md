@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Nossa Senhora de Guadalupe (a tilma)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Tradição e estudos científicos (infravermelho, oftalmologia, astronomia) (1531 (aparição); canonização de Juan Diego em 2002)
 Tema: Imagem inexplicada na tilma de Guadalupe
 
-> A imagem ficou impressa numa tilma de fibra de agave, material que deveria desintegrar-se em poucas décadas, mas que se conserva há quase 500 anos. Estudos por infravermelho (anos 1970) não acharam desenho preliminar nem...
+> A imagem ficou impressa numa tilma de fibra de agave, material que, segundo se costuma afirmar, deveria desintegrar-se em poucas décadas, mas que se conserva há quase 500 anos. O estudo por infravermelho de Philip Callah...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

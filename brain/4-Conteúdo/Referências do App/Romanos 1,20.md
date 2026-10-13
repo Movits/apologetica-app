@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Romanos 1,20
@@ -18,4 +18,3 @@ Funcionalidade: [[Referências]]
 - [[01 - A Existência de Deus o Argumento Cosmológico]]
 - [[09 - O Argumento do Design Cósmico (Ajuste Fino)]]
 - [[42 - Ateísmo e Naturalismo]]
-- [[56 - Deus Existe Os Melhores Argumentos da Razão]]

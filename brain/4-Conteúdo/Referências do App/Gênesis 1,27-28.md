@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Gênesis 1,27-28
@@ -16,8 +16,6 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]
-- [[25 - Aborto A Dignidade da Vida Humana]]
-- [[26 - Contracepção e Humanae Vitae]]
 - [[39 - Budismo]]
 - [[40 - Hinduísmo]]
 - [[64 - Sexo Antes do Casamento e a Castidade]]

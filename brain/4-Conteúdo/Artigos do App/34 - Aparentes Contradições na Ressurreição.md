@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 34 - Aparentes Contradições na Ressurreição
@@ -23,6 +23,10 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Atos 1,3]]
 - [[De Consensu Evangelistarum]]
 - [[O Caso da Ressurreição de Jesus]]
+- [[Lucas 24,1-10]]
+- [[Marcos 16,1-7]]
+- [[João 20,1-12]]
+- [[Mateus 28,16-17]]
 
 ## Artigos relacionados
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

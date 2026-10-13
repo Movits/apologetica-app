@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 76 - Como a Igreja Reconhece um Santo A Canonização
@@ -22,3 +22,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Apocalipse 5,8]]
 - [[Mateus 22,32]]
 - [[Hebreus 12,14]]
+
+## Artigos relacionados
+- [[04 - Maria Intercessora, Não Mediadora]]
+- [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
+- [[55 - Aparições de Maria Evidência para Deus]]

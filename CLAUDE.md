@@ -15,6 +15,7 @@ npm run check:refs             # valida os dados de referência (fonte, EN, urls
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
 node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (27 fotos que checam o próprio conteúdo, incluindo sair no meio do teste e voltar) no app web servido em BASE_URL
+node scripts/verify-bible.mjs  # Playwright: Atos 3,1, o bloco Josué 19,17-23, versículo do dia abrindo o Salmo certo e Jó em inglês (confira que BASE_URL serve o build NOVO)
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
@@ -24,7 +25,12 @@ extensão do Metro. Só módulos **puros** são testáveis (nada de `react-nativ
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
 `src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
 `src/theme/palette.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
-`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js` e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
+`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js`, `src/data/journeyMarks.js`,
+`src/data/dailyVerses.js` (texto literal das Bíblias do app) e as duas Bíblias
+(`tests/bibleAveMaria.test.mjs` confere a forma dos 1.334 capítulos contra
+`tests/fixtures/avemaria-forma.json`; `tests/bibles.test.mjs`, livros e capítulos).
+Pergunta de múltipla escolha nova passa pela regra de `tests/optionBalance.mjs`: a certa
+não pode se entregar pelo tamanho. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -158,6 +164,9 @@ mantenha esses dois em sincronia.
 `src/services/bibleApi.js` — `getChapter(bookId, chapter, language?)` síncrono.
 - `language='pt'` → Ave Maria (`src/data/bibleAveMaria.js`, ~4 MB)
 - `language='en'` → Douay-Rheims-Challoner (`src/data/bibleDouayRheims.js`, ~4.5 MB). Fallback automático para PT se EN indisponível.
+- Os dois arquivos são gerados (`scripts/convert-avemaria.mjs`, `scripts/convert-douay-rheims.mjs`): nunca edite à mão. A numeração da Ave Maria foi consertada em 39 capítulos por `scripts/source/avemaria-correcoes.json` (ver o `_doc` dele); correção nova de texto bíblico entra ali ou no conversor, com a fonte.
+- **Blocos da edição impressa**: a Ave Maria imprime alguns grupos juntos (Josué 19,17-23). O dado guarda o texto no primeiro número e `''` nos seguintes; `chapterVerses` junta numa linha com `end` ("17-23") e `verseText`/`getVerse` devolvem o bloco para qualquer número dentro dele. Conte versículos por `total` (o último número), nunca por `verses.length`.
+- Numeração: as duas Bíblias seguem a Vulgata nos Salmos (o 23 hebraico é o 22). Referência a Salmo traz as duas no rótulo ("Salmo 23 (22),1") e o `bibleNav` na do app. Onde a Douay-Rheims numera diferente da Ave Maria, use `bibleNavEn`.
 
 ### Navegação entre telas
 - Artigo → tap em referência → `navigate('RefDetail', { highlightId })` (tela dedicada de uma referência).
@@ -255,7 +264,7 @@ na reescrita de outubro de 2026). O que não pode subir é erro, e sua mudança 
 warning.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
-legada (hoje: 40 refs não bíblicas sem url, 57 sem tradução EN, 15 apontando para
+legada (hoje: 40 refs não bíblicas sem url, 56 sem tradução EN, 15 apontando para
 a Wikipédia). Esses números **só podem cair**.
 
 **2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**

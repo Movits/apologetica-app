@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Ossuário de Caifás
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (séc. I d.C.) (Descoberto em 1990)
 Tema: Confirmação histórica do sumo sacerdote Caifás
 
-> Numa tumba familiar no sul de Jerusalém foram achados ossuários, um deles ricamente ornamentado, com o nome do sumo sacerdote Caifás, que presidiu o julgamento de Jesus (Mateus 26,57; João 11,49).
+> Numa tumba familiar no sul de Jerusalém foram achados ossuários, um deles ricamente ornamentado, com o nome do sumo sacerdote Caifás, que presidiu o julgamento de Jesus (Mateus 26,57 e João 18,24).
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

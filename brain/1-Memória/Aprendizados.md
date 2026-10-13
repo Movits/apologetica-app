@@ -173,10 +173,34 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
   na segunda). Embaralhar na tela, com semente determinística.
 - `dayOfYear` por diferença de timestamps erra na primeira hora do dia em fuso
   com horário de verão. Contar pelos campos da data (UTC sobre y/m/d).
-- A Ave Maria offline tem versículos faltando em alguns capítulos do Novo
-  Testamento (ver Roteiro de Ideias). Texto bíblico de referência se tira com
-  `verse.mjs`, mas nesses capítulos o número do versículo engana.
+- A Ave Maria offline tinha versículos faltando e grudados (resolvido no mesmo
+  dia, ver abaixo). Texto bíblico de referência se tira com `verse.mjs`.
 - Revisores em paralelo: dar a cada um um validador que simula a aplicação e
   confere a sintaxe do arquivo. Mesmo assim, ids novos colidem entre grupos
   (dois "josefo-antiguidades-18" para passagens diferentes): deduplicar e
   comparar o conteúdo antes de juntar.
+
+## Sobre dados que parecem certos (2026-10-13, continuação)
+
+- Embaralhar as opções não basta: a IA escreve a certa como a opção mais
+  completa, e ela era a mais longa em 92% das perguntas das lições. Medir o
+  tamanho é barato; a regra ficou em `tests/optionBalance.mjs`.
+- Dado de fonte externa se confere contra uma segunda fonte independente
+  antes de confiar. A Ave Maria do fidalgobr perdia a numeração em 39
+  capítulos (número grudado no texto, blocos da edição achatados) e o
+  bibliaonline, da mesma linhagem, compartilhava parte dos defeitos. Só a
+  cantaramissa, de outra digitação, separou o que era defeito do que era a
+  numeração da própria edição.
+- Ao consertar texto de terceiros, recortar e não reescrever: o texto da
+  fonte foi cortado nas fronteiras certas e uma checagem só de letras provou
+  que nada se perdeu nem se repetiu. Texto novo só onde faltava, e conferido.
+- "Versículo do dia da Ave Maria" não era da Ave Maria: vários textos vinham
+  de outras traduções, e os Salmos usavam a numeração hebraica numa Bíblia que
+  segue a Vulgata. Toda citação bíblica que diz vir das Bíblias do app agora
+  tem teste de texto literal.
+- Uma chave errada some sem erro: Jó e Jonas na Douay-Rheims estavam como
+  'jó' e 'jn', e o inglês caía no português em silêncio. Teste de forma
+  (livros e capítulos) pega isso de graça.
+- Número em relatório e em commit se calcula, não se estima: o primeiro
+  rascunho do commit das lições dizia 105 correções de conteúdo; os registros
+  davam 112.

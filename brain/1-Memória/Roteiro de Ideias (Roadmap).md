@@ -30,15 +30,12 @@ Ver [[Pesquisa de Concorrência - Capela e Hallow (UI-UX)]] para o detalhe e as 
 
 ## Conteúdo
 
-- **Bíblia Ave Maria com versículos faltando** (achado em 2026-10-13): nos dados
-  de `src/data/bibleAveMaria.js`, Atos 3 não tem o versículo 1 e o resto do
-  capítulo vem deslocado (o 3,21 mostra o texto do 3,22); Mateus 14 tem os
-  versículos 15 e 16 fundidos. Também parecem faltar versículos em Gálatas 1,
-  2 Tessalonicenses 2, Hebreus 12, 1 Pedro 1 e Apocalipse 7, e Romanos 7 e
-  1 Coríntios 16 têm um a mais. Corrigir na raiz (fonte `_avemaria_raw.json` ou
-  `scripts/convert-avemaria.mjs`) e travar com um teste da contagem de
-  versículos por capítulo. Algumas diferenças contra a Douay-Rheims são da
-  numeração da Vulgata (Marcos 8/9, João 6, Atos 19) e estão certas.
+- ~~**Bíblia Ave Maria com versículos faltando**~~ (achado e resolvido em
+  2026-10-13): 39 capítulos com a numeração consertada por
+  `scripts/source/avemaria-correcoes.json`, travados por
+  `tests/bibleAveMaria.test.mjs`. Gálatas 1, 2 Tessalonicenses 2, Hebreus 12,
+  1 Pedro 1, Apocalipse 7, Romanos 7, 1 Coríntios 16 e Atos 15 ficaram como
+  estão: é a numeração da própria edição (quatro fontes concordam).
 
 Cobrir as lacunas do [[Top 100 Tópicos]]: comparar a lista dos temas mais buscados com os artigos existentes e priorizar os buracos.
 

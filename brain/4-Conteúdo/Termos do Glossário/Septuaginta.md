@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Septuaginta
@@ -14,3 +14,4 @@ Funcionalidade: [[Glossário]]
 - [[13 - A Virgindade Perpétua de Maria]]
 - [[14 - Maria, Mãe de Deus (Theotokos)]]
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
+- [[38 - Judaísmo]]

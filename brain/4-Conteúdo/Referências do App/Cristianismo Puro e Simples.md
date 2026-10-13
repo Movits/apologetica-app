@@ -1,18 +1,19 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Cristianismo Puro e Simples
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Teólogos | C. S. Lewis (1952)
-Tema: Argumento moral pela existência de Deus
+Tema: Argumento moral, trilema e argumento do desejo
 
-> "Toda vez que você encontra um homem dizendo que não acredita em um Bem e em um Mal reais, descobre que esse mesmo homem volta atrás um momento depois. Ele pode quebrar a promessa que fez a você, mas se você tentar quebr...
+> Livro que reúne as palestras de Lewis na rádio BBC. No livro I, ele parte da lei moral que todos pressupõem quando discutem e conclui: "parece, então, que somos forçados a acreditar num Certo e num Errado reais". No livr...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[06 - Ateísmo e o Problema do Mal]]
 - [[10 - O Argumento Moral pela Existência de Deus]]
 - [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]
 - [[36 - Cristianismo Copiou Religiões Pagãs]]

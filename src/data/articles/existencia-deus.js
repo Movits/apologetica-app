@@ -380,7 +380,7 @@ Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outr
 
 Que frutos as verdadeiras aparições marianas produzem? Conversão, arrependimento, volta aos sacramentos, oração, caridade, o batismo de multidões de indígenas no México depois de Guadalupe, retorno de pecadores a Cristo. Ora, Jesus mesmo ensinou que "todo reino dividido contra si mesmo será destruído" (Mateus 12,25). Um demônio que levasse multidões a se converter a Cristo, a confessar os pecados, a rezar e a viver o Evangelho estaria trabalhando contra o próprio reino. Não faz sentido. O diabo não conduz as pessoas para mais perto de Jesus.
 
-E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama atenção para si, sempre aponta para o Filho. A frase que resume toda a sua mensagem é a de Caná: "fazei tudo o que ele vos disser" (João 2,5). Uma aparição que levasse para longe de Cristo, ou que contradissesse a Escritura, seria rejeitada exatamente por isso. A Igreja, aliás, é severíssima: examina cada caso por anos e reprova a grande maioria das alegações.
+E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama atenção para si, sempre aponta para o Filho. A frase que resume toda a sua mensagem é a de Caná: "fazei o que ele vos disser" (João 2,5). Uma aparição que levasse para longe de Cristo, ou que contradissesse a Escritura, seria rejeitada exatamente por isso. A Igreja, aliás, é severíssima: examina cada caso por anos e reprova a grande maioria das alegações.
 
 ## O lugar certo das aparições
 

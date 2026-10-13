@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Apocalipse 5,8
@@ -16,5 +16,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]
-- [[22 - A Assunção de Maria]]
 - [[76 - Como a Igreja Reconhece um Santo A Canonização]]

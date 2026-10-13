@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Contra as Heresias, III, 22
@@ -14,4 +14,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[12 - A Imaculada Conceição de Maria]]
-- [[19 - O Papa Cabeça Visível da Igreja]]

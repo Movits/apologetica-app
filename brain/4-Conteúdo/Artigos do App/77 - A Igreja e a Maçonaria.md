@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 77 - A Igreja e a Maçonaria
@@ -24,3 +24,5 @@ Arquivo: `src/data/articles/outras-religioes.js`
 ## Referências usadas
 - [[Êxodo 20,3-5]]
 - [[João 14,6]]
+- [[Declaração sobre a Maçonaria (1983)]]
+- [[Nota sobre a Maçonaria (2023)]]

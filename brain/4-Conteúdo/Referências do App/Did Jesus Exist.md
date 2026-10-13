@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Did Jesus Exist
@@ -13,4 +13,5 @@ Tema: Defesa acadêmica da existência histórica de Jesus
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[31 - Como Lidar com Supostas Contradições na Bíblia]]
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

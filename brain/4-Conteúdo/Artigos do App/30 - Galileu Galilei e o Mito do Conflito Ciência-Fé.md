@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 30 - Galileu Galilei e o Mito do Conflito Ciência-Fé
@@ -16,13 +16,14 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - Qual era o problema, de fato
 - O que realmente aconteceu
 - Um erro humano, reconhecido em 1992
-- Os reformadores foram mais hostis
+- Os reformadores também resistiram
 - Ciência e fé: matriz, não conflito
 - Perguntas-chave
 
 ## Referências usadas
 - [[Discurso de João Paulo II sobre o caso Galileu]]
 - [[Hipótese do átomo primordial]]
+- [[Josué 10,12-13]]
 
 ## Artigos relacionados
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

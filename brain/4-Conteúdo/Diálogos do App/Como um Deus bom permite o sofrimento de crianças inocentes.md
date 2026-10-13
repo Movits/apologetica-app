@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Como um Deus bom permite o sofrimento de crianças inocentes

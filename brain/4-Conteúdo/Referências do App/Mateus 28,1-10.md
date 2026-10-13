@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Mateus 28,1-10
@@ -16,5 +16,5 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
+- [[31 - Como Lidar com Supostas Contradições na Bíblia]]
 - [[34 - Aparentes Contradições na Ressurreição]]
-- [[50 - O Sudário de Turim]]

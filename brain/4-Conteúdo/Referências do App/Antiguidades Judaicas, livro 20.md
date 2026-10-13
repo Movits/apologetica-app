@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Antiguidades Judaicas, livro 20
@@ -14,6 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
-- [[15 - Islamismo]]
-- [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]
