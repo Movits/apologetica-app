@@ -30,7 +30,10 @@
 // e voltar não recomeça o teste valendo) e
 // a pergunta do dia só conta a primeira resposta. O que a pessoa errou não
 // some: vira cartão de revisão e volta no dia seguinte, e acertar na revisão
-// é o caminho para ganhar esses pontos de volta.
+// é o caminho para ganhar esses pontos de volta. Errar nunca rende mais do que
+// acertar: a pergunta do teste vale 25 de primeira ou na revisão, a pergunta
+// do dia recupera no máximo os 15 que valia, e a previsão (que já pagou 5 na
+// hora, certa ou errada) volta só para fixar (tests/journey.test.mjs).
 //
 // Contexto (ctx): o que o motor precisa e não vive no estado:
 //   articlesByCategory: { [categoria]: [ids] }  (de src/data/articles)
@@ -41,7 +44,7 @@
 // Tudo é idempotente: repetir um evento nunca dá XP de novo, e uma conquista
 // desbloqueada fica desbloqueada.
 
-import { answerCard, hookKey, isDue, lessonKey, newCard, quizKey } from './review';
+import { FIRST_BOX_RIGHT, MASTERED_LEVEL, answerCard, hookKey, isDue, lessonKey, newCard, quizKey } from './review';
 
 export const STATE_VERSION = 1;
 
@@ -263,8 +266,8 @@ export function applyEvent(prev, event, ctx = {}) {
   const id = event && event.articleId;
   const today = event && typeof event.today === 'string' ? event.today : null;
   // Cartão novo só onde ainda não há um (o primeiro contato com a pergunta).
-  const seed = (key, correct) => {
-    if (today && !state.review[key]) state.review[key] = newCard(correct, today);
+  const seed = (key, correct, opts) => {
+    if (today && !state.review[key]) state.review[key] = newCard(correct, today, opts);
   };
 
   const touch = () => {
@@ -287,7 +290,7 @@ export function applyEvent(prev, event, ctx = {}) {
       l.hook = num(event.choice);
       gained += XP.hook;
       // Previsão errada volta na revisão (depois de ler, a pessoa já sabe).
-      if (event.correct === false) seed(hookKey(id), false);
+      if (event.correct === false) seed(hookKey(id), false, { maxBox: MASTERED_LEVEL });
     }
   } else if (type === 'checkAnswer' && id != null) {
     const index = event.index;
@@ -336,7 +339,11 @@ export function applyEvent(prev, event, ctx = {}) {
         const existing = state.review[qk];
         // A mesma pergunta pode voltar como pergunta do dia meses depois:
         // errar de novo conta como lapso do cartão que já existe.
-        state.review[qk] = existing && !existing.mastered ? answerCard(existing, false, key) : newCard(false, key);
+        // Recupera só as três últimas etapas (15 XP, o que valia acertar), e
+        // uma pergunta já dominada não reabre XP nenhum.
+        state.review[qk] = existing && !existing.mastered
+          ? answerCard(existing, false, key)
+          : newCard(false, key, { maxBox: Math.max(FIRST_BOX_RIGHT, existing ? existing.maxBox ?? MASTERED_LEVEL : 0) });
       }
     }
   } else if (type === 'review') {
@@ -345,7 +352,8 @@ export function applyEvent(prev, event, ctx = {}) {
     const next = answerCard(card, Boolean(event.correct), today);
     state.review[event.key] = next;
     // Só etapa nova paga: errar de propósito e acertar de novo não rende.
-    if (event.correct && (next.mastered || next.box > (card.maxBox ?? card.box ?? 0))) gained += XP.review;
+    const level = next.mastered ? MASTERED_LEVEL : next.box;
+    if (event.correct && level > (card.maxBox ?? card.box ?? 0)) gained += XP.review;
   } else if (type !== 'sync') {
     return { state: base, gained: 0, unlocked: [] };
   }

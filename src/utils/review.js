@@ -20,6 +20,8 @@ export const REVIEW_INTERVALS = [1, 3, 7, 16, 35];
 export const REVIEW_SESSION_SIZE = 5;
 // Caixa de entrada de uma pergunta acertada no teste (volta em 7 dias).
 export const FIRST_BOX_RIGHT = 2;
+// "Etapa" da pergunta dominada, acima da última caixa: conta para o XP.
+export const MASTERED_LEVEL = REVIEW_INTERVALS.length;
 
 const DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
@@ -49,11 +51,15 @@ export function parseKey(key) {
   return null;
 }
 
-// `maxBox` é a etapa mais alta que a pergunta já alcançou: o XP da revisão só
-// paga etapa nova, então errar de propósito para repetir uma etapa não rende.
-export function newCard(correct, today) {
+// `maxBox` é a etapa mais alta já paga: o XP da revisão só paga etapa nova
+// (caixa acima de maxBox, ou a pergunta dominada), então errar de propósito
+// para repetir uma etapa não rende. Quem cria o cartão pode marcar etapas
+// como já pagas (`maxBox`): a previsão já valeu XP na hora, a pergunta do dia
+// só recupera o que valia.
+export function newCard(correct, today, opts = {}) {
   const box = correct ? FIRST_BOX_RIGHT : 0;
-  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps: 0, lapses: 0, maxBox: box };
+  const maxBox = Math.max(box, Number.isFinite(opts.maxBox) ? opts.maxBox : box);
+  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps: 0, lapses: 0, maxBox };
 }
 
 // Resposta numa revisão. Devolve um cartão novo (não muta a entrada).
@@ -64,7 +70,7 @@ export function answerCard(card, correct, today) {
   if (!correct) return { box: 0, due: addDaysKey(today, REVIEW_INTERVALS[0]), reps, lapses: lapses + 1, maxBox: prevMax };
   const box = (card.box || 0) + 1;
   if (box >= REVIEW_INTERVALS.length) {
-    return { box: REVIEW_INTERVALS.length - 1, due: null, reps, lapses, maxBox: REVIEW_INTERVALS.length - 1, mastered: true };
+    return { box: REVIEW_INTERVALS.length - 1, due: null, reps, lapses, maxBox: MASTERED_LEVEL, mastered: true };
   }
   return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps, lapses, maxBox: Math.max(prevMax, box) };
 }

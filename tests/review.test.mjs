@@ -16,6 +16,7 @@ import {
   reviewSummary,
   shuffledOrder,
   daysBetween,
+  MASTERED_LEVEL,
 } from '../src/utils/review.js';
 
 // Revisão espaçada (caixas de Leitner): errou, a pergunta volta amanhã;
@@ -149,6 +150,13 @@ test('maxBox guarda a etapa mais alta já alcançada (o XP da revisão só paga 
   assert.equal(c.maxBox, 1);
   c = answerCard(c, true, c.due);
   assert.equal(c.maxBox, 2);
+  // Dominada conta como a etapa acima da última.
+  let m = newCard(true, T);
+  for (let i = 0; i < 5 && !m.mastered; i++) m = answerCard(m, true, m.due);
+  assert.equal(m.maxBox, MASTERED_LEVEL);
+  assert.equal(MASTERED_LEVEL, REVIEW_INTERVALS.length);
+  // Etapa já paga pode vir de fora (previsão, pergunta do dia).
+  assert.equal(newCard(false, T, { maxBox: MASTERED_LEVEL }).maxBox, MASTERED_LEVEL);
   // Cartões antigos sem maxBox contam a caixa atual.
   assert.equal(answerCard({ box: 2, due: T, reps: 1, lapses: 0 }, true, T).maxBox, 3);
 });

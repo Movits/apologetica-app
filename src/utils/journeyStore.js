@@ -58,6 +58,21 @@ function emit(state) {
   });
 }
 
+// Web: outra aba (ou o app instalado) gravou a jornada. Sem isto cada aba
+// seguia com a própria cópia, e a segunda aba aceitava de novo a resposta já
+// dada na primeira (e o último a gravar apagava o progresso do outro). O
+// AsyncStorage da web grava no localStorage com a mesma chave, e o evento
+// `storage` só chega às OUTRAS abas. No nativo não há `addEventListener`.
+if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+  window.addEventListener('storage', (e) => {
+    if (e.key !== KEY) return;
+    let next;
+    try { next = normalizeState(e.newValue ? JSON.parse(e.newValue) : null); } catch { return; }
+    cache = next;
+    emit(cache);
+  });
+}
+
 export function getJourney() {
   return load();
 }

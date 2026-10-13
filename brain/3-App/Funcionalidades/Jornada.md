@@ -80,8 +80,12 @@ caixas de Leitner:
   escolhida). Reabrir mostra a resposta dada e "Você já respondeu a pergunta
   de hoje". Errou, volta na Revisão amanhã.
 - **Revisão**: cada acerto empurra a próxima vez (1, 3, 7, 16 e 35 dias); errar
-  devolve para amanhã. Só etapa nova vale 5 XP (`maxBox` no cartão): errar de
-  propósito para repetir uma etapa não rende. Acertou na última caixa, a pergunta está
+  devolve para amanhã. Só etapa nova vale 5 XP (`maxBox` no cartão, e a pergunta
+  dominada conta como a etapa 5). Errar nunca rende mais do que acertar: a
+  pergunta do teste vale 25 de primeira ou na revisão, a pergunta do dia errada
+  nasce com `maxBox` 2 (recupera no máximo os 15 que valia) e a previsão errada
+  nasce com `maxBox` 5 (volta só para fixar, já valeu XP na hora). O web
+  sincroniza as abas pelo evento `storage`. Acertou na última caixa, a pergunta está
   dominada. É o único jeito de recuperar os pontos de quem errou: aprendendo.
 - **Opções embaralhadas** em toda pergunta (previsão, teste, treino, revisão,
   quiz). Nos dados a resposta certa estava na mesma posição em 75 das 83

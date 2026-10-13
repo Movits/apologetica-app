@@ -3967,7 +3967,8 @@ const translateChapterVerse = (s) => s
   .replace(/,?\s*capítulo\s*/gi, ', chapter ')
   .replace(/,?\s*versículos\s*/gi, ', verses ')
   .replace(/,?\s*versículo\s*/gi, ', verse ')
-  .replace(/\s+a\s+(\d)/g, '-$1');
+  .replace(/\s+a\s+(\d)/g, '-$1')
+  .replace(/(\d)\s+e\s+(\d)/g, '$1 and $2');
 
 export const translateFullSource = (fs, isEn) => {
   if (!isEn || !fs) return fs;
@@ -3975,7 +3976,8 @@ export const translateFullSource = (fs, isEn) => {
     return fs
       .replace('Catecismo da Igreja Católica', 'Catechism of the Catholic Church')
       .replace(/,?\s*parágrafos?\s*/gi, ' §')
-      .replace(/\s+a\s+(\d)/g, '-$1');
+      .replace(/\s+a\s+(\d)/g, '-$1')
+      .replace(/(\d)\s+e\s+(\d)/g, '$1 and $2');
   }
   for (const [ptName, enName] of Object.entries(FS_GOSPEL)) {
     const prefix = `Evangelho segundo ${ptName}`;

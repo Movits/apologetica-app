@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
@@ -42,6 +42,9 @@ export default function ReviewScreen({ navigation }) {
   // XP desta resposta como o motor pagou (0 se a etapa já tinha sido
   // alcançada, ou se a mesma pergunta foi respondida em outra aba).
   const [lastGained, setLastGained] = useState(0);
+  // Pergunta na tela agora: a gravação de uma resposta pode terminar depois
+  // de "Próxima", e aí não deve pintar a pergunta seguinte.
+  const currentKey = useRef(null);
   const [finished, setFinished] = useState(false);
 
   // A sessão nasce quando o estado carrega (e de novo em "Revisar mais").
@@ -50,6 +53,7 @@ export default function ReviewScreen({ navigation }) {
   }, [journey, session, today]);
 
   const item = session && session[index];
+  currentKey.current = item ? item.key : null;
   const optionCount = item?.options?.length || 0;
   const order = useMemo(() => shuffledOrder(optionCount, `review:${item?.key}:${today}`), [optionCount, item?.key, today]);
 
@@ -144,6 +148,7 @@ export default function ReviewScreen({ navigation }) {
       // teria o cartão agendado um dia antes).
       const r = await dispatchJourney({ type: 'review', key: item.key, correct: right });
       setGained((g) => g + r.gained);
+      if (currentKey.current !== item.key) return;
       setLastGained(r.gained);
       const card = r.state.review[item.key];
       setReturnsIn(card?.mastered ? 'mastered' : daysBetween(todayKey(), card?.due));

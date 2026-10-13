@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AppState, ScrollView, Text, View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
@@ -170,29 +171,52 @@ function MultipleChoiceGame({ mode, navigation }) {
   // Semente da ordem das opções na prática: nova a cada rodada.
   const [round, setRound] = useState(() => String(Date.now()));
 
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; }, []);
+
+  // Pergunta do dia de hoje e, se já respondida, a resposta dada (travada).
+  // Chamada ao abrir e sempre que o dia muda com a tela aberta: ao voltar para
+  // ela, quando o app volta do segundo plano e antes de gravar uma resposta.
+  const loadDaily = useCallback(() => {
+    const q = getQuizOfDay();
+    const key = todayKey();
+    setQuestions([q]);
+    setIndex(0);
+    setSelected(null);
+    setShowResult(false);
+    setLocked(false);
+    setScore(0);
+    AsyncStorage.getItem(HISTORY_KEY)
+      .then((raw) => {
+        const prev = alreadyAnswered(raw ? JSON.parse(raw) : {}, key, q.id);
+        if (!alive.current || !prev) return;
+        setSelected(typeof prev.choice === 'number' ? prev.choice : null);
+        setShowResult(true);
+        setLocked(true);
+        if (prev.correct) setScore(1);
+      })
+      .catch(() => {});
+  }, []);
+
   useEffect(() => {
-    let alive = true;
-    if (mode === 'daily') {
-      const q = getQuizOfDay();
-      setQuestions([q]);
-      AsyncStorage.getItem(HISTORY_KEY)
-        .then((raw) => {
-          const prev = alreadyAnswered(raw ? JSON.parse(raw) : {}, todayKey(), q.id);
-          if (!alive || !prev) return;
-          setSelected(typeof prev.choice === 'number' ? prev.choice : null);
-          setShowResult(true);
-          setLocked(true);
-          if (prev.correct) setScore(1);
-        })
-        .catch(() => {});
-    } else {
-      setQuestions(getRandomQuestions(PRACTICE_SIZE));
-    }
-    AsyncStorage.getItem(STREAK_KEY).then((v) => { if (alive) setStreak(parseInt(v) || 0); });
-    return () => { alive = false; };
-  }, [mode]);
+    if (mode === 'daily') loadDaily();
+    else setQuestions(getRandomQuestions(PRACTICE_SIZE));
+    AsyncStorage.getItem(STREAK_KEY).then((v) => { if (alive.current) setStreak(parseInt(v) || 0); });
+  }, [mode, loadDaily]);
 
   const current = questions[index];
+  // A pergunta na tela ainda é a de hoje? (Tela aberta de um dia para o outro.)
+  const currentId = useRef(null);
+  currentId.current = current ? current.id : null;
+  const reloadIfNewDay = useCallback(() => {
+    if (mode === 'daily' && currentId.current && currentId.current !== getQuizOfDay().id) loadDaily();
+  }, [mode, loadDaily]);
+  useFocusEffect(reloadIfNewDay);
+  useEffect(() => {
+    if (mode !== 'daily') return undefined;
+    const sub = AppState.addEventListener('change', (st) => { if (st === 'active') reloadIfNewDay(); });
+    return () => sub.remove();
+  }, [mode, reloadIfNewDay]);
   // As opções aparecem embaralhadas: no banco a certa cai quase sempre na
   // segunda posição. A pergunta do dia tem a mesma ordem o dia todo.
   const optionCount = current?.options?.length || 0;
@@ -203,12 +227,9 @@ function MultipleChoiceGame({ mode, navigation }) {
     if (showResult || locked) return;
     // Tela aberta desde ontem: a pergunta mudou à meia-noite. Troca pela de
     // hoje em vez de gravar a de ontem sob a data de hoje.
-    if (mode === 'daily') {
-      const fresh = getQuizOfDay();
-      if (fresh.id !== current.id) {
-        setQuestions([fresh]);
-        return;
-      }
+    if (mode === 'daily' && getQuizOfDay().id !== current.id) {
+      loadDaily();
+      return;
     }
     const ok = i === current.correct;
     setSelected(i);

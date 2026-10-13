@@ -139,15 +139,19 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, draft, 
     try {
       const prev = await getJourney();
       const prevLevel = levelFor(prev.xp);
-      // Treino ou valendo, segundo o motor no momento de fechar.
-      const wasPractice = Boolean(lessonOf(prev, articleId)?.check?.attempts);
       const r1 = await dispatchJourney({ type: 'read', articleId });
       const r2 = await dispatchJourney({ type: 'check', articleId, score: finalScore, total, answers });
       const after = levelFor(r2.state.xp);
+      // O placar e o "treino ou valendo" vêm do que o motor gravou: se outra
+      // cópia deste artigo (outra aba do app, outra aba do navegador)
+      // respondeu antes, vale a primeira resposta, não a desta tela.
+      const rec = lessonOf(r2.state, articleId)?.check;
+      const wasPractice = Boolean(rec && rec.attempts > 1);
+      const shownScore = rec && rec.attempts === 1 ? rec.first : finalScore;
       const unlocked = [...r1.unlocked, ...r2.unlocked];
       const levelUp = after.index > prevLevel.index ? after.level : null;
       setResult({
-        score: finalScore,
+        score: shownScore,
         gained: r1.gained + r2.gained,
         unlocked,
         levelUp,
@@ -157,7 +161,7 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, draft, 
         practice: wasPractice,
       });
       setPhase('result');
-      if (finalScore >= total) haptics.success();
+      if (shownScore >= total) haptics.success();
       if (unlocked.length || levelUp) setSheetOpen(true);
     } finally {
       setBusy(false);
