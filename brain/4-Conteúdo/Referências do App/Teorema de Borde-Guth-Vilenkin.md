@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Teorema de Borde-Guth-Vilenkin
@@ -13,4 +13,5 @@ Tema: Um universo em expansão não pode ser eterno no passado
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[01 - A Existência de Deus o Argumento Cosmológico]]
 - [[11 - Quem Criou Deus A Objeção do Ateísmo]]

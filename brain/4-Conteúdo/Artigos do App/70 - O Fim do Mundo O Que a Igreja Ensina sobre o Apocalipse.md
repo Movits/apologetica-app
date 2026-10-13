@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 70 - O Fim do Mundo O Que a Igreja Ensina sobre o Apocalipse
@@ -23,8 +23,10 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[Mateus 25,31-46]]
 - [[Apocalipse 20,12-13]]
-- [[Apocalipse 21,27]]
-- [[Hebreus 9,27]]
+- [[Marcos 13,32]]
+- [[1 João 2,18]]
+- [[Apocalipse 22,20]]
+- [[Catecismo §675]]
 
 ## Diálogos que levam a este artigo
 - [[Os sinais estão aí, o fim do mundo está chegando agora]]

@@ -1,15 +1,15 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Amoris Laetitia §250-251
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Documentos | Papa Francisco (19 de março de 2016)
-Tema: Acolhimento de pessoas com tendência homossexual
+Tema: Respeito às pessoas com tendência homossexual e ensino sobre o matrimônio
 
-> "A Igreja faz sua a atitude do Senhor Jesus que, num amor sem limites, se ofereceu por cada pessoa sem exceção. Toda pessoa, independentemente da sua tendência sexual, deve ser respeitada na sua dignidade e acolhida com ...
+> "A Igreja conforma o seu comportamento ao do Senhor Jesus que, num amor sem fronteiras, Se ofereceu por todas as pessoas sem exceção. (...) Por isso desejo, antes de mais nada, reafirmar que cada pessoa, independentement...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

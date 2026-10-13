@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Deuteronômio 18,10-12
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Tradição mosaica (séc. XIII a VII a.C.)
 Tema: Proibição de consultar os mortos e a adivinhação
 
-> Não se ache no meio de ti quem se dê à adivinhação, aos agouros, à magia, ao encantamento, nem quem consulte espíritos, nem mágico, nem quem interrogue os mortos. Pois quem faz tais coisas é abominável ao Senhor.
+> Não se ache no meio de ti quem faça passar pelo fogo seu filho ou sua filha, nem quem se dê à adivinhação, à astrologia, aos agouros, ao feiticismo, à magia ou à invocação dos mortos, porque o Senhor, teu Deus, abomina a...
 
 Abre no app em `dt 18,10`.
 Funcionalidade: [[Referências]]

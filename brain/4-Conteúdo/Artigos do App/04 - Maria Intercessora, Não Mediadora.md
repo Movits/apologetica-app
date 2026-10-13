@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 04 - Maria Intercessora, Não Mediadora
@@ -27,7 +27,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 2,1-11]]
 - [[Apocalipse 5,8]]
 - [[Mateus 22,32]]
-- [[Catecismo §966-975]]
 - [[Lumen Gentium §60-62]]
 
 ## Artigos relacionados

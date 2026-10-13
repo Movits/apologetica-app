@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 47 - A Arqueologia Confirma a Bíblia
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. A história confirma a Bíblia ponto a ponto.
+Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Onde pode ser testada, a Bíblia passa no teste.
 
 Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`

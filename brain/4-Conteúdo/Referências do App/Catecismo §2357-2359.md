@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Catecismo §2357-2359

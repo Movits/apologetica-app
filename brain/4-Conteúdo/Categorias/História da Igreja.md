@@ -1,12 +1,12 @@
 ---
 tags: [categoria, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # História da Igreja
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Categoria com aprox. 10 artigos (2026-07-08). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
+Categoria com aprox. 10 artigos (2026-10-13). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
 
 ## Artigos
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

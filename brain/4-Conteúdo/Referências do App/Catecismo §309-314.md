@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Catecismo §309-314
@@ -9,9 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Problema do mal / providência
 
-> Deus, que é onipotente e soberanamente bom, por que permitiu o mal? A esta pergunta tão premente quanto inevitável só a fé cristã dá a resposta cabal: bondade de Deus e soberania são compatíveis com o mal porque Deus per...
+> Se Deus Pai todo-poderoso, Criador do mundo ordenado e bom, tem cuidado com todas as suas criaturas, porque é que o mal existe? A esta questão, tão premente como inevitável, tão dolorosa como misteriosa, não é possível d...
 Funcionalidade: [[Referências]]
 
-## Usada nos artigos
-- [[06 - Ateísmo e o Problema do Mal]]
-- [[72 - Evolução, Gênesis e Adão e Eva]]
+Nenhum artigo usa esta referência hoje (candidata a revisão editorial).

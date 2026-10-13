@@ -1,15 +1,15 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Papiro P52 (Rylands)
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Outros | Cópia do Evangelho de João (c. 125 d.C.)
+Fonte: Outros | Cópia do Evangelho de João (séc. II d.C. (tradicionalmente c. 125))
 Tema: O manuscrito mais antigo do Novo Testamento
 
-> Pequeno fragmento com versículos de João 18, datado por volta do ano 125, a poucas décadas da composição do Evangelho. Está entre as evidências de que o texto do Novo Testamento circulava muito cedo, deixando pouquíssimo...
+> Pequeno fragmento com versículos de João 18, datado pelos paleógrafos do século II (tradicionalmente por volta do ano 125, hoje muitos preferem entre 125 e 175), poucas décadas depois da composição do Evangelho. Está ent...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

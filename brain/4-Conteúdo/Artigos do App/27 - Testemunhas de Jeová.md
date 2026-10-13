@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 27 - Testemunhas de Jeová
@@ -24,6 +24,11 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Filipenses 2,6-11]]
 - [[João 14,16-17]]
 - [[Concílio de Niceia Credo Niceno]]
+- [[Deuteronômio 18,22]]
+- [[Hebreus 1,5-6]]
+- [[Atos 13,2]]
+- [[Atos 5,3-4]]
+- [[Tito 2,13]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

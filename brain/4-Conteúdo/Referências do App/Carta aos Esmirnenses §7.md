@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Carta aos Esmirnenses §7
@@ -14,3 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]
+- [[37 - Protestantismo]]

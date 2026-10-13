@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Fides et Ratio
@@ -15,5 +15,3 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[42 - Ateísmo e Naturalismo]]
 - [[56 - Deus Existe Os Melhores Argumentos da Razão]]
-- [[62 - Qual é o Sentido da Vida]]
-- [[72 - Evolução, Gênesis e Adão e Eva]]

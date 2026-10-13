@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 33 - As Duas Genealogias de Jesus Mateus e Lucas
@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Mateus 1,1-17]]
 - [[Lucas 3,23-38]]
 - [[Deuteronômio 25,5-6]]
+- [[História Eclesiástica I,7]]
 
 ## Artigos relacionados
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

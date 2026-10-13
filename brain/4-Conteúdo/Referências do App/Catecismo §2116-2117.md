@@ -1,15 +1,15 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Catecismo §2116-2117
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
-Tema: Condenação do espiritismo, da adivinhação e da magia
+Tema: Contra a adivinhação, a magia e o espiritismo
 
-> Devem-se rejeitar todas as formas de adivinhação. O recurso aos chamados médiuns encobre muitas vezes uma vontade de poder sobre o tempo, a história e, em última análise, sobre os homens, e o desejo de captar potências o...
+> Todas as formas de adivinhação devem ser rejeitadas: recurso a Satanás ou aos demônios, evocação dos mortos ou outras práticas supostamente «reveladoras» do futuro. A consulta dos horóscopos, a astrologia, a quiromancia,...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

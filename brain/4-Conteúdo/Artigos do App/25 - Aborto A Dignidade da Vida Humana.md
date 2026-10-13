@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 25 - Aborto A Dignidade da Vida Humana
@@ -20,8 +20,11 @@ Arquivo: `src/data/articles/moral.js`
 - Perguntas-chave
 
 ## Referências usadas
-- [[Gênesis 1,27-28]]
 - [[Catecismo §2270-2275]]
+- [[Didaqué 2,2]]
+- [[Apologético 9,8]]
+- [[Código de Direito Canônico, cân. 1397 §2 e 1329 §2]]
+- [[Misericordia et Misera §12]]
 
 ## Artigos relacionados
 - [[08 - Homossexualidade e Doutrina Católica]]

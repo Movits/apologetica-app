@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Graça
@@ -15,6 +15,7 @@ Funcionalidade: [[Glossário]]
 - [[08 - Homossexualidade e Doutrina Católica]]
 - [[12 - A Imaculada Conceição de Maria]]
 - [[20 - Os Sete Sacramentos Sinais que Produzem Graça]]
+- [[22 - A Assunção de Maria]]
 - [[23 - Purgatório Purificação dos Que se Salvam]]
 - [[24 - Fé e Obras Não Sola Fide]]
 - [[37 - Protestantismo]]

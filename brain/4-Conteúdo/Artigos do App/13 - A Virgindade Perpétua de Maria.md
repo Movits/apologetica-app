@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 13 - A Virgindade Perpétua de Maria
@@ -19,7 +19,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Termos do glossário
 - [[Septuaginta]]
-- [[Concílio Ecumênico]]
 
 ## Referências usadas
 - [[Lucas 1,34]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Miquéias 5,1-2
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Profeta Miquéias (séc. VIII a.C.)
 Tema: O governante de Israel nasceria em Belém
 
-> E tu, Belém-Efrata, tão pequena entre os clãs de Judá, de ti sairá aquele que há de governar Israel, e cujas origens vêm desde os tempos antigos, desde os dias da eternidade.
+> Mas tu, Belém de Éfrata, tão pequena entre os clãs de Judá, é de ti que sairá para mim aquele que é chamado a governar Israel. Suas origens remontam aos tempos antigos, aos dias do longínquo passado.
 
 Abre no app em `mq 5,1`.
 Funcionalidade: [[Referências]]

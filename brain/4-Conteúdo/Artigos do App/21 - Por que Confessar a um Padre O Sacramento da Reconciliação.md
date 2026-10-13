@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 21 - Por que Confessar a um Padre O Sacramento da Reconciliação
@@ -25,6 +25,11 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 20,21-23]]
 - [[Tiago 5,14-16]]
 - [[Catecismo §1422-1470]]
+- [[1 Coríntios 11,27-29]]
+- [[1 João 1,9]]
+- [[Atos 19,18]]
+- [[Didaqué 4,14 e 14,1]]
+- [[Os que caíram, 28]]
 
 ## Artigos relacionados
 - [[07 - A Eucaristia Presença Real de Cristo]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 03 - A Sagrada Tradição e o Sola Scriptura
@@ -26,10 +26,13 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[2 Tessalonicenses 2,15]]
 - [[2 Pedro 1,20-21]]
+- [[Mateus 16,18-19]]
+- [[World Christian Encyclopedia]]
 - [[Catecismo §80-83]]
 - [[Dei Verbum §9-10]]
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
+- [[1 Coríntios 11,2]]
 
 ## Artigos relacionados
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

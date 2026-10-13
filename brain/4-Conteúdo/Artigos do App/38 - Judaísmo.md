@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 38 - Judaísmo
@@ -17,6 +17,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - Pontos de confronto
 - Perguntas-chave
 
+## Termos do glossário
+- [[Septuaginta]]
+
 ## Referências usadas
 - [[Isaías 53,3-7]]
 - [[Salmo 22 (21),2.17-19]]
@@ -24,8 +27,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Miquéias 5,1-2]]
 - [[Zacarias 12,10]]
 - [[Romanos 11,17-18]]
-- [[Hebreus 9,27]]
 - [[Nostra Aetate]]
+- [[Deuteronômio 6,4]]
+- [[Hebreus 10,10-14]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

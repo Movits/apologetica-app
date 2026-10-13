@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 24 - Fé e Obras Não Sola Fide
@@ -30,6 +30,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Gálatas 5,6]]
 - [[Apocalipse 20,12-13]]
 - [[Catecismo §1991-2005]]
+- [[Romanos 2,6-7]]
 
 ## Artigos relacionados
 - [[23 - Purgatório Purificação dos Que se Salvam]]

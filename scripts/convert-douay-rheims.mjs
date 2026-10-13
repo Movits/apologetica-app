@@ -55,6 +55,7 @@ const MISSING = {
 // Erros de digitação da fonte, conferidos em drbo.org.
 const TYPOS = {
   'at 7,59': ['Lord, lay not his sin', 'Lord, lay not this sin'],
+  '1cor 15,8': ['out of due tine', 'out of due time'],
 };
 
 const raw = JSON.parse(fs.readFileSync(SOURCE, 'utf8'));

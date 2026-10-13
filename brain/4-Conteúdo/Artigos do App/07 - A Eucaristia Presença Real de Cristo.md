@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 07 - A Eucaristia Presença Real de Cristo
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-A Eucaristia não é símbolo. É o Corpo, Sangue, Alma e Divindade de Jesus Cristo, confirmado pela Escritura, pelos Padres e por milagres comprovados.
+A Eucaristia não é símbolo. É o Corpo, Sangue, Alma e Divindade de Jesus Cristo, confirmado pela Escritura, pelos Padres e por milagres reconhecidos pela Igreja.
 
 Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
@@ -15,7 +15,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - "Isto é o meu corpo"
 - Paulo confirma a Presença Real
 - Os Padres da Igreja
-- Milagres eucarísticos comprovados
+- Milagres eucarísticos reconhecidos
 - Perguntas-chave
 
 ## Termos do glossário

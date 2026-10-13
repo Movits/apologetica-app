@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 67 - Por Que Jesus Morreu na Cruz A Redenção
@@ -25,6 +25,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[1 Coríntios 15,3-8]]
 - [[João 3,16]]
 - [[Filipenses 2,6-11]]
+- [[João 15,13]]
 
 ## Diálogos que levam a este artigo
 - [[Que Deus cruel é esse que precisa da morte do próprio Filho para perdo]]

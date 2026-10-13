@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 36 - Cristianismo Copiou Religiões Pagãs
@@ -22,7 +22,6 @@ Arquivo: `src/data/articles/outras-religioes.js`
 ## Referências usadas
 - [[The Gospel and the Greeks]]
 - [[Cristianismo Puro e Simples]]
-- [[O Problema da Dor]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # O teste bibliográfico do Novo Testamento
@@ -14,4 +14,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[48 - Os Manuscritos do Novo Testamento]]
-- [[68 - Quem Escreveu a Bíblia]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # World Christian Encyclopedia
@@ -13,5 +13,6 @@ Tema: Número de denominações cristãs no mundo
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[03 - A Sagrada Tradição e o Sola Scriptura]]
 - [[37 - Protestantismo]]
 - [[63 - Católico ou Evangélico As Principais Diferenças]]

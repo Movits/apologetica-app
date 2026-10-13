@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 23 - Purgatório Purificação dos Que se Salvam
@@ -22,6 +22,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Graça]]
 - [[Comunhão dos Santos]]
 - [[Purgatório]]
+- [[Deuterocanônicos]]
 
 ## Referências usadas
 - [[2 Macabeus 12,44-46]]
@@ -30,6 +31,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Hebreus 12,14]]
 - [[Mateus 12,32]]
 - [[Catecismo §1030-1032]]
+- [[Mateus 5,25-26]]
 
 ## Artigos relacionados
 - [[18 - O Cânon Bíblico Por que 73 Livros]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 28 - A Inquisição O Que Realmente Aconteceu
@@ -22,7 +22,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 
 ## Referências usadas
 - [[The Spanish Inquisition A Historical Revision]]
-- [[Tertio Millennio Adveniente §33]]
+- [[Tertio Millennio Adveniente §33 e §35]]
 
 ## Artigos relacionados
 - [[29 - As Cruzadas no Contexto Histórico Real]]

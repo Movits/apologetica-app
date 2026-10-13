@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Catecismo §464-469
@@ -9,9 +9,8 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Theotokos / Maria Mãe de Deus / Encarnação
 
-> Maria é verdadeiramente "Mãe de Deus", pois é mãe do Filho eterno de Deus feito homem, que é o próprio Deus. Confessamos, pois, que aquele que foi concebido do Espírito Santo no seio da Virgem Maria, é verdadeiramente o ...
+> A heresia nestoriana via em Cristo uma pessoa humana unida à pessoa divina do Filho de Deus. (...) Por isso, o Concílio de Éfeso proclamou, em 431, que Maria se tornou, com toda a verdade, Mãe de Deus, por ter concebido ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[14 - Maria, Mãe de Deus (Theotokos)]]
-- [[57 - Quem é Jesus Deus e Homem Verdadeiro]]

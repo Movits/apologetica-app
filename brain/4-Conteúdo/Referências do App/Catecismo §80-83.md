@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Catecismo §80-83
@@ -14,5 +14,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]
-- [[18 - O Cânon Bíblico Por que 73 Livros]]
-- [[31 - Como Lidar com Supostas Contradições na Bíblia]]

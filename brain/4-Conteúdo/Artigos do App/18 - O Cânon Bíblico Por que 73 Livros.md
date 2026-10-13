@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 18 - O Cânon Bíblico Por que 73 Livros
@@ -27,8 +27,10 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
-- [[Catecismo §80-83]]
-- [[Dei Verbum §9-10]]
+- [[2 Macabeus 12,44-46]]
+- [[Concílio de Trento (1545-1563)]]
+- [[Hebreus 11,35]]
+- [[Catecismo §120]]
 
 ## Artigos relacionados
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

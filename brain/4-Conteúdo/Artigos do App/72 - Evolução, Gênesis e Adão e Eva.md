@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 72 - Evolução, Gênesis e Adão e Eva
@@ -25,9 +25,9 @@ Arquivo: `src/data/articles/existencia-deus.js`
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]
-- [[Catecismo §309-314]]
-- [[Fides et Ratio]]
 - [[Hipótese do átomo primordial]]
+- [[Catecismo §390]]
+- [[Humani Generis, 36-37]]
 
 ## Diálogos que levam a este artigo
 - [[A evolução já provou que o Gênesis é mito e que Deus não é necessário]]

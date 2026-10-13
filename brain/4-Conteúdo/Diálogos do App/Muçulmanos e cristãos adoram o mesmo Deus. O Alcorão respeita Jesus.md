@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Muçulmanos e cristãos adoram o mesmo Deus. O Alcorão respeita Jesus

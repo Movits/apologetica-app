@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 08 - Homossexualidade e Doutrina Católica
@@ -28,6 +28,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[Romanos 1,26-27]]
 - [[1 Coríntios 6,9-11]]
 - [[Amoris Laetitia §250-251]]
+- [[Catecismo §2348-2349]]
 
 ## Artigos relacionados
 - [[25 - Aborto A Dignidade da Vida Humana]]

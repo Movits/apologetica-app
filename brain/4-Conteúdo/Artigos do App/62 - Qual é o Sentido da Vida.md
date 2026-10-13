@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 62 - Qual é o Sentido da Vida
@@ -22,10 +22,11 @@ Arquivo: `src/data/articles/existencia-deus.js`
 ## Referências usadas
 - [[Romanos 8,28]]
 - [[João 14,6]]
-- [[Fides et Ratio]]
 - [[O Existencialismo é um Humanismo]]
 - [[A Gaia Ciência §125]]
 - [[Cristianismo Puro e Simples]]
+- [[Mateus 7,7]]
+- [[Catecismo §1721]]
 
 ## Diálogos que levam a este artigo
 - [[A vida não tem sentido nenhum, somos só química que um dia acaba]]

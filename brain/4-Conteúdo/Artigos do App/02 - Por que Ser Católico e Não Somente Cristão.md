@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 02 - Por que Ser Católico e Não Somente Cristão
@@ -28,6 +28,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 17,20-21]]
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
+- [[Contra as Heresias, III,3,2-3]]
 
 ## Artigos relacionados
 - [[19 - O Papa Cabeça Visível da Igreja]]

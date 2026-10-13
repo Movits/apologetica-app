@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 57 - Quem é Jesus Deus e Homem Verdadeiro
@@ -30,7 +30,10 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Filipenses 2,6-11]]
 - [[Êxodo 3,14]]
 - [[Concílio de Niceia Credo Niceno]]
-- [[Catecismo §464-469]]
+- [[Marcos 2,5-7]]
+- [[Mateus 16,15-16]]
+- [[Catecismo §464]]
+- [[Concílio de Calcedônia]]
 
 ## Diálogos que levam a este artigo
 - [[Jesus foi um bom homem e grande mestre, mas não era Deus]]

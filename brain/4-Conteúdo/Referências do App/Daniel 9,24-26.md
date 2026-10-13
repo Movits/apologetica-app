@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # Daniel 9,24-26
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Tradição do profeta Daniel (séc. II a.C. (ambientado no séc. VI a.C.))
 Tema: Prazo para a vinda e a morte do Ungido antes da destruição da cidade
 
-> Setenta semanas estão fixadas para o teu povo e para a tua cidade santa. Depois das sessenta e duas semanas, um ungido será suprimido. E o povo de um chefe que há de vir destruirá a cidade e o santuário.
+> Setenta semanas foram fixadas a teu povo e à tua cidade santa (...) desde a declaração do decreto sobre a restauração de Jerusalém até um chefe ungido, haverá sete semanas; depois, durante sessenta e duas semanas, ressur...
 
 Abre no app em `dn 9,24`.
 Funcionalidade: [[Referências]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 gerado: true
 ---
 # 2 Pedro 3,16
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Pedro (séc. I d.C.)
 Tema: As cartas de Paulo são deturpadas pelos ignorantes
 
-> Em todas as suas cartas, Paulo fala dessas coisas, nas quais há pontos difíceis de entender, que os ignorantes e inconstantes deturpam, como o fazem também com as demais Escrituras, para sua própria perdição.
+> É o que ele faz em todas as suas cartas, nas quais fala nesses assuntos. Nelas há algumas passagens difíceis de entender, cujo sentido os espíritos ignorantes ou pouco fortalecidos deturpam, para a sua própria ruína, com...
 
 Abre no app em `2pd 3,16`.
 Funcionalidade: [[Referências]]
