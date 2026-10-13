@@ -659,7 +659,7 @@ export const QUIZ = [
     correct: 2,
     why: 'O NT é o texto da Antiguidade com mais evidência manuscrita: mais de 5.800 em grego, 10.000+ em latim e 9.000+ em outras línguas. A Ilíada de Homero, a segunda obra antiga mais copiada, tem cerca de 1.800. Isso não deixa dúvida sobre a transmissão do texto.',
     whyEn: 'The NT is the most attested text of antiquity: over 5,800 in Greek, 10,000+ in Latin and 9,000+ in other languages. Homer\'s Iliad, the second most copied ancient work, has about 1,800. This leaves no doubt about textual transmission.',
-    relatedArticle: 34,
+    relatedArticle: 48,
   },
   {
     id: 'q-canon-quem',

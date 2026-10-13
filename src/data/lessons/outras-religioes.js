@@ -30,8 +30,8 @@ const lessons = {
       'The Quran orders judgment by the Gospel (sura 5,46-47), where Jesus claims to be God (John 8,58 and 10,30). Accepting one and denying the other is the Islamic Dilemma.',
       'The crucifixion is attested even by Tacitus and Josephus, the Quran itself was standardized under Uthman, and the Paraclete of John 14 is the Holy Spirit, not a prophet.',
     ],
-    oneLiner: 'Respeito o Islã, mas o Alcorão manda julgar pelo Evangelho, e no Evangelho Jesus diz "eu sou" e aceita ser chamado de Deus. Ou ele é Deus, ou não pode ser profeta.',
-    oneLinerEn: 'I respect Islam, but the Quran says to judge by the Gospel, and in the Gospel Jesus says "I am" and accepts being called God. Either he is God, or he cannot be a prophet.',
+    oneLiner: 'Respeito o Islã, mas o Alcorão manda julgar pelo Evangelho, e no Evangelho Jesus diz "antes que Abraão existisse, eu sou". Ou ele é Deus, ou não pode ser profeta.',
+    oneLinerEn: 'I respect Islam, but the Quran says to judge by the Gospel, and in the Gospel Jesus says "before Abraham was, I am". Either he is God, or he cannot be a prophet.',
     check: [
       {
         question: 'Por que o artigo chama de "Dilema Islâmico" a posição muçulmana sobre Jesus?',
@@ -56,20 +56,20 @@ const lessons = {
         question: 'Como o artigo responde à afirmação da sura 4,157 de que Jesus não foi crucificado?',
         questionEn: 'How does the article answer the claim of sura 4,157 that Jesus was not crucified?',
         options: [
-          'Com fontes hostis ao cristianismo, como Tácito e Josefo, além dos Evangelhos e de Paulo',
+          'Com fontes não cristãs, como Tácito e Josefo, além dos Evangelhos e de Paulo',
           'Admitindo que a crucificação não pode ser provada historicamente',
           'Com uma visão de Maomé registrada em outra sura',
           'Dizendo que a morte na cruz é só questão de fé, não de história',
         ],
         optionsEn: [
-          'With sources hostile to Christianity, like Tacitus and Josephus, plus the Gospels and Paul',
+          'With non-Christian sources, like Tacitus and Josephus, plus the Gospels and Paul',
           'By admitting that the crucifixion cannot be proven historically',
           'With a vision of Muhammad recorded in another sura',
           'By saying that the death on the cross is only a matter of faith, not history',
         ],
         correct: 0,
-        why: 'A morte de Jesus na cruz está entre os fatos mais bem documentados da antiguidade: quatro Evangelhos, Paulo poucos anos depois e fontes hostis como o romano Tácito e o judeu Josefo. Um texto do século VII nega o que testemunhas do século I registraram.',
-        whyEn: 'The death of Jesus on the cross is among the best documented facts of antiquity: four Gospels, Paul a few years later, and hostile sources like the Roman Tacitus and the Jew Josephus. A 7th-century text denies what 1st-century witnesses recorded.',
+        why: 'A morte de Jesus na cruz está entre os fatos mais bem documentados da antiguidade: quatro Evangelhos, Paulo poucos anos depois e fontes não cristãs, como Tácito e Josefo. Um texto do século VII nega o que testemunhas do século I registraram.',
+        whyEn: 'The death of Jesus on the cross is among the best documented facts of antiquity: four Gospels, Paul a few years later, and non-Christian sources like Tacitus and Josephus. A 7th-century text denies what 1st-century witnesses recorded.',
       },
       {
         question: 'O que o artigo conclui sobre o argumento de que a Bíblia foi corrompida e o Alcorão, não?',
@@ -114,12 +114,12 @@ const lessons = {
     keyPoints: [
       'Codificado por Allan Kardec a partir de 1857, o Espiritismo ensina reencarnação, comunicação com os mortos por médiuns e vê Jesus como espírito elevado, não como Deus.',
       'A Bíblia chama Jesus de Deus (João 1,1 e 20,28), ensina uma só vida seguida do juízo (Hebreus 9,27) e mostra os mortos conscientes, sem retorno (Lucas 16).',
-      'A Bíblia proíbe consultar os mortos (Deuteronômio 18,10-12. Isaías 8,19) e o Catecismo condena o espiritismo nos parágrafos 2116 e 2117.',
+      'A Bíblia proíbe consultar os mortos (Deuteronômio 18,10-12 e Isaías 8,19), e o Catecismo rejeita a evocação dos mortos e adverte contra o espiritismo (2116 e 2117).',
     ],
     keyPointsEn: [
       'Codified by Allan Kardec from 1857 on, Spiritism teaches reincarnation, communication with the dead through mediums, and sees Jesus as an elevated spirit, not as God.',
       'The Bible calls Jesus God (John 1,1 and 20,28), teaches one life followed by judgment (Hebrews 9,27), and shows the dead conscious, with no return (Luke 16).',
-      'The Bible forbids consulting the dead (Deuteronomy 18,10-12. Isaiah 8,19), and the Catechism condemns spiritism in paragraphs 2116 and 2117.',
+      'The Bible forbids consulting the dead (Deuteronomy 18,10-12 and Isaiah 8,19), and the Catechism rejects conjuring up the dead and warns against spiritism (2116-2117).',
     ],
     oneLiner: 'Admiro a caridade espírita, mas a Bíblia que Kardec cita diz que se morre uma só vez e proíbe consultar os mortos. E Jesus aceitou ser chamado de Deus, o que um anjo recusou.',
     oneLinerEn: 'I admire Spiritist charity, but the Bible Kardec quotes says we die only once and forbids consulting the dead. And Jesus accepted being called God, which an angel refused.',
@@ -186,21 +186,21 @@ const lessons = {
 
   27: {
     hook: {
-      question: 'Antes de ler: por que as Testemunhas de Jeová negam que Jesus seja Deus?',
-      questionEn: 'Before you read: why do Jehovah\'s Witnesses deny that Jesus is God?',
+      question: 'Antes de ler: em que as Testemunhas de Jeová se apoiam para negar que Jesus seja Deus?',
+      questionEn: 'Before you read: what do Jehovah\'s Witnesses rely on to deny that Jesus is God?',
       options: [
-        'Porque sua tradução da Bíblia verte João 1,1 como "um deus"',
-        'Porque não usam a Bíblia, só revistas',
-        'Porque creem que Jesus nunca existiu',
+        'Numa tradução própria que verte João 1,1 como "um deus"',
+        'Em revistas próprias, sem usar a Bíblia',
+        'Na ideia de que Jesus nunca existiu',
       ],
       optionsEn: [
-        'Because their Bible translation renders John 1,1 as "a god"',
-        'Because they do not use the Bible, only magazines',
-        'Because they believe Jesus never existed',
+        'Their own translation, which renders John 1,1 as "a god"',
+        'Their own magazines, without using the Bible',
+        'The idea that Jesus never existed',
       ],
       correct: 0,
-      note: 'A Tradução do Novo Mundo acrescenta um artigo que não está no grego de João 1,1 e identifica Jesus com o arcanjo Miguel. O artigo mostra, com o texto grego e outros versículos, por que essa leitura não se sustenta.',
-      noteEn: 'The New World Translation adds an article that is not in the Greek of John 1,1 and identifies Jesus with the archangel Michael. The article shows, with the Greek text and other verses, why that reading does not hold.',
+      note: 'A negação se apoia em grande parte na Tradução do Novo Mundo, que acrescenta a João 1,1 um artigo que não está no grego. O artigo mostra, com o texto grego e outros versículos, por que essa leitura não se sustenta.',
+      noteEn: 'The denial rests largely on the New World Translation, which adds to John 1,1 an article that is not in the Greek. The article shows, with the Greek text and other verses, why that reading does not hold.',
     },
     keyPoints: [
       'Fundadas por Charles Taze Russell no fim do século XIX, as Testemunhas negam a Trindade: Jesus seria o arcanjo Miguel e o Espírito Santo, uma "força ativa".',
@@ -295,12 +295,12 @@ const lessons = {
     },
     keyPoints: [
       'As "semelhanças" entre Jesus e Hórus, Mitra, Dionísio ou Krishna (virgem, 25 de dezembro, 12 discípulos) não estão nos textos antigos: são fabricações modernas.',
-      'A cronologia inverte a tese: os paralelos do mitraísmo surgem nos séculos II e III, com o cristianismo já formado, e os mitos pagãos não têm data nem testemunhas.',
+      'A cronologia inverte a tese: o mitraísmo romano surge no fim do século I e floresce nos séculos II e III, após o cristianismo. E os mitos não têm data nem testemunhas.',
       'C. S. Lewis viu nos mitos pagãos intuições que preparavam a humanidade: em Cristo, "o mito se fez fato", numa pessoa histórica e datável.',
     ],
     keyPointsEn: [
       'The "similarities" of Jesus with Horus, Mithras, Dionysus, or Krishna (virgin birth, December 25, 12 disciples) are not in the ancient texts: they are modern inventions.',
-      'Chronology reverses the thesis: Mithraic parallels arise in the 2nd and 3rd centuries, with Christianity already formed, and pagan myths have no date and no witnesses.',
+      'Chronology flips the thesis: Roman Mithraism appears in the late 1st century and flourishes in the 2nd and 3rd, after Christianity. And myths have no date or witnesses.',
       'C. S. Lewis saw in pagan myths intuitions that prepared humanity: in Christ, "myth became fact", in a historical, datable person.',
     ],
     oneLiner: 'Pode ler os textos egípcios: Hórus não nasceu de virgem nem foi crucificado. E o mitraísmo com paralelos é posterior ao cristianismo. Quem copiou quem?',
@@ -341,8 +341,8 @@ const lessons = {
           'Because the Romans banned Mithraism before Christ',
         ],
         correct: 2,
-        why: 'As características do mitraísmo romano com paralelos aparecem nos séculos II e III, quando o cristianismo já tinha seus escritos, comunidades em todo o Império e liturgia. Se houve influência, a direção foi a inversa, como mostra Ronald Nash (1992).',
-        whyEn: 'The features of Roman Mithraism with parallels appear in the 2nd and 3rd centuries, when Christianity already had its writings, communities across the Empire, and a liturgy. If there was influence, it ran the other way, as Ronald Nash shows (1992).',
+        why: 'O mitraísmo romano só deixa vestígios no fim do século I e floresce nos séculos II e III, quando o cristianismo já tinha seus escritos, comunidades e liturgia. Se houve influência, o mais provável, como argumenta Ronald Nash (1992), é a direção inversa.',
+        whyEn: 'Roman Mithraism leaves its first traces only in the late 1st century and flourishes in the 2nd and 3rd, when Christianity already had its writings, communities, and liturgy. If there was influence, Ronald Nash (1992) argues it most likely ran the other way.',
       },
       {
         question: 'Qual é a diferença qualitativa entre o cristianismo e os mitos pagãos, segundo o artigo?',
@@ -477,12 +477,12 @@ const lessons = {
     },
     keyPoints: [
       'O cristianismo nasce do Judaísmo: dele recebemos o Deus único, as Escrituras e o Messias. Jesus, Maria e os apóstolos eram judeus, e a Igreja condena o antissemitismo.',
-      'Isaías 53, Salmo 22, Miquéias 5 e Zacarias 12,10 falam de um servo traspassado que sofre pelos pecados do povo e nasce em Belém. A correspondência com Jesus impressiona.',
+      'Isaías 53 (o servo que sofre pelos pecados do povo), o Salmo 22, Miquéias 5 (Belém) e Zacarias 12,10 (o traspassado) descrevem traços que correspondem de perto a Jesus.',
       'Daniel 9 diz que o Ungido seria morto antes da queda do santuário, no ano 70. Desde então não há Templo nem sacrifício, e Hebreus vê em Cristo o sacrifício definitivo.',
     ],
     keyPointsEn: [
       'Christianity springs from Judaism, which gave us the one God, the Scriptures, and the Messiah. Jesus, Mary, and the apostles were Jews. The Church condemns antisemitism.',
-      'Isaiah 53, Psalm 22, Micah 5, and Zechariah 12,10 speak of a pierced servant who suffers for the people\'s sins and is born in Bethlehem. The match with Jesus is striking.',
+      'Isaiah 53 (the servant who suffers for the people\'s sins), Psalm 22, Micah 5 (Bethlehem), and Zechariah 12,10 (the pierced one) sketch traits that closely match Jesus.',
       'Daniel 9 says the Anointed One would die before the sanctuary fell, in the year 70. Since then no Temple, no sacrifice: for Hebrews, Christ is the definitive sacrifice.',
     ],
     oneLiner: 'Não somos estranhos: partilhamos o mesmo Deus e as mesmas Escrituras. Só pergunto: se o Messias devia vir antes de o Templo cair, e ele caiu no ano 70, quem cumpriu o prazo?',
@@ -567,12 +567,12 @@ const lessons = {
       noteEn: 'The doctrine of no-self (anatta) says there is no permanent self, and nirvana is the extinction of desire and of that illusion. Christianity answers that you are real, the image of God, made to last. The article compares the two answers.',
     },
     keyPoints: [
-      'O Budismo ensina as Quatro Nobres Verdades: a vida é sofrimento, a causa é o desejo, é possível extingui-lo pelo Caminho Óctuplo. Não há eu permanente nem Deus criador.',
+      'O Budismo ensina as Quatro Nobres Verdades: a vida é marcada pelo sofrimento, a causa é o desejo, e o Caminho Óctuplo o extingue. Não há eu permanente nem Deus criador.',
       'O cristianismo diz o oposto: no princípio há um Deus pessoal que ama, cada pessoa é imagem de Deus (Gênesis 1,27) e a compaixão se funda no valor infinito do outro.',
       'O Buda oferece um método para se libertar pelo esforço. Cristo oferece a si mesmo (João 3,16): a salvação é dom, e o fim não é a extinção do eu, mas a ressurreição.',
     ],
     keyPointsEn: [
-      'Buddhism teaches the Four Noble Truths: life is suffering, its cause is desire, it can be ended through the Eightfold Path. There is no permanent self, no creator God.',
+      'Buddhism teaches the Four Noble Truths: life is marked by suffering, its cause is desire, and the Eightfold Path ends it. There is no permanent self, no creator God.',
       'Christianity says the opposite: in the beginning is a loving personal God, each person is God\'s image (Genesis 1,27), and compassion rests on the other\'s infinite worth.',
       'The Buddha offers a method to free yourself by effort. Christ offers himself (John 3,16): salvation is a gift, and the end is not the self\'s extinction but resurrection.',
     ],
@@ -933,12 +933,12 @@ const lessons = {
     keyPoints: [
       'A Nova Era não é uma igreja: é um clima de monismo (tudo é um e divino), reencarnação, astrologia, cristais, guias espirituais e um Jesus feito "consciência crística".',
       'A fé responde: você é criatura, boa e amada, mas não Deus. "Sereis como deuses" é a promessa da serpente (Gênesis 3,5), e o Jesus real veio em carne (1 João 4,2-3).',
-      'Astrologia, canalização e cristais são adivinhação (Deuteronômio 18,10-12. Catecismo 2116-2117), e ninguém se salva a si mesmo: a salvação é dom de um Deus pessoal.',
+      'Astrologia, canalização e cristais são adivinhação (Deuteronômio 18,10-12 e Catecismo 2116-2117), e ninguém se salva a si mesmo: a salvação é dom de um Deus pessoal.',
     ],
     keyPointsEn: [
       'The New Age is not a church but a climate of monism (all is one and divine), reincarnation, astrology, crystals, spirit guides, and a Jesus made "Christ consciousness".',
       'Faith answers: you are a beloved creature, not God. "You will be like gods" is the serpent\'s promise (Genesis 3,5), and the real Jesus came in the flesh (1 John 4,2-3).',
-      'Astrology, channeling, and crystals are divination (Deuteronomy 18,10-12. Catechism 2116-2117), and no one saves himself: salvation is the gift of a personal God.',
+      'Astrology, channeling, and crystals are divination (Deuteronomy 18,10-12 and Catechism 2116-2117), and no one saves himself: salvation is the gift of a personal God.',
     ],
     oneLiner: 'Entendo a sede de espiritualidade, mas "você é Deus" não é novidade: é a frase da serpente. A grandeza humana não está em ser Deus, está em ser amado por Ele.',
     oneLinerEn: 'I understand the thirst for spirituality, but "you are God" is nothing new: it is the serpent\'s line. Human greatness is not in being God, it is in being loved by Him.',
@@ -1039,13 +1039,13 @@ const lessons = {
         questionEn: 'What historical truth does the article say the Christian must firmly affirm before any confrontation?',
         options: [
           'Que escravidão e perseguição foram pecado grave e o racismo é incompatível com o Evangelho',
-          'Que as religiões africanas foram criadas no Brasil',
+          'Que essas religiões vieram da Europa com os colonizadores',
           'Que o sincretismo foi aprovado pela Igreja',
           'Que os orixás são santos católicos com outro nome',
         ],
         optionsEn: [
           'That slavery and persecution were a grave sin and racism is incompatible with the Gospel',
-          'That the African religions were created in Brazil',
+          'That these religions came from Europe with the colonizers',
           'That syncretism was approved by the Church',
           'That the orixás are Catholic saints under another name',
         ],
@@ -1145,8 +1145,8 @@ const lessons = {
         whyEn: '"You shall have no other gods before me" does not forbid only statues: it forbids placing ultimate trust in anything that is not God. The occult does exactly that, apart from him. At bottom, it is a question of to whom one gives the heart.',
       },
       {
-        question: 'Que duas verdades a astrologia nega, segundo o Catecismo citado no artigo?',
-        questionEn: 'What two truths does astrology deny, according to the Catechism cited in the article?',
+        question: 'Segundo o artigo, que duas verdades a astrologia nega?',
+        questionEn: 'According to the article, what two truths does astrology deny?',
         options: [
           'A existência dos astros e a ciência moderna',
           'A Trindade e a Encarnação',

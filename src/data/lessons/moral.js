@@ -118,7 +118,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Every person has inalienable dignity, regardless of sexual orientation, and must be accepted with respect, compassion, and sensitivity, without unjust discrimination.',
-      'The central distinction is between inclination and act: the tendency is not condemned. What the Church teaches to be contrary to natural law are the acts.',
+      'The central distinction is between inclination and act: the tendency is not condemned. The Church holds the acts contrary to natural law, for anthropological reasons.',
       'The teaching is the same for everyone: chastity is asked of the married and the single, and the Gospel announces transformation made possible by grace, not exclusion.',
     ],
     oneLiner: 'A Igreja não condena pessoas, ensina sobre atos. Pede castidade a todos, casados e solteiros, e acolhe cada um com respeito e com a esperança da graça.',
@@ -210,7 +210,7 @@ const lessons = {
     keyPointsEn: [
       'At fertilization a new human organism forms, with its own DNA. That is embryology, not religion. The ethical question is whether this human being has a right to life.',
       'Dignity does not depend on current capabilities, otherwise newborns, people in a coma, and the elderly with Alzheimer\'s would lose it too. Humanity is the same.',
-      'The Church has condemned abortion since the 1st century (Didache, Tertullian), distinguishes direct abortion from double effect, and offers mercy to the repentant.',
+      'The Church has condemned abortion since the 1st century (Didache, Tertullian), distinguishes it from double effect in cases of risk, and offers mercy to the repentant.',
     ],
     oneLiner: 'Que o embrião é um ser humano novo e distinto, diz a embriologia. Que todo ser humano tem direito à vida, diz a razão. A fé só confirma, e oferece perdão a quem errou.',
     oneLinerEn: 'That the embryo is a new, distinct human being, embryology says. That every human being has a right to life, reason says. Faith only confirms it, and offers forgiveness to those who failed.',
@@ -394,7 +394,7 @@ const lessons = {
       'Mortal sin breaks friendship with God and requires three conditions: grave matter, full knowledge, and deliberate consent. Venial sin only weakens charity.',
       'The seven capital vices are sources of other sins, and each has a virtue that heals it. No sin is greater than God\'s mercy, if there is repentance.',
     ],
-    oneLiner: 'Pecado não é desobedecer a um capricho de Deus, é ferir o amor e a si mesmo. E nenhum pecado é maior que a misericórdia de quem se arrepende e volta para casa.',
+    oneLiner: 'Pecado não é desobedecer a um capricho de Deus, é ferir o amor e a si mesmo. E nenhum pecado é maior que a misericórdia que espera quem se arrepende e volta para casa.',
     oneLinerEn: 'Sin is not disobeying a whim of God, it is wounding love and oneself. And no sin is greater than the mercy waiting for whoever repents and comes home.',
     check: [
       {
@@ -427,7 +427,7 @@ const lessons = {
         ],
         optionsEn: [
           'Because they are the only ones that lead to hell',
-          'Because it comes from caput, head: they are sources from which other sins spring',
+          'Because the name comes from caput, head: they are sources from which other sins spring',
           'Because they were defined in the capital, Rome',
           'Because they are the seven gravest sins of all',
         ],
@@ -527,8 +527,8 @@ const lessons = {
         whyEn: 'Chastity is not denying sexuality or seeing it as evil. It is a self-mastery that sets free and applies to all: the single person who waits, the faithful spouse, the consecrated. The opposite of chastity is not joy, it is using the other.',
       },
       {
-        question: 'Como o artigo trata quem já errou nesse campo?',
-        questionEn: 'How does the article treat those who have already failed in this area?',
+        question: 'Como o artigo trata quem já errou no campo da castidade?',
+        questionEn: 'How does the article treat those who have already failed in matters of chastity?',
         options: [
           'Como alguém que perdeu de vez a possibilidade de viver a castidade',
           'Com a palavra de Jesus à mulher adúltera: "nem eu te condeno, vai e não peques mais"',

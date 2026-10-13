@@ -22,7 +22,7 @@ O Islã foi fundado por Maomé (Muhammad), nascido em Meca por volta do ano 570 
 
 O centro de tudo é o tawhid, a unicidade absoluta de Deus. Allah é único, criador de todas as coisas, onisciente, todo-poderoso e juiz final. O pecado mais grave que existe é o shirk, associar a Allah qualquer parceiro ou igual. A vida religiosa se organiza em torno dos cinco pilares: a profissão de fé (não há divindade senão Allah, e Maomé é o seu mensageiro), as cinco orações diárias, a esmola obrigatória (zakat), o jejum do mês do Ramadã e a peregrinação a Meca (hajj).
 
-O muçulmano reverencia uma longa linha de profetas que inclui Adão, Noé, Abraão, Moisés e Jesus. E aqui há algo que surpreende muitos cristãos: o Islã tem grande respeito por Jesus, a quem chama Isa, o Messias. O Alcorão afirma que ele nasceu de uma virgem, Maria, a única mulher nomeada no livro e a quem é dedicada a sura 19. Afirma que Jesus fez milagres pela permissão de Allah e que voltará no fim dos tempos. O que o Islã nega é que Jesus seja Deus ou Filho de Deus, que tenha morrido na cruz, e a própria Trindade (sura 4,171 e 5,72).
+O muçulmano reverencia uma longa linha de profetas que inclui Adão, Noé, Abraão, Moisés e Jesus. E aqui há algo que surpreende muitos cristãos: o Islã tem grande respeito por Jesus, a quem chama Isa, o Messias. O Alcorão afirma que ele nasceu de uma virgem, Maria, a única mulher nomeada no livro e a quem é dedicada a sura 19. Afirma que Jesus fez milagres pela permissão de Allah e que voltará no fim dos tempos. O que o Islã nega é que Jesus seja Deus ou Filho de Deus, que tenha morrido na cruz, e a própria Trindade (suras 4,171 e 5,72).
 
 ## Pontos de convergência
 
@@ -34,7 +34,7 @@ As dificuldades começam justamente onde está a maior reverência islâmica: na
 
 1. O Dilema Islâmico. Jesus, segundo os Evangelhos, afirmou repetidas vezes ser Deus. Em João 8,58 declara "antes que Abraão existisse, eu sou", aplicando a si o nome divino revelado a Moisés. Os ouvintes entenderam tão bem que pegaram pedras para apedrejá-lo por blasfêmia. Em João 10,30 diz "eu e o Pai somos um", e de novo tentam apedrejá-lo "porque, sendo homem, te fazes Deus". Diante do sumo sacerdote, sob juramento, confirma ser o Filho do Bendito, e é condenado à morte por isso. O muçulmano tem então duas saídas, e nenhuma o satisfaz. Ou aceita que Jesus disse essas coisas, e então Jesus é Deus (e o Alcorão erra ao negá-lo) ou é blasfemo (e não pode ser profeta). Ou nega que ele disse, alegando que os Evangelhos foram corrompidos, mas isso contradiz o próprio Alcorão, que confirma a Torá e o Evangelho (sura 3,3) e manda julgar pelo Evangelho (sura 5,46-47).
 
-2. A negação da crucificação. A sura 4,157 afirma que os judeus "não o mataram nem o crucificaram, mas apenas lhes pareceu". Ora, a morte de Jesus por crucificação é um dos fatos mais bem estabelecidos de toda a história antiga. É atestada pelos quatro Evangelhos, por Paulo poucos anos depois do evento, e também por fontes não cristãs e hostis, como o historiador romano Tácito, que registra a execução de Cristo sob Pôncio Pilatos, e o judeu Flávio Josefo. Um texto do século VII está negando um acontecimento documentado por testemunhas do século I.
+2. A negação da crucificação. A sura 4,157 afirma que os judeus "não o mataram nem o crucificaram, mas apenas lhes pareceu". Ora, a morte de Jesus por crucificação é um dos fatos mais bem estabelecidos de toda a história antiga. É atestada pelos quatro Evangelhos, por Paulo poucos anos depois do evento, e também por fontes não cristãs, como o historiador romano Tácito, hostil aos cristãos, que registra a execução de Cristo sob Pôncio Pilatos, e o judeu Flávio Josefo, que nas Antiguidades Judaicas (18,3,3) conta que Pilatos o condenou à cruz, num trecho que recebeu acréscimos cristãos, mas cujo núcleo a maioria dos historiadores considera autêntico. Um texto do século VII está negando um acontecimento documentado por testemunhas do século I.
 
 3. A preservação do próprio Alcorão. O muçulmano costuma dizer que a Bíblia foi corrompida, mas que o Alcorão chegou perfeito até hoje. As próprias fontes islâmicas dizem outra coisa. O Sahih al-Bukhari, a coleção de tradições mais respeitada do Islã sunita, relata que o califa Uthman, por volta de 650, mandou recolher as cópias divergentes do Alcorão e queimá-las, fixando uma versão única. Se a existência de variantes e de uma padronização posterior invalidasse uma escritura, esse mesmo critério atingiria o Alcorão antes de atingir a Bíblia.
 
@@ -44,12 +44,12 @@ As dificuldades começam justamente onde está a maior reverência islâmica: na
 
 1. Você aceita que o Alcorão (sura 5,46-47) manda julgar pelo Evangelho. Onde, no Evangelho que existia naquela época, Jesus nega ser Deus?
 
-2. A crucificação de Jesus é atestada até por fontes romanas e judaicas hostis ao cristianismo. Com base em que evidência do século I a sura 4,157 a nega?
+2. A crucificação de Jesus é atestada até por fontes romanas e judaicas que não eram cristãs. Com base em que evidência do século I a sura 4,157 a nega?
 
 3. Se a Bíblia foi corrompida, quando e por quem? E como fica o Alcorão, sabendo que o próprio califa Uthman mandou queimar as cópias divergentes?
 
 4. O Paráclito de João 14 a 16 fala, ensina, é chamado de Espírito da Verdade e habita dentro dos discípulos. Como ele poderia ser um profeta humano nascido séculos depois?`,
-    references: ['alcorao-5-72', 'alcorao-4-171', 'alcorao-3-3', 'alcorao-5-46', 'alcorao-4-157', 'alcorao-61-6', 'jo-8-58', 'jo-10-30', 'mc-14-61', 'dt-18-18', 'jo-14-16', 'tacito-anais', 'josefo-antiguidades-20', 'bukhari-uthman'],
+    references: ['alcorao-5-72', 'alcorao-4-171', 'alcorao-3-3', 'alcorao-5-46', 'alcorao-4-157', 'alcorao-61-6', 'jo-8-58', 'jo-10-30', 'mc-14-61', 'dt-18-18', 'jo-14-16', 'tacito-anais', 'bukhari-uthman', 'nostra-aetate', 'josefo-antiguidades-18'],
   },
   {
     id: 16,
@@ -67,7 +67,7 @@ As dificuldades começam justamente onde está a maior reverência islâmica: na
 
 O Espiritismo foi codificado por Allan Kardec, pseudônimo do pedagogo francês Hippolyte Léon Denizard Rivail, a partir de 1857, com a publicação de O Livro dos Espíritos. A esse seguiram outras quatro obras de base: O Livro dos Médiuns, O Evangelho segundo o Espiritismo, O Céu e o Inferno e A Gênese.
 
-Os pilares da doutrina são a existência de um Deus único. A imortalidade da alma. A reencarnação, isto é, a passagem da alma por muitas vidas sucessivas para evoluir moralmente. A comunicação com os espíritos dos mortos por meio de médiuns, e a lei do progresso, segundo a qual todos caminham, vida após vida, rumo à perfeição. Jesus ocupa lugar central, mas como o espírito mais elevado já encarnado na Terra, modelo e guia da humanidade, e não como Deus feito homem. No Brasil, a figura do médium Chico Xavier e a vasta obra assistencial dos centros espíritas deram ao movimento grande respeitabilidade social.
+Os pilares da doutrina são a existência de um Deus único, a imortalidade da alma, a reencarnação (a passagem da alma por muitas vidas sucessivas para evoluir moralmente), a comunicação com os espíritos dos mortos por meio de médiuns e a lei do progresso, segundo a qual todos caminham, vida após vida, rumo à perfeição. Jesus ocupa lugar central, mas como o espírito mais elevado já encarnado na Terra, modelo e guia da humanidade, e não como Deus feito homem. No Brasil, a figura do médium Chico Xavier e a vasta obra assistencial dos centros espíritas deram ao movimento grande respeitabilidade social.
 
 ## Pontos de convergência
 
@@ -81,7 +81,7 @@ As diferenças, porém, atingem o coração da fé.
 
 2. Reencarnação ou ressurreição? A Carta aos Hebreus é direta: "está determinado aos homens morrerem uma só vez, vindo depois disso o juízo" (Hebreus 9,27). Uma vida, um juízo, não um ciclo de retornos. Jesus, na parábola do rico e de Lázaro (Lucas 16,19-31), descreve os mortos conscientes, com identidade preservada, separados por um abismo que ninguém pode atravessar. Não há reencarnação ali, há permanência. E quando perguntam diretamente a João Batista se ele é Elias, que alguns espíritas dizem reencarnado nele, ele responde de modo categórico: "não sou" (João 1,21). O cristianismo espera a ressurreição do próprio corpo, não a transmigração da alma por corpos diferentes.
 
-3. Comunicação com os mortos. Aqui o conflito é frontal. A Bíblia proíbe expressamente consultar os mortos. Deuteronômio 18,10-12 inclui entre as abominações "quem consulta espíritos e quem interroga os mortos". Isaías 8,19 pergunta com ironia: "acaso não deve um povo consultar o seu Deus? Consultará os mortos a favor dos vivos?". Quando o rei Saul recorre à médium de Endor (1 Samuel 28), o episódio é narrado como pecado grave que precede sua ruína, não como exemplo a seguir. O Catecismo da Igreja Católica, nos parágrafos 2116 e 2117, condena claramente o espiritismo e toda forma de adivinhação. Por trás do que se apresenta como o espírito de um falecido nem sempre está quem diz ser.
+3. Comunicação com os mortos. Aqui o conflito é frontal. A Bíblia proíbe expressamente consultar os mortos. Deuteronômio 18,10-12 inclui entre as abominações "quem consulta espíritos e quem interroga os mortos". Isaías 8,19 pergunta com ironia: "acaso não deve um povo consultar o seu Deus? Consultará os mortos a favor dos vivos?". Quando o rei Saul recorre à médium de Endor (1 Samuel 28), o episódio é narrado como pecado grave que precede sua ruína, não como exemplo a seguir: o livro das Crônicas diz depois que ele morreu por sua infidelidade, inclusive por ter consultado necromantes (1 Crônicas 10,13). O Catecismo da Igreja Católica manda rejeitar todas as formas de adivinhação, inclusive a evocação dos mortos e o recurso aos médiuns (parágrafo 2116), e adverte os fiéis contra o espiritismo (parágrafo 2117). Por trás do que se apresenta como o espírito de um falecido nem sempre está quem diz ser.
 
 4. A autoridade de Kardec. Resta a pergunta de fundo. Em que se apoia um pedagogo francês do século XIX, partindo de mensagens atribuídas a espíritos, para corrigir o testemunho ocular dos apóstolos e dezoito séculos de doutrina cristã sobre quem é Jesus e o que acontece depois da morte?
 
@@ -91,10 +91,10 @@ As diferenças, porém, atingem o coração da fé.
 
 2. Se o homem morre uma só vez e depois é julgado (Hebreus 9,27), onde cabem as reencarnações?
 
-3. A Bíblia proíbe consultar os mortos (Deuteronômio 18,11. Isaías 8,19). Em que texto bíblico o Espiritismo se apoia para fazer o contrário?
+3. A Bíblia proíbe consultar os mortos (Deuteronômio 18,11 e Isaías 8,19). Em que texto bíblico o Espiritismo se apoia para fazer o contrário?
 
 4. Sobre que autoridade Allan Kardec corrige os apóstolos a respeito da identidade de Jesus?`,
-    references: ['kardec-livro', 'jo-1-1', 'jo-8-58', 'jo-20-28', 'ap-22-8', 'hb-9-27', 'lc-16-19', 'dt-18-10', 'is-8-19', 'cic-2116'],
+    references: ['kardec-livro', 'jo-1-1', 'jo-8-58', 'jo-20-28', 'ap-22-8', 'hb-9-27', 'lc-16-19', 'dt-18-10', 'is-8-19', 'cic-2116', 'jo-1-21', '1sm-28-7', '1cr-10-13'],
   },
   {
     id: 27,
@@ -112,7 +112,7 @@ As diferenças, porém, atingem o coração da fé.
 
 O movimento foi fundado por Charles Taze Russell nos Estados Unidos, no fim do século XIX, e é dirigido pela Sociedade Torre de Vigia (Watch Tower). As Testemunhas de Jeová creem num Deus de uma só pessoa, chamado Jeová, e negam a Trindade. Para elas, Jesus não é Deus, mas a primeira criatura de Jeová, identificada com o arcanjo Miguel, e o Espírito Santo não é uma pessoa, e sim a "força ativa" de Deus.
 
-Esperam o Armagedom iminente, creem que apenas 144 mil irão ao céu enquanto os demais fiéis viverão num paraíso terrestre, recusam transfusões de sangue, não participam de guerras, política nem festas, e se dedicam intensamente à pregação de casa em casa. Usam uma Bíblia própria, a Tradução do Novo Mundo, cujo Novo Testamento saiu em 1950 e a Bíblia completa em 1961.
+Esperam o Armagedom iminente, creem que apenas 144 mil irão ao céu enquanto os demais fiéis viverão num paraíso terrestre, recusam transfusões de sangue, não participam de guerras nem de política, não comemoram Natal, Páscoa nem aniversários, e se dedicam intensamente à pregação de casa em casa. Usam uma Bíblia própria, a Tradução do Novo Mundo, cujo Novo Testamento saiu em 1950 e a Bíblia completa em 1961.
 
 ## Pontos de convergência
 
@@ -124,24 +124,24 @@ O problema é que a doutrina central, a negação da divindade de Cristo, não v
 
 1. A tradução de João 1,1. O texto grego diz: "no princípio era o Verbo (Lógos), e o Verbo estava com Deus, e o Verbo era Deus". A Tradução do Novo Mundo verte o fim como "o Verbo era um deus", acrescentando um artigo que não existe no grego. A construção (predicado sem artigo antes do verbo) indica natureza, não indefinição: em João 1,14 a mesma forma aparece com "carne", e ninguém traduz "se fez uma carne". Quase nenhuma tradução da história verte João 1,1 como a Torre de Vigia.
 
-2. Títulos divinos dados a Jesus. Em João 20,28 Tomé chama Jesus de "Senhor meu e Deus meu", e Jesus aceita. Em Tito 2,13 e 2 Pedro 1,1 ele é "nosso grande Deus e Salvador". Em Hebreus 1,8 o Pai chama o Filho de "Deus". Em Filipenses 2,6 Cristo é de "condição divina". Foi para guardar esse dado bíblico que o Concílio de Niceia, em 325, condenou Ário, que, como as Testemunhas hoje, dizia que o Filho era uma criatura: o Credo responde "gerado, não criado, consubstancial ao Pai".
+2. Títulos divinos dados a Jesus. Em João 20,28 Tomé chama Jesus de "Senhor meu e Deus meu", e Jesus aceita. Em Tito 2,13 ele é "nosso grande Deus e Salvador", e 2 Pedro 1,1 usa no grego a mesma construção ("nosso Deus e Salvador Jesus Cristo"). Em Hebreus 1,8 o Pai chama o Filho de "Deus". Em Filipenses 2,6 Cristo é de "condição divina". Foi para guardar esse dado bíblico que o Concílio de Niceia, em 325, condenou Ário, que, como as Testemunhas hoje, dizia que o Filho era uma criatura: o Credo responde "gerado, não criado, consubstancial ao Pai".
 
 3. Jesus não é o arcanjo Miguel. Em Hebreus 1, o autor mostra a superioridade do Filho justamente comparando-o aos anjos: "a qual dos anjos disse Deus alguma vez: tu és meu Filho?" e "todos os anjos de Deus o adorem" (Hebreus 1,5-6). Jesus é adorado pelos anjos, não é um deles.
 
 4. O Espírito Santo é pessoa, não força. Em Atos 13,2 "o Espírito Santo disse: reservai-me Barnabé e Saulo". Uma força não fala nem escolhe. Em João 14,16 Jesus chama o Espírito de "outro Paráclito", palavra que designa uma pessoa. Em Atos 5,3-4 mentir ao Espírito Santo é mentir a Deus.
 
-5. As datas que falharam. A Torre de Vigia anunciou o fim para 1914, depois 1925, depois 1975. Todas falharam. A própria Bíblia dá o critério (Deuteronômio 18,22): quando um profeta anuncia algo em nome de Deus e não acontece, não foi Deus quem falou.
+5. As datas que falharam. A Torre de Vigia anunciou que 1914 traria o fim dos governos humanos, depois esperou para 1925 a ressurreição de Abraão, Isaac e Jacó, e mais tarde apontou 1975, quando se completariam seis mil anos da criação do homem, como provável início do reino de mil anos de Cristo. Nada disso aconteceu, e hoje a organização relê 1914 como o início de um reinado invisível de Cristo no céu. A própria Bíblia dá o critério (Deuteronômio 18,22): quando um profeta anuncia algo em nome de Deus e não acontece, não foi Deus quem falou.
 
 ## Perguntas-chave
 
-1. Por que apenas a Tradução do Novo Mundo (1950) verte João 1,1 como "um deus", e nenhuma das traduções históricas (católica, ortodoxa, protestante) faz isso?
+1. Por que a Tradução do Novo Mundo (1950) verte João 1,1 como "um deus", se as grandes traduções históricas (católicas, ortodoxas, protestantes) não fazem isso?
 
 2. Em João 20,28 Tomé chama Jesus de "meu Deus". Se Jesus não é Deus, por que ele não corrigiu Tomé?
 
 3. Se Jesus é o arcanjo Miguel, como entender Hebreus 1,6: "todos os anjos de Deus o adorem"?
 
 4. Se as datas do fim anunciadas pela Sociedade Torre de Vigia (1914, 1925, 1975) falharam, por que confiar na próxima, diante do critério de Deuteronômio 18,22?`,
-    references: ['jo-1-1', 'jo-20-28', 'hb-1-8', 'fl-2-6', 'jo-14-16', 'concilio-niceia'],
+    references: ['jo-1-1', 'jo-20-28', 'hb-1-8', 'fl-2-6', 'jo-14-16', 'concilio-niceia', 'dt-18-22', 'hb-1-5', 'at-13-2', 'at-5-3', 'tt-2-13'],
   },
   {
     id: 36,
@@ -159,7 +159,7 @@ O problema é que a doutrina central, a negação da divindade de Cristo, não v
 
 Primeiro problema: as supostas semelhanças são quase todas falsas. Os textos egípcios sobre Hórus estão preservados, podem ser lidos diretamente. Hórus não nasceu de virgem (sua mãe Ísis concebeu de Osíris ressuscitado parcialmente, mito completamente diferente). Não nasceu em 25 de dezembro (nenhum texto antigo registra essa data para Hórus). Não foi crucificado (a crucificação como pena romana nem existia no Egito faraônico). Não ressuscitou ao terceiro dia. Não teve 12 discípulos. As alegações populares são fabricações modernas, fáceis de checar consultando egiptologia básica.
 
-O mesmo vale para Mitra. O mitraísmo romano existiu, sim. Mas suas características aparecem nos séculos II e III d.C., portanto depois da fundação e expansão do cristianismo. A direção da influência (se houve alguma) é a inversa: o mitraísmo absorveu elementos cristãos enquanto competia pelo mesmo público no Império Romano tardio. Os "12 seguidores de Mitra" que aparecem em sites ateus são interpretação moderna de constelações zodiacais em mosaicos mitraicos, não discípulos pessoais.
+O mesmo vale para Mitra. O mitraísmo romano existiu, sim. Mas os seus primeiros vestígios são do fim do século I d.C., e ele só floresce nos séculos II e III, portanto depois da fundação e da expansão inicial do cristianismo. Se houve influência, o mais provável é que tenha ido na direção inversa, do cristianismo para o mitraísmo, que competia pelo mesmo público no Império Romano. Os "12 seguidores de Mitra" que aparecem em sites ateus são interpretação moderna de constelações zodiacais em mosaicos mitraicos, não discípulos pessoais.
 
 Dionísio, deus grego do vinho, tinha mitos de morte e renovação cíclica vegetativa (associado às estações do ano). Mas não há crucificação histórica datada, nem testemunhas oculares, nem evento único que altera o curso da história. Mitologia cíclica vegetativa e ressurreição histórica única são categorias diferentes de afirmação.
 
@@ -171,7 +171,7 @@ Segundo problema: cronologia. Os elementos verdadeiramente paralelos entre crist
 
 ## Diferenças fundamentais
 
-Terceiro problema: diferenças fundamentais. O cristianismo afirma um evento histórico datado, com testemunhas nomeadas, em local geográfico específico, em período histórico bem documentado. Os mitos pagãos são intemporais, atemporais, sem ancoragem em pessoa histórica ou data verificável. Quando os Evangelhos falam de Pilatos, Tibério, Caifás, Herodes, mencionam personagens reais conhecidos da história romana. Os mitos pagãos não fazem isso. Essa diferença é qualitativa, não de grau.
+Terceiro problema: diferenças fundamentais. O cristianismo afirma um evento histórico datado, com testemunhas nomeadas, em local geográfico específico, em período histórico bem documentado. Os mitos pagãos são intemporais, sem ancoragem em pessoa histórica ou data verificável. Quando os Evangelhos falam de Pilatos, Tibério, Caifás, Herodes, mencionam personagens reais conhecidos da história romana. Os mitos pagãos não fazem isso. Essa diferença é qualitativa, não de grau.
 
 ## O argumento se autorrefuta
 
@@ -179,7 +179,7 @@ Quarto problema: o argumento se autorrefuta. Se as semelhanças entre cristianis
 
 ## O mito que se fez fato
 
-C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intensamente sobre a relação entre mitos pagãos e cristianismo. Em conversa com J. R. R. Tolkien (católico) e Hugo Dyson em 19 de setembro de 1931, sua resistência ao cristianismo se quebrou quando entendeu que o problema não era "o cristianismo se parece com mitos pagãos" mas o oposto: os mitos pagãos eram intuições verdadeiras que preparavam a humanidade para o fato histórico que se cumpriria em Cristo. Em Cristianismo Puro e Simples (1952), Lewis dirá que Deus enviou à humanidade "bons sonhos", aquelas "histórias estranhas, espalhadas por todas as religiões pagãs, sobre um deus que morre e volta à vida". E no ensaio Myth Became Fact (1944) escreveu que "o mito se fez fato" no cristianismo: as intuições humanas universais (necessidade de salvação, sacrifício redentor, vitória sobre a morte) foram realizadas concretamente em uma pessoa histórica datável.
+C. S. Lewis, que era ateu antes de converter-se ao cristianismo, refletiu intensamente sobre a relação entre mitos pagãos e cristianismo. Em conversa com J. R. R. Tolkien (católico) e Hugo Dyson em 19 de setembro de 1931, sua resistência ao cristianismo se quebrou quando entendeu que o problema não era "o cristianismo se parece com mitos pagãos" mas o oposto: os mitos pagãos eram intuições verdadeiras que preparavam a humanidade para o fato histórico que se cumpriria em Cristo. Em Cristianismo Puro e Simples (1952), Lewis dirá que Deus enviou à humanidade "bons sonhos", aquelas "histórias estranhas, espalhadas por todas as religiões pagãs, sobre um deus que morre e volta à vida". E no ensaio Myth Became Fact ("O mito se fez fato", 1944) escreveu que "o coração do cristianismo é um mito que também é um fato": as intuições humanas universais (necessidade de salvação, sacrifício redentor, vitória sobre a morte) foram realizadas concretamente em uma pessoa histórica datável.
 
 O argumento católico clássico aceita as similaridades reais (que existem, sim) e as interpreta como providência. Deus preparou a humanidade pagã para receber o Evangelho através de intuições parciais da verdade nas religiões anteriores. Quando o Verbo se fez carne, essas intuições encontraram seu cumprimento real, não em mais um mito, mas em uma pessoa histórica viva.
 
@@ -220,7 +220,7 @@ E aqui a convergência é enorme, muito maior do que com qualquer outra crença 
 
 As diferenças brotam de dois lemas, e ambos têm um problema interno.
 
-1. Só a Escritura (Sola Scriptura) se autorrefuta. Em nenhum lugar a Bíblia ensina que a Bíblia sozinha é a única regra de fé. Pelo contrário. Paulo manda "conservar as tradições aprendidas, seja por palavra, seja por carta" (2 Tessalonicenses 2,15) e chama a Igreja, não a Escritura, de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). Pedro adverte que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20) e que os ignorantes deturpam as cartas de Paulo "como o fazem com as demais Escrituras" (2 Pedro 3,16). Há ainda o problema do índice: foi a Igreja Católica, nos concílios de Hipona (393) e Cartago (397), que definiu quais livros compõem a Bíblia. Aceitar essa lista e rejeitar a autoridade que a fez é apoiar-se num galho e serrar a árvore. Santo Agostinho foi franco: "eu não creria no Evangelho se a isso não me movesse a autoridade da Igreja Católica".
+1. Só a Escritura (Sola Scriptura) se autorrefuta. Em nenhum lugar a Bíblia ensina que a Bíblia sozinha é a única regra de fé. Pelo contrário. Paulo manda "conservar as tradições aprendidas, seja por palavra, seja por carta" (2 Tessalonicenses 2,15) e chama a Igreja, não a Escritura, de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). Pedro adverte que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20) e que os ignorantes deturpam as cartas de Paulo "como o fazem com as demais Escrituras" (2 Pedro 3,16). Há ainda o problema do índice: foi a Igreja Católica, nos concílios de Hipona (393) e Cartago (397), que definiu quais livros compõem a Bíblia. Aceitar essa lista e rejeitar a autoridade que a fez é apoiar-se num galho e serrar a árvore. Santo Agostinho foi franco, por volta de 397, na obra Contra a Carta de Maniqueu: "eu não creria no Evangelho se a isso não me movesse a autoridade da Igreja Católica".
 
 2. Só a fé (Sola Fide) contradiz Tiago. A única vez em que a expressão "fé somente" aparece na Bíblia é para ser negada: "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24). Lutero teve tanta dificuldade com essa carta que a chamou de "epístola de palha" e chegou a acrescentar a palavra "somente" (allein) à sua tradução alemã de Romanos 3,28, onde Paulo não a escreveu. A posição católica não opõe fé e obras: a graça salva, a fé acolhe a graça, e a fé viva necessariamente floresce em obras de amor, como a árvore boa dá frutos. Foi assim que o Concílio de Trento respondeu à Reforma.
 
@@ -237,7 +237,7 @@ As diferenças brotam de dois lemas, e ambos têm um problema interno.
 3. Tiago 2,24 diz que o homem não é justificado "somente pela fé". Como conciliar isso com o Sola Fide?
 
 4. Se "só a Bíblia" bastasse, por que cinco séculos de Reforma geraram milhares de igrejas que discordam entre si sobre o que a Bíblia ensina?`,
-    references: ['mt-16-18', '2ts-2-15', '1tm-3-15', '2pd-1-20', '2pd-3-16', 'tg-2-24', 'rm-3-28', 'jo-17-20', 'hipona-393', 'cartago-397', 'jo-6-53', 'agostinho-evangelho', 'lutero-rm-3-28', 'concilio-trento', 'inacio-esmirnenses-7', 'justino-apologia-1', 'csgc-denominacoes'],
+    references: ['2ts-2-15', '1tm-3-15', '2pd-1-20', '2pd-3-16', 'tg-2-24', 'rm-3-28', 'jo-17-20', 'hipona-393', 'cartago-397', 'agostinho-evangelho', 'lutero-rm-3-28', 'concilio-trento', 'inacio-esmirnenses-7', 'justino-apologia-1', 'csgc-denominacoes', 'unitatis-redintegratio-3'],
   },
   {
     id: 38,
@@ -259,7 +259,7 @@ Depois da destruição do Templo de Jerusalém, no ano 70, o Judaísmo se reorga
 
 ## Pontos de convergência
 
-A convergência é profunda. Adoramos o mesmo Deus, o de Abraão, Isaac e Jacó. Recebemos como Palavra inspirada as mesmas Escrituras hebraicas. Partilhamos os Dez Mandamentos, a expectativa messiânica, a santidade da vida e a aliança. São Paulo, em Romanos 11, compara Israel à oliveira boa na qual os cristãos, vindos das nações, foram enxertados: a raiz sustenta os ramos, não o contrário. O Concílio Vaticano II, na declaração Nostra Aetate, condena qualquer forma de antissemitismo e reconhece o vínculo único entre a Igreja e o povo judeu.
+A convergência é profunda. Adoramos o mesmo Deus, o de Abraão, Isaac e Jacó. Recebemos como Palavra inspirada as mesmas Escrituras hebraicas. Partilhamos os Dez Mandamentos, a expectativa messiânica, a santidade da vida e a aliança. São Paulo, em Romanos 11, compara Israel à oliveira boa na qual os cristãos, vindos das nações, foram enxertados: a raiz sustenta os ramos, não o contrário. O Concílio Vaticano II, na declaração Nostra Aetate, deplora todas as manifestações de antissemitismo e reconhece o vínculo único entre a Igreja e o povo judeu.
 
 ## Pontos de confronto
 
@@ -267,13 +267,13 @@ O ponto é um só: Jesus de Nazaré é o Messias anunciado pelos profetas? O cri
 
 1. O Servo sofredor de Isaías 53. Escrito séculos antes de Cristo, descreve um servo "ferido por causa de nossas iniquidades", que "como cordeiro foi levado ao matadouro", que "não abriu a boca" e cuja morte traz cura "pelas suas chagas". A correspondência com a paixão de Jesus é impressionante.
 
-2. O Salmo 22. Começa com "Deus meu, Deus meu, por que me abandonaste", as palavras de Jesus na cruz, e descreve mãos e pés traspassados e vestes repartidas por sorteio, séculos antes de a crucificação existir como pena.
+2. O Salmo 22 (21). Começa com "Deus meu, Deus meu, por que me abandonaste", as palavras de Jesus na cruz, e descreve, séculos antes de Cristo, mãos e pés traspassados e vestes repartidas por sorteio. Um judeu pode objetar que o texto hebraico tradicional, o massorético, lê ali "como um leão". Mas a Septuaginta, tradução grega feita por judeus antes de Cristo, lê "traspassaram" (literalmente "cavaram"), e um antigo fragmento hebraico achado no deserto da Judeia parece apoiar essa leitura.
 
 3. A profecia de Daniel 9. Fixa um prazo, as "setenta semanas", após o qual o Ungido seria suprimido e a cidade e o santuário, destruídos. O Templo foi destruído no ano 70. Se o Messias deveria vir e ser morto antes dessa destruição, o prazo já passou.
 
-4. O lugar e o sinal. Miquéias 5,2 anuncia o nascimento do governante em Belém. Zacarias 12,10 fala daqueles que "olharão para aquele a quem traspassaram" e farão luto por ele. São sinais concretos, não vagos.
+4. O lugar e o sinal. Miquéias 5,1 anuncia o nascimento do governante em Belém. Zacarias 12,10 fala daqueles que "olharão para aquele a quem traspassaram" e farão luto por ele. São sinais concretos, não vagos.
 
-5. O fim dos sacrifícios. A Torá ordenava o sacrifício no Templo para a expiação dos pecados. Desde o ano 70 não há Templo nem sacrifício. O cristão vê nisso o sentido da Carta aos Hebreus: o sacrifício definitivo já foi oferecido por Cristo, sacerdote e vítima, de uma vez por todas.
+5. O fim dos sacrifícios. A Torá ordenava o sacrifício no Templo para a expiação dos pecados. Desde o ano 70 não há Templo nem sacrifício. O cristão vê nisso o sentido da Carta aos Hebreus: o sacrifício definitivo já foi oferecido por Cristo, sacerdote e vítima, de uma vez por todas (Hebreus 10,10-14).
 
 ## Perguntas-chave
 
@@ -284,7 +284,7 @@ O ponto é um só: Jesus de Nazaré é o Messias anunciado pelos profetas? O cri
 3. Desde o ano 70 não há Templo nem sacrifício de expiação. Como a aliança continua sem o meio de expiação que a própria Torá exigia?
 
 4. Os primeiros a crer em Jesus como Messias foram milhares de judeus observantes. O que eles viram nas Escrituras que levou tantos a reconhecê-lo?`,
-    references: ['is-53', 'sl-22', 'dn-9-24', 'mq-5-2', 'zc-12-10', 'rm-11-17', 'hb-9-27', 'nostra-aetate'],
+    references: ['is-53', 'sl-22', 'dn-9-24', 'mq-5-2', 'zc-12-10', 'rm-11-17', 'nostra-aetate', 'dt-6-4', 'hb-10-10'],
   },
   {
     id: 39,
@@ -295,7 +295,7 @@ O ponto é um só: Jesus de Nazaré é o Messias anunciado pelos profetas? O cri
     imageCredit: 'O Grande Buda de Kamakura, Japão. Foto via Wikimedia Commons.',
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Great%2520Buddha%2520of%2520Kamakura%252C%2520Kanagawa%2520Prefecture%253B%2520May%25202011%2520(01).jpg&w=2200&output=jpg&q=80',
-    summary: 'O Budismo busca o fim do sofrimento pela extinção do desejo e do próprio eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.',
+    summary: 'O Budismo busca o fim do sofrimento pela extinção do desejo e da ilusão do eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.',
     body: `O Budismo atrai muita gente no Ocidente pela serenidade, pela disciplina da meditação e pela ênfase na compaixão. Não é uma religião de combate, e o diálogo com um budista costuma ser tranquilo. Mas por baixo da semelhança de linguagem (paz, compaixão, desapego) há respostas opostas às do cristianismo sobre o que é real, o que somos e para onde vamos.
 
 ## O que creem
@@ -320,7 +320,7 @@ As diferenças, porém, são de fundo.
 
 4. Libertar-se por método ou ser salvo por dom? O Buda oferece um caminho para que você mesmo se liberte pelo próprio esforço. Cristo não oferece um método, oferece a si mesmo: "Deus tanto amou o mundo que lhe deu o seu Filho único" (João 3,16). Para quem carrega culpa real, a diferença é enorme: a salvação vem de fora, como presente gratuito, não como conquista.
 
-5. Renascer ou ressuscitar? O samsara é um ciclo de renascimentos do qual se deseja escapar para o nirvana, em que o eu individual se extingue. O cristianismo anuncia uma vida só (Hebreus 9,27) e, no fim, a ressurreição do corpo e a comunhão eterna com Deus. Não a extinção do eu, mas a sua plenitude.
+5. Renascer ou ressuscitar? O samsara é um ciclo de renascimentos do qual se deseja escapar para o nirvana, em que se apagam o desejo e a ilusão de um eu permanente. O cristianismo anuncia uma vida só (Hebreus 9,27) e, no fim, a ressurreição do corpo e a comunhão eterna com Deus. Não a extinção do eu, mas a sua plenitude.
 
 ## Perguntas-chave
 
@@ -328,7 +328,7 @@ As diferenças, porém, são de fundo.
 
 2. Por que ter compaixão por alguém cujo eu, segundo o Budismo, não existe de verdade?
 
-3. O nirvana é a extinção do desejo e do eu. O coração humano deseja mesmo desaparecer, ou deseja ser amado e durar?
+3. O nirvana é a extinção do desejo e da ilusão do eu. Mas o coração humano deseja mesmo deixar de ser alguém, ou deseja ser amado e durar?
 
 4. O Buda mostra um caminho a percorrer com o próprio esforço. E quando o esforço falha? O que o cristianismo oferece nesse ponto que o Budismo não oferece?`,
     references: ['gn-1-27', 'jo-3-16', 'hb-9-27', 'buda-quatro-nobres', 'nostra-aetate'],
@@ -342,7 +342,7 @@ As diferenças, porém, são de fundo.
     imageCredit: 'Krishna e Arjuna, relevo na decoração de uma casa em Bishnupur, Índia. Foto via Wikimedia Commons.',
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FBhagavata%2520Gita%2520Bishnupur%2520Arnab%2520Dutta%25202011.JPG&w=2200&output=jpg&q=80',
-    summary: 'O Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto impessoal. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.',
+    summary: 'Em muitas de suas escolas, o Hinduísmo vê o divino em tudo e o eu como uma faísca do absoluto. O cristianismo afirma um Deus pessoal distinto da criação, e uma só vida que decide a eternidade.',
     body: `O Hinduísmo é a mais antiga das grandes religiões vivas e uma das mais difíceis de resumir, porque não é um bloco só, mas uma família imensa de tradições, com muitos deuses, muitos textos e muitos caminhos. Tem grande beleza espiritual e uma sede do transcendente que o cristão reconhece de imediato. As diferenças aparecem quando se pergunta quem é Deus, o que é o ser humano e como termina a história.
 
 ## O que creem
@@ -363,7 +363,7 @@ As respostas de fundo, porém, divergem do Evangelho.
 
 2. O eu se dissolve ou permanece? Se atman é Brahman, a meta é deixar de ser indivíduo e fundir-se no todo. O cristianismo afirma o contrário: a pessoa é criada à imagem de Deus (Gênesis 1,27) e permanece pessoa para sempre, em relação de amor. A salvação não apaga o rosto, ela o plenifica.
 
-3. Karma e reencarnação ou graça e ressurreição? A lei do karma é implacável: cada um colhe exatamente o que plantou, vida após vida. O Evangelho anuncia algo que o karma não conhece: o perdão e a graça. E ensina uma só vida, seguida do juízo e da ressurreição (Hebreus 9,27), não um ciclo interminável de retornos.
+3. Karma e reencarnação ou graça e ressurreição? A lei do karma é implacável: cada um colhe exatamente o que plantou, vida após vida. É verdade que as correntes devocionais (bhakti) falam da graça de uma divindade que livra o devoto, e no Bhagavad Gita (18,66) Krishna promete livrar de todos os pecados quem nele se refugia. Mas o Evangelho anuncia algo que a lei do karma, em si, não conhece: o perdão e a graça de um Deus que entrou na história e morreu pelos pecadores. E ensina uma só vida, seguida do juízo e da ressurreição (Hebreus 9,27), não um ciclo interminável de retornos.
 
 4. Muitos caminhos ou um Caminho? Para o Hinduísmo, em geral, há muitos caminhos válidos para o divino. Jesus afirma algo único: "Eu sou o caminho, a verdade e a vida. Ninguém vai ao Pai senão por mim" (João 14,6). Não por arrogância, mas porque, se Deus de fato entrou na história em pessoa, esse fato muda tudo.
 
@@ -394,7 +394,7 @@ As respostas de fundo, porém, divergem do Evangelho.
 
 ## O que creem
 
-A religião foi fundada por Joseph Smith nos Estados Unidos. Smith afirmou ter tido, a partir de 1820, visões celestes, e ter recebido de um anjo chamado Morôni placas de ouro que traduziu como o Livro de Mórmon, publicado em 1830. Segundo esse livro, antigas tribos de Israel teriam migrado para as Américas por volta de 600 a.C., formando as civilizações dos nefitas e lamanitas, e Jesus ressuscitado as teria visitado.
+A religião foi fundada por Joseph Smith nos Estados Unidos. Smith afirmou ter tido, a partir de 1820, visões celestes, e ter recebido de um anjo chamado Morôni placas de ouro que traduziu como o Livro de Mórmon, publicado em 1830. Segundo esse livro, um grupo de israelitas teria saído de Jerusalém para as Américas por volta de 600 a.C., dando origem às civilizações dos nefitas e lamanitas, e Jesus ressuscitado as teria visitado.
 
 Além da Bíblia e do Livro de Mórmon, os mórmons seguem Doutrina e Convênios e a Pérola de Grande Valor, e creem em profetas vivos que recebem revelação contínua. Pontos marcantes da doutrina: Deus Pai teria sido um homem que se tornou Deus ("como o homem é, Deus já foi. Como Deus é, o homem pode vir a ser"). Existe uma pluralidade de deuses, e os fiéis podem, por fim, tornar-se deuses de seus próprios mundos. A família eterna, o batismo pelos mortos e o forte impulso missionário completam o quadro.
 
@@ -423,7 +423,7 @@ As dificuldades, porém, não são pequenas, e várias são verificáveis.
 3. Isaías 43,10 diz que não há outro Deus antes ou depois. Como conciliar isso com um Deus que foi homem e com muitos deuses?
 
 4. Se a poligamia e a exclusão dos negros foram revogadas por revelação justamente sob pressão social, o que isso diz sobre a fonte dessas revelações?`,
-    references: ['livro-mormon', 'livro-abraao', 'is-43-10', 'jo-1-1', 'fl-2-6'],
+    references: ['livro-mormon', 'livro-abraao', 'is-43-10'],
   },
   {
     id: 42,
@@ -445,17 +445,17 @@ Os argumentos mais fortes do ateísmo merecem ser nomeados com honestidade: o so
 
 ## Pontos de convergência
 
-O cristão tem mais em comum com o ateu sincero do que parece. Ambos valorizam a razão, a evidência e a honestidade intelectual. A Igreja, na encíclica Fides et Ratio, ensina que a fé e a razão são as duas asas pelas quais o espírito se eleva à verdade, e que nunca se opõem de fato. A própria ciência moderna nasceu na civilização cristã. A exigência de não acreditar em qualquer coisa sem boas razões é uma exigência que o cristão também faz.
+O cristão tem mais em comum com o ateu sincero do que parece. Ambos valorizam a razão, a evidência e a honestidade intelectual. A Igreja, na encíclica Fides et Ratio, de São João Paulo II (1998), ensina que a fé e a razão são as duas asas pelas quais o espírito se eleva à verdade, e que nunca se opõem de fato. A própria ciência moderna nasceu na civilização cristã. A exigência de não acreditar em qualquer coisa sem boas razões é uma exigência que o cristão também faz.
 
 ## Pontos de confronto
 
 A questão é se o naturalismo consegue sustentar aquilo de que ele mesmo depende.
 
-1. Por que existe algo em vez de nada? O naturalismo descreve como o universo funciona, mas não explica por que existe um universo, por que ele teve um começo (como indica a cosmologia atual) e por que suas leis são tão precisamente ajustadas para permitir a vida. Dizer "simplesmente é assim" não é uma explicação, é parar de perguntar. Esse ponto é tratado em detalhe nos artigos sobre o argumento cosmológico e o ajuste fino.
+1. Por que existe algo em vez de nada? O naturalismo descreve como o universo funciona, mas não explica por que existe um universo, por que ele teve um começo (como indica a cosmologia atual) e por que suas leis são tão precisamente ajustadas para permitir a vida. Dizer "simplesmente é assim" não é uma explicação, é parar de perguntar. São Paulo já dizia que as perfeições invisíveis de Deus se tornam visíveis à inteligência por suas obras (Romanos 1,20), e o filósofo William Lane Craig retomou, em The Kalam Cosmological Argument (1979), o argumento de que tudo o que começa a existir tem uma causa. Esse ponto é tratado em detalhe nos artigos sobre o argumento cosmológico e o ajuste fino.
 
-2. De onde vem a moral? Quando o ateu se revolta contra o mal, ele pressupõe que existe um bem real, um padrão objetivo acima das opiniões. Mas se só existe matéria em movimento, de onde vem esse padrão? Sem Deus, "certo" e "errado" tendem a virar preferências, e a indignação moral perde o chão. O próprio argumento do mal, a maior objeção ateia, só funciona se o bem existir de verdade, o que aponta para além da matéria.
+2. De onde vem a moral? Quando o ateu se revolta contra o mal, ele pressupõe que existe um bem real, um padrão objetivo acima das opiniões. Mas se só existe matéria em movimento, de onde vem esse padrão? Sem Deus, "certo" e "errado" tendem a virar preferências, e a indignação moral perde o chão. O próprio argumento do mal, a maior objeção ateia, só funciona se o bem existir de verdade, o que aponta para além da matéria. C. S. Lewis desenvolve esse argumento em Cristianismo Puro e Simples (1952).
 
-3. Por que confiar na razão? Se a mente é apenas o resultado de processos cegos, selecionados para sobreviver e não para alcançar a verdade, por que confiar nas suas conclusões, inclusive na conclusão de que Deus não existe? O naturalismo, levado a sério, serra o galho em que está sentado: usa a razão para negar aquilo que daria fundamento à própria razão.
+3. Por que confiar na razão? Se a mente é apenas o resultado de processos cegos, selecionados para sobreviver e não para alcançar a verdade, por que confiar nas suas conclusões, inclusive na conclusão de que Deus não existe? O naturalismo, levado a sério, serra o galho em que está sentado: usa a razão para negar aquilo que daria fundamento à própria razão. É o argumento que o filósofo Alvin Plantinga desenvolveu contra o naturalismo, por exemplo em Where the Conflict Really Lies (2011).
 
 4. O cientificismo se autorrefuta. A frase "só é verdade o que a ciência pode provar" não é, ela mesma, uma afirmação que a ciência possa provar. É uma afirmação filosófica. Logo, derruba a si mesma. A ciência é magnífica no seu campo, mas existem verdades reais, como as matemáticas, morais e lógicas, que não são objeto de experimento.
 
@@ -480,7 +480,7 @@ A questão é se o naturalismo consegue sustentar aquilo de que ele mesmo depend
     imageAspect: 1.19,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FFlammarion.jpg&w=2200&output=jpg&q=80',
     summary: 'A Nova Era mistura cristais, energias, reencarnação e um "Cristo cósmico", com a ideia de que o divino está em você. O Evangelho responde: você é criatura amada, não Deus.',
-    body: `A Nova Era não é uma igreja nem tem um fundador. É um clima espiritual difuso, que aparece em cristais, mapas astrais, terapias energéticas, búzios, reencarnação, autoajuda espiritualizada e na frase "sou espiritualizado, mas não religioso". Muita gente que se diz católica absorve ideias da Nova Era sem perceber. Por isso vale entender o que ela propõe e onde isso colide com a fé.
+    body: `A Nova Era não é uma igreja nem tem um fundador. É um clima espiritual difuso, que aparece em cristais, mapas astrais, terapias energéticas, tarô, reencarnação, autoajuda espiritualizada e na frase "sou espiritualizado, mas não religioso". Muita gente que se diz católica absorve ideias da Nova Era sem perceber. Por isso vale entender o que ela propõe e onde isso colide com a fé.
 
 ## O que creem
 
@@ -498,7 +498,7 @@ A própria Igreja analisou esse movimento no documento "Jesus Cristo, portador d
 
 1. Você é Deus ou criatura de Deus? A Nova Era diz que o divino está em você e que basta despertar para isso. A fé cristã diz o contrário: você é criatura, boa e amada, mas não é Deus. Curiosamente, a promessa "sereis como deuses" é exatamente a da serpente, no início do Gênesis (Gênesis 3,5). A grandeza humana não está em ser Deus, mas em ser amado por Ele.
 
-2. Um Cristo cósmico ou o Jesus da história? Trocar o Jesus que nasceu, morreu e ressuscitou num lugar e numa data por uma vaga "energia crística" esvazia o Evangelho. A Primeira Carta de João adverte: todo espírito que não reconhece Jesus vindo em carne não é de Deus (1 João 4,2-3).
+2. Um Cristo cósmico ou o Jesus da história? Trocar o Jesus que nasceu, morreu e ressuscitou num lugar e numa data por uma vaga "energia crística" esvazia o Evangelho. A Primeira Carta de João adverte: todo espírito que não reconhece Jesus vindo em carne não é de Deus (1 João 4,2-3). E Jesus não se apresentou como uma energia, mas como alguém: "Eu sou o caminho, a verdade e a vida" (João 14,6).
 
 3. Cristais, astrologia, canalização. A busca de poder por meio de energias, astros e espíritos é justamente o que a Bíblia chama de adivinhação e proíbe (Deuteronômio 18,10-12). O Catecismo da Igreja Católica, nos parágrafos 2116 e 2117, condena a astrologia, a consulta a médiuns e a magia, mesmo quando feitas em busca do bem.
 
@@ -547,7 +547,7 @@ Dito isso, há diferenças que não se resolvem só com simpatia.
 
 3. O sincretismo. Associar um orixá a um santo foi, muitas vezes, uma estratégia de sobrevivência sob perseguição, e isso se compreende com compaixão. Mas, teologicamente, o santo e o orixá não são a mesma coisa. A clareza, aqui, é um ato de respeito pela verdade, não de desprezo pela história.
 
-4. A salvação. Boa parte dessas tradições busca o equilíbrio e o favor por meio de oferendas e obrigações rituais. O Evangelho anuncia outra coisa: a salvação não se compra nem se conquista com ritos, é dom gratuito de um Deus pessoal que redime cada pessoa em Cristo.
+4. A salvação. Boa parte dessas tradições busca o equilíbrio e o favor por meio de oferendas e obrigações rituais. O Evangelho anuncia outra coisa: a salvação não se compra nem se conquista com ritos, é dom gratuito de um Deus pessoal que redime cada pessoa em Cristo, que disse: "Eu sou o caminho, a verdade e a vida" (João 14,6).
 
 ## Perguntas-chave
 
@@ -578,7 +578,7 @@ O primeiro de todos os mandamentos é "não terás outros deuses diante de mim" 
 
 ## O que a Bíblia diz
 
-A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a adivinhação, a magia, o feitiço e a consulta aos mortos: "não se ache no meio de ti quem pratique adivinhação, magia ou consulte os espíritos" (Deuteronômio 18,10-12). O quadro de Bernardo Cavallino retrata um caso bíblico: o rei Saul, em vez de confiar em Deus, procura uma necromante para invocar o espírito de Samuel, e isso é apresentado como a sua ruína. O profeta Isaías ironiza: "consultar os mortos a respeito dos vivos? Recorram antes à lei e ao testemunho" (Isaías 8,19-20).
+A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a adivinhação, a magia, o feitiço e a consulta aos mortos: "não se ache no meio de ti quem pratique adivinhação, magia ou consulte os espíritos" (Deuteronômio 18,10-12). O quadro de Bernardo Cavallino retrata um caso bíblico: o rei Saul, em vez de confiar em Deus, procura uma necromante para invocar o espírito de Samuel (1 Samuel 28), e a Escritura conta que ele morreu também por isso (1 Crônicas 10,13). O profeta Isaías ironiza: "consultar os mortos a respeito dos vivos? Recorram antes à lei e ao testemunho" (Isaías 8,19-20).
 
 ## Por que é perigoso, mesmo "de brincadeira"
 
@@ -586,7 +586,7 @@ A objeção comum é: "mas eu não levo a sério". O problema é que essas prát
 
 ## Horóscopo e astrologia
 
-A astrologia parte de uma ideia que a fé rejeita: a de que a sua vida é determinada pela posição dos astros no dia em que você nasceu. O Catecismo é explícito ao condenar a astrologia e a adivinhação, porque elas negam duas coisas centrais: a providência de Deus, que conduz a história com amor, e a liberdade humana, que faz de cada um responsável pelas próprias escolhas. Reduzir uma pessoa, com a sua história e a sua alma, a um "signo" é, no fundo, diminuí-la.
+A astrologia parte de uma ideia que a fé rejeita: a de que a sua vida é determinada pela posição dos astros no dia em que você nasceu. O Catecismo, no parágrafo 2116, é explícito: a consulta dos horóscopos e a astrologia estão entre as formas de adivinhação que devem ser rejeitadas. E não por acaso, porque elas negam duas coisas centrais: a providência de Deus, que conduz a história com amor, e a liberdade humana, que faz de cada um responsável pelas próprias escolhas. Reduzir uma pessoa, com a sua história e a sua alma, a um "signo" é, no fundo, diminuí-la.
 
 ## E a sorte, os amuletos, as simpatias?
 
@@ -605,7 +605,7 @@ No fundo, a mensagem cristã aqui é libertadora. O cristão não precisa viver 
 3. Qual a diferença entre confiar numa Pessoa que ama (fé) e confiar num ritual ou objeto que "obriga" a sorte (superstição)?
 
 4. Ler horóscopo "de brincadeira" educa você a confiar em Deus, ou a buscar segurança em outro lugar?`,
-    references: ['dt-18-10', 'cic-2116', 'is-8-19', 'ex-20-3', '2cor-11-14'],
+    references: ['dt-18-10', 'cic-2116', 'is-8-19', 'ex-20-3', '2cor-11-14', '1sm-28-7', '1cr-10-13'],
   },
   {
     id: 77,
@@ -640,7 +640,7 @@ Para o católico que descobriu, talvez tarde, essa incompatibilidade, o convite 
 1. Se a Igreja proíbe a Maçonaria desde 1738 e reafirmou isso em 1983, faz sentido tratar o tema como invenção recente ou exagero?
 
 2. O problema apontado é a filantropia dos maçons, ou a visão de fundo (relativismo, naturalismo, juramentos acima da consciência)?`,
-    references: ['ex-20-3', 'jo-14-6'],
+    references: ['ex-20-3', 'jo-14-6', 'cdf-maconaria-1983', 'ddf-maconaria-2023'],
   },
 ];
 

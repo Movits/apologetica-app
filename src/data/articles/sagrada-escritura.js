@@ -28,11 +28,11 @@ O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concíl
 
 ## Uma novidade do século XVI
 
-O quarto problema é histórico. O Sola Scriptura surgiu no séc. XVI. Antes disso, por 1500 anos, a Igreja funcionou com Escritura, Tradição e Magistério juntos. Se Sola Scriptura é a verdadeira doutrina cristã, isso significa que a Igreja inteira errou nos primeiros 15 séculos. Difícil de conciliar com a promessa de Jesus de que as portas do inferno não prevaleceriam contra ela.
+O quarto problema é histórico. O Sola Scriptura surgiu no séc. XVI. Antes disso, por 1500 anos, a Igreja funcionou com Escritura, Tradição e Magistério juntos. Se Sola Scriptura é a verdadeira doutrina cristã, isso significa que a Igreja inteira errou nos primeiros 15 séculos. Difícil de conciliar com a promessa de Jesus de que as portas do inferno não prevaleceriam contra ela (Mateus 16,18).
 
 ## A solução católica
 
-A solução católica é coerente: a Revelação de Deus se transmite pela Sagrada Escritura e pela Sagrada Tradição, ambas interpretadas pelo Magistério vivo da Igreja. As três coisas se sustentam mutuamente.
+A solução católica, ensinada pelo Concílio Vaticano II (Dei Verbum §9-10) e pelo Catecismo (§80-83), é coerente: a Revelação de Deus se transmite pela Sagrada Escritura e pela Sagrada Tradição, ambas interpretadas pelo Magistério vivo da Igreja. As três coisas se sustentam mutuamente.
 
 ## Perguntas-chave
 
@@ -45,7 +45,7 @@ A solução católica é coerente: a Revelação de Deus se transmite pela Sagra
 4. Em 2 Tessalonicenses 2,15 Paulo manda guardar tradições "por palavra ou por carta". Onde está agora a tradição oral apostólica que não foi escrita? Se ela se perdeu, parte da Revelação se perdeu?
 
 5. A Igreja antes do séc. XVI, que produziu mártires, doutores, santos, missionários, definiu o cânon, formulou a Trindade e a divindade de Cristo, estava em erro fundamental sobre como Deus se revela?`,
-    references: ['2ts-2-15', '2pd-1-20', 'mt-16-18', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397'],
+    references: ['2ts-2-15', '2pd-1-20', 'mt-16-18', 'csgc-denominacoes', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397', '1cor-11-2'],
   },
   {
     id: 18,
@@ -63,36 +63,36 @@ A pergunta inevitável: quem está certo?
 
 ## A Bíblia dos apóstolos era a Septuaginta
 
-A história responde com clareza. Antes do nascimento de Cristo, o judaísmo de língua grega (a maior parte da diáspora judaica) usava a [[Septuaginta]], tradução grega do Antigo Testamento feita em Alexandria entre os séculos III e II a.C. Essa tradução incluía os 7 livros deuterocanônicos. Era a Bíblia dos judeus helenistas, era a Bíblia dos apóstolos. O Novo Testamento cita o Antigo mais de 300 vezes, e cerca de dois terços dessas citações seguem a versão da Septuaginta, não o texto hebraico massorético posterior.
+A história responde com clareza. Antes do nascimento de Cristo, o judaísmo de língua grega (a maior parte da diáspora judaica) usava a [[Septuaginta]], tradução grega do Antigo Testamento feita em Alexandria entre os séculos III e II a.C. Essa coleção grega, tal como chegou aos cristãos, incluía os 7 livros deuterocanônicos. Era a Bíblia dos judeus helenistas, era a Bíblia dos apóstolos. O Novo Testamento cita o Antigo mais de 300 vezes, e cerca de dois terços dessas citações seguem a versão da Septuaginta, não o texto hebraico massorético posterior.
 
 Os apóstolos pregaram em grego no mundo greco-romano, usando a Septuaginta como Escritura. As primeiras gerações cristãs receberam essa Bíblia. Os primeiros concílios cristãos a confirmaram. O Concílio de Hipona em 393, com a participação de Santo Agostinho, fixou pela primeira vez o cânon dos 73 livros. O Concílio de Cartago em 397 reafirmou. Por mil e cem anos, a Igreja inteira (Ocidente e Oriente) usou essa Bíblia.
 
 ## O que mudou: o cânon de Jâmnia
 
-O que mudou? Por volta do ano 90, depois da destruição do Templo, o judaísmo rabínico (a tradição fala numa reunião de sábios em Jâmnia, embora os historiadores hoje duvidem de um "concílio" formal) consolidou um cânon hebraico mais estreito, deixando de fora os livros conhecidos em grego ou sem texto hebraico corrente. Pesavam razões linguísticas e também a polêmica com o cristianismo, que usava esses livros. Foi um cânon judaico pós-cristão, não a Bíblia que Cristo e os apóstolos receberam.
+O que mudou? Depois da destruição do Templo, no ano 70, o judaísmo rabínico foi consolidando um cânon hebraico mais estreito. A tradição liga parte dessas discussões aos sábios reunidos em Jâmnia, por volta do ano 90, embora os historiadores hoje não falem mais de um "concílio" formal. Ficaram de fora livros como Sirácida, Sabedoria e Macabeus, tidos como posteriores à época dos profetas ou conhecidos sobretudo em grego, e é provável que tenha pesado também o distanciamento em relação aos cristãos, que liam esses livros na Bíblia grega. Foi um cânon judaico fixado depois de Cristo, não a Bíblia que Cristo e os apóstolos receberam.
 
 ## Lutero remove sete livros
 
-No século XVI, Martinho Lutero adotou o cânon hebraico mais estreito e, na sua Bíblia de 1534, tirou os deuterocanônicos do corpo do Antigo Testamento, deixando-os num apêndice de "apócrifos", úteis de ler mas não Escritura. Com o tempo, as Bíblias protestantes passaram a omiti-los de vez. Fez isso por motivos teológicos: livros como 2 Macabeus 12,45 falam explicitamente em rezar pelos mortos, fundamentando a doutrina católica do Purgatório, que Lutero rejeitava. Foi uma decisão posterior, contra mil e quinhentos anos de uso constante na Igreja (mesmo quando um ou outro Padre, como São Jerônimo, teve reservas, a liturgia e os concílios sempre os acolheram).
+No século XVI, Martinho Lutero, seguindo São Jerônimo e o cânon hebraico, tirou os deuterocanônicos do corpo do Antigo Testamento. Na sua Bíblia de 1534, reuniu-os numa seção à parte, entre os dois Testamentos, com o título de "Apócrifos": livros "não tidos como iguais à Sagrada Escritura, mas úteis e bons de ler". Com o tempo, as Bíblias protestantes passaram a omiti-los de vez. A questão tinha também peso teológico: 2 Macabeus 12,45 fala explicitamente em rezar pelos mortos, um dos apoios da doutrina católica do Purgatório, e já no debate de Leipzig, em 1519, Lutero negou ao livro valor de prova por não estar no cânon. Foi uma decisão posterior, contra mil e quinhentos anos de uso constante na Igreja (mesmo quando alguns Padres tiveram reservas, a liturgia e os concílios sempre os acolheram).
 
 ## Trento confirma o cânon
 
-A Igreja Católica, no Concílio de Trento (1546), reafirmou solenemente o cânon de 73 livros, formalizando o que já era prática constante desde a era apostólica. Os mesmos livros foram confirmados em concílios anteriores: Roma (382), Hipona (393), Cartago (397, 419), Florença (1442).
+A Igreja Católica, no Concílio de Trento (1546), reafirmou solenemente o cânon de 73 livros, formalizando o que já era prática constante desde a era apostólica. Os mesmos livros já constavam de listas e concílios anteriores: Roma (382, numa lista atribuída ao papa Dâmaso), Hipona (393), Cartago (397, 419), Florença (1442).
 
 ## Os critérios do discernimento
 
-Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob a guia do Espírito Santo, quais livros eram autênticos, apostólicos, em conformidade com a regra de fé recebida. Os critérios eram: origem apostólica (escritos pelos apóstolos ou seus discípulos próximos), uso litúrgico nas igrejas (especialmente na liturgia eucarística), e ortodoxia (conformidade com a doutrina recebida). Os 73 livros passaram nesses critérios.
+Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Como resume o Catecismo (§120), foi a Tradição apostólica que a levou a discernir, sob a guia do Espírito Santo, quais escritos deviam entrar na lista dos livros sagrados: os autênticos, apostólicos, conformes à regra de fé recebida. Os critérios eram: origem apostólica (no Novo Testamento, escritos dos apóstolos ou de seus discípulos próximos, e no Antigo, livros recebidos dos apóstolos como Escritura), uso litúrgico nas igrejas (especialmente na liturgia eucarística), e ortodoxia (conformidade com a doutrina recebida). Os 73 livros passaram nesses critérios.
 
 ## Perguntas-chave
 
 1. Quem decidiu quais livros pertencem ao Novo Testamento? Se foi a Igreja Católica (e foi), por que aceitar essa decisão e rejeitar a mesma Igreja no Antigo?
 
-2. Por que a Bíblia de Lutero seguiu o cânon judaico de 90 d.C., feito depois do cristianismo, e não a Bíblia dos apóstolos?
+2. Por que a Bíblia de Lutero seguiu o cânon judaico fixado depois do cristianismo, e não a Bíblia dos apóstolos?
 
 3. Se os deuterocanônicos não são inspirados, por que Hebreus 11,35 alude claramente ao martírio de 2 Macabeus 7?
 
 4. Por que protestantes admitem que sua Bíblia tem livros que a Igreja decidiu incluir, mas rejeitam outros que a mesma Igreja decidiu incluir?`,
-    references: ['hipona-393', 'cartago-397', '2mc-12-44', 'cic-80-83', 'dei-verbum-9'],
+    references: ['hipona-393', 'cartago-397', '2mc-12-44', 'concilio-trento', 'hb-11-35', 'cic-120'],
   },
   {
     id: 31,
@@ -108,19 +108,19 @@ Vale notar: a Igreja não "decidiu arbitrariamente" o cânon. Ela discerniu, sob
 
 ## O que inerrância significa
 
-O primeiro princípio é a definição correta de inerrância. A Igreja não ensina que cada detalhe periférico da Bíblia (datas, números arredondados, ordem narrativa) é descrito com precisão moderna de jornalismo científico. O Concílio Vaticano II, em Dei Verbum §11, define que "os livros da Escritura ensinam com firmeza, com fidelidade e sem erro a verdade que Deus, para nossa salvação, quis ver consignada nas Sagradas Letras". O foco está na verdade salvífica, não em estatísticas de censo babilônico.
+O primeiro princípio é a definição correta de inerrância. A Igreja não ensina que cada detalhe periférico da Bíblia (datas, números arredondados, ordem narrativa) é descrito com precisão moderna de jornalismo científico. O Concílio Vaticano II, em Dei Verbum §11, afirma que "os livros da Escritura ensinam com certeza, fielmente e sem erro a verdade que Deus, para nossa salvação, quis que fosse consignada nas sagradas Letras". O foco está na verdade salvífica, não em estatísticas de censo babilônico.
 
 ## Conheça o gênero literário
 
 O segundo princípio é o gênero literário. A Bíblia não é um livro único, é uma biblioteca de 73 livros escritos ao longo de mais de mil anos, em estilos muito diferentes. Conhecer o gênero do livro que se está lendo é metade da batalha contra falsas contradições.
 
-A Torá (Gênesis, Êxodo, Levítico, Números, Deuteronômio) reúne história fundacional e legislação do povo judeu. Mistura narrativa de origens (criação, dilúvio, patriarcas) com código legal civil e ritual. Gênesis 1 não é cosmologia científica do séc. XXI: é hino litúrgico estruturado em sete dias para ensinar que Deus criou tudo de forma ordenada e proposital. Os capítulos legais (boa parte de Levítico e Deuteronômio) só fazem sentido lidos no contexto da aliança com Israel, não como manual de conduta universal aplicado letra a letra hoje. Pretender achar contradição entre Gênesis 1 (criação em dias) e Gênesis 2 (criação centrada em Adão) é ignorar que são dois gêneros distintos: hino e narrativa antropocêntrica, compostos lado a lado intencionalmente.
+A Torá (Gênesis, Êxodo, Levítico, Números, Deuteronômio) reúne história fundacional e legislação do povo judeu. Mistura narrativa de origens (criação, dilúvio, patriarcas) com código legal civil e ritual. Gênesis 1 não é cosmologia científica do séc. XXI: é hino litúrgico estruturado em sete dias para ensinar que Deus criou tudo de forma ordenada e proposital. Os capítulos legais (boa parte de Levítico e Deuteronômio) só fazem sentido lidos no contexto da aliança com Israel, não como manual de conduta universal aplicado letra a letra hoje. Pretender achar contradição entre Gênesis 1 (criação em dias) e Gênesis 2 (criação centrada em Adão) é ignorar que são dois gêneros distintos: hino e narrativa antropocêntrica, postos lado a lado de propósito.
 
-Salmos, Provérbios, Cântico dos Cânticos, Jó e Eclesiastes são literatura sapiencial e poesia hebraica. Usam paralelismo, metáfora, hipérbole, imagens corporais para Deus (mãos, braços, asas), pergunta retórica. Quando o Salmo 18,11 diz que Deus "pôs as trevas como seu retiro", é poesia, não geofísica. Provérbios trazem máximas gerais, não promessas individuais ("educa o jovem segundo a sua via" é princípio pedagógico, não garantia matemática). Eclesiastes registra o questionamento existencial de quem ainda não conhece a Ressurreição, e por isso parece pessimista em comparação com o Novo Testamento. Ler poesia como manual técnico é o erro mais comum dos críticos da Bíblia.
+Salmos, Provérbios, Cântico dos Cânticos, Jó e Eclesiastes são literatura sapiencial e poesia hebraica. Usam paralelismo, metáfora, hipérbole, imagens corporais para Deus (mãos, braços, asas), pergunta retórica. Quando o Salmo 18 (17 na numeração da Vulgata) diz que Deus "envolveu-se nas trevas como se fossem véu", é poesia, não geofísica. Provérbios trazem máximas gerais, não promessas individuais ("educa o jovem segundo a sua via" é princípio pedagógico, não garantia matemática). Eclesiastes registra o questionamento existencial de quem ainda não conhece a Ressurreição, e por isso parece pessimista em comparação com o Novo Testamento. Ler poesia como manual técnico é o erro mais comum dos críticos da Bíblia.
 
-Os Evangelhos são biografia antiga (em grego, bios), gênero documentado fora da Bíblia em autores como Plutarco e Suetônio. Biografia antiga organiza eventos por tema e finalidade teológica, não pela cronologia minuciosa que esperamos hoje. Cada evangelista escreve para um público específico (Mateus para judeus, Marcos para romanos, Lucas para gregos cultos, João para uma comunidade já bem instruída) e seleciona, agrupa e ordena material com esse leitor em mente. Daí Mateus colocar o Sermão da Montanha de uma vez (capítulos 5 a 7) enquanto Lucas distribui pedaços semelhantes ao longo do ministério. Não é contradição, é arranjo editorial reconhecido pela crítica acadêmica desde Richard Burridge em "What Are the Gospels?" (1992).
+Os Evangelhos são biografia antiga (em grego, bios), gênero documentado fora da Bíblia em autores como Plutarco e Suetônio. Biografia antiga organiza eventos por tema e finalidade teológica, não pela cronologia minuciosa que esperamos hoje. Cada evangelista escreve para um público específico (Mateus para judeus, Marcos para romanos, Lucas para gregos cultos, João para uma comunidade já bem instruída) e seleciona, agrupa e ordena material com esse leitor em mente. Daí Mateus colocar o Sermão da Montanha de uma vez (capítulos 5 a 7) enquanto Lucas distribui pedaços semelhantes ao longo do ministério. Não é contradição, é arranjo editorial próprio da biografia antiga, gênero ao qual os Evangelhos pertencem, como mostrou Richard Burridge em "What Are the Gospels?" (1992).
 
-Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-romano. Citações, viagens, autoridades civis, geografia precisa. O arqueólogo William Ramsay começou cético e terminou defendendo Lucas como historiador de primeira ordem, comparável a Tucídides.
+Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-romano. Citações, viagens, autoridades civis, geografia precisa. O arqueólogo William Ramsay começou cético e terminou defendendo Lucas como historiador de primeira ordem, digno de figurar entre os maiores historiadores.
 
 As Cartas (Paulo, Tiago, Pedro, João, Judas, Hebreus) são correspondência ocasional. Foram escritas para problemas concretos de comunidades específicas. Paulo não está escrevendo um sistema teológico fechado. Está respondendo a questões. Por isso 1 Coríntios passa de discussão sobre carnes de ídolos a regulamento de Eucaristia em poucas páginas: refletem a pauta dos coríntios, não um índice de teologia sistemática.
 
@@ -138,15 +138,15 @@ O terceiro princípio é o testemunho parcial. Quando quatro pessoas relatam o m
 
 Primeiro tipo: omissões interpretadas como negações. Mateus 28,5 menciona um anjo no túmulo, Lucas 24,4 menciona dois. Não há contradição: quando há dois, sempre há um. Mateus foca no que falou.
 
-Segundo tipo: arredondamentos e estimativas. Marcos 6,44 fala em "cinco mil homens" na multiplicação dos pães, e Mateus 14,21 esclarece: "sem contar mulheres e crianças". São números de estimativa popular, não censo demográfico.
+Segundo tipo: arredondamentos e estimativas. Marcos 6,44 fala em "cinco mil homens" na multiplicação dos pães, e Mateus 14,21 diz "aproximadamente cinco mil homens, sem contar as mulheres e crianças". São números de estimativa popular, não censo demográfico. O mesmo vale para 1 Reis 7,23, que dá ao "mar de bronze" do Templo dez côvados de uma borda à outra e trinta de circunferência: uma proporção arredondada de 3 para 1, normal na descrição de uma obra, que não pretendia ser um tratado de geometria.
 
 Terceiro tipo: ordem narrativa não-cronológica. Os Evangelhos frequentemente organizam por tema, não por sequência temporal. As tentações no deserto aparecem em ordem diferente em Mateus 4 e Lucas 4 porque cada evangelista organiza por sua finalidade teológica.
 
-Quarto tipo: diferenças de tradução ou cópia de manuscritos. 1 Reis 7,23 dá uma medida circular com proporção aproximada de pi = 3. Antigos sabiam o valor real, mas usavam arredondamento prático para descrição arquitetônica. Outros casos envolvem variantes textuais menores entre manuscritos.
+Quarto tipo: diferenças de cópia entre manuscritos. Números eram fáceis de errar ao copiar. 2 Reis 8,26 diz que Ocozias começou a reinar com 22 anos, e o texto hebraico de 2 Crônicas 22,2 diz 42, idade impossível, já que seu pai morreu aos 40 (2 Crônicas 21,20). A Bíblia Ave Maria, como muitas traduções modernas, traz 22 nos dois lugares. A inspiração vale para o texto original, e é a comparação das cópias que permite corrigir esses deslizes.
 
 As "contradições" mais famosas (Herodes vs Quirino no nascimento de Jesus, as genealogias de Mateus e Lucas, as aparições da Ressurreição) têm artigos específicos neste app que mostram as resoluções. Em quase todos os casos, a "contradição" desaparece quando se entende o contexto histórico, o gênero literário, e a perspectiva de cada autor.
 
-Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, escreve em seus livros que nenhuma das aparentes contradições afeta substancialmente a história central do cristianismo: Jesus existiu, foi crucificado, e seus discípulos creram tê-lo visto vivo após a morte.
+Mesmo Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, que usa essas discrepâncias contra a inerrância, reconhece o núcleo histórico: Jesus existiu, foi crucificado sob Pôncio Pilatos, e alguns de seus discípulos creram tê-lo visto vivo após a morte (Did Jesus Exist?, 2012, e How Jesus Became God, 2014).
 
 ## Perguntas-chave
 
@@ -157,7 +157,7 @@ Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, e
 3. Se a Bíblia fosse uma fraude, os redatores teriam alinhado todos os detalhes. As diferenças são sinal de independência de testemunho.
 
 4. Você mesmo já examinou as supostas contradições, ou está confiando em listas de terceiros sem checar? A maior parte se desfaz na leitura cuidadosa.`,
-    references: ['dei-verbum-9', 'cic-80-83', 'agostinho-consenso'],
+    references: ['agostinho-consenso', 'mt-28-1', 'ehrman-jesus-existiu', 'mc-6-44', '1rs-7-23', '2cr-22-2', 'lc-24-1', 'dei-verbum-11'],
   },
   {
     id: 32,
@@ -169,21 +169,21 @@ Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testamento, e
     imageAspect: 1.27,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAdoration%2520by%2520the%2520shepherds.%2520Circle%2520of%2520Apostolos%2520Krezias.jpg&w=2200&output=jpg&q=80',
     summary: 'Mateus diz que Jesus nasceu sob Herodes (morto em 4 a.C.). Lucas menciona o censo de Quirino (governador a partir de 6 d.C.). A "contradição" tem solução textual e histórica.',
-    body: `É uma das objeções mais citadas contra a historicidade dos Evangelhos. Mateus 2,1 diz que Jesus nasceu "no tempo do rei Herodes". Herodes, o Grande, morreu em 4 a.C., como atesta o historiador judeu Flávio Josefo. Mas Lucas 2,1-2 fala em um recenseamento ordenado por César Augusto "quando Quirino era governador da Síria". Quirino, segundo registros romanos, só foi governador da Síria a partir do ano 6 d.C., portanto cerca de dez anos após a morte de Herodes. Como Jesus pode ter nascido em dois períodos distintos?
+    body: `É uma das objeções mais citadas contra a historicidade dos Evangelhos. Mateus 2,1 diz que Jesus nasceu "no tempo do rei Herodes". Herodes, o Grande, morreu em 4 a.C., segundo a cronologia mais aceita, tirada do historiador judeu Flávio Josefo. Mas Lucas 2,1-2 fala em um recenseamento ordenado por César Augusto "quando Quirino era governador da Síria". Quirino, segundo Josefo, só foi governador da Síria a partir do ano 6 d.C., portanto cerca de dez anos após a morte de Herodes. Como Jesus pode ter nascido em dois períodos distintos?
 
 A solução envolve duas vias complementares: uma linguística e uma histórica.
 
 ## A via linguística
 
-Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "haute apographe prṓtē egeneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 traz esse uso explícito: prṓtós mou ("antes de mim"), Jesus em relação a João Batista, e João 15,18 repete a construção ("antes de vós"). Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". O gramático Daniel Wallace, autor da gramática grega "Greek Grammar Beyond the Basics" (1996), referência em estudos do Novo Testamento, defende essa tradução como gramaticalmente legítima e historicamente coerente.
+Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "hautē apographē prṓtē egéneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 traz esse uso explícito: prṓtós mou ("antes de mim"), Jesus em relação a João Batista, e João 15,18 repete a construção ("antes de vós"). Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". A leitura é debatida: o gramático Nigel Turner, em "Grammatical Insights into the New Testament" (1965), a defendeu como gramaticalmente legítima, e o biblista N. T. Wright, em "Who Was Jesus?" (1992), a considera plausível. Outros, como Joseph Fitzmyer, a rejeitam, e a questão segue aberta.
 
 ## A via histórica
 
-Via histórica: a carreira de Quirino. Inscrições latinas, especialmente o chamado Lapis Tiburtinus encontrado perto de Tivoli, mencionam um oficial romano (provavelmente Quirino) que foi legado da Síria duas vezes, com um intervalo entre as duas ocasiões. Sir William Ramsay, arqueólogo escocês especialista em geografia e administração do Império Romano, defendeu em "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915) que Quirino exerceu funções administrativas na Síria mesmo antes do ano 6 d.C., possivelmente como legado militar com responsabilidades fiscais. O recenseamento mencionado por Lucas teria começado nessa primeira fase, antes da morte de Herodes, e foi concluído depois com Quirino já em segunda ocupação do cargo. Outra evidência são as próprias práticas romanas: recenseamentos podiam durar anos e envolviam múltiplas etapas administrativas.
+Via histórica: a carreira de Quirino. Inscrições latinas, especialmente o chamado Lapis Tiburtinus, encontrado perto de Tivoli, mencionam um oficial romano, talvez Quirino (o nome não se conservou), que governou a Síria como legado "pela segunda vez" (iterum), o que muitos leem como duas passagens pelo cargo. Sir William Ramsay, arqueólogo escocês especialista em geografia e administração do Império Romano, defendeu em "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915) que Quirino exerceu funções administrativas na Síria mesmo antes do ano 6 d.C., possivelmente como legado militar com responsabilidades fiscais. O recenseamento mencionado por Lucas teria começado nessa primeira fase, antes da morte de Herodes, e sido concluído depois, com Quirino já no segundo mandato. Pesa também a própria prática romana: recenseamentos podiam durar anos e envolviam múltiplas etapas administrativas.
 
 ## Uma terceira possibilidade
 
-Há ainda uma terceira via, que muitos historiadores aceitam: o recenseamento descrito por Lucas pode não ser o famoso de Quirino de 6 d.C. (mencionado por Josefo em Antiguidades 18,1), mas um outro processo administrativo anterior. Os registros romanos da época não estão completos, e a memória local do nascimento de Jesus pode estar referenciando um evento documentalmente perdido.
+Há ainda uma terceira via, defendida por alguns historiadores: o recenseamento descrito por Lucas pode não ser o famoso de Quirino de 6 d.C. (mencionado por Josefo em Antiguidades 18,1), mas um outro processo administrativo anterior. Os registros romanos da época não estão completos, e a memória local do nascimento de Jesus pode estar se referindo a um evento cujos registros se perderam.
 
 A objeção, portanto, não é decisiva. As soluções linguísticas e históricas são razoáveis, têm respaldo acadêmico, e refletem a complexidade administrativa real do Império Romano. Lucas, médico culto, companheiro de viagens de Paulo e autor do livro mais detalhado em referências históricas do Novo Testamento (Atos dos Apóstolos), tem sido repetidamente vindicado pela arqueologia. Ramsay começou sua carreira como cético de Lucas e terminou como defensor da precisão histórica dele justamente após anos de pesquisa de campo.
 
@@ -198,7 +198,7 @@ Vale notar a desproporção da objeção. A historicidade de Jesus está atestad
 3. Se Lucas fosse incompetente em história, por que Atos dos Apóstolos é confiável até em detalhes mínimos da geografia mediterrânea?
 
 4. Cinco palavras ambíguas em Lucas 2,2 anulam todos os outros indicadores históricos do nascimento de Jesus durante o reinado de Herodes?`,
-    references: ['lc-2-1', 'mt-2-1', 'josefo-antiguidades-20'],
+    references: ['lc-2-1', 'mt-2-1', 'josefo-antiguidades-18-1'],
   },
   {
     id: 33,
@@ -228,7 +228,7 @@ Há uma terceira via menos comum mas defensável: as duas linhas convergem em di
 
 Para entender essas omissões, é preciso aceitar que os antigos não escreviam genealogias com a precisão notarial moderna. Eram documentos vivos, com função teológica e legal, não meramente biológica. Cada genealogia bíblica tem propósito específico, e diferentes propósitos produzem diferentes recortes.
 
-A objeção, portanto, parte de uma expectativa moderna anacrônica (genealogias devem ser planilhas exaustivas) aplicada a textos antigos com convenções diferentes. Os dois evangelistas conheciam o trabalho um do outro ou pelo menos as tradições convergentes da Igreja primitiva, e nenhuma comunidade cristã antiga viu contradição no fato de Mateus e Lucas darem genealogias distintas. A objeção é fenômeno tardio, da crítica racionalista dos séculos XVIII e XIX.
+A objeção, portanto, parte de uma expectativa moderna anacrônica (genealogias devem ser planilhas exaustivas) aplicada a textos antigos com convenções diferentes. A Igreja antiga conhecia a dificuldade: Eusébio registra que "muitos supõem" que as duas listas estão em desacordo, e Júlio Africano escreveu justamente para responder a isso. Mas os Padres não viram ali uma contradição que derrubasse os Evangelhos, e sim uma questão a explicar. Tratar a diferença como prova de fraude é sobretudo obra da crítica racionalista dos séculos XVIII e XIX.
 
 Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas para evitar a aparência de incoerência. O fato de coexistirem duas genealogias distintas, sem tentativa de harmonização, é sinal de fidelidade independente às fontes que cada um recebeu, não de fraude.
 
@@ -241,7 +241,7 @@ Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas
 3. A Lei do Levirato em Dt 25,5-6 cria sistematicamente "pais legais" diferentes de "pais biológicos". Por que isso não pode explicar as duas listas?
 
 4. Os antigos escreviam genealogias com propósito teológico e legal, não como árvore biológica completa. Você está aplicando expectativas modernas a documentos antigos?`,
-    references: ['mt-1-1', 'lc-3-23', 'dt-25-5'],
+    references: ['mt-1-1', 'lc-3-23', 'dt-25-5', 'eusebio-he-1-7'],
   },
   {
     id: 34,
@@ -262,7 +262,7 @@ Marcos 16,1: "Maria Madalena, Maria, mãe de Tiago, e Salomé".
 Lucas 24,10: "Maria Madalena, Joana, Maria, mãe de Tiago, e as outras".
 João 20,1: "Maria Madalena" (mas no versículo 2 ela diz "não sabemos onde o puseram", o plural indicando que não estava sozinha).
 
-Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona apenas duas testemunhas oficiais (o suficiente conforme Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três, Salomé só em Marcos e Joana só em Lucas.
+Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona duas, talvez porque duas testemunhas bastavam segundo a Lei (Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três, Salomé só em Marcos e Joana só em Lucas.
 
 ## Quantos anjos no túmulo?
 
@@ -276,7 +276,7 @@ Mesmo princípio. Quando há dois, sempre há um. Mateus e Marcos focam no anjo 
 ## Galileia ou Jerusalém?
 
 Mateus 28,16: aparição na Galileia, no monte indicado por Jesus.
-Lucas 24,33-49: aparições em Jerusalém, e ascensão de Betânia.
+Lucas 24,33-53: aparições em Jerusalém e ascensão perto de Betânia.
 João 20-21: aparições em Jerusalém e na Galileia (junto ao mar de Tiberíades, cap. 21).
 
 Atos 1,3 dá a chave: Jesus apareceu aos discípulos durante quarenta dias após a Ressurreição. Houve aparições múltiplas, em locais diferentes, ao longo de quase seis semanas. Lucas e Mateus focam em conjuntos diferentes dessas aparições, segundo suas finalidades narrativas. Não há contradição entre "apareceu na Galileia" e "apareceu em Jerusalém" se houve aparições nos dois lugares.
@@ -287,7 +287,7 @@ O princípio fundamental: testemunho parcial não é falso. Quatro testemunhas h
 
 O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram a mulheres e discípulos, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
 
-Gary Habermas, no estudo já citado sobre "fatos mínimos" da Ressurreição, mostra que mesmo historiadores agnósticos aceitam o núcleo central. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
+Gary Habermas, no seu estudo sobre os "fatos mínimos" da Ressurreição, mostra que mesmo historiadores agnósticos aceitam o núcleo central. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
 
 Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordenada, os autores teriam ajustado as periferias para parecer uniforme. As diferenças visíveis nos Evangelhos são exatamente o tipo de discrepância natural que se espera de testemunhas independentes de um evento real.
 
@@ -300,7 +300,7 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
 3. Você nota que o núcleo da história (túmulo vazio, aparições, transformação dos discípulos) é unânime nos quatro Evangelhos? Não é nessa unanimidade que está o peso da evidência?
 
 4. Quantos anjos ou quantas mulheres mudam a substância do evento "Jesus ressuscitou"?`,
-    references: ['mt-28-1', 'at-1-3', 'agostinho-consenso', 'habermas-resurreicao'],
+    references: ['mt-28-1', 'at-1-3', 'agostinho-consenso', 'habermas-resurreicao', 'lc-24-1', 'mc-16-1', 'jo-20-1', 'mt-28-16'],
   },
   {
     id: 45,
@@ -311,26 +311,26 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
     imageCredit: 'Émile Bernard, A Crucificação (1896). Domínio público.',
     imageAspect: 0.73,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCrucifixion-1896.jpg&w=2200&output=jpg&q=80',
-    summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Fontes pagãs a registraram, e a astronomia moderna ajudou a datar a crucificação no ano 33.',
+    summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Autores pagãos falaram de um fenômeno parecido, e a astronomia reforça uma das datas propostas para a crucificação, 3 de abril do ano 33.',
     body: `No momento da morte de Jesus, os três Evangelhos sinópticos relatam um fenômeno estranho: "desde a hora sexta até a hora nona, houve trevas sobre toda a terra" (Mateus 27,45), isto é, do meio-dia às três da tarde. Marcos e Lucas registram o mesmo. Esse detalhe, longe de ser uma lenda fácil de inventar, levanta questões interessantes de história e de astronomia.
 
 ## Não foi um eclipse solar
 
 A primeira coisa a notar é que a escuridão não pode ter sido um eclipse solar comum. A crucificação ocorreu na Páscoa judaica, que cai sempre na lua cheia. Ora, um eclipse solar só acontece na lua nova, quando a Lua se interpõe entre a Terra e o Sol. Na lua cheia, é astronomicamente impossível. Além disso, um eclipse solar total dura poucos minutos, não três horas.
 
-Isso tem uma consequência curiosa. Se os evangelistas quisessem inventar um sinal cósmico para impressionar, um "eclipse" na Páscoa seria o erro mais fácil de desmascarar para qualquer leitor da época que entendesse de calendário. Eles não descrevem um eclipse: descrevem trevas, um escurecimento anômalo, sem explicá-lo. É o tipo de relato sóbrio que se espera de uma testemunha, não de um mito.
+Isso tem uma consequência curiosa. Se os evangelistas quisessem inventar um sinal cósmico para impressionar, um "eclipse" na Páscoa seria o erro mais fácil de desmascarar para qualquer leitor da época que entendesse de calendário. Eles não fazem astronomia: descrevem trevas, um escurecimento anômalo, sem explicá-lo. Mesmo Lucas, cujo texto grego usa para o sol o verbo ekleipō ("faltar", de onde vem a palavra eclipse), não tenta explicar o fenômeno. É o tipo de relato sóbrio que se espera de uma testemunha, não de um mito.
 
 ## O que dizem fontes não cristãs
 
-O detalhe não ficou restrito aos cristãos. O historiador Talo, por volta do ano 55, mencionou a escuridão e tentou explicá-la como um eclipse. Conhecemos isso porque o cristão Júlio Africano, no século III, cita Talo e observa, com razão, que não podia ser eclipse, já que era Páscoa, em lua cheia. Flégon de Trales, autor pagão do século II, também registrou uma grande escuridão e um terremoto por volta do quarto ano da 202ª Olimpíada, que corresponde aproximadamente ao ano 33. Fontes hostis ou neutras, portanto, conheciam o fenômeno.
+O detalhe não ficou restrito aos cristãos. O historiador Talo, provavelmente no século I, mencionou a escuridão e tentou explicá-la como um eclipse do sol. Conhecemos isso porque o cristão Júlio Africano, no século III, cita Talo e observa, com razão, que não podia ser eclipse, já que era Páscoa, em lua cheia. Flégon de Trales, autor pagão do século II, registrou no quarto ano da 202ª Olimpíada, que corresponde aproximadamente ao ano 33, um grande eclipse do sol, com noite à hora sexta, e um terremoto na Bitínia. Autores não cristãos, portanto, falaram de um fenômeno que os cristãos antigos ligaram à crucificação.
 
 ## A lua em sangue e a datação pela astronomia
 
-Há ainda outro fio, e é onde entra a astronomia moderna. No dia de Pentecostes, o apóstolo Pedro cita o profeta Joel: "o sol se converterá em trevas e a lua em sangue" (Atos 2,20, citando Joel 2,31), aplicando a profecia aos acontecimentos da Páscoa em que Jesus morreu. A "lua em sangue" é a descrição clássica de um eclipse lunar, em que a Lua, ao ser encoberta pela sombra da Terra, ganha tom avermelhado.
+Há ainda outro fio, e é onde entra a astronomia moderna. No dia de Pentecostes, o apóstolo Pedro cita o profeta Joel: "o sol se converterá em trevas e a lua em sangue" (Atos 2,20, citando Joel 3,4, que outras edições numeram 2,31), para explicar o que acontecia em Jerusalém naqueles dias. Para alguns estudiosos, esses sinais remetem aos acontecimentos da Páscoa em que Jesus morreu, sete semanas antes. A "lua em sangue" é a descrição clássica de um eclipse lunar, em que a Lua, ao ser encoberta pela sombra da Terra, ganha tom avermelhado.
 
-Em 1983, os cientistas Colin Humphreys e W. G. Waddington publicaram na revista Nature o estudo "Dating the Crucifixion". Usando o cálculo astronômico de eclipses, o mesmo tipo de cálculo que hoje permite à NASA prever e retroprever eclipses com precisão de séculos, eles mostraram que na tarde e noite de sexta-feira, 3 de abril do ano 33, houve um eclipse lunar visível de Jerusalém: a Lua nasceu naquela noite já parcialmente eclipsada, avermelhada, exatamente "em sangue". Para os autores, esta é a data mais provável da crucificação, havendo também a hipótese de 7 de abril do ano 30.
+Em 1983, os cientistas Colin Humphreys e W. G. Waddington publicaram na revista Nature o estudo "Dating the Crucifixion". Usando o cálculo astronômico de eclipses, o mesmo tipo de cálculo que hoje permite à NASA prever e retroprever eclipses com precisão de séculos, eles mostraram que na sexta-feira, 3 de abril do ano 33, houve um eclipse parcial da Lua e calcularam que, em Jerusalém, ela nasceu ao entardecer ainda na fase final do eclipse, avermelhada, "em sangue". Para os autores, esta é a data mais provável da crucificação, havendo também a hipótese de 7 de abril do ano 30. A visibilidade do eclipse é discutida: o astrônomo Bradley Schaefer (1990) argumentou que a claridade do crepúsculo e a Lua rente ao horizonte o teriam escondido, enquanto outros refizeram os cálculos e o consideram perceptível por alguns minutos.
 
-O resultado é notável. Uma profecia do profeta Joel, escrita séculos antes de Cristo, foi relatada por Pedro como cumprida na morte de Jesus, e só com a ciência astronômica recente foi possível identificar o eclipse lunar real, calculável, que ocorreu naquele dia exato. A escuridão das três horas continua sem explicação natural simples. O eclipse lunar da noite, esse sim, a astronomia confirma.
+O resultado é sugestivo. Pedro proclamou cumprida em Jerusalém, naqueles dias, uma profecia de Joel escrita séculos antes de Cristo, e o cálculo astronômico mostra que houve de fato um eclipse lunar no fim da tarde de uma das datas mais prováveis da morte de Jesus. A escuridão das três horas continua sem explicação natural simples. O eclipse lunar, esse sim, a astronomia confirma, ainda que se discuta quanto dele se via de Jerusalém.
 
 ## O que isso prova e o que não prova
 
@@ -342,7 +342,7 @@ O resultado é notável. Uma profecia do profeta Joel, escrita séculos antes de
 
 2. Como explicar que autores pagãos e neutros, como Talo e Flégon, tenham registrado uma escuridão e um terremoto na mesma época?
 
-3. Pedro aplica a profecia de Joel, a lua em sangue, à Páscoa de Jesus. Não é notável que a astronomia identifique um eclipse lunar real em Jerusalém em 3 de abril do ano 33?
+3. Pedro proclama cumprida a profecia de Joel, a lua em sangue, nos dias da morte e da ressurreição de Jesus. Não é notável que a astronomia identifique um eclipse lunar real em 3 de abril do ano 33, uma das datas mais prováveis da crucificação?
 
 4. Se o relato fosse lenda tardia, por que é tão sóbrio, sem nem explicar o fenômeno, ao contrário das fábulas, que costumam exagerar?`,
     references: ['mt-27-45', 'jl-2-31', 'at-2-20', 'talo-flegon', 'humphreys-eclipse'],
@@ -361,13 +361,13 @@ O resultado é notável. Uma profecia do profeta Joel, escrita séculos antes de
 
 ## Onde nasceria
 
-O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel nasceria em Belém, uma cidade pequena: "de ti sairá aquele que há de governar Israel" (Miquéias 5,2). Setecentos anos depois, Jesus nasce ali.
+O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel nasceria em Belém, uma cidade pequena: "de ti sairá aquele que há de governar Israel" (Miquéias 5,1, que outras edições numeram 5,2). Setecentos anos depois, Jesus nasce ali.
 
 Isaías anunciou ainda o sinal da concepção virginal: "a virgem conceberá e dará à luz um filho, e o chamarão Emanuel" (Isaías 7,14), nome que significa "Deus conosco".
 
 ## Como morreria
 
-Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22, escrito séculos antes de a crucificação existir como forma de execução, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", palavras que Jesus pronuncia na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os quatro Evangelhos descrevem exatamente isso na crucificação.
+Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22 (21 na numeração da Vulgata), atribuído a Davi, cerca de mil anos antes de Cristo, muito antes de Roma fazer da cruz o seu suplício típico, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", palavras que Jesus pronuncia na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os Evangelhos narram exatamente isso: o grito na cruz, a partilha das vestes e, nos relatos da Ressurreição, as marcas dos cravos nas mãos e nos pés.
 
 O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "ferido por causa de nossas iniquidades", levado "como cordeiro ao matadouro", que "não abriu a boca", e cuja morte traz cura "por suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
 
@@ -375,7 +375,7 @@ Zacarias acrescenta um detalhe singular: "olharão para mim, a quem traspassaram
 
 ## Quando viria
 
-O profeta Daniel, no capítulo 9, fixa um prazo: dentro de um prazo de "setenta semanas" (de anos), o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
+O profeta Daniel, no capítulo 9, fixa um prazo: dentro de "setenta semanas" (de anos), o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
 
 ## A força do conjunto
 
@@ -383,14 +383,14 @@ Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Q
 
 ## Perguntas-chave
 
-1. O Salmo 22 descreve mãos e pés traspassados e vestes sorteadas séculos antes de a crucificação existir como pena. De quem ele fala, senão de Jesus?
+1. O Salmo 22 descreve mãos e pés traspassados e vestes sorteadas cerca de mil anos antes da cruz de Cristo. De quem ele fala, senão de Jesus?
 
 2. Isaías 53 descreve um servo inocente que sofre e morre pelos pecados do povo. Que outra figura da história cumpre essa descrição como Jesus?
 
 3. Daniel 9 coloca a vinda e a morte do Messias antes da destruição do Templo, no ano 70. Quem cumpriu esse prazo?
 
 4. Uma só pessoa cumprir o lugar (Miquéias), o modo (Salmo 22 e Isaías 53) e o tempo (Daniel) é coincidência razoável, ou aponta para um plano?`,
-    references: ['mq-5-2', 'is-7-14', 'sl-22', 'is-53', 'zc-12-10', 'dn-9-24'],
+    references: ['mq-5-2', 'is-7-14', 'sl-22', 'mt-27-45', 'is-53', 'zc-12-10', 'dn-9-24'],
   },
   {
     id: 47,
@@ -401,28 +401,28 @@ Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Q
     imageCredit: 'A Pedra de Pôncio Pilatos, Cesareia Marítima. Foto via Wikimedia Commons.',
     imageAspect: 1.5,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FHoly%2520Land%25202016%2520P0231%2520Caesarea%2520Maritima%2520Pilate%2520stone.jpg&w=2200&output=jpg&q=80',
-    summary: 'Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. A história confirma a Bíblia ponto a ponto.',
+    summary: 'Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Onde pode ser testada, a Bíblia passa no teste.',
     body: `Durante muito tempo se disse que a Bíblia estava cheia de personagens e lugares inventados. A cada nova escavação, porém, a história tem feito o contrário: confirmado nomes, cargos e locais exatamente como o texto os descreve. A arqueologia não prova que a Bíblia é Palavra de Deus, isso é questão de fé, mas comprova, de novo e de novo, que ela é confiável como documento histórico.
 
 ## Pôncio Pilatos existiu, e era prefeito
 
-Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos autores antigos (Josefo, Fílon, Tácito), sem nenhum vestígio material. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
+Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos autores antigos (Josefo, Fílon, Tácito), sem nenhuma inscrição com o seu nome. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
 
 ## O ossuário de Caifás
 
-Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57. João 11,49). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
+Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57 e João 18,24). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
 
 ## Piscinas que diziam não existir
 
-O Evangelho de João menciona a piscina de Betesda, "que tem cinco pórticos" (João 5,2). Críticos achavam o detalhe inventado, pois nenhuma piscina assim era conhecida. A escavação perto da igreja de Santa Ana, em Jerusalém, revelou exatamente uma piscina com cinco pórticos, como João descreveu. O mesmo aconteceu com a piscina de Siloé (João 9,7), localizada em 2004.
+O Evangelho de João menciona a piscina de Betesda, "que tem cinco pórticos" (João 5,2). Críticos achavam o detalhe inventado, pois nenhuma piscina assim era conhecida. A escavação perto da igreja de Santa Ana, em Jerusalém, revelou uma piscina dupla, dois tanques separados por um muro: com colunatas nos quatro lados e uma sobre o muro do meio, são os cinco pórticos de que João fala. Em 2004 veio à luz também a piscina de Siloé do tempo de Jesus (João 9,7).
 
 ## A Casa de Davi fora da Bíblia
 
-Houve quem dissesse que o rei Davi era apenas lenda. Em 1993, em Tel Dan, no norte de Israel, encontrou-se uma estela do século IX a.C., feita por um rei inimigo, que se gaba de ter derrotado a "Casa de Davi" (Beit David). É a dinastia davídica mencionada por uma fonte de fora, hostil, pouco mais de um século depois de Davi.
+Houve quem dissesse que o rei Davi era apenas lenda. Em 1993, em Tel Dan, no norte de Israel, encontrou-se uma estela do século IX a.C., feita por um rei inimigo, que se gaba de ter derrotado a "Casa de Davi" (Beit David). É a dinastia davídica mencionada por uma fonte de fora, hostil, cerca de um século e meio depois de Davi.
 
 ## Os hititas, de "mito" a império
 
-Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Como nenhum outro documento antigo falava deles, muitos estudiosos do século XIX os tinham por invenção. Então a arqueologia desenterrou a capital hitita, Hattusa, e milhares de tabuinhas: os hititas eram um grande império. A Bíblia estava certa, e os críticos, errados.
+Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Até o século XIX quase nada se sabia deles fora da Bíblia, e alguns estudiosos duvidavam que tivessem sido um povo importante. Então vieram as inscrições egípcias e assírias e, a partir de 1906, a escavação da capital hitita, Hattusa, com milhares de tabuinhas: os hititas eram um grande império. A Bíblia estava certa, e os críticos, errados.
 
 ## O que a arqueologia mostra e o que não mostra
 
@@ -457,7 +457,7 @@ De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem
 
 ## E cópias muito antigas
 
-Não é só quantidade, é proximidade. O fragmento mais antigo, o papiro P52, do Evangelho de João, é datado por volta do ano 125, ou seja, a poucas décadas do original. Para a maioria das obras clássicas, a cópia mais antiga que temos foi feita 700, 900, às vezes mil anos depois do autor. O Novo Testamento se mede em décadas, não em séculos. Quanto menor o intervalo, menor a chance de alteração acumulada.
+Não é só quantidade, é proximidade. O fragmento geralmente tido como o mais antigo, o papiro P52, do Evangelho de João, é datado pelos paleógrafos do século II (a estimativa tradicional é por volta do ano 125, e estudos recentes preferem algo entre 125 e 175), ou seja, a algumas décadas do original. Para a maioria das obras clássicas, a cópia mais antiga que temos foi feita 700, 900, às vezes mil anos depois do autor. O Novo Testamento se mede em décadas, não em séculos. Quanto menor o intervalo, menor a chance de alteração acumulada.
 
 ## E as variações entre as cópias?
 
@@ -465,13 +465,13 @@ Os críticos costumam citar que há centenas de milhares de variantes entre os m
 
 ## O Antigo Testamento também
 
-O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos do Mar Morto, em Qumran, mil anos mais antigos do que as cópias hebraicas que se conheciam. Ao compará-los, viu-se que o texto havia sido transmitido com notável fidelidade ao longo de um milênio. A ideia de uma Bíblia adulterada não sobrevive ao confronto com os documentos.
+O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos do Mar Morto, em Qumran, mil anos mais antigos do que as cópias hebraicas que se conheciam. Ao comparar, por exemplo, o grande rolo de Isaías com as cópias medievais, viu-se que o texto havia sido transmitido com notável fidelidade ao longo de um milênio, com diferenças em sua maioria de grafia. A ideia de uma Bíblia adulterada não sobrevive ao confronto com os documentos.
 
 ## Perguntas-chave
 
-1. Se a Bíblia foi mudada ao longo dos séculos, por que o papiro P52 já traz João por volta do ano 125, a poucas décadas do original?
+1. Se a Bíblia foi mudada ao longo dos séculos, por que o papiro P52 já traz João no século II, a algumas décadas do original?
 
-2. Aceitamos com confiança os textos de César e de Tácito, copiados séculos depois e em pouquíssimas cópias. Por que aplicar ao Novo Testamento, muito melhor atestado, um critério mais severo?
+2. Aceitamos com confiança os textos de César e de Tácito, copiados séculos depois e em muito menos cópias. Por que aplicar ao Novo Testamento, muito melhor atestado, um critério mais severo?
 
 3. Se há tantas cópias espalhadas tão cedo, isso facilita ou dificulta esconder uma alteração?
 
@@ -504,15 +504,15 @@ Quase nada foi escrito de imediato. Primeiro houve os acontecimentos e a tradiç
 
 ## Moisés escreveu mesmo o Pentateuco? E os Evangelhos?
 
-A tradição atribui os cinco primeiros livros a Moisés e cada Evangelho a um nome. A Igreja não exige que se prove que cada palavra saiu da mão do autor tradicional: textos antigos cresceram, foram reunidos e editados ao longo do tempo, e isso não contraria a inspiração. Os Evangelhos, por exemplo, brotam da pregação dos apóstolos, foram fixados por escrito pela comunidade e transmitem fielmente o que Jesus fez e ensinou. O essencial não é a assinatura, é a origem apostólica e a inspiração divina.
+A tradição atribui os cinco primeiros livros a Moisés e cada Evangelho a um nome. A Igreja não exige que se prove que cada palavra saiu da mão do autor tradicional: textos antigos cresceram, foram reunidos e editados ao longo do tempo, e isso não contraria a inspiração. Os Evangelhos, por exemplo, brotam da pregação dos apóstolos, foram postos por escrito pelos apóstolos e por homens ligados a eles, e transmitem fielmente o que Jesus fez e ensinou. O essencial não é a assinatura, é a origem apostólica e a inspiração divina.
 
 ## E os "erros" e contradições?
 
-A inspiração garante que a Bíblia ensina sem erro a verdade que Deus quis confiar para a nossa salvação. Ela não é um manual de astronomia ou de biologia, e não responde a perguntas que não eram as suas. Por isso, antes de gritar "contradição", é preciso perguntar qual o gênero do texto e o que o autor quis de fato dizer. A maioria das supostas contradições se desfaz quando se lê a Bíblia como ela é, e não como um relatório científico.
+A inspiração garante, como diz o Concílio Vaticano II (Dei Verbum §11), que a Bíblia ensina sem erro a verdade que Deus quis consignar para a nossa salvação. Ela não é um manual de astronomia ou de biologia, e não responde a perguntas que não eram as suas. Por isso, antes de gritar "contradição", é preciso perguntar qual o gênero do texto e o que o autor quis de fato dizer. A maioria das supostas contradições se desfaz quando se lê a Bíblia como ela é, e não como um relatório científico.
 
 ## Por que isso importa
 
-Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem. Mas, justamente por ter nascido na Igreja, ela não se lê sozinha, ao sabor da interpretação de cada um. Reconhecer o Autor divino e o lar onde ela nasceu, a Igreja, é a chave para ler a Sagrada Escritura como ela pede para ser lida.
+Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem. Mas, justamente por ter nascido na Igreja, ela não se lê sozinha, ao sabor da interpretação de cada um: o próprio São Pedro avisa que há nela pontos difíceis, que os ignorantes deturpam (2 Pedro 3,16). Reconhecer o Autor divino e o lar onde ela nasceu, a Igreja, é a chave para ler a Sagrada Escritura como ela pede para ser lida.
 
 ## Perguntas-chave
 
@@ -523,7 +523,7 @@ Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem
 3. A Bíblia "erra" quando não explica a ciência como um manual moderno, ou simplesmente está tratando de outra coisa?
 
 4. Se Deus é o Autor último, a Sagrada Escritura deve ser lida isoladamente, ao gosto de cada um, ou na comunhão da Igreja que a recebeu?`,
-    references: ['2pd-1-20', 'dei-verbum-9', 'hipona-393', 'ms-bibliografico', '2pd-3-16'],
+    references: ['2pd-1-20', 'hipona-393', '2pd-3-16', 'dei-verbum-11'],
   },
   {
     id: 69,
@@ -539,15 +539,15 @@ Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem
 
 ## A chave de tudo: a revelação é progressiva
 
-Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus. Era um passo possível naquele momento.
+Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus. Era um passo possível naquele momento. O Concílio Vaticano II diz o mesmo dos livros do Antigo Testamento: "apesar de conterem também coisas imperfeitas e transitórias, revelam, contudo, a verdadeira pedagogia divina" (Dei Verbum §15).
 
 ## A escravidão
 
-O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
+O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica dos escravos hebreus, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
 
 ## As guerras de conquista
 
-Há textos durésimos, com ordens de extermínio. Para lê-los com honestidade, é preciso considerar três coisas. Primeiro, o gênero: a linguagem de aniquilação total era uma hipérbole comum nas crônicas de guerra do Oriente Antigo, e não descreve necessariamente o que de fato ocorreu. Segundo, o alvo teológico: a luta era contra a idolatria e a corrupção que ameaçavam destruir o povo por dentro, não um ódio étnico. Terceiro, e decisivo: esses textos descrevem um momento da história da salvação, não um modelo a imitar. Nenhum cristão lê ali um mandado para a violência.
+Há textos duríssimos, com ordens de extermínio. Para lê-los com honestidade, é preciso considerar três coisas. Primeiro, o gênero: a linguagem de aniquilação total era uma hipérbole comum nas crônicas de guerra do Oriente Antigo, e não descreve necessariamente o que de fato ocorreu. Segundo, o alvo teológico: a luta era contra a idolatria e a corrupção que ameaçavam destruir o povo por dentro, não um ódio étnico. Terceiro, e decisivo: esses textos descrevem um momento da história da salvação, não um modelo a imitar. Nenhum cristão lê ali um mandado para a violência.
 
 ## "Olho por olho"
 
@@ -559,7 +559,7 @@ A chave de leitura de todo o Antigo Testamento é Jesus. Ele é a plenitude para
 
 ## Uma palavra ao crítico
 
-Por fim, uma observação. O ateu que se indigna com a violência do Antigo Testamento usa um padrão de "isto é mau" que ele precisa explicar. Se não há Deus, de onde vem esse dever moral absoluto que o faz condenar a crueldade? A própria capacidade de chamar algo de "mau" pressupõe um bem objetivo, e esse é um terreno em que a fé tem mais a oferecer do que o materialismo.
+Por fim, uma observação. O ateu que se indigna com a violência do Antigo Testamento usa um padrão de "isto é mau" que ele precisa explicar. Se não há Deus, de onde vem esse dever moral absoluto que o faz condenar a crueldade? São Paulo diria que é a lei que Deus gravou no coração de todos (Romanos 2,14-15). A própria capacidade de chamar algo de "mau" pressupõe um bem objetivo, e esse é um terreno em que a fé tem mais a oferecer do que o materialismo.
 
 ## Perguntas-chave
 
@@ -570,7 +570,7 @@ Por fim, uma observação. O ateu que se indigna com a violência do Antigo Test
 3. Jesus diz que Moisés tolerou coisas "pela dureza dos corações". Isso ajuda a distinguir o que Deus permitiu do que Deus quer?
 
 4. Para chamar a violência do Antigo Testamento de "má", o crítico ateu não precisa, antes, de um padrão moral absoluto, que só faz sentido se Deus existe?`,
-    references: ['gn-1-27', 'dei-verbum-9', 'rm-2-14'],
+    references: ['gn-1-27', 'rm-2-14', 'mt-19-8', 'fm-1-16', 'mt-5-38', 'dei-verbum-15'],
   },
   {
     id: 70,
@@ -590,11 +590,11 @@ O primeiro erro é ler o Apocalipse como um roteiro cifrado dos próximos anos. 
 
 ## Ninguém sabe o dia nem a hora
 
-Sobre o quando, Jesus foi categórico: "daquele dia e hora ninguém sabe, nem os anjos do céu, nem o Filho, mas somente o Pai" (Mateus 24,36). Toda data já marcada para o fim do mundo, sem exceção, fracassou. Por isso a Igreja desconfia, por princípio, de quem anuncia o fim para tal ano: isso contraria diretamente a palavra de Cristo e costuma servir mais ao medo e à manipulação do que à fé.
+Sobre o quando, Jesus foi categórico: "daquele dia ou daquela hora, ninguém o sabe, nem os anjos do céu nem mesmo o Filho, mas somente o Pai" (Marcos 13,32, com paralelo em Mateus 24,36). Toda data já marcada para o fim do mundo, sem exceção, fracassou. Por isso a Igreja desconfia, por princípio, de quem anuncia o fim para tal ano: isso contraria diretamente a palavra de Cristo e costuma servir mais ao medo e à manipulação do que à fé.
 
 ## O 666 e o anticristo
 
-O número 666 é, com grande probabilidade, uma cifra: nas letras-número do hebraico, corresponde ao nome do imperador Nero, o perseguidor da época. Não é um código para celulares ou códigos de barra modernos. Quanto ao "anticristo", o Novo Testamento fala de "muitos anticristos" já presentes (1 João 2,18), um espírito de oposição a Cristo em todas as épocas, e também de uma prova final, que o Catecismo §675 chama de "impostura do Anticristo". O que a Igreja não faz é apontar nomes. A história está cheia de gente que apontou o dedo para este ou aquele como o anticristo, e sempre errou. Caçar anticristos é perder tempo e paz.
+O número 666 é, com grande probabilidade, uma cifra: nas letras-número do hebraico, corresponde a "Nero César", o imperador perseguidor da época. Não é um código para celulares ou códigos de barra modernos. Quanto ao "anticristo", o Novo Testamento fala de "muitos anticristos" já presentes (1 João 2,18), um espírito de oposição a Cristo em todas as épocas, e também de uma prova final antes da vinda de Cristo, cuja "suprema impostura religiosa", diz o Catecismo (§675), "é a do Anticristo". O que a Igreja não faz é apontar nomes. A história está cheia de gente que apontou o dedo para este ou aquele como o anticristo, e sempre errou. Caçar anticristos é perder tempo e paz.
 
 ## E o "arrebatamento"?
 
@@ -602,7 +602,7 @@ A ideia de um arrebatamento secreto, em que os fiéis somem de repente antes de 
 
 ## O que de fato vai acontecer
 
-Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória, haverá a ressurreição dos mortos e o juízo final, o mal será definitivamente vencido e haverá "novos céus e nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
+Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória (Mateus 25,31), haverá a ressurreição dos mortos e o juízo final, em que os mortos serão julgados "segundo as suas obras" (Apocalipse 20,12), o mal será definitivamente vencido e haverá "novos céus e nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
 
 ## Como viver tudo isso
 
@@ -617,7 +617,7 @@ A atitude cristã diante do fim não é nem o medo paralisante nem a obsessão p
 3. O "arrebatamento" vem dos apóstolos e da Tradição, ou de uma ideia protestante do século XIX?
 
 4. Diante do fim, faz mais sentido viver com medo e caçando sinais, ou com vigilância e esperança, vivendo bem cada dia?`,
-    references: ['mt-25-31', 'ap-20-12', 'ap-21-27', 'hb-9-27'],
+    references: ['mt-25-31', 'ap-20-12', 'mc-13-32', '1jo-2-18', 'ap-22-20', 'cic-675'],
   },
   {
     id: 71,
@@ -637,7 +637,7 @@ A Bíblia não foi feita para ser lida de capa a capa, na ordem, como um romance
 
 ## Um caminho sugerido
 
-Depois de um Evangelho, um bom percurso é: os Atos dos Apóstolos, para ver a Igreja nascendo. Os Salmos, que são a escola de oração do próprio povo de Deus, e então, com outro preparo, voltar ao Gênesis e ao Êxodo, as grandes narrativas das origens. Livros como Levítico e Números, cheios de leis antigas, podem ficar para mais tarde: não desanime à toa logo no início.
+Depois de um Evangelho, um bom percurso é este: os Atos dos Apóstolos, para ver a Igreja nascendo, depois os Salmos, que são a escola de oração do próprio povo de Deus, e então, com outro preparo, a volta ao Gênesis e ao Êxodo, as grandes narrativas das origens. Livros como Levítico e Números, cheios de leis antigas, podem ficar para mais tarde: não desanime à toa logo no início.
 
 ## Pouco e constante vence muito e esporádico
 
@@ -645,7 +645,7 @@ Não tente ler dez capítulos de uma vez. Melhor um trecho curto por dia, lido c
 
 ## A regra de ouro: não leia totalmente sozinho
 
-Aqui está um ponto que evita muito erro. A Bíblia nasceu dentro da Igreja e é na Igreja que se lê bem. O próprio São Pedro avisa que nas Escrituras há "coisas difíceis de entender, que os ignorantes torcem para a própria perdição" (2 Pedro 3,16), e que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20). Por isso, use uma boa Bíblia católica com notas de rodapé, que situam e explicam os textos, e deixe que a fé da Igreja ilumine a sua leitura. Ler a Bíblia "por conta própria", sem nenhuma referência, é como navegar sem mapa.
+Aqui está um ponto que evita muito erro. A Bíblia nasceu dentro da Igreja, "coluna e sustentáculo da verdade" (1 Timóteo 3,15), e é na Igreja que se lê bem. O próprio São Pedro avisa que nas Escrituras há "coisas difíceis de entender, que os ignorantes torcem para a própria perdição" (2 Pedro 3,16), e que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20). Por isso, use uma boa Bíblia católica com notas de rodapé, que situam e explicam os textos, e deixe que a fé da Igreja ilumine a sua leitura. Ler a Bíblia "por conta própria", sem nenhuma referência, é como navegar sem mapa.
 
 ## Entenda o gênero do que lê
 
@@ -653,7 +653,7 @@ A Bíblia é uma biblioteca: tem poesia, narrativa histórica, parábola, lei, c
 
 ## Leia para rezar, não só para saber
 
-Por fim, o mais importante: o objetivo não é "saber a Bíblia" como quem decora datas, é encontrar Deus. A tradição cristã ensina a chamada leitura orante, a lectio divina, em quatro passos simples: ler o texto, meditar no que ele diz, rezar a partir dele e descansar em silêncio diante de Deus. Lida assim, a Bíblia deixa de ser um livro difícil e vira uma carta de Alguém que ama você.
+Por fim, o mais importante: o objetivo não é "saber a Bíblia" como quem decora datas, é encontrar Deus. O Concílio Vaticano II lembra que "a leitura da Sagrada Escritura deve ser acompanhada de oração" (Dei Verbum §25). A tradição cristã ensina a chamada leitura orante, a lectio divina, em quatro passos simples: ler o texto, meditar no que ele diz, rezar a partir dele e descansar em silêncio diante de Deus. Lida assim, a Bíblia deixa de ser um livro difícil e vira uma carta de Alguém que ama você.
 
 ## Perguntas-chave
 
@@ -664,7 +664,7 @@ Por fim, o mais importante: o objetivo não é "saber a Bíblia" como quem decor
 3. Ler um trecho curto por dia, com calma, ou tentar devorar capítulos e desistir na primeira semana: o que dá mais fruto?
 
 4. Você quer ler a Bíblia para "vencer um desafio de leitura", ou para encontrar Deus e rezar com ela?`,
-    references: ['2pd-1-20', '2pd-3-16', 'dei-verbum-9', '1tm-3-15'],
+    references: ['2pd-1-20', '2pd-3-16', '1tm-3-15', 'dei-verbum-25'],
   },
 ];
 
