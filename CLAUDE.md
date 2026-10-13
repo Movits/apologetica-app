@@ -15,6 +15,7 @@ npm run check:refs             # valida os dados de referência (fonte, EN, urls
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
 node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (27 fotos que checam o próprio conteúdo, incluindo sair no meio do teste e voltar) no app web servido em BASE_URL
+node scripts/verify-bible.mjs  # Playwright: Atos 3,1, o bloco Josué 19,17-23, versículo do dia abrindo o Salmo certo e Jó em inglês (confira que BASE_URL serve o build NOVO)
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
