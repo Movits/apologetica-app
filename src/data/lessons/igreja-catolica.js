@@ -1253,7 +1253,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'O domingo é o dia da Ressurreição, "o dia que o Senhor fez", e desde o início os cristãos se reuniam nele para partir o pão (Atos 20,7), séculos antes de Constantino. Guardar o domingo é viver o terceiro mandamento.',
-        whyEn: 'Sunday is the day of the Resurrection, and from the start Christians gathered on it to break bread (Acts 20,7), centuries before Constantine. Keeping Sunday is living the third commandment.',
+        whyEn: 'Sunday is the day of the Resurrection, and from the start Christians gathered on it to break bread (Acts 20:7), centuries before Constantine. Keeping Sunday is living the third commandment.',
       },
     ],
   },
@@ -1273,7 +1273,7 @@ const lessons = {
       'O purgatório purifica quem morreu salvo, mas imperfeito. Sobre o suicídio, a Igreja não desespera da salvação e reza. No fim, o juízo final e a ressurreição da carne.',
     ],
     keyPointsEn: [
-      'Death separates soul and body, and the soul appears at once for the particular judgment. We die only once (Hebrews 9,27): no reincarnation, no second earthly life.',
+      'Death separates soul and body, and the soul appears at once for the particular judgment. We die only once (Hebrews 9:27): no reincarnation, no second earthly life.',
       'Heaven is seeing God face to face. Hell is real and eternal, but not vengeance: it is the result of freely refusing God\'s love. Its gates are locked from the inside.',
       'Purgatory purifies those who died saved but imperfect. On suicide, the Church does not despair of salvation and prays. At the end: final judgment and bodily resurrection.',
     ],
@@ -1316,7 +1316,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'O purgatório não é segunda chance nem inferno temporário: é a purificação final de quem morreu amigo de Deus, já salvo, mas imperfeito. Nada de impuro entra no céu (Apocalipse 21,27), e rezar pelos mortos (2 Macabeus 12,46) só faz sentido se há purificação.',
-        whyEn: 'Purgatory is neither a second chance nor a temporary hell: it is the purification of those already saved, but imperfect. Nothing unclean enters heaven (Revelation 21,27), and praying for the dead (2 Maccabees 12,46) only makes sense if there is purification.',
+        whyEn: 'Purgatory is neither a second chance nor a temporary hell: it is the purification of those already saved, but imperfect. Nothing unclean enters heaven (Revelation 21:27), and praying for the dead (2 Maccabees 12:46) only makes sense if there is purification.',
       },
       {
         question: 'O que a Igreja ensina sobre quem se suicida, segundo o artigo?',
@@ -1356,7 +1356,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Catholics and Evangelicals share much, but the root disagreement is authority: the Bible does not teach "Scripture alone", and it was the Church that defined the canon.',
-      'Salvation is all grace, but true faith works through love (Galatians 5,6, James 2,24). In the sacraments, God acts through effective signs, not mere gestures of memory.',
+      'Salvation is all grace, but true faith works through love (Galatians 5:6, James 2:24). In the sacraments, God acts through effective signs, not mere gestures of memory.',
       'With no authority to interpret and unite, the Bible read by each one bred thousands of denominations. Dialogue begins with what is shared, then proposes the fullness.',
     ],
     oneLiner: 'Cremos no mesmo Cristo e lemos a Bíblia. A diferença de fundo é quem interpreta: a Bíblia não ensina "só a Bíblia", e foi a Igreja que definiu quais livros entram nela.',
@@ -1379,7 +1379,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'São Paulo manda conservar as tradições, por palavra ou por carta (2 Tessalonicenses 2,15), e chama a Igreja de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). Além disso, foi a Igreja, em concílios do século IV, que definiu quais livros formam a Bíblia.',
-        whyEn: 'Saint Paul commands holding the traditions, by word or by letter (2 Thessalonians 2,15), and calls the Church "the pillar and foundation of truth" (1 Timothy 3,15). And it was the Church, in fourth-century councils, that defined which books make up the Bible.',
+        whyEn: 'Saint Paul commands holding the traditions, by word or by letter (2 Thessalonians 2:15), and calls the Church "the pillar and foundation of truth" (1 Timothy 3:15). And it was the Church, in fourth-century councils, that defined which books make up the Bible.',
       },
       {
         question: 'Qual é a posição católica sobre fé e obras na salvação, segundo o artigo?',
@@ -1398,7 +1398,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'A Igreja afirma que a salvação é graça, nunca mérito comprado, mas que a fé verdadeira não fica sozinha: o que vale é "a fé que opera pela caridade" (Gálatas 5,6) e "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24). Não é fé contra obras.',
-        whyEn: 'Salvation is grace, never a merit one buys, but true faith does not stay alone: "what counts is faith working through love" (Galatians 5,6) and "a man is justified by works, and not by faith only" (James 2,24). It is not faith against works.',
+        whyEn: 'Salvation is grace, never a merit one buys, but true faith does not stay alone: "what counts is faith working through love" (Galatians 5:6) and "a man is justified by works, and not by faith only" (James 2:24). It is not faith against works.',
       },
       {
         question: 'Que conclusão o artigo tira do surgimento de dezenas de milhares de denominações em cinco séculos?',
@@ -1417,7 +1417,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Jesus rezou "para que todos sejam um" (João 17,21). O princípio de cada um interpretar a Bíblia por si gerou milhares de denominações com doutrinas opostas. Isso mostra a necessidade de uma autoridade visível, que a Igreja mantém desde os apóstolos.',
-        whyEn: 'Jesus prayed "that they may all be one" (John 17,21). Each one interpreting the Bible for himself produced thousands of denominations with opposing doctrines. This shows the need for a visible authority, which the Church has kept since the apostles.',
+        whyEn: 'Jesus prayed "that they may all be one" (John 17:21). Each one interpreting the Bible for himself produced thousands of denominations with opposing doctrines. This shows the need for a visible authority, which the Church has kept since the apostles.',
       },
     ],
   },
@@ -1461,7 +1461,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'A ação ordinária do demônio é discreta: tentação, mentira, desânimo, divisão. Jesus o chamou de "pai da mentira" (João 8,44), e sua arma preferida é convencer de que ele não existe ou de que o mal é bem. Resistir é viver na verdade e na graça.',
-        whyEn: 'The demon\'s ordinary action is discreet: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8,44), and his favorite weapon is convincing us he does not exist or that evil is good. Resisting is living in truth and grace.',
+        whyEn: 'The demon\'s ordinary action is discreet: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8:44), and his favorite weapon is convincing us he does not exist or that evil is good. Resisting is living in truth and grace.',
       },
       {
         question: 'O que a Igreja exige antes de qualquer exorcismo, segundo o artigo?',
@@ -1499,7 +1499,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'C. S. Lewis notou que o diabo se alegra com dois erros opostos: ser negado ou ser objeto de interesse excessivo e doentio. O equilíbrio é levar o mal a sério, sem medo e sem obsessão, com os olhos em Cristo, pois "o que está em vós é maior" (1 João 4,4).',
-        whyEn: 'C. S. Lewis noted that the devil rejoices in two opposite errors: being denied, or an excessive and unhealthy interest in him. The balance is taking evil seriously, without fear or obsession, eyes on Christ, for "greater is he that is in you" (1 John 4,4).',
+        whyEn: 'C. S. Lewis noted that the devil rejoices in two opposite errors: being denied, or an excessive and unhealthy interest in him. The balance is taking evil seriously, without fear or obsession, eyes on Christ, for "greater is he that is in you" (1 John 4:4).',
       },
     ],
   },
@@ -1625,7 +1625,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Quem ama diz "eu te amo" mil vezes sem que as palavras fiquem ocas. E a Ave-Maria traz a saudação do anjo e as palavras de Isabel (Lucas 1,28.42), não um texto composto por Maria. Enquanto os lábios repetem, o coração medita os fatos da salvação.',
-        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1,28.42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
+        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1:28.42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
       },
       {
         question: 'Segundo o artigo, qual é o papel da Ave-Maria repetida dentro do Rosário?',
@@ -1683,7 +1683,7 @@ const lessons = {
       'Dois erros: o legalismo (troca mágica com Deus) e o descaso (nunca sustentar a comunidade). A viúva das duas moedinhas mostra que o que conta é o amor, não o valor.',
     ],
     keyPointsEn: [
-      'In the Old Testament the tithe was a set percentage. In the New it changes: "God loves a cheerful giver" (2 Corinthians 9,7), and generosity springs from within.',
+      'In the Old Testament the tithe was a set percentage. In the New it changes: "God loves a cheerful giver" (2 Corinthians 9:7), and generosity springs from within.',
       'There is no universal Catholic law of ten percent under pain of sin. The Church asks for giving according to one\'s means. Ten percent is a healthy benchmark, not a tax.',
       'Two errors: legalism (a magic trade with God) and neglect (never supporting the community). The widow with two small coins shows that what counts is love, not the amount.',
     ],
@@ -1707,7 +1707,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'No Antigo Testamento o povo entregava dez por cento para o culto e os levitas. No Novo, o critério muda de natureza: "Dê cada um conforme o impulso do seu coração, sem tristeza nem constrangimento. Deus ama o que dá com alegria" (2 Coríntios 9,7).',
-        whyEn: 'In the Old Testament, ten percent went to worship and the Levites. In the New, the criterion changes in nature: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9,7).',
+        whyEn: 'In the Old Testament, ten percent went to worship and the Levites. In the New, the criterion changes in nature: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9:7).',
       },
       {
         question: 'Quais são os dois extremos que o artigo aponta sobre o dízimo?',
@@ -1730,7 +1730,7 @@ const lessons = {
       },
       {
         question: 'O que o episódio da viúva pobre (Marcos 12,43-44) ensina, segundo o artigo?',
-        questionEn: 'What does the episode of the poor widow (Mark 12,43-44) teach, according to the article?',
+        questionEn: 'What does the episode of the poor widow (Mark 12:43-44) teach, according to the article?',
         options: [
           'Que os pobres estão dispensados de contribuir',
           'Que Deus prefere as ofertas pequenas às grandes',
@@ -1827,7 +1827,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Os santos não competem com Cristo: são amigos no céu que intercedem por nós, como os anciãos que oferecem a Deus "as orações dos santos" (Apocalipse 5,8). E são a prova viva de que a santidade é possível em toda época e condição.',
-        whyEn: 'The saints do not compete with Christ: they are friends in heaven who intercede for us, like the elders who offer God "the prayers of the saints" (Revelation 5,8). And they are living proof that holiness is possible in every age and condition.',
+        whyEn: 'The saints do not compete with Christ: they are friends in heaven who intercede for us, like the elders who offer God "the prayers of the saints" (Revelation 5:8). And they are living proof that holiness is possible in every age and condition.',
       },
     ],
   },
@@ -1847,7 +1847,7 @@ const lessons = {
       'Ter dúvidas não é perder a fé: enfrentá-las com honestidade fortalece. E na aridez, o erro é largar a oração e os sacramentos justo quando são mais necessários.',
     ],
     keyPointsEn: [
-      'Faith is a gift: no one believes by effort alone. So the first step is to ask, like the father in the Gospel: "I believe, Lord, help my unbelief" (Mark 9,24).',
+      'Faith is a gift: no one believes by effort alone. So the first step is to ask, like the father in the Gospel: "I believe, Lord, help my unbelief" (Mark 9:24).',
       'But the gift must be welcomed with concrete steps: daily prayer, the sacraments, reading the Gospel, time with people of faith and practicing charity.',
       'Having doubts is not losing faith: facing them honestly strengthens it. And in dryness, the mistake is to drop prayer and the sacraments just when they are most needed.',
     ],
@@ -1871,7 +1871,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'Ninguém crê apenas pela força do próprio esforço: a fé é, antes de tudo, graça que Deus oferece. Por isso se começa pedindo, como o pai do Evangelho (Marcos 9,24). Mas o dom precisa ser acolhido, e isso exige querer e dar passos concretos.',
-        whyEn: 'No one believes by the force of his own effort alone: faith is, above all, grace that God offers. So one begins by asking, like the father in the Gospel (Mark 9,24). But the gift must be welcomed, and that requires willing it and taking concrete steps.',
+        whyEn: 'No one believes by the force of his own effort alone: faith is, above all, grace that God offers. So one begins by asking, like the father in the Gospel (Mark 9:24). But the gift must be welcomed, and that requires willing it and taking concrete steps.',
       },
       {
         question: 'Como o artigo trata a dúvida na vida de fé?',
@@ -1890,7 +1890,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'Ter dúvidas não é perder a fé. A dúvida faz parte do caminho de quase todo crente, e enfrentá-la com honestidade fortalece. Por isso vale buscar respostas, na apologética e nos bons livros, e ao mesmo tempo confiar (Romanos 8,28).',
-        whyEn: 'Having doubts is not losing faith. Doubt is part of the journey of almost every believer, and facing it honestly strengthens. So it is worth seeking answers, in apologetics and good books, and at the same time trusting (Romans 8,28).',
+        whyEn: 'Having doubts is not losing faith. Doubt is part of the journey of almost every believer, and facing it honestly strengthens. So it is worth seeking answers, in apologetics and good books, and at the same time trusting (Romans 8:28).',
       },
       {
         question: 'O que o artigo chama de erro na hora em que a fé esfria?',
@@ -1929,7 +1929,7 @@ const lessons = {
       'Os mínimos são poucos: jejum na Quarta de Cinzas e na Sexta Santa, e abstinência de carne nessas datas e nas sextas do ano, que no Brasil pode virar outra penitência.',
     ],
     keyPointsEn: [
-      'Fasting is not dieting or testing willpower: it is saying no to the body to say a greater yes to God. Jesus fasted forty days in the desert (Matthew 4,2).',
+      'Fasting is not dieting or testing willpower: it is saying no to the body to say a greater yes to God. Jesus fasted forty days in the desert (Matthew 4:2).',
       'Lent is the forty days before Easter, on three pillars: prayer, fasting and almsgiving. The goal is to convert the heart, not to "go without chocolate" as a sport.',
       'The minimums are few: fasting on Ash Wednesday and Good Friday, and no meat on those days and on Fridays, which in Brazil may become another penance.',
     ],
@@ -1953,7 +1953,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Jejuar é um ato de amor e penitência: dizer não ao corpo, em algo legítimo, para dizer um sim maior a Deus. É treinar a liberdade, lembrando que "não só de pão vive o homem" (Mateus 4,4). O próprio Jesus jejuou quarenta dias no deserto (Mateus 4,2).',
-        whyEn: 'Fasting is an act of love and penance: saying no to the body, in something legitimate, to say a greater yes to God. It trains freedom, recalling that "man does not live on bread alone" (Matthew 4,4). Jesus himself fasted forty days in the desert (Matthew 4,2).',
+        whyEn: 'Fasting is an act of love and penance: saying no to the body, in something legitimate, to say a greater yes to God. It trains freedom, recalling that "man does not live on bread alone" (Matthew 4:4). Jesus himself fasted forty days in the desert (Matthew 4:2).',
       },
       {
         question: 'Quais são os três pilares da Quaresma, segundo o artigo?',

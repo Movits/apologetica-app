@@ -27,7 +27,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Islam believes in one God (tawhid) and honors Jesus as the Messiah, born of a virgin, and a prophet, but denies his divinity, his death on the cross, and the Trinity.',
-      'The Quran orders judgment by the Gospel (sura 5,46-47), where Jesus claims to be God (John 8,58 and 10,30). Accepting one and denying the other is the Islamic Dilemma.',
+      'The Quran orders judgment by the Gospel (sura 5:46-47), where Jesus claims to be God (John 8:58 and 10:30). Accepting one and denying the other is the Islamic Dilemma.',
       'The crucifixion is attested even by Tacitus and Josephus, the Quran itself was standardized under Uthman, and the Paraclete of John 14 is the Holy Spirit, not a prophet.',
     ],
     oneLiner: 'Respeito o Islã, mas o Alcorão manda julgar pelo Evangelho, e no Evangelho Jesus diz "antes que Abraão existisse, eu sou". Ou ele é Deus, ou não pode ser profeta.',
@@ -50,11 +50,11 @@ const lessons = {
         ],
         correct: 1,
         why: 'A sura 5,46-47 manda julgar pelo Evangelho. Nele, Jesus diz "antes que Abraão existisse, eu sou" e é acusado de se fazer Deus. Ou ele disse isso (e é Deus ou blasfemo), ou os Evangelhos foram corrompidos, o que contradiz o próprio Alcorão.',
-        whyEn: 'Sura 5,46-47 orders judgment by the Gospel. In it, Jesus says "before Abraham was, I am" and is accused of making himself God. Either he said it (and is God or a blasphemer), or the Gospels were corrupted, which contradicts the Quran itself.',
+        whyEn: 'Sura 5:46-47 orders judgment by the Gospel. In it, Jesus says "before Abraham was, I am" and is accused of making himself God. Either he said it (and is God or a blasphemer), or the Gospels were corrupted, which contradicts the Quran itself.',
       },
       {
         question: 'Como o artigo responde à afirmação da sura 4,157 de que Jesus não foi crucificado?',
-        questionEn: 'How does the article answer the claim of sura 4,157 that Jesus was not crucified?',
+        questionEn: 'How does the article answer the claim of sura 4:157 that Jesus was not crucified?',
         options: [
           'Com Tácito e Josefo, fontes não cristãs, além dos Evangelhos e de Paulo',
           'Admitindo que a crucificação não pode ser provada historicamente',
@@ -118,15 +118,15 @@ const lessons = {
     ],
     keyPointsEn: [
       'Codified by Allan Kardec from 1857 on, Spiritism teaches reincarnation, communication with the dead through mediums, and sees Jesus as an elevated spirit, not as God.',
-      'The Bible calls Jesus God (John 1,1 and 20,28), teaches one life followed by judgment (Hebrews 9,27), and shows the dead conscious, with no return (Luke 16).',
-      'The Bible forbids consulting the dead (Deuteronomy 18,10-12 and Isaiah 8,19), and the Catechism rejects conjuring up the dead and warns against spiritism (2116-2117).',
+      'The Bible calls Jesus God (John 1:1 and 20:28), teaches one life followed by judgment (Hebrews 9:27), and shows the dead conscious, with no return (Luke 16).',
+      'The Bible forbids consulting the dead (Deuteronomy 18:10-12 and Isaiah 8:19), and the Catechism rejects conjuring up the dead and warns against spiritism (2116-2117).',
     ],
     oneLiner: 'Admiro a caridade espírita, mas a Bíblia que Kardec cita diz que se morre uma só vez e proíbe consultar os mortos. E Jesus aceitou de Tomé a adoração que um anjo recusou para si.',
     oneLinerEn: 'I admire Spiritist charity, but the Bible Kardec quotes says we die only once and forbids consulting the dead. And Jesus accepted from Thomas the worship an angel refused for himself.',
     check: [
       {
         question: 'Que contraste o artigo faz entre Jesus (João 20,28) e o anjo de Apocalipse 22,8-9?',
-        questionEn: 'What contrast does the article draw between Jesus (John 20,28) and the angel of Revelation 22,8-9?',
+        questionEn: 'What contrast does the article draw between Jesus (John 20:28) and the angel of Revelation 22:8-9?',
         options: [
           'O anjo recusa adoração e Jesus a aceita: Jesus é mais que criatura',
           'O anjo aceita adoração e Jesus a recusa, por humildade diante do Pai',
@@ -160,7 +160,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Na parábola, os mortos continuam conscientes, mantêm quem são e estão separados por um abismo que ninguém atravessa. Não há retorno a outra vida, há permanência. Com Hebreus 9,27 (morrer uma só vez), isso exclui o ciclo de reencarnações.',
-        whyEn: 'In the parable, the dead remain conscious, keep their identity, and are separated by a chasm no one can cross. There is no return to another life, there is permanence. With Hebrews 9,27 (to die once), this rules out a cycle of reincarnations.',
+        whyEn: 'In the parable, the dead remain conscious, keep their identity, and are separated by a chasm no one can cross. There is no return to another life, there is permanence. With Hebrews 9:27 (to die once), this rules out a cycle of reincarnations.',
       },
       {
         question: 'O que a Bíblia diz sobre consultar os mortos, segundo o artigo?',
@@ -179,7 +179,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'Deuteronômio 18,10-12 lista consultar os mortos entre as abominações, e Isaías 8,19 pergunta por que consultar os mortos em vez de Deus. O recurso de Saul à médium de Endor precede a sua ruína. O Catecismo (2116 e 2117) condena a prática.',
-        whyEn: 'Deuteronomy 18,10-12 lists consulting the dead among the abominations, and Isaiah 8,19 asks why consult the dead instead of God. Saul\'s recourse to the medium of Endor precedes his ruin. The Catechism (2116 and 2117) condemns the practice.',
+        whyEn: 'Deuteronomy 18:10-12 lists consulting the dead among the abominations, and Isaiah 8:19 asks why consult the dead instead of God. Saul\'s recourse to the medium of Endor precedes his ruin. The Catechism (2116 and 2117) condemns the practice.',
       },
     ],
   },
@@ -194,13 +194,13 @@ const lessons = {
         'Num evangelho apócrifo achado no Egito, que nega a divindade de Jesus',
       ],
       optionsEn: [
-        'Their own translation, which renders John 1,1 as "a god"',
+        'Their own translation, which renders John 1:1 as "a god"',
         'Revelations given to Russell, which they place above the Bible itself',
         'An apocryphal gospel found in Egypt that denies Jesus\' divinity',
       ],
       correct: 0,
       note: 'A negação se apoia em grande parte na Tradução do Novo Mundo, que acrescenta a João 1,1 um artigo que não está no grego. O artigo mostra, com o texto grego e outros versículos, por que essa leitura não se sustenta.',
-      noteEn: 'The denial rests largely on the New World Translation, which adds to John 1,1 an article that is not in the Greek. The article shows, with the Greek text and other verses, why that reading does not hold.',
+      noteEn: 'The denial rests largely on the New World Translation, which adds to John 1:1 an article that is not in the Greek. The article shows, with the Greek text and other verses, why that reading does not hold.',
     },
     keyPoints: [
       'Fundadas por Charles Taze Russell no fim do século XIX, as Testemunhas negam a Trindade: Jesus seria o arcanjo Miguel e o Espírito Santo, uma "força ativa".',
@@ -209,15 +209,15 @@ const lessons = {
     ],
     keyPointsEn: [
       'Founded by Charles Taze Russell in the late 19th century, the Witnesses deny the Trinity: Jesus would be the archangel Michael and the Holy Spirit an "active force".',
-      'The New World Translation renders John 1,1 as "a god", but the Greek indicates divine nature, and John 20,28, Titus 2,13, and Hebrews 1,8 call Jesus God.',
-      'Hebrews 1 has the angels worship the Son, the Spirit speaks and chooses in Acts 13,2, and the dates for the end (1914, 1925, 1975) failed, against Deuteronomy 18,22.',
+      'The New World Translation renders John 1:1 as "a god", but the Greek indicates divine nature, and John 20:28, Titus 2:13, and Hebrews 1:8 call Jesus God.',
+      'Hebrews 1 has the angels worship the Son, the Spirit speaks and chooses in Acts 13:2, and the dates for the end (1914, 1925, 1975) failed, against Deuteronomy 18:22.',
     ],
     oneLiner: 'Quase nenhuma tradução da história verte João 1,1 como "um deus". E Tomé chamou Jesus de "meu Deus" sem ser corrigido: se Jesus não fosse Deus, era a hora de dizer.',
-    oneLinerEn: 'Almost no translation in history renders John 1,1 as "a god". And Thomas called Jesus "my God" without being corrected: if Jesus were not God, that was the moment to say so.',
+    oneLinerEn: 'Almost no translation in history renders John 1:1 as "a god". And Thomas called Jesus "my God" without being corrected: if Jesus were not God, that was the moment to say so.',
     check: [
       {
         question: 'Qual é o problema que o artigo aponta na tradução de João 1,1 pela Torre de Vigia ("o Verbo era um deus")?',
-        questionEn: 'What problem does the article point out in the Watch Tower\'s translation of John 1,1 ("the Word was a god")?',
+        questionEn: 'What problem does the article point out in the Watch Tower\'s translation of John 1:1 ("the Word was a god")?',
         options: [
           'Traduz do latim da Vulgata, e não do texto grego original de João',
           'Acrescenta um artigo ausente no grego, onde a construção indica natureza',
@@ -232,7 +232,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'No grego, o predicado sem artigo antes do verbo indica natureza, não um "deus" indefinido. A mesma forma aparece em João 1,14 com "carne", e ninguém traduz "se fez uma carne". Quase nenhuma tradução da história verte como a Torre de Vigia.',
-        whyEn: 'In Greek, a predicate without an article before the verb indicates nature, not an indefinite "god". The same form appears in John 1,14 with "flesh", and no one translates "became a flesh". Almost no translation in history renders it as the Watch Tower does.',
+        whyEn: 'In Greek, a predicate without an article before the verb indicates nature, not an indefinite "god". The same form appears in John 1:14 with "flesh", and no one translates "became a flesh". Almost no translation in history renders it as the Watch Tower does.',
       },
       {
         question: 'Como o artigo responde à ideia de que Jesus é o arcanjo Miguel?',
@@ -251,7 +251,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'Hebreus 1,5-6 pergunta a qual dos anjos Deus chamou de Filho e manda que "todos os anjos de Deus o adorem". Jesus é adorado pelos anjos, não é um deles. Em Hebreus 1,8 o Pai chama o Filho de "Deus".',
-        whyEn: 'Hebrews 1,5-6 asks which of the angels God ever called Son and commands that "all God\'s angels worship him". Jesus is worshiped by the angels, he is not one of them. In Hebrews 1,8 the Father calls the Son "God".',
+        whyEn: 'Hebrews 1:5-6 asks which of the angels God ever called Son and commands that "all God\'s angels worship him". Jesus is worshiped by the angels, he is not one of them. In Hebrews 1:8 the Father calls the Son "God".',
       },
       {
         question: 'Por que o artigo diz que o Espírito Santo é pessoa, e não apenas uma força?',
@@ -270,7 +270,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Em Atos 13,2 o Espírito Santo diz "reservai-me Barnabé e Saulo": uma força não fala nem escolhe. Jesus o chama "outro Paráclito" (João 14,16), palavra que designa uma pessoa, e em Atos 5,3-4 mentir ao Espírito é mentir a Deus.',
-        whyEn: 'In Acts 13,2 the Holy Spirit says "set apart for me Barnabas and Saul": a force does not speak or choose. Jesus calls him "another Paraclete" (John 14,16), a word that designates a person, and in Acts 5,3-4 lying to the Spirit is lying to God.',
+        whyEn: 'In Acts 13:2 the Holy Spirit says "set apart for me Barnabas and Saul": a force does not speak or choose. Jesus calls him "another Paraclete" (John 14:16), a word that designates a person, and in Acts 5:3-4 lying to the Spirit is lying to God.',
       },
     ],
   },
@@ -376,9 +376,9 @@ const lessons = {
         'Em Apocalipse 22,18, que proíbe acrescentar ao livro',
       ],
       optionsEn: [
-        'In 2 Timothy 3,16, which says all Scripture is inspired by God',
+        'In 2 Timothy 3:16, which says all Scripture is inspired by God',
         'Nowhere, and it calls the Church the pillar of truth',
-        'In Revelation 22,18, against adding to the book',
+        'In Revelation 22:18, against adding to the book',
       ],
       correct: 1,
       note: 'Nenhum versículo ensina "só a Escritura". Paulo manda guardar as tradições orais e chama a Igreja, não a Bíblia, de "coluna e sustentáculo da verdade". O artigo mostra por que os dois lemas da Reforma têm um problema interno.',
@@ -391,8 +391,8 @@ const lessons = {
     ],
     keyPointsEn: [
       'Protestants are separated brethren who share the Trinity, Christ\'s divinity, the Bible and Baptism. The difference stems from the mottos Scripture alone and faith alone.',
-      'Scripture alone refutes itself: the Bible never teaches it, orders traditions kept (2 Thessalonians 2,15), and the Church itself defined the canon at Hippo and Carthage.',
-      'Faith alone contradicts James 2,24, the one place "faith alone" appears, only to be denied. Five centuries without a living authority bred thousands of denominations.',
+      'Scripture alone refutes itself: the Bible never teaches it, orders traditions kept (2 Thessalonians 2:15), and the Church itself defined the canon at Hippo and Carthage.',
+      'Faith alone contradicts James 2:24, the one place "faith alone" appears, only to be denied. Five centuries without a living authority bred thousands of denominations.',
     ],
     oneLiner: 'Quem decidiu quais livros entram na Bíblia foi a Igreja Católica, em Hipona e Cartago. Aceitar a lista e rejeitar quem a fez é se apoiar no galho e serrar a árvore.',
     oneLinerEn: 'It was the Catholic Church, at Hippo and Carthage, that decided which books go in the Bible. Accepting the list and rejecting who made it is sitting on the branch and sawing the tree.',
@@ -410,11 +410,11 @@ const lessons = {
           'Because the ancient copies of the Bible have copying errors and variants',
           'Because the Bible never teaches it and even points to tradition and the Church',
           'Because Protestants removed seven books from the Old Testament',
-          'Because Luther added "alone" to his translation of Romans 3,28',
+          'Because Luther added "alone" to his translation of Romans 3:28',
         ],
         correct: 1,
         why: 'Nenhum versículo diz que a Bíblia sozinha é a regra de fé. Paulo manda conservar as tradições "por palavra ou por carta" (2 Tessalonicenses 2,15) e chama a Igreja de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). E foi a Igreja que fixou o cânon.',
-        whyEn: 'No verse says the Bible alone is the rule of faith. Paul orders the traditions kept "by word or by letter" (2 Thessalonians 2,15) and calls the Church "the pillar and foundation of truth" (1 Timothy 3,15). And it was the Church that fixed the canon.',
+        whyEn: 'No verse says the Bible alone is the rule of faith. Paul orders the traditions kept "by word or by letter" (2 Thessalonians 2:15) and calls the Church "the pillar and foundation of truth" (1 Timothy 3:15). And it was the Church that fixed the canon.',
       },
       {
         question: 'O que o artigo observa sobre a expressão "fé somente" na Bíblia?',
@@ -427,13 +427,13 @@ const lessons = {
         ],
         optionsEn: [
           'It appears dozens of times in Paul\'s letters, especially Romans',
-          'It appears in Romans 3,28, in Paul\'s original Greek text',
-          'It appears only once, in James 2,24, and there to be denied',
+          'It appears in Romans 3:28, in Paul\'s original Greek text',
+          'It appears only once, in James 2:24, and there to be denied',
           'It never appears, neither to affirm nor to deny the doctrine',
         ],
         correct: 2,
         why: 'Tiago 2,24 diz que "o homem é justificado pelas obras, e não somente pela fé". Lutero acrescentou "somente" (allein) à sua tradução de Romanos 3,28, onde Paulo não a escreveu. Para a Igreja, a graça salva, e a fé viva floresce em obras.',
-        whyEn: 'James 2,24 says "a man is justified by works and not by faith alone". Luther added "alone" (allein) to his translation of Romans 3,28, where Paul did not write it. For the Church, grace saves, and living faith blossoms into works.',
+        whyEn: 'James 2:24 says "a man is justified by works and not by faith alone". Luther added "alone" (allein) to his translation of Romans 3:28, where Paul did not write it. For the Church, grace saves, and living faith blossoms into works.',
       },
       {
         question: 'Como o artigo descreve a relação entre protestantes e católicos?',
@@ -482,7 +482,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Christianity springs from Judaism, which gave us the one God, the Scriptures, and the Messiah. Jesus, Mary, and the apostles were Jews. The Church condemns antisemitism.',
-      'Isaiah 53 (the servant who suffers for the people\'s sins), Psalm 22, Micah 5 (Bethlehem), and Zechariah 12,10 (the pierced one) sketch traits that closely match Jesus.',
+      'Isaiah 53 (the servant who suffers for the people\'s sins), Psalm 22, Micah 5 (Bethlehem), and Zechariah 12:10 (the pierced one) sketch traits that closely match Jesus.',
       'Daniel 9 says the Anointed One would die before the sanctuary fell, in the year 70. Since then no Temple, no sacrifice: for Hebrews, Christ is the definitive sacrifice.',
     ],
     oneLiner: 'Não somos estranhos: partilhamos o mesmo Deus e as mesmas Escrituras. Só pergunto: se o Messias devia vir antes de o Templo cair, e ele caiu no ano 70, quem cumpriu o prazo?',
@@ -573,8 +573,8 @@ const lessons = {
     ],
     keyPointsEn: [
       'Buddhism teaches the Four Noble Truths: life is marked by suffering, its cause is desire, and the Eightfold Path ends it. There is no permanent self, no creator God.',
-      'Christianity says the opposite: in the beginning is a loving personal God, each person is God\'s image (Genesis 1,27), and compassion rests on the other\'s infinite worth.',
-      'The Buddha offers a method to free yourself by effort. Christ offers himself (John 3,16): salvation is a gift, and the end is not the self\'s extinction but resurrection.',
+      'Christianity says the opposite: in the beginning is a loving personal God, each person is God\'s image (Genesis 1:27), and compassion rests on the other\'s infinite worth.',
+      'The Buddha offers a method to free yourself by effort. Christ offers himself (John 3:16): salvation is a gift, and the end is not the self\'s extinction but resurrection.',
     ],
     oneLiner: 'Admiro a compaixão budista, mas pergunto: se o eu é ilusão, quem alcança o nirvana? Para o cristão, você é real, amado por um Deus pessoal, e salvo de presente, não por esforço.',
     oneLinerEn: 'I admire Buddhist compassion, but I ask: if the self is an illusion, who attains nirvana? For the Christian, you are real, loved by a personal God, and saved as a gift, not by effort.',
@@ -634,7 +634,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'O Buda mostra um caminho para que você mesmo se liberte pelo próprio esforço. Cristo não oferece um método, oferece a si mesmo: "Deus tanto amou o mundo que lhe deu o seu Filho único" (João 3,16). A salvação vem de fora, como presente gratuito.',
-        whyEn: 'The Buddha shows a path for you to free yourself by your own effort. Christ does not offer a method, he offers himself: "God so loved the world that he gave his only Son" (John 3,16). Salvation comes from outside, as a free gift.',
+        whyEn: 'The Buddha shows a path for you to free yourself by your own effort. Christ does not offer a method, he offers himself: "God so loved the world that he gave his only Son" (John 3:16). Salvation comes from outside, as a free gift.',
       },
     ],
   },
@@ -665,7 +665,7 @@ const lessons = {
     keyPointsEn: [
       'Hinduism is a family of traditions rooted in the Vedas: Brahman is the absolute, the self is bound to samsara by karma, and the goal is moksha, release from the cycle.',
       'Christianity affirms a personal God, creator, distinct from the world. The person, God\'s image, is not dissolved into the whole but called to communion, still herself.',
-      'Karma knows only consequence, the Gospel brings forgiveness and grace. One life (Hebrews 9,27), one Way (John 14,6), and a history with beginning, center, and end.',
+      'Karma knows only consequence, the Gospel brings forgiveness and grace. One life (Hebrews 9:27), one Way (John 14:6), and a history with beginning, center, and end.',
     ],
     oneLiner: 'Respeito a busca hindu, mas o karma não conhece perdão, e o coração pede misericórdia. Se Deus entrou na história em Jesus, não dá para dizer que todos os caminhos dão no mesmo lugar.',
     oneLinerEn: 'I respect the Hindu search, but karma knows no forgiveness, and the heart asks for mercy. If God entered history in Jesus, you cannot say all paths lead to the same place.',
@@ -706,11 +706,11 @@ const lessons = {
         ],
         correct: 2,
         why: 'A lei do karma é implacável: cada um colhe exatamente o que plantou, vida após vida. O Evangelho anuncia o perdão e a graça, e ensina uma só vida seguida do juízo e da ressurreição (Hebreus 9,27), não um ciclo interminável.',
-        whyEn: 'The law of karma is relentless: each one reaps exactly what he sowed, life after life. The Gospel announces forgiveness and grace, and teaches one life followed by judgment and resurrection (Hebrews 9,27), not an endless cycle.',
+        whyEn: 'The law of karma is relentless: each one reaps exactly what he sowed, life after life. The Gospel announces forgiveness and grace, and teaches one life followed by judgment and resurrection (Hebrews 9:27), not an endless cycle.',
       },
       {
         question: 'Por que o artigo diz que "ninguém vai ao Pai senão por mim" (João 14,6) não é arrogância?',
-        questionEn: 'Why does the article say that "no one comes to the Father except through me" (John 14,6) is not arrogance?',
+        questionEn: 'Why does the article say that "no one comes to the Father except through me" (John 14:6) is not arrogance?',
         options: [
           'Porque todas as religiões dizem de si mesmas exatamente a mesma coisa',
           'Porque Jesus falava só aos judeus do seu tempo, não aos hindus',
@@ -746,7 +746,7 @@ const lessons = {
       ],
       correct: 1,
       note: '"Como o homem é, Deus já foi. Como Deus é, o homem pode vir a ser." A doutrina mórmon admite muitos deuses e a divinização dos fiéis. O artigo mostra como Isaías 43,10, a arqueologia e a egiptologia respondem.',
-      noteEn: '"As man is, God once was. As God is, man may become." Mormon doctrine admits many gods and the deification of the faithful. The article shows how Isaiah 43,10, archaeology, and Egyptology answer.',
+      noteEn: '"As man is, God once was. As God is, man may become." Mormon doctrine admits many gods and the deification of the faithful. The article shows how Isaiah 43:10, archaeology, and Egyptology answer.',
     },
     keyPoints: [
       'Fundado por Joseph Smith, que publicou o Livro de Mórmon em 1830, o mormonismo ensina que Deus já foi homem, que há muitos deuses e que os fiéis podem tornar-se deuses.',
@@ -756,7 +756,7 @@ const lessons = {
     keyPointsEn: [
       'Founded by Joseph Smith, who published the Book of Mormon in 1830, Mormonism teaches that God was once a man, there are many gods, and the faithful may become gods.',
       'Archaeology and DNA find no trace of the Book of Mormon\'s Hebrew civilizations, and the Book of Abraham papyri, rediscovered in 1966, are ordinary funerary texts.',
-      'Isaiah 43,10 allows no god before or after the one God, and revelations that change under social pressure (polygamy in 1890, priesthood in 1978) question their source.',
+      'Isaiah 43:10 allows no god before or after the one God, and revelations that change under social pressure (polygamy in 1890, priesthood in 1978) question their source.',
     ],
     oneLiner: 'Admiro a família e a vida moral dos mórmons, mas os papiros do Livro de Abraão foram reencontrados e lidos: não falam de Abraão. E Isaías diz que nenhum deus foi formado antes ou depois.',
     oneLinerEn: 'I admire Mormon family life and morals, but the papyri of the Book of Abraham were found and read: they say nothing of Abraham. And Isaiah says no god was formed before or after.',
@@ -801,7 +801,7 @@ const lessons = {
       },
       {
         question: 'Como o artigo usa Isaías 43,10 contra a doutrina mórmon de Deus?',
-        questionEn: 'How does the article use Isaiah 43,10 against the Mormon doctrine of God?',
+        questionEn: 'How does the article use Isaiah 43:10 against the Mormon doctrine of God?',
         options: [
           'Mostrando que Deus se tornou homem em Jesus, como o mórmon diz do Pai',
           'Mostrando que há vários deuses, mas um é o maior',
@@ -816,7 +816,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'Em Isaías 43,10 Deus declara: "antes de mim nenhum deus foi formado, e depois de mim não haverá outro". O monoteísmo absoluto da Bíblia não admite um Deus que progrediu de homem a Deus, nem muitos deuses, nem homens que viram deuses.',
-        whyEn: 'In Isaiah 43,10 God declares: "before me no god was formed, and after me there shall be none". The absolute monotheism of the Bible allows no God who progressed from man to God, no many gods, and no men who become gods.',
+        whyEn: 'In Isaiah 43:10 God declares: "before me no god was formed, and after me there shall be none". The absolute monotheism of the Bible allows no God who progressed from man to God, no many gods, and no men who become gods.',
       },
     ],
   },
@@ -928,7 +928,7 @@ const lessons = {
       ],
       correct: 1,
       note: 'A Nova Era promete a divindade interior. O Gênesis mostra essa promessa na boca da serpente (Gênesis 3,5). O artigo explica por que a fé diz o contrário: você é criatura amada, não Deus, e a salvação é dom, não técnica.',
-      noteEn: 'The New Age promises inner divinity. Genesis puts that promise in the serpent\'s mouth (Genesis 3,5). The article explains why faith says the opposite: you are a beloved creature, not God, and salvation is a gift, not a technique.',
+      noteEn: 'The New Age promises inner divinity. Genesis puts that promise in the serpent\'s mouth (Genesis 3:5). The article explains why faith says the opposite: you are a beloved creature, not God, and salvation is a gift, not a technique.',
     },
     keyPoints: [
       'A Nova Era não é uma igreja: é um clima de monismo (tudo é um e divino), reencarnação, astrologia, cristais, guias espirituais e um Jesus feito "consciência crística".',
@@ -937,8 +937,8 @@ const lessons = {
     ],
     keyPointsEn: [
       'The New Age is not a church but a climate of monism (all is one and divine), reincarnation, astrology, crystals, spirit guides, and a Jesus made "Christ consciousness".',
-      'Faith answers: you are a beloved creature, not God. "You will be like gods" is the serpent\'s promise (Genesis 3,5), and the real Jesus came in the flesh (1 John 4,2-3).',
-      'Astrology, channeling, and crystals are divination (Deuteronomy 18,10-12 and Catechism 2116-2117), and no one saves himself: salvation is the gift of a personal God.',
+      'Faith answers: you are a beloved creature, not God. "You will be like gods" is the serpent\'s promise (Genesis 3:5), and the real Jesus came in the flesh (1 John 4:2-3).',
+      'Astrology, channeling, and crystals are divination (Deuteronomy 18:10-12 and Catechism 2116-2117), and no one saves himself: salvation is the gift of a personal God.',
     ],
     oneLiner: 'Entendo a sede de espiritualidade, mas "você é Deus" não é novidade: é a frase da serpente. A grandeza humana não está em ser Deus, está em ser amado por Ele.',
     oneLinerEn: 'I understand the thirst for spirituality, but "you are God" is nothing new: it is the serpent\'s line. Human greatness is not in being God, it is in being loved by Him.',
@@ -974,7 +974,7 @@ const lessons = {
         optionsEn: [
           'By saying that Jesus was only a moral teacher, with nothing divine',
           'By accepting that the Christ energy is another name for the Holy Spirit',
-          'With 1 John 4,2-3: a spirit that denies Jesus came in the flesh is not of God',
+          'With 1 John 4:2-3: a spirit that denies Jesus came in the flesh is not of God',
           'By saying that Christ is only a title that several masters received',
         ],
         correct: 2,
@@ -1070,7 +1070,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'A fé católica é radicalmente monoteísta: a adoração é devida só a Deus (Êxodo 20,3). O santo intercede como irmão, não é divindade. Render culto a orixás, ainda que vistos como intermediários, não é o mesmo que pedir a oração de um santo.',
-        whyEn: 'The Catholic faith is radically monotheistic: worship is due to God alone (Exodus 20,3). The saint intercedes as a brother, he is not a deity. To render cult to orixás, even seen as intermediaries, is not the same as asking for a saint\'s prayer.',
+        whyEn: 'The Catholic faith is radically monotheistic: worship is due to God alone (Exodus 20:3). The saint intercedes as a brother, he is not a deity. To render cult to orixás, even seen as intermediaries, is not the same as asking for a saint\'s prayer.',
       },
       {
         question: 'Como o artigo trata a associação histórica entre orixás e santos católicos?',
@@ -1118,8 +1118,8 @@ const lessons = {
       'A astrologia nega a providência e a liberdade, e a superstição confia numa mecânica, não numa Pessoa. O cristão vive livre do medo, nas mãos de um Pai providente.',
     ],
     keyPointsEn: [
-      'It starts with the first commandment (Exodus 20,3): the occult seeks power, protection, or predictions apart from God, and the Bible forbids it (Deuteronomy 18,10-12).',
-      'Even "for fun", these practices train the heart to seek security outside God and can open a person to influences he does not control (2 Corinthians 11,14).',
+      'It starts with the first commandment (Exodus 20:3): the occult seeks power, protection, or predictions apart from God, and the Bible forbids it (Deuteronomy 18:10-12).',
+      'Even "for fun", these practices train the heart to seek security outside God and can open a person to influences he does not control (2 Corinthians 11:14).',
       'Astrology denies providence and freedom, and superstition trusts a mechanism, not a Person. The Christian lives free of fear, in the hands of a provident Father.',
     ],
     oneLiner: 'Não leio horóscopo por medo de azar, mas por liberdade: minha vida não está nas mãos dos astros, está nas de um Pai que me ama. Fé confia numa Pessoa, superstição confia num ritual.',

@@ -164,7 +164,7 @@ const lessons = {
       },
       {
         question: 'Como o artigo lê a passagem de 1 Coríntios 6,9-11?',
-        questionEn: 'How does the article read the passage of 1 Corinthians 6,9-11?',
+        questionEn: 'How does the article read the passage of 1 Corinthians 6:9-11?',
         options: [
           'Como anúncio de transformação possível pela graça, não de exclusão',
           'Como lista definitiva de pessoas que nunca poderão ser salvas',
@@ -543,7 +543,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'A castidade não é um vidro que, quebrado uma vez, não tem conserto: é uma virtude que se pode sempre recomeçar a viver, com a graça. Firmeza na verdade, ternura com a pessoa, como Jesus em João 8,11.',
-        whyEn: 'Chastity is not a glass that, once broken, cannot be mended: it is a virtue one can always begin to live again, with grace. Firmness in the truth, tenderness with the person, as Jesus in John 8,11.',
+        whyEn: 'Chastity is not a glass that, once broken, cannot be mended: it is a virtue one can always begin to live again, with grace. Firmness in the truth, tenderness with the person, as Jesus in John 8:11.',
       },
     ],
   },
@@ -564,7 +564,7 @@ const lessons = {
       ],
       correct: 1,
       note: 'Jesus foi claro: "não vim revogar a Lei, mas dar-lhe pleno cumprimento" (Mateus 5,17). A lei cerimonial foi cumprida nele, mas a lei moral do Decálogo não caduca, porque descreve o bem da própria pessoa. Cada "não" guarda um "sim" maior.',
-      noteEn: 'Jesus was clear: "I have not come to abolish the Law, but to fulfill it" (Matthew 5,17). The ceremonial law was fulfilled in him, but the moral law of the Decalogue does not expire, because it describes the good of the person. Each "no" guards a greater "yes".',
+      noteEn: 'Jesus was clear: "I have not come to abolish the Law, but to fulfill it" (Matthew 5:17). The ceremonial law was fulfilled in him, but the moral law of the Decalogue does not expire, because it describes the good of the person. Each "no" guards a greater "yes".',
     },
     keyPoints: [
       'A Lei antiga tinha partes cerimoniais e judiciais, cumpridas em Cristo, e a lei moral do Decálogo, que não caduca. Jesus aprofunda os mandamentos, não os revoga.',
@@ -573,7 +573,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'The old Law had ceremonial and judicial parts, fulfilled in Christ, and the moral law of the Decalogue, which does not expire. Jesus deepens it, he does not revoke it.',
-      'The commandments are not a whim of God: they describe how the human being flourishes, and are written on every heart (Romans 2,15). The Decalogue makes that explicit.',
+      'The commandments are not a whim of God: they describe how the human being flourishes, and are written on every heart (Romans 2:15). The Decalogue makes that explicit.',
       'Three commandments concern God, seven our neighbor, and all is summed up in love. Each "no" protects a greater "yes", like the sign that warns of the cliff.',
     ],
     oneLiner: 'Os mandamentos são como a placa que avisa do precipício: não tiram a liberdade de dirigir, protegem a vida. Jesus não os revogou, levou-os ao pleno cumprimento.',
@@ -615,7 +615,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'São Paulo diz que os pagãos, sem a Lei escrita, mostram "a obra da Lei gravada em seus corações" (Romanos 2,15). Os mandamentos não são um capricho que Deus poderia inverter: descrevem como o ser humano floresce.',
-        whyEn: 'Saint Paul says the pagans, without the written Law, show "the work of the Law written on their hearts" (Romans 2,15). The commandments are not a whim God could reverse: they describe how the human being flourishes.',
+        whyEn: 'Saint Paul says the pagans, without the written Law, show "the work of the Law written on their hearts" (Romans 2:15). The commandments are not a whim God could reverse: they describe how the human being flourishes.',
       },
       {
         question: 'Como o artigo responde a quem vê os mandamentos como uma "jaula"?',

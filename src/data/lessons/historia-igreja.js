@@ -433,7 +433,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'A mulher vestida de sol com a lua sob os pés é a Mulher do Apocalipse 12,1. O cinto indicava gravidez, e as estrelas, segundo estudos, o céu daquele solstício. Não era ídolo asteca nem deusa espanhola: era a Mãe de Deus, morena como eles.',
-        whyEn: 'The woman clothed with the sun with the moon under her feet is the Woman of Revelation 12,1. The sash indicated pregnancy, and the stars, studies say, that solstice sky. Neither Aztec idol nor Spanish goddess: the Mother of God, dark-skinned like them.',
+        whyEn: 'The woman clothed with the sun with the moon under her feet is the Woman of Revelation 12:1. The sash indicated pregnancy, and the stars, studies say, that solstice sky. Neither Aztec idol nor Spanish goddess: the Mother of God, dark-skinned like them.',
       },
       {
         question: 'Qual é a postura do artigo diante das alegações sobre a tilma?',
@@ -634,7 +634,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'Toda devoção mariana verdadeira aponta não para si mesma, mas para Cristo. Aparecida repete o que Maria disse em Caná (João 2,5). Ela é também símbolo de um povo pobre e mestiço que se reconhece nela.',
-        whyEn: 'Every true Marian devotion points not to itself but to Christ. Aparecida repeats what Mary said at Cana (John 2,5). She is also the symbol of a poor, mixed people who recognize themselves in her.',
+        whyEn: 'Every true Marian devotion points not to itself but to Christ. Aparecida repeats what Mary said at Cana (John 2:5). She is also the symbol of a poor, mixed people who recognize themselves in her.',
       },
     ],
   },
@@ -797,7 +797,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Jesus disse que, para quem fizesse cair "um destes pequenos", melhor fora ter ao pescoço a mó de um moinho (Mateus 18,6). Quem abusa trai exatamente o que Jesus mais defendeu. O crime é dos criminosos, não da fé que traíram.',
-        whyEn: 'Jesus said that for whoever scandalized "one of these little ones" it were better to have a millstone hanged about his neck (Matthew 18,6). The abuser betrays exactly what Jesus most defended. The crime belongs to the criminals, not to the faith they betrayed.',
+        whyEn: 'Jesus said that for whoever scandalized "one of these little ones" it were better to have a millstone hanged about his neck (Matthew 18:6). The abuser betrays exactly what Jesus most defended. The crime belongs to the criminals, not to the faith they betrayed.',
       },
       {
         question: 'Onde, segundo o artigo, a fé do cristão se apoia?',

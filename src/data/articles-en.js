@@ -6,27 +6,27 @@ export const ARTICLES_EN = {
   83: {
     titleEn: 'The Ten Commandments: the Guide God Gave Us',
     summaryEn: 'The Ten Commandments are not a list of arbitrary prohibitions, nor did they stay behind in the Old Testament. They are the map that protects what matters most.',
-    bodyEn: `"Are the Ten Commandments not an Old Testament thing? Did Jesus not come to do away with the Law?" It is a common doubt, and the answer is no: Jesus himself said, "I have not come to abolish the Law, but to fulfill it" (Matthew 5,17). The Decalogue still stands, and understanding it undoes the idea that it would be a cage of rules.
+    bodyEn: `"Are the Ten Commandments not an Old Testament thing? Did Jesus not come to do away with the Law?" It is a common doubt, and the answer is no: Jesus himself said, "I have not come to abolish the Law, but to fulfill it" (Matthew 5:17). The Decalogue still stands, and understanding it undoes the idea that it would be a cage of rules.
 
 ## Ceremonial law and moral law
 
-The confusion arises from mixing up different things. The Law of the Old Testament had ceremonial parts (sacrifices, circumcision, clean and unclean foods) and judicial parts (the civil rules of Israel), which pointed to Christ and were fulfilled and surpassed in him. But it also had the moral law, summed up in the Ten Commandments, which does not expire, because it does not depend on a culture: it describes the good of the human person himself. That is why Jesus deepens the commandments instead of abolishing them: "you have heard that it was said... but I say to you" (Matthew 5,21-22). He raises them, he does not revoke them.
+The confusion arises from mixing up different things. The Law of the Old Testament had ceremonial parts (sacrifices, circumcision, clean and unclean foods) and judicial parts (the civil rules of Israel), which pointed to Christ and were fulfilled and surpassed in him. But it also had the moral law, summed up in the Ten Commandments, which does not expire, because it does not depend on a culture: it describes the good of the human person himself. That is why Jesus deepens the commandments instead of abolishing them: "you have heard that it was said... but I say to you" (Matthew 5:21-22). He raises them, he does not revoke them.
 
 ## Not an arbitrary imposition, but natural law
 
-The commandments are not a whim of God, as if he could have commanded the opposite. They are the description of how the human being flourishes, written on the heart itself. Saint Paul says that even the pagans, without the written Law, "show that the work of the Law is written on their hearts" (Romans 2,15). Almost every culture knows that killing the innocent, stealing, and lying is wrong. The Decalogue merely makes that knowledge explicit, and anchors it in God, who is its source.
+The commandments are not a whim of God, as if he could have commanded the opposite. They are the description of how the human being flourishes, written on the heart itself. Saint Paul says that even the pagans, without the written Law, "show that the work of the Law is written on their hearts" (Romans 2:15). Almost every culture knows that killing the innocent, stealing, and lying is wrong. The Decalogue merely makes that knowledge explicit, and anchors it in God, who is its source.
 
 ## Two tablets: love of God and of neighbor
 
-Jesus summed it all up in two commandments: to love God above all things and to love your neighbor as yourself (Matthew 22,37-40). The first three commandments concern the relationship with God; the other seven, the relationship with people. They are not two separate subjects: whoever truly loves God respects what he loves, that is, each person. That is why the Decalogue is a single law of love, not a collection of "do nots".
+Jesus summed it all up in two commandments: to love God above all things and to love your neighbor as yourself (Matthew 22:37-40). The first three commandments concern the relationship with God; the other seven, the relationship with people. They are not two separate subjects: whoever truly loves God respects what he loves, that is, each person. That is why the Decalogue is a single law of love, not a collection of "do nots".
 
 ## The most contested today
 
-It is worth defending closely the ones today's world most questions. The 1st ("you shall have no other gods", Exodus 20,3) also condemns the occult, horoscopes, and superstition, because putting your life in the hands of "forces" or of money enslaves; only God sets free. The 3rd (keep the Lord's Day holy) protects time for God and family in a world that turns everything into work and consumption. The 4th (honor your father and mother) sustains the family, the first school of love. The 6th and 9th (chastity) defend the body and true love against the logic of disposability. The 7th (do not steal) demands justice and care for the poor, not just petty theft. Each "do not" guards a greater "yes".
+It is worth defending closely the ones today's world most questions. The 1st ("you shall have no other gods", Exodus 20:3) also condemns the occult, horoscopes, and superstition, because putting your life in the hands of "forces" or of money enslaves; only God sets free. The 3rd (keep the Lord's Day holy) protects time for God and family in a world that turns everything into work and consumption. The 4th (honor your father and mother) sustains the family, the first school of love. The 6th and 9th (chastity) defend the body and true love against the logic of disposability. The 7th (do not steal) demands justice and care for the poor, not just petty theft. Each "do not" guards a greater "yes".
 
 ## A path of freedom, not a cage
 
-In the end, the commandment works like the sign that warns of the cliff on the mountain road. It does not take away your freedom to drive; it protects your life so you arrive. God does not give the commandments because he needs them, but because we need them. Whoever sees them as a prison has not yet noticed that it is precisely transgression that imprisons, and obedience to the good that sets free. That is why the psalmist calls the Law a "delight" and God's word "a lamp to my feet" (Psalm 119,77 and 105).
+In the end, the commandment works like the sign that warns of the cliff on the mountain road. It does not take away your freedom to drive; it protects your life so you arrive. God does not give the commandments because he needs them, but because we need them. Whoever sees them as a prison has not yet noticed that it is precisely transgression that imprisons, and obedience to the good that sets free. That is why the psalmist calls the Law a "delight" and God's word "a lamp to my feet" (Psalm 119:77 and 105).
 
 ## Key questions
 
@@ -47,7 +47,7 @@ Prayer is not bending God's will with formulas, as if he were a machine for gran
 
 ## It is not only asking
 
-Prayer has many forms, and reducing it to asking impoverishes everything. There is adoration and praise (recognizing who God is), thanksgiving (giving thanks), contrition (asking forgiveness), and, yes, supplication (asking). The model of all prayer is the Our Father, which Jesus himself taught (Matthew 6,9-13): in it fits everything, from praise to forgiveness, from daily bread to deliverance from evil.
+Prayer has many forms, and reducing it to asking impoverishes everything. There is adoration and praise (recognizing who God is), thanksgiving (giving thanks), contrition (asking forgiveness), and, yes, supplication (asking). The model of all prayer is the Our Father, which Jesus himself taught (Matthew 6:9-13): in it fits everything, from praise to forgiveness, from daily bread to deliverance from evil.
 
 ## How to begin in practice
 
@@ -76,7 +76,7 @@ First, a clarification: praying the Rosary is not worshiping Mary. It is meditat
 
 ## It is not "empty repetition"
 
-The most common objection is that of "vain repetitions" (Matthew 6,7). But repetition made out of love is not vain. Whoever loves says "I love you" a thousand times, and they are not empty words. Besides, the Hail Mary is, in large part, the word of God: the greeting of the angel and the words of Elizabeth (Luke 1,28.42). While the lips repeat, the heart meditates on the facts of salvation. It is not the mouth that prays the Rosary, it is the mind that contemplates.
+The most common objection is that of "vain repetitions" (Matthew 6:7). But repetition made out of love is not vain. Whoever loves says "I love you" a thousand times, and they are not empty words. Besides, the Hail Mary is, in large part, the word of God: the greeting of the angel and the words of Elizabeth (Luke 1:28.42). While the lips repeat, the heart meditates on the facts of salvation. It is not the mouth that prays the Rosary, it is the mind that contemplates.
 
 ## How to pray, step by step
 
@@ -99,7 +99,7 @@ Those who pray the Rosary often find peace, focus, and a growing intimacy with J
 
 ## Where it comes from
 
-The word "tithe" means a tenth part. In the Old Testament, it was a regulated practice: the people handed over ten percent for the support of worship and of the Levites. In the New Testament, however, the criterion changes in nature. It is no longer an externally imposed percentage, but the generosity that springs from within. Saint Paul sums it up: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9,7).
+The word "tithe" means a tenth part. In the Old Testament, it was a regulated practice: the people handed over ten percent for the support of worship and of the Levites. In the New Testament, however, the criterion changes in nature. It is no longer an externally imposed percentage, but the generosity that springs from within. Saint Paul sums it up: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9:7).
 
 ## Does the Church require ten percent?
 
@@ -111,7 +111,7 @@ There are two opposite errors. Legalism, which turns the tithe into a cold calcu
 
 ## The heart of the matter
 
-Jesus praised a widow who put two small coins into the temple treasury, saying she gave more than all the rich, "because she gave out of her poverty all she had" (Mark 12,43-44). It is not the amount that counts, it is the love that goes with it. Giving frees us from the slavery of things, teaches us to trust, and opens the hand that selfishness closes. Tithing rightly understood impoverishes no one; it enriches the heart.
+Jesus praised a widow who put two small coins into the temple treasury, saying she gave more than all the rich, "because she gave out of her poverty all she had" (Mark 12:43-44). It is not the amount that counts, it is the love that goes with it. Giving frees us from the slavery of things, teaches us to trust, and opens the hand that selfishness closes. Tithing rightly understood impoverishes no one; it enriches the heart.
 
 ## Key questions
 
@@ -138,7 +138,7 @@ Miracles do not serve to "prove" that the person earned heaven, as if they were 
 
 ## What the saints are for
 
-The saints do not replace Christ nor compete with him. They are friends in heaven who intercede for us, like the elders of Revelation who offer God "the prayers of the saints" (Revelation 5,8). And they are, above all, the living proof that holiness, "without which no one will see the Lord" (Hebrews 12,14), is possible, in every age and condition: workers, kings, mothers, the young, the learned and the illiterate. They show that the Gospel works, because "God is not God of the dead, but of the living" (Matthew 22,32).
+The saints do not replace Christ nor compete with him. They are friends in heaven who intercede for us, like the elders of Revelation who offer God "the prayers of the saints" (Revelation 5:8). And they are, above all, the living proof that holiness, "without which no one will see the Lord" (Hebrews 12:14), is possible, in every age and condition: workers, kings, mothers, the young, the learned and the illiterate. They show that the Gospel works, because "God is not God of the dead, but of the living" (Matthew 22:32).
 
 ## Key questions
 
@@ -157,7 +157,7 @@ Since 1738, with Pope Clement XII, the Church has forbidden Catholics to join Fr
 
 ## Why: it is not persecution, it is coherence
 
-The problem is not secrecy in itself, nor the philanthropic works that many Masons carry out. The problem is the worldview at the base. Freemasonry generally professes a religious relativism (all religions would be equally valid, and God would be a generic "Great Architect", without a face), a naturalism that dispenses with revelation, and oaths that demand a loyalty to the lodge capable of overriding one's own conscience. This is incompatible with the Christian faith, which confesses Jesus Christ as the only Savior, "the way, the truth, and the life" (John 14,6), and with the first commandment, which reserves worship to God (Exodus 20,3).
+The problem is not secrecy in itself, nor the philanthropic works that many Masons carry out. The problem is the worldview at the base. Freemasonry generally professes a religious relativism (all religions would be equally valid, and God would be a generic "Great Architect", without a face), a naturalism that dispenses with revelation, and oaths that demand a loyalty to the lodge capable of overriding one's own conscience. This is incompatible with the Christian faith, which confesses Jesus Christ as the only Savior, "the way, the truth, and the life" (John 14:6), and with the first commandment, which reserves worship to God (Exodus 20:3).
 
 ## Without conspiracy
 
@@ -180,15 +180,15 @@ For the Catholic who discovered, perhaps late, this incompatibility, the invitat
 
 ## Faith is gift and is response
 
-No one believes by the force of his own effort alone; faith is, above all, grace, something God offers (Catechism §153). So the first attitude is to ask, with the humility of that father in the Gospel who said to Jesus: "I believe, Lord; help my unbelief" (Mark 9,24). But God respects freedom: the gift must be welcomed, and that requires willing it and taking concrete steps. Faith does not fall ready from heaven onto someone who stays still.
+No one believes by the force of his own effort alone; faith is, above all, grace, something God offers (Catechism §153). So the first attitude is to ask, with the humility of that father in the Gospel who said to Jesus: "I believe, Lord; help my unbelief" (Mark 9:24). But God respects freedom: the gift must be welcomed, and that requires willing it and taking concrete steps. Faith does not fall ready from heaven onto someone who stays still.
 
 ## Concrete paths
 
-Faith grows in practice, like trust in a friendship. Some steps help greatly: praying every day, even without feeling anything; frequenting the sacraments, especially the Eucharist and confession; reading a little of the Gospel regularly; spending time with people of faith, because faith is contagious; and practicing concrete charity, for, as Saint Paul says, "what counts is faith working through love" (Galatians 5,6). Faith without practice withers; faith exercised grows strong.
+Faith grows in practice, like trust in a friendship. Some steps help greatly: praying every day, even without feeling anything; frequenting the sacraments, especially the Eucharist and confession; reading a little of the Gospel regularly; spending time with people of faith, because faith is contagious; and practicing concrete charity, for, as Saint Paul says, "what counts is faith working through love" (Galatians 5:6). Faith without practice withers; faith exercised grows strong.
 
 ## Faith and doubt
 
-A fear must be undone: having doubts is not losing faith. Doubt is part of the journey of almost every believer, and facing it honestly strengthens. So it is worth seeking answers, and apologetics, good books, and the articles of this app exist for that. To seek to understand and, at the same time, to trust, remembering that "all things work together for good for those who love God" (Romans 8,28).
+A fear must be undone: having doubts is not losing faith. Doubt is part of the journey of almost every believer, and facing it honestly strengthens. So it is worth seeking answers, and apologetics, good books, and the articles of this app exist for that. To seek to understand and, at the same time, to trust, remembering that "all things work together for good for those who love God" (Romans 8:28).
 
 ## When faith grows cold
 
@@ -207,7 +207,7 @@ Crises and periods of aridity are normal, even in the saints. The mistake is pre
 
 ## What it is and what it is not
 
-To fast is not to lose weight nor to test one's own willpower. It is an act of love and penance: to say no to the body, in something legitimate, in order to say a greater yes to God. It is to train freedom, remembering that "man does not live on bread alone" (Matthew 4,4). Jesus himself fasted forty days in the desert before beginning his mission (Matthew 4,2), and Lent reproduces precisely that time.
+To fast is not to lose weight nor to test one's own willpower. It is an act of love and penance: to say no to the body, in something legitimate, in order to say a greater yes to God. It is to train freedom, remembering that "man does not live on bread alone" (Matthew 4:4). Jesus himself fasted forty days in the desert before beginning his mission (Matthew 4:2), and Lent reproduces precisely that time.
 
 ## Lent: the forty days
 
@@ -242,7 +242,7 @@ No. Imagine the art were sold. To whom? Probably to billionaire collectors, who 
 
 ## What the Church actually does
 
-Here is the fact that tends to be forgotten: the Catholic Church is, by far, the largest non-governmental network of assistance and education on the planet. Hospitals, schools, universities, orphanages, shelters, food distribution, presence in places the State does not even reach, in obedience to the criterion of the Last Judgment: "I was hungry, and you gave me to eat" (Matthew 25,31-46). Much of this is invisible and silent. Before asking why the Church does not do more for the poor, it is worth asking: who, in the world, does more?
+Here is the fact that tends to be forgotten: the Catholic Church is, by far, the largest non-governmental network of assistance and education on the planet. Hospitals, schools, universities, orphanages, shelters, food distribution, presence in places the State does not even reach, in obedience to the criterion of the Last Judgment: "I was hungry, and you gave me to eat" (Matthew 25:31-46). Much of this is invisible and silent. Before asking why the Church does not do more for the poor, it is worth asking: who, in the world, does more?
 
 ## The ideal and the failures
 
@@ -261,7 +261,7 @@ None of this means closing our eyes. The Gospel asks for simplicity, and there h
 
 ## First, the naked truth
 
-There were heinous crimes committed by priests and religious against children and young people. And there was, worse still, cover-up by superiors who should have protected the victims and chose instead to protect the institution. This is a betrayal of the Gospel, not its application. Jesus himself reserved the most terrible words for whoever would scandalize "one of these little ones that believe in me": "it were better for him that a millstone should be hanged about his neck, and that he should be drowned in the depth of the sea" (Matthew 18,6). Nothing justifies these crimes, nothing relativizes them.
+There were heinous crimes committed by priests and religious against children and young people. And there was, worse still, cover-up by superiors who should have protected the victims and chose instead to protect the institution. This is a betrayal of the Gospel, not its application. Jesus himself reserved the most terrible words for whoever would scandalize "one of these little ones that believe in me": "it were better for him that a millstone should be hanged about his neck, and that he should be drowned in the depth of the sea" (Matthew 18:6). Nothing justifies these crimes, nothing relativizes them.
 
 ## What is not honest to do
 
@@ -273,7 +273,7 @@ Far from perfect, and having taken far too long to react, the Church today has s
 
 ## And the faith?
 
-In the end, one must remember where faith rests. It does not rest on the holiness of its ministers, but on Christ. That men betray the Gospel proves that we need the Gospel, not that it is false. Jesus himself warned that the weeds would grow alongside the wheat until the harvest (Matthew 13,24-30), and that among the Twelve there would be a traitor. This nullifies neither the wheat nor the other eleven. Before the victims, the first word of the Church cannot be defense, but the request for forgiveness and the firm commitment to protect.
+In the end, one must remember where faith rests. It does not rest on the holiness of its ministers, but on Christ. That men betray the Gospel proves that we need the Gospel, not that it is false. Jesus himself warned that the weeds would grow alongside the wheat until the harvest (Matthew 13:24-30), and that among the Twelve there would be a traitor. This nullifies neither the wheat nor the other eleven. Before the victims, the first word of the Church cannot be defense, but the request for forgiveness and the firm commitment to protect.
 
 ## Key questions
 
@@ -319,7 +319,7 @@ The very word "Bible" comes from Greek and means "the books", in the plural. The
 
 ## The Author behind the authors: inspiration
 
-The Christian faith affirms that, behind these many human authors, there is one principal Author: God. This is what is called inspiration. But note what it is not: it is not mechanical dictation, as if the authors were secretaries in a trance. God makes use of the intelligence, style, culture, and even the limitations of each author, without nullifying any of it, to communicate the truth he wills. As Saint Peter says, "moved by the Holy Spirit, holy men of God spoke" (2 Peter 1,21). That is why the Bible is, at the same time, fully human and fully the word of God.
+The Christian faith affirms that, behind these many human authors, there is one principal Author: God. This is what is called inspiration. But note what it is not: it is not mechanical dictation, as if the authors were secretaries in a trance. God makes use of the intelligence, style, culture, and even the limitations of each author, without nullifying any of it, to communicate the truth he wills. As Saint Peter says, "moved by the Holy Spirit, holy men of God spoke" (2 Peter 1:21). That is why the Bible is, at the same time, fully human and fully the word of God.
 
 ## How the Bible came to us
 
@@ -335,7 +335,7 @@ Inspiration guarantees, as the Second Vatican Council says (Dei Verbum §11), th
 
 ## Why it matters
 
-If God is the Author of the Bible, it has an authority no other book has. But, precisely because it was born in the Church, it is not read alone, at the whim of each individual: Saint Peter himself warns that it contains points hard to understand, which the ignorant twist (2 Peter 3,16). To recognize the divine Author and the home where it was born, the Church, is the key to reading Sacred Scripture as it asks to be read.
+If God is the Author of the Bible, it has an authority no other book has. But, precisely because it was born in the Church, it is not read alone, at the whim of each individual: Saint Peter himself warns that it contains points hard to understand, which the ignorant twist (2 Peter 3:16). To recognize the divine Author and the home where it was born, the Church, is the key to reading Sacred Scripture as it asks to be read.
 
 ## Key questions
 
@@ -354,11 +354,11 @@ If God is the Author of the Bible, it has an authority no other book has. But, p
 
 ## The key to everything: revelation is progressive
 
-God did not pour out the whole truth at once upon a people of the second millennium before Christ. He revealed himself gradually, starting from where people were, like a father who educates his child in stages, or a teacher who instructs the student as he grows. Jesus himself gives the key: about the divorce permitted by Moses, he says it was granted "because of your hardness of heart, but from the beginning it was not so" (Matthew 19,8). In other words: not everything the Law tolerated was God's ideal. It was a possible step at that moment. The Second Vatican Council says the same of the books of the Old Testament: "though they also contain some things which are incomplete and temporary, nevertheless show us true divine pedagogy" (Dei Verbum §15).
+God did not pour out the whole truth at once upon a people of the second millennium before Christ. He revealed himself gradually, starting from where people were, like a father who educates his child in stages, or a teacher who instructs the student as he grows. Jesus himself gives the key: about the divorce permitted by Moses, he says it was granted "because of your hardness of heart, but from the beginning it was not so" (Matthew 19:8). In other words: not everything the Law tolerated was God's ideal. It was a possible step at that moment. The Second Vatican Council says the same of the books of the Old Testament: "though they also contain some things which are incomplete and temporary, nevertheless show us true divine pedagogy" (Dei Verbum §15).
 
 ## Slavery
 
-The Old Testament does not invent slavery. It already existed throughout the ancient world. What the Law does is regulate and humanize it (rest, periodic release of Hebrew slaves, protection), at a time when no one imagined abolishing it. More importantly: the Bible plants the seed that would one day destroy it, by affirming that every human being is created "in the image of God" (Genesis 1,27). It is this seed that blossoms in the New Testament, when Paul commands to receive the slave Onesimus "no longer as a slave, but as a brother" (Philemon 16). It is no coincidence that, centuries later, Christians led abolition, precisely in the name of this biblical principle.
+The Old Testament does not invent slavery. It already existed throughout the ancient world. What the Law does is regulate and humanize it (rest, periodic release of Hebrew slaves, protection), at a time when no one imagined abolishing it. More importantly: the Bible plants the seed that would one day destroy it, by affirming that every human being is created "in the image of God" (Genesis 1:27). It is this seed that blossoms in the New Testament, when Paul commands to receive the slave Onesimus "no longer as a slave, but as a brother" (Philemon 16). It is no coincidence that, centuries later, Christians led abolition, precisely in the name of this biblical principle.
 
 ## The wars of conquest
 
@@ -366,7 +366,7 @@ There are very harsh texts, with orders of extermination. To read them honestly,
 
 ## "Eye for eye"
 
-The famous law of retaliation sounds barbaric to our ears. But, in its time, it was a civilizing advance: instead of limitless revenge (killing a whole family for one offense), it imposed proportionality, "only" eye for eye, tooth for tooth. It was a brake on escalation, not an incentive to violence. And Jesus later brings the principle to fullness: "you have heard it said... but I say to you: love your enemies" (Matthew 5,38-44).
+The famous law of retaliation sounds barbaric to our ears. But, in its time, it was a civilizing advance: instead of limitless revenge (killing a whole family for one offense), it imposed proportionality, "only" eye for eye, tooth for tooth. It was a brake on escalation, not an incentive to violence. And Jesus later brings the principle to fullness: "you have heard it said... but I say to you: love your enemies" (Matthew 5:38-44).
 
 ## The final criterion is Christ
 
@@ -374,7 +374,7 @@ The key to reading the entire Old Testament is Jesus. He is the fullness toward 
 
 ## A word to the critic
 
-Finally, an observation. The atheist who is outraged by the violence of the Old Testament uses a standard of "this is evil" that he himself must explain. If there is no God, where does that absolute moral duty come from that makes him condemn cruelty? Saint Paul would say it is the law God has written on every heart (Romans 2,14-15). The very ability to call something "evil" presupposes an objective good, and that is a terrain where faith has more to offer than materialism.
+Finally, an observation. The atheist who is outraged by the violence of the Old Testament uses a standard of "this is evil" that he himself must explain. If there is no God, where does that absolute moral duty come from that makes him condemn cruelty? Saint Paul would say it is the law God has written on every heart (Romans 2:14-15). The very ability to call something "evil" presupposes an objective good, and that is a terrain where faith has more to offer than materialism.
 
 ## Key questions
 
@@ -397,11 +397,11 @@ The first error is to read Revelation as a coded screenplay of the coming years.
 
 ## No one knows the day or the hour
 
-About the when, Jesus was categorical: "of that day or hour no man knoweth, neither the angels in heaven, nor the Son, but the Father" (Mark 13,32, paralleled in Matthew 24,36). Every date ever set for the end of the world, without exception, has failed. Therefore the Church is suspicious, on principle, of anyone who announces the end for such a year: this directly contradicts the word of Christ and tends to serve fear and manipulation more than faith.
+About the when, Jesus was categorical: "of that day or hour no man knoweth, neither the angels in heaven, nor the Son, but the Father" (Mark 13:32, paralleled in Matthew 24:36). Every date ever set for the end of the world, without exception, has failed. Therefore the Church is suspicious, on principle, of anyone who announces the end for such a year: this directly contradicts the word of Christ and tends to serve fear and manipulation more than faith.
 
 ## The 666 and the antichrist
 
-The number 666 is, in all likelihood, a cipher: in the letter-numbers of Hebrew, it corresponds to "Nero Caesar", the persecuting emperor of the time. It is not a code for cell phones or modern barcodes. As for the "antichrist", the New Testament speaks of "many antichrists" already present (1 John 2,18), a spirit of opposition to Christ in every age, and also of a final trial before Christ's coming, in which, says the Catechism (§675), "the supreme religious deception is that of the Antichrist". What the Church does not do is point at names. History is full of people who pointed the finger at this or that one as the antichrist, and were always wrong. Hunting antichrists is a waste of time and peace.
+The number 666 is, in all likelihood, a cipher: in the letter-numbers of Hebrew, it corresponds to "Nero Caesar", the persecuting emperor of the time. It is not a code for cell phones or modern barcodes. As for the "antichrist", the New Testament speaks of "many antichrists" already present (1 John 2:18), a spirit of opposition to Christ in every age, and also of a final trial before Christ's coming, in which, says the Catechism (§675), "the supreme religious deception is that of the Antichrist". What the Church does not do is point at names. History is full of people who pointed the finger at this or that one as the antichrist, and were always wrong. Hunting antichrists is a waste of time and peace.
 
 ## And the "rapture"?
 
@@ -409,11 +409,11 @@ The idea of a secret rapture, in which the faithful suddenly vanish before a gre
 
 ## What will actually happen
 
-Stripped of sensationalism, the teaching is clear and is in the Creed: Christ will return in glory (Matthew 25,31), there will be the resurrection of the dead and the final judgment, in which the dead will be judged "according to their works" (Revelation 20,12), evil will be definitively conquered, and there will be "new heavens and a new earth". It is not the annihilation of everything, but transformation and fullness. History does not move toward nothingness, but toward Christ.
+Stripped of sensationalism, the teaching is clear and is in the Creed: Christ will return in glory (Matthew 25:31), there will be the resurrection of the dead and the final judgment, in which the dead will be judged "according to their works" (Revelation 20:12), evil will be definitively conquered, and there will be "new heavens and a new earth". It is not the annihilation of everything, but transformation and fullness. History does not move toward nothingness, but toward Christ.
 
 ## How to live all this
 
-The Christian attitude toward the end is neither paralyzing fear nor obsession with signs, but the serene vigilance of one who awaits Someone he loves. Instead of calculating dates, the Christian seeks to live each day in such a way as not to fear the coming of the Lord, and makes his own the last prayer of the Bible: "Come, Lord Jesus" (Revelation 22,20).
+The Christian attitude toward the end is neither paralyzing fear nor obsession with signs, but the serene vigilance of one who awaits Someone he loves. Instead of calculating dates, the Christian seeks to live each day in such a way as not to fear the coming of the Lord, and makes his own the last prayer of the Bible: "Come, Lord Jesus" (Revelation 22:20).
 
 ## Key questions
 
@@ -444,7 +444,7 @@ Do not try to read ten chapters at once. Better a short passage a day, read slow
 
 ## The golden rule: do not read entirely alone
 
-Here is a point that prevents much error. The Bible was born within the Church, "the pillar and ground of the truth" (1 Timothy 3,15), and is read well in the Church. Saint Peter himself warns that in the Scriptures there are "things hard to understand, which the ignorant twist to their own destruction" (2 Peter 3,16), and that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1,20). Therefore, use a good Catholic Bible with footnotes, which situate and explain the texts, and let the faith of the Church illumine your reading. To read the Bible "on your own", with no reference at all, is like sailing without a map.
+Here is a point that prevents much error. The Bible was born within the Church, "the pillar and ground of the truth" (1 Timothy 3:15), and is read well in the Church. Saint Peter himself warns that in the Scriptures there are "things hard to understand, which the ignorant twist to their own destruction" (2 Peter 3:16), and that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1:20). Therefore, use a good Catholic Bible with footnotes, which situate and explain the texts, and let the faith of the Church illumine your reading. To read the Bible "on your own", with no reference at all, is like sailing without a map.
 
 ## Understand the genre of what you read
 
@@ -487,7 +487,7 @@ Here the Church distinguishes the essential from the accessory. What it affirms 
 
 ## What Genesis really teaches
 
-When Genesis is read for what it is, what it teaches remains intact, and science does not touch it: the universe is neither eternal nor absurd, but created and good. The human being is not just one more animal, but the image of God (Genesis 1,27), with a dignity no other being possesses, and the evil of the world does not come from God, but from a free refusal of the creature. None of these affirmations is confirmed or refuted by a fossil, because they are on another plane.
+When Genesis is read for what it is, what it teaches remains intact, and science does not touch it: the universe is neither eternal nor absurd, but created and good. The human being is not just one more animal, but the image of God (Genesis 1:27), with a dignity no other being possesses, and the evil of the world does not come from God, but from a free refusal of the creature. None of these affirmations is confirmed or refuted by a fossil, because they are on another plane.
 
 ## Without fear of the truth
 
@@ -510,11 +510,11 @@ At bottom, the Catholic attitude is born of a simple conviction: all truth comes
 
 ## Authority: Scripture alone, or Scripture and the Church?
 
-This is the underlying disagreement, from which almost all the others flow. Protestantism began with the principle of "Scripture alone" (sola scriptura): only the Bible is the rule of faith. The Catholic Church replies that the Bible itself does not teach this. Saint Paul commands to "hold the traditions, whether by word or by letter" (2 Thessalonians 2,15) and calls the Church, not the Bible, "the pillar and foundation of truth" (1 Timothy 3,15). Moreover, it was the Church that, in fourth-century councils, defined which books make up the Bible. To accept the index of the Bible while rejecting the authority that defined it is an inconsistency.
+This is the underlying disagreement, from which almost all the others flow. Protestantism began with the principle of "Scripture alone" (sola scriptura): only the Bible is the rule of faith. The Catholic Church replies that the Bible itself does not teach this. Saint Paul commands to "hold the traditions, whether by word or by letter" (2 Thessalonians 2:15) and calls the Church, not the Bible, "the pillar and foundation of truth" (1 Timothy 3:15). Moreover, it was the Church that, in fourth-century councils, defined which books make up the Bible. To accept the index of the Bible while rejecting the authority that defined it is an inconsistency.
 
 ## Salvation: faith alone, or the faith that works through love?
 
-Another classic point is "faith alone" (sola fide): one is saved by faith alone, without works. The Church affirms that salvation is entirely grace, never a merit one buys; but that true faith does not remain alone, it becomes alive in love. It is Scripture itself: "a man is justified by works, and not by faith only" (James 2,24), and "what counts is faith working through love" (Galatians 5,6). It is not faith against works, but faith that blossoms into works.
+Another classic point is "faith alone" (sola fide): one is saved by faith alone, without works. The Church affirms that salvation is entirely grace, never a merit one buys; but that true faith does not remain alone, it becomes alive in love. It is Scripture itself: "a man is justified by works, and not by faith only" (James 2:24), and "what counts is faith working through love" (Galatians 5:6). It is not faith against works, but faith that blossoms into works.
 
 ## The sacraments
 
@@ -526,7 +526,7 @@ Catholics honor Mary and ask the intercession of the saints, without worshiping 
 
 ## Unity: one Church or thousands?
 
-There is a fact that deserves reflection. Jesus prayed "that they may all be one" (John 17,21). In five centuries, the principle of "each one interprets the Bible for himself" produced tens of thousands of denominations, many with opposing doctrines, all claiming to follow Scripture alone. Without an authority to interpret and unite, fragmentation is inevitable. The Catholic Church presents itself as the one Christ promised to build on Peter (Matthew 16,18), which has kept, since the apostles, a visible faith and government.
+There is a fact that deserves reflection. Jesus prayed "that they may all be one" (John 17:21). In five centuries, the principle of "each one interprets the Bible for himself" produced tens of thousands of denominations, many with opposing doctrines, all claiming to follow Scripture alone. Without an authority to interpret and unite, fragmentation is inevitable. The Catholic Church presents itself as the one Christ promised to build on Peter (Matthew 16:18), which has kept, since the apostles, a visible faith and government.
 
 ## How to dialogue
 
@@ -549,11 +549,11 @@ None of this licenses contempt. The way is not angry polemics, but serene witnes
 
 ## What the Church really teaches
 
-Sex is not dirty or shameful; it is a good gift, created by God, who "created them male and female" and blessed them (Genesis 1,27-28). Catholic doctrine recognizes in it two inseparable meanings, the deep union of man and woman and openness to life (Saint Paul VI, Humanae Vitae, 1968, 12). And it teaches that its proper place is marriage, the total and definitive covenant between a man and a woman, "one flesh" that Saint Paul calls a great mystery (Ephesians 5,31-32).
+Sex is not dirty or shameful; it is a good gift, created by God, who "created them male and female" and blessed them (Genesis 1:27-28). Catholic doctrine recognizes in it two inseparable meanings, the deep union of man and woman and openness to life (Saint Paul VI, Humanae Vitae, 1968, 12). And it teaches that its proper place is marriage, the total and definitive covenant between a man and a woman, "one flesh" that Saint Paul calls a great mystery (Ephesians 5:31-32).
 
 ## Why reserve it for marriage?
 
-The reason is not a taboo, it is coherence. The sexual act speaks a language of the body, and what it says is strong: "I give myself entirely to you, without reserve and forever". Now, only in marriage is that "forever" true, because there a public, total, and definitive commitment was made. Outside it, the body promises a gift the will has not yet confirmed: it says "forever" while reserving the right to leave tomorrow. That is why Saint Paul is firm against fornication: "flee from sexual immorality" (1 Corinthians 6,18), because it wounds the truth of love and the dignity of persons.
+The reason is not a taboo, it is coherence. The sexual act speaks a language of the body, and what it says is strong: "I give myself entirely to you, without reserve and forever". Now, only in marriage is that "forever" true, because there a public, total, and definitive commitment was made. Outside it, the body promises a gift the will has not yet confirmed: it says "forever" while reserving the right to leave tomorrow. That is why Saint Paul is firm against fornication: "flee from sexual immorality" (1 Corinthians 6:18), because it wounds the truth of love and the dignity of persons.
 
 ## Chastity is not repression
 
@@ -565,7 +565,7 @@ Here the Church is clear and, at the same time, understanding. Pornography and m
 
 ## And what about those who have already failed?
 
-Most people come to this subject with a history, sometimes a heavy one. The word of the Church is not condemnation, it is a new beginning. Chastity is not a glass that, once broken, can never be mended; it is a virtue one can always begin to live again, with the grace of God. It was to Jesus that they brought the woman caught in adultery, and it was he who said, without humiliating her: "neither do I condemn you; go, and sin no more" (John 8,11). Firmness in the truth, tenderness with the person.
+Most people come to this subject with a history, sometimes a heavy one. The word of the Church is not condemnation, it is a new beginning. Chastity is not a glass that, once broken, can never be mended; it is a virtue one can always begin to live again, with the grace of God. It was to Jesus that they brought the woman caught in adultery, and it was he who said, without humiliating her: "neither do I condemn you; go, and sin no more" (John 8:11). Firmness in the truth, tenderness with the person.
 
 ## The fruit
 
@@ -588,15 +588,15 @@ There is a concrete fruit on this path: relationships built on respect rather th
 
 ## It all begins with the first commandment
 
-The first of all commandments is "you shall have no other gods before me" (Exodus 20,3). It does not forbid only statues of other gods; it forbids placing ultimate trust in anything that is not God. The occult, in all its forms, does exactly that: it seeks power, protection, or knowledge of the future in forces that are not God, apart from him. At bottom, it is a question of to whom one gives the heart.
+The first of all commandments is "you shall have no other gods before me" (Exodus 20:3). It does not forbid only statues of other gods; it forbids placing ultimate trust in anything that is not God. The occult, in all its forms, does exactly that: it seeks power, protection, or knowledge of the future in forces that are not God, apart from him. At bottom, it is a question of to whom one gives the heart.
 
 ## What the Bible says
 
-Scripture is direct. The book of Deuteronomy lists and expressly forbids divination, magic, sorcery, and consulting the dead: "let there not be found among you anyone who practices divination, magic, or consults spirits" (Deuteronomy 18,10-12). The painting by Bernardo Cavallino depicts a biblical case: King Saul, instead of trusting in God, seeks a medium to summon the spirit of Samuel (1 Samuel 28), and Scripture says this was also why he died (1 Chronicles 10,13). The prophet Isaiah is ironic: "should they consult the dead on behalf of the living? To the law and to the testimony!" (Isaiah 8,19-20).
+Scripture is direct. The book of Deuteronomy lists and expressly forbids divination, magic, sorcery, and consulting the dead: "let there not be found among you anyone who practices divination, magic, or consults spirits" (Deuteronomy 18:10-12). The painting by Bernardo Cavallino depicts a biblical case: King Saul, instead of trusting in God, seeks a medium to summon the spirit of Samuel (1 Samuel 28), and Scripture says this was also why he died (1 Chronicles 10:13). The prophet Isaiah is ironic: "should they consult the dead on behalf of the living? To the law and to the testimony!" (Isaiah 8:19-20).
 
 ## Why it is dangerous, even "for fun"
 
-The common objection is: "but I do not take it seriously". The problem is that these practices are not merely harmless nonsense. First, because they train the heart to seek security outside God, feeding fear, dependence, and anxiety about the future. Second, because they can open a person to spiritual influences he neither controls nor understands. Saint Paul reminds us that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14): not everything that presents itself as light, peace, or self-knowledge truly is.
+The common objection is: "but I do not take it seriously". The problem is that these practices are not merely harmless nonsense. First, because they train the heart to seek security outside God, feeding fear, dependence, and anxiety about the future. Second, because they can open a person to spiritual influences he neither controls nor understands. Saint Paul reminds us that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11:14): not everything that presents itself as light, peace, or self-knowledge truly is.
 
 ## Horoscopes and astrology
 
@@ -631,11 +631,11 @@ The Christian faith affirms that, beyond the visible world, God created purely s
 
 ## Demons are fallen angels
 
-Demons are not the eternal opposite of God, as if there were two principles at war. They are creatures, angels whom God made good and who, freely, turned against him (Catechism §391). Tradition sums up their choice in a phrase: "I will not serve". Bruegel's painting depicts that moment, drawing on Michael's battle against the dragon (Revelation 12,7-9): the rebel angels plunging from heaven, turned into monsters. The point is decisive: the devil is a defeated creature, not a rival equal to God. He has limited power and was already conquered on the cross.
+Demons are not the eternal opposite of God, as if there were two principles at war. They are creatures, angels whom God made good and who, freely, turned against him (Catechism §391). Tradition sums up their choice in a phrase: "I will not serve". Bruegel's painting depicts that moment, drawing on Michael's battle against the dragon (Revelation 12:7-9): the rebel angels plunging from heaven, turned into monsters. The point is decisive: the devil is a defeated creature, not a rival equal to God. He has limited power and was already conquered on the cross.
 
 ## How the demon acts: temptation
 
-In daily life, the action of the demon is almost never the spectacular possession of the movies. It is something more discreet and more dangerous: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8,44), and Saint Paul warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14). His favorite weapon is to convince someone that he does not exist, or that evil is good. To resist him is, above all, to live in truth and in grace.
+In daily life, the action of the demon is almost never the spectacular possession of the movies. It is something more discreet and more dangerous: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8:44), and Saint Paul warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11:14). His favorite weapon is to convince someone that he does not exist, or that evil is good. To resist him is, above all, to live in truth and in grace.
 
 ## Possession and exorcism
 
@@ -643,7 +643,7 @@ Demonic possession exists, but it is rare, and the Church is extremely cautious.
 
 ## Without fear: Christ has won
 
-The Christian does not live obsessed with the demon, nor does he ignore him. He lives a serene vigilance, knowing that "greater is he who is in you than he who is in the world" (1 John 4,4). The weapons are simple and powerful: prayer, the sacraments, confession, the Word, sacramentals such as holy water. Whoever is in Christ need not fear bad luck, "spiritual attachment", or curses: he belongs to the One who has already conquered death and hell.
+The Christian does not live obsessed with the demon, nor does he ignore him. He lives a serene vigilance, knowing that "greater is he who is in you than he who is in the world" (1 John 4:4). The weapons are simple and powerful: prayer, the sacraments, confession, the Word, sacramentals such as holy water. Whoever is in Christ need not fear bad luck, "spiritual attachment", or curses: he belongs to the One who has already conquered death and hell.
 
 ## The danger of the two extremes
 
@@ -674,11 +674,11 @@ It is the most common objection: if God is all-powerful and good, why not erase 
 
 ## The key: God himself takes it on
 
-Here a false image must be undone, that of a vengeful Father who unloads his wrath on an innocent third party to calm himself. That is not it. What dies on the cross is not just any third party: it is God himself, in the Son made man, who freely takes our death upon himself. It is God paying, in himself, the price that was ours. The prophet Isaiah, centuries before, already described the Suffering Servant: "he was pierced for our transgressions... and by his wounds we are healed" (Isaiah 53,5). Saint Paul sums it up: "Christ died for our sins, according to the Scriptures" (1 Corinthians 15,3).
+Here a false image must be undone, that of a vengeful Father who unloads his wrath on an innocent third party to calm himself. That is not it. What dies on the cross is not just any third party: it is God himself, in the Son made man, who freely takes our death upon himself. It is God paying, in himself, the price that was ours. The prophet Isaiah, centuries before, already described the Suffering Servant: "he was pierced for our transgressions... and by his wounds we are healed" (Isaiah 53:5). Saint Paul sums it up: "Christ died for our sins, according to the Scriptures" (1 Corinthians 15:3).
 
 ## Love taken to the extreme
 
-The cross is not, at bottom, about punishment. It is about love. It answers the question "how far does God love me?" with a gesture without limits: to death, even death on a cross. "God so loved the world that he gave his only Son" (John 3,16). Saint Paul will say that Christ, "though he was in the form of God, emptied himself... and humbled himself, becoming obedient unto death" (Philippians 2,6-8). And Jesus himself: "no one has greater love than this, to lay down his life for his friends" (John 15,13). The cross is the measure of the love of God.
+The cross is not, at bottom, about punishment. It is about love. It answers the question "how far does God love me?" with a gesture without limits: to death, even death on a cross. "God so loved the world that he gave his only Son" (John 3:16). Saint Paul will say that Christ, "though he was in the form of God, emptied himself... and humbled himself, becoming obedient unto death" (Philippians 2:6-8). And Jesus himself: "no one has greater love than this, to lay down his life for his friends" (John 15:13). The cross is the measure of the love of God.
 
 ## The resurrection: the cross is not the end
 
@@ -729,7 +729,7 @@ Two objections always appear. The one from evil ("if God is good, why is there s
 
 ## The reasonable conclusion
 
-None of these arguments, alone, "closes" the question like a theorem. They are not proofs like those of the natural sciences but, in the words of the Catechism, "converging and convincing arguments" (Catechism, 31). Added together, they converge: the universe had a beginning, is ordered, and harbors moral and rational beings. The simplest and most complete explanation of all this is a personal, intelligent, and good Cause. Faith does not ask for a leap into the dark. It asks for a step into the light that reason already glimpses. As Jesus promised, "seek and you shall find" (Matthew 7,7).
+None of these arguments, alone, "closes" the question like a theorem. They are not proofs like those of the natural sciences but, in the words of the Catechism, "converging and convincing arguments" (Catechism, 31). Added together, they converge: the universe had a beginning, is ordered, and harbors moral and rational beings. The simplest and most complete explanation of all this is a personal, intelligent, and good Cause. Faith does not ask for a leap into the dark. It asks for a step into the light that reason already glimpses. As Jesus promised, "seek and you shall find" (Matthew 7:7).
 
 ## Key questions
 
@@ -744,11 +744,11 @@ None of these arguments, alone, "closes" the question like a theorem. They are n
   57: {
     titleEn: 'Who Is Jesus? True God and True Man',
     summaryEn: 'Jesus was not merely a good teacher. He claimed to be God, demonstrated it with signs, and the Church has always confessed him as true God and true man.',
-    bodyEn: `Almost everyone has an opinion about Jesus: a good man, a great moral teacher, a prophet, a revolutionary. What few face is the question he himself posed to the disciples: "but who do you say that I am?" (Matthew 16,15). For if we take seriously what Jesus said and did, the option "merely a good teacher" is the only one left out.
+    bodyEn: `Almost everyone has an opinion about Jesus: a good man, a great moral teacher, a prophet, a revolutionary. What few face is the question he himself posed to the disciples: "but who do you say that I am?" (Matthew 16:15). For if we take seriously what Jesus said and did, the option "merely a good teacher" is the only one left out.
 
 ## What Jesus claimed about himself
 
-Jesus did not simply go around saying wise things. He forgave sins in his own name, something only God can do (Mark 2,5-7). He accepted being worshiped. He said: "before Abraham was, I am" (John 8,58), taking for himself the divine name revealed to Moses, "I Am" (Exodus 3,14). He stated: "I and the Father are one" (John 10,30), and for this they tried to stone him for blasphemy. Before the High Priest, adjured to say whether he was the Son of God (Matthew 26,63), he answered "I am" (Mark 14,62), and was condemned to death precisely for that claim.
+Jesus did not simply go around saying wise things. He forgave sins in his own name, something only God can do (Mark 2:5-7). He accepted being worshiped. He said: "before Abraham was, I am" (John 8:58), taking for himself the divine name revealed to Moses, "I Am" (Exodus 3:14). He stated: "I and the Father are one" (John 10:30), and for this they tried to stone him for blasphemy. Before the High Priest, adjured to say whether he was the Son of God (Matthew 26:63), he answered "I am" (Mark 14:62), and was condemned to death precisely for that claim.
 
 ## The trilemma
 
@@ -760,7 +760,7 @@ Jesus did not ask for blind faith. He accompanied his words with signs: he heale
 
 ## The witness of the New Testament
 
-The first Christian community, Jewish and monotheistic, did the unthinkable: it began to worship a man. Why? Because it had known him risen. John opens his Gospel saying that "the Word was God" and "became flesh" (John 1,1.14). Thomas, touching the wounds, exclaims "my Lord and my God" (John 20,28). The Letter to the Hebrews applies to the Son: "your throne, O God, endures forever" (Hebrews 1,8). And Saint Paul affirms that Christ, "though he was in the form of God, emptied himself, taking the form of a servant" (Philippians 2,6-7).
+The first Christian community, Jewish and monotheistic, did the unthinkable: it began to worship a man. Why? Because it had known him risen. John opens his Gospel saying that "the Word was God" and "became flesh" (John 1:1.14). Thomas, touching the wounds, exclaims "my Lord and my God" (John 20:28). The Letter to the Hebrews applies to the Son: "your throne, O God, endures forever" (Hebrews 1:8). And Saint Paul affirms that Christ, "though he was in the form of God, emptied himself, taking the form of a servant" (Philippians 2:6-7).
 
 ## The Church's definition
 
@@ -795,7 +795,7 @@ A contradiction would be to say that God is one and three in the same sense. Tha
 
 ## The biblical root
 
-The Trinity was not invented by councils. It was discovered in Revelation. At Jesus' baptism, the Son is in the water, the Spirit descends like a dove, and the Father speaks from heaven (Matthew 3,16-17). Sending the apostles, Jesus commands baptizing "in the name of the Father and of the Son and of the Holy Spirit" (Matthew 28,19), and says "in the name", singular, for three. John affirms that "the Word was God" (John 1,1). Jesus says "I and the Father are one" (John 10,30) and promises "another Advocate", the Spirit (John 14,16), distinct from him and the Father, yet also God. The Old Testament already hinted at it. The New reveals it in fullness.
+The Trinity was not invented by councils. It was discovered in Revelation. At Jesus' baptism, the Son is in the water, the Spirit descends like a dove, and the Father speaks from heaven (Matthew 3:16-17). Sending the apostles, Jesus commands baptizing "in the name of the Father and of the Son and of the Holy Spirit" (Matthew 28:19), and says "in the name", singular, for three. John affirms that "the Word was God" (John 1:1). Jesus says "I and the Father are one" (John 10:30) and promises "another Advocate", the Spirit (John 14:16), distinct from him and the Father, yet also God. The Old Testament already hinted at it. The New reveals it in fullness.
 
 ## How the Church defined it
 
@@ -803,7 +803,7 @@ When Arius denied the full divinity of the Son, the Council of Nicaea, in 325, c
 
 ## Why it matters
 
-The Trinity is not a useless puzzle. It reveals that God, in himself, is communion and eternal love: the Father who gives himself to the Son, the Son who returns to the Father, and the Spirit who is that Love. That is why Saint John could write "God is love" (1 John 4,8), for love exists in God from all eternity, before any creature. And that is why the human being, made in the image of this God, finds fulfillment only by loving and living in communion. To believe in the Trinity is to believe that, at the foundation of everything, there is Love.
+The Trinity is not a useless puzzle. It reveals that God, in himself, is communion and eternal love: the Father who gives himself to the Son, the Son who returns to the Father, and the Spirit who is that Love. That is why Saint John could write "God is love" (1 John 4:8), for love exists in God from all eternity, before any creature. And that is why the human being, made in the image of this God, finds fulfillment only by loving and living in communion. To believe in the Trinity is to believe that, at the foundation of everything, there is Love.
 
 ## Key questions
 
@@ -822,11 +822,11 @@ The Trinity is not a useless puzzle. It reveals that God, in himself, is communi
 
 ## What sin really is
 
-Sin is not disobeying an arbitrary rule, like being fined for parking in the wrong place. It is a failure against reason, truth, and above all against love: of God and of neighbor. God does not forbid certain things because he is authoritarian, but because they wound us, like a father who forbids his child to put his hand in the fire. The root of all sin is portrayed in Genesis: the serpent promises "you will be like gods" (Genesis 3,5). To sin is, at bottom, to want to be the god of oneself, to decide good and evil on one's own, instead of trusting the One who created us.
+Sin is not disobeying an arbitrary rule, like being fined for parking in the wrong place. It is a failure against reason, truth, and above all against love: of God and of neighbor. God does not forbid certain things because he is authoritarian, but because they wound us, like a father who forbids his child to put his hand in the fire. The root of all sin is portrayed in Genesis: the serpent promises "you will be like gods" (Genesis 3:5). To sin is, at bottom, to want to be the god of oneself, to decide good and evil on one's own, instead of trusting the One who created us.
 
 ## Mortal and venial sin
 
-Not every sin has the same weight, and Scripture itself distinguishes "sin that leads to death" and sin that does not (1 John 5,16-17). The Church spelled out this distinction precisely. Mortal sin breaks friendship with God and requires three conditions together: grave matter, full knowledge that it is grave, and deliberate consent of the will (Catechism 1857). If one of them is missing, there is no mortal sin. Venial sin is the lighter failure, which does not break but cools and weakens charity, like a disease that does not kill but debilitates. The distinction is liberating: it prevents both laxity ("nothing is grave") and scrupulosity ("everything condemns me").
+Not every sin has the same weight, and Scripture itself distinguishes "sin that leads to death" and sin that does not (1 John 5:16-17). The Church spelled out this distinction precisely. Mortal sin breaks friendship with God and requires three conditions together: grave matter, full knowledge that it is grave, and deliberate consent of the will (Catechism 1857). If one of them is missing, there is no mortal sin. Venial sin is the lighter failure, which does not break but cools and weakens charity, like a disease that does not kill but debilitates. The distinction is liberating: it prevents both laxity ("nothing is grave") and scrupulosity ("everything condemns me").
 
 ## The seven capital sins
 
@@ -834,11 +834,11 @@ There is a classic list of seven sins called capital: pride, greed, envy, anger,
 
 ## The sin against the Holy Spirit
 
-Jesus gave a mysterious warning: every sin can be forgiven, "but blasphemy against the Spirit will not be forgiven" (Matthew 12,31-32). This does not mean God refuses to forgive something; it means there is a sin that, by its very nature, closes the door to forgiveness: the final and obstinate refusal to repent. God always offers mercy; but mercy, to heal, must be received. Whoever, to the end, rejects forgiveness is not forgiven, not because God does not want to, but because the person does not.
+Jesus gave a mysterious warning: every sin can be forgiven, "but blasphemy against the Spirit will not be forgiven" (Matthew 12:31-32). This does not mean God refuses to forgive something; it means there is a sin that, by its very nature, closes the door to forgiveness: the final and obstinate refusal to repent. God always offers mercy; but mercy, to heal, must be received. Whoever, to the end, rejects forgiveness is not forgiven, not because God does not want to, but because the person does not.
 
 ## The good news: mercy is greater
 
-Speaking of sin only makes sense because of what comes after: forgiveness. Christianity is not a religion of perfect people, but of forgiven sinners. There is no sin, however grave, that is greater than God's mercy, provided there is repentance. It was for this that Christ instituted the sacrament of Confession (Catechism 1446), where what was dead comes back to life. The parable of the prodigal son sums it all up: however bad the fall, the Father runs to meet the one who returns (Luke 15,20). To recognize sin is not to sink into guilt; it is to take the first step home.
+Speaking of sin only makes sense because of what comes after: forgiveness. Christianity is not a religion of perfect people, but of forgiven sinners. There is no sin, however grave, that is greater than God's mercy, provided there is repentance. It was for this that Christ instituted the sacrament of Confession (Catechism 1446), where what was dead comes back to life. The parable of the prodigal son sums it all up: however bad the fall, the Father runs to meet the one who returns (Luke 15:20). To recognize sin is not to sink into guilt; it is to take the first step home.
 
 ## Key questions
 
@@ -857,15 +857,15 @@ Speaking of sin only makes sense because of what comes after: forgiveness. Chris
 
 ## It is not a repetition, but a re-presentation
 
-There is a common misunderstanding: that the Mass "repeats" the sacrifice of Jesus, as if the cross had not been enough. That is not it. The Letter to the Hebrews is clear: Christ offered himself "once" (Hebrews 9,28). The Mass does not repeat that sacrifice. It makes it present (Catechism §1367). The one sacrifice of Calvary, outside of time, is brought to the altar here and now, so that every generation can take part in it. The Council of Trent (Session XXII, 1562), quoted in Catechism §1367, taught that in the Mass "the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner".
+There is a common misunderstanding: that the Mass "repeats" the sacrifice of Jesus, as if the cross had not been enough. That is not it. The Letter to the Hebrews is clear: Christ offered himself "once" (Hebrews 9:28). The Mass does not repeat that sacrifice. It makes it present (Catechism §1367). The one sacrifice of Calvary, outside of time, is brought to the altar here and now, so that every generation can take part in it. The Council of Trent (Session XXII, 1562), quoted in Catechism §1367, taught that in the Mass "the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner".
 
 ## The two tables: the Word and the Eucharist
 
-The Mass has two great parts, like two arms. First, the Liturgy of the Word: readings from the Old Testament, the Apostles, and the Gospel, with the homily. Then, the Liturgy of the Eucharist, which culminates in the consecration and communion. It is the same movement of the road to Emmaus, on the day of the Resurrection: Jesus first explains the Scriptures to the disciples and then makes himself known "in the breaking of bread" (Luke 24,30-35). Word and Sacrament, always together.
+The Mass has two great parts, like two arms. First, the Liturgy of the Word: readings from the Old Testament, the Apostles, and the Gospel, with the homily. Then, the Liturgy of the Eucharist, which culminates in the consecration and communion. It is the same movement of the road to Emmaus, on the day of the Resurrection: Jesus first explains the Scriptures to the disciples and then makes himself known "in the breaking of bread" (Luke 24:30-35). Word and Sacrament, always together.
 
 ## The heart of the Mass: the consecration
 
-At the central moment, the priest, acting in the person of Christ, repeats the words of the Last Supper: "this is my body", "this is my blood" (Matthew 26,26-28). And the bread and wine become, truly, the Body and Blood of Christ, the change the Council of Trent (Session XIII, 1551) called transubstantiation (Catechism §1376). It is not a symbol. Jesus was emphatic: "unless you eat the flesh of the Son of man and drink his blood, you have no life in you" (John 6,53). It is the same Real Presence confirmed over the centuries by eucharistic miracles studied by science.
+At the central moment, the priest, acting in the person of Christ, repeats the words of the Last Supper: "this is my body", "this is my blood" (Matthew 26:26-28). And the bread and wine become, truly, the Body and Blood of Christ, the change the Council of Trent (Session XIII, 1551) called transubstantiation (Catechism §1376). It is not a symbol. Jesus was emphatic: "unless you eat the flesh of the Son of man and drink his blood, you have no life in you" (John 6:53). It is the same Real Presence confirmed over the centuries by eucharistic miracles studied by science.
 
 ## The Mass is older than people think
 
@@ -873,11 +873,11 @@ Whoever imagines the Mass to be a medieval invention is surprised when reading t
 
 ## Why on Sundays, and why of obligation?
 
-The Church asks for participation in the Sunday Mass, and this bothers some. But there is a deep reason. Sunday is the day of the Resurrection, "the day the Lord has made" (Psalm 118 [117],24), and from the beginning Christians gathered on it "to break bread" (Acts 20,7). To keep Sunday is to live the third commandment, to sanctify the day of the Lord. It is not an arbitrary attendance rule: it is the recognition that, if God gives himself entirely to us in the Eucharist, the least we can do is reserve this weekly encounter for him.
+The Church asks for participation in the Sunday Mass, and this bothers some. But there is a deep reason. Sunday is the day of the Resurrection, "the day the Lord has made" (Psalm 118 [117],24), and from the beginning Christians gathered on it "to break bread" (Acts 20:7). To keep Sunday is to live the third commandment, to sanctify the day of the Lord. It is not an arbitrary attendance rule: it is the recognition that, if God gives himself entirely to us in the Eucharist, the least we can do is reserve this weekly encounter for him.
 
 ## How to take part well
 
-The Mass is not a spectacle to be watched; it is a sacrifice in which one participates. The faithful are called to unite their life, their joys and sorrows, to the offering of Christ on the altar, and to receive communion in a state of grace, for Saint Paul warns that whoever eats the Body of the Lord "unworthily" eats his own condemnation (1 Corinthians 11,27-29). Well lived, the Mass ceases to be an obligation and becomes the center of the week: the place where heaven touches earth.
+The Mass is not a spectacle to be watched; it is a sacrifice in which one participates. The faithful are called to unite their life, their joys and sorrows, to the offering of Christ on the altar, and to receive communion in a state of grace, for Saint Paul warns that whoever eats the Body of the Lord "unworthily" eats his own condemnation (1 Corinthians 11:27-29). Well lived, the Mass ceases to be an obligation and becomes the center of the week: the place where heaven touches earth.
 
 ## Key questions
 
@@ -896,11 +896,11 @@ The Mass is not a spectacle to be watched; it is a sacrifice in which one partic
 
 ## Death and the particular judgment
 
-Death is not the end of the person, but the separation of soul and body. The soul is immortal and, at the instant of death, appears before God in the so-called particular judgment. As Scripture says, "it is appointed for men to die once, and after that comes judgment" (Hebrews 9,27). There is no reincarnation nor a second earthly life: each one reaps, before God, what he lived and loved.
+Death is not the end of the person, but the separation of soul and body. The soul is immortal and, at the instant of death, appears before God in the so-called particular judgment. As Scripture says, "it is appointed for men to die once, and after that comes judgment" (Hebrews 9:27). There is no reincarnation nor a second earthly life: each one reaps, before God, what he lived and loved.
 
 ## Heaven
 
-Heaven is not a place of clouds and harps, but the state of perfect and eternal happiness: to see God "face to face" (1 Corinthians 13,12), the so-called beatific vision. It is the fullness of every human desire, with no more pain, death, or separation. But it has a condition: "nothing unclean shall enter" heaven (Revelation 21,27). Only one who is fully purified can bear the light of God.
+Heaven is not a place of clouds and harps, but the state of perfect and eternal happiness: to see God "face to face" (1 Corinthians 13:12), the so-called beatific vision. It is the fullness of every human desire, with no more pain, death, or separation. But it has a condition: "nothing unclean shall enter" heaven (Revelation 21:27). Only one who is fully purified can bear the light of God.
 
 ## Hell
 
@@ -908,7 +908,7 @@ Hell is the truth most avoided, but Jesus spoke of it more than anyone else in t
 
 ## Purgatory
 
-Between those who die in mortal sin and the already perfectly holy, there is a third, very common situation: that of one who dies a friend of God, saved, but still imperfect, with attachments and faults to be purified. For these there is purgatory, not a "second chance" nor a "temporary hell", but the final purification of those already saved (Catechism §1030-1031). Saint Paul speaks of one who is saved "but only as through fire" (1 Corinthians 3,15). And the Second Book of Maccabees praises those who pray for the dead, "that they might be delivered from their sins" (2 Maccabees 12,46), which only makes sense if there is a purification after death.
+Between those who die in mortal sin and the already perfectly holy, there is a third, very common situation: that of one who dies a friend of God, saved, but still imperfect, with attachments and faults to be purified. For these there is purgatory, not a "second chance" nor a "temporary hell", but the final purification of those already saved (Catechism §1030-1031). Saint Paul speaks of one who is saved "but only as through fire" (1 Corinthians 3:15). And the Second Book of Maccabees praises those who pray for the dead, "that they might be delivered from their sins" (2 Maccabees 12:46), which only makes sense if there is a purification after death.
 
 ## Suicide and trust in mercy
 
@@ -916,7 +916,7 @@ One point requires delicacy. For a long time, the idea spread that whoever takes
 
 ## The final judgment and the resurrection of the body
 
-At the end of history, there will be the final judgment, when Christ returns "in his glory" and separates some from others (Matthew 25,31-32). Then what the Creed professes will take place: the resurrection of the body. The soul will not remain disembodied forever; the body too will rise, transformed, to share in the eternal destiny. Christianity does not promise an escape from the body, but the redemption of the whole person.
+At the end of history, there will be the final judgment, when Christ returns "in his glory" and separates some from others (Matthew 25:31-32). Then what the Creed professes will take place: the resurrection of the body. The soul will not remain disembodied forever; the body too will rise, transformed, to share in the eternal destiny. Christianity does not promise an escape from the body, but the redemption of the whole person.
 
 ## Key questions
 
@@ -943,7 +943,7 @@ And yet, no one actually lives as if life had no meaning. We seek happiness with
 
 ## The Christian answer
 
-Christianity answers the question with a disconcerting boldness: you are not an accident. You were thought of, willed, and created by Love, in the image of God. The meaning of life, in the classic formula of the catechisms, taken up by the Catechism of the Catholic Church (1721), is to know, love, and serve God in this life, and to be happy with him forever in the next. It is not a cold task. It is a love story. Jesus says: "I am the way, and the truth, and the life" (John 14,6). And Saint Paul assures that "all things work together for good for those who love God" (Romans 8,28), including the painful ones. Meaning is not a theory, it is a Person.
+Christianity answers the question with a disconcerting boldness: you are not an accident. You were thought of, willed, and created by Love, in the image of God. The meaning of life, in the classic formula of the catechisms, taken up by the Catechism of the Catholic Church (1721), is to know, love, and serve God in this life, and to be happy with him forever in the next. It is not a cold task. It is a love story. Jesus says: "I am the way, and the truth, and the life" (John 14:6). And Saint Paul assures that "all things work together for good for those who love God" (Romans 8:28), including the painful ones. Meaning is not a theory, it is a Person.
 
 ## And suffering, does it not remove meaning?
 
@@ -951,7 +951,7 @@ At first sight, pain seems to empty everything. But it is the opposite. Precisel
 
 ## What to do with this
 
-If the question of meaning presses on you, that is not a defect to silence with distractions. It is a compass. It is worth seeking seriously, with the same honesty with which one seeks truth in any other area. The promise is ancient and bold: "seek and you shall find" (Matthew 7,7). In the end, the answer to "what is the meaning of life?" is not a sentence, but an encounter.
+If the question of meaning presses on you, that is not a defect to silence with distractions. It is a compass. It is worth seeking seriously, with the same honesty with which one seeks truth in any other area. The promise is ancient and bold: "seek and you shall find" (Matthew 7:7). In the end, the answer to "what is the meaning of life?" is not a sentence, but an encounter.
 
 ## Key questions
 
@@ -992,7 +992,7 @@ Some object that the universe could have arisen from nothing, citing physicists 
 
 ## What kind of cause?
 
-If the universe, that is, all space, time, and matter, has a cause, that cause cannot be made of space, time, or matter. It must be immaterial, timeless, beyond space, immensely powerful, and able to create freely. These are, point by point, the attributes always ascribed to God. As Saint Paul says, "the invisible perfections of God have become visible to the intelligence through his works" (Romans 1,20).
+If the universe, that is, all space, time, and matter, has a cause, that cause cannot be made of space, time, or matter. It must be immaterial, timeless, beyond space, immensely powerful, and able to create freely. These are, point by point, the attributes always ascribed to God. As Saint Paul says, "the invisible perfections of God have become visible to the intelligence through his works" (Romans 1:20).
 
 ## Key questions
 
@@ -1012,17 +1012,17 @@ If the universe, that is, all space, time, and matter, has a cause, that cause c
 
 ## The empty tomb
 
-The tomb was empty (Matthew 28,1-10). Both Jews and Romans had a clear interest in producing Jesus\' body to suppress Christianity at its birth. They never could, because the body was not there.
+The tomb was empty (Matthew 28:1-10). Both Jews and Romans had a clear interest in producing Jesus\' body to suppress Christianity at its birth. They never could, because the body was not there.
 
 ## The appearances
 
-The appearances were public and multiple. Saint Paul mentions, in 1 Corinthians 15,3-8, an appearance to more than five hundred people at once, many of them still alive when he wrote the letter. They could be questioned. He invites the reader to verify.
+The appearances were public and multiple. Saint Paul mentions, in 1 Corinthians 15:3-8, an appearance to more than five hundred people at once, many of them still alive when he wrote the letter. They could be questioned. He invites the reader to verify.
 
 ## The transformation of the apostles
 
 The transformation of the apostles is perhaps the strongest piece of evidence. Men who fled in fear on the night of Jesus\' arrest went on to proclaim the Resurrection under threat of death. The martyrdoms of Peter and of James, the brother of John, are already attested in the first century, and the tradition of the Church holds that nearly all the apostles, except John, died as martyrs. No one dies tortured for something they know to be a lie.
 
-Even pagan and Jewish sources hostile to Christianity attest to the existence and execution of Jesus. The Jewish historian Flavius Josephus, in Jewish Antiquities (c. 93-94 AD), mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. An important note here: the Greek word adelphós used for "brother" had a broad sense in Hellenistic Judaism, designating biological brother, cousin, or close relative (see Genesis 14,14 where Lot is called adelphós of Abraham, being his nephew). James, the "brother of the Lord" also mentioned by Saint Paul in Galatians 1,19, is a relative of Jesus, not a biological son of Mary. The Perpetual Virginity of Mary is constant doctrine of the Church, and the "brothers of Jesus" in the Gospels (Matthew 13,55) follow the broad use of the term (more in the article "The Perpetual Virginity of Mary").
+Even pagan and Jewish sources hostile to Christianity attest to the existence and execution of Jesus. The Jewish historian Flavius Josephus, in Jewish Antiquities (c. 93-94 AD), mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. An important note here: the Greek word adelphós used for "brother" had a broad sense in Hellenistic Judaism, designating biological brother, cousin, or close relative (see Genesis 14:14 where Lot is called adelphós of Abraham, being his nephew). James, the "brother of the Lord" also mentioned by Saint Paul in Galatians 1:19, is a relative of Jesus, not a biological son of Mary. The Perpetual Virginity of Mary is constant doctrine of the Church, and the "brothers of Jesus" in the Gospels (Matthew 13:55) follow the broad use of the term (more in the article "The Perpetual Virginity of Mary").
 
 ## The minimal facts
 
@@ -1038,7 +1038,7 @@ The historical question is not "was there evidence?", but "what explanation acco
 
 3. What makes a person die tortured for something they know to be a lie?
 
-4. How did faith in the Resurrection arise so early? The creed of 1 Corinthians 15,3-8 is dated by many scholars, including skeptics such as Gerd Lüdemann, to within a few years of the crucifixion, leaving little time for "mythical evolution".`,
+4. How did faith in the Resurrection arise so early? The creed of 1 Corinthians 15:3-8 is dated by many scholars, including skeptics such as Gerd Lüdemann, to within a few years of the crucifixion, leaving little time for "mythical evolution".`,
   },
 
   17: {
@@ -1048,7 +1048,7 @@ The historical question is not "was there evidence?", but "what explanation acco
 
 ## Jesus claimed to be God
 
-Jesus repeatedly affirmed himself to be God. In John 10,30 he says "I and the Father are one". In John 8,58, applying to himself the divine name YHWH revealed to Moses, he declares "before Abraham was, I am". In Mark 2,5-7 he forgives sins, an exclusive prerogative of God according to the very scribes present. In John 14,9 he says "whoever has seen me has seen the Father". In John 5,18 the Jews try to kill him because "he made himself equal to God". Before the Sanhedrin, asked whether he is the Son of God, he answers "I am" (Mark 14,61-62), and Thomas, before the risen Lord, confesses him "my Lord and my God" (John 20,28).
+Jesus repeatedly affirmed himself to be God. In John 10:30 he says "I and the Father are one". In John 8:58, applying to himself the divine name YHWH revealed to Moses, he declares "before Abraham was, I am". In Mark 2:5-7 he forgives sins, an exclusive prerogative of God according to the very scribes present. In John 14:9 he says "whoever has seen me has seen the Father". In John 5:18 the Jews try to kill him because "he made himself equal to God". Before the Sanhedrin, asked whether he is the Son of God, he answers "I am" (Mark 14:61-62), and Thomas, before the risen Lord, confesses him "my Lord and my God" (John 20:28).
 
 ## Three options, and only three
 
@@ -1084,11 +1084,11 @@ There is a fourth option that modern skeptics try to introduce: Jesus never said
   2: {
     titleEn: 'Why Be Catholic and Not Just Christian?',
     summaryEn: 'The Church founded by Christ is one, and it subsists in the Catholic Church.',
-    bodyEn: `Jesus founded a Church, not churches. In Matthew 16,18 he says "upon this rock I will build my Church", in the singular. And he handed the keys of the Kingdom to Peter, establishing a visible authority structure, not an invisible network of disorganized believers. On the eve of his Passion he prayed "that they all may be one [...] that the world may believe that thou hast sent me" (John 17,21): a unity the world can see.
+    bodyEn: `Jesus founded a Church, not churches. In Matthew 16:18 he says "upon this rock I will build my Church", in the singular. And he handed the keys of the Kingdom to Peter, establishing a visible authority structure, not an invisible network of disorganized believers. On the eve of his Passion he prayed "that they all may be one [...] that the world may believe that thou hast sent me" (John 17:21): a unity the world can see.
 
 ## Apostolic continuity
 
-Apostolic continuity is what distinguishes the Catholic Church from denominations that emerged centuries later. Every Catholic bishop is ordained by other bishops, in a chain that goes back to the Apostles. Peter\'s succession in Rome goes from the apostle himself to Linus, Cletus, Clement, and continues to the current Pope: Saint Irenaeus of Lyons was already publishing this list around 180 (Against Heresies III,3,3). This is documentable, historical, not metaphorical.
+Apostolic continuity is what distinguishes the Catholic Church from denominations that emerged centuries later. Every Catholic bishop is ordained by other bishops, in a chain that goes back to the Apostles. Peter\'s succession in Rome goes from the apostle himself to Linus, Cletus, Clement, and continues to the current Pope: Saint Irenaeus of Lyons was already publishing this list around 180 (Against Heresies III.3.3). This is documentable, historical, not metaphorical.
 
 ## It subsists in the Catholic Church
 
@@ -1108,21 +1108,21 @@ Whoever is Christian without being Catholic generally inherits selected doctrine
 
 3. Where, in the Bible, is it written that every doctrine must be in the Bible? (Classic question about Sola Scriptura being self-refuting.)
 
-4. Jesus promised in Matthew 16,18 that the gates of hell would not prevail against his Church. If the true Church disappeared for 1500 years until the Reformation, did Jesus lie?`,
+4. Jesus promised in Matthew 16:18 that the gates of hell would not prevail against his Church. If the true Church disappeared for 1500 years until the Reformation, did Jesus lie?`,
   },
 
   7: {
     titleEn: 'The Eucharist: Real Presence of Christ',
     summaryEn: 'The Eucharist is not a symbol. It is the Body, Blood, Soul and Divinity of Jesus Christ, confirmed by Scripture, by the Fathers, and by approved miracles.',
-    bodyEn: `In chapter 6 of John\'s Gospel, Jesus insists, from verse 51 to 58, that one must eat his flesh and drink his blood, and declares: "my flesh is meat indeed: and my blood is drink indeed" (Jn 6,55). When many disciples murmur against the teaching and stop following him, Jesus does not call them back saying "it was only a metaphor". He asks the Twelve: "Will you also go away?" (Jn 6,67). If it were figurative language, would it make sense to lose disciples over a misunderstanding? No.
+    bodyEn: `In chapter 6 of John\'s Gospel, Jesus insists, from verse 51 to 58, that one must eat his flesh and drink his blood, and declares: "my flesh is meat indeed: and my blood is drink indeed" (Jn 6:55). When many disciples murmur against the teaching and stop following him, Jesus does not call them back saying "it was only a metaphor". He asks the Twelve: "Will you also go away?" (Jn 6:67). If it were figurative language, would it make sense to lose disciples over a misunderstanding? No.
 
 ## "This is my body"
 
-At the Last Supper, he says "This is my body" (Mt 26,26). In the Greek of the Gospels the verb is estin, "is", the direct form of identification. Greek had verbs for "to signify" or "to compare" (semaínō, homoióō), and no account of the Supper uses them. In John 6, after the listeners take offense (6,52), the text moves from the ordinary verb "to eat" (phagein) to trōgō ("to chew"), rawer and more physical, which reinforces the literal reading.
+At the Last Supper, he says "This is my body" (Mt 26:26). In the Greek of the Gospels the verb is estin, "is", the direct form of identification. Greek had verbs for "to signify" or "to compare" (semaínō, homoióō), and no account of the Supper uses them. In John 6, after the listeners take offense (6:52), the text moves from the ordinary verb "to eat" (phagein) to trōgō ("to chew"), rawer and more physical, which reinforces the literal reading.
 
 ## Paul confirms the Real Presence
 
-Saint Paul confirms the Real Presence by warning the Corinthians that eating the bread or drinking the cup "unworthily" makes one "guilty of the body and of the blood of the Lord" (1 Cor 11,27). This language only makes sense if there is actually a body and blood present. If it were only a symbol, why would receiving a symbol unworthily bring condemnation?
+Saint Paul confirms the Real Presence by warning the Corinthians that eating the bread or drinking the cup "unworthily" makes one "guilty of the body and of the blood of the Lord" (1 Cor 11:27). This language only makes sense if there is actually a body and blood present. If it were only a symbol, why would receiving a symbol unworthily bring condemnation?
 
 ## The Church Fathers
 
@@ -1136,9 +1136,9 @@ Throughout history the Church has recognized dozens of Eucharistic miracles, sev
 
 ## Key questions
 
-1. Why did Jesus lose many disciples in John 6,66 if he was only speaking symbolically? Why did he not call them back clearing up the misunderstanding?
+1. Why did Jesus lose many disciples in John 6:66 if he was only speaking symbolically? Why did he not call them back clearing up the misunderstanding?
 
-2. In 1 Corinthians 11,27-29, Paul says that eating unworthily makes one guilty of the body and blood of the Lord, and that whoever communicates without discerning the Body eats his own condemnation. How does this make sense if it is only a symbol?
+2. In 1 Corinthians 11:27-29, Paul says that eating unworthily makes one guilty of the body and blood of the Lord, and that whoever communicates without discerning the Body eats his own condemnation. How does this make sense if it is only a symbol?
 
 3. Why did all the Fathers of the Church of the first thousand years teach Real Presence, without exception? Were they all wrong, and only the reformers of the 16th century rediscovered the "true" meaning?
 
@@ -1166,7 +1166,7 @@ Third, Christianity does not ignore suffering, it transforms it. God himself ent
 
 There is still a philosophical problem that atheists rarely perceive. The argument from evil presupposes an objective standard of good and evil. If there is no God, there is no objective standard. The argument itself collapses: atheism has no basis to call anything "evil", only "unpleasant". As C. S. Lewis recounted in "Mere Christianity" (1952), when, still an atheist, he tried to use the argument from evil against God, he realized that his whole notion of "evil" presupposed the "good" he wanted to deny. The objection from evil, taken seriously, proves precisely the existence of the objective moral standard, that is, of God.
 
-Saint Paul writes in Romans 8,28 that "all things work together for good for those who love God". Not that everything is good, but that God draws good even out of evil. The Catechism sums it up: God is in no way the cause of moral evil, but he permits it, because he respects the freedom of his creatures, and, mysteriously, knows how to derive good from it (Catechism 311). The Paschal mystery is the supreme example: the worst crime in history (killing the incarnate God) became the source of redemption.
+Saint Paul writes in Romans 8:28 that "all things work together for good for those who love God". Not that everything is good, but that God draws good even out of evil. The Catechism sums it up: God is in no way the cause of moral evil, but he permits it, because he respects the freedom of his creatures, and, mysteriously, knows how to derive good from it (Catechism 311). The Paschal mystery is the supreme example: the worst crime in history (killing the incarnate God) became the source of redemption.
 
 ## Key questions
 
@@ -1184,11 +1184,11 @@ Saint Paul writes in Romans 8,28 that "all things work together for good for tho
 
 ## The Bible does not teach Sola Scriptura
 
-The first is that the Bible itself does not say this about itself. On the contrary, Saint Paul writes to the Thessalonians: "stand firm and hold to the traditions you were taught, whether by word or by letter from us" (2 Thes 2,15). Oral Tradition is placed side by side with written Tradition. In 1 Corinthians 11,2 he praises the faithful for keeping the traditions "as I delivered them to you".
+The first is that the Bible itself does not say this about itself. On the contrary, Saint Paul writes to the Thessalonians: "stand firm and hold to the traditions you were taught, whether by word or by letter from us" (2 Thes 2:15). Oral Tradition is placed side by side with written Tradition. In 1 Corinthians 11:2 he praises the faithful for keeping the traditions "as I delivered them to you".
 
 ## Who interprets?
 
-The second problem is that the Bible needs to be interpreted. Who decides which interpretation is correct? In the absence of interpretive authority, each Christian becomes his own Pope. The practical result was that, in 500 years of Protestantism, tens of thousands of denominations emerged (the Center for the Study of Global Christianity counts more than 45,000 Christian denominations worldwide, the vast majority Protestant or independent), all saying they follow "only the Bible" and arriving at opposite conclusions about baptism, the Eucharist, salvation, morality, ministry. Saint Peter already warned in 2 Peter 1,20 that "no prophecy of Scripture is a matter of one\'s own interpretation".
+The second problem is that the Bible needs to be interpreted. Who decides which interpretation is correct? In the absence of interpretive authority, each Christian becomes his own Pope. The practical result was that, in 500 years of Protestantism, tens of thousands of denominations emerged (the Center for the Study of Global Christianity counts more than 45,000 Christian denominations worldwide, the vast majority Protestant or independent), all saying they follow "only the Bible" and arriving at opposite conclusions about baptism, the Eucharist, salvation, morality, ministry. Saint Peter already warned in 2 Peter 1:20 that "no prophecy of Scripture is a matter of one\'s own interpretation".
 
 ## It was the Church that defined the canon
 
@@ -1196,7 +1196,7 @@ The third problem is that the biblical canon was defined by the Church. The Coun
 
 ## A 16th-century novelty
 
-The fourth problem is historical. Sola Scriptura emerged in the 16th century. Before that, for 1500 years, the Church functioned with Scripture, Tradition and Magisterium together. If Sola Scriptura is the true Christian doctrine, this means that the entire Church erred in the first 15 centuries. Difficult to reconcile with Jesus\' promise that the gates of hell would not prevail against it (Matthew 16,18).
+The fourth problem is historical. Sola Scriptura emerged in the 16th century. Before that, for 1500 years, the Church functioned with Scripture, Tradition and Magisterium together. If Sola Scriptura is the true Christian doctrine, this means that the entire Church erred in the first 15 centuries. Difficult to reconcile with Jesus\' promise that the gates of hell would not prevail against it (Matthew 16:18).
 
 ## The Catholic solution
 
@@ -1210,7 +1210,7 @@ The Catholic solution, taught by the Second Vatican Council (Dei Verbum §9-10) 
 
 3. If the Bible clearly interprets itself, why are there tens of thousands of denominations in conflict over interpretation?
 
-4. In 2 Thessalonians 2,15 Paul orders to keep traditions "by word or by letter". Where now is the apostolic oral tradition that was not written down? If it was lost, was part of the Revelation lost?
+4. In 2 Thessalonians 2:15 Paul orders to keep traditions "by word or by letter". Where now is the apostolic oral tradition that was not written down? If it was lost, was part of the Revelation lost?
 
 5. The Church before the 16th century, which produced martyrs, doctors, saints, missionaries, defined the canon, formulated the Trinity and the divinity of Christ, was in fundamental error about how God reveals himself?`,
   },
@@ -1238,7 +1238,7 @@ There are three possible explanations for this fine-tuning. Physical necessity d
 
 The multiverse objection (there exist infinite universes with different constants, and by luck we are in the one that allows life) has three problems. First, there is no empirical evidence of other universes. Second, even the multiverse, if it exists, would itself need fine-tuning to generate diverse universes. Third, [[Occam\'s razor]] recommends the most economical explanation. This principle, attributed to the Franciscan philosopher William of Ockham in the 14th century, holds that among explanations that account for the same facts we should prefer the one positing fewer entities without necessity. Positing a single Designer is more economical than positing infinite unverifiable universes just to escape this conclusion.
 
-Saint Paul already said in the Letter to the Romans that "the invisible perfections of God, since the creation of the world, are understood and seen through created things" (Romans 1,20). Modern science does not refute this affirmation, it confirms it with mathematical precision.
+Saint Paul already said in the Letter to the Romans that "the invisible perfections of God, since the creation of the world, are understood and seen through created things" (Romans 1:20). Modern science does not refute this affirmation, it confirms it with mathematical precision.
 
 ## Key questions
 
@@ -1264,7 +1264,7 @@ The atheist philosopher Friedrich Nietzsche recognized this with frankness. In "
 
 ## We live as if morality were real
 
-But we all live as if morality were real. We condemn Nazism, defend the weak, become indignant at injustice. Not as if these judgments were mere preference, but as if they were true. In Romans 2,14-15, Saint Paul writes that even the gentiles "have the work of the law written on their hearts", manifesting a conscience that accuses or justifies their actions.
+But we all live as if morality were real. We condemn Nazism, defend the weak, become indignant at injustice. Not as if these judgments were mere preference, but as if they were true. In Romans 2:14-15, Saint Paul writes that even the gentiles "have the work of the law written on their hearts", manifesting a conscience that accuses or justifies their actions.
 
 ## What the argument does not say
 
@@ -1324,15 +1324,15 @@ The question turns against the questioner. Why is there something rather than no
 
 ## Mediation and intercession
 
-This objection confuses mediation with intercession. Christ is the only mediator between God and men, as Saint Paul teaches in 1 Timothy 2,5. He is the source of all grace. But just as we ask a friend here on earth to pray for us, we can ask the saints in heaven to intercede with God. This does not replace Christ, it depends on him. That is why the Church herself can call Mary Mediatrix (Lumen Gentium §62): a subordinate mediation that takes nothing away from and adds nothing to that of Christ, the one Mediator.
+This objection confuses mediation with intercession. Christ is the only mediator between God and men, as Saint Paul teaches in 1 Timothy 2:5. He is the source of all grace. But just as we ask a friend here on earth to pray for us, we can ask the saints in heaven to intercede with God. This does not replace Christ, it depends on him. That is why the Church herself can call Mary Mediatrix (Lumen Gentium §62): a subordinate mediation that takes nothing away from and adds nothing to that of Christ, the one Mediator.
 
 ## The saints are alive
 
-The objection that the saints are dead does not hold, because Jesus himself said that God "is not the God of the dead, but of the living" (Mt 22,32). The saints live in Christ. The Apocalypse shows this in image: the elders in heaven offer to God "golden vials full of odours, which are the prayers of saints" (Apoc 5,8). The intercession of the saints is Scripture, not late invention.
+The objection that the saints are dead does not hold, because Jesus himself said that God "is not the God of the dead, but of the living" (Mt 22:32). The saints live in Christ. The Apocalypse shows this in image: the elders in heaven offer to God "golden vials full of odours, which are the prayers of saints" (Apoc 5:8). The intercession of the saints is Scripture, not late invention.
 
 ## Mary's intercession
 
-Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, she perceives the lack of wine and intercedes. Jesus responds, even before "his hour" (Jn 2,4-5). This scene is the biblical model of Marian intercession. She points to Christ, and what she says to the servants applies to every Christian: "Whatsoever he shall say to you, do ye."
+Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, she perceives the lack of wine and intercedes. Jesus responds, even before "his hour" (Jn 2:4-5). This scene is the biblical model of Marian intercession. She points to Christ, and what she says to the servants applies to every Christian: "Whatsoever he shall say to you, do ye."
 
 ## To adore and to venerate
 
@@ -1344,7 +1344,7 @@ The classical Catholic distinction is between latria (adoration owed only to God
 
 2. If the saints in heaven are closer to God than we are on earth, why would it be worse to ask them for prayer than to ask someone alive?
 
-3. In Apocalypse 5,8 the elders offer to God the prayers of the saints. How does this fit a theology where only Christ is "intercessor"?
+3. In Apocalypse 5:8 the elders offer to God the prayers of the saints. How does this fit a theology where only Christ is "intercessor"?
 
 4. Why do Protestant Christians ask one another for prayer (intercession of brothers alive) but not from the brothers in heaven (intercession of the saints)? Does death interrupt the communion of saints?`,
   },
@@ -1356,13 +1356,13 @@ The classical Catholic distinction is between latria (adoration owed only to God
 
 ## "Mary too needed a Savior"
 
-The popular objection is that Mary needed to be saved like any other human being, according to Luke 1,47, when she herself calls God "my Savior" in the Magnificat. The Catholic doctrine responds with elegance. Mary was indeed saved, but in a unique way. She was preserved from original sin in anticipation of the merits of Christ, not after falling into it. As in a fall, it is better to be held back before than to be lifted out afterwards. Christ is her Savior too, but through preservation, and not through subsequent healing. That is why the Magnificat does not contradict the dogma: she rejoices "in God my Saviour" because she recognizes God\'s saving work in her life.
+The popular objection is that Mary needed to be saved like any other human being, according to Luke 1:47, when she herself calls God "my Savior" in the Magnificat. The Catholic doctrine responds with elegance. Mary was indeed saved, but in a unique way. She was preserved from original sin in anticipation of the merits of Christ, not after falling into it. As in a fall, it is better to be held back before than to be lifted out afterwards. Christ is her Savior too, but through preservation, and not through subsequent healing. That is why the Magnificat does not contradict the dogma: she rejoices "in God my Saviour" because she recognizes God\'s saving work in her life.
 
-## "Full of grace" in Luke 1,28
+## "Full of grace" in Luke 1:28
 
-The biblical basis is in Luke 1,28. The angel Gabriel greets Mary not by her name, but with a title: kecharitōménē in Greek, which is the perfect passive participle of the verb "to grace". The Greek perfect tense indicates a completed action whose effects continue. A rendering faithful to the tense would be "you who have been graced and remain so", which the Latin tradition translated as "full of grace". Mary\'s grace is not momentary, it is a permanent and full state. Through the centuries, says the Catechism, the Church has become ever more aware that Mary, "full of grace" through God, was redeemed from the moment of her conception (§491).
+The biblical basis is in Luke 1:28. The angel Gabriel greets Mary not by her name, but with a title: kecharitōménē in Greek, which is the perfect passive participle of the verb "to grace". The Greek perfect tense indicates a completed action whose effects continue. A rendering faithful to the tense would be "you who have been graced and remain so", which the Latin tradition translated as "full of grace". Mary\'s grace is not momentary, it is a permanent and full state. Through the centuries, says the Catechism, the Church has become ever more aware that Mary, "full of grace" through God, was redeemed from the moment of her conception (§491).
 
-There is also Genesis 3,15, the so-called "Protoevangelium". God says to the serpent "I will put enmity between you and the woman, between your seed and her seed". The Hebrew word used here is eyvah, a deep and lasting enmity: in Ezekiel 25,15 and 35,5 it describes the age-old hatred of nations hostile to Israel. Several Fathers saw in this "woman" Mary, and the totality of this enmity has direct implication: if the opposition between Mary and the serpent (representative of sin and the devil) is absolute, Mary cannot, at any moment, be under the domain of the serpent, that is, under original sin. This is the Old Testament foundation of the dogma of the Immaculate Conception. Pius IX explicitly cites this verse in the bull Ineffabilis Deus of 1854.
+There is also Genesis 3:15, the so-called "Protoevangelium". God says to the serpent "I will put enmity between you and the woman, between your seed and her seed". The Hebrew word used here is eyvah, a deep and lasting enmity: in Ezekiel 25:15 and 35:5 it describes the age-old hatred of nations hostile to Israel. Several Fathers saw in this "woman" Mary, and the totality of this enmity has direct implication: if the opposition between Mary and the serpent (representative of sin and the devil) is absolute, Mary cannot, at any moment, be under the domain of the serpent, that is, under original sin. This is the Old Testament foundation of the dogma of the Immaculate Conception. Pius IX explicitly cites this verse in the bull Ineffabilis Deus of 1854.
 
 ## The new Eve in the Fathers
 
@@ -1386,15 +1386,15 @@ Devotion to Our Lady of the Conception is the liturgical expression of this dogm
 
 ## The "brothers of Jesus"
 
-The main objection comes from the texts that speak of the "brothers of Jesus" (Matthew 13,55 and Mark 6,3). The Greek word adelphós, used in these texts, had a much broader meaning than biological brother of the same mother. It also designated cousins, close relatives, and even members of the same community. In the Septuagint (the Greek translation of the Old Testament used by the apostles), Lot is called adelphós (brother) of Abraham in Genesis 14,14, although he was his nephew (Genesis 14,12). Hebrew and Aramaic, languages spoken by Jesus, had no specific word for cousin, they used "brother" in the broad sense. This usage passed naturally into the Greek of the Gospels.
+The main objection comes from the texts that speak of the "brothers of Jesus" (Matthew 13:55 and Mark 6:3). The Greek word adelphós, used in these texts, had a much broader meaning than biological brother of the same mother. It also designated cousins, close relatives, and even members of the same community. In the Septuagint (the Greek translation of the Old Testament used by the apostles), Lot is called adelphós (brother) of Abraham in Genesis 14:14, although he was his nephew (Genesis 14:12). Hebrew and Aramaic, languages spoken by Jesus, had no specific word for cousin, they used "brother" in the broad sense. This usage passed naturally into the Greek of the Gospels.
 
 ## Mary's question
 
-When Luke 1,34 narrates the Annunciation, Mary, already engaged to Joseph, asks the angel: "How shall this be done, because I know not man?". Since Saint Gregory of Nyssa and Saint Augustine, tradition has seen in this question the purpose of remaining a virgin: being betrothed in marriage, the news that she would conceive would have been normal.
+When Luke 1:34 narrates the Annunciation, Mary, already engaged to Joseph, asks the angel: "How shall this be done, because I know not man?". Since Saint Gregory of Nyssa and Saint Augustine, tradition has seen in this question the purpose of remaining a virgin: being betrothed in marriage, the news that she would conceive would have been normal.
 
-In John 19,26-27, Jesus on the cross entrusts Mary to the care of the beloved disciple, whom tradition identifies with the apostle John. In Jewish custom, caring for a mother fell to her sons, and it would be strange to entrust her to someone else if she had other living children. James, "the brother of the Lord", mentioned by Paul in Galatians 1,19, is traditionally identified with James son of Alphaeus (cf. Mt 10,3 and Mk 15,40), a close relative, not a son of Mary.
+In John 19:26-27, Jesus on the cross entrusts Mary to the care of the beloved disciple, whom tradition identifies with the apostle John. In Jewish custom, caring for a mother fell to her sons, and it would be strange to entrust her to someone else if she had other living children. James, "the brother of the Lord", mentioned by Paul in Galatians 1:19, is traditionally identified with James son of Alphaeus (cf. Mt 10:3 and Mk 15:40), a close relative, not a son of Mary.
 
-The objection of the "firstborn" in Luke 2,7 also does not stand. In Hebrew, bekhor (translated as prōtótokos in Greek) meant simply the first to open the womb, with specific ritual rights (Exodus 13,2), regardless of whether there were others after. It was a technical ritual term, not comparative. There is a Jewish funerary inscription from 5 BC (Tell el-Yehudieh, Egypt) of a woman who died giving birth to her "firstborn", with no other children.
+The objection of the "firstborn" in Luke 2:7 also does not stand. In Hebrew, bekhor (translated as prōtótokos in Greek) meant simply the first to open the womb, with specific ritual rights (Exodus 13:2), regardless of whether there were others after. It was a technical ritual term, not comparative. There is a Jewish funerary inscription from 5 BC (Tell el-Yehudieh, Egypt) of a woman who died giving birth to her "firstborn", with no other children.
 
 ## Fathers and reformers
 
@@ -1408,7 +1408,7 @@ A historical curiosity is worth noting. Martin Luther and Ulrich Zwingli affirme
 
 2. Why does Jesus on the cross entrust Mary to John, and not to a supposed "biological brother"? In Jewish custom, this would be strange.
 
-3. How can James and Joseph be biological sons of Mary, if Matthew 27,56 calls their mother "Mary the mother of James and Joseph", another Mary, whom tradition identifies with "Mary of Cleophas" (John 19,25)?
+3. How can James and Joseph be biological sons of Mary, if Matthew 27:56 calls their mother "Mary the mother of James and Joseph", another Mary, whom tradition identifies with "Mary of Cleophas" (John 19:25)?
 
 4. Why did Luther and Zwingli, who rejected so many Catholic doctrines, maintain the perpetual virginity of Mary? Were they also wrong?`,
   },
@@ -1420,17 +1420,17 @@ A historical curiosity is worth noting. Martin Luther and Ulrich Zwingli affirme
 
 ## "You are Peter" (Matthew 16)
 
-The biblical basis is direct. In Matthew 16,18-19, Jesus says to Simon: "Thou art Peter, and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also in heaven". Three things given to him alone: a new name (Peter, "Rock"), the promise to build the Church upon him and the keys (symbol of administrative authority, cf. Is 22,22). Jesus later extends the power to bind and loose to the Twelve (Mt 18,18), but the keys are entrusted to Peter alone.
+The biblical basis is direct. In Matthew 16:18-19, Jesus says to Simon: "Thou art Peter, and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also in heaven". Three things given to him alone: a new name (Peter, "Rock"), the promise to build the Church upon him and the keys (symbol of administrative authority, cf. Is 22:22). Jesus later extends the power to bind and loose to the Twelve (Mt 18:18), but the keys are entrusted to Peter alone.
 
 ## "This rock" is Peter himself
 
-The common objection is that "this rock" refers to Peter\'s confession of faith, not to him. But the wordplay only works if it is Peter himself. In Aramaic, the language Jesus spoke, the name he gives Simon is Kepha, "rock" (John 1,42 transcribes it as Cephas), and the sentence would have the same word on both sides: "You are Kepha, and on this Kepha I will build my Church". In Greek, kefa became Pétros (masculine) and pétra (feminine) for grammatical reasons (masculine name for a man), but the meaning is the same.
+The common objection is that "this rock" refers to Peter\'s confession of faith, not to him. But the wordplay only works if it is Peter himself. In Aramaic, the language Jesus spoke, the name he gives Simon is Kepha, "rock" (John 1:42 transcribes it as Cephas), and the sentence would have the same word on both sides: "You are Kepha, and on this Kepha I will build my Church". In Greek, kefa became Pétros (masculine) and pétra (feminine) for grammatical reasons (masculine name for a man), but the meaning is the same.
 
-In John 21,15-17, after the Resurrection, Jesus asks Peter three times whether he loves him and three times entrusts the flock to him ("Feed my lambs", "Feed my sheep"), to him alone, confirming him as shepherd of the whole flock. In Luke 22,32 he prays specifically for Peter that his faith may not fail and that he may confirm his brothers.
+In John 21:15-17, after the Resurrection, Jesus asks Peter three times whether he loves him and three times entrusts the flock to him ("Feed my lambs", "Feed my sheep"), to him alone, confirming him as shepherd of the whole flock. In Luke 22:32 he prays specifically for Peter that his faith may not fail and that he may confirm his brothers.
 
 ## The witness of the first centuries
 
-The patristic history is equally clear. Saint Ignatius of Antioch, around 107, greets the Church of Rome as the one that "presides in the place of the region of the Romans" and "presides over love", language he uses for no other Church. Saint Irenaeus of Lyons (c. 180), in "Against Heresies" (book III, 3,2-3), lists the succession of the bishops of Rome from Peter to Eleutherius (his contemporary) and says that "with this Church, on account of its more excellent origin, it is necessary that every Church should agree". And Rome was already acting as a reference at the end of the 1st century: around 96, under Bishop Clement, it wrote to the Corinthians to end a division among them, as Irenaeus himself recalls.
+The patristic history is equally clear. Saint Ignatius of Antioch, around 107, greets the Church of Rome as the one that "presides in the place of the region of the Romans" and "presides over love", language he uses for no other Church. Saint Irenaeus of Lyons (c. 180), in "Against Heresies" (book III, 3.2-3), lists the succession of the bishops of Rome from Peter to Eleutherius (his contemporary) and says that "with this Church, on account of its more excellent origin, it is necessary that every Church should agree". And Rome was already acting as a reference at the end of the 1st century: around 96, under Bishop Clement, it wrote to the Corinthians to end a division among them, as Irenaeus himself recalls.
 
 Papal succession is uniquely documentable. Peter, Linus, Cletus, Clement, Evaristus, and continues uninterrupted to the current Pope. There are records, episcopal lists, letters, decrees. No community born of the Reformation can trace this continuity. The very title "Pope" (from the Greek pappas, "father") was given to various bishops. In the West it came to designate above all the Bishop of Rome from the 5th and 6th centuries, and Gregory VII (1073-1085) reserved it to him. In the East, the patriarchs of Alexandria still use it today.
 
@@ -1460,9 +1460,9 @@ The definition is careful: "the Immaculate Mother of God, the ever Virgin Mary, 
 
 ## The biblical basis and the argument of suitability
 
-The biblical basis is indirect but convergent. In Luke 1,28, the angel calls her kecharitōménē (full of grace). In Luke 1,42, Elizabeth cries out: "Blessed art thou among women". The liturgy applies Psalm 45 to Mary (44 in the Vulgate numbering, followed by the Douay-Rheims): "The queen stood on thy right hand" (Ps 44,10). Apocalypse 12,1 shows "a woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars", an image that Tradition also applies to the glorified Mary in heaven.
+The biblical basis is indirect but convergent. In Luke 1:28, the angel calls her kecharitōménē (full of grace). In Luke 1:42, Elizabeth cries out: "Blessed art thou among women". The liturgy applies Psalm 45 to Mary (44 in the Vulgate numbering, followed by the Douay-Rheims): "The queen stood on thy right hand" (Ps 44:10). Apocalypse 12:1 shows "a woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars", an image that Tradition also applies to the glorified Mary in heaven.
 
-The argument of suitability is strong. Mary was preserved from original sin (Immaculate Conception) and never committed personal sin. The corruption of the body is a consequence of sin (Gen 3,19 and Rom 6,23). If Mary was exempt from the cause, why would she suffer the consequence? It was fitting that the Mother of God, free from sin, did not know the decomposition of the tomb. She was united in life to the body of Christ (whom she carried) and was united in glory to the risen Christ.
+The argument of suitability is strong. Mary was preserved from original sin (Immaculate Conception) and never committed personal sin. The corruption of the body is a consequence of sin (Gen 3:19 and Rom 6:23). If Mary was exempt from the cause, why would she suffer the consequence? It was fitting that the Mother of God, free from sin, did not know the decomposition of the tomb. She was united in life to the body of Christ (whom she carried) and was united in glory to the risen Christ.
 
 ## An ancient belief
 
@@ -1492,17 +1492,17 @@ Pius XII, before defining the dogma, consulted the bishops of the whole world. T
 
 ## Nothing impure enters heaven
 
-The argument starts from a clear biblical premise: nothing impure enters heaven. In Apocalypse 21,27, about the heavenly Jerusalem: "There shall not enter into it any thing defiled". In Hebrews 12,14: "Follow peace with all men and holiness: without which no man shall see God". But the reality is that many die in a state of grace (saved) without having reached full sanctification. What happens to those souls?
+The argument starts from a clear biblical premise: nothing impure enters heaven. In Apocalypse 21:27, about the heavenly Jerusalem: "There shall not enter into it any thing defiled". In Hebrews 12:14: "Follow peace with all men and holiness: without which no man shall see God". But the reality is that many die in a state of grace (saved) without having reached full sanctification. What happens to those souls?
 
 The Catholic answer is Purgatory: a state of purification that prepares for the definitive encounter with God. It is not a "third place" between heaven and hell: it is the final path to heaven for those who are already saved.
 
 ## The biblical basis
 
-The biblical basis is found in two strands. First: 2 Maccabees 12,39-46. Judas Maccabeus, after a battle, discovers that some of his fallen soldiers were carrying objects consecrated to idols (sin against the first commandment). He organizes a collection and sends it to Jerusalem "for sacrifice to be offered for the sins of the dead". The text concludes: "It is therefore a holy and wholesome thought to pray for the dead, that they may be loosed from sins". This text is so clear that Luther, at the Leipzig Disputation (1519), when Eck cited it in favor of Purgatory, denied the canonicity of 2 Maccabees, and his 1534 Bible relegated the deuterocanonical books to an appendix.
+The biblical basis is found in two strands. First: 2 Maccabees 12:39-46. Judas Maccabeus, after a battle, discovers that some of his fallen soldiers were carrying objects consecrated to idols (sin against the first commandment). He organizes a collection and sends it to Jerusalem "for sacrifice to be offered for the sins of the dead". The text concludes: "It is therefore a holy and wholesome thought to pray for the dead, that they may be loosed from sins". This text is so clear that Luther, at the Leipzig Disputation (1519), when Eck cited it in favor of Purgatory, denied the canonicity of 2 Maccabees, and his 1534 Bible relegated the deuterocanonical books to an appendix.
 
-Second strand: 1 Corinthians 3,12-15. Saint Paul writes that each one builds on the foundation of Christ "gold, silver, precious stones, wood, hay, stubble", and that "the fire shall try every man\'s work, of what sort it is". He continues: "If any man\'s work burn, he shall suffer loss: but he himself shall be saved, yet so as by fire". The person is saved, but passes through a purifying "fire". This is the classical image of Purgatory.
+Second strand: 1 Corinthians 3:12-15. Saint Paul writes that each one builds on the foundation of Christ "gold, silver, precious stones, wood, hay, stubble", and that "the fire shall try every man\'s work, of what sort it is". He continues: "If any man\'s work burn, he shall suffer loss: but he himself shall be saved, yet so as by fire". The person is saved, but passes through a purifying "fire". This is the classical image of Purgatory.
 
-Other passages converge. Matthew 12,32 speaks of a sin that "shall not be forgiven him neither in this world, nor in the world to come", and Saint Gregory the Great concludes from this that certain offenses can be forgiven in the age to come, a reading the Catechism takes up (§1031). In Matthew 5,26 Jesus warns: "thou shalt not go out from thence till thou repay the last farthing", the image of a debt that must be paid off.
+Other passages converge. Matthew 12:32 speaks of a sin that "shall not be forgiven him neither in this world, nor in the world to come", and Saint Gregory the Great concludes from this that certain offenses can be forgiven in the age to come, a reading the Catechism takes up (§1031). In Matthew 5:26 Jesus warns: "thou shalt not go out from thence till thou repay the last farthing", the image of a debt that must be paid off.
 
 ## The Church always prayed for the dead
 
@@ -1518,9 +1518,9 @@ That is why the Church exhorts the living to pray for the dead. It does not chan
 
 ## Key questions
 
-1. How do you interpret 2 Maccabees 12,44-46 about praying for the dead? (If you reject the book, why did Luther deny its canonicity precisely in the debate on Purgatory?)
+1. How do you interpret 2 Maccabees 12:44-46 about praying for the dead? (If you reject the book, why did Luther deny its canonicity precisely in the debate on Purgatory?)
 
-2. In 1 Corinthians 3,15, Paul says someone can be saved "yet so as by fire". What fire is that?
+2. In 1 Corinthians 3:15, Paul says someone can be saved "yet so as by fire". What fire is that?
 
 3. If there is no Purgatory, why did the entire Church since the first centuries pray for the dead? Did the apostles teach wrong?
 
@@ -1529,14 +1529,14 @@ That is why the Church exhorts the living to pray for the dead. It does not chan
 
   24: {
     titleEn: 'Faith and Works: Not Sola Fide',
-    summaryEn: 'Salvation is obtained by faith that works through charity. James 2,24 explicitly contradicts Protestant Sola Fide.',
+    summaryEn: 'Salvation is obtained by faith that works through charity. James 2:24 explicitly contradicts Protestant Sola Fide.',
     bodyEn: `One of the pillars of the Protestant Reformation was Sola Fide (faith alone): the doctrine that salvation is obtained exclusively by faith, without any cooperation of works. Luther went so far as to call the Letter of James "an epistle of straw", in his 1522 preface to the New Testament, because it contradicted this doctrine.
 
 ## "Not by faith alone"
 
-James 2,24 writes: "Do you see that by works a man is justified, and not by faith only?". This is the only time in the entire Bible that the expression "by faith alone" (in Greek, ek písteōs mónon) appears, and it appears denied. James continues: "For even as the body without the spirit is dead: so also faith without works is dead" (Jas 2,26).
+James 2:24 writes: "Do you see that by works a man is justified, and not by faith only?". This is the only time in the entire Bible that the expression "by faith alone" (in Greek, ek písteōs mónon) appears, and it appears denied. James continues: "For even as the body without the spirit is dead: so also faith without works is dead" (Jas 2:26).
 
-True faith is never alone. It is alive, and necessarily produces works of charity. When Paul says that "a man is justified by faith, without the works of the law" (Romans 3,28), he is contrasting Christian faith with the works of the Mosaic Law (circumcision, sabbath, kosher rites), and with the idea that some human work could merit justification. He is not denying the necessity of the works of charity that faith inspires. In Galatians 5,6, Paul himself writes: "in Christ Jesus neither circumcision availeth any thing nor uncircumcision: but faith that worketh by charity".
+True faith is never alone. It is alive, and necessarily produces works of charity. When Paul says that "a man is justified by faith, without the works of the law" (Romans 3:28), he is contrasting Christian faith with the works of the Mosaic Law (circumcision, sabbath, kosher rites), and with the idea that some human work could merit justification. He is not denying the necessity of the works of charity that faith inspires. In Galatians 5:6, Paul himself writes: "in Christ Jesus neither circumcision availeth any thing nor uncircumcision: but faith that worketh by charity".
 
 ## The Catholic position
 
@@ -1544,29 +1544,29 @@ The Catholic position is simple and biblical. Salvation is free: nothing we do c
 
 ## Works in the final judgment
 
-Jesus himself speaks of the decisive importance of works in the final judgment. In Matthew 25,31-46 (the judgment of the nations), the saved and the condemned are separated by concrete works of mercy: "I was hungry, and you gave me to eat", says the King, and "as long as you did it to one of these my least brethren, you did it to me". Faith is not even mentioned in that judgment.
+Jesus himself speaks of the decisive importance of works in the final judgment. In Matthew 25:31-46 (the judgment of the nations), the saved and the condemned are separated by concrete works of mercy: "I was hungry, and you gave me to eat", says the King, and "as long as you did it to one of these my least brethren, you did it to me". Faith is not even mentioned in that judgment.
 
-In Matthew 7,21, Jesus is categorical: "Not every one that saith to me, Lord, Lord, shall enter into the kingdom of heaven: but he that doth the will of my Father who is in heaven". Merely confessing the faith with the mouth ("saying Lord, Lord") is not enough. One must do.
+In Matthew 7:21, Jesus is categorical: "Not every one that saith to me, Lord, Lord, shall enter into the kingdom of heaven: but he that doth the will of my Father who is in heaven". Merely confessing the faith with the mouth ("saying Lord, Lord") is not enough. One must do.
 
-Apocalypse 20,12-13 describes the final judgment: "they were judged, every one according to their works". And Paul, in Romans 2,6-7, says that God "will render to every man according to his works. To them indeed who, according to patience in good work, seek glory and honour and incorruption, eternal life".
+Apocalypse 20:12-13 describes the final judgment: "they were judged, every one according to their works". And Paul, in Romans 2:6-7, says that God "will render to every man according to his works. To them indeed who, according to patience in good work, seek glory and honour and incorruption, eternal life".
 
 ## Everything is grace
 
 There is still a common confusion of terms. Protestants sometimes think that "justification" in the Catholic sense means "earning entry into heaven by one\'s own effort". It is not that. Catholic doctrine is clear: everything is grace. Even our good works are possible by grace. As Saint Augustine says in a letter of 418 (Letter 194), "when God crowns our merits, he crowns his own gifts".
 
-The practical question is simple. Imagine someone who confesses Christ with the mouth, but lives in habitual mortal sin, without charity, without mercy, without conversion. Will this person be saved? James asks: "Shall faith be able to save him?" (Jas 2,14). And he answers: "Thou believest that there is one God. Thou dost well: the devils also believe and tremble" (Jas 2,19). The demons know the truth about God and are not saved by it: belief without love is not enough.
+The practical question is simple. Imagine someone who confesses Christ with the mouth, but lives in habitual mortal sin, without charity, without mercy, without conversion. Will this person be saved? James asks: "Shall faith be able to save him?" (Jas 2:14). And he answers: "Thou believest that there is one God. Thou dost well: the devils also believe and tremble" (Jas 2:19). The demons know the truth about God and are not saved by it: belief without love is not enough.
 
 The classical Catholic formulation is: we are justified by faith working through charity. Faith without charity is dead. Charity without faith is mere philanthropy. The two together, animated by grace, are the path of salvation.
 
 ## Key questions
 
-1. How do you read James 2,24, which says literally that justification is not "by faith alone"?
+1. How do you read James 2:24, which says literally that justification is not "by faith alone"?
 
 2. In the judgment of Matthew 25, why are the saved and the condemned separated by concrete works, and not by faith?
 
-3. If faith alone is enough, why does James 2,19 say that "the devils also believe and tremble"?
+3. If faith alone is enough, why does James 2:19 say that "the devils also believe and tremble"?
 
-4. If works do not matter, why does Apocalypse 20,13 say that "they were judged, every one according to their works"?`,
+4. If works do not matter, why does Apocalypse 20:13 say that "they were judged, every one according to their works"?`,
   },
 
 };
@@ -1583,7 +1583,7 @@ The question was formally debated at the Council of Ephesus in 431, against the 
 
 ## "Mother of my Lord"
 
-The biblical basis is direct. In Luke 1,43, Elizabeth, full of the Holy Spirit, calls Mary "the mother of my Lord". The word Kyrios (Lord) is the one the Septuagint uses to translate the divine name YHWH, and Luke himself applies it to God right afterwards (Luke 1,45-46). Elizabeth thus recognizes the Lord in the child Mary carries in her womb, and the Catechism sees in this greeting the basis of the title Mother of God (§495).
+The biblical basis is direct. In Luke 1:43, Elizabeth, full of the Holy Spirit, calls Mary "the mother of my Lord". The word Kyrios (Lord) is the one the Septuagint uses to translate the divine name YHWH, and Luke himself applies it to God right afterwards (Luke 1:45-46). Elizabeth thus recognizes the Lord in the child Mary carries in her womb, and the Catechism sees in this greeting the basis of the title Mother of God (§495).
 
 The first of Saint Cyril\'s anathemas, read at the Council of Ephesus, says: "If anyone does not confess that Emmanuel is truly God, and therefore that the Holy Virgin is the Mother of God, since she bore according to the flesh the Word of God become flesh, let him be anathema". This title is as Christological as it is Mariological. To deny it is to deny the true Incarnation.
 
@@ -1599,7 +1599,7 @@ Denying the Theotokos of Mary is not a minor objection. It is denying who Jesus 
 
 1. Mary is the mother of Jesus. Jesus is God. Therefore, Mary is mother of God. Where is the error?
 
-2. In Luke 1,43 Elizabeth calls Mary "the mother of my Lord". If Lord (Kyrios) is a divine title, how can one deny Theotokos?
+2. In Luke 1:43 Elizabeth calls Mary "the mother of my Lord". If Lord (Kyrios) is a divine title, how can one deny Theotokos?
 
 3. If you deny that Mary is Mother of God, are you saying that Jesus has two persons (one human, born of Mary, and another divine, eternal)? This is Nestorianism, condemned at Ephesus.
 
@@ -1620,11 +1620,11 @@ The Church teaches, without ambiguity, that every person possesses inalienable d
 
 ## Inclination and act
 
-The crucial distinction is between inclination and act. The Church does not condemn the homosexual tendency in itself, which is not a sin, although the Catechism describes it as "objectively disordered" (Catechism 2358). What it teaches as contrary to natural law are homosexual acts. The reason is anthropological: human sexuality, in the Christian view, is ordered to the union between man and woman and to the transmission of life (Genesis 1,27-28). Acts that exclude this finality in principle move away from the order for which sexuality was created.
+The crucial distinction is between inclination and act. The Church does not condemn the homosexual tendency in itself, which is not a sin, although the Catechism describes it as "objectively disordered" (Catechism 2358). What it teaches as contrary to natural law are homosexual acts. The reason is anthropological: human sexuality, in the Christian view, is ordered to the union between man and woman and to the transmission of life (Genesis 1:27-28). Acts that exclude this finality in principle move away from the order for which sexuality was created.
 
 ## What the New Testament says
 
-Saint Paul treats the subject in Romans 1,26-27 and in 1 Corinthians 6,9-11. This last passage is important because, after listing various conducts (including homosexual acts) that exclude from the Kingdom, it concludes: "And such were some of you. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ". The apostolic teaching is not one of exclusion, it is one of transformation made possible by grace.
+Saint Paul treats the subject in Romans 1:26-27 and in 1 Corinthians 6:9-11. This last passage is important because, after listing various conducts (including homosexual acts) that exclude from the Kingdom, it concludes: "And such were some of you. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ". The apostolic teaching is not one of exclusion, it is one of transformation made possible by grace.
 
 This position is not discrimination. The Church asks for chastity from everyone, married and single (Catechism 2348 and 2359). A single heterosexual man or woman is also called to chastity. The teaching is universal, demanding, and the same for all. There is no moral standard for some and another for others.
 
@@ -1654,7 +1654,7 @@ Islam was founded by Muhammad, who was born in Mecca around the year 570 and die
 
 The center of everything is tawhid, the absolute oneness of God. Allah is one, creator of all things, omniscient, almighty, and final judge. The gravest sin that exists is shirk, associating any partner or equal with Allah. Religious life is organized around the five pillars: the profession of faith (there is no deity but Allah, and Muhammad is his messenger), the five daily prayers, obligatory almsgiving (zakat), the fast of the month of Ramadan, and the pilgrimage to Mecca (hajj).
 
-The Muslim reveres a long line of prophets that includes Adam, Noah, Abraham, Moses, and Jesus. And here is something that surprises many Christians: Islam has great respect for Jesus, whom it calls Isa, the Messiah. The Quran affirms that he was born of a virgin, Mary, the only woman named in the book and to whom sura 19 is dedicated. It affirms that Jesus performed miracles by Allah's permission and that he will return at the end of time. What Islam denies is that Jesus is God or Son of God, that he died on the cross, and the Trinity itself (suras 4,171 and 5,72).
+The Muslim reveres a long line of prophets that includes Adam, Noah, Abraham, Moses, and Jesus. And here is something that surprises many Christians: Islam has great respect for Jesus, whom it calls Isa, the Messiah. The Quran affirms that he was born of a virgin, Mary, the only woman named in the book and to whom sura 19 is dedicated. It affirms that Jesus performed miracles by Allah's permission and that he will return at the end of time. What Islam denies is that Jesus is God or Son of God, that he died on the cross, and the Trinity itself (suras 4:171 and 5:72).
 
 ## Points of convergence
 
@@ -1664,19 +1664,19 @@ Christians and Muslims affirm much together. We believe in one God, creator of h
 
 The difficulties begin precisely where the greatest Islamic reverence lies: in the person of Jesus. It is not a single problem, but several, and together they form a tension that is hard to sustain.
 
-1. The Islamic Dilemma. Jesus, according to the Gospels, repeatedly affirmed himself to be God. In John 8,58 he declares "before Abraham was, I am", applying to himself the divine name revealed to Moses. The listeners understood so well that they picked up stones to stone him for blasphemy. In John 10,30 he says "I and the Father are one", and again they try to stone him "because, being a man, you make yourself God". Before the high priest, under oath, he confirms that he is the Son of the Blessed, and he is condemned to death for it. The Muslim then has two ways out, and neither satisfies him. Either he accepts that Jesus said these things, and then Jesus is God (and the Quran errs in denying it) or he is a blasphemer (and cannot be a prophet). Or he denies that he said them, alleging that the Gospels were corrupted, but this contradicts the Quran itself, which confirms the Torah and the Gospel (sura 3,3) and orders judgment by the Gospel (sura 5,46-47).
+1. The Islamic Dilemma. Jesus, according to the Gospels, repeatedly affirmed himself to be God. In John 8:58 he declares "before Abraham was, I am", applying to himself the divine name revealed to Moses. The listeners understood so well that they picked up stones to stone him for blasphemy. In John 10:30 he says "I and the Father are one", and again they try to stone him "because, being a man, you make yourself God". Before the high priest, under oath, he confirms that he is the Son of the Blessed, and he is condemned to death for it. The Muslim then has two ways out, and neither satisfies him. Either he accepts that Jesus said these things, and then Jesus is God (and the Quran errs in denying it) or he is a blasphemer (and cannot be a prophet). Or he denies that he said them, alleging that the Gospels were corrupted, but this contradicts the Quran itself, which confirms the Torah and the Gospel (sura 3:3) and orders judgment by the Gospel (sura 5:46-47).
 
-2. The denial of the crucifixion. Sura 4,157 affirms that the Jews "did not kill him nor crucify him, but it only appeared so to them". Now, the death of Jesus by crucifixion is one of the best established facts of all ancient history. It is attested by the four Gospels, by Paul a few years after the event, and also by non-Christian sources, such as the Roman historian Tacitus, hostile to Christians, who records the execution of Christ under Pontius Pilate, and the Jew Flavius Josephus, who in the Jewish Antiquities (18,3,3) says that Pilate condemned him to the cross, in a passage that received Christian additions but whose core most historians consider authentic. A 7th-century text is denying an event documented by 1st-century witnesses.
+2. The denial of the crucifixion. Sura 4:157 affirms that the Jews "did not kill him nor crucify him, but it only appeared so to them". Now, the death of Jesus by crucifixion is one of the best established facts of all ancient history. It is attested by the four Gospels, by Paul a few years after the event, and also by non-Christian sources, such as the Roman historian Tacitus, hostile to Christians, who records the execution of Christ under Pontius Pilate, and the Jew Flavius Josephus, who in the Jewish Antiquities (18.3.3) says that Pilate condemned him to the cross, in a passage that received Christian additions but whose core most historians consider authentic. A 7th-century text is denying an event documented by 1st-century witnesses.
 
 3. The preservation of the Quran itself. The Muslim usually says that the Bible was corrupted, but that the Quran arrived perfect to this day. Islamic sources themselves say otherwise. The Sahih al-Bukhari, the most respected collection of traditions in Sunni Islam, reports that Caliph Uthman, around 650, ordered the divergent copies of the Quran to be gathered and burned, fixing a single version. If the existence of variants and a later standardization invalidated a scripture, that same criterion would reach the Quran before reaching the Bible.
 
-4. Was Muhammad foretold in the Bible? Some Islamic apologists cite Deuteronomy 18,18 ("I will raise up a prophet like you") and the Paraclete promised by Jesus in John 14,16, identified with "Ahmad" in sura 61,6. But Deuteronomy speaks of a prophet from among the people of Israel, and the Acts of the Apostles apply the text to Jesus, not to an Arab six centuries later. And the Paraclete, in John's own Gospel, is explicitly the Holy Spirit, who "remains with you and will be in you" and was given at Pentecost, not a man who would be born much later.
+4. Was Muhammad foretold in the Bible? Some Islamic apologists cite Deuteronomy 18:18 ("I will raise up a prophet like you") and the Paraclete promised by Jesus in John 14:16, identified with "Ahmad" in sura 61:6. But Deuteronomy speaks of a prophet from among the people of Israel, and the Acts of the Apostles apply the text to Jesus, not to an Arab six centuries later. And the Paraclete, in John's own Gospel, is explicitly the Holy Spirit, who "remains with you and will be in you" and was given at Pentecost, not a man who would be born much later.
 
 ## Key questions
 
-1. You accept that the Quran (sura 5,46-47) orders judgment by the Gospel. Where, in the Gospel that existed at that time, does Jesus deny being God?
+1. You accept that the Quran (sura 5:46-47) orders judgment by the Gospel. Where, in the Gospel that existed at that time, does Jesus deny being God?
 
-2. The crucifixion of Jesus is attested even by Roman and Jewish sources that were not Christian. On what 1st-century evidence does sura 4,157 deny it?
+2. The crucifixion of Jesus is attested even by Roman and Jewish sources that were not Christian. On what 1st-century evidence does sura 4:157 deny it?
 
 3. If the Bible was corrupted, when and by whom? And what about the Quran, knowing that Caliph Uthman himself ordered the divergent copies burned?
 
@@ -1702,21 +1702,21 @@ There is real common ground. Against materialism, Spiritism affirms that God exi
 
 The differences, however, reach the heart of the faith.
 
-1. Jesus: creature or Creator? In the answer to question 625 of The Spirits' Book, Kardec defines Jesus as "type of the moral perfection to which Humanity can aspire on Earth", but not as God. This contradicts the Gospels themselves. In John 1,1 the Word "was God" from the beginning. In John 8,58 Jesus takes for himself the divine name "I Am". In John 20,28 the apostle Thomas calls him "My Lord and my God", and Jesus accepts the title. Yet in Apocalypse 22,8-9 an angel firmly refuses to be worshiped and orders that only God be adored. If Jesus were merely a very elevated spirit, accepting worship would have been exactly the sin the angel refused to commit.
+1. Jesus: creature or Creator? In the answer to question 625 of The Spirits' Book, Kardec defines Jesus as "type of the moral perfection to which Humanity can aspire on Earth", but not as God. This contradicts the Gospels themselves. In John 1:1 the Word "was God" from the beginning. In John 8:58 Jesus takes for himself the divine name "I Am". In John 20:28 the apostle Thomas calls him "My Lord and my God", and Jesus accepts the title. Yet in Apocalypse 22:8-9 an angel firmly refuses to be worshiped and orders that only God be adored. If Jesus were merely a very elevated spirit, accepting worship would have been exactly the sin the angel refused to commit.
 
-2. Reincarnation or resurrection? The Letter to the Hebrews is direct: "it is appointed for men to die once, and after that the judgment" (Hebrews 9,27). One life, one judgment, not a cycle of returns. Jesus, in the parable of the rich man and Lazarus (Luke 16,19-31), describes the dead as conscious, with identity preserved, separated by a chasm that no one can cross. There is no reincarnation there, there is permanence. And when John the Baptist is asked directly whether he is Elijah, whom some Spiritists say is reincarnated in him, he answers categorically: "I am not" (John 1,21). Christianity awaits the resurrection of the body itself, not the transmigration of the soul through different bodies.
+2. Reincarnation or resurrection? The Letter to the Hebrews is direct: "it is appointed for men to die once, and after that the judgment" (Hebrews 9:27). One life, one judgment, not a cycle of returns. Jesus, in the parable of the rich man and Lazarus (Luke 16:19-31), describes the dead as conscious, with identity preserved, separated by a chasm that no one can cross. There is no reincarnation there, there is permanence. And when John the Baptist is asked directly whether he is Elijah, whom some Spiritists say is reincarnated in him, he answers categorically: "I am not" (John 1:21). Christianity awaits the resurrection of the body itself, not the transmigration of the soul through different bodies.
 
-3. Communication with the dead. Here the conflict is head-on. The Bible expressly forbids consulting the dead. Deuteronomy 18,10-12 includes among the abominations "one who consults spirits and one who questions the dead". Isaiah 8,19 asks ironically: "should not a people consult its God? Will they consult the dead on behalf of the living?". When King Saul resorts to the medium of Endor (1 Samuel 28), the episode is narrated as a grave sin that precedes his ruin, not as an example to follow: the book of Chronicles later says he died for his unfaithfulness, including for having consulted a medium (1 Chronicles 10,13). The Catechism of the Catholic Church says that all forms of divination are to be rejected, including conjuring up the dead and recourse to mediums (paragraph 2116), and warns the faithful against spiritism (paragraph 2117). Behind what presents itself as the spirit of a deceased person is not always who it claims to be.
+3. Communication with the dead. Here the conflict is head-on. The Bible expressly forbids consulting the dead. Deuteronomy 18:10-12 includes among the abominations "one who consults spirits and one who questions the dead". Isaiah 8:19 asks ironically: "should not a people consult its God? Will they consult the dead on behalf of the living?". When King Saul resorts to the medium of Endor (1 Samuel 28), the episode is narrated as a grave sin that precedes his ruin, not as an example to follow: the book of Chronicles later says he died for his unfaithfulness, including for having consulted a medium (1 Chronicles 10:13). The Catechism of the Catholic Church says that all forms of divination are to be rejected, including conjuring up the dead and recourse to mediums (paragraph 2116), and warns the faithful against spiritism (paragraph 2117). Behind what presents itself as the spirit of a deceased person is not always who it claims to be.
 
 4. The authority of Kardec. There remains the underlying question. On what does a 19th-century French pedagogue rest, starting from messages attributed to spirits, to correct the eyewitness testimony of the apostles and eighteen centuries of Christian doctrine about who Jesus is and what happens after death?
 
 ## Key questions
 
-1. In John 20,28 Thomas calls Jesus "my God" and he accepts it; in Apocalypse 22,9 an angel refuses worship. Why did Jesus, if he were only a creature, accept what the angel refused?
+1. In John 20:28 Thomas calls Jesus "my God" and he accepts it; in Apocalypse 22:9 an angel refuses worship. Why did Jesus, if he were only a creature, accept what the angel refused?
 
-2. If man dies only once and is then judged (Hebrews 9,27), where do reincarnations fit?
+2. If man dies only once and is then judged (Hebrews 9:27), where do reincarnations fit?
 
-3. The Bible forbids consulting the dead (Deuteronomy 18,11 and Isaiah 8,19). On what biblical text does Spiritism rely to do the opposite?
+3. The Bible forbids consulting the dead (Deuteronomy 18:11 and Isaiah 8:19). On what biblical text does Spiritism rely to do the opposite?
 
 4. On what authority does Allan Kardec correct the apostles regarding the identity of Jesus?`,
   },
@@ -1740,7 +1740,7 @@ What changed? After the destruction of the Temple in the year 70, rabbinic Judai
 
 ## Luther removes seven books
 
-In the 16th century, Martin Luther, following Saint Jerome and the Hebrew canon, took the deuterocanonical books out of the body of the Old Testament. In his 1534 Bible he gathered them in a separate section, between the two Testaments, under the title "Apocrypha": books "not held equal to Holy Scripture, but useful and good to read". Over time, Protestant Bibles came to omit them altogether. The question also had theological weight: 2 Maccabees 12,45 speaks explicitly of praying for the dead, one of the supports of the Catholic doctrine of Purgatory, and already at the Leipzig debate, in 1519, Luther denied the book any force as proof because it was not in the canon. It was a later decision, against 1500 years of constant use in the Church (even when some Fathers had reservations, the liturgy and the councils always received them).
+In the 16th century, Martin Luther, following Saint Jerome and the Hebrew canon, took the deuterocanonical books out of the body of the Old Testament. In his 1534 Bible he gathered them in a separate section, between the two Testaments, under the title "Apocrypha": books "not held equal to Holy Scripture, but useful and good to read". Over time, Protestant Bibles came to omit them altogether. The question also had theological weight: 2 Maccabees 12:45 speaks explicitly of praying for the dead, one of the supports of the Catholic doctrine of Purgatory, and already at the Leipzig debate, in 1519, Luther denied the book any force as proof because it was not in the canon. It was a later decision, against 1500 years of constant use in the Church (even when some Fathers had reservations, the liturgy and the councils always received them).
 
 ## Trent confirms the canon
 
@@ -1756,7 +1756,7 @@ Worth noting: the Church did not "decide arbitrarily" the canon. As the Catechis
 
 2. Why did Luther\'s Bible follow the Jewish canon fixed after Christianity, and not the Bible of the apostles?
 
-3. If the deuterocanonical books are not inspired, why does Hebrews 11,35 clearly allude to the martyrdom of 2 Maccabees 7?
+3. If the deuterocanonical books are not inspired, why does Hebrews 11:35 clearly allude to the martyrdom of 2 Maccabees 7?
 
 4. Why do Protestants admit that their Bible has books that the Church decided to include, but reject others that the same Church decided to include?`,
   },
@@ -1774,19 +1774,19 @@ The fundamental principle is simple: God accommodates himself to human nature. W
 
 The seven sacraments embrace all stages of Christian life.
 
-Baptism is the doorway. It erases original sin and personal sin, infuses the life of God (sanctifying grace), makes the soul a child of God and member of the Church. Jesus commanded it in Matthew 28,19: "teach ye all nations: baptizing them in the name of the Father and of the Son and of the Holy Ghost". In John 3,5 he says: "unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God".
+Baptism is the doorway. It erases original sin and personal sin, infuses the life of God (sanctifying grace), makes the soul a child of God and member of the Church. Jesus commanded it in Matthew 28:19: "teach ye all nations: baptizing them in the name of the Father and of the Son and of the Holy Ghost". In John 3:5 he says: "unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God".
 
-Confirmation (Chrismation) is the sacrament of Christian maturity. It confers the gifts of the Holy Spirit in a special way (wisdom, understanding, counsel, fortitude, knowledge, piety, fear of God) so that the baptized may give public witness to the faith. It comes from Pentecost (Acts 2). Practiced by the apostles through the laying on of hands (Acts 8,14-17).
+Confirmation (Chrismation) is the sacrament of Christian maturity. It confers the gifts of the Holy Spirit in a special way (wisdom, understanding, counsel, fortitude, knowledge, piety, fear of God) so that the baptized may give public witness to the faith. It comes from Pentecost (Acts 2). Practiced by the apostles through the laying on of hands (Acts 8:14-17).
 
-Eucharist is the heart of Christian life. Instituted at the Last Supper ("This is my body", Mt 26,26), it is not a symbol: it is the Body, Blood, Soul and Divinity of Jesus Christ, as the Council of Trent defined (session XIII, 1551) and the Catechism teaches (§1374). Topic treated in its own article.
+Eucharist is the heart of Christian life. Instituted at the Last Supper ("This is my body", Mt 26:26), it is not a symbol: it is the Body, Blood, Soul and Divinity of Jesus Christ, as the Council of Trent defined (session XIII, 1551) and the Catechism teaches (§1374). Topic treated in its own article.
 
-Reconciliation (Confession) restores grace lost through grave sin. Jesus explicitly instituted it in John 20,22-23: "Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them". This power is given to the apostles and their legitimate successors (bishops and priests). Topic treated in its own article on confession.
+Reconciliation (Confession) restores grace lost through grave sin. Jesus explicitly instituted it in John 20:22-23: "Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them". This power is given to the apostles and their legitimate successors (bishops and priests). Topic treated in its own article on confession.
 
-Anointing of the Sick strengthens those who are in grave illness. James 5,14-15 orders: "Is any man sick among you? Let him bring in the priests of the church and let them pray over him, anointing him with oil in the name of the Lord". It can erase sins, give peace, and sometimes restore physical health.
+Anointing of the Sick strengthens those who are in grave illness. James 5:14-15 orders: "Is any man sick among you? Let him bring in the priests of the church and let them pray over him, anointing him with oil in the name of the Lord". It can erase sins, give peace, and sometimes restore physical health.
 
 Holy Orders is the sacrament that constitutes bishops, priests and deacons. Apostolic succession passes through here: each bishop receives ordination from another bishop, in an unbroken chain back to the apostles. Without valid orders, there is no valid Eucharist and no valid confession. That is why the Church does not recognize as priests pastors of denominations without apostolic succession.
 
-Matrimony between two baptized persons is elevated by Christ to sacramental dignity (Mt 19,6 and Eph 5,32). It confers special grace so that the spouses may live conjugal love according to Christ and fulfill faithfully the duties of marriage. It is indissoluble: "What therefore God hath joined together, let no man put asunder" (Mt 19,6).
+Matrimony between two baptized persons is elevated by Christ to sacramental dignity (Mt 19:6 and Eph 5:32). It confers special grace so that the spouses may live conjugal love according to Christ and fulfill faithfully the duties of marriage. It is indissoluble: "What therefore God hath joined together, let no man put asunder" (Mt 19:6).
 
 ## Matter, form, and minister
 
@@ -1794,13 +1794,13 @@ Each sacrament has three elements: matter (sensible sign, like water or oil), fo
 
 ## Key questions
 
-1. If sacraments are "only symbols", why does Jesus say in John 6,53 that without eating his flesh there is no life in you?
+1. If sacraments are "only symbols", why does Jesus say in John 6:53 that without eating his flesh there is no life in you?
 
-2. Why does Paul, in 1 Corinthians 11,29, say that eating the Eucharist unworthily brings condemnation? Symbols do not condemn.
+2. Why does Paul, in 1 Corinthians 11:29, say that eating the Eucharist unworthily brings condemnation? Symbols do not condemn.
 
-3. In John 20,22-23 Jesus gives the power to forgive sins to the apostles. Did this power disappear in the next generation, or does it continue?
+3. In John 20:22-23 Jesus gives the power to forgive sins to the apostles. Did this power disappear in the next generation, or does it continue?
 
-4. If sacraments do not produce grace, why does James 5,14-15 promise physical healing and forgiveness through the anointing?`,
+4. If sacraments do not produce grace, why does James 5:14-15 promise physical healing and forgiveness through the anointing?`,
   },
 
   21: {
@@ -1810,7 +1810,7 @@ Each sacrament has three elements: matter (sensible sign, like water or oil), fo
 
 ## Instituted at the Resurrection
 
-On the very Sunday of the Resurrection, Jesus appears to the apostles and says: "As the Father hath sent me, I also send you". And he breathed on them, saying: "Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them: and whose sins you shall retain, they are retained" (John 20,21-23). This is the formal institution of the sacrament of Reconciliation.
+On the very Sunday of the Resurrection, Jesus appears to the apostles and says: "As the Father hath sent me, I also send you". And he breathed on them, saying: "Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them: and whose sins you shall retain, they are retained" (John 20:21-23). This is the formal institution of the sacrament of Reconciliation.
 
 Notice: Jesus gives the power to forgive and the power to retain sins. To retain or forgive with wisdom, it is necessary to know them. And to know them, it is necessary to hear them. Hence confession.
 
@@ -1818,25 +1818,25 @@ This power is not transferable to oneself (you cannot absolve yourself). It is n
 
 ## Confession in Scripture
 
-The Bible knows of other practices of confession as well. James 5,16 orders: "Confess your sins to one another". 1 John 1,9 says: "If we confess our sins, he is faithful and just, to forgive us our sins". Acts 19,18 tells that "many of them that believed came, confessing and declaring their deeds". Confession was part of Christian life from the beginning.
+The Bible knows of other practices of confession as well. James 5:16 orders: "Confess your sins to one another". 1 John 1:9 says: "If we confess our sins, he is faithful and just, to forgive us our sins". Acts 19:18 tells that "many of them that believed came, confessing and declaring their deeds". Confession was part of Christian life from the beginning.
 
 ## The practice from the beginning
 
-The historical practice is documentable. The Didache (1st-2nd century) commands: "In the church you shall acknowledge your transgressions" (4,14). Saint Ignatius of Antioch, around 107, links the forgiveness of those who repent to their return to communion with the bishop. Tertullian (c. 203) describes the penance in which the sinner bows before the feet of the presbyters, and Origen (Homilies on Leviticus 2,4) speaks of one who is not ashamed to declare his sin to the priest of the Lord. Around 251, Saint Cyprian of Carthage praises those who, having merely thought of sacrificing to idols, "confess this very thing to God\'s priests" and "seek out the salutary medicine even for slight and moderate wounds" (On the Lapsed, 28). The form evolved (in the beginning it was more public, then became private to preserve the dignity of the penitent), but the essence is the same since the apostles.
+The historical practice is documentable. The Didache (1st-2nd century) commands: "In the church you shall acknowledge your transgressions" (4:14). Saint Ignatius of Antioch, around 107, links the forgiveness of those who repent to their return to communion with the bishop. Tertullian (c. 203) describes the penance in which the sinner bows before the feet of the presbyters, and Origen (Homilies on Leviticus 2:4) speaks of one who is not ashamed to declare his sin to the priest of the Lord. Around 251, Saint Cyprian of Carthage praises those who, having merely thought of sacrificing to idols, "confess this very thing to God\'s priests" and "seek out the salutary medicine even for slight and moderate wounds" (On the Lapsed, 28). The form evolved (in the beginning it was more public, then became private to preserve the dignity of the penitent), but the essence is the same since the apostles.
 
 ## It is God who forgives
 
 Worth noting an important distinction. Who forgives the sin is God, not the priest. The priest is an instrument. He acts in persona Christi (in the person of Christ). It is like the pipe that carries water: the water comes from the source, but passes through the pipe. The absolution comes from God, but passes through the minister\'s word: "I absolve you of your sins, in the name of the Father, and of the Son, and of the Holy Spirit".
 
-The objection "God knows me and forgives me directly" has three problems. First, it contradicts what Jesus instituted (Jn 20,23). Second, it ignores that we are incarnate beings, and forgiveness needs to also be sensible (a word heard, an absolution declared, a real encounter). Third, it loses the psychological and spiritual effect of saying the sin out loud to another human being (humility, medicinal shame, concrete counsel).
+The objection "God knows me and forgives me directly" has three problems. First, it contradicts what Jesus instituted (Jn 20:23). Second, it ignores that we are incarnate beings, and forgiveness needs to also be sensible (a word heard, an absolution declared, a real encounter). Third, it loses the psychological and spiritual effect of saying the sin out loud to another human being (humility, medicinal shame, concrete counsel).
 
-The Church makes confession obligatory in two situations: whoever has grave sins must confess them at least once a year (minimum precept, Catechism §1457), and whoever is conscious of grave sin must go to confession before receiving Communion (Catechism §1457, cf. 1 Cor 11,27-29). Frequent confession, even of venial sins, is strongly recommended as a means of spiritual growth.
+The Church makes confession obligatory in two situations: whoever has grave sins must confess them at least once a year (minimum precept, Catechism §1457), and whoever is conscious of grave sin must go to confession before receiving Communion (Catechism §1457, cf. 1 Cor 11:27-29). Frequent confession, even of venial sins, is strongly recommended as a means of spiritual growth.
 
 ## Key questions
 
-1. In John 20,23 Jesus gives the power to forgive sins to the apostles. To whom was this power given, if not to priests?
+1. In John 20:23 Jesus gives the power to forgive sins to the apostles. To whom was this power given, if not to priests?
 
-2. If "God forgives me directly", why does James 5,16 order to confess "to one another"?
+2. If "God forgives me directly", why does James 5:16 order to confess "to one another"?
 
 3. Why did the ancient Church already entrust the reconciliation of sinners to bishops and priests? Did it err for fifteen hundred years?
 
@@ -2051,7 +2051,7 @@ First, the context. Heliocentrism (Sun at the center) had already been proposed 
 
 ## What the problem really was
 
-The problem with Galileo was not that he defended heliocentrism as a mathematical hypothesis (that was tolerated). The problem was that he affirmed heliocentrism as proven physical truth, in contradiction to the traditional reading of certain biblical passages (such as Joshua 10,12-13, where "the sun stood still"). And at the time a direct proof of the Earth's motion was still missing. It would only come with the aberration of light, discovered by James Bradley in 1729, and with stellar parallax (the small apparent shift of nearby stars caused by the Earth's orbit), measured by Friedrich Bessel in 1838. And Galileo's main physical argument, from the tides, was wrong.
+The problem with Galileo was not that he defended heliocentrism as a mathematical hypothesis (that was tolerated). The problem was that he affirmed heliocentrism as proven physical truth, in contradiction to the traditional reading of certain biblical passages (such as Joshua 10:12-13, where "the sun stood still"). And at the time a direct proof of the Earth's motion was still missing. It would only come with the aberration of light, discovered by James Bradley in 1729, and with stellar parallax (the small apparent shift of nearby stars caused by the Earth's orbit), measured by Friedrich Bessel in 1838. And Galileo's main physical argument, from the tides, was wrong.
 
 ## What really happened
 
@@ -2126,13 +2126,13 @@ The third principle is partial testimony. When four people report the same accid
 
 ## Four common types and how to resolve them
 
-First type: omissions interpreted as denials. Matthew 28,5 mentions an angel at the tomb, Luke 24,4 mentions two. There is no contradiction: when there are two, there is always one. Matthew focuses on the one who spoke.
+First type: omissions interpreted as denials. Matthew 28:5 mentions an angel at the tomb, Luke 24:4 mentions two. There is no contradiction: when there are two, there is always one. Matthew focuses on the one who spoke.
 
-Second type: rounding and estimates. Mark 6,44 speaks of "five thousand men" at the multiplication of the loaves, and Matthew 14,21 says "about five thousand men, besides women and children". They are popular estimates, not a demographic census. The same applies to 1 Kings 7,23, which gives the "molten sea" of the Temple ten cubits from brim to brim and thirty around: a ratio rounded to 3 to 1, normal in describing a piece of work that was never meant as a geometry treatise.
+Second type: rounding and estimates. Mark 6:44 speaks of "five thousand men" at the multiplication of the loaves, and Matthew 14:21 says "about five thousand men, besides women and children". They are popular estimates, not a demographic census. The same applies to 1 Kings 7:23, which gives the "molten sea" of the Temple ten cubits from brim to brim and thirty around: a ratio rounded to 3 to 1, normal in describing a piece of work that was never meant as a geometry treatise.
 
 Third type: non-chronological narrative order. The Gospels often organize by theme, not by temporal sequence. The temptations in the desert appear in different order in Matthew 4 and Luke 4 because each evangelist organizes by his theological purpose.
 
-Fourth type: copying differences between manuscripts. Numbers were easy to miscopy. 2 Kings 8,26 says Ahaziah began to reign at 22, and the Hebrew text of 2 Chronicles 22,2 says 42, an impossible age, since his father died at 40 (2 Chronicles 21,20). The Douay-Rheims, following the Vulgate, keeps 42, while many modern translations read 22 in both places. Inspiration applies to the original text, and comparing the copies is what allows such slips to be corrected.
+Fourth type: copying differences between manuscripts. Numbers were easy to miscopy. 2 Kings 8:26 says Ahaziah began to reign at 22, and the Hebrew text of 2 Chronicles 22:2 says 42, an impossible age, since his father died at 40 (2 Chronicles 21:20). The Douay-Rheims, following the Vulgate, keeps 42, while many modern translations read 22 in both places. Inspiration applies to the original text, and comparing the copies is what allows such slips to be corrected.
 
 The most famous "contradictions" (Herod vs Quirinius at the birth of Jesus, the genealogies of Matthew and Luke, the appearances of the Resurrection) have specific articles in this app that show the resolutions. In almost all cases, the "contradiction" disappears when one understands the historical context, the literary genre, and the perspective of each author.
 
@@ -2152,13 +2152,13 @@ Even Bart Ehrman, agnostic and one of the best-known critics of the New Testamen
   32: {
     titleEn: 'Birth of Jesus: Herod and the Census of Quirinius',
     summaryEn: 'Matthew says Jesus was born under Herod (died 4 BC). Luke mentions the census of Quirinius (governor from 6 AD). The "contradiction" has textual and historical solutions.',
-    bodyEn: `It is one of the most cited objections against the historicity of the Gospels. Matthew 2,1 says that Jesus was born "in the time of King Herod". Herod the Great died in 4 BC, according to the most widely accepted chronology, drawn from the Jewish historian Flavius Josephus. But Luke 2,1-2 speaks of a census ordered by Caesar Augustus "when Quirinius was governor of Syria". Quirinius, according to Josephus, was only governor of Syria from the year 6 AD, therefore about ten years after Herod\'s death. How could Jesus have been born in two distinct periods?
+    bodyEn: `It is one of the most cited objections against the historicity of the Gospels. Matthew 2:1 says that Jesus was born "in the time of King Herod". Herod the Great died in 4 BC, according to the most widely accepted chronology, drawn from the Jewish historian Flavius Josephus. But Luke 2:1-2 speaks of a census ordered by Caesar Augustus "when Quirinius was governor of Syria". Quirinius, according to Josephus, was only governor of Syria from the year 6 AD, therefore about ten years after Herod\'s death. How could Jesus have been born in two distinct periods?
 
 The solution involves two complementary paths: a linguistic one and a historical one.
 
 ## The linguistic path
 
-Linguistic path: Luke\'s Greek. The verse Lk 2,2 literally says "hautē apographē prṓtē egéneto hēgemoneúontos tēs Syrías Kyrēníou". The traditional translation is "this was the first census made when Quirinius was governor of Syria". But the word prṓtē (πρώτη), normally "first", is also used in the Greek of the New Testament with the sense of "before". John 1,15 brings this explicit use: prṓtós mou ("before me"), Jesus in relation to John the Baptist, and John 15,18 repeats the construction ("before you"). Applying this reading to Luke 2,2, the sense would be: "this census happened before the one made when Quirinius was governor". The reading is debated: the grammarian Nigel Turner, in "Grammatical Insights into the New Testament" (1965), defended it as grammatically legitimate, and the biblical scholar N. T. Wright, in "Who Was Jesus?" (1992), considers it plausible. Others, such as Joseph Fitzmyer, reject it, and the question remains open.
+Linguistic path: Luke\'s Greek. The verse Lk 2:2 literally says "hautē apographē prṓtē egéneto hēgemoneúontos tēs Syrías Kyrēníou". The traditional translation is "this was the first census made when Quirinius was governor of Syria". But the word prṓtē (πρώτη), normally "first", is also used in the Greek of the New Testament with the sense of "before". John 1:15 brings this explicit use: prṓtós mou ("before me"), Jesus in relation to John the Baptist, and John 15:18 repeats the construction ("before you"). Applying this reading to Luke 2:2, the sense would be: "this census happened before the one made when Quirinius was governor". The reading is debated: the grammarian Nigel Turner, in "Grammatical Insights into the New Testament" (1965), defended it as grammatically legitimate, and the biblical scholar N. T. Wright, in "Who Was Jesus?" (1992), considers it plausible. Others, such as Joseph Fitzmyer, reject it, and the question remains open.
 
 ## The historical path
 
@@ -2166,41 +2166,41 @@ Historical path: Quirinius\' career. Latin inscriptions, especially the so-calle
 
 ## A third possibility
 
-There is also a third path, defended by some historians: the census described by Luke may not be the famous one of Quirinius of 6 AD (mentioned by Josephus in Antiquities 18,1), but another previous administrative process. The Roman records of the time are not complete, and local memory of the birth of Jesus may be referring to an event whose records were lost.
+There is also a third path, defended by some historians: the census described by Luke may not be the famous one of Quirinius of 6 AD (mentioned by Josephus in Antiquities 18.1), but another previous administrative process. The Roman records of the time are not complete, and local memory of the birth of Jesus may be referring to an event whose records were lost.
 
 The objection, therefore, is not decisive. The linguistic and historical solutions are reasonable, have academic backing, and reflect the real administrative complexity of the Roman Empire. Luke, a cultured doctor, companion of Paul\'s journeys and author of the most detailed book in historical references of the New Testament (Acts of the Apostles), has been repeatedly vindicated by archaeology. Ramsay began his career as a skeptic of Luke and ended as a defender of his historical precision precisely after years of field research.
 
-Worth noting the disproportion of the objection. The historicity of Jesus is attested by multiple independent sources (Matthew, Mark, Luke, John, Paul, Josephus, Tacitus, Pliny the Younger, Suetonius). Five grammatically ambiguous words in Luke 2,2 do not bring down this edifice.
+Worth noting the disproportion of the objection. The historicity of Jesus is attested by multiple independent sources (Matthew, Mark, Luke, John, Paul, Josephus, Tacitus, Pliny the Younger, Suetonius). Five grammatically ambiguous words in Luke 2:2 do not bring down this edifice.
 
 ## Key questions
 
-1. Have you examined the Greek of Luke 2,2, or accepted the traditional translation without questioning the possibility of "before"?
+1. Have you examined the Greek of Luke 2:2, or accepted the traditional translation without questioning the possibility of "before"?
 
 2. Did you know that Luke is considered a first-order historian by archaeologists like William Ramsay, vindicated in dozens of administrative details of the Roman Empire?
 
 3. If Luke were incompetent in history, why is Acts of the Apostles reliable even in minimal details of Mediterranean geography?
 
-4. Do five ambiguous words in Luke 2,2 annul all the other historical indicators of the birth of Jesus during the reign of Herod?`,
+4. Do five ambiguous words in Luke 2:2 annul all the other historical indicators of the birth of Jesus during the reign of Herod?`,
   },
 
   33: {
     titleEn: 'The Two Genealogies of Jesus: Matthew and Luke',
     summaryEn: 'Matthew and Luke bring different lists of Jesus\' ancestors. It is not a contradiction: they are distinct lines (legal and biological) serving distinct theological purposes.',
-    bodyEn: `Another common objection: Matthew 1,1-17 gives a genealogy of Jesus that goes from Abraham to Jesus, passing through David and his son Solomon. Luke 3,23-38 gives another genealogy, that goes from Jesus backwards to Adam, passing through David but through another son, Nathan. The lists have different names. How can they coexist?
+    bodyEn: `Another common objection: Matthew 1:1-17 gives a genealogy of Jesus that goes from Abraham to Jesus, passing through David and his son Solomon. Luke 3:23-38 gives another genealogy, that goes from Jesus backwards to Adam, passing through David but through another son, Nathan. The lists have different names. How can they coexist?
 
 The classical Catholic explanation, sustained since the Fathers, distinguishes legal genealogy and biological genealogy.
 
 ## Legal line and biological line
 
-First hypothesis: Matthew gives the legal line of Joseph, Luke gives the biological line of Mary. Matthew writes for a Jewish audience and emphasizes Jesus as Messiah son of David through the royal line (Solomon), legally heir to the throne through Joseph, husband of Mary. Luke writes for a broader (Greco-Roman) audience and traces the human ancestry of Jesus through his biological mother, who was also of the house of David (through the line of Nathan, another son of David and Bathsheba). Verse Luke 3,23 begins with "Jesus, as was supposed son of Joseph, son of Heli". The Greek construction allows reading that Heli was the father of Mary, father-in-law of Joseph, the Lucan line being the maternal one.
+First hypothesis: Matthew gives the legal line of Joseph, Luke gives the biological line of Mary. Matthew writes for a Jewish audience and emphasizes Jesus as Messiah son of David through the royal line (Solomon), legally heir to the throne through Joseph, husband of Mary. Luke writes for a broader (Greco-Roman) audience and traces the human ancestry of Jesus through his biological mother, who was also of the house of David (through the line of Nathan, another son of David and Bathsheba). Verse Luke 3:23 begins with "Jesus, as was supposed son of Joseph, son of Heli". The Greek construction allows reading that Heli was the father of Mary, father-in-law of Joseph, the Lucan line being the maternal one.
 
 ## The levirate explanation
 
-Second hypothesis: both genealogies are of Joseph, but they explain a case of levirate. The Levirate Law in Deuteronomy 25,5-6 established that, when a man died childless, his brother should marry the widow, and the first son of that union would be considered the legal son of the deceased. Applied to the genealogies: if Joseph\'s biological father was Jacob (Matthew) and the legal father was Heli (Luke, by levirate), the two lists would be true in different senses. Eusebius of Caesarea, in "Ecclesiastical History" I,7, cites a tradition transmitted by Julius Africanus (3rd century) with this explanation.
+Second hypothesis: both genealogies are of Joseph, but they explain a case of levirate. The Levirate Law in Deuteronomy 25:5-6 established that, when a man died childless, his brother should marry the widow, and the first son of that union would be considered the legal son of the deceased. Applied to the genealogies: if Joseph\'s biological father was Jacob (Matthew) and the legal father was Heli (Luke, by levirate), the two lists would be true in different senses. Eusebius of Caesarea, in "Ecclesiastical History" I,7, cites a tradition transmitted by Julius Africanus (3rd century) with this explanation.
 
 ## Genealogies were not spreadsheets
 
-There is a less common but defensible third way: the two lines converge at different points in history. Ancient genealogical lists frequently skipped generations, grouped ancestors in symbolic blocks, and followed theological objectives. The very structure of Matthew in 3 groups of 14 generations (1,17) is deliberately symbolic (14 is the numerical value in Hebrew of "David"), and required intentional omissions that the author knew (Matthew skips kings like Ahaziah, Joash and Amaziah, known from the Old Testament).
+There is a less common but defensible third way: the two lines converge at different points in history. Ancient genealogical lists frequently skipped generations, grouped ancestors in symbolic blocks, and followed theological objectives. The very structure of Matthew in 3 groups of 14 generations (1:17) is deliberately symbolic (14 is the numerical value in Hebrew of "David"), and required intentional omissions that the author knew (Matthew skips kings like Ahaziah, Joash and Amaziah, known from the Old Testament).
 
 To understand these omissions, one must accept that the ancients did not write genealogies with modern notarial precision. They were living documents, with theological and legal function, not merely biological. Each biblical genealogy has a specific purpose, and different purposes produce different cuts.
 
@@ -2212,9 +2212,9 @@ Worth adding: if the evangelists were inventing, they would align the lists to a
 
 1. Why would two authors who fabricate a genealogy for Jesus produce different versions? Wouldn\'t they align them to avoid contradiction?
 
-2. How do you read Luke 3,23 ("as was supposed son of Joseph")? Is it not exactly the kind of expression that opens space for the genealogy to be of another line?
+2. How do you read Luke 3:23 ("as was supposed son of Joseph")? Is it not exactly the kind of expression that opens space for the genealogy to be of another line?
 
-3. The Levirate Law in Deut 25,5-6 systematically creates "legal fathers" different from "biological fathers". Why can\'t this explain the two lists?
+3. The Levirate Law in Deut 25:5-6 systematically creates "legal fathers" different from "biological fathers". Why can\'t this explain the two lists?
 
 4. The ancients wrote genealogies with theological and legal purpose, not as complete biological tree. Are you applying modern expectations to ancient documents?`,
   },
@@ -2226,29 +2226,29 @@ Worth adding: if the evangelists were inventing, they would align the lists to a
 
 ## How many women went to the tomb?
 
-Matthew 28,1: "Mary Magdalene and the other Mary".
-Mark 16,1: "Mary Magdalene, Mary, mother of James, and Salome".
-Luke 24,10: "Mary Magdalene, Joanna, Mary, mother of James, and the others".
-John 20,1: "Mary Magdalene" (but in verse 2 she says "we do not know where they have laid him", the plural indicating that she was not alone).
+Matthew 28:1: "Mary Magdalene and the other Mary".
+Mark 16:1: "Mary Magdalene, Mary, mother of James, and Salome".
+Luke 24:10: "Mary Magdalene, Joanna, Mary, mother of James, and the others".
+John 20:1: "Mary Magdalene" (but in verse 2 she says "we do not know where they have laid him", the plural indicating that she was not alone).
 
-There is no contradiction. Each evangelist mentions some of the women present, none says "only these were there". John focuses on Mary Magdalene because she is the central character of his subsequent narrative. Matthew, writing for Jews, mentions two, perhaps because two witnesses sufficed under the Law (Deuteronomy 19,15). Luke, attentive physician, lists more names. The lists overlap and complement each other: Magdalene appears in all four, Mary mother of James in three, Salome only in Mark and Joanna only in Luke.
+There is no contradiction. Each evangelist mentions some of the women present, none says "only these were there". John focuses on Mary Magdalene because she is the central character of his subsequent narrative. Matthew, writing for Jews, mentions two, perhaps because two witnesses sufficed under the Law (Deuteronomy 19:15). Luke, attentive physician, lists more names. The lists overlap and complement each other: Magdalene appears in all four, Mary mother of James in three, Salome only in Mark and Joanna only in Luke.
 
 ## How many angels at the tomb?
 
-Matthew 28,5: "the angel".
-Mark 16,5: "a young man".
-Luke 24,4: "two men".
-John 20,12: "two angels".
+Matthew 28:5: "the angel".
+Mark 16:5: "a young man".
+Luke 24:4: "two men".
+John 20:12: "two angels".
 
 Same principle. When there are two, there is always one. Matthew and Mark focus on the angel who spoke (probably the protagonist of the scene). Luke and John mention both present. There is no logical contradiction between "one spoke" and "there were two". Saint Augustine uses exactly this example in "De Consensu Evangelistarum" (c. 400) to show how partial testimonies are not lying.
 
 ## Galilee or Jerusalem?
 
-Matthew 28,16: appearance in Galilee, on the mountain indicated by Jesus.
-Luke 24,33-53: appearances in Jerusalem and ascension near Bethany.
+Matthew 28:16: appearance in Galilee, on the mountain indicated by Jesus.
+Luke 24:33-53: appearances in Jerusalem and ascension near Bethany.
 John 20-21: appearances in Jerusalem and in Galilee (by the Sea of Tiberias, chapter 21).
 
-Acts 1,3 gives the key: Jesus appeared to the disciples during forty days after the Resurrection. There were multiple appearances, in different locations, throughout almost six weeks. Luke and Matthew focus on different sets of these appearances, according to their narrative purposes. There is no contradiction between "appeared in Galilee" and "appeared in Jerusalem" if there were appearances in both places.
+Acts 1:3 gives the key: Jesus appeared to the disciples during forty days after the Resurrection. There were multiple appearances, in different locations, throughout almost six weeks. Luke and Matthew focus on different sets of these appearances, according to their narrative purposes. There is no contradiction between "appeared in Galilee" and "appeared in Jerusalem" if there were appearances in both places.
 
 ## The weight is in the convergence
 
@@ -2284,13 +2284,13 @@ Bart Ehrman, agnostic, critic of institutional Christianity, professor of Religi
 
 The extra-biblical evidence (outside the Gospels) is multiple and independent.
 
-Flavius Josephus, Jewish historian, wrote "Jewish Antiquities" in 93-94 AD. He makes two mentions of Jesus. The first, in 18,3 (called "Testimonium Flavianum"), is partially interpolated by later Christian copyists, but most scholars accept that the core is authentic: Jesus existed, was crucified under Pontius Pilate, had followers. The second, in 20,9, is accepted as authentic by nearly all scholars: it mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. Josephus was Jewish, not Christian. He had no motive to invent these references.
+Flavius Josephus, Jewish historian, wrote "Jewish Antiquities" in 93-94 AD. He makes two mentions of Jesus. The first, in 18.3 (called "Testimonium Flavianum"), is partially interpolated by later Christian copyists, but most scholars accept that the core is authentic: Jesus existed, was crucified under Pontius Pilate, had followers. The second, in 20.9, is accepted as authentic by nearly all scholars: it mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. Josephus was Jewish, not Christian. He had no motive to invent these references.
 
 Publius Cornelius Tacitus, first-rate Roman historian, wrote the "Annals" around 116 AD. In book XV, chapter 44, he describes the Neronian persecution of 64 AD and explains: "The name Christians comes from Christ, who, in the reign of Tiberius, was delivered to torment by the procurator Pontius Pilate. This pernicious superstition, momentarily repressed, was resurfacing, not only in Judea where the evil had been born, but also in Rome". Tacitus was pagan, hostile to Christians (he calls Christianity a "pernicious superstition"). His attestation, totally independent of Christian sources, confirms the essential: Jesus existed, was crucified by Pilate, and his movement exploded despite the execution of the founder.
 
 Pliny the Younger, Roman governor of Bithynia, wrote to Emperor Trajan around 112 AD a letter asking for guidance on how to prosecute Christians. He describes those interrogated: "They were accustomed to meet on a fixed day before dawn, and sing among themselves alternately a hymn to Christ as to a god". Eight decades after the crucifixion, in a province distant from Judea, Christian communities worship Christ as divine. Independent attestation of early Christian practice.
 
-Suetonius, Roman historian, in "Life of Claudius" (c. 121), chapter 25, mentions that the emperor Claudius "expelled the Jews from Rome because they constantly provoked disturbances at the instigation of Chrestus". "Chrestus" is, for most historians, the vulgar Latin spelling of "Christus". The event, dated around 49 AD, is confirmed independently in Acts 18,2, where Aquila and Priscilla arrive in Corinth precisely because "Claudius had ordered all the Jews to leave Rome".
+Suetonius, Roman historian, in "Life of Claudius" (c. 121), chapter 25, mentions that the emperor Claudius "expelled the Jews from Rome because they constantly provoked disturbances at the instigation of Chrestus". "Chrestus" is, for most historians, the vulgar Latin spelling of "Christus". The event, dated around 49 AD, is confirmed independently in Acts 18:2, where Aquila and Priscilla arrive in Corinth precisely because "Claudius had ordered all the Jews to leave Rome".
 
 The Babylonian Talmud, redacted between the 3rd and 6th centuries but preserving older traditions, mentions in Sanhedrin 43a a certain Yeshu, put to death and hung on a tree on the eve of Passover for "having practiced sorcery and seduced Israel into apostasy". The reference is hostile and seeks to disqualify Jesus, but confirms the essential: he existed, was executed, and had disciples.
 
@@ -2374,11 +2374,11 @@ And here the convergence is enormous, far greater than with any other belief in 
 
 The differences spring from two mottos, and both have an internal problem.
 
-1. Scripture alone (Sola Scriptura) refutes itself. Nowhere does the Bible teach that the Bible alone is the only rule of faith. On the contrary. Paul orders us to "hold to the traditions you were taught, whether by word or by letter" (2 Thessalonians 2,15) and calls the Church, not Scripture, "the pillar and foundation of truth" (1 Timothy 3,15). Peter warns that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1,20) and that the ignorant distort Paul's letters "as they do the rest of the Scriptures" (2 Peter 3,16). There is also the problem of the table of contents: it was the Catholic Church, at the councils of Hippo (393) and Carthage (397), that defined which books make up the Bible. To accept that list and reject the authority that made it is to sit on a branch and saw through the tree. Saint Augustine was frank, around 397, in his work Against the Epistle of Manichaeus: "I would not believe the Gospel unless moved to it by the authority of the Catholic Church".
+1. Scripture alone (Sola Scriptura) refutes itself. Nowhere does the Bible teach that the Bible alone is the only rule of faith. On the contrary. Paul orders us to "hold to the traditions you were taught, whether by word or by letter" (2 Thessalonians 2:15) and calls the Church, not Scripture, "the pillar and foundation of truth" (1 Timothy 3:15). Peter warns that "no prophecy of Scripture is a matter of private interpretation" (2 Peter 1:20) and that the ignorant distort Paul's letters "as they do the rest of the Scriptures" (2 Peter 3:16). There is also the problem of the table of contents: it was the Catholic Church, at the councils of Hippo (393) and Carthage (397), that defined which books make up the Bible. To accept that list and reject the authority that made it is to sit on a branch and saw through the tree. Saint Augustine was frank, around 397, in his work Against the Epistle of Manichaeus: "I would not believe the Gospel unless moved to it by the authority of the Catholic Church".
 
-2. Faith alone (Sola Fide) contradicts James. The only time the phrase "faith alone" appears in the Bible is to be denied: "a man is justified by works and not by faith alone" (James 2,24). Luther had such difficulty with that letter that he called it an "epistle of straw" and even added the word "alone" (allein) to his German translation of Romans 3,28, where Paul did not write it. The Catholic position does not oppose faith and works: grace saves, faith receives grace, and living faith necessarily blossoms into works of love, as a good tree bears fruit. This is how the Council of Trent answered the Reformation.
+2. Faith alone (Sola Fide) contradicts James. The only time the phrase "faith alone" appears in the Bible is to be denied: "a man is justified by works and not by faith alone" (James 2:24). Luther had such difficulty with that letter that he called it an "epistle of straw" and even added the word "alone" (allein) to his German translation of Romans 3:28, where Paul did not write it. The Catholic position does not oppose faith and works: grace saves, faith receives grace, and living faith necessarily blossoms into works of love, as a good tree bears fruit. This is how the Council of Trent answered the Reformation.
 
-3. Fragmentation. Five centuries of "Bible alone", without a living authority to interpret, produced thousands of denominations, disagreeing among themselves about baptism, the Lord's Supper, salvation, and morality. When each Christian becomes the final judge of the meaning of Scripture, the unity for which Christ prayed ("that they may all be one", John 17,21) becomes impossible in practice.
+3. Fragmentation. Five centuries of "Bible alone", without a living authority to interpret, produced thousands of denominations, disagreeing among themselves about baptism, the Lord's Supper, salvation, and morality. When each Christian becomes the final judge of the meaning of Scripture, the unity for which Christ prayed ("that they may all be one", John 17:21) becomes impossible in practice.
 
 4. The Church of the first centuries was already Catholic. The Reformation claimed to return to the early Church, but the oldest documents describe a Church that believes in the real presence of the Eucharist, in the succession of bishops, in confession, and in prayer for the dead. Ignatius of Antioch, around 107, and Justin Martyr, around 155, sound far more Catholic than Protestant.
 
@@ -2388,7 +2388,7 @@ The differences spring from two mottos, and both have an internal problem.
 
 2. Who defined which books belong in the Bible? Why accept that decision of the Catholic Church and reject the others?
 
-3. James 2,24 says that a man is not justified "by faith alone". How do you reconcile this with Sola Fide?
+3. James 2:24 says that a man is not justified "by faith alone". How do you reconcile this with Sola Fide?
 
 4. If "Bible alone" were enough, why did five centuries of the Reformation produce thousands of churches that disagree among themselves about what the Bible teaches?`,
   },
@@ -2400,7 +2400,7 @@ The differences spring from two mottos, and both have an internal problem.
 
 ## What they believe
 
-Judaism is the faith of the people of Israel, founded on the covenant between God and Abraham and sealed with Moses at Sinai. Its center is the Shema: "Hear, O Israel: the Lord our God, the Lord is one" (Deuteronomy 6,4). The Torah, the first five books, is the heart of the Hebrew Scriptures, which Christians call the Old Testament.
+Judaism is the faith of the people of Israel, founded on the covenant between God and Abraham and sealed with Moses at Sinai. Its center is the Shema: "Hear, O Israel: the Lord our God, the Lord is one" (Deuteronomy 6:4). The Torah, the first five books, is the heart of the Hebrew Scriptures, which Christians call the Old Testament.
 
 After the destruction of the Temple of Jerusalem in the year 70, Judaism reorganized around the synagogue, study, and rabbinic interpretation, gathered in the Mishnah and the Talmud. In the 12th century, Maimonides summarized the faith in thirteen principles, among them the oneness of God, the authority of the Torah, and the hope for the coming of the Messiah, a descendant of King David who would bring peace and gather Israel. It is this point, the identity of the Messiah, that defines the entire difference with Christianity.
 
@@ -2418,9 +2418,9 @@ The point is one: is Jesus of Nazareth the Messiah announced by the prophets? Th
 
 3. The prophecy of Daniel 9. It sets a deadline, the "seventy weeks", after which the Anointed One would be cut off and the city and the sanctuary destroyed. The Temple was destroyed in the year 70. If the Messiah was to come and be put to death before that destruction, the deadline has already passed.
 
-4. The place and the sign. Micah 5,2 announces the birth of the ruler in Bethlehem. Zechariah 12,10 speaks of those who "will look on the one they pierced" and mourn for him. These are concrete signs, not vague ones.
+4. The place and the sign. Micah 5:2 announces the birth of the ruler in Bethlehem. Zechariah 12:10 speaks of those who "will look on the one they pierced" and mourn for him. These are concrete signs, not vague ones.
 
-5. The end of sacrifices. The Torah commanded sacrifice in the Temple for the atonement of sins. Since the year 70 there has been no Temple and no sacrifice. The Christian sees in this the meaning of the Letter to the Hebrews: the definitive sacrifice has already been offered by Christ, priest and victim, once for all (Hebrews 10,10-14).
+5. The end of sacrifices. The Torah commanded sacrifice in the Temple for the atonement of sins. Since the year 70 there has been no Temple and no sacrifice. The Christian sees in this the meaning of the Letter to the Hebrews: the definitive sacrifice has already been offered by Christ, priest and victim, once for all (Hebrews 10:10-14).
 
 ## Key questions
 
@@ -2454,13 +2454,13 @@ The differences, however, are foundational.
 
 1. Is reality personal or impersonal? This is the basic question. For the Christian, in the beginning there is a personal God who loves, speaks, and creates. For classical Buddhism, the absolute is not someone, and salvation is to dissolve into stillness. Either the foundation of everything is personal Love, or it is impersonal silence. Both cannot be true at the same time.
 
-2. Is the self an illusion or the image of God? Buddhism teaches that the "self" is an illusion to be dissolved. Christianity affirms the opposite: each person is unique, created in the image of God (Genesis 1,27) and destined to live forever, not to disappear. One's identity is not a problem to eliminate, it is a gift to be purified and fulfilled.
+2. Is the self an illusion or the image of God? Buddhism teaches that the "self" is an illusion to be dissolved. Christianity affirms the opposite: each person is unique, created in the image of God (Genesis 1:27) and destined to live forever, not to disappear. One's identity is not a problem to eliminate, it is a gift to be purified and fulfilled.
 
 3. Compassion grounded in what? Buddhism preaches compassion, and that is beautiful. But if the "self" of the other is an illusion, why have compassion for it? Christian compassion has a clear root: the other is a child of God, of infinite value, for whom Christ gave his life. The dignity of the person is not merely practical, it is personal.
 
-4. To liberate oneself by a method, or to be saved as a gift? The Buddha offers a path for you to liberate yourself by your own effort. Christ does not offer a method, he offers himself: "God so loved the world that he gave his only Son" (John 3,16). For those who carry real guilt, the difference is enormous: salvation comes from outside, as a free gift, not as an achievement.
+4. To liberate oneself by a method, or to be saved as a gift? The Buddha offers a path for you to liberate yourself by your own effort. Christ does not offer a method, he offers himself: "God so loved the world that he gave his only Son" (John 3:16). For those who carry real guilt, the difference is enormous: salvation comes from outside, as a free gift, not as an achievement.
 
-5. To be reborn or to rise again? Samsara is a cycle of rebirths from which one wishes to escape into nirvana, where desire and the illusion of a lasting self are extinguished. Christianity announces one single life (Hebrews 9,27) and, in the end, the resurrection of the body and eternal communion with God. Not the extinction of the self, but its fullness.
+5. To be reborn or to rise again? Samsara is a cycle of rebirths from which one wishes to escape into nirvana, where desire and the illusion of a lasting self are extinguished. Christianity announces one single life (Hebrews 9:27) and, in the end, the resurrection of the body and eternal communion with God. Not the extinction of the self, but its fullness.
 
 ## Key questions
 
@@ -2494,11 +2494,11 @@ The underlying answers, however, diverge from the Gospel.
 
 1. Is God everything, or the Creator distinct from everything? In much of Hinduism, the divine and the world blend together (pantheism), and in the end all is the same Brahman. Christianity affirms a personal God who created the world out of nothing and is distinct from it. The creature is not God and does not dissolve into God: it is loved by Him and called to communion, without ceasing to be itself.
 
-2. Does the self dissolve or remain? If atman is Brahman, the goal is to cease being an individual and merge into the whole. Christianity affirms the opposite: the person is created in the image of God (Genesis 1,27) and remains a person forever, in a relationship of love. Salvation does not erase the face, it fulfills it.
+2. Does the self dissolve or remain? If atman is Brahman, the goal is to cease being an individual and merge into the whole. Christianity affirms the opposite: the person is created in the image of God (Genesis 1:27) and remains a person forever, in a relationship of love. Salvation does not erase the face, it fulfills it.
 
-3. Karma and reincarnation, or grace and resurrection? The law of karma is relentless: each one reaps exactly what he sowed, life after life. It is true that the devotional currents (bhakti) speak of the grace of a deity who frees the devotee, and in the Bhagavad Gita (18,66) Krishna promises to free from all sins whoever takes refuge in him. But the Gospel announces something the law of karma, in itself, does not know: the forgiveness and grace of a God who entered history and died for sinners. And it teaches one single life, followed by judgment and resurrection (Hebrews 9,27), not an endless cycle of returns.
+3. Karma and reincarnation, or grace and resurrection? The law of karma is relentless: each one reaps exactly what he sowed, life after life. It is true that the devotional currents (bhakti) speak of the grace of a deity who frees the devotee, and in the Bhagavad Gita (18:66) Krishna promises to free from all sins whoever takes refuge in him. But the Gospel announces something the law of karma, in itself, does not know: the forgiveness and grace of a God who entered history and died for sinners. And it teaches one single life, followed by judgment and resurrection (Hebrews 9:27), not an endless cycle of returns.
 
-4. Many paths or one Way? For Hinduism, in general, there are many valid paths to the divine. Jesus affirms something unique: "I am the way, the truth, and the life; no one comes to the Father except through me" (John 14,6). Not out of arrogance, but because, if God truly entered history in person, that fact changes everything.
+4. Many paths or one Way? For Hinduism, in general, there are many valid paths to the divine. Jesus affirms something unique: "I am the way, the truth, and the life; no one comes to the Father except through me" (John 14:6). Not out of arrogance, but because, if God truly entered history in person, that fact changes everything.
 
 5. Is history a cycle or a road? The Hindu view of time is cyclical, without a definite end. The Christian view is of a real history, with a beginning (creation), a center (the Incarnation of God in Jesus, in a place and on a date), and an end (eternal life). Salvation is not flight from time, it is time brought to fullness.
 
@@ -2536,7 +2536,7 @@ The difficulties, however, are not small, and several are verifiable.
 
 2. The Book of Abraham, a test that failed. Joseph Smith said he had translated part of the Pearl of Great Price from Egyptian papyri he had bought. Those papyri, thought to be lost, were rediscovered in 1966. When Egyptologists read them, they saw they were ordinary funerary texts (the Book of Breathings), with no relation to Abraham. Smith's translation does not correspond to what the papyri actually say.
 
-3. The doctrine of God. That God was once a man, that there are many gods, and that men can become gods directly contradicts Scripture. In Isaiah 43,10 God declares: "before me no god was formed, and after me there shall be none". The absolute monotheism of the Bible does not allow a God who progressed from man to God.
+3. The doctrine of God. That God was once a man, that there are many gods, and that men can become gods directly contradicts Scripture. In Isaiah 43:10 God declares: "before me no god was formed, and after me there shall be none". The absolute monotheism of the Bible does not allow a God who progressed from man to God.
 
 4. The revelations that change. Polygamy was taught by revelation and then forbidden in 1890, under pressure from the American government. The priesthood was denied to Black members until 1978, when a new revelation reversed the rule. A revelation that changes according to social convenience raises the question of its source.
 
@@ -2546,7 +2546,7 @@ The difficulties, however, are not small, and several are verifiable.
 
 2. The papyri of the Book of Abraham were rediscovered and read by Egyptologists. Why does Joseph Smith's translation not match what they say?
 
-3. Isaiah 43,10 says there is no other God before or after. How do you reconcile this with a God who was once a man and with many gods?
+3. Isaiah 43:10 says there is no other God before or after. How do you reconcile this with a God who was once a man and with many gods?
 
 4. If polygamy and the exclusion of Black members were revoked by revelation precisely under social pressure, what does that say about the source of those revelations?`,
   },
@@ -2570,7 +2570,7 @@ The Christian has more in common with the sincere atheist than it seems. Both va
 
 The question is whether naturalism can sustain what it itself depends on.
 
-1. Why is there something rather than nothing? Naturalism describes how the universe works, but it does not explain why there is a universe, why it had a beginning (as current cosmology indicates), and why its laws are so precisely tuned to allow life. To say "it just is that way" is not an explanation, it is to stop asking. Saint Paul already said that God's invisible perfections are clearly seen, being understood by the things that are made (Romans 1,20), and the philosopher William Lane Craig revived, in The Kalam Cosmological Argument (1979), the argument that whatever begins to exist has a cause. This point is treated in detail in the articles on the cosmological argument and fine-tuning.
+1. Why is there something rather than nothing? Naturalism describes how the universe works, but it does not explain why there is a universe, why it had a beginning (as current cosmology indicates), and why its laws are so precisely tuned to allow life. To say "it just is that way" is not an explanation, it is to stop asking. Saint Paul already said that God's invisible perfections are clearly seen, being understood by the things that are made (Romans 1:20), and the philosopher William Lane Craig revived, in The Kalam Cosmological Argument (1979), the argument that whatever begins to exist has a cause. This point is treated in detail in the articles on the cosmological argument and fine-tuning.
 
 2. Where does morality come from? When the atheist revolts against evil, he presupposes that a real good exists, an objective standard above opinions. But if only matter in motion exists, where does that standard come from? Without God, "right" and "wrong" tend to become preferences, and moral indignation loses its ground. The argument from evil itself, the greatest atheist objection, only works if good truly exists, which points beyond matter. C. S. Lewis develops this argument in Mere Christianity (1952).
 
@@ -2608,11 +2608,11 @@ There is a true longing behind this. The New Age reacts against dry materialism,
 
 The Church itself analyzed this movement in the document "Jesus Christ, the Bearer of the Water of Life", of 2003. The points of collision are clear.
 
-1. Are you God or a creature of God? The New Age says the divine is within you and that you need only awaken to it. The Christian faith says the opposite: you are a creature, good and beloved, but you are not God. Curiously, the promise "you will be like gods" is exactly the serpent's, at the beginning of Genesis (Genesis 3,5). Human greatness is not in being God, but in being loved by Him.
+1. Are you God or a creature of God? The New Age says the divine is within you and that you need only awaken to it. The Christian faith says the opposite: you are a creature, good and beloved, but you are not God. Curiously, the promise "you will be like gods" is exactly the serpent's, at the beginning of Genesis (Genesis 3:5). Human greatness is not in being God, but in being loved by Him.
 
-2. A cosmic Christ or the Jesus of history? To exchange the Jesus who was born, died, and rose in a place and on a date for a vague "Christ energy" empties the Gospel. The First Letter of John warns: every spirit that does not acknowledge Jesus come in the flesh is not from God (1 John 4,2-3). And Jesus did not present himself as an energy, but as someone: "I am the way, and the truth, and the life" (John 14,6).
+2. A cosmic Christ or the Jesus of history? To exchange the Jesus who was born, died, and rose in a place and on a date for a vague "Christ energy" empties the Gospel. The First Letter of John warns: every spirit that does not acknowledge Jesus come in the flesh is not from God (1 John 4:2-3). And Jesus did not present himself as an energy, but as someone: "I am the way, and the truth, and the life" (John 14:6).
 
-3. Crystals, astrology, channeling. The search for power through energies, stars, and spirits is precisely what the Bible calls divination and forbids (Deuteronomy 18,10-12). The Catechism of the Catholic Church, in paragraphs 2116 and 2117, condemns astrology, consulting mediums, and magic, even when done in search of good.
+3. Crystals, astrology, channeling. The search for power through energies, stars, and spirits is precisely what the Bible calls divination and forbids (Deuteronomy 18:10-12). The Catechism of the Catholic Church, in paragraphs 2116 and 2117, condemns astrology, consulting mediums, and magic, even when done in search of good.
 
 4. To save oneself or to be saved? For the New Age, salvation is self-realization, the work of one's own effort and technique. For Christianity, no one saves himself: salvation is the gift of Another, of a personal God who comes to meet the one who cannot arrive alone.
 
@@ -2646,19 +2646,19 @@ There are sincere points of contact. These religions affirm the existence of a s
 
 That said, there are differences that are not resolved by sympathy alone.
 
-1. Mediumship and spirits. The incorporation of spirits and guides, present especially in Umbanda, runs into the same biblical prohibition that applies to Spiritism: consulting and invoking the dead is forbidden in Scripture (Deuteronomy 18,10-12), and the Catechism of the Catholic Church condemns these practices in paragraphs 2116 and 2117.
+1. Mediumship and spirits. The incorporation of spirits and guides, present especially in Umbanda, runs into the same biblical prohibition that applies to Spiritism: consulting and invoking the dead is forbidden in Scripture (Deuteronomy 18:10-12), and the Catechism of the Catholic Church condemns these practices in paragraphs 2116 and 2117.
 
-2. The cult of the orixás. The Catholic faith is radically monotheistic: worship is due to God alone (Exodus 20,3: "you shall have no other gods before me"). To render cult to orixás, even thought of as forces or intermediaries, is not the same as venerating a saint. The saint is a brother who intercedes before the one God; he does not receive cult as a deity.
+2. The cult of the orixás. The Catholic faith is radically monotheistic: worship is due to God alone (Exodus 20:3: "you shall have no other gods before me"). To render cult to orixás, even thought of as forces or intermediaries, is not the same as venerating a saint. The saint is a brother who intercedes before the one God; he does not receive cult as a deity.
 
 3. Syncretism. To associate an orixá with a saint was often a survival strategy under persecution, and this is understood with compassion. But, theologically, the saint and the orixá are not the same thing. Clarity here is an act of respect for the truth, not contempt for history.
 
-4. Salvation. Much of these traditions seek balance and favor through offerings and ritual obligations. The Gospel announces something else: salvation is neither bought nor earned with rites, it is the free gift of a personal God who redeems each person in Christ, who said: "I am the way, and the truth, and the life" (John 14,6).
+4. Salvation. Much of these traditions seek balance and favor through offerings and ritual obligations. The Gospel announces something else: salvation is neither bought nor earned with rites, it is the free gift of a personal God who redeems each person in Christ, who said: "I am the way, and the truth, and the life" (John 14:6).
 
 ## Key questions
 
-1. Scripture forbids invoking spirits and the dead (Deuteronomy 18,11). How do you reconcile this with the incorporation of guides and mediumship?
+1. Scripture forbids invoking spirits and the dead (Deuteronomy 18:11). How do you reconcile this with the incorporation of guides and mediumship?
 
-2. If there is one God to whom worship is due (Exodus 20,3), what place remains for the cult of the orixás?
+2. If there is one God to whom worship is due (Exodus 20:3), what place remains for the cult of the orixás?
 
 3. To venerate a saint is to ask the intercession of a brother before God. Is that really the same as worshiping an orixá?
 
@@ -2684,31 +2684,31 @@ There is something to acknowledge. Jehovah's Witnesses believe in one God, have 
 
 The problem is that the central doctrine, the denial of Christ's divinity, does not come from the Gospels, but from a forced reading of them.
 
-1. The translation of John 1,1. The Greek text says: "in the beginning was the Word (Logos), and the Word was with God, and the Word was God". The New World Translation renders the end as "the Word was a god", adding an article that does not exist in Greek. The construction (a predicate without article before the verb) indicates nature, not indefiniteness: in John 1,14 the same form appears with "flesh", and no one translates "became a flesh". Almost no translation in history renders John 1,1 as the Watch Tower does.
+1. The translation of John 1:1. The Greek text says: "in the beginning was the Word (Logos), and the Word was with God, and the Word was God". The New World Translation renders the end as "the Word was a god", adding an article that does not exist in Greek. The construction (a predicate without article before the verb) indicates nature, not indefiniteness: in John 1:14 the same form appears with "flesh", and no one translates "became a flesh". Almost no translation in history renders John 1:1 as the Watch Tower does.
 
-2. Divine titles given to Jesus. In John 20,28 Thomas calls Jesus "my Lord and my God", and Jesus accepts. In Titus 2,13 he is "our great God and Savior", and 2 Peter 1,1 uses the same construction in Greek ("our God and Savior Jesus Christ"). In Hebrews 1,8 the Father calls the Son "God". In Philippians 2,6 Christ is "in the form of God". It was to safeguard this biblical teaching that the Council of Nicaea, in 325, condemned Arius, who, like the Witnesses today, said the Son was a creature: the Creed answers "begotten, not made, consubstantial with the Father".
+2. Divine titles given to Jesus. In John 20:28 Thomas calls Jesus "my Lord and my God", and Jesus accepts. In Titus 2:13 he is "our great God and Savior", and 2 Peter 1:1 uses the same construction in Greek ("our God and Savior Jesus Christ"). In Hebrews 1:8 the Father calls the Son "God". In Philippians 2:6 Christ is "in the form of God". It was to safeguard this biblical teaching that the Council of Nicaea, in 325, condemned Arius, who, like the Witnesses today, said the Son was a creature: the Creed answers "begotten, not made, consubstantial with the Father".
 
-3. Jesus is not the archangel Michael. In Hebrews 1, the author shows the superiority of the Son precisely by comparing him to the angels: "to which of the angels did God ever say, you are my Son?" and "let all God's angels worship him" (Hebrews 1,5-6). Jesus is worshiped by the angels, he is not one of them.
+3. Jesus is not the archangel Michael. In Hebrews 1, the author shows the superiority of the Son precisely by comparing him to the angels: "to which of the angels did God ever say, you are my Son?" and "let all God's angels worship him" (Hebrews 1:5-6). Jesus is worshiped by the angels, he is not one of them.
 
-4. The Holy Spirit is a person, not a force. In Acts 13,2 "the Holy Spirit said: set apart for me Barnabas and Saul". A force does not speak or choose. In John 14,16 Jesus calls the Spirit "another Paraclete", a word that designates a person. In Acts 5,3-4 to lie to the Holy Spirit is to lie to God.
+4. The Holy Spirit is a person, not a force. In Acts 13:2 "the Holy Spirit said: set apart for me Barnabas and Saul". A force does not speak or choose. In John 14:16 Jesus calls the Spirit "another Paraclete", a word that designates a person. In Acts 5:3-4 to lie to the Holy Spirit is to lie to God.
 
-5. The dates that failed. The Watch Tower announced that 1914 would bring the end of human governments, then expected the resurrection of Abraham, Isaac, and Jacob in 1925, and later pointed to 1975, when six thousand years from man's creation would be completed, as the likely start of Christ's thousand-year reign. None of this happened, and today the organization rereads 1914 as the beginning of an invisible reign of Christ in heaven. The Bible itself gives the criterion (Deuteronomy 18,22): when a prophet announces something in God's name and it does not happen, it was not God who spoke.
+5. The dates that failed. The Watch Tower announced that 1914 would bring the end of human governments, then expected the resurrection of Abraham, Isaac, and Jacob in 1925, and later pointed to 1975, when six thousand years from man's creation would be completed, as the likely start of Christ's thousand-year reign. None of this happened, and today the organization rereads 1914 as the beginning of an invisible reign of Christ in heaven. The Bible itself gives the criterion (Deuteronomy 18:22): when a prophet announces something in God's name and it does not happen, it was not God who spoke.
 
 ## Key questions
 
-1. Why does the New World Translation (1950) render John 1,1 as "a god", when the great historical translations (Catholic, Orthodox, Protestant) do not?
+1. Why does the New World Translation (1950) render John 1:1 as "a god", when the great historical translations (Catholic, Orthodox, Protestant) do not?
 
-2. In John 20,28 Thomas calls Jesus "my God". If Jesus is not God, why did he not correct Thomas?
+2. In John 20:28 Thomas calls Jesus "my God". If Jesus is not God, why did he not correct Thomas?
 
-3. If Jesus is the archangel Michael, how do we understand Hebrews 1,6: "let all God's angels worship him"?
+3. If Jesus is the archangel Michael, how do we understand Hebrews 1:6: "let all God's angels worship him"?
 
-4. If the dates for the end announced by the Watch Tower Society (1914, 1925, 1975) failed, why trust the next one, given the criterion of Deuteronomy 18,22?`,
+4. If the dates for the end announced by the Watch Tower Society (1914, 1925, 1975) failed, why trust the next one, given the criterion of Deuteronomy 18:22?`,
   },
 
   45: {
     titleEn: 'The Darkness at the Cross and the Dating of the Crucifixion',
     summaryEn: 'The Gospels report three hours of darkness at the death of Jesus. Pagan authors spoke of a similar phenomenon, and astronomy supports one of the proposed dates for the crucifixion, 3 April of the year 33.',
-    bodyEn: `At the moment of Jesus' death, the three synoptic Gospels report a strange phenomenon: "from the sixth hour there was darkness over all the land until the ninth hour" (Matthew 27,45), that is, from noon to three in the afternoon. Mark and Luke record the same. This detail, far from being an easy legend to invent, raises interesting questions of history and astronomy.
+    bodyEn: `At the moment of Jesus' death, the three synoptic Gospels report a strange phenomenon: "from the sixth hour there was darkness over all the land until the ninth hour" (Matthew 27:45), that is, from noon to three in the afternoon. Mark and Luke record the same. This detail, far from being an easy legend to invent, raises interesting questions of history and astronomy.
 
 ## It was not a solar eclipse
 
@@ -2722,7 +2722,7 @@ The detail was not limited to Christians. The historian Thallus, probably in the
 
 ## The moon to blood and dating by astronomy
 
-There is yet another thread, and this is where modern astronomy comes in. On the day of Pentecost, the apostle Peter quotes the prophet Joel: "the sun shall be turned to darkness and the moon to blood" (Acts 2,20, citing Joel 2,31), to explain what was happening in Jerusalem in those days. For some scholars, these signs point back to the events of the Passover at which Jesus died, seven weeks earlier. The "moon to blood" is the classic description of a lunar eclipse, in which the Moon, covered by the Earth's shadow, takes on a reddish tone.
+There is yet another thread, and this is where modern astronomy comes in. On the day of Pentecost, the apostle Peter quotes the prophet Joel: "the sun shall be turned to darkness and the moon to blood" (Acts 2:20, citing Joel 2:31), to explain what was happening in Jerusalem in those days. For some scholars, these signs point back to the events of the Passover at which Jesus died, seven weeks earlier. The "moon to blood" is the classic description of a lunar eclipse, in which the Moon, covered by the Earth's shadow, takes on a reddish tone.
 
 In 1983, the scientists Colin Humphreys and W. G. Waddington published in the journal Nature the study "Dating the Crucifixion". Using the astronomical computation of eclipses, the same kind of computation that today allows NASA to predict and retro-predict eclipses with precision across centuries, they showed that on Friday, 3 April of the year 33, there was a partial eclipse of the Moon and calculated that, in Jerusalem, it rose at dusk still in the final phase of the eclipse, reddened, "as blood". For the authors, this is the most likely date of the crucifixion, with 7 April of the year 30 as an alternative. The visibility of the eclipse is debated: the astronomer Bradley Schaefer (1990) argued that the twilight glow and the Moon hugging the horizon would have hidden it, while others redid the calculations and consider it noticeable for a few minutes.
 
@@ -2750,21 +2750,21 @@ Honesty is needed. Dating by eclipse does not prove the divinity of Jesus, and s
 
 ## Where he would be born
 
-The prophet Micah, in the 8th century BC, announced that the ruler of Israel would be born in Bethlehem, a small town: "from you shall come forth the one who is to rule Israel" (Micah 5,2). Seven hundred years later, Jesus is born there.
+The prophet Micah, in the 8th century BC, announced that the ruler of Israel would be born in Bethlehem, a small town: "from you shall come forth the one who is to rule Israel" (Micah 5:2). Seven hundred years later, Jesus is born there.
 
-Isaiah also announced the sign of the virginal conception: "the virgin shall conceive and bear a son, and they shall call him Emmanuel" (Isaiah 7,14), a name that means "God with us".
+Isaiah also announced the sign of the virginal conception: "the virgin shall conceive and bear a son, and they shall call him Emmanuel" (Isaiah 7:14), a name that means "God with us".
 
 ## How he would die
 
-Here the prophecies reach a level of detail that astonishes. Psalm 22 (21 in the Vulgate numbering), attributed to David about a thousand years before Christ, long before Rome made the cross its typical punishment, describes a persecuted righteous one who cries "My God, my God, why have you forsaken me", words Jesus utters on the cross (Matthew 27,46), has his hands and feet pierced, and sees his executioners divide his garments by casting lots. The Gospels narrate exactly this: the cry on the cross, the dividing of the garments and, in the Resurrection accounts, the marks of the nails in the hands and feet.
+Here the prophecies reach a level of detail that astonishes. Psalm 22 (21 in the Vulgate numbering), attributed to David about a thousand years before Christ, long before Rome made the cross its typical punishment, describes a persecuted righteous one who cries "My God, my God, why have you forsaken me", words Jesus utters on the cross (Matthew 27:46), has his hands and feet pierced, and sees his executioners divide his garments by casting lots. The Gospels narrate exactly this: the cry on the cross, the dividing of the garments and, in the Resurrection accounts, the marks of the nails in the hands and feet.
 
 Chapter 53 of Isaiah, the song of the Suffering Servant, is even more explicit: the Servant is "wounded for our iniquities", led "like a lamb to the slaughter", who "did not open his mouth", and whose death brings healing "by his wounds". It is the description of an atoning death, voluntary and innocent.
 
-Zechariah adds a singular detail: "they will look on me, the one they pierced" (Zechariah 12,10), fulfilled when the soldier opens Jesus' side with the lance.
+Zechariah adds a singular detail: "they will look on me, the one they pierced" (Zechariah 12:10), fulfilled when the soldier opens Jesus' side with the lance.
 
 ## When he would come
 
-The prophet Daniel, in chapter 9, sets a deadline: within a span of "seventy weeks" (of years), the Anointed One would be cut off, and then the city and the sanctuary would be destroyed (Daniel 9,24-26). The Temple was destroyed by the Romans in the year 70. If the Messiah was to come and die before that destruction, the time of his coming has already been fulfilled, and Jesus fits exactly in that window.
+The prophet Daniel, in chapter 9, sets a deadline: within a span of "seventy weeks" (of years), the Anointed One would be cut off, and then the city and the sanctuary would be destroyed (Daniel 9:24-26). The Temple was destroyed by the Romans in the year 70. If the Messiah was to come and die before that destruction, the time of his coming has already been fulfilled, and Jesus fits exactly in that window.
 
 ## The force of the whole
 
@@ -2792,11 +2792,11 @@ For centuries, the mention of Pontius Pilate came from the Gospels and a few anc
 
 ## The ossuary of Caiaphas
 
-The Gospels tell that Jesus was tried by Caiaphas, the high priest (Matthew 26,57 and John 18,24). In 1990, in Jerusalem, a tomb with ossuaries was found, one of them richly decorated, with the inscription "Yehosef bar Qayafa", that is, Joseph, son of Caiaphas. It is very probably the ossuary of the very high priest who handed Jesus over.
+The Gospels tell that Jesus was tried by Caiaphas, the high priest (Matthew 26:57 and John 18:24). In 1990, in Jerusalem, a tomb with ossuaries was found, one of them richly decorated, with the inscription "Yehosef bar Qayafa", that is, Joseph, son of Caiaphas. It is very probably the ossuary of the very high priest who handed Jesus over.
 
 ## Pools that were said not to exist
 
-The Gospel of John mentions the pool of Bethesda, "which has five porticoes" (John 5,2). Critics thought the detail invented, since no such pool was known. The excavation near the church of Saint Anne, in Jerusalem, revealed a double pool, two basins separated by a wall: with colonnades on the four sides and one on the middle wall, these are the five porticoes John speaks of. In 2004 the pool of Siloam of Jesus' time (John 9,7) also came to light.
+The Gospel of John mentions the pool of Bethesda, "which has five porticoes" (John 5:2). Critics thought the detail invented, since no such pool was known. The excavation near the church of Saint Anne, in Jerusalem, revealed a double pool, two basins separated by a wall: with colonnades on the four sides and one on the middle wall, these are the five porticoes John speaks of. In 2004 the pool of Siloam of Jesus' time (John 9:7) also came to light.
 
 ## The House of David outside the Bible
 
@@ -2876,7 +2876,7 @@ One detail stands out. Wherever typing was done, as in Lanciano and Tixtla, the 
 
 ## What this proves and what asks for faith
 
-Honesty is needed. These miracles do not replace faith or make it unnecessary. The Real Presence is believed on the word of Christ (John 6,53-55), not on laboratory tests. But Eucharistic miracles are signs: tangible confirmations, given by God, of a truth that was already in Scripture and Tradition. Saint Carlo Acutis, a young Italian canonized in 2025, devoted his adolescence to cataloging more than a hundred of these cases approved by the Church, precisely to help people believe.
+Honesty is needed. These miracles do not replace faith or make it unnecessary. The Real Presence is believed on the word of Christ (John 6:53-55), not on laboratory tests. But Eucharistic miracles are signs: tangible confirmations, given by God, of a truth that was already in Scripture and Tradition. Saint Carlo Acutis, a young Italian canonized in 2025, devoted his adolescence to cataloging more than a hundred of these cases approved by the Church, precisely to help people believe.
 
 ## Key questions
 
@@ -2896,7 +2896,7 @@ Honesty is needed. These miracles do not replace faith or make it unnecessary. T
 
 ## What the image shows
 
-The man of the Shroud suffered exactly what the Gospels describe of the passion of Jesus, in details that go beyond what was known in the Middle Ages. There are marks of a severe scourging, with dozens of blows from a Roman whip with dumbbell-shaped tips. There are wounds on the scalp, consistent with a crown of thorns shaped like a cap, not a ring, as it usually appears in art. There is the mark of a lance on the right side, from which came blood and a clear fluid, as John 19,34 describes. The legs were not broken, contrary to what was done to hasten the death of the crucified (John 19,33). The blood on the cloth is human and, according to the analyses of the forensic physician Pierluigi Baima Bollone in the 1980s, of type AB, a result that has not yet been independently confirmed.
+The man of the Shroud suffered exactly what the Gospels describe of the passion of Jesus, in details that go beyond what was known in the Middle Ages. There are marks of a severe scourging, with dozens of blows from a Roman whip with dumbbell-shaped tips. There are wounds on the scalp, consistent with a crown of thorns shaped like a cap, not a ring, as it usually appears in art. There is the mark of a lance on the right side, from which came blood and a clear fluid, as John 19:34 describes. The legs were not broken, contrary to what was done to hasten the death of the crucified (John 19:33). The blood on the cloth is human and, according to the analyses of the forensic physician Pierluigi Baima Bollone in the 1980s, of type AB, a result that has not yet been independently confirmed.
 
 ## What science cannot explain
 
@@ -2970,7 +2970,7 @@ Perhaps the most intriguing detail is in the eyes of the figure. From the 1950s 
 
 ## A sermon in an image
 
-For the natives, the image was a catechism. Each element spoke in their language: the woman clothed with the sun, with the moon under her feet, is the Woman of Revelation (Revelation 12,1); the black sash indicated pregnancy; the stars on the mantle, according to studies, match the position of the sky over Mexico at the winter solstice of 1531. She was neither an Aztec idol nor a Spanish goddess: she was the Mother of God, dark-skinned like them, who stood on the moon and in front of the sun they had once worshiped. In the following years, baptisms multiplied: the Franciscan Motolinía reckoned, around 1537, that more than nine million natives had been baptized since the conquest, and tradition gives the Virgin of Guadalupe a decisive role in that movement, among a people who, a few years earlier, still offered human sacrifices to their gods.
+For the natives, the image was a catechism. Each element spoke in their language: the woman clothed with the sun, with the moon under her feet, is the Woman of Revelation (Revelation 12:1); the black sash indicated pregnancy; the stars on the mantle, according to studies, match the position of the sky over Mexico at the winter solstice of 1531. She was neither an Aztec idol nor a Spanish goddess: she was the Mother of God, dark-skinned like them, who stood on the moon and in front of the sun they had once worshiped. In the following years, baptisms multiplied: the Franciscan Motolinía reckoned, around 1537, that more than nine million natives had been baptized since the conquest, and tradition gives the Virgin of Guadalupe a decisive role in that movement, among a people who, a few years earlier, still offered human sacrifices to their gods.
 
 ## What this means
 
@@ -3038,7 +3038,7 @@ Tradition keeps striking episodes. The most famous is that of the slave Zacarias
 
 ## What it means for Brazil
 
-Aparecida is not just a statue. It is the symbol of a people who recognize themselves in it: poor, mixed, darkened, found by simple folk and raised to the dignity of patroness of an entire nation. The devotion to Aparecida crossed slavery, the Empire, the Republic, and remains alive. For the Christian, she points, like every true Marian devotion, not to herself, but to Christ, repeating what Mary said at Cana: "whatsoever he shall say to you, do ye" (John 2,5).
+Aparecida is not just a statue. It is the symbol of a people who recognize themselves in it: poor, mixed, darkened, found by simple folk and raised to the dignity of patroness of an entire nation. The devotion to Aparecida crossed slavery, the Empire, the Republic, and remains alive. For the Christian, she points, like every true Marian devotion, not to herself, but to Christ, repeating what Mary said at Cana: "whatsoever he shall say to you, do ye" (John 2:5).
 
 ## Key questions
 
@@ -3070,9 +3070,9 @@ The point is not that each case, alone, proves God. It is that the atheist, to m
 
 ## The answer to the Protestant
 
-Many Protestants, if they accept that these events actually happened, give another explanation: they would be demonic deceptions. They cite Saint Paul, who warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14). The objection deserves a serious answer, and the answer is in the criterion Jesus himself gave: "by their fruits you will know them" (Matthew 7,16).
+Many Protestants, if they accept that these events actually happened, give another explanation: they would be demonic deceptions. They cite Saint Paul, who warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11:14). The objection deserves a serious answer, and the answer is in the criterion Jesus himself gave: "by their fruits you will know them" (Matthew 7:16).
 
-What fruits do true Marian apparitions produce? Conversion, repentance, return to the sacraments, prayer, charity, the baptism of multitudes of indigenous people in Mexico after Guadalupe, the return of sinners to Christ. Now, Jesus himself taught that "every kingdom divided against itself will be destroyed" (Matthew 12,25). A demon that led crowds to convert to Christ, to confess their sins, to pray, and to live the Gospel would be working against its own kingdom. It makes no sense. The devil does not lead people closer to Jesus.
+What fruits do true Marian apparitions produce? Conversion, repentance, return to the sacraments, prayer, charity, the baptism of multitudes of indigenous people in Mexico after Guadalupe, the return of sinners to Christ. Now, Jesus himself taught that "every kingdom divided against itself will be destroyed" (Matthew 12:25). A demon that led crowds to convert to Christ, to confess their sins, to pray, and to live the Gospel would be working against its own kingdom. It makes no sense. The devil does not lead people closer to Jesus.
 
 And that is exactly what Mary does in the approved apparitions: she never draws attention to herself, she always points to her Son. The phrase that sums up her whole message is that of Cana: "whatsoever he shall say to you, do ye" (John 2:5). An apparition that led away from Christ, or that contradicted Scripture, would be rejected for that very reason. The Church, moreover, is very strict: it examines each case for years and rejects the great majority of claims.
 
@@ -3086,7 +3086,7 @@ Finally, each thing must be put in its place. Apparitions are private revelation
 
 2. Do hysteria and fraud explain a sign announced in advance, seen by tens of thousands, photographed, and investigated by a secular government?
 
-3. To the Protestant: if these apparitions lead people to Christ, to confession, and to charity, what demon would work this way against its own kingdom (Matthew 12,25)?
+3. To the Protestant: if these apparitions lead people to Christ, to confession, and to charity, what demon would work this way against its own kingdom (Matthew 12:25)?
 
 4. Mary, in the approved apparitions, always points to Jesus, saying "whatsoever he shall say to you, do ye". Does that fit with demonic deception, or with the opposite?`,
   },

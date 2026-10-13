@@ -7,10 +7,10 @@ const lessons = {
       question: 'Antes de ler: na sua opinião, onde a Bíblia ensina que ela mesma é a única regra de fé?',
       questionEn: 'Before you read: in your view, where does the Bible teach that it is the only rule of faith?',
       options: ['Em 2 Timóteo 3,16: "toda a Escritura é inspirada"', 'Em nenhum: a ideia não aparece na Bíblia', 'Em vários versículos, de forma clara'],
-      optionsEn: ['In 2 Timothy 3,16: "all scripture, inspired of God"', 'Nowhere: the idea is not in the Bible', 'In several verses, quite clearly'],
+      optionsEn: ['In 2 Timothy 3:16: "all scripture, inspired of God"', 'Nowhere: the idea is not in the Bible', 'In several verses, quite clearly'],
       correct: 1,
       note: 'Nenhum versículo ensina o Sola Scriptura. 2 Timóteo 3,16 diz que a Escritura é inspirada e útil, não que seja a única regra. E São Paulo manda guardar as tradições recebidas "por palavra ou por carta" (2 Tessalonicenses 2,15).',
-      noteEn: 'No verse teaches Sola Scriptura. 2 Timothy 3,16 says Scripture is inspired and useful, not that it is the only rule. And Saint Paul orders the faithful to keep the traditions received "by word or by letter" (2 Thessalonians 2,15).',
+      noteEn: 'No verse teaches Sola Scriptura. 2 Timothy 3:16 says Scripture is inspired and useful, not that it is the only rule. And Saint Paul orders the faithful to keep the traditions received "by word or by letter" (2 Thessalonians 2:15).',
     },
     keyPoints: [
       'A Bíblia nunca diz ser a única regra de fé. Paulo coloca a Tradição oral ao lado da escrita (2 Tessalonicenses 2,15) e Pedro nega a interpretação particular.',
@@ -18,7 +18,7 @@ const lessons = {
       'Foi a Igreja que definiu o cânon nos concílios de Hipona (393) e Cartago (397), e por 1500 anos viveu de Escritura, Tradição e Magistério juntos.',
     ],
     keyPointsEn: [
-      'The Bible never says it is the only rule of faith. Paul places oral Tradition beside the written one (2 Thessalonians 2,15) and Peter denies private interpretation.',
+      'The Bible never says it is the only rule of faith. Paul places oral Tradition beside the written one (2 Thessalonians 2:15) and Peter denies private interpretation.',
       'Without an authority to interpret, every reader becomes his own pope, and the result is tens of thousands of denominations clashing over central doctrines.',
       'It was the Church that defined the canon at the councils of Hippo (393) and Carthage (397), and for 1500 years lived by Scripture, Tradition and Magisterium together.',
     ],
@@ -27,7 +27,7 @@ const lessons = {
     check: [
       {
         question: 'Segundo o artigo, o que 2 Tessalonicenses 2,15 mostra sobre a Tradição?',
-        questionEn: 'According to the article, what does 2 Thessalonians 2,15 show about Tradition?',
+        questionEn: 'According to the article, what does 2 Thessalonians 2:15 show about Tradition?',
         options: ['Que a Tradição oral foi substituída pela escrita', 'Que Tradição oral e escrita são colocadas lado a lado', 'Que só vale o que Paulo escreveu nas cartas', 'Que a Tradição é um costume humano sem valor'],
         optionsEn: ['That oral Tradition was replaced by the written one', 'That oral and written Tradition are placed side by side', 'That only what Paul wrote in letters counts', 'That Tradition is a worthless human custom'],
         correct: 1,
@@ -90,10 +90,10 @@ const lessons = {
         question: 'Segundo o artigo, por que a questão dos deuterocanônicos tinha também peso teológico para Lutero?',
         questionEn: 'According to the article, why did the question of the deuterocanonical books also carry theological weight for Luther?',
         options: ['Porque Judite e Tobias contradiziam a justificação pela fé', 'Porque 2 Macabeus 12,45 fala em rezar pelos mortos', 'Porque Trento já os tinha declarado apócrifos em 1546', 'Porque só existiam em latim, e não em hebraico'],
-        optionsEn: ['Because Judith and Tobit contradicted justification by faith', 'Because 2 Maccabees 12,45 speaks of praying for the dead', 'Because Trent had declared them apocryphal in 1546', 'Because they existed only in Latin, not in Hebrew'],
+        optionsEn: ['Because Judith and Tobit contradicted justification by faith', 'Because 2 Maccabees 12:45 speaks of praying for the dead', 'Because Trent had declared them apocryphal in 1546', 'Because they existed only in Latin, not in Hebrew'],
         correct: 1,
         why: 'Lutero seguiu Jerônimo e o cânon hebraico, mas a questão pesava na teologia: 2 Macabeus 12,45 fala em rezar pelos mortos, apoio do Purgatório, e em Leipzig (1519) Lutero negou ao livro valor de prova. Trento reafirmou os 73 livros.',
-        whyEn: 'Luther followed Jerome and the Hebrew canon, but the question weighed on theology: 2 Maccabees 12,45 speaks of praying for the dead, a support of Purgatory, and at Leipzig (1519) Luther denied the book any force as proof. Trent reaffirmed the 73 books.',
+        whyEn: 'Luther followed Jerome and the Hebrew canon, but the question weighed on theology: 2 Maccabees 12:45 speaks of praying for the dead, a support of Purgatory, and at Leipzig (1519) Luther denied the book any force as proof. Trent reaffirmed the 73 books.',
       },
       {
         question: 'O que significa dizer que a Igreja "discerniu" o cânon em vez de "decidir arbitrariamente"?',
@@ -163,7 +163,7 @@ const lessons = {
       question: 'Antes de ler: Mateus põe o nascimento de Jesus sob Herodes (morto em 4 a.C.) e Lucas cita o censo de Quirino (6 d.C.). O que você acha disso?',
       questionEn: 'Before you read: Matthew sets the birth of Jesus under Herod (died 4 BC) and Luke cites the census of Quirinius (AD 6). What do you make of that?',
       options: ['Um dos evangelistas simplesmente errou a data do nascimento', 'Lucas 2,2 e a carreira de Quirino admitem outra leitura', 'Herodes, na verdade, morreu depois do ano 6 d.C.'],
-      optionsEn: ['One of the evangelists simply got the birth date wrong', 'Luke 2,2 and Quirinius\' career allow another reading', 'Herod actually died after AD 6'],
+      optionsEn: ['One of the evangelists simply got the birth date wrong', 'Luke 2:2 and Quirinius\' career allow another reading', 'Herod actually died after AD 6'],
       correct: 1,
       note: 'A palavra grega "prōtē" pode significar "antes de", e uma inscrição fala de um legado, talvez Quirino, que governou a Síria pela segunda vez. O artigo mostra três caminhos que tiram a força da objeção.',
       noteEn: 'The Greek word "prōtē" can mean "before", and an inscription speaks of a legate, perhaps Quirinius, who governed Syria a second time. The article lays out three paths that take the force out of the objection.',
@@ -174,21 +174,21 @@ const lessons = {
       'Lucas, autor de Atos, foi vindicado pela arqueologia em dezenas de detalhes. Cinco palavras ambíguas não derrubam a historicidade de Jesus, atestada por múltiplas fontes.',
     ],
     keyPointsEn: [
-      'Linguistic path (debated): "prōtē" in Luke 2,2 can mean "before", as in John 1,15. The census would be "before the one made when Quirinius governed Syria".',
+      'Linguistic path (debated): "prōtē" in Luke 2:2 can mean "before", as in John 1:15. The census would be "before the one made when Quirinius governed Syria".',
       'Historical path: the Lapis Tiburtinus suggests a legate of Syria twice over, and Ramsay argued Quirinius already had duties there before AD 6. Censuses could take years.',
       'Luke, author of Acts, has been vindicated by archaeology in dozens of details. Five ambiguous words do not topple the historicity of Jesus, attested by many sources.',
     ],
     oneLiner: 'A "contradição" cabe em cinco palavras de Lucas 2,2, que admitem a leitura "antes do censo de Quirino". E Lucas tem sido confirmado pela arqueologia vez após vez.',
-    oneLinerEn: 'The "contradiction" fits in five words of Luke 2,2, which allow the reading "before the census of Quirinius". And archaeology has vindicated Luke time and again.',
+    oneLinerEn: 'The "contradiction" fits in five words of Luke 2:2, which allow the reading "before the census of Quirinius". And archaeology has vindicated Luke time and again.',
     check: [
       {
         question: 'Que leitura alternativa do grego de Lucas 2,2 o artigo apresenta?',
-        questionEn: 'What alternative reading of the Greek of Luke 2,2 does the article present?',
+        questionEn: 'What alternative reading of the Greek of Luke 2:2 does the article present?',
         options: ['Que "Quirino" é um erro de copista no lugar de "Herodes"', 'Que "prōtē" pode querer dizer "antes" do censo de Quirino', 'Que Lucas fala de um censo feito no Egito, e não na Judeia', 'Que a frase inteira foi acrescentada no século IV'],
         optionsEn: ['That "Quirinius" is a copyist\'s slip for "Herod"', 'That "prōtē" can mean "before" the census of Quirinius', 'That Luke means a census in Egypt, not in Judea', 'That the whole sentence was added in the 4th century'],
         correct: 1,
         why: 'O artigo mostra que "prōtē", normalmente "primeiro", é usada no Novo Testamento com sentido de "antes de" (João 1,15 e 15,18). Assim, Lucas falaria de um censo anterior ao famoso de 6 d.C.',
-        whyEn: 'The article shows that "prōtē", normally "first", is used in the New Testament in the sense of "before" (John 1,15 and 15,18). Luke would then be speaking of a census earlier than the famous one of AD 6.',
+        whyEn: 'The article shows that "prōtē", normally "first", is used in the New Testament in the sense of "before" (John 1:15 and 15:18). Luke would then be speaking of a census earlier than the famous one of AD 6.',
       },
       {
         question: 'O que o Lapis Tiburtinus acrescenta ao debate, segundo o artigo?',
@@ -226,8 +226,8 @@ const lessons = {
       'Genealogias antigas não eram planilhas: saltavam gerações e tinham propósito teológico, como os 3 grupos de 14 de Mateus. Ver fraude nisso é leitura moderna.',
     ],
     keyPointsEn: [
-      'Matthew (via Solomon) gives Joseph\'s legal line, heir to David\'s throne. Luke (via Nathan) may give Mary\'s line: "as was supposed son of Joseph, son of Heli" (3,23).',
-      'Another hypothesis, from Julius Africanus, is the levirate (Deuteronomy 25,5-6): Joseph had a biological father (Jacob) and a legal one (Heli), so both lists are true.',
+      'Matthew (via Solomon) gives Joseph\'s legal line, heir to David\'s throne. Luke (via Nathan) may give Mary\'s line: "as was supposed son of Joseph, son of Heli" (3:23).',
+      'Another hypothesis, from Julius Africanus, is the levirate (Deuteronomy 25:5-6): Joseph had a biological father (Jacob) and a legal one (Heli), so both lists are true.',
       'Ancient genealogies were not spreadsheets: they skipped generations and served theological aims, like Matthew\'s 3 groups of 14. Reading fraud into it is modern.',
     ],
     oneLiner: 'Duas genealogias diferentes não são fraude: quem inventa alinha as listas. Mateus segue a linha real por José, Lucas segue outra linha, e as duas levam a Davi.',
@@ -235,7 +235,7 @@ const lessons = {
     check: [
       {
         question: 'Como o artigo lê a expressão "como se cria filho de José, filho de Heli" em Lucas 3,23?',
-        questionEn: 'How does the article read the phrase "as was supposed son of Joseph, son of Heli" in Luke 3,23?',
+        questionEn: 'How does the article read the phrase "as was supposed son of Joseph, son of Heli" in Luke 3:23?',
         options: ['Como prova de que Lucas não conhecia José', 'Como abertura para Heli ser pai de Maria', 'Como erro de copista, que trocou "Jacó" por "Heli"', 'Como sinal de que Jesus não era da casa de Davi'],
         optionsEn: ['As proof that Luke did not know Joseph', 'As room for Heli to be Mary\'s father', 'As a copyist\'s slip, "Heli" for "Jacob"', 'As a sign Jesus was not of David\'s house'],
         correct: 1,
@@ -244,7 +244,7 @@ const lessons = {
       },
       {
         question: 'O que a Lei do Levirato (Deuteronômio 25,5-6) explica no caso das genealogias?',
-        questionEn: 'What does the Levirate Law (Deuteronomy 25,5-6) explain in the case of the genealogies?',
+        questionEn: 'What does the Levirate Law (Deuteronomy 25:5-6) explain in the case of the genealogies?',
         options: ['Que José teria dois pais: Jacó pelo sangue, Heli pela lei', 'Que as mães não entravam nas genealogias judaicas', 'Que Davi teve dois filhos chamados Salomão', 'Que Mateus podia pular reis como Ocozias e Joás'],
         optionsEn: ['That Joseph had two fathers: Jacob by birth, Heli by law', 'That mothers were left out of Jewish genealogies', 'That David had two sons named Solomon', 'That Matthew could skip kings like Ahaziah and Joash'],
         correct: 0,
@@ -279,7 +279,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Each evangelist names some women, none says "only these". One angel spoke, but there were two: where there are two, there is always one. Partial testimony is not false.',
-      'Galilee or Jerusalem? Acts 1,3 says Jesus appeared over forty days. There were appearances in both places, and each Gospel chooses which ones to tell.',
+      'Galilee or Jerusalem? Acts 1:3 says Jesus appeared over forty days. There were appearances in both places, and each Gospel chooses which ones to tell.',
       'The core is unanimous: crucified and buried on Friday, empty tomb on Sunday, appearances, Magdalene as witness, disciples going from despair to bold proclamation.',
     ],
     oneLiner: 'Se os Evangelhos fossem invenção combinada, todos diriam o mesmo número de anjos. As diferenças na periferia são a cara de testemunhas reais que concordam no essencial.',
@@ -289,14 +289,14 @@ const lessons = {
         question: 'Por que, segundo o artigo, João mencionar só Maria Madalena não contradiz Marcos, que cita três mulheres?',
         questionEn: 'Why, according to the article, does John naming only Mary Magdalene not contradict Mark, who names three women?',
         options: ['Porque João escreveu antes e não conhecia as outras', 'Porque o "não sabemos" de João 20,2 mostra companhia', 'Porque Marcos exagerou o número para impressionar', 'Porque as outras mulheres só chegaram no dia seguinte'],
-        optionsEn: ['Because John wrote earlier and did not know the others', 'Because John 20,2\'s "we do not know" shows company', 'Because Mark inflated the number to impress', 'Because the other women only came the next day'],
+        optionsEn: ['Because John wrote earlier and did not know the others', 'Because John 20:2\'s "we do not know" shows company', 'Because Mark inflated the number to impress', 'Because the other women only came the next day'],
         correct: 1,
         why: 'Cada evangelista menciona algumas das presentes. João foca em Madalena porque ela é central na sua narrativa, mas o "não sabemos" revela que ela não estava só. As listas se completam, não se excluem.',
         whyEn: 'Each evangelist mentions some of those present. John focuses on Magdalene because she is central to his narrative, but the "we do not know" reveals she was not alone. The lists complete one another, they do not exclude.',
       },
       {
         question: 'Como Atos 1,3 ajuda a resolver se o Ressuscitado apareceu na Galileia ou em Jerusalém?',
-        questionEn: 'How does Acts 1,3 help settle whether the risen Jesus appeared in Galilee or in Jerusalem?',
+        questionEn: 'How does Acts 1:3 help settle whether the risen Jesus appeared in Galilee or in Jerusalem?',
         options: ['Diz que Jesus só apareceu em Jerusalém', 'Mostra que as aparições na Galileia são simbólicas', 'Fala de aparições durante quarenta dias', 'Afirma que os discípulos nunca voltaram à Galileia'],
         optionsEn: ['It says Jesus appeared only in Jerusalem', 'It shows the Galilee appearances are symbolic', 'It speaks of appearances over forty days', 'It states the disciples never went back to Galilee'],
         correct: 2,
@@ -332,7 +332,7 @@ const lessons = {
     keyPointsEn: [
       'The darkness was no solar eclipse: Passover falls at full moon and a solar eclipse needs a new moon, besides lasting minutes. The account is sober, with no explanation.',
       'Non-Christian authors spoke of something similar: Thallus (probably 1st c.), quoted by Julius Africanus, and Phlegon: night at the sixth hour, an earthquake, around 33.',
-      'Peter quotes Joel, "the moon to blood" (Acts 2,20). Humphreys and Waddington (Nature, 1983) computed that the Moon rose partly eclipsed over Jerusalem on 3 April 33.',
+      'Peter quotes Joel, "the moon to blood" (Acts 2:20). Humphreys and Waddington (Nature, 1983) computed that the Moon rose partly eclipsed over Jerusalem on 3 April 33.',
     ],
     oneLiner: 'Ninguém inventa um eclipse na lua cheia. Os Evangelhos contam trevas sem explicá-las, autores pagãos falam de algo parecido, e a astronomia achou um eclipse lunar em 3 de abril de 33.',
     oneLinerEn: 'No one invents an eclipse at full moon. The Gospels report darkness without explaining it, pagan authors speak of something similar, and astronomy found a lunar eclipse on 3 April 33.',
@@ -382,8 +382,8 @@ const lessons = {
       'Daniel 9 coloca a morte do Ungido antes da destruição do Templo (ano 70). A força está no conjunto: um só homem cumprir lugar, modo e tempo não é coincidência.',
     ],
     keyPointsEn: [
-      'Micah 5,2 announces Bethlehem in the 8th century BC, and Isaiah 7,14 the sign of the virgin who conceives Emmanuel, "God with us".',
-      'Psalm 22 (pierced hands and feet, garments cast by lot), Isaiah 53 (the Servant wounded for our sins) and Zechariah 12,10 (the pierced one) describe the manner of death.',
+      'Micah 5:2 announces Bethlehem in the 8th century BC, and Isaiah 7:14 the sign of the virgin who conceives Emmanuel, "God with us".',
+      'Psalm 22 (pierced hands and feet, garments cast by lot), Isaiah 53 (the Servant wounded for our sins) and Zechariah 12:10 (the pierced one) describe the manner of death.',
       'Daniel 9 places the Anointed\'s death before the Temple\'s destruction (year 70). The force is in the whole: one man fulfilling place, manner and time is no coincidence.',
     ],
     oneLiner: 'Cada profecia sozinha dá para discutir. O que não dá é explicar por coincidência que um só homem tenha nascido onde, morrido como e vindo quando os profetas disseram.',
@@ -435,7 +435,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'The Caesarea stone (1961) reads "Pontius Pilate, prefect of Judea", with the exact title, and the 1990 ossuary, "Joseph, son of Caiaphas": the judges of Jesus.',
-      'The five-portico pool of Bethesda (John 5,2), thought invented, was excavated beside the church of Saint Anne. The Tel Dan stele (9th c. BC) names the "House of David".',
+      'The five-portico pool of Bethesda (John 5:2), thought invented, was excavated beside the church of Saint Anne. The Tel Dan stele (9th c. BC) names the "House of David".',
       'The Hittites, whose importance was doubted in the 19th century, were an empire based at Hattusa. Archaeology proves no miracles, but backs the Bible where testable.',
     ],
     oneLiner: 'A arqueologia não prova que a Bíblia é Palavra de Deus, mas cada vez que o texto pode ser testado contra a terra (Pilatos, Caifás, Betesda, a Casa de Davi), ele passa no teste.',
@@ -457,7 +457,7 @@ const lessons = {
         optionsEn: ['Because the Caiaphas ossuary was found in it', 'Because it was thought invented until dug up', 'Because it is mentioned only in the Old Testament', 'Because it proves the healing of the paralytic'],
         correct: 1,
         why: 'João 5,2 fala de "cinco pórticos" e nenhuma piscina assim era conhecida. A escavação junto à igreja de Santa Ana revelou uma piscina dupla compatível com isso. O artigo é claro: achados não provam milagres, provam a confiabilidade do relato.',
-        whyEn: 'John 5,2 speaks of "five porticoes" and no such pool was known. The excavation beside the church of Saint Anne revealed a double pool that fits it. The article is clear: finds do not prove miracles, they prove the reliability of the account.',
+        whyEn: 'John 5:2 speaks of "five porticoes" and no such pool was known. The excavation beside the church of Saint Anne revealed a double pool that fits it. The article is clear: finds do not prove miracles, they prove the reliability of the account.',
       },
       {
         question: 'Qual é o limite honesto que o artigo reconhece para a arqueologia?',
@@ -539,7 +539,7 @@ const lessons = {
     ],
     keyPointsEn: [
       '"Bible" means "the books": 73 books, about a thousand years, some forty authors (kings, prophets, fishermen, a physician) and very different genres.',
-      'Inspiration is not mechanical dictation: the authors spoke inspired by the Holy Spirit (2 Peter 1,21), and God makes use of each one\'s style and even limits.',
+      'Inspiration is not mechanical dictation: the authors spoke inspired by the Holy Spirit (2 Peter 1:21), and God makes use of each one\'s style and even limits.',
       'The Bible did not decide which books are the Bible: the Church did, at Hippo (393) and Carthage (397). That is why it is read not alone but in the Church\'s communion.',
     ],
     oneLiner: 'A Bíblia tem uns quarenta autores humanos e um só Autor divino, que inspira sem apagar o estilo de ninguém. E nasceu na Igreja, que é onde se aprende a lê-la.',
@@ -582,7 +582,7 @@ const lessons = {
       optionsEn: ['Pretend those passages do not exist', 'Read it as revelation unfolding toward Christ', 'Admit the God of the Old Testament was cruel'],
       correct: 1,
       note: 'Deus educou um povo por etapas, tolerando o que ainda não podia mudar, como Jesus explica sobre o divórcio (Mateus 19,8). A chave de leitura de todo o Antigo Testamento é Cristo.',
-      noteEn: 'God educated a people in stages, tolerating what could not yet change, as Jesus explains about divorce (Matthew 19,8). The key to reading the whole Old Testament is Christ.',
+      noteEn: 'God educated a people in stages, tolerating what could not yet change, as Jesus explains about divorce (Matthew 19:8). The key to reading the whole Old Testament is Christ.',
     },
     keyPoints: [
       'A revelação é progressiva: Deus parte de onde o povo estava. Jesus diz que Moisés tolerou o divórcio "pela dureza dos corações", ou seja, nem tudo tolerado era o ideal.',
@@ -591,7 +591,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Revelation is progressive: God starts where the people were. Jesus says Moses tolerated divorce "because of your hardness of heart": not all that was tolerated was ideal.',
-      'The Law does not invent slavery but humanizes it, and the Bible plants the seed of its end: man is God\'s image (Genesis 1,27), the slave a brother (Philemon 16).',
+      'The Law does not invent slavery but humanizes it, and the Bible plants the seed of its end: man is God\'s image (Genesis 1:27), the slave a brother (Philemon 16).',
       'Extermination language is hyperbole of ancient war chronicles, not a model to imitate. "Eye for eye" was a brake on revenge. Whoever wants to see God looks at Calvary.',
     ],
     oneLiner: 'Deus educou um povo por etapas, tolerando o que ainda não dava para mudar. Para saber como Deus é de verdade, não olhe uma página do Levítico, olhe para o Calvário.',
@@ -601,7 +601,7 @@ const lessons = {
         question: 'Que passagem o artigo usa como "chave" para a revelação progressiva?',
         questionEn: 'Which passage does the article use as the "key" to progressive revelation?',
         options: ['Gênesis 1,27, sobre o homem criado à imagem de Deus', 'Mateus 19,8, sobre o divórcio tolerado por Moisés', 'Filêmon 16, sobre receber Onésimo como irmão', 'Mateus 5,38-44, sobre o olho por olho'],
-        optionsEn: ['Genesis 1,27, on man created in God\'s image', 'Matthew 19,8, on the divorce Moses allowed', 'Philemon 16, on receiving Onesimus as a brother', 'Matthew 5,38-44, on eye for eye'],
+        optionsEn: ['Genesis 1:27, on man created in God\'s image', 'Matthew 19:8, on the divorce Moses allowed', 'Philemon 16, on receiving Onesimus as a brother', 'Matthew 5:38-44, on eye for eye'],
         correct: 1,
         why: 'Jesus explica que o divórcio foi concedido "pela dureza dos vossos corações, mas no princípio não era assim". Ou seja, nem tudo o que a Lei tolerou era o ideal de Deus, era um passo possível naquele momento.',
         whyEn: 'Jesus explains that divorce was granted "because of your hardness of heart, but from the beginning it was not so". In other words, not everything the Law tolerated was God\'s ideal, it was a possible step at that moment.',
@@ -613,7 +613,7 @@ const lessons = {
         optionsEn: ['The Bible set up slavery as a permanent ideal', 'The Bible banned slavery from Genesis onward', 'The Law humanized it, and the Bible sowed its abolition', 'The Bible never mentions slaves, only hired servants'],
         correct: 2,
         why: 'O Antigo Testamento não inventa a escravidão, regula e humaniza (descanso, libertação, proteção) num tempo em que ninguém pensava em abolir. Gênesis 1,27 e Filêmon 16 são a semente que cristãos fizeram florescer na abolição.',
-        whyEn: 'The Old Testament does not invent slavery, it regulates and humanizes it (rest, release, protection) at a time when no one thought of abolition. Genesis 1,27 and Philemon 16 are the seed that Christians brought to bloom in abolition.',
+        whyEn: 'The Old Testament does not invent slavery, it regulates and humanizes it (rest, release, protection) at a time when no one thought of abolition. Genesis 1:27 and Philemon 16 are the seed that Christians brought to bloom in abolition.',
       },
       {
         question: 'Que observação o artigo faz ao crítico ateu que se indigna com a violência do Antigo Testamento?',
@@ -643,7 +643,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Revelation is apocalyptic: symbols (beasts, numbers, trumpets) to console persecuted first-century Christians. Its message is a certainty, not a date: Christ has won.',
-      'Jesus was categorical: "of that day or hour no man knoweth" (Mark 13,32). The 666 is likely a cipher for Nero, and the "secret rapture" is a 19th-century invention.',
+      'Jesus was categorical: "of that day or hour no man knoweth" (Mark 13:32). The 666 is likely a cipher for Nero, and the "secret rapture" is a 19th-century invention.',
       'The Creed says it: Christ will return in glory, resurrection of the dead, final judgment, new heavens and new earth. The right attitude is serene vigilance, not fear.',
     ],
     oneLiner: 'Ninguém sabe o dia nem a hora, nem o Filho. O Apocalipse não é calendário de catástrofes, é a certeza de que o Cordeiro venceu. O cristão espera Alguém que ama, não um desastre.',
@@ -656,7 +656,7 @@ const lessons = {
         optionsEn: ['Because the end of the world already came in AD 70', 'Because Jesus said no one knows the day or the hour', 'Because only the pope may announce the date', 'Because Revelation forbids any talk of the end'],
         correct: 1,
         why: 'Marcos 13,32 é categórico, e toda data já marcada fracassou. Marcar datas contraria diretamente a palavra de Cristo e, segundo o artigo, costuma servir mais ao medo e à manipulação do que à fé.',
-        whyEn: 'Mark 13,32 is categorical, and every date ever set has failed. Setting dates directly contradicts the word of Christ and, according to the article, tends to serve fear and manipulation more than faith.',
+        whyEn: 'Mark 13:32 is categorical, and every date ever set has failed. Setting dates directly contradicts the word of Christ and, according to the article, tends to serve fear and manipulation more than faith.',
       },
       {
         question: 'O que o artigo diz sobre o "arrebatamento secreto" antes da grande tribulação?',
@@ -674,7 +674,7 @@ const lessons = {
         optionsEn: ['Serene vigilance, awaiting Someone one loves', 'Constant fear and preparation for catastrophes', 'Identifying the antichrist of the day for protection', 'Indifference, because the end will never come'],
         correct: 0,
         why: 'Nem medo paralisante nem obsessão por sinais. O cristão vive cada dia de modo a não temer a vinda do Senhor e faz sua a última oração da Bíblia: "Vem, Senhor Jesus" (Apocalipse 22,20).',
-        whyEn: 'Neither paralyzing fear nor obsession with signs. The Christian lives each day so as not to fear the coming of the Lord and makes his own the last prayer of the Bible: "Come, Lord Jesus" (Revelation 22,20).',
+        whyEn: 'Neither paralyzing fear nor obsession with signs. The Christian lives each day so as not to fear the coming of the Lord and makes his own the last prayer of the Bible: "Come, Lord Jesus" (Revelation 22:20).',
       },
     ],
   },
@@ -695,7 +695,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'Start with a Gospel (Mark is the shortest, Luke full of tenderness), then Acts, the Psalms and, with preparation, Genesis and Exodus. Leviticus and Numbers can wait.',
-      'A little and constant beats a lot and sporadic: a short passage a day. And do not read alone: Peter warns there are texts the imprudent twist (2 Peter 3,16).',
+      'A little and constant beats a lot and sporadic: a short passage a day. And do not read alone: Peter warns there are texts the imprudent twist (2 Peter 3:16).',
       'Know the genre and ask what the author meant and what God says today. Read in order to pray: lectio divina has four steps (read, meditate, pray, contemplate).',
     ],
     oneLiner: 'Não comece pelo Gênesis: comece por um Evangelho, leia pouco por dia, com uma Bíblia católica anotada, e leia para rezar, não só para saber.',
@@ -717,7 +717,7 @@ const lessons = {
         optionsEn: ['That one must always read aloud, in a group', 'That only priests and catechists may read it', 'That one reads with good notes and the Church\'s faith', 'That the Bible may only be read at Mass'],
         correct: 2,
         why: 'A Bíblia nasceu dentro da Igreja e é nela que se lê bem. Pedro avisa que há "coisas difíceis de entender" que os ignorantes torcem (2 Pedro 3,16). Ler sem nenhuma referência é navegar sem mapa.',
-        whyEn: 'The Bible was born within the Church and is read well in the Church. Peter warns there are "things hard to understand" that the ignorant twist (2 Peter 3,16). Reading with no reference at all is sailing without a map.',
+        whyEn: 'The Bible was born within the Church and is read well in the Church. Peter warns there are "things hard to understand" that the ignorant twist (2 Peter 3:16). Reading with no reference at all is sailing without a map.',
       },
       {
         question: 'Quais são os quatro passos da lectio divina citados no artigo?',
