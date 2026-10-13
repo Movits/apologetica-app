@@ -6,15 +6,17 @@ export const referencesEn = {
   // === BIBLE ===
   'mt-16-18': {
     topicEn: 'Primacy of Peter / foundation of the Church',
-    textEn: 'And I say to thee: That thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also in heaven.',
+    textEn: 'And I say to thee: That thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose on earth, it shall be loosed also in heaven.',
     meaningEn: 'Jesus calls Simon "Pétros" (Peter, masculine) and says that upon this "pétra" (rock, feminine) he will build his Church. In Aramaic, the language Jesus actually spoke, both uses are the same word Kepha (rock). Simon receives the name of Rock, and upon that Rock (himself) the Church is founded.',
   },
   '1pd-3-15': {
+    fullSourceEn: 'First Letter of Saint Peter, chapter 3, verses 15-16 in the Douay-Rheims (verse 15 in Bibles that follow the Greek numbering)',
     topicEn: 'Apologetics / duty to give an account of one\'s hope',
     textEn: 'Sanctify the Lord Christ in your hearts, being ready always to satisfy every one that asketh you a reason of that hope which is in you. But with modesty and fear, having a good conscience: that whereas they speak evil of you, they may be ashamed who falsely accuse your good conversation in Christ.',
     meaningEn: 'Formal defense, rational answer, justificatory argumentation. It is the root of the word "apologetics." Peter asks every Christian to know how to give a reasonable and well-founded account of their faith.',
   },
   'jo-6-53': {
+    fullSourceEn: 'Gospel of John, chapter 6, verses 54-56 in the Douay-Rheims (53-55 in Bibles that follow the Greek numbering)',
     topicEn: 'Eucharist / Real Presence',
     textEn: 'Then Jesus said to them: Amen, amen I say unto you: Except you eat the flesh of the Son of man, and drink his blood, you shall not have life in you. He that eateth my flesh, and drinketh my blood, hath everlasting life: and I will raise him up in the last day. For my flesh is meat indeed: and my blood is drink indeed.',
     meaningEn: 'Sárx is "flesh", the same word as in "the Word was made flesh" (John 1:14). Phagein, from the ordinary verb "to eat" (esthíō), is what John uses up to this point. After the listeners take offense ("How can this man give us his flesh to eat?"), the text switches to trṓgō, "to chew", a rawer, more physical verb. John uses both forms, even side by side in the closing verse of the discourse, but the switch, right at the moment of offense, shows that Jesus did not soften his words: he insisted on them.',
@@ -29,20 +31,21 @@ export const referencesEn = {
   },
   '1cor-15-3': {
     topicEn: 'Resurrection of Christ / eyewitness accounts',
-    textEn: 'For I delivered unto you first of all, which I also received: how that Christ died for our sins, according to the scriptures: And that he was buried, and that he rose again the third day, according to the scriptures: And that he was seen by Cephas; and after that by the eleven. Then was he seen by more than five hundred brethren at once, of whom many remain until this present, and some are fallen asleep. After that, he was seen by James, then by all the apostles. And last of all, he was seen also by me, as by one born out of due time.',
+    textEn: 'For I delivered unto you first of all, which I also received: how that Christ died for our sins, according to the scriptures: And that he was buried: and that he rose again on the third day according to the scriptures: And that he was seen by Cephas, and after that by the eleven. Then was he seen by more than five hundred brethren at once: of whom many remain until this present, and some are fallen asleep. After that, he was seen by James: then by all the apostles. And last of all, he was seen also by me.',
   },
   '2ts-2-15': {
+    fullSourceEn: 'Second Letter to the Thessalonians, chapter 2, verse 14 in the Douay-Rheims (verse 15 in Bibles that follow the Greek numbering)',
     topicEn: 'Apostolic Tradition',
     textEn: 'Therefore, brethren, stand fast; and hold the traditions which you have learned, whether by word, or by our epistle.',
     meaningEn: 'Tradition, transmission, teaching handed down from one generation to the next. This is the same word used for the oral apostolic Tradition that the Church has preserved alongside Scripture. Paul places it on equal footing ("whether by word, or by our epistle").',
   },
   'jo-2-1': {
     topicEn: "Wedding at Cana / Mary's intercession",
-    textEn: "And the third day, there was a marriage in Cana of Galilee: and the mother of Jesus was there. And Jesus also was invited, and his disciples, to the marriage. And the wine failing, the mother of Jesus saith to him: They have no wine. And Jesus saith to her: Woman, what is that to me and to thee? my hour is not yet come. His mother saith to the waiters: Whatsoever he shall say to you, do ye. Now there were set there six waterpots of stone, containing two or three measures apiece. Jesus saith to them: Fill the waterpots with water. And they filled them up to the brim. And Jesus saith to them: Draw out now, and carry to the chief steward of the feast. And when the chief steward had tasted the water made wine, and knew not whence it was, he calleth the bridegroom, And saith to him: Every man at first setteth forth good wine, and when men have well drunk, then that which is worse. But thou hast kept the good wine until now. This beginning of miracles did Jesus in Cana of Galilee; and manifested his glory, and his disciples believed in him.",
+    textEn: "And the third day, there was a marriage in Cana of Galilee: and the mother of Jesus was there. And Jesus also was invited, and his disciples, to the marriage. And the wine failing, the mother of Jesus saith to him: They have no wine. And Jesus saith to her: Woman, what is that to me and to thee? My hour is not yet come. His mother saith to the waiters: Whatsoever he shall say to you, do ye. Now there were set there six waterpots of stone, according to the manner of the purifying of the Jews, containing two or three measures apiece. Jesus saith to them: Fill the waterpots with water. And they filled them up to the brim. And Jesus saith to them: Draw out now and carry to the chief steward of the feast. And they carried it. And when the chief steward had tasted the water made wine and knew not whence it was, but the waiters knew who had drawn the water: the chief steward calleth the bridegroom, And saith to him: Every man at first setteth forth good wine, and when men have well drunk, then that which is worse. But thou hast kept the good wine until now. This beginning of miracles did Jesus in Cana of Galilee and manifested his glory. And his disciples believed in him.",
   },
   'mt-22-32': {
     topicEn: 'Communion of saints / life after death',
-    textEn: 'I am the God of Abraham, and the God of Isaac, and the God of Jacob (Ex 3:6)? He is not the God of the dead, but of the living.',
+    textEn: 'I am the God of Abraham and the God of Isaac and the God of Jacob? He is not the God of the dead but of the living.',
   },
   'ap-5-8': {
     topicEn: 'Intercession of saints in heaven',
@@ -87,13 +90,14 @@ export const referencesEn = {
   },
   'mt-28-1': {
     topicEn: 'Resurrection of Christ / empty tomb',
-    textEn: 'And in the end of the sabbath, when it began to dawn towards the first day of the week, came Mary Magdalen and the other Mary, to see the sepulchre. And behold there was a great earthquake. For an angel of the Lord descended from heaven, and coming, rolled back the stone, and sat upon it. And his countenance was as lightning, and his raiment as snow. And for fear of him, the guards were struck with terror, and became as dead men. And the angel answering, said to the women: Fear not you; for I know that you seek Jesus who was crucified. He is not here, for he is risen, as he said. Come, and see the place where the Lord was laid. And going quickly, tell ye his disciples that he is risen: and behold he will go before you into Galilee; there you shall see him. And they went out quickly from the sepulchre with fear and great joy, running to tell his disciples. And behold Jesus met them, saying: All hail. But they came up, and took hold of his feet, and adored him. Then Jesus said to them: Fear not. Go, tell my brethren that they go into Galilee, there they shall see me.',
+    textEn: 'And in the end of the sabbath, when it began to dawn towards the first day of the week, came Mary Magdalen and the other Mary, to see the sepulchre. And behold there was a great earthquake. For an angel of the Lord descended from heaven and coming rolled back the stone and sat upon it. And his countenance was as lightning and his raiment as snow. And for fear of him, the guards were struck with terror and became as dead men. And the angel answering, said to the women: Fear not you: for I know that you seek Jesus who was crucified. He is not here. For he is risen, as he said. Come, and see the place where the Lord was laid. And going quickly, tell ye his disciples that he is risen. And behold he will go before you into Galilee. There you shall see him. Lo, I have foretold it to you. And they went out quickly from the sepulchre with fear and great joy, running to tell his disciples. And behold, Jesus met them, saying: All hail. But they came up and took hold of his feet and adored him. Then Jesus said to them: Fear not. Go, tell my brethren that they go into Galilee. There they shall see me.',
   },
   'jo-17-20': {
     topicEn: 'Prayer for the unity of the Church',
     textEn: 'And not for them only do I pray, but for them also who through their word shall believe in me; That they all may be one, as thou, Father, in me, and I in thee; that they also may be one in us; that the world may believe that thou hast sent me.',
   },
   'jo-6-67': {
+    fullSourceEn: 'Gospel of John, chapter 6, verses 67-70 in the Douay-Rheims (66-69 in Bibles that follow the Greek numbering)',
     topicEn: "Eucharist / Peter's confession",
     textEn: "Then Jesus said to the twelve: Will you also go away? And Simon Peter answered him: Lord, to whom shall we go? thou hast the words of eternal life. And we have believed and have known, that thou art the Christ, the Son of God.",
   },
@@ -179,7 +183,7 @@ export const referencesEn = {
   },
   'ap-22-8': {
     topicEn: 'Angel refuses worship / only God is to be adored',
-    textEn: 'And I, John, who have heard and seen these things. And after I had heard and seen, I fell down to adore before the feet of the angel, who shewed me these things. And he said to me: See thou do it not: for I am thy fellow servant, and of thy brethren the prophets, and of them that keep the words of the prophecy of this book. Adore God.',
+    textEn: 'And I, John, who have heard and seen these things. And, after I had heard and seen, I fell down to adore before the feet of the angel who shewed me the things. And he said to me: See thou do it not. For I am thy fellow servant, and of thy brethren the prophets and of them that keep the words of the prophecy of this book. Adore God.',
   },
   '2mc-12-44': {
     topicEn: 'Prayer for the dead / foundation of Purgatory',
@@ -264,15 +268,15 @@ export const referencesEn = {
   },
   'mt-1-1': {
     topicEn: 'Genealogy of Jesus according to Matthew / legal line through Joseph',
-    textEn: 'The book of the generation of Jesus Christ, the son of David, the son of Abraham. (...) So all the generations, from Abraham to David, are fourteen generations. And from David to the transmigration of Babylon, are fourteen generations: and from the transmigration of Babylon to Christ are fourteen generations.',
+    textEn: 'The book of the generation of Jesus Christ, the son of David, the son of Abraham: (...) And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ. So all the generations from Abraham to David, are fourteen generations. And from David to the transmigration of Babylon, are fourteen generations: and from the transmigration of Babylon to Christ are fourteen generations.',
   },
   'lc-3-23': {
     topicEn: 'Genealogy of Jesus according to Luke / ascending line to Adam',
-    textEn: 'And Jesus himself was beginning about the age of thirty years; being (as it was supposed) the son of Joseph, who was of Heli, who was of Matthat, who was of Levi (...) who was of Seth, who was of Adam, who was of God.',
+    textEn: 'And Jesus himself was beginning about the age of thirty years: being (as it was supposed) the son of Joseph, who was of Heli, who was of Mathat, (...) who was of Nathan, who was of David, (...) who was of Seth, who was of Adam, who was of God.',
   },
   'dt-25-5': {
     topicEn: 'Levirate law / marriage of childless widow',
-    textEn: 'When brethren dwell together, and one of them dieth without children, the wife of the deceased shall not marry to another: but his brother shall take her, and raise up seed for his brother. And the firstborn son he shall have of her shall be called by his name, that his name be not abolished out of Israel.',
+    textEn: 'When brethren dwell together, and one of them dieth without children, the wife of the deceased shall not marry to another: but his brother shall take her, and raise up seed for his brother: And the first son he shall have of her he shall call by his name, that his name be not abolished out of Israel.',
   },
   'at-1-3': {
     topicEn: 'Appearances of the Risen Christ over forty days',
@@ -1343,5 +1347,10 @@ export const referencesEn = {
     yearEn: '1717 (finding); 1930 (proclaimed patroness of Brazil by Pius XI)',
     topicEn: 'The image of Brazil\'s patroness and popular devotion',
     textEn: 'In October 1717, three fishermen drew from the river the body and then the head of a small terracotta image of Our Lady of the Conception, followed by an abundant catch after hours with nothing. The devotion grew through accounts of graces and healings over three centuries, giving rise to the Shrine of Aparecida, one of the largest Marian basilicas in the world. Pius XI proclaimed Our Lady of Aparecida patroness of Brazil in 1930.',
+  },
+  'jl-2-31': {
+    fullSourceEn: 'Book of the prophet Joel, chapter 2, verse 31 (3:4 in Bibles that follow the Hebrew numbering)',
+    topicEn: 'Cosmic signs: the sun into darkness and the moon into blood',
+    textEn: 'The sun shall be turned into darkness, and the moon into blood: before the great and dreadful day of the Lord doth come.',
   },
 };

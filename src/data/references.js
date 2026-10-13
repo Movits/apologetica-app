@@ -48,6 +48,7 @@ export const references = [
     topic: 'Apologética / dever de evangelizar',
     text: `Portanto, não temais as suas ameaças e não vos turbeis. Antes, santificai em vossos corações Cristo, o Senhor. Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito.`,
     bibleNav: { bookId: '1pd', chapter: 3, verse: 15 },
+    bibleNavEn: { bookId: '1pd', chapter: 3, verse: 15, verseEnd: 16 },
     originalLanguage: {
       language: 'Grego',
       word: 'ἀπολογία',
@@ -66,6 +67,7 @@ export const references = [
     topic: 'Eucaristia / presença real',
     text: `Então, Jesus lhes disse: “Em verdade, em verdade vos digo: se não comerdes a carne do Filho do Homem, e não beberdes o seu sangue, não tereis a vida em vós mesmos. Quem come a minha carne e bebe o meu sangue tem a vida eterna; e eu o ressuscitarei no último dia. Pois a minha carne é verdadeiramente uma comida e o meu sangue, verdadeiramente uma bebida.`,
     bibleNav: { bookId: 'jo', chapter: 6, verse: 53, verseEnd: 55 },
+    bibleNavEn: { bookId: 'jo', chapter: 6, verse: 54, verseEnd: 56 },
     originalLanguage: {
       language: 'Grego',
       word: 'σάρξ / τρώγω',
@@ -117,6 +119,7 @@ export const references = [
     topic: 'Tradição apostólica',
     text: `Assim, pois, irmãos, ficai firmes e conservai os ensinamentos que de nós aprendestes, seja por palavras, seja por carta nossa.`,
     bibleNav: { bookId: '2ts', chapter: 2, verse: 15 },
+    bibleNavEn: { bookId: '2ts', chapter: 2, verse: 14 },
     originalLanguage: {
       language: 'Grego',
       word: 'παράδοσις',
@@ -294,8 +297,9 @@ export const references = [
     author: 'Apóstolo João',
     year: 'séc. I d.C.',
     topic: 'Eucaristia / confissão de Pedro',
-    text: `Desde então, muitos dos seus discípulos se retiraram e já não andavam com ele. Jesus perguntou aos Doze: “Quereis vós também retirar-vos?”. Respondeu-lhe Simão Pedro: “Senhor, a quem iríamos nós? Tu tens as palavras da vida eterna. E nós cremos e sabemos que tu és o Santo de Deus!”.`,
+    text: `Desde então, muitos dos seus discípulos se retiraram e já não andavam com ele. Então, Jesus perguntou aos Doze: “Quereis vós também retirar-vos?”. Respondeu-lhe Simão Pedro: “Senhor, a quem iríamos nós? Tu tens as palavras da vida eterna. E nós cremos e sabemos que tu és o Santo de Deus!”.`,
     bibleNav: { bookId: 'jo', chapter: 6, verse: 66, verseEnd: 69 },
+    bibleNavEn: { bookId: 'jo', chapter: 6, verse: 67, verseEnd: 70 },
   },
   {
     id: 'lc-1-28',
@@ -1178,7 +1182,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Os dois maiores mandamentos: amar a Deus e ao próximo',
-    text: `Respondeu Jesus: “Amarás o Senhor, teu Deus, de todo o teu coração, de toda a tua alma e de todo o teu espírito. Esse é o maior e o primeiro mandamento. E o segundo, semelhante a este, é: Amarás teu próximo como a ti mesmo. Nesses dois mandamentos se resumem toda a Lei e os Profetas”.`,
+    text: `Respondeu Jesus: “Amarás o Senhor, teu Deus, de todo o teu coração, de toda a tua alma e de todo o teu espírito (Dt 6,5). Esse é o maior e o primeiro mandamento. E o segundo, semelhante a este, é: Amarás teu próximo como a ti mesmo (Lv 19,18). Nesses dois mandamentos se resumem toda a Lei e os Profetas”.`,
     bibleNav: { bookId: 'mt', chapter: 22, verse: 37, verseEnd: 40 },
   },
   {
@@ -1257,7 +1261,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Juízo final pelas obras de misericórdia',
-    text: 'Quando o Filho do Homem voltar na sua glória e todos os anjos com ele, sentar-se-á no trono glorioso. Todas as nações se reunirão diante dele e ele separará uns dos outros, como o pastor separa as ovelhas dos cabritos. (...) Porque tive fome, e me destes de comer; tive sede, e me destes de beber; (...) Em verdade vos digo: todas as vezes que fizestes isso a um destes meus irmãos mais pequeninos, foi a mim que o fizestes.',
+    text: 'Quando o Filho do Homem voltar na sua glória e todos os anjos com ele, se sentará no seu trono glorioso. Todas as nações se reunirão diante dele e ele separará uns dos outros, como o pastor separa as ovelhas dos cabritos. (...) porque tive fome e me destes de comer; tive sede e me destes de beber; era peregrino e me acolhestes; (...) Responderá o Rei: ‘Em verdade eu vos declaro: todas as vezes que fizestes isso a um destes meus irmãos mais pequeninos, foi a mim mesmo que o fizestes.’',
     bibleNav: { bookId: 'mt', chapter: 25, verse: 31, verseEnd: 46 },
   },
   {
@@ -1290,7 +1294,7 @@ export const references = [
     author: 'Atribuída a Paulo ou círculo paulino',
     year: 'séc. I d.C.',
     topic: 'Divindade do Filho / o Pai chama o Filho de Deus',
-    text: 'Mas, do Filho, diz: "O teu trono, ó Deus, subsiste pelos séculos dos séculos; o cetro do teu reino é cetro de equidade".',
+    text: 'ao passo que do Filho diz: O teu trono, ó Deus, subsiste para a eternidade. O cetro do teu Reino é cetro de justiça.',
     bibleNav: { bookId: 'hb', chapter: 1, verse: 8 },
   },
   {
@@ -1301,7 +1305,7 @@ export const references = [
     author: 'Apóstolo Paulo',
     year: 'c. 61-63 d.C.',
     topic: 'Divindade de Cristo / Encarnação',
-    text: 'Ele, que era de condição divina, não considerou como uma usurpação ser igual a Deus. Mas aniquilou-se a si mesmo, assumindo a condição de servo e tornando-se semelhante aos homens. (...) Por isso Deus o exaltou soberanamente e lhe outorgou o nome que está acima de todo nome, para que ao nome de Jesus todo joelho se dobre.',
+    text: 'Sendo ele de condição divina, não se prevaleceu de sua igualdade com Deus, mas aniquilou-se a si mesmo, assumindo a condição de escravo e assemelhando-se aos homens. (...) Por isso, Deus o exaltou soberanamente e lhe outorgou o nome que está acima de todos os nomes, para que ao nome de Jesus se dobre todo joelho no céu, na terra e nos infernos.',
     bibleNav: { bookId: 'fl', chapter: 2, verse: 6, verseEnd: 11 },
   },
 
@@ -1493,7 +1497,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Perdão neste mundo e no porvir',
-    text: 'Todo o que tiver falado contra o Filho do Homem, isso lhe será perdoado, mas todo o que tiver falado contra o Espírito Santo não alcançará perdão nem neste mundo nem no porvir.',
+    text: 'Todo o que tiver falado contra o Filho do Homem será perdoado. Se, porém, falar contra o Espírito Santo, não alcançará perdão nem neste século nem no século vindouro.',
     bibleNav: { bookId: 'mt', chapter: 12, verse: 32 },
   },
   {
@@ -1515,7 +1519,7 @@ export const references = [
     author: 'Apóstolo Paulo',
     year: 'c. 48-55 d.C.',
     topic: 'Fé que opera pela caridade',
-    text: 'Porque, em Cristo Jesus, nem a circuncisão nem a incircuncisão têm valor algum, mas sim a fé que opera pela caridade.',
+    text: 'Estar circuncidado ou incircunciso de nada vale em Cristo Jesus, mas sim a fé que opera pela caridade.',
     bibleNav: { bookId: 'gl', chapter: 5, verse: 6 },
   },
   {
@@ -1559,7 +1563,7 @@ export const references = [
     author: 'Apóstolo Paulo',
     year: 'c. 61-63 d.C.',
     topic: 'Matrimônio como sacramento',
-    text: 'Por isso o homem deixará pai e mãe, e se unirá à sua mulher, e os dois serão uma só carne. Grande é este mistério, refiro-me a Cristo e à Igreja.',
+    text: 'Por isso, o homem deixará pai e mãe e se unirá à sua mulher, e os dois constituirão uma só carne (Gn 2,24). Esse mistério é grande, quero dizer, com referência a Cristo e à Igreja.',
     bibleNav: { bookId: 'ef', chapter: 5, verse: 31, verseEnd: 32 },
   },
   {
@@ -1570,7 +1574,7 @@ export const references = [
     author: 'Apóstolo Lucas',
     year: 'séc. I d.C.',
     topic: 'Crisma / imposição das mãos pelos apóstolos',
-    text: 'Os apóstolos que estavam em Jerusalém, sabendo que Samaria recebera a palavra de Deus, enviaram-lhes Pedro e João. Estes, ali chegando, oraram pelos samaritanos para que recebessem o Espírito Santo. Pois ainda não havia descido sobre nenhum deles, mas só haviam sido batizados em nome do Senhor Jesus. Então lhes impuseram as mãos, e receberam o Espírito Santo.',
+    text: 'Os apóstolos que se achavam em Jerusalém, tendo ouvido que a Samaria recebera a Palavra de Deus, enviaram-lhe Pedro e João. Estes, assim que chegaram, fizeram oração pelos novos fiéis, a fim de receberem o Espírito Santo, visto que não havia descido ainda sobre nenhum deles, mas tinham sido somente batizados em nome do Senhor Jesus. Então, os dois apóstolos lhes impuseram as mãos e receberam o Espírito Santo.',
     bibleNav: { bookId: 'at', chapter: 8, verse: 14, verseEnd: 17 },
   },
   // ============ REFERÊNCIAS PARA NOVOS ARTIGOS (CONTRADIÇÕES, HISTORICIDADE) ============
@@ -1582,7 +1586,7 @@ export const references = [
     author: 'Apóstolo Lucas',
     year: 'séc. I d.C.',
     topic: 'Censo de Quirino / nascimento de Jesus',
-    text: 'Naqueles tempos apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Este recenseamento foi feito antes do que se efetuou quando Quirino era governador da Síria. Iam todos alistar-se, cada um na sua cidade. Também José subiu da Galileia, da cidade de Nazaré, à Judeia, à Cidade de Davi chamada Belém, porque era da casa e família de Davi, a fim de alistar-se com Maria, sua esposa, que estava grávida.',
+    text: 'Naqueles tempos, apareceu um decreto de César Augusto, ordenando o recenseamento de toda a terra. Esse recenseamento foi feito antes do governo de Quirino, na Síria. Todos iam alistar-se, cada um na sua cidade. Também José subiu da Galileia, da cidade de Nazaré, à Judeia, à Cidade de Davi, chamada Belém, porque era da casa e família de Davi, para se alistar com a sua esposa, Maria, que estava grávida.',
     bibleNav: { bookId: 'lc', chapter: 2, verse: 1, verseEnd: 7 },
     originalLanguage: {
       language: 'Grego',
@@ -1600,7 +1604,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Nascimento de Jesus no reinado de Herodes',
-    text: 'Tendo, pois, nascido Jesus em Belém de Judá, no tempo do rei Herodes, eis que magos vieram do Oriente a Jerusalém.',
+    text: 'Tendo, pois, Jesus nascido em Belém de Judá, no tempo do rei Herodes, eis que magos vieram do Oriente a Jerusalém.',
     bibleNav: { bookId: 'mt', chapter: 2, verse: 1 },
   },
   {
@@ -1611,7 +1615,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Genealogia de Jesus segundo Mateus / linha legal por José',
-    text: 'Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Assim, todas as gerações de Abraão a Davi são catorze. De Davi até o cativeiro da Babilônia, catorze gerações; e do cativeiro da Babilônia até Cristo, catorze gerações.',
+    text: 'Genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Jacó gerou José, esposo de Maria, da qual nasceu Jesus, que é chamado Cristo. Portanto, as gerações, desde Abraão até Davi, são catorze. Desde Davi até o cativeiro da Babilônia, catorze gerações. E, depois do cativeiro até Cristo, catorze gerações.',
     bibleNav: { bookId: 'mt', chapter: 1, verse: 1, verseEnd: 17 },
   },
   {
@@ -1622,7 +1626,7 @@ export const references = [
     author: 'Apóstolo Lucas',
     year: 'séc. I d.C.',
     topic: 'Genealogia de Jesus segundo Lucas / linha ascendente até Adão',
-    text: 'Quando Jesus começou a ensinar, tinha cerca de trinta anos e era tido como filho de José, filho de Heli, filho de Matat, filho de Levi (...) filho de Set, filho de Adão, filho de Deus.',
+    text: 'Quando Jesus começou o seu ministério, tinha cerca de trinta anos, e era tido por filho de José, filho de Heli, filho de Matat, (...) filho de Natã, filho de Davi, (...) filho de Set, filho de Adão, filho de Deus.',
     bibleNav: { bookId: 'lc', chapter: 3, verse: 23, verseEnd: 38 },
   },
   {
@@ -1633,7 +1637,7 @@ export const references = [
     author: 'Tradicionalmente atribuído a Moisés',
     year: 'redação final c. séc. VI a.C.',
     topic: 'Lei do Levirato / casamento da viúva sem filhos',
-    text: 'Quando irmãos morarem juntos e um deles morrer sem ter filho, a mulher do falecido não se casará fora, com um estrangeiro; seu cunhado a tomará por mulher, e cumprirá com ela o dever de cunhado. O primogênito que ela conceber será considerado como filho do irmão falecido, para que o nome deste não se apague em Israel.',
+    text: 'Se alguns irmãos habitarem juntos, e um deles morrer sem deixar filhos, a mulher do defunto não se casará fora com um estranho: seu cunhado a desposará e se aproximará dela, observando o costume do levirato. Ao primeiro filho que ela tiver se porá o nome do irmão morto, a fim de que o seu nome não se extinga em Israel.',
     bibleNav: { bookId: 'dt', chapter: 25, verse: 5, verseEnd: 6 },
   },
   {
@@ -1644,7 +1648,7 @@ export const references = [
     author: 'Apóstolo Lucas',
     year: 'séc. I d.C.',
     topic: 'Aparições do Ressuscitado por 40 dias',
-    text: 'A eles se manifestou depois da sua paixão, com numerosas provas, aparecendo-lhes durante quarenta dias e falando-lhes do Reino de Deus.',
+    text: 'E a eles se manifestou vivo depois de sua Paixão, com muitas provas, aparecendo-lhes durante quarenta dias e falando das coisas do Reino de Deus.',
     bibleNav: { bookId: 'at', chapter: 1, verse: 3 },
   },
 
@@ -1764,7 +1768,7 @@ export const references = [
     author: 'Tradição mosaica',
     year: 'séc. XIII a VII a.C.',
     topic: 'Profecia do profeta semelhante a Moisés',
-    text: 'Suscitar-lhes-ei do meio de seus irmãos um profeta semelhante a ti; porei minhas palavras na sua boca, e ele lhes dirá tudo o que eu lhe ordenar.',
+    text: 'eu lhes suscitarei um profeta como tu dentre seus irmãos: minhas palavras porei em sua boca e ele lhes fará conhecer as minhas ordens.',
     bibleNav: { bookId: 'dt', chapter: 18, verse: 18 },
   },
   {
@@ -1775,7 +1779,7 @@ export const references = [
     author: 'Apóstolo João',
     year: 'séc. I d.C.',
     topic: 'O Paráclito prometido é o Espírito Santo',
-    text: 'E eu rogarei ao Pai, e ele vos dará outro Paráclito, para que fique convosco eternamente: o Espírito da Verdade, que o mundo não pode receber, porque não o vê nem o conhece. Vós o conheceis, porque permanece convosco e estará em vós.',
+    text: 'E eu rogarei ao Pai, e ele vos dará outro Paráclito, para que fique eternamente convosco. É o Espírito da Verdade, que o mundo não pode receber, porque não o vê nem o conhece, mas vós o conhecereis, porque permanecerá convosco e estará em vós.',
     bibleNav: { bookId: 'jo', chapter: 14, verse: 16, verseEnd: 17 },
   },
   {
@@ -1786,7 +1790,7 @@ export const references = [
     author: 'Evangelista Lucas',
     year: 'séc. I d.C.',
     topic: 'Estado dos mortos: consciência, identidade e abismo intransponível',
-    text: 'Entre nós e vós está firmado um grande abismo, de modo que os que querem passar daqui para vós não o podem, nem os de lá passar para nós. (...) Se não ouvem a Moisés e aos profetas, tampouco se deixarão convencer ainda que ressuscite alguém dentre os mortos.',
+    text: 'Ora, aconteceu morrer o mendigo e ser levado pelos anjos ao seio de Abraão. Morreu também o rico e foi sepultado. E, estando ele nos tormentos do inferno, levantou os olhos e viu, ao longe, Abraão e Lázaro no seu seio. (...) Além de tudo, há entre nós e vós um grande abismo, de maneira que os que querem passar daqui para vós não o podem, nem os de lá passar para cá. (...) Abraão respondeu-lhe: Se não ouvirem a Moisés e aos profetas, tampouco se deixarão convencer, ainda que ressuscite algum dos mortos.',
     bibleNav: { bookId: 'lc', chapter: 16, verse: 19, verseEnd: 31 },
   },
   {
@@ -1807,8 +1811,8 @@ export const references = [
     fullSource: 'Livro do profeta Isaías, capítulo 8, versículo 19',
     author: 'Profeta Isaías',
     year: 'séc. VIII a.C.',
-    topic: 'Repreensão a quem consulta os mortos em vez de Deus',
-    text: 'Quando vos disserem: Consultai os que evocam os espíritos e os adivinhos, que murmuram e cochicham, respondei: Acaso não deve um povo consultar o seu Deus? Consultará os mortos a favor dos vivos?',
+    topic: 'Advertência contra quem manda consultar os espíritos dos mortos',
+    text: 'Se vos disserem: “Consultai os espíritos dos mortos, os adivinhos, os que conhecem segredos e dizem em voz baixa: ‘Porventura um povo não deve consultar os seus deuses? Consultar os mortos em favor dos vivos?’.”',
     bibleNav: { bookId: 'is', chapter: 8, verse: 19 },
   },
   {
@@ -1830,7 +1834,7 @@ export const references = [
     author: 'Apóstolo Paulo',
     year: 'c. 63-65 d.C.',
     topic: 'A Igreja como coluna e sustentáculo da verdade',
-    text: 'Para que, no caso de eu tardar, saibas como te portar na casa de Deus, que é a Igreja do Deus vivo, coluna e sustentáculo da verdade.',
+    text: 'Todavia, se eu tardar, quero que saibas como deves portar-te na casa de Deus, que é a Igreja de Deus vivo, coluna e sustentáculo da verdade.',
     bibleNav: { bookId: '1tm', chapter: 3, verse: 15 },
   },
   {
@@ -1841,7 +1845,7 @@ export const references = [
     author: 'Apóstolo Pedro',
     year: 'séc. I d.C.',
     topic: 'As cartas de Paulo são deturpadas pelos ignorantes',
-    text: 'Em todas as suas cartas, Paulo fala dessas coisas, nas quais há pontos difíceis de entender, que os ignorantes e inconstantes deturpam, como o fazem também com as demais Escrituras, para sua própria perdição.',
+    text: 'É o que ele faz em todas as suas cartas, nas quais fala nesses assuntos. Nelas há algumas passagens difíceis de entender, cujo sentido os espíritos ignorantes ou pouco fortalecidos deturpam, para a sua própria ruína, como o fazem também com as demais Escrituras.',
     bibleNav: { bookId: '2pd', chapter: 3, verse: 16 },
   },
   {
@@ -1928,7 +1932,7 @@ export const references = [
     author: 'Tradição do profeta Daniel',
     year: 'séc. II a.C. (ambientado no séc. VI a.C.)',
     topic: 'Prazo para a vinda e a morte do Ungido antes da destruição da cidade',
-    text: 'Setenta semanas estão fixadas para o teu povo e para a tua cidade santa. Depois das sessenta e duas semanas, um ungido será suprimido. E o povo de um chefe que há de vir destruirá a cidade e o santuário.',
+    text: 'Setenta semanas foram fixadas a teu povo e à tua cidade santa (...) desde a declaração do decreto sobre a restauração de Jerusalém até um chefe ungido, haverá sete semanas; depois, durante sessenta e duas semanas, ressurgirá, será reconstruída com praças e muralhas. Nos tempos de aflição, depois dessas sessenta e duas semanas, um ungido será suprimido, e ninguém será a favor dele. A cidade e o santuário serão destruídos pelo povo de um chefe que virá.',
     bibleNav: { bookId: 'dn', chapter: 9, verse: 24, verseEnd: 26 },
   },
   {
@@ -1939,7 +1943,7 @@ export const references = [
     author: 'Profeta Miquéias',
     year: 'séc. VIII a.C.',
     topic: 'O governante de Israel nasceria em Belém',
-    text: 'E tu, Belém-Efrata, tão pequena entre os clãs de Judá, de ti sairá aquele que há de governar Israel, e cujas origens vêm desde os tempos antigos, desde os dias da eternidade.',
+    text: 'Mas tu, Belém de Éfrata, tão pequena entre os clãs de Judá, é de ti que sairá para mim aquele que é chamado a governar Israel. Suas origens remontam aos tempos antigos, aos dias do longínquo passado.',
     bibleNav: { bookId: 'mq', chapter: 5, verse: 1, verseEnd: 2 },
   },
   {
@@ -1950,7 +1954,7 @@ export const references = [
     author: 'Profeta Zacarias',
     year: 'séc. VI a V a.C.',
     topic: 'Olharão para aquele a quem traspassaram',
-    text: 'Derramarei sobre a casa de Davi e sobre os habitantes de Jerusalém um espírito de graça e de súplica. Olharão para mim, a quem traspassaram; farão luto por ele como se chora por um filho único.',
+    text: 'Suscitarei sobre a casa de Davi e sobre os habitantes de Jerusalém um espírito de boa vontade e de prece, e eles voltarão os seus olhos para mim. Farão lamentações sobre aquele que traspassaram, como se fosse um filho único; eles o chorarão amargamente como se chora um primogênito!',
     bibleNav: { bookId: 'zc', chapter: 12, verse: 10 },
   },
   {
@@ -1961,7 +1965,7 @@ export const references = [
     author: 'Apóstolo Paulo',
     year: 'c. 57 d.C.',
     topic: 'Israel como a oliveira boa em que os cristãos foram enxertados',
-    text: 'Se alguns ramos foram cortados, e tu, oliveira brava, foste enxertado em seu lugar, tornando-te participante da raiz e da seiva da oliveira, não te glories contra os ramos. Não és tu que sustentas a raiz, mas a raiz é que te sustenta.',
+    text: 'Se alguns dos ramos foram cortados, e se tu, oliveira selvagem, foste enxertada em seu lugar e agora recebes seiva da raiz da oliveira, não te envaideças nem menosprezes os ramos. Pois, se te gloriares, sabe que não és tu que sustentas a raiz, mas a raiz a ti.',
     bibleNav: { bookId: 'rm', chapter: 11, verse: 17, verseEnd: 18 },
   },
   {
@@ -1972,7 +1976,7 @@ export const references = [
     author: 'Apóstolo João',
     year: 'séc. I d.C.',
     topic: 'A salvação como dom do amor de Deus',
-    text: 'Com efeito, de tal modo Deus amou o mundo, que lhe deu seu Filho único, para que todo o que nele crê não pereça, mas tenha a vida eterna.',
+    text: 'Com efeito, de tal modo Deus amou o mundo, que lhe deu seu Filho único, para que todo o que nele crer não pereça, mas tenha a vida eterna.',
     bibleNav: { bookId: 'jo', chapter: 3, verse: 16 },
   },
   {
@@ -1983,7 +1987,7 @@ export const references = [
     author: 'Apóstolo João',
     year: 'séc. I d.C.',
     topic: 'Cristo, único caminho ao Pai',
-    text: 'Respondeu-lhe Jesus: Eu sou o caminho, a verdade e a vida. Ninguém vai ao Pai senão por mim.',
+    text: 'Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim.',
     bibleNav: { bookId: 'jo', chapter: 14, verse: 6 },
   },
   {
@@ -2037,7 +2041,7 @@ export const references = [
     author: 'Profeta Isaías',
     year: 'séc. VIII a VI a.C.',
     topic: 'Monoteísmo absoluto: não há outro Deus',
-    text: 'Vós sois minhas testemunhas, diz o Senhor, e meu servo a quem escolhi, para que saibais e creiais em mim e compreendais que sou eu. Antes de mim nenhum deus foi formado, e depois de mim não haverá nenhum.',
+    text: 'Vós sois minhas testemunhas, diz o Senhor, e meus servos que eu escolhi, a fim de que se reconheça e que me acreditem e que se compreenda que sou eu. Nenhum deus foi formado antes de mim, e não haverá outros depois de mim.',
     bibleNav: { bookId: 'is', chapter: 43, verse: 10 },
   },
   {
@@ -2091,7 +2095,7 @@ export const references = [
     author: 'Apóstolo João',
     year: 'séc. I d.C.',
     topic: 'Critério para discernir os espíritos: Jesus veio em carne',
-    text: 'Nisto se reconhece o espírito de Deus: todo espírito que confessa que Jesus Cristo veio em carne é de Deus; e todo espírito que não confessa Jesus não é de Deus.',
+    text: 'Nisto se reconhece o Espírito de Deus: todo espírito que proclama que Jesus Cristo se encarnou é de Deus; todo espírito que não proclama Jesus esse não é de Deus, mas é o espírito do Anticristo de cuja vinda tendes ouvido, e já está agora no mundo.',
     bibleNav: { bookId: '1jo', chapter: 4, verse: 2, verseEnd: 3 },
   },
   {
@@ -2115,18 +2119,18 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'As trevas durante a crucificação',
-    text: 'Desde a hora sexta até a hora nona, houve trevas sobre toda a terra. Por volta da hora nona, Jesus bradou em alta voz: Eli, Eli, lammá sabactani? Isto é: Meu Deus, meu Deus, por que me abandonaste?',
+    text: 'Desde a hora sexta até a nona, cobriu-se toda a terra de trevas. Próximo da hora nona, Jesus exclamou em voz forte: “Eli, Eli, lammá sabactáni?” – o que quer dizer: “Meu Deus, meu Deus, por que me abandonaste?”.',
     bibleNav: { bookId: 'mt', chapter: 27, verse: 45, verseEnd: 46 },
   },
   {
     id: 'jl-2-31',
     ref: 'Joel 2,31',
     source: 'Bíblia',
-    fullSource: 'Livro do profeta Joel, capítulo 2, versículo 31 (numerado 3,4 em algumas edições)',
+    fullSource: 'Livro do profeta Joel, capítulo 3, versículo 4 (2,31 na Vulgata e nas Bíblias que a seguem)',
     author: 'Profeta Joel',
     year: 'séc. IX a IV a.C.',
     topic: 'Sinais cósmicos: o sol em trevas e a lua em sangue',
-    text: 'O sol se converterá em trevas e a lua em sangue, antes que venha o grande e terrível dia do Senhor.',
+    text: 'O sol se converterá em trevas e a lua, em sangue, ao se aproximar o grandioso e temível dia do Senhor.',
     bibleNav: { bookId: 'jl', chapter: 3, verse: 4 },
     bibleNavEn: { bookId: 'jl', chapter: 2, verse: 31 },
   },
@@ -2138,7 +2142,7 @@ export const references = [
     author: 'Apóstolo Lucas',
     year: 'séc. I d.C.',
     topic: 'Pedro aplica a profecia de Joel aos eventos da Páscoa',
-    text: 'O sol se converterá em trevas e a lua em sangue, antes que venha o dia do Senhor, grande e glorioso. Pedro cita o profeta Joel ao explicar os acontecimentos ligados à morte e à ressurreição de Jesus.',
+    text: 'O sol se converterá em trevas e a lua em sangue, antes que venha o grande e glorioso dia do Senhor.',
     bibleNav: { bookId: 'at', chapter: 2, verse: 20 },
   },
   {
@@ -2169,7 +2173,7 @@ export const references = [
     author: 'Profeta Isaías',
     year: 'séc. VIII a.C.',
     topic: 'Profecia do nascimento virginal do Emanuel',
-    text: 'Por isso, o próprio Senhor vos dará um sinal: eis que a virgem conceberá e dará à luz um filho, e o chamará Emanuel, que significa Deus conosco.',
+    text: 'Por isso, o próprio Senhor vos dará um sinal: uma virgem conceberá e dará à luz um filho, e o chamará ‘Deus Conosco’.',
     bibleNav: { bookId: 'is', chapter: 7, verse: 14 },
   },
 
@@ -2333,7 +2337,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Pelos frutos os conhecereis',
-    text: 'Pelos seus frutos os conhecereis. Colhem-se, porventura, uvas dos espinheiros ou figos dos abrolhos?',
+    text: 'Pelos seus frutos os conhecereis. Colhem-se, porventura, uvas dos espinhos e figos dos abrolhos?',
     bibleNav: { bookId: 'mt', chapter: 7, verse: 16 },
   },
   {
@@ -2344,7 +2348,7 @@ export const references = [
     author: 'Apóstolo Mateus',
     year: 'séc. I d.C.',
     topic: 'Um reino dividido contra si mesmo não subsiste',
-    text: 'Todo reino dividido contra si mesmo será destruído, e toda cidade ou casa dividida contra si mesma não subsistirá. Ora, se Satanás expele Satanás, está dividido contra si mesmo. Como subsistirá, então, o seu reino?',
+    text: 'Todo reino dividido contra si mesmo será destruído. Toda cidade, toda casa dividida contra si mesma não pode subsistir. Se Satanás expele Satanás, está dividido contra si mesmo. Como, pois, subsistirá o seu reino?',
     bibleNav: { bookId: 'mt', chapter: 12, verse: 25, verseEnd: 26 },
   },
   {
