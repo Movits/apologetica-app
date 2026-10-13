@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { QUIZ, DAILY_QUESTIONS, TRUE_FALSE } from '../src/data/quiz.js';
+import { MAX_SHARE, correctTooLong, longestShare, shortestShare } from './optionBalance.mjs';
 
 // Banco do quiz: a pergunta do dia vira cartão de revisão pelo id, e a prática
 // sorteia do banco. Ids repetidos fariam a revisão mostrar a pergunta errada.
@@ -38,4 +39,15 @@ test('sem travessão em nenhum texto do quiz (convenção do projeto)', () => {
     }
   }
   assert.deepEqual(bad, []);
+});
+
+test('a resposta certa não se entrega pelo tamanho (prática e pergunta do dia, PT e EN)', () => {
+  for (const [bank, items] of [['prática', QUIZ], ['pergunta do dia', DAILY_QUESTIONS]]) {
+    for (const [lang, pick] of [['PT', (q) => q.options], ['EN', (q) => q.optionsEn]]) {
+      const long = items.filter((q) => correctTooLong(pick(q), q.correct)).map((q) => q.id);
+      assert.deepEqual(long, [], `${bank} ${lang}: a certa é muito mais longa que todas as erradas`);
+      assert.ok(longestShare(items, pick) <= MAX_SHARE, `${bank} ${lang}: a certa é a mais longa em ${Math.round(100 * longestShare(items, pick))}% das perguntas`);
+      assert.ok(shortestShare(items, pick) <= MAX_SHARE, `${bank} ${lang}: a certa é a mais curta em ${Math.round(100 * shortestShare(items, pick))}% das perguntas`);
+    }
+  }
 });
