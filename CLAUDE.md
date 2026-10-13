@@ -24,7 +24,12 @@ extensão do Metro. Só módulos **puros** são testáveis (nada de `react-nativ
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
 `src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
 `src/theme/palette.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
-`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js` e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
+`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js`, `src/data/journeyMarks.js`,
+`src/data/dailyVerses.js` (texto literal das Bíblias do app) e as duas Bíblias
+(`tests/bibleAveMaria.test.mjs` confere a forma dos 1.334 capítulos contra
+`tests/fixtures/avemaria-forma.json`; `tests/bibles.test.mjs`, livros e capítulos).
+Pergunta de múltipla escolha nova passa pela regra de `tests/optionBalance.mjs`: a certa
+não pode se entregar pelo tamanho. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -158,6 +163,9 @@ mantenha esses dois em sincronia.
 `src/services/bibleApi.js` — `getChapter(bookId, chapter, language?)` síncrono.
 - `language='pt'` → Ave Maria (`src/data/bibleAveMaria.js`, ~4 MB)
 - `language='en'` → Douay-Rheims-Challoner (`src/data/bibleDouayRheims.js`, ~4.5 MB). Fallback automático para PT se EN indisponível.
+- Os dois arquivos são gerados (`scripts/convert-avemaria.mjs`, `scripts/convert-douay-rheims.mjs`): nunca edite à mão. A numeração da Ave Maria foi consertada em 39 capítulos por `scripts/source/avemaria-correcoes.json` (ver o `_doc` dele); correção nova de texto bíblico entra ali ou no conversor, com a fonte.
+- **Blocos da edição impressa**: a Ave Maria imprime alguns grupos juntos (Josué 19,17-23). O dado guarda o texto no primeiro número e `''` nos seguintes; `chapterVerses` junta numa linha com `end` ("17-23") e `verseText`/`getVerse` devolvem o bloco para qualquer número dentro dele. Conte versículos por `total` (o último número), nunca por `verses.length`.
+- Numeração: as duas Bíblias seguem a Vulgata nos Salmos (o 23 hebraico é o 22). Referência a Salmo traz as duas no rótulo ("Salmo 23 (22),1") e o `bibleNav` na do app. Onde a Douay-Rheims numera diferente da Ave Maria, use `bibleNavEn`.
 
 ### Navegação entre telas
 - Artigo → tap em referência → `navigate('RefDetail', { highlightId })` (tela dedicada de uma referência).
