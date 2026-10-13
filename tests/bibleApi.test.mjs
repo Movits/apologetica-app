@@ -58,3 +58,36 @@ test('capítulo com menos versículos em EN: sem fallback por versículo (regra 
   assert.equal(typeof getVerse(found.bookId, found.ch, found.verse, 'pt'), 'string');
   assert.equal(getVerse(found.bookId, found.ch, found.verse, 'en'), null);
 });
+
+// Blocos da edição impressa: a Ave Maria imprime alguns grupos de versículos
+// juntos (Josué 19,2-7, listas de cidades e genealogias). O dado guarda o
+// texto no primeiro número e deixa os seguintes vazios, para a numeração
+// continuar certa; a tela mostra uma linha só, "2-7".
+test('chapterVerses junta o bloco numa linha com o intervalo', async () => {
+  const { chapterVerses } = await import('../src/services/bibleApi.js');
+  assert.deepEqual(chapterVerses(['a', 'b', '', '', 'c']), [
+    { n: 1, t: 'a' },
+    { n: 2, t: 'b', end: 4 },
+    { n: 5, t: 'c' },
+  ]);
+  assert.deepEqual(chapterVerses(['a', 'b']), [{ n: 1, t: 'a' }, { n: 2, t: 'b' }]);
+  assert.deepEqual(chapterVerses(['a', '']), [{ n: 1, t: 'a', end: 2 }]);
+});
+
+test('verseText devolve o texto do bloco para qualquer número dentro dele', async () => {
+  const { verseText } = await import('../src/services/bibleApi.js');
+  const ch = ['a', 'b', '', '', 'c'];
+  assert.equal(verseText(ch, 1), 'a');
+  assert.equal(verseText(ch, 2), 'b');
+  assert.equal(verseText(ch, 3), 'b');
+  assert.equal(verseText(ch, 4), 'b');
+  assert.equal(verseText(ch, 5), 'c');
+  assert.equal(verseText(ch, 6), null);
+  assert.equal(verseText(ch, 0), null);
+  assert.equal(verseText(undefined, 1), null);
+});
+
+test('getChapter conta os números do capítulo, não as linhas', () => {
+  const ch = getChapter('jo', 3, 'pt');
+  assert.equal(ch.total, ch.verses.reduce((n, v) => n + (v.end ? v.end - v.n + 1 : 1), 0));
+});

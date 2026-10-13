@@ -101,7 +101,7 @@ const VerseRow = memo(function VerseRow({ verse, bg, numColor, textColor, strong
         { backgroundColor: bg ?? (pressed ? s.pressedBg : 'transparent') },
       ]}
     >
-      <Text style={[s.numStyle, s.num, { color: numColor, paddingTop: s.numOffset }]}>{verse.n}</Text>
+      <Text style={[s.numStyle, s.num, { color: numColor, paddingTop: s.numOffset }]}>{verse.end ? `${verse.n}-${verse.end}` : verse.n}</Text>
       <Text style={[s.readingStyle, s.text, { color: textColor }, strong ? s.strong : null]}>{verse.t}</Text>
       {hasNote ? <Ionicons name="document-text" size={s.iconSize} color={s.iconColor} style={s.noteIcon} /> : null}
     </Pressable>
@@ -660,7 +660,8 @@ export default function BibleScreen({ route, navigation }) {
   // consultar existe para impedir.
   useEffect(() => {
     if (!chapterData?.verses?.length || !highlightVerse) return undefined;
-    const idx = chapterData.verses.findIndex((v) => v.n === highlightVerse);
+    // Um bloco da edição impressa ("2-7") contém o versículo pedido.
+    const idx = chapterData.verses.findIndex((v) => v.n <= highlightVerse && highlightVerse <= (v.end ?? v.n));
     if (idx < 0 || !verseListRef.current) return undefined;
     const timer = setTimeout(() => {
       // Sem alvo em pixels: scrollToIndex resolve o offset por dentro, então
@@ -736,7 +737,7 @@ export default function BibleScreen({ route, navigation }) {
       bookId: book.id,
       chapter,
       verseStart: v.n,
-      verseEnd: v.n,
+      verseEnd: v.end ?? v.n,
     }));
   };
 
@@ -747,7 +748,7 @@ export default function BibleScreen({ route, navigation }) {
     if (noteId) navigation.navigate('NoteEditor', { noteId });
   };
 
-  const verseRef = (verse) => formatVerseRef({ bookName: bn(book), chapter, verse: verse?.n }, isEn);
+  const verseRef = (verse) => formatVerseRef({ bookName: bn(book), chapter, verse: verse?.n, verseEnd: verse?.end }, isEn);
 
   const onCopy = async () => {
     const v = actionVerse;
@@ -863,7 +864,7 @@ export default function BibleScreen({ route, navigation }) {
   const onHighlight = darkMode ? colors.onTint : colors.text;
 
   const renderVerse = useCallback(({ item }) => {
-    const isDeepLinked = Boolean(highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse));
+    const isDeepLinked = Boolean(highlightVerse && (item.end ?? item.n) >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse));
     const userHighlight = highlightsByVerse[item.n];
     return (
       <VerseRow

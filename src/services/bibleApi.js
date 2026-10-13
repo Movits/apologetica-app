@@ -48,7 +48,30 @@ export function ensureBible(language = 'pt') {
   return carregando[lang];
 }
 
-// Retorna { total, verses: [{n, t}], source, language } ou null.
+// Blocos da edição impressa: a Ave Maria imprime alguns grupos de versículos
+// juntos (Josué 19,2-7, listas de cidades, genealogias). O dado guarda o texto
+// do bloco no primeiro número e deixa os seguintes como '' para a numeração
+// continuar certa (Josué 19,40 é o 40 de verdade). Aqui o bloco vira uma linha
+// só, com `end` ("2-7" na tela).
+export function chapterVerses(chapterArr) {
+  const verses = [];
+  chapterArr.forEach((t, i) => {
+    if (t === '' && verses.length) verses[verses.length - 1].end = i + 1;
+    else verses.push({ n: i + 1, t });
+  });
+  return verses;
+}
+
+// Texto do versículo `n`, ou null fora do capítulo. Um número dentro de um
+// bloco devolve o texto do bloco inteiro.
+export function verseText(chapterArr, n) {
+  if (!chapterArr || !(n >= 1) || n > chapterArr.length) return null;
+  for (let i = n - 1; i >= 0; i--) if (chapterArr[i] !== '') return chapterArr[i] ?? null;
+  return null;
+}
+
+// Retorna { total, verses: [{n, t, end?}], source, language } ou null.
+// `total` é o número de versículos (o último número), não o de linhas.
 // `language` pode ser 'pt' ou 'en'. Fallback automático para PT se EN não estiver disponível.
 export function getChapter(bookId, chapter, language = 'pt') {
   const book = getBook(bookId);
@@ -61,7 +84,7 @@ export function getChapter(bookId, chapter, language = 'pt') {
       if (chapterArr) {
         return {
           total: chapterArr.length,
-          verses: chapterArr.map((t, i) => ({ n: i + 1, t })),
+          verses: chapterVerses(chapterArr),
           source: 'douay-rheims',
           language: 'en',
         };
@@ -84,7 +107,7 @@ export function getChapter(bookId, chapter, language = 'pt') {
 
   return {
     total: chapterArr.length,
-    verses: chapterArr.map((t, i) => ({ n: i + 1, t })),
+    verses: chapterVerses(chapterArr),
     source: 'avemaria',
     language: 'pt',
   };
@@ -96,14 +119,15 @@ export function getChapter(bookId, chapter, language = 'pt') {
 // versículo a menos na numeração inglesa devolve null, como o `find` nas telas
 // devolvia undefined); EN pedido sem a Douay-Rheims lê o PT. Substitui
 // getChapter(...)?.verses?.find((v) => v.n === n)?.t nas telas de marcações e
-// notas, sem montar o capítulo inteiro a cada linha.
+// notas, sem montar o capítulo inteiro a cada linha. Dentro de um bloco da
+// edição impressa, devolve o texto do bloco (ver chapterVerses).
 export function getVerse(bookId, chapter, verse, language = 'pt') {
   if (!getBook(bookId)) return null;
   if (language === 'en' && DRA) {
     const chapterArr = DRA[bookId]?.[chapter - 1];
-    if (chapterArr) return chapterArr[verse - 1] ?? null;
+    if (chapterArr) return verseText(chapterArr, verse);
   }
-  return AVEMARIA?.[bookId]?.[chapter - 1]?.[verse - 1] ?? null;
+  return verseText(AVEMARIA?.[bookId]?.[chapter - 1], verse);
 }
 
 // Normaliza para busca: minúsculas + remove acentos.
@@ -136,11 +160,14 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
         if (norm(verses[vi]).includes(q)) {
           const chapter = ci + 1;
           const verse = vi + 1;
+          // Bloco da edição impressa: a referência mostra o intervalo todo.
+          let verseEnd = verse;
+          while (verses[verseEnd] === '') verseEnd++;
           results.push({
             bookId,
             chapter,
             verse,
-            ref: formatVerseRef({ bookName: name, chapter, verse }, isEn),
+            ref: formatVerseRef({ bookName: name, chapter, verse, verseEnd }, isEn),
             text: verses[vi],
           });
           if (results.length >= limit) return results;
