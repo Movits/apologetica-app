@@ -1,6 +1,6 @@
 ---
 tags: [arquitetura]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 ---
 
 # Estado Global e Tema
@@ -10,6 +10,8 @@ O estado global do app vive em três contexts de React, todos em `src/context/`.
 ## ThemeContext
 
 Arquivo: `src/context/ThemeContext.jsx`. Controla tema claro/escuro e tamanho de fonte.
+
+As cores vêm de `src/theme/palette.js` (puro, exporta `LIGHT`, `DARK` e `contrastRatio`), que o ThemeContext reexporta. O teste `tests/palette.test.mjs` cobra as mesmas chaves nas duas paletas e contraste AA nos pares de texto e fundo. A identidade é uma só, a Clássica, ver [[Decisão - Identidade visual Clássica]].
 
 - **Paleta clara**: navy `#1a3a5c` (primary), dourado `#c9a84c` (accent) e creme `#f5f0e8` (bg).
 - **Paleta escura**: estilo "noite na catedral", navy profundo com dourado quente. `primaryText` vira dourado claro `#e6c878` e o texto geral é creme, não branco puro.

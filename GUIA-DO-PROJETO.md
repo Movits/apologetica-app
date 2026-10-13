@@ -14,7 +14,7 @@ Mapa de tudo que existe nesta pasta, em linguagem simples.
 | `fotos/` | Fotos que VOCÊ adiciona para o site (a landing page). Tem um LEIA-ME dentro explicando. A subpasta `fotos/app/` guarda as capturas do app que a landing mostra (geradas, não precisa mexer). |
 | `documentos/` | Suas pesquisas e anotações: pesquisa de mercado, pesquisa de público, lista dos 100 tópicos, créditos das imagens, rascunhos. Nada daqui afeta o app. |
 | `brain/` | Seu segundo cérebro: notas em português que explicam o projeto inteiro, conectadas entre si. Abra com o Obsidian apontando para esta pasta (ou para a raiz do projeto). Comece pela nota `Início`. |
-| `design/` | O redesign do app: `design/preview/index.html` é o protótipo navegável (abra no navegador) com o antes e o depois das telas, e `design/preview/antes/` guarda as capturas de como o app era. |
+| `design/` | O redesign do app: `design/preview/index.html` é o protótipo navegável (abra no navegador) com o antes e o depois das telas, e `design/preview/antes/` guarda as capturas de como o app era. Em `design/identidade/` fica o arquivo das identidades visuais testadas em outubro de 2026: os painéis de marca das quatro em `boards/` e, em `marcas/`, os símbolos das três que não foram escolhidas (Âncora, Basílica e Lumen). O app usa a Clássica. |
 
 ## O aplicativo
 

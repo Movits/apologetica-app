@@ -2,16 +2,14 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { Appearance, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as NavigationBar from 'expo-navigation-bar';
-import * as Font from 'expo-font';
 import { space, radius, icon, thumb, motion, shadow, textStyle, fontFamilyFor } from '../theme/tokens';
 import { THEME_MODES, resolveThemeMode, isDarkFor } from '../utils/themeMode';
-import { DEFAULT_IDENTITY, IDENTITIES, IDENTITY_IDS, identityFor } from '../theme/identities';
+import { LIGHT, DARK } from '../theme/palette';
 
-// As paletas da identidade padrão (Clássica) são exportadas para quem vive
-// fora do provider (o ErrorBoundary em App.js embrulha o ThemeProvider).
-// Dentro do app, use useTheme().colors, que segue a identidade escolhida.
-export const LIGHT = IDENTITIES[DEFAULT_IDENTITY].light;
-export const DARK = IDENTITIES[DEFAULT_IDENTITY].dark;
+// As paletas (src/theme/palette.js) são reexportadas para quem vive fora do
+// provider (o ErrorBoundary em App.js embrulha o ThemeProvider). Dentro do
+// app, use useTheme().colors, que segue o tema ativo.
+export { LIGHT, DARK };
 
 // Sala escura do visualizador de obras (src/components/art/): igual nos dois
 // temas, como uma galeria com a luz apagada, na família do Museu Virtual
@@ -51,17 +49,10 @@ const TOKENS = { space, radius, icon, thumb, motion, shadow, fontFamily: FONT_FA
 // há migração: quem tinha escolhido escolhe de novo em Ajustes.
 const STORAGE_THEME_MODE = 'settings:theme';
 const STORAGE_FONT = 'settings:fontSize';
-const STORAGE_IDENTITY = 'settings:identity';
-
-// Fontes de título das identidades que não são a padrão. A Cormorant (padrão)
-// é carregada no App.js antes da primeira tela; estas só quando a identidade
-// for escolhida, e até lá os títulos ficam na Cormorant.
-const DISPLAY_FONT_FILES = {
-  'EBGaramond-SemiBold': require('../../assets/fonts/EBGaramond-SemiBold.ttf'),
-  'Cinzel-SemiBold': require('../../assets/fonts/Cinzel-SemiBold.ttf'),
-  'InstrumentSerif-Regular': require('../../assets/fonts/InstrumentSerif-Regular.ttf'),
-};
-const DEFAULT_DISPLAY = { scale: 1, weight: '600' };
+// Chave das identidades visuais em avaliação (outubro de 2026), que saíram do
+// app quando a Clássica ficou como a única. Só é apagada na hidratação, para
+// não deixar lixo em quem chegou a experimentar outra.
+const STORAGE_LEGACY_IDENTITY = 'settings:identity';
 
 const ThemeContext = createContext(null);
 
@@ -74,9 +65,6 @@ export function ThemeProvider({ children }) {
   const [themeMode, setThemeModeState] = useState('system');
   const [systemScheme, setSystemScheme] = useState(() => Appearance.getColorScheme());
   const [fontSize, setFontSizeState] = useState('normal');
-  const [identityId, setIdentityId] = useState(DEFAULT_IDENTITY);
-  // Fontes de título já carregadas (a padrão vem pronta do App.js).
-  const [loadedFonts, setLoadedFonts] = useState(() => ({ [IDENTITIES[DEFAULT_IDENTITY].display]: true }));
   const [hydrated, setHydrated] = useState(false);
   const darkMode = isDarkFor(themeMode, systemScheme);
 
@@ -99,30 +87,12 @@ export function ThemeProvider({ children }) {
         if (Platform.OS === 'web') {
           try { landing = window.localStorage.getItem('appg_theme'); } catch {}
         }
-        const [saved, fs, savedIdentity] = await Promise.all([
+        const [saved, fs] = await Promise.all([
           AsyncStorage.getItem(STORAGE_THEME_MODE),
           AsyncStorage.getItem(STORAGE_FONT),
-          AsyncStorage.getItem(STORAGE_IDENTITY),
         ]);
-        // Link de prévia da web (?identidade=ancora): vale e fica salvo. O
-        // parâmetro sai da URL logo em seguida, senão um recarregar da página
-        // desfaria a escolha feita depois em Ajustes.
-        let fromUrl = null;
-        if (Platform.OS === 'web') {
-          try {
-            const url = new URL(window.location.href);
-            fromUrl = url.searchParams.get('identidade');
-            if (fromUrl !== null) {
-              url.searchParams.delete('identidade');
-              window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
-            }
-          } catch {}
-        }
-        const nextIdentity = [fromUrl, savedIdentity].find((v) => IDENTITY_IDS.includes(v));
-        if (nextIdentity) {
-          setIdentityId(nextIdentity);
-          if (nextIdentity !== savedIdentity) AsyncStorage.setItem(STORAGE_IDENTITY, nextIdentity).catch(() => {});
-        }
+        // Fire-and-forget: apagar uma chave que não existe é no-op.
+        AsyncStorage.removeItem(STORAGE_LEGACY_IDENTITY).catch(() => {});
         setThemeModeState(resolveThemeMode({ landing, saved }));
         if (fs && FONT_SCALES[fs]) setFontSizeState(fs);
       } catch {
@@ -154,24 +124,6 @@ export function ThemeProvider({ children }) {
   // chamadores antigos): vira sempre uma escolha explícita.
   const setDarkMode = useCallback((next) => setThemeMode(next ? 'dark' : 'light'), [setThemeMode]);
 
-  const setIdentity = useCallback((id) => {
-    const next = IDENTITY_IDS.includes(id) ? id : DEFAULT_IDENTITY;
-    setIdentityId(next);
-    AsyncStorage.setItem(STORAGE_IDENTITY, next).catch(() => {});
-  }, []);
-
-  // Carrega a fonte de título da identidade escolhida, uma vez.
-  const identity = identityFor(identityId);
-  useEffect(() => {
-    const name = identity.display;
-    if (loadedFonts[name] || !DISPLAY_FONT_FILES[name]) return;
-    let alive = true;
-    Font.loadAsync({ [name]: DISPLAY_FONT_FILES[name] })
-      .then(() => { if (alive) setLoadedFonts((m) => ({ ...m, [name]: true })); })
-      .catch(() => {});
-    return () => { alive = false; };
-  }, [identity.display, loadedFonts]);
-
   useEffect(() => {
     if (hydrated) AsyncStorage.setItem(STORAGE_FONT, fontSize).catch(() => {});
   }, [fontSize, hydrated]);
@@ -193,7 +145,7 @@ export function ThemeProvider({ children }) {
   // tema, deixando o campo uniforme. Atualiza quando o tema muda.
   useEffect(() => {
     if (Platform.OS !== 'web' || typeof document === 'undefined') return;
-    const c = identity[darkMode ? 'dark' : 'light'];
+    const c = darkMode ? DARK : LIGHT;
     const id = 'appg-autofill-style';
     let el = document.getElementById(id);
     if (!el) {
@@ -208,15 +160,10 @@ export function ThemeProvider({ children }) {
       '-webkit-text-fill-color:' + c.text + ' !important;' +
       'caret-color:' + c.text + ';' +
       'transition:background-color 9999s ease-in-out 0s;}';
-  }, [darkMode, identity]);
+  }, [darkMode]);
 
   const value = useMemo(() => {
-    const colors = identity[darkMode ? 'dark' : 'light'];
-    // Fonte da identidade só depois de carregada; antes, a Cormorant padrão.
-    const ready = Boolean(loadedFonts[identity.display]);
-    const families = ready ? { ...FONT_FAMILY, display: identity.display } : FONT_FAMILY;
-    const display = ready ? { scale: identity.displayScale, weight: identity.displayWeight } : DEFAULT_DISPLAY;
-    const tokens = { ...TOKENS, fontFamily: families };
+    const colors = darkMode ? DARK : LIGHT;
     const scale = FONT_SCALES[fontSize] ?? 1;
     // Piso de 11px: mesmo no menor tamanho de fonte, texto nao fica ilegivel.
     const fs = (n) => Math.max(11, Math.round(n * scale));
@@ -235,14 +182,12 @@ export function ThemeProvider({ children }) {
       scale,
       fs,
       hydrated,
-      tokens,
-      identity,
-      setIdentity,
+      tokens: TOKENS,
       // Estilo de Text por papel (`text('body')`), já com a escala e a fonte da
       // plataforma aplicadas. Lança para papel desconhecido.
-      text: (role) => cache[role] ?? (cache[role] = textStyle(role, fs, families, display)),
+      text: (role) => cache[role] ?? (cache[role] = textStyle(role, fs, FONT_FAMILY)),
     };
-  }, [darkMode, themeMode, fontSize, hydrated, setDarkMode, setThemeMode, identity, loadedFonts, setIdentity]);
+  }, [darkMode, themeMode, fontSize, hydrated, setDarkMode, setThemeMode]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
