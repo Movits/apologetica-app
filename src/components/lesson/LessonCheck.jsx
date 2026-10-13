@@ -195,9 +195,11 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, draft, 
             <Text style={[text('subhead'), { color: colors.textSubtle }]}>{t('lesson.check.first', { score: first, total })}</Text>
           </View>
         </View>
-        <View style={{ flexDirection: 'row', gap: space.xs, marginTop: space.xxs }}>
-          <Button variant="secondary" icon="refresh" label={t('lesson.check.retry')} onPress={restart} style={{ flex: 1 }} />
-          {onOpenJourney ? <Button variant="plain" icon="trophy-outline" label={t('lesson.complete.journey')} onPress={onOpenJourney} style={{ flex: 1 }} /> : null}
+        {/* Empilhados: lado a lado, os dois rótulos quebram em duas linhas
+            no celular. */}
+        <View style={{ gap: space.xs, marginTop: space.xxs }}>
+          <Button variant="secondary" icon="refresh" label={t('lesson.check.retry')} onPress={restart} />
+          {onOpenJourney ? <Button variant="plain" icon="trophy-outline" label={t('lesson.complete.journey')} onPress={onOpenJourney} /> : null}
         </View>
       </View>
     );

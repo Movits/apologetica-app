@@ -152,7 +152,7 @@ async function run(browser, theme, width) {
 
   try {
     await openHome();
-    await shot('01-inicio', ['Catecúmeno']);
+    await shot('01-inicio', ['Objeção do dia', '0 de 83 lições']);
 
     // Minha Jornada vazia, com a Revisão ainda sem nada e a escada de níveis.
     await clickVisible(page.getByRole('button', { name: /^Minha Jornada/ }));
@@ -273,9 +273,13 @@ async function run(browser, theme, width) {
     await sleep(1500);
     await shot('19-pergunta-do-dia-travada', ['Você já respondeu a pergunta de hoje']);
 
+    // Dois toques: o primeiro volta à aba (que ainda está em Minha Jornada,
+    // aberta na etapa 02), o segundo leva ao topo dela.
+    await clickVisible(page.getByRole('tab', { name: 'Início' }));
+    await sleep(900);
     await clickVisible(page.getByRole('tab', { name: 'Início' }));
     await sleep(1200);
-    await shot('20-inicio-progresso', ['Catecúmeno']);
+    await shot('20-inicio-progresso', ['Objeção do dia', '1 de 83 lições']);
 
     // Dia seguinte: o relógio do navegador passa a correr a partir de amanhã
     // e o app recarrega com o mesmo armazenamento. As três erradas (teste,
@@ -284,7 +288,7 @@ async function run(browser, theme, width) {
     await page.clock.install({ time: new Date(Date.now() + 24 * 3600 * 1000) });
     await page.clock.resume();
     await openHome();
-    await shot('21-inicio-revisao', ['3 para revisar']);
+    await shot('21-inicio-revisao', ['Objeção do dia', '3 para revisar']);
     await clickVisible(page.getByRole('button', { name: /^Minha Jornada/ }));
     await sleep(1200);
     await scrollToText(page, 'Revisão', 100);
