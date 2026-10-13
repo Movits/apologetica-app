@@ -49,3 +49,17 @@ test('withEn sem tradução devolve cópia igual, e nulo devolve nulo', () => {
   assert.equal(withEn(null), null);
   assert.equal(withEn(undefined), null);
 });
+
+test('translateFullSource: capítulo e versículo em inglês, com espaço e plural', async () => {
+  const { translateFullSource } = await import('../src/data/references.js');
+  assert.equal(translateFullSource('Evangelho segundo São João, capítulo 6, versículos 53-55', true), 'Gospel of John, chapter 6, verses 53-55');
+  assert.equal(translateFullSource('Carta aos Hebreus, capítulo 9, versículo 27', true), 'Letter to the Hebrews, chapter 9, verse 27');
+  assert.equal(translateFullSource('Livro do Gênesis, capítulo 1, versículos 27 a 28', true), 'Book of Genesis, chapter 1, verses 27-28');
+  assert.equal(translateFullSource('Carta aos Hebreus, capítulo 9, versículo 27', false), 'Carta aos Hebreus, capítulo 9, versículo 27');
+});
+
+test('translateFullSource: "e" entre números vira "and" no inglês', async () => {
+  const { translateFullSource } = await import('../src/data/references.js');
+  assert.equal(translateFullSource('Evangelho segundo São Mateus, capítulo 5, versículos 45 e 46', true), 'Gospel of Matthew, chapter 5, verses 45 and 46');
+  assert.equal(translateFullSource('Catecismo da Igreja Católica, parágrafos 2116 e 2117', true), 'Catechism of the Catholic Church §2116 and 2117');
+});

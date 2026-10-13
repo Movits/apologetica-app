@@ -25,7 +25,6 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import ReadingPlanScreen from './src/screens/ReadingPlanScreen';
 import ToolsScreen from './src/screens/ToolsScreen';
-import CategoryArticlesScreen from './src/screens/CategoryArticlesScreen';
 
 import {
   createAppStack,
@@ -49,7 +48,6 @@ import { checkForWebUpdate } from './src/utils/webUpdate';
 // abertura; Ajustes oferece "Instalar neste computador". No nativo é no-op.
 import './src/utils/pwaInstall';
 import { hasSeenOnboarding } from './src/utils/onboarding';
-import { categoryLabel } from './src/utils/i18nData';
 
 // Inicializa o Sentry (no-op na web e no Expo Go, ver src/sentry.js / sentry.web.js).
 initSentry();
@@ -101,8 +99,8 @@ const LINKING = Platform.OS === 'web' ? undefined : {
 // componentes são telas do Tab.Navigator). As raízes desenhadas com
 // LargeTitleScreen zeram esse padding por largeTitleRootOptions().
 
-// Stack interno do tab Início: HomeScreen, Referências, Busca e a lista por
-// categoria (só a Início chama 'CategoryArticles').
+// Stack interno do tab Início: HomeScreen, Referências e Busca (a lista por
+// categoria, CategoryArticles, vive em sharedScreens desde Minha Jornada).
 function HomeStackScreen() {
   const { colors } = useTheme();
   const { t } = useLanguage();
@@ -112,11 +110,6 @@ function HomeStackScreen() {
       <HomeNav.Screen name="HomeMain" component={HomeScreen} options={{ title: t('tab.home'), ...largeTitleRootOptions(colors) }} />
       <HomeNav.Screen name="References" component={ReferencesScreen} options={{ title: t('tab.references') }} />
       <HomeNav.Screen name="Search" component={SearchScreen} options={{ title: t('header.search') }} />
-      <HomeNav.Screen
-        name="CategoryArticles"
-        component={CategoryArticlesScreen}
-        options={({ route }) => ({ title: categoryLabel(route.params?.category, t) })}
-      />
       {sharedScreens(HomeNav, t)}
     </HomeNav.Navigator>
   );

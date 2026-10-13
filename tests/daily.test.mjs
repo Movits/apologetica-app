@@ -111,7 +111,9 @@ test('caracterização: objeção do dia (fórmula da Home e da notificação)',
   // Cópia literal da fórmula de HomeScreen.jsx:65-67 e notifications.js:8-12,
   // que não são importáveis aqui (react-native / expo-notifications).
   for (const [y, m, d, , , objIdx] of CASES) {
-    const now = new Date(y, m, d);
+    // Meio-dia: à meia-noite, num fuso com horário de verão, esta cópia da
+    // fórmula antiga ficava um dia atrás (tests/daily-dst.test.mjs).
+    const now = new Date(y, m, d, 12);
     const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
     assert.equal((dayOfYear + now.getFullYear() * 7) % DIALOGUES.length, objIdx, `${y}-${m + 1}-${d}`);
   }

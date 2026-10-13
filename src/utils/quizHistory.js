@@ -1,5 +1,6 @@
 // Histórico do quiz diário, guardado em AsyncStorage como
-// { 'AAAA-MM-DD': { id, correct } }. Módulo puro (testes em
+// { 'AAAA-MM-DD': { id, correct, choice } } (choice = índice da opção escolhida,
+// ausente nas entradas antigas). Módulo puro (testes em
 // tests/quizHistory.test.mjs): a tela lê o JSON, chama recordDailyAnswer e grava.
 //
 // A chave era a data em UTC (toISOString) e passou a ser a data local
@@ -10,10 +11,21 @@
 // vai para ontem antes de gravar a de hoje, e o streak segue contando de onde
 // estava. Se ontem já tem resposta, não há como decidir e a de hoje é só
 // sobrescrita. Nunca muta o objeto recebido.
-export function recordDailyAnswer(hist, { today, yesterday, id, correct }) {
+//
+// A primeira resposta do dia fica: se a pergunta de hoje já foi respondida,
+// devolve o mesmo objeto (quem chama compara e não grava). Antes a tela deixava
+// responder de novo, e acertar na segunda tentativa somava XP e sequência.
+export function recordDailyAnswer(hist, { today, yesterday, id, correct, choice }) {
+  if (alreadyAnswered(hist, today, id)) return hist;
   const next = { ...(hist || {}) };
   const prev = next[today];
   if (prev && prev.id !== id && !next[yesterday]) next[yesterday] = prev;
-  next[today] = { id, correct };
+  next[today] = typeof choice === 'number' ? { id, correct, choice } : { id, correct };
   return next;
+}
+
+// A entrada de hoje, se for desta pergunta (a tela abre já respondida).
+export function alreadyAnswered(hist, today, id) {
+  const entry = hist && hist[today];
+  return entry && entry.id === id ? entry : null;
 }

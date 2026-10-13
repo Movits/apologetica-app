@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { recordDailyAnswer } from '../src/utils/quizHistory.js';
+import { alreadyAnswered, recordDailyAnswer } from '../src/utils/quizHistory.js';
 
 // Histórico do quiz diário: { 'AAAA-MM-DD': { id, correct } }. A chave passou
 // de UTC (toISOString) para hora local (todayKey), e quem respondeu ontem à
@@ -41,9 +41,22 @@ test('não move quando ontem já tem resposta: só sobrescreve a de hoje', () =>
   });
 });
 
-test('não move quando a entrada de hoje é da mesma pergunta (responder de novo)', () => {
-  const hist = { '2026-09-24': { id: 'q-hoje', correct: false } };
-  assert.deepEqual(recordDailyAnswer(hist, args), { '2026-09-24': { id: 'q-hoje', correct: true } });
+test('a primeira resposta do dia fica: responder de novo a mesma pergunta não muda nada', () => {
+  const hist = { '2026-09-24': { id: 'q-hoje', correct: false, choice: 0 } };
+  const out = recordDailyAnswer(hist, { ...args, choice: 2 });
+  assert.equal(out, hist, 'devolve o mesmo objeto: nada a gravar');
+});
+
+test('guarda a opção escolhida, para a tela mostrar a resposta já dada', () => {
+  assert.deepEqual(recordDailyAnswer({}, { ...args, choice: 3 }), { '2026-09-24': { id: 'q-hoje', correct: true, choice: 3 } });
+});
+
+test('alreadyAnswered: só quando a entrada de hoje é desta pergunta', () => {
+  const hist = { '2026-09-24': { id: 'q-hoje', correct: true } };
+  assert.deepEqual(alreadyAnswered(hist, '2026-09-24', 'q-hoje'), { id: 'q-hoje', correct: true });
+  assert.equal(alreadyAnswered(hist, '2026-09-24', 'q-outra'), null);
+  assert.equal(alreadyAnswered(hist, '2026-09-25', 'q-hoje'), null);
+  assert.equal(alreadyAnswered(null, '2026-09-24', 'q-hoje'), null);
 });
 
 test('preserva os outros dias do histórico', () => {

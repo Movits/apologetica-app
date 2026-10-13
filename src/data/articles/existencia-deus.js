@@ -24,13 +24,13 @@ Aristóteles, quatro séculos antes de Cristo, já notara que tudo o que se move
 
 O ponto não é cronológico, como se Deus fosse apenas a primeira peça do dominó no passado. O argumento é sobre a dependência aqui e agora: o universo, a cada instante, é sustentado por algo que não depende de mais nada. Tire esse fundamento e tudo desaba, como um lustre que precisa, neste momento, da corrente que o prende ao teto.
 
-O filósofo Gottfried Leibniz formulou a mesma intuição no chamado princípio de razão suficiente: tudo o que existe tem uma razão para existir, seja em si mesmo, seja em outro. Só Deus, o Ser Necessário, tem em si mesmo a razão de existir. Tudo o mais a recebe dele.
+O filósofo Gottfried Leibniz formulou a mesma intuição no chamado princípio de razão suficiente: tudo o que existe tem uma razão para existir, seja em si mesmo, seja em outro. Só Deus, o Ser Necessário, tem em si mesmo a razão de existir. Tudo o mais a recebe dele. O Catecismo da Igreja Católica resume esses caminhos: partindo do mundo, a razão pode conhecer uma realidade "que é a causa primeira e o fim último de tudo" (Catecismo, 31-34).
 
 ## O argumento Kalam e a ciência
 
 A versão contemporânea mais discutida é o argumento Kalam, popularizado pelo filósofo William Lane Craig. Ele tem três passos simples: tudo o que começa a existir tem uma causa. O universo começou a existir. Logo, o universo tem uma causa.
 
-A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo em expansão média positiva, incluindo a maioria dos modelos de multiverso, teve um começo absoluto no tempo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
+A segunda premissa, antes apenas filosófica, hoje conta com forte apoio científico. A descoberta do Big Bang mostrou que o próprio espaço, o tempo e a matéria tiveram um início. O teorema de Borde, Guth e Vilenkin, de 2003, demonstrou que qualquer universo que, em média, esteve em expansão, incluindo a maioria dos modelos de multiverso, não pode ser eterno no passado: precisa ter tido um começo. Curiosamente, foi um padre católico, Georges Lemaître, quem primeiro propôs o modelo do átomo primordial que viria a se chamar Big Bang.
 
 ## "Veio do nada", "veio do vácuo quântico"
 
@@ -49,7 +49,7 @@ Se o universo, isto é, todo o espaço, o tempo e a matéria, tem uma causa, ess
 3. Se você acredita num multiverso eterno, qual é a evidência empírica disso, e ele próprio não precisaria de uma causa?
 
 4. Some quantas coisas contingentes quiser. De onde vem a existência do conjunto, se cada parte poderia não existir?`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam', 'lemaitre-bigbang'],
+    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'craig-kalam', 'lemaitre-bigbang', 'bgv-teorema'],
   },
   {
     id: 9,
@@ -69,9 +69,9 @@ Santo Tomás de Aquino, na Quinta Via da Suma Teológica, observou que mesmo ser
 
 ## Constantes precisas demais
 
-Existem dezenas de constantes fundamentais que precisam ter valores extremamente específicos para que a vida seja possível. A força gravitacional, a constante eletromagnética, a razão entre a massa do próton e do elétron, a constante cosmológica. Se qualquer uma delas tivesse valor ligeiramente diferente, mesmo por uma fração infinitesimal, o universo seria estéril.
+Existem dezenas de constantes fundamentais que precisam ter valores extremamente específicos para que a vida seja possível. A força gravitacional, a constante eletromagnética, a razão entre a massa do próton e do elétron, a constante cosmológica. Se várias delas tivessem valores um pouco diferentes, em alguns casos por uma fração minúscula, o universo seria estéril.
 
-O físico e ateu Fred Hoyle, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro A Nova Mente do Imperador que a probabilidade do nosso universo ter condições iniciais favoráveis à vida é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo.
+O físico e ateu Fred Hoyle, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu em 1981 que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro A Nova Mente do Imperador (1989) que a probabilidade de o universo começar, por puro acaso, num estado tão ordenado quanto o do nosso, isto é, de entropia tão baixa, é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo.
 
 ## Necessidade, acaso ou design?
 
@@ -81,7 +81,7 @@ Há três explicações possíveis para esse ajuste fino. A necessidade física 
 
 A objeção do multiverso (existem infinitos universos com constantes diferentes, e por sorte estamos no que permite vida) tem três problemas. Primeiro, não há evidência empírica de outros universos. Segundo, mesmo o multiverso, se existir, precisaria ele próprio de ajuste fino para gerar universos diversos. Terceiro, a [[navalha de Occam]] recomenda a explicação mais econômica. Esse princípio, atribuído ao filósofo franciscano Guilherme de Ockham no século XIV, diz que, entre explicações que dão conta dos mesmos fatos, devemos preferir a que postula menos entidades sem necessidade. Postular um único Designer é mais econômico do que postular infinitos universos inverificáveis só para escapar dessa conclusão.
 
-São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de Deus, desde a criação do mundo, são entendidas e vistas por meio das coisas criadas". A ciência moderna não derruba essa afirmação, ela a confirma com precisão matemática.
+São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de Deus, desde a criação do mundo, são entendidas e vistas por meio das coisas criadas" (Romanos 1,20). A ciência moderna não derruba essa afirmação, ela a confirma com precisão matemática.
 
 ## Perguntas-chave
 
@@ -90,7 +90,7 @@ São Paulo já dizia na Carta aos Romanos que "as perfeições invisíveis de De
 2. Se as constantes físicas pudessem ter qualquer valor, por que justamente as únicas que permitem vida foram realizadas?
 
 3. Como uma matéria sem inteligência produziu observadores capazes de descrever matematicamente o universo que os produziu?`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'cic-31-35', 'hoyle-universo', 'penrose-road', 'occam-navalha'],
+    references: ['suma-i-q2-a3', 'rm-1-20', 'hoyle-universo', 'penrose-road', 'occam-navalha'],
   },
   {
     id: 10,
@@ -118,7 +118,7 @@ Mas todos vivemos como se a moral fosse real. Condenamos o nazismo, defendemos o
 
 ## O que o argumento não diz
 
-O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem e muitas vezes agem com grande integridade. O argumento é mais sutil. O ateísmo, levado às últimas consequências, não tem como justificar a moral como objetiva. Se ela é objetiva, e parece ser, então deve haver uma fonte que a sustente. Essa fonte é o Deus pessoal, criador da natureza humana e autor da lei moral inscrita no coração de cada pessoa.
+O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem e muitas vezes agem com grande integridade. O argumento é mais sutil. O ateísmo, levado às últimas consequências, não tem como justificar a moral como objetiva. Se ela é objetiva, e parece ser, então deve haver uma fonte que a sustente. Essa fonte é o Deus pessoal, criador da natureza humana e autor da lei moral inscrita no coração de cada pessoa. É a lei natural, que, nas palavras do Catecismo, "permite ao homem discernir, pela razão, o bem e o mal" (Catecismo, 1954).
 
 ## Perguntas-chave
 
@@ -151,11 +151,11 @@ A formulação correta do argumento cosmológico não é "tudo tem uma causa". �
 
 ## Contingente e necessário
 
-Santo Tomás de Aquino fez essa distinção há quase oitocentos anos. Há seres contingentes, que poderiam não existir, e há o ser necessário, que existe por si mesmo. Tudo o que vemos no universo é contingente. Esta pedra poderia não estar aqui, sua vida poderia não ter acontecido, o universo poderia ter sido outro. Mas se tudo fosse contingente, nada existiria, porque a contingência precisa de algo que não seja contingente para sustentá-la.
+Santo Tomás de Aquino trabalhou essa distinção na Terceira Via da Suma Teológica, há mais de setecentos e cinquenta anos. Há seres contingentes, que poderiam não existir, e há o ser necessário, que existe por si mesmo. Tudo o que vemos no universo é contingente. Esta pedra poderia não estar aqui, sua vida poderia não ter acontecido, o universo poderia ter sido outro. Mas se tudo fosse contingente, nada existiria, porque a contingência precisa de algo que não seja contingente para sustentá-la.
 
 ## Uma confusão de categorias
 
-A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Causalidade é uma relação entre coisas no universo. Aplicá-la a Deus é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
+A pergunta "quem criou Deus?" é como perguntar "quem é casado com o solteiro?". A pergunta pressupõe uma confusão de categorias. Deus não é um ser entre outros seres, é o fundamento do ser. Ser causado é próprio do que começa a existir, do que é contingente. Exigir isso de Deus, que é necessário e eterno, é o mesmo erro de aplicar leis físicas fora do universo onde elas operam.
 
 O argumento Kalam formaliza isso bem. William Lane Craig mostra que tudo que começa a existir tem causa. O universo começou a existir, como indica a cosmologia atual: o teorema de Borde-Guth-Vilenkin, demonstrado em 2003 pelos físicos Arvind Borde, Alan Guth e Alexander Vilenkin, prova que qualquer universo que em média esteve em expansão não pode ser eterno no passado, ele precisa ter tido um começo. Logo, o universo tem causa. Deus não começou, então não cai sob essa regra. Atribuir a Deus o predicado "começou a existir" é negar o conceito mesmo de Deus.
 
@@ -172,7 +172,7 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
 2. Se Deus pode ser eterno sem causa, por que você não admite que o universo precise de uma causa eterna?
 
 3. Você sabe o que significa "Deus" no argumento? Não é "alguém como você, mas grande", é o fundamento do ser. A pergunta "quem criou o fundamento do ser?" é incoerente.`,
-    references: ['suma-i-q2-a3', 'cic-31-35', 'craig-kalam', 'bgv-teorema'],
+    references: ['suma-i-q2-a3', 'craig-kalam', 'bgv-teorema'],
   },
   {
     id: 5,
@@ -188,23 +188,23 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
 
 ## O túmulo vazio
 
-O túmulo estava vazio. Tanto judeus quanto romanos tinham interesse claro em produzir o corpo de Jesus para suprimir o cristianismo no nascedouro. Nunca conseguiram, porque o corpo não estava lá.
+O túmulo estava vazio (Mateus 28,1-10). Tanto judeus quanto romanos tinham interesse claro em produzir o corpo de Jesus para suprimir o cristianismo no nascedouro. Nunca conseguiram, porque o corpo não estava lá.
 
 ## As aparições
 
-As aparições foram públicas e múltiplas. São Paulo lista mais de quinhentas pessoas que viram Cristo ressuscitado em 1 Coríntios 15,3-8, muitas delas ainda vivas quando ele escreveu a carta. Podiam ser interrogadas. Ele convida o leitor a verificar.
+As aparições foram públicas e múltiplas. São Paulo menciona, em 1 Coríntios 15,3-8, uma aparição a mais de quinhentas pessoas de uma só vez, muitas delas ainda vivas quando ele escreveu a carta. Podiam ser interrogadas. Ele convida o leitor a verificar.
 
 ## A transformação dos apóstolos
 
-A transformação dos apóstolos é talvez a evidência mais forte. Homens que fugiram com medo na noite da prisão de Jesus, todos exceto João morreram mártires proclamando a ressurreição. Ninguém morre torturado por algo que sabe ser mentira.
+A transformação dos apóstolos é talvez a evidência mais forte. Homens que fugiram com medo na noite da prisão de Jesus passaram a proclamar a ressurreição sob ameaça de morte. O martírio de Pedro e o de Tiago, irmão de João, já estão atestados no século I, e a tradição da Igreja diz que quase todos os apóstolos, exceto João, morreram mártires. Ninguém morre torturado por algo que sabe ser mentira.
 
-Mesmo fontes pagãs e judaicas hostis ao cristianismo atestam a existência e a execução de Jesus. O historiador judeu Flávio Josefo, em Antiguidades Judaicas (c. 93-94), menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Vale uma nota importante aqui: a palavra grega adelphós usada para "irmão" tinha sentido amplo no judaísmo helenístico, designando irmão biológico, primo ou parente próximo (vide Gênesis 14,14 onde Ló é chamado adelphós de Abraão, sendo seu sobrinho). Tiago, "o irmão do Senhor" mencionado também por São Paulo em Gálatas 1,19, é parente de Jesus, não filho biológico de Maria. A Virgindade Perpétua de Maria é doutrina constante da Igreja, e os "irmãos de Jesus" nos Evangelhos seguem o uso amplo do termo (mais detalhes no artigo "A Virgindade Perpétua de Maria").
+Mesmo fontes pagãs e judaicas hostis ao cristianismo atestam a existência e a execução de Jesus. O historiador judeu Flávio Josefo, em Antiguidades Judaicas (c. 93-94), menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Vale uma nota importante aqui: a palavra grega adelphós usada para "irmão" tinha sentido amplo no judaísmo helenístico, designando irmão biológico, primo ou parente próximo (vide Gênesis 14,14 onde Ló é chamado adelphós de Abraão, sendo seu sobrinho). Tiago, "o irmão do Senhor" mencionado também por São Paulo em Gálatas 1,19, é parente de Jesus, não filho biológico de Maria. A Virgindade Perpétua de Maria é doutrina constante da Igreja, e os "irmãos de Jesus" nos Evangelhos (Mateus 13,55) seguem o uso amplo do termo (mais detalhes no artigo "A Virgindade Perpétua de Maria").
 
 ## Os fatos mínimos
 
-Gary Habermas, pesquisador especializado no tema e professor de Liberty University, identificou em "O Caso da Ressurreição de Jesus" (2004) o que chama de "fatos mínimos" sobre a ressurreição. São eventos aceitos por cerca de 95% dos historiadores críticos do tema, mesmo os não-crentes: morte por crucificação, túmulo vazio, aparições percebidas como reais pelos discípulos, conversão de Paulo de perseguidor a apóstolo, e conversão de Tiago (parente de Jesus), que antes não cria nele. Mesmo o historiador agnóstico Bart Ehrman aceita a maior parte desses fatos.
+Gary Habermas, pesquisador especializado no tema e professor de Liberty University, identificou em "O Caso da Ressurreição de Jesus" (2004) o que chama de "fatos mínimos" sobre a ressurreição. São eventos aceitos pela grande maioria dos historiadores críticos do tema, mesmo os não crentes (o túmulo vazio, com cerca de 75% de aceitação no levantamento de Habermas, é o menos consensual): morte por crucificação, túmulo vazio, aparições percebidas como reais pelos discípulos, conversão de Paulo de perseguidor a apóstolo, e conversão de Tiago (parente de Jesus), que antes não cria nele. Mesmo o historiador agnóstico Bart Ehrman aceita a maior parte desses fatos.
 
-A questão histórica não é "houve evidências?", mas "qual explicação dá conta de todas elas?". As teorias alternativas (alucinação coletiva, roubo do corpo, morte aparente, mito tardio) falham em explicar pelo menos um desses cinco fatos cada. A única hipótese que dá conta de todos é a ressurreição corporal.
+A questão histórica não é "houve evidências?", mas "qual explicação dá conta de todas elas?". As teorias alternativas (alucinação coletiva, roubo do corpo, morte aparente, mito tardio) falham em explicar pelo menos um desses cinco fatos cada. A única hipótese que dá conta de todos é a ressurreição corporal. Para a Igreja, ela é "a verdade culminante da nossa fé em Cristo" (Catecismo, 638).
 
 ## Perguntas-chave
 
@@ -214,8 +214,8 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
 
 3. O que faz uma pessoa morrer torturada por algo que ela sabe ser mentira?
 
-4. Como a fé na ressurreição surgiu tão cedo? O credo de 1 Coríntios 15,3-8 é datado pelos próprios estudiosos críticos como anterior a três anos da crucificação, deixando pouco tempo para "evolução mítica".`,
-    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19'],
+4. Como a fé na ressurreição surgiu tão cedo? O credo de 1 Coríntios 15,3-8 é datado por muitos estudiosos, inclusive céticos como Gerd Lüdemann, a poucos anos da crucificação, deixando pouco tempo para "evolução mítica".`,
+    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19', 'gn-14-14'],
   },
   {
     id: 17,
@@ -231,7 +231,7 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
 
 ## Jesus afirmou ser Deus
 
-Jesus afirmou repetidamente ser Deus. Em João 10,30 diz "eu e o Pai somos um". Em João 8,58, aplicando a si o nome divino YHWH revelado a Moisés, declara "antes que Abraão fosse, eu sou". Em Marcos 2,5-7 perdoa pecados, prerrogativa exclusiva de Deus segundo os próprios escribas presentes. Em João 14,9 diz "quem me viu, viu o Pai". Em João 5,18 os judeus tentam matá-lo porque "se igualava a Deus".
+Jesus afirmou repetidamente ser Deus. Em João 10,30 diz "eu e o Pai somos um". Em João 8,58, aplicando a si o nome divino YHWH revelado a Moisés, declara "antes que Abraão fosse, eu sou". Em Marcos 2,5-7 perdoa pecados, prerrogativa exclusiva de Deus segundo os próprios escribas presentes. Em João 14,9 diz "quem me viu, viu o Pai". Em João 5,18 os judeus tentam matá-lo porque "se igualava a Deus". Diante do Sinédrio, à pergunta se era o Filho de Deus, responde "Eu sou" (Marcos 14,61-62), e Tomé, diante do Ressuscitado, o confessa "meu Senhor e meu Deus" (João 20,28).
 
 ## Três opções, e só três
 
@@ -259,10 +259,10 @@ Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca diss
 
 2. Se ele se enganou achando ser Deus, como produziu os ensinamentos morais mais influentes da história?
 
-3. Se ele mentiu deliberadamente, por que seus apóstolos, que conviveram com ele, morreram mártires pregando essa mentira?
+3. Se ele mentiu deliberadamente, por que seus apóstolos, que conviveram com ele, arriscaram a vida, e vários morreram mártires, pregando essa mentira?
 
 4. Por que o testemunho histórico unânime das primeiras gerações cristãs foi que Jesus reivindicou divindade, se isso é fabricação tardia?`,
-    references: ['jo-8-58', 'jo-10-30', 'mc-14-61', 'jo-20-28', 'lewis-mere-christianity'],
+    references: ['jo-8-58', 'jo-10-30', 'mc-14-61', 'jo-20-28', 'lewis-mere-christianity', 'mc-2-5', 'jo-5-18', 'jo-14-9'],
   },
   {
     id: 35,
@@ -284,15 +284,15 @@ Bart Ehrman, agnóstico, crítico do cristianismo institucional, professor de Es
 
 As evidências extra-bíblicas (fora dos Evangelhos) são múltiplas e independentes.
 
-Flávio Josefo, historiador judeu, escreveu "Antiguidades Judaicas" em 93-94 d.C. Faz duas menções a Jesus. A primeira, em 18,3 (chamada "Testimonium Flavianum"), está parcialmente interpolada por copistas cristãos posteriores, mas a maioria dos estudiosos aceita que o núcleo é autêntico: Jesus existiu, foi crucificado sob Pôncio Pilatos, teve seguidores. A segunda, em 20,9, é universalmente aceita: menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Josefo era judeu, não cristão. Não tinha motivo para inventar essas referências.
+Flávio Josefo, historiador judeu, escreveu "Antiguidades Judaicas" em 93-94 d.C. Faz duas menções a Jesus. A primeira, em 18,3 (chamada "Testimonium Flavianum"), está parcialmente interpolada por copistas cristãos posteriores, mas a maioria dos estudiosos aceita que o núcleo é autêntico: Jesus existiu, foi crucificado sob Pôncio Pilatos, teve seguidores. A segunda, em 20,9, é aceita como autêntica pela quase totalidade dos estudiosos: menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Josefo era judeu, não cristão. Não tinha motivo para inventar essas referências.
 
 Públio Cornélio Tácito, historiador romano de primeira linha, escreveu os "Anais" cerca de 116 d.C. No livro XV, capítulo 44, descreve a perseguição neroniana de 64 d.C. e explica: "O nome Cristãos vem de Cristo, que, no reinado de Tibério, foi entregue ao suplício pelo procurador Pôncio Pilatos. Essa superstição perniciosa, momentaneamente reprimida, ressurgia de novo, não apenas na Judeia onde nascera o mal, mas também em Roma". Tácito era pagão, hostil aos cristãos (chama o cristianismo de "superstição perniciosa"). Sua atestação, totalmente independente das fontes cristãs, confirma o essencial: Jesus existiu, foi crucificado por Pilatos, e seu movimento explodiu apesar da execução do fundador.
 
 Plínio, o Jovem, governador romano da Bitínia, escreveu ao imperador Trajano por volta de 112 d.C. uma carta pedindo orientação sobre como processar cristãos. Descreve os interrogados: "Costumam reunir-se em dia determinado, antes do amanhecer, e cantar entre si, alternadamente, um hino a Cristo como a um deus". Oito décadas após a crucificação, em uma província distante da Judeia, comunidades cristãs adoram Cristo como divino. Atestação independente da prática cristã primitiva.
 
-Suetônio, historiador romano, em "Vida de Cláudio" (c. 121), capítulo 25, menciona que o imperador Cláudio "expulsou os judeus de Roma porque provocavam agitações constantes por instigação de Chrestus". "Chrestus" é a grafia latina vulgar de "Christus". O evento, datado em torno de 49 d.C., é confirmado independentemente em Atos 18,2, onde Áquila e Priscila chegam a Corinto justamente porque "Cláudio decretara que todos os judeus saíssem de Roma".
+Suetônio, historiador romano, em "Vida de Cláudio" (c. 121), capítulo 25, menciona que o imperador Cláudio "expulsou os judeus de Roma porque provocavam agitações constantes por instigação de Chrestus". "Chrestus" é, para a maioria dos historiadores, a grafia latina vulgar de "Christus". O evento, datado em torno de 49 d.C., é confirmado independentemente em Atos 18,2, onde Áquila e Priscila chegam a Corinto justamente porque "Cláudio decretara que todos os judeus saíssem de Roma".
 
-O Talmude babilônico, redigido entre os séculos III e V mas preservando tradições mais antigas, menciona em Sanhedrin 43a um certo Yeshu enforcado na véspera da Páscoa por "ter praticado feitiçaria e seduzido Israel à apostasia". A referência é hostil e procura desqualificar Jesus, mas confirma o essencial: existiu, foi executado em Jerusalém, atraiu seguidores.
+O Talmude babilônico, redigido entre os séculos III e VI mas preservando tradições mais antigas, menciona em Sanhedrin 43a um certo Yeshu, morto e pendurado num madeiro na véspera da Páscoa por "ter praticado feitiçaria e seduzido Israel à apostasia". A referência é hostil e procura desqualificar Jesus, mas confirma o essencial: existiu, foi executado e teve discípulos.
 
 Cinco fontes independentes (Josefo judeu, Tácito pagão, Plínio pagão, Suetônio pagão, Talmude judaico) atestam, de pontos de vista hostis ou neutros, a existência histórica de Jesus, sua crucificação por autoridade romana, e a rápida expansão de um movimento de seguidores. Some-se a isso os 27 livros do Novo Testamento (escritos por pelo menos 8 autores independentes nas primeiras décadas), os escritos dos Padres Apostólicos (Clemente Romano c. 96, Inácio de Antioquia c. 107, Policarpo, Papias, Pastor de Hermas, Didaqué), e o testemunho convergente é esmagador.
 
@@ -304,12 +304,12 @@ A tese mítica precisa explicar como, em poucos anos após a suposta "criação 
 
 1. Você sabe quantos historiadores acadêmicos de universidades reconhecidas defendem que Jesus não existiu? (Resposta: praticamente nenhum.)
 
-2. Como você explica as menções de Tácito, Plínio o Jovem, Suetônio e Josefo, todos não-cristãos, todos no primeiro século depois de Cristo?
+2. Como você explica as menções de Tácito, Plínio o Jovem, Suetônio e Josefo, todos não cristãos, todos escrevendo a menos de cem anos da crucificação?
 
 3. Se Jesus foi invenção literária, como existiam comunidades cristãs em Roma já em 49 d.C., a ponto de Cláudio precisar expulsar judeus por causa de agitações sobre "Chrestus"?
 
 4. Bart Ehrman, agnóstico crítico do cristianismo, defende a existência histórica de Jesus. Em que base você sustenta o contrário?`,
-    references: ['josefo-antiguidades-20', 'tacito-anais', 'plinio-jovem', 'suetonio-claudio', 'ehrman-jesus-existiu'],
+    references: ['josefo-antiguidades-20', 'josefo-antiguidades-18', 'tacito-anais', 'plinio-jovem', 'suetonio-claudio', 'ehrman-jesus-existiu', 'at-18-2', 'talmude-sanhedrin-43a'],
   },
   {
     id: 50,
@@ -325,7 +325,7 @@ A tese mítica precisa explicar como, em poucos anos após a suposta "criação 
 
 ## O que a imagem mostra
 
-O homem do Sudário sofreu exatamente o que os Evangelhos descrevem da paixão de Jesus, em detalhes que vão além do que se sabia na Idade Média. Há marcas de uma flagelação severa, com dezenas de golpes de um açoite romano de pontas em forma de halteres. Há ferimentos no couro cabeludo, compatíveis com uma coroa de espinhos em forma de capacete, e não de aro, como costuma aparecer na arte. Há a marca de uma lança no lado direito, da qual saíram sangue e um líquido claro, como descreve João 19,34. As pernas não foram quebradas, ao contrário do que se fazia para apressar a morte dos crucificados (João 19,33). O sangue presente no pano é humano, do tipo AB.
+O homem do Sudário sofreu exatamente o que os Evangelhos descrevem da paixão de Jesus, em detalhes que vão além do que se sabia na Idade Média. Há marcas de uma flagelação severa, com dezenas de golpes de um açoite romano de pontas em forma de halteres. Há ferimentos no couro cabeludo, compatíveis com uma coroa de espinhos em forma de capacete, e não de aro, como costuma aparecer na arte. Há a marca de uma lança no lado direito, da qual saíram sangue e um líquido claro, como descreve João 19,34. As pernas não foram quebradas, ao contrário do que se fazia para apressar a morte dos crucificados (João 19,33). O sangue presente no pano é humano e, segundo as análises do médico legista Pierluigi Baima Bollone nos anos 1980, do tipo AB, resultado que ainda não foi confirmado de forma independente.
 
 ## O que a ciência não explica
 
@@ -333,7 +333,7 @@ Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com inst
 
 ## E a datação por carbono-14?
 
-É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores apontaram que a amostra foi retirada de um canto do pano que havia sido remendado e costurado em épocas posteriores a um incêndio, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
+É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores, como o do químico Raymond Rogers (2005), apontaram que a amostra foi retirada de um canto do pano que havia sido remendado com fios mais novos, tingidos para disfarçar o conserto, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
 
 ## O que a Igreja diz
 
@@ -345,10 +345,10 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. T
 
 2. A imagem não tem tinta nem pinceladas e guarda informação tridimensional. Que falsário medieval teria feito isso, e como?
 
-3. A amostra do carbono-14 saiu de um canto remendado do pano. Faz sentido datar o lençol inteiro por um pedaço costurado depois de um incêndio?
+3. A amostra do carbono-14 saiu de um único canto do pano. Faz sentido datar o lençol inteiro por um pedaço que pode ter sido remendado séculos depois?
 
-4. O tipo sanguíneo do Sudário é AB, o mesmo dos milagres eucarísticos e do Sudário de Oviedo. É só coincidência?`,
-    references: ['sudario-turim', 'milagre-lanciano', 'mt-28-1'],
+4. As análises de Baima Bollone apontaram no Sudário sangue do tipo AB, o mesmo tipo relatado no milagre eucarístico de Lanciano e no Sudário de Oviedo. Se isso se confirmar, será só coincidência?`,
+    references: ['sudario-turim', 'milagre-lanciano', 'sudario-oviedo', 'jo-19-33'],
   },
   {
     id: 55,
@@ -376,15 +376,15 @@ O ponto não é que cada caso, sozinho, prove Deus. É que o ateu, para manter o
 
 ## A resposta ao protestante
 
-Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outra explicação: seriam enganos demoníacos. Citam São Paulo, que adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A objeção merece resposta séria, e a resposta está no critério que o próprio Jesus deu: "pelos seus frutos os conhecereis" (Mateus 7,16).
+Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outra explicação: seriam enganos demoníacos. Citam São Paulo, que adverte que "o próprio Satanás se transfigura em anjo de luz" (2 Coríntios 11,14). A objeção merece resposta séria, e a resposta está no critério que o próprio Jesus deu: "pelos seus frutos os conhecereis" (Mateus 7,16).
 
-Que frutos as verdadeiras aparições marianas produzem? Conversão, arrependimento, volta aos sacramentos, oração, caridade, fim dos sacrifícios humanos em Guadalupe, retorno de pecadores a Cristo. Ora, Jesus mesmo ensinou que "todo reino dividido contra si mesmo será destruído" (Mateus 12,25). Um demônio que levasse multidões a se converter a Cristo, a confessar os pecados, a rezar e a viver o Evangelho estaria trabalhando contra o próprio reino. Não faz sentido. O diabo não conduz as pessoas para mais perto de Jesus.
+Que frutos as verdadeiras aparições marianas produzem? Conversão, arrependimento, volta aos sacramentos, oração, caridade, o batismo de multidões de indígenas no México depois de Guadalupe, retorno de pecadores a Cristo. Ora, Jesus mesmo ensinou que "todo reino dividido contra si mesmo será destruído" (Mateus 12,25). Um demônio que levasse multidões a se converter a Cristo, a confessar os pecados, a rezar e a viver o Evangelho estaria trabalhando contra o próprio reino. Não faz sentido. O diabo não conduz as pessoas para mais perto de Jesus.
 
 E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama atenção para si, sempre aponta para o Filho. A frase que resume toda a sua mensagem é a de Caná: "fazei tudo o que ele vos disser" (João 2,5). Uma aparição que levasse para longe de Cristo, ou que contradissesse a Escritura, seria rejeitada exatamente por isso. A Igreja, aliás, é severíssima: examina cada caso por anos e reprova a grande maioria das alegações.
 
 ## O lugar certo das aparições
 
-É preciso, por fim, pôr cada coisa no seu lugar. As aparições são revelações privadas. Não acrescentam nada à revelação pública, que se encerrou com os apóstolos, e ninguém é obrigado a crer nelas para se salvar. O fundamento da fé não é Fátima nem Guadalupe, é a ressurreição de Cristo. As aparições são sinais, ajudas, confirmações sensíveis para tempos de pouca fé. Mas, como sinais, elas falam, e o que dizem é difícil de calar dentro de uma visão de mundo que insiste que só existe matéria.
+É preciso, por fim, pôr cada coisa no seu lugar. As aparições são revelações privadas (Catecismo, 67). Não acrescentam nada à revelação pública, que se encerrou com os apóstolos, e ninguém é obrigado a crer nelas para se salvar. O fundamento da fé não é Fátima nem Guadalupe, é a ressurreição de Cristo. As aparições são sinais, ajudas, confirmações sensíveis para tempos de pouca fé. Mas, como sinais, elas falam, e o que dizem é difícil de calar dentro de uma visão de mundo que insiste que só existe matéria.
 
 ## Perguntas-chave
 
@@ -395,7 +395,7 @@ E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama at
 3. Ao protestante: se essas aparições levam as pessoas a Cristo, à confissão e à caridade, que demônio trabalharia assim contra o próprio reino (Mateus 12,25)?
 
 4. Maria, nas aparições aprovadas, sempre aponta para Jesus, dizendo "fazei o que ele vos disser". Isso combina com engano demoníaco, ou com o contrário?`,
-    references: ['fatima-milagre-sol', 'guadalupe-tilma', 'zeitoun-aparicao', '2cor-11-14', 'mt-7-16', 'mt-12-25', 'jo-2-1'],
+    references: ['fatima-milagre-sol', 'guadalupe-tilma', 'zeitoun-aparicao', '2cor-11-14', 'mt-7-16', 'mt-12-25', 'jo-2-1', 'cic-67'],
   },
   {
     id: 56,
@@ -411,7 +411,7 @@ E é exatamente isso que Maria faz nas aparições aprovadas: ela nunca chama at
 
 ## Fé e razão não são inimigas
 
-Antes de tudo, é preciso desfazer um mito: o de que fé e razão se excluem. A própria ciência moderna nasceu na civilização cristã, fundada na convicção de que o universo é ordenado e inteligível porque foi feito por uma Inteligência. São João Paulo II resumiu na encíclica "Fé e Razão" (Fides et Ratio, 1998): "a fé e a razão são como duas asas pelas quais o espírito humano se eleva para a contemplação da verdade". Crer não é desligar o cérebro, é segui-lo até onde ele aponta.
+Antes de tudo, é preciso desfazer um mito: o de que fé e razão se excluem. A própria ciência moderna nasceu na civilização cristã, fundada na convicção de que o universo é ordenado e inteligível porque foi feito por uma Inteligência. São João Paulo II resumiu na encíclica "Fé e Razão" (Fides et Ratio, 1998): "a fé e a razão constituem como que as duas asas pelas quais o espírito humano se eleva para a contemplação da verdade". Crer não é desligar o cérebro, é segui-lo até onde ele aponta.
 
 ## O argumento da causa
 
@@ -427,7 +427,7 @@ Se Deus não existe, "certo" e "errado" são apenas opinião ou instinto, e nada
 
 ## O argumento da própria razão
 
-Há ainda um argumento sutil e poderoso. Se a sua mente é só o resultado cego de átomos e da seleção natural, que selecionou sobrevivência e não verdade, por que confiar nela? O filósofo Alvin Plantinga mostrou que o naturalismo ateu serra o galho em que se senta: ele não consegue justificar a confiança na razão que usa para se afirmar. Quem pensa, já pressupõe que a verdade existe e que a mente alcança o real, e isso combina muito melhor com um Criador racional do que com o acaso.
+Há ainda um argumento sutil e poderoso. Se a sua mente é só o resultado cego de átomos e da seleção natural, que selecionou sobrevivência e não verdade, por que confiar nela? O filósofo Alvin Plantinga argumentou, em Where the Conflict Really Lies (2011), que o naturalismo ateu serra o galho em que se senta: ele não consegue justificar a confiança na razão que usa para se afirmar. Quem pensa, já pressupõe que a verdade existe e que a mente alcança o real, e isso combina muito melhor com um Criador racional do que com o acaso.
 
 ## "E o sofrimento? E quem criou Deus?"
 
@@ -435,7 +435,7 @@ Duas objeções aparecem sempre. A do mal ("se Deus é bom, por que há sofrimen
 
 ## A conclusão razoável
 
-Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, somados, eles convergem: o universo teve um começo, é ordenado, abriga seres morais e racionais. A explicação mais simples e completa de tudo isso é uma Causa pessoal, inteligente e boa. A fé não pede um salto no escuro. Pede um passo à luz do que a razão já entrevê. Como prometeu Jesus, "buscai e achareis" (Mateus 7,7).
+Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Não são provas como as das ciências naturais, mas, nas palavras do Catecismo, "argumentos convergentes e convincentes" (Catecismo, 31). Somados, eles convergem: o universo teve um começo, é ordenado, abriga seres morais e racionais. A explicação mais simples e completa de tudo isso é uma Causa pessoal, inteligente e boa. A fé não pede um salto no escuro. Pede um passo à luz do que a razão já entrevê. Como prometeu Jesus, "buscai e achareis" (Mateus 7,7).
 
 ## Perguntas-chave
 
@@ -446,7 +446,7 @@ Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, soma
 3. Se a mente é só química cega selecionada para sobreviver, e não para achar a verdade, com que direito você confia nos próprios argumentos ateus?
 
 4. Você já buscou de verdade, com honestidade e abertura, ou descartou a pergunta antes de examiná-la?`,
-    references: ['suma-i-q2-a3', 'rm-1-20', 'fides-et-ratio', 'craig-kalam', 'plantinga-eaan', 'cic-31-35'],
+    references: ['suma-i-q2-a3', 'fides-et-ratio', 'craig-kalam', 'plantinga-eaan', 'cic-31-35', 'mt-7-7'],
   },
   {
     id: 57,
@@ -462,7 +462,7 @@ Nenhum desses argumentos, sozinho, "fecha" a questão como um teorema. Mas, soma
 
 ## O que Jesus afirmava de si
 
-Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em seu próprio nome, algo que só Deus pode fazer. Aceitou ser adorado. Disse: "antes que Abraão existisse, eu sou" (João 8,58), tomando para si o nome divino revelado a Moisés, "Eu Sou" (Êxodo 3,14). Afirmou: "eu e o Pai somos um" (João 10,30), e por isso quiseram apedrejá-lo por blasfêmia. Diante do Sumo Sacerdote, sob juramento, à pergunta se era o Filho de Deus, respondeu "Eu sou" (Marcos 14,62), e foi condenado à morte exatamente por essa afirmação.
+Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em seu próprio nome, algo que só Deus pode fazer (Marcos 2,5-7). Aceitou ser adorado. Disse: "antes que Abraão existisse, eu sou" (João 8,58), tomando para si o nome divino revelado a Moisés, "Eu Sou" (Êxodo 3,14). Afirmou: "eu e o Pai somos um" (João 10,30), e por isso quiseram apedrejá-lo por blasfêmia. Diante do Sumo Sacerdote, conjurado a dizer se era o Filho de Deus (Mateus 26,63), respondeu "Eu sou" (Marcos 14,62), e foi condenado à morte exatamente por essa afirmação.
 
 ## O trilema
 
@@ -478,7 +478,7 @@ A primeira comunidade cristã, judaica e monoteísta, fez o impensável: começo
 
 ## A definição da Igreja
 
-Levou tempo para a Igreja encontrar as palavras exatas para esse mistério. Contra Ário, que dizia que o Filho era apenas a maior das criaturas, o Concílio de Niceia, em 325, definiu que o Filho é "consubstancial ao Pai", verdadeiro Deus de verdadeiro Deus. Depois, o Concílio de Calcedônia, em 451, precisou que em Cristo há duas naturezas, divina e humana, sem confusão e sem separação, numa só pessoa. Não meio deus e meio homem: Deus inteiro e homem inteiro.
+Levou tempo para a Igreja encontrar as palavras exatas para esse mistério. Contra Ário, que dizia que o Filho era apenas a maior das criaturas, o Concílio de Niceia, em 325, definiu que o Filho é "consubstancial ao Pai", verdadeiro Deus de verdadeiro Deus. Depois, o Concílio de Calcedônia, em 451, precisou que em Cristo há duas naturezas, divina e humana, sem confusão e sem separação, numa só pessoa. Não meio deus e meio homem: Deus inteiro e homem inteiro, ou, nas palavras do Catecismo, "verdadeiro Deus e verdadeiro homem" (Catecismo, 464).
 
 ## Por que isso muda tudo
 
@@ -493,7 +493,7 @@ Se Jesus é Deus, então suas palavras não são uma opinião religiosa entre ou
 3. Tomé, um cético, chama Jesus de "meu Senhor e meu Deus". Ou estava errado, ou viu algo que muda a história. Qual das duas?
 
 4. Niceia não inventou a divindade de Cristo. Ela a defendeu contra quem a negava. O que está no Novo Testamento confirma ou contradiz essa definição?`,
-    references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'cic-466'],
+    references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'mc-2-5', 'mt-16-15', 'cic-464', 'concilio-calcedonia'],
   },
   {
     id: 58,
@@ -517,7 +517,7 @@ Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o
 
 ## A raiz bíblica
 
-A Trindade não foi inventada por concílios. Foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu. Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai e do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1). Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava. O Novo o revela em plenitude.
+A Trindade não foi inventada por concílios. Foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu (Mateus 3,16-17). Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai e do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1). Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava. O Novo o revela em plenitude.
 
 ## Como a Igreja definiu
 
@@ -536,7 +536,7 @@ A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, 
 3. "Deus é amor" desde a eternidade. Mas amor exige alguém a quem amar. Como um deus solitário e sem Trindade seria amor antes de criar o mundo?
 
 4. Mistério é o mesmo que absurdo? Ou há verdades reais (até na física) que ultrapassam a nossa capacidade de imaginar sem por isso serem ilógicas?`,
-    references: ['mt-28-19', 'jo-1-1', 'jo-10-30', 'jo-14-16', '1jo-4-2', 'concilio-niceia', 'hb-1-8'],
+    references: ['mt-28-19', 'jo-1-1', 'jo-10-30', 'jo-14-16', 'concilio-niceia', '1jo-4-8', 'mt-3-16', 'concilio-constantinopla'],
   },
   {
     id: 62,
@@ -552,15 +552,15 @@ A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, 
 
 ## A resposta honesta do materialismo
 
-Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche reconheceu que, "morto Deus", não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado. Tem, no máximo, um sentido fingido, que a morte apaga.
+Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche, em A Gaia Ciência (1882), reconheceu que, "morto Deus", não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre, em O Existencialismo é um Humanismo (1946), afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado. Tem, no máximo, um sentido fingido, que a morte apaga.
 
 ## O vazio que nada preenche
 
-E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscamos felicidade sem parar. Mas note uma coisa estranha: nada deste mundo sacia por completo. Conquistado um prazer, um sucesso, um amor, logo o coração pede mais. Santo Agostinho diagnosticou isso há mil e seiscentos anos numa frase que ainda hoje desarma: "fizeste-nos para ti, Senhor, e o nosso coração está inquieto enquanto não repousa em ti". C. S. Lewis acrescentou: se nenhum prazer do mundo me satisfaz por inteiro, a explicação mais provável não é que a felicidade não exista, mas que eu fui feito para outro mundo. O desejo de infinito é a marca de quem foi feito para o Infinito.
+E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscamos felicidade sem parar. Mas note uma coisa estranha: nada deste mundo sacia por completo. Conquistado um prazer, um sucesso, um amor, logo o coração pede mais. Santo Agostinho diagnosticou isso há mil e seiscentos anos, nas Confissões (c. 400), numa frase que ainda hoje desarma: "fizeste-nos para ti, Senhor, e o nosso coração está inquieto enquanto não repousa em ti". C. S. Lewis acrescentou, em Cristianismo Puro e Simples (1952): se nenhum prazer do mundo me satisfaz por inteiro, a explicação mais provável não é que a felicidade não exista, mas que eu fui feito para outro mundo. O desejo de infinito é a marca de quem foi feito para o Infinito.
 
 ## A resposta cristã
 
-O cristianismo responde à pergunta com uma audácia desconcertante: você não é um acidente. Foi pensado, querido e criado por Amor, à imagem de Deus. O sentido da vida, na fórmula clássica do catecismo, é conhecer, amar e servir a Deus nesta vida, e ser feliz com ele para sempre na outra. Não é uma tarefa fria. É uma história de amor. Jesus diz: "eu sou o caminho, a verdade e a vida" (João 14,6). E São Paulo garante que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28), inclusive as dolorosas. O sentido não é uma teoria, é uma Pessoa.
+O cristianismo responde à pergunta com uma audácia desconcertante: você não é um acidente. Foi pensado, querido e criado por Amor, à imagem de Deus. O sentido da vida, na fórmula clássica dos catecismos, retomada pelo Catecismo da Igreja Católica (1721), é conhecer, amar e servir a Deus nesta vida, e ser feliz com ele para sempre na outra. Não é uma tarefa fria. É uma história de amor. Jesus diz: "eu sou o caminho, a verdade e a vida" (João 14,6). E São Paulo garante que "todas as coisas concorrem para o bem daqueles que amam a Deus" (Romanos 8,28), inclusive as dolorosas. O sentido não é uma teoria, é uma Pessoa.
 
 ## E o sofrimento, não tira o sentido?
 
@@ -579,7 +579,7 @@ Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distraç�
 3. Os ateus mais honestos admitem que, sem Deus, o sentido é inventado e a morte apaga tudo. Você consegue viver, de verdade, com essa conclusão?
 
 4. E se a resposta para a sua pergunta mais profunda não for uma ideia, mas Alguém que está, ele mesmo, à sua procura?`,
-    references: ['rm-8-28', 'jo-14-6', 'fides-et-ratio', 'sartre-existencialismo', 'nietzsche-gaia', 'lewis-mere-christianity'],
+    references: ['rm-8-28', 'jo-14-6', 'sartre-existencialismo', 'nietzsche-gaia', 'lewis-mere-christianity', 'mt-7-7', 'cic-1721'],
   },
   {
     id: 67,
@@ -603,7 +603,7 @@ Para entender a cura, é preciso entender a doença. O pecado não é só "trans
 
 ## A chave: Deus mesmo assume
 
-Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega a ira num terceiro inocente para se acalmar. Não é isso. O que morre na cruz não é um terceiro qualquer: é o próprio Deus, no Filho feito homem, que toma sobre si livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso. O profeta Isaías, oito séculos antes, já descrevia o Servo Sofredor: "ele foi traspassado por causa das nossas transgressões... e por suas chagas fomos curados" (Isaías 53,5). São Paulo resume: "Cristo morreu pelos nossos pecados, segundo as Escrituras" (1 Coríntios 15,3).
+Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega a ira num terceiro inocente para se acalmar. Não é isso. O que morre na cruz não é um terceiro qualquer: é o próprio Deus, no Filho feito homem, que toma sobre si livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso. O profeta Isaías, séculos antes, já descrevia o Servo Sofredor: "ele foi traspassado por causa das nossas transgressões... e por suas chagas fomos curados" (Isaías 53,5). São Paulo resume: "Cristo morreu pelos nossos pecados, segundo as Escrituras" (1 Coríntios 15,3).
 
 ## O amor levado ao extremo
 
@@ -623,10 +623,10 @@ A Redenção não é um acontecimento distante do passado, fechado em si. Ela al
 
 2. Na cruz não é um terceiro punido por um Deus irado: é o próprio Deus que assume a nossa morte. Isso muda a sua imagem do cristianismo?
 
-3. Isaías descreveu o Servo "traspassado pelas nossas transgressões" oito séculos antes de Cristo. Coincidência, ou anúncio?
+3. Isaías descreveu o Servo "traspassado pelas nossas transgressões" séculos antes de Cristo. Coincidência, ou anúncio?
 
 4. Se Deus foi até a cruz para alcançar você, o que isso diz sobre quanto a sua vida vale aos olhos dele?`,
-    references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6'],
+    references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6', 'jo-15-13'],
   },
   {
     id: 72,
@@ -646,7 +646,7 @@ Os primeiros capítulos do Gênesis não foram escritos para informar a idade da
 
 ## A posição da Igreja sobre a evolução
 
-Ao contrário do que muitos imaginam, a Igreja não condena a teoria da evolução. O Papa Pio XII, na encíclica Humani Generis (1950), declarou que a origem do corpo humano a partir de matéria viva preexistente pode ser livremente investigada e debatida. São João Paulo II, em 1996, foi além e afirmou que a evolução é "mais que uma hipótese". A fé impõe um único limite: a alma espiritual de cada ser humano não emerge da matéria por acaso, é criada diretamente por Deus. O corpo pode ter uma história biológica. A alma é dom imediato do Criador.
+Ao contrário do que muitos imaginam, a Igreja não condena a teoria da evolução. O Papa Pio XII, na encíclica Humani Generis (1950), declarou que a origem do corpo humano a partir de matéria viva preexistente pode ser livremente investigada e debatida. São João Paulo II, em 1996, foi além e afirmou que a evolução é "mais que uma hipótese". A fé impõe, antes de tudo, um limite: a alma espiritual de cada ser humano não emerge da matéria, é criada diretamente por Deus. O corpo pode ter uma história biológica. A alma é dom imediato do Criador.
 
 ## Criação e evolução não competem
 
@@ -654,11 +654,11 @@ A confusão de fundo é misturar dois planos diferentes. A ciência responde à 
 
 ## Adão e Eva existiram?
 
-Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (a maçã, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem. "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético. Como exatamente isso se deu, a fé não detalha. Que se deu, ela afirma.
+Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (a maçã, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem. "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. O relato da queda, diz o Catecismo, "utiliza uma linguagem feita de imagens, mas afirma um acontecimento primordial" (Catecismo, 390). Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético. Como exatamente isso se deu, a fé não detalha. Que se deu, ela afirma.
 
 ## O que o Gênesis ensina de verdade
 
-Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom. O ser humano não é um animal a mais, mas imagem de Deus, com uma dignidade que nenhum outro ser possui, e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
+Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom. O ser humano não é um animal a mais, mas imagem de Deus (Gênesis 1,27), com uma dignidade que nenhum outro ser possui, e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
 
 ## Sem medo da verdade
 
@@ -670,10 +670,10 @@ No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem
 
 2. A ciência explica o "como" e a fé o "por quê" e o "quem". Por que tratar a evolução como se respondesse a perguntas que não são as dela?
 
-3. A Igreja aceita a evolução do corpo desde 1950, exigindo apenas que a alma seja criada por Deus. Isso combina com a fama de "inimiga da ciência"?
+3. A Igreja admite como possível a evolução do corpo desde 1950, exigindo que a alma seja criada diretamente por Deus. Isso combina com a fama de "inimiga da ciência"?
 
 4. Negar que houve uma origem real do pecado resolve o problema do mal no mundo, ou apenas o deixa sem explicação?`,
-    references: ['gn-1-27', 'cic-309', 'fides-et-ratio', 'lemaitre-bigbang'],
+    references: ['gn-1-27', 'lemaitre-bigbang', 'cic-390', 'humani-generis'],
   },
 ];
 

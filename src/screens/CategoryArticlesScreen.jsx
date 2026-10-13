@@ -7,7 +7,9 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getReadSet } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
-import { EmptyState } from '../components/ui';
+import { EmptyState, ProgressBar } from '../components/ui';
+import { useJourney } from '../hooks/useJourney';
+import { categoryProgress, isLessonComplete, lessonOf } from '../utils/journey';
 import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
 import { centeredColumn } from '../components/ReadingColumn';
 
@@ -24,6 +26,7 @@ export default function CategoryArticlesScreen({ route }) {
   const { t } = useLanguage();
   const { space } = tokens;
   const [readSet, setReadSet] = useState(() => new Set());
+  const journey = useJourney();
 
   const category = route?.params?.category;
   const list = useMemo(() => sortByRank(articles.filter((a) => a.category === category)), [category]);
@@ -39,6 +42,9 @@ export default function CategoryArticlesScreen({ route }) {
 
   const description = t(`category.${category}.desc`);
   const countLabel = list.length === 1 ? t('articles.count.one') : t('articles.count', { n: list.length });
+  // Progresso da jornada neste tema (lições concluídas), sob a descrição.
+  const prog = journey ? categoryProgress(journey, list.map((a) => a.id)) : null;
+  const progLabel = prog ? t('journey.categoryProgress', { n: prog.completed, total: prog.total }) : null;
 
   return (
     <FlatList
@@ -49,6 +55,12 @@ export default function CategoryArticlesScreen({ route }) {
         <View style={{ paddingTop: space.sm, paddingBottom: space.xs, gap: space.xxs }}>
           <Text style={[text('subhead'), { color: colors.textSubtle }]}>{description}</Text>
           <Text style={[text('footnote'), { color: colors.textSubtle }]}>{countLabel}</Text>
+          {prog && prog.completed > 0 ? (
+            <View style={{ gap: space.xxs, marginTop: space.xxs }}>
+              <ProgressBar value={prog.total ? prog.completed / prog.total : 0} accessibilityLabel={progLabel} />
+              <Text style={[text('footnote'), { color: colors.textSubtle }]}>{progLabel}</Text>
+            </View>
+          ) : null}
         </View>
       }
       ItemSeparatorComponent={ArticleListSeparator}
@@ -57,6 +69,7 @@ export default function CategoryArticlesScreen({ route }) {
         <ArticleListItem
           article={item}
           read={readSet.has(item.id)}
+          completed={isLessonComplete(lessonOf(journey, item.id))}
           showCategory={false}
           onPress={() => openArticle(navigation, item.id)}
         />
