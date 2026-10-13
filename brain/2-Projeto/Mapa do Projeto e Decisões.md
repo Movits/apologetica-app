@@ -1,6 +1,6 @@
 ---
 tags: [mapa]
-atualizado: 2026-07-08
+atualizado: 2026-10-13
 ---
 # Mapa do Projeto e Decisões
 
@@ -20,6 +20,7 @@ Cada uma segue o modelo Contexto, Decisão, Motivo e Consequências.
 - [[Decisão - Pastas fotos e documentos na raiz]]: dois lugares seguros e com nome em português para os arquivos do dono do projeto.
 - [[Decisão - Catecismo vira link para o Vaticano]]: o navegador interno do Catecismo saiu, as referências `cic-` abrem o site oficial.
 - [[Decisão - Limpeza conservadora de código]]: só remover código morto com prova, o resto vai para a lista de observação.
+- [[Decisão - Identidade visual Clássica]]: das quatro identidades testadas em outubro de 2026, o dono ficou com a de sempre (navy, dourado, Cormorant e cruz latina). As outras três estão arquivadas em `design/identidade/` e no git.
 
 ## Manutenção
 
