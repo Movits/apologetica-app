@@ -45,8 +45,9 @@ const BOOK_MAP = {
 // saíam como 'jó' e 'jn', e o inglês desses dois livros caía no português.
 
 // Versículos que a fonte deixa em branco no meio do capítulo, com o texto da
-// Douay-Rheims-Challoner em drbo.org. (Os brancos no fim do capítulo são
-// versículos que a fonte juntou ao anterior: viram bloco na tela.)
+// Douay-Rheims-Challoner em drbo.org. Os brancos no fim do capítulo são números
+// que a Douay-Rheims não tem (a fonte segue a numeração da King James): saem,
+// e o capítulo termina no último versículo, como em drbo.org.
 const MISSING = {
   '1rs 17,19': 'And Elias said to her: Give me thy son. And he took him out of her bosom, and carried him into the upper chamber where he abode, and laid him upon his own bed.',
   'pr 30,29': 'There are three things, which go well, and the fourth that walketh happily:',
@@ -81,6 +82,9 @@ for (const [ref, text] of Object.entries(MISSING)) {
   const [ch, v] = cv.split(',').map(Number);
   if (out[id]?.[ch - 1]?.[v - 1] !== '') throw new Error(`Versículo ${ref} não está em branco na fonte`);
   out[id][ch - 1][v - 1] = text;
+}
+for (const chapters of Object.values(out)) {
+  for (const verses of chapters) while (verses.length && verses[verses.length - 1] === '') verses.pop();
 }
 for (const [ref, [de, para]] of Object.entries(TYPOS)) {
   const [id, cv] = ref.split(' ');

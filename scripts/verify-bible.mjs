@@ -64,6 +64,17 @@ async function run(browser, { lang, width, tag, date }) {
     } else {
       await openChapter('Job', 1);
       await shot('job-1-en', ['There was a man in the land of Hus']);
+      // Busca em inglês: o versículo do dia de Mateus 5,4 é o 5,5 na Douay-Rheims.
+      await click(page.getByRole('tab', { name: 'Home' }));
+      await sleep(1000);
+      await click(page.getByText('Search', { exact: true }));
+      await sleep(1000);
+      await page.keyboard.type('they that mourn');
+      await sleep(1500);
+      await shot('busca-en', ['Matthew 5:5', 'Blessed are they that mourn']);
+      await click(page.getByText('Matthew 5:5', { exact: true }));
+      await sleep(2500);
+      await shot('busca-en-abre', ['Blessed are they that mourn: for they shall be comforted']);
     }
     if (date) {
       await click(page.getByRole('tab', { name: T.tools }));

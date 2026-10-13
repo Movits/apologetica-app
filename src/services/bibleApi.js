@@ -70,6 +70,19 @@ export function verseText(chapterArr, n) {
   return null;
 }
 
+// Intervalo { start, end } da linha que contém o versículo `n` (o bloco
+// inteiro quando `n` cai num bloco), ou null fora do capítulo. É o rótulo
+// certo de uma marcação feita num número do meio de um bloco.
+export function verseSpan(chapterArr, n) {
+  if (!chapterArr || !(n >= 1) || n > chapterArr.length) return null;
+  let start = n;
+  while (start > 1 && chapterArr[start - 1] === '') start--;
+  if (chapterArr[start - 1] === '') return null;
+  let end = n;
+  while (end < chapterArr.length && chapterArr[end] === '') end++;
+  return { start, end };
+}
+
 // Retorna { total, verses: [{n, t, end?}], source, language } ou null.
 // `total` é o número de versículos (o último número), não o de linhas.
 // `language` pode ser 'pt' ou 'en'. Fallback automático para PT se EN não estiver disponível.
@@ -130,6 +143,16 @@ export function getVerse(bookId, chapter, verse, language = 'pt') {
   return verseText(AVEMARIA?.[bookId]?.[chapter - 1], verse);
 }
 
+// verseSpan no capítulo que getVerse leria (mesmas regras de idioma).
+export function getVerseSpan(bookId, chapter, verse, language = 'pt') {
+  if (!getBook(bookId)) return null;
+  if (language === 'en' && DRA) {
+    const chapterArr = DRA[bookId]?.[chapter - 1];
+    if (chapterArr) return verseSpan(chapterArr, verse);
+  }
+  return verseSpan(AVEMARIA?.[bookId]?.[chapter - 1], verse);
+}
+
 // Normaliza para busca: minúsculas + remove acentos.
 function norm(s) {
   return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -167,6 +190,7 @@ export function searchBible(query, { language = 'pt', limit = 30 } = {}) {
             bookId,
             chapter,
             verse,
+            ...(verseEnd > verse ? { verseEnd } : {}),
             ref: formatVerseRef({ bookName: name, chapter, verse, verseEnd }, isEn),
             text: verses[vi],
           });

@@ -88,6 +88,21 @@ test('verseText devolve o texto do bloco para qualquer número dentro dele', asy
 });
 
 test('getChapter conta os números do capítulo, não as linhas', () => {
-  const ch = getChapter('jo', 3, 'pt');
+  // Josué 19 tem os blocos 2-7, 17-23, 35-39 e 41-46: 51 números em 31 linhas.
+  const ch = getChapter('js', 19, 'pt');
+  assert.equal(ch.total, 51);
+  assert.equal(ch.verses.length, 31);
   assert.equal(ch.total, ch.verses.reduce((n, v) => n + (v.end ? v.end - v.n + 1 : 1), 0));
+});
+
+test('verseSpan devolve o intervalo da linha que contém o número', async () => {
+  const { verseSpan } = await import('../src/services/bibleApi.js');
+  const ch = ['a', 'b', '', '', 'c'];
+  assert.deepEqual(verseSpan(ch, 1), { start: 1, end: 1 });
+  assert.deepEqual(verseSpan(ch, 2), { start: 2, end: 4 });
+  assert.deepEqual(verseSpan(ch, 3), { start: 2, end: 4 });
+  assert.deepEqual(verseSpan(ch, 5), { start: 5, end: 5 });
+  assert.equal(verseSpan(ch, 6), null);
+  assert.equal(verseSpan(ch, 0), null);
+  assert.equal(verseSpan(undefined, 1), null);
 });

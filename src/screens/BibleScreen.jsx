@@ -731,15 +731,26 @@ export default function BibleScreen({ route, navigation }) {
   const onPickColor = (color) => {
     const v = actionVerse;
     if (!v) return;
-    withAccount(() => applyHighlight(v.n, color));
+    // Num bloco, a marcação que já existe pode estar num número do meio: é ela
+    // que troca de cor ou sai, em vez de nascer uma segunda no primeiro número.
+    const existing = highlightOfLine(v);
+    withAccount(() => applyHighlight(existing ? existing.n : v.n, color));
   };
 
   // Marcar de novo com a mesma cor remove (é o que applyHighlight faz).
   const onRemoveHighlight = () => {
     const v = actionVerse;
-    const existing = highlightOfLine(v);
-    if (!existing) return;
-    withAccount(() => applyHighlight(existing.n, existing.color));
+    if (!v) return;
+    const ids = [];
+    for (let n = v.n; n <= (v.end ?? v.n); n++) if (highlightsByVerse[n]) ids.push(highlightsByVerse[n].id);
+    if (!ids.length) return;
+    withAccount(async () => {
+      try {
+        for (const id of ids) await removeHighlight(id);
+      } catch (e) {
+        notify(isEn ? 'Error' : 'Erro', e.message || (isEn ? 'Could not remove the highlight.' : 'Não consegui remover a marcação.'));
+      }
+    });
   };
 
   const onNote = () => {

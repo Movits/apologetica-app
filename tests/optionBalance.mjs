@@ -15,6 +15,8 @@ export const MAX_SHARE = 0.4;
 const lengths = (options) => options.map((o) => o.length);
 
 export function correctTooLong(options, correct) {
+  // Sem opções não há o que medir: a falta é cobrada pelos testes de estrutura.
+  if (!Array.isArray(options) || options.length < 2) return false;
   const len = lengths(options);
   const longestWrong = Math.max(...len.filter((_, i) => i !== correct));
   return len[correct] > Math.max(longestWrong * LENGTH_SLACK.ratio, longestWrong + LENGTH_SLACK.chars);

@@ -32,6 +32,14 @@ deixasse prova, item por item.
 - **Inglês**: referências no formato inglês (John 14:6) em 536 lugares, só
   nos campos em inglês.
 
+- **Revisão de código** (agente): achou cinco problemas, todos corrigidos com
+  teste ou roteiro. Escolher cor ou remover a marcação numa linha de bloco
+  duplicava a marcação. A busca ignorava o `bibleNavEn` dos versículos do dia,
+  e em inglês "Matthew 5:4" abria "Blessed are the meek". Os brancos no fim do
+  capítulo da Douay-Rheims eram números que a edição não tem e viravam "12-13".
+  A tela Marcações mostrava só o número inicial do bloco. E um teste usava um
+  capítulo sem bloco e não testava nada.
+
 ## Decisões
 
 - Gálatas 1, 2 Tessalonicenses 2, Hebreus 12, 1 Pedro 1, Apocalipse 7,

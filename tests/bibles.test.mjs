@@ -22,3 +22,21 @@ test('as duas Bíblias têm os 73 livros pelos ids do app, com o número de cap�
     }
   }
 });
+
+// '' é bloco da edição impressa: só a Ave Maria tem, e nunca no versículo 1
+// (o bloco precisa de um texto antes). Um '' na Douay-Rheims viraria em silêncio
+// um bloco "N-N+1" (era o caso de 1 Reis 17,19 em branco na fonte).
+test('versículo vazio só como continuação de bloco da Ave Maria', () => {
+  const vaziosDR = [];
+  const vazioNo1 = [];
+  for (const [nome, biblia] of [['Ave Maria', AVEMARIA], ['Douay-Rheims', DRA]]) {
+    for (const [id, chs] of Object.entries(biblia)) {
+      chs.forEach((vs, ci) => {
+        if (vs[0] === '') vazioNo1.push(`${nome} ${id} ${ci + 1}`);
+        if (nome === 'Douay-Rheims') vs.forEach((v, vi) => { if (v === '') vaziosDR.push(`${id} ${ci + 1},${vi + 1}`); });
+      });
+    }
+  }
+  assert.deepEqual(vazioNo1, []);
+  assert.deepEqual(vaziosDR, []);
+});
