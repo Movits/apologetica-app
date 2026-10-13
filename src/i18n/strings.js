@@ -96,9 +96,6 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Aparência',
-    'settings.section.identity': 'Identidade visual',
-    'settings.identity.footer': 'Propostas em avaliação. A Clássica é a identidade de sempre. Escolha outra para ver o app inteiro com ela, e volte quando quiser.',
-    'settings.identity.selected': 'Em uso',
     'settings.install.title': 'Instalar como aplicativo',
     'settings.install.sub': 'Abre em janela própria no computador ou na tela de início do celular, e se atualiza sozinho a cada versão.',
     'settings.section.notifications': 'Notificações',
@@ -589,9 +586,6 @@ export const STRINGS = {
 
     // === Settings ===
     'settings.section.appearance': 'Appearance',
-    'settings.section.identity': 'Visual identity',
-    'settings.identity.footer': 'Proposals under review. Classic is the original identity. Pick another to see the whole app with it, and switch back any time.',
-    'settings.identity.selected': 'In use',
     'settings.install.title': 'Install as an app',
     'settings.install.sub': 'Opens in its own window on your computer or on your phone home screen, and updates itself with every release.',
     'settings.section.notifications': 'Notifications',

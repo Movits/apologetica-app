@@ -10,8 +10,6 @@ import Constants from 'expo-constants';
 import { getBuildId } from '../utils/webUpdate';
 import { pick, pickPair } from '../utils/i18nData';
 import { THEME_MODES } from '../utils/themeMode';
-import { IDENTITIES, IDENTITY_IDS } from '../theme/identities';
-import { MarkGlyph } from '../components/BrandMark';
 import { canInstallApp, onInstallAvailabilityChange, promptInstallApp } from '../utils/pwaInstall';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
@@ -79,7 +77,7 @@ function ThemedSwitch({ value, onValueChange, label }) {
 
 export default function SettingsScreen() {
   const navigation = useNavigation();
-  const { colors, tokens, text, themeMode, setThemeMode, fontSize, setFontSize, darkMode, identity, setIdentity } = useTheme();
+  const { colors, tokens, text, themeMode, setThemeMode, fontSize, setFontSize } = useTheme();
   const { lang, setLang, t, isEn } = useLanguage();
   const { user, signOut, guest, deleteAccount } = useAuth();
   const { space, radius, icon } = tokens;
@@ -292,16 +290,6 @@ export default function SettingsScreen() {
   const caption = [text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md, marginTop: space.xs }];
   // Os chips ficam abaixo do título da linha, com um respiro.
   const chipRow = { marginTop: space.xxs };
-  // Prévia de cada identidade no seletor: marca num ladrilho com o fundo dela
-  // e três amostras de cor (principal, destaque e ação).
-  const styles = {
-    identityTile: {
-      width: 44, height: 44, borderRadius: tokens.radius.sm, borderWidth: StyleSheet.hairlineWidth,
-      alignItems: 'center', justifyContent: 'center',
-    },
-    identityTrail: { flexDirection: 'row', alignItems: 'center', gap: space.xxs },
-    identitySwatch: { width: space.sm, height: space.sm, borderRadius: tokens.radius.full, borderWidth: StyleSheet.hairlineWidth },
-  };
 
   return (
     <>
@@ -391,43 +379,6 @@ export default function SettingsScreen() {
               <Chip label="English" selected={lang === 'en'} onPress={() => setLang('en')} haptic />
             </ChipRow>
           </Row>
-        </Group>
-
-        {/* Identidade visual: a Clássica e as propostas em avaliação. Cada
-            linha mostra a marca e três cores da própria identidade, não da
-            ativa, para dar para comparar antes de trocar. */}
-        <SectionTitle title={t('settings.section.identity')} />
-        <Group footer={t('settings.identity.footer')}>
-          {IDENTITY_IDS.map((id) => {
-            const it = IDENTITIES[id];
-            const pal = it[darkMode ? 'dark' : 'light'];
-            const selected = identity.id === id;
-            return (
-              <Row
-                key={id}
-                leading={
-                  <View style={[styles.identityTile, { backgroundColor: pal.bg, borderColor: colors.separator }]}>
-                    <MarkGlyph kind={it.mark} color={pal.tint} size={tokens.icon.lg} />
-                  </View>
-                }
-                title={pick(it, 'name', isEn)}
-                subtitle={pick(it, 'concept', isEn)}
-                trailing={
-                  <View style={styles.identityTrail}>
-                    {[pal.primary, pal.accent, pal.tint].map((c, i) => (
-                      <View key={i} style={[styles.identitySwatch, { backgroundColor: c, borderColor: colors.separator }]} />
-                    ))}
-                    {selected ? <Ionicons name="checkmark" size={tokens.icon.md} color={colors.tint} /> : null}
-                  </View>
-                }
-                role="radio"
-                aria-checked={selected}
-                accessibilityLabel={selected ? `${pick(it, 'name', isEn)}, ${t('settings.identity.selected')}` : pick(it, 'name', isEn)}
-                onPress={() => setIdentity(id)}
-                haptic
-              />
-            );
-          })}
         </Group>
 
         {installable ? (
