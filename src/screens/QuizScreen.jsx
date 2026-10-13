@@ -201,6 +201,15 @@ function MultipleChoiceGame({ mode, navigation }) {
 
   const choose = async (i) => {
     if (showResult || locked) return;
+    // Tela aberta desde ontem: a pergunta mudou à meia-noite. Troca pela de
+    // hoje em vez de gravar a de ontem sob a data de hoje.
+    if (mode === 'daily') {
+      const fresh = getQuizOfDay();
+      if (fresh.id !== current.id) {
+        setQuestions([fresh]);
+        return;
+      }
+    }
     const ok = i === current.correct;
     setSelected(i);
     setShowResult(true);

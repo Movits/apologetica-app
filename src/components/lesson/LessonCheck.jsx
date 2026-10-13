@@ -22,7 +22,9 @@ import BadgeUnlockSheet from './BadgeUnlockSheet';
 // e o motor cuida de não pagar XP duas vezes.
 //
 // Só a primeira tentativa vale XP e cria os cartões da revisão espaçada (as
-// erradas voltam amanhã, as certas em uma semana). Depois dela a pessoa já viu
+// erradas voltam amanhã, as certas em uma semana). Cada resposta da primeira
+// tentativa é gravada na hora (evento checkAnswer): quem erra, sai do artigo e
+// volta retoma de onde parou, com as respostas dadas, e não recomeça valendo. Depois dela a pessoa já viu
 // as respostas certas, então refazer é "Treinar de novo": não paga XP e diz
 // isso na tela. As opções aparecem embaralhadas, com uma ordem nova a cada
 // tentativa (nos dados a certa cai muito na mesma posição).
@@ -55,38 +57,47 @@ export default function LessonCheck({ articleId, questions, journey, onOpenJourn
         initialDone={done}
         first={lessonState?.check?.first ?? lessonState?.check?.best ?? 0}
         attempts={lessonState?.check?.attempts ?? 0}
+        draft={lessonState?.draft}
         onOpenJourney={onOpenJourney}
       />
     </View>
   );
 }
 
-function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJourney }) {
+function CheckBody({ articleId, questions, initialDone, first, attempts, draft, onOpenJourney }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, radius, icon, motion, seal } = tokens;
   const total = questions.length;
-  const [phase, setPhase] = useState(initialDone ? 'summary' : 'quiz');
-  const [index, setIndex] = useState(0);
+  // Primeira tentativa começada e interrompida: retoma na primeira pergunta
+  // sem resposta gravada, com o placar do que já foi respondido.
+  const [resume] = useState(() => {
+    const given = [];
+    if (!initialDone && draft) for (let i = 0; i < total && i in draft; i++) given.push(Boolean(draft[i]));
+    return given;
+  });
+  const [phase, setPhase] = useState(initialDone ? 'summary' : resume.length >= total ? 'ready' : 'quiz');
+  const [index, setIndex] = useState(Math.min(resume.length, total - 1));
   const [selected, setSelected] = useState(null);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(resume.filter(Boolean).length);
   const [result, setResult] = useState(null);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   // Respostas desta tentativa (acertou?), na ordem das perguntas: vão para o
   // motor, que cria os cartões da revisão se for a primeira tentativa.
-  const [answers, setAnswers] = useState([]);
-  // Tentativas já feitas antes desta: 0 = valendo, mais que isso = treino.
-  const [attempt, setAttempt] = useState(attempts);
-  const practice = attempt > 0;
+  const [answers, setAnswers] = useState(resume);
+  // Tentativas já gravadas (estado vivo da jornada): 0 = valendo, mais que
+  // isso = treino. Vem do motor, não de uma cópia local, para o aviso de
+  // treino nunca discordar do que o motor paga.
+  const practice = attempts > 0;
 
   const current = questions[index];
   const answered = selected !== null;
   const isLast = index + 1 >= total;
   const optionCount = current?.options?.length || 0;
   const order = useMemo(
-    () => shuffledOrder(optionCount, `check:${articleId}:${index}:${attempt}`),
-    [optionCount, articleId, index, attempt]
+    () => shuffledOrder(optionCount, `check:${articleId}:${index}:${attempts}`),
+    [optionCount, articleId, index, attempts]
   );
 
   // A jornada foi reiniciada (Minha Jornada > Reiniciar) com este artigo
@@ -99,7 +110,6 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJ
       setScore(0);
       setAnswers([]);
       setResult(null);
-      setAttempt(0);
     }
   }, [initialDone, phase]);
 
@@ -107,6 +117,8 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJ
     if (answered) return;
     setSelected(i);
     setAnswers((a) => [...a, i === current.correct]);
+    // Valendo: grava a resposta já, antes do fim (a primeira fica).
+    if (!practice) dispatchJourney({ type: 'checkAnswer', articleId, index, correct: i === current.correct }).catch(() => {});
     if (i === current.correct) {
       setScore((s) => s + 1);
       haptics.success();
@@ -127,6 +139,8 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJ
     try {
       const prev = await getJourney();
       const prevLevel = levelFor(prev.xp);
+      // Treino ou valendo, segundo o motor no momento de fechar.
+      const wasPractice = Boolean(lessonOf(prev, articleId)?.check?.attempts);
       const r1 = await dispatchJourney({ type: 'read', articleId });
       const r2 = await dispatchJourney({ type: 'check', articleId, score: finalScore, total, answers });
       const after = levelFor(r2.state.xp);
@@ -140,9 +154,8 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJ
         level: after,
         xp: r2.state.xp,
         complete: isLessonComplete(lessonOf(r2.state, articleId)),
-        practice,
+        practice: wasPractice,
       });
-      setAttempt(lessonOf(r2.state, articleId)?.check?.attempts ?? attempt + 1);
       setPhase('result');
       if (finalScore >= total) haptics.success();
       if (unlocked.length || levelUp) setSheetOpen(true);
@@ -161,6 +174,16 @@ function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJ
   };
 
   const card = { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm };
+
+  // As três respondidas, mas a pessoa saiu antes de ver o resultado.
+  if (phase === 'ready') {
+    return (
+      <View style={card}>
+        <Text style={[text('subhead'), { color: colors.text }]}>{t('lesson.check.resume', { total })}</Text>
+        <Button label={t('lesson.check.finish')} icon="arrow-forward" onPress={finish} loading={busy} haptic="impact" />
+      </View>
+    );
+  }
 
   if (phase === 'summary') {
     return (

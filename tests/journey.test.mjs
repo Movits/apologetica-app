@@ -97,7 +97,7 @@ test('previsão (hook): XP uma vez, guarda a escolha, acerto não vale mais', ()
 
 test('previsão errada vira cartão de revisão para amanhã; certa não', () => {
   const wrong = applyEvent(createState(), { type: 'hook', articleId: 4, choice: 0, correct: false, today: T }, CTX);
-  assert.deepEqual(wrong.state.review, { 'a:4:h': { box: 0, due: '2026-10-14', reps: 0, lapses: 0 } });
+  assert.deepEqual(wrong.state.review, { 'a:4:h': { box: 0, due: '2026-10-14', reps: 0, lapses: 0, maxBox: 0 } });
   const right = applyEvent(createState(), { type: 'hook', articleId: 4, choice: 1, correct: true, today: T }, CTX);
   assert.deepEqual(right.state.review, {});
   // Responder de novo não cria nem muda cartão.
@@ -127,12 +127,36 @@ test('teste: só a primeira tentativa vale XP, refazer é treino', () => {
   assert.equal(lessonOf(e.state, 2).check.best, 3);
 });
 
+test('teste: cada resposta da primeira tentativa fica gravada na hora (sair e voltar não zera)', () => {
+  const ans = (s, index, correct) => applyEvent(s, { type: 'checkAnswer', articleId: 7, index, correct, today: T }, CTX).state;
+  // Errou a primeira, saiu do artigo, voltou e "acertou" a mesma pergunta.
+  let s = ans(createState(), 0, false);
+  assert.deepEqual(lessonOf(s, 7).draft, { 0: false });
+  s = ans(s, 0, true);
+  assert.deepEqual(lessonOf(s, 7).draft, { 0: false }, 'a primeira resposta fica');
+  s = ans(s, 1, true);
+  s = ans(s, 2, true);
+  // O fim do teste diz 3 de 3, mas o que vale é o gravado: 2 de 3.
+  const r = applyEvent(s, { type: 'check', articleId: 7, score: 3, total: 3, answers: [true, true, true], today: T }, CTX);
+  assert.equal(r.gained, 2 * XP.checkCorrect);
+  assert.deepEqual(lessonOf(r.state, 7).check, { best: 2, first: 2, perfect: false, attempts: 1 });
+  assert.equal(lessonOf(r.state, 7).draft, undefined, 'o rascunho sai depois do fim');
+  assert.equal(r.state.review['a:7:0'].box, 0, 'a errada volta amanhã');
+  // Depois da primeira tentativa, respostas avulsas não mexem em nada.
+  const after = applyEvent(r.state, { type: 'checkAnswer', articleId: 7, index: 0, correct: true, today: T }, CTX);
+  assert.deepEqual(after.state, r.state);
+  assert.equal(after.gained, 0);
+  // Índice inválido é ignorado.
+  const bad = applyEvent(createState(), { type: 'checkAnswer', articleId: 7, index: -1, correct: true, today: T }, CTX);
+  assert.equal(lessonOf(bad.state, 7), null);
+});
+
 test('teste: a primeira tentativa cria os cartões de revisão (erradas amanhã, certas em uma semana)', () => {
   const r = applyEvent(createState(), { type: 'check', articleId: 7, score: 1, total: 3, answers: [false, true, false], today: T }, CTX);
   assert.deepEqual(r.state.review, {
-    'a:7:0': { box: 0, due: '2026-10-14', reps: 0, lapses: 0 },
-    'a:7:1': { box: 2, due: '2026-10-20', reps: 0, lapses: 0 },
-    'a:7:2': { box: 0, due: '2026-10-14', reps: 0, lapses: 0 },
+    'a:7:0': { box: 0, due: '2026-10-14', reps: 0, lapses: 0, maxBox: 0 },
+    'a:7:1': { box: 2, due: '2026-10-20', reps: 0, lapses: 0, maxBox: 2 },
+    'a:7:2': { box: 0, due: '2026-10-14', reps: 0, lapses: 0, maxBox: 0 },
   });
   // O treino (refazer) não mexe nos cartões.
   const again = applyEvent(r.state, { type: 'check', articleId: 7, score: 3, total: 3, answers: [true, true, true], today: T }, CTX);
@@ -189,7 +213,7 @@ test('quiz diário: só a primeira resposta do dia conta, e XP só se acertou', 
   assert.equal(d.gained, 0);
   assert.equal(d.state.days['2026-10-08'], false);
   // A pergunta do dia errada volta na revisão do dia seguinte.
-  assert.deepEqual(c.state.review, { 'q:dq-002': { box: 0, due: '2026-10-09', reps: 0, lapses: 0 } });
+  assert.deepEqual(c.state.review, { 'q:dq-002': { box: 0, due: '2026-10-09', reps: 0, lapses: 0, maxBox: 0 } });
 });
 
 test('revisão: acerto numa pergunta vencida vale XP e reagenda; fora do dia não faz nada', () => {
@@ -203,14 +227,22 @@ test('revisão: acerto numa pergunta vencida vale XP e reagenda; fora do dia nã
   const ok = applyEvent(seeded, { type: 'review', key: 'a:4:h', correct: true, today: '2026-10-14' }, CTX);
   assert.equal(ok.gained, XP.review);
   assert.equal(ok.state.xp, xp0 + XP.review);
-  assert.deepEqual(ok.state.review['a:4:h'], { box: 1, due: '2026-10-17', reps: 1, lapses: 0 });
+  assert.deepEqual(ok.state.review['a:4:h'], { box: 1, due: '2026-10-17', reps: 1, lapses: 0, maxBox: 1 });
   // Repetir o mesmo evento no mesmo dia não paga de novo.
   const twice = applyEvent(ok.state, { type: 'review', key: 'a:4:h', correct: true, today: '2026-10-14' }, CTX);
   assert.equal(twice.gained, 0);
+  // Errar de propósito e acertar de novo não paga a mesma etapa duas vezes.
+  const lapse = applyEvent(ok.state, { type: 'review', key: 'a:4:h', correct: false, today: '2026-10-17' }, CTX);
+  assert.equal(lapse.gained, 0);
+  const again = applyEvent(lapse.state, { type: 'review', key: 'a:4:h', correct: true, today: '2026-10-18' }, CTX);
+  assert.equal(again.gained, 0, 'a caixa 1 já tinha sido alcançada');
+  assert.equal(again.state.review['a:4:h'].box, 1);
+  const higher = applyEvent(again.state, { type: 'review', key: 'a:4:h', correct: true, today: '2026-10-21' }, CTX);
+  assert.equal(higher.gained, XP.review, 'etapa nova (caixa 2) paga');
   // Errar na revisão: sem XP, volta para amanhã.
   const miss = applyEvent(seeded, { type: 'review', key: 'a:4:h', correct: false, today: '2026-10-14' }, CTX);
   assert.equal(miss.gained, 0);
-  assert.deepEqual(miss.state.review['a:4:h'], { box: 0, due: '2026-10-15', reps: 1, lapses: 1 });
+  assert.deepEqual(miss.state.review['a:4:h'], { box: 0, due: '2026-10-15', reps: 1, lapses: 1, maxBox: 0 });
   // Chave sem cartão: nada.
   const ghost = applyEvent(seeded, { type: 'review', key: 'a:99:0', correct: true, today: '2026-10-14' }, CTX);
   assert.equal(ghost.gained, 0);

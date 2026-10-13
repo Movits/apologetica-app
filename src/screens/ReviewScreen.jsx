@@ -39,6 +39,9 @@ export default function ReviewScreen({ navigation }) {
   const [score, setScore] = useState(0);
   const [gained, setGained] = useState(0);
   const [returnsIn, setReturnsIn] = useState(null);
+  // XP desta resposta como o motor pagou (0 se a etapa já tinha sido
+  // alcançada, ou se a mesma pergunta foi respondida em outra aba).
+  const [lastGained, setLastGained] = useState(0);
   const [finished, setFinished] = useState(false);
 
   // A sessão nasce quando o estado carrega (e de novo em "Revisar mais").
@@ -136,10 +139,14 @@ export default function ReviewScreen({ navigation }) {
     const right = i === item.correct;
     if (right) { setScore((s) => s + 1); haptics.success(); } else { haptics.error(); }
     try {
-      const r = await dispatchJourney({ type: 'review', key: item.key, correct: right, today });
+      // Sem `today`: o journeyStore carimba a data da resposta. A da abertura
+      // da tela só monta a sessão (quem passa da meia-noite com a tela aberta
+      // teria o cartão agendado um dia antes).
+      const r = await dispatchJourney({ type: 'review', key: item.key, correct: right });
       setGained((g) => g + r.gained);
+      setLastGained(r.gained);
       const card = r.state.review[item.key];
-      setReturnsIn(card?.mastered ? 'mastered' : daysBetween(today, card?.due));
+      setReturnsIn(card?.mastered ? 'mastered' : daysBetween(todayKey(), card?.due));
     } catch {}
   };
 
@@ -148,6 +155,7 @@ export default function ReviewScreen({ navigation }) {
     setIndex((x) => x + 1);
     setSelected(null);
     setReturnsIn(null);
+    setLastGained(0);
   };
 
   const returnsLabel = returnsIn === 'mastered'
@@ -188,7 +196,7 @@ export default function ReviewScreen({ navigation }) {
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs, marginTop: space.xxs }}>
                     <Ionicons name={returnsIn === 'mastered' ? 'ribbon-outline' : 'repeat-outline'} size={icon.sm} color={colors.textSubtle} />
                     <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]}>{returnsLabel}</Text>
-                    {ok ? <XpChip n={XP.review} /> : null}
+                    {lastGained > 0 ? <XpChip n={lastGained} /> : null}
                   </View>
                 ) : null}
               </View>

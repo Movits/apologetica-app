@@ -18,13 +18,16 @@
 // preenche); sem ela nenhum cartão é criado, para nunca inventar uma data.
 //   { type: 'read', articleId }                          chegou aos 90% do artigo
 //   { type: 'hook', articleId, choice, correct, today }  respondeu a previsão
+//   { type: 'checkAnswer', articleId, index, correct }   respondeu uma pergunta do teste
 //   { type: 'check', articleId, score, total, answers, today }  terminou o teste
 //   { type: 'dailyQuiz', dateKey, correct, quizId }      pergunta diária
 //   { type: 'review', key, correct, today }              respondeu na Revisão
 //   { type: 'sync' }                                     só reavalia conquistas
 //
 // Regras contra "chutar até acertar": a previsão vale uma vez (a primeira
-// escolha fica), o teste só paga XP na primeira tentativa (refazer é treino) e
+// escolha fica), o teste só paga XP na primeira tentativa (refazer é treino;
+// cada resposta da primeira tentativa é gravada na hora, então sair do artigo
+// e voltar não recomeça o teste valendo) e
 // a pergunta do dia só conta a primeira resposta. O que a pessoa errou não
 // some: vira cartão de revisão e volta no dia seguinte, e acertar na revisão
 // é o caminho para ganhar esses pontos de volta.
@@ -286,18 +289,35 @@ export function applyEvent(prev, event, ctx = {}) {
       // Previsão errada volta na revisão (depois de ler, a pessoa já sabe).
       if (event.correct === false) seed(hookKey(id), false);
     }
+  } else if (type === 'checkAnswer' && id != null) {
+    const index = event.index;
+    const current = state.lessons[id];
+    if (!Number.isInteger(index) || index < 0 || (current && current.check && current.check.attempts)) {
+      return { state: base, gained: 0, unlocked: [] };
+    }
+    const l = touch();
+    // A primeira resposta de cada pergunta fica.
+    if (!l.draft || !(index in l.draft)) l.draft = { ...(l.draft || {}), [index]: Boolean(event.correct) };
   } else if (type === 'check' && id != null) {
     const l = touch();
     const total = event.total == null ? CHECK_TOTAL : Math.max(1, Math.round(num(event.total, 1)));
-    const score = Math.min(total, Math.round(num(event.score)));
+    let score = Math.min(total, Math.round(num(event.score)));
     const prevCheck = l.check || { best: 0, perfect: false, attempts: 0 };
     const isFirst = !prevCheck.attempts;
+    let answers = Array.isArray(event.answers) ? event.answers : null;
+    if (isFirst && l.draft) {
+      // Vale o que foi gravado pergunta a pergunta, não o placar que a tela
+      // manda no fim (quem saiu e voltou não refaz a pergunta valendo).
+      answers = Array.from({ length: total }, (_, i) => (i in l.draft ? l.draft[i] : Boolean(answers && answers[i])));
+      score = answers.filter(Boolean).length;
+    }
+    delete l.draft;
     if (isFirst) {
       // Só a primeira tentativa paga: depois dela a pessoa já viu as
       // respostas certas, e refazer é treino.
       gained += score * XP.checkCorrect;
       if (score >= total) gained += XP.checkPerfect;
-      if (Array.isArray(event.answers)) event.answers.forEach((ok, i) => seed(lessonKey(id, i), Boolean(ok)));
+      if (answers) answers.forEach((ok, i) => seed(lessonKey(id, i), Boolean(ok)));
     }
     l.check = {
       best: Math.max(prevCheck.best || 0, score),
@@ -322,8 +342,10 @@ export function applyEvent(prev, event, ctx = {}) {
   } else if (type === 'review') {
     const card = state.review[event.key];
     if (!today || !isDue(card, today)) return { state: base, gained: 0, unlocked: [] };
-    state.review[event.key] = answerCard(card, Boolean(event.correct), today);
-    if (event.correct) gained += XP.review;
+    const next = answerCard(card, Boolean(event.correct), today);
+    state.review[event.key] = next;
+    // Só etapa nova paga: errar de propósito e acertar de novo não rende.
+    if (event.correct && (next.mastered || next.box > (card.maxBox ?? card.box ?? 0))) gained += XP.review;
   } else if (type !== 'sync') {
     return { state: base, gained: 0, unlocked: [] };
   }

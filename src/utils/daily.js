@@ -1,15 +1,16 @@
 // Datas compartilhadas (Onda 8, S5): "item do dia", chave de hoje e Páscoa.
 // Módulo puro (sem react-native nem expo) para rodar nos testes do Node.
 
-// Dia do ano (1 de janeiro = 1). É a fórmula original de dailyVerses.js,
-// quiz.js, notifications.js e HomeScreen.jsx, mantida ao pé da letra para não
-// mudar o item do dia de ninguém: diferença em milissegundos desde 31/12 do ano
-// anterior (new Date(ano, 0, 0)) dividida por um dia. Como é diferença de
-// timestamps, uma troca de horário de verão entre 31/12 e a data tira uma hora
-// da conta e o item só vira à 01:00 nesse dia. O Brasil não tem horário de
-// verão desde 2019, e mudar a fórmula mudaria o item do dia dos usuários.
+// Dia do ano (1 de janeiro = 1), pela data do calendário local. A fórmula
+// antiga dividia a diferença de timestamps desde 31/12 por um dia, e no
+// horário de verão (EUA, Europa) a primeira hora depois da meia-noite ainda
+// contava como o dia anterior: a pergunta do dia de ontem voltava, destravada,
+// sob a data de hoje (tests/daily-dst.test.mjs). Contando em UTC sobre os
+// campos da data, o resultado é o mesmo da fórmula antiga em todos os outros
+// horários, então ninguém perde o item do dia.
 export function dayOfYear(date = new Date()) {
-  return Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+  const y = date.getFullYear();
+  return Math.round((Date.UTC(y, date.getMonth(), date.getDate()) - Date.UTC(y, 0, 0)) / 86400000);
 }
 
 // Índice determinístico "do dia": (diaDoAno + ano × semente) mod tamanho.

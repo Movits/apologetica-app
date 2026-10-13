@@ -49,8 +49,8 @@ test('chaves das perguntas: teste, previsão e pergunta do dia, ida e volta', ()
 
 test('cartão novo: errou volta amanhã, acertou volta em uma semana', () => {
   assert.equal(REVIEW_INTERVALS[FIRST_BOX_RIGHT], 7);
-  assert.deepEqual(newCard(false, T), { box: 0, due: '2026-10-14', reps: 0, lapses: 0 });
-  assert.deepEqual(newCard(true, T), { box: FIRST_BOX_RIGHT, due: '2026-10-20', reps: 0, lapses: 0 });
+  assert.deepEqual(newCard(false, T), { box: 0, due: '2026-10-14', reps: 0, lapses: 0, maxBox: 0 });
+  assert.deepEqual(newCard(true, T), { box: FIRST_BOX_RIGHT, due: '2026-10-20', reps: 0, lapses: 0, maxBox: FIRST_BOX_RIGHT });
 });
 
 test('acertos sucessivos seguem os intervalos e a pergunta fica dominada no fim', () => {
@@ -73,10 +73,10 @@ test('acertos sucessivos seguem os intervalos e a pergunta fica dominada no fim'
 });
 
 test('errar na revisão devolve para amanhã e conta o lapso, sem mutar a entrada', () => {
-  const card = { box: 3, due: T, reps: 4, lapses: 0 };
+  const card = { box: 3, due: T, reps: 4, lapses: 0, maxBox: 3 };
   const out = answerCard(card, false, T);
-  assert.deepEqual(out, { box: 0, due: '2026-10-14', reps: 5, lapses: 1 });
-  assert.deepEqual(card, { box: 3, due: T, reps: 4, lapses: 0 }, 'entrada intacta');
+  assert.deepEqual(out, { box: 0, due: '2026-10-14', reps: 5, lapses: 1, maxBox: 3 });
+  assert.deepEqual(card, { box: 3, due: T, reps: 4, lapses: 0, maxBox: 3 }, 'entrada intacta');
 });
 
 test('isDue: vence no dia marcado ou depois, nunca antes', () => {
@@ -136,4 +136,19 @@ test('daysBetween: diferença em dias entre duas chaves', () => {
   assert.equal(daysBetween('2026-12-31', '2027-01-01'), 1);
   assert.equal(daysBetween(T, '2026-10-12'), -1);
   assert.equal(daysBetween('x', T), null);
+});
+
+test('maxBox guarda a etapa mais alta já alcançada (o XP da revisão só paga etapa nova)', () => {
+  let c = newCard(false, T);
+  c = answerCard(c, true, c.due);
+  assert.equal(c.maxBox, 1);
+  c = answerCard(c, false, c.due);
+  assert.equal(c.box, 0);
+  assert.equal(c.maxBox, 1);
+  c = answerCard(c, true, c.due);
+  assert.equal(c.maxBox, 1);
+  c = answerCard(c, true, c.due);
+  assert.equal(c.maxBox, 2);
+  // Cartões antigos sem maxBox contam a caixa atual.
+  assert.equal(answerCard({ box: 2, due: T, reps: 1, lapses: 0 }, true, T).maxBox, 3);
 });

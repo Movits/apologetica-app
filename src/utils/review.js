@@ -49,21 +49,24 @@ export function parseKey(key) {
   return null;
 }
 
+// `maxBox` é a etapa mais alta que a pergunta já alcançou: o XP da revisão só
+// paga etapa nova, então errar de propósito para repetir uma etapa não rende.
 export function newCard(correct, today) {
   const box = correct ? FIRST_BOX_RIGHT : 0;
-  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps: 0, lapses: 0 };
+  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps: 0, lapses: 0, maxBox: box };
 }
 
 // Resposta numa revisão. Devolve um cartão novo (não muta a entrada).
 export function answerCard(card, correct, today) {
   const reps = (card.reps || 0) + 1;
   const lapses = card.lapses || 0;
-  if (!correct) return { box: 0, due: addDaysKey(today, REVIEW_INTERVALS[0]), reps, lapses: lapses + 1 };
+  const prevMax = card.maxBox ?? card.box ?? 0;
+  if (!correct) return { box: 0, due: addDaysKey(today, REVIEW_INTERVALS[0]), reps, lapses: lapses + 1, maxBox: prevMax };
   const box = (card.box || 0) + 1;
   if (box >= REVIEW_INTERVALS.length) {
-    return { box: REVIEW_INTERVALS.length - 1, due: null, reps, lapses, mastered: true };
+    return { box: REVIEW_INTERVALS.length - 1, due: null, reps, lapses, maxBox: REVIEW_INTERVALS.length - 1, mastered: true };
   }
-  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps, lapses };
+  return { box, due: addDaysKey(today, REVIEW_INTERVALS[box]), reps, lapses, maxBox: Math.max(prevMax, box) };
 }
 
 export function isDue(card, today) {
