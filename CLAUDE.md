@@ -23,7 +23,7 @@ com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
 `src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
-`src/theme/identities.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
+`src/theme/palette.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
 `src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js` e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
@@ -123,12 +123,13 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 - Errar não se resolve chutando de novo: previsão travada, teste só paga XP na primeira tentativa (refazer é treino), pergunta do dia só conta a primeira resposta, e o que foi errado volta na Revisão espaçada (`src/utils/review.js`, caixas 1/3/7/16/35 dias, tela `ReviewScreen`). As opções aparecem embaralhadas por `shuffledOrder` em toda pergunta. Os cartões guardam as perguntas de lição pelo índice: **lição publicada nunca reordena nem remove perguntas**, reescreve no lugar.
 - Motor puro em `src/utils/journey.js` (XP, `LEVELS` com o significado de cada nome, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `EmblemMark`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Os emblemas são marcas vetoriais em `src/data/journeyMarks.js` (mesmo sistema do `BrandMark`: caixa 64, traço 4,5, uma cor do tema; **nunca imagem gerada por IA**), desenhadas por `EmblemMark`. Ver `brain/3-App/Funcionalidades/Jornada.md`.
 
-### Identidades visuais e visualizador de obras
-- `src/theme/identities.js` (puro, testado): Clássica (padrão), Âncora, Basílica e Lumen,
-  cada uma com paleta clara e escura, fonte de títulos (carregada sob demanda no
-  ThemeContext) e marca (`BrandMark`, SVGs em `assets/brand/`). O dono troca em Ajustes;
-  na web, `?identidade=ancora` abre o app (e a landing) com ela. Paleta nova sempre com
-  as mesmas chaves e contraste AA (o teste cobra). Ver `brain/2-Projeto/Decisões`.
+### Identidade visual e visualizador de obras
+- Identidade única: a Clássica (navy, dourado e creme, Cormorant, cruz latina no
+  `BrandMark`), decidida pelo dono em 13/10/2026. As propostas Âncora, Basílica e Lumen
+  estão arquivadas em `design/identidade/` e no git (`1e777be`, merge `09c0e4e`). Paleta
+  em `src/theme/palette.js` (puro: `LIGHT`, `DARK`, `contrastRatio`): cor nova entra nas
+  duas, com contraste AA (o teste cobra). Ver
+  `brain/2-Projeto/Decisões/Decisão - Identidade visual Clássica.md`.
 - Visualizador de obras: `src/components/art/` (OpenSeadragon em WebView/iframe, lupas,
   aula). Dados em `src/data/artworks/` (gerados os índices) e `src/data/artImages.js`.
   Ver `brain/3-App/Funcionalidades/Visualizador de Obras.md`.
@@ -233,7 +234,8 @@ arquivo, senão o pacote nativo vaza pro bundle web.
   - **Ritual de memória**: ao concluir uma sessão de trabalho significativa, criar `brain/1-Memória/Diário/AAAA-MM-DD - resumo.md` (o que foi feito, decisões, pendências) e acrescentar lições permanentes em `brain/1-Memória/Aprendizados.md`. Ao retomar trabalho, ler a entrada mais recente do Diário.
 - `GUIA-DO-PROJETO.md` — mapa da raiz em linguagem leiga; manter atualizado ao criar/mover pastas.
 
-Cores: as paletas `LIGHT`/`DARK` completas estão em `src/context/ThemeContext.jsx`.
+Cores: as paletas `LIGHT`/`DARK` completas estão em `src/theme/palette.js` (o
+`ThemeContext` reexporta).
 Ícones via `@expo/vector-icons` (Ionicons).
 
 ## Fluxo de revisão e verificação
