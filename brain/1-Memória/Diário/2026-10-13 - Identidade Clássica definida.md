@@ -50,15 +50,16 @@ Para quem usa, o resultado é a Clássica de sempre, só sem o seletor.
 - [[Estado Global e Tema]] diz de onde vêm as cores.
 - `GUIA-DO-PROJETO.md` explica a pasta `design/identidade/`.
 
-## Pendências
+## Publicação
 
-- Publicar o site: o dono autorizou ("pode publicar"). O site muda com o merge
-  no master, que dispara o deploy do GitHub Pages.
-- O APK de 5 de outubro (`5e41da1c`) ainda tem o seletor. Em 5 de outubro o
-  dono definiu que publicar é "tudo, inclusive para build", então um APK novo
-  sai junto com esta publicação.
-- Ícone, splash e cor do manifesto, pendentes desde 5 de outubro, não precisam
-  mudar: sempre foram da Clássica.
+- PR #4 entrou no master (merge `409c029`). O deploy do GitHub Pages passou
+  e o teste de fumaça no site publicado confirmou: fundo da Clássica mesmo com
+  `?identidade=ancora` no endereço, Ajustes sem "Identidade visual", Última
+  Ceia com as lupas, nenhum erro de página. A landing publicada não tem mais
+  `data-identity`, `?identidade=` nem Cinzel.
+- Build EAS Android `preview` `4b96be4b` concluído (APK sem o seletor).
+- Ícone, splash e cor do manifesto não precisam mudar: sempre foram da
+  Clássica.
 
 ## Aprendizado
 
