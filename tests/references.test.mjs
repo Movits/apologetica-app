@@ -63,3 +63,39 @@ test('translateFullSource: "e" entre números vira "and" no inglês', async () =
   assert.equal(translateFullSource('Evangelho segundo São Mateus, capítulo 5, versículos 45 e 46', true), 'Gospel of Matthew, chapter 5, verses 45 and 46');
   assert.equal(translateFullSource('Catecismo da Igreja Católica, parágrafos 2116 e 2117', true), 'Catechism of the Catholic Church §2116 and 2117');
 });
+
+// O texto de toda referência bíblica é o das Bíblias do app (PT Ave Maria, EN
+// Douay-Rheims) no número que "Ler no app" abre: 44 traziam outra tradução ou
+// resumo sem marca de corte. Cortes com (...) ou [...]; pontuação e
+// maiúsculas não contam.
+test('referências bíblicas: texto literal das Bíblias do app no número do link', async () => {
+  const { AVEMARIA } = await import('../src/data/bibleAveMaria.js');
+  const { DRA } = await import('../src/data/bibleDouayRheims.js');
+  const { verseText } = await import('../src/services/bibleApi.js');
+  const letras = (s) => String(s).normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
+  const trecho = (bible, b) => {
+    const arr = bible[b.bookId]?.[b.chapter - 1];
+    const out = [];
+    for (let n = b.verse; n <= (b.verseEnd ?? b.verse); n++) { const t = verseText(arr, n); if (t && !out.includes(t)) out.push(t); }
+    return out.join(' ');
+  };
+  const literal = (texto, biblia) => {
+    const B = letras(biblia);
+    let pos = 0;
+    for (const parte of String(texto).split(/\[\s*(?:\.\.\.|…)\s*\]|…|\.\.\./)) {
+      const p = letras(parte);
+      if (!p) continue;
+      const i = B.indexOf(p, pos);
+      if (i < 0) return false;
+      pos = i + p.length;
+    }
+    return true;
+  };
+  const errados = [];
+  for (const r of references.filter((x) => x.source === 'Bíblia' && x.bibleNav)) {
+    if (!literal(r.text, trecho(AVEMARIA, r.bibleNav))) errados.push(`${r.id} PT`);
+    const en = referencesEn[r.id]?.textEn;
+    if (en && !literal(en, trecho(DRA, r.bibleNavEn ?? r.bibleNav))) errados.push(`${r.id} EN`);
+  }
+  assert.deepEqual(errados, []);
+});
