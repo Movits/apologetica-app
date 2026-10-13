@@ -2,6 +2,7 @@
 // dia seguinte, fotografando cada passo nos dois temas e em duas larguras.
 //
 // Uso: BASE_URL=http://localhost:8099 OUT_DIR=/tmp/jornada node scripts/verify-journey.mjs
+// (27 fotos por tema e largura).
 // (app web servido em BASE_URL, por exemplo `npx expo export -p web` + servidor
 // estático). CHROMIUM_PATH aponta um Chromium já instalado quando a versão do
 // Playwright do projeto não bate com a do navegador baixado (ambiente de nuvem).
@@ -191,32 +192,43 @@ async function run(browser, theme, width) {
     // Teste rápido: primeira pergunta ainda sem resposta.
     await scrollToText(page, 'Teste rápido');
     await shot('08-teste', ['Teste rápido', 'Pergunta 1 de 3', lesson.check[0].question]);
-    // Erra a primeira, acerta as outras duas (2 de 3).
-    for (let q = 0; q < lesson.check.length; q++) {
+    // Erra a primeira de propósito.
+    const q0 = lesson.check[0];
+    await clickVisible(page.getByRole('radiogroup').last().getByRole('radio').nth(shownAt(q0.options.length, `check:${articleId}:0:0`, wrongOf(q0.options.length, q0.correct))));
+    await sleep(800);
+    await scrollToText(page, 'Pergunta 1 de 3');
+    await shot('09-teste-erro', ['Resposta correta:']);
+
+    // Sai do artigo e volta: o teste retoma na pergunta 2, com a resposta
+    // errada gravada (antes recomeçava valendo, e dava para "acertar" a que
+    // acabou de ver).
+    await clickVisible(page.getByRole('tab', { name: 'Artigos' }));
+    await sleep(1200);
+    await clickVisible(page.locator('[data-testid="article-item"]').filter({ hasText: articleTitle }));
+    await sleep(1500);
+    await scrollToText(page, 'Teste rápido');
+    await shot('10-teste-retomado', ['Pergunta 2 de 3', lesson.check[1].question]);
+
+    // Acerta as outras duas (2 de 3).
+    for (let q = 1; q < lesson.check.length; q++) {
       const cq = lesson.check[q];
-      const target = q === 0 ? wrongOf(cq.options.length, cq.correct) : cq.correct;
-      const group = page.getByRole('radiogroup').last();
-      await clickVisible(group.getByRole('radio').nth(shownAt(cq.options.length, `check:${articleId}:${q}:0`, target)));
+      await clickVisible(page.getByRole('radiogroup').last().getByRole('radio').nth(shownAt(cq.options.length, `check:${articleId}:${q}:0`, cq.correct)));
       await sleep(800);
-      if (q === 0) {
-        await scrollToText(page, 'Pergunta 1 de 3');
-        await shot('09-teste-erro', ['Resposta correta:']);
-      }
       await clickVisible(page.getByRole('button', { name: q < lesson.check.length - 1 ? 'Próxima' : 'Ver resultado' }));
       await sleep(900);
     }
     await sleep(1500);
-    await shot('10-conquista', ['Conquista desbloqueada', 'Primeiro passo']);
+    await shot('11-conquista', ['Conquista desbloqueada', 'Primeiro passo']);
     await clickVisible(page.getByRole('button', { name: 'Continuar' }));
     await sleep(900);
     await scrollToText(page, 'Teste rápido');
-    await shot('11-resultado', ['2/3', 'Elas voltam na sua Revisão']);
+    await shot('12-resultado', ['2/3', 'Elas voltam na sua Revisão']);
 
     // Treinar de novo: não vale XP e diz isso.
     await clickVisible(page.getByRole('button', { name: 'Treinar de novo' }));
     await sleep(900);
     await scrollToText(page, 'Teste rápido');
-    await shot('12-treino', ['Treino: não vale XP']);
+    await shot('13-treino', ['Treino: não vale XP']);
     for (let q = 0; q < lesson.check.length; q++) {
       const cq = lesson.check[q];
       const group = page.getByRole('radiogroup').last();
@@ -227,18 +239,18 @@ async function run(browser, theme, width) {
     }
     await sleep(1200);
     await scrollToText(page, 'Teste rápido');
-    await shot('13-treino-resultado', ['3/3', 'Treino não vale XP']);
+    await shot('14-treino-resultado', ['3/3', 'Treino não vale XP']);
 
     // Minha Jornada depois da lição: a revisão marcada para amanhã.
     await clickVisible(page.getByRole('button', { name: 'Ver minha jornada' }));
     await sleep(1500);
     await scrollToText(page, 'Revisão', 100);
-    await shot('14-jornada', ['Tudo revisado por hoje', 'Próxima revisão amanhã']);
+    await shot('15-jornada', ['Tudo revisado por hoje', 'Próxima revisão amanhã']);
     await scrollToText(page, 'Conquistas', 100);
-    await shot('15-jornada-conquistas', ['Primeiro passo']);
+    await shot('16-jornada-conquistas', ['Primeiro passo']);
     await clickVisible(page.getByRole('button', { name: /^Primeiro passo/ }));
     await sleep(900);
-    await shot('16-conquista-folha', ['Concluiu a primeira lição']);
+    await shot('17-conquista-folha', ['Concluiu a primeira lição']);
     await clickVisible(page.getByRole('button', { name: 'Fechar' }));
     await sleep(700);
 
@@ -253,17 +265,17 @@ async function run(browser, theme, width) {
     await sleep(1200);
     await clickVisible(page.getByRole('radio').nth(shownAt(dq.options.length, `daily:${dq.id}:${today.key}`, wrongOf(dq.options.length, dq.correct))));
     await sleep(1000);
-    await shot('17-pergunta-do-dia-erro', ['Resposta correta:', 'Ela volta na sua Revisão amanhã.']);
+    await shot('18-pergunta-do-dia-erro', ['Resposta correta:', 'Ela volta na sua Revisão amanhã.']);
     // Volta pelo botão do app: o voltar do navegador sai do app na web.
     await clickVisible(page.getByRole('button', { name: 'Outros modos de jogo' }));
     await sleep(900);
     await clickVisible(page.getByText('Pergunta diária', { exact: true }));
     await sleep(1500);
-    await shot('18-pergunta-do-dia-travada', ['Você já respondeu a pergunta de hoje']);
+    await shot('19-pergunta-do-dia-travada', ['Você já respondeu a pergunta de hoje']);
 
     await clickVisible(page.getByRole('tab', { name: 'Início' }));
     await sleep(1200);
-    await shot('19-inicio-progresso', ['Catecúmeno']);
+    await shot('20-inicio-progresso', ['Catecúmeno']);
 
     // Dia seguinte: o relógio do navegador passa a correr a partir de amanhã
     // e o app recarrega com o mesmo armazenamento. As três erradas (teste,
@@ -272,14 +284,14 @@ async function run(browser, theme, width) {
     await page.clock.install({ time: new Date(Date.now() + 24 * 3600 * 1000) });
     await page.clock.resume();
     await openHome();
-    await shot('20-inicio-revisao', ['3 para revisar']);
+    await shot('21-inicio-revisao', ['3 para revisar']);
     await clickVisible(page.getByRole('button', { name: /^Minha Jornada/ }));
     await sleep(1200);
     await scrollToText(page, 'Revisão', 100);
-    await shot('21-jornada-revisao', ['3 perguntas para revisar hoje']);
+    await shot('22-jornada-revisao', ['3 perguntas para revisar hoje']);
     await clickVisible(page.getByText('3 perguntas para revisar hoje', { exact: true }));
     await sleep(1200);
-    await shot('22-revisao-pergunta', ['Pergunta 1 de 3', 'Teste rápido']);
+    await shot('23-revisao-pergunta', ['Pergunta 1 de 3', 'Teste rápido']);
 
     const tomorrow = await browserToday(page);
     // Ordem da sessão: mesma data e caixa, então pela chave (a:ID:0, a:ID:h, q:...).
@@ -293,13 +305,13 @@ async function run(browser, theme, width) {
       const target = s.right ? s.correct : wrongOf(s.options, s.correct);
       await clickVisible(page.getByRole('radiogroup').last().getByRole('radio').nth(shownAt(s.options, `review:${s.key}:${tomorrow.key}`, target)));
       await sleep(1000);
-      if (i === 0) await shot('23-revisao-acerto', ['Acertou', 'Volta em 3 dias']);
-      if (i === 1) await shot('24-revisao-erro', ['Resposta correta:', 'Volta amanhã', 'Reler o artigo']);
+      if (i === 0) await shot('24-revisao-acerto', ['Acertou', 'Volta em 3 dias']);
+      if (i === 1) await shot('25-revisao-erro', ['Resposta correta:', 'Volta amanhã', 'Reler o artigo']);
       await clickVisible(page.getByRole('button', { name: i < session.length - 1 ? 'Próxima' : 'Ver resultado' }));
       await sleep(900);
     }
     await sleep(900);
-    await shot('25-revisao-fim', ['Revisão feita', '2/3']);
+    await shot('26-revisao-fim', ['Revisão feita', '2/3']);
 
     // De volta ao artigo: o teste já feito mostra a primeira tentativa (a que
     // valeu) e a opção de treinar, sem obrigar a responder de novo.
@@ -309,7 +321,7 @@ async function run(browser, theme, width) {
     await clickVisible(page.locator('[data-testid="article-item"]').filter({ hasText: articleTitle }));
     await sleep(1500);
     await scrollToText(page, 'Teste rápido');
-    await shot('26-teste-feito', ['Teste feito', 'Primeira tentativa: 2 de 3', 'Treinar de novo']);
+    await shot('27-teste-feito', ['Teste feito', 'Primeira tentativa: 2 de 3', 'Treinar de novo']);
   } catch (e) {
     report.failures.push({ tag, error: String(e).slice(0, 400) });
     await page.screenshot({ path: path.join(OUT, `${tag}-ERRO.png`) }).catch(() => {});

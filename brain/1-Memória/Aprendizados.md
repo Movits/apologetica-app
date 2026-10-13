@@ -150,3 +150,33 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
   (cloudfront); contornar por Action no GitHub é recusado pelo classificador
   (e com razão). O `sandbox_exec` do Higgsfield mostra a imagem gerada ao
   modelo mesmo quando o container não consegue baixá-la.
+
+## Sobre verificar telas e o que acontece quando a pessoa erra (2026-10-13)
+
+- Foto de verificação precisa provar o próprio conteúdo. O roteiro antigo
+  fotografou duas vezes a mesma tela ("Resposta de bolso" no lugar do "Teste
+  rápido") porque `scrollIntoViewIfNeeded` não rola quando o alvo já aparece
+  no pé da tela. Agora cada foto declara o texto que precisa estar visível e
+  o roteiro falha se não estiver.
+- "Visível" no Playwright não é "na janela": uma tela empilhada que não
+  terminou de entrar fica à direita, fora da vista, e passa na checagem
+  vertical. Conferir x e y. E conferir a olho mesmo assim: foi a olho que
+  apareceu a foto da Jornada igual à da Início.
+- Relógio parado (`page.clock.setFixedTime`) congela as animações do app; para
+  simular o dia seguinte, `clock.install({ time })` e `clock.resume()`.
+- Gamificação: pontos só na primeira tentativa, gravada pergunta a pergunta
+  (gravar só no fim deixava sair e recomeçar valendo), e o erro volta numa
+  revisão espaçada. A revisão de código achou o atalho de sair e voltar; o
+  teste de engine agora cobre.
+- Dados de múltipla escolha escritos por IA concentram a resposta certa na
+  mesma posição (75 de 83 previsões no meio, 73 de 100 perguntas da prática
+  na segunda). Embaralhar na tela, com semente determinística.
+- `dayOfYear` por diferença de timestamps erra na primeira hora do dia em fuso
+  com horário de verão. Contar pelos campos da data (UTC sobre y/m/d).
+- A Ave Maria offline tem versículos faltando em alguns capítulos do Novo
+  Testamento (ver Roteiro de Ideias). Texto bíblico de referência se tira com
+  `verse.mjs`, mas nesses capítulos o número do versículo engana.
+- Revisores em paralelo: dar a cada um um validador que simula a aplicação e
+  confere a sintaxe do arquivo. Mesmo assim, ids novos colidem entre grupos
+  (dois "josefo-antiguidades-18" para passagens diferentes): deduplicar e
+  comparar o conteúdo antes de juntar.

@@ -14,7 +14,7 @@ npm run lint                   # ESLint em src/ (App.js e src/navigation entram 
 npm run check:refs             # valida os dados de referência (fonte, EN, urls)
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
-node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (26 fotos que checam o próprio conteúdo) no app web servido em BASE_URL
+node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (27 fotos que checam o próprio conteúdo, incluindo sair no meio do teste e voltar) no app web servido em BASE_URL
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 

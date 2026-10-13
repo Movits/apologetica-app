@@ -70,14 +70,18 @@ caixas de Leitner:
 - **Previsão ("Antes de ler")**: uma resposta, travada. Vale 5 XP certa ou
   errada (o que conta é se comprometer antes de ler). Errou, ela volta na
   Revisão amanhã, sem o prefixo "Antes de ler".
-- **Teste rápido**: só a primeira tentativa vale XP. Refazer virou "Treinar de
-  novo", com o aviso "Treino: não vale XP". As erradas na primeira tentativa
-  voltam amanhã, as certas em uma semana.
+- **Teste rápido**: só a primeira tentativa vale XP, e cada resposta dela é
+  gravada na hora (evento `checkAnswer`, rascunho `lessons[id].draft`): quem
+  sai do artigo no meio e volta continua de onde parou, e o fim do teste usa o
+  rascunho, não o placar que a tela manda. Refazer virou "Treinar de novo",
+  com o aviso "Treino: não vale XP". As erradas na primeira tentativa voltam
+  amanhã, as certas em uma semana.
 - **Pergunta do dia**: a primeira resposta do dia fica gravada (com a opção
   escolhida). Reabrir mostra a resposta dada e "Você já respondeu a pergunta
   de hoje". Errou, volta na Revisão amanhã.
-- **Revisão**: cada acerto empurra a próxima vez (1, 3, 7, 16 e 35 dias) e vale
-  5 XP; errar devolve para amanhã. Acertou na última caixa, a pergunta está
+- **Revisão**: cada acerto empurra a próxima vez (1, 3, 7, 16 e 35 dias); errar
+  devolve para amanhã. Só etapa nova vale 5 XP (`maxBox` no cartão): errar de
+  propósito para repetir uma etapa não rende. Acertou na última caixa, a pergunta está
   dominada. É o único jeito de recuperar os pontos de quem errou: aprendendo.
 - **Opções embaralhadas** em toda pergunta (previsão, teste, treino, revisão,
   quiz). Nos dados a resposta certa estava na mesma posição em 75 das 83
