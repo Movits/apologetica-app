@@ -582,7 +582,7 @@ A Escritura é direta. O livro do Deuteronômio lista e proíbe expressamente a 
 
 ## Por que é perigoso, mesmo "de brincadeira"
 
-A objeção comum é: "mas eu não levo a sério". O problema é que essas práticas não são apenas bobagem inofensiva. Primeiro, porque educam o coração a buscar segurança fora de Deus, alimentando o medo, a dependência e a ansiedade pelo futuro. Segundo, porque podem abrir a pessoa a influências espirituais que ela não controla nem entende. São Paulo lembra que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14): nem tudo o que se apresenta como luz, paz ou autoconhecimento o é de fato.
+A objeção comum é: "mas eu não levo a sério". O problema é que essas práticas não são apenas bobagem inofensiva. Primeiro, porque educam o coração a buscar segurança fora de Deus, alimentando o medo, a dependência e a ansiedade pelo futuro. Segundo, porque podem abrir a pessoa a influências espirituais que ela não controla nem entende. São Paulo lembra que "o próprio Satanás se transfigura em anjo de luz" (2 Coríntios 11,14): nem tudo o que se apresenta como luz, paz ou autoconhecimento o é de fato.
 
 ## Horóscopo e astrologia
 

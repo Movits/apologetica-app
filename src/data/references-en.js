@@ -17,7 +17,7 @@ export const referencesEn = {
   'jo-6-53': {
     topicEn: 'Eucharist / Real Presence',
     textEn: 'Then Jesus said to them: Amen, amen I say unto you: Except you eat the flesh of the Son of man, and drink his blood, you shall not have life in you. He that eateth my flesh, and drinketh my blood, hath everlasting life: and I will raise him up in the last day. For my flesh is meat indeed: and my blood is drink indeed.',
-    meaningEn: 'Sárx is physical, literal flesh, as opposed to sōma (body) which could be metaphorical. Trṓgō is the verb "to chew, to gnaw," used for animals or for eating in a literal, physical sense. Jesus could have used phágō (to eat symbolically), but chose the most physical term possible to make clear he was speaking literally.',
+    meaningEn: 'Sárx is "flesh", the same word as in "the Word was made flesh" (John 1:14). Phagein, from the ordinary verb "to eat" (esthíō), is what John uses up to this point. After the listeners take offense ("How can this man give us his flesh to eat?"), the text switches to trṓgō, "to chew", a rawer, more physical verb. John uses both forms, even side by side in the closing verse of the discourse, but the switch, right at the moment of offense, shows that Jesus did not soften his words: he insisted on them.',
   },
   'rm-1-20': {
     topicEn: "God's existence known through reason / natural law",
@@ -100,7 +100,7 @@ export const referencesEn = {
   'lc-1-28': {
     topicEn: 'Annunciation / full of grace (Immaculate Conception)',
     textEn: 'And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women.',
-    meaningEn: 'Perfect passive participle of charitóō ("to fill with grace"). The Greek perfect indicates a completed action whose effects endure. Literal translation: "thou who hast been and remainest completely filled with grace." It is not simply "favored" (at a particular moment), but a permanent and complete state of grace. Gabriel uses this term as a title given to Mary, in place of her own name.',
+    meaningEn: 'Perfect passive participle of charitóō ("to grace", "to bestow grace"). The Greek perfect indicates a completed action whose effect remains: something like "you who have been graced and remain so", which the Latin tradition rendered as "full of grace" (gratia plena). It is not a passing favor but a lasting state. Gabriel uses the term as a title, in place of Mary\'s own name.',
   },
   'lc-1-47': {
     topicEn: 'Mary praises God as her Savior / Magnificat',
@@ -191,7 +191,7 @@ export const referencesEn = {
   },
   'tg-2-24': {
     topicEn: 'Faith and works / against Sola Fide',
-    textEn: "My brethren, what shall it profit, if a man say he hath faith, but hath not works? Shall faith be able to save him? (...) So faith also, if it have not works, is dead in itself. (...) Do you see that by works a man is justified; and not by faith only? (...) For even as the body without the spirit is dead; so also faith without works is dead.",
+    textEn: 'What shall it profit, my brethren, if a man say he hath faith, but hath not works? Shall faith be able to save him? (...) So faith also, if it have not works, is dead in itself. (...) Do you see that by works a man is justified, and not by faith only? (...) For even as the body without the spirit is dead: so also faith without works is dead.',
   },
   'mt-25-31': {
     topicEn: 'Final judgment by works of mercy',
@@ -235,7 +235,7 @@ export const referencesEn = {
   },
   'ap-20-12': {
     topicEn: 'Final judgment by works',
-    textEn: 'And I saw the dead, great and small, standing in the presence of the throne, and the books were opened; and another book was opened, which is the book of life; and the dead were judged by those things which were written in the books, according to their works. (...) And they were judged every one according to their works.',
+    textEn: 'And I saw the dead, great and small, standing in the presence of the throne. And the books were opened: and another book was opened, which was the book of life. And the dead were judged by those things which were written in the books, according to their works. And the sea gave up the dead that were in it: and death and hell gave up their dead that were in them. And they were judged, every one according to their works.',
   },
   'mt-7-21': {
     topicEn: 'Faith without works is not enough',
@@ -279,6 +279,67 @@ export const referencesEn = {
     textEn: 'To whom also he shewed himself alive after his passion, by many proofs, for forty days appearing to them, and speaking of the kingdom of God.',
   },
 
+  'is-53': {
+    fullSourceEn: 'Book of Isaiah, chapter 53, verses 3-7 (the suffering Servant)',
+    authorEn: 'Book of Isaiah (Second Isaiah, chapters 40-55)',
+    yearEn: '6th century BC (end of the Babylonian exile, according to the most accepted dating)',
+    topicEn: 'Prophecy of the Servant who suffers for the sins of the people',
+    textEn: 'Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity: and his look was as it were hidden and despised, whereupon we esteemed him not. Surely he hath borne our infirmities and carried our sorrows: and we have thought him as it were a leper, and as one struck by God and afflicted. But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. All we like sheep have gone astray, every one hath turned aside into his own way: and the Lord hath laid on him the iniquity of us all. He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter, and shall be dumb as a lamb before his shearer, and he shall not open his mouth.',
+  },
+  'dt-18-10': {
+    fullSourceEn: 'Book of Deuteronomy, chapter 18, verses 10-12',
+    authorEn: 'Mosaic tradition',
+    yearEn: '13th to 7th century BC',
+    topicEn: 'Prohibition of consulting the dead and of divination',
+    textEn: 'Neither let there be found among you any one that shall expiate his son or daughter, making them to pass through the fire: or that consulteth soothsayers, or observeth dreams and omens, neither let there be any wizard, Nor charmer, nor any one that consulteth pythonic spirits, or fortune tellers, or that seeketh the truth from the dead. For the Lord abhorreth all these things, and for these abominations he will destroy them at thy coming.',
+  },
+  'sl-22': {
+    fullSourceEn: 'Book of Psalms, psalm 22 (numbered 21 in the Vulgate tradition)',
+    authorEn: 'Attributed to King David',
+    yearEn: 'uncertain date (traditionally 10th century BC)',
+    topicEn: 'Messianic psalm: the persecuted and pierced righteous one',
+    textEn: 'O God my God, look upon me: why hast thou forsaken me? Far from my salvation are the words of my sins. (...) For many dogs have encompassed me: the council of the malignant hath besieged me. They have dug my hands and feet. They have numbered all my bones. And they have looked and stared upon me. They parted my garments amongst them; and upon my vesture they cast lots.',
+  },
+  '2cor-11-14': {
+    refEn: '2 Corinthians 11:14-15',
+    fullSourceEn: 'Second Letter to the Corinthians, chapter 11, verses 14-15',
+    topicEn: 'Satan masquerades as an angel of light',
+    textEn: 'And no wonder: for Satan himself transformeth himself into an angel of light. Therefore it is no great thing if his ministers be transformed as the ministers of justice, whose end shall be according to their works.',
+  },
+  'ap-12-1': {
+    fullSourceEn: 'Book of Revelation, chapter 12, verse 1',
+    topicEn: 'The Woman clothed with the sun',
+    textEn: 'And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.',
+  },
+  'gn-3-5': {
+    fullSourceEn: 'Book of Genesis, chapter 3, verse 5 (the temptation)',
+    authorEn: 'Pentateuchal tradition',
+    yearEn: 'written down in the 6th century BC from older traditions',
+    topicEn: 'The original temptation: you shall be as gods',
+    textEn: 'For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as Gods, knowing good and evil.',
+  },
+  'ex-20-3': {
+    fullSourceEn: 'Book of Exodus, chapter 20, verses 3-5 (the first commandment)',
+    authorEn: 'Mosaic tradition',
+    yearEn: '13th to 7th century BC',
+    topicEn: 'First commandment: one God alone to be worshiped',
+    textEn: 'Thou shalt not have strange gods before me. Thou shalt not make to thyself a graven thing, nor the likeness of any thing that is in heaven above, or in the earth beneath, nor of those things that are in the waters under the earth. Thou shalt not adore them, nor serve them: I am the Lord thy God, mighty, jealous (...).',
+  },
+  'mt-5-17': {
+    fullSourceEn: 'Gospel of Matthew, chapter 5, verse 17',
+    topicEn: 'Jesus did not come to abolish the Law, but to fulfil it',
+    textEn: 'Do not think that I am come to destroy the law, or the prophets. I am not come to destroy, but to fulfil.',
+  },
+  'rm-2-15': {
+    fullSourceEn: 'Letter to the Romans, chapter 2, verse 15',
+    topicEn: 'The moral law written on the human heart',
+    textEn: 'Who shew the work of the law written in their hearts, their conscience bearing witness to them: and their thoughts between themselves accusing or also defending one another.',
+  },
+  'mt-22-37': {
+    fullSourceEn: 'Gospel of Matthew, chapter 22, verses 37-40',
+    topicEn: 'The two greatest commandments: love of God and of neighbor',
+    textEn: 'Jesus said to him: Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with thy whole mind. This is the greatest and the first commandment. And the second is like to this: Thou shalt love thy neighbour as thyself. On these two commandments dependeth the whole law and the prophets.',
+  },
   // === CATECHISM ===
   'cic-31-35': {
     topicEn: 'Natural knowledge of God through reason',
@@ -298,7 +359,8 @@ export const referencesEn = {
   },
   'cic-1373': {
     topicEn: 'Eucharist / transubstantiation',
-    textEn: "The mode of Christ's presence under the Eucharistic species is unique. In the most blessed sacrament of the Eucharist the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained. This presence is called real – by which is not intended to exclude the other types of presence as if they could not be real too, but because it is presence in the fullest sense.",
+    textEn: 'The mode of Christ\'s presence under the Eucharistic species is unique. (...) In the most blessed sacrament of the Eucharist "the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained" (1374). The Council of Trent summarizes the Catholic faith by declaring: "(...) by the consecration of the bread and wine there takes place a change of the whole substance of the bread into the substance of the body of Christ our Lord and of the whole substance of the wine into the substance of his blood. This change the holy Catholic Church has fittingly and properly called transubstantiation" (1376).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P41.HTM',
   },
   'cic-2357': {
     topicEn: 'Homosexuality / chastity',
@@ -306,7 +368,8 @@ export const referencesEn = {
   },
   'cic-309': {
     topicEn: 'Problem of evil / providence',
-    textEn: "Why does God permit evil? (...) To this question, as pressing as it is unavoidable and as painful as it is mysterious, no quick answer will suffice. Only Christian faith as a whole constitutes the answer to this question: the goodness of creation, the drama of sin and the patient love of God who comes to meet man by his covenants (...) and above all by the sending of his Son.",
+    textEn: 'If God the Father almighty, the Creator of the ordered and good world, cares for all his creatures, why does evil exist? To this question, as pressing as it is unavoidable and as painful as it is mysterious, no quick answer will suffice. Only Christian faith as a whole constitutes the answer to this question: the goodness of creation, the drama of sin and the patient love of God who comes to meet man by his covenants, the redemptive Incarnation of his Son, his gift of the Spirit, his gathering of the Church, the power of the sacraments and his call to a blessed life to which free creatures are invited to consent in advance, but from which, by a terrible mystery, they can also turn away in advance. There is not a single aspect of the Christian message that is not in part an answer to the question of evil.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P19.HTM',
   },
   'cic-638': {
     topicEn: 'Resurrection of Christ',
@@ -322,7 +385,8 @@ export const referencesEn = {
   },
   'cic-466': {
     topicEn: 'Theotokos / Mary Mother of God / Incarnation',
-    textEn: "Mary is truly Mother of God since she is the mother of the eternal Son of God made man, who is God himself. The Council of Ephesus (in 431) confessed that Mary truly became the Mother of God by the human conception of the Son of God in her womb.",
+    textEn: 'The Nestorian heresy regarded Christ as a human person joined to the divine person of God\'s Son. (...) For this reason the Council of Ephesus proclaimed in 431 that Mary truly became the Mother of God by the human conception of the Son of God in her womb (466). (...) In fact, the One whom she conceived as man by the Holy Spirit, who truly became her Son according to the flesh, was none other than the Father\'s eternal Son, the second person of the Holy Trinity. Hence the Church confesses that Mary is truly "Mother of God" (Theotokos) (495).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1J.HTM',
   },
   'cic-1954': {
     topicEn: 'Natural moral law',
@@ -349,6 +413,13 @@ export const referencesEn = {
     textEn: "Fecundity is a gift, an end of marriage, for conjugal love naturally tends to be fruitful. (...) Is intrinsically evil every action which, whether in anticipation of the conjugal act, or in its accomplishment, or in the development of its natural consequences, proposes, whether as an end or as a means, to render procreation impossible. To this doctrine of the Church on contraception, the married couple is called to conform their behavior.",
   },
 
+  'cic-2116': {
+    refEn: 'Catechism §2116-2117',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2116 and 2117',
+    topicEn: 'Against divination, magic and spiritism',
+    textEn: 'All forms of divination are to be rejected: recourse to Satan or demons, conjuring up the dead or other practices falsely supposed to "unveil" the future. Consulting horoscopes, astrology, palm reading, interpretation of omens and lots, the phenomena of clairvoyance, and recourse to mediums all conceal a desire for power over time, history, and, in the last analysis, other human beings, as well as a wish to conciliate hidden powers. They contradict the honor, respect, and loving fear that we owe to God alone (2116). All practices of magic or sorcery, by which one attempts to tame occult powers, so as to place them at one\'s service and have a supernatural power over others (even if this were for the sake of restoring their health), are gravely contrary to the virtue of religion. (...) Spiritism often implies divination or magical practices; the Church for her part warns the faithful against it (2117).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P7E.HTM',
+  },
   // === DOCUMENTS ===
   'lumen-gentium-8': {
     topicEn: 'Ecclesiology / subsistit in',
@@ -367,8 +438,8 @@ export const referencesEn = {
     textEn: "The Church which 'goes forth' is a community of missionary disciples who take the first step, who are involved and supportive, who bear fruit and rejoice. An evangelising community knows that the Lord has taken the initiative, he has loved us first (cf. 1 Jn 4:19), and therefore we can move forward, boldly take the initiative, go out to others, seek those who have fallen away.",
   },
   'amoris-laetitia-250': {
-    topicEn: 'Welcome of persons with homosexual tendencies',
-    textEn: "The Church makes her own the attitude of the Lord Jesus, who offers his boundless love to every person without exception. Every person, regardless of sexual orientation, ought to be respected in his or her dignity and treated with consideration, while 'every sign of unjust discrimination' is to be carefully avoided.",
+    topicEn: 'Respect for persons with homosexual tendencies and teaching on marriage',
+    textEn: '"The Church makes her own the attitude of the Lord Jesus, who offers his boundless love to each person without exception. (...) We would like before all else to reaffirm that every person, regardless of sexual orientation, ought to be respected in his or her dignity and treated with consideration, while \'every sign of unjust discrimination\' is to be carefully avoided, particularly any form of aggression and violence" (250). The Synod Fathers observed that "there are absolutely no grounds for considering homosexual unions to be in any way similar or even remotely analogous to God\'s plan for marriage and family" (251).',
   },
   'ineffabilis-deus': {
     topicEn: 'Immaculate Conception / dogmatic definition',
@@ -400,8 +471,9 @@ export const referencesEn = {
     fullSourceEn: 'Council of Trent, Session XIII, Decree on the Most Holy Sacrament of the Eucharist',
   },
   'humanae-vitae-17': {
+    fullSourceEn: 'Encyclical Humanae Vitae on the regulation of birth, 17',
     topicEn: 'Predictions on the social consequences of contraception',
-    textEn: "Careful reflection will reveal that a dangerous weapon would thus be placed in the hands of those public authorities who take no heed of moral exigencies. Not much experience is needed to be familiar with human weakness and to understand that human beings, especially the young, who are so exposed to temptation, need incentives to keep the moral law, and it is an evil thing to make it easy for them to break that law.",
+    textEn: 'Responsible men can become more deeply convinced of the truth of the doctrine laid down by the Church on this issue if they reflect on the consequences of methods and plans for artificial birth control. Let them first consider how easily this course of action could open wide the way for marital infidelity and a general lowering of moral standards. (...) Another effect that gives cause for alarm is that a man who grows accustomed to the use of contraceptive methods may forget the reverence due to a woman, and, disregarding her physical and emotional equilibrium, reduce her to being a mere instrument for the satisfaction of his own desires, no longer considering her as his partner whom he should surround with care and affection. Finally, careful consideration should be given to the danger of this power passing into the hands of those public authorities who care little for the precepts of the moral law. (...) Consequently, unless we are willing that the responsibility of procreating life should be left to the arbitrary decision of men, we must accept that there are certain limits, beyond which it is wrong to go, to the power of man over his own body and its natural functions.',
   },
   'munificentissimus-deus': {
     topicEn: 'Definition of the dogma of the Assumption of Mary',
@@ -437,6 +509,13 @@ export const referencesEn = {
     urlEn: 'https://en.wikipedia.org/wiki/First_Council_of_Nicaea',
   },
 
+  'nostra-aetate': {
+    refEn: 'Nostra Aetate',
+    fullSourceEn: 'Declaration Nostra Aetate on the relation of the Church to non-Christian religions, Second Vatican Council',
+    authorEn: 'Second Vatican Council, promulgated by Saint Paul VI',
+    topicEn: 'Catholic attitude toward other religions',
+    textEn: '"Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths and through searching philosophical inquiry. (...) The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings which, though differing in many aspects from the ones she holds and sets forth, nonetheless often reflect a ray of that Truth which enlightens all men" (2). "The Church regards with esteem also the Moslems. They adore the one God, living and subsisting in Himself; merciful and all-powerful, the Creator of heaven and earth" (3). "(...) the Church (...) decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (4).',
+  },
   // === THEOLOGIANS ===
   'suma-i-q2-a3': {
     topicEn: 'Demonstrations of the existence of God',
@@ -484,25 +563,25 @@ export const referencesEn = {
     authorEn: 'Saint Cyril of Jerusalem (Doctor of the Church)',
   },
   'lewis-problema-dor': {
-    topicEn: 'Problem of evil and suffering',
-    textEn: "God whispers to us in our pleasures, speaks in our conscience, but shouts in our pains: it is His megaphone to rouse a deaf world.",
     refEn: 'The Problem of Pain',
-    fullSourceEn: 'The Problem of Pain (book)',
+    fullSourceEn: 'The Problem of Pain, chapter 8 ("Hell"), 1940',
     authorEn: 'C. S. Lewis (apologist and professor at Oxford and Cambridge)',
+    topicEn: 'Hell as the free and final refusal of God',
+    textEn: 'I willingly believe that the damned are, in one sense, successful, rebels to the end; that the doors of hell are locked on the inside. I do not mean that the ghosts may not wish to come out of hell, in the vague fashion wherein an envious man "wishes" to be happy: but they certainly do not will even the first preliminary stages of that self-abandonment through which alone the soul can reach any good. They enjoy forever the horrible freedom they have demanded, and are therefore self-enslaved.',
   },
   'lewis-mere-christianity': {
-    topicEn: 'Moral argument for the existence of God',
-    textEn: "Every time you find a man who says he does not believe in a real Right and Wrong, you will find the same man going back on this a moment later. He may break his promise to you, but if you try breaking one to him he will be complaining 'it's not fair' in an instant. A nation may say treaties don't matter, but then spoils its case by complaining that the particular treaty it wants to break is an unfair one. It seems, then, we are forced to believe in a real standard of Right and Wrong.",
     refEn: 'Mere Christianity',
-    fullSourceEn: 'Mere Christianity (book)',
+    fullSourceEn: 'Mere Christianity, 1952, a book collecting Lewis\'s BBC radio talks (1941-1944)',
     authorEn: 'C. S. Lewis (apologist and professor at Oxford and Cambridge)',
+    topicEn: 'Moral argument, trilemma and argument from desire',
+    textEn: 'A book collecting Lewis\'s BBC radio talks. In Book I he starts from the moral law everyone assumes when quarreling and concludes: "It seems, then, we are forced to believe in a real Right and Wrong." In Book II he recalls that, as an atheist, he argued that the universe was cruel and unjust, until he asked himself: "But how had I got this idea of just and unjust?" The same book holds the trilemma, according to which a man who said the sort of things Jesus said "would not be a great moral teacher" but a lunatic, the Devil of Hell, or the Son of God, and the "good dreams" God sent the human race, the pagan stories "about a god who dies and comes to life again". In Book III comes the argument from desire: "If I find in myself a desire which no experience in this world can satisfy, the most probable explanation is that I was made for another world."',
   },
   'hoyle-universo': {
+    refEn: 'Reflections on the universe (Hoyle)',
+    fullSourceEn: '"The Universe: Past and Present Reflections", Engineering and Science, vol. 45 (Caltech, November 1981), p. 12. Hoyle returns to the idea in the book The Intelligent Universe (1983).',
+    authorEn: 'Fred Hoyle (astrophysicist, a self-declared atheist)',
     topicEn: 'Fine-tuning of the universe / cosmic design',
-    textEn: "A common-sense interpretation of the facts suggests that a super-intellect has monkeyed with physics, as well as with chemistry and biology, and that there are no blind forces worth speaking about in nature. The numbers one calculates from the facts seem to me so overwhelming as to put this conclusion almost beyond question.",
-    refEn: 'The Intelligent Universe',
-    fullSourceEn: 'The Intelligent Universe (book) and articles on fine-tuning',
-    authorEn: 'Fred Hoyle (astrophysicist, originally atheist)',
+    textEn: 'A common sense interpretation of the facts suggests that a superintellect has monkeyed with physics, as well as with chemistry and biology, and that there are no blind forces worth speaking about in nature. The numbers one calculates from the facts seem to me so overwhelming as to put this conclusion almost beyond question.',
   },
   'penrose-road': {
     topicEn: 'Fine-tuning / probability of the universe',
@@ -512,12 +591,12 @@ export const referencesEn = {
     authorEn: 'Sir Roger Penrose (mathematician and physicist, Nobel Prize in Physics 2020)',
   },
   'craig-kalam': {
-    topicEn: 'Kalam argument / origin of the universe',
-    textEn: "The Kalam cosmological argument has three premises. First: everything that begins to exist has a cause. Second: the universe began to exist. Third: therefore, the universe has a cause. The first premise is basic metaphysical intuition. The second is confirmed by modern cosmology (the Borde-Guth-Vilenkin theorem of 2003, demonstrating that any universe with average positive expansion had an absolute beginning in time). The conclusion requires postulating a cause transcendent to space, time, and matter.",
     refEn: 'The Kalam Cosmological Argument',
     fullSourceEn: 'The Kalam Cosmological Argument (book)',
     authorEn: 'William Lane Craig (philosopher and Christian theologian, PhD in Philosophy and Theology)',
-    yearEn: '1979 (book), updated versions after the Big Bang',
+    yearEn: '1979 (book)',
+    topicEn: 'Kalam argument / origin of the universe',
+    textEn: 'The Kalam cosmological argument has three steps. First: everything that begins to exist has a cause. Second: the universe began to exist. Third: therefore, the universe has a cause. For Craig, the first premise is a basic metaphysical intuition, and the second has strong support from modern cosmology, such as the Borde-Guth-Vilenkin theorem of 2003, which proved that any universe that has, on average, been expanding cannot be eternal in the past: it must have had a beginning. The conclusion points to a cause that transcends space, time and matter.',
   },
   'habermas-resurreicao': {
     topicEn: 'Minimal facts about the Resurrection / historical method',
@@ -594,13 +673,13 @@ export const referencesEn = {
     fullSourceEn: 'Holy Quran, Surah 5 (Al-Ma\'idah), verses 46-47',
   },
   'milagre-lanciano': {
-    topicEn: 'Eucharistic miracle of Lanciano / evidence of the Real Presence',
-    textEn: "During a Mass in the 8th century, a Basilian monk doubted the Real Presence. At the moment of consecration, the Host turned visibly into flesh and the wine into coagulated blood in five globules. The relics have been preserved in Lanciano for over 1,200 years. Studies of 1970-1971 by Dr. Linoli concluded: the flesh is living human cardiac tissue (myocardium); the blood is human, type AB; both belong to the same person; the proteins remained intact without preservatives for over 1,200 years, which is scientifically inexplicable. A WHO committee in 1973 confirmed the results.",
     refEn: 'Eucharistic Miracle of Lanciano',
-    fullSourceEn: 'Eucharistic Miracle of Lanciano, Italy, and subsequent scientific studies',
-    authorEn: 'Church of San Francesco, Lanciano (Italy); studies by Dr. Edoardo Linoli (pathologist) and Dr. Ruggero Bertelli (University of Siena)',
-    yearEn: 'c. 750 AD (miracle); 1970-1971 (scientific studies); 1981 (WHO confirmation)',
-    urlEn: 'https://en.wikipedia.org/wiki/Eucharistic_miracle_of_Lanciano',
+    fullSourceEn: 'Eucharistic Miracle of Lanciano, Italy, and the study by Odoardo Linoli published in Quaderni Sclavo di Diagnostica (1971)',
+    authorEn: 'Church of San Francesco, Lanciano (Italy); studies by the pathologist Odoardo Linoli, with Ruggero Bertelli (University of Siena)',
+    yearEn: 'c. 750 AD (miracle, according to tradition); 1970-1971 (Linoli\'s studies, published in 1971)',
+    topicEn: 'Eucharistic miracle of Lanciano / evidence of the Real Presence',
+    textEn: 'According to tradition, around the 8th century, a Basilian monk who doubted the Real Presence saw, at the consecration, the Host turn into flesh and the wine into blood, which coagulated into five globules. The relics are kept in Lanciano. In 1970-1971, the pathologist Odoardo Linoli examined them and reported that the flesh is human heart muscle tissue (myocardium) and that the blood is human, with the same type, AB, in the flesh and in the blood. Linoli found no trace of preservatives and considered it extraordinary that flesh and blood had come through so many centuries without decomposition.',
+    urlEn: 'https://pubmed.ncbi.nlm.nih.gov/4950729/',
   },
   'acutis-milagres': {
     topicEn: 'Eucharistic miracles documented throughout history',
@@ -1217,5 +1296,52 @@ export const referencesEn = {
     fullSourceEn: 'Book of Psalms, psalm 119 (118 in the Vulgate numbering), verse 105',
     authorEn: 'Anonymous psalmist',
     yearEn: 'post-exilic period (date uncertain)',
+  },
+  'milagre-buenos-aires': {
+    refEn: 'Eucharistic miracle of Buenos Aires (1996)',
+    fullSourceEn: 'Histopathological analyses of the Buenos Aires Host, authorized by the then archbishop Jorge Bergoglio (later Pope Francis)',
+    authorEn: 'Investigation coordinated by Dr. Ricardo Castañón Gómez; histopathology by Dr. Frederick Zugibe (forensic pathologist, Columbia University)',
+    yearEn: '1996 (event); analyses between 1999 and 2006',
+    topicEn: 'Host turned into heart muscle tissue',
+    textEn: 'In 1996, a discarded Host that turned into a bloody substance was kept and, years later, analyzed by laboratories without the experts knowing its origin. The pathologist Frederick Zugibe described heart muscle tissue (myocardium) with white blood cells and signs of inflammation, and concluded that it came from a heart that had suffered trauma and was still alive when the sample was taken. According to Castañón\'s team, the blood is type AB.',
+  },
+  'livro-mormon': {
+    refEn: 'The Book of Mormon',
+    fullSourceEn: 'The Book of Mormon, scripture of The Church of Jesus Christ of Latter-day Saints',
+    authorEn: 'Published by Joseph Smith',
+    topicEn: 'Claim of Hebrew civilizations in the Americas',
+    textEn: 'The Book of Mormon recounts that a group of Israelites, the family of the prophet Lehi, left Jerusalem around 600 BC and crossed the sea to the Americas, where their descendants supposedly built great civilizations (Nephites and Lamanites), with cities, writing, horses, chariots and steel weapons. American archaeology and DNA studies of the native populations (of Asian, not Semitic, origin) do not confirm these claims.',
+    urlEn: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/2?lang=eng',
+  },
+  'sudario-turim': {
+    refEn: 'The Shroud of Turin and the STURP project',
+    fullSourceEn: 'Scientific studies of the Shroud of Turin, including the Shroud of Turin Research Project (STURP, 1978) and later analyses',
+    authorEn: 'International scientific teams (STURP and others)',
+    yearEn: '1978 (STURP); 1988 (carbon-14, disputed); later studies',
+    topicEn: 'The image of the crucified man on the Shroud of Turin',
+    textEn: 'The Shroud bears the image of a man who suffered scourging, crowning with thorns and crucifixion, with a wound in the side and unbroken legs, as the Gospels describe. The blood is human and, according to the analyses of the forensic physician Pierluigi Baima Bollone in the 1980s, of type AB, a result that has never been independently confirmed. After examining the cloth in 1978, STURP concluded in 1981 that the image is not a painting (there are no pigments, paints or dyes on the fibers), lies only on the surface of the fibers and contains three-dimensional information, with no known technical explanation. The 1988 carbon-14 dating (between 1260 and 1390) is disputed: according to the chemist Raymond Rogers (2005), the sample may have come from a repaired corner of the cloth.',
+  },
+  'guadalupe-tilma': {
+    refEn: 'Our Lady of Guadalupe (the tilma)',
+    fullSourceEn: 'The tilma of Saint Juan Diego with the image of Our Lady of Guadalupe (Mexico, 1531) and later studies',
+    authorEn: 'Tradition and scientific studies (infrared, ophthalmology, astronomy)',
+    yearEn: '1531 (apparition); canonization of Juan Diego in 2002',
+    topicEn: 'Unexplained image on the tilma of Guadalupe',
+    textEn: 'The image was imprinted on a tilma of agave fiber, a material that, as is often claimed, should have disintegrated within a few decades, yet it has been preserved for almost 500 years. Philip Callahan\'s infrared study (1979) found no underdrawing or brushstrokes in the original parts of the figure. Ophthalmologists reported human figures reflected in the eyes of the image. According to some studies, the stars on the mantle match the sky over Mexico at the solstice of 1531. In the following years, baptisms of natives multiplied (the Franciscan Motolinía spoke of more than nine million by about 1537), and tradition attributes to the Virgin of Guadalupe a decisive role in that conversion.',
+  },
+  'zeitoun-aparicao': {
+    refEn: 'The apparitions of Zeitoun (Cairo, 1968-1971)',
+    fullSourceEn: 'Luminous apparitions over the Coptic Orthodox church of Saint Mary in Zeitoun, Cairo, Egypt',
+    authorEn: 'Witnesses (Christian and Muslim), the press and the official Egyptian investigation',
+    topicEn: 'Public Marian apparition witnessed by crowds of several religions',
+    textEn: 'For more than two years, a luminous figure of the Virgin was seen above the dome of the church by crowds that added up to hundreds of thousands of people, including Coptic Christians, Catholics, Protestants and Muslims. The phenomenon was photographed, although the authenticity of some photos is disputed. According to the accounts, the Egyptian government (secular, under Nasser) had it investigated, and the police found no fraud. The Coptic Pope Cyril VI officially recognized the apparitions, and the Coptic Catholic patriarch, Cardinal Stephanos I Sidarouss, also declared that he believed in them.',
+  },
+  'aparecida-historia': {
+    refEn: 'Our Lady of Aparecida (1717)',
+    fullSourceEn: 'Finding of the image of Our Lady of Aparecida in the Paraíba do Sul river, Guaratinguetá (São Paulo), and the devotion that followed',
+    authorEn: 'Tradition and history of the devotion',
+    yearEn: '1717 (finding); 1930 (proclaimed patroness of Brazil by Pius XI)',
+    topicEn: 'The image of Brazil\'s patroness and popular devotion',
+    textEn: 'In October 1717, three fishermen drew from the river the body and then the head of a small terracotta image of Our Lady of the Conception, followed by an abundant catch after hours with nothing. The devotion grew through accounts of graces and healings over three centuries, giving rise to the Shrine of Aparecida, one of the largest Marian basilicas in the world. Pius XI proclaimed Our Lady of Aparecida patroness of Brazil in 1930.',
   },
 };

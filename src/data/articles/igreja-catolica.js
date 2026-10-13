@@ -724,7 +724,7 @@ Os demônios não são o oposto eterno de Deus, como se houvesse dois princípio
 
 ## Como o demônio age: a tentação
 
-No dia a dia, a ação do demônio quase nunca é a possessão espetacular do cinema. É algo mais discreto e mais perigoso: a tentação, a mentira, o desânimo, a divisão. Jesus o chamou de "pai da mentira" (João 8,44), e São Paulo adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A sua arma preferida é convencer alguém de que ele não existe, ou de que o mal é bem. Resistir a ele é, antes de tudo, viver na verdade e na graça.
+No dia a dia, a ação do demônio quase nunca é a possessão espetacular do cinema. É algo mais discreto e mais perigoso: a tentação, a mentira, o desânimo, a divisão. Jesus o chamou de "pai da mentira" (João 8,44), e São Paulo adverte que "o próprio Satanás se transfigura em anjo de luz" (2 Coríntios 11,14). A sua arma preferida é convencer alguém de que ele não existe, ou de que o mal é bem. Resistir a ele é, antes de tudo, viver na verdade e na graça.
 
 ## Possessão e exorcismo
 

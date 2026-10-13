@@ -596,7 +596,7 @@ Scripture is direct. The book of Deuteronomy lists and expressly forbids divinat
 
 ## Why it is dangerous, even "for fun"
 
-The common objection is: "but I do not take it seriously". The problem is that these practices are not merely harmless nonsense. First, because they train the heart to seek security outside God, feeding fear, dependence, and anxiety about the future. Second, because they can open a person to spiritual influences he neither controls nor understands. Saint Paul reminds us that "Satan himself disguises as an angel of light" (2 Corinthians 11,14): not everything that presents itself as light, peace, or self-knowledge truly is.
+The common objection is: "but I do not take it seriously". The problem is that these practices are not merely harmless nonsense. First, because they train the heart to seek security outside God, feeding fear, dependence, and anxiety about the future. Second, because they can open a person to spiritual influences he neither controls nor understands. Saint Paul reminds us that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14): not everything that presents itself as light, peace, or self-knowledge truly is.
 
 ## Horoscopes and astrology
 
@@ -635,7 +635,7 @@ Demons are not the eternal opposite of God, as if there were two principles at w
 
 ## How the demon acts: temptation
 
-In daily life, the action of the demon is almost never the spectacular possession of the movies. It is something more discreet and more dangerous: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8,44), and Saint Paul warns that "Satan himself transforms himself into an angel of light" (2 Corinthians 11,14). His favorite weapon is to convince someone that he does not exist, or that evil is good. To resist him is, above all, to live in truth and in grace.
+In daily life, the action of the demon is almost never the spectacular possession of the movies. It is something more discreet and more dangerous: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8,44), and Saint Paul warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14). His favorite weapon is to convince someone that he does not exist, or that evil is good. To resist him is, above all, to live in truth and in grace.
 
 ## Possession and exorcism
 
@@ -3070,7 +3070,7 @@ The point is not that each case, alone, proves God. It is that the atheist, to m
 
 ## The answer to the Protestant
 
-Many Protestants, if they accept that these events actually happened, give another explanation: they would be demonic deceptions. They cite Saint Paul, who warns that "Satan himself disguises himself as an angel of light" (2 Corinthians 11,14). The objection deserves a serious answer, and the answer is in the criterion Jesus himself gave: "by their fruits you will know them" (Matthew 7,16).
+Many Protestants, if they accept that these events actually happened, give another explanation: they would be demonic deceptions. They cite Saint Paul, who warns that "Satan himself transformeth himself into an angel of light" (2 Corinthians 11,14). The objection deserves a serious answer, and the answer is in the criterion Jesus himself gave: "by their fruits you will know them" (Matthew 7,16).
 
 What fruits do true Marian apparitions produce? Conversion, repentance, return to the sacraments, prayer, charity, the baptism of multitudes of indigenous people in Mexico after Guadalupe, the return of sinners to Christ. Now, Jesus himself taught that "every kingdom divided against itself will be destroyed" (Matthew 12,25). A demon that led crowds to convert to Christ, to confess their sins, to pray, and to live the Gospel would be working against its own kingdom. It makes no sense. The devil does not lead people closer to Jesus.
 

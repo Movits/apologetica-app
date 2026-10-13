@@ -253,7 +253,7 @@ na reescrita de outubro de 2026). O que não pode subir é erro, e sua mudança 
 warning.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
-legada (hoje: 44 refs não bíblicas sem url, 75 sem tradução EN, 17 apontando para
+legada (hoje: 40 refs não bíblicas sem url, 57 sem tradução EN, 15 apontando para
 a Wikipédia). Esses números **só podem cair**.
 
 **2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**

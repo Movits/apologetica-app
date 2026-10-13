@@ -376,7 +376,7 @@ O ponto não é que cada caso, sozinho, prove Deus. É que o ateu, para manter o
 
 ## A resposta ao protestante
 
-Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outra explicação: seriam enganos demoníacos. Citam São Paulo, que adverte que "o próprio Satanás se disfarça em anjo de luz" (2 Coríntios 11,14). A objeção merece resposta séria, e a resposta está no critério que o próprio Jesus deu: "pelos seus frutos os conhecereis" (Mateus 7,16).
+Muitos protestantes, se aceitam que esses eventos aconteceram de fato, dão outra explicação: seriam enganos demoníacos. Citam São Paulo, que adverte que "o próprio Satanás se transfigura em anjo de luz" (2 Coríntios 11,14). A objeção merece resposta séria, e a resposta está no critério que o próprio Jesus deu: "pelos seus frutos os conhecereis" (Mateus 7,16).
 
 Que frutos as verdadeiras aparições marianas produzem? Conversão, arrependimento, volta aos sacramentos, oração, caridade, o batismo de multidões de indígenas no México depois de Guadalupe, retorno de pecadores a Cristo. Ora, Jesus mesmo ensinou que "todo reino dividido contra si mesmo será destruído" (Mateus 12,25). Um demônio que levasse multidões a se converter a Cristo, a confessar os pecados, a rezar e a viver o Evangelho estaria trabalhando contra o próprio reino. Não faz sentido. O diabo não conduz as pessoas para mais perto de Jesus.
 
