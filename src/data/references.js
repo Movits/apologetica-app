@@ -3961,9 +3961,12 @@ const FS_BIBLE_PREFIXES = [
   ['Apocalipse de São João', 'Book of Revelation'],
   ['Atos dos Apóstolos', 'Acts of the Apostles'],
 ];
+// "versículos 53-55" vira "verses 53-55" e "versículo 34" vira "verse 34"
+// (antes saía "verse53-55", sem espaço e sem plural; tests/references.test.mjs).
 const translateChapterVerse = (s) => s
   .replace(/,?\s*capítulo\s*/gi, ', chapter ')
-  .replace(/,?\s*versículos?\s*/gi, ', verse')
+  .replace(/,?\s*versículos\s*/gi, ', verses ')
+  .replace(/,?\s*versículo\s*/gi, ', verse ')
   .replace(/\s+a\s+(\d)/g, '-$1');
 
 export const translateFullSource = (fs, isEn) => {
