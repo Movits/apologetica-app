@@ -310,7 +310,7 @@ A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias
 
 ## O que significa para o Brasil
 
-Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece nela: pobre, mestiço, escurecido, achado por gente simples e elevado à dignidade de padroeira de uma nação inteira. A devoção a Aparecida atravessou a escravidão, o Império, a República, e continua viva. Para o cristão, ela aponta, como toda devoção mariana verdadeira, não para si mesma, mas para Cristo, repetindo o que Maria disse em Caná: "fazei tudo o que ele vos disser" (João 2,5).
+Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece nela: pobre, mestiço, escurecido, achado por gente simples e elevado à dignidade de padroeira de uma nação inteira. A devoção a Aparecida atravessou a escravidão, o Império, a República, e continua viva. Para o cristão, ela aponta, como toda devoção mariana verdadeira, não para si mesma, mas para Cristo, repetindo o que Maria disse em Caná: "fazei o que ele vos disser" (João 2,5).
 
 ## Perguntas-chave
 

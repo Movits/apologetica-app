@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { LESSONS } from '../src/data/lessons/index.js';
+import { MAX_SHARE, correctTooLong, longestShare, shortestShare } from './optionBalance.mjs';
 
 // Integridade das lições da Jornada (src/data/lessons/): toda lição aponta
 // para um artigo existente, todo artigo tem lição, e cada campo respeita o
@@ -63,5 +64,18 @@ test('teste rápido: três perguntas de quatro opções, correta variada, com o 
       positions.add(q.correct);
     }
     assert.ok(positions.size >= 2, `${id}: a resposta certa está sempre na mesma posição`);
+  }
+});
+
+test('a resposta certa não se entrega pelo tamanho (previsão e teste, PT e EN)', () => {
+  const items = Object.entries(LESSONS).flatMap(([id, l]) => [
+    { where: `${id} previsão`, ...l.hook },
+    ...l.check.map((q, i) => ({ where: `${id} teste ${i + 1}`, ...q })),
+  ]);
+  for (const [lang, pick] of [['PT', (q) => q.options], ['EN', (q) => q.optionsEn]]) {
+    const long = items.filter((q) => correctTooLong(pick(q), q.correct)).map((q) => q.where);
+    assert.deepEqual(long, [], `${lang}: a certa é muito mais longa que todas as erradas`);
+    assert.ok(longestShare(items, pick) <= MAX_SHARE, `${lang}: a certa é a mais longa em ${Math.round(100 * longestShare(items, pick))}% das perguntas`);
+    assert.ok(shortestShare(items, pick) <= MAX_SHARE, `${lang}: a certa é a mais curta em ${Math.round(100 * shortestShare(items, pick))}% das perguntas`);
   }
 });

@@ -84,7 +84,7 @@ Begin with the sign of the cross and the Creed. At the start, an Our Father, thr
 
 ## Why it is worth it
 
-Those who pray the Rosary often find peace, focus, and a growing intimacy with Jesus, led by the hand of Mary, who never points to herself but to her Son: "do whatever he tells you" (John 2,5). It is a prayer that fits on the bus, in line, on a walk, and that has accompanied Christians, in joys and in wars, for centuries.
+Those who pray the Rosary often find peace, focus, and a growing intimacy with Jesus, led by the hand of Mary, who never points to herself but to her Son: "whatsoever he shall say to you, do ye" (John 2:5). It is a prayer that fits on the bus, in line, on a walk, and that has accompanied Christians, in joys and in wars, for centuries.
 
 ## Key questions
 
@@ -1122,7 +1122,7 @@ At the Last Supper, he says "This is my body" (Mt 26,26). In the Greek of the Go
 
 ## Paul confirms the Real Presence
 
-Saint Paul confirms the Real Presence by warning the Corinthians that eating the bread or drinking the cup "unworthily" makes one "guilty of the body and blood of the Lord" (1 Cor 11,27). This language only makes sense if there is actually a body and blood present. If it were only a symbol, why would receiving a symbol unworthily bring condemnation?
+Saint Paul confirms the Real Presence by warning the Corinthians that eating the bread or drinking the cup "unworthily" makes one "guilty of the body and of the blood of the Lord" (1 Cor 11,27). This language only makes sense if there is actually a body and blood present. If it were only a symbol, why would receiving a symbol unworthily bring condemnation?
 
 ## The Church Fathers
 
@@ -1332,7 +1332,7 @@ The objection that the saints are dead does not hold, because Jesus himself said
 
 ## Mary's intercession
 
-Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, she perceives the lack of wine and intercedes. Jesus responds, even before "his hour" (Jn 2,4-5). This scene is the biblical model of Marian intercession. She points to Christ, and what she says to the servants applies to every Christian: "Do whatever he tells you."
+Mary, as Mother of Christ, has a unique intercession. At the Wedding at Cana, she perceives the lack of wine and intercedes. Jesus responds, even before "his hour" (Jn 2,4-5). This scene is the biblical model of Marian intercession. She points to Christ, and what she says to the servants applies to every Christian: "Whatsoever he shall say to you, do ye."
 
 ## To adore and to venerate
 
@@ -1929,7 +1929,7 @@ Fourth: man considers himself the unlimited owner of his own body, whereas Paul 
 
 ## The data confirm it
 
-Social indicators in the decades following the popularization of the pill are consistent with the predictions. In the United States, divorce rates more than doubled, from 2.5 per 1,000 population in 1965 to 5.2 in 1978, according to National Center for Health Statistics data. The proportion of children born outside marriage rose from about 5% in 1960 to about 40% since the late 2000s. In parallel, widely documented cases of forced sterilization in public programs (such as the family planning program of Peru between 1996 and 2000, under Fujimori, and the Indian Emergency of 1975-1977) confirmed Paul VI\'s third fear about the use of contraception by authorities insensitive to moral demands.
+Social indicators in the decades following the popularization of the pill are consistent with the predictions. In the United States, divorce rates more than doubled, from 2.5 per 1,000 population in 1965 to 5.1 in 1978, according to National Center for Health Statistics data. The proportion of children born outside marriage rose from about 5% in 1960 to about 40% since the late 2000s. In parallel, widely documented cases of forced sterilization in public programs (such as the family planning program of Peru between 1996 and 2000, under Fujimori, and the Indian Emergency of 1975-1977) confirmed Paul VI\'s third fear about the use of contraception by authorities insensitive to moral demands.
 
 The argument "if the Church allowed contraception, people would have fewer abortions" also deserves careful examination. Historical experience shows that contraception tends to break the mental connection between sex and children, and when the method fails (all methods have failure rates), abortion often appears as an "emergency solution". The correlation is not simple nor unidirectional, but the thesis that more contraception alone solves the abortion question does not stand before the data.
 
@@ -3038,7 +3038,7 @@ Tradition keeps striking episodes. The most famous is that of the slave Zacarias
 
 ## What it means for Brazil
 
-Aparecida is not just a statue. It is the symbol of a people who recognize themselves in it: poor, mixed, darkened, found by simple folk and raised to the dignity of patroness of an entire nation. The devotion to Aparecida crossed slavery, the Empire, the Republic, and remains alive. For the Christian, she points, like every true Marian devotion, not to herself, but to Christ, repeating what Mary said at Cana: "do whatever he tells you" (John 2,5).
+Aparecida is not just a statue. It is the symbol of a people who recognize themselves in it: poor, mixed, darkened, found by simple folk and raised to the dignity of patroness of an entire nation. The devotion to Aparecida crossed slavery, the Empire, the Republic, and remains alive. For the Christian, she points, like every true Marian devotion, not to herself, but to Christ, repeating what Mary said at Cana: "whatsoever he shall say to you, do ye" (John 2,5).
 
 ## Key questions
 
@@ -3074,7 +3074,7 @@ Many Protestants, if they accept that these events actually happened, give anoth
 
 What fruits do true Marian apparitions produce? Conversion, repentance, return to the sacraments, prayer, charity, the baptism of multitudes of indigenous people in Mexico after Guadalupe, the return of sinners to Christ. Now, Jesus himself taught that "every kingdom divided against itself will be destroyed" (Matthew 12,25). A demon that led crowds to convert to Christ, to confess their sins, to pray, and to live the Gospel would be working against its own kingdom. It makes no sense. The devil does not lead people closer to Jesus.
 
-And that is exactly what Mary does in the approved apparitions: she never draws attention to herself, she always points to her Son. The phrase that sums up her whole message is that of Cana: "do whatever he tells you" (John 2,5). An apparition that led away from Christ, or that contradicted Scripture, would be rejected for that very reason. The Church, moreover, is very strict: it examines each case for years and rejects the great majority of claims.
+And that is exactly what Mary does in the approved apparitions: she never draws attention to herself, she always points to her Son. The phrase that sums up her whole message is that of Cana: "whatsoever he shall say to you, do ye" (John 2:5). An apparition that led away from Christ, or that contradicted Scripture, would be rejected for that very reason. The Church, moreover, is very strict: it examines each case for years and rejects the great majority of claims.
 
 ## The right place of apparitions
 
@@ -3088,6 +3088,6 @@ Finally, each thing must be put in its place. Apparitions are private revelation
 
 3. To the Protestant: if these apparitions lead people to Christ, to confession, and to charity, what demon would work this way against its own kingdom (Matthew 12,25)?
 
-4. Mary, in the approved apparitions, always points to Jesus, saying "do whatever he tells you". Does that fit with demonic deception, or with the opposite?`,
+4. Mary, in the approved apparitions, always points to Jesus, saying "whatsoever he shall say to you, do ye". Does that fit with demonic deception, or with the opposite?`,
   },
 });

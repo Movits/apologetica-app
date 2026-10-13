@@ -53,11 +53,11 @@ Quem é cristão sem ser católico geralmente herda doutrinas selecionadas da Ig
 
 ## "Isto é o meu corpo"
 
-Na Última Ceia, ele diz "Isto é o meu corpo" (Mt 26,26). No grego dos Evangelhos, o verbo é estin, "é", a forma direta de identificação. O grego tinha verbos para "significar" ou "comparar" (semaínō, homoióō), e nenhum relato da Ceia os usa. Em Jo 6, depois que os ouvintes se escandalizam (6,52), o texto passa do verbo comum "comer" (phagein) para trōgō ("mastigar"), mais cru e físico, o que reforça a leitura literal.
+Na Última Ceia, ele diz "isto é meu corpo" (Mt 26,26). No grego dos Evangelhos, o verbo é estin, "é", a forma direta de identificação. O grego tinha verbos para "significar" ou "comparar" (semaínō, homoióō), e nenhum relato da Ceia os usa. Em Jo 6, depois que os ouvintes se escandalizam (6,52), o texto passa do verbo comum "comer" (phagein) para trōgō ("mastigar"), mais cru e físico, o que reforça a leitura literal.
 
 ## Paulo confirma a Presença Real
 
-São Paulo confirma a Presença Real ao advertir os Coríntios de que comer o pão ou beber o cálice "indignamente" é ser "réu do corpo e sangue do Senhor" (1 Cor 11,27). Essa linguagem só faz sentido se houver corpo e sangue de fato presentes. Se fosse apenas símbolo, por que receber indignamente um símbolo traria condenação?
+São Paulo confirma a Presença Real ao advertir os Coríntios de que comer o pão ou beber o cálice "indignamente" é ser "culpável do corpo e do sangue do Senhor" (1 Cor 11,27). Essa linguagem só faz sentido se houver corpo e sangue de fato presentes. Se fosse apenas símbolo, por que receber indignamente um símbolo traria condenação?
 
 ## Os Padres da Igreja
 
