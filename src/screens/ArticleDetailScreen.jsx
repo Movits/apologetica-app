@@ -434,7 +434,7 @@ export default function ArticleDetailScreen({ route, navigation }) {
           )}
 
           {lesson?.hook && journey ? (
-            <LessonHook hook={lesson.hook} choice={lessonState?.hook ?? null} onAnswer={onAnswerHook} style={{ marginBottom: space.lg }} />
+            <LessonHook hook={lesson.hook} articleId={article.id} choice={lessonState?.hook ?? null} onAnswer={onAnswerHook} style={{ marginBottom: space.lg }} />
           ) : null}
 
           <MarkdownText text={displayBody} onOpenGlossary={openGlossary} />

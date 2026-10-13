@@ -7,7 +7,10 @@ import { useLanguage } from '../context/LanguageContext';
 import { articles } from '../data/articles';
 import { ARTICLE_CATEGORIES, sortByRank } from '../data/articleCategories';
 import { useJourney } from '../hooks/useJourney';
-import { BADGES, LEVELS, categoryProgress, isLessonComplete, journeyStats, lessonOf } from '../utils/journey';
+import { BADGES, LEVELS, XP, categoryProgress, isLessonComplete, journeyStats, lessonOf } from '../utils/journey';
+import { daysBetween, reviewSummary } from '../utils/review';
+import { dueItems } from '../utils/reviewItems';
+import { todayKey } from '../utils/daily';
 import { ARTICLES_BY_CATEGORY, resetJourney } from '../utils/journeyStore';
 import { getLiveStreak } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
@@ -17,26 +20,32 @@ import { Button, ContinueRow, Group, PressScale, ProgressBar, Row, SectionTitle,
 import { BadgeEmblem, XpRing } from '../components/lesson';
 import { centeredColumn, columnInnerWidth, COLUMN_MAX } from '../components/ReadingColumn';
 
-// Minha Jornada: o selo do nível com o anel até o próximo, os números
-// (lições, testes sem erro, sequência, conquistas), a próxima lição, o
-// progresso por tema (anel pequeno por categoria) e a grade de conquistas,
-// cada uma com a própria folha. Tudo vem do estado local da jornada
+// Minha Jornada: o selo do nível com o anel até o próximo e o que o nome do
+// nível quer dizer (a escada inteira numa folha), os números (lições, testes
+// sem erro, sequência, conquistas), a Revisão (perguntas que voltaram hoje), a
+// próxima lição, o progresso por tema (anel pequeno por categoria) e a grade
+// de conquistas, cada uma com a própria folha. Tudo vem do estado local da jornada
 // (useJourney) mais a sequência de leitura (readingProgress).
 const BADGE_COLUMNS = 3;
 
 export default function JourneyScreen({ navigation }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
+  // Recalculado a cada foco (useFocusEffect abaixo): voltar da Revisão ou de
+  // um dia para o outro com a tela aberta atualiza a contagem.
+  const [today, setToday] = useState(() => todayKey());
   const { space, radius, icon, seal } = tokens;
   const journey = useJourney();
   const [streak, setStreak] = useState(0);
   const [badge, setBadge] = useState(null);
+  const [levelsOpen, setLevelsOpen] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
       let alive = true;
       getLiveStreak().then((n) => { if (alive) setStreak(n); });
+      setToday(todayKey());
       return () => { alive = false; };
     }, [])
   );
@@ -65,6 +74,19 @@ export default function JourneyScreen({ navigation }) {
 
   if (!journey || !stats) return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
 
+  // Revisão: vencidas que ainda existem no conteúdo, e quando vem a próxima.
+  const reviewDue = dueItems(journey.review, today).length;
+  const review = reviewSummary(journey.review, today);
+  const nextIn = daysBetween(today, review.nextDue);
+  const reviewTitle = reviewDue > 0
+    ? t(reviewDue === 1 ? 'journey.review.due.one' : 'journey.review.due', { n: reviewDue })
+    : review.total ? t('journey.review.clear') : t('journey.review.none');
+  const mastered = review.mastered ? t(review.mastered === 1 ? 'journey.review.mastered.one' : 'journey.review.mastered', { n: review.mastered }) : null;
+  const reviewSub = reviewDue > 0
+    ? t('journey.review.dueSub', { n: XP.review })
+    : !review.total ? t('journey.review.noneSub')
+      : [nextIn == null ? null : nextIn <= 1 ? t('journey.review.nextTomorrow') : t('journey.review.nextIn', { n: nextIn }), mastered].filter(Boolean).join(' · ');
+
   const levelName = pick(stats.level, 'name', isEn);
   const inner = columnInnerWidth(width, COLUMN_MAX, space.md);
   const badgeSide = Math.floor((inner - space.xs * (BADGE_COLUMNS - 1)) / BADGE_COLUMNS);
@@ -87,10 +109,12 @@ export default function JourneyScreen({ navigation }) {
             ? `${t('journey.xp', { n: stats.xp })} · ${t('journey.toNext', { n: stats.toNext, level: pick(stats.next, 'name', isEn) })}`
             : `${t('journey.xp', { n: stats.xp })} · ${t('journey.maxLevel')}`}
         </Text>
+        <Text style={[text('footnote'), { color: colors.text, textAlign: 'center' }]}>{pick(stats.level, 'desc', isEn)}</Text>
         <ProgressBar value={stats.progress} accessibilityLabel={levelName} style={{ alignSelf: 'stretch', marginTop: space.xxs }} />
         {stats.completed === 0 ? (
           <Text style={[text('footnote'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.xxs }]}>{t('journey.intro')}</Text>
         ) : null}
+        <Button variant="plain" icon="information-circle-outline" label={t('journey.levels')} onPress={() => setLevelsOpen(true)} />
       </View>
 
       <Group style={{ marginTop: space.md }}>
@@ -98,6 +122,20 @@ export default function JourneyScreen({ navigation }) {
         <Row icon="ribbon-outline" title={t('journey.stats.perfect')} trailing={String(stats.perfect)} />
         <Row icon="flame-outline" iconColor={streak > 0 ? colors.accentText : undefined} title={t('journey.stats.streak')} trailing={streakLabel} />
         <Row icon="trophy-outline" title={t('journey.stats.badges')} trailing={t('journey.ofTotal', { n: stats.badges, total: stats.badgesTotal })} />
+      </Group>
+
+      <SectionTitle title={t('journey.section.review')} />
+      <Group>
+        <Row
+          icon="repeat-outline"
+          iconColor={reviewDue > 0 ? colors.accentText : undefined}
+          title={reviewTitle}
+          titleLines={0}
+          subtitle={reviewSub}
+          trailing={reviewDue > 0 ? String(reviewDue) : undefined}
+          chevron
+          onPress={() => navigation.navigate('Review')}
+        />
       </Group>
 
       <SectionTitle title={t('journey.section.next')} />
@@ -171,6 +209,32 @@ export default function JourneyScreen({ navigation }) {
       {stats.xp > 0 ? (
         <Button variant="plain" label={t('journey.reset')} onPress={onReset} textStyle={{ color: colors.danger }} style={{ marginTop: space.lg }} />
       ) : null}
+
+      <Sheet visible={levelsOpen} onClose={() => setLevelsOpen(false)} title={t('journey.levels')}>
+        {/* Altura limitada a uma fração da janela: seis níveis com o
+            significado não cabem numa tela pequena sem rolar. */}
+        <ScrollView style={{ maxHeight: height * 0.62 }} contentContainerStyle={{ gap: space.md, paddingVertical: space.xs }}>
+          {LEVELS.map((lv, i) => {
+            const current = i === stats.index;
+            return (
+              <View key={lv.id} style={{ flexDirection: 'row', alignItems: 'flex-start', gap: space.sm }}>
+                <BadgeEmblem id={lv.id} icon="star" size="sm" locked={stats.xp < lv.min} />
+                <View style={{ flex: 1, gap: space.xxs }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: space.xs }}>
+                    <Text style={[text('headline'), { color: colors.text }]}>{pick(lv, 'name', isEn)}</Text>
+                    {current ? (
+                      <Text style={[text('caption1'), { color: colors.accentText, fontWeight: '600' }]}>{t('journey.levels.current')}</Text>
+                    ) : null}
+                  </View>
+                  <Text style={[text('footnote'), { color: colors.textSubtle }]}>{`${t('journey.level')} ${i + 1} · ${t('journey.levels.from', { n: lv.min })}`}</Text>
+                  <Text style={[text('subhead'), { color: colors.text }]}>{pick(lv, 'desc', isEn)}</Text>
+                </View>
+              </View>
+            );
+          })}
+        </ScrollView>
+        <Button label={t('common.close')} variant="secondary" onPress={() => setLevelsOpen(false)} style={{ marginTop: space.sm }} />
+      </Sheet>
 
       <Sheet visible={Boolean(badge)} onClose={() => setBadge(null)} title={badge ? pick(badge, 'name', isEn) : undefined}>
         {badge ? (

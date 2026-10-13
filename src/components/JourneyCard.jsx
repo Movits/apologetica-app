@@ -5,12 +5,15 @@ import { useLanguage } from '../context/LanguageContext';
 import { pick } from '../utils/i18nData';
 import { journeyStats } from '../utils/journey';
 import { ARTICLES_BY_CATEGORY } from '../utils/journeyStore';
+import { dueItems } from '../utils/reviewItems';
+import { todayKey } from '../utils/daily';
 import { PressScale, ProgressBar } from './ui';
 import XpRing from './lesson/XpRing';
 
 // Cartão da Jornada na Início: anel com o número do nível, nome do nível,
 // lições concluídas e XP, barra até o próximo nível e, quando há, a chama da
-// sequência. Toque abre Minha Jornada. `journey` é o estado (useJourney);
+// sequência, e quantas perguntas voltaram hoje para a Revisão. Toque abre
+// Minha Jornada. `journey` é o estado (useJourney);
 // `streak` vem de readingProgress.getStreak e é opcional.
 export default function JourneyCard({ journey, streak = 0, onPress, style }) {
   const { colors, tokens, text } = useTheme();
@@ -19,7 +22,9 @@ export default function JourneyCard({ journey, streak = 0, onPress, style }) {
   if (!journey) return null;
   const st = journeyStats(journey, { articlesByCategory: ARTICLES_BY_CATEGORY });
   const levelName = pick(st.level, 'name', isEn);
-  const label = `${t('home.card.journey')}, ${t('journey.level')} ${st.index + 1} ${levelName}, ${t('journey.lessons', { n: st.completed, total: st.total })}`;
+  const due = dueItems(journey.review, todayKey()).length;
+  const dueLabel = due > 0 ? t('home.card.review', { n: due }) : null;
+  const label = [`${t('home.card.journey')}, ${t('journey.level')} ${st.index + 1} ${levelName}, ${t('journey.lessons', { n: st.completed, total: st.total })}`, dueLabel].filter(Boolean).join(', ');
 
   return (
     <PressScale
@@ -57,6 +62,12 @@ export default function JourneyCard({ journey, streak = 0, onPress, style }) {
           {`${t('journey.lessons', { n: st.completed, total: st.total })} · ${t('journey.xp', { n: st.xp })}`}
         </Text>
         <ProgressBar value={st.progress} accessibilityLabel={levelName} style={{ marginTop: space.xxs }} />
+        {dueLabel ? (
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs, marginTop: space.xxs }}>
+            <Ionicons name="repeat-outline" size={icon.sm} color={colors.accentText} />
+            <Text style={[text('footnote'), { color: colors.accentText, fontWeight: '600' }]}>{dueLabel}</Text>
+          </View>
+        ) : null}
       </View>
       <Ionicons name="chevron-forward" size={icon.sm} color={colors.textTertiary} />
     </PressScale>

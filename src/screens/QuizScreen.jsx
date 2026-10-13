@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,7 +8,8 @@ import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/qu
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { addDays, todayKey } from '../utils/daily';
-import { recordDailyAnswer } from '../utils/quizHistory';
+import { alreadyAnswered, recordDailyAnswer } from '../utils/quizHistory';
+import { shuffledOrder } from '../utils/review';
 import { haptics } from '../utils/haptics';
 import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
 import { OptionButton } from '../components/lesson';
@@ -107,7 +108,8 @@ function Meta({ icon, iconColor, children }) {
 }
 
 // Veredito e explicação depois de responder, mais o artigo relacionado.
-function Verdict({ ok, title, explanation, onReadArticle }) {
+// `note` é uma linha de rodapé (a pergunta volta na Revisão, já respondida hoje).
+function Verdict({ ok, title, explanation, note, noteIcon = 'repeat-outline', onReadArticle }) {
   const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
   const { space, icon } = tokens;
@@ -123,6 +125,12 @@ function Verdict({ ok, title, explanation, onReadArticle }) {
           <Text style={[text('headline'), { color: colors.text, flex: 1 }]}>{title}</Text>
         </View>
         {explanation ? <Text style={[text('subhead'), { color: colors.text }]}>{explanation}</Text> : null}
+        {note ? (
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
+            <Ionicons name={noteIcon} size={icon.sm} color={colors.textSubtle} />
+            <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]}>{note}</Text>
+          </View>
+        ) : null}
       </View>
       {onReadArticle ? (
         <Row icon="book-outline" title={t('quiz.readArticle')} trailing="chevron" onPress={onReadArticle} />
@@ -155,20 +163,44 @@ function MultipleChoiceGame({ mode, navigation }) {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
+  // Pergunta do dia já respondida hoje (abriu de novo): mostra a resposta dada
+  // e não deixa responder outra vez. Antes dava para errar, voltar e acertar,
+  // e o acerto repetido somava XP e sequência.
+  const [locked, setLocked] = useState(false);
+  // Semente da ordem das opções na prática: nova a cada rodada.
+  const [round, setRound] = useState(() => String(Date.now()));
 
   useEffect(() => {
+    let alive = true;
     if (mode === 'daily') {
-      setQuestions([getQuizOfDay()]);
+      const q = getQuizOfDay();
+      setQuestions([q]);
+      AsyncStorage.getItem(HISTORY_KEY)
+        .then((raw) => {
+          const prev = alreadyAnswered(raw ? JSON.parse(raw) : {}, todayKey(), q.id);
+          if (!alive || !prev) return;
+          setSelected(typeof prev.choice === 'number' ? prev.choice : null);
+          setShowResult(true);
+          setLocked(true);
+          if (prev.correct) setScore(1);
+        })
+        .catch(() => {});
     } else {
       setQuestions(getRandomQuestions(PRACTICE_SIZE));
     }
-    AsyncStorage.getItem(STREAK_KEY).then((v) => setStreak(parseInt(v) || 0));
+    AsyncStorage.getItem(STREAK_KEY).then((v) => { if (alive) setStreak(parseInt(v) || 0); });
+    return () => { alive = false; };
   }, [mode]);
 
   const current = questions[index];
+  // As opções aparecem embaralhadas: no banco a certa cai quase sempre na
+  // segunda posição. A pergunta do dia tem a mesma ordem o dia todo.
+  const optionCount = current?.options?.length || 0;
+  const seed = mode === 'daily' ? `daily:${current?.id}:${todayKey()}` : `practice:${current?.id}:${round}`;
+  const order = useMemo(() => shuffledOrder(optionCount, seed), [optionCount, seed]);
 
   const choose = async (i) => {
-    if (showResult) return;
+    if (showResult || locked) return;
     const ok = i === current.correct;
     setSelected(i);
     setShowResult(true);
@@ -186,9 +218,13 @@ function MultipleChoiceGame({ mode, navigation }) {
       const yesterday = todayKey(addDays(new Date(), -1));
       try {
         const raw = await AsyncStorage.getItem(HISTORY_KEY);
-        const hist = recordDailyAnswer(raw ? JSON.parse(raw) : {}, {
-          today, yesterday, id: current.id, correct: ok,
+        const before = raw ? JSON.parse(raw) : {};
+        const hist = recordDailyAnswer(before, {
+          today, yesterday, id: current.id, correct: ok, choice: i,
         });
+        // Mesmo objeto = já havia resposta de hoje (outra aba, outro toque):
+        // a primeira fica e nada mais conta.
+        if (hist === before) return;
         await AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
         if (ok) {
           const had = hist[yesterday];
@@ -197,8 +233,9 @@ function MultipleChoiceGame({ mode, navigation }) {
           await AsyncStorage.setItem(STREAK_KEY, String(newStreak));
         }
       } catch {}
-      // A pergunta do dia também rende XP na Jornada (uma vez por dia).
-      dispatchJourney({ type: 'dailyQuiz', dateKey: today, correct: ok }).catch(() => {});
+      // A pergunta do dia também rende XP na Jornada (só a primeira resposta
+      // do dia) e, se errada, volta na Revisão amanhã.
+      dispatchJourney({ type: 'dailyQuiz', dateKey: today, correct: ok, quizId: current.id }).catch(() => {});
     }
   };
 
@@ -211,6 +248,7 @@ function MultipleChoiceGame({ mode, navigation }) {
   };
 
   const restart = () => {
+    setRound(String(Date.now()));
     setQuestions(getRandomQuestions(PRACTICE_SIZE));
     setIndex(0);
     setSelected(null);
@@ -226,7 +264,8 @@ function MultipleChoiceGame({ mode, navigation }) {
   const catText = pick(current, 'category', isEn);
   const total = questions.length;
   const isLast = index + 1 >= total;
-  const ok = selected === current.correct;
+  // Entrada antiga do histórico (sem a opção escolhida): o acerto vem do placar.
+  const ok = locked && selected === null ? score > 0 : selected === current.correct;
 
   let meta = null;
   if (mode === 'daily' && streak > 0) {
@@ -247,14 +286,14 @@ function MultipleChoiceGame({ mode, navigation }) {
       <QuestionCard category={catText} meta={meta} question={qText} />
 
       <View role="radiogroup" aria-label={t('quiz.options')} style={{ gap: space.xs }}>
-        {opts.map((opt, i) => {
+        {order.map((i) => {
           const isCorrect = i === current.correct;
           const isPicked = i === selected;
           const state = showResult && isCorrect ? 'correct' : showResult && isPicked ? 'wrong' : 'idle';
           return (
             <OptionButton
               key={i}
-              label={opt}
+              label={opts[i]}
               state={state}
               checked={isPicked}
               disabled={showResult}
@@ -269,6 +308,8 @@ function MultipleChoiceGame({ mode, navigation }) {
           ok={ok}
           title={ok ? t('quiz.correct') : `${t('quiz.correctAnswer')}: ${opts[current.correct]}`}
           explanation={whyText}
+          note={mode !== 'daily' ? null : locked ? t('quiz.daily.answered') : ok ? null : t('quiz.daily.reviewNote')}
+          noteIcon={locked ? 'calendar-outline' : 'repeat-outline'}
           onReadArticle={current.relatedArticle ? () => openArticle(navigation, current.relatedArticle) : null}
         />
       ) : null}

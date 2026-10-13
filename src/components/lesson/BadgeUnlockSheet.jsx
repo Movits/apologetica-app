@@ -17,7 +17,7 @@ export default function BadgeUnlockSheet({ visible, badgeIds = [], levelUp, onCl
   const { space, motion } = tokens;
   const badges = badgeIds.map((id) => BADGE_BY_ID.get(id)).filter(Boolean);
   const items = [];
-  if (levelUp) items.push({ key: `level-${levelUp.id}`, id: levelUp.id, icon: 'star', label: t('journey.levelUp'), name: pick(levelUp, 'name', isEn), desc: `${t('journey.level')} ${LEVELS.indexOf(levelUp) + 1}` });
+  if (levelUp) items.push({ key: `level-${levelUp.id}`, id: levelUp.id, icon: 'star', label: t('journey.levelUp'), name: pick(levelUp, 'name', isEn), desc: `${t('journey.level')} ${LEVELS.indexOf(levelUp) + 1}. ${pick(levelUp, 'desc', isEn)}` });
   for (const b of badges) items.push({ key: b.id, id: b.id, icon: b.icon, label: t('journey.badgeUnlocked'), name: pick(b, 'name', isEn), desc: pick(b, 'desc', isEn) });
   const title = badges.length > 1 ? t('journey.badgesUnlocked', { n: badges.length }) : items[0]?.label;
 

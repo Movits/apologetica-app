@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { pick } from '../../utils/i18nData';
 import { haptics } from '../../utils/haptics';
 import { XP } from '../../utils/journey';
+import { shuffledOrder } from '../../utils/review';
 import OptionButton from './OptionButton';
 import XpChip from './XpChip';
 
@@ -17,14 +18,20 @@ import XpChip from './XpChip';
 // resposta antes de ler, que é o que fixa o aprendizado.
 //
 // `hook` vem de src/data/lessons; `choice` é a escolha já gravada (ou null);
-// `onAnswer(index)` dispara o evento. Sem `hook` não desenha nada.
+// `onAnswer(index)` dispara o evento com o índice ORIGINAL da opção. Na tela
+// as opções aparecem embaralhadas pela semente do artigo (`articleId`): nos
+// dados a certa cai quase sempre na mesma posição, e o padrão entregaria a
+// resposta. Errou: a pergunta vira cartão de revisão para amanhã (motor), e o
+// aviso aparece logo abaixo da nota. Sem `hook` não desenha nada.
 const PREFIX_RE = /^(antes de ler|before you read)\s*[:：]\s*/i;
 
-export default function LessonHook({ hook, choice, onAnswer, style }) {
+export default function LessonHook({ hook, articleId, choice, onAnswer, style }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, radius, icon } = tokens;
   const [justGained, setJustGained] = useState(0);
+  const count = hook?.options?.length || 0;
+  const order = useMemo(() => shuffledOrder(count, `hook:${articleId}`), [count, articleId]);
 
   if (!hook) return null;
   // O rótulo "Antes de ler" já está no cabeçalho do card, então o prefixo sai
@@ -57,14 +64,14 @@ export default function LessonHook({ hook, choice, onAnswer, style }) {
       </View>
       <Text role="heading" aria-level={2} style={[text('title3'), { color: colors.text }]}>{question}</Text>
       <View role="radiogroup" aria-label={question} style={{ gap: space.xs, marginTop: space.xxs }}>
-        {options.map((label, i) => {
+        {order.map((i) => {
           const isCorrect = i === hook.correct;
           const isPicked = i === choice;
           const state = answered && isCorrect ? 'correct' : answered && isPicked ? 'wrong' : 'idle';
           return (
             <OptionButton
               key={i}
-              label={label}
+              label={options[i]}
               state={state}
               checked={isPicked}
               disabled={answered}
@@ -88,6 +95,14 @@ export default function LessonHook({ hook, choice, onAnswer, style }) {
               {ok ? t('lesson.hook.right') : t('lesson.hook.wrong')}
             </Text>
             {note ? <Text style={[text('subhead'), { color: colors.text }]}>{note}</Text> : null}
+            {/* Só logo depois de responder: reabrindo o artigo outro dia, o
+                "amanhã" já não valeria. */}
+            {!ok && justGained > 0 ? (
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs, marginTop: space.xxs }}>
+                <Ionicons name="repeat-outline" size={icon.sm} color={colors.textSubtle} />
+                <Text style={[text('footnote'), { color: colors.textSubtle, flex: 1 }]}>{t('lesson.hook.reviewNote')}</Text>
+              </View>
+            ) : null}
           </View>
         </Animated.View>
       ) : null}

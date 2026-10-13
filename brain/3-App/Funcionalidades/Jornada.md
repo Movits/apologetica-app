@@ -1,6 +1,6 @@
 ---
 tags: [funcionalidade, gamificacao]
-atualizado: 2026-10-07
+atualizado: 2026-10-13
 ---
 # Jornada (lições, XP, níveis e conquistas)
 
@@ -22,7 +22,14 @@ Plano de origem: [[Plano - Jornada gamificada dos artigos]].
   erro, sequência, conquistas), próxima lição, progresso por tema (abre
   `CategoryArticles`, que por isso passou para `sharedScreens`) e a grade das
   16 conquistas, cada uma com folha própria. Botão de reiniciar no fim.
-- `src/components/JourneyCard.jsx`: o cartão da Início (logo após a busca).
+- `src/components/JourneyCard.jsx`: o cartão da Início (logo após a busca),
+  com "N para revisar" quando há perguntas vencidas.
+- `src/screens/ReviewScreen.jsx` ("Revisão", rota `Review` em todos os
+  stacks): as perguntas que voltaram hoje, até 5 por sessão, uma por vez, com
+  o porquê, quando ela volta ("Volta em 3 dias", "Volta amanhã", "Dominada") e
+  "Reler o artigo" quando a pessoa erra. Fim com placar, XP e "Revisar mais".
+  Minha Jornada tem a seção "Revisão" (contagem do dia, próxima data,
+  dominadas) e a folha "O que os níveis querem dizer".
 - Ferramentas > Treino ganhou a linha "Minha Jornada". A lista de artigos e a
   de categoria mostram "Concluído" (fita dourada) além de "Lido", e a categoria
   mostra a barra de progresso do tema.
@@ -52,21 +59,63 @@ Plano de origem: [[Plano - Jornada gamificada dos artigos]].
   marca por id e o formato. A folha de contato se gera com o script
   `render-sheet.mjs` guardado no diário da sessão (scratchpad).
 
+## O que acontece quando a pessoa erra (decisão de 2026-10-13)
+
+Antes, refazer o teste pagava os acertos novos: dava para errar, ver as
+respostas certas e refazer para ganhar os pontos. A pergunta do dia também
+podia ser respondida de novo (e o acerto repetido somava XP e sequência). E
+nada do que a pessoa errava voltava depois. Agora, no modelo do Duolingo e das
+caixas de Leitner:
+
+- **Previsão ("Antes de ler")**: uma resposta, travada. Vale 5 XP certa ou
+  errada (o que conta é se comprometer antes de ler). Errou, ela volta na
+  Revisão amanhã, sem o prefixo "Antes de ler".
+- **Teste rápido**: só a primeira tentativa vale XP. Refazer virou "Treinar de
+  novo", com o aviso "Treino: não vale XP". As erradas na primeira tentativa
+  voltam amanhã, as certas em uma semana.
+- **Pergunta do dia**: a primeira resposta do dia fica gravada (com a opção
+  escolhida). Reabrir mostra a resposta dada e "Você já respondeu a pergunta
+  de hoje". Errou, volta na Revisão amanhã.
+- **Revisão**: cada acerto empurra a próxima vez (1, 3, 7, 16 e 35 dias) e vale
+  5 XP; errar devolve para amanhã. Acertou na última caixa, a pergunta está
+  dominada. É o único jeito de recuperar os pontos de quem errou: aprendendo.
+- **Opções embaralhadas** em toda pergunta (previsão, teste, treino, revisão,
+  quiz). Nos dados a resposta certa estava na mesma posição em 75 das 83
+  previsões e em 73 das 100 perguntas da prática: o padrão entregava a
+  resposta. A ordem é determinística pela semente (`shuffledOrder`), muda a
+  cada tentativa e a cada dia.
+
+Lógica pura em `src/utils/review.js` (`tests/review.test.mjs`) e
+`src/utils/reviewItems.js` (`tests/reviewItems.test.mjs`, toda pergunta de
+lição e do quiz precisa resolver). As perguntas de lição são guardadas pelo
+índice (`a:<artigo>:<n>`, `a:<artigo>:h`, `q:<id do quiz>`): **uma lição
+publicada nunca reordena nem remove perguntas**; para mudar, reescreva no
+lugar.
+
 ## Motor (`src/utils/journey.js`, puro, `tests/journey.test.mjs`)
 
-- XP: artigo lido 20, previsão 5, acerto no teste 10, teste perfeito 15 de
-  bônus, quiz diário 15. Um artigo completo vale 70. Tudo idempotente: repetir
-  nunca paga de novo, refazer o teste só paga os acertos novos.
+- XP: artigo lido 20, previsão 5, acerto no teste 10 (só na primeira
+  tentativa), teste perfeito de primeira 15 de bônus, quiz diário 15 (só a
+  primeira resposta do dia), acerto na revisão 5. Um artigo completo vale 70.
+  Tudo idempotente: repetir nunca paga de novo.
 - Níveis: Catecúmeno 0, Neófito 120, Discípulo 400, Apologista 900, Defensor
-  da Fé 1800, Mestre 3200 (2, 6, 13, 26 e 46 artigos completos).
+  da Fé 1800, Mestre 3200 (2, 6, 13, 26 e 46 artigos completos). Cada nível
+  traz `desc`/`descEn` com o que o nome quer dizer, com a citação conferida
+  nas Bíblias do app: catecúmeno vem de katēchein (Lucas 1,4), neófito é
+  "plantado há pouco" (1 Timóteo 3,6), discípulo é aprendiz (mathētēs),
+  apologista vem de apologia, defesa (1 Pedro 3,15), defensor responde "com
+  suavidade e respeito", mestre ensina outros (2 Timóteo 2,2).
 - Conquistas (16): primeiro passo, uma por categoria completa (6), sequência
   de leitura 3/7/30, dez testes sem erro, trinta lições, todas as lições,
   trilhos Fundamentos e Aprofundamento, sete dias de quiz.
 - `applyEvent(state, event, ctx)` devolve `{ state, gained, unlocked }`; o
   contexto (artigos por categoria, streak, streak do quiz, trilhos concluídos)
   vem de fora, por `journeyStore.buildContext`.
-- Estado: `{ v, xp, lessons: { [id]: { read, hook, check: { best, perfect,
-  attempts }, done } }, badges: { [id]: ts }, days: { [AAAA-MM-DD]: true } }`.
+- Estado: `{ v, xp, lessons: { [id]: { read, hook, check: { best, first,
+  perfect, attempts }, done } }, badges: { [id]: ts }, days: { [AAAA-MM-DD]:
+  acertou? }, review: { [chave]: { box, due, reps, lapses, mastered? } } }`.
+  O `journeyStore` carimba `today` (data local) em todo evento; sem data o
+  motor não cria cartão.
 
 ## Persistência (`src/utils/journeyStore.js`)
 
@@ -77,6 +126,6 @@ entrega o estado às telas e as atualiza a cada evento.
 ## Ligações
 
 - [[Artigos]]
-- [[Quiz da Fé]] (a pergunta do dia rende XP)
+- [[Quiz da Fé]] (a pergunta do dia rende XP e, errada, volta na Revisão)
 - [[Plano de Leitura]] (trilhos viram conquistas)
 - [[Mapa de Funcionalidades]]

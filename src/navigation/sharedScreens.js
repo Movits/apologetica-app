@@ -15,6 +15,7 @@ import DebateStrategiesScreen from '../screens/DebateStrategiesScreen';
 import BibleMapScreen from '../screens/BibleMapScreen';
 import LegalScreen from '../screens/LegalScreen';
 import JourneyScreen from '../screens/JourneyScreen';
+import ReviewScreen from '../screens/ReviewScreen';
 import CategoryArticlesScreen from '../screens/CategoryArticlesScreen';
 import { categoryLabel } from '../utils/i18nData';
 
@@ -62,6 +63,7 @@ export function sharedScreens(Nav, t) {
       <Nav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
       <Nav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
       <Nav.Screen name="Journey" component={JourneyScreen} options={{ title: t('header.journey') }} />
+      <Nav.Screen name="Review" component={ReviewScreen} options={{ title: t('header.review') }} />
       <Nav.Screen
         name="CategoryArticles"
         component={CategoryArticlesScreen}

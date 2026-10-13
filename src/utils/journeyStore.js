@@ -118,7 +118,10 @@ export function dispatchJourney(event) {
       await markAsRead(event.articleId).catch(() => {});
     }
     const ctx = await buildContext();
-    const result = applyEvent(prev, event, ctx);
+    // A data de hoje (hora local) entra em todo evento: é ela que agenda e
+    // vence os cartões da revisão. Um evento que já traga `today` é mantido
+    // (testes e telas que precisem fixar a data).
+    const result = applyEvent(prev, { today: todayKey(), ...event }, ctx);
     // applyEvent sempre devolve um objeto novo: compara o conteúdo, senão
     // um evento repetido (previsão já respondida) gravaria e avisaria à toa.
     const changed = JSON.stringify(result.state) !== JSON.stringify(prev);

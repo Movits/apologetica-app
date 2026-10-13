@@ -14,7 +14,7 @@ npm run lint                   # ESLint em src/ (App.js e src/navigation entram 
 npm run check:refs             # valida os dados de referência (fonte, EN, urls)
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
-node scripts/verify-journey.mjs # Playwright: percorre uma lição inteira (previsão, teste, conquista, Minha Jornada) no app web servido em BASE_URL
+node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (26 fotos que checam o próprio conteúdo) no app web servido em BASE_URL
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
@@ -22,9 +22,9 @@ npx expo export -p web         # gera dist/ (o que o deploy publica)
 com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
-`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey}.js`,
+`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
 `src/theme/identities.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
-`src/data/lessons/` (integridade das lições da Jornada) e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
+`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js` e `src/data/journeyMarks.js`. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -77,7 +77,7 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 - **MainStack** (raiz): MainTabs + NoteEditor (modal full-screen sem tab bar).
 - **AuthStack**: Login, Signup, ForgotPassword.
 - **OnboardingScreen**: exibido antes das tabs enquanto deslogado.
-- Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa. `Journey` (Minha Jornada) e `CategoryArticles` também vivem em `sharedScreens.js`.
+- Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa. `Journey` (Minha Jornada), `Review` (Revisão) e `CategoryArticles` também vivem em `sharedScreens.js`.
 - **Os nomes das tabs são strings em português e fazem parte da API de navegação**: `'Início'`, `'Artigos'`, `'Bíblia'`, `'Ferramentas'`, `'Ajustes'`. É por isso que existe `navigate('Bíblia', ...)`. O label visível vem do `LABELS`/`ICONS` em `App.js` via `t('tab.*')`. Renomear a rota quebra todos os deep links; para traduzir, mexa só no label.
 - `Tab.Navigator` usa `backBehavior="history"`, então o botão voltar percorre o histórico entre abas, não a ordem das abas.
 
@@ -120,7 +120,8 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 
 ### Jornada (gamificação dos artigos)
 - Cada artigo tem uma lição em `src/data/lessons/<categoria>.js` (`hook` de previsão, `keyPoints`, `oneLiner`, `check` com 3 perguntas, PT/EN). `tests/lessons.test.mjs` cobra que todo artigo tem lição e vice-versa: **artigo novo exige lição nova**.
-- Motor puro em `src/utils/journey.js` (XP, `LEVELS`, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `EmblemMark`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Os emblemas são marcas vetoriais em `src/data/journeyMarks.js` (mesmo sistema do `BrandMark`: caixa 64, traço 4,5, uma cor do tema; **nunca imagem gerada por IA**), desenhadas por `EmblemMark`. Ver `brain/3-App/Funcionalidades/Jornada.md`.
+- Errar não se resolve chutando de novo: previsão travada, teste só paga XP na primeira tentativa (refazer é treino), pergunta do dia só conta a primeira resposta, e o que foi errado volta na Revisão espaçada (`src/utils/review.js`, caixas 1/3/7/16/35 dias, tela `ReviewScreen`). As opções aparecem embaralhadas por `shuffledOrder` em toda pergunta. Os cartões guardam as perguntas de lição pelo índice: **lição publicada nunca reordena nem remove perguntas**, reescreve no lugar.
+- Motor puro em `src/utils/journey.js` (XP, `LEVELS` com o significado de cada nome, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `EmblemMark`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Os emblemas são marcas vetoriais em `src/data/journeyMarks.js` (mesmo sistema do `BrandMark`: caixa 64, traço 4,5, uma cor do tema; **nunca imagem gerada por IA**), desenhadas por `EmblemMark`. Ver `brain/3-App/Funcionalidades/Jornada.md`.
 
 ### Identidades visuais e visualizador de obras
 - `src/theme/identities.js` (puro, testado): Clássica (padrão), Âncora, Basílica e Lumen,

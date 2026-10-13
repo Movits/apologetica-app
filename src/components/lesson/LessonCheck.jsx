@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,6 +8,7 @@ import { pick } from '../../utils/i18nData';
 import { haptics } from '../../utils/haptics';
 import { levelFor, lessonOf, isLessonComplete } from '../../utils/journey';
 import { dispatchJourney, getJourney } from '../../utils/journeyStore';
+import { shuffledOrder } from '../../utils/review';
 import { Button, ProgressBar, SectionTitle } from '../ui';
 import OptionButton from './OptionButton';
 import XpChip from './XpChip';
@@ -20,8 +21,14 @@ import BadgeUnlockSheet from './BadgeUnlockSheet';
 // conquista. Terminar o teste conta o artigo como lido (quem respondeu leu),
 // e o motor cuida de não pagar XP duas vezes.
 //
-// Quem já fez o teste vê o resumo (melhor resultado) com a opção de refazer:
-// reabrir o artigo não obriga a responder de novo.
+// Só a primeira tentativa vale XP e cria os cartões da revisão espaçada (as
+// erradas voltam amanhã, as certas em uma semana). Depois dela a pessoa já viu
+// as respostas certas, então refazer é "Treinar de novo": não paga XP e diz
+// isso na tela. As opções aparecem embaralhadas, com uma ordem nova a cada
+// tentativa (nos dados a certa cai muito na mesma posição).
+//
+// Quem já fez o teste vê o resumo (resultado da primeira tentativa) com a
+// opção de treinar: reabrir o artigo não obriga a responder de novo.
 //
 // `questions` vem de src/data/lessons; `lessonState` é a entrada da jornada
 // para este artigo (null = ainda carregando, então nada é desenhado, para não
@@ -46,14 +53,15 @@ export default function LessonCheck({ articleId, questions, journey, onOpenJourn
         articleId={articleId}
         questions={questions}
         initialDone={done}
-        best={lessonState?.check?.best ?? 0}
+        first={lessonState?.check?.first ?? lessonState?.check?.best ?? 0}
+        attempts={lessonState?.check?.attempts ?? 0}
         onOpenJourney={onOpenJourney}
       />
     </View>
   );
 }
 
-function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
+function CheckBody({ articleId, questions, initialDone, first, attempts, onOpenJourney }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, radius, icon, motion, seal } = tokens;
@@ -65,10 +73,21 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
   const [result, setResult] = useState(null);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [busy, setBusy] = useState(false);
+  // Respostas desta tentativa (acertou?), na ordem das perguntas: vão para o
+  // motor, que cria os cartões da revisão se for a primeira tentativa.
+  const [answers, setAnswers] = useState([]);
+  // Tentativas já feitas antes desta: 0 = valendo, mais que isso = treino.
+  const [attempt, setAttempt] = useState(attempts);
+  const practice = attempt > 0;
 
   const current = questions[index];
   const answered = selected !== null;
   const isLast = index + 1 >= total;
+  const optionCount = current?.options?.length || 0;
+  const order = useMemo(
+    () => shuffledOrder(optionCount, `check:${articleId}:${index}:${attempt}`),
+    [optionCount, articleId, index, attempt]
+  );
 
   // A jornada foi reiniciada (Minha Jornada > Reiniciar) com este artigo
   // montado: o "já feito" caiu, então o resumo dá lugar ao teste de novo.
@@ -78,13 +97,16 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
       setIndex(0);
       setSelected(null);
       setScore(0);
+      setAnswers([]);
       setResult(null);
+      setAttempt(0);
     }
   }, [initialDone, phase]);
 
   const choose = (i) => {
     if (answered) return;
     setSelected(i);
+    setAnswers((a) => [...a, i === current.correct]);
     if (i === current.correct) {
       setScore((s) => s + 1);
       haptics.success();
@@ -106,7 +128,7 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
       const prev = await getJourney();
       const prevLevel = levelFor(prev.xp);
       const r1 = await dispatchJourney({ type: 'read', articleId });
-      const r2 = await dispatchJourney({ type: 'check', articleId, score: finalScore, total });
+      const r2 = await dispatchJourney({ type: 'check', articleId, score: finalScore, total, answers });
       const after = levelFor(r2.state.xp);
       const unlocked = [...r1.unlocked, ...r2.unlocked];
       const levelUp = after.index > prevLevel.index ? after.level : null;
@@ -118,7 +140,9 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
         level: after,
         xp: r2.state.xp,
         complete: isLessonComplete(lessonOf(r2.state, articleId)),
+        practice,
       });
+      setAttempt(lessonOf(r2.state, articleId)?.check?.attempts ?? attempt + 1);
       setPhase('result');
       if (finalScore >= total) haptics.success();
       if (unlocked.length || levelUp) setSheetOpen(true);
@@ -132,6 +156,7 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
     setIndex(0);
     setSelected(null);
     setScore(0);
+    setAnswers([]);
     setResult(null);
   };
 
@@ -144,7 +169,7 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
           <Ionicons name="checkmark-circle" size={icon.md} color={colors.success} />
           <View style={{ flex: 1 }}>
             <Text style={[text('headline'), { color: colors.text }]}>{t('lesson.check.done')}</Text>
-            <Text style={[text('subhead'), { color: colors.textSubtle }]}>{t('lesson.check.best', { score: best, total })}</Text>
+            <Text style={[text('subhead'), { color: colors.textSubtle }]}>{t('lesson.check.first', { score: first, total })}</Text>
           </View>
         </View>
         <View style={{ flexDirection: 'row', gap: space.xs, marginTop: space.xxs }}>
@@ -166,8 +191,14 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
         </XpRing>
         <Text role="heading" aria-level={2} style={[text('section'), { color: colors.text, textAlign: 'center' }]}>{title}</Text>
         <Text style={[text('subhead'), { color: colors.textSubtle, textAlign: 'center' }]}>{t('lesson.check.result', { score: result.score, total })}</Text>
-        {result.gained > 0 ? <XpChip n={result.gained} animated /> : null}
-        {result.complete ? (
+        {result.gained > 0 ? <XpChip n={result.gained} animated style={{ alignSelf: 'center' }} /> : null}
+        {/* Ícone dentro do texto: com o texto centralizado em várias linhas, um
+            ícone ao lado ficaria solto na margem. */}
+        <Text style={[text('footnote'), { color: colors.textSubtle, textAlign: 'center' }]}>
+          <Ionicons name={result.practice ? 'barbell-outline' : 'repeat-outline'} size={icon.sm} color={colors.textSubtle} />
+          {` ${result.practice ? t('lesson.check.practiceNote') : t('lesson.check.reviewNote')}`}
+        </Text>
+        {result.complete && !result.practice ? (
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
             <Ionicons name="ribbon-outline" size={icon.sm} color={colors.accentText} />
             <Text style={[text('footnote'), { color: colors.accentText, fontWeight: '600' }]}>{t('lesson.complete.title')}</Text>
@@ -200,7 +231,9 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
   return (
     <View style={card}>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space.sm }}>
-        <Text style={[text('footnote'), { color: colors.textSubtle }]}>{t('lesson.check.questionOf', { n: index + 1, total })}</Text>
+        <Text style={[text('footnote'), { color: colors.textSubtle, flexShrink: 1 }]}>
+          {practice ? `${t('lesson.check.questionOf', { n: index + 1, total })} · ${t('lesson.check.practice')}` : t('lesson.check.questionOf', { n: index + 1, total })}
+        </Text>
         <View aria-hidden style={{ flexDirection: 'row', gap: space.xxs }}>
           {questions.map((_, i) => (
             <View
@@ -217,12 +250,12 @@ function CheckBody({ articleId, questions, initialDone, best, onOpenJourney }) {
       </View>
       <Text role="heading" aria-level={2} style={[text('title3'), { color: colors.text }]}>{qText}</Text>
       <View role="radiogroup" aria-label={qText} style={{ gap: space.xs, marginTop: space.xxs }}>
-        {opts.map((label, i) => {
+        {order.map((i) => {
           const isCorrect = i === current.correct;
           const isPicked = i === selected;
           const state = answered && isCorrect ? 'correct' : answered && isPicked ? 'wrong' : 'idle';
           return (
-            <OptionButton key={i} label={label} state={state} checked={isPicked} disabled={answered} onPress={() => choose(i)} />
+            <OptionButton key={i} label={opts[i]} state={state} checked={isPicked} disabled={answered} onPress={() => choose(i)} />
           );
         })}
       </View>
