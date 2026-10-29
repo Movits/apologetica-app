@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 55 - Aparições de Maria Evidência para Deus
@@ -22,7 +22,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[O Milagre do Sol (Fátima, 1917)]]
 - [[Nossa Senhora de Guadalupe (a tilma)]]
 - [[As aparições de Zeitoun (Cairo, 1968-1971)]]
-- [[2 Coríntios 11,14]]
+- [[2 Coríntios 11,14-15]]
 - [[Mateus 7,16]]
 - [[Mateus 12,25-26]]
 - [[João 2,1-11]]

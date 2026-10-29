@@ -1,12 +1,12 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Romanos 2,15
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | Apóstolo Paulo (séc. I d.C.)
+Fonte: Bíblia | Apóstolo Paulo (c. 57 d.C.)
 Tema: A lei moral gravada no coração humano
 
 > Eles mostram que o objeto da lei está gravado nos seus corações, dando-lhes testemunho a sua consciência, bem como os seus raciocínios, com os quais se acusam ou se escusam mutuamente.

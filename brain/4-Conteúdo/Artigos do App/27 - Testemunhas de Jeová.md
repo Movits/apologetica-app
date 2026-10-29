@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 27 - Testemunhas de Jeová
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-As Testemunhas de Jeová negam a Trindade e a divindade de Cristo, apoiadas numa tradução própria da Bíblia, de 1950. O texto grego e a história respondem.
+As Testemunhas de Jeová negam a Trindade e a divindade de Cristo, apoiadas numa tradução própria da Bíblia, publicada a partir de 1950. O texto grego e a história respondem.
 
 Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
@@ -23,7 +23,12 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Hebreus 1,8]]
 - [[Filipenses 2,6-11]]
 - [[João 14,16-17]]
-- [[Concílio de Niceia Credo Niceno]]
+- [[Concílio de Niceia (Credo Niceno)]]
+- [[Tito 2,13]]
+- [[Hebreus 1,5-6]]
+- [[Atos 13,2]]
+- [[Atos 5,3-4]]
+- [[Deuteronômio 18,22]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 64 - Sexo Antes do Casamento e a Castidade
@@ -25,10 +25,11 @@ Arquivo: `src/data/articles/moral.js`
 - [[Graça]]
 
 ## Referências usadas
-- [[1 Coríntios 6,9-11]]
-- [[Efésios 5,31-32]]
 - [[Gênesis 1,27-28]]
-- [[Humanae Vitae §17]]
+- [[1 Coríntios 6,18]]
+- [[João 8,11]]
+- [[Humanae Vitae §12]]
+- [[Catecismo §2348-2353]]
 
 ## Diálogos que levam a este artigo
 - [[Sexo é natural, por que esperar o casamento]]

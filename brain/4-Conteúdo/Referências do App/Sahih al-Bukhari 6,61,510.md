@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Sahih al-Bukhari 6,61,510

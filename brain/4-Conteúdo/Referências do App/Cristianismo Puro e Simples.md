@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Cristianismo Puro e Simples
@@ -13,8 +13,7 @@ Tema: Argumento moral pela existência de Deus
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[06 - Ateísmo e o Problema do Mal]]
 - [[10 - O Argumento Moral pela Existência de Deus]]
 - [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]
-- [[36 - Cristianismo Copiou Religiões Pagãs]]
 - [[42 - Ateísmo e Naturalismo]]
-- [[62 - Qual é o Sentido da Vida]]

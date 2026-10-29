@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Primeira Apologia §66
@@ -14,4 +14,5 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]
+- [[37 - Protestantismo]]
 - [[60 - A Santa Missa O Que É e Por Que Participar]]

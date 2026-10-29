@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 73 - Como Rezar Um Guia para Começar
@@ -20,4 +20,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Referências usadas
 - [[Mateus 6,9-13]]
-- [[Catecismo §2559]]
+- [[Catecismo §2559-2560]]

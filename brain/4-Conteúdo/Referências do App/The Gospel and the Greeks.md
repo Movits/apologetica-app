@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # The Gospel and the Greeks
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Teólogos | Ronald H. Nash (filósofo cristão, professor em Reformed Theological Seminary) (1992 (segunda edição 2003))
 Tema: Refutação acadêmica da tese de plágio cristão sobre religiões pagãs
 
-> Nash analisa exaustivamente as supostas semelhanças entre o cristianismo e religiões de mistérios greco-romanas (mitraísmo, culto de Ísis, dionisismo, hermetismo). Conclusão: as alegações populares (em obras como Zeitgei...
+> Nash analisa exaustivamente as supostas semelhanças entre o cristianismo e religiões de mistérios greco-romanas (mitraísmo, culto de Ísis, dionisismo, hermetismo). Conclusão: as alegações populares (repetidas depois, por...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

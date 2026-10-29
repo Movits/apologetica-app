@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Discurso de João Paulo II sobre o caso Galileu
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Documentos | São Papa João Paulo II (31 de outubro de 1992)
 Tema: Reconhecimento dos erros no caso Galileu
 
-> "O erro dos teólogos da época, ao sustentar a centralidade da Terra, foi pensar que o nosso conhecimento da estrutura física do mundo era, de algum modo, imposto pelo sentido literal da Sagrada Escritura. (...) O caso Ga...
+> "O erro dos teólogos da época, ao sustentar a centralidade da Terra, foi pensar que o nosso conhecimento da estrutura física do mundo era, de algum modo, imposto pelo sentido literal da Sagrada Escritura. (...) Do século...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

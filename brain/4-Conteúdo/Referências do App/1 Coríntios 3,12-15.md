@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 1 Coríntios 3,12-15
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Paulo (c. 53-54 d.C.)
 Tema: Purificação pelo fogo / Purgatório
 
-> Quanto àquele que edifica sobre este fundamento com ouro, prata, pedras preciosas, madeira, feno ou palha, a obra de cada um aparecerá. O dia (do Senhor) demonstrá-la-á. Esse dia há de manifestar-se pelo fogo, e o fogo p...
+> Agora, se alguém edifica sobre este fundamento, com ouro, ou com prata, ou com pedras preciosas, com madeira, ou com feno, ou com palha, a obra de cada um aparecerá. O dia (do julgamento) irá demonstrá-lo. Será descobert...
 
 Abre no app em `1cor 3,12`.
 Funcionalidade: [[Referências]]

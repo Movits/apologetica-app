@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §1373-1381
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Eucaristia / transubstanciação
 
-> O modo da presença de Cristo sob as espécies eucarísticas é único. Nesta presença, Cristo se faz presente de modo substancial: toda a substância do pão se converte na substância do Corpo de Cristo, e toda a substância do...
+> O modo da presença de Cristo sob as espécies eucarísticas é único. (...) No santíssimo sacramento da Eucaristia estão "contidos, verdadeira, real e substancialmente, o corpo e o sangue, conjuntamente com a alma e a divin...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

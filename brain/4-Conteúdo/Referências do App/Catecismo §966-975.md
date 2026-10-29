@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §966-975
@@ -9,9 +9,8 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Maria / Assunção / mediação
 
-> A Virgem imaculada, preservada imune de toda a mancha do pecado original, terminado o curso da vida terrena, foi elevada à glória celeste em corpo e alma, e exaltada pelo Senhor como Rainha do universo.
+> "Finalmente, a Virgem Imaculada, preservada imune de toda a mancha da culpa original, terminado o curso da vida terrena, foi elevada ao céu em corpo e alma e exaltada pelo Senhor como rainha, para assim se conformar mais...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
-- [[04 - Maria Intercessora, Não Mediadora]]
 - [[22 - A Assunção de Maria]]

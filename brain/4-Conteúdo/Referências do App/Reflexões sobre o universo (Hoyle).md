@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Reflexões sobre o universo (Hoyle)

@@ -1,19 +1,19 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 49 - Milagres Eucarísticos Quando a Hóstia Vira Carne
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Em vários milagres eucarísticos analisados por cientistas, a Hóstia se tornou tecido cardíaco humano vivo, do tipo AB. Lanciano, Buenos Aires, Sokolka e Tixtla apontam para o mesmo coração.
+Em vários milagres eucarísticos analisados por cientistas, os laudos descreveram tecido cardíaco humano e, em alguns casos, sangue do tipo AB. Lanciano, Buenos Aires, Sokółka e Tixtla apontam para o mesmo coração.
 
 Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Tópicos internos
 - Lanciano, o caso mais estudado
-- Buenos Aires, Sokolka, Tixtla
+- Buenos Aires, Sokółka, Tixtla
 - O tipo sanguíneo AB
 - O que isso prova e o que pede fé
 - Perguntas-chave

@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 47 - A Arqueologia Confirma a Bíblia
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. A história confirma a Bíblia ponto a ponto.
+Personagens e lugares que os críticos diziam ser lenda foram desenterrados: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Em muitos pontos verificáveis, a arqueologia confirma a Bíblia.
 
 Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 68 - Quem Escreveu a Bíblia
@@ -24,8 +24,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[2 Pedro 1,20-21]]
 - [[Dei Verbum §9-10]]
 - [[Concílio de Hipona]]
-- [[O teste bibliográfico do Novo Testamento]]
-- [[2 Pedro 3,16]]
+- [[Dei Verbum §11]]
 
 ## Diálogos que levam a este artigo
 - [[A Bíblia foi escrita por homens, então é só invenção humana]]

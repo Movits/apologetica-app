@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Talo e Flégon (fontes pagãs)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Historiadores não cristãos da Antiguidade (séc. I e II d.C.)
 Tema: Testemunho não cristão da escuridão na crucificação
 
-> O historiador Talo, por volta do ano 55, mencionou a escuridão e tentou explicá-la como eclipse solar. Júlio Africano, no séc. III, cita Talo e objeta que não podia ser eclipse, pois era a Páscoa, em lua cheia. Flégon de...
+> O historiador Talo, de data incerta (talvez meados do séc. I), mencionou a escuridão no terceiro livro de suas Histórias e tentou explicá-la como eclipse solar. Júlio Africano, no séc. III, cita Talo e objeta que não pod...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

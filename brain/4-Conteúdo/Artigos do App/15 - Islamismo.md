@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 15 - Islamismo
@@ -20,9 +20,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 ## Referências usadas
 - [[Alcorão, sura 5,72-75]]
 - [[Alcorão, sura 4,171]]
-- [[Alcorão, sura 3,3]]
+- [[Alcorão, sura 3,3-4]]
 - [[Alcorão, sura 5,46-47]]
-- [[Alcorão, sura 4,157]]
+- [[Alcorão, sura 4,157-158]]
 - [[Alcorão, sura 61,6]]
 - [[João 8,58]]
 - [[João 10,30-33]]
@@ -30,8 +30,10 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuteronômio 18,18]]
 - [[João 14,16-17]]
 - [[Anais, livro XV, 44]]
-- [[Antiguidades Judaicas, livro 20]]
 - [[Sahih al-Bukhari 6,61,510]]
+- [[1 Coríntios 15,3-8]]
+- [[Antiguidades Judaicas, livro 18]]
+- [[Nostra Aetate §2 e §4]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]

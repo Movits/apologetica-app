@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Lumen Gentium §60-62
@@ -9,9 +9,8 @@ gerado: true
 Fonte: Documentos | Concílio Vaticano II (21 de novembro de 1964)
 Tema: Mediação de Maria
 
-> "Maria, a Mãe de Deus, na ordem da graça é nossa Mãe. Sua maternidade na ordem da graça perdura sem cessar desde o consentimento que prestou fielmente na anunciação e que conservou sem hesitação ao pé da cruz, até a cons...
+> "(...) a função maternal de Maria em relação aos homens de modo algum ofusca ou diminui esta única mediação de Cristo; manifesta antes a sua eficácia. Com efeito, todo o influxo salvador da Virgem Santíssima sobre os hom...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[04 - Maria Intercessora, Não Mediadora]]
-- [[22 - A Assunção de Maria]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 41 - Mormonismo (SUD)
@@ -21,8 +21,6 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[O Livro de Mórmon]]
 - [[Livro de Abraão (papiros)]]
 - [[Isaías 43,10]]
-- [[João 1,1-3]]
-- [[Filipenses 2,6-11]]
 
 ## Artigos relacionados
 - [[27 - Testemunhas de Jeová]]

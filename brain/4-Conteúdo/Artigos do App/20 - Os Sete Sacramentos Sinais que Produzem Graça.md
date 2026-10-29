@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 20 - Os Sete Sacramentos Sinais que Produzem Graça
@@ -24,7 +24,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Pecado Original]]
 
 ## Referências usadas
-- [[Mateus 26,26-28]]
 - [[1 Coríntios 11,27-29]]
 - [[João 6,53-55]]
 - [[João 3,5]]
@@ -35,6 +34,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Mateus 28,19-20]]
 - [[Catecismo §1373-1381]]
 - [[Concílio de Trento, sessão XIII]]
+- [[Mateus 19,6]]
+- [[Concílio de Trento, sessão VII]]
 
 ## Artigos relacionados
 - [[07 - A Eucaristia Presença Real de Cristo]]

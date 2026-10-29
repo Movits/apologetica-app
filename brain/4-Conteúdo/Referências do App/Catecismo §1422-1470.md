@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §1422-1470
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Sacramento da Reconciliação / Confissão
 
-> Os que se aproximam do sacramento da Penitência recebem da misericórdia de Deus o perdão das ofensas feitas a Ele e, ao mesmo tempo, reconciliam-se com a Igreja, que foi ferida pelos seus pecados. Cristo instituiu o sacr...
+> "Aqueles que se aproximam do sacramento da Penitência obtêm da misericórdia de Deus o perdão da ofensa a Ele feita e, ao mesmo tempo, são reconciliados com a Igreja, que tinham ferido com o seu pecado (...)." (...) Crist...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

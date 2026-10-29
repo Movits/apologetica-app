@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 06 - Ateísmo e o Problema do Mal
@@ -21,7 +21,8 @@ Arquivo: `src/data/articles/moral.js`
 ## Referências usadas
 - [[Romanos 8,28]]
 - [[Catecismo §309-314]]
-- [[O Problema da Dor]]
+- [[Cristianismo Puro e Simples]]
+- [[Jó 38,1-4]]
 
 ## Artigos relacionados
 - [[10 - O Argumento Moral pela Existência de Deus]]

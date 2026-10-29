@@ -1,6 +1,6 @@
 ---
 tags: [plano, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Trilho - Aprofundamento

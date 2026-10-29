@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 80 - A Riqueza da Igreja e do Vaticano
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Se a Igreja e tao rica, por que nao vende tudo e acaba com a pobreza? Uma resposta honesta sobre o patrimonio da Igreja, a arte e os pobres.
+Se a Igreja é tão rica, por que não vende tudo e acaba com a pobreza? Uma resposta honesta sobre o patrimônio da Igreja, a arte e os pobres.
 
 Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
@@ -23,6 +23,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 
 ## Referências usadas
 - [[Mateus 25,31-46]]
+- [[Dilexi te §35 e §38]]
 
 ## Diálogos que levam a este artigo
 - [[A Igreja é riquíssima; devia vender tudo e acabar com a pobreza]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Hebreus 9,27
@@ -16,8 +16,6 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[16 - Espiritismo (Kardecismo)]]
-- [[38 - Judaísmo]]
 - [[39 - Budismo]]
 - [[40 - Hinduísmo]]
 - [[61 - O Que Acontece Depois da Morte Os Novíssimos]]
-- [[70 - O Fim do Mundo O Que a Igreja Ensina sobre o Apocalipse]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Efésios 5,31-32
@@ -9,11 +9,10 @@ gerado: true
 Fonte: Bíblia | Apóstolo Paulo (c. 61-63 d.C.)
 Tema: Matrimônio como sacramento
 
-> Por isso o homem deixará pai e mãe, e se unirá à sua mulher, e os dois serão uma só carne. Grande é este mistério, refiro-me a Cristo e à Igreja.
+> Por isso, o homem deixará pai e mãe e se unirá à sua mulher, e os dois constituirão uma só carne. Esse mistério é grande, quero dizer, com referência a Cristo e à Igreja.
 
 Abre no app em `ef 5,31`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[20 - Os Sete Sacramentos Sinais que Produzem Graça]]
-- [[64 - Sexo Antes do Casamento e a Castidade]]

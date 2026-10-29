@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 38 - Judaísmo
@@ -19,13 +19,14 @@ Arquivo: `src/data/articles/outras-religioes.js`
 
 ## Referências usadas
 - [[Isaías 53,3-7]]
-- [[Salmo 22 (21),2.17-19]]
+- [[Salmo 21 (22),2.17-19]]
 - [[Daniel 9,24-26]]
-- [[Miquéias 5,1-2]]
+- [[Miquéias 5,1]]
 - [[Zacarias 12,10]]
 - [[Romanos 11,17-18]]
-- [[Hebreus 9,27]]
-- [[Nostra Aetate]]
+- [[Nostra Aetate §2 e §4]]
+- [[Deuteronômio 6,4]]
+- [[Hebreus 10,11-14]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Mateus 1,1-17
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
 Tema: Genealogia de Jesus segundo Mateus / linha legal por José
 
-> Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Assim, todas as gerações de Abraão a Davi são catorze. De Davi até o cativeiro da Babilônia, catorze gerações; e do cativeiro da Babilônia até Cr...
+> Genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Portanto, as gerações, desde Abraão até Davi, são catorze. Desde Davi até o cativeiro da Babilônia, catorze gerações. E, depois do cativeiro até Cristo, c...
 
 Abre no app em `mt 1,1`.
 Funcionalidade: [[Referências]]

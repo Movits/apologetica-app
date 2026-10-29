@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Isaías 8,19
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Profeta Isaías (séc. VIII a.C.)
 Tema: Repreensão a quem consulta os mortos em vez de Deus
 
-> Quando vos disserem: Consultai os que evocam os espíritos e os adivinhos, que murmuram e cochicham, respondei: Acaso não deve um povo consultar o seu Deus? Consultará os mortos a favor dos vivos?
+> Se vos disserem: “Consultai os espíritos dos mortos, os adivinhos, os que conhecem segredos e dizem em voz baixa: ‘Porventura um povo não deve consultar os seus deuses? Consultar os mortos em favor dos vivos?’.”
 
 Abre no app em `is 8,19`.
 Funcionalidade: [[Referências]]

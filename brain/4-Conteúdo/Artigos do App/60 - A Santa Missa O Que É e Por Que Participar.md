@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 60 - A Santa Missa O Que É e Por Que Participar
@@ -32,6 +32,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Catecismo §1373-1381]]
 - [[Milagre Eucarístico de Lanciano]]
 - [[Primeira Apologia §66]]
+- [[Hebreus 9,28]]
+- [[Catecismo §1367]]
 
 ## Diálogos que levam a este artigo
 - [[Não preciso ir à missa, Deus está em todo lugar e posso rezar em casa]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Mateus 7,16
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
 Tema: Pelos frutos os conhecereis
 
-> Pelos seus frutos os conhecereis. Colhem-se, porventura, uvas dos espinheiros ou figos dos abrolhos?
+> Pelos seus frutos os conhecereis. Colhem-se, porventura, uvas dos espinhos e figos dos abrolhos?
 
 Abre no app em `mt 7,16`.
 Funcionalidade: [[Referências]]

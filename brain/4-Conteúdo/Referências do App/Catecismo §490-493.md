@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §490-493
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Imaculada Conceição de Maria
 
-> Maria, "a cheia de graça", é "obra-prima do Espírito Santo". Para se tornar a Mãe do Salvador, Maria "foi dotada por Deus dos dons à altura de tal função". Pela graça de Deus, Maria permaneceu pura de todo pecado pessoal...
+> Para vir a ser Mãe do Salvador, Maria "foi adornada por Deus com dons dignos de uma tão grande missão". O anjo Gabriel, no momento da Anunciação, saúda-a como "cheia de graça". (...) Ao longo dos séculos, a Igreja tomou ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

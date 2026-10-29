@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 31 - Como Lidar com Supostas Contradições na Bíblia
@@ -22,9 +22,9 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Inerrância]]
 
 ## Referências usadas
-- [[Dei Verbum §9-10]]
-- [[Catecismo §80-83]]
 - [[De Consensu Evangelistarum]]
+- [[Dei Verbum §11]]
+- [[Did Jesus Exist]]
 
 ## Artigos relacionados
 - [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]

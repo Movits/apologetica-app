@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Isaías 7,14
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Profeta Isaías (séc. VIII a.C.)
 Tema: Profecia do nascimento virginal do Emanuel
 
-> Por isso, o próprio Senhor vos dará um sinal: eis que a virgem conceberá e dará à luz um filho, e o chamará Emanuel, que significa Deus conosco.
+> Por isso, o próprio Senhor vos dará um sinal: uma virgem conceberá e dará à luz um filho, e o chamará ‘Deus Conosco’.
 
 Abre no app em `is 7,14`.
 Funcionalidade: [[Referências]]

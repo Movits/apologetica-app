@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 1 Coríntios 6,9-11
@@ -16,5 +16,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[08 - Homossexualidade e Doutrina Católica]]
-- [[59 - O Que é o Pecado Mortal, Venial e os Sete Pecados Capitais]]
-- [[64 - Sexo Antes do Casamento e a Castidade]]

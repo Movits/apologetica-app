@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 37 - Protestantismo
@@ -26,17 +26,22 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuterocanônicos]]
 
 ## Referências usadas
-- [[Mateus 16,18-19]]
 - [[2 Tessalonicenses 2,15]]
 - [[1 Timóteo 3,15]]
 - [[2 Pedro 1,20-21]]
 - [[2 Pedro 3,16]]
 - [[Tiago 2,14-26]]
-- [[João 6,53-55]]
 - [[Contra a Epístola de Maniqueu, 5,6]]
 - [[Carta sobre a Tradução (1530)]]
 - [[Concílio de Trento (1545-1563)]]
 - [[World Christian Encyclopedia]]
+- [[Concílio de Hipona]]
+- [[Concílio de Cartago]]
+- [[Unitatis Redintegratio 3]]
+- [[João 17,20-21]]
+- [[Carta aos Esmirnenses §7]]
+- [[Primeira Apologia §66]]
+- [[Romanos 3,28]]
 
 ## Artigos relacionados
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]

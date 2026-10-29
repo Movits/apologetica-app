@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Deuterocanônicos
@@ -12,5 +12,6 @@ Funcionalidade: [[Glossário]]
 
 ## Aparece nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]
+- [[03 - A Sagrada Tradição e o Sola Scriptura]]
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
 - [[37 - Protestantismo]]

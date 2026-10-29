@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 12 - A Imaculada Conceição de Maria
@@ -28,7 +28,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Gênesis 3,15]]
 - [[Ineffabilis Deus]]
 - [[Catecismo §490-493]]
-- [[Contra as Heresias, III, 22]]
+- [[Contra as Heresias, III, 22, 4]]
 
 ## Artigos relacionados
 - [[04 - Maria Intercessora, Não Mediadora]]

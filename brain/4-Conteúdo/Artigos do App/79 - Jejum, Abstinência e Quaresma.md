@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 79 - Jejum, Abstinência e Quaresma
@@ -20,3 +20,5 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Referências usadas
 - [[Mateus 4,1-2]]
+- [[Código de Direito Canônico, cânones 1250-1253]]
+- [[Paenitemini, capítulo III]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 29 - As Cruzadas no Contexto Histórico Real
@@ -26,7 +26,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 ## Referências usadas
 - [[Concílio de Clermont]]
 - [[História das Cruzadas]]
-- [[Tertio Millennio Adveniente §33]]
+- [[Discurso de João Paulo II em Atenas]]
 
 ## Artigos relacionados
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

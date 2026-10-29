@@ -1,15 +1,15 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Gênesis 3,5
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | Tradição do Pentateuco (redação séc. VI a.C. sobre tradições antigas)
+Fonte: Bíblia | Tradicionalmente atribuído a Moisés (redação final c. séc. VI a.C.)
 Tema: A tentação original: sereis como deuses
 
-> Mas a serpente disse à mulher: De modo nenhum morrereis. Deus sabe que, no dia em que dele comerdes, abrir-se-ão vossos olhos e sereis como deuses, conhecedores do bem e do mal.
+> Mas Deus bem sabe que, no dia em que dele comerdes, vossos olhos se abrirão, e sereis como deuses, conhecedores do bem e do mal.
 
 Abre no app em `gn 3,5`.
 Funcionalidade: [[Referências]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Romanos 11,17-18
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Paulo (c. 57 d.C.)
 Tema: Israel como a oliveira boa em que os cristãos foram enxertados
 
-> Se alguns ramos foram cortados, e tu, oliveira brava, foste enxertado em seu lugar, tornando-te participante da raiz e da seiva da oliveira, não te glories contra os ramos. Não és tu que sustentas a raiz, mas a raiz é qu...
+> Se alguns dos ramos foram cortados, e se tu, oliveira selvagem, foste enxertada em seu lugar e agora recebes seiva da raiz da oliveira, não te envaideças nem menosprezes os ramos. Pois, se te gloriares, sabe que não és t...
 
 Abre no app em `rm 11,17`.
 Funcionalidade: [[Referências]]

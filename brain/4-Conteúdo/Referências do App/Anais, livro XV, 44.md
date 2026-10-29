@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # Anais, livro XV, 44
@@ -13,5 +13,6 @@ Tema: Atestação romana sobre Cristo e os cristãos
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[05 - A Ressurreição de Jesus Fato Histórico]]
 - [[15 - Islamismo]]
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

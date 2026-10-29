@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 39 - Budismo
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-O Budismo busca o fim do sofrimento pela extinção do desejo e do próprio eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.
+O Budismo busca o fim do sofrimento pela extinção do desejo e da ilusão do eu. O cristianismo responde que o eu é real, amado por um Deus pessoal, e salvo como dom, não como conquista.
 
 Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
@@ -22,7 +22,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[João 3,16]]
 - [[Hebreus 9,27]]
 - [[As Quatro Nobres Verdades]]
-- [[Nostra Aetate]]
+- [[Nostra Aetate §2 e §4]]
+- [[Udana 8,3]]
 
 ## Artigos relacionados
 - [[40 - Hinduísmo]]

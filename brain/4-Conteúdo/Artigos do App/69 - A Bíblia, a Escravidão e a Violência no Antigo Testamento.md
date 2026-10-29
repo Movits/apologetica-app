@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 69 - A Bíblia, a Escravidão e a Violência no Antigo Testamento
@@ -22,8 +22,8 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Referências usadas
 - [[Gênesis 1,27-28]]
-- [[Dei Verbum §9-10]]
 - [[Romanos 2,14-15]]
+- [[Catecismo §122]]
 
 ## Diálogos que levam a este artigo
 - [[O Deus do Antigo Testamento é um monstro genocida e escravagista]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 16 - Espiritismo (Kardecismo)
@@ -18,7 +18,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - Perguntas-chave
 
 ## Referências usadas
-- [[O Livro dos Espíritos]]
+- [[O Livro dos Espíritos, questão 625]]
 - [[João 1,1-3]]
 - [[João 8,58]]
 - [[João 20,28]]
@@ -28,6 +28,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuteronômio 18,10-12]]
 - [[Isaías 8,19]]
 - [[Catecismo §2116-2117]]
+- [[João 1,21]]
+- [[1 Crônicas 10,13-14]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

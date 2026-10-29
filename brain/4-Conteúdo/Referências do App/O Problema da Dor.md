@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # O Problema da Dor
@@ -12,6 +12,4 @@ Tema: Problema do mal e do sofrimento
 > "Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo."
 Funcionalidade: [[Referências]]
 
-## Usada nos artigos
-- [[06 - Ateísmo e o Problema do Mal]]
-- [[36 - Cristianismo Copiou Religiões Pagãs]]
+Nenhum artigo usa esta referência hoje (candidata a revisão editorial).

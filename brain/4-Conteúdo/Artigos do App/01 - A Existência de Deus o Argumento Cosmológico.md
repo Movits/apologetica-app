@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 01 - A Existência de Deus o Argumento Cosmológico
@@ -25,6 +25,8 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Catecismo §31-35]]
 - [[O Argumento Cosmológico Kalam]]
 - [[Hipótese do átomo primordial]]
+- [[Teorema de Borde-Guth-Vilenkin]]
+- [[Monadologia §32 e §38]]
 
 ## Artigos relacionados
 - [[09 - O Argumento do Design Cósmico (Ajuste Fino)]]

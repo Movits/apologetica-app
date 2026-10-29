@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 gerado: true
 ---
 # 46 - Profecias Messiânicas Cumpridas em Jesus
@@ -19,9 +19,9 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - Perguntas-chave
 
 ## Referências usadas
-- [[Miquéias 5,1-2]]
+- [[Miquéias 5,1]]
 - [[Isaías 7,14]]
-- [[Salmo 22 (21),2.17-19]]
+- [[Salmo 21 (22),2.17-19]]
 - [[Isaías 53,3-7]]
 - [[Zacarias 12,10]]
 - [[Daniel 9,24-26]]
