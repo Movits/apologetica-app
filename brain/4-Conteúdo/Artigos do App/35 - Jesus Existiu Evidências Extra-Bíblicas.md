@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 35 - Jesus Existiu Evidências Extra-Bíblicas
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o que os Evangelhos narram.
+A tese de que Jesus nunca existiu (mitismo) é praticamente inexistente na academia séria. Fontes pagãs e judaicas confirmam o essencial: Jesus existiu e foi executado sob Pôncio Pilatos.
 
 Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`
@@ -22,7 +22,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Antiguidades Judaicas 18,3,3]]
 - [[Anais, livro XV, 44]]
 - [[Epístolas, livro X, 96]]
-- [[Vida de Cláudio, 25]]
+- [[Vida de Cláudio, 25,4]]
 - [[Did Jesus Exist]]
 - [[Atos 18,2]]
 - [[Talmude Babilônico, Sanhedrin 43a]]

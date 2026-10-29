@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 03 - A Sagrada Tradição e o Sola Scriptura
@@ -28,11 +28,12 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[2 Pedro 1,20-21]]
 - [[Mateus 16,18-19]]
 - [[World Christian Encyclopedia]]
-- [[Catecismo §80-83]]
+- [[Catecismo §80-85]]
 - [[Dei Verbum §9-10]]
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
 - [[1 Coríntios 11,2]]
+- [[Concílio de Trento (1545-1563)]]
 
 ## Artigos relacionados
 - [[02 - Por que Ser Católico e Não Somente Cristão]]
@@ -41,7 +42,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Diálogos que levam a este artigo
 - [[A Bíblia é a única regra de fé]]
-- [[A salvação é só pela fé — obras não contribuem em nada]]
+- [[A salvação é só pela fé. Obras não contribuem em nada]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 16: Sola Scriptura não funciona (a Tradição)

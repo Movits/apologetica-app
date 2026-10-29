@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Antiguidades Judaicas, livro 20
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Teólogos | Flávio Josefo (historiador judeu) (c. 93-94 d.C.)
 Tema: Atestação histórica de Jesus e Tiago
 
-> "Anás reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados."
+> "Anano reuniu o Sinédrio e levou diante deles o irmão de Jesus, chamado Cristo, cujo nome era Tiago, e alguns outros, acusando-os de violar a lei, e os entregou para serem apedrejados." Anano, filho do Anás que aparece n...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

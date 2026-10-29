@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Código de Direito Canônico, cânones 1251-1253

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Romanos 1,26-27
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Paulo (c. 57 d.C.)
 Tema: Sexualidade desordenada
 
-> Por isso, Deus os entregou a paixões vergonhosas: as suas mu­lheres mudaram as relações natu­rais em relações contra a natureza. Do mesmo modo também os homens, deixando o uso natural da mulher, arderam em desejos uns pa...
+> Por isso, Deus os entregou a paixões vergonhosas: as suas mulheres mudaram as relações naturais em relações contra a natureza. Do mesmo modo também os homens, deixando o uso natural da mulher, arderam em desejos uns para...
 
 Abre no app em `rm 1,26`.
 Funcionalidade: [[Referências]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # World Christian Encyclopedia
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Todd M. Johnson e Gina A. Zurlo (organizadores) (3ª edição, 2020)
 Tema: Número de denominações cristãs no mundo
 
-> O levantamento estima a existência de dezenas de milhares de denominações cristãs distintas no mundo, a grande maioria surgida no campo protestante após o século XVI. O número exato varia conforme o critério de contagem,...
+> O levantamento registra cerca de 45 mil denominações cristãs em 2020, contadas separadamente em cada um dos 234 países e territórios, a grande maioria protestantes e independentes surgidas a partir do século XVI. O númer...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

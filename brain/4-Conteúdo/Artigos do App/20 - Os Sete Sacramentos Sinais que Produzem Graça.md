@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 20 - Os Sete Sacramentos Sinais que Produzem Graça
@@ -37,6 +37,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Concílio de Trento, sessão XIII]]
 - [[Mateus 19,6]]
 - [[Catecismo §1128-1131]]
+- [[Concílio de Trento, sessão VII]]
 
 ## Artigos relacionados
 - [[07 - A Eucaristia Presença Real de Cristo]]

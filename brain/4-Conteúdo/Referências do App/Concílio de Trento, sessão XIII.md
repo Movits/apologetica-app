@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Concílio de Trento, sessão XIII
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Documentos | Concílio Ecumênico de Trento (11 de outubro de 1551)
 Tema: Definição dogmática da transubstanciação
 
-> "Se alguém negar que no santíssimo sacramento da Eucaristia se contêm verdadeira, real e substancialmente o corpo e o sangue, juntamente com a alma e divindade de nosso Senhor Jesus Cristo e, portanto, Cristo todo, mas d...
+> "Cân. 1. Se alguém negar que no Santíssimo Sacramento da Eucaristia está contido verdadeira, real e substancialmente o corpo e sangue juntamente com a alma e divindade de Nosso Senhor Jesus Cristo, e por conseguinte o Cr...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 58 - A Santíssima Trindade Um Só Deus em Três Pessoas
@@ -27,13 +27,15 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[João 1,1-3]]
 - [[João 10,30-33]]
 - [[João 14,16-17]]
-- [[Concílio de Niceia Credo Niceno]]
+- [[Concílio de Niceia (Credo Niceno)]]
 - [[1 João 4,8]]
 - [[Mateus 3,16-17]]
 - [[Concílio de Constantinopla I]]
+- [[Catecismo §253-254]]
+- [[Catecismo §243-245]]
 
 ## Diálogos que levam a este artigo
-- [[Deus não pode ser três e um ao mesmo tempo — isso é contradição]]
+- [[Deus não pode ser três e um ao mesmo tempo. Isso é contradição]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 13: Um só Deus em três Pessoas: a Trindade

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Milagre eucarístico de Sokółka (2008)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Profa. Maria Sobaniec-Łotowska e Prof. Stanisław Sulkowski (anatomopatologistas) (2008 (evento); laudo de 2009)
 Tema: Hóstia convertida em tecido cardíaco
 
-> Uma Hóstia caída e recolhida em água apresentou uma mancha vermelha. Dois anatomopatologistas da Universidade de Medicina de Białystok analisaram a amostra de forma independente e concluíram tratar-se de tecido do múscul...
+> Uma Hóstia caída e recolhida em água apresentou uma mancha vermelha. Dois anatomopatologistas da Universidade de Medicina de Białystok analisaram a amostra de forma independente e concluíram que o material indica tecido ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

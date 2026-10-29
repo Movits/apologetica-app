@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 50 - O Sudário de Turim
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Um lençol que envolveu um homem crucificado exatamente como os Evangelhos descrevem Jesus, com uma imagem que a ciência ainda não sabe explicar. As evidências e os debates.
+Um lençol que envolveu um homem crucificado como os Evangelhos descrevem Jesus, com uma imagem que a ciência ainda não sabe explicar. As evidências e os debates.
 
 Categoria: [[Existência de Deus]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/existencia-deus.js`

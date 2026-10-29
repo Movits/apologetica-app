@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 64 - Sexo Antes do Casamento e a Castidade
@@ -29,6 +29,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[Gênesis 1,27-28]]
 - [[Catecismo §2348-2349]]
 - [[Catecismo §2337]]
+- [[Catecismo §2350 e §2353]]
 - [[Humanae Vitae §12]]
 - [[1 Coríntios 6,18]]
 - [[João 8,11]]

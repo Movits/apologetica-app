@@ -1,6 +1,6 @@
 ---
 tags: [plano, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Trilho - Fundamentos em 30 dias

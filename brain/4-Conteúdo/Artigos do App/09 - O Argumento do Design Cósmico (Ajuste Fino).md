@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 09 - O Argumento do Design Cósmico (Ajuste Fino)
@@ -25,7 +25,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Suma Teológica I, q. 2, a. 3]]
 - [[Romanos 1,20]]
 - [[Reflexões sobre o universo (Hoyle)]]
-- [[A Nova Mente do Imperador]]
+- [[A Mente Nova do Rei]]
 - [[Navalha de Occam]]
 
 ## Artigos relacionados

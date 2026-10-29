@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §2357-2359
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Homossexualidade / castidade
 
-> As pessoas homossexuais devem ser acolhidas com respeito, compaixão e delicadeza. Evitar-se-á para com elas qualquer sinal de discriminação injusta. Estas pessoas são chamadas a realizar a vontade de Deus em sua vida.
+> Um número considerável de homens e de mulheres apresenta tendências homossexuais profundamente radicadas. Esta propensão, objectivamente desordenada, constitui, para a maior parte deles, uma provação. Devem ser acolhidos...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

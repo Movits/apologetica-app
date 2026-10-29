@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 82 - Pio XII e a Igreja na Segunda Guerra
@@ -19,7 +19,8 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - Perguntas-chave
 
 ## Referências usadas
-- [[Nostra Aetate]]
+- [[Abertura dos arquivos de Pio XII (Francisco, 2019)]]
+- [[Nostra Aetate §2-5]]
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 5: Pio XII foi cúmplice do nazismo?

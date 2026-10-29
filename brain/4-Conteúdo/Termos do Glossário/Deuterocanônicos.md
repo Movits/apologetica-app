@@ -1,12 +1,12 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Deuterocanônicos
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânone judaico de Jâmnia (séc. I d.C.). A Igreja Católica os reconhece desde os Concílios de Hipona (393) e Cartago (397).
+Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânone judaico de Jâmnia (séc. I d.C.). A Igreja Católica os reconhece, e eles já constam das listas antigas de Roma (382), Hipona (393) e Cartago (397).
 
 Funcionalidade: [[Glossário]]
 

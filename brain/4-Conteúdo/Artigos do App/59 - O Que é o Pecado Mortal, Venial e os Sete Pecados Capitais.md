@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 59 - O Que é o Pecado Mortal, Venial e os Sete Pecados Capitais
@@ -24,12 +24,13 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Referências usadas
 - [[Gênesis 3,5]]
-- [[Mateus 12,32]]
+- [[Mateus 12,31-32]]
 - [[Catecismo §1422-1470]]
 - [[1 João 5,16-17]]
 - [[Catecismo §1857]]
 - [[Catecismo §1866]]
 - [[Lucas 15,20]]
+- [[Catecismo §1864]]
 
 ## Diálogos que levam a este artigo
 - [[Pecado é invenção da Igreja para controlar as pessoas pelo medo e pela]]

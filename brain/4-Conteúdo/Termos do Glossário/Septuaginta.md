@@ -1,12 +1,12 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Septuaginta
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Tradução grega do Antigo Testamento feita por 70 (ou 72) sábios judeus em Alexandria entre os sécs. III e II a.C. Inclui os deuterocanônicos. Era a Bíblia usada pelos apóstolos e pela Igreja primitiva. Citada explicitamente em mais de 300 passagens do Novo Testamento.
+Tradução grega do Antigo Testamento feita em Alexandria a partir do século III a.C. O nome vem da tradição dos 70 (ou 72) sábios judeus que teriam traduzido a Lei. Inclui os deuterocanônicos. Era a Bíblia usada pelos apóstolos e pela Igreja primitiva. Cerca de dois terços das mais de 300 citações do Antigo Testamento no Novo seguem a Septuaginta.
 
 Funcionalidade: [[Glossário]]
 

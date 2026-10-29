@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Inscrição de Pôncio Pilatos (Cesareia)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (séc. I d.C.) (Inscrição c. 26 a 36 d.C.; descoberta em 1961)
 Tema: Confirmação histórica de Pôncio Pilatos como prefeito da Judeia
 
-> A inscrição, hoje no Museu de Israel, menciona "Pôncio Pilatos, prefeito da Judeia", confirmando a existência e o cargo do governador que condenou Jesus, exatamente como aparece nos Evangelhos.
+> A inscrição, hoje no Museu de Israel, menciona "Pôncio Pilatos, prefeito da Judeia" (parte das letras está reconstituída), confirmando a existência e o cargo do governador que condenou Jesus, o mesmo Pilatos que os Evang...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

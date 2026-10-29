@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Basta a Bíblia e a fé em Jesus. A Igreja Católica acrescentou coisas q

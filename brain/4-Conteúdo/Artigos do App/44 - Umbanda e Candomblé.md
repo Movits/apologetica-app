@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 44 - Umbanda e Candomblé
@@ -21,7 +21,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuteronômio 18,10-12]]
 - [[Catecismo §2116-2117]]
 - [[Êxodo 20,3-5]]
-- [[Nostra Aetate]]
+- [[Nostra Aetate §2-5]]
 - [[João 14,6]]
 
 ## Artigos relacionados

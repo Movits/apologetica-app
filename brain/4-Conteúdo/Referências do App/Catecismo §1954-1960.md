@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §1954-1960
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Lei moral natural
 
-> O homem participa da sabedoria e da bondade do Criador, que lhe confere o domínio sobre os seus atos e a capacidade de governar-se em vista da verdade e do bem. A lei natural exprime o sentido moral original que permite ...
+> O homem participa na sabedoria e na bondade do Criador, que lhe confere o domínio dos seus atos e a capacidade de se governar em ordem à verdade e ao bem. A lei natural exprime o sentido moral original que permite ao hom...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

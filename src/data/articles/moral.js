@@ -20,7 +20,7 @@ Primeiro, é preciso distinguir o mal moral, causado pela liberdade humana, do m
 
 ## Deus pode ter razões que não vemos
 
-Segundo, Deus pode ter razões suficientes para permitir sofrimentos que não compreendemos. Um cirurgião causa dor para curar. Isso não o torna mau, embora a criança no momento da injeção possa achar que sim. Nossa perspectiva é limitada. O livro de Jó no Antigo Testamento explora exatamente essa tensão: Jó sofre sem entender por quê, e Deus não dá explicações, apenas mostra que sua sabedoria excede a humana.
+Segundo, Deus pode ter razões suficientes para permitir sofrimentos que não compreendemos. Um médico causa dor para curar. Isso não o torna mau, embora a criança, na hora da injeção, possa achar que sim. Nossa perspectiva é limitada. O livro de Jó no Antigo Testamento explora exatamente essa tensão: Jó sofre sem entender por quê, e Deus não dá explicações, apenas mostra que sua sabedoria excede a humana (Jó 38,1-4).
 
 ## Um Deus que sofre conosco
 
@@ -30,7 +30,7 @@ Terceiro, o cristianismo não ignora o sofrimento, ele o transforma. Deus mesmo 
 
 Há ainda um problema filosófico que ateus raramente percebem. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, não há padrão objetivo. O próprio argumento colapsa: o ateísmo não tem base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis contou em "Cristianismo Puro e Simples" (1952), quando, ainda ateu, tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. A objeção do mal, levada a sério, prova justamente a existência do padrão moral objetivo, ou seja, de Deus.
 
-São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. O Catecismo resume: Deus não é de modo algum causa do mal moral, mas o permite, por respeito à liberdade da criatura, e misteriosamente sabe tirar dele o bem (Catecismo §311). A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção.
+São Paulo escreve em Romanos 8,28 que "todas as coisas concorrem para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. O Catecismo resume: Deus não é de modo algum causa do mal moral, mas o permite, por respeito à liberdade da criatura, e misteriosamente sabe tirar dele o bem (Catecismo §311). A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção (Catecismo §312).
 
 ## Perguntas-chave
 
@@ -39,7 +39,7 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqu
 2. Se Deus interviesse para impedir todo mal, ele teria que abolir a liberdade humana. Você prefere existir como pessoa livre num mundo onde há sofrimento, ou como autômato num mundo perfeito sem virtude?
 
 3. O cristianismo apresenta um Deus crucificado, que entra no sofrimento humano. Qual outra cosmovisão oferece resposta mais profunda ao sofrimento que essa?`,
-    references: ['rm-8-28', 'lewis-mere-christianity', 'cic-311'],
+    references: ['rm-8-28', 'lewis-mere-christianity', 'cic-311', 'job-38-1'],
   },
   {
     id: 8,
@@ -51,7 +51,7 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas cooperam para o bem daqu
     imageAspect: 1.33,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCreacionEva.jpg&w=2200&output=jpg&q=80',
     summary: 'A Igreja distingue entre a inclinação e o ato, e chama todos a viver em dignidade e castidade.',
-    body: `A doutrina católica sobre sexualidade humana é baseada em antropologia e lei natural, não em preconceito. É importante entender essa distinção para discutir o tema com clareza.
+    body: `A doutrina católica sobre sexualidade humana se apoia na Escritura e na Tradição, e também na antropologia e na lei natural (a lei moral que a razão pode conhecer a partir da natureza humana), não em preconceito. É importante entender essa distinção para discutir o tema com clareza.
 
 ## A dignidade de toda pessoa
 
@@ -63,7 +63,7 @@ A distinção crucial é entre a inclinação e o ato. A Igreja não condena a t
 
 ## O que diz o Novo Testamento
 
-São Paulo trata do tema em Romanos 1,26-27 e em 1 Coríntios 6,9-11. Esta última passagem é importante porque, depois de listar várias condutas (incluindo atos homossexuais) que excluem do Reino, conclui: "E tais éreis vós, alguns de vós. Mas fostes lavados, mas fostes santificados, mas fostes justificados em nome do Senhor Jesus Cristo". O ensinamento apostólico não é de exclusão, é de transformação possível pela graça.
+São Paulo trata do tema em Romanos 1,26-27 e em 1 Coríntios 6,9-11. Esta última passagem é importante porque, depois de listar várias condutas (incluindo atos homossexuais) que excluem do Reino, conclui: "Ao menos alguns de vós têm sido isso. Mas fostes lavados, mas fostes santificados, mas fostes justificados, em nome do Senhor Jesus Cristo". O ensinamento apostólico não é de exclusão, é de transformação possível pela graça.
 
 Essa posição não é discriminação. A Igreja pede castidade a todos, casados e solteiros (Catecismo §2348 e 2359). Um homem ou mulher heterossexual solteiro também é chamado à castidade. O ensinamento é universal, exigente, e o mesmo para todos. Não há um padrão moral para uns e outro para outros.
 
@@ -77,7 +77,7 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
 
 1. Se "amor é amor" bastasse, o sentimento sozinho legitimaria qualquer expressão sexual consentida, sem nenhum outro critério. Você aceita essa consequência, ou o amor verdadeiro também tem uma forma e uma verdade a respeitar?
 
-2. Por que a sexualidade humana, biologicamente ordenada à complementariedade homem-mulher e à geração de vida, deveria ser interpretada de modo que ignore essa estrutura natural?
+2. Por que a sexualidade humana, biologicamente ordenada à complementaridade homem-mulher e à geração de vida, deveria ser interpretada de modo que ignore essa estrutura natural?
 
 3. A Igreja pede castidade a todos os solteiros, heterossexuais ou homossexuais. Em que sentido isso é discriminação?`,
     references: ['cic-2357', 'gn-1-27', 'rm-1-26', '1cor-6-9', 'amoris-laetitia-250', 'cic-2348'],
@@ -96,9 +96,9 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
 
 ## O que a ciência diz
 
-O que a ciência embriológica estabelece sem disputa: na fecundação (encontro do espermatozoide com o óvulo), forma-se um novo organismo humano completo. Não "pedaço de tecido da mãe", não "potencial vida": um ser humano individual, geneticamente distinto, com cromossomos próprios, capaz de auto-organização e desenvolvimento contínuo. O coração começa a bater cerca de 21 a 23 dias após a fecundação. O sistema nervoso central começa a se formar por volta do 18º dia, e o tubo neural se fecha até o fim da quarta semana. Em 8 semanas, todos os órgãos principais estão formados.
+O que a ciência embriológica estabelece sem disputa: na fecundação (encontro do espermatozoide com o óvulo), forma-se um novo organismo humano completo. Não "pedaço de tecido da mãe", não "potencial vida": um ser humano individual, geneticamente distinto, com cromossomos próprios, capaz de auto-organização e desenvolvimento contínuo. O coração começa a bater cerca de 21 a 23 dias após a fecundação (Männer, 2022). O sistema nervoso central começa a se formar por volta do 18º dia, e o tubo neural se fecha até o fim da quarta semana. Ao fim da oitava semana, todos os órgãos e sistemas principais já começaram a se formar.
 
-Esses são fatos científicos, não opiniões religiosas. Qualquer livro de embriologia médica os afirma. A questão é exclusivamente filosófica e ética: esse ser humano tem direito à vida?
+Esses são fatos científicos, não opiniões religiosas. Os manuais de embriologia médica os registram. A questão é exclusivamente filosófica e ética: esse ser humano tem direito à vida?
 
 ## A dignidade não depende de capacidades
 
@@ -106,7 +106,7 @@ A posição católica responde sim, e por razões universalmente válidas: a vid
 
 ## A Igreja desde o século I
 
-A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás o embrião por meio do aborto, nem farás que morra o recém-nascido". Tertuliano, no Apologético (c. 197), escreve: "Impedir o nascimento é um homicídio antecipado, e não importa que se tire a vida já nascida ou que se destrua a que está para nascer. Já é homem aquele que o será". Santo Agostinho, São Basílio, São Jerônimo: todos os Padres condenam o aborto sem ambiguidade.
+A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás o embrião por meio do aborto, nem farás que morra o recém-nascido". Tertuliano, no Apologético (c. 197), escreve: "Impedir o nascimento é um homicídio antecipado, e não importa que se tire a vida já nascida ou que se destrua a que está para nascer. Já é homem aquele que o será". São Basílio declara culpada de homicídio a mulher que destrói de propósito o filho no ventre, sem distinguir se o feto já estava formado (Carta 188, c. 374). São Jerônimo e Santo Agostinho também condenam o aborto, embora em algumas passagens distinguissem o feto formado do não formado, e Agostinho hesitava sobre o momento em que o embrião começa a viver (Enquirídio 86). Mas nenhum Padre da Igreja tratou o aborto como lícito.
 
 ## "Meu corpo, minha decisão"
 
@@ -124,7 +124,7 @@ Em caso de malformação fetal: nenhuma deficiência justifica execução. Bebê
 
 A disciplina da Igreja é firme: o aborto direto é sempre matéria grave. Quem provoca um aborto que se consuma incorre em excomunhão automática, e isso inclui os cúmplices sem os quais ele não teria acontecido (Código de Direito Canônico, cânones 1397 §2 e 1329 §2). A pena só se aplica nas condições previstas pelo Direito (Catecismo §2272), que leva em conta atenuantes como a menoridade ou o medo grave.
 
-Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a quem se arrepende. O Papa Francisco, na carta apostólica Misericordia et Misera (2016), autorizou todos os sacerdotes a absolverem o pecado do aborto (antes era reservado a bispos em alguns lugares). Existe pastoral específica para mulheres que abortaram, com acompanhamento espiritual, oração, reconciliação. Como em todo pecado: condenação clara do ato, misericórdia plena para a pessoa.
+Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a quem se arrepende. O Papa Francisco, na carta apostólica Misericordia et Misera (2016), autorizou todos os sacerdotes a absolverem o pecado do aborto (antes, levantar a excomunhão era reservado ao bispo, que em muitos lugares delegava essa faculdade aos padres). Existe pastoral específica para mulheres que abortaram, com acompanhamento espiritual, oração, reconciliação. Como em todo pecado: condenação clara do ato, misericórdia plena para a pessoa.
 
 ## Perguntas-chave
 
@@ -134,8 +134,8 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
 
 3. Por que a dignidade dependeria de capacidades atuais (consciência, autonomia)? Bebês recém-nascidos não têm autonomia, e adultos em coma perdem consciência. Eles deixam de ter dignidade?
 
-4. Em casos de risco da mãe, a Igreja permite procedimentos médicos que indiretamente afetam o feto. A diferença entre aborto direto e duplo efeito é eticamente decisiva.`,
-    references: ['cic-2270', 'didaque-2-2', 'tertuliano-apologetico-9', 'cdc-1397', 'misericordia-et-misera-12'],
+4. A Igreja permite tratar a mãe em risco mesmo quando isso causa, indiretamente, a morte do feto. Por que não seria eticamente decisiva a diferença entre matar diretamente e aceitar um efeito que não se quer?`,
+    references: ['cic-2270', 'didaque-2-2', 'tertuliano-apologetico-9', 'cdc-1397', 'misericordia-et-misera-12', 'manner-coracao-2022'],
   },
   {
     id: 26,
@@ -151,7 +151,7 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
 
 ## Os dois sentidos do ato conjugal
 
-O ensinamento básico é simples. O ato conjugal, segundo a doutrina católica, tem dois significados inseparáveis: unitivo (expressão de amor entre os esposos) e procriativo (abertura à transmissão da vida), como ensinam Humanae Vitae §12 e o Catecismo §2366-2370. Esses dois aspectos foram instituídos pelo Criador e estão unidos pela própria natureza do ato. Separá-los artificialmente é violar a verdade do ato conjugal.
+O ensinamento básico é simples. O ato conjugal, segundo a doutrina católica, tem dois significados inseparáveis: unitivo (expressão de amor entre os esposos) e procriativo (abertura à transmissão da vida), como ensinam Humanae Vitae §12 e o Catecismo §2366-2370. Esses dois aspectos foram instituídos pelo Criador e estão unidos pela própria natureza do ato: Paulo VI fala da "conexão inseparável que Deus quis e que o homem não pode alterar por sua iniciativa" entre o significado unitivo e o procriador (Humanae Vitae §12). Separá-los artificialmente é violar a verdade do ato conjugal.
 
 A contracepção artificial separa esses dois aspectos: mantém o prazer e a união física, mas elimina deliberadamente a abertura à vida. O ato conjugal deixa de ser totalmente verdadeiro. Transforma-se em algo diferente do que naturalmente é.
 
@@ -161,7 +161,7 @@ A Igreja não condena o planejamento familiar responsável. Ao contrário, ensin
 
 ## Métodos naturais e contracepção artificial
 
-Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São estudados cientificamente, e alguns, como o sintotérmico, passam de 99% de eficácia quando usados corretamente (Frank-Herrmann e colaboradores, Human Reproduction, 2007). Respeitam o corpo da mulher e exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal.
+Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São estudados cientificamente, e alguns, como o sintotérmico, passam de 99% de eficácia quando usados corretamente (Frank-Herrmann e colaboradores, Human Reproduction, 2007). Respeitam o corpo da mulher e exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal (Catecismo §2370).
 
 Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laqueadura, vasectomia) separam artificialmente os dois aspectos. Cada método tem problemas específicos. A pílula age sobretudo impedindo a ovulação, mas, quando a ovulação escapa, discute-se se as alterações que ela provoca no endométrio podem impedir a implantação de um embrião já formado: há quem veja boas evidências disso (Larimore e Stanford, 2000) e quem as julgue insuficientes (Rivera, Yacobson e Grimes, 1999). O DIU age principalmente antes da fecundação, mas não se exclui que às vezes impeça um embrião já formado de sobreviver e se implantar (Ortiz e Croxatto, 2007). A laqueadura mutila um órgão saudável. O preservativo introduz uma barreira artificial no ato.
 
@@ -194,7 +194,7 @@ A Igreja é a única instituição global que ainda defende coerentemente esta p
 3. Por que os Métodos Naturais (que respeitam o corpo) são considerados inferiores à pílula (que altera quimicamente o corpo da mulher por anos)?
 
 4. Se cada ato conjugal pode ser livremente esvaziado de sua dimensão procriativa, por que critica-se objetificação sexual? Você não está fazendo isso?`,
-    references: ['humanae-vitae-17', 'cic-2366', 'humanae-vitae-12'],
+    references: ['humanae-vitae-17', 'cic-2366', 'humanae-vitae-12', 'larimore-stanford-2000', 'ortiz-croxatto-2007'],
   },
   {
     id: 59,
@@ -214,15 +214,15 @@ Pecado não é desobedecer a uma regra arbitrária, como quem é multado por est
 
 ## Pecado mortal e pecado venial
 
-Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue "pecado que leva à morte" e pecado que não leva (1 João 5,16-17). A Igreja definiu essa distinção com precisão. O pecado mortal rompe a amizade com Deus e exige três condições juntas: matéria grave, plena consciência de que é grave e consentimento deliberado da vontade (Catecismo §1857). Faltando uma delas, não há pecado mortal. O pecado venial é a falta mais leve, que não rompe, mas esfria e enfraquece a caridade, como uma doença que não mata mas debilita. A distinção é libertadora: ela impede tanto a frouxidão ("nada é grave") quanto o escrúpulo ("tudo me condena").
+Nem todo pecado tem o mesmo peso, e a Escritura mesma distingue o "pecado que é para morte" do "pecado que não leva à morte" (1 João 5,16-17). A Igreja definiu essa distinção com precisão. O pecado mortal rompe a amizade com Deus e exige três condições juntas: matéria grave, plena consciência de que é grave e consentimento deliberado da vontade (Catecismo §1857). Faltando uma delas, não há pecado mortal. O pecado venial é a falta mais leve, que não rompe, mas esfria e enfraquece a caridade, como uma doença que não mata mas debilita. A distinção é libertadora: ela impede tanto a frouxidão ("nada é grave") quanto o escrúpulo ("tudo me condena").
 
 ## Os sete pecados capitais
 
-Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça (Catecismo §1866). "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todas. A cada vício capital corresponde uma virtude que o cura: à soberba, a humildade, à avareza, a generosidade, à inveja, a caridade, à ira, a mansidão, à luxúria, a castidade, à gula, a temperança, à preguiça, a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
+Há uma lista clássica de sete pecados chamados capitais: soberba, avareza, inveja, ira, luxúria, gula e preguiça (Catecismo §1866). "Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as fontes de onde os outros brotam. A soberba, o desejo desordenado da própria grandeza, é tida como a raiz de todos eles. A cada vício capital corresponde uma virtude que o cura: a soberba se cura com a humildade, a avareza com a generosidade, a inveja com a caridade, a ira com a mansidão, a luxúria com a castidade, a gula com a temperança e a preguiça com a diligência. Conhecer os próprios vícios dominantes é o começo do combate espiritual.
 
 ## O pecado contra o Espírito Santo
 
-Jesus fez uma advertência misteriosa: todo pecado pode ser perdoado, "mas a blasfêmia contra o Espírito não será perdoada" (Mateus 12,31-32). Isso não significa que Deus se recuse a perdoar algo. Significa que existe um pecado que, por sua própria natureza, fecha a porta ao perdão: a recusa final e obstinada de se arrepender. Deus oferece sempre a misericórdia, mas a misericórdia, para curar, precisa ser acolhida. Quem, até o fim, rejeita o perdão, não é perdoado, não porque Deus não queira, mas porque a pessoa não quer.
+Jesus fez uma advertência misteriosa: todo pecado pode ser perdoado, "mas a blasfêmia contra o Espírito não lhes será perdoada" (Mateus 12,31-32). Isso não significa que Deus se recuse a perdoar algo. Significa que existe um pecado que, por sua própria natureza, fecha a porta ao perdão: a recusa final e obstinada de se arrepender (Catecismo §1864). Deus oferece sempre a misericórdia, mas a misericórdia, para curar, precisa ser acolhida. Quem, até o fim, rejeita o perdão, não é perdoado, não porque Deus não queira, mas porque a pessoa não quer.
 
 ## A boa notícia: a misericórdia é maior
 
@@ -237,7 +237,7 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
 3. Os sete vícios capitais descrevem com precisão as raízes do mal que você observa em si e nos outros. Em que isso seria "ultrapassado"?
 
 4. Se nenhum pecado é maior que a misericórdia de Deus, por que tantos preferem negar o pecado a aceitar o perdão que o cura?`,
-    references: ['gn-3-5', 'mt-12-32', 'cic-1422', '1jo-5-16', 'cic-1857', 'cic-1866', 'lc-15-20'],
+    references: ['gn-3-5', 'mt-12-31', 'cic-1422', '1jo-5-16', 'cic-1857', 'cic-1866', 'lc-15-20', 'cic-1864'],
   },
   {
     id: 64,
@@ -257,11 +257,11 @@ O sexo não é sujo nem vergonhoso. É um dom bom de Deus, que "criou o homem e 
 
 ## Por que reservar ao casamento?
 
-A razão não é um tabu, é a coerência. O ato sexual fala uma linguagem do corpo, e o que ele diz é forte: "eu me dou todo a você, sem reservas e para sempre". Ora, só no casamento esse "para sempre" é verdade, porque ali houve um compromisso público, total e definitivo. Fora dele, o corpo promete uma entrega que a vontade ainda não confirmou: diz "para sempre" enquanto se reserva o direito de ir embora amanhã. Por isso São Paulo é firme contra a fornicação: "fugi da imoralidade sexual" (1 Coríntios 6,18), porque ela fere a verdade do amor e a dignidade das pessoas.
+A razão não é um tabu, é a coerência. O ato sexual fala uma linguagem do corpo, e o que ele diz é forte: "eu me dou todo a você, sem reservas e para sempre". Ora, só no casamento esse "para sempre" é verdade, porque ali houve um compromisso público, total e definitivo. Fora dele, o corpo promete uma entrega que a vontade ainda não confirmou: diz "para sempre" enquanto se reserva o direito de ir embora amanhã. Por isso São Paulo é firme: "Fugi da fornicação" (1 Coríntios 6,18), porque ela fere a verdade do amor e a dignidade das pessoas (Catecismo §2350 e §2353).
 
 ## Castidade não é repressão
 
-Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida (Catecismo §2337 e 2348-2349). É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda. Para o casado, que é fiel. Para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
+Castidade não significa negar a sexualidade nem vê-la como má. Significa integrá-la no amor, vivê-la segundo o próprio estado de vida (Catecismo §2337 e 2348-2349). É uma virtude, um autodomínio que liberta, e vale para todos: para o solteiro, que se guarda, para o casado, que é fiel, e para quem escolheu a vida consagrada. O contrário da castidade não é a alegria, é o uso do outro. Quem é casto não é alguém sem desejo, mas alguém cujo desejo está a serviço do amor, e não o contrário.
 
 ## Pornografia e masturbação
 
@@ -269,7 +269,7 @@ Aqui a Igreja é clara e, ao mesmo tempo, compreensiva. A pornografia e a mastur
 
 ## E quem já errou?
 
-A grande maioria das pessoas chega a este assunto com uma história, às vezes pesada. A palavra da Igreja não é condenação, é recomeço. A castidade não é um vidro que, quebrado uma vez, não tem mais conserto. É uma virtude que se pode sempre recomeçar a viver, com a graça de Deus. Foi a Jesus que trouxeram a mulher pega em adultério, e foi ele quem disse, sem a humilhar: "nem eu te condeno. Vai e não peques mais" (João 8,11). Firmeza na verdade, ternura com a pessoa.
+A grande maioria das pessoas chega a este assunto com uma história, às vezes pesada. A palavra da Igreja não é condenação, é recomeço. A castidade não é um vidro que, quebrado uma vez, não tem mais conserto. É uma virtude que se pode sempre recomeçar a viver, com a graça de Deus. Foi a Jesus que trouxeram a mulher pega em adultério, e foi ele quem disse, sem a humilhar: "Nem eu te condeno. Vai e não tornes a pecar" (João 8,11). Firmeza na verdade, ternura com a pessoa.
 
 ## O fruto
 
@@ -284,7 +284,7 @@ Há um fruto concreto nesse caminho: relações construídas sobre respeito e n�
 3. Castidade é negar o desejo, ou colocá-lo a serviço do amor, em vez de usar o outro?
 
 4. A liberdade sexual sem limites entregou de fato mais felicidade e amor estável, ou mais descarte e solidão?`,
-    references: ['ef-5-32', 'gn-1-27', 'cic-2348', 'cic-2337', 'humanae-vitae-12', '1cor-6-18', 'jo-8-11'],
+    references: ['ef-5-32', 'gn-1-27', 'cic-2348', 'cic-2337', 'cic-2350', 'humanae-vitae-12', '1cor-6-18', 'jo-8-11'],
   },
   {
     id: 83,
@@ -296,36 +296,36 @@ Há um fruto concreto nesse caminho: relações construídas sobre respeito e n�
     imageAspect: 0.8,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRembrandt%2520-%2520Moses%2520with%2520the%2520Ten%2520Commandments%2520-%2520Google%2520Art%2520Project.jpg&w=2200&output=jpg&q=80',
     summary: 'Os Dez Mandamentos não são uma lista de proibições arbitrárias nem ficaram no Antigo Testamento. São o mapa que protege o que mais importa.',
-    body: `"Os Dez Mandamentos não são coisa de Antigo Testamento? Jesus não veio acabar com a Lei?" É uma dúvida comum, e a resposta é não: o próprio Jesus disse "não vim revogar a Lei, mas dar-lhe pleno cumprimento" (Mateus 5,17). O Decálogo continua de pé, e entendê-lo desfaz a ideia de que seria uma jaula de regras.
+    body: `"Os Dez Mandamentos não são coisa de Antigo Testamento? Jesus não veio acabar com a Lei?" É uma dúvida comum, e a resposta é não: o próprio Jesus disse "Não julgueis que vim abolir a Lei ou os profetas. Não vim para os abolir, mas sim para levá-los à perfeição" (Mateus 5,17). O Decálogo continua de pé, e entendê-lo desfaz a ideia de que seria uma jaula de regras.
 
 ## Lei cerimonial e lei moral
 
-A confusão nasce de misturar coisas diferentes. A Lei do Antigo Testamento tinha partes cerimoniais (sacrifícios, circuncisão, comidas puras e impuras) e judiciais (regras civis de Israel), que apontavam para Cristo e foram cumpridas e superadas nele. Mas tinha também a lei moral, resumida nos Dez Mandamentos, que não caduca, porque não depende de uma cultura: descreve o bem da própria pessoa humana. Por isso Jesus aprofunda os mandamentos em vez de aboli-los: "ouvistes que foi dito... eu, porém, vos digo" (Mateus 5,21-22). Ele eleva, não revoga.
+A confusão nasce de misturar coisas diferentes. A Lei do Antigo Testamento tinha partes cerimoniais (sacrifícios, circuncisão, comidas puras e impuras) e judiciais (regras civis de Israel), que apontavam para Cristo e foram cumpridas e superadas nele. Mas tinha também a lei moral, resumida nos Dez Mandamentos, que não caduca, porque não depende de uma cultura: descreve o bem da própria pessoa humana. Por isso Jesus aprofunda os mandamentos em vez de aboli-los: "Ouvistes o que foi dito aos antigos (...). Mas eu vos digo" (Mateus 5,21-22). Ele eleva, não revoga.
 
 ## Não são imposição arbitrária, são lei natural
 
-Os mandamentos não são um capricho de Deus, como se ele pudesse ter mandado o contrário. São a descrição de como o ser humano floresce, escritos no próprio coração. São Paulo diz que mesmo os pagãos, sem a Lei escrita, "mostram que a obra da Lei está gravada em seus corações" (Romanos 2,15). Quase toda cultura sabe que matar o inocente, roubar e mentir é errado. O Decálogo apenas torna explícito esse conhecimento, e o ancora em Deus, que é a sua fonte.
+Os mandamentos não são um capricho de Deus, como se ele pudesse ter mandado o contrário. São a descrição de como o ser humano floresce, escritos no próprio coração. São Paulo diz que mesmo os pagãos, sem a Lei escrita, "mostram que o objeto da lei está gravado nos seus corações" (Romanos 2,15). Quase toda cultura sabe que matar o inocente, roubar e mentir é errado. O Decálogo apenas torna explícito esse conhecimento, e o ancora em Deus, que é a sua fonte.
 
 ## Duas tábuas: amor a Deus e ao próximo
 
-Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo (Mateus 22,37-40). Os três primeiros mandamentos cuidam da relação com Deus. Os outros sete, da relação com as pessoas. Não são dois assuntos separados: quem de fato ama a Deus respeita o que ele ama, isto é, cada pessoa. Por isso o Decálogo é uma só lei do amor, não uma coleção de "nãos".
+Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar o próximo como a si mesmo (Mateus 22,37-40). Na numeração católica, que segue Santo Agostinho e é a usada aqui, os três primeiros mandamentos cuidam da relação com Deus, e os outros sete, da relação com as pessoas. (Ortodoxos e boa parte dos protestantes contam de outro modo: fazem da proibição das imagens o 2º mandamento e juntam os dois últimos num só.) Não são dois assuntos separados: quem de fato ama a Deus respeita o que ele ama, isto é, cada pessoa. Por isso o Decálogo é uma só lei do amor, não uma coleção de "nãos".
 
 ## Os mais contestados hoje
 
-Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses", Êxodo 20,3) condena também o ocultismo, o horóscopo e a superstição, porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
+Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses", Êxodo 20,3) condena também o ocultismo, o horóscopo e a superstição (Catecismo §2116), porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
 
 ## Caminho de liberdade, não jaula
 
-No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir. Protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmista chama a Lei de "delícia" e a palavra de Deus de "lâmpada para os meus pés" (Salmo 119,77 e 105).
+No fim, o mandamento funciona como a placa que avisa do precipício na estrada da montanha. Ela não tira a sua liberdade de dirigir. Protege a sua vida para que você chegue. Deus não dá os mandamentos porque precisa deles, mas porque nós precisamos. Quem os vê como prisão ainda não percebeu que é justamente a transgressão que aprisiona, e a obediência ao bem que liberta. Por isso o salmista diz que "os preceitos do Senhor são retos, deleitam o coração" e que "o mandamento do Senhor é luminoso, esclarece os olhos" (Salmo 18,9).
 
 ## Perguntas-chave
 
-1. Se Jesus disse que não veio revogar a Lei, mas dar-lhe pleno cumprimento, faz sentido tratar os Dez Mandamentos como algo "superado"?
+1. Se Jesus disse que não veio abolir a Lei, mas levá-la à perfeição, faz sentido tratar os Dez Mandamentos como algo "superado"?
 
 2. Os mandamentos são um capricho que Deus poderia ter invertido, ou descrevem o bem da própria pessoa, gravado no coração de todos?
 
 3. Um mandamento que proíbe matar, roubar e mentir tira a sua liberdade, ou protege a vida de todos, inclusive a sua?`,
-    references: ['ex-20-3', 'mt-5-17', 'rm-2-15', 'mt-22-37', 'mt-5-21', 'sl-119-77', 'sl-119-105'],
+    references: ['ex-20-3', 'mt-5-17', 'rm-2-15', 'mt-22-37', 'mt-5-21', 'sl-18-9', 'cic-2116'],
   },
 ];
 

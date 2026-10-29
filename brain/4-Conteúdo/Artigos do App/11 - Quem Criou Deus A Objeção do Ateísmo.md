@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 11 - Quem Criou Deus A Objeção do Ateísmo
@@ -20,6 +20,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]
+- [[Catecismo §31-35]]
 - [[O Argumento Cosmológico Kalam]]
 - [[Teorema de Borde-Guth-Vilenkin]]
 

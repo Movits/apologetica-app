@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 23 - Purgatório Purificação dos Que se Salvam
@@ -32,6 +32,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Mateus 12,32]]
 - [[Catecismo §1030-1032]]
 - [[Mateus 5,25-26]]
+- [[Concílio de Trento, sessão XXV, Decreto sobre o Purgatório]]
+- [[A Coroa (De Corona), 3]]
+- [[Confissões, IX, 11-13]]
 
 ## Artigos relacionados
 - [[18 - O Cânon Bíblico Por que 73 Livros]]

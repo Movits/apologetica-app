@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §2116-2117
@@ -17,3 +17,4 @@ Funcionalidade: [[Referências]]
 - [[43 - Nova Era]]
 - [[44 - Umbanda e Candomblé]]
 - [[65 - Horóscopo, Ocultismo e Superstição O Que a Igreja Ensina]]
+- [[83 - Os Dez Mandamentos o Guia que Deus nos Deu]]

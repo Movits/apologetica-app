@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 13 - A Virgindade Perpétua de Maria
@@ -29,7 +29,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Lucas 2,7]]
 - [[Gálatas 1,19]]
 - [[Catecismo §499-501]]
-- [[De Carne Christi]]
+- [[De Carne Christi, 17]]
+- [[Comentário a Mateus, X, 17]]
+- [[Marcos 15,40]]
 
 ## Artigos relacionados
 - [[04 - Maria Intercessora, Não Mediadora]]

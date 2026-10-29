@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §2282-2283

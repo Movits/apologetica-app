@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Cristianismo Puro e Simples
@@ -18,4 +18,3 @@ Funcionalidade: [[Referências]]
 - [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]
 - [[36 - Cristianismo Copiou Religiões Pagãs]]
 - [[42 - Ateísmo e Naturalismo]]
-- [[62 - Qual é o Sentido da Vida]]

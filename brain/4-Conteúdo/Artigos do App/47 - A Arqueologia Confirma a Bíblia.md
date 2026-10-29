@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 47 - A Arqueologia Confirma a Bíblia
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Onde pode ser testada, a Bíblia passa no teste.
+Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Em muitos pontos em que pode ser testada, a Bíblia passa no teste.
 
 Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
@@ -14,9 +14,9 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Tópicos internos
 - Pôncio Pilatos existiu, e era prefeito
 - O ossuário de Caifás
-- Piscinas que diziam não existir
+- As piscinas de Betesda e de Siloé
 - A Casa de Davi fora da Bíblia
-- Os hititas, de "mito" a império
+- Os hititas, de povo esquecido a império
 - O que a arqueologia mostra e o que não mostra
 - Perguntas-chave
 

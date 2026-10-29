@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 14 - Maria, Mãe de Deus (Theotokos)
@@ -13,7 +13,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Tópicos internos
 - O Concílio de Éfeso
-- "Mãe do meu Senhor"
+- "Mãe de meu Senhor"
 - Mãe da pessoa, não da natureza
 - Perguntas-chave
 
@@ -31,9 +31,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[12 - A Imaculada Conceição de Maria]]
 - [[13 - A Virgindade Perpétua de Maria]]
 - [[27 - Testemunhas de Jeová]]
-
-## Diálogos que levam a este artigo
-- [[Rezar para santos é idolatria — somente Deus pode ouvir orações]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 26: Maria, Mãe de Deus (Theotokos)

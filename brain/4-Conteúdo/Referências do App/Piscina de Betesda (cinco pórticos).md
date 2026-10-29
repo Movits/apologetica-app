@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Piscina de Betesda (cinco pórticos)
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (Escavações nos séc. XIX e XX)
 Tema: Confirmação do detalhe de João 5,2
 
-> João 5,2 descreve uma piscina "que tem cinco pórticos". O detalhe era tido por invenção, até que a escavação revelou uma piscina dupla, dois tanques separados por um muro: com colunatas nos quatro lados e uma sobre o mur...
+> João 5,2 descreve uma piscina "que tem cinco pórticos". Alguns críticos tinham o detalhe por simbólico, até que a escavação revelou uma piscina dupla, dois tanques separados por um muro: com colunatas nos quatro lados e ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

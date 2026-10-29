@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 30 - Galileu Galilei e o Mito do Conflito Ciência-Fé
@@ -19,6 +19,9 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - Os reformadores também resistiram
 - Ciência e fé: matriz, não conflito
 - Perguntas-chave
+
+## Termos do glossário
+- [[Heresia]]
 
 ## Referências usadas
 - [[Discurso de João Paulo II sobre o caso Galileu]]

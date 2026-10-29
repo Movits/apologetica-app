@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 77 - A Igreja e a Maçonaria
@@ -26,3 +26,5 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[João 14,6]]
 - [[Declaração sobre a Maçonaria (1983)]]
 - [[Nota sobre a Maçonaria (2023)]]
+- [[In eminenti (1738)]]
+- [[Humanum Genus]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 19 - O Papa Cabeça Visível da Igreja
@@ -30,6 +30,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Lucas 22,31-32]]
 - [[Carta aos Romanos, prólogo]]
 - [[Contra as Heresias, III,3,2-3]]
+- [[Isaías 22,22]]
 
 ## Artigos relacionados
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

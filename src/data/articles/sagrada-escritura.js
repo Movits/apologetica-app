@@ -16,15 +16,15 @@ const articles = [
 
 ## A Bíblia não ensina o Sola Scriptura
 
-O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, São Paulo escreve aos Tessalonicenses: "permanecei firmes e conservai as tradições que aprendestes, seja por palavra, seja por carta nossa" (2 Ts 2,15). A Tradição oral é colocada lado a lado com a Tradição escrita. Em 1 Coríntios 11,2 ele elogia os fiéis por guardarem as tradições "como eu vo-las transmiti".
+O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, São Paulo pede aos Tessalonicenses que fiquem firmes e conservem as tradições que aprenderam, "seja por palavras, seja por carta nossa" (2 Ts 2,15). A Tradição oral é colocada lado a lado com a Tradição escrita. Em 1 Coríntios 11,2 ele elogia os fiéis por guardarem as tradições "como eu vo-las transmiti".
 
 ## Quem interpreta?
 
-O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity conta mais de 45.000 denominações cristãs no mundo, a imensa maioria protestante ou independente), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação particular".
+O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity conta cerca de 45.000 denominações cristãs no mundo, listadas separadamente em cada país, a imensa maioria protestante ou independente), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação pessoal".
 
 ## Foi a Igreja que definiu o cânon
 
-O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concílio de Hipona em 393 e o Concílio de Cartago em 397 fixaram pela primeira vez a lista dos 73 livros do cânon católico, com a participação de Santo Agostinho. Antes desses concílios não havia uma lista oficial fechada: listas de bispos e igrejas locais circulavam e divergiam entre si. Sem confiar na autoridade da Igreja, não há como saber quais livros pertencem à Bíblia. O próprio livro não traz índice.
+O terceiro problema é que o cânon bíblico foi definido pela Igreja. O Concílio de Hipona em 393 e o Concílio de Cartago em 397, com a participação de Santo Agostinho, aprovaram uma lista com os mesmos livros do cânon católico de 73 livros, que o Concílio de Trento definiu solenemente em 1546. Antes de Hipona e Cartago não havia uma lista oficial fechada: listas de bispos e igrejas locais circulavam e divergiam entre si. Sem confiar na autoridade da Igreja, não há como saber quais livros pertencem à Bíblia. O próprio livro não traz índice.
 
 ## Uma novidade do século XVI
 
@@ -42,10 +42,10 @@ A solução católica, ensinada pelo Concílio Vaticano II (Dei Verbum §9-10) e
 
 3. Se a Bíblia se interpreta a si mesma claramente, por que existem dezenas de milhares de denominações em conflito sobre interpretação?
 
-4. Em 2 Tessalonicenses 2,15 Paulo manda guardar tradições "por palavra ou por carta". Onde está agora a tradição oral apostólica que não foi escrita? Se ela se perdeu, parte da Revelação se perdeu?
+4. Em 2 Tessalonicenses 2,15 Paulo manda guardar tradições "seja por palavras, seja por carta nossa". Onde está agora a tradição oral apostólica que não foi escrita? Se ela se perdeu, parte da Revelação se perdeu?
 
 5. A Igreja antes do séc. XVI, que produziu mártires, doutores, santos, missionários, definiu o cânon, formulou a Trindade e a divindade de Cristo, estava em erro fundamental sobre como Deus se revela?`,
-    references: ['2ts-2-15', '2pd-1-20', 'mt-16-18', 'csgc-denominacoes', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397', '1cor-11-2'],
+    references: ['2ts-2-15', '2pd-1-20', 'mt-16-18', 'csgc-denominacoes', 'cic-80-83', 'dei-verbum-9', 'hipona-393', 'cartago-397', '1cor-11-2', 'concilio-trento'],
   },
   {
     id: 18,
@@ -63,11 +63,11 @@ A pergunta inevitável: quem está certo?
 
 ## A Bíblia dos apóstolos era a Septuaginta
 
-A história responde com clareza. Antes do nascimento de Cristo, o judaísmo de língua grega (a maior parte da diáspora judaica) usava a [[Septuaginta]], tradução grega do Antigo Testamento feita em Alexandria entre os séculos III e II a.C. Essa coleção grega, tal como chegou aos cristãos, incluía os 7 livros deuterocanônicos. Era a Bíblia dos judeus helenistas, era a Bíblia dos apóstolos. O Novo Testamento cita o Antigo mais de 300 vezes, e cerca de dois terços dessas citações seguem a versão da Septuaginta, não o texto hebraico massorético posterior.
+A história responde com clareza. Antes do nascimento de Cristo, o judaísmo de língua grega (a maior parte da diáspora judaica) usava a [[Septuaginta]], tradução grega do Antigo Testamento feita em Alexandria a partir do século III a.C. Essa coleção grega, tal como chegou aos cristãos, incluía os 7 livros deuterocanônicos. Era a Bíblia dos judeus helenistas, era a Bíblia dos apóstolos. O Novo Testamento cita o Antigo mais de 300 vezes, e cerca de dois terços dessas citações seguem a versão da Septuaginta, não o texto hebraico massorético posterior.
 
-Os apóstolos pregaram em grego no mundo greco-romano, usando a Septuaginta como Escritura. As primeiras gerações cristãs receberam essa Bíblia. Os primeiros concílios cristãos a confirmaram. O Concílio de Hipona em 393, com a participação de Santo Agostinho, fixou pela primeira vez o cânon dos 73 livros. O Concílio de Cartago em 397 reafirmou. Por mil e cem anos, a Igreja inteira (Ocidente e Oriente) usou essa Bíblia.
+Os apóstolos pregaram em grego no mundo greco-romano, usando a Septuaginta como Escritura. As primeiras gerações cristãs receberam essa Bíblia. Os primeiros concílios cristãos a confirmaram. O Concílio de Hipona em 393, com a participação de Santo Agostinho, aprovou uma lista com os mesmos livros do cânon católico atual, e o Concílio de Cartago em 397 a reafirmou. Por mil e cem anos, a Igreja inteira (Ocidente e Oriente) usou essa Bíblia.
 
-## O que mudou: o cânon de Jâmnia
+## O que mudou: o cânon rabínico
 
 O que mudou? Depois da destruição do Templo, no ano 70, o judaísmo rabínico foi consolidando um cânon hebraico mais estreito. A tradição liga parte dessas discussões aos sábios reunidos em Jâmnia, por volta do ano 90, embora os historiadores hoje não falem mais de um "concílio" formal. Ficaram de fora livros como Sirácida, Sabedoria e Macabeus, tidos como posteriores à época dos profetas ou conhecidos sobretudo em grego, e é provável que tenha pesado também o distanciamento em relação aos cristãos, que liam esses livros na Bíblia grega. Foi um cânon judaico fixado depois de Cristo, não a Bíblia que Cristo e os apóstolos receberam.
 
@@ -116,29 +116,29 @@ O segundo princípio é o gênero literário. A Bíblia não é um livro único,
 
 A Torá (Gênesis, Êxodo, Levítico, Números, Deuteronômio) reúne história fundacional e legislação do povo judeu. Mistura narrativa de origens (criação, dilúvio, patriarcas) com código legal civil e ritual. Gênesis 1 não é cosmologia científica do séc. XXI: é hino litúrgico estruturado em sete dias para ensinar que Deus criou tudo de forma ordenada e proposital. Os capítulos legais (boa parte de Levítico e Deuteronômio) só fazem sentido lidos no contexto da aliança com Israel, não como manual de conduta universal aplicado letra a letra hoje. Pretender achar contradição entre Gênesis 1 (criação em dias) e Gênesis 2 (criação centrada em Adão) é ignorar que são dois gêneros distintos: hino e narrativa antropocêntrica, postos lado a lado de propósito.
 
-Salmos, Provérbios, Cântico dos Cânticos, Jó e Eclesiastes são literatura sapiencial e poesia hebraica. Usam paralelismo, metáfora, hipérbole, imagens corporais para Deus (mãos, braços, asas), pergunta retórica. Quando o Salmo 18 (17 na numeração da Vulgata) diz que Deus "envolveu-se nas trevas como se fossem véu", é poesia, não geofísica. Provérbios trazem máximas gerais, não promessas individuais ("educa o jovem segundo a sua via" é princípio pedagógico, não garantia matemática). Eclesiastes registra o questionamento existencial de quem ainda não conhece a Ressurreição, e por isso parece pessimista em comparação com o Novo Testamento. Ler poesia como manual técnico é o erro mais comum dos críticos da Bíblia.
+Salmos, Provérbios, Cântico dos Cânticos, Jó e Eclesiastes são literatura sapiencial e poesia hebraica. Usam paralelismo, metáfora, hipérbole, imagens corporais para Deus (mãos, braços, asas), pergunta retórica. Quando o Salmo 18 (17 na numeração da Vulgata) diz que Deus "envolveu-se nas trevas como se fossem véu", é poesia, não geofísica. Provérbios trazem máximas gerais, não promessas individuais ("Ensina à criança o caminho que ela deve seguir", Provérbios 22,6, é princípio pedagógico, não garantia matemática). Eclesiastes registra o questionamento existencial de quem ainda não conhece a Ressurreição, e por isso parece pessimista em comparação com o Novo Testamento. Ler poesia como manual técnico é o erro mais comum dos críticos da Bíblia.
 
 Os Evangelhos são biografia antiga (em grego, bios), gênero documentado fora da Bíblia em autores como Plutarco e Suetônio. Biografia antiga organiza eventos por tema e finalidade teológica, não pela cronologia minuciosa que esperamos hoje. Cada evangelista escreve para um público específico (Mateus para judeus, Marcos para romanos, Lucas para gregos cultos, João para uma comunidade já bem instruída) e seleciona, agrupa e ordena material com esse leitor em mente. Daí Mateus colocar o Sermão da Montanha de uma vez (capítulos 5 a 7) enquanto Lucas distribui pedaços semelhantes ao longo do ministério. Não é contradição, é arranjo editorial próprio da biografia antiga, gênero ao qual os Evangelhos pertencem, como mostrou Richard Burridge em "What Are the Gospels?" (1992).
 
-Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-romano. Citações, viagens, autoridades civis, geografia precisa. O arqueólogo William Ramsay começou cético e terminou defendendo Lucas como historiador de primeira ordem, digno de figurar entre os maiores historiadores.
+Os Atos dos Apóstolos, ainda de Lucas, são historiografia ao estilo greco-romano. Citações, viagens, autoridades civis, geografia precisa. O arqueólogo William Ramsay começou cético e terminou defendendo Lucas como historiador de primeira ordem, digno de figurar entre os maiores historiadores, em "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915).
 
 As Cartas (Paulo, Tiago, Pedro, João, Judas, Hebreus) são correspondência ocasional. Foram escritas para problemas concretos de comunidades específicas. Paulo não está escrevendo um sistema teológico fechado. Está respondendo a questões. Por isso 1 Coríntios passa de discussão sobre carnes de ídolos a regulamento de Eucaristia em poucas páginas: refletem a pauta dos coríntios, não um índice de teologia sistemática.
 
 Os Profetas (Isaías, Jeremias, Ezequiel, os 12 menores) misturam denúncia social, oráculo de juízo, promessa messiânica e visão simbólica. Isaías é o profeta de imagens mais densas: a vinha do Senhor do capítulo 5, o Servo Sofredor do 53, o céu novo do 65. As datas e cenários históricos importam muito ali, mas o que está em jogo são padrões teológicos repetíveis, não fotografias documentais de cada inimigo histórico.
 
-O Apocalipse é o ápice do gênero apocalíptico, comum no judaísmo do séc. II a.C. ao séc. II d.C. (Daniel também é apocalíptico em parte). Esse gênero usa símbolos densos: números (7, 12, 1000), animais, cores, partes do corpo, ciclos repetidos. Tudo é figura. Tentar ler o Apocalipse como roteiro literal de eventos futuros (como faz uma certa escatologia evangélica popular) é o oposto da intenção do autor. João escreve sob perseguição romana para encorajar cristãos a perseverar, mostrando em linguagem simbólica a vitória final do Cordeiro. Os números de animais e cabeças são código judaico do séc. I, não previsões de eventos políticos modernos.
+O Apocalipse é o ápice do gênero apocalíptico, comum no judaísmo do séc. II a.C. ao séc. II d.C. (Daniel também é apocalíptico em parte). Esse gênero usa símbolos densos: números (7, 12, 1000), animais, cores, partes do corpo, ciclos repetidos. Quase tudo é figura, ainda que as figuras falem de realidades verdadeiras, como a vinda gloriosa de Cristo e o juízo. Tentar ler o Apocalipse como roteiro literal de eventos futuros (como faz uma certa escatologia evangélica popular) é o oposto da intenção do autor. João escreve sob perseguição romana para encorajar cristãos a perseverar, mostrando em linguagem simbólica a vitória final do Cordeiro. Os números de animais e cabeças são código judaico do séc. I, não previsões de eventos políticos modernos.
 
 Resumo: cada livro fala sua língua. Antes de gritar "contradição", pergunte qual o gênero do trecho, qual o público original, qual o objetivo do autor. Quase todas as supostas contradições somem aí.
 
 ## O valor do testemunho parcial
 
-O terceiro princípio é o testemunho parcial. Quando quatro pessoas relatam o mesmo acidente, cada uma menciona detalhes diferentes. Isso é sinal de testemunho autêntico, não de mentira. Se as versões fossem idênticas, suspeitaríamos de conluio. Santo Agostinho dedicou uma obra inteira a esse tema, "De Consensu Evangelistarum" (c. 400), demonstrando como as aparentes discrepâncias entre os Evangelhos confirmam a independência dos relatos.
+O terceiro princípio é o testemunho parcial. Quando quatro pessoas relatam o mesmo acidente, cada uma menciona detalhes diferentes. Isso é sinal de testemunho autêntico, não de mentira. Se as versões fossem idênticas, suspeitaríamos de conluio. Santo Agostinho dedicou uma obra inteira a esse tema, "De Consensu Evangelistarum" (c. 400), mostrando que as aparentes discrepâncias entre os Evangelhos não são contradições, mas modos diferentes e complementares de narrar os mesmos fatos.
 
 ## Quatro tipos comuns e como resolvê-los
 
 Primeiro tipo: omissões interpretadas como negações. Mateus 28,5 menciona um anjo no túmulo, Lucas 24,4 menciona dois. Não há contradição: quando há dois, sempre há um. Mateus foca no que falou.
 
-Segundo tipo: arredondamentos e estimativas. Marcos 6,44 fala em "cinco mil homens" na multiplicação dos pães, e Mateus 14,21 diz "aproximadamente cinco mil homens, sem contar as mulheres e crianças". São números de estimativa popular, não censo demográfico. O mesmo vale para 1 Reis 7,23, que dá ao "mar de bronze" do Templo dez côvados de uma borda à outra e trinta de circunferência: uma proporção arredondada de 3 para 1, normal na descrição de uma obra, que não pretendia ser um tratado de geometria.
+Segundo tipo: arredondamentos e estimativas. Marcos 6,44 conta que, na multiplicação dos pães, "foram cinco mil os homens que haviam comido", e Mateus 14,21 diz "aproximadamente cinco mil homens, sem contar as mulheres e crianças". São números de estimativa popular, não censo demográfico. O mesmo vale para 1 Reis 7,23, que dá ao "mar de bronze" do Templo dez côvados de uma borda à outra e trinta de circunferência: uma proporção arredondada de 3 para 1, normal na descrição de uma obra, que não pretendia ser um tratado de geometria.
 
 Terceiro tipo: ordem narrativa não-cronológica. Os Evangelhos frequentemente organizam por tema, não por sequência temporal. As tentações no deserto aparecem em ordem diferente em Mateus 4 e Lucas 4 porque cada evangelista organiza por sua finalidade teológica.
 
@@ -169,17 +169,17 @@ Mesmo Bart Ehrman, agnóstico e um dos críticos mais conhecidos do Novo Testame
     imageAspect: 1.27,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FAdoration%2520by%2520the%2520shepherds.%2520Circle%2520of%2520Apostolos%2520Krezias.jpg&w=2200&output=jpg&q=80',
     summary: 'Mateus diz que Jesus nasceu sob Herodes (morto em 4 a.C.). Lucas menciona o censo de Quirino (governador a partir de 6 d.C.). A "contradição" tem solução textual e histórica.',
-    body: `É uma das objeções mais citadas contra a historicidade dos Evangelhos. Mateus 2,1 diz que Jesus nasceu "no tempo do rei Herodes". Herodes, o Grande, morreu em 4 a.C., segundo a cronologia mais aceita, tirada do historiador judeu Flávio Josefo. Mas Lucas 2,1-2 fala em um recenseamento ordenado por César Augusto "quando Quirino era governador da Síria". Quirino, segundo Josefo, só foi governador da Síria a partir do ano 6 d.C., portanto cerca de dez anos após a morte de Herodes. Como Jesus pode ter nascido em dois períodos distintos?
+    body: `É uma das objeções mais citadas contra a historicidade dos Evangelhos. Mateus 2,1 diz que Jesus nasceu "no tempo do rei Herodes". Herodes, o Grande, morreu em 4 a.C., segundo a cronologia mais aceita, tirada do historiador judeu Flávio Josefo. Mas Lucas 2,1-2, na tradução mais comum, fala em um recenseamento ordenado por César Augusto "quando Quirino era governador da Síria". Quirino, segundo Josefo, só foi governador da Síria a partir do ano 6 d.C., portanto cerca de dez anos após a morte de Herodes. Como Jesus pode ter nascido em dois períodos distintos?
 
 A solução envolve duas vias complementares: uma linguística e uma histórica.
 
 ## A via linguística
 
-Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "hautē apographē prṓtē egéneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 traz esse uso explícito: prṓtós mou ("antes de mim"), Jesus em relação a João Batista, e João 15,18 repete a construção ("antes de vós"). Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". A leitura é debatida: o gramático Nigel Turner, em "Grammatical Insights into the New Testament" (1965), a defendeu como gramaticalmente legítima, e o biblista N. T. Wright, em "Who Was Jesus?" (1992), a considera plausível. Outros, como Joseph Fitzmyer, a rejeitam, e a questão segue aberta.
+Via linguística: o grego de Lucas. O versículo Lc 2,2 diz literalmente "hautē apographē prṓtē egéneto hēgemoneúontos tēs Syrías Kyrēníou". A tradução tradicional é "este foi o primeiro recenseamento feito quando Quirino era governador da Síria". Mas a palavra prṓtē (πρώτη), normalmente "primeiro", também é usada no grego do Novo Testamento com o sentido de "antes de". João 1,15 traz esse uso explícito: prṓtós mou ("antes de mim"), Jesus em relação a João Batista, e João 15,18 repete a construção ("antes que a vós"). Aplicando essa leitura a Lucas 2,2, o sentido seria: "este recenseamento aconteceu antes daquele feito quando Quirino era governador". É nesse sentido que traduz a Bíblia Ave Maria, usada neste app: "Esse recenseamento foi feito antes do governo de Quirino, na Síria". A leitura é debatida: o gramático Nigel Turner, em "Grammatical Insights into the New Testament" (1965), a defendeu como gramaticalmente legítima, e o biblista N. T. Wright, em "Who Was Jesus?" (1992), a considera plausível. Outros, como Joseph Fitzmyer, a rejeitam, e a questão segue aberta.
 
 ## A via histórica
 
-Via histórica: a carreira de Quirino. Inscrições latinas, especialmente o chamado Lapis Tiburtinus, encontrado perto de Tivoli, mencionam um oficial romano, talvez Quirino (o nome não se conservou), que governou a Síria como legado "pela segunda vez" (iterum), o que muitos leem como duas passagens pelo cargo. Sir William Ramsay, arqueólogo escocês especialista em geografia e administração do Império Romano, defendeu em "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915) que Quirino exerceu funções administrativas na Síria mesmo antes do ano 6 d.C., possivelmente como legado militar com responsabilidades fiscais. O recenseamento mencionado por Lucas teria começado nessa primeira fase, antes da morte de Herodes, e sido concluído depois, com Quirino já no segundo mandato. Pesa também a própria prática romana: recenseamentos podiam durar anos e envolviam múltiplas etapas administrativas.
+Via histórica: a carreira de Quirino. Uma inscrição latina fragmentária, o chamado Lapis Tiburtinus, encontrada perto de Tivoli, menciona um oficial romano, talvez Quirino (o nome não se conservou), que governou a Síria como legado "pela segunda vez" (iterum), o que muitos leem como duas passagens pelo cargo. Sir William Ramsay, arqueólogo escocês especialista em geografia e administração do Império Romano, defendeu em "The Bearing of Recent Discovery on the Trustworthiness of the New Testament" (1915) que Quirino exerceu funções administrativas na Síria mesmo antes do ano 6 d.C., possivelmente como legado militar com responsabilidades fiscais. O recenseamento mencionado por Lucas teria começado nessa primeira fase, antes da morte de Herodes, e sido concluído depois, com Quirino já no segundo mandato. Pesa também a própria prática romana: recenseamentos podiam durar anos e envolviam múltiplas etapas administrativas.
 
 ## Uma terceira possibilidade
 
@@ -187,7 +187,7 @@ Há ainda uma terceira via, defendida por alguns historiadores: o recenseamento 
 
 A objeção, portanto, não é decisiva. As soluções linguísticas e históricas são razoáveis, têm respaldo acadêmico, e refletem a complexidade administrativa real do Império Romano. Lucas, médico culto, companheiro de viagens de Paulo e autor do livro mais detalhado em referências históricas do Novo Testamento (Atos dos Apóstolos), tem sido repetidamente vindicado pela arqueologia. Ramsay começou sua carreira como cético de Lucas e terminou como defensor da precisão histórica dele justamente após anos de pesquisa de campo.
 
-Vale notar a desproporção da objeção. A historicidade de Jesus está atestada por múltiplas fontes independentes (Mateus, Marcos, Lucas, João, Paulo, Josefo, Tácito, Plínio o Jovem, Suetônio). Cinco palavras gramaticalmente ambíguas em Lucas 2,2 não derrubam esse edifício.
+Vale notar a desproporção da objeção. A historicidade de Jesus está atestada por múltiplas fontes independentes (Mateus, Marcos, Lucas, João, Paulo, Josefo, Tácito, Plínio o Jovem, Suetônio). Um versículo de gramática discutida, Lucas 2,2, não derruba esse edifício.
 
 ## Perguntas-chave
 
@@ -197,7 +197,7 @@ Vale notar a desproporção da objeção. A historicidade de Jesus está atestad
 
 3. Se Lucas fosse incompetente em história, por que Atos dos Apóstolos é confiável até em detalhes mínimos da geografia mediterrânea?
 
-4. Cinco palavras ambíguas em Lucas 2,2 anulam todos os outros indicadores históricos do nascimento de Jesus durante o reinado de Herodes?`,
+4. Um versículo de leitura discutida, Lucas 2,2, anula todos os outros indicadores históricos do nascimento de Jesus durante o reinado de Herodes?`,
     references: ['lc-2-1', 'mt-2-1', 'josefo-antiguidades-18-1'],
   },
   {
@@ -216,11 +216,11 @@ A explicação católica clássica, sustentada desde os Padres, distingue geneal
 
 ## Linha legal e linha biológica
 
-Primeira hipótese: Mateus dá a linha legal de José, Lucas dá a linha biológica de Maria. Mateus escreve para um público judeu e enfatiza Jesus como Messias filho de Davi pela linha real (Salomão), legalmente herdeiro do trono através de José, esposo de Maria. Lucas escreve para um público mais amplo (greco-romano) e traça a ascendência humana de Jesus por sua mãe biológica, que também era da casa de Davi (pela linha de Natã, outro filho de Davi e Betsabeia). O versículo Lucas 3,23 começa com "Jesus, como se cria filho de José, filho de Heli". A construção grega permite ler que Heli era pai de Maria, sogro de José, sendo a linha lucana a maternal.
+Primeira hipótese: Mateus dá a linha legal de José, Lucas dá a linha biológica de Maria. Essa leitura, ao contrário da segunda hipótese, não vem dos Padres (difundiu-se a partir de Ânio de Viterbo, por volta de 1500), mas tem bons defensores modernos. Mateus escreve para um público judeu e enfatiza Jesus como Messias filho de Davi pela linha real (Salomão), legalmente herdeiro do trono através de José, esposo de Maria. Lucas escreve para um público mais amplo (greco-romano) e traça a ascendência humana de Jesus por sua mãe biológica, que também era da casa de Davi (pela linha de Natã, outro filho de Davi e Betsabeia). O versículo Lucas 3,23 diz que Jesus "era tido por filho de José, filho de Heli". A construção grega permite ler que Heli era pai de Maria, sogro de José, sendo a linha lucana a maternal.
 
 ## A explicação do levirato
 
-Segunda hipótese: ambas as genealogias são de José, mas explicam um caso de levirato. A Lei do Levirato em Deuteronômio 25,5-6 estabelecia que, quando um homem morria sem filhos, seu irmão deveria casar-se com a viúva, e o primeiro filho dessa união seria considerado filho legal do falecido. Aplicado às genealogias: se o pai biológico de José fosse Jacó (Mateus) e o pai legal fosse Heli (Lucas, por levirato), as duas listas seriam verdadeiras em sentidos diferentes. Eusébio de Cesareia, em "História Eclesiástica" I,7, cita uma tradição transmitida por Júlio Africano (séc. III) com essa explicação.
+Segunda hipótese: ambas as genealogias são de José, mas explicam um caso de levirato. A Lei do Levirato em Deuteronômio 25,5-6 estabelecia que, quando um homem morria sem filhos, seu irmão deveria casar-se com a viúva, e o primeiro filho dessa união seria considerado filho legal do falecido. Aplicado às genealogias: se o pai biológico de José fosse Jacó (Mateus) e o pai legal fosse Heli (Lucas, por levirato), as duas listas seriam verdadeiras em sentidos diferentes. Eusébio de Cesareia, em "História Eclesiástica" I,7, cita essa explicação de Júlio Africano (séc. III), que dá o detalhe decisivo: Jacó e Heli eram irmãos só por parte de mãe, filhos de pais diferentes, um descendente de Salomão e o outro de Natã. Por isso as duas listas, a partir do avô de José, seguem ramos diferentes da casa de Davi.
 
 ## Genealogias não eram planilhas
 
@@ -236,7 +236,7 @@ Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas
 
 1. Por que dois autores que fabricassem uma genealogia para Jesus produziriam versões diferentes? Não alinhariam para evitar contradição?
 
-2. Como você lê Lucas 3,23 ("como se cria filho de José")? Não é exatamente o tipo de expressão que abre espaço para a genealogia ser de outra linha?
+2. Como você lê Lucas 3,23 ("era tido por filho de José")? Não é exatamente o tipo de expressão que abre espaço para a genealogia ser de outra linha?
 
 3. A Lei do Levirato em Dt 25,5-6 cria sistematicamente "pais legais" diferentes de "pais biológicos". Por que isso não pode explicar as duas listas?
 
@@ -259,16 +259,16 @@ Vale acrescentar: se os evangelistas estivessem inventando, alinhariam as listas
 
 Mateus 28,1: "Maria Madalena e a outra Maria".
 Marcos 16,1: "Maria Madalena, Maria, mãe de Tiago, e Salomé".
-Lucas 24,10: "Maria Madalena, Joana, Maria, mãe de Tiago, e as outras".
+Lucas 24,10: "Maria Madalena, Joana e Maria, mãe de Tiago", e outras mulheres com elas.
 João 20,1: "Maria Madalena" (mas no versículo 2 ela diz "não sabemos onde o puseram", o plural indicando que não estava sozinha).
 
-Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona duas, talvez porque duas testemunhas bastavam segundo a Lei (Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três, Salomé só em Marcos e Joana só em Lucas.
+Não há contradição. Cada evangelista menciona algumas das mulheres presentes, nenhum diz "apenas estas estavam lá". João foca em Maria Madalena porque ela é a personagem central da sua narrativa subsequente. Mateus, escrevendo para judeus, menciona duas, talvez porque duas testemunhas bastavam segundo a Lei (Deuteronômio 19,15). Lucas, médico atento, lista mais nomes. As listas se sobrepõem e se completam: Madalena aparece nos quatro, Maria mãe de Tiago em três (Mateus a chama "a outra Maria"), Salomé só em Marcos e Joana só em Lucas.
 
 ## Quantos anjos no túmulo?
 
 Mateus 28,5: "o anjo".
 Marcos 16,5: "um jovem".
-Lucas 24,4: "dois homens".
+Lucas 24,4: "dois personagens com vestes resplandecentes".
 João 20,12: "dois anjos".
 
 Mesmo princípio. Quando há dois, sempre há um. Mateus e Marcos focam no anjo que falou (provavelmente o protagonista da cena). Lucas e João mencionam os dois presentes. Não há contradição lógica entre "um falou" e "havia dois". Santo Agostinho usa exatamente esse exemplo em "De Consensu Evangelistarum" (c. 400) para mostrar como testemunhos parciais não são mentirosos.
@@ -285,9 +285,9 @@ Atos 1,3 dá a chave: Jesus apareceu aos discípulos durante quarenta dias após
 
 O princípio fundamental: testemunho parcial não é falso. Quatro testemunhas honestas de um evento mencionam detalhes diferentes, e isso é normal. Em qualquer tribunal, divergências em periferia somadas a convergência no essencial é sinal de testemunho independente, não de mentira.
 
-O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram a mulheres e discípulos, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
+O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram aos discípulos, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
 
-Gary Habermas, no seu estudo sobre os "fatos mínimos" da Ressurreição, mostra que mesmo historiadores agnósticos aceitam o núcleo central. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
+Gary Habermas, no seu estudo sobre os "fatos mínimos" da Ressurreição ("O Caso da Ressurreição de Jesus", com Michael Licona, 2004), mostra que mesmo historiadores agnósticos aceitam o núcleo central: a morte de Jesus na cruz e a convicção dos discípulos de que o tinham visto vivo. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
 
 Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordenada, os autores teriam ajustado as periferias para parecer uniforme. As diferenças visíveis nos Evangelhos são exatamente o tipo de discrepância natural que se espera de testemunhas independentes de um evento real.
 
@@ -311,8 +311,8 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
     imageCredit: 'Émile Bernard, A Crucificação (1896). Domínio público.',
     imageAspect: 0.73,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FCrucifixion-1896.jpg&w=2200&output=jpg&q=80',
-    summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Autores pagãos falaram de um fenômeno parecido, e a astronomia reforça uma das datas propostas para a crucificação, 3 de abril do ano 33.',
-    body: `No momento da morte de Jesus, os três Evangelhos sinópticos relatam um fenômeno estranho: "desde a hora sexta até a hora nona, houve trevas sobre toda a terra" (Mateus 27,45), isto é, do meio-dia às três da tarde. Marcos e Lucas registram o mesmo. Esse detalhe, longe de ser uma lenda fácil de inventar, levanta questões interessantes de história e de astronomia.
+    summary: 'Os Evangelhos relatam três horas de escuridão na morte de Jesus. Autores não cristãos falaram de um fenômeno parecido, e a astronomia reforça uma das datas propostas para a crucificação, 3 de abril do ano 33.',
+    body: `No momento da morte de Jesus, os três Evangelhos sinópticos relatam um fenômeno estranho: "desde a hora sexta até a nona, cobriu-se toda a terra de trevas" (Mateus 27,45), isto é, do meio-dia às três da tarde. Marcos e Lucas registram o mesmo. Esse detalhe, longe de ser uma lenda fácil de inventar, levanta questões interessantes de história e de astronomia.
 
 ## Não foi um eclipse solar
 
@@ -342,7 +342,7 @@ O resultado é sugestivo. Pedro proclamou cumprida em Jerusalém, naqueles dias,
 
 2. Como explicar que autores pagãos e neutros, como Talo e Flégon, tenham registrado uma escuridão e um terremoto na mesma época?
 
-3. Pedro proclama cumprida a profecia de Joel, a lua em sangue, nos dias da morte e da ressurreição de Jesus. Não é notável que a astronomia identifique um eclipse lunar real em 3 de abril do ano 33, uma das datas mais prováveis da crucificação?
+3. Sete semanas depois da Páscoa em que Jesus morreu, Pedro proclama cumprida a profecia de Joel, a lua em sangue. Não é notável que a astronomia identifique um eclipse lunar real em 3 de abril do ano 33, uma das datas mais prováveis da crucificação?
 
 4. Se o relato fosse lenda tardia, por que é tão sóbrio, sem nem explicar o fenômeno, ao contrário das fábulas, que costumam exagerar?`,
     references: ['mt-27-45', 'jl-2-31', 'at-2-20', 'talo-flegon', 'humphreys-eclipse'],
@@ -361,21 +361,21 @@ O resultado é sugestivo. Pedro proclamou cumprida em Jerusalém, naqueles dias,
 
 ## Onde nasceria
 
-O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel nasceria em Belém, uma cidade pequena: "de ti sairá aquele que há de governar Israel" (Miquéias 5,1, que outras edições numeram 5,2). Setecentos anos depois, Jesus nasce ali.
+O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel nasceria em Belém, uma cidade pequena: "é de ti que sairá para mim aquele que é chamado a governar Israel" (Miquéias 5,1, que outras edições numeram 5,2). Setecentos anos depois, Jesus nasce ali.
 
-Isaías anunciou ainda o sinal da concepção virginal: "a virgem conceberá e dará à luz um filho, e o chamarão Emanuel" (Isaías 7,14), nome que significa "Deus conosco".
+Isaías anunciou ainda o sinal da concepção virginal: "uma virgem conceberá e dará à luz um filho, e o chamará 'Deus Conosco'" (Isaías 7,14), que é o sentido do nome hebraico Emanuel.
 
 ## Como morreria
 
-Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22 (21 na numeração da Vulgata), atribuído a Davi, cerca de mil anos antes de Cristo, muito antes de Roma fazer da cruz o seu suplício típico, descreve um justo perseguido que clama "Deus meu, Deus meu, por que me abandonaste", palavras que Jesus pronuncia na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os Evangelhos narram exatamente isso: o grito na cruz, a partilha das vestes e, nos relatos da Ressurreição, as marcas dos cravos nas mãos e nos pés.
+Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22 (21 na numeração da Vulgata), atribuído a Davi, cerca de mil anos antes de Cristo, muito antes de Roma fazer da cruz o seu suplício típico, descreve um justo perseguido que clama "Meu Deus, meu Deus, por que me abandonastes?", o brado que Jesus repete na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os Evangelhos narram o grito na cruz e a partilha das vestes. Nos relatos da Ressurreição, Jesus mostra as mãos e os pés (Lucas 24,39-40), e Tomé fala do "sinal dos pregos" nas mãos de Jesus (João 20,25).
 
-O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "ferido por causa de nossas iniquidades", levado "como cordeiro ao matadouro", que "não abriu a boca", e cuja morte traz cura "por suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
+O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "esmagado por nossas iniquidades", não abre a boca "como um cordeiro que se conduz ao matadouro", e sua morte traz cura: "fomos curados graças às suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
 
-Zacarias acrescenta um detalhe singular: "olharão para mim, a quem traspassaram" (Zacarias 12,10), cumprido quando o soldado abre o lado de Jesus com a lança.
+Zacarias acrescenta um detalhe singular: "voltarão os seus olhos para mim" e "farão lamentações sobre aquele que traspassaram" (Zacarias 12,10), cumprido quando o soldado abre o lado de Jesus com a lança.
 
 ## Quando viria
 
-O profeta Daniel, no capítulo 9, fixa um prazo: dentro de "setenta semanas" (de anos), o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa exatamente nessa janela.
+O profeta Daniel, no capítulo 9, fixa um prazo: dentro de "setenta semanas" (de anos), o Ungido seria suprimido, e em seguida a cidade e o santuário seriam destruídos (Daniel 9,24-26). O Templo foi destruído pelos romanos no ano 70. Se o Messias devia vir e morrer antes dessa destruição, o tempo da sua vinda já se cumpriu, e Jesus se encaixa nessa janela, ainda que o ponto de partida da contagem seja discutido.
 
 ## A força do conjunto
 
@@ -401,18 +401,18 @@ Cada profecia, isolada, poderia ser discutida. Mas a força está no conjunto. Q
     imageCredit: 'A Pedra de Pôncio Pilatos, Cesareia Marítima. Foto via Wikimedia Commons.',
     imageAspect: 1.5,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FHoly%2520Land%25202016%2520P0231%2520Caesarea%2520Maritima%2520Pilate%2520stone.jpg&w=2200&output=jpg&q=80',
-    summary: 'Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Onde pode ser testada, a Bíblia passa no teste.',
-    body: `Durante muito tempo se disse que a Bíblia estava cheia de personagens e lugares inventados. A cada nova escavação, porém, a história tem feito o contrário: confirmado nomes, cargos e locais exatamente como o texto os descreve. A arqueologia não prova que a Bíblia é Palavra de Deus, isso é questão de fé, mas comprova, de novo e de novo, que ela é confiável como documento histórico.
+    summary: 'Personagens e lugares da Bíblia apareceram nas escavações: Pilatos, Caifás, a piscina de Betesda, a Casa de Davi. Em muitos pontos em que pode ser testada, a Bíblia passa no teste.',
+    body: `Durante muito tempo se disse que a Bíblia estava cheia de personagens e lugares inventados. Muitos achados arqueológicos, porém, têm mostrado o contrário: confirmam nomes, cargos e locais como o texto os descreve. A arqueologia não prova que a Bíblia é Palavra de Deus, isso é questão de fé, mas comprova, de novo e de novo, que ela é confiável como documento histórico.
 
 ## Pôncio Pilatos existiu, e era prefeito
 
-Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos autores antigos (Josefo, Fílon, Tácito), sem nenhuma inscrição com o seu nome. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o cargo exato.
+Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos autores antigos (Josefo, Fílon, Tácito), sem nenhuma inscrição com o seu nome. Em 1961, em Cesareia Marítima, arqueólogos encontraram uma pedra com uma inscrição em latim que nomeia "Pôncio Pilatos, prefeito da Judeia". O homem que condenou Jesus está agora gravado na pedra, com o seu título oficial, que nem os autores antigos registravam com exatidão (Tácito, escrevendo décadas depois, o chama de procurador).
 
 ## O ossuário de Caifás
 
 Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57 e João 18,24). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
 
-## Piscinas que diziam não existir
+## As piscinas de Betesda e de Siloé
 
 O Evangelho de João menciona a piscina de Betesda, "que tem cinco pórticos" (João 5,2). Críticos achavam o detalhe inventado, pois nenhuma piscina assim era conhecida. A escavação perto da igreja de Santa Ana, em Jerusalém, revelou uma piscina dupla, dois tanques separados por um muro: com colunatas nos quatro lados e uma sobre o muro do meio, são os cinco pórticos de que João fala. Em 2004 veio à luz também a piscina de Siloé do tempo de Jesus (João 9,7).
 
@@ -420,13 +420,13 @@ O Evangelho de João menciona a piscina de Betesda, "que tem cinco pórticos" (J
 
 Houve quem dissesse que o rei Davi era apenas lenda. Em 1993, em Tel Dan, no norte de Israel, encontrou-se uma estela do século IX a.C., feita por um rei inimigo, que se gaba de ter derrotado a "Casa de Davi" (Beit David). É a dinastia davídica mencionada por uma fonte de fora, hostil, cerca de um século e meio depois de Davi.
 
-## Os hititas, de "mito" a império
+## Os hititas, de povo esquecido a império
 
 Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Até o século XIX quase nada se sabia deles fora da Bíblia, e alguns estudiosos duvidavam que tivessem sido um povo importante. Então vieram as inscrições egípcias e assírias e, a partir de 1906, a escavação da capital hitita, Hattusa, com milhares de tabuinhas: os hititas eram um grande império. A Bíblia estava certa, e os críticos, errados.
 
 ## O que a arqueologia mostra e o que não mostra
 
-É preciso ser justo. Achados arqueológicos não provam milagres nem a inspiração divina das Escrituras. Mas mostram um padrão claro: onde o texto bíblico pode ser testado contra a história e a terra, ele resiste ao teste. Um livro que acerta os nomes, os cargos e os lugares verificáveis merece crédito também naquilo que relata e não se pode escavar.
+É preciso ser justo. Achados arqueológicos não provam milagres nem a inspiração divina das Escrituras. Mas mostram um padrão: em muitos pontos em que o texto bíblico pode ser testado contra a história e a terra, ele resiste ao teste. Um livro que acerta os nomes, os cargos e os lugares verificáveis merece crédito também naquilo que relata e não se pode escavar.
 
 ## Perguntas-chave
 
@@ -453,7 +453,7 @@ Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Até 
 
 ## Uma montanha de cópias
 
-De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem mais de 5.800 manuscritos em grego, além de cerca de 10 mil em latim e milhares em outras línguas antigas, somando algo perto de 25 mil cópias. Para comparar: da "Guerra das Gálias", de Júlio César, restam poucas centenas de manuscritos, da "Ilíada" de Homero, o segundo texto antigo mais copiado, cerca de 1.800. O Novo Testamento está numa categoria à parte.
+De nenhuma outra obra antiga restaram tantas cópias. Do Novo Testamento existem cerca de 5.700 manuscritos em grego registrados pelo Instituto de Pesquisa Textual do Novo Testamento (INTF), da Universidade de Münster, entre eles mais de 130 papiros, além de cerca de 10 mil em latim e milhares em outras línguas antigas, somando algo perto de 25 mil cópias. Para comparar: da "Guerra das Gálias", de Júlio César, restam poucas centenas de manuscritos, da "Ilíada" de Homero, o segundo texto antigo mais copiado, cerca de 1.800. O Novo Testamento está numa categoria à parte.
 
 ## E cópias muito antigas
 
@@ -496,7 +496,7 @@ A própria palavra "Bíblia" vem do grego e significa "os livros", no plural. S�
 
 ## O Autor por trás dos autores: a inspiração
 
-A fé cristã afirma que, por trás desses muitos autores humanos, há um só Autor principal: Deus. É o que se chama inspiração. Mas atenção ao que ela não é: não é um ditado mecânico, como se os autores fossem secretárias em transe. Deus se serve da inteligência, do estilo, da cultura e até das limitações de cada autor, sem anular nada disso, para comunicar a verdade que quer. Como diz São Pedro, "movidos pelo Espírito Santo é que os santos homens de Deus falaram" (2 Pedro 1,21). Por isso a Bíblia é, ao mesmo tempo, plenamente humana e plenamente palavra de Deus.
+A fé cristã afirma que, por trás desses muitos autores humanos, há um só Autor principal: Deus. É o que se chama inspiração. Mas atenção ao que ela não é: não é um ditado mecânico, como se os autores fossem secretárias em transe. Deus se serve da inteligência, do estilo, da cultura e até das limitações de cada autor, sem anular nada disso, para comunicar a verdade que quer. Como diz São Pedro, "homens inspirados pelo Espírito Santo falaram da parte de Deus" (2 Pedro 1,21). Por isso a Bíblia é, ao mesmo tempo, plenamente humana e plenamente palavra de Deus.
 
 ## Como a Bíblia chegou até nós
 
@@ -539,19 +539,19 @@ Se Deus é o Autor da Bíblia, ela tem uma autoridade que nenhum outro livro tem
 
 ## A chave de tudo: a revelação é progressiva
 
-Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que foi concedido "pela dureza dos vossos corações, mas no princípio não era assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus. Era um passo possível naquele momento. O Concílio Vaticano II diz o mesmo dos livros do Antigo Testamento: "apesar de conterem também coisas imperfeitas e transitórias, revelam, contudo, a verdadeira pedagogia divina" (Dei Verbum §15).
+Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio antes de Cristo. Ele se revelou aos poucos, partindo de onde as pessoas estavam, como um pai que educa o filho por etapas, ou um professor que ensina o aluno conforme ele cresce. O próprio Jesus dá a chave: sobre o divórcio permitido por Moisés, ele diz que isso foi tolerado "por causa da dureza de vosso coração", "mas no começo não foi assim" (Mateus 19,8). Ou seja: nem tudo o que a Lei tolerou era o ideal de Deus. Era um passo possível naquele momento. O Concílio Vaticano II diz o mesmo dos livros do Antigo Testamento: "apesar de conterem também coisas imperfeitas e transitórias, revelam, contudo, a verdadeira pedagogia divina" (Dei Verbum §15).
 
 ## A escravidão
 
-O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica dos escravos hebreus, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo manda receber o escravo Onésimo "não mais como escravo, mas como irmão" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
+O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica dos escravos hebreus, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo, que podia dar ordens mas prefere fazer um apelo (Filêmon 8-9), pede que o escravo Onésimo seja recebido "não já como escravo, mas bem mais do que escravo, como irmão caríssimo" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
 
 ## As guerras de conquista
 
-Há textos duríssimos, com ordens de extermínio. Para lê-los com honestidade, é preciso considerar três coisas. Primeiro, o gênero: a linguagem de aniquilação total era uma hipérbole comum nas crônicas de guerra do Oriente Antigo, e não descreve necessariamente o que de fato ocorreu. Segundo, o alvo teológico: a luta era contra a idolatria e a corrupção que ameaçavam destruir o povo por dentro, não um ódio étnico. Terceiro, e decisivo: esses textos descrevem um momento da história da salvação, não um modelo a imitar. Nenhum cristão lê ali um mandado para a violência.
+Há textos duríssimos, com ordens de extermínio. Para lê-los com honestidade, é preciso considerar três coisas. Primeiro, o gênero: a linguagem de aniquilação total era uma hipérbole comum nas crônicas de guerra do Oriente Antigo, e não descreve necessariamente o que de fato ocorreu. Segundo, o alvo teológico: a luta era contra a idolatria e a corrupção que ameaçavam destruir o povo por dentro, não um ódio étnico. Terceiro, e decisivo: esses textos descrevem um momento da história da salvação, não um modelo a imitar. A Igreja não lê ali um mandado para a violência.
 
 ## "Olho por olho"
 
-A famosa lei de talião soa bárbara aos nossos ouvidos. Mas, no seu tempo, ela foi um avanço civilizatório: em vez da vingança sem limites (matar a família inteira por uma ofensa), ela impôs proporcionalidade, "apenas" olho por olho, dente por dente. Era um freio à escalada, não um incentivo à violência. E Jesus, depois, leva o princípio à plenitude: "ouvistes que foi dito... eu, porém, vos digo: amai os vossos inimigos" (Mateus 5,38-44).
+A famosa lei de talião soa bárbara aos nossos ouvidos. Mas, no seu tempo, ela foi um avanço civilizatório: em vez da vingança sem limites (matar a família inteira por uma ofensa), ela impôs proporcionalidade, "apenas" olho por olho, dente por dente. Era um freio à escalada, não um incentivo à violência. E Jesus, depois, leva o princípio à plenitude: "tendes ouvido o que foi dito... Eu, porém, vos digo: amai vossos inimigos" (Mateus 5,38-44).
 
 ## O critério final é Cristo
 
@@ -567,7 +567,7 @@ Por fim, uma observação. O ateu que se indigna com a violência do Antigo Test
 
 2. A Bíblia institui a escravidão como ideal, ou planta o princípio (o homem é imagem de Deus) que acabaria por aboli-la?
 
-3. Jesus diz que Moisés tolerou coisas "pela dureza dos corações". Isso ajuda a distinguir o que Deus permitiu do que Deus quer?
+3. Jesus diz que Moisés tolerou coisas "por causa da dureza de vosso coração". Isso ajuda a distinguir o que Deus permitiu do que Deus quer?
 
 4. Para chamar a violência do Antigo Testamento de "má", o crítico ateu não precisa, antes, de um padrão moral absoluto, que só faz sentido se Deus existe?`,
     references: ['gn-1-27', 'rm-2-14', 'mt-19-8', 'fm-1-16', 'mt-5-38', 'dei-verbum-15'],
@@ -602,7 +602,7 @@ A ideia de um arrebatamento secreto, em que os fiéis somem de repente antes de 
 
 ## O que de fato vai acontecer
 
-Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória (Mateus 25,31), haverá a ressurreição dos mortos e o juízo final, em que os mortos serão julgados "segundo as suas obras" (Apocalipse 20,12), o mal será definitivamente vencido e haverá "novos céus e nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
+Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória (Mateus 25,31), haverá a ressurreição dos mortos e o juízo final, em que os mortos serão julgados "segundo as suas obras" (Apocalipse 20,12), o mal será definitivamente vencido e haverá "novos céus e uma nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
 
 ## Como viver tudo isso
 
@@ -645,7 +645,7 @@ Não tente ler dez capítulos de uma vez. Melhor um trecho curto por dia, lido c
 
 ## A regra de ouro: não leia totalmente sozinho
 
-Aqui está um ponto que evita muito erro. A Bíblia nasceu dentro da Igreja, "coluna e sustentáculo da verdade" (1 Timóteo 3,15), e é na Igreja que se lê bem. O próprio São Pedro avisa que nas Escrituras há "coisas difíceis de entender, que os ignorantes torcem para a própria perdição" (2 Pedro 3,16), e que "nenhuma profecia da Escritura é de interpretação particular" (2 Pedro 1,20). Por isso, use uma boa Bíblia católica com notas de rodapé, que situam e explicam os textos, e deixe que a fé da Igreja ilumine a sua leitura. Ler a Bíblia "por conta própria", sem nenhuma referência, é como navegar sem mapa.
+Aqui está um ponto que evita muito erro. A Bíblia nasceu dentro da Igreja, "coluna e sustentáculo da verdade" (1 Timóteo 3,15), e é na Igreja que se lê bem. O próprio São Pedro avisa que nas cartas de Paulo "há algumas passagens difíceis de entender, cujo sentido os espíritos ignorantes ou pouco fortalecidos deturpam, para a sua própria ruína, como o fazem também com as demais Escrituras" (2 Pedro 3,16), e que "nenhuma profecia da Escritura é de interpretação pessoal" (2 Pedro 1,20). Por isso, use uma boa Bíblia católica com notas de rodapé, que situam e explicam os textos, e deixe que a fé da Igreja ilumine a sua leitura. Ler a Bíblia "por conta própria", sem nenhuma referência, é como navegar sem mapa.
 
 ## Entenda o gênero do que lê
 
@@ -659,7 +659,7 @@ Por fim, o mais importante: o objetivo não é "saber a Bíblia" como quem decor
 
 1. Faz mais sentido começar a Bíblia pelo Gênesis e travar no Levítico, ou conhecer primeiro Jesus por um Evangelho?
 
-2. Se o próprio São Pedro diz que há textos que os imprudentes "torcem", não é mais seguro ler a Bíblia com as notas e a fé da Igreja?
+2. Se o próprio São Pedro diz que há passagens que os ignorantes "deturpam", não é mais seguro ler a Bíblia com as notas e a fé da Igreja?
 
 3. Ler um trecho curto por dia, com calma, ou tentar devorar capítulos e desistir na primeira semana: o que dá mais fruto?
 

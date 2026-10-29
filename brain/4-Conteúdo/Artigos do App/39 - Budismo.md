@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 39 - Budismo
@@ -22,7 +22,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[João 3,16]]
 - [[Hebreus 9,27]]
 - [[As Quatro Nobres Verdades]]
-- [[Nostra Aetate]]
+- [[Nostra Aetate §2-5]]
+- [[Udana 8,3]]
 
 ## Artigos relacionados
 - [[40 - Hinduísmo]]

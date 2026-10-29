@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Lumen Gentium §8
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Documentos | Concílio Vaticano II (21 de novembro de 1964)
 Tema: Eclesiologia / subsistit in
 
-> "Esta Igreja, constituída e organizada neste mundo como sociedade, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos Bispos em comunhão com ele, embora fora de sua estrutura se encontrem muitos elemen...
+> "Esta Igreja, constituída e organizada neste mundo como sociedade, subsiste na Igreja Católica, governada pelo sucessor de Pedro e pelos Bispos em união com ele, embora, fora da sua comunidade, se encontrem muitos elemen...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

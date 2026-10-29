@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Lucas 1,42
@@ -15,4 +15,5 @@ Abre no app em `lc 1,42`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[22 - A Assunção de Maria]]
 - [[74 - Como Rezar o Rosário]]

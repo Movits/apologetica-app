@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 61 - O Que Acontece Depois da Morte Os Novíssimos
@@ -35,6 +35,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[1 Coríntios 13,12]]
 - [[Catecismo §1037]]
 - [[Catecismo §2282-2283]]
+- [[Catecismo §1033-1037]]
 
 ## Diálogos que levam a este artigo
 - [[Um Deus de amor jamais mandaria alguém para o inferno]]

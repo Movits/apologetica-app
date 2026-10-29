@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 40 - Hinduísmo
@@ -25,7 +25,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Gênesis 1,27-28]]
 - [[Hebreus 9,27]]
 - [[Bhagavad Gita e Upanishads]]
-- [[Nostra Aetate]]
+- [[Nostra Aetate §2-5]]
 
 ## Artigos relacionados
 - [[39 - Budismo]]

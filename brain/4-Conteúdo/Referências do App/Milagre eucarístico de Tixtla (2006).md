@@ -1,15 +1,15 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Milagre eucarístico de Tixtla (2006)
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Outros | Investigação coordenada pelo Dr. Ricardo Castañón Gómez (2006 (evento); análises de 2009 a 2013)
+Fonte: Outros | Investigação coordenada pelo Dr. Ricardo Castañón Gómez (2006 (evento); investigação de 2009 a 2012, resultados apresentados em 2013)
 Tema: Hóstia que exsudou substância sanguínea
 
-> Durante uma Missa em 2006, uma Hóstia começou a exsudar uma substância avermelhada. A análise identificou sangue humano com hemoglobina e DNA, e a substância vinha do interior da Hóstia, não da superfície. Os achados for...
+> Durante uma Missa em 2006, uma Hóstia começou a exsudar uma substância avermelhada. Segundo a equipe de Castañón, a análise identificou sangue humano do tipo AB, com hemoglobina e DNA, além de tecido do músculo cardíaco,...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

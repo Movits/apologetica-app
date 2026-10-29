@@ -121,8 +121,8 @@ const lessons = {
       'At the Supper he says "this is my body" (estin, "is"), and Paul warns that receiving unworthily makes one guilty of the body and blood of the Lord (1 Corinthians 11:27).',
       'Ignatius, Justin and Cyril of Jerusalem teach the Real Presence, Trent defines it in 1551, and the purely symbolic reading gains ground with Zwingli in the 16th century.',
     ],
-    oneLiner: 'A Eucaristia não é símbolo: Jesus disse "isto é o meu corpo", Paulo levou ao pé da letra, e por mil anos nenhum teólogo de peso disse que era só símbolo.',
-    oneLinerEn: 'The Eucharist is not a symbol: Jesus said "this is my body", Paul took him literally, and for a thousand years no major theologian called it a mere symbol.',
+    oneLiner: 'A Eucaristia não é símbolo: Jesus disse "isto é o meu corpo", Paulo levou ao pé da letra, e por mil anos nenhum Padre ou Doutor da Igreja disse que era só símbolo.',
+    oneLinerEn: 'The Eucharist is not a symbol: Jesus said "this is my body", Paul took him literally, and for a thousand years no Father or Doctor of the Church called it a mere symbol.',
     check: [
       {
         question: 'Por que o artigo destaca o verbo grego trōgō, usado por Jesus em João 6?',
@@ -209,7 +209,7 @@ const lessons = {
     ],
     keyPointsEn: [
       'The objection "why not go straight to Jesus?" confuses mediation with intercession: Christ is the one mediator (1 Timothy 2:5), but asking someone to pray depends on him.',
-      'The saints are alive, since God "is not the God of the dead, but of the living" (Matthew 22:32), and in Revelation the elders offer God the prayers of the saints (5:8).',
+      'The saints are alive, since God "is not the God of the dead but of the living" (Matthew 22:32), and in Revelation the elders offer God the prayers of the saints (5:8).',
       'At Cana Mary intercedes and points to Christ ("whatsoever he shall say to you, do ye"). The Church distinguishes latria (God alone), dulia (saints), hyperdulia (Mary).',
     ],
     oneLiner: 'Católico não adora Maria: pede que ela reze por ele, como pede a um amigo. A diferença é que ela já está ao lado de Cristo.',
@@ -251,7 +251,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'Jesus mesmo disse que Deus "não é Deus dos mortos, mas Deus dos vivos". Apocalipse 5,8 mostra os anciãos no céu oferecendo a Deus as orações dos santos: a intercessão dos que estão com Deus é Escritura, não invenção tardia.',
-        whyEn: 'Jesus himself said that God "is not the God of the dead, but of the living". Revelation 5:8 shows the elders in heaven offering God the prayers of the saints: the intercession of those with God is Scripture, not a late invention.',
+        whyEn: 'Jesus himself said that God "is not the God of the dead but of the living". Revelation 5:8 shows the elders in heaven offering God the prayers of the saints: the intercession of those with God is Scripture, not a late invention.',
       },
       {
         question: 'O que significa "hiperdulia" na linguagem da Igreja?',
@@ -308,7 +308,7 @@ const lessons = {
     check: [
       {
         question: 'Como o artigo responde ao argumento de que Maria chama Deus de "meu Salvador" (Lucas 1,47) e por isso teria pecado?',
-        questionEn: 'How does the article answer the argument that Mary calls God "my Savior" (Luke 1:47) and therefore must have sinned?',
+        questionEn: 'How does the article answer the argument that Mary calls God "my Saviour" (Luke 1:47) and therefore must have sinned?',
         options: [
           'Dizendo que o Magnificat não foi dito por Maria, mas por Isabel',
           'Admitindo que Maria pecou, mas só antes da Anunciação',
@@ -478,7 +478,7 @@ const lessons = {
     keyPoints: [
       'Theotokos não significa que Maria gerou a divindade, mas que aquele que ela gerou, na unidade de sua pessoa, é verdadeiramente Deus.',
       'Nestório queria só "Mãe de Cristo" e separava as naturezas de Jesus como se fossem duas pessoas. Éfeso (431), com Cirilo de Alexandria, defendeu a unidade da pessoa.',
-      'Isabel chama Maria de "mãe do meu Senhor" (Lucas 1,43), e Kyrios é o título divino da Septuaginta. O título é tão cristológico quanto mariano.',
+      'Isabel chama Maria de "mãe de meu Senhor" (Lucas 1,43), e Kyrios é o título divino da Septuaginta. O título é tão cristológico quanto mariano.',
     ],
     keyPointsEn: [
       'Theotokos does not mean that Mary generated the divinity, but that the one she bore, in the unity of his person, is truly God.',
@@ -531,7 +531,7 @@ const lessons = {
         questionEn: 'Why is Luke 1:43 used as the biblical basis of the title?',
         options: [
           'Porque o anjo Gabriel a saúda como "Mãe de Deus" na Anunciação',
-          'Porque Isabel a chama "mãe do meu Senhor", e Kyrios é título divino',
+          'Porque Isabel a chama "mãe de meu Senhor", e Kyrios é título divino',
           'Porque Jesus, em Caná, a chama de "mulher", como a nova Eva',
           'Porque Maria se declara "serva do Senhor", e o Senhor é Deus',
         ],
@@ -542,7 +542,7 @@ const lessons = {
           'Because Mary calls herself "the handmaid of the Lord", and the Lord is God',
         ],
         correct: 1,
-        why: 'Kyrios (Senhor) é a palavra que a Septuaginta usa para o nome divino YHWH, e Lucas a aplica a Deus logo depois (1,45-46). Ao chamar Maria de "mãe do meu Senhor", Isabel reconhece no filho dela o Senhor.',
+        why: 'Kyrios (Senhor) é a palavra que a Septuaginta usa para o nome divino YHWH, e Lucas a aplica a Deus logo depois (1,45-46). Ao chamar Maria de "mãe de meu Senhor", Isabel reconhece no filho dela o Senhor.',
         whyEn: 'Kyrios (Lord) is the word the Septuagint uses for the divine name YHWH, and Luke applies it to God right afterwards (1:45-46). By calling Mary "the mother of my Lord", Elizabeth recognizes the Lord in her son.',
       },
     ],
@@ -551,7 +551,7 @@ const lessons = {
   19: {
     hook: {
       question: 'Antes de ler: em "tu és Pedro, e sobre esta pedra edificarei a minha Igreja", a "pedra" é quem ou o quê?',
-      questionEn: 'Before you read: in "you are Peter, and on this rock I will build my Church", who or what is the "rock"?',
+      questionEn: 'Before you read: in "thou art Peter; and upon this rock I will build my church", who or what is the "rock"?',
       options: [
         'Só a fé que Pedro confessou, não a pessoa dele',
         'O próprio Pedro, cujo nome quer dizer "rocha"',
@@ -1005,8 +1005,8 @@ const lessons = {
 
   24: {
     hook: {
-      question: 'Antes de ler: a expressão "somente pela fé" aparece na Bíblia?',
-      questionEn: 'Before you read: does the expression "by faith alone" appear in the Bible?',
+      question: 'Antes de ler: no grego original, a expressão "somente pela fé" aparece na Bíblia?',
+      questionEn: 'Before you read: does the expression "by faith only" appear in the Bible?',
       options: [
         'Sim, em Romanos, como resumo da doutrina de Paulo',
         'Sim, uma única vez, em Tiago 2,24, e negada',
@@ -1018,17 +1018,17 @@ const lessons = {
         'It appears nowhere',
       ],
       correct: 1,
-      note: 'Tiago 2,24 diz que o homem "é justificado pelas obras e não somente pela fé". É a única vez que a expressão aparece, e aparece negada. O artigo explica por que Paulo e Tiago não se contradizem e o que "tudo é graça" significa.',
+      note: 'Tiago 2,24 diz que o homem "é justificado pelas obras e não somente pela fé". No grego, é a única vez que a expressão aparece, e aparece negada. O artigo explica por que Paulo e Tiago não se contradizem e o que "tudo é graça" significa.',
       noteEn: 'James 2:24 says that "by works a man is justified, and not by faith only". It is the only time the expression appears, and it appears denied. The article explains why Paul and James do not contradict each other and what "everything is grace" means.',
     },
     keyPoints: [
-      'Tiago 2,24 é o único lugar onde "somente pela fé" aparece na Bíblia, e aparece negada. A fé sem obras é morta (Tiago 2,26).',
+      'Tiago 2,24 é o único lugar onde "somente pela fé" aparece no grego da Bíblia, e aparece negada. A fé sem obras é morta (Tiago 2,26).',
       'Paulo, em Romanos 3,28, exclui as "obras da Lei" mosaica, não a caridade: ele mesmo diz que o que vale é "a fé que opera pela caridade" (Gálatas 5,6).',
       'A salvação é gratuita e tudo é graça, mas a graça produz obras que cooperam para a salvação final. No juízo de Mateus 25, as obras de misericórdia decidem.',
     ],
     keyPointsEn: [
-      'James 2:24 is the only place where "by faith alone" appears in the Bible, and it appears denied. Faith without works is dead (James 2:26).',
-      'Paul, in Romans 3:28, excludes the "works of the Law" of Moses, not charity: he himself says what counts is "faith working through love" (Galatians 5:6).',
+      'James 2:24 is the only place where "by faith only" appears in the Bible, and it appears denied. Faith without works is dead (James 2:26).',
+      'Paul, in Romans 3:28, excludes the "works of the Law" of Moses, not charity: he himself says what counts is "faith that worketh by charity" (Galatians 5:6).',
       'Salvation is free and everything is grace, but grace produces works that cooperate toward final salvation. In the judgment of Matthew 25, works of mercy decide.',
     ],
     oneLiner: 'Ninguém compra o céu com obras: tudo é graça. Mas fé que não produz caridade é morta, e no juízo final Jesus pergunta se demos de comer a quem tinha fome.',
@@ -1036,7 +1036,7 @@ const lessons = {
     check: [
       {
         question: 'Como o artigo concilia Romanos 3,28 ("o homem é justificado pela fé, sem as observâncias da lei") com Tiago 2,24?',
-        questionEn: 'How does the article reconcile Romans 3:28 ("a man is justified by faith, without the works of the law") with James 2:24?',
+        questionEn: 'How does the article reconcile Romans 3:28 ("we account a man to be justified by faith, without the works of the law") with James 2:24?',
         options: [
           'Dizendo que Tiago escreveu antes e que Paulo depois o corrigiu',
           'Dizendo que Paulo exclui as obras da Lei mosaica, não a caridade',
@@ -1051,7 +1051,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Paulo contrasta a fé cristã com as obras da Lei (circuncisão, sábado, ritos kosher). Ele não nega as obras que a fé inspira: em Gálatas 5,6 diz que o que vale é "a fé que opera pela caridade". Tiago e Paulo falam de coisas diferentes.',
-        whyEn: 'Paul contrasts Christian faith with the works of the Law (circumcision, sabbath, kosher rites). He does not deny the works faith inspires: in Galatians 5:6 he says what counts is "faith working through love". James and Paul speak of different things.',
+        whyEn: 'Paul contrasts Christian faith with the works of the Law (circumcision, sabbath, kosher rites). He does not deny the works faith inspires: in Galatians 5:6 he says what counts is "faith that worketh by charity". James and Paul speak of different things.',
       },
       {
         question: 'O que a posição católica afirma sobre o papel das obras na salvação?',
@@ -1379,7 +1379,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'São Paulo manda conservar as tradições, por palavra ou por carta (2 Tessalonicenses 2,15), e chama a Igreja de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). Além disso, foi a Igreja, em concílios do século IV, que definiu quais livros formam a Bíblia.',
-        whyEn: 'Saint Paul commands holding the traditions, by word or by letter (2 Thessalonians 2:15), and calls the Church "the pillar and foundation of truth" (1 Timothy 3:15). And it was the Church, in fourth-century councils, that defined which books make up the Bible.',
+        whyEn: 'Saint Paul commands holding the traditions, by word or by letter (2 Thessalonians 2:15), and calls the Church "the pillar and ground of the truth" (1 Timothy 3:15). And it was the Church, in fourth-century councils, that defined which books make up the Bible.',
       },
       {
         question: 'Qual é a posição católica sobre fé e obras na salvação, segundo o artigo?',
@@ -1397,8 +1397,8 @@ const lessons = {
           'Faith and works are alternative paths: each picks his own',
         ],
         correct: 0,
-        why: 'A Igreja afirma que a salvação é graça, nunca mérito comprado, mas que a fé verdadeira não fica sozinha: o que vale é "a fé que opera pela caridade" (Gálatas 5,6) e "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24). Não é fé contra obras.',
-        whyEn: 'Salvation is grace, never a merit one buys, but true faith does not stay alone: "what counts is faith working through love" (Galatians 5:6) and "a man is justified by works, and not by faith only" (James 2:24). It is not faith against works.',
+        why: 'A Igreja afirma que a salvação é graça, nunca mérito comprado, mas que a fé verdadeira não fica sozinha: o que vale é "a fé que opera pela caridade" (Gálatas 5,6) e "o homem é justificado pelas obras e não somente pela fé" (Tiago 2,24). Não é fé contra obras.',
+        whyEn: 'Salvation is grace, never a merit one buys, but true faith does not stay alone: what counts is "faith that worketh by charity" (Galatians 5:6) and "by works a man is justified, and not by faith only" (James 2:24). It is not faith against works.',
       },
       {
         question: 'Que conclusão o artigo tira do surgimento de dezenas de milhares de denominações em cinco séculos?',
@@ -1417,7 +1417,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Jesus rezou "para que todos sejam um" (João 17,21). O princípio de cada um interpretar a Bíblia por si gerou milhares de denominações com doutrinas opostas. Isso mostra a necessidade de uma autoridade visível, que a Igreja mantém desde os apóstolos.',
-        whyEn: 'Jesus prayed "that they may all be one" (John 17:21). Each one interpreting the Bible for himself produced thousands of denominations with opposing doctrines. This shows the need for a visible authority, which the Church has kept since the apostles.',
+        whyEn: 'Jesus prayed "that they all may be one" (John 17:21). Each one interpreting the Bible for himself produced thousands of denominations with opposing doctrines. This shows the need for a visible authority, which the Church has kept since the apostles.',
       },
     ],
   },
@@ -1461,7 +1461,7 @@ const lessons = {
         ],
         correct: 3,
         why: 'A ação ordinária do demônio é discreta: tentação, mentira, desânimo, divisão. Jesus o chamou de "pai da mentira" (João 8,44), e sua arma preferida é convencer de que ele não existe ou de que o mal é bem. Resistir é viver na verdade e na graça.',
-        whyEn: 'The demon\'s ordinary action is discreet: temptation, lies, discouragement, division. Jesus called him "the father of lies" (John 8:44), and his favorite weapon is convincing us he does not exist or that evil is good. Resisting is living in truth and grace.',
+        whyEn: 'The demon\'s ordinary action is discreet: temptation, lies, discouragement, division. Jesus called him the father of lies (John 8:44), and his favorite weapon is convincing us he does not exist or that evil is good. Resisting is living in truth and grace.',
       },
       {
         question: 'O que a Igreja exige antes de qualquer exorcismo, segundo o artigo?',
@@ -1498,8 +1498,8 @@ const lessons = {
           'Seeing the demon at work behind every problem in life',
         ],
         correct: 2,
-        why: 'C. S. Lewis notou que o diabo se alegra com dois erros opostos: ser negado ou ser objeto de interesse excessivo e doentio. O equilíbrio é levar o mal a sério, sem medo e sem obsessão, com os olhos em Cristo, pois "o que está em vós é maior" (1 João 4,4).',
-        whyEn: 'C. S. Lewis noted that the devil rejoices in two opposite errors: being denied, or an excessive and unhealthy interest in him. The balance is taking evil seriously, without fear or obsession, eyes on Christ, for "greater is he that is in you" (1 John 4:4).',
+        why: 'C. S. Lewis notou que os demônios se alegram com dois erros opostos: serem negados ou objeto de interesse excessivo e doentio. O equilíbrio é levar o mal a sério, sem medo e sem obsessão, com os olhos em Cristo, pois "o que está em vós é maior" (1 João 4,4).',
+        whyEn: 'C. S. Lewis noted that the devils rejoice in two opposite errors: being denied, or an excessive and unhealthy interest in them. The balance is taking evil seriously, without fear or obsession, eyes on Christ, for "greater is he that is in you" (1 John 4:4).',
       },
     ],
   },
@@ -1625,7 +1625,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Quem ama diz "eu te amo" mil vezes sem que as palavras fiquem ocas. E a Ave-Maria traz a saudação do anjo e as palavras de Isabel (Lucas 1,28.42), não um texto composto por Maria. Enquanto os lábios repetem, o coração medita os fatos da salvação.',
-        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1:28.42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
+        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1:28, 42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
       },
       {
         question: 'Segundo o artigo, qual é o papel da Ave-Maria repetida dentro do Rosário?',
@@ -1683,7 +1683,7 @@ const lessons = {
       'Dois erros: o legalismo (troca mágica com Deus) e o descaso (nunca sustentar a comunidade). A viúva das duas moedinhas mostra que o que conta é o amor, não o valor.',
     ],
     keyPointsEn: [
-      'In the Old Testament the tithe was a set percentage. In the New it changes: "God loves a cheerful giver" (2 Corinthians 9:7), and generosity springs from within.',
+      'In the Old Testament the tithe was a set percentage. In the New it changes: "God loveth a cheerful giver" (2 Corinthians 9:7), and generosity springs from within.',
       'There is no universal Catholic law of ten percent under pain of sin. The Church asks for giving according to one\'s means. Ten percent is a healthy benchmark, not a tax.',
       'Two errors: legalism (a magic trade with God) and neglect (never supporting the community). The widow with two small coins shows that what counts is love, not the amount.',
     ],
@@ -1707,7 +1707,7 @@ const lessons = {
         ],
         correct: 0,
         why: 'No Antigo Testamento o povo entregava dez por cento para o culto e os levitas. No Novo, o critério muda de natureza: "Dê cada um conforme o impulso do seu coração, sem tristeza nem constrangimento. Deus ama o que dá com alegria" (2 Coríntios 9,7).',
-        whyEn: 'In the Old Testament, ten percent went to worship and the Levites. In the New, the criterion changes in nature: "each one as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver" (2 Corinthians 9:7).',
+        whyEn: 'In the Old Testament, ten percent went to worship and the Levites. In the New, the criterion changes in nature: "Every one as he hath determined in his heart, not with sadness or of necessity: for God loveth a cheerful giver" (2 Corinthians 9:7).',
       },
       {
         question: 'Quais são os dois extremos que o artigo aponta sobre o dízimo?',
@@ -1827,7 +1827,7 @@ const lessons = {
         ],
         correct: 1,
         why: 'Os santos não competem com Cristo: são amigos no céu que intercedem por nós, como os anciãos que oferecem a Deus "as orações dos santos" (Apocalipse 5,8). E são a prova viva de que a santidade é possível em toda época e condição.',
-        whyEn: 'The saints do not compete with Christ: they are friends in heaven who intercede for us, like the elders who offer God "the prayers of the saints" (Revelation 5:8). And they are living proof that holiness is possible in every age and condition.',
+        whyEn: 'The saints do not compete with Christ: they are friends in heaven who intercede for us, like the elders who offer God "the prayers of saints" (Revelation 5:8). And they are living proof that holiness is possible in every age and condition.',
       },
     ],
   },
@@ -1847,7 +1847,7 @@ const lessons = {
       'Ter dúvidas não é perder a fé: enfrentá-las com honestidade fortalece. E na aridez, o erro é largar a oração e os sacramentos justo quando são mais necessários.',
     ],
     keyPointsEn: [
-      'Faith is a gift: no one believes by effort alone. So the first step is to ask, like the father in the Gospel: "I believe, Lord, help my unbelief" (Mark 9:24).',
+      'Faith is a gift: no one believes by effort alone. So the first step is to ask, like the father in the Gospel: "I do believe, Lord. Help my unbelief" (Mark 9:24).',
       'But the gift must be welcomed with concrete steps: daily prayer, the sacraments, reading the Gospel, time with people of faith and practicing charity.',
       'Having doubts is not losing faith: facing them honestly strengthens it. And in dryness, the mistake is to drop prayer and the sacraments just when they are most needed.',
     ],
@@ -1953,7 +1953,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Jejuar é um ato de amor e penitência: dizer não ao corpo, em algo legítimo, para dizer um sim maior a Deus. É treinar a liberdade, lembrando que "não só de pão vive o homem" (Mateus 4,4). O próprio Jesus jejuou quarenta dias no deserto (Mateus 4,2).',
-        whyEn: 'Fasting is an act of love and penance: saying no to the body, in something legitimate, to say a greater yes to God. It trains freedom, recalling that "man does not live on bread alone" (Matthew 4:4). Jesus himself fasted forty days in the desert (Matthew 4:2).',
+        whyEn: 'Fasting is an act of love and penance: saying no to the body, in something legitimate, to say a greater yes to God. It trains freedom, recalling that "not in bread alone doth man live" (Matthew 4:4). Jesus himself fasted forty days in the desert (Matthew 4:2).',
       },
       {
         question: 'Quais são os três pilares da Quaresma, segundo o artigo?',

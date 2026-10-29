@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §1030-1032
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Purgatório / purificação final dos eleitos
 
-> Os que morrem na graça e na amizade de Deus, mas imperfeitamente purificados, embora tenham assegurada a salvação eterna, sofrem depois da morte uma purificação, a fim de obterem a santidade necessária para entrar na ale...
+> Os que morrem na graça e na amizade de Deus, mas não de todo purificados, embora seguros da sua salvação eterna, sofrem depois da morte uma purificação, a fim de obterem a santidade necessária para entrar na alegria do c...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

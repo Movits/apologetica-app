@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Catecismo §499-501
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Virgindade perpétua de Maria
 
-> O aprofundamento da fé na maternidade virginal levou a Igreja a confessar a virgindade real e perpétua de Maria também no parto do Filho de Deus feito homem. Maria é "sempre virgem" (aeiparthenos).
+> O aprofundamento da fé na maternidade virginal levou a Igreja a confessar a virgindade real e perpétua de Maria, mesmo no parto do Filho de Deus feito homem. Com efeito, o nascimento de Cristo "não diminuiu, antes consag...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

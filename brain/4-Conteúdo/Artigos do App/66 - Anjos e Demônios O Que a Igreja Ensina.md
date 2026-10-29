@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 66 - Anjos e Demônios O Que a Igreja Ensina
@@ -29,6 +29,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Apocalipse 12,7-9]]
 - [[Catecismo §391-395]]
 - [[João 8,44]]
+- [[Cartas de um Diabo a seu Aprendiz, prefácio]]
+- [[Catecismo §328-336]]
+- [[Catecismo §1673]]
 
 ## Diálogos que levam a este artigo
 - [[Isso de demônio é coisa da Idade Média, hoje ninguém acredita]]

@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Heresia
@@ -11,4 +11,5 @@ Negação ou dúvida pertinaz, por parte de um batizado, sobre uma verdade que d
 Funcionalidade: [[Glossário]]
 
 ## Aparece nos artigos
+- [[30 - Galileu Galilei e o Mito do Conflito Ciência-Fé]]
 - [[58 - A Santíssima Trindade Um Só Deus em Três Pessoas]]

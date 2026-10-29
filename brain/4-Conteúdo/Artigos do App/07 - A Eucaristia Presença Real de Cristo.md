@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 07 - A Eucaristia Presença Real de Cristo
@@ -30,7 +30,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Catecismo §1373-1381]]
 - [[Carta aos Esmirnenses §7]]
 - [[Primeira Apologia §66]]
-- [[Catequese Mistagógica IV]]
+- [[Catequese Mistagógica IV, 1 e 9]]
 - [[Concílio de Trento, sessão XIII]]
 - [[Milagre Eucarístico de Lanciano]]
 - [[Catálogo Internacional de Milagres Eucarísticos]]

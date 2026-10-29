@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 18 - O Cânon Bíblico Por que 73 Livros
@@ -13,7 +13,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Tópicos internos
 - A Bíblia dos apóstolos era a Septuaginta
-- O que mudou: o cânon de Jâmnia
+- O que mudou: o cânon rabínico
 - Lutero remove sete livros
 - Trento confirma o cânon
 - Os critérios do discernimento

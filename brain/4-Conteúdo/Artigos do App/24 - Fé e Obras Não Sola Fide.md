@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 24 - Fé e Obras Não Sola Fide
@@ -20,6 +20,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Termos do glossário
 - [[Sola Fide]]
+- [[Sacramento]]
 - [[Graça]]
 
 ## Referências usadas
@@ -29,7 +30,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Romanos 3,28]]
 - [[Gálatas 5,6]]
 - [[Apocalipse 20,12-13]]
-- [[Catecismo §1991-2005]]
+- [[Catecismo §1987-2005]]
 - [[Romanos 2,6-7]]
 
 ## Artigos relacionados

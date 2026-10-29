@@ -1,12 +1,12 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Lucas 1,34
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | Apóstolo Lucas (séc. I d.C.)
+Fonte: Bíblia | Evangelista Lucas (séc. I d.C.)
 Tema: Virgindade de Maria / propósito de virgindade perpétua
 
 > Maria perguntou ao anjo: “Como se fará isso, pois não conheço homem?”

@@ -1,12 +1,12 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 1 Timóteo 2,5
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | Apóstolo Paulo (c. 62-65 d.C.)
+Fonte: Bíblia | Apóstolo Paulo (c. 63-65 d.C.)
 Tema: Mediação única de Cristo
 
 > Porque há um só Deus e há um só mediador entre Deus e os homens: Jesus Cristo, homem

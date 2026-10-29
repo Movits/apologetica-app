@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # Mateus 12,32
@@ -16,4 +16,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]
-- [[59 - O Que é o Pecado Mortal, Venial e os Sete Pecados Capitais]]

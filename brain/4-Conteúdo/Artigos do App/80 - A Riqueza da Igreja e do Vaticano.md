@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 80 - A Riqueza da Igreja e do Vaticano
@@ -23,6 +23,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 
 ## Referências usadas
 - [[Mateus 25,31-46]]
+- [[Dilexi te §35 e §38]]
 
 ## Diálogos que levam a este artigo
 - [[A Igreja é riquíssima; devia vender tudo e acabar com a pobreza]]

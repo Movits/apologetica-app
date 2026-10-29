@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 45 - A Escuridão na Cruz e a Datação da Crucificação
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Os Evangelhos relatam três horas de escuridão na morte de Jesus. Autores pagãos falaram de um fenômeno parecido, e a astronomia reforça uma das datas propostas para a crucificação, 3 de abril do ano 33.
+Os Evangelhos relatam três horas de escuridão na morte de Jesus. Autores não cristãos falaram de um fenômeno parecido, e a astronomia reforça uma das datas propostas para a crucificação, 3 de abril do ano 33.
 
 Categoria: [[Sagrada Escritura]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/sagrada-escritura.js`
@@ -20,7 +20,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Referências usadas
 - [[Mateus 27,45-46]]
-- [[Joel 2,31]]
+- [[Joel 3,4]]
 - [[Atos 2,20]]
 - [[Talo e Flégon (fontes pagãs)]]
 - [[Dating the Crucifixion (Nature, 1983)]]

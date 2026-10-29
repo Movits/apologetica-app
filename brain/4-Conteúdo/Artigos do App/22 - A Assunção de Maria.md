@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 22 - A Assunção de Maria
@@ -26,8 +26,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Referências usadas
 - [[Catecismo §966-975]]
 - [[Lucas 1,28]]
+- [[Lucas 1,42]]
 - [[Apocalipse 12,1]]
-- [[Munificentissimus Deus]]
+- [[Munificentissimus Deus §44]]
 - [[Salmo 45 (44),10]]
 - [[Gênesis 3,19]]
 - [[Romanos 6,23]]

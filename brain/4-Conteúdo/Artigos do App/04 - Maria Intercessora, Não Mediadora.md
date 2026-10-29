@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # 04 - Maria Intercessora, Não Mediadora
@@ -37,6 +37,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Diálogos que levam a este artigo
 - [[Vocês adoram Maria como se fosse Deus]]
+- [[Rezar para santos é idolatria. Somente Deus pode ouvir orações]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 25: Intercessão dos santos: não é idolatria

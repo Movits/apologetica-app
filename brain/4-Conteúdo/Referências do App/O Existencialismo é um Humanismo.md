@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-13
+atualizado: 2026-10-29
 gerado: true
 ---
 # O Existencialismo é um Humanismo
@@ -9,7 +9,7 @@ gerado: true
 Fonte: Teólogos | Jean-Paul Sartre (filósofo francês, ateu) (29 de outubro de 1945 (conferência); livro publicado em 1946)
 Tema: Consequências do ateísmo / liberdade radical
 
-> "O existencialista pensa que é muito constrangedor que Deus não exista, pois com Ele desaparece toda possibilidade de encontrar valores em um céu inteligível. Não pode mais haver bem a priori, pois não há mais consciênci...
+> "O existencialista pensa que é muito constrangedor que Deus não exista, pois com Ele desaparece toda possibilidade de encontrar valores em um céu inteligível. Não pode mais haver bem a priori, pois não há consciência inf...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
