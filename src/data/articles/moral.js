@@ -237,7 +237,7 @@ Falar de pecado só faz sentido por causa do que vem depois: o perdão. O cristi
 3. Os sete vícios capitais descrevem com precisão as raízes do mal que você observa em si e nos outros. Em que isso seria "ultrapassado"?
 
 4. Se nenhum pecado é maior que a misericórdia de Deus, por que tantos preferem negar o pecado a aceitar o perdão que o cura?`,
-    references: ['gn-3-5', 'mt-12-32', 'cic-1422', '1jo-5-16', 'cic-1857', 'cic-1866', 'lc-15-20', 'cic-1864'],
+    references: ['gn-3-5', 'mt-12-31', 'cic-1422', '1jo-5-16', 'cic-1857', 'cic-1866', 'lc-15-20', 'cic-1864'],
   },
   {
     id: 64,

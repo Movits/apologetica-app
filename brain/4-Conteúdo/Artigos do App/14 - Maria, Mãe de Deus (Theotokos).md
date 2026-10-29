@@ -32,8 +32,5 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[13 - A Virgindade Perpétua de Maria]]
 - [[27 - Testemunhas de Jeová]]
 
-## Diálogos que levam a este artigo
-- [[Rezar para santos é idolatria — somente Deus pode ouvir orações]]
-
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 26: Maria, Mãe de Deus (Theotokos)

@@ -31,7 +31,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[25 - Aborto A Dignidade da Vida Humana]]
 
 ## Diálogos que levam a este artigo
-- [[Proibir o divórcio é cruel — Jesus não entendeu a realidade humana]]
+- [[Proibir o divórcio é cruel. Jesus não entendeu a realidade humana]]
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 34: Contracepção e Humanae Vitae

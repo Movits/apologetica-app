@@ -76,7 +76,7 @@ First, a clarification: praying the Rosary is not worshiping Mary. It is meditat
 
 ## It is not "empty repetition"
 
-The most common objection is that of "vain repetitions" (Matthew 6:7). But repetition made out of love is not vain. Whoever loves says "I love you" a thousand times, and they are not empty words. Besides, the Hail Mary is, in large part, the word of God: the greeting of the angel and the words of Elizabeth (Luke 1:28.42). While the lips repeat, the heart meditates on the facts of salvation. It is not the mouth that prays the Rosary, it is the mind that contemplates.
+The most common objection is that of "vain repetitions" (Matthew 6:7). But repetition made out of love is not vain. Whoever loves says "I love you" a thousand times, and they are not empty words. Besides, the Hail Mary is, in large part, the word of God: the greeting of the angel and the words of Elizabeth (Luke 1:28, 42). While the lips repeat, the heart meditates on the facts of salvation. It is not the mouth that prays the Rosary, it is the mind that contemplates.
 
 ## How to pray, step by step
 
@@ -157,7 +157,7 @@ Since 1738, with the bull In eminenti of Pope Clement XII, the Church has forbid
 
 ## Why: it is not persecution, it is coherence
 
-The problem is not secrecy in itself, nor the philanthropic works that many Masons carry out. The problem is the worldview at the base. Freemasonry generally professes a religious relativism (all religions would be equally valid, and God would be a generic "Great Architect", without a face), a naturalism that dispenses with revelation, and oaths that demand a loyalty to the lodge capable of overriding one's own conscience. This is incompatible with the Christian faith, which confesses Jesus Christ as the only Savior, "the way, the truth, and the life" (John 14:6), and with the first commandment, which reserves worship to God (Exodus 20:3).
+The problem is not secrecy in itself, nor the philanthropic works that many Masons carry out. The problem is the worldview at the base. Freemasonry generally professes a religious relativism (all religions would be equally valid, and God would be a generic "Great Architect", without a face), a naturalism that dispenses with revelation, and oaths that demand a loyalty to the lodge capable of overriding one's own conscience. This is incompatible with the Christian faith, which confesses Jesus Christ as the only Savior, "the way, and the truth, and the life" (John 14:6), and with the first commandment, which reserves worship to God (Exodus 20:3).
 
 ## Without conspiracy
 
@@ -300,7 +300,7 @@ The great question is why Pius XII did not make a more explicit public condemnat
 
 ## The verdict of history
 
-In 2020, the Vatican opened the archives of the pontificate of Pius XII to research. The first studies of the documents, such as Johan Ickx's ("Le Bureau", 2020), document the network of help to Jews set up by the Secretariat of State. Other historians, such as David Kertzer ("The Pope at War", 2022), keep a more critical reading of the Pope's prudence. The debate continues, and the Church is in no hurry with judgments. But the caricature of "Hitler's Pope" simply does not hold up against the facts. And the same Church, at the Second Vatican Council, decried "hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (Nostra Aetate, 1965, 4).
+In 2020, the Vatican opened the archives of the pontificate of Pius XII to research. The first studies of the documents, such as Johan Ickx's ("Le Bureau", 2020), document the network of help to Jews set up by the Secretariat of State. Other historians, such as David Kertzer ("The Pope at War", 2022), keep a more critical reading of the Pope's prudence. The debate continues, and the Church is in no hurry with judgments. But the caricature of "Hitler's Pope" simply does not hold up against the facts. And the same Church, at the Second Vatican Council, decried "hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (Nostra Aetate, 1965, §4).
 
 ## Key questions
 
@@ -549,7 +549,7 @@ None of this licenses contempt. The way is not angry polemics, but serene witnes
 
 ## What the Church really teaches
 
-Sex is not dirty or shameful. It is a good gift of God, who created them "male and female" and blessed them (Genesis 1:27-28). Catholic doctrine recognizes in it two inseparable meanings, the deep union of man and woman and openness to life (Saint Paul VI, Humanae Vitae, 1968, 12). And it teaches that its proper place is marriage, the total and definitive covenant between a man and a woman, "one flesh" that Saint Paul calls a great mystery (Ephesians 5:31-32).
+Sex is not dirty or shameful. It is a good gift of God, who created them "male and female" and blessed them (Genesis 1:27-28). Catholic doctrine recognizes in it two inseparable meanings, the deep union of man and woman and openness to life (Saint Paul VI, Humanae Vitae, 1968, §12). And it teaches that its proper place is marriage, the total and definitive covenant between a man and a woman, "one flesh" that Saint Paul calls a great mystery (Ephesians 5:31-32).
 
 ## Why reserve it for marriage?
 
@@ -557,7 +557,7 @@ The reason is not a taboo, it is coherence. The sexual act speaks a language of 
 
 ## Chastity is not repression
 
-Chastity does not mean denying sexuality nor seeing it as evil. It means integrating it into love, living it according to one's state of life (Catechism 2337 and 2348-2349). It is a virtue, a self-mastery that sets free, and it applies to everyone: to the single person, who guards himself, to the married, who is faithful, and to the one who chose consecrated life. The opposite of chastity is not joy, it is the use of the other. The chaste person is not someone without desire, but someone whose desire is at the service of love, and not the other way around.
+Chastity does not mean denying sexuality nor seeing it as evil. It means integrating it into love, living it according to one's state of life (Catechism §2337 and 2348-2349). It is a virtue, a self-mastery that sets free, and it applies to everyone: to the single person, who guards himself, to the married, who is faithful, and to the one who chose consecrated life. The opposite of chastity is not joy, it is the use of the other. The chaste person is not someone without desire, but someone whose desire is at the service of love, and not the other way around.
 
 ## Pornography and masturbation
 
@@ -729,7 +729,7 @@ Two objections always appear. The one from evil ("if God is good, why is there s
 
 ## The reasonable conclusion
 
-None of these arguments, alone, "closes" the question like a theorem. They are not proofs like those of the natural sciences but, in the words of the Catechism, "converging and convincing arguments" (Catechism, 31). Added together, they converge: the universe had a beginning, is ordered, and harbors moral and rational beings. The simplest and most complete explanation of all this is a personal, intelligent, and good Cause. Faith does not ask for a leap into the dark. It asks for a step into the light that reason already glimpses. As Jesus promised, "seek and you shall find" (Matthew 7:7).
+None of these arguments, alone, "closes" the question like a theorem. They are not proofs like those of the natural sciences but, in the words of the Catechism, "converging and convincing arguments" (Catechism, 31). Added together, they converge: the universe had a beginning, is ordered, and harbors moral and rational beings. The simplest and most complete explanation of all this is a personal, intelligent, and good Cause. Faith does not ask for a leap into the dark. It asks for a step into the light that reason already glimpses. As Jesus promised, "seek, and you shall find" (Matthew 7:7).
 
 ## Key questions
 
@@ -748,11 +748,11 @@ None of these arguments, alone, "closes" the question like a theorem. They are n
 
 ## What Jesus claimed about himself
 
-Jesus did not simply go around saying wise things. He forgave sins in his own name, something only God can do (Mark 2:5-7). He accepted being worshiped. He said: "before Abraham was made, I am" (John 8:58), taking for himself the divine name revealed to Moses, "I Am" (Exodus 3:14). He stated: "I and the Father are one" (John 10:30), and for this they tried to stone him for blasphemy. Before the High Priest, adjured to say whether he was the Son of God (Matthew 26:63), he answered "I am" (Mark 14:62), and was condemned to death precisely for that claim.
+Jesus did not simply go around saying wise things. He forgave sins in his own name, something only God can do (Mark 2:5-7). He accepted being worshiped. He said: "before Abraham was made, I AM" (John 8:58), taking for himself the divine name revealed to Moses, "I AM" (Exodus 3:14). He stated: "I and the Father are one" (John 10:30), and for this they tried to stone him for blasphemy. Before the High Priest, adjured to say whether he was the Son of God (Matthew 26:63), he answered "I am" (Mark 14:62), and was condemned to death precisely for that claim.
 
 ## The trilemma
 
-In the face of this, the writer C. S. Lewis framed a famous dilemma (Mere Christianity, 1952). A man who says the things Jesus said cannot be merely a "great moral teacher". Either he knew he was not God, and then he was a liar, or he thought he was without being, and then he was a lunatic, on the level of someone who says he is a poached egg, or else he was in fact who he said he was. Liar, lunatic, or Lord. What does not hold up is the lukewarm compliment of calling him a good teacher while ignoring what he actually claimed.
+In the face of this, the writer C. S. Lewis framed a famous trilemma (Mere Christianity, 1952). A man who says the things Jesus said cannot be merely a "great moral teacher". Either he knew he was not God, and then he was a liar, or he thought he was without being, and then he was a lunatic, on the level of someone who says he is a poached egg, or else he was in fact who he said he was. Liar, lunatic, or Lord. What does not hold up is the lukewarm compliment of calling him a good teacher while ignoring what he actually claimed.
 
 ## The signs and the Resurrection
 
@@ -760,7 +760,7 @@ Jesus did not ask for blind faith. He accompanied his words with signs: he heale
 
 ## The witness of the New Testament
 
-The first Christian community, Jewish and monotheistic, did the unthinkable: it began to worship a man. Why? Because it had known him risen. John opens his Gospel saying that "the Word was God" and "was made flesh" (John 1:1.14). Thomas, before the wounds Jesus invites him to touch, exclaims "my Lord and my God" (John 20:28). The Letter to the Hebrews applies to the Son: "Thy throne, O God, is for ever and ever" (Hebrews 1:8). And Saint Paul affirms that Christ, "being in the form of God", "emptied himself, taking the form of a servant" (Philippians 2:6-7).
+The first Christian community, Jewish and monotheistic, did the unthinkable: it began to worship a man. Why? Because it had known him risen. John opens his Gospel saying that "the Word was God" and "was made flesh" (John 1:1, 14). Thomas, before the wounds Jesus invites him to touch, exclaims "my Lord and my God" (John 20:28). The Letter to the Hebrews applies to the Son: "Thy throne, O God, is for ever and ever" (Hebrews 1:8). And Saint Paul affirms that Christ, "being in the form of God", "emptied himself, taking the form of a servant" (Philippians 2:6-7).
 
 ## The Church's definition
 
@@ -939,7 +939,7 @@ If only matter exists, and the human being is a chance arrangement of atoms on a
 
 ## The emptiness that nothing fills
 
-And yet, no one actually lives as if life had no meaning. We seek happiness without ceasing. But notice something strange: nothing in this world fully satisfies. Once a pleasure, a success, a love is attained, the heart soon asks for more. Saint Augustine diagnosed this sixteen hundred years ago, in the Confessions (c. 400), in a line that still disarms us today: "you have made us for yourself, O Lord, and our heart is restless until it rests in you". C. S. Lewis added, in Mere Christianity (1952): if no pleasure in the world satisfies me entirely, the most likely explanation is not that happiness does not exist, but that I was made for another world. The desire for the infinite is the mark of one made for the Infinite.
+And yet, no one actually lives as if life had no meaning. We seek happiness without ceasing. But notice something strange: nothing in this world fully satisfies. Once a pleasure, a success, a love is attained, the heart soon asks for more. Saint Augustine diagnosed this sixteen hundred years ago, in the Confessions (c. 400), in a line that still disarms us today: "you have made us for yourself, and our heart is restless until it rests in you". C. S. Lewis added, in Mere Christianity (1952): if no pleasure in the world satisfies me entirely, the most likely explanation is not that happiness does not exist, but that I was made for another world. The desire for the infinite is the mark of one made for the Infinite.
 
 ## The Christian answer
 
@@ -951,7 +951,7 @@ At first sight, pain seems to empty everything. But it is the opposite. Precisel
 
 ## What to do with this
 
-If the question of meaning presses on you, that is not a defect to silence with distractions. It is a compass. It is worth seeking seriously, with the same honesty with which one seeks truth in any other area. The promise is ancient and bold: "seek and you shall find" (Matthew 7:7). In the end, the answer to "what is the meaning of life?" is not a sentence, but an encounter.
+If the question of meaning presses on you, that is not a defect to silence with distractions. It is a compass. It is worth seeking seriously, with the same honesty with which one seeks truth in any other area. The promise is ancient and bold: "seek, and you shall find" (Matthew 7:7). In the end, the answer to "what is the meaning of life?" is not a sentence, but an encounter.
 
 ## Key questions
 
@@ -1126,7 +1126,7 @@ Saint Paul confirms the Real Presence by warning the Corinthians that eating the
 
 ## The Church Fathers
 
-The Church Fathers bear witness to the Real Presence from the first centuries. Saint Ignatius of Antioch, around 107, writes to the Smyrnaeans that the heretics "abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ". Saint Justin Martyr, in the First Apology to Emperor Antoninus Pius (c. 155), affirms: "For not as common bread and common drink do we receive these, but in like manner as Jesus Christ our Saviour, having been made flesh by the Word of God, had both flesh and blood for our salvation, so likewise have we been taught that the food which is blessed by the prayer of His word (...) is the flesh and blood of that Jesus who was made flesh". Saint Cyril of Jerusalem, in Mystagogical Catechesis IV (c. 350), asks: "Who shall dare to doubt, when he himself said: This is my body?". The Council of Trent, in session XIII of 1551, solemnly defined the dogma of transubstantiation against the reformers.
+The Church Fathers bear witness to the Real Presence from the first centuries. Saint Ignatius of Antioch, around 107, writes to the Smyrnaeans that the heretics "abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ". Saint Justin Martyr, in the First Apology to Emperor Antoninus Pius (c. 155), affirms: "For not as common bread and common drink do we receive these, but in like manner as Jesus Christ our Saviour, having been made flesh by the Word of God, had both flesh and blood for our salvation, so likewise have we been taught that the food which is blessed by the prayer of His word (...) is the flesh and blood of that Jesus who was made flesh". Saint Cyril of Jerusalem, in Mystagogical Catechesis IV (c. 350), asks: "Since then He Himself declared and said of the Bread, This is My Body, who shall dare to doubt any longer?". The Council of Trent, in session XIII of 1551, solemnly defined the dogma of transubstantiation against the reformers.
 
 For a thousand years no Father or Doctor of the Church taught that it was only a symbol. The best-known case of denial is Berengar of Tours, in the 11th century, who rejected the change of the bread into the Body of Christ and recanted before Rome in 1059 and in 1079. The purely symbolic reading only gained ground in the 16th century, with Ulrich Zwingli, against the other reformers who kept some form of real presence.
 
@@ -1188,7 +1188,7 @@ The first is that the Bible itself does not say this about itself. On the contra
 
 ## Who interprets?
 
-The second problem is that the Bible needs to be interpreted. Who decides which interpretation is correct? In the absence of interpretive authority, each Christian becomes his own Pope. The practical result was that, in 500 years of Protestantism, tens of thousands of denominations emerged (the Center for the Study of Global Christianity counts more than 45,000 Christian denominations worldwide, each one listed separately in each country, the vast majority Protestant or independent), all saying they follow "only the Bible" and arriving at opposite conclusions about baptism, the Eucharist, salvation, morality, ministry. Saint Peter already warned in 2 Peter 1:20 that "no prophecy of scripture is made by private interpretation".
+The second problem is that the Bible needs to be interpreted. Who decides which interpretation is correct? In the absence of interpretive authority, each Christian becomes his own Pope. The practical result was that, in 500 years of Protestantism, tens of thousands of denominations emerged (the Center for the Study of Global Christianity counts about 45,000 Christian denominations worldwide, each one listed separately in each country, the vast majority Protestant or independent), all saying they follow "only the Bible" and arriving at opposite conclusions about baptism, the Eucharist, salvation, morality, ministry. Saint Peter already warned in 2 Peter 1:20 that "no prophecy of scripture is made by private interpretation".
 
 ## It was the Church that defined the canon
 
@@ -1420,7 +1420,7 @@ A historical curiosity is worth noting. Martin Luther and Ulrich Zwingli affirme
 
 ## "You are Peter" (Matthew 16)
 
-The biblical basis is direct. In Matthew 16:18-19, Jesus says to Simon: "Thou art Peter, and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose on earth, it shall be loosed also in heaven". Three things given to him alone: a new name (Peter, "Rock"), the promise to build the Church upon him and the keys (symbol of administrative authority, cf. Is 22:22). Jesus later extends the power to bind and loose to the Twelve (Mt 18:18), but the keys are entrusted to Peter alone.
+The biblical basis is direct. In Matthew 16:18-19, Jesus says to Simon: "Thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose on earth, it shall be loosed also in heaven". Three things given to him alone: a new name (Peter, "Rock"), the promise to build the Church upon him and the keys (symbol of administrative authority, cf. Is 22:22). Jesus later extends the power to bind and loose to the Twelve (Mt 18:18), but the keys are entrusted to Peter alone.
 
 ## "This rock" is Peter himself
 
@@ -1620,13 +1620,13 @@ The Church teaches, without ambiguity, that every person possesses inalienable d
 
 ## Inclination and act
 
-The crucial distinction is between inclination and act. The Church does not condemn the homosexual tendency in itself, which is not a sin, although the Catechism describes it as "objectively disordered" (Catechism 2358). What it teaches as contrary to natural law are homosexual acts. The reason is anthropological: human sexuality, in the Christian view, is ordered to the union between man and woman and to the transmission of life (Genesis 1:27-28). Acts that exclude this finality in principle move away from the order for which sexuality was created.
+The crucial distinction is between inclination and act. The Church does not condemn the homosexual tendency in itself, which is not a sin, although the Catechism describes it as "objectively disordered" (Catechism §2358). What it teaches as contrary to natural law are homosexual acts. The reason is anthropological: human sexuality, in the Christian view, is ordered to the union between man and woman and to the transmission of life (Genesis 1:27-28). Acts that exclude this finality in principle move away from the order for which sexuality was created.
 
 ## What the New Testament says
 
 Saint Paul treats the subject in Romans 1:26-27 and in 1 Corinthians 6:9-11. This last passage is important because, after listing various conducts (including homosexual acts) that exclude from the Kingdom, it concludes: "And such some of you were. But you are washed: but you are sanctified: but you are justified: in the name of our Lord Jesus Christ". The apostolic teaching is not one of exclusion, it is one of transformation made possible by grace.
 
-This position is not discrimination. The Church asks for chastity from everyone, married and single (Catechism 2348 and 2359). A single heterosexual man or woman is also called to chastity. The teaching is universal, demanding, and the same for all. There is no moral standard for some and another for others.
+This position is not discrimination. The Church asks for chastity from everyone, married and single (Catechism §2348 and 2359). A single heterosexual man or woman is also called to chastity. The teaching is universal, demanding, and the same for all. There is no moral standard for some and another for others.
 
 ## "Love is love"?
 
@@ -1849,7 +1849,7 @@ Object.assign(ARTICLES_EN, {
   25: {
     titleEn: 'Abortion: The Dignity of Human Life',
     summaryEn: 'Human life begins at conception. Science confirms what faith has always taught.',
-    bodyEn: `Catholic doctrine on abortion has been constant since the 1st century: it is gravely immoral, equivalent to homicide (Catechism 2270-2271). The common objection is that this is "religious imposition" on a secular subject. The answer is that science confirms what faith has always affirmed.
+    bodyEn: `Catholic doctrine on abortion has been constant since the 1st century: it is gravely immoral, equivalent to homicide (Catechism §2270-2271). The common objection is that this is "religious imposition" on a secular subject. The answer is that science confirms what faith has always affirmed.
 
 ## What science says
 
@@ -1879,7 +1879,7 @@ In case of rape: the violence to the mother\'s body is a very grave crime, and s
 
 In case of fetal malformation: no disability justifies execution. Babies with serious syndromes or diseases have the same right to life as any other. History shows where the opposite path leads: Nazi Germany began by eliminating people with physical and mental disabilities, under the criterion of "life unworthy of being lived".
 
-The Church's discipline is firm: direct abortion is always grave matter. Whoever procures a completed abortion incurs automatic excommunication, and this includes the accomplices without whom it would not have happened (Code of Canon Law, canons 1397 §2 and 1329 §2). The penalty applies only under the conditions set by law (Catechism 2272), which takes into account mitigating factors such as being a minor or acting under grave fear.
+The Church's discipline is firm: direct abortion is always grave matter. Whoever procures a completed abortion incurs automatic excommunication, and this includes the accomplices without whom it would not have happened (Code of Canon Law, canons 1397 §2 and 1329 §2). The penalty applies only under the conditions set by law (Catechism §2272), which takes into account mitigating factors such as being a minor or acting under grave fear.
 
 But the doctrine is also merciful. The Church offers sacramental forgiveness to those who repent. Pope Francis, in the apostolic letter Misericordia et Misera (2016), authorized all priests to absolve the sin of abortion (before that, lifting the excommunication was reserved to the bishop, who in many places delegated this faculty to priests). There is specific pastoral care for women who have aborted, with spiritual accompaniment, prayer, reconciliation. As in every sin: clear condemnation of the act, full mercy for the person.
 
@@ -1901,7 +1901,7 @@ But the doctrine is also merciful. The Church offers sacramental forgiveness to 
 
 ## The two meanings of the conjugal act
 
-The basic teaching is simple. The conjugal act, according to Catholic doctrine, has two inseparable meanings: unitive (expression of love between spouses) and procreative (openness to the transmission of life), as Humanae Vitae 12 and the Catechism 2366-2370 teach. These two aspects were instituted by the Creator and are united by the very nature of the act: Paul VI speaks of the "inseparable connection, established by God, which man on his own initiative may not break" between the unitive and the procreative significance (Humanae Vitae §12). Separating them artificially is to violate the truth of the conjugal act.
+The basic teaching is simple. The conjugal act, according to Catholic doctrine, has two inseparable meanings: unitive (expression of love between spouses) and procreative (openness to the transmission of life), as Humanae Vitae §12 and the Catechism §2366-2370 teach. These two aspects were instituted by the Creator and are united by the very nature of the act: Paul VI speaks of the "inseparable connection, established by God, which man on his own initiative may not break" between the unitive and the procreative significance (Humanae Vitae §12). Separating them artificially is to violate the truth of the conjugal act.
 
 Artificial contraception separates these two aspects: it maintains pleasure and physical union, but deliberately eliminates openness to life. The conjugal act ceases to be fully truthful. It transforms into something different from what it naturally is.
 
@@ -2282,7 +2282,7 @@ Bart Ehrman, agnostic, critic of institutional Christianity, professor of Religi
 
 ## The non-Christian sources
 
-The extra-biblical evidence (outside the Gospels) is multiple and independent.
+The extra-biblical evidence is multiple and independent.
 
 Flavius Josephus, Jewish historian, wrote "Jewish Antiquities" in 93-94 AD. He makes two mentions of Jesus. The first, in 18.3 (called "Testimonium Flavianum"), is partially interpolated by later Christian copyists, but most scholars accept that the core is authentic: Jesus existed, was crucified under Pontius Pilate, had followers. The second, in 20.9, is accepted as authentic by nearly all scholars: it mentions James, "brother of Jesus called Christ", taken to death by the Sanhedrin in 62 AD. Josephus was Jewish, not Christian. He had no motive to invent these references.
 
@@ -3058,7 +3058,7 @@ Aparecida is not just a statue. It is the symbol of a people who recognize thems
 
 ## The argument, in a few words
 
-Consider the whole. At Fatima, in 1917, a sign was announced months in advance and witnessed by about seventy thousand people, including skeptics, with coverage by the secular press. At Guadalupe, in 1531, an image remained on a cloth that should have rotted and did not, with no brushstrokes to explain it. At Zeitoun, in Cairo, between 1968 and 1971, crowds of Christians and Muslims saw, for more than two years, and photographed, a luminous figure over a church, without the Egyptian government finding fraud.
+Consider the whole. At Fatima, in 1917, a sign was announced months in advance and witnessed by fifty to seventy thousand people, including skeptics, with coverage by the secular press. At Guadalupe, in 1531, an image remained on a cloth that should have rotted and did not, with no brushstrokes to explain it. At Zeitoun, in Cairo, between 1968 and 1971, crowds of Christians and Muslims saw, for more than two years, and photographed, a luminous figure over a church, without the Egyptian government finding fraud.
 
 These cases have in common precisely what legends lack: witnesses in great number, of different creeds, at precise dates and places, sometimes with signs announced beforehand and with physical traces. They are not "someone felt something". They are public and documented events.
 

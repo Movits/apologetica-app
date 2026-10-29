@@ -42,7 +42,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Diálogos que levam a este artigo
 - [[A Bíblia é a única regra de fé]]
-- [[A salvação é só pela fé — obras não contribuem em nada]]
+- [[A salvação é só pela fé. Obras não contribuem em nada]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 16: Sola Scriptura não funciona (a Tradição)

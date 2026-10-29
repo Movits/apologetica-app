@@ -71,7 +71,7 @@ Santo Tomás de Aquino, na Quinta Via da Suma Teológica, observou que mesmo ser
 
 Várias constantes fundamentais da física precisam ter valores muito específicos para que a vida seja possível: a força da gravidade, a do eletromagnetismo (a constante de estrutura fina), a razão entre a massa do próton e a do elétron, a constante cosmológica. Se algumas delas mudassem um pouco, em certos casos por uma fração minúscula, o universo seria estéril.
 
-O astrofísico Fred Hoyle, ateu durante boa parte da vida, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu em 1981 que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, assim como a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro A Nova Mente do Imperador (1989) que a probabilidade de o universo começar, por puro acaso, num estado tão ordenado quanto o do nosso, isto é, de entropia tão baixa, é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo. Penrose não tira daí uma conclusão religiosa e espera uma explicação física, mas o número mostra quão especial foi o começo do universo.
+O astrofísico Fred Hoyle, ateu durante boa parte da vida, depois de calcular as condições necessárias para a formação de carbono nas estrelas, escreveu em 1981 que "uma interpretação direta dos fatos sugere que um superintelecto manipulou a física, assim como a química e a biologia". Roger Penrose, matemático ganhador do Nobel de Física em 2020, calculou no livro A Mente Nova do Rei (1989) que a probabilidade de o universo começar, por puro acaso, num estado tão ordenado quanto o do nosso, isto é, de entropia tão baixa, é da ordem de 1 em 10 elevado a 10 elevado a 123. Um número tão pequeno que, comparado com ele, ganhar na loteria mil vezes seguidas é praticamente certo. Penrose não tira daí uma conclusão religiosa e espera uma explicação física, mas o número mostra quão especial foi o começo do universo.
 
 ## Necessidade, acaso ou design?
 
@@ -282,7 +282,7 @@ Bart Ehrman, agnóstico, crítico do cristianismo institucional, professor de Es
 
 ## As fontes não cristãs
 
-As evidências extra-bíblicas (fora dos Evangelhos) são múltiplas e independentes.
+As evidências extra-bíblicas são múltiplas e independentes.
 
 Flávio Josefo, historiador judeu, escreveu "Antiguidades Judaicas" em 93-94 d.C. Faz duas menções a Jesus. A primeira, em 18,3 (chamada "Testimonium Flavianum"), está parcialmente interpolada por copistas cristãos posteriores, mas a maioria dos estudiosos aceita que o núcleo é autêntico: Jesus existiu, foi crucificado sob Pôncio Pilatos, teve seguidores. A segunda, em 20,9, é aceita como autêntica pela quase totalidade dos estudiosos: menciona Tiago, "irmão de Jesus chamado Cristo", levado à morte pelo Sinédrio em 62 d.C. Josefo era judeu, não cristão. Não tinha motivo para inventar essas referências.
 
@@ -364,7 +364,7 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. O
 
 ## O argumento, em poucas palavras
 
-Veja o conjunto. Em Fátima, em 1917, um sinal foi anunciado com meses de antecedência e presenciado por cerca de setenta mil pessoas, incluindo céticos, com cobertura da imprensa laica. Em Guadalupe, em 1531, ficou uma imagem num tecido que deveria ter apodrecido e não apodreceu, sem pinceladas que a expliquem. Em Zeitoun, no Cairo, entre 1968 e 1971, multidões de cristãos e muçulmanos viram, por mais de dois anos, e fotografaram, uma figura luminosa sobre uma igreja, sem que o governo egípcio achasse fraude.
+Veja o conjunto. Em Fátima, em 1917, um sinal foi anunciado com meses de antecedência e presenciado por cinquenta a setenta mil pessoas, incluindo céticos, com cobertura da imprensa laica. Em Guadalupe, em 1531, ficou uma imagem num tecido que deveria ter apodrecido e não apodreceu, sem pinceladas que a expliquem. Em Zeitoun, no Cairo, entre 1968 e 1971, multidões de cristãos e muçulmanos viram, por mais de dois anos, e fotografaram, uma figura luminosa sobre uma igreja, sem que o governo egípcio achasse fraude.
 
 Esses casos têm em comum justamente o que falta às lendas: testemunhas em grande número, de credos diferentes, em datas e lugares precisos, às vezes com sinais anunciados de antemão e com vestígios físicos. Não são "alguém sentiu algo". São eventos públicos e documentados.
 
@@ -466,7 +466,7 @@ Jesus não andava por aí dizendo apenas coisas sábias. Ele perdoava pecados em
 
 ## O trilema
 
-Diante disso, o escritor C. S. Lewis formulou um dilema célebre (Cristianismo Puro e Simples, 1952). Um homem que diz as coisas que Jesus disse não pode ser apenas um "grande mestre moral". Ou ele sabia que não era Deus, e então era um mentiroso, ou achava que era sem ser, e então era um lunático, no nível de quem diz ser um ovo pochê, ou então era de fato quem dizia ser. Mentiroso, lunático ou Senhor. O que não se sustenta é o elogio morno de chamá-lo de bom professor e ignorar o que ele de fato afirmou.
+Diante disso, o escritor C. S. Lewis formulou um trilema célebre (Cristianismo Puro e Simples, 1952). Um homem que diz as coisas que Jesus disse não pode ser apenas um "grande mestre moral". Ou ele sabia que não era Deus, e então era um mentiroso, ou achava que era sem ser, e então era um lunático, no nível de quem diz ser um ovo pochê, ou então era de fato quem dizia ser. Mentiroso, lunático ou Senhor. O que não se sustenta é o elogio morno de chamá-lo de bom professor e ignorar o que ele de fato afirmou.
 
 ## Os sinais e a Ressurreição
 
@@ -556,7 +556,7 @@ Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num pl
 
 ## O vazio que nada preenche
 
-E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscamos felicidade sem parar. Mas note uma coisa estranha: nada deste mundo sacia por completo. Conquistado um prazer, um sucesso, um amor, logo o coração pede mais. Santo Agostinho diagnosticou isso há mil e seiscentos anos, nas Confissões (c. 400), numa frase que ainda hoje desarma: "fizeste-nos para ti, Senhor, e o nosso coração está inquieto enquanto não repousa em ti". C. S. Lewis acrescentou, em Cristianismo Puro e Simples (1952): se nenhum prazer do mundo me satisfaz por inteiro, a explicação mais provável não é que a felicidade não exista, mas que eu fui feito para outro mundo. O desejo de infinito é a marca de quem foi feito para o Infinito.
+E, no entanto, ninguém vive de fato como se a vida não tivesse sentido. Buscamos felicidade sem parar. Mas note uma coisa estranha: nada deste mundo sacia por completo. Conquistado um prazer, um sucesso, um amor, logo o coração pede mais. Santo Agostinho diagnosticou isso há mil e seiscentos anos, nas Confissões (c. 400), numa frase que ainda hoje desarma: "nos fizeste para ti, e o nosso coração está inquieto enquanto não repousa em ti". C. S. Lewis acrescentou, em Cristianismo Puro e Simples (1952): se nenhum prazer do mundo me satisfaz por inteiro, a explicação mais provável não é que a felicidade não exista, mas que eu fui feito para outro mundo. O desejo de infinito é a marca de quem foi feito para o Infinito.
 
 ## A resposta cristã
 

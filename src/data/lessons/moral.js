@@ -109,7 +109,7 @@ const lessons = {
       ],
       correct: 1,
       note: 'A Igreja distingue inclinação e ato: a tendência em si não é pecado, e toda pessoa deve ser acolhida com respeito, compaixão e delicadeza (Catecismo §2358). O artigo explica o que se pede a todos, e por quê.',
-      noteEn: 'The Church distinguishes inclination from act: the tendency itself is not a sin, and every person must be accepted with respect, compassion, and sensitivity (Catechism 2358). The article explains what is asked of everyone, and why.',
+      noteEn: 'The Church distinguishes inclination from act: the tendency itself is not a sin, and every person must be accepted with respect, compassion, and sensitivity (Catechism §2358). The article explains what is asked of everyone, and why.',
     },
     keyPoints: [
       'Toda pessoa tem dignidade inalienável, independente da orientação sexual, e deve ser acolhida com respeito, compaixão e delicadeza, sem discriminação injusta.',
@@ -436,8 +436,8 @@ const lessons = {
         whyEn: '"Capital" comes from head (caput): they are not necessarily the worst, but the roots from which the others are born. Pride is held to be the root of all, and to each vice corresponds a virtue that heals it.',
       },
       {
-        question: 'Como o artigo explica o pecado contra o Espírito Santo, que "não será perdoado"?',
-        questionEn: 'How does the article explain the sin against the Holy Spirit, which "will not be forgiven"?',
+        question: 'Como o artigo explica o pecado contra o Espírito Santo, que "não alcançará perdão"?',
+        questionEn: 'How does the article explain the sin against the Holy Spirit, which "shall not be forgiven"?',
         options: [
           'É uma blasfêmia verbal específica que Deus se recusa a perdoar',
           'É um pecado tão grave que nem a Confissão o apaga',

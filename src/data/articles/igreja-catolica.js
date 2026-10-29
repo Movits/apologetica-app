@@ -61,7 +61,7 @@ São Paulo confirma a Presença Real ao advertir os Coríntios de que comer o p�
 
 ## Os Padres da Igreja
 
-Os Padres da Igreja testemunham a Presença Real desde os primeiros séculos. Santo Inácio de Antioquia, por volta de 107, escreve aos Esmirnenses que os heréticos "afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo". São Justino Mártir, na Primeira Apologia ao imperador Antonino Pio (c. 155), afirma: "Não recebemos isso como pão comum ou bebida comum. Assim como Jesus Cristo, nosso Salvador, feito carne pela Palavra de Deus, teve carne e sangue para nossa salvação, assim também fomos ensinados que esse alimento, sobre o qual se rezou a ação de graças (...), é a carne e o sangue do mesmo Jesus encarnado". São Cirilo de Jerusalém, na Catequese Mistagógica IV (c. 350), pergunta: "Quem ousará duvidar se ele mesmo disse: Este é o meu corpo?". O Concílio de Trento, na sessão XIII de 1551, definiu solenemente o dogma da [[Transubstanciação]] contra os reformadores.
+Os Padres da Igreja testemunham a Presença Real desde os primeiros séculos. Santo Inácio de Antioquia, por volta de 107, escreve aos Esmirnenses que os heréticos "afastam-se da Eucaristia e da oração porque não confessam que a Eucaristia é a carne de nosso Salvador Jesus Cristo". São Justino Mártir, na Primeira Apologia ao imperador Antonino Pio (c. 155), afirma: "Não recebemos isso como pão comum ou bebida comum. Assim como Jesus Cristo, nosso Salvador, feito carne pela Palavra de Deus, teve carne e sangue para nossa salvação, assim também fomos ensinados que esse alimento, sobre o qual se rezou a ação de graças (...), é a carne e o sangue do mesmo Jesus encarnado". São Cirilo de Jerusalém, na Catequese Mistagógica IV (c. 350), pergunta: "Visto que ele mesmo, falando do pão, declarou expressamente: Este é o meu corpo, quem ousará duvidar?". O Concílio de Trento, na sessão XIII de 1551, definiu solenemente o dogma da [[Transubstanciação]] contra os reformadores.
 
 Por mil anos, nenhum Padre ou Doutor da Igreja ensinou que fosse apenas símbolo. O caso mais conhecido de negação é o de Berengário de Tours, no século XI, que recusou a conversão do pão no Corpo de Cristo e se retratou diante de Roma em 1059 e em 1079. A leitura puramente simbólica só ganhou força no século XVI, com Ulrico Zwínglio, contra os outros reformadores que mantinham alguma forma de presença real.
 
@@ -673,7 +673,7 @@ Esta é a divergência de fundo, da qual quase todas as outras derivam. O protes
 
 ## A salvação: só a fé, ou a fé que age pelo amor?
 
-Outro ponto clássico é a "fé somente" (sola fide): salva-se só pela fé, sem as obras. A Igreja afirma que a salvação é toda graça, jamais um mérito que se compra, mas que a fé verdadeira não fica sozinha, ela se torna viva no amor. É a própria Escritura: "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24), e o que vale em Cristo é "a fé que opera pela caridade" (Gálatas 5,6). Não são fé contra obras, mas fé que floresce em obras.
+Outro ponto clássico é a "fé somente" (sola fide): salva-se só pela fé, sem as obras. A Igreja afirma que a salvação é toda graça, jamais um mérito que se compra, mas que a fé verdadeira não fica sozinha, ela se torna viva no amor. É a própria Escritura: "o homem é justificado pelas obras e não somente pela fé" (Tiago 2,24), e o que vale em Cristo é "a fé que opera pela caridade" (Gálatas 5,6). Não são fé contra obras, mas fé que floresce em obras.
 
 ## Os sacramentos
 

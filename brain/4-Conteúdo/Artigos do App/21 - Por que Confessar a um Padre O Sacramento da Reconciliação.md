@@ -37,7 +37,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Diálogos que levam a este artigo
 - [[Confesso direto a Deus, não preciso de padre]]
-- [[O purgatório não está na Bíblia — é invenção da Igreja Católica]]
+- [[O purgatório não está na Bíblia. É invenção da Igreja Católica]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 23: Por que confessar a um padre

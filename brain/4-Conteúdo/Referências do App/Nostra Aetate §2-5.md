@@ -3,7 +3,7 @@ tags: [referencia, conteudo-gerado, fonte-documentos]
 atualizado: 2026-10-29
 gerado: true
 ---
-# Nostra Aetate §2-4
+# Nostra Aetate §2-5
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Documentos | Concílio Vaticano II, promulgada por São Paulo VI (28 de outubro de 1965)

@@ -30,8 +30,8 @@ Arquivo: `src/data/articles/moral.js`
 ## Diálogos que levam a este artigo
 - [[Se Deus é bom, por que há sofrimento]]
 - [[Como um Deus bom permite o sofrimento de crianças inocentes]]
-- [[Não existe certo e errado absoluto — é tudo relativo à cultura]]
-- [[Ateus podem ser pessoas morais — não precisam de Deus para ter ética]]
+- [[Não existe certo e errado absoluto. É tudo relativo à cultura]]
+- [[Ateus podem ser pessoas morais. Não precisam de Deus para ter ética]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 6: Se Deus existe, por que há mal?

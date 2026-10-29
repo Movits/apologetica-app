@@ -26,7 +26,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Hebreus 9,27]]
 - [[Lucas 16,19-31]]
 - [[Deuteronômio 18,10-12]]
-- [[Isaías 8,19]]
+- [[Isaías 8,19-20]]
 - [[Catecismo §2116-2117]]
 - [[João 1,21]]
 - [[1 Samuel 28,7-8]]

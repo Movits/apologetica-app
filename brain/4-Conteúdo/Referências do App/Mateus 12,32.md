@@ -16,4 +16,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]
-- [[59 - O Que é o Pecado Mortal, Venial e os Sete Pecados Capitais]]

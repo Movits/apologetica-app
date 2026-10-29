@@ -20,7 +20,7 @@ O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, S
 
 ## Quem interpreta?
 
-O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity conta mais de 45.000 denominações cristãs no mundo, listadas separadamente em cada país, a imensa maioria protestante ou independente), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação pessoal".
+O segundo problema é que a Bíblia precisa ser interpretada. Quem decide qual interpretação é correta? Na ausência de autoridade interpretativa, cada cristão se torna seu próprio papa. O resultado prático foi que, em 500 anos de protestantismo, surgiram dezenas de milhares de denominações (o Center for the Study of Global Christianity conta cerca de 45.000 denominações cristãs no mundo, listadas separadamente em cada país, a imensa maioria protestante ou independente), todas dizendo seguir "só a Bíblia" e chegando a conclusões opostas sobre batismo, Eucaristia, salvação, moral, ministério. São Pedro já avisava em 2 Pedro 1,20 que "nenhuma profecia da Escritura é de interpretação pessoal".
 
 ## Foi a Igreja que definiu o cânon
 
@@ -602,7 +602,7 @@ A ideia de um arrebatamento secreto, em que os fiéis somem de repente antes de 
 
 ## O que de fato vai acontecer
 
-Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória (Mateus 25,31), haverá a ressurreição dos mortos e o juízo final, em que os mortos serão julgados "segundo as suas obras" (Apocalipse 20,12), o mal será definitivamente vencido e haverá "novos céus e nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
+Despojado do sensacionalismo, o ensinamento é claro e está no Credo: Cristo voltará em glória (Mateus 25,31), haverá a ressurreição dos mortos e o juízo final, em que os mortos serão julgados "segundo as suas obras" (Apocalipse 20,12), o mal será definitivamente vencido e haverá "novos céus e uma nova terra". Não é o aniquilamento de tudo, mas a transformação e a plenitude. A história não caminha para o nada, mas para Cristo.
 
 ## Como viver tudo isso
 

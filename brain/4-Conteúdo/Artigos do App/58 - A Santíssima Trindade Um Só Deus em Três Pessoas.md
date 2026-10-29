@@ -35,7 +35,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Catecismo §243-245]]
 
 ## Diálogos que levam a este artigo
-- [[Deus não pode ser três e um ao mesmo tempo — isso é contradição]]
+- [[Deus não pode ser três e um ao mesmo tempo. Isso é contradição]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 13: Um só Deus em três Pessoas: a Trindade

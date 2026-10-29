@@ -3,11 +3,11 @@ tags: [dialogo, conteudo-gerado]
 atualizado: 2026-10-29
 gerado: true
 ---
-# Ateus podem ser pessoas morais — não precisam de Deus para ter ética
+# Deus não pode ser três e um ao mesmo tempo. Isso é contradição
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Objeção: "Ateus podem ser pessoas morais — não precisam de Deus para ter ética."
+Objeção: "Deus não pode ser três e um ao mesmo tempo. Isso é contradição."
 Categoria: Existência de Deus | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
-Id: `d-ateismo-moral`
+Id: `d-trindade`
 
-Artigo completo: [[06 - Ateísmo e o Problema do Mal]]
+Artigo completo: [[58 - A Santíssima Trindade Um Só Deus em Três Pessoas]]

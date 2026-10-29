@@ -429,17 +429,17 @@ const lessons = {
       noteEn: 'Conversion, confession, prayer and charity are the fruits of the approved apparitions. A demon leading crowds to Christ would work against its own kingdom (Matthew 12:25). The article answers the atheist too.',
     },
     keyPoints: [
-      'Fátima (sinal anunciado, setenta mil testemunhas), Guadalupe (imagem num tecido que não apodreceu) e Zeitoun (aparições fotografadas por dois anos) são eventos públicos.',
+      'Fátima (sinal anunciado, 50 a 70 mil testemunhas), Guadalupe (imagem num tecido que não apodreceu) e Zeitoun (aparições fotografadas por dois anos) são eventos públicos.',
       'Ao ateu: histeria e fraude não explicam sinais anunciados, fotografados e investigados por um governo laico. Descartar só o testemunho sobrenatural é preconceito.',
       'Ao protestante: pelos frutos se conhece a árvore. Aparições que levam a Cristo e aos sacramentos não vêm do demônio. E são revelações privadas: ninguém é obrigado a crer.',
     ],
     keyPointsEn: [
-      'Fatima (announced sign, 70,000 witnesses), Guadalupe (image on a cloth that never rotted) and Zeitoun (apparitions photographed for two years) are public events.',
+      'Fatima (announced sign, 50,000-70,000 witnesses), Guadalupe (image on a cloth that never rotted) and Zeitoun (apparitions photographed for two years) are public events.',
       'To the atheist: hysteria and fraud cannot explain announced, photographed and officially investigated signs. Rejecting only supernatural testimony is prejudice.',
       'To the Protestant: a tree is known by its fruits. Apparitions leading to Christ and the sacraments are not demonic. They are private revelations: no one must believe.',
     ],
-    oneLiner: 'Ninguém precisa crer em Fátima para ser católico. Mas setenta mil pessoas viram um sinal anunciado com meses de antecedência, e os frutos foram conversão e oração. Isso não vem do demônio.',
-    oneLinerEn: "No one must believe in Fatima to be Catholic. But seventy thousand people saw a sign announced months ahead, and the fruits were conversion and prayer. That is not the devil's work.",
+    oneLiner: 'Ninguém precisa crer em Fátima para ser católico. Mas 50 a 70 mil pessoas viram um sinal anunciado com meses de antecedência, e os frutos foram conversão e oração. Isso não vem do demônio.',
+    oneLinerEn: "No one must believe in Fatima to be Catholic. But 50,000 to 70,000 people saw a sign announced months ahead, and the fruits were conversion and prayer. That is not the devil's work.",
     check: [
       {
         question: 'Segundo o artigo, o que casos como Fátima, Guadalupe e Zeitoun têm que falta às lendas?',
@@ -538,7 +538,7 @@ const lessons = {
       'Niceia (325) definiu o Filho "consubstancial ao Pai" contra Ário. Calcedônia (451) precisou: duas naturezas, divina e humana, numa só pessoa. Deus e homem inteiros.',
     ],
     keyPointsEn: [
-      'Jesus forgave sins, accepted worship, said "before Abraham was made, I am" and was condemned to death for affirming, before the High Priest, that he was the Son of God.',
+      'Jesus forgave sins, accepted worship, said "before Abraham was made, I AM" and was condemned to death for affirming, before the High Priest, that he was the Son of God.',
       "Hence Lewis's trilemma holds: liar, lunatic or Lord. And he backed his words with signs and with the Resurrection, which led monotheistic Jews to worship him.",
       'Nicaea (325) defined the Son "consubstantial with the Father" against Arius. Chalcedon (451) added: two natures, divine and human, in one person. Wholly God and man.',
     ],

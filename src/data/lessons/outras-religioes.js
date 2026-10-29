@@ -178,7 +178,7 @@ const lessons = {
           'It forbids it, and narrates Saul\'s consultation as a sin',
         ],
         correct: 3,
-        why: 'Deuteronômio 18,10-12 lista consultar os mortos entre as abominações, e Isaías 8,19 pergunta por que consultar os mortos em vez de Deus. O recurso de Saul à médium de Endor precede a sua ruína. O Catecismo (2116 e 2117) condena a prática.',
+        why: 'Deuteronômio 18,10-12 lista consultar os mortos entre as abominações, e Isaías 8,19 adverte contra quem manda consultar os espíritos dos mortos. O recurso de Saul à médium de Endor precede a sua ruína. O Catecismo (2116 e 2117) condena a prática.',
         whyEn: 'Deuteronomy 18:10-12 lists consulting the dead among the abominations, and Isaiah 8:19 asks why consult the dead instead of God. Saul\'s recourse to the medium of Endor precedes his ruin. The Catechism (2116 and 2117) condemns the practice.',
       },
     ],
@@ -387,7 +387,7 @@ const lessons = {
     keyPoints: [
       'Os protestantes são irmãos separados: partilham a Trindade, a divindade de Cristo, a Bíblia inspirada e o Batismo. A diferença nasce dos lemas só a Escritura e só a fé.',
       'Só a Escritura se autorrefuta: a Bíblia não o ensina, manda guardar as tradições (2 Tessalonicenses 2,15) e foi a Igreja que listou o cânon em Hipona e Cartago.',
-      'Só a fé contradiz Tiago 2,24, único lugar em que "fé somente" aparece, para ser negada. E cinco séculos sem autoridade viva geraram milhares de denominações.',
+      'Só a fé contradiz Tiago 2,24, único lugar em que "somente pela fé" está no grego, para ser negada. E cinco séculos sem autoridade viva geraram milhares de denominações.',
     ],
     keyPointsEn: [
       'Protestants are separated brethren who share the Trinity, Christ\'s divinity, the Bible and Baptism. The difference stems from the mottos Scripture alone and faith alone.',
@@ -413,11 +413,11 @@ const lessons = {
           'Because Luther added "alone" to his translation of Romans 3:28',
         ],
         correct: 1,
-        why: 'Nenhum versículo diz que a Bíblia sozinha é a regra de fé. Paulo manda conservar as tradições "por palavra ou por carta" (2 Tessalonicenses 2,15) e chama a Igreja de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). E foi a Igreja que fixou o cânon.',
-        whyEn: 'No verse says the Bible alone is the rule of faith. Paul orders the traditions kept "by word or by letter" (2 Thessalonians 2:15) and calls the Church "the pillar and ground of the truth" (1 Timothy 3:15). And it was the Church that fixed the canon.',
+        why: 'Nenhum versículo diz que a Bíblia sozinha é a regra de fé. Paulo manda conservar as tradições por palavra ou por carta (2 Tessalonicenses 2,15) e chama a Igreja de "coluna e sustentáculo da verdade" (1 Timóteo 3,15). E foi a Igreja que fixou o cânon.',
+        whyEn: 'No verse says the Bible alone is the rule of faith. Paul orders the traditions kept by word or by letter (2 Thessalonians 2:15) and calls the Church "the pillar and ground of the truth" (1 Timothy 3:15). And it was the Church that fixed the canon.',
       },
       {
-        question: 'O que o artigo observa sobre a expressão "fé somente" na Bíblia?',
+        question: 'O que o artigo observa sobre a expressão "somente pela fé" no grego da Bíblia?',
         questionEn: 'What does the article observe about the phrase "faith only" in the Bible?',
         options: [
           'Aparece dezenas de vezes nas cartas de Paulo, sobretudo em Romanos',
@@ -432,7 +432,7 @@ const lessons = {
           'It never appears, neither to affirm nor to deny the doctrine',
         ],
         correct: 2,
-        why: 'Tiago 2,24 diz que "o homem é justificado pelas obras, e não somente pela fé". Lutero acrescentou "somente" (allein) à sua tradução de Romanos 3,28, onde Paulo não a escreveu. Para a Igreja, a graça salva, e a fé viva floresce em obras.',
+        why: 'Tiago 2,24 diz que "o homem é justificado pelas obras e não somente pela fé". Lutero acrescentou "somente" (allein) à sua tradução de Romanos 3,28, onde Paulo não a escreveu. Para a Igreja, a graça salva, e a fé viva floresce em obras.',
         whyEn: 'James 2:24 says "by works a man is justified, and not by faith only". Luther added "alone" (allein) to his translation of Romans 3:28, where Paul did not write it. For the Church, grace saves, and living faith blossoms into works.',
       },
       {

@@ -27,7 +27,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Miquéias 5,1]]
 - [[Zacarias 12,10]]
 - [[Romanos 11,17-18]]
-- [[Nostra Aetate §2-4]]
+- [[Nostra Aetate §2-5]]
 - [[Deuteronômio 6,4]]
 - [[Hebreus 10,10-14]]
 

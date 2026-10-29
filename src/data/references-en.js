@@ -37,7 +37,7 @@ export const referencesEn = {
     topicEn: 'Apostolic Tradition',
     textEn: 'Therefore, brethren, stand fast: and hold the traditions, which you have learned, whether by word or by our epistle.',
     fullSourceEn: 'Second Letter to the Thessalonians, chapter 2, verse 14 (2:15 in most modern Bibles)',
-    meaningEn: 'Tradition, transmission, teaching handed down from one generation to the next. This is the same word used for the oral apostolic Tradition that the Church has preserved alongside Scripture. Paul places it on equal footing ("whether by word, or by our epistle").',
+    meaningEn: 'Tradition, transmission, teaching handed down from one generation to the next. This is the same word used for the oral apostolic Tradition that the Church has preserved alongside Scripture. Paul places it on equal footing ("whether by word or by our epistle").',
   },
   'jo-2-1': {
     topicEn: "Wedding at Cana / Mary's intercession",
@@ -82,7 +82,7 @@ export const referencesEn = {
   },
   '1cor-6-9': {
     topicEn: 'Sexuality / universal call to conversion',
-    textEn: 'Know you not that the unjust shall not possess the kingdom of God? Do not err: neither fornicators, nor idolaters, nor adulterers, nor the effeminate, nor liers with mankind, nor thieves, nor covetous, nor drunkards, nor railers, nor extortioners, shall possess the kingdom of God. And such some of you were, but you are washed, but you are sanctified, but you are justified in the name of our Lord Jesus Christ, and the Spirit of our God.',
+    textEn: 'Know you not that the unjust shall not possess the kingdom of God? Do not err: Neither fornicators nor idolaters nor adulterers: Nor the effeminate nor liers with mankind nor thieves nor covetous nor drunkards nor railers nor extortioners shall possess the kingdom of God. And such some of you were. But you are washed: but you are sanctified: but you are justified: in the name of our Lord Jesus Christ and the Spirit of our God.',
   },
   '2pd-1-20': {
     topicEn: 'Inspiration and interpretation of Scripture',
@@ -153,7 +153,7 @@ export const referencesEn = {
   },
   'jo-8-58': {
     topicEn: 'Divinity of Jesus / "I AM"',
-    textEn: 'Jesus said to them: Amen, amen I say to you, before Abraham was made, I am.',
+    textEn: 'Jesus said to them: Amen, amen, I say to you, before Abraham was made, I AM.',
     meaningEn: 'Literally "I am," in the present tense and with no predicate, in contrast with "before Abraham was made," in the past. In Exodus 3:14 the Septuagint renders the name revealed to Moses as egṑ eimí ho ṓn ("I am the one who is"), and in Isaiah God speaks of himself with the same absolute egṑ eimí (Isaiah 43:10: "understand that I myself am"). The Jews present understood the claim: they took up stones to cast at him (John 8:59). It was not merely a claim of pre-existence, but a direct echo of the way God names himself.',
   },
   'jo-10-30': {
@@ -226,11 +226,15 @@ export const referencesEn = {
   },
   'hb-12-14': {
     topicEn: 'Sanctification required to see the Lord',
-    textEn: 'Follow peace with all men, and holiness: without which no man shall see God.',
+    textEn: 'Follow peace with all men and holiness: without which no man shall see God.',
   },
   'mt-12-32': {
     topicEn: 'Forgiveness in this world and the world to come',
-    textEn: 'And whosoever shall speak a word against the Son of man, it shall be forgiven him: but he that shall speak against the Holy Ghost, it shall not be forgiven him, neither in this world, nor in the world to come.',
+    textEn: 'And whosoever shall speak a word against the Son of man, it shall be forgiven him: but he that shall speak against the Holy Ghost, it shall not be forgiven him neither in this world, nor in the world to come.',
+  },
+  'mt-12-31': {
+    topicEn: 'The blasphemy against the Holy Spirit',
+    textEn: 'Therefore I say to you: Every sin and blasphemy shall be forgiven men, but the blasphemy of the Spirit shall not be forgiven. And whosoever shall speak a word against the Son of man, it shall be forgiven him: but he that shall speak against the Holy Ghost, it shall not be forgiven him neither in this world, nor in the world to come.',
   },
   'rm-3-28': {
     topicEn: 'Justification by faith apart from works of the Mosaic Law',
@@ -334,8 +338,8 @@ export const referencesEn = {
   },
   'is-8-19': {
     topicEn: 'Rebuke of those who consult the dead instead of God',
-    textEn: 'And when they shall say to you: Seek of pythons, and of diviners, who mutter in their enchantments: should not the people seek of their God, for the living of the dead?',
-    fullSourceEn: 'Book of the Prophet Isaiah, chapter 8, verse 19',
+    textEn: 'And when they shall say to you: Seek of pythons, and of diviners, who mutter in their enchantments: should not the people seek of their God, for the living of the dead? To the law rather, and to the testimony. And if they speak not according to this word, they shall not have the morning light.',
+    fullSourceEn: 'Book of the Prophet Isaiah, chapter 8, verses 19 and 20',
     authorEn: 'Prophet Isaiah',
   },
   '1tm-3-15': {
@@ -554,7 +558,7 @@ export const referencesEn = {
     refEn: 'Catechism §2116-2117',
     fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2116 and 2117',
     topicEn: 'Against divination, magic and spiritism',
-    textEn: 'All forms of divination are to be rejected: recourse to Satan or demons, conjuring up the dead or other practices falsely supposed to "unveil" the future. Consulting horoscopes, astrology, palm reading, interpretation of omens and lots, the phenomena of clairvoyance, and recourse to mediums all conceal a desire for power over time, history, and, in the last analysis, other human beings, as well as a wish to conciliate hidden powers. They contradict the honor, respect, and loving fear that we owe to God alone (2116). All practices of magic or sorcery, by which one attempts to tame occult powers, so as to place them at one\'s service and have a supernatural power over others (even if this were for the sake of restoring their health), are gravely contrary to the virtue of religion. (...) Spiritism often implies divination or magical practices; the Church for her part warns the faithful against it (2117).',
+    textEn: 'All forms of divination are to be rejected: recourse to Satan or demons, conjuring up the dead or other practices falsely supposed to "unveil" the future. Consulting horoscopes, astrology, palm reading, interpretation of omens and lots, the phenomena of clairvoyance, and recourse to mediums all conceal a desire for power over time, history, and, in the last analysis, other human beings, as well as a wish to conciliate hidden powers. They contradict the honor, respect, and loving fear that we owe to God alone (2116). All practices of magic or sorcery, by which one attempts to tame occult powers, so as to place them at one\'s service and have a supernatural power over others (even if this were for the sake of restoring their health), are gravely contrary to the virtue of religion. (...) Wearing charms is also reprehensible. Spiritism often implies divination or magical practices; the Church for her part warns the faithful against it (2117).',
     urlEn: 'https://www.vatican.va/archive/ENG0015/__P7E.HTM',
   },
   // === DOCUMENTS ===
@@ -682,11 +686,11 @@ export const referencesEn = {
   },
 
   'nostra-aetate': {
-    refEn: 'Nostra Aetate §2-4',
-    fullSourceEn: 'Declaration Nostra Aetate on the relation of the Church to non-Christian religions, Second Vatican Council, §2-4',
+    refEn: 'Nostra Aetate §2-5',
+    fullSourceEn: 'Declaration Nostra Aetate on the relation of the Church to non-Christian religions, Second Vatican Council, §2-5',
     authorEn: 'Second Vatican Council, promulgated by Saint Paul VI',
     topicEn: 'Catholic attitude toward other religions',
-    textEn: '"Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths and through searching philosophical inquiry. (...) The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings which, though differing in many aspects from the ones she holds and sets forth, nonetheless often reflect a ray of that Truth which enlightens all men" (2). "The Church regards with esteem also the Moslems. They adore the one God, living and subsisting in Himself; merciful and all-powerful, the Creator of heaven and earth" (3). "(...) the Church (...) decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (4).',
+    textEn: '"Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths and through searching philosophical inquiry. (...) The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings which, though differing in many aspects from the ones she holds and sets forth, nonetheless often reflect a ray of that Truth which enlightens all men" (2). "The Church regards with esteem also the Moslems. They adore the one God, living and subsisting in Himself; merciful and all-powerful, the Creator of heaven and earth" (3). "(...) the Church (...) decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (4). "The Church reproves, as foreign to the mind of Christ, any discrimination against men or harassment of them because of their race, color, condition of life, or religion" (5).',
   },
   // === THEOLOGIANS ===
   'agostinho-evangelho': {
@@ -1021,11 +1025,11 @@ export const referencesEn = {
   },
   'ms-p52': {
     topicEn: 'The oldest manuscript of the New Testament',
-    textEn: 'A small fragment with verses of John 18. Its first editor dated it to the first half of the 2nd century, and recent studies propose a date closer to AD 200. Even on the later dating, it is among the oldest manuscripts of the New Testament and shows that, within a few generations of being written, the Gospel of John was already circulating in Egypt, far from Ephesus, where ancient tradition places its composition.',
+    textEn: 'A small fragment with verses of John 18. Its first editor dated it to the first half of the 2nd century. Recent studies prefer something between 125 and 175, and some allow a date close to AD 200. Even on the later dating, it is among the oldest manuscripts of the New Testament and shows that, within a few generations of being written, the Gospel of John was already circulating in Egypt, far from Ephesus, where ancient tradition places its composition.',
     refEn: 'Papyrus P52 (Rylands)',
     fullSourceEn: 'Papyrus P52 (Rylands Greek Papyrus 457), fragment of the Gospel of John, chapter 18 (verses 31-33 and 37-38), John Rylands Library, Manchester',
     authorEn: 'Copy of the Gospel of John',
-    yearEn: 'c. AD 100-150 according to its first editor (1935); recent studies suggest a date closer to AD 200',
+    yearEn: 'c. AD 100-150 according to its first editor (1935), and 125-175 according to recent studies (some allow a date close to AD 200)',
   },
   'milagre-lanciano': {
     refEn: 'Eucharistic Miracle of Lanciano',
@@ -1113,7 +1117,7 @@ export const referencesEn = {
   },
   'lemaitre-bigbang': {
     topicEn: 'Catholic origins of the Big Bang theory',
-    textEn: "The cosmological model that came to be called the Big Bang was proposed by Father Lemaître before Edwin Hubble experimentally confirmed the expansion of the universe. Lemaître derived mathematically, from Einstein's General Relativity, that the universe is expanding and had its origin in a highly dense 'primordial atom.' Initially received with skepticism, the hypothesis became widely accepted after subsequent observations. The very grounding of modern science in a Christian civilisation (universities born in medieval Christendom, Mendel father of genetics) refutes the myth of the 'science vs. faith' conflict.",
+    textEn: "The cosmological model that came to be called the Big Bang was proposed by Father Lemaître before Edwin Hubble experimentally confirmed the expansion of the universe. Lemaître derived mathematically, from Einstein's General Relativity, that the universe is expanding and had its origin in a highly dense 'primordial atom.' Initially received with skepticism (Einstein went so far as to say 'your calculations are correct, but your physics is abominable'), the hypothesis became widely accepted after subsequent observations. The very grounding of modern science in a Christian civilisation (universities born in medieval Christendom, Mendel father of genetics, Boscovich in physics) refutes the myth of the 'science vs. faith' conflict.",
     refEn: 'Primordial Atom Hypothesis',
     fullSourceEn: 'Lemaître, "Un Univers homogène de masse constante et de rayon croissant..." (Annales de la Société Scientifique de Bruxelles, vol. 47, 1927) and "The Beginning of the World from the Point of View of Quantum Theory" (Nature, vol. 127, p. 706, 1931)',
     authorEn: 'Mons. Georges Lemaître (Belgian Catholic priest, professor at the Catholic University of Louvain)',
@@ -1480,42 +1484,42 @@ export const referencesEn = {
     yearEn: 'baraita attributed to the tannaitic period (up to c. 200 AD); Talmud redacted between the 3rd and 6th centuries',
   },
   'hb-9-28': {
-    refEn: 'Hebrews 9,28',
+    refEn: 'Hebrews 9:28',
     topicEn: 'The one sacrifice of Christ, offered once',
     textEn: 'So also Christ was offered once to exhaust the sins of many. The second time he shall appear without sin to them that expect him unto salvation.',
   },
   'lc-24-30': {
-    refEn: 'Luke 24,30-35',
+    refEn: 'Luke 24:30-35',
     topicEn: 'Emmaus: Jesus known in the breaking of bread',
     textEn: 'And it came to pass, whilst he was at table with them, he took bread and blessed and brake and gave to them. And their eyes were opened: and they knew him. And he vanished out of their sight. And they said one to the other: Was not our heart burning within us, whilst he spoke in the way and opened to us the scriptures? And rising up, the same hour, they went back to Jerusalem: and they found the eleven gathered together, and those that were with them, Saying: The Lord is risen indeed and hath appeared to Simon. And they told what things were done in the way: and how they knew him in the breaking of bread.',
   },
   'at-20-7': {
-    refEn: 'Acts 20,7',
+    refEn: 'Acts 20:7',
     topicEn: 'The first Christians gather on the first day of the week to break bread',
     textEn: 'And on the first day of the week, when we were assembled to break bread, Paul discoursed with them, being to depart on the morrow. And he continued his speech until midnight.',
   },
   '1cor-13-12': {
-    refEn: '1 Corinthians 13,12',
+    refEn: '1 Corinthians 13:12',
     topicEn: 'Seeing God face to face / beatific vision',
     textEn: 'We see now through a glass in a dark manner: but then face to face. Now I know in part: but then I shall know even as I am known.',
   },
   'jo-8-44': {
-    refEn: 'John 8,44',
+    refEn: 'John 8:44',
     topicEn: 'The devil, father of lies',
     textEn: 'You are of your father the devil: and the desires of your father you will do. He was a murderer from the beginning: and he stood not in the truth, because truth is not in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father thereof.',
   },
   'mt-6-7': {
-    refEn: 'Matthew 6,7',
+    refEn: 'Matthew 6:7',
     topicEn: 'Against the heathen babbling in prayer',
     textEn: 'And when you are praying, speak not much, as the heathens. For they think that in their much speaking they may be heard.',
   },
   'lc-1-42': {
-    refEn: 'Luke 1,42',
+    refEn: 'Luke 1:42',
     topicEn: 'Elizabeth\'s greeting in the Hail Mary',
     textEn: 'And she cried out with a loud voice and said: Blessed art thou among women and blessed is the fruit of thy womb.',
   },
   'mt-4-4': {
-    refEn: 'Matthew 4,4',
+    refEn: 'Matthew 4:4',
     topicEn: 'Not by bread alone does man live',
     textEn: 'Who answered and said: It is written, Not in bread alone doth man live, but in every word that proceedeth from the mouth of God.',
   },
@@ -1603,7 +1607,7 @@ export const referencesEn = {
     topicEn: 'Condemnation of abortion and infanticide among the first Christians',
     textEn: 'You shall not kill the embryo by abortion and shall not cause the newborn to perish.',
     refEn: 'Didache 2:2',
-    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), chapter 2, verse 2, as quoted by the Catechism 2271',
+    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), chapter 2, verse 2, as quoted by the Catechism §2271',
     authorEn: 'Anonymous author of the early Church',
     yearEn: 'late 1st or early 2nd century',
     urlEn: 'https://www.vatican.va/archive/ENG0015/__P7Z.HTM',

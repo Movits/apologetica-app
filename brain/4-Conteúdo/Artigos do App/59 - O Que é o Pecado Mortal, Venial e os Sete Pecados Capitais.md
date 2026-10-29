@@ -24,7 +24,7 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Referências usadas
 - [[Gênesis 3,5]]
-- [[Mateus 12,32]]
+- [[Mateus 12,31-32]]
 - [[Catecismo §1422-1470]]
 - [[1 João 5,16-17]]
 - [[Catecismo §1857]]

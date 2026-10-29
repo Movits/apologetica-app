@@ -23,7 +23,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 ## Referências usadas
 - [[Deuteronômio 18,10-12]]
 - [[Catecismo §2116-2117]]
-- [[Isaías 8,19]]
+- [[Isaías 8,19-20]]
 - [[Êxodo 20,3-5]]
 - [[2 Coríntios 11,14-15]]
 - [[1 Samuel 28,7-8]]

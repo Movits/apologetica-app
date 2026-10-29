@@ -3,10 +3,10 @@ tags: [dialogo, conteudo-gerado]
 atualizado: 2026-10-29
 gerado: true
 ---
-# O purgatório não está na Bíblia — é invenção da Igreja Católica
+# O purgatório não está na Bíblia. É invenção da Igreja Católica
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Objeção: "O purgatório não está na Bíblia — é invenção da Igreja Católica."
+Objeção: "O purgatório não está na Bíblia. É invenção da Igreja Católica."
 Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-purgatorio`
 

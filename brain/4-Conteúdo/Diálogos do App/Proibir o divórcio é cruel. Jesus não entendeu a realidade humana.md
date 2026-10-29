@@ -3,11 +3,11 @@ tags: [dialogo, conteudo-gerado]
 atualizado: 2026-10-29
 gerado: true
 ---
-# Não existe certo e errado absoluto — é tudo relativo à cultura
+# Proibir o divórcio é cruel. Jesus não entendeu a realidade humana
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Objeção: "Não existe certo e errado absoluto — é tudo relativo à cultura."
+Objeção: "Proibir o divórcio é cruel. Jesus não entendeu a realidade humana."
 Categoria: Moral | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
-Id: `d-relativismo`
+Id: `d-divorcio`
 
-Artigo completo: [[06 - Ateísmo e o Problema do Mal]]
+Artigo completo: [[26 - Contracepção e Humanae Vitae]]

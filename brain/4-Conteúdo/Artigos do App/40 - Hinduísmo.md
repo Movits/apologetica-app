@@ -25,7 +25,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Gênesis 1,27-28]]
 - [[Hebreus 9,27]]
 - [[Bhagavad Gita e Upanishads]]
-- [[Nostra Aetate §2-4]]
+- [[Nostra Aetate §2-5]]
 
 ## Artigos relacionados
 - [[39 - Budismo]]

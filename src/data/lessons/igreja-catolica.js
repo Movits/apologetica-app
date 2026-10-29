@@ -1005,7 +1005,7 @@ const lessons = {
 
   24: {
     hook: {
-      question: 'Antes de ler: a expressão "somente pela fé" aparece na Bíblia?',
+      question: 'Antes de ler: no grego original, a expressão "somente pela fé" aparece na Bíblia?',
       questionEn: 'Before you read: does the expression "by faith only" appear in the Bible?',
       options: [
         'Sim, em Romanos, como resumo da doutrina de Paulo',
@@ -1018,11 +1018,11 @@ const lessons = {
         'It appears nowhere',
       ],
       correct: 1,
-      note: 'Tiago 2,24 diz que o homem "é justificado pelas obras e não somente pela fé". É a única vez que a expressão aparece, e aparece negada. O artigo explica por que Paulo e Tiago não se contradizem e o que "tudo é graça" significa.',
+      note: 'Tiago 2,24 diz que o homem "é justificado pelas obras e não somente pela fé". No grego, é a única vez que a expressão aparece, e aparece negada. O artigo explica por que Paulo e Tiago não se contradizem e o que "tudo é graça" significa.',
       noteEn: 'James 2:24 says that "by works a man is justified, and not by faith only". It is the only time the expression appears, and it appears denied. The article explains why Paul and James do not contradict each other and what "everything is grace" means.',
     },
     keyPoints: [
-      'Tiago 2,24 é o único lugar onde "somente pela fé" aparece na Bíblia, e aparece negada. A fé sem obras é morta (Tiago 2,26).',
+      'Tiago 2,24 é o único lugar onde "somente pela fé" aparece no grego da Bíblia, e aparece negada. A fé sem obras é morta (Tiago 2,26).',
       'Paulo, em Romanos 3,28, exclui as "obras da Lei" mosaica, não a caridade: ele mesmo diz que o que vale é "a fé que opera pela caridade" (Gálatas 5,6).',
       'A salvação é gratuita e tudo é graça, mas a graça produz obras que cooperam para a salvação final. No juízo de Mateus 25, as obras de misericórdia decidem.',
     ],
@@ -1397,7 +1397,7 @@ const lessons = {
           'Faith and works are alternative paths: each picks his own',
         ],
         correct: 0,
-        why: 'A Igreja afirma que a salvação é graça, nunca mérito comprado, mas que a fé verdadeira não fica sozinha: o que vale é "a fé que opera pela caridade" (Gálatas 5,6) e "o homem é justificado pelas obras, e não somente pela fé" (Tiago 2,24). Não é fé contra obras.',
+        why: 'A Igreja afirma que a salvação é graça, nunca mérito comprado, mas que a fé verdadeira não fica sozinha: o que vale é "a fé que opera pela caridade" (Gálatas 5,6) e "o homem é justificado pelas obras e não somente pela fé" (Tiago 2,24). Não é fé contra obras.',
         whyEn: 'Salvation is grace, never a merit one buys, but true faith does not stay alone: what counts is "faith that worketh by charity" (Galatians 5:6) and "by works a man is justified, and not by faith only" (James 2:24). It is not faith against works.',
       },
       {
@@ -1625,7 +1625,7 @@ const lessons = {
         ],
         correct: 2,
         why: 'Quem ama diz "eu te amo" mil vezes sem que as palavras fiquem ocas. E a Ave-Maria traz a saudação do anjo e as palavras de Isabel (Lucas 1,28.42), não um texto composto por Maria. Enquanto os lábios repetem, o coração medita os fatos da salvação.',
-        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1:28.42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
+        whyEn: 'Whoever loves says "I love you" a thousand times without the words going hollow. And the Hail Mary carries the angel\'s greeting and Elizabeth\'s words (Luke 1:28, 42), not a text by Mary. While the lips repeat, the heart meditates on the facts of salvation.',
       },
       {
         question: 'Segundo o artigo, qual é o papel da Ave-Maria repetida dentro do Rosário?',

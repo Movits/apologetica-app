@@ -20,7 +20,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 
 ## Referências usadas
 - [[Abertura dos arquivos de Pio XII (Francisco, 2019)]]
-- [[Nostra Aetate §2-4]]
+- [[Nostra Aetate §2-5]]
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 5: Pio XII foi cúmplice do nazismo?

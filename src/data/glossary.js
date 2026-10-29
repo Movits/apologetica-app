@@ -35,9 +35,9 @@ export const glossary = [
     term: 'Sola Fide',
     termEn: 'Sola Fide',
     definition:
-      'Doutrina protestante de que a salvação se obtém apenas pela fé, sem necessidade de obras. Tiago 2,24 contradiz explicitamente esse princípio: "o homem se justifica pelas obras e não somente pela fé". A Igreja Católica ensina que a fé sem obras é morta.',
+      'Doutrina protestante de que a salvação se obtém apenas pela fé, sem necessidade de obras. Tiago 2,24 contradiz explicitamente esse princípio: "o homem é justificado pelas obras e não somente pela fé". A Igreja Católica ensina que a fé sem obras é morta.',
     definitionEn:
-      'Protestant doctrine that salvation is obtained by faith alone, without need for works. James 2:24 explicitly contradicts this principle: "a man is justified by works, and not by faith only". The Catholic Church teaches that faith without works is dead.',
+      'Protestant doctrine that salvation is obtained by faith alone, without need for works. James 2:24 explicitly contradicts this principle: "by works a man is justified, and not by faith only". The Catholic Church teaches that faith without works is dead.',
   },
   {
     id: 'magisterio',
@@ -170,18 +170,18 @@ export const glossary = [
     term: 'Deuterocanônicos',
     termEn: 'Deuterocanonicals',
     definition:
-      'Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânone judaico de Jâmnia (séc. I d.C.). A Igreja Católica os reconhece desde os Concílios de Hipona (393) e Cartago (397).',
+      'Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânone judaico de Jâmnia (séc. I d.C.). A Igreja Católica os reconhece, e eles já constam das listas antigas de Roma (382), Hipona (393) e Cartago (397).',
     definitionEn:
-      'The 7 Old Testament books (Tobit, Judith, Wisdom, Sirach, Baruch, 1 and 2 Maccabees) that Protestants do not accept because they follow the Jewish canon of Jamnia (1st century AD). The Catholic Church recognizes them since the Councils of Hippo (393) and Carthage (397).',
+      'The 7 Old Testament books (Tobit, Judith, Wisdom, Sirach, Baruch, 1 and 2 Maccabees) that Protestants do not accept because they follow the Jewish canon of Jamnia (1st century AD). The Catholic Church recognizes them, and they already appear in the ancient lists of Rome (382), Hippo (393) and Carthage (397).',
   },
   {
     id: 'septuaginta',
     term: 'Septuaginta',
     termEn: 'Septuagint',
     definition:
-      'Tradução grega do Antigo Testamento feita por 70 (ou 72) sábios judeus em Alexandria entre os sécs. III e II a.C. Inclui os deuterocanônicos. Era a Bíblia usada pelos apóstolos e pela Igreja primitiva. Citada explicitamente em mais de 300 passagens do Novo Testamento.',
+      'Tradução grega do Antigo Testamento feita em Alexandria a partir do século III a.C. O nome vem da tradição dos 70 (ou 72) sábios judeus que teriam traduzido a Lei. Inclui os deuterocanônicos. Era a Bíblia usada pelos apóstolos e pela Igreja primitiva. Cerca de dois terços das mais de 300 citações do Antigo Testamento no Novo seguem a Septuaginta.',
     definitionEn:
-      'Greek translation of the Old Testament made by 70 (or 72) Jewish scholars in Alexandria between the 3rd and 2nd centuries BC. Includes the deuterocanonicals. It was the Bible used by the apostles and the early Church. Explicitly quoted in more than 300 New Testament passages.',
+      'Greek translation of the Old Testament made in Alexandria from the 3rd century BC onward. The name comes from the tradition of 70 (or 72) Jewish scholars said to have translated the Law. Includes the deuterocanonicals. It was the Bible used by the apostles and the early Church. About two thirds of the more than 300 Old Testament quotations in the New Testament follow the Septuagint.',
   },
   {
     id: 'patristica',

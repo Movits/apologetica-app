@@ -25,7 +25,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Suma Teológica I, q. 2, a. 3]]
 - [[Romanos 1,20]]
 - [[Reflexões sobre o universo (Hoyle)]]
-- [[A Nova Mente do Imperador]]
+- [[A Mente Nova do Rei]]
 - [[Navalha de Occam]]
 
 ## Artigos relacionados

@@ -6,7 +6,7 @@ gerado: true
 # Sola Fide
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Doutrina protestante de que a salvação se obtém apenas pela fé, sem necessidade de obras. Tiago 2,24 contradiz explicitamente esse princípio: "o homem se justifica pelas obras e não somente pela fé". A Igreja Católica ensina que a fé sem obras é morta.
+Doutrina protestante de que a salvação se obtém apenas pela fé, sem necessidade de obras. Tiago 2,24 contradiz explicitamente esse princípio: "o homem é justificado pelas obras e não somente pela fé". A Igreja Católica ensina que a fé sem obras é morta.
 
 Funcionalidade: [[Glossário]]
 
