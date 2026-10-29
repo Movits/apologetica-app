@@ -27,9 +27,10 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
-- [[Catecismo §120]]
-- [[Concílio de Trento (1545-1563)]]
 - [[2 Macabeus 12,44-46]]
+- [[Concílio de Trento (1545-1563)]]
+- [[Hebreus 11,35]]
+- [[Catecismo §120]]
 
 ## Artigos relacionados
 - [[02 - Por que Ser Católico e Não Somente Cristão]]

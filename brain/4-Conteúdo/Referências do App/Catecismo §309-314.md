@@ -12,5 +12,4 @@ Tema: Problema do mal / providência
 > Se Deus Pai todo-poderoso, Criador do mundo ordenado e bom, tem cuidado com todas as suas criaturas, porque é que o mal existe? A esta questão, tão premente como inevitável, tão dolorosa como misteriosa, não é possível d...
 Funcionalidade: [[Referências]]
 
-## Usada nos artigos
-- [[06 - Ateísmo e o Problema do Mal]]
+Nenhum artigo usa esta referência hoje (candidata a revisão editorial).

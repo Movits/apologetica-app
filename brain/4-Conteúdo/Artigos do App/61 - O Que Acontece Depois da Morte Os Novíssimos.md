@@ -31,8 +31,11 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Catecismo §1030-1032]]
 - [[2 Macabeus 12,44-46]]
 - [[1 Coríntios 3,12-15]]
-- [[Catecismo §1033-1037]]
+- [[O Problema da Dor]]
+- [[1 Coríntios 13,12]]
+- [[Catecismo §1037]]
 - [[Catecismo §2282-2283]]
+- [[Catecismo §1033-1037]]
 
 ## Diálogos que levam a este artigo
 - [[Um Deus de amor jamais mandaria alguém para o inferno]]

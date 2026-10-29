@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Atribuída a Paulo ou círculo paulino (séc. I d.C.)
-Tema: O sacrifício único de Cristo
+Tema: O único sacrifício de Cristo, oferecido uma só vez
 
 > assim Cristo se ofereceu uma só vez para tomar sobre si os pecados da multidão, e aparecerá uma segunda vez, não porém em razão do pecado, mas para trazer a salvação àqueles que o esperam.
 

@@ -22,6 +22,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Graça]]
 - [[Comunhão dos Santos]]
 - [[Purgatório]]
+- [[Deuterocanônicos]]
 
 ## Referências usadas
 - [[2 Macabeus 12,44-46]]
@@ -30,7 +31,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Hebreus 12,14]]
 - [[Mateus 12,32]]
 - [[Catecismo §1030-1032]]
-- [[Mateus 5,26]]
+- [[Mateus 5,25-26]]
 - [[Concílio de Trento, sessão XXV, Decreto sobre o Purgatório]]
 - [[A Coroa (De Corona), 3]]
 - [[Confissões, IX, 11-13]]

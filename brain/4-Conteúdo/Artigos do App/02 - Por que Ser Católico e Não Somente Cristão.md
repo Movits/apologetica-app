@@ -28,7 +28,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 17,20-21]]
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
-- [[Contra as Heresias, III, 3, 2-3]]
+- [[Contra as Heresias, III,3,2-3]]
 
 ## Artigos relacionados
 - [[19 - O Papa Cabeça Visível da Igreja]]

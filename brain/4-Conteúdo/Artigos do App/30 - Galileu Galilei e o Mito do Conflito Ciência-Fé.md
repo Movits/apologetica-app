@@ -16,7 +16,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - Qual era o problema, de fato
 - O que realmente aconteceu
 - Um erro humano, reconhecido em 1992
-- Os reformadores foram mais hostis
+- Os reformadores também resistiram
 - Ciência e fé: matriz, não conflito
 - Perguntas-chave
 
@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 ## Referências usadas
 - [[Discurso de João Paulo II sobre o caso Galileu]]
 - [[Hipótese do átomo primordial]]
+- [[Josué 10,12-13]]
 
 ## Artigos relacionados
 - [[28 - A Inquisição O Que Realmente Aconteceu]]

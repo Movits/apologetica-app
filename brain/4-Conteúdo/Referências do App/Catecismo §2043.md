@@ -7,9 +7,9 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
-Tema: Preceitos da Igreja: jejum e abstinência, ajuda às necessidades da Igreja
+Tema: Prover às necessidades materiais da Igreja
 
-> O quarto preceito ("Guardar abstinência e jejuar nos dias determinados pela Igreja") assegura os dias de ascese e de penitência que nos preparam para as festas litúrgicas e contribuem para nos fazer adquirir domínio sobr...
+> O quinto preceito («prover as necessidades da Igreja, segundo os legítimos usos e costumes e as determinações») aponta ainda aos fiéis a obrigação de prover, às necessidades materiais da Igreja consoante as possibilidade...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

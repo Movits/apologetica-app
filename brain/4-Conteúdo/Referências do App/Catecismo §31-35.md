@@ -14,6 +14,5 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[01 - A Existência de Deus o Argumento Cosmológico]]
-- [[09 - O Argumento do Design Cósmico (Ajuste Fino)]]
 - [[11 - Quem Criou Deus A Objeção do Ateísmo]]
 - [[56 - Deus Existe Os Melhores Argumentos da Razão]]

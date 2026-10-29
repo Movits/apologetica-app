@@ -21,7 +21,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Deuteronômio 18,10-12]]
 - [[Catecismo §2116-2117]]
 - [[Êxodo 20,3-5]]
-- [[Nostra Aetate §2 e §4]]
+- [[Nostra Aetate §2-4]]
+- [[João 14,6]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]

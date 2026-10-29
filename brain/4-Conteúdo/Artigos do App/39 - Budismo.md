@@ -22,7 +22,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[João 3,16]]
 - [[Hebreus 9,27]]
 - [[As Quatro Nobres Verdades]]
-- [[Nostra Aetate §2 e §4]]
+- [[Nostra Aetate §2-4]]
 - [[Udana 8,3]]
 
 ## Artigos relacionados

@@ -16,4 +16,5 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[37 - Protestantismo]]
+- [[68 - Quem Escreveu a Bíblia]]
 - [[71 - Como Começar a Ler a Bíblia]]

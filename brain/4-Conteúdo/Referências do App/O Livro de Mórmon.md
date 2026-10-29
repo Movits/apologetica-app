@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Publicado por Joseph Smith (1830)
 Tema: Alegação de civilizações hebraicas nas Américas
 
-> O Livro de Mórmon afirma que israelitas liderados pelo profeta Leí migraram para as Américas por volta de 600 a.C. e ali ergueram grandes civilizações (nefitas e lamanitas), com cidades, escrita, cavalos, carros e armas ...
+> O Livro de Mórmon narra que um grupo de israelitas, a família do profeta Leí, saiu de Jerusalém por volta de 600 a.C. e atravessou o mar até as Américas, onde seus descendentes teriam erguido grandes civilizações (nefita...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

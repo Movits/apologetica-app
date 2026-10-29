@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | São Marcos (séc. I d.C.)
-Tema: Ninguém sabe o dia nem a hora do fim
+Tema: Ninguém sabe o dia nem a hora
 
 > A respeito, porém, daquele dia ou daquela hora, ninguém o sabe, nem os anjos do céu nem mesmo o Filho, mas somente o Pai.
 

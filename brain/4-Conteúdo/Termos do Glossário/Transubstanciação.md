@@ -13,3 +13,4 @@ Funcionalidade: [[Glossário]]
 ## Aparece nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]
 - [[37 - Protestantismo]]
+- [[60 - A Santa Missa O Que É e Por Que Participar]]

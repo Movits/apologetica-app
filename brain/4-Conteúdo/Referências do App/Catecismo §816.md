@@ -14,3 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]
+- [[19 - O Papa Cabeça Visível da Igreja]]

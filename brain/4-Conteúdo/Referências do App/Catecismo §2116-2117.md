@@ -7,9 +7,9 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
-Tema: Condenação do espiritismo, da adivinhação e da magia
+Tema: Contra a adivinhação, a magia e o espiritismo
 
-> Todas as formas de adivinhação devem ser rejeitadas: recurso a Satanás ou aos demônios, evocação dos mortos ou outras práticas supostamente "reveladoras" do futuro. A consulta dos horóscopos, a astrologia, a quiromancia,...
+> Todas as formas de adivinhação devem ser rejeitadas: recurso a Satanás ou aos demônios, evocação dos mortos ou outras práticas supostamente «reveladoras» do futuro. A consulta dos horóscopos, a astrologia, a quiromancia,...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

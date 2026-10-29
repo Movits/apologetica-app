@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Historiadores não cristãos da Antiguidade (séc. I e II d.C.)
 Tema: Testemunho não cristão da escuridão na crucificação
 
-> O historiador Talo, de data incerta (talvez meados do séc. I), mencionou a escuridão no terceiro livro de suas Histórias e tentou explicá-la como eclipse solar. Júlio Africano, no séc. III, cita Talo e objeta que não pod...
+> O historiador Talo, provavelmente no séc. I, mencionou a escuridão no terceiro livro de suas Histórias e tentou explicá-la como eclipse solar. Júlio Africano, no séc. III, cita Talo e objeta que não podia ser eclipse, po...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

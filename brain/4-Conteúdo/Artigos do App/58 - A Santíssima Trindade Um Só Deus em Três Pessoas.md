@@ -28,8 +28,9 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[João 10,30-33]]
 - [[João 14,16-17]]
 - [[Concílio de Niceia (Credo Niceno)]]
-- [[Mateus 3,16-17]]
 - [[1 João 4,8]]
+- [[Mateus 3,16-17]]
+- [[Concílio de Constantinopla I]]
 - [[Catecismo §253-254]]
 - [[Catecismo §243-245]]
 

@@ -14,5 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
-- [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]

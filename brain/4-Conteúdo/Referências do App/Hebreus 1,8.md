@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Atribuída a Paulo ou círculo paulino (séc. I d.C.)
 Tema: Divindade do Filho / o Pai chama o Filho de Deus
 
-> Ao passo que do Filho diz: O teu trono, ó Deus, subsiste para a eternidade. O cetro do teu Reino é cetro de justiça.
+> ao passo que do Filho diz: O teu trono, ó Deus, subsiste para a eternidade. O cetro do teu Reino é cetro de justiça.
 
 Abre no app em `hb 1,8`.
 Funcionalidade: [[Referências]]

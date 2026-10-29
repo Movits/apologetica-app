@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Referências usadas
 - [[Apocalipse 5,8]]
 - [[Mateus 22,32]]
+- [[Hebreus 12,14]]
 - [[Vatican News, o Dicastério para as Causas dos Santos]]
 
 ## Artigos relacionados

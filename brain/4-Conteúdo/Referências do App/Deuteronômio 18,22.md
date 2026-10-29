@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Tradição mosaica (séc. XIII a VII a.C.)
-Tema: Critério do falso profeta: a palavra que não se cumpre
+Tema: Critério do falso profeta: a palavra que não se cumpre não veio de Deus
 
 > Quando o profeta tiver falado em nome do Senhor, se o que ele disse não se realizar, é que essa palavra não veio do Senhor. O profeta falou presunçosamente. Não o temas!”
 

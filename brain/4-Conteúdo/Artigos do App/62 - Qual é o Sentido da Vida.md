@@ -24,9 +24,10 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[João 14,6]]
 - [[O Existencialismo é um Humanismo]]
 - [[A Gaia Ciência §125]]
+- [[Mateus 7,7]]
+- [[Catecismo §1721]]
 - [[Confissões, I, 1]]
 - [[Cristianismo Puro e Simples, livro III, capítulo 10]]
-- [[Catecismo §1721]]
 
 ## Diálogos que levam a este artigo
 - [[A vida não tem sentido nenhum, somos só química que um dia acaba]]

@@ -98,7 +98,8 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
     if (!book || !ch) return Infinity;
     try {
       const data = getChapter(book.id, ch, lang);
-      return data?.verses?.length || Infinity;
+      // total é o último número: um bloco da edição ("2-7") é uma linha só.
+      return data?.total || Infinity;
     } catch {
       return Infinity;
     }

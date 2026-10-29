@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Eucaristia / transubstanciação
 
-> O modo da presença de Cristo sob as espécies eucarísticas é único. (...) No santíssimo sacramento da Eucaristia estão "contidos, verdadeira, real e substancialmente, o corpo e o sangue, conjuntamente com a alma e a divin...
+> O modo da presença de Cristo sob as espécies eucarísticas é único. (...) No santíssimo sacramento da Eucaristia estão «contidos, verdadeira, real e substancialmente, o corpo e o sangue, conjuntamente com a alma e a divin...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

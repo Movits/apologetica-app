@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 
 ## Referências usadas
 - [[The Gospel and the Greeks]]
+- [[Cristianismo Puro e Simples]]
 - [[O mito se fez fato]]
 
 ## Artigos relacionados

@@ -17,4 +17,5 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]
 - [[20 - Os Sete Sacramentos Sinais que Produzem Graça]]
+- [[21 - Por que Confessar a um Padre O Sacramento da Reconciliação]]
 - [[60 - A Santa Missa O Que É e Por Que Participar]]

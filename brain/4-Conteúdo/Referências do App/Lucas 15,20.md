@@ -6,8 +6,8 @@ gerado: true
 # Lucas 15,20
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | São Lucas Evangelista (c. 80-90 d.C.)
-Tema: O pai que corre ao encontro do filho pródigo
+Fonte: Bíblia | Evangelista Lucas (séc. I d.C.)
+Tema: O pai corre ao encontro do filho que volta
 
 > Levantou-se, pois, e foi ter com seu pai. Estava ainda longe, quando seu pai o viu e, movido de compaixão, correu-lhe ao encontro, o abraçou e o beijou.
 

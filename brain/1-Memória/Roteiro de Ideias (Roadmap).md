@@ -30,6 +30,25 @@ Ver [[Pesquisa de Concorrência - Capela e Hallow (UI-UX)]] para o detalhe e as 
 
 ## Conteúdo
 
+- ~~**Bíblia Ave Maria com versículos faltando**~~ (achado e resolvido em
+  2026-10-13): 39 capítulos com a numeração consertada por
+  `scripts/source/avemaria-correcoes.json`, travados por
+  `tests/bibleAveMaria.test.mjs`. Gálatas 1, 2 Tessalonicenses 2, Hebreus 12,
+  1 Pedro 1, Apocalipse 7, Romanos 7, 1 Coríntios 16 e Atos 15 ficaram como
+  estão: é a numeração da própria edição (quatro fontes concordam).
+
+- **Capítulos que só existem numa das Bíblias** (achado na revisão de código de
+  2026-10-13): Joel tem 4 capítulos na Ave Maria e 3 na Douay-Rheims, e
+  Malaquias tem 3 e 4. Em inglês, Joel 4 cai no português e Malaquias 4 não
+  aparece na grade. Consertar pede contar capítulos por idioma na grade, na
+  navegação, no seletor de referência e no progresso de leitura (que hoje
+  conta pela Ave Maria): decidir como o progresso trata esses dois livros
+  antes de mexer.
+- **Marcações antigas nos capítulos consertados** (2026-10-13): os 39
+  capítulos da Ave Maria que ganharam a numeração certa podem ter marcações e
+  notas feitas no número antigo. Se aparecer reclamação, uma migração pode
+  mover cada uma pelo texto marcado.
+
 Cobrir as lacunas do [[Top 100 Tópicos]]: comparar a lista dos temas mais buscados com os artigos existentes e priorizar os buracos.
 
 ## Loja de apps

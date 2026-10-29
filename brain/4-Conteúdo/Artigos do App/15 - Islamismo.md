@@ -31,9 +31,9 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[João 14,16-17]]
 - [[Anais, livro XV, 44]]
 - [[Sahih al-Bukhari 6,61,510]]
+- [[Nostra Aetate §2-4]]
+- [[Antiguidades Judaicas 18,3,3]]
 - [[1 Coríntios 15,3-8]]
-- [[Antiguidades Judaicas, livro 18]]
-- [[Nostra Aetate §2 e §4]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]

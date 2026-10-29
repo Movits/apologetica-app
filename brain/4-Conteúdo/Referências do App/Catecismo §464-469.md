@@ -9,7 +9,7 @@ gerado: true
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
 Tema: Theotokos / Maria Mãe de Deus / Encarnação
 
-> A humanidade de Cristo não tem outro sujeito senão a pessoa divina do Filho de Deus, que a assumiu e a fez sua desde que foi concebida. Por isso, o Concílio de Éfeso proclamou, em 431, que Maria se tornou, com toda a ver...
+> A heresia nestoriana via em Cristo uma pessoa humana unida à pessoa divina do Filho de Deus. (...) Por isso, o Concílio de Éfeso proclamou, em 431, que Maria se tornou, com toda a verdade, Mãe de Deus, por ter concebido ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

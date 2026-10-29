@@ -101,7 +101,7 @@ const VerseRow = memo(function VerseRow({ verse, bg, numColor, textColor, strong
         { backgroundColor: bg ?? (pressed ? s.pressedBg : 'transparent') },
       ]}
     >
-      <Text style={[s.numStyle, s.num, { color: numColor, paddingTop: s.numOffset }]}>{verse.n}</Text>
+      <Text style={[s.numStyle, s.num, { color: numColor, paddingTop: s.numOffset }]}>{verse.end ? `${verse.n}-${verse.end}` : verse.n}</Text>
       <Text style={[s.readingStyle, s.text, { color: textColor }, strong ? s.strong : null]}>{verse.t}</Text>
       {hasNote ? <Ionicons name="document-text" size={s.iconSize} color={s.iconColor} style={s.noteIcon} /> : null}
     </Pressable>
@@ -660,7 +660,8 @@ export default function BibleScreen({ route, navigation }) {
   // consultar existe para impedir.
   useEffect(() => {
     if (!chapterData?.verses?.length || !highlightVerse) return undefined;
-    const idx = chapterData.verses.findIndex((v) => v.n === highlightVerse);
+    // Um bloco da edição impressa ("2-7") contém o versículo pedido.
+    const idx = chapterData.verses.findIndex((v) => v.n <= highlightVerse && highlightVerse <= (v.end ?? v.n));
     if (idx < 0 || !verseListRef.current) return undefined;
     const timer = setTimeout(() => {
       // Sem alvo em pixels: scrollToIndex resolve o offset por dentro, então
@@ -715,18 +716,41 @@ export default function BibleScreen({ route, navigation }) {
     }
   };
 
+  // Um bloco da edição impressa ("17-23") é uma linha só: a marcação ou a nota
+  // feita antes num número do meio dele aparece e se remove pela linha.
+  const inLine = (v, lookup) => {
+    if (!v) return null;
+    for (let n = v.n; n <= (v.end ?? v.n); n++) if (lookup(n)) return n;
+    return null;
+  };
+  const highlightOfLine = (v) => {
+    const n = inLine(v, (x) => highlightsByVerse[x]);
+    return n == null ? null : { n, ...highlightsByVerse[n] };
+  };
+
   const onPickColor = (color) => {
     const v = actionVerse;
     if (!v) return;
-    withAccount(() => applyHighlight(v.n, color));
+    // Num bloco, a marcação que já existe pode estar num número do meio: é ela
+    // que troca de cor ou sai, em vez de nascer uma segunda no primeiro número.
+    const existing = highlightOfLine(v);
+    withAccount(() => applyHighlight(existing ? existing.n : v.n, color));
   };
 
   // Marcar de novo com a mesma cor remove (é o que applyHighlight faz).
   const onRemoveHighlight = () => {
     const v = actionVerse;
-    const existing = v && highlightsByVerse[v.n];
-    if (!existing) return;
-    withAccount(() => applyHighlight(v.n, existing.color));
+    if (!v) return;
+    const ids = [];
+    for (let n = v.n; n <= (v.end ?? v.n); n++) if (highlightsByVerse[n]) ids.push(highlightsByVerse[n].id);
+    if (!ids.length) return;
+    withAccount(async () => {
+      try {
+        for (const id of ids) await removeHighlight(id);
+      } catch (e) {
+        notify(isEn ? 'Error' : 'Erro', e.message || (isEn ? 'Could not remove the highlight.' : 'Não consegui remover a marcação.'));
+      }
+    });
   };
 
   const onNote = () => {
@@ -736,18 +760,19 @@ export default function BibleScreen({ route, navigation }) {
       bookId: book.id,
       chapter,
       verseStart: v.n,
-      verseEnd: v.n,
+      verseEnd: v.end ?? v.n,
     }));
   };
 
   const onOpenNote = () => {
     const v = actionVerse;
     setActionVerse(null);
-    const noteId = v && noteIdByVerse[v.n];
+    const n = inLine(v, (x) => noteIdByVerse[x]);
+    const noteId = n == null ? null : noteIdByVerse[n];
     if (noteId) navigation.navigate('NoteEditor', { noteId });
   };
 
-  const verseRef = (verse) => formatVerseRef({ bookName: bn(book), chapter, verse: verse?.n }, isEn);
+  const verseRef = (verse) => formatVerseRef({ bookName: bn(book), chapter, verse: verse?.n, verseEnd: verse?.end }, isEn);
 
   const onCopy = async () => {
     const v = actionVerse;
@@ -863,8 +888,13 @@ export default function BibleScreen({ route, navigation }) {
   const onHighlight = darkMode ? colors.onTint : colors.text;
 
   const renderVerse = useCallback(({ item }) => {
-    const isDeepLinked = Boolean(highlightVerse && item.n >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse));
-    const userHighlight = highlightsByVerse[item.n];
+    const isDeepLinked = Boolean(highlightVerse && (item.end ?? item.n) >= highlightVerse && item.n <= (highlightVerseEnd || highlightVerse));
+    let userHighlight = null;
+    let hasNote = false;
+    for (let n = item.n; n <= (item.end ?? item.n); n++) {
+      userHighlight = userHighlight || highlightsByVerse[n] || null;
+      hasNote = hasNote || versesWithNotes.has(n);
+    }
     return (
       <VerseRow
         verse={item}
@@ -872,7 +902,7 @@ export default function BibleScreen({ route, navigation }) {
         numColor={userHighlight ? onHighlight : isDeepLinked ? colors.text : colors.accentText}
         textColor={userHighlight ? onHighlight : colors.text}
         strong={isDeepLinked}
-        hasNote={versesWithNotes.has(item.n)}
+        hasNote={hasNote}
         onPress={openActions}
         s={verseStyles}
       />
@@ -1072,7 +1102,7 @@ export default function BibleScreen({ route, navigation }) {
       );
     }
 
-    const current = actionVerse ? highlightsByVerse[actionVerse.n] : null;
+    const current = highlightOfLine(actionVerse);
 
     return (
       <View style={styles.screen}>
@@ -1111,7 +1141,7 @@ export default function BibleScreen({ route, navigation }) {
           verse={actionVerse}
           title={verseRef(actionVerse)}
           currentColor={current?.color}
-          hasNote={actionVerse ? versesWithNotes.has(actionVerse.n) : false}
+          hasNote={inLine(actionVerse, (x) => versesWithNotes.has(x)) != null}
           onColor={onPickColor}
           onRemoveHighlight={onRemoveHighlight}
           onNote={onNote}

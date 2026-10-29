@@ -24,6 +24,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Pecado Original]]
 
 ## Referências usadas
+- [[Mateus 26,26-28]]
 - [[1 Coríntios 11,27-29]]
 - [[João 6,53-55]]
 - [[João 3,5]]
@@ -35,6 +36,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Catecismo §1373-1381]]
 - [[Concílio de Trento, sessão XIII]]
 - [[Mateus 19,6]]
+- [[Catecismo §1128-1131]]
 - [[Concílio de Trento, sessão VII]]
 
 ## Artigos relacionados

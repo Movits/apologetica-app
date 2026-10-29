@@ -15,4 +15,5 @@ Abre no app em `gn 14,14`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[05 - A Ressurreição de Jesus Fato Histórico]]
 - [[13 - A Virgindade Perpétua de Maria]]

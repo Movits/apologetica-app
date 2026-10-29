@@ -22,8 +22,8 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Referências usadas
 - [[2 Pedro 1,20-21]]
-- [[Dei Verbum §9-10]]
 - [[Concílio de Hipona]]
+- [[2 Pedro 3,16]]
 - [[Dei Verbum §11]]
 
 ## Diálogos que levam a este artigo

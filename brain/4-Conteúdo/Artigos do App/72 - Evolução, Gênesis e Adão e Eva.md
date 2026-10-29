@@ -26,10 +26,10 @@ Arquivo: `src/data/articles/existencia-deus.js`
 ## Referências usadas
 - [[Gênesis 1,27-28]]
 - [[Hipótese do átomo primordial]]
+- [[Catecismo §390]]
 - [[Humani Generis, 36-37]]
 - [[Mensagem à Pontifícia Academia das Ciências sobre a evolução]]
 - [[Comentário Literal ao Gênesis, I, 19, 39]]
-- [[Catecismo §390]]
 
 ## Diálogos que levam a este artigo
 - [[A evolução já provou que o Gênesis é mito e que Deus não é necessário]]

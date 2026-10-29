@@ -6,7 +6,7 @@ gerado: true
 # 22 - A Assunção de Maria
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Maria foi elevada à glória celeste em corpo e alma. Dogma definido em 1950, mas crença celebrada no Oriente e no Ocidente desde a Antiguidade.
+Maria foi elevada à glória celeste em corpo e alma. Dogma definido em 1950, mas crença atestada desde o século V.
 
 Categoria: [[Igreja Católica]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/igreja-catolica.js`
@@ -26,9 +26,12 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Referências usadas
 - [[Catecismo §966-975]]
 - [[Lucas 1,28]]
-- [[Munificentissimus Deus §44]]
+- [[Lucas 1,42]]
 - [[Apocalipse 12,1]]
+- [[Munificentissimus Deus §44]]
 - [[Salmo 45 (44),10]]
+- [[Gênesis 3,19]]
+- [[Romanos 6,23]]
 
 ## Artigos relacionados
 - [[04 - Maria Intercessora, Não Mediadora]]

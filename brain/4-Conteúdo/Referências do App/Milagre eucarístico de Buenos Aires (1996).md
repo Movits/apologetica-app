@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Investigação coordenada pelo Dr. Ricardo Castañón Gómez; histopatologia do Dr. Frederick Zugibe (médico legista, Universidade de Columbia) (1996 (evento); análises entre 1999 e 2006)
 Tema: Hóstia convertida em tecido do músculo cardíaco
 
-> Em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi guardada e, anos depois, analisada por laboratórios sem que os peritos soubessem a origem. Os exames identificaram tecido do músculo cardíaco...
+> Em 1996, uma Hóstia descartada que se transformou em matéria sanguinolenta foi guardada e, anos depois, analisada por laboratórios sem que os peritos soubessem a origem. O patologista Frederick Zugibe descreveu tecido do...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (Escavações a partir de 1906)
 Tema: De suposta invenção bíblica a império histórico
 
-> A Bíblia menciona os hititas dezenas de vezes. Até meados do séc. XIX pouco se sabia deles fora da Bíblia, e alguns críticos duvidavam de que tivessem sido um povo importante. Inscrições egípcias e assírias, decifradas a...
+> A Bíblia menciona os hititas dezenas de vezes. Até o séc. XIX quase nada se sabia deles fora da Bíblia, e alguns estudiosos duvidavam que tivessem sido um povo importante. Inscrições egípcias e assírias, decifradas ao lo...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

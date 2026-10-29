@@ -16,4 +16,5 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
+- [[31 - Como Lidar com Supostas Contradições na Bíblia]]
 - [[34 - Aparentes Contradições na Ressurreição]]

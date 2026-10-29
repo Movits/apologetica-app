@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Profeta Isaías (séc. VIII a.C.)
-Tema: Repreensão a quem consulta os mortos em vez de Deus
+Tema: Advertência contra quem manda consultar os espíritos dos mortos
 
 > Se vos disserem: “Consultai os espíritos dos mortos, os adivinhos, os que conhecem segredos e dizem em voz baixa: ‘Porventura um povo não deve consultar os seus deuses? Consultar os mortos em favor dos vivos?’.”
 

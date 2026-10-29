@@ -7,9 +7,10 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Teólogos | C. S. Lewis (apologista e professor de Oxford e Cambridge) (1940)
-Tema: Problema do mal e do sofrimento
+Tema: O inferno como recusa livre e definitiva de Deus
 
-> "Deus sussurra para nós em nossos prazeres, fala em nossa consciência, mas grita em nossas dores: é o seu megafone para despertar um mundo surdo."
+> "Creio de bom grado que os condenados são, em certo sentido, bem-sucedidos, rebeldes até o fim, e que as portas do inferno estão trancadas por dentro. Não quero dizer que as almas não possam desejar sair do inferno, do m...
 Funcionalidade: [[Referências]]
 
-Nenhum artigo usa esta referência hoje (candidata a revisão editorial).
+## Usada nos artigos
+- [[61 - O Que Acontece Depois da Morte Os Novíssimos]]

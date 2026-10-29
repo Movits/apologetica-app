@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Apóstolo Paulo (c. 57 d.C.)
-Tema: Deus retribui a cada um segundo as suas obras
+Tema: Juízo segundo as obras
 
 > que retribuirá a cada um segundo as suas obras: a vida eterna aos que, perseverando em fazer o bem, buscam a glória, a honra e a imortalidade;
 

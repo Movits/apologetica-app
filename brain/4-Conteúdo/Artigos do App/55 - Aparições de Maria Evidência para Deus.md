@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Mateus 7,16]]
 - [[Mateus 12,25-26]]
 - [[João 2,1-11]]
+- [[Catecismo §67]]
 
 ## Artigos relacionados
 - [[51 - O Milagre do Sol em Fátima (1917)]]

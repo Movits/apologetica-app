@@ -27,14 +27,15 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Comunhão dos Santos]]
 
 ## Referências usadas
+- [[Mateus 16,18-19]]
 - [[2 Tessalonicenses 2,15]]
 - [[1 Timóteo 3,15]]
 - [[João 17,20-21]]
+- [[Tiago 2,14-26]]
+- [[Gálatas 5,6]]
 - [[World Christian Encyclopedia]]
 - [[Concílio de Hipona]]
 - [[Concílio de Cartago]]
-- [[Tiago 2,14-26]]
-- [[Gálatas 5,6]]
 
 ## Diálogos que levam a este artigo
 - [[No fim, católico e evangélico dá no mesmo, todos creem em Jesus]]

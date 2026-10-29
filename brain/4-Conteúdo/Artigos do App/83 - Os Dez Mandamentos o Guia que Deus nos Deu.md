@@ -24,6 +24,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[Mateus 5,17]]
 - [[Romanos 2,15]]
 - [[Mateus 22,37-40]]
+- [[Mateus 5,21-22]]
 - [[Salmo 18,9]]
 - [[Catecismo §2116-2117]]
 

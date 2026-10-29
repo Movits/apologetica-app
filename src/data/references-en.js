@@ -6,7 +6,7 @@ export const referencesEn = {
   // === BIBLE ===
   'mt-16-18': {
     topicEn: 'Primacy of Peter / foundation of the Church',
-    textEn: 'And I say to thee: That thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also in heaven.',
+    textEn: 'And I say to thee: That thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose on earth, it shall be loosed also in heaven.',
     meaningEn: 'Jesus calls Simon "Pétros" (Peter, masculine) and says that upon this "pétra" (rock, feminine) he will build his Church. In Aramaic, the language Jesus actually spoke, both uses are the same word Kepha (rock). Simon receives the name of Rock, and upon that Rock (himself) the Church is founded.',
   },
   '1pd-3-15': {
@@ -19,7 +19,7 @@ export const referencesEn = {
     topicEn: 'Eucharist / Real Presence',
     textEn: 'Then Jesus said to them: Amen, amen, I say unto you: except you eat the flesh of the Son of man and drink his blood, you shall not have life in you. He that eateth my flesh and drinketh my blood hath everlasting life: and I will raise him up in the last day. For my flesh is meat indeed: and my blood is drink indeed.',
     fullSourceEn: 'Gospel of John, chapter 6, verses 54-56 (6:53-55 in most modern Bibles)',
-    meaningEn: 'Sárx is flesh, the same word as in "the Word was made flesh" (John 1:14). Trṓgō means "to chew, to gnaw": in classical Greek it was used mostly of animals, and in the New Testament it denotes concrete eating (Matthew 24:38 and John 13:18). At the start of the discourse John uses the ordinary verb phágō ("to eat"), including in this verse\'s "except you eat". When the listeners object ("How can this man give us his flesh to eat?"), Jesus does not soften his words: he repeats that one must eat his flesh and, right after, switches to trṓgō, an even more concrete verb. He reinforces the literal sense instead of correcting it as a metaphor.',
+    meaningEn: 'Sárx is "flesh", the same word as in "the Word was made flesh" (John 1:14). Phagein, from the ordinary verb "to eat" (esthíō), is what John uses up to this point. After the listeners take offense ("How can this man give us his flesh to eat?"), the text switches to trṓgō, "to chew", a rawer, more physical verb. John uses both forms, even side by side in the closing verse of the discourse, but the switch, right at the moment of offense, shows that Jesus did not soften his words: he insisted on them.',
   },
   'rm-1-20': {
     topicEn: "God's existence known through reason / natural law",
@@ -31,7 +31,7 @@ export const referencesEn = {
   },
   '1cor-15-3': {
     topicEn: 'Resurrection of Christ / eyewitness accounts',
-    textEn: "For I delivered unto you first of all, which I also received: how that Christ died for our sins, according to the scriptures: And that he was buried: and that he rose again on the third day according to the scriptures: And that he was seen by Cephas, and after that by the eleven. Then was he seen by more than five hundred brethren at once: of whom many remain until this present, and some are fallen asleep. After that, he was seen by James: then by all the apostles. And last of all, he was seen also by me, as by one born out of due tine.",
+    textEn: 'For I delivered unto you first of all, which I also received: how that Christ died for our sins, according to the scriptures: And that he was buried: and that he rose again on the third day according to the scriptures: And that he was seen by Cephas, and after that by the eleven. Then was he seen by more than five hundred brethren at once: of whom many remain until this present, and some are fallen asleep. After that, he was seen by James: then by all the apostles. And last of all, he was seen also by me.',
   },
   '2ts-2-15': {
     topicEn: 'Apostolic Tradition',
@@ -45,7 +45,7 @@ export const referencesEn = {
   },
   'mt-22-32': {
     topicEn: 'Communion of saints / life after death',
-    textEn: "I am the God of Abraham and the God of Isaac and the God of Jacob? He is not the God of the dead but of the living.",
+    textEn: 'I am the God of Abraham and the God of Isaac and the God of Jacob? He is not the God of the dead but of the living.',
   },
   'ap-5-8': {
     topicEn: 'Intercession of saints in heaven',
@@ -104,7 +104,7 @@ export const referencesEn = {
   'lc-1-28': {
     topicEn: 'Annunciation / full of grace (Immaculate Conception)',
     textEn: 'And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women.',
-    meaningEn: 'Perfect passive participle of charitóō ("to grace, to bestow grace"). The Greek perfect indicates a completed action whose effects endure. Literal translation: "thou who hast been graced" (and remainest so). It is not simply "favored" at a particular moment, but a permanent state of grace. Gabriel uses this term as a title given to Mary, in place of her own name.',
+    meaningEn: 'Perfect passive participle of charitóō ("to grace", "to bestow grace"). The Greek perfect indicates a completed action whose effect remains: something like "you who have been graced and remain so", which the Latin tradition rendered as "full of grace" (gratia plena). It is not a passing favor but a lasting state. Gabriel uses the term as a title, in place of Mary\'s own name.',
   },
   'lc-1-47': {
     topicEn: 'Mary praises God as her Savior / Magnificat',
@@ -114,7 +114,7 @@ export const referencesEn = {
     topicEn: 'Protoevangelium / enmity between Mary and the devil',
     textEn: 'I will put enmities between thee and the woman, and thy seed and her seed: she shall crush thy head, and thou shalt lie in wait for her heel.',
     fullSourceEn: 'Book of Genesis, chapter 3, verse 15 (the Protoevangelium)',
-    meaningEn: 'Feminine noun: enmity, hostility, deep antagonism. It does not mean mere emotional "hatred" but a state of absolute opposition, as between nations in declared war. The Portuguese Ave Maria Bible renders it "ódio" (hatred), while the Douay-Rheims has "enmities," following the Latin Vulgate (inimicitias). All translate the same Hebrew word. The argument of "total enmity" (or "absolute enmity") is theological: if God places this radical opposition between the woman and the serpent (representing sin and the devil), Mary cannot at any moment be under the dominion of the serpent, that is, under original sin. This total separation between Mary and sin is one of the Old Testament roots of the dogma of the Immaculate Conception. Pius IX (Ineffabilis Deus, 1854) and Pius XII (Fulgens Corona, 1953, n. 7) read this verse in that sense.',
+    meaningEn: 'Feminine noun: enmity, hostility, deep antagonism. It is not a mere feeling but lasting hostility, the same word Ezekiel uses for the age-old hatred of nations hostile to Israel (Ez 25:15 and 35:5). The Portuguese Ave Maria Bible renders it "ódio" (hatred), while the Douay-Rheims has "enmities", following the Latin Vulgate (inimicitias). All translate the same Hebrew word. The argument of "total enmity" (or "absolute enmity") is theological: if God places this radical opposition between the woman and the serpent (representing sin and the devil), Mary cannot at any moment be under the dominion of the serpent, that is, under original sin. This total separation between Mary and sin is one of the Old Testament roots of the dogma of the Immaculate Conception. Pius IX (Ineffabilis Deus, 1854) and Pius XII (Fulgens Corona, 1953, §7) read this verse in that sense.',
   },
   'lc-1-34': {
     topicEn: "Mary's virginity / intention of perpetual virginity",
@@ -122,8 +122,8 @@ export const referencesEn = {
   },
   'lc-2-7': {
     topicEn: 'Firstborn / Hebrew liturgical term',
-    textEn: "And she brought forth her first born son and wrapped him up in swaddling clothes and laid him in a manger: because there was no room for them in the inn.",
-    meaningEn: 'Translation of the Hebrew bekhor. Designates the first child to open the womb, with specific ritual and legal rights (Exodus 13:2), regardless of whether other children follow. It was a technical term, applied even to an only child. A Jewish funerary inscription from Tell el-Yahudieh in Egypt (ancient Leontopolis), dated to 5 BC, has a mother, Arsinoe, say that she died in the pains of giving birth to her "firstborn" child: the term applies even when there was no other child.',
+    textEn: 'And she brought forth her firstborn son, and wrapped him up in swaddling clothes, and laid him in a manger; because there was no room for them in the inn.',
+    meaningEn: 'Translation of the Hebrew bekhor. Designates the first child to open the womb, with specific ritual and legal rights (Exodus 13:2), regardless of whether other children follow. It was a technical term, applied even to an only child. A Jewish funerary inscription from 5 BC, found at Tell el-Yehudieh (Egypt), calls "firstborn" the child of a woman who died giving birth to him, with no other children.',
   },
   'mt-13-55': {
     topicEn: 'Brothers of Jesus / adelphós in Greek',
@@ -149,7 +149,7 @@ export const referencesEn = {
   'lc-1-43': {
     topicEn: 'Mary, Mother of the Lord (Theotokos)',
     textEn: 'And whence is this to me, that the mother of my Lord should come to me?',
-    meaningEn: 'Literally: "the mother of the Lord of me." Kyrios is the divine title, used in the Septuagint to translate the divine name YHWH. Elizabeth, filled with the Holy Spirit, declares Mary as the mother of the Lord God. This is the biblical foundation of the title Theotokos (Mother of God), defined at the Council of Ephesus in 431.',
+    meaningEn: 'Literally: "the mother of the Lord of me." Kyrios is the divine title, used in the Septuagint to translate the divine name YHWH. Elizabeth, filled with the Holy Spirit, recognizes the Lord in Mary\'s son, and Luke himself uses Kyrios for God right afterwards (1:45-46). This is the biblical foundation of the title Theotokos (Mother of God), defined at the Council of Ephesus in 431.',
   },
   'jo-8-58': {
     topicEn: 'Divinity of Jesus / "I AM"',
@@ -184,7 +184,7 @@ export const referencesEn = {
   },
   'ap-22-8': {
     topicEn: 'Angel refuses worship / only God is to be adored',
-    textEn: 'And I, John, who have heard and seen these things. And after I had heard and seen, I fell down to adore before the feet of the angel, who shewed me these things. And he said to me: See thou do it not: for I am thy fellow servant, and of thy brethren the prophets, and of them that keep the words of the prophecy of this book. Adore God.',
+    textEn: 'And I, John, who have heard and seen these things. And, after I had heard and seen, I fell down to adore before the feet of the angel who shewed me the things. And he said to me: See thou do it not. For I am thy fellow servant, and of thy brethren the prophets and of them that keep the words of the prophecy of this book. Adore God.',
   },
   '2mc-12-44': {
     topicEn: 'Prayer for the dead / foundation of Purgatory',
@@ -196,7 +196,7 @@ export const referencesEn = {
   },
   'tg-2-24': {
     topicEn: 'Faith and works / against Sola Fide',
-    textEn: "What shall it profit, my brethren, if a man say he hath faith, but hath not works? Shall faith be able to save him? (...) So faith also, if it have not works, is dead in itself. (...) Do you see that by works a man is justified, and not by faith only? (...) For even as the body without the spirit is dead: so also faith without works is dead.",
+    textEn: 'What shall it profit, my brethren, if a man say he hath faith, but hath not works? Shall faith be able to save him? (...) So faith also, if it have not works, is dead in itself. (...) Do you see that by works a man is justified, and not by faith only? (...) For even as the body without the spirit is dead: so also faith without works is dead.',
   },
   'mt-25-31': {
     topicEn: 'Final judgment by works of mercy',
@@ -242,7 +242,7 @@ export const referencesEn = {
   },
   'ap-20-12': {
     topicEn: 'Final judgment by works',
-    textEn: 'And I saw the dead, great and small, standing in the presence of the throne. And the books were opened: and another book was opened, which was the book of life. And the dead were judged by those things which were written in the books, according to their works. (...) And they were judged, every one according to their works.',
+    textEn: 'And I saw the dead, great and small, standing in the presence of the throne. And the books were opened: and another book was opened, which was the book of life. And the dead were judged by those things which were written in the books, according to their works. And the sea gave up the dead that were in it: and death and hell gave up their dead that were in them. And they were judged, every one according to their works.',
   },
   'mt-7-21': {
     topicEn: 'Faith without works is not enough',
@@ -254,7 +254,7 @@ export const referencesEn = {
   },
   'ef-5-32': {
     topicEn: 'Marriage as a sacrament',
-    textEn: 'For this cause shall a man leave his father and mother, and shall cleave to his wife, and they shall be two in one flesh. This is a great sacrament; but I speak in Christ and in the church.',
+    textEn: 'For this cause shall a man leave his father and mother: and shall cleave to his wife. And they shall be two in one flesh. This is a great sacrament: but I speak in Christ and in the church.',
   },
   'at-8-14': {
     topicEn: 'Confirmation / laying on of hands by the Apostles',
@@ -263,7 +263,7 @@ export const referencesEn = {
   'lc-2-1': {
     topicEn: 'Census of Quirinius / birth of Jesus',
     textEn: 'And it came to pass that in those days there went out a decree from Caesar Augustus that the whole world should be enrolled. This enrolling was first made by Cyrinus, the governor of Syria. And all went to be enrolled, every one into his own city. And Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to the city of David, which is called Bethlehem: because he was of the house and family of David. To be enrolled with Mary his espoused wife, who was with child. And it came to pass that when they were there, her days were accomplished that she should be delivered. And she brought forth her first born son and wrapped him up in swaddling clothes and laid him in a manger: because there was no room for them in the inn.',
-    meaningEn: 'In Luke 2:2, the word prṓtē is traditionally translated as "first" (this was the first census, made when Quirinius governed Syria). But Greek also allows the translation "before" (this census took place before the one made under Quirinius). The grammarian Nigel Turner and others defend the second reading (the Douay-Rheims follows the first), which elegantly resolves the apparent contradiction with Matthew 2:1 (Herod died in 4 BC; Quirinius was governor in 6 AD).',
+    meaningEn: 'In Luke 2:2, the word prṓtē is traditionally translated as "first" (this was the first census, made when Quirinius governed Syria). But Greek also allows the translation "before" (this census took place before the one made under Quirinius). Grammarians such as Nigel Turner defend the second reading, which would resolve the apparent contradiction with Matthew 2:1 (Herod died in 4 BC, Quirinius was governor in 6 AD), while others, such as Joseph Fitzmyer, reject it. The Douay-Rheims follows the first reading: "This enrolling was first made by Cyrinus, the governor of Syria."',
   },
   'mt-2-1': {
     topicEn: 'Birth of Jesus in the reign of Herod',
@@ -271,12 +271,12 @@ export const referencesEn = {
   },
   'mt-1-1': {
     topicEn: 'Genealogy of Jesus according to Matthew / legal line through Joseph',
-    textEn: 'The book of the generation of Jesus Christ, the son of David, the son of Abraham. (...) So all the generations, from Abraham to David, are fourteen generations. And from David to the transmigration of Babylon, are fourteen generations: and from the transmigration of Babylon to Christ are fourteen generations.',
     fullSourceEn: 'Gospel of Matthew, chapter 1, verses 1-17 (genealogy)',
+    textEn: 'The book of the generation of Jesus Christ, the son of David, the son of Abraham: (...) And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ. So all the generations from Abraham to David, are fourteen generations. And from David to the transmigration of Babylon, are fourteen generations: and from the transmigration of Babylon to Christ are fourteen generations.',
   },
   'lc-3-23': {
     topicEn: 'Genealogy of Jesus according to Luke / ascending line to Adam',
-    textEn: 'And Jesus himself was beginning about the age of thirty years: being (as it was supposed) the son of Joseph, who was of Heli, who was of Mathat, who was of Levi (...) who was of Seth, who was of Adam, who was of God.',
+    textEn: 'And Jesus himself was beginning about the age of thirty years: being (as it was supposed) the son of Joseph, who was of Heli, who was of Mathat, (...) who was of Nathan, who was of David, (...) who was of Seth, who was of Adam, who was of God.',
     fullSourceEn: 'Gospel of Luke, chapter 3, verses 23-38 (genealogy)',
   },
   'dt-25-5': {
@@ -319,18 +319,6 @@ export const referencesEn = {
     topicEn: 'Jesus fasts forty days in the desert',
     textEn: 'Then Jesus was led by the spirit into the desert, to be tempted by the devil. And when he had fasted forty days and forty nights, afterwards he was hungry.',
   },
-  'mt-5-17': {
-    topicEn: 'Jesus did not come to abolish the Law, but to fulfil it',
-    textEn: 'Do not think that I am come to destroy the law, or the prophets. I am not come to destroy, but to fulfil.',
-  },
-  'rm-2-15': {
-    topicEn: 'The moral law written on the human heart',
-    textEn: 'Who shew the work of the law written in their hearts, their conscience bearing witness to them: and their thoughts between themselves accusing or also defending one another,',
-  },
-  'mt-22-37': {
-    topicEn: 'The two greatest commandments: love of God and of neighbour',
-    textEn: 'Jesus said to him: Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with thy whole mind. This is the greatest and the first commandment. And the second is like to this: Thou shalt love thy neighbour as thyself. On these two commandments dependeth the whole law and the prophets.',
-  },
   'dt-18-18': {
     topicEn: 'Prophecy of the prophet like Moses',
     textEn: 'I will raise them up a prophet out of the midst of their brethren like to thee: and I will put my words in his mouth, and he shall speak to them all that I shall command him.',
@@ -341,12 +329,8 @@ export const referencesEn = {
   },
   'lc-16-19': {
     topicEn: 'State of the dead: consciousness, identity and an impassable chasm',
-    textEn: 'And besides all this, between us and you, there is fixed a great chaos: so that they who would pass from hence to you cannot, nor from thence come hither. (...) And he said to him: If they hear not Moses and the prophets, neither will they believe, if one rise again from the dead.',
+    textEn: 'And it came to pass that the beggar died and was carried by the angels into Abraham\'s bosom. And the rich man also died: and he was buried in hell. And lifting up his eyes when he was in torments, he saw Abraham afar off and Lazarus in his bosom: (...) And besides all this, between us and you, there is fixed a great chaos: so that they who would pass from hence to you cannot, nor from thence come hither. (...) And he said to him: If they hear not Moses and the prophets, neither will they believe, if one rise again from the dead.',
     fullSourceEn: 'Gospel of Luke, chapter 16, verses 19-31 (the rich man and Lazarus)',
-  },
-  'dt-18-10': {
-    topicEn: 'Prohibition of consulting the dead and of divination',
-    textEn: 'Neither let there be found among you any one that shall expiate his son or daughter, making them to pass through the fire: or that consulteth soothsayers, or observeth dreams and omens, neither let there be any wizard, Nor charmer, nor any one that consulteth pythonic spirits, or fortune tellers, or that seeketh the truth from the dead. For the Lord abhorreth all these things, and for these abominations he will destroy them at thy coming.',
   },
   'is-8-19': {
     topicEn: 'Rebuke of those who consult the dead instead of God',
@@ -361,18 +345,6 @@ export const referencesEn = {
   '2pd-3-16': {
     topicEn: "Paul's letters are twisted by the unlearned",
     textEn: 'As also in all his epistles, speaking in them of these things; in which are certain things hard to be understood, which the unlearned and unstable wrest, as they do also the other scriptures, to their own destruction.',
-  },
-  'is-53': {
-    topicEn: 'Prophecy of the Servant who suffers for the sins of the people',
-    textEn: 'Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity: and his look was as it were hidden and despised, whereupon we esteemed him not. Surely he hath borne our infirmities and carried our sorrows: and we have thought him as it were a leper, and as one struck by God and afflicted. But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. All we like sheep have gone astray, every one hath turned aside into his own way: and the Lord hath laid on him the iniquity of us all. He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter, and shall be dumb as a lamb before his shearer, and he shall not open his mouth.',
-    fullSourceEn: 'Book of the Prophet Isaiah, chapter 53, verses 3-7 (the Suffering Servant)',
-    authorEn: 'Prophet Isaiah',
-  },
-  'sl-22': {
-    topicEn: 'Messianic psalm: the righteous man persecuted and pierced',
-    textEn: 'O God my God, look upon me: why hast thou forsaken me? Far from my salvation are the words of my sins. (...) For many dogs have encompassed me: the council of the malignant hath besieged me. They have dug my hands and feet. They have numbered all my bones. And they have looked and stared upon me. They parted my garments amongst them; and upon my vesture they cast lots.',
-    fullSourceEn: 'Book of Psalms, Psalm 21 (22 in the Hebrew numbering), verses 2 and 17-19',
-    authorEn: 'Attributed to King David',
   },
   'dn-9-24': {
     topicEn: 'Deadline for the coming and death of the Anointed One before the destruction of the city',
@@ -411,29 +383,13 @@ export const referencesEn = {
     fullSourceEn: 'Book of the Prophet Isaiah, chapter 43, verse 10',
     authorEn: 'Prophet Isaiah',
   },
-  'gn-3-5': {
-    topicEn: 'The original temptation: you shall be as gods',
-    textEn: 'For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as Gods, knowing good and evil.',
-    fullSourceEn: 'Book of Genesis, chapter 3, verse 5 (the temptation)',
-  },
   '1jo-4-2': {
     topicEn: 'Criterion for discerning spirits: Jesus came in the flesh',
     textEn: 'By this is the spirit of God known. Every spirit which confesseth that Jesus Christ is come in the flesh is of God: And every spirit that dissolveth Jesus is not of God. And this is Antichrist, of whom you have heard that he cometh: and he is now already in the world.',
   },
-  'ex-20-3': {
-    topicEn: 'First commandment: one God alone to be worshipped',
-    textEn: 'Thou shalt not have strange gods before me. Thou shalt not make to thyself a graven thing, nor the likeness of any thing that is in heaven above, or in the earth beneath, nor of those things that are in the waters under the earth. Thou shalt not adore them, nor serve them: I am the Lord thy God, mighty, jealous (...)',
-    fullSourceEn: 'Book of Exodus, chapter 20, verses 3-5 (the first commandment)',
-  },
   'mt-27-45': {
     topicEn: 'The darkness during the crucifixion',
     textEn: 'Now from the sixth hour, there was darkness over the whole earth, until the ninth hour. And about the ninth hour, Jesus cried with a loud voice, saying: Eli, Eli, lamma sabacthani? That is, My God, My God, why hast thou forsaken me?',
-  },
-  'jl-2-31': {
-    topicEn: 'Cosmic signs: the sun darkened and the moon turned to blood',
-    textEn: 'The sun shall be turned into darkness, and the moon into blood: before the great and dreadful day of the Lord doth come.',
-    fullSourceEn: 'Book of the Prophet Joel, chapter 2, verse 31 (3:4 in the Hebrew numbering and in some editions)',
-    authorEn: 'Prophet Joel',
   },
   'at-2-20': {
     topicEn: "Peter applies Joel's prophecy to the events of Passover",
@@ -446,14 +402,6 @@ export const referencesEn = {
     fullSourceEn: 'Book of the Prophet Isaiah, chapter 7, verse 14',
     authorEn: 'Prophet Isaiah',
   },
-  'ap-12-1': {
-    topicEn: 'The Woman clothed with the sun',
-    textEn: 'And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.',
-  },
-  '2cor-11-14': {
-    topicEn: 'Satan disguises himself as an angel of light',
-    textEn: 'And no wonder: for Satan himself transformeth himself into an angel of light. Therefore it is no great thing if his ministers be transformed as the ministers of justice, whose end shall be according to their works.',
-  },
   'mt-7-16': {
     topicEn: 'By their fruits you shall know them',
     textEn: 'By their fruits you shall know them. Do men gather grapes of thorns, or figs of thistles?',
@@ -463,6 +411,62 @@ export const referencesEn = {
     textEn: 'And Jesus knowing their thoughts, said to them: Every kingdom divided against itself shall be made desolate: and every city or house divided against itself shall not stand. And if Satan cast out Satan, he is divided against himself: how then shall his kingdom stand?',
   },
 
+  'is-53': {
+    fullSourceEn: 'Book of Isaiah, chapter 53, verses 3-7 (the suffering Servant)',
+    authorEn: 'Book of Isaiah (Second Isaiah, chapters 40-55)',
+    yearEn: '6th century BC (end of the Babylonian exile, according to the most accepted dating)',
+    topicEn: 'Prophecy of the Servant who suffers for the sins of the people',
+    textEn: 'Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity: and his look was as it were hidden and despised, whereupon we esteemed him not. Surely he hath borne our infirmities and carried our sorrows: and we have thought him as it were a leper, and as one struck by God and afflicted. But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. All we like sheep have gone astray, every one hath turned aside into his own way: and the Lord hath laid on him the iniquity of us all. He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter, and shall be dumb as a lamb before his shearer, and he shall not open his mouth.',
+  },
+  'dt-18-10': {
+    fullSourceEn: 'Book of Deuteronomy, chapter 18, verses 10-12',
+    topicEn: 'Prohibition of consulting the dead and of divination',
+    textEn: 'Neither let there be found among you any one that shall expiate his son or daughter, making them to pass through the fire: or that consulteth soothsayers, or observeth dreams and omens, neither let there be any wizard, Nor charmer, nor any one that consulteth pythonic spirits, or fortune tellers, or that seeketh the truth from the dead. For the Lord abhorreth all these things, and for these abominations he will destroy them at thy coming.',
+  },
+  'sl-22': {
+    refEn: 'Psalm 21 (22):2, 17-19',
+    fullSourceEn: 'Book of Psalms, Psalm 21 (22 in the Hebrew numbering), verses 2 and 17-19',
+    authorEn: 'Attributed to King David',
+    yearEn: 'uncertain date (traditionally 10th century BC)',
+    topicEn: 'Messianic psalm: the persecuted and pierced righteous one',
+    textEn: 'O God my God, look upon me: why hast thou forsaken me? Far from my salvation are the words of my sins. (...) For many dogs have encompassed me: the council of the malignant hath besieged me. They have dug my hands and feet. They have numbered all my bones. And they have looked and stared upon me. They parted my garments amongst them; and upon my vesture they cast lots.',
+  },
+  '2cor-11-14': {
+    refEn: '2 Corinthians 11:14-15',
+    fullSourceEn: 'Second Letter to the Corinthians, chapter 11, verses 14-15',
+    topicEn: 'Satan masquerades as an angel of light',
+    textEn: 'And no wonder: for Satan himself transformeth himself into an angel of light. Therefore it is no great thing if his ministers be transformed as the ministers of justice, whose end shall be according to their works.',
+  },
+  'ap-12-1': {
+    fullSourceEn: 'Book of Revelation, chapter 12, verse 1',
+    topicEn: 'The Woman clothed with the sun',
+    textEn: 'And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.',
+  },
+  'gn-3-5': {
+    fullSourceEn: 'Book of Genesis, chapter 3, verse 5 (the temptation)',
+    topicEn: 'The original temptation: you shall be as gods',
+    textEn: 'For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as Gods, knowing good and evil.',
+  },
+  'ex-20-3': {
+    fullSourceEn: 'Book of Exodus, chapter 20, verses 3-5 (the first commandment)',
+    topicEn: 'First commandment: one God alone to be worshiped',
+    textEn: 'Thou shalt not have strange gods before me. Thou shalt not make to thyself a graven thing, nor the likeness of any thing that is in heaven above, or in the earth beneath, nor of those things that are in the waters under the earth. Thou shalt not adore them, nor serve them: I am the Lord thy God, mighty, jealous (...).',
+  },
+  'mt-5-17': {
+    fullSourceEn: 'Gospel of Matthew, chapter 5, verse 17',
+    topicEn: 'Jesus did not come to abolish the Law, but to fulfil it',
+    textEn: 'Do not think that I am come to destroy the law, or the prophets. I am not come to destroy, but to fulfil.',
+  },
+  'rm-2-15': {
+    fullSourceEn: 'Letter to the Romans, chapter 2, verse 15',
+    topicEn: 'The moral law written on the human heart',
+    textEn: 'Who shew the work of the law written in their hearts, their conscience bearing witness to them: and their thoughts between themselves accusing or also defending one another.',
+  },
+  'mt-22-37': {
+    fullSourceEn: 'Gospel of Matthew, chapter 22, verses 37-40',
+    topicEn: 'The two greatest commandments: love of God and of neighbor',
+    textEn: 'Jesus said to him: Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with thy whole mind. This is the greatest and the first commandment. And the second is like to this: Thou shalt love thy neighbour as thyself. On these two commandments dependeth the whole law and the prophets.',
+  },
   // === CATECHISM ===
   'cic-31-35': {
     topicEn: 'Natural knowledge of God through reason',
@@ -482,7 +486,8 @@ export const referencesEn = {
   },
   'cic-1373': {
     topicEn: 'Eucharist / transubstantiation',
-    textEn: 'The mode of Christ\'s presence under the Eucharistic species is unique. (...) In the most blessed sacrament of the Eucharist "the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained." (...) The Council of Trent summarizes the Catholic faith by declaring: "(...) by the consecration of the bread and wine there takes place a change of the whole substance of the bread into the substance of the body of Christ our Lord and of the whole substance of the wine into the substance of his blood. This change the holy Catholic Church has fittingly and properly called transubstantiation."',
+    textEn: 'The mode of Christ\'s presence under the Eucharistic species is unique. (...) In the most blessed sacrament of the Eucharist "the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained" (1374). The Council of Trent summarizes the Catholic faith by declaring: "(...) by the consecration of the bread and wine there takes place a change of the whole substance of the bread into the substance of the body of Christ our Lord and of the whole substance of the wine into the substance of his blood. This change the holy Catholic Church has fittingly and properly called transubstantiation" (1376).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P41.HTM',
   },
   'cic-2357': {
     topicEn: 'Homosexuality / chastity',
@@ -490,7 +495,8 @@ export const referencesEn = {
   },
   'cic-309': {
     topicEn: 'Problem of evil / providence',
-    textEn: 'If God the Father almighty, the Creator of the ordered and good world, cares for all his creatures, why does evil exist? To this question, as pressing as it is unavoidable and as painful as it is mysterious, no quick answer will suffice. Only Christian faith as a whole constitutes the answer to this question (...). God is in no way, directly or indirectly, the cause of moral evil. He permits it, however, because he respects the freedom of his creatures and, mysteriously, knows how to derive good from it.',
+    textEn: 'If God the Father almighty, the Creator of the ordered and good world, cares for all his creatures, why does evil exist? To this question, as pressing as it is unavoidable and as painful as it is mysterious, no quick answer will suffice. Only Christian faith as a whole constitutes the answer to this question: the goodness of creation, the drama of sin and the patient love of God who comes to meet man by his covenants, the redemptive Incarnation of his Son, his gift of the Spirit, his gathering of the Church, the power of the sacraments and his call to a blessed life to which free creatures are invited to consent in advance, but from which, by a terrible mystery, they can also turn away in advance. There is not a single aspect of the Christian message that is not in part an answer to the question of evil.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P19.HTM',
   },
   'cic-638': {
     topicEn: 'Resurrection of Christ',
@@ -511,12 +517,13 @@ export const referencesEn = {
   },
   'cic-466': {
     topicEn: 'Theotokos / Mary Mother of God / Incarnation',
-    textEn: 'Christ\'s humanity has no other subject than the divine person of the Son of God, who assumed it and made it his own, from his conception. For this reason the Council of Ephesus proclaimed in 431 that Mary truly became the Mother of God by the human conception of the Son of God in her womb. (...) The One whom she conceived as man by the Holy Spirit, who truly became her Son according to the flesh, was none other than the Father\'s eternal Son, the second person of the Holy Trinity. Hence the Church confesses that Mary is truly "Mother of God" (Theotokos).',
+    textEn: 'The Nestorian heresy regarded Christ as a human person joined to the divine person of God\'s Son. (...) For this reason the Council of Ephesus proclaimed in 431 that Mary truly became the Mother of God by the human conception of the Son of God in her womb (466). (...) In fact, the One whom she conceived as man by the Holy Spirit, who truly became her Son according to the flesh, was none other than the Father\'s eternal Son, the second person of the Holy Trinity. Hence the Church confesses that Mary is truly "Mother of God" (Theotokos) (495).',
     fullSourceEn: 'Catechism of the Catholic Church §464-469 (Incarnation) and §495 (Theotokos)',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1J.HTM',
   },
   'cic-2559': {
     topicEn: 'What prayer is',
-    textEn: '"Prayer is the raising of one\'s mind and heart to God or the requesting of good things from God" (St. John Damascene). (...) He who humbles himself will be exalted; humility is the foundation of prayer. Only when we humbly acknowledge that "we do not know how to pray as we ought," are we ready to receive freely the gift of prayer. "Man is a beggar before God." (...) Christ comes to meet every human being. It is he who first seeks us and asks us for a drink. (...) Whether we realize it or not, prayer is the encounter of God\'s thirst with ours.',
+    textEn: '"Prayer is the raising of one\'s mind and heart to God or the requesting of good things from God" (St. John Damascene). (...) He who humbles himself will be exalted; humility is the foundation of prayer. Only when we humbly acknowledge that "we do not know how to pray as we ought," are we ready to receive freely the gift of prayer. "Man is a beggar before God" (2559). (...) Christ comes to meet every human being. It is he who first seeks us and asks us for a drink. (...) Whether we realize it or not, prayer is the encounter of God\'s thirst with ours (2560).',
   },
   'cic-1954': {
     topicEn: 'Natural moral law',
@@ -534,11 +541,6 @@ export const referencesEn = {
     topicEn: 'Justification / grace / faith working through charity',
     textEn: 'The grace of the Holy Spirit has the power to justify us, that is, to cleanse us from our sins and to communicate to us "the righteousness of God through faith in Jesus Christ" and through Baptism. (...) With justification, faith, hope, and charity are poured into our hearts, and obedience to the divine will is granted us. Justification has been merited for us by the Passion of Christ who offered himself on the cross as a living victim, holy and pleasing to God, and whose blood has become the instrument of atonement for the sins of all men. Justification is conferred in Baptism, the sacrament of faith. It conforms us to the righteousness of God, who makes us inwardly just by the power of his mercy. Its purpose is the glory of God and of Christ, and the gift of eternal life.',
   },
-  'cic-2116': {
-    topicEn: 'Condemnation of spiritism, divination and magic',
-    textEn: 'All forms of divination are to be rejected: recourse to Satan or demons, conjuring up the dead or other practices falsely supposed to "unveil" the future. Consulting horoscopes, astrology, palm reading, interpretation of omens and lots, the phenomena of clairvoyance, and recourse to mediums all conceal a desire for power over time, history, and, in the last analysis, other human beings, as well as a wish to conciliate hidden powers. They contradict the honor, respect, and loving fear that we owe to God alone. (...) Spiritism often implies divination or magical practices; the Church for her part warns the faithful against it.',
-    fullSourceEn: 'Catechism of the Catholic Church §2116-2117',
-  },
   'cic-2270': {
     topicEn: 'Abortion / dignity of human life from conception',
     textEn: "Human life must be respected and protected absolutely from the moment of conception. From the first moment of his existence, a human being must be recognized as having the rights of a person – among which is the inviolable right of every innocent being to life. Since the first century the Church has affirmed the moral evil of every procured abortion. This teaching has not changed and remains unchangeable.",
@@ -548,6 +550,13 @@ export const referencesEn = {
     textEn: 'Fecundity is a gift, an end of marriage, for conjugal love naturally tends to be fruitful. (...) In contrast, "every action which, whether in anticipation of the conjugal act, or in its accomplishment, or in the development of its natural consequences, proposes, whether as an end or as a means, to render procreation impossible" is intrinsically evil. "Thus the innate language that expresses the total reciprocal self-giving of husband and wife is overlaid, through contraception, by an objectively contradictory language, namely, that of not giving oneself totally to the other."',
   },
 
+  'cic-2116': {
+    refEn: 'Catechism §2116-2117',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2116 and 2117',
+    topicEn: 'Against divination, magic and spiritism',
+    textEn: 'All forms of divination are to be rejected: recourse to Satan or demons, conjuring up the dead or other practices falsely supposed to "unveil" the future. Consulting horoscopes, astrology, palm reading, interpretation of omens and lots, the phenomena of clairvoyance, and recourse to mediums all conceal a desire for power over time, history, and, in the last analysis, other human beings, as well as a wish to conciliate hidden powers. They contradict the honor, respect, and loving fear that we owe to God alone (2116). All practices of magic or sorcery, by which one attempts to tame occult powers, so as to place them at one\'s service and have a supernatural power over others (even if this were for the sake of restoring their health), are gravely contrary to the virtue of religion. (...) Spiritism often implies divination or magical practices; the Church for her part warns the faithful against it (2117).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P7E.HTM',
+  },
   // === DOCUMENTS ===
   'lumen-gentium-8': {
     topicEn: 'Ecclesiology / subsistit in',
@@ -556,8 +565,8 @@ export const referencesEn = {
   },
   'lumen-gentium-60': {
     topicEn: "Mary's mediation",
-    textEn: 'The maternal duty of Mary toward men in no wise obscures or diminishes this unique mediation of Christ, but rather shows His power. For all the salvific influence of the Blessed Virgin on men originates, not from some inner necessity, but from the divine pleasure. (...) Wherefore she is our mother in the order of grace. This maternity of Mary in the order of grace began with the consent which she gave in faith at the Annunciation and which she sustained without wavering beneath the cross, and lasts until the eternal fulfillment of all the elect.',
     fullSourceEn: 'Dogmatic Constitution Lumen Gentium, §60-62',
+    textEn: "This maternity of Mary in the order of grace began with the consent which she gave in faith at the Annunciation and which she sustained without wavering beneath the cross, and lasts until the eternal fulfillment of all the elect. (...) Therefore the Blessed Virgin is invoked by the Church under the titles of Advocate, Auxiliatrix, Adjutrix, and Mediatrix. This, however, is to be so understood that it neither takes away from nor adds anything to the dignity and efficaciousness of Christ the one Mediator.",
   },
   'dei-verbum-9': {
     topicEn: 'Scripture, Tradition, and the Magisterium',
@@ -570,8 +579,8 @@ export const referencesEn = {
     fullSourceEn: 'Apostolic Exhortation Evangelii Gaudium, §24',
   },
   'amoris-laetitia-250': {
-    topicEn: 'Welcome of persons with homosexual tendencies',
-    textEn: "The Church makes her own the attitude of the Lord Jesus, who offers his boundless love to each person without exception. (...) We would like before all else to reaffirm that every person, regardless of sexual orientation, ought to be respected in his or her dignity and treated with consideration, while 'every sign of unjust discrimination' is to be carefully avoided, particularly any form of aggression and violence.",
+    topicEn: 'Respect for persons with homosexual tendencies and teaching on marriage',
+    textEn: '"The Church makes her own the attitude of the Lord Jesus, who offers his boundless love to each person without exception. (...) We would like before all else to reaffirm that every person, regardless of sexual orientation, ought to be respected in his or her dignity and treated with consideration, while \'every sign of unjust discrimination\' is to be carefully avoided, particularly any form of aggression and violence" (250). The Synod Fathers observed that "there are absolutely no grounds for considering homosexual unions to be in any way similar or even remotely analogous to God\'s plan for marriage and family" (251).',
     fullSourceEn: 'Apostolic Exhortation Amoris Laetitia, §250-251',
   },
   'ineffabilis-deus': {
@@ -614,10 +623,9 @@ export const referencesEn = {
     urlEn: 'https://history.hanover.edu/texts/trent/ct13.html',
   },
   'humanae-vitae-17': {
+    fullSourceEn: 'Encyclical Humanae Vitae on the regulation of birth, 17',
     topicEn: 'Predictions on the social consequences of contraception',
-    textEn: 'Responsible men can become more deeply convinced of the truth of the doctrine laid down by the Church on this issue if they reflect on the consequences of methods and plans for artificial birth control. Let them first consider how easily this course of action could open wide the way for marital infidelity and a general lowering of moral standards. Not much experience is needed to be fully aware of human weakness and to understand that human beings, and especially the young, who are so exposed to temptation, need incentives to keep the moral law, and it is an evil thing to make it easy for them to break that law. Another effect that gives cause for alarm is that a man who grows accustomed to the use of contraceptive methods may forget the reverence due to a woman, and, disregarding her physical and emotional equilibrium, reduce her to being a mere instrument for the satisfaction of his own desires, no longer considering her as his partner whom he should surround with care and affection. Finally, careful consideration should be given to the danger of this power passing into the hands of those public authorities who care little for the precepts of the moral law.',
-    fullSourceEn: 'Encyclical Humanae Vitae on the regulation of birth, §17',
-    authorEn: 'Pope Paul VI',
+    textEn: 'Responsible men can become more deeply convinced of the truth of the doctrine laid down by the Church on this issue if they reflect on the consequences of methods and plans for artificial birth control. Let them first consider how easily this course of action could open wide the way for marital infidelity and a general lowering of moral standards. (...) Another effect that gives cause for alarm is that a man who grows accustomed to the use of contraceptive methods may forget the reverence due to a woman, and, disregarding her physical and emotional equilibrium, reduce her to being a mere instrument for the satisfaction of his own desires, no longer considering her as his partner whom he should surround with care and affection. Finally, careful consideration should be given to the danger of this power passing into the hands of those public authorities who care little for the precepts of the moral law. (...) Consequently, unless we are willing that the responsibility of procreating life should be left to the arbitrary decision of men, we must accept that there are certain limits, beyond which it is wrong to go, to the power of man over his own body and its natural functions.',
   },
   'munificentissimus-deus': {
     topicEn: 'Definition of the dogma of the Assumption of Mary',
@@ -630,16 +638,9 @@ export const referencesEn = {
     urlEn: 'https://www.vatican.va/content/pius-ix/pt/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html',
     fullSourceEn: 'Dogmatic Constitution Pastor Aeternus on the Church of Christ, chapter 4',
   },
-  'nostra-aetate': {
-    topicEn: 'Catholic attitude toward other religions',
-    textEn: '"The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings which, though differing in many aspects from the ones she holds and sets forth, nonetheless often reflect a ray of that Truth which enlightens all men. Indeed, she proclaims, and ever must proclaim Christ \'the way, the truth, and the life\' (John 14:6), in whom men may find the fullness of religious life (...)." On the Jews (§4): "in her rejection of every persecution against any man, the Church, mindful of the patrimony she shares with the Jews and moved not by political reasons but by the Gospel\'s spiritual love, decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone."',
-    refEn: 'Nostra Aetate §2 and §4',
-    fullSourceEn: 'Declaration Nostra Aetate on the relation of the Church to non-Christian religions, Second Vatican Council, §2 and §4',
-    authorEn: 'Second Vatican Council, promulgated by Pope Paul VI',
-  },
   'tertio-millennio': {
     topicEn: 'Request for forgiveness for the sins of the Church\'s children in history',
-    textEn: 'Hence it is appropriate that, as the Second Millennium of Christianity draws to a close, the Church should become more fully conscious of the sinfulness of her children, recalling all those times in history when they departed from the spirit of Christ and his Gospel (...). Another painful chapter of history to which the sons and daughters of the Church must return with a spirit of repentance is that of the acquiescence given, especially in certain centuries, to intolerance and even the use of violence in the service of truth.',
+    textEn: "Hence it is appropriate that, as the Second Millennium of Christianity draws to a close, the Church should become more fully conscious of the sinfulness of her children, recalling all those times in history when they departed from the spirit of Christ and his Gospel (...) (33). Another painful chapter of history to which the sons and daughters of the Church must return with a spirit of repentance is that of the acquiescence given, especially in certain centuries, to intolerance and even the use of violence in the service of truth (35).",
     refEn: 'Tertio Millennio Adveniente §33 and §35',
     fullSourceEn: 'Apostolic Letter Tertio Millennio Adveniente on preparation for the Jubilee of the Year 2000, §33 and §35',
   },
@@ -680,6 +681,13 @@ export const referencesEn = {
     authorEn: 'Ecumenical Council of Nicaea',
   },
 
+  'nostra-aetate': {
+    refEn: 'Nostra Aetate §2-4',
+    fullSourceEn: 'Declaration Nostra Aetate on the relation of the Church to non-Christian religions, Second Vatican Council, §2-4',
+    authorEn: 'Second Vatican Council, promulgated by Saint Paul VI',
+    topicEn: 'Catholic attitude toward other religions',
+    textEn: '"Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths and through searching philosophical inquiry. (...) The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings which, though differing in many aspects from the ones she holds and sets forth, nonetheless often reflect a ray of that Truth which enlightens all men" (2). "The Church regards with esteem also the Moslems. They adore the one God, living and subsisting in Himself; merciful and all-powerful, the Creator of heaven and earth" (3). "(...) the Church (...) decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone" (4).',
+  },
   // === THEOLOGIANS ===
   'agostinho-evangelho': {
     topicEn: 'Authority of the Church in recognizing the Scriptures',
@@ -737,7 +745,7 @@ export const referencesEn = {
   },
   'ireneu-contra-heresias': {
     topicEn: 'Mary, New Eve / recapitulation',
-    textEn: 'And even as she [Eve], having indeed a husband, Adam, but being nevertheless as yet a virgin (...), having become disobedient, was made the cause of death, both to herself and to the entire human race; so also did Mary, having a man betrothed [to her], and being nevertheless a virgin, by yielding obedience, become the cause of salvation, both to herself and the whole human race. (...) And thus also it was that the knot of Eve\'s disobedience was loosed by the obedience of Mary.',
+    textEn: "And even as she [Eve], having indeed a husband, Adam, but being nevertheless as yet a virgin (...), having become disobedient, was made the cause of death, both to herself and to the entire human race; so also did Mary, having a man betrothed [to her], and being nevertheless a virgin, by yielding obedience, become the cause of salvation, both to herself and the whole human race. (...) And thus also it was that the knot of Eve's disobedience was loosed by the obedience of Mary.",
     refEn: 'Against Heresies III, 22, 4',
     fullSourceEn: 'Adversus Haereses (Against Heresies), Book III, chapter 22, paragraph 4',
     authorEn: 'Saint Irenaeus of Lyon (disciple of Saint Polycarp, who was a disciple of Saint John)',
@@ -752,7 +760,7 @@ export const referencesEn = {
   },
   'tertuliano-de-carne': {
     topicEn: 'Virginal conception / Mary, the New Eve',
-    textEn: '"For it was while Eve was yet a virgin, that the ensnaring word had crept into her ear which was to build the edifice of death. Into a virgin\'s soul, in like manner, must be introduced that Word of God which was to raise the fabric of life; so that what had been reduced to ruin by this sex, might by the selfsame sex be recovered to salvation. As Eve had believed the serpent, so Mary believed the angel. The delinquency which the one occasioned by believing, the other by believing effaced." (chapter 17). Tertullian defends the virginal conception of Christ, but not perpetual virginity: in chapter 23 he says Mary was a virgin as regards a husband, but not as regards her bearing a child, and in De Monogamia 8 he states that she was to marry after the birth of Jesus.',
+    textEn: "\"As Eve had believed the serpent, so Mary believed the angel. The delinquency which the one occasioned by believing, the other by believing effaced.\" (De Carne Christi 17). Tertullian defends the virginal conception and the parallel between Eve and Mary, but denies Mary's virginity in childbirth (De Carne Christi 23) and after it (De Monogamia 8), a position Saint Jerome rejects in Against Helvidius (383).",
     refEn: 'De Carne Christi, 17',
     fullSourceEn: 'De Carne Christi (On the Flesh of Christ), chapters 17 and 23; De Monogamia, chapter 8',
     authorEn: 'Tertullian',
@@ -783,11 +791,11 @@ export const referencesEn = {
     urlEn: 'https://quran.com/61/6?translations=22',
   },
   'lewis-problema-dor': {
-    topicEn: 'Problem of evil and suffering',
-    textEn: "God whispers to us in our pleasures, speaks in our conscience, but shouts in our pains: it is His megaphone to rouse a deaf world.",
     refEn: 'The Problem of Pain',
-    fullSourceEn: 'The Problem of Pain, chapter 6 ("Human Pain"), 1940',
+    fullSourceEn: 'The Problem of Pain, chapter 8 ("Hell"), 1940',
     authorEn: 'C. S. Lewis (apologist and professor at Oxford and Cambridge)',
+    topicEn: 'Hell as the free and final refusal of God',
+    textEn: 'I willingly believe that the damned are, in one sense, successful, rebels to the end; that the doors of hell are locked on the inside. I do not mean that the ghosts may not wish to come out of hell, in the vague fashion wherein an envious man "wishes" to be happy: but they certainly do not will even the first preliminary stages of that self-abandonment through which alone the soul can reach any good. They enjoy forever the horrible freedom they have demanded, and are therefore self-enslaved.',
   },
   'bukhari-uthman': {
     topicEn: 'Standardization of the Quran\'s text by Caliph Uthman',
@@ -798,11 +806,11 @@ export const referencesEn = {
     yearEn: '9th century AD (c. 846)',
   },
   'lewis-mere-christianity': {
-    topicEn: 'Moral argument for the existence of God',
-    textEn: "Every time you find a man who says he does not believe in a real Right and Wrong, you will find the same man going back on this a moment later. He may break his promise to you, but if you try breaking one to him he will be complaining 'it's not fair' in an instant. A nation may say treaties don't matter, but then spoils its case by complaining that the particular treaty it wants to break is an unfair one. It seems, then, we are forced to believe in a real standard of Right and Wrong.",
     refEn: 'Mere Christianity',
-    fullSourceEn: 'Mere Christianity (book), Book I, chapter 1 ("The Law of Human Nature")',
+    fullSourceEn: 'Mere Christianity, 1952, a book collecting Lewis\'s BBC radio talks (1941-1944)',
     authorEn: 'C. S. Lewis (apologist and professor at Oxford and Cambridge)',
+    topicEn: 'Moral argument, trilemma and argument from desire',
+    textEn: 'A book collecting Lewis\'s BBC radio talks. In Book I he starts from the moral law everyone assumes when quarreling and concludes: "It seems, then, we are forced to believe in a real Right and Wrong." In Book II he recalls that, as an atheist, he argued that the universe was cruel and unjust, until he asked himself: "But how had I got this idea of just and unjust?" The same book holds the trilemma, according to which a man who said the sort of things Jesus said "would not be a great moral teacher" but a lunatic, the Devil of Hell, or the Son of God, and the "good dreams" God sent the human race, the pagan stories "about a god who dies and comes to life again". In Book III comes the argument from desire: "If I find in myself a desire which no experience in this world can satisfy, the most probable explanation is that I was made for another world."',
   },
   'lutero-rm-3-28': {
     topicEn: 'Addition of the word "alone" in Romans 3:28',
@@ -812,11 +820,11 @@ export const referencesEn = {
     authorEn: 'Martin Luther',
   },
   'hoyle-universo': {
-    topicEn: 'Fine-tuning of the universe / cosmic design',
-    textEn: "A common-sense interpretation of the facts suggests that a super-intellect has monkeyed with physics, as well as with chemistry and biology, and that there are no blind forces worth speaking about in nature. The numbers one calculates from the facts seem to me so overwhelming as to put this conclusion almost beyond question.",
     refEn: 'Reflections on the universe (Hoyle)',
     fullSourceEn: '"The Universe: Past and Present Reflections", Engineering and Science, vol. 45 (Caltech, November 1981), p. 12. Hoyle returns to the idea in the book The Intelligent Universe (1983).',
-    authorEn: 'Fred Hoyle (astrophysicist, originally atheist)',
+    authorEn: 'Fred Hoyle (astrophysicist, a self-declared atheist)',
+    topicEn: 'Fine-tuning of the universe / cosmic design',
+    textEn: 'A common sense interpretation of the facts suggests that a superintellect has monkeyed with physics, as well as with chemistry and biology, and that there are no blind forces worth speaking about in nature. The numbers one calculates from the facts seem to me so overwhelming as to put this conclusion almost beyond question.',
   },
   'csgc-denominacoes': {
     topicEn: 'Number of Christian denominations in the world',
@@ -841,12 +849,12 @@ export const referencesEn = {
     yearEn: '5th century BC',
   },
   'craig-kalam': {
-    topicEn: 'Kalam argument / origin of the universe',
-    textEn: 'The Kalam argument has two premises and a conclusion. First: everything that begins to exist has a cause. Second: the universe began to exist. Conclusion: therefore, the universe has a cause. For Craig, the first premise is a basic metaphysical intuition. He supports the second with philosophical arguments against an infinite past and with modern cosmology, citing the Borde-Guth-Vilenkin theorem of 2003, according to which a universe that has, on average, been expanding cannot be extended indefinitely into the past. The conclusion requires postulating a cause transcendent to space, time, and matter.',
     refEn: 'The Kalam Cosmological Argument',
     fullSourceEn: 'The Kalam Cosmological Argument (book)',
     authorEn: 'William Lane Craig (philosopher and Christian theologian, PhD in Philosophy and Theology)',
-    yearEn: '1979 (book); updated versions in later writings, such as Craig and Sinclair (2009)',
+    yearEn: '1979 (book)',
+    topicEn: 'Kalam argument / origin of the universe',
+    textEn: 'The Kalam cosmological argument has three steps. First: everything that begins to exist has a cause. Second: the universe began to exist. Third: therefore, the universe has a cause. For Craig, the first premise is a basic metaphysical intuition, and the second has strong support from modern cosmology, such as the Borde-Guth-Vilenkin theorem of 2003, according to which any universe that has, on average, been expanding cannot be eternal in the past: it must have had a beginning. The conclusion points to a cause that transcends space, time and matter.',
   },
   'bhagavad-gita': {
     topicEn: 'Brahman, atman and liberation (moksha)',
@@ -862,14 +870,6 @@ export const referencesEn = {
     refEn: 'The Case for the Resurrection of Jesus',
     fullSourceEn: 'The Case for the Resurrection of Jesus (book, with Mike Licona)',
     authorEn: 'Gary Habermas (specialist in resurrection studies, professor at Liberty University)',
-  },
-  'livro-mormon': {
-    topicEn: 'Claim of Hebrew civilizations in the Americas',
-    textEn: 'The Book of Mormon claims that Israelites led by the prophet Lehi migrated to the Americas around 600 BC and built great civilizations there (Nephites and Lamanites), with cities, writing, horses, chariots and steel weapons. American archaeology and DNA studies of native populations (of Asian, not Semitic, origin) do not confirm these claims.',
-    refEn: 'The Book of Mormon',
-    fullSourceEn: 'The Book of Mormon, scripture of The Church of Jesus Christ of Latter-day Saints',
-    authorEn: 'Published by Joseph Smith',
-    urlEn: 'https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-and-dna-studies?lang=eng',
   },
   'josefo-antiguidades-20': {
     topicEn: 'Historical attestation of Jesus and James',
@@ -897,9 +897,9 @@ export const referencesEn = {
   },
   'talo-flegon': {
     topicEn: 'Non-Christian testimony to the darkness at the Crucifixion',
-    textEn: 'The historian Thallus, of uncertain date (perhaps the mid-1st century), mentioned the darkness in the third book of his Histories and tried to explain it as a solar eclipse. Julius Africanus, in the 3rd century, quotes Thallus and objects that it could not have been an eclipse, since it was Passover, at full moon. Phlegon of Tralles recorded a great eclipse of the sun, with stars visible at midday, and an earthquake in Bithynia, in the fourth year of the 202nd Olympiad (AD 32 or 33).',
+    textEn: 'The historian Thallus, probably in the 1st century, mentioned the darkness in the third book of his Histories and tried to explain it as a solar eclipse. Julius Africanus, in the 3rd century, quotes Thallus and objects that it could not have been an eclipse, since it was Passover, at full moon. Phlegon of Tralles recorded in the fourth year of the 202nd Olympiad, around AD 33, a great eclipse of the sun, with night at the sixth hour, and an earthquake in Bithynia, without mentioning Jesus. Christian authors linked this record to the crucifixion.',
     refEn: 'Thallus and Phlegon (pagan sources)',
-    fullSourceEn: 'Thallus (uncertain date, perhaps mid-1st century), quoted by Julius Africanus, Chronography, fragment 18; and Phlegon of Tralles, Chronicles (2nd century AD)',
+    fullSourceEn: 'Thallus (probably 1st century AD), quoted by Julius Africanus, Chronography, fragment 18, and Phlegon of Tralles, Olympiads (2nd century AD)',
     authorEn: 'Non-Christian historians of Antiquity',
     yearEn: '1st and 2nd centuries AD',
   },
@@ -938,7 +938,7 @@ export const referencesEn = {
   },
   'kamen-inquisicao': {
     topicEn: 'Historiographical revision of the Spanish Inquisition',
-    textEn: "Research based on primary archives of the Spanish Inquisition. Main conclusions: the total number of those executed over more than three centuries of activity (1478-1834) was approximately 3,000 to 5,000 people, far fewer than popular imagination supposes. Acquittal rates were high (40-70%), proceedings followed formal rules, and the Inquisition was skeptical regarding witch-hunting that swept civil and Protestant Europe. The 'Black Legend' was largely a 16th-century propaganda construction.",
+    textEn: "Research based on primary archives of the Spanish Inquisition. Main conclusions: the total number of those executed over more than three centuries of activity (1478-1834) was approximately 3,000 to 5,000 people, far fewer than popular imagination supposes. Only a small share of the accused were sentenced to death (under 2% between 1540 and 1700), proceedings followed formal rules, and the Inquisition became skeptical of the witch-hunting that swept the civil courts of Europe. The 'Black Legend' was largely a 16th-century propaganda construction.",
     authorEn: 'Henry Kamen (British historian, specialist in imperial Spain)',
   },
   'milagre-tixtla': {
@@ -952,7 +952,7 @@ export const referencesEn = {
   },
   'madden-cruzadas': {
     topicEn: 'Modern historiography of the Crusades',
-    textEn: 'Academic historiography of recent decades, freed from confessional polemics, has repositioned the Crusades as a belated defensive response to four hundred years of Muslim military expansion over Christian territories (Syria, Egypt, North Africa, Spain, Anatolia). The motivation of crusaders was largely penitential and religious, not commercial. The Fourth Crusade (1202-1204), with the sack of Constantinople, was an anomaly condemned by Pope Innocent III and deplored by Pope John Paul II in 2001, in Athens, and again in 2004, before Patriarch Bartholomew I.',
+    textEn: "Academic historiography of recent decades has repositioned the Crusades as a belated defensive response to four hundred years of Muslim military expansion over Christian territories (Syria, Egypt, North Africa, Spain, Anatolia). The motivation of crusaders was largely penitential and religious, not commercial. The Fourth Crusade (1202-1204), with the sack of Constantinople, was an anomaly condemned by Pope Innocent III and deplored by Pope John Paul II in 2001, in Athens, and in 2004, before Patriarch Bartholomew I.",
     refEn: 'History of the Crusades',
     fullSourceEn: 'The New Concise History of the Crusades (and other academic volumes on the subject)',
     authorEn: 'Thomas F. Madden (historian, Saint Louis University) and Jonathan Riley-Smith (Cambridge)',
@@ -961,7 +961,7 @@ export const referencesEn = {
   // === OTHERS ===
   'arq-caifas': {
     topicEn: 'Historical confirmation of the high priest Caiaphas',
-    textEn: 'In a family tomb in southern Jerusalem, ossuaries were found, one of them richly decorated, bearing the name of the high priest Caiaphas, who presided over the trial of Jesus (Matthew 26:57; John 11:49).',
+    textEn: 'In a family tomb in southern Jerusalem, ossuaries were found, one of them richly decorated, bearing the name of the high priest Caiaphas, who presided over the trial of Jesus (Matthew 26:57 and John 18:24).',
     refEn: 'Ossuary of Caiaphas',
     fullSourceEn: 'Ossuary with the inscription "Yehosef bar Qayafa" (Joseph, son of Caiaphas), found in Jerusalem in 1990',
     authorEn: 'Archaeological find (1st century AD)',
@@ -976,7 +976,7 @@ export const referencesEn = {
   },
   'arq-betesda': {
     topicEn: 'Confirmation of the detail in John 5:2',
-    textEn: 'John 5:2 describes a pool "having five porches". Some critics took the detail as symbolic, until excavations revealed a double pool, with a dam between the two basins: four colonnades around it and one on the dam correspond to the five porches of the text. The pool of Siloam (John 9:7) was located in 2004.',
+    textEn: 'John 5:2 describes a pool "having five porches". Some critics took the detail as symbolic, until excavations revealed a double pool, with a dam between the two basins: four colonnades around it and one on the dam correspond to the five porches of the text. The pool of Siloam from the time of Jesus (John 9:7) was located in 2004.',
     refEn: 'Pool of Bethesda (five porches)',
     fullSourceEn: 'Excavation of the pool of Bethesda, next to the church of Saint Anne, in Jerusalem',
     authorEn: 'Archaeological find',
@@ -991,7 +991,7 @@ export const referencesEn = {
   },
   'arq-tel-dan': {
     topicEn: 'Extra-biblical mention of the dynasty of David',
-    textEn: 'The stele, made by a king hostile to Israel, boasts of victories and mentions the "House of David" (Beit David), attesting the Davidic dynasty from an outside source, a little more than a century after David.',
+    textEn: 'The stele, made by a king hostile to Israel, boasts of victories and mentions the "House of David" (Beit David), attesting the Davidic dynasty from an outside source, about a century and a half after David.',
     refEn: 'Tel Dan Stele ("House of David")',
     fullSourceEn: 'Tel Dan Stele, a 9th-century BC Aramaic inscription found in northern Israel in 1993',
     authorEn: 'Aramean king (probably Hazael of Damascus)',
@@ -1028,22 +1028,13 @@ export const referencesEn = {
     yearEn: 'c. AD 100-150 according to its first editor (1935); recent studies suggest a date closer to AD 200',
   },
   'milagre-lanciano': {
-    topicEn: 'Eucharistic miracle of Lanciano / evidence of the Real Presence',
-    textEn: 'During a Mass in the 8th century, a Basilian monk doubted the Real Presence. At the moment of consecration, the Host turned visibly into flesh and the wine into coagulated blood in five globules. The relics have been preserved in Lanciano for over 1,200 years. The 1970-1971 studies by Dr. Linoli, published in 1971 in the journal Quaderni Sclavo di Diagnostica Clinica e di Laboratorio (vol. 7, pp. 661-674), concluded that the flesh is human cardiac tissue (myocardium), that the blood is human, type AB, the same blood group as the flesh, and that there were no traces of preservatives. Promoters of the miracle state that a commission linked to the World Health Organization, appointed in 1973, confirmed these results, but no WHO document on this is known.',
     refEn: 'Eucharistic Miracle of Lanciano',
-    fullSourceEn: 'Eucharistic Miracle of Lanciano, Italy, and subsequent scientific studies',
-    authorEn: 'Church of San Francesco, Lanciano (Italy); studies by Dr. Edoardo Linoli (pathologist) and Dr. Ruggero Bertelli (University of Siena)',
-    yearEn: 'c. 750 AD (miracle, according to tradition); 1970-1971 (Linoli\'s studies)',
+    fullSourceEn: 'Eucharistic Miracle of Lanciano, Italy, and the study by Odoardo Linoli published in Quaderni Sclavo di Diagnostica (1971)',
+    authorEn: 'Church of San Francesco, Lanciano (Italy); studies by the pathologist Odoardo Linoli, with Ruggero Bertelli (University of Siena)',
+    yearEn: 'c. 750 AD (miracle, according to tradition); 1970-1971 (Linoli\'s studies, published in 1971)',
+    topicEn: 'Eucharistic miracle of Lanciano / evidence of the Real Presence',
+    textEn: 'According to tradition, around the 8th century, a Basilian monk who doubted the Real Presence saw, at the consecration, the Host turn into flesh and the wine into blood, which coagulated into five globules. The relics are kept in Lanciano. In 1970-1971, the pathologist Odoardo Linoli examined them and reported that the flesh is human heart muscle tissue (myocardium) and that the blood is human, with the same type, AB, in the flesh and in the blood. Linoli found no trace of preservatives and considered it extraordinary that flesh and blood had come through so many centuries without decomposition.',
     urlEn: 'https://pubmed.ncbi.nlm.nih.gov/4950729/',
-  },
-  'milagre-buenos-aires': {
-    topicEn: 'Host turned into heart muscle tissue',
-    textEn: 'In 1996, a discarded Host that turned into a bloody substance was kept and, years later, analyzed by laboratories without the experts knowing its origin. The tests identified heart muscle tissue (myocardium), with white blood cells and signs of inflammation, consistent with a heart that had suffered trauma and was still alive when the sample was taken. According to Castañón\'s team, the blood type is AB.',
-    refEn: 'Eucharistic miracle of Buenos Aires (1996)',
-    fullSourceEn: 'Histopathological analyses of the Host of Buenos Aires, authorized by the then Archbishop Jorge Mario Bergoglio (later Pope Francis)',
-    authorEn: 'Investigation coordinated by Dr. Ricardo Castañón Gómez; histopathology by Dr. Frederick Zugibe (forensic pathologist, Columbia University)',
-    yearEn: '1996 (event); analyses between 1999 and 2006',
-    urlEn: 'https://www.miracolieucaristici.org/en/Liste/scheda_c.html?nat=argentina&wh=buenosaires',
   },
   'acutis-milagres': {
     topicEn: 'Eucharistic miracles documented throughout history',
@@ -1069,14 +1060,6 @@ export const referencesEn = {
     fullSourceEn: 'Annals (Annales), Book XV, chapter 44',
     authorEn: 'Publius Cornelius Tacitus (Roman historian)',
     urlEn: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0078:book=15:chapter=44',
-  },
-  'sudario-turim': {
-    topicEn: 'The image of the crucified man on the Shroud of Turin',
-    textEn: 'The Shroud bears the image of a man who suffered scourging, crowning with thorns and crucifixion, with a wound in the side and unbroken legs, as the Gospels describe. Tests in 1980-1981 identified blood components in the stains (the often cited AB typing is not reliable). STURP, which examined the cloth in 1978, concluded that the image is not a painting (no pigments or brushstrokes), lies only on the surface of the fibers and contains three-dimensional information, with no known technical explanation. The 1988 carbon-14 dating (between 1260 and 1390) is disputed: the sample came from a single corner of the cloth, and a reanalysis of the raw data, in 2019, pointed to a lack of homogeneity in the measurements.',
-    refEn: 'The Shroud of Turin and the STURP project',
-    fullSourceEn: 'Scientific studies on the Shroud of Turin, including the Shroud of Turin Research Project (STURP, 1978) and later analyses',
-    authorEn: 'International scientific teams (STURP and others)',
-    yearEn: '1978 (STURP); 1988 (carbon-14, disputed); later studies',
   },
   'plinio-jovem': {
     topicEn: 'Early Christian practice attested by a Roman authority',
@@ -1110,26 +1093,10 @@ export const referencesEn = {
     fullSourceEn: 'On the Harmony of the Gospels (De Consensu Evangelistarum)',
     authorEn: 'Saint Augustine of Hippo (Doctor of the Church)',
   },
-  'zeitoun-aparicao': {
-    topicEn: 'Public Marian apparition witnessed by crowds of several religions',
-    textEn: 'For more than two years, a luminous figure of the Virgin was seen above the dome of the church by crowds that totaled hundreds of thousands of people, including Coptic Christians, Catholics, Protestants and Muslims. The phenomenon was photographed. The Egyptian government (secular, under Nasser) investigated and found no fraud. The Coptic pope Cyril VI officially recognized the apparitions in May 1968. The Holy See issued no approval of its own and respected the judgment of the Coptic Church.',
-    refEn: 'The apparitions of Zeitoun (Cairo, 1968-1971)',
-    fullSourceEn: 'Luminous apparitions above the Coptic Orthodox church of Saint Mary in Zeitoun, Cairo, Egypt',
-    authorEn: 'Witnesses (Christian and Muslim), the press and an official Egyptian investigation',
-    yearEn: '1968 to 1971',
-  },
   'ehrman-jesus-existiu': {
     topicEn: 'Academic defense of the historical existence of Jesus',
     textEn: "Despite being agnostic and broadly critical of Christianity, Ehrman writes that the mythicist thesis (Jesus never existed) has no defenders among the specialists who teach the field: of the thousands of scholars of early Christianity who teach at accredited seminaries and universities in North America and Europe, 'none of them, to my knowledge, has any doubts that Jesus existed.' His central arguments are the several early and mutually independent Christian sources (Mark, Q, M, L, the sources of John), the testimony of Paul, who knew Peter and James, the brother of the Lord, and the fact that the first Christians preached a crucified Messiah, an idea no Jew of the time would have invented. Josephus and Tacitus confirm this, although Ehrman gives them less weight.",
     authorEn: 'Bart D. Ehrman (agnostic historian, professor of Religious Studies, University of North Carolina)',
-  },
-  'aparecida-historia': {
-    topicEn: 'The patroness image of Brazil and popular devotion',
-    textEn: 'In October 1717, three fishermen pulled from the river the body and then the head of a small terracotta image of Our Lady of the Conception, followed by an abundant catch after hours without anything. Devotion grew through accounts of graces and healings over three centuries, giving rise to the Shrine of Aparecida, one of the largest Marian basilicas in the world. Pius XI proclaimed Our Lady of Aparecida patroness of Brazil in 1930.',
-    refEn: 'Our Lady of Aparecida (1717)',
-    fullSourceEn: 'Finding of the image of Our Lady of Aparecida in the Paraíba do Sul river, Guaratinguetá (São Paulo), and the devotion that followed',
-    authorEn: 'Tradition and history of the devotion',
-    yearEn: '1717 (finding); 1930 (proclaimed patroness of Brazil by Pius XI)',
   },
   'nash-grecos': {
     topicEn: 'Academic refutation of the thesis of Christian plagiarism from pagan religions',
@@ -1146,11 +1113,631 @@ export const referencesEn = {
   },
   'lemaitre-bigbang': {
     topicEn: 'Catholic origins of the Big Bang theory',
-    textEn: "The cosmological model that came to be called the Big Bang was proposed by Father Lemaître before Edwin Hubble experimentally confirmed the expansion of the universe. Lemaître derived mathematically, from Einstein's General Relativity, that the universe is expanding and had its origin in a highly dense 'primordial atom.' Initially received with skepticism, the hypothesis became widely accepted after subsequent observations. The very grounding of modern science in a Christian civilisation (universities founded by the Church, Mendel father of genetics) refutes the myth of the 'science vs. faith' conflict.",
+    textEn: "The cosmological model that came to be called the Big Bang was proposed by Father Lemaître before Edwin Hubble experimentally confirmed the expansion of the universe. Lemaître derived mathematically, from Einstein's General Relativity, that the universe is expanding and had its origin in a highly dense 'primordial atom.' Initially received with skepticism, the hypothesis became widely accepted after subsequent observations. The very grounding of modern science in a Christian civilisation (universities born in medieval Christendom, Mendel father of genetics) refutes the myth of the 'science vs. faith' conflict.",
     refEn: 'Primordial Atom Hypothesis',
     fullSourceEn: 'Lemaître, "Un Univers homogène de masse constante et de rayon croissant..." (Annales de la Société Scientifique de Bruxelles, vol. 47, 1927) and "The Beginning of the World from the Point of View of Quantum Theory" (Nature, vol. 127, p. 706, 1931)',
     authorEn: 'Mons. Georges Lemaître (Belgian Catholic priest, professor at the Catholic University of Louvain)',
     yearEn: '1927 (original article); 1931 (primordial atom hypothesis)',
+  },
+  'js-10-12': {
+    topicEn: 'The sun that "stood still" / passage invoked against heliocentrism in the Galileo case',
+    textEn: 'Then Joshua spoke to the Lord, in the day that he delivered the Amorrhite in the sight of the children of Israel, and he said before them: Move not, O sun, toward Gabaon, nor thou, O moon, toward the valley of Ajalon. And the sun and the moon stood still, till the people revenged themselves of their enemies. Is not this written in the book of the just? So the sun stood still in the midst of heaven, and hasted not to go down the space of one day.',
+  },
+  'mt-18-6': {
+    topicEn: 'Scandal against the little ones / gravity of abuse',
+    textEn: 'But he that shall scandalize one of these little ones that believe in me, it were better for him that a millstone should be hanged about his neck, and that he should be drowned in the depth of the sea.',
+  },
+  'mt-13-24': {
+    topicEn: 'Parable of the wheat and the weeds / evil grows alongside good until the end',
+    textEn: 'Another parable he proposed to them, saying: The kingdom of heaven is likened to a man that sowed good seed in his field. But while men were asleep, his enemy came and oversowed cockle among the wheat and went his way. And when the blade was sprung up, and had brought forth fruit, then appeared also the cockle. And the servants of the good man of the house coming said to him. Sir, didst thou not sow good seed in thy field? Whence then hath it cockle? And he said to them: An enemy hath done this. And the servants said to him: Wilt thou that we go and gather it up? And he said: No, lest perhaps gathering up the cockle, you root up the wheat also together with it. Suffer both to grow until the harvest, and in the time of the harvest I will say to the reapers: Gather up first the cockle, and bind it into bundles to burn, but the wheat gather ye into my barn.',
+  },
+  'vos-estis-lux-mundi': {
+    refEn: 'Vos Estis Lux Mundi, arts. 3 and 19',
+    fullSourceEn: 'Apostolic Letter in the form of Motu Proprio Vos Estis Lux Mundi, on reporting abuse in the Church',
+    authorEn: 'Pope Francis',
+    yearEn: 'May 7, 2019 (definitive version in 2023)',
+    topicEn: 'Obligation to report abuse and compliance with civil law',
+    textEn: '"(...) whenever a cleric or a member of an Institute of Consecrated Life or of a Society of Apostolic Life has notice of, or well-founded motives to believe that, one of the facts referred to in article 1 has been committed, that person is obliged to report promptly the fact to the local Ordinary where the events are said to have occurred (...)" (art. 3 §1). "These norms apply without prejudice to the rights and obligations established in each place by state laws, particularly those concerning any reporting obligations to the competent civil authorities" (art. 19).',
+    urlEn: 'https://www.vatican.va/content/francesco/en/motu_proprio/documents/papa-francesco-motu-proprio-20190507_vos-estis-lux-mundi.html',
+  },
+  'jo-21-15': {
+    topicEn: 'Primacy of Peter / Jesus entrusts the flock to Peter',
+    textEn: 'When therefore they had dined, Jesus saith to Simon Peter: Simon, son of John, lovest thou me more than these? He saith to him: Yea, Lord, thou knowest that I love thee. He saith to him: Feed my lambs. He saith to him again: Simon, son of John, lovest thou me? He saith to him: yea, Lord, thou knowest that I love thee. He saith to him: Feed my lambs. He said to him the third time: Simon, son of John, lovest thou me? Peter was grieved because he had said to him the third time: Lovest thou me? And he said to him: Lord, thou knowest all things: thou knowest that I love thee. He said to him: Feed my sheep.',
+  },
+  'lc-22-32': {
+    topicEn: 'Jesus prays for Peter\'s faith, so that he may confirm his brethren',
+    textEn: 'And the Lord said: Simon, Simon, behold Satan hath desired to have you, that he may sift you as wheat. But I have prayed for thee, that thy faith fail not: and thou, being once converted, confirm thy brethren.',
+  },
+  'inacio-romanos': {
+    topicEn: 'The Church of Rome, which "presides over love"',
+    textEn: '(...) the Church which is beloved and enlightened by the will of Him that wills all things which are according to the love of Jesus Christ our God, which also presides in the place of the region of the Romans, worthy of God, worthy of honour, worthy of the highest happiness, worthy of praise, worthy of obtaining her every desire, worthy of being deemed holy, and which presides over love, is named from Christ, and from the Father.',
+    refEn: 'Letter to the Romans, prologue',
+    fullSourceEn: 'Letter to the Romans, opening greeting',
+    authorEn: 'Saint Ignatius of Antioch (disciple of the Apostle John)',
+    urlEn: 'https://www.newadvent.org/fathers/0107.htm',
+  },
+  'ireneu-contra-heresias-3-3': {
+    topicEn: 'Succession of the bishops of Rome / primacy of the Roman Church',
+    textEn: 'For it is a matter of necessity that every Church should agree with this Church, on account of its preeminent authority (...). The blessed apostles, then, having founded and built up the Church, committed into the hands of Linus the office of the episcopate. (...) To him succeeded Anacletus; and after him, in the third place from the apostles, Clement was allotted the bishopric. (...) To this Clement there succeeded Evaristus. (...) Eleutherius does now, in the twelfth place from the apostles, hold the inheritance of the episcopate.',
+    refEn: 'Against Heresies III,3,2-3',
+    fullSourceEn: 'Adversus Haereses (Against Heresies), Book III, chapter 3, 2-3',
+    authorEn: 'Saint Irenaeus of Lyon (disciple of Saint Polycarp, who was a disciple of Saint John)',
+  },
+  'mt-19-6': {
+    topicEn: 'Indissolubility of marriage',
+    textEn: 'Therefore now they are not two, but one flesh. What therefore God hath joined together, let no man put asunder.',
+  },
+  'cic-1128': {
+    topicEn: 'Sacraments / ex opere operato and the dispositions of the recipient',
+    textEn: 'From the moment that a sacrament is celebrated in accordance with the intention of the Church, the power of Christ and his Spirit acts in and through it, independently of the personal holiness of the minister. Nevertheless, the fruits of the sacraments also depend on the disposition of the one who receives them. (...) The sacraments are efficacious signs of grace, instituted by Christ and entrusted to the Church, by which divine life is dispensed to us.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P33.HTM',
+  },
+  '1jo-1-9': {
+    topicEn: 'Confession of sins',
+    textEn: 'If we confess our sins, he is faithful and just, to forgive us our sins and to cleanse us from all iniquity.',
+  },
+  'at-19-18': {
+    topicEn: 'Confession of sins in the early Church',
+    textEn: 'And many of them that believed came, confessing and declaring their deeds.',
+  },
+  'didaque-4-14': {
+    topicEn: 'Confession of sins in the assembly',
+    textEn: 'In the church you shall acknowledge your transgressions, and you shall not come near for your prayer with an evil conscience. (...) But every Lord\'s day gather yourselves together, and break bread, and give thanksgiving after having confessed your transgressions, that your sacrifice may be pure.',
+    refEn: 'Didache 4:14 and 14:1',
+    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), 4:14 and 14:1',
+    authorEn: 'Anonymous author of the early Church',
+  },
+  'cipriano-lapsis-28': {
+    topicEn: 'Confession of sins to the priests',
+    textEn: 'Moreover, how much are they both greater in faith and better in their fear, who, although bound by no crime of sacrifice to idols or of certificate, yet, since they have even thought of such things, with grief and simplicity confess this very thing to God\'s priests, and make the conscientious avowal, put off from them the load of their minds, and seek out the salutary medicine even for slight and moderate wounds.',
+    refEn: 'On the Lapsed, 28',
+    fullSourceEn: 'De Lapsis (On the Lapsed), chapter 28',
+    authorEn: 'Saint Cyprian of Carthage (bishop and martyr)',
+  },
+  'sl-45-10': {
+    topicEn: 'The queen at the king\'s right hand / Mary as Queen',
+    textEn: 'The daughters of kings have delighted thee in thy glory. The queen stood on thy right hand, in gilded clothing; surrounded with variety.',
+    refEn: 'Psalm 45 (44):10',
+  },
+  'gn-3-19': {
+    topicEn: 'Death as a consequence of sin',
+    textEn: 'In the sweat of thy face shalt thou eat bread till thou return to the earth out of which thou wast taken: for dust thou art, and into dust thou shalt return.',
+  },
+  'rm-6-23': {
+    topicEn: 'The wages of sin is death',
+    textEn: 'For the wages of sin is death. But the grace of God, life everlasting in Christ Jesus our Lord.',
+  },
+  'mt-5-26': {
+    topicEn: 'Paying the last farthing / purification',
+    textEn: 'Be at agreement with thy adversary betimes, whilst thou art in the way with him: lest perhaps the adversary deliver thee to the judge, and the judge deliver thee to the officer, and thou be cast into prison. Amen I say to thee, thou shalt not go out from thence till thou repay the last farthing.',
+  },
+  'rm-2-6': {
+    topicEn: 'Judgment according to works',
+    textEn: 'Who will render to every man according to his works. To them indeed who, according to patience in good work, seek glory and honour and incorruption, eternal life:',
+  },
+  '1cor-11-2': {
+    topicEn: 'The traditions handed on by the Apostle',
+    textEn: 'Now I praise you, brethren, that in all things you are mindful of me and keep my ordinances as I have delivered them to you.',
+  },
+  'hb-11-35': {
+    topicEn: 'Martyrs who hoped for the resurrection (an allusion to 2 Maccabees 7)',
+    textEn: 'Women received their dead raised to life again. But others were racked, not accepting deliverance, that they might find a better resurrection.',
+  },
+  'mc-6-44': {
+    topicEn: 'The five thousand at the multiplication of the loaves',
+    textEn: 'And they that did eat, were five thousand men.',
+  },
+  '1rs-7-23': {
+    topicEn: 'The measurements of the bronze sea of the Temple',
+    textEn: 'He made also a molten sea, of ten cubits, from brim to brim, round all about; the height of it was five cubits, and a line of thirty cubits compassed it round about.',
+  },
+  '2cr-22-2': {
+    topicEn: 'The age of Ahaziah: a number that varied in copying (22 or 42 years)',
+    textEn: 'Ochozias was forty-two years old when he began to reign, and he reigned one year in Jerusalem, and the name of his mother was Athalia the daughter of Amri.',
+  },
+  'lc-24-1': {
+    topicEn: 'The women at the empty tomb and the two men in shining apparel',
+    textEn: 'And on the first day of the week, very early in the morning, they came to the sepulchre, bringing the spices which they had prepared. And they found the stone rolled back from the sepulchre. And going in, they found not the body of the Lord Jesus. And it came to pass, as they were astonished in their mind at this, behold, two men stood by them, in shining apparel. (...) And it was Mary Magdalen and Joanna and Mary of James and the other women that were with them, who told these things to the apostles.',
+  },
+  'mc-16-1': {
+    topicEn: 'The women at the tomb and the young man in white',
+    textEn: 'And when the sabbath was past, Mary Magdalen and Mary the mother of James and Salome bought sweet spices, that coming, they might anoint Jesus. And very early in the morning, the first day of the week, they come to the sepulchre, the sun being now risen. (...) And entering into the sepulchre, they saw a young man sitting on the right side, clothed with a white robe: and they were astonished. Who saith to them: Be not affrighted. You seek Jesus of Nazareth, who was crucified. He is risen: he is not here. Behold the place where they laid him. But go, tell his disciples and Peter that he goeth before you into Galilee. There you shall see him, as he told you.',
+  },
+  'jo-20-1': {
+    topicEn: 'Mary Magdalene at the empty tomb and the two angels',
+    textEn: 'And on the first day of the week, Mary Magdalen cometh early, when it was yet dark, unto the sepulchre: and she saw the stone taken away from the sepulchre. She ran therefore and cometh to Simon Peter and to the other disciple whom Jesus loved and saith to them: They have taken away the Lord out of the sepulchre: and we know not where they have laid him. (...) But Mary stood at the sepulchre without, weeping. Now as she was weeping, she stooped down and looked into the sepulchre, And she saw two angels in white, sitting, one at the head, and one at the feet, where the body of Jesus had been laid.',
+  },
+  'mt-28-16': {
+    topicEn: 'The appearance of the Risen One in Galilee',
+    textEn: 'And the eleven disciples went into Galilee, unto the mountain where Jesus had appointed them. And seeing him they adored: but some doubted.',
+  },
+  'mt-19-8': {
+    topicEn: 'What Moses permitted because of hardness of heart',
+    textEn: 'He saith to them: Because Moses by reason of the hardness of your heart permitted you to put away your wives: but from the beginning it was not so.',
+  },
+  'fm-1-16': {
+    topicEn: 'The slave Onesimus received as a brother',
+    textEn: 'Not now as a servant, but instead of a servant, a most dear brother, especially to me. But how much more to thee, both in the flesh and in the Lord?',
+  },
+  'mt-5-38': {
+    topicEn: 'From "eye for an eye" to love of enemies',
+    textEn: 'You have heard that it hath been said: An eye for an eye, and a tooth for a tooth. But I say to you not to resist evil: but if one strike thee on thy right cheek, turn to him also the other. (...) You have heard that it hath been said, Thou shalt love thy neighbour, and hate thy enemy. But I say to you, Love your enemies: do good to them that hate you: and pray for them that persecute and calumniate you.',
+  },
+  'mc-13-32': {
+    topicEn: 'No one knows the day or the hour',
+    textEn: 'But of that day or hour no man knoweth, neither the angels in heaven, nor the Son, but the Father.',
+  },
+  '1jo-2-18': {
+    topicEn: 'The many antichrists already present',
+    textEn: 'Little children, it is the last hour: and as you have heard that Antichrist cometh, even now there are become many Antichrists: whereby we know that it is the last hour.',
+  },
+  'ap-22-20': {
+    topicEn: 'Come, Lord Jesus: the last prayer of the Bible',
+    textEn: 'He that giveth testimony of these things, saith: Surely, I come quickly: Amen. Come, Lord Jesus.',
+  },
+  'cic-120': {
+    topicEn: 'The canon of Scripture',
+    textEn: 'It was by the apostolic Tradition that the Church discerned which writings are to be included in the list of the sacred books. This complete list is called the canon of Scripture. It includes 46 books for the Old Testament (45 if we count Jeremiah and Lamentations as one) and 27 for the New.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__PR.HTM',
+  },
+  'cic-675': {
+    topicEn: 'The Church\'s final trial and the deception of the Antichrist',
+    textEn: 'Before Christ\'s second coming the Church must pass through a final trial that will shake the faith of many believers. The persecution that accompanies her pilgrimage on earth will unveil the "mystery of iniquity" in the form of a religious deception offering men an apparent solution to their problems at the price of apostasy from the truth. The supreme religious deception is that of the Antichrist, a pseudo-messianism by which man glorifies himself in place of God and of his Messiah come in the flesh.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1V.HTM',
+  },
+  'dei-verbum-11': {
+    topicEn: 'Inspiration and truth of Sacred Scripture',
+    textEn: 'Therefore, since everything asserted by the inspired authors or sacred writers must be held to be asserted by the Holy Spirit, it follows that the books of Scripture must be acknowledged as teaching solidly, faithfully and without error that truth which God wanted put into sacred writings for the sake of salvation.',
+  },
+  'dei-verbum-15': {
+    topicEn: 'The Old Testament and divine pedagogy',
+    textEn: 'Now the books of the Old Testament, in accordance with the state of mankind before the time of salvation established by Christ, reveal to all men the knowledge of God and of man and the ways in which God, just and merciful, deals with men. These books, though they also contain some things which are incomplete and temporary, nevertheless show us true divine pedagogy.',
+  },
+  'dei-verbum-25': {
+    topicEn: 'Reading Scripture accompanied by prayer',
+    textEn: 'And let them remember that prayer should accompany the reading of Sacred Scripture, so that God and man may talk together; for "we speak to Him when we pray; we hear Him when we read the divine saying."',
+  },
+  'josefo-antiguidades-18-1': {
+    topicEn: 'The census of Quirinius in Judea (AD 6)',
+    refEn: 'Jewish Antiquities, Book 18',
+    fullSourceEn: 'Jewish Antiquities, Book 18, chapter 1, paragraph 1, and chapter 2, paragraph 1',
+    textEn: 'Now Cyrenius, a Roman senator, and one who had gone through other magistracies, and had passed through them till he had been consul, (...) came at this time into Syria, with a few others, being sent by Caesar to be a judge of that nation, and to take an account of their substance. (...) Moreover, Cyrenius came himself into Judea, which was now added to the province of Syria, to take an account of their substance. (...) The taxings were come to a conclusion, which were made in the thirty-seventh year of Caesar\'s victory over Antony at Actium.',
+  },
+  'eusebio-he-1-7': {
+    topicEn: 'The two genealogies of Jesus: by nature and by law',
+    refEn: 'Ecclesiastical History I,7',
+    fullSourceEn: 'Ecclesiastical History, Book I, chapter 7, with the letter of Julius Africanus to Aristides',
+    authorEn: 'Eusebius of Caesarea, quoting Julius Africanus',
+    textEn: 'Matthew and Luke in their gospels have given us the genealogy of Christ differently, and many suppose that they are at variance with one another. (...) Thus neither of the gospels is in error, for one reckons by nature, the other by law.',
+  },
+  'jo-1-21': {
+    topicEn: 'John the Baptist denies being Elijah / against reincarnation',
+    textEn: 'And they asked him: What then? Art thou Elias? And he said: I am not. Art thou the prophet? And he answered: No.',
+  },
+  '1sm-28-7': {
+    topicEn: 'Saul consults the medium of Endor',
+    textEn: 'And Saul said to his servants: Seek me a woman that hath a divining spirit, and I will go to her, and enquire by her. And his servants said to him: There is a woman that hath a divining spirit at Endor. Then he disguised himself: and put on other clothes, and he went, and two men with him, and they came to the woman by night, and he said to her: Divine to me by thy divining spirit, and bring me up him whom I shall tell thee.',
+  },
+  '1cr-10-13': {
+    topicEn: 'Saul dies for his unfaithfulness, including consulting a medium',
+    textEn: 'So Saul died for his iniquities, because he transgressed the commandment of the Lord, which he had commanded, and kept it not: and moreover consulted also a witch, And trusted not in the Lord: therefore he slew him, and transferred his kingdom to David the son of Isai.',
+  },
+  'dt-18-22': {
+    topicEn: 'Test of a false prophet: a word that does not come true is not from God',
+    textEn: 'Thou shalt have this sign: Whatsoever that same prophet foretelleth in the name of the Lord, and it cometh not to pass: that thing the Lord hath not spoken, but the prophet hath forged it by the pride of his mind: and therefore thou shalt not fear him.',
+  },
+  'hb-1-5': {
+    topicEn: 'The Son is superior to the angels and worshiped by them',
+    textEn: 'For to which of the angels hath he said at any time: Thou art my Son, to-day have I begotten thee? And again: I will be to him a Father, and he shall be to me a Son? And again, when he bringeth in the first begotten into the world, he saith: And let all the angels of God adore him.',
+  },
+  'at-13-2': {
+    topicEn: 'The Holy Spirit speaks and chooses: he is a person',
+    textEn: 'And as they were ministering to the Lord and fasting, the Holy Ghost said to them: Separate me Saul and Barnabas, for the work whereunto I have taken them.',
+  },
+  'at-5-3': {
+    topicEn: 'To lie to the Holy Spirit is to lie to God',
+    textEn: 'But Peter said: Ananias, why hath Satan tempted thy heart, that thou shouldst lie to the Holy Ghost and by fraud keep part of the price of the land? Whilst it remained, did it not remain to thee? And after it was sold, was it not in thy power? Why hast thou conceived this thing in thy heart? Thou hast not lied to men, but to God.',
+  },
+  'tt-2-13': {
+    topicEn: 'Jesus Christ, our great God and Savior',
+    textEn: 'Looking for the blessed hope and coming of the glory of the great God and our Saviour Jesus Christ.',
+  },
+  'dt-6-4': {
+    topicEn: 'The Shema: profession of faith in the one God',
+    textEn: 'Hear, O Israel, the Lord our God is one Lord.',
+  },
+  'hb-10-10': {
+    topicEn: 'The one, definitive sacrifice of Christ',
+    textEn: 'In the which will, we are sanctified by the oblation of the body of Jesus Christ once. And every priest indeed standeth daily ministering and often offering the same sacrifices which can never take away sins. But this man, offering one sacrifice for sins, for ever sitteth on the right hand of God, From henceforth expecting until his enemies be made his footstool. For by one oblation he hath perfected for ever them that are sanctified.',
+  },
+  'josefo-antiguidades-18': {
+    refEn: 'Jewish Antiquities 18,3,3',
+    fullSourceEn: 'Jewish Antiquities, Book 18, chapter 3, paragraph 3 (18.63-64 in modern numbering), the so-called Testimonium Flavianum',
+    authorEn: 'Flavius Josephus (Jewish historian)',
+    topicEn: 'Jewish attestation that Pilate condemned Jesus to the cross',
+    textEn: '"Now there was about this time Jesus, a wise man (...). And when Pilate, at the suggestion of the principal men amongst us, had condemned him to the cross, those that loved him at the first did not forsake him." The passage received additions from Christian copyists (such as the phrase "He was [the] Christ"), but most historians consider its core authentic, including the condemnation by Pilate.',
+  },
+  'unitatis-redintegratio-3': {
+    refEn: 'Unitatis Redintegratio, 3',
+    fullSourceEn: 'Decree Unitatis Redintegratio on Ecumenism, Second Vatican Council, no. 3',
+    authorEn: 'Second Vatican Council, promulgated by Saint Paul VI',
+    yearEn: 'November 21, 1964',
+    topicEn: 'Baptized non-Catholic Christians as separated brethren',
+    textEn: 'For men who believe in Christ and have been truly baptized are in communion with the Catholic Church even though this communion is imperfect. (...) But even in spite of them it remains true that all who have been justified by faith in Baptism are members of Christ\'s body, and have a right to be called Christian, and so are correctly accepted as brothers by the children of the Catholic Church. (...) The brethren divided from us also use many liturgical actions of the Christian religion.',
+    urlEn: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html',
+  },
+  'cdf-maconaria-1983': {
+    refEn: 'Declaration on Masonic Associations (1983)',
+    fullSourceEn: 'Declaration on Masonic Associations, Congregation for the Doctrine of the Faith',
+    authorEn: 'Congregation for the Doctrine of the Faith (Cardinal Joseph Ratzinger), approved by Saint John Paul II',
+    yearEn: 'November 26, 1983',
+    topicEn: 'Incompatibility between the Catholic faith and Freemasonry',
+    textEn: 'Therefore the Church\'s negative judgment in regard to Masonic association remains unchanged since their principles have always been considered irreconcilable with the doctrine of the Church and therefore membership in them remains forbidden. The faithful who enrol in Masonic associations are in a state of grave sin and may not receive Holy Communion.',
+    urlEn: 'https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19831126_declaration-masonic_en.html',
+  },
+  'ddf-maconaria-2023': {
+    refEn: 'Note on Freemasonry (2023)',
+    fullSourceEn: 'Note of the Dicastery for the Doctrine of the Faith on the request of the Bishop of Dumaguete (Philippines) regarding membership in Freemasonry by the Catholic faithful',
+    authorEn: 'Dicastery for the Doctrine of the Faith (Cardinal Víctor Manuel Fernández), approved by Pope Francis',
+    yearEn: 'November 13, 2023',
+    topicEn: 'Reaffirmation of the ban on joining Freemasonry',
+    textEn: 'On the doctrinal level, it should be remembered that active membership in Freemasonry by a member of the faithful is forbidden because of the irreconcilability between Catholic doctrine and Freemasonry (cf. Congregation for the Doctrine of the Faith, "Declaration on Masonic Associations" [1983], and the guidelines published by the Catholic Bishops\' Conference of the Philippines in 2003).',
+    urlEn: 'https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231113_richiesta-cortes-massoneria_en.html',
+  },
+  'mc-2-5': {
+    topicEn: 'Divinity of Jesus / only God forgives sins',
+    textEn: 'And when Jesus had seen their faith, he saith to the sick of the palsy: Son, thy sins are forgiven thee. And there were some of the scribes sitting there and thinking in their hearts: Why doth this man speak thus? He blasphemeth. Who can forgive sins, but God only?',
+  },
+  'jo-5-18': {
+    topicEn: 'Divinity of Jesus / equal to God',
+    textEn: 'Hereupon therefore the Jews sought the more to kill him, because he did not only break the sabbath but also said God was his Father, making himself equal to God.',
+  },
+  'jo-14-9': {
+    topicEn: 'Divinity of Jesus / whoever has seen me has seen the Father',
+    textEn: 'Jesus saith to him: Have I been so long a time with you and have you not known me? Philip, he that seeth me seeth the Father also. How sayest thou: Shew us the Father?',
+  },
+  'at-18-2': {
+    topicEn: 'Expulsion of the Jews from Rome by Claudius',
+    textEn: 'And finding a certain Jew, named Aquila, born in Pontus, lately come from Italy, with Priscilla his wife (because that Claudius had commanded all Jews to depart from Rome), he came to them.',
+  },
+  'jo-19-33': {
+    topicEn: 'Legs not broken and side pierced',
+    textEn: 'But after they were come to Jesus, when they saw that he was already dead, they did not break his legs. But one of the soldiers with a spear opened his side: and immediately there came out blood and water.',
+  },
+  'mt-7-7': {
+    topicEn: 'Seek and you shall find',
+    textEn: 'Ask, and it shall be given you: seek, and you shall find: knock, and it shall be opened to you.',
+  },
+  'mt-16-15': {
+    topicEn: 'Who is Jesus? / Peter\'s confession',
+    textEn: 'Jesus saith to them: But whom do you say that I am? Simon Peter answered and said: Thou art Christ, the Son of the living God.',
+  },
+  '1jo-4-8': {
+    topicEn: 'God is love',
+    textEn: 'He that loveth not knoweth not God: for God is charity.',
+  },
+  'mt-3-16': {
+    topicEn: 'Baptism of Jesus / Father, Son and Spirit',
+    textEn: 'And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him. And behold a voice from heaven saying: This is my beloved Son, in whom I am well pleased.',
+  },
+  'jo-15-13': {
+    topicEn: 'Love that lays down its life / Redemption',
+    textEn: 'Greater love than this no man hath, that a man lay down his life for his friends.',
+  },
+  'cic-67': {
+    topicEn: 'Private revelations',
+    textEn: 'Throughout the ages, there have been so-called "private" revelations, some of which have been recognized by the authority of the Church. They do not belong, however, to the deposit of faith. It is not their role to improve or complete Christ\'s definitive Revelation, but to help live more fully by it in a certain period of history.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__PH.HTM',
+  },
+  'cic-464': {
+    topicEn: 'Jesus, true God and true man',
+    textEn: 'The unique and altogether singular event of the Incarnation of the Son of God does not mean that Jesus Christ is part God and part man, nor does it imply that he is the result of a confused mixture of the divine and the human. He became truly man while remaining truly God. Jesus Christ is true God and true man.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1J.HTM',
+  },
+  'concilio-calcedonia': {
+    topicEn: 'Two natures in one person',
+    textEn: 'Following the holy Fathers, we unanimously teach and confess one and the same Son, our Lord Jesus Christ: the same perfect in divinity and perfect in humanity, the same truly God and truly man (...). We confess that one and the same Christ, Lord, and only-begotten Son, is to be acknowledged in two natures without confusion, change, division or separation.',
+    refEn: 'Council of Chalcedon',
+    fullSourceEn: 'Definition of faith of the Ecumenical Council of Chalcedon, quoted in the Catechism of the Catholic Church, paragraph 467',
+    authorEn: 'Ecumenical Council of Chalcedon',
+    yearEn: '451 AD',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1J.HTM',
+  },
+  'concilio-constantinopla': {
+    topicEn: 'Divinity of the Holy Spirit',
+    textEn: 'The Creed of the Council of Constantinople confesses: "We believe in the Holy Spirit, the Lord and giver of life, who proceeds from the Father", and that "with the Father and the Son, he is worshipped and glorified".',
+    refEn: 'First Council of Constantinople',
+    fullSourceEn: 'First Ecumenical Council of Constantinople, Niceno-Constantinopolitan Creed, quoted in the Catechism of the Catholic Church, paragraph 245',
+    authorEn: 'Ecumenical Council of Constantinople',
+    yearEn: '381 AD',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P17.HTM',
+  },
+  'cic-1721': {
+    topicEn: 'What we were created for',
+    textEn: 'God put us in the world to know, to love, and to serve him, and so to come to paradise. Beatitude makes us "partakers of the divine nature" and of eternal life.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P5K.HTM',
+  },
+  'cic-390': {
+    topicEn: 'The fall: figurative language, real event',
+    textEn: 'The account of the fall in Genesis 3 uses figurative language, but affirms a primeval event, a deed that took place at the beginning of the history of man. Revelation gives us the certainty of faith that the whole of human history is marked by the original fault freely committed by our first parents.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P1C.HTM',
+  },
+  'humani-generis': {
+    topicEn: 'Evolution of the body, creation of the soul and unity of the human race',
+    textEn: 'For these reasons the Teaching Authority of the Church does not forbid that, in conformity with the present state of human sciences and sacred theology, research and discussions, on the part of men experienced in both fields, take place with regard to the doctrine of evolution, in as far as it inquires into the origin of the human body as coming from pre-existent and living matter - for the Catholic faith obliges us to hold that souls are immediately created by God. (...) When, however, there is question of another conjectural opinion, namely polygenism, the children of the Church by no means enjoy such liberty.',
+    refEn: 'Humani Generis, 36-37',
+    fullSourceEn: 'Encyclical letter Humani Generis, concerning some false opinions threatening to undermine the foundations of Catholic doctrine, paragraphs 36 and 37',
+    authorEn: 'Pope Pius XII',
+    yearEn: 'August 12, 1950',
+    urlEn: 'https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html',
+  },
+  'talmude-sanhedrin-43a': {
+    topicEn: 'Jesus in a hostile Jewish source',
+    textEn: '"On Passover Eve they hung the corpse of Jesus the Nazarene after they killed him by way of stoning. And a crier went out before him for forty days, publicly proclaiming: Jesus the Nazarene is going out to be stoned because he practiced sorcery, incited people to idol worship, and led the Jewish people astray. Anyone who knows of a reason to acquit him should come forward and teach it on his behalf. And the court did not find a reason to acquit him, and so they stoned him and hung his corpse on Passover eve." The passage adds that "Jesus the Nazarene had five disciples". The text is late and polemical, but it presupposes that Jesus existed, was executed and had followers.',
+    refEn: 'Babylonian Talmud, Sanhedrin 43a',
+    fullSourceEn: 'Babylonian Talmud, tractate Sanhedrin, folio 43a (baraita on the execution of Jesus the Nazarene), William Davidson Edition (Sefaria)',
+    authorEn: 'Jewish sages (rabbinic tradition)',
+    yearEn: 'baraita attributed to the tannaitic period (up to c. 200 AD); Talmud redacted between the 3rd and 6th centuries',
+  },
+  'hb-9-28': {
+    refEn: 'Hebrews 9,28',
+    topicEn: 'The one sacrifice of Christ, offered once',
+    textEn: 'So also Christ was offered once to exhaust the sins of many. The second time he shall appear without sin to them that expect him unto salvation.',
+  },
+  'lc-24-30': {
+    refEn: 'Luke 24,30-35',
+    topicEn: 'Emmaus: Jesus known in the breaking of bread',
+    textEn: 'And it came to pass, whilst he was at table with them, he took bread and blessed and brake and gave to them. And their eyes were opened: and they knew him. And he vanished out of their sight. And they said one to the other: Was not our heart burning within us, whilst he spoke in the way and opened to us the scriptures? And rising up, the same hour, they went back to Jerusalem: and they found the eleven gathered together, and those that were with them, Saying: The Lord is risen indeed and hath appeared to Simon. And they told what things were done in the way: and how they knew him in the breaking of bread.',
+  },
+  'at-20-7': {
+    refEn: 'Acts 20,7',
+    topicEn: 'The first Christians gather on the first day of the week to break bread',
+    textEn: 'And on the first day of the week, when we were assembled to break bread, Paul discoursed with them, being to depart on the morrow. And he continued his speech until midnight.',
+  },
+  '1cor-13-12': {
+    refEn: '1 Corinthians 13,12',
+    topicEn: 'Seeing God face to face / beatific vision',
+    textEn: 'We see now through a glass in a dark manner: but then face to face. Now I know in part: but then I shall know even as I am known.',
+  },
+  'jo-8-44': {
+    refEn: 'John 8,44',
+    topicEn: 'The devil, father of lies',
+    textEn: 'You are of your father the devil: and the desires of your father you will do. He was a murderer from the beginning: and he stood not in the truth, because truth is not in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father thereof.',
+  },
+  'mt-6-7': {
+    refEn: 'Matthew 6,7',
+    topicEn: 'Against the heathen babbling in prayer',
+    textEn: 'And when you are praying, speak not much, as the heathens. For they think that in their much speaking they may be heard.',
+  },
+  'lc-1-42': {
+    refEn: 'Luke 1,42',
+    topicEn: 'Elizabeth\'s greeting in the Hail Mary',
+    textEn: 'And she cried out with a loud voice and said: Blessed art thou among women and blessed is the fruit of thy womb.',
+  },
+  'mt-4-4': {
+    refEn: 'Matthew 4,4',
+    topicEn: 'Not by bread alone does man live',
+    textEn: 'Who answered and said: It is written, Not in bread alone doth man live, but in every word that proceedeth from the mouth of God.',
+  },
+  'cic-1367': {
+    refEn: 'Catechism §1367',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraph 1367',
+    topicEn: 'The Mass and the cross: one single sacrifice',
+    textEn: 'The sacrifice of Christ and the sacrifice of the Eucharist are one single sacrifice: "The victim is one and the same: the same now offers through the ministry of priests, who then offered himself on the cross; only the manner of offering is different." "In this divine sacrifice which is celebrated in the Mass, the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner."',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P41.HTM',
+  },
+  'cic-1037': {
+    refEn: 'Catechism §1037',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraph 1037',
+    topicEn: 'God predestines no one to hell',
+    textEn: 'God predestines no one to go to hell; for this, a willful turning away from God (a mortal sin) is necessary, and persistence in it until the end.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P2O.HTM',
+  },
+  'cic-2283': {
+    refEn: 'Catechism §2282-2283',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2282 and 2283',
+    topicEn: 'Suicide, responsibility and hope of salvation',
+    textEn: 'Grave psychological disturbances, anguish, or grave fear of hardship, suffering, or torture can diminish the responsibility of the one committing suicide. We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance. The Church prays for persons who have taken their own lives.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P7Z.HTM',
+  },
+  'cic-2043': {
+    refEn: 'Catechism §2043',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraph 2043',
+    topicEn: 'Providing for the material needs of the Church',
+    textEn: 'The faithful also have the duty of providing for the material needs of the Church, each according to his abilities.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P75.HTM',
+  },
+  'cic-153': {
+    refEn: 'Catechism §153',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraph 153',
+    topicEn: 'Faith is a gift of God',
+    textEn: 'Faith is a gift of God, a supernatural virtue infused by him. "Before this faith can be exercised, man must have the grace of God to move and assist him; he must have the interior helps of the Holy Spirit, who moves the heart and converts it to God, who opens the eyes of the mind and \'makes it easy for all to accept and believe the truth.\'"',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__PX.HTM',
+  },
+  'cdc-222': {
+    refEn: 'Code of Canon Law, canon 222',
+    fullSourceEn: 'Code of Canon Law, Book II, canon 222',
+    authorEn: 'Saint John Paul II (promulgation)',
+    topicEn: 'The duty to support the Church and help the poor',
+    textEn: '§1. The Christian faithful are obliged to assist with the needs of the Church so that the Church has what is necessary for divine worship, for the works of the apostolate and of charity, and for the decent support of ministers. §2. They are also obliged to promote social justice and, mindful of the precept of the Lord, to assist the poor from their own resources.',
+    urlEn: 'https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html',
+  },
+  'cdc-1251': {
+    refEn: 'Code of Canon Law, canons 1251-1253',
+    fullSourceEn: 'Code of Canon Law, Book IV, canons 1251 to 1253 (penitential days)',
+    authorEn: 'Saint John Paul II (promulgation)',
+    topicEn: 'Fasting and abstinence: days, ages and substitution',
+    textEn: 'Can. 1251. Abstinence from meat, or from some other food as determined by the Episcopal Conference, is to be observed on all Fridays, unless a solemnity should fall on a Friday. Abstinence and fasting are to be observed on Ash Wednesday and Good Friday. Can. 1252. The law of abstinence binds those who have completed their fourteenth year. The law of fasting binds those who have attained their majority, until the beginning of their sixtieth year. Pastors of souls and parents are to ensure that even those who by reason of their age are not bound by the law of fasting and abstinence, are taught the true meaning of penance. Can. 1253. The conference of bishops can determine more precisely the observance of fast and abstinence as well as substitute other forms of penance, especially works of charity and exercises of piety, in whole or in part, for abstinence and fast.',
+    urlEn: 'https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html',
+  },
+  'kearse-ligaj-2024': {
+    refEn: 'Kearse and Ligaj, scientific analysis of Eucharistic miracles',
+    fullSourceEn: 'Kelly Kearse and Frank Ligaj, "Scientific Analysis of Eucharistic Miracles: Importance of a Standardization in Evaluation", Journal of Forensic Science and Research',
+    authorEn: 'Kelly P. Kearse and Frank Ligaj',
+    topicEn: 'Limits of the analyses of Eucharistic miracles and the false WHO report on Lanciano',
+    textEn: 'The authors review the analyses of Lanciano, Buenos Aires, Tixtla and Sokolka and call for more rigorous standards, with control samples, specific markers and genetic tests. They report that the WHO and the UN have no record of the alleged 1973 commission on Lanciano, and that the cardiologist Franco Serafini, on examining the "report" kept in a safe in Lanciano, found pages about Lanciano attached to hundreds of pages of tests on Egyptian mummies. They also note that bacteria express A and B antigens, which can distort blood typing of old or contaminated samples.',
+  },
+  'cic-311': {
+    topicEn: 'God is not the cause of moral evil, but permits it and draws good from it',
+    textEn: 'Angels and men, as intelligent and free creatures, have to journey toward their ultimate destinies by their free choice and preferential love. They can therefore go astray. Indeed, they have sinned. Thus has moral evil, incommensurably more harmful than physical evil, entered the world. God is in no way, directly or indirectly, the cause of moral evil. He permits it, however, because he respects the freedom of his creatures and, mysteriously, knows how to derive good from it: "For almighty God. . ., because he is supremely good, would never allow any evil whatsoever to exist in his works if he were not so all-powerful and good as to cause good to emerge from evil itself."',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P19.HTM',
+  },
+  'cic-2348': {
+    topicEn: 'All the baptized are called to chastity, according to their state of life',
+    textEn: 'All the baptized are called to chastity. The Christian has "put on Christ," the model for all chastity. All Christ\'s faithful are called to lead a chaste life in keeping with their particular states of life. At the moment of his Baptism, the Christian is pledged to lead his affective life in chastity. (...) Married people are called to live conjugal chastity; others practice chastity in continence.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P85.HTM',
+  },
+  'cic-2350': {
+    refEn: 'Catechism §2350 and §2353',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2350 (the engaged) and 2353 (fornication)',
+    topicEn: 'Chastity during engagement, and fornication',
+    textEn: 'Those who are engaged to marry are called to live chastity in continence. They should see in this time of testing a discovery of mutual respect, an apprenticeship in fidelity, and the hope of receiving one another from God. They should reserve for marriage the expressions of affection that belong to married love (2350). (...) Fornication is carnal union between an unmarried man and an unmarried woman. It is gravely contrary to the dignity of persons and of human sexuality which is naturally ordered to the good of spouses and the generation and education of children (2353).',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P85.HTM',
+  },
+  'cic-2337': {
+    topicEn: 'What chastity is: the integration of sexuality within the person',
+    textEn: 'Chastity means the successful integration of sexuality within the person and thus the inner unity of man in his bodily and spiritual being. Sexuality, in which man\'s belonging to the bodily and biological world is expressed, becomes personal and truly human when it is integrated into the relationship of one person to another, in the complete and lifelong mutual gift of a man and a woman. The virtue of chastity therefore involves the integrity of the person and the integrality of the gift.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P85.HTM',
+  },
+  'didaque-2-2': {
+    topicEn: 'Condemnation of abortion and infanticide among the first Christians',
+    textEn: 'You shall not kill the embryo by abortion and shall not cause the newborn to perish.',
+    refEn: 'Didache 2:2',
+    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), chapter 2, verse 2, as quoted by the Catechism 2271',
+    authorEn: 'Anonymous author of the early Church',
+    yearEn: 'late 1st or early 2nd century',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P7Z.HTM',
+  },
+  'tertuliano-apologetico-9': {
+    topicEn: 'Abortion as anticipated homicide',
+    textEn: 'In our case, murder being once for all forbidden, we may not destroy even the foetus in the womb, while as yet the human being derives blood from other parts of the body for its sustenance. To hinder a birth is merely a speedier man-killing; nor does it matter whether you take away a life that is born, or destroy one that is coming to the birth. That is a man which is going to be one; you have the fruit already in its seed.',
+    refEn: 'Apology 9:8',
+    fullSourceEn: 'Apology (Apologeticum), chapter 9, section 8, translated by S. Thelwall (Ante-Nicene Fathers)',
+    authorEn: 'Tertullian',
+    urlEn: 'https://www.newadvent.org/fathers/0301.htm',
+  },
+  'cdc-1397': {
+    topicEn: 'Excommunication for completed abortion and its reach to accomplices',
+    textEn: 'Can. 1397 §2: A person who actually procures an abortion incurs a latae sententiae excommunication. Can. 1329 §2: In the case of a latae sententiae penalty attached to an offence, accomplices, even though not mentioned in the law or precept, incur the same penalty if, without their assistance, the crime would not have been committed, and if the penalty is of such a nature as to be able to affect them.',
+    refEn: 'Code of Canon Law, can. 1397 §2 and 1329 §2',
+    fullSourceEn: 'Code of Canon Law (1983), canon 1397 §2 (canon 1398 before the 2021 revision of Book VI) and canon 1329 §2',
+    authorEn: 'Holy See, promulgated by Saint John Paul II',
+    yearEn: '1983, Book VI revised in 2021',
+    urlEn: 'https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1364-1399_en.html',
+  },
+  'misericordia-et-misera-12': {
+    topicEn: 'Every priest may absolve the sin of abortion',
+    textEn: 'Given this need, lest any obstacle arise between the request for reconciliation and God\'s forgiveness, I henceforth grant to all priests, in virtue of their ministry, the faculty to absolve those who have committed the sin of procured abortion. (...) I wish to restate as firmly as I can that abortion is a grave sin, since it puts an end to an innocent life. In the same way, however, I can and must state that there is no sin that God\'s mercy cannot reach and wipe away when it finds a repentant heart seeking to be reconciled with the Father.',
+    fullSourceEn: 'Apostolic letter Misericordia et Misera, at the conclusion of the Extraordinary Jubilee of Mercy, 12',
+  },
+  'humanae-vitae-12': {
+    topicEn: 'The two inseparable meanings of the conjugal act: unitive and procreative',
+    textEn: 'This particular doctrine, often expounded by the magisterium of the Church, is based on the inseparable connection, established by God, which man on his own initiative may not break, between the unitive significance and the procreative significance which are both inherent to the marriage act. The reason is that the fundamental nature of the marriage act, while uniting husband and wife in the closest intimacy, also renders them capable of generating new life, and this as a result of laws written into the actual nature of man and of woman.',
+    fullSourceEn: 'Encyclical Humanae Vitae on the regulation of birth, 12',
+    authorEn: 'Saint Paul VI',
+  },
+  '1jo-5-16': {
+    topicEn: 'Sin unto death and sin not unto death',
+    textEn: 'He that knoweth his brother to sin a sin which is not to death, let him ask: and life shall be given to him who sinneth not to death. There is a sin unto death. For that I say not that any man ask. All iniquity is sin. And there is a sin unto death.',
+  },
+  'cic-1857': {
+    topicEn: 'The three conditions for mortal sin',
+    textEn: 'For a sin to be mortal, three conditions must together be met: "Mortal sin is sin whose object is grave matter and which is also committed with full knowledge and deliberate consent."',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P6C.HTM',
+  },
+  'cic-1866': {
+    topicEn: 'The seven capital sins',
+    textEn: 'Vices can be classified according to the virtues they oppose, or also be linked to the capital sins which Christian experience has distinguished, following St. John Cassian and St. Gregory the Great. They are called "capital" because they engender other sins, other vices. They are pride, avarice, envy, wrath, lust, gluttony, and sloth or acedia.',
+    urlEn: 'https://www.vatican.va/archive/ENG0015/__P6D.HTM',
+  },
+  'lc-15-20': {
+    topicEn: 'The father runs to meet the son who returns',
+    textEn: 'And rising up, he came to his father. And when he was yet a great way off, his father saw him and was moved with compassion and running to him fell upon his neck and kissed him.',
+    authorEn: 'Luke the Evangelist',
+  },
+  '1cor-6-18': {
+    topicEn: 'Flee fornication',
+    textEn: 'Fly fornication. Every sin that a man doth is without the body: but he that committeth fornication sinneth against his own body.',
+  },
+  'jo-8-11': {
+    topicEn: 'Jesus does not condemn the adulterous woman and calls her to conversion',
+    textEn: 'Who said: No man, Lord. And Jesus said: Neither will I condemn thee. Go, and now sin no more.',
+  },
+  'mt-5-21': {
+    topicEn: 'Jesus deepens the commandment "you shall not kill"',
+    textEn: 'You have heard that it was said to them of old: Thou shalt not kill. And whosoever shall kill, shall be in danger of the judgment. But I say to you, that whosoever is angry with his brother, shall be in danger of the judgment. And whosoever shall say to his brother, Raca, shall be in danger of the council. And whosoever shall say, Thou fool, shall be in danger of hell fire.',
+  },
+  'sl-119-77': {
+    topicEn: 'God\'s Law as delight',
+    textEn: 'Let thy tender mercies come unto me, and I shall live: for thy law is my meditation.',
+    refEn: 'Psalm 119 (118):77',
+    fullSourceEn: 'Book of Psalms, psalm 119 (118 in the Vulgate numbering), verse 77',
+    authorEn: 'Anonymous psalmist',
+    yearEn: 'post-exilic period (date uncertain)',
+    meaningEn: 'Plural of sha‘ashu‘im, "delight, enjoyment": the Law is the psalmist\'s joy. The Latin Vulgate, following the Greek translation, reads "meditatio mea" (my meditation), which is why older Bibles such as the Douay-Rheims say "my meditation".',
+  },
+  'sl-119-105': {
+    topicEn: 'God\'s word lights the way',
+    textEn: 'Thy word is a lamp to my feet, and a light to my paths.',
+    refEn: 'Psalm 119 (118):105',
+    fullSourceEn: 'Book of Psalms, psalm 119 (118 in the Vulgate numbering), verse 105',
+    authorEn: 'Anonymous psalmist',
+    yearEn: 'post-exilic period (date uncertain)',
+  },
+  'milagre-buenos-aires': {
+    refEn: 'Eucharistic miracle of Buenos Aires (1996)',
+    fullSourceEn: 'Histopathological analyses of the Buenos Aires Host, authorized by the then archbishop Jorge Bergoglio (later Pope Francis)',
+    authorEn: 'Investigation coordinated by Dr. Ricardo Castañón Gómez; histopathology by Dr. Frederick Zugibe (forensic pathologist, Columbia University)',
+    yearEn: '1996 (event); analyses between 1999 and 2006',
+    urlEn: 'https://www.miracolieucaristici.org/en/Liste/scheda_c.html?nat=argentina&wh=buenosaires',
+    topicEn: 'Host turned into heart muscle tissue',
+    textEn: 'In 1996, a discarded Host that turned into a bloody substance was kept and, years later, analyzed by laboratories without the experts knowing its origin. The pathologist Frederick Zugibe described heart muscle tissue (myocardium) with white blood cells and signs of inflammation, and concluded that it came from a heart that had suffered trauma and was still alive when the sample was taken. According to Castañón\'s team, the blood is type AB.',
+  },
+  'livro-mormon': {
+    refEn: 'The Book of Mormon',
+    fullSourceEn: 'The Book of Mormon, scripture of The Church of Jesus Christ of Latter-day Saints',
+    authorEn: 'Published by Joseph Smith',
+    topicEn: 'Claim of Hebrew civilizations in the Americas',
+    textEn: 'The Book of Mormon recounts that a group of Israelites, the family of the prophet Lehi, left Jerusalem around 600 BC and crossed the sea to the Americas, where their descendants supposedly built great civilizations (Nephites and Lamanites), with cities, writing, horses, chariots and steel weapons. American archaeology and DNA studies of the native populations (of Asian, not Semitic, origin) do not confirm these claims.',
+    urlEn: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/2?lang=eng',
+  },
+  'sudario-turim': {
+    refEn: 'The Shroud of Turin and the STURP project',
+    fullSourceEn: 'Scientific studies of the Shroud of Turin, including the Shroud of Turin Research Project (STURP, 1978) and later analyses',
+    authorEn: 'International scientific teams (STURP and others)',
+    yearEn: '1978 (STURP); 1988 (carbon-14, disputed); later studies',
+    topicEn: 'The image of the crucified man on the Shroud of Turin',
+    textEn: 'The Shroud bears the image of a man who suffered scourging, crowning with thorns and crucifixion, with a wound in the side and unbroken legs, as the Gospels describe. Tests by John Heller and Alan Adler (1980-1981) identified blood components in the stains. According to the analyses of the forensic physician Pierluigi Baima Bollone in the 1980s, the blood is human and of type AB, a result that has never been independently confirmed. After examining the cloth in 1978, STURP concluded in 1981 that the image is not a painting (there are no pigments, paints or dyes on the fibers), lies only on the surface of the fibers and contains three-dimensional information, with no known technical explanation. The 1988 carbon-14 dating (between 1260 and 1390) is disputed: according to the chemist Raymond Rogers (2005), the sample may have come from a repaired corner of the cloth.',
+  },
+  'guadalupe-tilma': {
+    refEn: 'Our Lady of Guadalupe (the tilma)',
+    fullSourceEn: 'The tilma of Saint Juan Diego with the image of Our Lady of Guadalupe (Mexico, 1531) and later studies',
+    authorEn: 'Tradition and scientific studies (infrared, ophthalmology, astronomy)',
+    yearEn: '1531 (apparition); canonization of Juan Diego in 2002',
+    topicEn: 'Unexplained image on the tilma of Guadalupe',
+    textEn: 'The image was imprinted on a tilma of agave fiber, a material that, as is often claimed, should have disintegrated within a few decades, yet it has been preserved for almost 500 years. Philip Callahan\'s infrared study (1979) found no underdrawing or brushstrokes in the original parts of the figure. Ophthalmologists reported human figures reflected in the eyes of the image. According to some studies, the stars on the mantle match the sky over Mexico at the solstice of 1531. In the following years, baptisms of natives multiplied (the Franciscan Motolinía spoke of more than nine million by about 1537), and tradition attributes to the Virgin of Guadalupe a decisive role in that conversion.',
+  },
+  'zeitoun-aparicao': {
+    refEn: 'The apparitions of Zeitoun (Cairo, 1968-1971)',
+    fullSourceEn: 'Luminous apparitions over the Coptic Orthodox church of Saint Mary in Zeitoun, Cairo, Egypt',
+    authorEn: 'Witnesses (Christian and Muslim), the press and the official Egyptian investigation',
+    topicEn: 'Public Marian apparition witnessed by crowds of several religions',
+    textEn: 'For more than two years, a luminous figure of the Virgin was seen above the dome of the church by crowds that added up to hundreds of thousands of people, including Coptic Christians, Catholics, Protestants and Muslims. The phenomenon was photographed, although the authenticity of some photos is disputed. According to the accounts, the Egyptian government (secular, under Nasser) had it investigated, and the police found no fraud. The Coptic Pope Cyril VI officially recognized the apparitions, and the Coptic Catholic patriarch, Cardinal Stephanos I Sidarouss, also declared that he believed in them.',
+  },
+  'aparecida-historia': {
+    refEn: 'Our Lady of Aparecida (1717)',
+    fullSourceEn: 'Finding of the image of Our Lady of Aparecida in the Paraíba do Sul river, Guaratinguetá (São Paulo), and the devotion that followed',
+    authorEn: 'Tradition and history of the devotion',
+    yearEn: '1717 (finding); 1930 (proclaimed patroness of Brazil by Pius XI)',
+    topicEn: 'The image of Brazil\'s patroness and popular devotion',
+    textEn: 'In October 1717, three fishermen drew from the river the body and then the head of a small terracotta image of Our Lady of the Conception, followed by an abundant catch after hours with nothing. The devotion grew through accounts of graces and healings over three centuries, giving rise to the Shrine of Aparecida, one of the largest Marian basilicas in the world. Pius XI proclaimed Our Lady of Aparecida patroness of Brazil in 1930.',
+  },
+  'jl-2-31': {
+    refEn: 'Joel 2:31',
+    fullSourceEn: 'Book of the prophet Joel, chapter 2, verse 31 (3:4 in Bibles that follow the Hebrew numbering)',
+    authorEn: 'Prophet Joel',
+    topicEn: 'Cosmic signs: the sun into darkness and the moon into blood',
+    textEn: 'The sun shall be turned into darkness, and the moon into blood: before the great and dreadful day of the Lord doth come.',
   },
   'leibniz-monadologia': {
     refEn: 'Monadology §32 and §38',
@@ -1172,31 +1759,6 @@ export const referencesEn = {
     yearEn: 'c. 96 AD',
     textEn: 'Through envy and jealousy the greatest and most righteous pillars of the church have been persecuted and put to death. Let us set before our eyes the illustrious apostles. Peter, through unrighteous envy, endured not one or two, but numerous labours; and when he had at length suffered martyrdom, departed to the place of glory due to him. [...] Paul [...] suffered martyrdom under the prefects. Thus was he removed from the world, and went into the holy place.',
   },
-  'mc-2-5': {
-    refEn: 'Mark 2:5-7',
-    topicEn: 'Jesus forgives sins / a divine prerogative',
-    textEn: 'And when Jesus had seen their faith, he saith to the sick of the palsy: Son, thy sins are forgiven thee. And there were some of the scribes sitting there and thinking in their hearts: Why doth this man speak thus? He blasphemeth. Who can forgive sins, but God only?',
-  },
-  'jo-14-9': {
-    refEn: 'John 14:9',
-    topicEn: 'Whoever sees Jesus sees the Father',
-    textEn: 'Jesus saith to him: Have I been so long a time with you and have you not known me? Philip, he that seeth me seeth the Father also. How sayest thou: Shew us the Father?',
-  },
-  'jo-5-18': {
-    refEn: 'John 5:18',
-    topicEn: 'Jesus makes himself equal to God',
-    textEn: 'Hereupon therefore the Jews sought the more to kill him, because he did not only break the sabbath but also said God was his Father, making himself equal to God.',
-  },
-  'jo-19-33': {
-    refEn: 'John 19:33-34',
-    topicEn: 'The legs not broken and the pierced side',
-    textEn: 'But after they were come to Jesus, when they saw that he was already dead, they did not break his legs. But one of the soldiers with a spear opened his side: and immediately there came out blood and water.',
-  },
-  'mt-7-7': {
-    refEn: 'Matthew 7:7',
-    topicEn: 'Seek, and you shall find',
-    textEn: 'Ask, and it shall be given you: seek, and you shall find: knock, and it shall be opened to you.',
-  },
   'cic-467': {
     refEn: 'Catechism §467',
     topicEn: 'Chalcedon (451): two natures in one person',
@@ -1209,16 +1771,6 @@ export const referencesEn = {
     fullSourceEn: 'Mere Christianity, Book II, chapter 3 ("The Shocking Alternative")',
     yearEn: '1952 (from radio talks given in the 1940s)',
     textEn: 'A man who was merely a man and said the sort of things Jesus said would not be a great moral teacher. He would either be a lunatic, on the level with the man who says he is a poached egg, or else he would be the Devil of Hell. You must make your choice. Either this man was, and is, the Son of God: or else a madman or something worse.',
-  },
-  'mt-3-16': {
-    refEn: 'Matthew 3:16-17',
-    topicEn: 'Baptism of Jesus: the Father, the Son and the Spirit',
-    textEn: 'And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him. And behold a voice from heaven saying: This is my beloved Son, in whom I am well pleased.',
-  },
-  '1jo-4-8': {
-    refEn: '1 John 4:8',
-    topicEn: 'God is love',
-    textEn: 'He that loveth not knoweth not God: for God is charity.',
   },
   'cic-253': {
     refEn: 'Catechism §253-254',
@@ -1245,26 +1797,6 @@ export const referencesEn = {
     fullSourceEn: 'Mere Christianity, Book III, chapter 10 ("Hope")',
     textEn: 'If I find in myself a desire which no experience in this world can satisfy, the most probable explanation is that I was made for another world.',
   },
-  'cic-1721': {
-    refEn: 'Catechism §1721',
-    topicEn: 'Why God created us',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraph 1721 (Christian beatitude)',
-    textEn: 'God put us in the world to know, to love, and to serve him, and so to come to paradise. Beatitude makes us "partakers of the divine nature" and of eternal life. With beatitude, man enters into the glory of Christ and into the joy of the Trinitarian life.',
-  },
-  'jo-15-13': {
-    refEn: 'John 15:13',
-    topicEn: `Laying down one's life for one's friends: the measure of love`,
-    textEn: 'Greater love than this no man hath, that a man lay down his life for his friends.',
-  },
-  'humani-generis': {
-    refEn: 'Humani Generis 36-37',
-    topicEn: 'Evolution of the body, direct creation of the soul and unity of the human race',
-    fullSourceEn: 'Encyclical Humani Generis, concerning some false opinions threatening to undermine the foundations of Catholic doctrine, nos. 36 and 37',
-    authorEn: 'Pope Pius XII',
-    yearEn: 'August 12, 1950',
-    urlEn: 'https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html',
-    textEn: 'The Teaching Authority of the Church does not forbid that, in conformity with the present state of human sciences and sacred theology, research and discussions, on the part of men experienced in both fields, take place with regard to the doctrine of evolution, in as far as it inquires into the origin of the human body as coming from pre-existent and living matter - for the Catholic faith obliges us to hold that souls are immediately created by God (...) (36). When, however, there is question of another conjectural opinion, namely polygenism, the children of the Church by no means enjoy such liberty. For the faithful cannot embrace that opinion which maintains that either after Adam there existed on this earth true men who did not take their origin through natural generation from him as from the first parent of all, or that Adam represents a certain number of first parents. Now it is in no way apparent how such an opinion can be reconciled with that which the sources of revealed truth and the documents of the Teaching Authority of the Church propose with regard to original sin (37).',
-  },
   'jp2-evolucao-1996': {
     refEn: 'Message to the Pontifical Academy of Sciences on evolution (1996)',
     topicEn: 'Evolution, "more than a hypothesis", and the creation of the soul',
@@ -1279,12 +1811,6 @@ export const referencesEn = {
     fullSourceEn: 'The Literal Meaning of Genesis (De Genesi ad litteram), Book I, chapter 19, no. 39',
     authorEn: 'Saint Augustine of Hippo',
     textEn: 'It often happens that even a non-Christian knows something about the earth, the heavens, and the other elements of this world, about the motion, size and distances of the stars, the eclipses of the sun and moon, the cycles of the years and seasons, the nature of animals, plants and stones, and holds it by sure reason or experience. Now it is very shameful and harmful, and to be avoided above all, that an unbeliever should hear a Christian talk nonsense about these things as if speaking according to the Christian Scriptures, so that, seeing him wholly in error, he can hardly keep from laughing. (...) How will they believe those Books about the resurrection of the dead, the hope of eternal life and the kingdom of heaven, if they think them mistaken about things they have already been able to learn by experience or by unquestionable calculation?',
-  },
-  'cic-390': {
-    refEn: 'Catechism §390',
-    topicEn: 'The fall: figurative language, a real event',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraph 390 (the fall)',
-    textEn: 'The account of the fall in Genesis 3 uses figurative language, but affirms a primeval event, a deed that took place at the beginning of the history of man. Revelation gives us the certainty of faith that the whole of human history is marked by the original fault freely committed by our first parents.',
   },
   'ireneu-sucessao': {
     refEn: 'Against Heresies III, 3, 2-3',
@@ -1305,62 +1831,16 @@ export const referencesEn = {
     topicEn: 'Mary, mother of James and Joseph / the "brothers" of Jesus',
     textEn: 'And there were also women looking on afar off: among whom was Mary Magdalen and Mary the mother of James the Less and of Joseph and Salome,',
   },
-  'jo-21-15': {
-    refEn: 'John 21:15-17',
-    topicEn: 'Peter, shepherd of the flock of Christ',
-    textEn: 'When therefore they had dined, Jesus saith to Simon Peter: Simon, son of John, lovest thou me more than these? He saith to him: Yea, Lord, thou knowest that I love thee. He saith to him: Feed my lambs. He saith to him again: Simon, son of John, lovest thou me? He saith to him: yea, Lord, thou knowest that I love thee. He saith to him: Feed my lambs. He said to him the third time: Simon, son of John, lovest thou me? Peter was grieved because he had said to him the third time: Lovest thou me? And he said to him: Lord, thou knowest all things: thou knowest that I love thee. He said to him: Feed my sheep.',
-  },
-  'lc-22-32': {
-    refEn: 'Luke 22:31-32',
-    topicEn: 'Jesus prays for Peter to confirm his brethren',
-    textEn: 'And the Lord said: Simon, Simon, behold Satan hath desired to have you, that he may sift you as wheat. But I have prayed for thee, that thy faith fail not: and thou, being once converted, confirm thy brethren.',
-  },
   'is-22-22': {
     refEn: 'Isaiah 22:22',
     topicEn: `The key of the house of David / the king's steward`,
     textEn: 'And I will lay the key of the house of David upon his shoulder: and he shall open, and none shall shut: and he shall shut, and none shall open.',
-  },
-  'inacio-romanos': {
-    refEn: 'Letter to the Romans, greeting and 3:1',
-    topicEn: 'Primacy of the Church of Rome',
-    textEn: 'Ignatius, who is also called Theophorus, to the Church which has obtained mercy, through the majesty of the Most High Father, and Jesus Christ, His only-begotten Son (...), which also presides in the place of the region of the Romans, worthy of God, worthy of honour (...), and which presides over love (...). You have never envied any one, you have taught others (3:1).',
-    fullSourceEn: 'Letter of Saint Ignatius of Antioch to the Romans, greeting and chapter 3',
-    authorEn: 'Saint Ignatius of Antioch (disciple of the Apostle John)',
-  },
-  'mt-19-6': {
-    refEn: 'Matthew 19:6',
-    topicEn: 'Indissolubility of marriage',
-    textEn: 'Therefore now they are not two, but one flesh. What therefore God hath joined together, let no man put asunder.',
   },
   'trento-sacramentos': {
     refEn: 'Council of Trent, Session VII',
     topicEn: 'The seven sacraments / intention of the minister',
     textEn: 'If any one saith, that the sacraments of the New Law were not all instituted by Jesus Christ, our Lord, or, that they are more, or less, than seven (...), let him be anathema (canon 1). If any one saith, that, in ministers, when they effect, and confer the sacraments, there is not required the intention at least of doing what the Church does, let him be anathema (canon 11).',
     fullSourceEn: 'Council of Trent, Session VII, Canons on the Sacraments in General',
-  },
-  'didaque': {
-    refEn: 'Didache 4:14 and 14:1',
-    topicEn: 'Confession of sins in the early Church',
-    textEn: `In the church you shall acknowledge your transgressions, and you shall not come near for your prayer with an evil conscience (4:14). But every Lord's day gather yourselves together, and break bread, and give thanksgiving after having confessed your transgressions, that your sacrifice may be pure (14:1).`,
-    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), chapters 4 and 14',
-    authorEn: 'Unknown author (early Christian community, probably in Syria)',
-  },
-  'cipriano-de-lapsis': {
-    refEn: 'On the Lapsed (De Lapsis), 28',
-    topicEn: 'Confession of sins to priests in the 3rd century',
-    textEn: `Moreover, how much are they both greater in faith and better in their fear, who, although bound by no crime of sacrifice to idols or of certificate, yet, since they have even thought of such things, with grief and simplicity confess this very thing to God's priests, and make the conscientious avowal, put off from them the load of their minds, and seek out the salutary medicine even for slight and moderate wounds.`,
-    fullSourceEn: 'Treatise On the Lapsed (De Lapsis), chapter 28',
-    authorEn: 'Saint Cyprian of Carthage (bishop and martyr)',
-  },
-  'sl-45-10': {
-    refEn: 'Psalm 45 (44):10',
-    topicEn: `The queen at the king's right hand / applied to Mary in the liturgy of the Assumption`,
-    textEn: 'The daughters of kings have delighted thee in thy glory. The queen stood on thy right hand, in gilded clothing; surrounded with variety.',
-  },
-  'mt-5-26': {
-    refEn: 'Matthew 5:26',
-    topicEn: 'Paying the last farthing / purification after death',
-    textEn: 'Amen I say to thee, thou shalt not go out from thence till thou repay the last farthing.',
   },
   'trento-purgatorio': {
     refEn: 'Council of Trent, Session XXV, Decree on Purgatory',
@@ -1382,36 +1862,11 @@ export const referencesEn = {
     fullSourceEn: 'Confessions, Book IX, chapters 11 to 13 (death of Saint Monica)',
     authorEn: 'Saint Augustine of Hippo',
   },
-  'rm-2-6': {
-    refEn: 'Romans 2:6-7',
-    topicEn: 'God renders to every man according to his works',
-    textEn: 'Who will render to every man according to his works. To them indeed who, according to patience in good work, seek glory and honour and incorruption, eternal life:',
-  },
-  'hb-9-28': {
-    topicEn: 'The one sacrifice of Christ',
-    textEn: 'So also Christ was offered once to exhaust the sins of many. The second time he shall appear without sin to them that expect him unto salvation.',
-  },
-  'cic-1367': {
-    refEn: 'Catechism §1367',
-    topicEn: 'The Mass makes present the one sacrifice of Christ',
-    textEn: 'The sacrifice of Christ and the sacrifice of the Eucharist are one single sacrifice: "The victim is one and the same: the same now offers through the ministry of priests, who then offered himself on the cross; only the manner of offering is different." "And since in this divine sacrifice which is celebrated in the Mass, the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner... this sacrifice is truly propitiatory."',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraph 1367, quoting the Council of Trent, Session XXII (1562)',
-  },
   'cic-1033': {
     refEn: 'Catechism §1033-1037',
     topicEn: 'Hell / definitive self-exclusion from communion with God',
     textEn: `To die in mortal sin without repenting and accepting God's merciful love means remaining separated from him for ever by our own free choice. This state of definitive self-exclusion from communion with God and the blessed is called "hell" (1033). The teaching of the Church affirms the existence of hell and its eternity (1035). God predestines no one to go to hell; for this, a willful turning away from God (a mortal sin) is necessary, and persistence in it until the end (1037).`,
     fullSourceEn: 'Catechism of the Catholic Church, paragraphs 1033 to 1037 (hell)',
-  },
-  'cic-2282': {
-    refEn: 'Catechism §2282-2283',
-    topicEn: 'Suicide / diminished responsibility and hope in mercy',
-    textEn: 'Grave psychological disturbances, anguish, or grave fear of hardship, suffering, or torture can diminish the responsibility of the one committing suicide (2282). We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance. The Church prays for persons who have taken their own lives (2283).',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 2282 and 2283 (suicide)',
-  },
-  'jo-8-44': {
-    topicEn: 'The devil, murderer and father of lies',
-    textEn: 'You are of your father the devil: and the desires of your father you will do. He was a murderer from the beginning: and he stood not in the truth, because truth is not in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father thereof.',
   },
   'lewis-cartas-diabo': {
     refEn: 'The Screwtape Letters, preface',
@@ -1431,36 +1886,12 @@ export const referencesEn = {
     textEn: 'The solemn exorcism, called "a major exorcism," can be performed only by a priest and with the permission of the bishop. The priest must proceed with prudence, strictly observing the rules established by the Church. [...] Illness, especially psychological illness, is a very different matter; treating this is the concern of medical science. Therefore, before an exorcism is performed, it is important to ascertain that one is dealing with the presence of the Evil One, and not an illness.',
     fullSourceEn: 'Catechism of the Catholic Church, paragraph 1673 (exorcism)',
   },
-  'lc-1-42': {
-    authorEn: 'Luke the Evangelist',
-    topicEn: `Elizabeth's greeting / second biblical part of the Hail Mary`,
-    textEn: 'And she cried out with a loud voice and said: Blessed art thou among women and blessed is the fruit of thy womb.',
-  },
-  'cic-2043': {
-    refEn: 'Catechism §2043',
-    topicEn: 'Precepts of the Church: fasting and abstinence, helping the needs of the Church',
-    textEn: 'The fourth precept ("You shall observe the days of fasting and abstinence established by the Church") ensures the times of ascesis and penance which prepare us for the liturgical feasts and help us acquire mastery over our instincts and freedom of heart. The fifth precept ("You shall help to provide for the needs of the Church") means that the faithful are obliged to assist with the material needs of the Church, each according to his own ability.',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraph 2043 (fourth and fifth precepts of the Church)',
-  },
-  'cdc-222': {
-    refEn: 'Code of Canon Law, canon 222',
-    topicEn: 'Duty of the faithful to support the Church and help the poor',
-    textEn: '§1. The Christian faithful are obliged to assist with the needs of the Church so that the Church has what is necessary for divine worship, for the works of the apostolate and of charity, and for the decent support of ministers. §2. They are also obliged to promote social justice and, mindful of the precept of the Lord, to assist the poor from their own resources.',
-    fullSourceEn: 'Code of Canon Law, canon 222',
-    authorEn: 'Saint John Paul II (promulgation)',
-  },
   'vaticannews-causas-santos': {
     refEn: 'Vatican News, the Dicastery for the Causes of Saints',
     topicEn: 'Stages of canonization, miracles, and the medical board',
     textEn: `In order to be declared a saint, the candidate must first be a Servant of God, then Venerable, then Blessed. Except for martyrs, who become Blessed without a miracle, beatification requires the recognition of a miracle attributed to the candidate's intercession, and canonization a second miracle, which must have occurred after the beatification. Healings are examined by a medical board composed of both believing and non-believing specialists. Unless there is a papal dispensation, the process cannot begin until five years after the candidate's death.`,
     fullSourceEn: 'Vatican News, "Dicastery for the Causes of Saints" (explanation of the beatification and canonization process)',
     authorEn: 'Vatican News (Dicastery for Communication of the Holy See)',
-  },
-  'cic-153': {
-    refEn: 'Catechism §153-162',
-    topicEn: 'Faith, gift of God and human act',
-    textEn: 'Faith is a gift of God, a supernatural virtue infused by him (153). Believing is possible only by grace and the interior helps of the Holy Spirit. But it is no less true that believing is an authentically human act (154). Faith is an entirely free gift that God makes to man. We can lose this priceless gift. [...] To live, grow and persevere in the faith until the end we must nourish it with the word of God; we must beg the Lord to increase our faith; it must be "working through charity," abounding in hope, and rooted in the faith of the Church (162).',
-    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 153 to 162 (the characteristics of faith)',
   },
   'cdc-1250': {
     refEn: 'Code of Canon Law, canons 1250-1253',
@@ -1478,88 +1909,19 @@ export const referencesEn = {
     authorEn: 'Saint Paul VI',
     yearEn: 'February 17, 1966',
   },
-  'cic-120': {
-    topicEn: 'The canon of Scripture',
-    textEn: 'It was by the apostolic Tradition that the Church discerned which writings are to be included in the list of the sacred books. This complete list is called the canon of Scripture. It includes 46 books for the Old Testament (45 if we count Jeremiah and Lamentations as one) and 27 for the New.',
-  },
-  'dei-verbum-11': {
-    topicEn: 'Inspiration and truth of Sacred Scripture',
-    textEn: 'Therefore, since everything asserted by the inspired authors or sacred writers must be held to be asserted by the Holy Spirit, it follows that the books of Scripture must be acknowledged as teaching solidly, faithfully and without error that truth which God wanted put into sacred writings for the sake of salvation.',
-    urlEn: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html',
-  },
-  'josefo-antiguidades-18': {
-    refEn: 'Jewish Antiquities 18',
-    fullSourceEn: 'Jewish Antiquities, Book 18, chapter 1, paragraph 1',
-    topicEn: 'The census of Quirinius in 6 AD',
-    textEn: 'Josephus relates that Quirinius (Cyrenius), a Roman senator who had been consul, was sent by Augustus to Syria and "came himself into Judea, which was now added to the province of Syria, to take an account of their substance" after the deposition of Archelaus (6 AD), a measure that provoked the revolt of Judas the Galilean. It is the main source of the objection against Luke 2:2.',
-  },
   'cic-122': {
     topicEn: 'The divine pedagogy in the Old Testament',
     textEn: `Even though they contain matters imperfect and provisional, the books of the Old Testament bear witness to the whole divine pedagogy of God's saving love.`,
-  },
-  'mc-13-32': {
-    topicEn: 'No one knows the day or the hour of the end',
-    textEn: 'But of that day or hour no man knoweth, neither the angels in heaven, nor the Son, but the Father.',
-  },
-  'jo-1-21': {
-    refEn: 'John 1:21',
-    topicEn: 'John the Baptist denies being Elijah',
-    textEn: 'And they asked him: What then? Art thou Elias? And he said: I am not. Art thou the prophet? And he answered: No.',
-  },
-  '1cr-10-13': {
-    refEn: '1 Chronicles 10:13-14',
-    topicEn: 'Saul died for having consulted a medium',
-    textEn: 'So Saul died for his iniquities, because he transgressed the commandment of the Lord, which he had commanded, and kept it not: and moreover consulted also a witch, And trusted not in the Lord: therefore he slew him, and transferred his kingdom to David the son of Isai.',
-  },
-  'tt-2-13': {
-    refEn: 'Titus 2:13',
-    topicEn: 'Jesus Christ, our great God and Saviour',
-    textEn: 'Looking for the blessed hope and coming of the glory of the great God and our Saviour Jesus Christ.',
-  },
-  'hb-1-5': {
-    refEn: 'Hebrews 1:5-6',
-    topicEn: 'The Son is superior to the angels and adored by them',
-    textEn: 'For to which of the angels hath he said at any time: Thou art my Son, to-day have I begotten thee? And again: I will be to him a Father, and he shall be to me a Son? And again, when he bringeth in the first begotten into the world, he saith: And let all the angels of God adore him.',
-  },
-  'at-13-2': {
-    refEn: 'Acts 13:2',
-    topicEn: 'The Holy Spirit speaks and chooses: he is a person',
-    textEn: 'And as they were ministering to the Lord and fasting, the Holy Ghost said to them: Separate me Saul and Barnabas, for the work whereunto I have taken them.',
-  },
-  'at-5-3': {
-    refEn: 'Acts 5:3-4',
-    topicEn: 'To lie to the Holy Spirit is to lie to God',
-    textEn: 'But Peter said: Ananias, why hath Satan tempted thy heart, that thou shouldst lie to the Holy Ghost and by fraud keep part of the price of the land? Whilst it remained, did it not remain to thee? And after it was sold, was it not in thy power? Why hast thou conceived this thing in thy heart? Thou hast not lied to men, but to God.',
-  },
-  'dt-18-22': {
-    refEn: 'Deuteronomy 18:22',
-    topicEn: 'Test of a false prophet: the word that does not come to pass',
-    textEn: 'Thou shalt have this sign: Whatsoever that same prophet foretelleth in the name of the Lord, and it cometh not to pass: that thing the Lord hath not spoken, but the prophet hath forged it by the pride of his mind: and therefore thou shalt not fear him.',
   },
   'lewis-mito-fato': {
     refEn: 'Myth Became Fact',
     topicEn: 'Pagan myths as a foreshadowing of the historical fact of Christ',
     textEn: 'Weeks after the conversation with Tolkien and Dyson (19 September 1931), Lewis wrote: "the story of Christ is simply a true myth: a myth working on us in the same way as the others, but with this tremendous difference that it really happened". In the 1944 essay: "The heart of Christianity is a myth which is also a fact." For Lewis, the myths of gods who die and revive were foreshadowings fulfilled, in history, in Jesus.',
   },
-  'unitatis-redintegratio-3': {
-    refEn: 'Unitatis Redintegratio 3',
-    topicEn: 'Non-Catholic baptized Christians as separated brethren',
-    textEn: 'Those who believe in Christ and have been truly baptized "are put in some, though imperfect, communion with the Catholic Church" and are "accepted as brothers by the children of the Catholic Church". The decree calls them "separated brethren" and recalls that they do not enjoy the full unity that Christ wished to give his Church.',
-  },
-  'dt-6-4': {
-    refEn: 'Deuteronomy 6:4',
-    topicEn: 'The Shema: profession of faith in the one God',
-    textEn: 'Hear, O Israel, the Lord our God is one Lord.',
-  },
-  'hb-10-11': {
-    refEn: 'Hebrews 10:11-14',
-    topicEn: 'The one sacrifice of Christ replaces the Temple sacrifices',
-    textEn: 'And every priest indeed standeth daily ministering and often offering the same sacrifices which can never take away sins. But this man, offering one sacrifice for sins, for ever sitteth on the right hand of God, From henceforth expecting until his enemies be made his footstool. For by one oblation he hath perfected for ever them that are sanctified.',
-  },
   'udana-8-3': {
     refEn: 'Udana 8:3',
     topicEn: 'Nirvana as described by the Buddha',
-    textEn: '"There is, monks, an unborn, unbecome, unmade, unfabricated. If there were not that unborn, unbecome, unmade, unfabricated, there would not be the case that escape from the born, become, made, fabricated would be discerned." (translation by Thanissaro Bhikkhu). The Buddha describes nirvana through negations and refuses to define it as existence or as annihilation.',
+    textEn: '"There is, monks, an unborn, unbecome, unmade, unfabricated. If there were not that unborn, unbecome, unmade, unfabricated, there would not be the case that escape from the born, become, made, fabricated would be discerned." (translation by Thanissaro Bhikkhu). The Buddha describes nirvana through negations and, asked whether the one who attains it goes on existing after death, declined to answer (Majjhima Nikaya 63 and 72).',
   },
   'cic-2111': {
     refEn: 'Catechism §2111',
@@ -1576,16 +1938,6 @@ export const referencesEn = {
     topicEn: 'Freemasonry and naturalism',
     textEn: 'Leo XIII identifies naturalism, which denies revelation and makes human reason the measure of all things, as the principle of Masonic doctrine, and therefore considers it incompatible with the Christian faith.',
   },
-  'cdf-maconaria-1983': {
-    refEn: 'Declaration on Masonic Associations (1983)',
-    topicEn: 'The prohibition continues after the new Code of Canon Law',
-    textEn: `The new Code does not name Freemasonry for reasons of drafting, but the Church's negative judgment remains unchanged, because its principles have always been considered irreconcilable with the doctrine of the Church. The faithful who enrol in Masonic associations "are in a state of grave sin and may not receive Holy Communion". Local ecclesiastical authorities have no competence to judge otherwise.`,
-  },
-  'ddf-maconaria-2023': {
-    refEn: 'Note on Freemasonry (2023)',
-    topicEn: 'Confirmation of the prohibition of membership in Freemasonry',
-    textEn: 'Faced with a rise in the number of faithful enrolled in Freemasonry in a Philippine diocese, the Dicastery reaffirms, citing the 1983 declaration, that active membership in Freemasonry by a member of the faithful is forbidden because of the irreconcilability between Catholic doctrine and Freemasonry, which also applies to clerics, and asks for catechesis in all parishes on these reasons.',
-  },
   'job-38-1': {
     refEn: 'Job 38:1-4',
     topicEn: 'God answers Job: divine wisdom exceeds human wisdom',
@@ -1599,21 +1951,6 @@ export const referencesEn = {
     textEn: 'Human embryology textbooks say that the embryonic heart starts beating at 21 to 23 days after fertilization (35 to 37 days of gestational age, counted from the last menstrual period). Ultrasound studies of IVF pregnancies recorded the first heartbeats over a wider range, between 20 and 35 days after fertilization.',
     fullSourceEn: 'Jörg Männer, "When Does the Human Embryonic Heart Start Beating? A Review of Contemporary and Historical Sources of Knowledge about the Onset of Blood Circulation in Man", Journal of Cardiovascular Development and Disease, vol. 9, no. 6, article 187, 2022',
     authorEn: 'Jörg Männer (embryologist, University of Göttingen)',
-  },
-  'didaque-2-2': {
-    refEn: 'Didache 2:2',
-    topicEn: 'Condemnation of abortion and infanticide in the early Church',
-    textEn: '"You shall not kill the embryo by abortion and shall not cause the newborn to perish."',
-    fullSourceEn: 'Didache (Teaching of the Twelve Apostles), chapter 2, verse 2, quoted in the Catechism of the Catholic Church, §2271',
-    authorEn: 'Unknown author (early Christian community, probably in Syria)',
-  },
-  'tertuliano-apologetico-9': {
-    refEn: 'Apology 9:8',
-    topicEn: 'Abortion as anticipated homicide',
-    textEn: '"In our case, murder being once for all forbidden, we may not destroy even the foetus in the womb, while as yet the human being derives blood from other parts of the body for its sustenance. To hinder a birth is merely a speedier man-killing; nor does it matter whether you take away a life that is born, or destroy one that is coming to the birth. That is a man which is going to be one; you have the fruit already in its seed."',
-    fullSourceEn: 'Apology (Apologeticum), chapter 9, section 8',
-    authorEn: 'Tertullian of Carthage',
-    urlEn: 'https://www.newadvent.org/fathers/0301.htm',
   },
   'larimore-stanford-2000': {
     refEn: 'Larimore and Stanford (2000), postfertilization effects of the pill',
@@ -1629,44 +1966,9 @@ export const referencesEn = {
     fullSourceEn: 'María Elena Ortiz and Horacio B. Croxatto, "Copper-T intrauterine device and levonorgestrel intrauterine system: biological bases of their mechanism of action", Contraception, vol. 75, no. 6, supplement, 2007, pp. S16-S30',
     authorEn: 'María Elena Ortiz and Horacio B. Croxatto (Chilean researchers in human reproduction)',
   },
-  'humanae-vitae-12': {
-    refEn: 'Humanae Vitae §12',
-    topicEn: 'The two inseparable meanings of the conjugal act',
-    textEn: '"This particular doctrine, often expounded by the magisterium of the Church, is based on the inseparable connection, established by God, which man on his own initiative may not break, between the unitive significance and the procreative significance which are both inherent to the marriage act. The reason is that the fundamental nature of the marriage act, while uniting husband and wife in the closest intimacy, also renders them capable of generating new life, and this as a result of laws written into the actual nature of man and of woman."',
-    fullSourceEn: 'Encyclical Humanae Vitae on the regulation of birth, §12',
-    authorEn: 'Pope Saint Paul VI',
-  },
-  '1jo-5-16': {
-    topicEn: 'Sin unto death and sin not unto death',
-    textEn: 'He that knoweth his brother to sin a sin which is not to death, let him ask: and life shall be given to him who sinneth not to death. There is a sin unto death. For that I say not that any man ask. All iniquity is sin. And there is a sin unto death.',
-  },
-  'cic-1857': {
-    topicEn: 'Mortal and venial sin: the three conditions',
-    textEn: `Mortal sin destroys charity in the heart of man by a grave violation of God's law (...). Venial sin allows charity to subsist, even though it offends and wounds it. (...) For a sin to be mortal, three conditions must together be met: "Mortal sin is sin whose object is grave matter and which is also committed with full knowledge and deliberate consent."`,
-  },
   'cic-1864': {
     topicEn: 'Blasphemy against the Holy Spirit',
     textEn: '"Therefore I tell you, every sin and blasphemy will be forgiven men, but the blasphemy against the Spirit will not be forgiven." There are no limits to the mercy of God, but anyone who deliberately refuses to accept his mercy by repenting, rejects the forgiveness of his sins and the salvation offered by the Holy Spirit. Such hardness of heart can lead to final impenitence and eternal loss.',
-  },
-  'lc-15-20': {
-    topicEn: 'The father who runs to meet the prodigal son',
-    textEn: 'And rising up, he came to his father. And when he was yet a great way off, his father saw him and was moved with compassion and running to him fell upon his neck and kissed him.',
-  },
-  'cic-1866': {
-    topicEn: 'The seven capital sins',
-    textEn: 'Vices can be classified according to the virtues they oppose, or also be linked to the capital sins which Christian experience has distinguished, following St. John Cassian and St. Gregory the Great. They are called "capital" because they engender other sins, other vices. They are pride, avarice, envy, wrath, lust, gluttony, and sloth or acedia.',
-  },
-  '1cor-6-18': {
-    topicEn: 'Flee fornication',
-    textEn: 'Fly fornication. Every sin that a man doth is without the body: but he that committeth fornication sinneth against his own body.',
-  },
-  'jo-8-11': {
-    topicEn: 'The woman caught in adultery: neither do I condemn thee',
-    textEn: 'Who said: No man, Lord. And Jesus said: Neither will I condemn thee. Go, and now sin no more.',
-  },
-  'cic-2348': {
-    topicEn: `Chastity according to one's state of life, engagement, and fornication`,
-    textEn: `All Christ's faithful are called to lead a chaste life in keeping with their particular states of life. (...) Those who are engaged to marry are called to live chastity in continence. They should see in this time of testing a discovery of mutual respect, an apprenticeship in fidelity, and the hope of receiving one another from God. They should reserve for marriage the expressions of affection that belong to married love. (...) Fornication is carnal union between an unmarried man and an unmarried woman. It is gravely contrary to the dignity of persons and of human sexuality which is naturally ordered to the good of spouses and the generation and education of children.`,
   },
   'sl-18-9': {
     topicEn: 'The commandments rejoice the heart and give light',
@@ -1708,16 +2010,6 @@ export const referencesEn = {
     authorEn: 'Pope Leo XIV',
     yearEn: '4 October 2025',
     urlEn: 'https://www.vatican.va/content/leo-xiv/en/apost_exhortations/documents/20251004-dilexi-te.html',
-  },
-  'mt-18-6': {
-    refEn: 'Matthew 18:6',
-    topicEn: 'The gravity of scandalizing the little ones',
-    textEn: 'But he that shall scandalize one of these little ones that believe in me, it were better for him that a millstone should be hanged about his neck, and that he should be drowned in the depth of the sea.',
-  },
-  'mt-13-24': {
-    refEn: 'Matthew 13:24-30',
-    topicEn: 'The cockle grows alongside the wheat until the harvest',
-    textEn: 'Another parable he proposed to them, saying: The kingdom of heaven is likened to a man that sowed good seed in his field. But while men were asleep, his enemy came and oversowed cockle among the wheat and went his way. (...) Suffer both to grow until the harvest, and in the time of the harvest I will say to the reapers: Gather up first the cockle, and bind it into bundles to burn, but the wheat gather ye into my barn.',
   },
   'francisco-arquivos-pio-xii-2019': {
     refEn: 'Opening of the Pius XII archives (Francis, 2019)',

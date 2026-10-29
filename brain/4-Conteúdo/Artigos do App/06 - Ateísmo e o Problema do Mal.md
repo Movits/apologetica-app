@@ -20,8 +20,8 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Referências usadas
 - [[Romanos 8,28]]
-- [[Catecismo §309-314]]
 - [[Cristianismo Puro e Simples]]
+- [[Catecismo §311]]
 - [[Jó 38,1-4]]
 
 ## Artigos relacionados

@@ -20,7 +20,6 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[Lucas 2,1-7]]
 - [[Mateus 2,1]]
-- [[Antiguidades Judaicas, livro 20]]
 - [[Antiguidades Judaicas, livro 18]]
 
 ## Artigos relacionados

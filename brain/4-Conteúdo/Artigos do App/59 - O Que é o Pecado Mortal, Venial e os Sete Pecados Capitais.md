@@ -27,10 +27,10 @@ Arquivo: `src/data/articles/moral.js`
 - [[Mateus 12,32]]
 - [[Catecismo §1422-1470]]
 - [[1 João 5,16-17]]
-- [[Catecismo §1855-1857]]
-- [[Catecismo §1864]]
-- [[Lucas 15,20]]
+- [[Catecismo §1857]]
 - [[Catecismo §1866]]
+- [[Lucas 15,20]]
+- [[Catecismo §1864]]
 
 ## Diálogos que levam a este artigo
 - [[Pecado é invenção da Igreja para controlar as pessoas pelo medo e pela]]

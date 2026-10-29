@@ -9,7 +9,7 @@ gerado: true
 Fonte: Teólogos | Tertuliano (c. 207 a 212 d.C.)
 Tema: Concepção virginal / Maria, nova Eva
 
-> "Foi quando Eva ainda era virgem que a palavra enganosa penetrou em seu ouvido para edificar a morte. Numa virgem devia igualmente entrar o Verbo de Deus que edificaria a vida, para que aquilo que por esse sexo fora leva...
+> "Eva acreditara na serpente, Maria acreditou em Gabriel. O delito que aquela cometeu crendo, esta, crendo, apagou." (De Carne Christi 17). Tertuliano defende a concepção virginal e o paralelo entre Eva e Maria, mas nega ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

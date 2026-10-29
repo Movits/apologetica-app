@@ -17,3 +17,4 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[37 - Protestantismo]]
 - [[63 - Católico ou Evangélico As Principais Diferenças]]
+- [[71 - Como Começar a Ler a Bíblia]]

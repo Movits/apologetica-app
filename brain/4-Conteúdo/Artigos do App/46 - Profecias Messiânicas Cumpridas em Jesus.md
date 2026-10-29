@@ -22,6 +22,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Miquéias 5,1]]
 - [[Isaías 7,14]]
 - [[Salmo 21 (22),2.17-19]]
+- [[Mateus 27,45-46]]
 - [[Isaías 53,3-7]]
 - [[Zacarias 12,10]]
 - [[Daniel 9,24-26]]

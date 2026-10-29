@@ -9,7 +9,7 @@ gerado: true
 Fonte: Documentos | Concílio Vaticano II (21 de novembro de 1964)
 Tema: Mediação de Maria
 
-> "(...) a função maternal de Maria em relação aos homens de modo algum ofusca ou diminui esta única mediação de Cristo; manifesta antes a sua eficácia. Com efeito, todo o influxo salvador da Virgem Santíssima sobre os hom...
+> "Esta maternidade de Maria na economia da graça perdura sem interrupção, desde o consentimento, que fielmente deu na anunciação e que manteve inabalável junto à cruz, até à consumação eterna de todos os eleitos. [...] Po...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo João (c. 95 d.C.)
 Tema: Juízo final segundo as obras
 
-> Vi os mortos, grandes e pequenos, de pé, diante do trono. Abriram-se livros, e ainda outro livro, que é o livro da vida. E os mortos foram julgados conforme o que estava escrito nesse livro, segundo as suas obras. (...) ...
+> Vi os mortos, grandes e pequenos, de pé, diante do trono. Abriram-se livros, e ainda outro livro, que é o livro da vida. E os mortos foram julgados conforme o que estava escrito nesse livro, segundo as suas obras. O mar ...
 
 Abre no app em `ap 20,12`.
 Funcionalidade: [[Referências]]

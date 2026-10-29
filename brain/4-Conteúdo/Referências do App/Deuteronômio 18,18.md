@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Tradicionalmente atribuído a Moisés (redação final c. séc. VI a.C.)
 Tema: Profecia do profeta semelhante a Moisés
 
-> Eu lhes suscitarei um profeta como tu dentre seus irmãos: minhas palavras porei em sua boca e ele lhes fará conhecer as minhas ordens.
+> eu lhes suscitarei um profeta como tu dentre seus irmãos: minhas palavras porei em sua boca e ele lhes fará conhecer as minhas ordens.
 
 Abre no app em `dt 18,18`.
 Funcionalidade: [[Referências]]

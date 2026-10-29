@@ -24,11 +24,11 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Filipenses 2,6-11]]
 - [[João 14,16-17]]
 - [[Concílio de Niceia (Credo Niceno)]]
-- [[Tito 2,13]]
+- [[Deuteronômio 18,22]]
 - [[Hebreus 1,5-6]]
 - [[Atos 13,2]]
 - [[Atos 5,3-4]]
-- [[Deuteronômio 18,22]]
+- [[Tito 2,13]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

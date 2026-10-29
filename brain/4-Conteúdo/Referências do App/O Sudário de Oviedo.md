@@ -14,3 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
+- [[50 - O Sudário de Turim]]

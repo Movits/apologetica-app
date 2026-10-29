@@ -22,9 +22,9 @@ Arquivo: `src/data/articles/moral.js`
 ## Referências usadas
 - [[Humanae Vitae §17]]
 - [[Catecismo §2366-2372]]
+- [[Humanae Vitae §12]]
 - [[Larimore e Stanford (2000), efeitos pós-fertilização da pílu]]
 - [[Ortiz e Croxatto (2007), mecanismo de ação do DIU]]
-- [[Humanae Vitae §12]]
 
 ## Artigos relacionados
 - [[08 - Homossexualidade e Doutrina Católica]]

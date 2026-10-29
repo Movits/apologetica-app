@@ -124,3 +124,83 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - O Fast Refresh com vários agentes editando reinicia a navegação do app web
   e rerroda efeitos: testes manuais no painel do navegador ficam instáveis.
   Para verificar fluxo, script de Playwright direto no servidor.
+
+## Sobre revisão de conteúdo em lote e gamificação (2026-10-07)
+
+- Agentes de revisão devolvem propostas, não edições: pedir um bloco JSON
+  `{ file, find, replace, reason }` com o trecho exato e aplicar por script que
+  exige o `find` uma vez só. 231 substituições entraram sem um erro de
+  posição, e cada uma foi lida antes.
+- Dividir uma categoria grande entre dois agentes exige dois arquivos de saída
+  (juntar depois é um script de dez linhas) e proibir os dois de editar o
+  arquivo compartilhado.
+- Conteúdo gerado por IA que cita santos e papas envelhece rápido: Carlo
+  Acutis e Paulo VI eram "beatos" em artigos escritos depois das canonizações.
+  Rever títulos e "hoje Papa X" a cada revisão.
+- Imagem gerada por IA não entra no app, nem como emblema pequeno: o dono
+  reconhece a "cara de IA" (medalhão 3D brilhante, filigrana, luz de render) e
+  rejeita. Ícone e emblema se desenham no sistema do `BrandMark` (SVG, traço
+  4,5, uma cor do tema). O Higgsfield serve para painéis de referência e
+  marketing, não para elementos de interface.
+- Para desenhar um conjunto de marcas vetoriais com agentes: folha de contato
+  renderizada com Playwright (vários tamanhos, dois temas, as marcas do app
+  como referência), cada designer olha a própria folha e corrige, juízes com
+  lentes diferentes pontuam, uma síntese fecha a "mão" única.
+- A política de rede do ambiente de nuvem bloqueava o CDN do Higgsfield
+  (cloudfront); contornar por Action no GitHub é recusado pelo classificador
+  (e com razão). O `sandbox_exec` do Higgsfield mostra a imagem gerada ao
+  modelo mesmo quando o container não consegue baixá-la.
+
+## Sobre verificar telas e o que acontece quando a pessoa erra (2026-10-13)
+
+- Foto de verificação precisa provar o próprio conteúdo. O roteiro antigo
+  fotografou duas vezes a mesma tela ("Resposta de bolso" no lugar do "Teste
+  rápido") porque `scrollIntoViewIfNeeded` não rola quando o alvo já aparece
+  no pé da tela. Agora cada foto declara o texto que precisa estar visível e
+  o roteiro falha se não estiver.
+- "Visível" no Playwright não é "na janela": uma tela empilhada que não
+  terminou de entrar fica à direita, fora da vista, e passa na checagem
+  vertical. Conferir x e y. E conferir a olho mesmo assim: foi a olho que
+  apareceu a foto da Jornada igual à da Início.
+- Relógio parado (`page.clock.setFixedTime`) congela as animações do app; para
+  simular o dia seguinte, `clock.install({ time })` e `clock.resume()`.
+- Gamificação: pontos só na primeira tentativa, gravada pergunta a pergunta
+  (gravar só no fim deixava sair e recomeçar valendo), e o erro volta numa
+  revisão espaçada. A revisão de código achou o atalho de sair e voltar; o
+  teste de engine agora cobre.
+- Dados de múltipla escolha escritos por IA concentram a resposta certa na
+  mesma posição (75 de 83 previsões no meio, 73 de 100 perguntas da prática
+  na segunda). Embaralhar na tela, com semente determinística.
+- `dayOfYear` por diferença de timestamps erra na primeira hora do dia em fuso
+  com horário de verão. Contar pelos campos da data (UTC sobre y/m/d).
+- A Ave Maria offline tinha versículos faltando e grudados (resolvido no mesmo
+  dia, ver abaixo). Texto bíblico de referência se tira com `verse.mjs`.
+- Revisores em paralelo: dar a cada um um validador que simula a aplicação e
+  confere a sintaxe do arquivo. Mesmo assim, ids novos colidem entre grupos
+  (dois "josefo-antiguidades-18" para passagens diferentes): deduplicar e
+  comparar o conteúdo antes de juntar.
+
+## Sobre dados que parecem certos (2026-10-13, continuação)
+
+- Embaralhar as opções não basta: a IA escreve a certa como a opção mais
+  completa, e ela era a mais longa em 92% das perguntas das lições. Medir o
+  tamanho é barato; a regra ficou em `tests/optionBalance.mjs`.
+- Dado de fonte externa se confere contra uma segunda fonte independente
+  antes de confiar. A Ave Maria do fidalgobr perdia a numeração em 39
+  capítulos (número grudado no texto, blocos da edição achatados) e o
+  bibliaonline, da mesma linhagem, compartilhava parte dos defeitos. Só a
+  cantaramissa, de outra digitação, separou o que era defeito do que era a
+  numeração da própria edição.
+- Ao consertar texto de terceiros, recortar e não reescrever: o texto da
+  fonte foi cortado nas fronteiras certas e uma checagem só de letras provou
+  que nada se perdeu nem se repetiu. Texto novo só onde faltava, e conferido.
+- "Versículo do dia da Ave Maria" não era da Ave Maria: vários textos vinham
+  de outras traduções, e os Salmos usavam a numeração hebraica numa Bíblia que
+  segue a Vulgata. Toda citação bíblica que diz vir das Bíblias do app agora
+  tem teste de texto literal.
+- Uma chave errada some sem erro: Jó e Jonas na Douay-Rheims estavam como
+  'jó' e 'jn', e o inglês caía no português em silêncio. Teste de forma
+  (livros e capítulos) pega isso de graça.
+- Número em relatório e em commit se calcula, não se estima: o primeiro
+  rascunho do commit das lições dizia 105 correções de conteúdo; os registros
+  davam 112.

@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Documentos | Papa Francisco (19 de março de 2016)
-Tema: Acolhimento de pessoas com tendência homossexual
+Tema: Respeito às pessoas com tendência homossexual e ensino sobre o matrimônio
 
 > "A Igreja conforma o seu comportamento ao do Senhor Jesus que, num amor sem fronteiras, Se ofereceu por todas as pessoas sem exceção. (...) Por isso desejo, antes de mais nada, reafirmar que cada pessoa, independentement...
 Funcionalidade: [[Referências]]

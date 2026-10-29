@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
 Tema: Indissolubilidade do matrimônio
 
-> Assim, já não são dois, mas uma só carne. Portanto, não separe o homem o que Deus uniu”.
+> Assim, já não são dois, mas uma só carne. Portanto, não separe o homem o que Deus uniu.
 
 Abre no app em `mt 19,6`.
 Funcionalidade: [[Referências]]

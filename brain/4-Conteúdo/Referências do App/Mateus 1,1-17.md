@@ -9,7 +9,7 @@ gerado: true
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
 Tema: Genealogia de Jesus segundo Mateus / linha legal por José
 
-> Genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Portanto, as gerações, desde Abraão até Davi, são catorze. Desde Davi até o cativeiro da Babilônia, catorze gerações. E, depois do cativeiro até Cristo, c...
+> Genealogia de Jesus Cristo, filho de Davi, filho de Abraão. (...) Jacó gerou José, esposo de Maria, da qual nasceu Jesus, que é chamado Cristo. Portanto, as gerações, desde Abraão até Davi, são catorze. Desde Davi até o ...
 
 Abre no app em `mt 1,1`.
 Funcionalidade: [[Referências]]

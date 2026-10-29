@@ -6,10 +6,10 @@ gerado: true
 # Milagre Eucarístico de Lanciano
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Outros | Igreja de São Francisco, Lanciano (Itália); estudos de Dr. Edoardo Linoli (anatomopatologista) e Dr. Ruggero Bertelli (Universidade de Siena) (c. 750 d.C. (milagre, segundo a tradição); 1970-1971 (estudos de Linoli))
+Fonte: Outros | Igreja de São Francisco, Lanciano (Itália); estudos do anatomopatologista Odoardo Linoli, com Ruggero Bertelli (Universidade de Siena) (c. 750 d.C. (milagre, segundo a tradição); 1970-1971 (estudos de Linoli, publicados em 1971))
 Tema: Milagre eucarístico / evidência da Presença Real
 
-> Durante uma Missa no séc. VIII, um monge basiliano duvidou da Presença Real. Ao consagrar, a Hóstia transformou-se em carne visível e o vinho em sangue coagulado em cinco glóbulos. As relíquias estão preservadas em Lanci...
+> Segundo a tradição, por volta do século VIII, um monge basiliano que duvidava da Presença Real viu, na consagração, a Hóstia transformar-se em carne e o vinho em sangue, que coagulou em cinco glóbulos. As relíquias se co...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

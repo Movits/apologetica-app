@@ -23,8 +23,13 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 
 ## Referências usadas
 - [[De Consensu Evangelistarum]]
-- [[Dei Verbum §11]]
+- [[Mateus 28,1-10]]
 - [[Did Jesus Exist]]
+- [[Marcos 6,44]]
+- [[1 Reis 7,23]]
+- [[2 Crônicas 22,2]]
+- [[Lucas 24,1-10]]
+- [[Dei Verbum §11]]
 
 ## Artigos relacionados
 - [[32 - Nascimento de Jesus Herodes e o Censo de Quirino]]

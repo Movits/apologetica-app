@@ -12,7 +12,7 @@ const articles = [
     imageAspect: 1.5,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPedro%2520Berruguete%2520-%2520Saint%2520Dominic%2520Presiding%2520over%2520an%2520Auto-da-fe%2520(detail)%2520-%2520c.%25201491-1499%2520-%252001.jpg&w=2200&output=jpg&q=80',
     summary: 'O mito popular da Inquisição supera em muito a história real. Os números, comparados a outros tribunais da época, são reveladores.',
-    body: `Poucas instituições da história católica geram tanto preconceito quanto a Inquisição. A imagem popular é de tortura generalizada, milhões de mortos, fanatismo medieval. A pesquisa histórica séria, feita inclusive por historiadores não-católicos, mostra uma realidade muito diferente.
+    body: `Poucas instituições da história católica geram tanto preconceito quanto a Inquisição. A imagem popular é de tortura generalizada, milhões de mortos, fanatismo medieval. A pesquisa histórica séria, feita inclusive por historiadores não católicos, mostra uma realidade muito diferente.
 
 ## As várias Inquisições
 
@@ -20,25 +20,25 @@ Primeira distinção crucial: existiram várias "Inquisições" diferentes, em p
 
 ## Os números reais
 
-Os números reais, segundo pesquisas modernas baseadas em arquivos. A Inquisição Espanhola, a mais famosa e mais difamada, em mais de três séculos de atividade (1478-1834), executou alguns milhares de pessoas: as estimativas dos historiadores ficam, em geral, entre 3.000 e 5.000, e Henry Kamen (The Spanish Inquisition: A Historical Revision, 1997) chega a no máximo 3.000, a maior parte nas primeiras décadas. No simpósio internacional que o Vaticano promoveu em 1998, cujas atas foram apresentadas em 2004, o historiador Agostino Borromeo resumiu os dados: cerca de 125 mil processos na Espanha, com menos de 2% de condenações à morte. A grande maioria dos réus recebeu penitências, multas, desterro, prisão ou teve o processo suspenso. Em comparação, a caça às bruxas, conduzida sobretudo por tribunais seculares, executou na Europa entre 30 mil e 60 mil pessoas, segundo as estimativas atuais.
+Os números reais, segundo pesquisas modernas baseadas em arquivos. A Inquisição Espanhola, a mais famosa e mais difamada, em mais de três séculos de atividade (1478-1834), executou cerca de 3.000 a 5.000 pessoas, segundo as estimativas de historiadores que trabalharam com os arquivos, como Henry Kamen (The Spanish Inquisition: A Historical Revision, 1997) e Ricardo García Cárcel. Em comparação, no mesmo período, os tribunais civis europeus executaram dezenas de milhares por bruxaria (as estimativas acadêmicas ficam entre 40 e 60 mil). E a grande maioria dos processados não ia para a fogueira: dos cerca de 44 mil processos de 1540 a 1700 estudados por Gustav Henningsen e Jaime Contreras (1986), menos de 2% terminaram em execução.
 
-A Inquisição Romana, criada pelo Papa Paulo III em 1542, também recorreu pouco à pena de morte: o historiador Andrea Del Col (L'Inquisizione in Italia, 2006) estima cerca de 1.250 condenações à morte em 51 mil a 75 mil processos na Itália, e no tribunal de Aquileia, no Friul, só 4 dos primeiros mil réus (1551-1647) foram executados. O caso mais famoso foi Giordano Bruno (1600), executado não por defender o heliocentrismo (era ocultista, defendia panteísmo e doutrinas que negavam dogmas fundamentais). O caso Galileu (1633) terminou em prisão domiciliar, não execução, e o Papa João Paulo II reconheceu publicamente o erro em 1992.
+A Inquisição Romana, dirigida pela Santa Sé, também recorreu pouco à pena de morte: o historiador Andrea Del Col (L'Inquisizione in Italia, 2006) estima, para toda a Itália, cerca de 1.250 condenações à morte em 51 a 75 mil processos abertos depois de 1542. O caso mais famoso foi Giordano Bruno (1600), executado não por defender o heliocentrismo (era ocultista, defendia panteísmo e doutrinas que negavam dogmas fundamentais). O caso Galileu (1633) terminou em prisão domiciliar, não execução, e João Paulo II reconheceu formalmente o erro em 1992.
 
 ## Métodos mais garantistas que os tribunais civis
 
-Os métodos inquisitoriais, comparados aos tribunais civis da época, eram surpreendentemente garantistas. Existiam regras formais de processo. O acusado tinha direito a defesa. Confissões obtidas sob tortura só valiam se fossem ratificadas depois, fora da câmara de tortura e pelo menos 24 horas mais tarde (mas, se o acusado se retratasse, a regra mais comum era torturá-lo de novo). A tortura não podia pôr a vida em risco nem mutilar, um médico podia mandar interrompê-la, e ela foi usada numa minoria dos processos: menos de 10%, segundo o balanço apresentado por Borromeo em 2004. Comparada a muitos tribunais seculares da época, que também torturavam e, em crimes considerados excepcionais como a bruxaria, deixavam de lado até os limites da lei, a Inquisição costumava ser mais contida.
+Os métodos inquisitoriais, comparados aos tribunais civis da época, eram surpreendentemente garantistas. Existiam regras formais de processo. O acusado tinha um advogado e podia apontar inimigos pessoais para desqualificar testemunhas, embora não soubesse os nomes de quem o acusava. A confissão obtida sob tortura só valia se fosse ratificada depois, fora da sala de tortura. A tortura era usada com limites estritos: não podia mutilar nem derramar sangue, e em geral um médico acompanhava a sessão. Ainda assim, o acusado que se retratava da confissão podia voltar a ser torturado. Comparada à justiça civil europeia da época, que recorria à tortura com mais frequência e menos controle, a Inquisição era, nesse ponto, mais contida.
 
 ## A lenda negra espanhola
 
-Por que o exagero? Razões históricas claras. A "lenda negra espanhola" foi construída por panfletistas protestantes do norte europeu (Inglaterra, Holanda) no séc. XVI, em guerra política e religiosa com a Espanha católica. Eram textos de combate, que misturavam fatos reais e exageros. O Livro dos Mártires de John Foxe (1563), o tratado Sanctae Inquisitionis Hispanicae Artes (1567), publicado na Alemanha sob o pseudônimo de Reginaldo González Montes, e, no século seguinte, o relato do escocês William Lithgow, torturado em Málaga em 1620 (publicado em 1632), foram fundamentais para difundir essa imagem no mundo de língua inglesa.
+Por que o exagero? Razões históricas claras. A "lenda negra espanhola" foi construída por panfletistas protestantes do norte europeu (Inglaterra, Holanda) no séc. XVI, em guerra política e religiosa com a Espanha católica. Seus escritos eram de combate e misturavam fatos reais com exageros. O "Livro dos Mártires" de John Foxe (1563), o panfleto de Reginaldo González Montano (1567) e, mais tarde, o relato de William Lithgow (1632) foram fundamentais para difundir a imagem distorcida no mundo de língua inglesa.
 
 ## A caça às bruxas foi obra dos tribunais civis
 
-Vale notar que a maior parte do que se atribuiu à Inquisição (queima de bruxas, caça às bruxas em massa) foi feita não pelos tribunais da Inquisição, mas por tribunais seculares, em terras protestantes e católicas. A Inquisição Espanhola, na verdade, foi cética sobre bruxaria. Depois do auto de fé de Logroño (1610), em que seis condenados ainda foram queimados, o inquisidor Alonso de Salazar Frías investigou os casos, concluiu que faltavam provas e pôs fim à caça às bruxas no País Basco espanhol. Do outro lado da fronteira, no País Basco francês, juízes seculares já tinham executado muitas pessoas. Em 1614 a Inquisição instruiu seus tribunais a tratar acusações de bruxaria com extremo cuidado, contra a histeria popular. Onde as Inquisições espanhola, portuguesa e romana tinham jurisdição, as execuções por bruxaria foram raras: segundo Borromeo, os tribunais eclesiásticos mandaram à fogueira 59 pessoas na Espanha, 36 na Itália e 4 em Portugal. As grandes matanças aconteceram onde não havia Inquisição e tribunais locais torturavam sem freio, tanto em territórios protestantes (Mecklemburgo, a região de Vaud, na Suíça, e a Escócia) quanto em católicos (os principados-bispados de Würzburg e Bamberg e os arcebispados de Trier, Mainz e Colônia, no Sacro Império). Os historiadores concluem que pesou menos a religião do governante do que a fragmentação política e judicial de cada região.
+Vale notar que a maior parte do que se atribuiu à Inquisição (queima de bruxas, caça às bruxas em massa) foi feita não pela Inquisição, mas por tribunais civis e locais. A Inquisição Espanhola, na verdade, mudou de rumo com o caso de Logroño: depois do auto de fé de 1610, que ainda mandou acusados de bruxaria à fogueira, o inquisidor Alonso de Salazar Frías examinou centenas de casos e não encontrou prova alguma, e em 1614 a Suprema instruiu os tribunais a tratar essas acusações com extremo cuidado, contra a histeria popular. Onde atuavam as Inquisições Espanhola, Portuguesa e Romana, houve pouquíssimas execuções por bruxaria: segundo o balanço que o historiador Agostino Borromeo apresentou em 2004, com as atas do simpósio sobre a Inquisição promovido pela Santa Sé em 1998, os tribunais eclesiásticos mandaram à fogueira 59 pessoas na Espanha, 36 na Itália e 4 em Portugal. As grandes matanças aconteceram em tribunais civis e locais da Europa central e do norte, tanto em terras protestantes (Alemanha luterana, Suíça reformada, Escócia presbiteriana) quanto em católicas (entre os piores focos estiveram os principados-bispados de Würzburg e Bamberg e os arcebispados de Trier, Mainz e Colônia), e somaram dezenas de milhares. Para os historiadores, a religião das autoridades de cada território teve papel secundário na intensidade da caça.
 
 ## Os erros reais e o pedido de perdão
 
-A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, mesmo limitado, é hoje moralmente rejeitado. A intolerância religiosa de Estado é incompatível com a dignidade humana. A confusão entre poder civil e poder eclesiástico foi desastrosa para a Igreja. Em 1994, São João Paulo II pediu que os filhos da Igreja voltassem "com espírito aberto ao arrependimento" à condescendência "perante métodos de intolerância ou até mesmo de violência no serviço à verdade" (Tertio Millennio Adveniente, §35). No Dia do Perdão, 12 de março de 2000, a Igreja pediu perdão publicamente por esses pecados, e em 2004, ao receber as atas do simpósio sobre a Inquisição, o Papa lembrou que esse pedido de perdão vale também para os dramas ligados à Inquisição.
+A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, mesmo limitado, é hoje moralmente rejeitado. A intolerância religiosa de Estado é incompatível com a dignidade humana. A confusão entre poder civil e poder eclesiástico foi desastrosa para a Igreja. São João Paulo II, que já em Tertio Millennio Adveniente (1994) pedira que a Igreja assumisse o peso do pecado dos seus filhos (§33), incluída a condescendência com "métodos de intolerância ou até mesmo de violência no serviço à verdade" (§35), pediu perdão publicamente por eles no Dia do Perdão, em 12 de março de 2000. Em 2004, na carta que escreveu para a apresentação das atas do simpósio sobre a Inquisição, o Papa lembrou que o pedido de perdão daquele dia "vale tanto para dramas ligados à Inquisição como para as feridas da memória, que são as suas consequências".
 
 Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. A história real é grave, exige reflexão e arrependimento, mas é qualitativa e quantitativamente muito diferente da imagem popular.
 
@@ -46,11 +46,11 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
 
 1. Quantos foram realmente executados pela Inquisição? (Resposta histórica: cerca de 3.000-5.000 em 350 anos da Espanhola, contra dezenas de milhares pelos tribunais civis europeus no mesmo período.)
 
-2. Onde houve menos execuções por bruxaria: onde agiam as Inquisições, na Espanha, em Portugal e na Itália, ou onde não havia Inquisição? (Resposta: onde agiam as Inquisições, com larga vantagem.)
+2. Quem executou mais "bruxas": os tribunais da Inquisição ou os tribunais civis? (Resposta: os civis, de longe, sobretudo na Europa central e do norte.)
 
 3. A Inquisição, comparada aos tribunais civis contemporâneos, oferecia mais ou menos garantias ao acusado? (Resposta: mais.)
 
-4. Se a Inquisição era "fanatismo religioso", por que rejeitou a caça às bruxas que enfureceu a Europa civil?`,
+4. Se a Inquisição era "fanatismo religioso", por que rejeitou a caça às bruxas que assolou os tribunais civis da Europa?`,
     references: ['kamen-inquisicao', 'tertio-millennio', 'borromeo-inquisicao-2004', 'jp2-inquisicao-2004'],
   },
   {
@@ -67,19 +67,19 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
 
 ## Antes do Islã, eram terras cristãs
 
-Contexto histórico esquecido: até o ano 632 (morte de Maomé), a Síria, a Palestina, o Egito, o Norte da África, a Anatólia (Turquia atual) e a Espanha eram majoritariamente cristãs (a vizinha Pérsia era zoroastriana). A Síria era cristã há seis séculos. O Egito era cristão (igreja copta) há cinco séculos. Cartago, na atual Tunísia, fora sede de grandes Padres da Igreja (Tertuliano, Cipriano, Agostinho). Hipona, terra de Santo Agostinho, era cidade cristã.
+Contexto histórico esquecido: até o ano 632 (morte de Maomé), as terras do Levante (Síria e Palestina), do Egito e do Norte da África, a Anatólia (Turquia atual) e a Espanha eram majoritariamente cristãs. A Síria era cristã há seis séculos. O Egito era cristão (igreja copta) há cinco séculos. Cartago, na atual Tunísia, fora a cidade de grandes Padres da Igreja (Tertuliano, Cipriano). Hipona, onde Santo Agostinho foi bispo, era cidade cristã.
 
 ## Cem anos de conquista pela espada
 
-Entre 632 e 732, em apenas cem anos, os exércitos muçulmanos conquistaram quase tudo isso pela espada (a Anatólia bizantina resistiu, e Constantinopla rechaçou os cercos árabes, como o grande cerco de 717-718). Damasco em 635, Jerusalém em 638, Alexandria em 642, Cartago em 698. Em 711, atravessaram o Estreito de Gibraltar e conquistaram a Espanha cristã (cuja reconquista só se completaria em 1492, com a tomada de Granada, quase oitocentos anos depois). Em 732, foram detidos na França por Carlos Martel, em Poitiers.
+Entre 632 e 732, em apenas cem anos, os exércitos muçulmanos conquistaram pela espada quase tudo isso (só a Anatólia resistiria, sob Bizâncio, até a chegada dos turcos, no séc. XI). Damasco em 635, Jerusalém em 638, Alexandria em 642, Cartago em 698. Em 711, atravessaram o Estreito de Gibraltar e conquistaram a Espanha cristã (cuja reconquista só se completaria em 1492, quase oitocentos anos depois). Em 732, foram detidos na França por Carlos Martel, em Poitiers.
 
 ## A vida dos cristãos sob domínio islâmico
 
-Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham status de cidadania reduzida: pagavam imposto especial (jizya), não podiam construir igrejas novas, não podiam fazer proselitismo e, em regra, não podiam ter autoridade sobre muçulmanos (as regras variavam com o governante, e houve exceções, como a família de São João Damasceno, que serviu na administração dos califas de Damasco). A conversão ao islã era recompensada com isenção de imposto e ascensão social. A conversão do islã ao cristianismo era punida com morte. Não era "convivência pacífica", era subjugação organizada.
+Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham status de cidadania reduzida: pagavam imposto especial (jizya) e, pelas regras do chamado Pacto de Omar, não podiam construir igrejas novas nem fazer proselitismo, e em princípio não podiam exercer autoridade sobre muçulmanos. A conversão ao islã era recompensada com isenção de imposto e ascensão social. A conversão do islã ao cristianismo era punida com morte. Não era "convivência pacífica", era subjugação organizada.
 
 ## O século XI e o pedido bizantino
 
-No séc. XI a situação piorou ainda mais. Em 1009, o califa fatímida al-Hakim destruiu a Igreja do Santo Sepulcro em Jerusalém (o lugar do túmulo de Cristo) e perseguiu cristãos. Os turcos seljúcidas, recém-convertidos ao islã, derrotaram o Império Bizantino em Manzikert em 1071, tomaram quase toda a Ásia Menor nos anos seguintes, tiraram Jerusalém dos fatímidas por volta de 1073 e começaram a hostilizar peregrinos cristãos que iam à Terra Santa. Os peregrinos eram roubados, escravizados, mortos.
+No séc. XI a situação piorou ainda mais. Em 1009, o califa fatímida al-Hakim destruiu a Igreja do Santo Sepulcro em Jerusalém (o lugar do túmulo de Cristo) e perseguiu cristãos. Os turcos seljúcidas, recém-convertidos ao islã, derrotaram o Império Bizantino em Manzikert, em 1071, ocuparam quase toda a Ásia Menor nos anos seguintes, tomaram Jerusalém dos fatímidas no início da década de 1070 e começaram a hostilizar peregrinos cristãos que iam à Terra Santa. Os peregrinos eram roubados, escravizados, mortos.
 
 O imperador bizantino Aleixo I Comneno pediu socorro militar ao Papa Urbano II contra o avanço seljúcida. Em resposta, no Concílio de Clermont (27 de novembro de 1095), Urbano II pregou a Primeira Cruzada: campanha militar para defender os cristãos do Oriente e libertar a Terra Santa, especialmente Jerusalém, do domínio muçulmano.
 
@@ -89,15 +89,15 @@ Foi defesa, não agressão. Quatrocentos e sessenta anos depois do início da co
 
 A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. A Igreja não justifica esses excessos. Condena-os.
 
-Mas é desonesto falar das atrocidades cruzadas sem mencionar as atrocidades muçulmanas no mesmo período. Não havia "lado civilizado": eram duas civilizações em guerra, com práticas militares cruéis típicas da época. Quando Zengi, senhor de Mossul e Alepo, tomou Edessa em 1144, seus soldados mataram os habitantes que encontravam, "sem poupar idade, condição nem sexo", segundo o cronista Guilherme de Tiro, e foi essa queda que provocou a Segunda Cruzada. As escravidões em massa eram prática normal de ambos os lados. O comércio de escravos transaariano e do Índico, sob direção muçulmana, durou mais de uma dúzia de séculos e atingiu cifras comparáveis ao tráfico atlântico segundo estimativas de historiadores como Olivier Pétré-Grenouilleau.
+Mas é desonesto falar das atrocidades cruzadas sem mencionar as atrocidades muçulmanas no mesmo período. Não havia "lado civilizado": eram duas civilizações em guerra, com práticas militares cruéis típicas da época. Quando o sultão Baibars tomou Antioquia, em 1268, a população cristã da cidade foi massacrada ou escravizada. As escravidões em massa eram prática normal de ambos os lados. O tráfico de escravos africanos pelo Saara e pelo oceano Índico, sob direção muçulmana, durou cerca de treze séculos e, segundo estimativas de historiadores como Olivier Pétré-Grenouilleau (Les Traites négrières, 2004), atingiu cifras comparáveis às do tráfico atlântico.
 
 ## A vergonha da Quarta Cruzada
 
-A Quarta Cruzada (1202-1204) foi um desastre moral: cruzados foram desviados pelos venezianos e atacaram Constantinopla cristã (ortodoxa), saqueando a cidade. O Papa Inocêncio III tinha proibido os cruzados de atacar cristãos e, ao saber dos detalhes do saque, condenou-o duramente numa carta de 1205 ao seu legado. Em 2001, em Atenas, o Papa João Paulo II pediu perdão a Deus pelos pecados dos católicos contra os ortodoxos, lembrou o "desastroso saque da cidade imperial de Constantinopla" e disse que o fato de os agressores serem cristãos latinos "enche os católicos de profundo arrependimento". Em 2004 voltou ao tema diante do Patriarca Bartolomeu I. A história católica honesta reconhece os erros graves.
+A Quarta Cruzada (1202-1204) foi um desastre moral: cruzados foram desviados pelos venezianos e atacaram Constantinopla cristã (ortodoxa), saqueando a cidade. O Papa Inocêncio III tinha proibido os cruzados de atacar cristãos e, ao saber dos detalhes do saque, condenou-o duramente numa carta de 1205 ao seu legado. Em 2001, em Atenas, o Papa João Paulo II pediu perdão público por esse pecado, e em 2004, diante do Patriarca Bartolomeu I, voltou a manifestar "indignação e dor" pelo saque. A história católica honesta reconhece os erros graves.
 
-A motivação espiritual dos cruzados era complexa. Para a maioria, era genuinamente religiosa: o desejo de libertar o lugar do túmulo de Cristo, defender peregrinos, ganhar a indulgência (a remissão das penas devidas pelos pecados já perdoados na confissão: a dura viagem valia como penitência completa). Para alguns, eram motivos seculares (terra, conquista, glória). A indulgência cruzada era oferecida a quem aceitasse os enormes sacrifícios financeiros e físicos da campanha (a Primeira Cruzada empobreceu famílias nobres por gerações).
+A motivação espiritual dos cruzados era complexa. Para a maioria, era genuinamente religiosa: o desejo de libertar o lugar do túmulo de Cristo, defender peregrinos, ganhar a indulgência, isto é, a remissão da pena temporal devida pelos pecados já perdoados, porque a cruzada era entendida como ato de penitência. Para alguns, eram motivos seculares (terra, conquista, glória). A indulgência cruzada era oferecida a quem aceitasse os enormes sacrifícios financeiros e físicos da campanha (a Primeira Cruzada empobreceu famílias nobres por gerações).
 
-A historiografia acadêmica moderna tem reconhecido cada vez mais essa complexidade. Historiadores das Cruzadas de posições diferentes, como Jonathan Riley-Smith e Thomas Madden (ambos católicos) e Christopher Tyerman, rejeitam, cada um a seu modo, a narrativa popular de "cruzados invasores contra pacíficos muçulmanos" movidos só por cobiça, embora divirjam sobre o peso do caráter defensivo das Cruzadas.
+A historiografia acadêmica moderna tem reconhecido cada vez mais essa complexidade. Historiadores das Cruzadas com visões diferentes, como Jonathan Riley-Smith e Thomas Madden (ambos católicos) e Christopher Tyerman, rejeitam, cada um a seu modo, a narrativa popular de "cruzados invasores contra pacíficos muçulmanos", embora divirjam sobre o quanto as Cruzadas foram uma guerra defensiva.
 
 ## Perguntas-chave
 
@@ -124,33 +124,33 @@ A historiografia acadêmica moderna tem reconhecido cada vez mais essa complexid
 
 ## O contexto antes de Galileu
 
-Primeiro, o contexto. O heliocentrismo (Sol no centro) já tinha sido proposto por Aristarco de Samos no séc. III a.C., mas tinha sido rejeitado por motivos científicos (faltavam evidências observacionais). No séc. XVI, Nicolau Copérnico, um clérigo católico (cônego da Catedral de Frombork), retomou a hipótese em seu livro "Sobre as Revoluções dos Orbes Celestes" (1543). Esse livro foi dedicado ao Papa Paulo III. Antes disso, em 1533, as ideias de Copérnico tinham sido expostas no Vaticano ao Papa Clemente VII, que as ouviu com interesse, e em 1536 o cardeal Nicolau Schönberg escreveu a Copérnico pedindo que as publicasse (a carta saiu impressa no começo do livro). Os jesuítas, principal ordem de cientistas católicos, conheciam e usavam os cálculos de Copérnico, embora ensinassem oficialmente o sistema geocêntrico (e, mais tarde, o de Tycho Brahe), e em 1611 os astrônomos do Colégio Romano confirmaram e celebraram as descobertas de Galileu com o telescópio.
+Primeiro, o contexto. O heliocentrismo (Sol no centro) já tinha sido proposto por Aristarco de Samos no séc. III a.C., mas tinha sido rejeitado por motivos científicos (faltavam evidências observacionais). No séc. XVI, Nicolau Copérnico, um clérigo católico (cônego da Catedral de Frombork), retomou a hipótese em seu livro "Sobre as Revoluções dos Orbes Celestes" (1543). Esse livro foi dedicado ao Papa Paulo III, e a teoria já era bem vista em círculos católicos: em 1533, o Papa Clemente VII ouvira com interesse uma exposição dela, e em 1536 o cardeal Nikolaus von Schönberg escrevera a Copérnico pedindo que a publicasse. Os jesuítas do Colégio Romano, como Cristóvão Clávio, conheciam e usavam os cálculos de Copérnico décadas antes de Galileu, embora não aceitassem o heliocentrismo como fato físico.
 
 ## Qual era o problema, de fato
 
-O problema com Galileu não era ele defender o heliocentrismo como hipótese matemática (isso era tolerado). O problema era ele afirmar o heliocentrismo como verdade física comprovada, em contradição com a leitura tradicional de certas passagens bíblicas (como Josué 10,12-13: "Sol, detém-te" e "o sol parou"). E na época, faltavam ainda evidências definitivas. As primeiras provas diretas de que a Terra gira em torno do Sol só vieram muito depois: a aberração da luz, descoberta por James Bradley no fim da década de 1720, e a paralaxe das estrelas, medida por Friedrich Bessel em 1838. O sistema de Tycho Brahe, com a Terra parada, explicava as fases de Vênus observadas por Galileu tão bem quanto o de Copérnico. E o principal argumento físico de Galileu, de que as marés provavam o movimento da Terra, estava errado. Já as objeções do senso comum (por que não sentimos vento contrário, por que uma pedra jogada para cima cai no mesmo lugar) ele respondeu bem, com o exemplo do navio em movimento, no Diálogo que publicaria em 1632.
+O problema com Galileu não era ele defender o heliocentrismo como hipótese matemática (isso era tolerado). O problema era ele afirmar o heliocentrismo como verdade física comprovada, em contradição com a leitura tradicional de certas passagens bíblicas (como Josué 10,12-13, onde se lê que "o sol parou"). E, na época, faltava ainda uma prova direta do movimento da Terra. Ela só viria com a aberração da luz, descoberta por James Bradley em 1729, e com a paralaxe estelar (o pequeno deslocamento aparente das estrelas próximas causado pela órbita da Terra), medida por Friedrich Bessel em 1838. E o principal argumento físico de Galileu, o das marés, estava errado.
 
 ## O que realmente aconteceu
 
-Em 1616, a Congregação do Índice declarou a doutrina do movimento da Terra "falsa" e "totalmente contrária à Sagrada Escritura" e suspendeu o livro de Copérnico até que fosse corrigido. O cardeal Roberto Belarmino, que no ano anterior tinha escrito que, se houvesse uma demonstração verdadeira, seria preciso reler com cuidado as passagens bíblicas que parecem contrárias, advertiu Galileu a não sustentar nem defender a tese como verdade (usá-la como hipótese de cálculo continuava permitido). Galileu aceitou. Em 1632, publicou "Diálogo sobre os Dois Máximos Sistemas do Mundo", apresentando o heliocentrismo de modo a ridicularizar a posição contrária (colocou um argumento caro ao Papa Urbano VIII na boca de Simplício, personagem com o nome de um antigo comentador de Aristóteles, mas que soava como "simplório"). Urbano, antes amigo e protetor de Galileu, ficou furioso e o caso foi reaberto.
+Em 1616, a Congregação do Índice declarou falsa e contrária à Escritura a tese do movimento da Terra e suspendeu o livro de Copérnico até que fosse corrigido, e o cardeal Roberto Belarmino advertiu Galileu a não sustentar nem defender o heliocentrismo. Tratá-lo como hipótese matemática continuava permitido, e o próprio Belarmino escrevera, em 1615, que, se surgisse uma demonstração verdadeira, seria preciso reler com cuidado as passagens da Escritura que pareciam dizer o contrário. Galileu aceitou. Em 1632, publicou "Diálogo sobre os Dois Máximos Sistemas do Mundo", apresentando o heliocentrismo de modo a ridicularizar a posição contrária (pôs um argumento caro ao Papa Urbano VIII na boca de Simplício, personagem com o nome de um antigo comentador de Aristóteles, mas que soava como "simplório"). Urbano, antes amigo e protetor de Galileu, ficou furioso e o caso foi reaberto.
 
-Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença o declarou "veementemente suspeito de heresia", obrigou-o a abjurar formalmente o heliocentrismo e proibiu o Diálogo. A pena: prisão, logo trocada por prisão domiciliar pelo resto da vida, na sua confortável villa em Arcetri, perto de Florença, onde continuou pesquisando ciência (publicou "Discursos sobre as Duas Novas Ciências" em 1638, fundamento da mecânica clássica) e recebendo visitas de cientistas internacionais. Não foi torturado: no último interrogatório, foi formalmente ameaçado de tortura, como mandava o procedimento, mas a ameaça não foi cumprida. Não foi morto. Não foi queimado. Tinha 69 anos no julgamento e morreu em 1642 em sua casa.
+Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença o declarou "veementemente suspeito de heresia", obrigou-o a abjurar formalmente o heliocentrismo e proibiu o Diálogo. A pena: prisão, logo trocada por prisão domiciliar pelo resto da vida, na sua confortável villa em Arcetri, perto de Florença, onde continuou pesquisando ciência (publicou "Discursos sobre as Duas Novas Ciências" em 1638, fundamento da mecânica clássica) e recebendo visitas de cientistas internacionais. Não foi torturado: foi apenas interrogado sob a ameaça formal de tortura, de praxe nos processos da época. Não foi morto. Não foi queimado. Tinha 69 anos no julgamento e morreu em 1642 em sua casa.
 
 ## Um erro humano, reconhecido em 1992
 
-A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso em 31 de outubro de 1992, ao receber as conclusões de uma comissão de estudo criada em 1981. Disse que "o erro dos teólogos da época" foi pensar que o conhecimento do mundo físico era "imposto pelo sentido literal da Sagrada Escritura". Disse também que "uma trágica incompreensão recíproca" tinha sido tomada como sinal de uma oposição de fundo entre ciência e fé, um "doloroso mal-entendido" que "pertence agora ao passado". Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico. Condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
+A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 31 de outubro de 1992, depois de uma comissão de estudo que trabalhou de 1981 a 1992. Disse que "o erro dos teólogos da época" foi pensar que o conhecimento da estrutura física do mundo era, de algum modo, "imposto pelo sentido literal da Sagrada Escritura". E lembrou que uma "trágica incompreensão recíproca" tinha sido tomada como sinal de uma oposição de fundo entre ciência e fé, um "doloroso mal-entendido" que, segundo ele, já pertence ao passado. Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico. Condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
 
-## Os reformadores foram mais hostis
+## Os reformadores também resistiram
 
-Compare a posição da Igreja com a hostilidade científica de outros movimentos. Lutero chamou Copérnico de "tolo" que "quer virar de cabeça para baixo a astronomia toda". Melanchthon (o grande sistematizador luterano) condenou o heliocentrismo. Calvino rejeitou. Os reformadores protestantes do séc. XVI foram, em geral, mais hostis a Copérnico do que os católicos.
+Compare a posição da Igreja com a de outros movimentos religiosos da época. Lutero, numa conversa à mesa em 1539, zombou do novo astrônomo que queria "virar de cabeça para baixo toda a astronomia", lembrando que Josué mandou parar o sol, e não a Terra. Melanchthon (o grande sistematizador luterano) rejeitou o heliocentrismo com argumentos bíblicos. Calvino nunca citou Copérnico, mas num sermão de por volta de 1556 chamou de desvairados os que diziam que o sol não se move e que é a Terra que gira. No séc. XVI, a resistência a Copérnico veio de católicos e de protestantes, e os líderes da Reforma se manifestaram contra ele antes de Roma, que só tomaria posição em 1616.
 
 ## Ciência e fé: matriz, não conflito
 
 A história da ciência e da Igreja Católica, longe de ser "conflito", é amplamente cooperativa. A própria existência da ciência moderna deve muito ao cristianismo. A ideia de um universo racional, ordenado por leis matemáticas, criado por uma mente divina, foi pressuposto teológico que permitiu a confiança na investigação científica. As universidades nasceram na Europa cristã medieval, muitas a partir das escolas das catedrais e com privilégios concedidos pelos papas (Bolonha, por volta de 1088, Oxford, no fim do séc. XI, Paris, por volta de 1150, Salamanca, 1218).
 
-Cientistas católicos foram protagonistas em quase todas as áreas. Gregor Mendel (monge agostiniano) fundou a genética. Georges Lemaître (sacerdote belga) propôs o que viria a se chamar Big Bang. Roger Boscovich (jesuíta) precursor da física atômica. Albertus Magnus, dominicano do séc. XIII, é patrono dos cientistas. Os jesuítas mapearam o céu (35 crateras lunares e várias estrelas levam nomes de jesuítas). O Observatório do Vaticano tem raízes na reforma do calendário de 1582 e foi refundado por Leão XIII em 1891.
+Cientistas católicos foram protagonistas em quase todas as áreas. Gregor Mendel (monge agostiniano) fundou a genética. Georges Lemaître (sacerdote belga) propôs o que viria a se chamar Big Bang. Roger Boscovich (jesuíta) foi precursor da teoria atômica. Santo Alberto Magno, dominicano do séc. XIII, é patrono dos cientistas. Os jesuítas mapearam o céu (35 crateras lunares levam nomes de jesuítas). O Observatório do Vaticano, com raízes na reforma do calendário gregoriano (1582), foi refundado por Leão XIII em 1891 e funciona até hoje.
 
-O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, por autores como John William Draper ("History of the Conflict between Religion and Science", 1874), abertamente anticatólico, e Andrew Dickson White ("A History of the Warfare of Science with Theology in Christendom", 1896), que atacava a teologia dogmática em geral. Historiadores da ciência contemporâneos (Edward Grant, Stanley Jaki, Ronald Numbers) reconhecem que essa narrativa é fundamentalmente falsa.
+O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, por obras polêmicas como a de John William Draper ("History of the Conflict between Religion and Science", 1874), escrita sobretudo contra a Igreja Católica, e a de Andrew Dickson White ("A History of the Warfare of Science with Theology in Christendom", 1896). Historiadores da ciência contemporâneos (Edward Grant, Stanley Jaki, Ronald Numbers) reconhecem que essa narrativa é fundamentalmente falsa.
 
 ## Perguntas-chave
 
@@ -158,12 +158,12 @@ O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, p
 
 2. Galileu foi morto pela Igreja? (Não. Morreu em casa, idoso, depois de continuar publicando.)
 
-3. Quem propôs o Big Bang? (Um padre católico belga, Georges Lemaître, em 1927.)
+3. Quem propôs o Big Bang? (Um padre católico belga, Georges Lemaître: o universo em expansão em 1927 e o átomo primordial em 1931.)
 
 4. Onde nasceram as primeiras universidades da Europa? (Na cristandade medieval, em geral a partir de escolas da Igreja e com privilégios dos papas.)
 
 5. Se "ciência e fé são incompatíveis", como explicar que a ciência moderna nasceu na civilização cristã, e não nas civilizações orientais ou pagãs?`,
-    references: ['jp2-galileu-1992', 'lemaitre-bigbang'],
+    references: ['jp2-galileu-1992', 'lemaitre-bigbang', 'js-10-12'],
   },
   {
     id: 51,
@@ -191,7 +191,7 @@ Tentou-se explicar o fenômeno como ilusão de ótica, histeria coletiva ou efei
 
 ## O que a Igreja diz
 
-A Igreja Católica investigou o caso por anos. O bispo de Leiria, D. José Alves Correia da Silva, abriu o processo canônico em 1922 e, em 13 de outubro de 1930, declarou "dignas de crédito" as visões das crianças e autorizou o culto de Nossa Senhora de Fátima. Como em toda revelação privada, ninguém é obrigado a crer. Mas o Milagre do Sol permanece como um sinal público e datado, num século que se dizia científico demais para milagres.
+O bispo de Leiria, D. José Alves Correia da Silva, investigou o caso por anos e, em 13 de outubro de 1930, declarou as aparições de Fátima "dignas de crédito". Como em toda revelação privada, ninguém é obrigado a crer. Mas o Milagre do Sol permanece como um sinal público e datado, num século que se dizia científico demais para milagres.
 
 ## Perguntas-chave
 
@@ -218,9 +218,9 @@ A Igreja Católica investigou o caso por anos. O bispo de Leiria, D. José Alves
 
 ## A imagem que não devia existir
 
-O extraordinário não é só a história, é o objeto. A tilma é feita de fibra de agave, um material grosseiro que, segundo os defensores do milagre, costuma se desfazer em poucas décadas. Quase quinhentos anos depois, o tecido permanece íntegro, mesmo tendo ficado exposto sem proteção por mais de um século, à fumaça das velas e ao toque de milhões de fiéis.
+O extraordinário não é só a história, é o objeto. A tilma é feita de fibra de agave, um material grosseiro que, segundo se costuma afirmar, deveria ter se desintegrado em vinte ou trinta anos. Quase quinhentos anos depois, o tecido permanece íntegro e em notável estado de conservação, mesmo tendo ficado exposto sem proteção por mais de um século, à fumaça das velas e ao toque de milhões de fiéis.
 
-A imagem em si desafia explicação. O estudo com infravermelho do biofísico Philip Callahan, em 1979, não encontrou desenho preliminar nem camada de preparo sob as partes originais da figura (o rosto, as mãos, a túnica rosada e o manto azul), nem verniz sobre elas. Callahan considerou essa figura original inexplicável, e nela as cores não desbotaram. O mesmo estudo, porém, identificou acréscimos pintados depois por mãos humanas, como a lua, o anjo, os raios de sol e as estrelas, e são esses acréscimos, não a figura original, que hoje mostram rachaduras e descascamento. Em 1791, derramou-se acidentalmente ácido nítrico sobre o tecido, e a mancha, em vez de destruir a imagem, foi desaparecendo com o tempo sem deixar dano grave.
+A imagem em si desafia explicação. O estudo com infravermelho feito por Philip Callahan em 1979 não encontrou, nas partes originais da figura, sinais de desenho preliminar, esboço ou pinceladas, algo muito incomum para um pintor da época, que trabalhava a partir de um esboço. O mesmo estudo mostrou que alguns detalhes, como a lua e o anjo aos pés da figura, foram acrescentados depois, a pincel, o que não atinge a figura central. Não há verniz nem fixador, e ainda assim as cores não desbotaram. Em 1791, derramou-se acidentalmente ácido nítrico sobre o tecido, e a mancha, em vez de destruir a imagem, foi desaparecendo com o tempo sem deixar dano grave.
 
 ## Os olhos da Virgem
 
@@ -228,21 +228,21 @@ Talvez o detalhe mais intrigante esteja nos olhos da figura. A partir dos anos 1
 
 ## Um sermão em imagem
 
-Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1). O cinto preto indicava gravidez. Nos anos 1980, o padre Mario Rojas Sánchez e Juan Homero Hernández Illescas defenderam que as estrelas no manto correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que se punha diante do sol e pisava a lua, astros que eles antes adoravam. A tradição liga à devoção de Guadalupe a grande onda de batismos daqueles anos: o franciscano Motolinía calculou em mais de nove milhões os indígenas batizados nos quinze anos que se seguiram à conquista, até 1536.
+Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1). O cinto preto indicava gravidez. Nos anos 1980, o padre Mario Rojas Sánchez e Juan Homero Hernández Illescas defenderam que as estrelas no manto correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e se punha diante do sol que eles antes adoravam. Nos anos seguintes, os batismos se multiplicaram: o franciscano Motolinía calculava, por volta de 1537, em mais de nove milhões os indígenas batizados desde a conquista, e a tradição atribui à Virgem de Guadalupe um papel decisivo nesse movimento, num povo que, poucos anos antes, ainda oferecia sacrifícios humanos aos seus deuses.
 
 ## O que isso significa
 
-Como sempre, é preciso honestidade. A Igreja não obriga ninguém a crer em Guadalupe, e nem toda alegação sobre a tilma tem o mesmo peso científico. Mas o conjunto é impressionante: um tecido grosseiro que se conserva há quase cinco séculos, uma figura original sem desenho preliminar nem preparo que não desbota, detalhes que só a tecnologia recente revelou, e um fruto histórico imenso. Nossa Senhora de Guadalupe é hoje padroeira das Américas, e seu manto continua sendo um sinal difícil de explicar dentro de uma visão puramente materialista do mundo.
+Como sempre, é preciso honestidade. A Igreja não obriga ninguém a crer em Guadalupe, e nem toda alegação sobre a tilma tem o mesmo peso científico. Mas o conjunto é impressionante: um tecido que não apodrece, uma figura sem pinceladas que não desbota, detalhes que só a tecnologia recente revelou, e um fruto histórico imenso. Nossa Senhora de Guadalupe é hoje padroeira das Américas, e seu manto continua sendo um sinal difícil de explicar dentro de uma visão puramente materialista do mundo.
 
 ## Perguntas-chave
 
 1. Como um tecido grosseiro de fibra de agave, sem camada de preparo, permanece íntegro há quase quinhentos anos?
 
-2. Os pintores da época trabalhavam sobre um esboço e uma camada de preparo. Por que a figura original de Guadalupe não tem nenhum dos dois?
+2. Pintores trabalham a partir de um esboço. Por que a figura original de Guadalupe não tem nenhum desenho preliminar, nem pinceladas?
 
 3. Se a imagem é uma fraude do século XVI, como explicar as figuras refletidas nos olhos, detectadas só com ampliação moderna?
 
-4. Que falsificação sustentaria por quase quinhentos anos a fé de milhões de pessoas, a começar pelos indígenas que pediram o batismo nas décadas seguintes?`,
+4. Que falsificação se tornaria, por quase cinco séculos, o coração da fé de todo um povo?`,
     references: ['guadalupe-tilma', 'ap-12-1'],
   },
   {
@@ -267,19 +267,11 @@ O que torna Zeitoun extraordinário é a escala e a diversidade do público. As 
 
 ## Fotografada e investigada
 
-Diferente de quase todas as aparições, Zeitoun foi fotografada. Várias imagens da figura luminosa sobre a igreja foram registradas por testemunhas e pela imprensa da época. O governo egípcio, então de orientação laica e socialista, sob Nasser, investigou o caso oficialmente, justamente para descartar fraude ou truque, e não encontrou projetor, holofote ou qualquer manipulação num raio de quilômetros. A Igreja Copta Ortodoxa, pela voz do papa Cirilo VI, reconheceu oficialmente as aparições em maio de 1968. A Santa Sé não emitiu um juízo próprio: o papa São Paulo VI entendeu que, por se tratar de uma igreja copta, a avaliação cabia à Igreja Copta.
+Diferente de quase todas as aparições, Zeitoun foi fotografada. Várias imagens da figura luminosa sobre a igreja foram registradas por testemunhas e pela imprensa da época, embora a autenticidade de algumas delas seja discutida. O governo egípcio, então de orientação laica e socialista, sob Nasser, mandou investigar o caso para descartar fraude ou truque, e, segundo os relatos, a polícia não encontrou projetor, holofote ou qualquer manipulação nos arredores. Alguns estudiosos lembram que o governo, abalado pela derrota na guerra de 1967, acabou acolhendo e divulgando as aparições, mas nenhum indício de fraude foi documentado. A Igreja Copta Ortodoxa, pela voz do papa Cirilo VI, reconheceu oficialmente as aparições. O patriarca copta católico, cardeal Estêvão I Sidarouss, em comunhão com Roma, também declarou não ter dúvidas sobre a realidade das aparições, embora a Santa Sé não tenha aberto investigação própria.
 
 ## Por que o caso é forte
 
-Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre:
-
-- duração longa, de anos e não de um instante
-- número enorme de testemunhas
-- registro fotográfico
-- investigação por um governo sem interesse em confirmar o sobrenatural
-- presença de testemunhas de outra religião
-
-A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
+Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: uma duração de anos, e não de um instante, um número enorme de testemunhas, registro fotográfico, uma investigação policial que não achou truque e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
 
 ## Perguntas-chave
 
@@ -287,9 +279,9 @@ A explicação por histeria coletiva, sempre invocada, esbarra nessa combinaçã
 
 2. Histeria coletiva produz fotografias e dura mais de dois anos?
 
-3. Por que o governo laico do Egito, que investigou o caso, não encontrou nenhum truque?
+3. Por que a investigação do governo laico do Egito não encontrou nenhum truque?
 
-4. Se um fenômeno é visto por multidões de várias religiões, registrado em fotos e reconhecido até por autoridades que não ganham nada com isso, em que se apoia quem o descarta de antemão?`,
+4. Se um fenômeno é visto por multidões de várias religiões, registrado em fotos e reconhecido por autoridades religiosas e civis, em que se apoia quem o descarta de antemão?`,
     references: ['zeitoun-aparicao'],
   },
   {
@@ -318,7 +310,7 @@ A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias
 
 ## O que significa para o Brasil
 
-Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece nela: pobre, mestiço, escurecido, achado por gente simples e elevado à dignidade de padroeira de uma nação inteira. A devoção a Aparecida atravessou a escravidão, o Império, a República, e continua viva. Para o cristão, ela aponta, como toda devoção mariana verdadeira, não para si mesma, mas para Cristo, repetindo o que Maria disse em Caná: "Fazei o que ele vos disser" (João 2,5).
+Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece nela: pobre, mestiço, escurecido, achado por gente simples e elevado à dignidade de padroeira de uma nação inteira. A devoção a Aparecida atravessou a escravidão, o Império, a República, e continua viva. Para o cristão, ela aponta, como toda devoção mariana verdadeira, não para si mesma, mas para Cristo, repetindo o que Maria disse em Caná: "fazei o que ele vos disser" (João 2,5).
 
 ## Perguntas-chave
 
@@ -345,7 +337,7 @@ Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece
 
 ## Que "tesouro" é esse
 
-A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos. No caso do Vaticano, o Tratado de Latrão, de 1929, obriga a Santa Sé a manter seus tesouros de arte e de ciência visíveis a estudiosos e visitantes. As igrejas, a começar pela Basílica de São Pedro, recebem os visitantes de graça. Os Museus Vaticanos cobram ingresso, e essa renda paga a conservação das obras e ajuda a manter a Cidade do Vaticano. A Capela Sistina não é uma conta bancária. É um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
+A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e, tirando os ingressos de alguns museus, quase não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça. A Capela Sistina não é uma conta bancária. É um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
 
 ## Vender tudo acabaria com a pobreza?
 
@@ -353,11 +345,11 @@ Não. Imagine que se vendesse a arte. A quem? Provavelmente a colecionadores bil
 
 ## O que a Igreja de fato faz
 
-Aqui está o dado que costuma ser esquecido: a Igreja Católica é, de longe, a maior rede de assistência e educação do planeta. Hospitais, escolas, universidades, orfanatos, abrigos, distribuição de alimentos, presença em lugares onde nem o Estado chega. Boa parte disso é invisível e silenciosa, e nasce das palavras de Jesus sobre o Juízo: "tive fome e me destes de comer" e "todas as vezes que fizestes isso a um destes meus irmãos mais pequeninos, foi a mim mesmo que o fizestes" (Mateus 25,35.40). Antes de perguntar por que a Igreja não faz mais pelos pobres, vale perguntar: quem, no mundo, faz mais?
+Aqui está o dado que costuma ser esquecido: a Igreja Católica é, de longe, a maior rede não governamental de assistência e educação do planeta. Hospitais, escolas, universidades, orfanatos, abrigos, distribuição de alimentos, presença em lugares onde nem o Estado chega, em obediência ao critério do Juízo final: "tive fome e me destes de comer" (Mateus 25,31-46). Boa parte disso é invisível e silenciosa. Antes de perguntar por que a Igreja não faz mais pelos pobres, vale perguntar: quem, no mundo, faz mais?
 
 ## O ideal e as falhas
 
-Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e ainda há luxo indevido e abusos por parte de clérigos, que a própria Igreja deve corrigir. O Papa Francisco (2013-2025) pedia "uma Igreja pobre e para os pobres", e Leão XIV retomou esse pedido na sua primeira exortação apostólica, Dilexi te (2025). Criticar a ostentação de um ou outro é legítimo e necessário. Concluir, disso, que a Igreja deveria desaparecer, ou que ela nada faz pelos pobres, é injusto com os fatos.
+Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e ainda há luxo indevido e abusos por parte de clérigos, que a própria Igreja deve corrigir. O Papa Francisco, logo depois de eleito, em 2013, pediu uma "Igreja pobre e para os pobres", e Leão XIV retomou esse pedido na sua primeira exortação apostólica, Dilexi te (2025). Criticar a ostentação de um ou outro é legítimo e necessário. Concluir, disso, que a Igreja deveria desaparecer, ou que ela nada faz pelos pobres, é injusto com os fatos.
 
 ## Perguntas-chave
 
@@ -380,26 +372,26 @@ Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e a
 
 ## Primeiro, a verdade nua
 
-Houve crimes hediondos cometidos por padres e religiosos contra crianças e jovens. E houve, pior ainda, encobrimento por parte de superiores que deveriam ter protegido as vítimas e preferiram proteger a instituição. Isso é uma traição ao Evangelho, não a sua aplicação. O próprio Jesus reservou as palavras mais terríveis a quem fizesse cair "um destes pequenos": "melhor fora que lhe atassem ao pescoço a mó de um moinho e o lançassem no fundo do mar" (Mateus 18,6). Nada justifica esses crimes, nada os relativiza.
+Houve crimes hediondos cometidos por padres e religiosos contra crianças e jovens. E houve, pior ainda, encobrimento por parte de superiores que deveriam ter protegido as vítimas e preferiram proteger a instituição. Isso é uma traição ao Evangelho, não a sua aplicação. O próprio Jesus reservou as palavras mais terríveis a quem fizesse cair "um destes pequenos que creem em mim": "melhor fora que lhe atassem ao pescoço a mó de um moinho e o lançassem no fundo do mar" (Mateus 18,6). Nada justifica esses crimes, nada os relativiza.
 
 ## O que não é honesto fazer
 
-Reconhecida a gravidade, é preciso apontar também os usos desonestos do tema. Tratar o abuso como se fosse um problema exclusivamente católico é falso: trata-se, tragicamente, de um drama presente em toda a sociedade, nas escolas, no esporte, em outras religiões e instituições, e sobretudo no círculo da família e dos amigos, onde acontece a grande maioria dos casos. E usar os crimes de alguns para condenar a fé de milhões, e todo o bem imenso que a Igreja faz, é uma generalização injusta. O crime é dos criminosos, não da fé que eles traíram.
+Reconhecida a gravidade, é preciso apontar também os usos desonestos do tema. Tratar o abuso como se fosse um problema exclusivamente católico é falso. Trata-se, tragicamente, de um drama presente em toda a sociedade, nas escolas, no esporte, em outras religiões e instituições, e sobretudo no círculo da família e dos amigos, onde acontece a maior parte dos abusos. E usar os crimes de alguns para condenar a fé de milhões, e todo o bem imenso que a Igreja faz, é uma generalização injusta. O crime é dos criminosos, não da fé que eles traíram.
 
 ## O que a Igreja tem feito
 
-Longe de ser perfeita, e tendo demorado demais a reagir, a Igreja hoje conta com algumas das normas mais rígidas que existem: tolerância zero, afastamento dos culpados, denúncia obrigatória, colaboração com a justiça civil, comissões de proteção de menores e protocolos em todas as dioceses. Muito veio tarde, e ainda há o que melhorar, mas houve uma mudança real e profunda, reconhecida até por especialistas de fora.
+Longe de ser perfeita, e tendo demorado demais a reagir, a Igreja hoje conta com algumas das normas mais rígidas que existem: tolerância zero, afastamento dos culpados, denúncia obrigatória (motu proprio Vos Estis Lux Mundi, Papa Francisco, 2019), colaboração com a justiça civil, a Pontifícia Comissão para a Proteção dos Menores (2014) e protocolos em todas as dioceses. Muito veio tarde, e ainda há o que melhorar, mas houve uma mudança real e profunda, reconhecida até por especialistas de fora.
 
 ## E a fé?
 
-No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidade dos seus ministros, mas em Cristo. Que homens traiam o Evangelho prova que precisamos do Evangelho, não que ele seja falso. Jesus mesmo avisou que o joio cresceria ao lado do trigo até o fim, e que entre os Doze haveria um traidor. Isso não anula o trigo nem os outros onze. Diante das vítimas, a primeira palavra da Igreja não pode ser a defesa, mas o pedido de perdão e o compromisso firme de proteger.
+No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidade dos seus ministros, mas em Cristo. Que homens traiam o Evangelho prova que precisamos do Evangelho, não que ele seja falso. Jesus mesmo avisou que o joio cresceria ao lado do trigo até a colheita (Mateus 13,24-30), e que entre os Doze haveria um traidor. Isso não anula o trigo nem os outros onze. Diante das vítimas, a primeira palavra da Igreja não pode ser a defesa, mas o pedido de perdão e o compromisso firme de proteger.
 
 ## Perguntas-chave
 
 1. Os crimes de abuso são uma aplicação do Evangelho, ou justamente uma traição àquilo que Jesus mais defendeu?
 
 2. Se o abuso de menores é um drama de toda a sociedade, é honesto tratá-lo como se fosse um problema só da Igreja?`,
-    references: ['mt-18-6', 'mt-13-24'],
+    references: ['mt-18-6', 'mt-13-24', 'vos-estis-lux-mundi'],
   },
   {
     id: 82,
@@ -411,7 +403,7 @@ No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidad
     imageAspect: 1.95,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FGaspar%2520van%2520Wittel%2520002.jpg&w=2200&output=jpg&q=80',
     summary: 'O Papa Pio XII foi um cúmplice silencioso do nazismo, como diz a lenda negra, ou agiu nos bastidores para salvar judeus? O que a história mostra.',
-    body: `Uma acusação famosa pinta o Papa Pio XII como o "Papa de Hitler" (título de um livro do jornalista inglês John Cornwell, de 1999), um cúmplice silencioso diante do Holocausto. A história séria, baseada em documentos, conta uma história bem diferente.
+    body: `Uma acusação famosa pinta o Papa Pio XII como o "Papa de Hitler" (título do livro de John Cornwell, de 1999), um cúmplice silencioso diante do Holocausto. A história séria, baseada em documentos, conta uma história bem diferente.
 
 ## A "lenda negra"
 
@@ -419,22 +411,22 @@ A imagem de um Pio XII conivente não nasceu de arquivos, mas sobretudo de uma p
 
 ## O que ele de fato fez
 
-Durante a guerra, Pio XII orientou conventos, mosteiros, igrejas e o próprio Vaticano a abrigarem e esconderem judeus. O diplomata israelense Pinchas Lapide estimou, em 1967 (Three Popes and the Jews), que a Igreja sob o seu pontificado ajudou a salvar de 700 mil a 860 mil judeus, mas esse número, que ele não documentou, é contestado por outros historiadores, inclusive por defensores de Pio XII. Líderes judeus da época reconheceram publicamente a ajuda: Golda Meir, então ministra das Relações Exteriores de Israel e futura primeira-ministra, prestou homenagem ao Papa na sua morte, em 1958. E Israel Zolli, rabino-chefe de Roma durante a guerra, converteu-se ao catolicismo em 1945 e escolheu o nome de batismo Eugenio em homenagem a Pio XII (Eugenio Pacelli), embora tenha negado que se converteu por gratidão.
+Durante a ocupação nazista de Roma (1943-1944), milhares de judeus foram escondidos em conventos, mosteiros, igrejas e até em propriedades da Santa Sé: uma lista achada nos arquivos do Pontifício Instituto Bíblico, divulgada em 2023, registra mais de 4.300 pessoas abrigadas em instituições católicas da cidade, das quais pelo menos 3.200 eram judeus. Vários testemunhos da época atribuem essa acolhida a um pedido do próprio Pio XII, embora o alcance do seu papel direto ainda seja discutido. O historiador judeu Pinchas Lapide, em "Three Popes and the Jews" (1967), estimou que a ação da Igreja sob o seu pontificado tenha contribuído para salvar centenas de milhares de judeus, número que muitos historiadores consideram alto. Não por acaso, líderes judeus da época reconheceram isso publicamente: Golda Meir, então ministra das Relações Exteriores e futura primeira-ministra de Israel, prestou homenagem na sua morte, em 1958, e o rabino-chefe de Roma do período, Israel Zolli, que se converteu ao catolicismo em 1945, adotou no batismo, em homenagem ao Papa, o nome Eugenio, o nome de batismo de Pio XII.
 
 ## Por que não gritou mais alto?
 
-A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda: depois que os bispos católicos fizeram ler em todas as igrejas, em 26 de julho de 1942, uma carta contra as deportações, os nazistas prenderam, em represália, os judeus convertidos ao catolicismo, entre eles Santa Teresa Benedita da Cruz (Edith Stein), morta em Auschwitz em 9 de agosto de 1942. Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha. É difícil discutir a boa intenção e os resultados.
+A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda em 1942: depois que os bispos condenaram publicamente as deportações, os nazistas retaliaram prendendo e deportando também os judeus convertidos ao catolicismo, entre eles Santa Teresa Benedita da Cruz (Edith Stein). Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha. É difícil discutir a boa intenção e os resultados.
 
 ## O veredito da história
 
-Em 2020, o Vaticano abriu os arquivos do pontificado de Pio XII à pesquisa. À medida que os documentos são estudados, o que emerge confirma o quadro de um Papa que agiu nos bastidores para proteger vidas, e não de um cúmplice. O debate sobre detalhes continua, e a Igreja não tem pressa em julgamentos. Mas a caricatura do "Papa de Hitler" simplesmente não se sustenta diante dos fatos.
+Em 2020, o Vaticano abriu os arquivos do pontificado de Pio XII à pesquisa. Os primeiros estudos dos documentos, como o de Johan Ickx ("Le Bureau", 2020), documentam a rede de ajuda a judeus montada pela Secretaria de Estado. Outros historiadores, como David Kertzer ("The Pope at War", 2022), mantêm uma leitura mais crítica da prudência do Papa. O debate continua, e a Igreja não tem pressa em julgamentos. Mas a caricatura do "Papa de Hitler" simplesmente não se sustenta diante dos fatos. E a mesma Igreja, no Concílio Vaticano II, deplorou "todos os ódios, perseguições e manifestações de anti-semitismo" contra os judeus (Nostra Aetate, 1965, §4).
 
 ## Perguntas-chave
 
 1. Se líderes judeus da época, como Golda Meir, agradeceram publicamente a Pio XII, de onde veio a fama de "cúmplice"?
 
-2. Diante do caso da Holanda, em que um protesto público provocou a deportação dos judeus católicos, a ação discreta de Pio XII foi covardia ou cálculo para salvar mais vidas?`,
-    references: ['francisco-arquivos-pio-xii-2019'],
+2. Diante do caso da Holanda, em que um protesto público levou os nazistas a deportar também os judeus católicos, a ação discreta de Pio XII foi covardia ou cálculo para salvar mais vidas?`,
+    references: ['francisco-arquivos-pio-xii-2019', 'nostra-aetate'],
   },
 ];
 

@@ -21,9 +21,11 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Referências usadas
 - [[Catecismo §2270-2275]]
-- [[Männer (2022), quando o coração do embrião começa a bater]]
 - [[Didaqué 2,2]]
 - [[Apologético 9,8]]
+- [[Código de Direito Canônico, cân. 1397 §2 e 1329 §2]]
+- [[Misericordia et Misera §12]]
+- [[Männer (2022), quando o coração do embrião começa a bater]]
 
 ## Artigos relacionados
 - [[08 - Homossexualidade e Doutrina Católica]]

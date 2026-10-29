@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Achado arqueológico (Escavações nos séc. XIX e XX)
 Tema: Confirmação do detalhe de João 5,2
 
-> João 5,2 descreve uma piscina "que tem cinco pórticos". Alguns críticos tinham o detalhe por simbólico, até que as escavações revelaram uma piscina dupla, com um dique entre os dois tanques: quatro colunatas em volta e u...
+> João 5,2 descreve uma piscina "que tem cinco pórticos". Alguns críticos tinham o detalhe por simbólico, até que a escavação revelou uma piscina dupla, dois tanques separados por um muro: com colunatas nos quatro lados e ...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

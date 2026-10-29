@@ -14,6 +14,8 @@ npm run lint                   # ESLint em src/ (App.js e src/navigation entram 
 npm run check:refs             # valida os dados de referência (fonte, EN, urls)
 npm test                       # node --test em tests/*.test.mjs (sem Jest)
 npm run capture                # Playwright: fotografa todas as telas (390 e 1280, claro e escuro) no app servido em :8081
+node scripts/verify-journey.mjs # Playwright: lição inteira, treino, pergunta do dia e a revisão do dia seguinte (27 fotos que checam o próprio conteúdo, incluindo sair no meio do teste e voltar) no app web servido em BASE_URL
+node scripts/verify-bible.mjs  # Playwright: Atos 3,1, o bloco Josué 19,17-23, versículo do dia abrindo o Salmo certo e Jó em inglês (confira que BASE_URL serve o build NOVO)
 npx expo export -p web         # gera dist/ (o que o deploy publica)
 ```
 
@@ -21,8 +23,14 @@ npx expo export -p web         # gera dist/ (o que o deploy publica)
 com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
-`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage}.js`,
-`src/theme/palette.js` e os dados de `src/data/references.js` e `src/data/artworks/`. Lógica nova pura nasce com o teste antes (TDD). Não
+`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
+`src/theme/palette.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
+`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js`, `src/data/journeyMarks.js`,
+`src/data/dailyVerses.js` (texto literal das Bíblias do app) e as duas Bíblias
+(`tests/bibleAveMaria.test.mjs` confere a forma dos 1.334 capítulos contra
+`tests/fixtures/avemaria-forma.json`; `tests/bibles.test.mjs`, livros e capítulos).
+Pergunta de múltipla escolha nova passa pela regra de `tests/optionBalance.mjs`: a certa
+não pode se entregar pelo tamanho. Lógica nova pura nasce com o teste antes (TDD). Não
 adicione `"type": "module"` ao `package.json` (quebra Metro, Babel e `app.config.js`).
 
 **Builds EAS** (`eas.json`: development / preview / production) só devem ser
@@ -68,20 +76,21 @@ num desses módulos, **atualize as duas variantes**:
 ### Navegação
 O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 
-- **HomeStack** (`HomeStackScreen`): HomeMain → References, Tools, Today, Notebook, NotebookPage, CategoryArticles, Favorites, Glossary, ReadingPlan, Rosary, ExamConscience, Highlights, Notes, Search, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, DebateStrategies, BibleMap, Legal.
+- **HomeStack** (`HomeStackScreen`): HomeMain → References, Tools, Today, Notebook, NotebookPage, CategoryArticles, Journey, Favorites, Glossary, ReadingPlan, Rosary, ExamConscience, Highlights, Notes, Search, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, DebateStrategies, BibleMap, Legal.
 - **ToolsStack** (`ToolsStackScreen`): ToolsMain → mesmas telas secundárias (Today, Notebook, Quiz, Dialogue, DebateStrategies, BibleMap etc.).
 - **SettingsStack** (`SettingsStackScreen`): SettingsMain → Legal, Glossary, ReadingPlan, Rosary, ExamConscience, Favorites, ArticleFromSearch, RefDetail.
 - **ArticlesStack** (`ArticlesStackScreen`): ArticlesList → ArticleDetail → RefDetail.
 - **MainStack** (raiz): MainTabs + NoteEditor (modal full-screen sem tab bar).
 - **AuthStack**: Login, Signup, ForgotPassword.
 - **OnboardingScreen**: exibido antes das tabs enquanto deslogado.
-- Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa.
+- Rotas `ArticleFromSearch`/`RefDetail` são duplicadas de propósito nos stacks para o tap resolver dentro da aba ativa. `Journey` (Minha Jornada), `Review` (Revisão) e `CategoryArticles` também vivem em `sharedScreens.js`.
 - **Os nomes das tabs são strings em português e fazem parte da API de navegação**: `'Início'`, `'Artigos'`, `'Bíblia'`, `'Ferramentas'`, `'Ajustes'`. É por isso que existe `navigate('Bíblia', ...)`. O label visível vem do `LABELS`/`ICONS` em `App.js` via `t('tab.*')`. Renomear a rota quebra todos os deep links; para traduzir, mexa só no label.
 - `Tab.Navigator` usa `backBehavior="history"`, então o botão voltar percorre o histórico entre abas, não a ordem das abas.
 
 ### Design system (`src/theme/`, `src/components/ui/`, `src/navigation/`)
 - `src/theme/tokens.js` é puro e é a única fonte de números de layout: `space`
-  (grade de 4), `radius`, `type` + `textStyle(role, fs)`, `icon`, `motion`, `shadow`
+  (grade de 4), `radius`, `type` + `textStyle(role, fs)`, `icon`, `thumb`, `seal`
+  (anéis e emblemas da Jornada), `motion`, `shadow`
   (formato `boxShadow` do RN 0.81). `useTheme()` expõe `tokens` (com `fontFamily`
   resolvida por plataforma) e `text(role)` já escalado pelo tamanho de letra. Nas
   telas não entram números soltos de tamanho, raio ou cor, nem hex fora da paleta
@@ -114,6 +123,11 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
   `tokens.motion.stagger`, `scheduleOnRN` em vez de `runOnJS`). Reduce motion é
   respeitado pelo `ReduceMotion.System` padrão. Haptics via `src/utils/haptics.js`
   (no-op na web).
+
+### Jornada (gamificação dos artigos)
+- Cada artigo tem uma lição em `src/data/lessons/<categoria>.js` (`hook` de previsão, `keyPoints`, `oneLiner`, `check` com 3 perguntas, PT/EN). `tests/lessons.test.mjs` cobra que todo artigo tem lição e vice-versa: **artigo novo exige lição nova**.
+- Errar não se resolve chutando de novo: previsão travada, teste só paga XP na primeira tentativa (refazer é treino), pergunta do dia só conta a primeira resposta, e o que foi errado volta na Revisão espaçada (`src/utils/review.js`, caixas 1/3/7/16/35 dias, tela `ReviewScreen`). As opções aparecem embaralhadas por `shuffledOrder` em toda pergunta. Os cartões guardam as perguntas de lição pelo índice: **lição publicada nunca reordena nem remove perguntas**, reescreve no lugar.
+- Motor puro em `src/utils/journey.js` (XP, `LEVELS` com o significado de cada nome, `BADGES`, `applyEvent` idempotente); persistência em `src/utils/journeyStore.js` (AsyncStorage `journey:state`, fila de eventos, `subscribeJourney`); hook `useJourney()`. Blocos em `src/components/lesson/` (`LessonHook`, `LessonSummary`, `PocketAnswer`, `LessonCheck`, `XpRing`, `BadgeEmblem`, `EmblemMark`, `BadgeUnlockSheet`, `OptionButton`), tela `JourneyScreen`, cartão `JourneyCard` na Início. Os emblemas são marcas vetoriais em `src/data/journeyMarks.js` (mesmo sistema do `BrandMark`: caixa 64, traço 4,5, uma cor do tema; **nunca imagem gerada por IA**), desenhadas por `EmblemMark`. Ver `brain/3-App/Funcionalidades/Jornada.md`.
 
 ### Identidade visual e visualizador de obras
 - Identidade única: a Clássica (navy, dourado e creme, Cormorant, cruz latina no
@@ -150,6 +164,9 @@ mantenha esses dois em sincronia.
 `src/services/bibleApi.js` — `getChapter(bookId, chapter, language?)` síncrono.
 - `language='pt'` → Ave Maria (`src/data/bibleAveMaria.js`, ~4 MB)
 - `language='en'` → Douay-Rheims-Challoner (`src/data/bibleDouayRheims.js`, ~4.5 MB). Fallback automático para PT se EN indisponível.
+- Os dois arquivos são gerados (`scripts/convert-avemaria.mjs`, `scripts/convert-douay-rheims.mjs`): nunca edite à mão. A numeração da Ave Maria foi consertada em 39 capítulos por `scripts/source/avemaria-correcoes.json` (ver o `_doc` dele); correção nova de texto bíblico entra ali ou no conversor, com a fonte.
+- **Blocos da edição impressa**: a Ave Maria imprime alguns grupos juntos (Josué 19,17-23). O dado guarda o texto no primeiro número e `''` nos seguintes; `chapterVerses` junta numa linha com `end` ("17-23") e `verseText`/`getVerse` devolvem o bloco para qualquer número dentro dele. Conte versículos por `total` (o último número), nunca por `verses.length`.
+- Numeração: as duas Bíblias seguem a Vulgata nos Salmos (o 23 hebraico é o 22). Referência a Salmo traz as duas no rótulo ("Salmo 23 (22),1") e o `bibleNav` na do app. Onde a Douay-Rheims numera diferente da Ave Maria, use `bibleNavEn`.
 
 ### Navegação entre telas
 - Artigo → tap em referência → `navigate('RefDetail', { highlightId })` (tela dedicada de uma referência).
@@ -176,6 +193,8 @@ mantenha esses dois em sincronia.
 - `readingPlan.js` — plano de leitura em dois trilhos (Fundamentos + Aprofundamento).
 - `jesusJourney.js` — mapa da jornada de Jesus (21 paradas, usado pelo BibleMapScreen).
 - `debateStrategies.js` — táticas de debate e falácias.
+- `lessons/` — lições da Jornada por categoria (ver "Jornada").
+- `journeyMarks.js` — marcas vetoriais das conquistas e níveis da Jornada (elementos SVG por id).
 
 ### Serviços (`src/services/`)
 - **Únicos serviços que usam rede**: `liturgyApi.js` (liturgia do dia, com cache e fallback offline) e `newsApi.js` (notícias católicas via RSS, cache de 3h por idioma). Todo o resto é local.
@@ -193,7 +212,7 @@ mantenha esses dois em sincronia.
   - `notes` — `{ bookId, chapter, verseStart, verseEnd, text, createdAt, updatedAt }`.
   - `notebook` — `{ title, text, ... }` (páginas do caderno).
   - As funções `watch*` retornam `onSnapshot` em tempo real e devolvem o `unsubscribe`; sempre chame no cleanup do `useEffect`.
-- Favoritos e progresso de leitura NÃO estão no Firestore: são locais, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`, `bibleProgress.js`). É de propósito: progresso muda a cada scroll, precisa valer no modo visitante e não vale uma escrita de rede.
+- Favoritos, progresso de leitura e a Jornada NÃO estão no Firestore: são locais, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`, `bibleProgress.js`, `journeyStore.js`). É de propósito: progresso muda a cada scroll, precisa valer no modo visitante e não vale uma escrita de rede.
   - `readingProgress.js` e `lastRead.js` são de **artigos** (marcados como lidos, plano de leitura, último artigo aberto); `bibleProgress.js` é da **Bíblia** (capítulos lidos por livro e o ponto onde parou). São arquivos diferentes com nomes parecidos.
 - Modo visitante é suportado em todo o app: código que toca Firestore precisa tolerar `auth.currentUser === null` (as `watch*` já devolvem lista vazia).
 - Ao mudar a forma dos dados, revise `firestore.rules` junto.
@@ -245,8 +264,8 @@ na reescrita de outubro de 2026). O que não pode subir é erro, e sua mudança 
 warning.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
-legada (hoje, depois da revisão de outubro de 2026: 16 refs não bíblicas sem url,
-1 sem tradução EN, 1 apontando para a Wikipédia). Esses números **só podem cair**.
+legada (hoje, depois das revisões de outubro de 2026: 16 refs não bíblicas sem url,
+0 sem tradução EN, 1 apontando para a Wikipédia). Esses números **só podem cair**.
 
 **2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**
 - `/code-review` — revisa o diff atual em busca de bugs de correção.

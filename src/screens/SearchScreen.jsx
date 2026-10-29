@@ -74,6 +74,9 @@ const looseArticleIndex = new Fuse(articles, {
   threshold: 0.55,
   includeScore: true,
 });
+// Versículo do dia na numeração da Douay-Rheims quando ela difere (bibleNavEn).
+const navOf = (v, isEn) => (isEn && v.bibleNavEn) || v;
+
 const looseVerseIndex = new Fuse(DAILY_VERSES, {
   keys: ['text', 'ref'],
   threshold: 0.55,
@@ -195,7 +198,7 @@ export default function SearchScreen({ navigation }) {
     const v = looseVerseIndex.search(q)[0];
     const candidates = [
       a && { type: 'article', label: pick(a.item, 'title', isEn), item: a.item, score: a.score },
-      v && { type: 'verse', label: verseLabel(v.item, isEn), item: v.item, score: v.score },
+      v && { type: 'verse', label: verseLabel(navOf(v.item, isEn), isEn), item: v.item, score: v.score },
     ].filter(Boolean);
     if (candidates.length === 0) return null;
     candidates.sort((x, y) => x.score - y.score);
@@ -203,8 +206,11 @@ export default function SearchScreen({ navigation }) {
   }, [debouncedQuery, searching, visibleHits, isEn]);
 
   const openVerse = useCallback(
-    (v) => openBible(navigation, { bookId: v.bookId, chapter: v.chapter, verse: v.verse }),
-    [navigation]
+    (v) => {
+      const nav = navOf(v, isEn);
+      openBible(navigation, { bookId: nav.bookId, chapter: nav.chapter, verse: nav.verse, verseEnd: nav.verseEnd });
+    },
+    [navigation, isEn]
   );
   const openReference = useCallback(
     (id) => navigation.navigate('RefDetail', { highlightId: id }),
@@ -281,7 +287,7 @@ export default function SearchScreen({ navigation }) {
             <Row
               key={`${v.bookId}-${v.chapter}-${v.verse}`}
               icon="book-outline"
-              title={verseLabel(v, isEn)}
+              title={verseLabel(navOf(v, isEn), isEn)}
               trailing="chevron"
               onPress={() => openVerse(v)}
             >

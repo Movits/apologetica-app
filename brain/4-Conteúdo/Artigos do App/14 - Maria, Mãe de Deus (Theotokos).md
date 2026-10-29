@@ -13,7 +13,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Tópicos internos
 - O Concílio de Éfeso
-- "Mãe do meu Senhor"
+- "Mãe de meu Senhor"
 - Mãe da pessoa, não da natureza
 - Perguntas-chave
 

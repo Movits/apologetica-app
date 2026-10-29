@@ -19,10 +19,13 @@ Arquivo: `src/data/articles/existencia-deus.js`
 
 ## Referências usadas
 - [[Antiguidades Judaicas, livro 20]]
+- [[Antiguidades Judaicas 18,3,3]]
 - [[Anais, livro XV, 44]]
 - [[Epístolas, livro X, 96]]
 - [[Vida de Cláudio, 25,4]]
 - [[Did Jesus Exist]]
+- [[Atos 18,2]]
+- [[Talmude Babilônico, Sanhedrin 43a]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

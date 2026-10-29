@@ -7,9 +7,9 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Catecismo | Magistério da Igreja, promulgado por São João Paulo II (1992)
-Tema: Suicídio / responsabilidade diminuída e esperança na misericórdia
+Tema: Suicídio, responsabilidade e esperança na salvação
 
-> Perturbações psíquicas graves, a angústia ou o temor grave duma provação, dum sofrimento, da tortura, são circunstâncias que podem diminuir a responsabilidade do suicida (2282). Não se deve desesperar da salvação eterna ...
+> Perturbações psíquicas graves, a angústia ou o temor grave duma provação, dum sofrimento, da tortura, são circunstâncias que podem diminuir a responsabilidade do suicida. Não se deve desesperar da salvação eterna das pes...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

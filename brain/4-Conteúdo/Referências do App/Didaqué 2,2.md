@@ -6,10 +6,10 @@ gerado: true
 # Didaqué 2,2
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Teólogos | Autor desconhecido (comunidade cristã primitiva, provavelmente da Síria) (c. 70 a 120 d.C.)
-Tema: Condenação do aborto e do infanticídio na Igreja primitiva
+Fonte: Teólogos | Autor anônimo da Igreja primitiva (fim do séc. I ou início do séc. II)
+Tema: Condenação do aborto e do infanticídio nos primeiros cristãos
 
-> "Não matarás o embrião por meio do aborto, nem farás que morra o recém-nascido."
+> «Não matarás o embrião por meio do aborto, nem farás que morra o recém-nascido.»
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

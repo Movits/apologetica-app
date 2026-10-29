@@ -9,7 +9,7 @@ gerado: true
 Fonte: Teólogos | Thomas F. Madden (historiador, Saint Louis University) e Jonathan Riley-Smith (Cambridge) (edições de 1999 em diante)
 Tema: Historiografia moderna das Cruzadas
 
-> A historiografia acadêmica das últimas décadas, livre de polêmica confessional, reposicionou as Cruzadas como resposta defensiva tardia a quatrocentos anos de expansão militar muçulmana sobre territórios cristãos (Síria,...
+> A historiografia acadêmica das últimas décadas reposicionou as Cruzadas como resposta defensiva tardia a quatrocentos anos de expansão militar muçulmana sobre territórios cristãos (Síria, Egito, Norte da África, Espanha,...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

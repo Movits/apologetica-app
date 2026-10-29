@@ -23,7 +23,10 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 ## Referências usadas
 - [[Gênesis 1,27-28]]
 - [[Romanos 2,14-15]]
-- [[Catecismo §122]]
+- [[Mateus 19,8]]
+- [[Filêmon 16]]
+- [[Mateus 5,38-44]]
+- [[Dei Verbum §15]]
 
 ## Diálogos que levam a este artigo
 - [[O Deus do Antigo Testamento é um monstro genocida e escravagista]]

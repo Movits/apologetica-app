@@ -25,11 +25,14 @@ Arquivo: `src/data/articles/moral.js`
 - [[Graça]]
 
 ## Referências usadas
+- [[Efésios 5,31-32]]
 - [[Gênesis 1,27-28]]
+- [[Catecismo §2348-2349]]
+- [[Catecismo §2337]]
+- [[Catecismo §2350 e §2353]]
+- [[Humanae Vitae §12]]
 - [[1 Coríntios 6,18]]
 - [[João 8,11]]
-- [[Humanae Vitae §12]]
-- [[Catecismo §2348-2353]]
 
 ## Diálogos que levam a este artigo
 - [[Sexo é natural, por que esperar o casamento]]

@@ -7,9 +7,9 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Documentos | Papa Pio XII (12 de agosto de 1950)
-Tema: Evolução do corpo, criação direta da alma e unidade do gênero humano
+Tema: Evolução do corpo, criação da alma e unidade do gênero humano
 
-> "O magistério da Igreja não proíbe que nas investigações e disputas entre homens doutos de ambos os campos se trate da doutrina do evolucionismo, que busca a origem do corpo humano em matéria viva preexistente (pois a fé...
+> Por isso o magistério da Igreja não proíbe que nas investigações e disputas entre homens doutos de ambos os campos se trate da doutrina do evolucionismo, que busca a origem do corpo humano em matéria viva preexistente (p...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

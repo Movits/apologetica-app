@@ -29,6 +29,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Isaías 8,19]]
 - [[Catecismo §2116-2117]]
 - [[João 1,21]]
+- [[1 Samuel 28,7-8]]
 - [[1 Crônicas 10,13-14]]
 
 ## Artigos relacionados

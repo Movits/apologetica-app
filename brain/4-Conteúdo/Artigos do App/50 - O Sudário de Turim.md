@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 ## Referências usadas
 - [[O Sudário de Turim e o projeto STURP]]
 - [[Milagre Eucarístico de Lanciano]]
+- [[O Sudário de Oviedo]]
 - [[João 19,33-34]]
 
 ## Artigos relacionados

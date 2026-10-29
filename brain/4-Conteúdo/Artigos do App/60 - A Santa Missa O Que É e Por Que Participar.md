@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - Perguntas-chave
 
 ## Termos do glossário
+- [[Transubstanciação]]
 - [[Sacramento]]
 - [[Graça]]
 
@@ -33,6 +34,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Milagre Eucarístico de Lanciano]]
 - [[Primeira Apologia §66]]
 - [[Hebreus 9,28]]
+- [[Lucas 24,30-35]]
+- [[Atos 20,7]]
 - [[Catecismo §1367]]
 
 ## Diálogos que levam a este artigo

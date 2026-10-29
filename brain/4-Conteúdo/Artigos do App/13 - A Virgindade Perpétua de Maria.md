@@ -19,7 +19,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Termos do glossário
 - [[Septuaginta]]
-- [[Concílio Ecumênico]]
 
 ## Referências usadas
 - [[Lucas 1,34]]

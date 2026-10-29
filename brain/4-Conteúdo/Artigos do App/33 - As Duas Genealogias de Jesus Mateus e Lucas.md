@@ -21,6 +21,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Mateus 1,1-17]]
 - [[Lucas 3,23-38]]
 - [[Deuteronômio 25,5-6]]
+- [[História Eclesiástica I,7]]
 
 ## Artigos relacionados
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

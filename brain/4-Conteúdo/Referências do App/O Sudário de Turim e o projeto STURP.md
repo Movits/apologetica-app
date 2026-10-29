@@ -9,7 +9,7 @@ gerado: true
 Fonte: Outros | Equipes científicas internacionais (STURP e outros) (1978 (STURP); 1988 (carbono-14, contestado); estudos posteriores)
 Tema: A imagem do homem crucificado no Sudário de Turim
 
-> O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. Testes de 1980-1981 identificaram componente...
+> O Sudário traz a imagem de um homem que sofreu flagelação, coroação de espinhos e crucificação, com uma ferida no lado e as pernas não quebradas, como descrevem os Evangelhos. Testes de John Heller e Alan Adler (1980-198...
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos

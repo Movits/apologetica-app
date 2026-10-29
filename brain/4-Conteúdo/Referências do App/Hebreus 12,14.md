@@ -16,3 +16,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[23 - Purgatório Purificação dos Que se Salvam]]
+- [[76 - Como a Igreja Reconhece um Santo A Canonização]]

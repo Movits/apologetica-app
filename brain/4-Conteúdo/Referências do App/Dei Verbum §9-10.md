@@ -14,5 +14,3 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]
-- [[68 - Quem Escreveu a Bíblia]]
-- [[71 - Como Começar a Ler a Bíblia]]

@@ -6,8 +6,8 @@ gerado: true
 # Humanae Vitae §12
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Documentos | São Papa Paulo VI (25 de julho de 1968)
-Tema: Os dois significados inseparáveis do ato conjugal
+Fonte: Documentos | São Paulo VI (25 de julho de 1968)
+Tema: Os dois significados inseparáveis do ato conjugal: unitivo e procriador
 
 > "Esta doutrina, muitas vezes exposta pelo Magistério, está fundada sobre a conexão inseparável que Deus quis e que o homem não pode alterar por sua iniciativa, entre os dois significados do ato conjugal: o significado un...
 Funcionalidade: [[Referências]]

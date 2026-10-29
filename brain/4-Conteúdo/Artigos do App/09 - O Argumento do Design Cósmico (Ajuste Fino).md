@@ -24,7 +24,6 @@ Arquivo: `src/data/articles/existencia-deus.js`
 ## Referências usadas
 - [[Suma Teológica I, q. 2, a. 3]]
 - [[Romanos 1,20]]
-- [[Catecismo §31-35]]
 - [[Reflexões sobre o universo (Hoyle)]]
 - [[A Nova Mente do Imperador]]
 - [[Navalha de Occam]]

@@ -6,7 +6,7 @@ gerado: true
 # Atos 13,2
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Fonte: Bíblia | Evangelista Lucas (séc. I d.C.)
+Fonte: Bíblia | Apóstolo Lucas (séc. I d.C.)
 Tema: O Espírito Santo fala e escolhe: é pessoa
 
 > Enquanto celebravam o culto do Senhor, depois de terem jejuado, disse-lhes o Espírito Santo: “Separai-me Barnabé e Saulo para a obra a que os tenho destinado”.

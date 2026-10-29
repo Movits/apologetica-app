@@ -12,6 +12,4 @@ Tema: Sucessão apostólica / bispos de Roma
 > "É necessário que toda Igreja, isto é, os fiéis de toda parte, esteja de acordo com esta Igreja, por causa de sua origem mais excelente (...). Os bem-aventurados apóstolos, tendo fundado e edificado a Igreja, confiaram a...
 Funcionalidade: [[Referências]]
 
-## Usada nos artigos
-- [[02 - Por que Ser Católico e Não Somente Cristão]]
-- [[19 - O Papa Cabeça Visível da Igreja]]
+Nenhum artigo usa esta referência hoje (candidata a revisão editorial).

@@ -20,5 +20,6 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Referências usadas
 - [[Mateus 4,1-2]]
-- [[Código de Direito Canônico, cânones 1250-1253]]
+- [[Mateus 4,4]]
+- [[Código de Direito Canônico, cânones 1251-1253]]
 - [[Paenitemini, capítulo III]]

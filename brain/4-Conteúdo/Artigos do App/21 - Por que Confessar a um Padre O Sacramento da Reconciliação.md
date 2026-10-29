@@ -25,8 +25,11 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 20,21-23]]
 - [[Tiago 5,14-16]]
 - [[Catecismo §1422-1470]]
+- [[1 Coríntios 11,27-29]]
+- [[1 João 1,9]]
+- [[Atos 19,18]]
 - [[Didaqué 4,14 e 14,1]]
-- [[A respeito dos que caíram (De Lapsis), 28]]
+- [[Os que caíram, 28]]
 
 ## Artigos relacionados
 - [[07 - A Eucaristia Presença Real de Cristo]]

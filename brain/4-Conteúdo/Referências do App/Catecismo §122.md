@@ -12,5 +12,4 @@ Tema: A pedagogia divina no Antigo Testamento
 > Os livros do Antigo Testamento, «apesar de conterem também coisas imperfeitas e transitórias», dão testemunho de toda a divina pedagogia do amor salvífico de Deus.
 Funcionalidade: [[Referências]]
 
-## Usada nos artigos
-- [[69 - A Bíblia, a Escravidão e a Violência no Antigo Testamento]]
+Nenhum artigo usa esta referência hoje (candidata a revisão editorial).

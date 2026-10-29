@@ -12,6 +12,6 @@ Funcionalidade: [[Glossário]]
 
 ## Aparece nos artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]
-- [[03 - A Sagrada Tradição e o Sola Scriptura]]
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
+- [[23 - Purgatório Purificação dos Que se Salvam]]
 - [[37 - Protestantismo]]

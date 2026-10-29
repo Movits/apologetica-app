@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[O Caso da Ressurreição de Jesus]]
 - [[Mateus 13,55-56]]
 - [[Gálatas 1,19]]
+- [[Gênesis 14,14]]
 - [[Atos 12,1-2]]
 - [[Primeira Carta de Clemente, 5]]
 - [[Anais, livro XV, 44]]

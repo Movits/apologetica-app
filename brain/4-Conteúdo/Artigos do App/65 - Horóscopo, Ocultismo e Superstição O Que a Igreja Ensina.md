@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Isaías 8,19]]
 - [[Êxodo 20,3-5]]
 - [[2 Coríntios 11,14-15]]
+- [[1 Samuel 28,7-8]]
 - [[1 Crônicas 10,13-14]]
 - [[Catecismo §2111]]
 

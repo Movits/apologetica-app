@@ -7,7 +7,7 @@ gerado: true
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Apóstolo Mateus (séc. I d.C.)
-Tema: A gravidade de fazer cair os pequenos
+Tema: Escândalo contra os pequenos / gravidade do abuso
 
 > Mas, se alguém fizer cair em pecado um destes pequenos que creem em mim, melhor fora que lhe atassem ao pescoço a mó de um moinho e o lançassem no fundo do mar.
 

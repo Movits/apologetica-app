@@ -31,6 +31,9 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Êxodo 3,14]]
 - [[Concílio de Niceia (Credo Niceno)]]
 - [[Marcos 2,5-7]]
+- [[Mateus 16,15-16]]
+- [[Catecismo §464]]
+- [[Concílio de Calcedônia]]
 - [[Catecismo §467]]
 - [[Cristianismo Puro e Simples, livro II, capítulo 3]]
 

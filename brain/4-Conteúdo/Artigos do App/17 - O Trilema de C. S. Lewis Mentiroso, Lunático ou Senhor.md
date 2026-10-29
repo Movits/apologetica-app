@@ -28,8 +28,8 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[João 20,28]]
 - [[Cristianismo Puro e Simples]]
 - [[Marcos 2,5-7]]
-- [[João 14,9]]
 - [[João 5,18]]
+- [[João 14,9]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
