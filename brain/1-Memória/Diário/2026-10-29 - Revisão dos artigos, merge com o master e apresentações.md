@@ -54,14 +54,19 @@ aprovação; só deck HTML no navegador; 16:9; repositório público com site.
   de 73 livros (18), com roteiro de narração por passo e textos citados direto
   das refs do app. Conferidos slide a slide no navegador, local e publicado.
 
+## Fechamento (02/11)
+
+- As 144 observações da passada de coerência foram triadas com verificador:
+  51 erros claros aplicados, 19 viraram propostas. Os 55 travessões de
+  `dialogues.js` saíram (nenhum arquivo de conteúdo tem travessão).
+- O dono aprovou as 132 propostas do relatório: aplicadas (354 trocas, 56 refs
+  novas). O PDF de Hipona e Cartago, que não abria, virou o Código da Igreja
+  Africana (419) no New Advent. Dívida do check:refs: 16 sem url, 0 sem EN,
+  0 na Wikipédia. 275 links conferidos.
+- PR [Movits/apologetica-app#7](https://github.com/Movits/apologetica-app/pull/7)
+  mesclado em 02/11 com o OK dele; deploy do site concluído.
+
 ## Pendências
 
-- PR [Movits/apologetica-app#7](https://github.com/Movits/apologetica-app/pull/7)
-  aguardando o OK do dono para o merge (o merge publica o site).
-- O dono decide as 113 propostas no relatório; depois aplicar as aprovadas.
-- `dialogues.js` ainda tem 34 travessões, herdados do master (fora do escopo
-  desta revisão).
-- As 144 observações sem patch da passada de coerência (sugestões, não erros)
-  ficaram fora; vale olhar numa próxima rodada.
 - Para gravar: as obras vindas do app têm 1000 px; para tela cheia, salvar a
   versão grande (imageHd) em `assets/art/` do repositório das apresentações.
