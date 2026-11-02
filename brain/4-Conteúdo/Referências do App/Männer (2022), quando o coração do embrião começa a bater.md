@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-ciência]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Männer (2022), quando o coração do embrião começa a bater

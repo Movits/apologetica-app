@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Concílio de Trento (1545-1563)
@@ -15,4 +15,5 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
+- [[24 - Fé e Obras Não Sola Fide]]
 - [[37 - Protestantismo]]

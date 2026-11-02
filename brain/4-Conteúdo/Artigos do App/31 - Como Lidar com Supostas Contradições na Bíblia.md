@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 31 - Como Lidar com Supostas Contradições na Bíblia

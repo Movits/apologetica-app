@@ -1,16 +1,16 @@
 ---
 tags: [categoria, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Igreja Católica
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Categoria com aprox. 23 artigos (2026-10-29). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
+Categoria com aprox. 23 artigos (2026-11-02). Funcionalidade: [[Artigos]] | Índice: [[Conteúdo do App (gerado)]]
 
 ## Artigos
 - [[02 - Por que Ser Católico e Não Somente Cristão]]
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[07 - A Eucaristia Presença Real de Cristo]]
 - [[12 - A Imaculada Conceição de Maria]]
 - [[13 - A Virgindade Perpétua de Maria]]

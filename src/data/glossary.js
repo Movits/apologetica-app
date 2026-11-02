@@ -170,9 +170,9 @@ export const glossary = [
     term: 'Deuterocanônicos',
     termEn: 'Deuterocanonicals',
     definition:
-      'Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânone judaico de Jâmnia (séc. I d.C.). A Igreja Católica os reconhece, e eles já constam das listas antigas de Roma (382), Hipona (393) e Cartago (397).',
+      'Os 7 livros do Antigo Testamento (Tobias, Judite, Sabedoria, Sirácida, Baruque, 1 e 2 Macabeus) que os protestantes não aceitam por seguirem o cânon hebraico fixado pelos rabinos depois de Cristo (a tradição o liga a Jâmnia, por volta do ano 90). A Igreja Católica os reconhece, e eles já constam das listas antigas de Roma (382), Hipona (393) e Cartago (397).',
     definitionEn:
-      'The 7 Old Testament books (Tobit, Judith, Wisdom, Sirach, Baruch, 1 and 2 Maccabees) that Protestants do not accept because they follow the Jewish canon of Jamnia (1st century AD). The Catholic Church recognizes them, and they already appear in the ancient lists of Rome (382), Hippo (393) and Carthage (397).',
+      'The 7 Old Testament books (Tobit, Judith, Wisdom, Sirach, Baruch, 1 and 2 Maccabees) that Protestants do not accept because they follow the Hebrew canon settled by the rabbis after Christ (tradition links it to Jamnia, around AD 90). The Catholic Church recognizes them, and they already appear in the ancient lists of Rome (382), Hippo (393) and Carthage (397).',
   },
   {
     id: 'septuaginta',

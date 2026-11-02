@@ -16,7 +16,7 @@ const articles = [
 
 ## A Bíblia não ensina o Sola Scriptura
 
-O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, São Paulo pede aos Tessalonicenses que fiquem firmes e conservem as tradições que aprenderam, "seja por palavras, seja por carta nossa" (2 Ts 2,15). A Tradição oral é colocada lado a lado com a Tradição escrita. Em 1 Coríntios 11,2 ele elogia os fiéis por guardarem as tradições "como eu vo-las transmiti".
+O primeiro é que a própria Bíblia não diz isso de si mesma. Ao contrário, São Paulo escreve aos Tessalonicenses: "ficai firmes e conservai os ensinamentos que de nós aprendestes, seja por palavras, seja por carta nossa" (2 Ts 2,15). A palavra grega traduzida por "ensinamentos" é paradóseis, "tradições", isto é, o que se transmite de uma pessoa a outra. A Tradição oral é colocada lado a lado com a Tradição escrita. Em 1 Coríntios 11,2 ele elogia os fiéis por guardarem as suas "instruções" (de novo paradóseis, no grego), "tais como eu vo-las transmiti".
 
 ## Quem interpreta?
 
@@ -185,6 +185,12 @@ Via histórica: a carreira de Quirino. Uma inscrição latina fragmentária, o c
 
 Há ainda uma terceira via, defendida por alguns historiadores: o recenseamento descrito por Lucas pode não ser o famoso de Quirino de 6 d.C. (mencionado por Josefo em Antiguidades 18,1), mas um outro processo administrativo anterior. Os registros romanos da época não estão completos, e a memória local do nascimento de Jesus pode estar se referindo a um evento cujos registros se perderam.
 
+## A objeção na sua forma mais forte
+
+É justo reconhecer que muitos estudiosos críticos, como Raymond Brown ("The Birth of the Messiah", 1977), pensam que Lucas confundiu as datas. Os argumentos deles são sérios: Josefo descreve o recenseamento de Quirino no ano 6 d.C. como uma novidade que provocou a revolta de Judas, o galileu, e o próprio Lucas conhece esse episódio (Atos 5,37). Além disso, nenhum documento da época fala de um recenseamento romano na Judeia enquanto Herodes reinava.
+
+Há, porém, dados no outro prato da balança. Tertuliano, no início do século III, afirma que houve recenseamentos na Judeia sob Augusto, feitos por Sêncio Saturnino, governador da Síria por volta de 9 a 6 a.C., isto é, ainda no reinado de Herodes ("Contra Marcião" IV,19). E um edito do governador do Egito do ano 104 d.C. manda que, para o recenseamento, cada um volte à própria terra, prática parecida com a que Lucas descreve. Nada disso encerra a questão, mas mostra que a acusação de erro não é a única leitura razoável.
+
 A objeção, portanto, não é decisiva. As soluções linguísticas e históricas são razoáveis, têm respaldo acadêmico, e refletem a complexidade administrativa real do Império Romano. Lucas, médico culto, companheiro de viagens de Paulo e autor do livro mais detalhado em referências históricas do Novo Testamento (Atos dos Apóstolos), tem sido repetidamente vindicado pela arqueologia. Ramsay começou sua carreira como cético de Lucas e terminou como defensor da precisão histórica dele justamente após anos de pesquisa de campo.
 
 Vale notar a desproporção da objeção. A historicidade de Jesus está atestada por múltiplas fontes independentes (Mateus, Marcos, Lucas, João, Paulo, Josefo, Tácito, Plínio o Jovem, Suetônio). Um versículo de gramática discutida, Lucas 2,2, não derruba esse edifício.
@@ -198,7 +204,7 @@ Vale notar a desproporção da objeção. A historicidade de Jesus está atestad
 3. Se Lucas fosse incompetente em história, por que Atos dos Apóstolos é confiável até em detalhes mínimos da geografia mediterrânea?
 
 4. Um versículo de leitura discutida, Lucas 2,2, anula todos os outros indicadores históricos do nascimento de Jesus durante o reinado de Herodes?`,
-    references: ['lc-2-1', 'mt-2-1', 'josefo-antiguidades-18-1'],
+    references: ['lc-2-1', 'mt-2-1', 'josefo-antiguidades-18-1', 'at-5-37'],
   },
   {
     id: 33,
@@ -287,7 +293,7 @@ O princípio fundamental: testemunho parcial não é falso. Quatro testemunhas h
 
 O essencial está nos quatro Evangelhos: Jesus foi crucificado e sepultado na sexta-feira, o túmulo foi encontrado vazio no terceiro dia (domingo), aparições do Ressuscitado ocorreram aos discípulos, Maria Madalena foi testemunha privilegiada, os discípulos passaram do desespero à proclamação ousada em pouco tempo. Essa estrutura é unânime, e é onde está o peso histórico do testemunho.
 
-Gary Habermas, no seu estudo sobre os "fatos mínimos" da Ressurreição ("O Caso da Ressurreição de Jesus", com Michael Licona, 2004), mostra que mesmo historiadores agnósticos aceitam o núcleo central: a morte de Jesus na cruz e a convicção dos discípulos de que o tinham visto vivo. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas, antes de qualquer coordenação editorial possível.
+Gary Habermas, no seu estudo sobre os "fatos mínimos" da Ressurreição ("O Caso da Ressurreição de Jesus", com Michael Licona, 2004), mostra que mesmo historiadores agnósticos aceitam o núcleo central: a morte de Jesus na cruz e a convicção dos discípulos de que o tinham visto vivo. As divergências de periferia, longe de minarem o evento, atestam que os Evangelhos preservam fontes diversas que circulavam nas primeiras décadas. Um crítico lembrará que Mateus e Lucas usaram Marcos como fonte, e por isso não são testemunhas totalmente independentes. É a posição da maioria dos estudiosos, mas justamente nas aparições do Ressuscitado eles deixam de seguir Marcos, cujos manuscritos mais antigos terminam no túmulo vazio (Marcos 16,8), e cada um traz tradições próprias, como os discípulos de Emaús em Lucas e o encontro no monte da Galileia em Mateus. João segue caminho próprio, e a lista mais antiga das aparições, a de Paulo (1 Coríntios 15,3-8), escrita por volta de 53 ou 54, não depende de nenhum Evangelho.
 
 Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordenada, os autores teriam ajustado as periferias para parecer uniforme. As diferenças visíveis nos Evangelhos são exatamente o tipo de discrepância natural que se espera de testemunhas independentes de um evento real.
 
@@ -300,7 +306,7 @@ Vale notar uma contraprova: se a Ressurreição tivesse sido invenção coordena
 3. Você nota que o núcleo da história (túmulo vazio, aparições, transformação dos discípulos) é unânime nos quatro Evangelhos? Não é nessa unanimidade que está o peso da evidência?
 
 4. Quantos anjos ou quantas mulheres mudam a substância do evento "Jesus ressuscitou"?`,
-    references: ['mt-28-1', 'at-1-3', 'agostinho-consenso', 'habermas-resurreicao', 'lc-24-1', 'mc-16-1', 'jo-20-1', 'mt-28-16'],
+    references: ['mt-28-1', 'at-1-3', 'agostinho-consenso', 'habermas-resurreicao', 'lc-24-1', 'mc-16-1', 'jo-20-1', 'mt-28-16', '1cor-15-3'],
   },
   {
     id: 45,
@@ -365,9 +371,13 @@ O profeta Miquéias, no século VIII a.C., anunciou que o governante de Israel n
 
 Isaías anunciou ainda o sinal da concepção virginal: "uma virgem conceberá e dará à luz um filho, e o chamará 'Deus Conosco'" (Isaías 7,14), que é o sentido do nome hebraico Emanuel.
 
+Aqui um crítico judeu ou cético levanta logo a objeção mais conhecida: a palavra hebraica de Isaías 7,14 é almah, "jovem", "moça em idade de casar", e não betulah, o termo mais usado para virgem, e o sinal foi dado ao rei Acaz, por volta de 735 a.C. A resposta tem três partes. Primeiro, não há no Antigo Testamento nenhum caso claro de almah dita de uma mulher casada: é a palavra usada para Rebeca ainda solteira (Gênesis 24,43), e o próprio texto a chama de virgem poucos versículos antes (Gênesis 24,16). Segundo, os próprios tradutores judeus da Septuaginta, mais de um século antes de Cristo, verteram almah por parthénos, "virgem", e é esse texto que Mateus cita (Mateus 1,23). Terceiro, a tradição católica lê a profecia em dois planos: um sinal para o tempo de Acaz e um cumprimento pleno, que ultrapassa o primeiro, no nascimento virginal de Jesus.
+
 ## Como morreria
 
 Aqui as profecias chegam a um nível de detalhe que surpreende. O Salmo 22 (21 na numeração da Vulgata), atribuído a Davi, cerca de mil anos antes de Cristo, muito antes de Roma fazer da cruz o seu suplício típico, descreve um justo perseguido que clama "Meu Deus, meu Deus, por que me abandonastes?", o brado que Jesus repete na cruz (Mateus 27,46), tem as mãos e os pés traspassados, e vê os algozes repartirem suas vestes lançando sortes. Os Evangelhos narram o grito na cruz e a partilha das vestes. Nos relatos da Ressurreição, Jesus mostra as mãos e os pés (Lucas 24,39-40), e Tomé fala do "sinal dos pregos" nas mãos de Jesus (João 20,25).
+
+Vale saber que o texto hebraico tradicional (massorético) traz, no versículo das mãos e dos pés, "como um leão" (ka'ari), e não "traspassaram". Mas a Septuaginta, traduzida por judeus antes de Cristo, lê "cavaram", isto é, furaram, traspassaram, e um manuscrito hebraico antigo achado no deserto da Judeia (5/6HevPs, dos séculos I ou II) traz, no lugar de "como um leão", uma forma verbal (ka'aru) que muitos estudiosos leem como apoio a essa leitura.
 
 O capítulo 53 de Isaías, o cântico do Servo sofredor, é ainda mais explícito: o Servo é "esmagado por nossas iniquidades", não abre a boca "como um cordeiro que se conduz ao matadouro", e sua morte traz cura: "fomos curados graças às suas chagas". É a descrição de uma morte expiatória, voluntária e inocente.
 
@@ -410,7 +420,7 @@ Por séculos, a menção a Pôncio Pilatos vinha dos Evangelhos e de poucos auto
 
 ## O ossuário de Caifás
 
-Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57 e João 18,24). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. É muito provavelmente o ossuário do próprio sumo sacerdote que entregou Jesus.
+Os Evangelhos contam que Jesus foi julgado por Caifás, o sumo sacerdote (Mateus 26,57 e João 18,24). Em 1990, em Jerusalém, foi achada uma tumba com ossuários, um deles ricamente decorado, com a inscrição "Yehosef bar Qayafa", isto é, José, filho de Caifás. O historiador judeu Flávio Josefo informa que o sumo sacerdote dos Evangelhos se chamava José, apelidado Caifás (Antiguidades Judaicas 18,95), e por isso a maioria dos estudiosos vê aí, muito provavelmente, o ossuário do próprio sumo sacerdote que entregou Jesus.
 
 ## As piscinas de Betesda e de Siloé
 
@@ -426,7 +436,7 @@ Talvez o caso mais famoso. A Bíblia menciona os hititas dezenas de vezes. Até 
 
 ## O que a arqueologia mostra e o que não mostra
 
-É preciso ser justo. Achados arqueológicos não provam milagres nem a inspiração divina das Escrituras. Mas mostram um padrão: em muitos pontos em que o texto bíblico pode ser testado contra a história e a terra, ele resiste ao teste. Um livro que acerta os nomes, os cargos e os lugares verificáveis merece crédito também naquilo que relata e não se pode escavar.
+É preciso ser justo. Achados arqueológicos não provam milagres nem a inspiração divina das Escrituras. Mas mostram um padrão: em muitos pontos em que o texto bíblico pode ser testado contra a história e a terra, ele resiste ao teste. Também é honesto reconhecer que em alguns pontos a arqueologia ainda não dá uma resposta simples, como a data do Êxodo e a conquista de Jericó e de Ai, narrada no livro de Josué: as escavações nesses dois sítios produziram resultados discutidos até hoje. A arqueologia é uma ciência em andamento, e esses casos em aberto não desfazem o padrão dos que puderam ser verificados. Um livro que acerta os nomes, os cargos e os lugares verificáveis merece crédito também naquilo que relata e não se pode escavar.
 
 ## Perguntas-chave
 
@@ -465,7 +475,7 @@ Os críticos costumam citar que há centenas de milhares de variantes entre os m
 
 ## O Antigo Testamento também
 
-O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos do Mar Morto, em Qumran, mil anos mais antigos do que as cópias hebraicas que se conheciam. Ao comparar, por exemplo, o grande rolo de Isaías com as cópias medievais, viu-se que o texto havia sido transmitido com notável fidelidade ao longo de um milênio, com diferenças em sua maioria de grafia. A ideia de uma Bíblia adulterada não sobrevive ao confronto com os documentos.
+O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos do Mar Morto, em Qumran, mil anos mais antigos do que as cópias hebraicas que se conheciam. Ao comparar, por exemplo, o grande rolo de Isaías com as cópias medievais, viu-se que o texto havia sido transmitido com notável fidelidade ao longo de um milênio, com diferenças em sua maioria de grafia. Qumran também mostrou que alguns livros, como Jeremias, circulavam em mais de uma forma, mas as diferenças são conhecidas, estudadas e não apontam para adulteração. A ideia de uma Bíblia adulterada não sobrevive ao confronto com os documentos.
 
 ## Perguntas-chave
 
@@ -475,7 +485,7 @@ O mesmo vale para o Antigo Testamento. Em 1947 foram descobertos os Manuscritos 
 
 3. Se há tantas cópias espalhadas tão cedo, isso facilita ou dificulta esconder uma alteração?
 
-4. Os Manuscritos do Mar Morto, mil anos mais antigos, batem com o texto posterior. Onde está, de fato, a tal adulteração?`,
+4. O grande rolo de Isaías de Qumran, mil anos mais antigo, bate com o texto hebraico posterior. Onde está, de fato, a tal adulteração?`,
     references: ['ms-p52', 'ms-bibliografico'],
   },
   {
@@ -543,7 +553,7 @@ Deus não despejou toda a verdade de uma vez sobre um povo do segundo milênio a
 
 ## A escravidão
 
-O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica dos escravos hebreus, proteção), num tempo em que ninguém imaginava aboli-la. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo, que podia dar ordens mas prefere fazer um apelo (Filêmon 8-9), pede que o escravo Onésimo seja recebido "não já como escravo, mas bem mais do que escravo, como irmão caríssimo" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico.
+O Antigo Testamento não inventa a escravidão. Ela já existia em todo o mundo antigo. O que a Lei faz é regulá-la e humanizá-la (descanso, libertação periódica dos escravos hebreus, proteção), num tempo em que ninguém imaginava aboli-la. É honesto admitir os limites dessa proteção: a libertação no sétimo ano (Êxodo 21,2) não valia para os escravos estrangeiros, que podiam ser comprados e deixados em herança aos filhos "como escravos perpétuos" (Levítico 25,44-46). A Lei tolerava uma instituição do seu tempo sem propô-la como ideal, e não é a última palavra sobre a escravidão. Mais importante: a Bíblia planta a semente que um dia a destruiria, ao afirmar que todo ser humano é criado "à imagem de Deus" (Gênesis 1,27). É essa semente que floresce no Novo Testamento, quando Paulo, que podia dar ordens mas prefere fazer um apelo (Filêmon 8-9), pede que o escravo Onésimo seja recebido "não já como escravo, mas bem mais do que escravo, como irmão caríssimo" (Filêmon 16). Não por acaso, foram cristãos que, séculos depois, lideraram a abolição, em nome justamente desse princípio bíblico, ainda que outros cristãos tenham defendido a escravidão citando a Bíblia.
 
 ## As guerras de conquista
 

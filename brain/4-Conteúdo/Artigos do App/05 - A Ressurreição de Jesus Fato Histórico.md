@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 05 - A Ressurreição de Jesus Fato Histórico
@@ -30,6 +30,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Atos 12,1-2]]
 - [[Primeira Carta de Clemente, 5]]
 - [[Anais, livro XV, 44]]
+- [[Mateus 28,11-15]]
 
 ## Artigos relacionados
 - [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]

@@ -1105,12 +1105,12 @@ const lessons = {
     },
     keyPoints: [
       'Para a fé católica, na consagração o pão e o vinho se tornam o Corpo e o Sangue de Cristo. Em alguns milagres, esse mistério ficou visível e foi examinado em laboratório.',
-      'Em Lanciano (c. 750), exames de 1970 e 1971 acharam miocárdio humano e sangue AB, íntegros há doze séculos. Buenos Aires, Sokolka e Tixtla também relatam tecido cardíaco.',
+      'Em Lanciano (c. 750), exames de 1970 e 1971 acharam miocárdio humano e sangue AB, íntegros há doze séculos. Buenos Aires, Sokółka e Tixtla também relatam tecido cardíaco.',
       'Os milagres não substituem a fé: a Presença Real se crê pela palavra de Cristo. Eles são sinais sensíveis que confirmam o que a Escritura e a Tradição já ensinam.',
     ],
     keyPointsEn: [
       'For the Catholic faith, at the consecration the bread and wine become the Body and Blood of Christ. In some miracles, that mystery became visible and was tested in a lab.',
-      'In Lanciano (c. 750), 1970-71 tests found human myocardium and type AB blood, intact after twelve centuries. Buenos Aires, Sokolka and Tixtla also report heart tissue.',
+      'In Lanciano (c. 750), 1970-71 tests found human myocardium and type AB blood, intact after twelve centuries. Buenos Aires, Sokółka and Tixtla also report heart tissue.',
       'The miracles do not replace faith: the Real Presence is believed on the word of Christ. They are tangible signs confirming what Scripture and Tradition already teach.',
     ],
     oneLiner: 'Em Lanciano e em casos recentes, a análise da Hóstia apontou tecido de coração e, onde houve tipagem, sangue AB. Isso não substitui a fé, mas é um sinal difícil de ignorar.',
@@ -1136,8 +1136,8 @@ const lessons = {
         whyEn: 'The article asks for honesty: the Real Presence is believed on the word of Christ, not on lab tests. The miracles are tangible signs given by God, confirmations of what Scripture and Tradition already teach, not a substitute for faith.',
       },
       {
-        question: 'Segundo o artigo, o que mais impressiona nos casos de Lanciano, Buenos Aires, Sokolka e Tixtla?',
-        questionEn: 'According to the article, what is most striking in the cases of Lanciano, Buenos Aires, Sokolka and Tixtla?',
+        question: 'Segundo o artigo, o que mais impressiona nos casos de Lanciano, Buenos Aires, Sokółka e Tixtla?',
+        questionEn: 'According to the article, what is most striking in the cases of Lanciano, Buenos Aires, Sokółka and Tixtla?',
         options: [
           'A conservação da carne de Lanciano por mais de mil anos',
           'A confirmação dos laudos pela OMS em 1973',
@@ -1170,8 +1170,8 @@ const lessons = {
           'DNA tests and blood typing were done in every case',
         ],
         correct: 0,
-        why: 'Quem quer fraudar não entrega o material a cientistas, inclusive não crentes, que poderiam desmentir tudo em público. A Igreja fez isso. Já a confirmação da OMS nunca existiu, Bergoglio só autorizou a análise e em Sokolka não houve DNA nem tipagem.',
-        whyEn: 'Someone bent on fraud does not hand the material to scientists, non-believers included, who could refute it all in public. The Church did that. The WHO confirmation never existed, Bergoglio only authorized the analysis, and Sokolka had no DNA or typing.',
+        why: 'Quem quer fraudar não entrega o material a cientistas, inclusive não crentes, que poderiam desmentir tudo em público. A Igreja fez isso. Já a confirmação da OMS nunca existiu, Bergoglio só autorizou a análise e em Sokółka não houve DNA nem tipagem.',
+        whyEn: 'Someone bent on fraud does not hand the material to scientists, non-believers included, who could refute it all in public. The Church did that. The WHO confirmation never existed, Bergoglio only authorized the analysis, and Sokółka had no DNA or typing.',
       },
     ],
   },

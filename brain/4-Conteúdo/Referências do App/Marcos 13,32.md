@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Marcos 13,32
@@ -15,4 +15,5 @@ Abre no app em `mc 13,32`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[57 - Quem é Jesus Deus e Homem Verdadeiro]]
 - [[70 - O Fim do Mundo O Que a Igreja Ensina sobre o Apocalipse]]

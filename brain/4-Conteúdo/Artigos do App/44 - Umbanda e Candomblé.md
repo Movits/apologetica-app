@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 44 - Umbanda e Candomblé
@@ -23,9 +23,10 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Êxodo 20,3-5]]
 - [[Nostra Aetate §2-5]]
 - [[João 14,6]]
+- [[Censo 2022, religião (IBGE)]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]
 - [[43 - Nova Era]]
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[40 - Hinduísmo]]

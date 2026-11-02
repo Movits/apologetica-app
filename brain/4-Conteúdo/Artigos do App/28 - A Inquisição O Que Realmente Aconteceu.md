@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 28 - A Inquisição O Que Realmente Aconteceu
@@ -19,6 +19,9 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - A caça às bruxas foi obra dos tribunais civis
 - Os erros reais e o pedido de perdão
 - Perguntas-chave
+
+## Termos do glossário
+- [[Heresia]]
 
 ## Referências usadas
 - [[The Spanish Inquisition, A Historical Revision]]

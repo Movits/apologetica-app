@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 57 - Quem é Jesus Deus e Homem Verdadeiro
@@ -17,6 +17,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - Os sinais e a Ressurreição
 - O testemunho do Novo Testamento
 - A definição da Igreja
+- E os textos em que Jesus parece menor que o Pai?
 - Por que isso muda tudo
 - Perguntas-chave
 
@@ -36,6 +37,9 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Concílio de Calcedônia]]
 - [[Catecismo §467]]
 - [[Cristianismo Puro e Simples, livro II, capítulo 3]]
+- [[João 14,28]]
+- [[Marcos 13,32]]
+- [[Catecismo §474]]
 
 ## Diálogos que levam a este artigo
 - [[Jesus foi um bom homem e grande mestre, mas não era Deus]]

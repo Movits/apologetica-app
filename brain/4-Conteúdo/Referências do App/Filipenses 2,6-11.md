@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Filipenses 2,6-11
@@ -15,6 +15,7 @@ Abre no app em `fl 2,6`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]
 - [[27 - Testemunhas de Jeová]]
 - [[57 - Quem é Jesus Deus e Homem Verdadeiro]]
 - [[67 - Por Que Jesus Morreu na Cruz A Redenção]]

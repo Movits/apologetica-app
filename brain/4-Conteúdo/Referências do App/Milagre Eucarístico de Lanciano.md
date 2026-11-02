@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Milagre Eucarístico de Lanciano
@@ -15,5 +15,4 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[07 - A Eucaristia Presença Real de Cristo]]
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
-- [[50 - O Sudário de Turim]]
 - [[60 - A Santa Missa O Que É e Por Que Participar]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 76 - Como a Igreja Reconhece um Santo A Canonização
@@ -23,8 +23,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Mateus 22,32]]
 - [[Hebreus 12,14]]
 - [[Vatican News, o Dicastério para as Causas dos Santos]]
+- [[Divinus Perfectionis Magister]]
 
 ## Artigos relacionados
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
 - [[55 - Aparições de Maria Evidência para Deus]]

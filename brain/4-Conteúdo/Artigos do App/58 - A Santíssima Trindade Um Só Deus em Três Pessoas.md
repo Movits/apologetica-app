@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 58 - A Santíssima Trindade Um Só Deus em Três Pessoas
@@ -16,6 +16,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - Por que não é contradição
 - A raiz bíblica
 - Como a Igreja definiu
+- As objeções mais fortes
 - Por que isso importa
 - Perguntas-chave
 
@@ -33,6 +34,13 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Concílio de Constantinopla I]]
 - [[Catecismo §253-254]]
 - [[Catecismo §243-245]]
+- [[Atos 5,3-4]]
+- [[A Autólico, II, 15]]
+- [[Deuteronômio 6,4]]
+- [[1 Coríntios 8,6]]
+- [[Alcorão, sura 4,171]]
+- [[Alcorão, sura 5,116]]
+- [[Didaqué 7,1]]
 
 ## Diálogos que levam a este artigo
 - [[Deus não pode ser três e um ao mesmo tempo. Isso é contradição]]

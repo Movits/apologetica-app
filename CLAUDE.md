@@ -265,7 +265,7 @@ warning.
 
 `npm run check:refs` precisa terminar com 0 erros. Ele também imprime a dívida
 legada (hoje, depois das revisões de outubro de 2026: 16 refs não bíblicas sem url,
-0 sem tradução EN, 1 apontando para a Wikipédia). Esses números **só podem cair**.
+0 sem tradução EN, 0 apontando para a Wikipédia). Esses números **só podem cair**.
 
 **2. Revisão por agente — para mudanças não triviais (lógica, navegação, telas):**
 - `/code-review` — revisa o diff atual em busca de bugs de correção.

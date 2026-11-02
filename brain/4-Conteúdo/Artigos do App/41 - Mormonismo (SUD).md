@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 41 - Mormonismo (SUD)
@@ -17,10 +17,18 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - Pontos de confronto
 - Perguntas-chave
 
+## Termos do glossário
+- [[Graça]]
+
 ## Referências usadas
 - [[O Livro de Mórmon]]
 - [[Livro de Abraão (papiros)]]
 - [[Isaías 43,10]]
+- [[Doutrina e Convênios 130,22 e 132,20]]
+- [[Ensaios dos Tópicos do Evangelho (Igreja SUD)]]
+- [[Oseias 11,9]]
+- [[Catecismo §460]]
+- [[João 10,34]]
 
 ## Artigos relacionados
 - [[27 - Testemunhas de Jeová]]

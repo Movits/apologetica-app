@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 20 - Os Sete Sacramentos Sinais que Produzem Graça
@@ -14,6 +14,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Tópicos internos
 - Por que sinais sensíveis
 - Os sete, um a um
+- Por que sete, e não dois?
 - Matéria, forma e ministro
 - Perguntas-chave
 

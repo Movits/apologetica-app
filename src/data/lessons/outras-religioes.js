@@ -1200,8 +1200,8 @@ const lessons = {
         'It no longer does, since the 1983 Code of Canon Law',
       ],
       correct: 1,
-      note: 'A proibição vem de 1738 e foi reafirmada em 1983: quem adere está em pecado grave. O motivo não é o segredo nem conspiração, é a visão de mundo da loja, incompatível com a fé em Cristo como único Salvador.',
-      noteEn: 'The ban dates from 1738 and was reaffirmed in 1983: whoever joins is in grave sin. The reason is not secrecy or conspiracy, it is the worldview of the lodge, incompatible with faith in Christ as the only Savior.',
+      note: 'A proibição vem de 1738 e foi reafirmada em 1983 e em 2023: quem adere está em pecado grave. O motivo não é o segredo nem conspiração, é a visão de mundo da loja, incompatível com a fé em Cristo como único Salvador.',
+      noteEn: 'The ban dates from 1738 and was reaffirmed in 1983 and 2023: whoever joins is in grave sin. The reason is not secrecy or conspiracy, it is the worldview of the lodge, incompatible with faith in Christ as the only Savior.',
     },
     keyPoints: [
       'Desde 1738 (Clemente XII) a Igreja proíbe a filiação à Maçonaria. Em 1983 a Congregação para a Doutrina da Fé reafirmou: quem adere está em pecado grave e não comunga.',

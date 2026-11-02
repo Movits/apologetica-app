@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Deuteronômio 18,10-12
@@ -15,6 +15,7 @@ Abre no app em `dt 18,10`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[16 - Espiritismo (Kardecismo)]]
 - [[43 - Nova Era]]
 - [[44 - Umbanda e Candomblé]]

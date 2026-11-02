@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # A Igreja é riquíssima; devia vender tudo e acabar com a pobreza

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-outros]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Alcorão, sura 4,171
@@ -14,3 +14,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[15 - Islamismo]]
+- [[58 - A Santíssima Trindade Um Só Deus em Três Pessoas]]

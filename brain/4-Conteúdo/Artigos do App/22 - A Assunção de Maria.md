@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 22 - A Assunção de Maria
@@ -34,7 +34,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Romanos 6,23]]
 
 ## Artigos relacionados
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[12 - A Imaculada Conceição de Maria]]
 
 ## No plano de leitura

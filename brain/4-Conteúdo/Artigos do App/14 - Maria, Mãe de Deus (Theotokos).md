@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 14 - Maria, Mãe de Deus (Theotokos)
@@ -27,7 +27,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Catecismo §464-469]]
 
 ## Artigos relacionados
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[12 - A Imaculada Conceição de Maria]]
 - [[13 - A Virgindade Perpétua de Maria]]
 - [[27 - Testemunhas de Jeová]]

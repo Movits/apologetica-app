@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 12 - A Imaculada Conceição de Maria
@@ -29,9 +29,10 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Ineffabilis Deus]]
 - [[Catecismo §490-493]]
 - [[Contra as Heresias, III, 22, 4]]
+- [[Efésios 1,6]]
 
 ## Artigos relacionados
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[13 - A Virgindade Perpétua de Maria]]
 - [[14 - Maria, Mãe de Deus (Theotokos)]]
 - [[22 - A Assunção de Maria]]

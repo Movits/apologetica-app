@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-ciência]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Dating the Crucifixion (Nature, 1983)

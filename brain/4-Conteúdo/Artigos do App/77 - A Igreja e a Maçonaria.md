@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 77 - A Igreja e a Maçonaria
@@ -12,6 +12,7 @@ Categoria: [[Outras Religiões]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/outras-religioes.js`
 
 ## Tópicos internos
+- O que é a Maçonaria
 - O que a Igreja decidiu
 - Por quê: não é perseguição, é coerência
 - Sem conspiração

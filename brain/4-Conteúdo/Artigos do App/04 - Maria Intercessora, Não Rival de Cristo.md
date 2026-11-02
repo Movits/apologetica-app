@@ -1,9 +1,9 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
-# 04 - Maria Intercessora, Não Mediadora
+# 04 - Maria Intercessora, Não Rival de Cristo
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Pedir intercessão aos santos não é idolatria, é o mesmo que pedir a um amigo que ore por nós.
@@ -14,6 +14,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Tópicos internos
 - Mediação e intercessão
 - Os santos estão vivos
+- Como os santos nos ouvem?
 - A intercessão de Maria
 - Adorar e venerar
 - Perguntas-chave
@@ -28,6 +29,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Apocalipse 5,8]]
 - [[Mateus 22,32]]
 - [[Lumen Gentium §60-62]]
+- [[Deuteronômio 18,10-12]]
+- [[2 Macabeus 15,12-14]]
+- [[Hebreus 12,1]]
 
 ## Artigos relacionados
 - [[12 - A Imaculada Conceição de Maria]]
@@ -41,4 +45,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 25: Intercessão dos santos: não é idolatria
-- [[Trilho - Respondendo objeções protestantes]], dia 9: Maria intercessora, não mediadora
+- [[Trilho - Respondendo objeções protestantes]], dia 9: Maria intercessora, não rival de Cristo

@@ -53,8 +53,8 @@ const lessons = {
         whyEn: 'The article says love requires freedom, and freedom implies the real possibility of moral evil. A God who prevented every wrong choice would have created robots, not persons.',
       },
       {
-        question: 'Qual é o "problema filosófico" que, segundo o artigo, os ateus raramente percebem no argumento do mal?',
-        questionEn: 'What is the "philosophical problem" that, according to the article, atheists rarely notice in the argument from evil?',
+        question: 'Qual é o "problema filosófico" que, segundo o artigo, pesa sobre o próprio argumento do mal?',
+        questionEn: 'What is the "philosophical problem" that, according to the article, weighs on the argument from evil itself?',
         options: [
           'Que a ciência ainda não sabe explicar terremotos e doenças',
           'Que o sofrimento é sempre castigo merecido por algum pecado pessoal',
@@ -296,12 +296,12 @@ const lessons = {
     keyPoints: [
       'O ato conjugal tem dois sentidos inseparáveis, unitivo e procriativo. A contracepção artificial mantém a união e elimina de propósito a abertura à vida.',
       'A Igreja aprova o planejamento responsável: os métodos naturais respeitam os ciclos da mulher e exigem diálogo e autodomínio, sem alterar o corpo nem o ato.',
-      'Em 1968, Paulo VI previu infidelidade, perda de respeito pela mulher, uso da contracepção pelos Estados e a ideia de domínio total sobre o corpo. Os dados confirmaram.',
+      'Em 1968, Paulo VI previu infidelidade, perda de respeito pela mulher, uso da contracepção pelos Estados e a ideia de domínio total sobre o corpo. Várias se confirmaram.',
     ],
     keyPointsEn: [
       'The conjugal act has two inseparable meanings, unitive and procreative. Artificial contraception keeps the union and deliberately removes openness to life.',
       'The Church approves responsible planning: natural methods respect the woman\'s cycles and demand dialogue and self-mastery, without altering the body or the act.',
-      'In 1968, Paul VI predicted infidelity, loss of respect for women, state use of contraception, and the idea of total dominion over the body. The data confirmed it.',
+      'In 1968, Paul VI predicted infidelity, loss of respect for women, state use of contraception, and the idea of total dominion over the body. Several were borne out.',
     ],
     oneLiner: 'A Igreja não é contra planejar a família, é contra separar de propósito amor e vida no ato conjugal. Paulo VI avisou em 1968 aonde isso levaria, e as décadas confirmaram.',
     oneLinerEn: 'The Church is not against planning a family, it is against deliberately separating love and life in the conjugal act. Paul VI warned in 1968 where that leads, and the decades confirmed it.',
@@ -341,8 +341,8 @@ const lessons = {
           'That the Church would lose most of its faithful in the West',
         ],
         correct: 2,
-        why: 'Paulo VI previu quatro consequências: banalização da fidelidade, perda do respeito pela mulher, uso da contracepção pelos poderes públicos e a ideia de domínio ilimitado sobre o próprio corpo. O artigo mostra como cada uma se verificou.',
-        whyEn: 'Paul VI predicted four consequences: the trivialization of fidelity, loss of respect for women, use of contraception by public authorities, and the idea of unlimited dominion over one\'s own body. The article shows how each came true.',
+        why: 'Paulo VI previu quatro consequências: banalização da fidelidade, perda do respeito pela mulher, uso da contracepção pelos poderes públicos e a ideia de domínio ilimitado sobre o próprio corpo. O artigo mostra como várias delas se confirmaram.',
+        whyEn: 'Paul VI predicted four consequences: the trivialization of fidelity, loss of respect for women, use of contraception by public authorities, and the idea of unlimited dominion over one\'s own body. The article shows how several of them were borne out.',
       },
       {
         question: 'Como o artigo responde à ideia de que mais contracepção reduziria o número de abortos?',
@@ -360,8 +360,8 @@ const lessons = {
           'It shows abortion often becomes an "emergency solution" when the method fails',
         ],
         correct: 3,
-        why: 'A contracepção tende a quebrar a conexão mental entre sexo e filhos, e todo método tem taxa de falha. Quando falha, o aborto frequentemente aparece como saída. A tese de que mais contracepção, sozinha, resolve a questão não se sustenta.',
-        whyEn: 'Contraception tends to break the mental link between sex and children, and every method has a failure rate. When it fails, abortion often appears as the way out. The thesis that more contraception alone solves the question does not hold.',
+        why: 'A contracepção tende a quebrar a conexão mental entre sexo e filhos, e todo método tem taxa de falha. Quando falha, o aborto frequentemente aparece como saída. Para São João Paulo II, contracepção e aborto são muitas vezes frutos da mesma planta.',
+        whyEn: 'Contraception tends to break the mental link between sex and children, and every method has a failure rate. When it fails, abortion often appears as the way out. For Saint John Paul II, contraception and abortion are often fruits of the same tree.',
       },
     ],
   },
@@ -432,7 +432,7 @@ const lessons = {
           'Because they are the seven gravest sins there are',
         ],
         correct: 1,
-        why: '"Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as raízes de onde os outros nascem. A soberba é tida como a raiz de todas, e a cada vício corresponde uma virtude que o cura.',
+        why: '"Capitais" vem de cabeça (caput): não são necessariamente os piores, mas as raízes de onde os outros nascem. A soberba é tida como a raiz de todos eles, e a cada vício corresponde uma virtude que o cura.',
         whyEn: '"Capital" comes from head (caput): they are not necessarily the worst, but the roots from which the others are born. Pride is held to be the root of all, and to each vice corresponds a virtue that heals it.',
       },
       {

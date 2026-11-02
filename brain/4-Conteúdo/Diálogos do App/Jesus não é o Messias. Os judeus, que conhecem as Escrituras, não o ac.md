@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Jesus não é o Messias. Os judeus, que conhecem as Escrituras, não o ac

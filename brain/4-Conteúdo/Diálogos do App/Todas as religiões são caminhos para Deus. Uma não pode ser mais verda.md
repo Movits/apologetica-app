@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Todas as religiões são caminhos para Deus. Uma não pode ser mais verda

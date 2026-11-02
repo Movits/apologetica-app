@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Rezar para santos é idolatria. Somente Deus pode ouvir orações
@@ -10,4 +10,4 @@ Objeção: "Rezar para santos é idolatria. Somente Deus pode ouvir orações."
 Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-santos-idolatria`
 
-Artigo completo: [[04 - Maria Intercessora, Não Mediadora]]
+Artigo completo: [[04 - Maria Intercessora, Não Rival de Cristo]]

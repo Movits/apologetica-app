@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 15 - Islamismo
@@ -34,6 +34,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Nostra Aetate §2-5]]
 - [[Antiguidades Judaicas 18,3,3]]
 - [[1 Coríntios 15,3-8]]
+- [[Deuteronômio 17,15]]
 
 ## Artigos relacionados
 - [[16 - Espiritismo (Kardecismo)]]

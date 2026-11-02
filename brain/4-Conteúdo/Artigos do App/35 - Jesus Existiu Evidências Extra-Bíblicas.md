@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 35 - Jesus Existiu Evidências Extra-Bíblicas
@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Did Jesus Exist]]
 - [[Atos 18,2]]
 - [[Talmude Babilônico, Sanhedrin 43a]]
+- [[Gálatas 1,19]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

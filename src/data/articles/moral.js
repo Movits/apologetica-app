@@ -18,6 +18,12 @@ const articles = [
 
 Primeiro, é preciso distinguir o mal moral, causado pela liberdade humana, do mal natural, que envolve doenças, terremotos, sofrimento físico. Deus criou seres livres porque o amor exige liberdade. A liberdade implica a possibilidade real do mal moral. Sem liberdade, não há virtude, nem amor verdadeiro, nem mérito. Um Deus que impedisse toda escolha errada teria criado robôs, não pessoas.
 
+## E o mal natural e o sofrimento dos animais?
+
+A liberdade explica o mal que nós causamos, mas não explica um terremoto, um câncer infantil ou a dor dos animais, que já existia centenas de milhões de anos antes de haver seres humanos. Essa é a forma mais forte da objeção, e a filosofia a resume num exemplo famoso: um filhote de cervo preso num incêndio florestal causado por um raio, que agoniza por dias antes de morrer, sem que ninguém veja e sem nenhum bem aparente que justifique isso.
+
+O Catecismo não foge da pergunta. Ele diz que Deus quis criar um mundo "em estado de caminho" para a perfeição, e que esse devir implica "o aparecimento de certos seres" e "o desaparecimento de outros", "as construções da natureza, com as suas destruições". Por isso, "com o bem físico também existe, pois, o mal físico, enquanto a criação não tiver atingido a perfeição" (Catecismo §310). Um mundo com leis estáveis é condição para que exista vida e para que nossas escolhas tenham consequências reais: as mesmas placas tectônicas que provocam terremotos reciclam o carbono e mantêm a Terra habitável, e as mesmas mutações que permitem a variedade dos seres vivos também causam doenças. Quanto aos animais, eles sentem dor de verdade, mas é provável que não a vivam como nós, que a prolongamos pela memória, pelo medo do futuro e pela pergunta "por quê?". Nada disso torna a dor deles indiferente, e a fé não promete uma explicação completa. Promete que a história não termina aqui: "toda a criação geme e sofre como que dores de parto até o presente dia", com "a esperança de ser também ela libertada do cativeiro da corrupção" (Romanos 8,21-22).
+
 ## Deus pode ter razões que não vemos
 
 Segundo, Deus pode ter razões suficientes para permitir sofrimentos que não compreendemos. Um médico causa dor para curar. Isso não o torna mau, embora a criança, na hora da injeção, possa achar que sim. Nossa perspectiva é limitada. O livro de Jó no Antigo Testamento explora exatamente essa tensão: Jó sofre sem entender por quê, e Deus não dá explicações, apenas mostra que sua sabedoria excede a humana (Jó 38,1-4).
@@ -28,7 +34,7 @@ Terceiro, o cristianismo não ignora o sofrimento, ele o transforma. Deus mesmo 
 
 ## A objeção que se volta contra si
 
-Há ainda um problema filosófico que ateus raramente percebem. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, não há padrão objetivo. O próprio argumento colapsa: o ateísmo não tem base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis contou em "Cristianismo Puro e Simples" (1952), quando, ainda ateu, tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. A objeção do mal, levada a sério, prova justamente a existência do padrão moral objetivo, ou seja, de Deus.
+Há ainda um problema filosófico que pesa sobre a própria objeção. O argumento do mal pressupõe um padrão objetivo de bem e mal. Se não há Deus, é difícil dizer de onde viria esse padrão, e sem ele o ateísmo não teria base para chamar nada de "mau", apenas de desagradável. Como C. S. Lewis contou em "Cristianismo Puro e Simples" (1952), quando, ainda ateu, tentou usar o argumento do mal contra Deus, percebeu que toda sua noção de "mal" pressupunha o "bem" que ele queria negar. Um ateu bem informado pode responder que não precisa de uma moral objetiva: basta tomar o padrão do próprio cristão e mostrar que um Deus bom e um mundo com tanto mal não combinam. A resposta é justa, mas leva a discussão para outro ponto: a questão passa a ser se um Deus bom pode ter razões para permitir o mal, e é a isso que respondem as seções anteriores. E quem insiste que o mal é real, e não apenas desagradável, ainda precisa dizer de onde vem esse padrão. Levada a sério, a objeção do mal aponta para um padrão moral objetivo, e esse padrão aponta para Deus.
 
 São Paulo escreve em Romanos 8,28 que "todas as coisas concorrem para o bem daqueles que amam a Deus". Não que tudo seja bom, mas que Deus tira bem mesmo do mal. O Catecismo resume: Deus não é de modo algum causa do mal moral, mas o permite, por respeito à liberdade da criatura, e misteriosamente sabe tirar dele o bem (Catecismo §311). A Páscoa é o exemplo supremo: o pior crime da história (matar Deus encarnado) tornou-se a fonte da redenção (Catecismo §312).
 
@@ -36,10 +42,10 @@ São Paulo escreve em Romanos 8,28 que "todas as coisas concorrem para o bem daq
 
 1. Você chama o sofrimento de "mau". Por qual padrão objetivo o sofrimento é mau? Se for só preferência sua, sua objeção contra Deus colapsa.
 
-2. Se Deus interviesse para impedir todo mal, ele teria que abolir a liberdade humana. Você prefere existir como pessoa livre num mundo onde há sofrimento, ou como autômato num mundo perfeito sem virtude?
+2. Se Deus interviesse para impedir todo mal moral, ele teria que abolir a liberdade humana. Você prefere existir como pessoa livre num mundo onde há sofrimento, ou como autômato num mundo perfeito sem virtude?
 
 3. O cristianismo apresenta um Deus crucificado, que entra no sofrimento humano. Qual outra cosmovisão oferece resposta mais profunda ao sofrimento que essa?`,
-    references: ['rm-8-28', 'lewis-mere-christianity', 'cic-311', 'job-38-1'],
+    references: ['rm-8-28', 'lewis-mere-christianity', 'cic-311', 'job-38-1', 'rm-8-19'],
   },
   {
     id: 8,
@@ -61,6 +67,16 @@ A Igreja ensina, sem ambiguidade, que toda pessoa possui dignidade inalienável,
 
 A distinção crucial é entre a inclinação e o ato. A Igreja não condena a tendência homossexual em si mesma, que não é pecado, embora o Catecismo a descreva como "objetivamente desordenada" (Catecismo §2358). O que ela ensina ser contrário à lei natural são os atos homossexuais. A razão é antropológica: a sexualidade humana, na visão cristã, está ordenada à união entre homem e mulher e à transmissão da vida (Gênesis 1,27-28). Atos que excluem essa finalidade por princípio se afastam da ordem para a qual a sexualidade foi criada.
 
+## O que diz o Catecismo, por inteiro
+
+O tema ocupa três parágrafos do Catecismo, e ler um sem os outros dá uma ideia errada: o primeiro fala dos atos, o segundo das pessoas e o terceiro do caminho que a Igreja propõe.
+
+> A homossexualidade designa as relações entre homens ou mulheres, que experimentam uma atração sexual exclusiva ou predominante para pessoas do mesmo sexo. Tem-se revestido de formas muito variadas, através dos séculos e das culturas. A sua gênese psíquica continua em grande parte por explicar. Apoiando-se na Sagrada Escritura, que os apresenta como depravações graves, a Tradição sempre declarou que "os atos de homossexualidade são intrinsecamente desordenados". São contrários à lei natural, fecham o ato sexual ao dom da vida, não procedem duma verdadeira complementaridade afetiva sexual, não podem, em caso algum, ser aprovados. (§2357)
+
+> Um número considerável de homens e de mulheres apresenta tendências homossexuais profundamente radicadas. Esta propensão, objetivamente desordenada, constitui, para a maior parte deles, uma provação. Devem ser acolhidos com respeito, compaixão e delicadeza. Evitar-se-á, em relação a eles, qualquer sinal de discriminação injusta. Estas pessoas são chamadas a realizar na sua vida a vontade de Deus e, se forem cristãs, a unir ao sacrifício da cruz do Senhor as dificuldades que podem encontrar devido à sua condição. (§2358)
+
+> As pessoas homossexuais são chamadas à castidade. Pelas virtudes do autodomínio, educadoras da liberdade interior, e, às vezes, pelo apoio duma amizade desinteressada, pela oração e pela graça sacramental, podem e devem aproximar-se, gradual e resolutamente, da perfeição cristã. (§2359)
+
 ## O que diz o Novo Testamento
 
 São Paulo trata do tema em Romanos 1,26-27 e em 1 Coríntios 6,9-11. Esta última passagem é importante porque, depois de listar várias condutas (incluindo atos homossexuais) que excluem do Reino, conclui: "Ao menos alguns de vós têm sido isso. Mas fostes lavados, mas fostes santificados, mas fostes justificados, em nome do Senhor Jesus Cristo". O ensinamento apostólico não é de exclusão, é de transformação possível pela graça.
@@ -69,7 +85,7 @@ Essa posição não é discriminação. A Igreja pede castidade a todos, casados
 
 ## "Amor é amor"?
 
-A objeção popular de que "o amor é amor" ignora uma distinção essencial. A Igreja valoriza profundamente o amor entre pessoas do mesmo sexo, na forma de amizade, fraternidade, solidariedade. O que ela distingue é o amor e a sua expressão sexual. Nem todo amor é genital, e nem toda relação genital é amor. O Papa Francisco, em Amoris Laetitia (2016), reforçou tanto o respeito devido a essas pessoas quanto a continuidade do ensinamento doutrinal.
+A objeção popular de que "o amor é amor" ignora uma distinção essencial. A Igreja valoriza profundamente o amor entre pessoas do mesmo sexo, na forma de amizade, fraternidade, solidariedade. O que ela distingue é o amor e a sua expressão sexual. Nem todo amor é genital, e nem toda relação genital é amor. O Papa Francisco, em Amoris Laetitia (2016), reforçou tanto o respeito devido a essas pessoas quanto a continuidade do ensinamento doutrinal. Em 2023, a declaração Fiducia supplicans, do Dicastério para a Doutrina da Fé, admitiu bênçãos simples, fora de qualquer rito litúrgico, a casais em situação irregular e a casais do mesmo sexo, e deixou claro que isso não aprova a união nem muda a doutrina sobre o matrimônio.
 
 A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja não condena pessoas, ensina sobre atos. E ensina, junto com o ensinamento moral, a possibilidade real de viver na graça e a esperança da plenitude em Cristo.
 
@@ -80,7 +96,7 @@ A doutrina não muda porque a verdade sobre o ser humano não muda. A Igreja nã
 2. Por que a sexualidade humana, biologicamente ordenada à complementaridade homem-mulher e à geração de vida, deveria ser interpretada de modo que ignore essa estrutura natural?
 
 3. A Igreja pede castidade a todos os solteiros, heterossexuais ou homossexuais. Em que sentido isso é discriminação?`,
-    references: ['cic-2357', 'gn-1-27', 'rm-1-26', '1cor-6-9', 'amoris-laetitia-250', 'cic-2348'],
+    references: ['cic-2357', 'gn-1-27', 'rm-1-26', '1cor-6-9', 'amoris-laetitia-250', 'cic-2348', 'fiducia-supplicans'],
   },
   {
     id: 25,
@@ -112,13 +128,15 @@ A Didaqué, manual de instrução cristã do séc. I-II, afirma: "Não matarás 
 
 A objeção do "meu corpo, minha decisão" pressupõe que o feto é parte do corpo da mãe. Não é. Tem DNA distinto, tipo sanguíneo que pode ser diferente, sexo que pode ser diferente, sistema imunológico próprio. Está dentro da mãe, mas não é a mãe. É outro ser humano, hospedado no corpo dela.
 
+Há uma versão mais forte da objeção, proposta pela filósofa Judith Jarvis Thomson (1971): mesmo que o feto seja uma pessoa, ninguém é obrigado a emprestar o próprio corpo para manter outra pessoa viva, assim como ninguém seria obrigado a ficar ligado por meses a um violinista doente a quem foi conectado sem consentimento. A analogia falha em dois pontos. Primeiro, o aborto não é um simples "desligar-se": é escolher, como fim ou como meio, a morte do filho. Segundo, mãe e filho não são estranhos. Os pais têm deveres especiais com os filhos que geraram, e ninguém aceitaria que um pai deixasse o recém-nascido morrer de fome por não ter consentido em sustentá-lo. A dependência do filho não diminui a sua dignidade, aumenta a responsabilidade de quem o cerca.
+
 ## Os casos difíceis
 
 A objeção do "caso difícil" (estupro, malformação fetal, risco de vida da mãe) é importante e merece resposta cuidadosa.
 
 Em caso de risco de vida da mãe: a Igreja permite procedimentos médicos que visam salvar a mãe, mesmo se indiretamente causam a morte do feto (princípio do duplo efeito). Por exemplo, o tratamento de um câncer de útero em mulher grávida, ou a retirada da trompa afetada numa gravidez ectópica. Em nenhum desses casos se busca a morte do feto: ela é consequência indireta. Diferente do aborto, que busca diretamente a morte do feto.
 
-Em caso de estupro: a violência ao corpo da mãe é crime gravíssimo, e ela merece todo apoio físico, psicológico, espiritual. Mas o filho não é responsável pela violência do pai. Matar a criança não desfaz o estupro, só adiciona uma segunda vítima inocente. A solução é amparar a mãe, oferecer adoção, e não puni-la duas vezes (a primeira pelo agressor, a segunda pelo Estado, exigindo que se torne assassina do próprio filho).
+Em caso de estupro: a violência ao corpo da mãe é crime gravíssimo, e ela merece todo apoio físico, psicológico, espiritual. Mas o filho não é responsável pela violência do pai. Matar a criança não desfaz o estupro, só adiciona uma segunda vítima inocente. A solução é amparar a mãe, oferecer a adoção como possibilidade e não somar à violência do agressor uma segunda ferida, a perda do próprio filho.
 
 Em caso de malformação fetal: nenhuma deficiência justifica execução. Bebês com síndromes ou doenças graves têm direito à vida tanto quanto qualquer outro. A história mostra para onde leva o caminho oposto: a Alemanha nazista começou eliminando pessoas com deficiência física e mental, pelo critério da "vida indigna de ser vivida".
 
@@ -135,7 +153,7 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
 3. Por que a dignidade dependeria de capacidades atuais (consciência, autonomia)? Bebês recém-nascidos não têm autonomia, e adultos em coma perdem consciência. Eles deixam de ter dignidade?
 
 4. A Igreja permite tratar a mãe em risco mesmo quando isso causa, indiretamente, a morte do feto. Por que não seria eticamente decisiva a diferença entre matar diretamente e aceitar um efeito que não se quer?`,
-    references: ['cic-2270', 'didaque-2-2', 'tertuliano-apologetico-9', 'cdc-1397', 'misericordia-et-misera-12', 'manner-coracao-2022'],
+    references: ['cic-2270', 'didaque-2-2', 'tertuliano-apologetico-9', 'cdc-1397', 'misericordia-et-misera-12', 'manner-coracao-2022', 'thomson-1971'],
   },
   {
     id: 26,
@@ -146,8 +164,8 @@ Mas a doutrina é também misericordiosa. A Igreja oferece perdão sacramental a
     imageCredit: 'Rafael, A Sagrada Família (séc. XVI). Domínio público.',
     imageAspect: 0.75,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FRaffael%2520015.jpg&w=2200&output=jpg&q=80',
-    summary: 'A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.',
-    body: `Em 25 de julho de 1968, São Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, as previsões de Paulo VI sobre as consequências sociais se cumpriram com precisão profética.
+    summary: 'Em 1968, Paulo VI previu consequências sociais da contracepção que, em boa parte, se confirmaram.',
+    body: `Em 25 de julho de 1968, São Paulo VI publicou a encíclica Humanae Vitae, reafirmando o ensinamento constante da Igreja: os métodos contraceptivos artificiais são moralmente ilícitos. A reação foi violenta, dentro e fora da Igreja. Décadas depois, várias das previsões de Paulo VI sobre as consequências sociais se mostraram certeiras.
 
 ## Os dois sentidos do ato conjugal
 
@@ -161,7 +179,7 @@ A Igreja não condena o planejamento familiar responsável. Ao contrário, ensin
 
 ## Métodos naturais e contracepção artificial
 
-Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São estudados cientificamente, e alguns, como o sintotérmico, passam de 99% de eficácia quando usados corretamente (Frank-Herrmann e colaboradores, Human Reproduction, 2007). Respeitam o corpo da mulher e exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal (Catecismo §2370).
+Os Métodos Naturais (Billings, Sintotérmico, Creighton) baseiam-se na observação dos ciclos de fertilidade da mulher. Permitem ou abstenção em períodos férteis (se o casal busca evitar gravidez) ou intencionalidade nesses períodos (se busca conceber). São estudados cientificamente, e alguns, como o sintotérmico, passam de 99% de eficácia quando usados corretamente (Frank-Herrmann e colaboradores, Human Reproduction, 2007). Nem todos chegam a esse número: segundo o levantamento de James Trussell (2011), cerca de 3% das mulheres engravidam no primeiro ano com o método da ovulação, o Billings, mesmo usado corretamente. E no uso real, com erros, a falha é maior. No próprio estudo de Frank-Herrmann, 1,8% das mulheres engravidaram em 13 ciclos de uso real do sintotérmico, e nas pesquisas nacionais dos Estados Unidos, que somam todos os métodos baseados na percepção da fertilidade, a falha no uso real chega a 24%. Além disso, esses métodos respeitam o corpo da mulher e exigem comunicação e autodomínio entre os esposos. Sem alteração química, sem barreiras físicas, sem violação do ato conjugal (Catecismo §2370).
 
 Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laqueadura, vasectomia) separam artificialmente os dois aspectos. Cada método tem problemas específicos. A pílula age sobretudo impedindo a ovulação, mas, quando a ovulação escapa, discute-se se as alterações que ela provoca no endométrio podem impedir a implantação de um embrião já formado: há quem veja boas evidências disso (Larimore e Stanford, 2000) e quem as julgue insuficientes (Rivera, Yacobson e Grimes, 1999). O DIU age principalmente antes da fecundação, mas não se exclui que às vezes impeça um embrião já formado de sobreviver e se implantar (Ortiz e Croxatto, 2007). A laqueadura mutila um órgão saudável. O preservativo introduz uma barreira artificial no ato.
 
@@ -169,32 +187,32 @@ Já a pílula anticoncepcional, DIU, preservativo, métodos cirúrgicos (laquead
 
 As previsões proféticas de Paulo VI estão no parágrafo 17 da encíclica. Ele previu quatro consequências da aceitação ampla da contracepção:
 
-Primeira: a banalização da fidelidade conjugal e degradação geral dos costumes. "Considerem, antes de mais, o caminho amplo e fácil que tais métodos abririam à infidelidade conjugal e à degradação da moralidade". Resultado verificável: explosão de adultério, separações, relações casuais como norma.
+Primeira: a banalização da fidelidade conjugal e degradação geral dos costumes. "Considerem, antes de mais, o caminho amplo e fácil que tais métodos abririam à infidelidade conjugal e à degradação da moralidade". Nas décadas seguintes vieram a multiplicação dos divórcios e a aceitação das relações casuais como norma.
 
-Segunda: a perda do respeito pela mulher. "É ainda de recear que o homem, habituando-se ao uso das práticas anticoncepcionais, acabe por perder o respeito pela mulher e, sem se preocupar mais com o equilíbrio físico e psicológico dela, chegue a considerá-la como simples instrumento de prazer egoísta e não mais como a sua companheira, respeitada e amada". Cultura pornográfica massiva, objetificação sexual, OnlyFans, prostituição banalizada: tudo verificável.
+Segunda: a perda do respeito pela mulher. "É ainda de recear que o homem, habituando-se ao uso das práticas anticoncepcionais, acabe por perder o respeito pela mulher e, sem se preocupar mais com o equilíbrio físico e psicológico dela, chegue a considerá-la como simples instrumento de prazer egoísta e não mais como a sua companheira, respeitada e amada". A pornografia de massa e a objetificação sexual, hoje onipresentes, mostram que o temor não era fantasia.
 
 Terceira: o uso da contracepção pelos poderes públicos. "Pense-se ainda seriamente na arma perigosa que se viria a pôr nas mãos de autoridades públicas, pouco preocupadas com exigências morais". Resultado: políticas públicas de controle populacional impostas a populações pobres, esterilização forçada (como na Índia dos anos 1970 e no Peru dos anos 1990).
 
-Quarta: o homem se considera ilimitadamente dono do próprio corpo, quando Paulo VI pede que se reconheçam "limites intransponíveis no domínio do homem sobre o próprio corpo e as suas funções". Resultado: cultura de descarte, eutanásia, aborto, mutilação cirúrgica voluntária, ideologia de gênero. A lógica é a mesma: meu corpo é meu, faço o que quero.
+Quarta: o homem se considera ilimitadamente dono do próprio corpo, quando Paulo VI pede que se reconheçam "limites intransponíveis no domínio do homem sobre o próprio corpo e as suas funções". A mesma lógica, "meu corpo é meu, faço o que quero", reaparece depois nos debates sobre aborto e eutanásia.
 
-## Os dados confirmam
+## O que os dados mostram
 
-Os indicadores sociais nas décadas seguintes à popularização da pílula são consistentes com as previsões. Nos Estados Unidos, as taxas de divórcio mais que dobraram, de 2,5 por mil habitantes em 1965 para 5,1 em 1978, segundo dados do National Center for Health Statistics. A proporção de filhos nascidos fora do casamento subiu de cerca de 5% em 1960 para cerca de 40% desde o fim dos anos 2000. Em paralelo, casos amplamente documentados de esterilização forçada em programas públicos (como o programa de planejamento familiar do Peru entre 1996 e 2000, sob Fujimori, e a Emergência indiana de 1975-1977) confirmaram o terceiro temor de Paulo VI sobre o uso da contracepção por autoridades insensíveis às exigências morais.
+Os indicadores sociais nas décadas seguintes à popularização da pílula são consistentes com as previsões. Nos Estados Unidos, as taxas de divórcio mais que dobraram, de 2,5 por mil habitantes em 1965 para 5,1 em 1978, segundo dados do National Center for Health Statistics. Depois do pico, por volta de 1980, a curva se inverteu: medida por mil mulheres casadas, a taxa caiu de 22,6 em 1980 para 14,6 em 2022, ainda acima dos 12,5 de 1968. Correlação não é causa: o divórcio também cresceu com as leis de divórcio sem culpa e outras mudanças da época, e um argumento honesto não atribui tudo à pílula. A proporção de filhos nascidos fora do casamento subiu de cerca de 5% em 1960 para cerca de 40% desde o fim dos anos 2000. Em paralelo, casos amplamente documentados de esterilização forçada em programas públicos (como o programa de planejamento familiar do Peru entre 1996 e 2000, sob Fujimori, e a Emergência indiana de 1975-1977) confirmaram o terceiro temor de Paulo VI sobre o uso da contracepção por autoridades insensíveis às exigências morais.
 
-O argumento "se a Igreja permitisse contracepção, as pessoas teriam menos abortos" também merece exame cuidadoso. A experiência histórica mostra que a contracepção tende a quebrar a conexão mental entre sexo e filhos, e quando o método falha (todos têm taxa de falha), o aborto frequentemente aparece como "solução de emergência". A correlação não é simples nem unidirecional, mas a tese de que mais contracepção sozinha resolve a questão do aborto não se sustenta diante dos dados.
+O argumento "se a Igreja permitisse contracepção, as pessoas teriam menos abortos" também merece exame honesto. Há estudos em que oferecer contracepção gratuita e de longa duração reduziu as taxas de aborto de um grupo (Peipert e colaboradores, 2012). Mas a Igreja não julga a moral de um ato só pelo efeito estatístico, e São João Paulo II apontou outro dado: a "mentalidade contraceptiva" separa o sexo da abertura à vida, de modo que, quando o método falha, o filho passa a ser visto como um inimigo, e "o aborto a única solução possível diante de uma contracepção falhada". Por isso, embora sejam males moralmente diferentes, contracepção e aborto surgem com frequência "intimamente relacionados como frutos da mesma planta" (Evangelium Vitae §13).
 
-A Igreja é a única instituição global que ainda defende coerentemente esta posição. Não porque seja "atrasada", mas porque é a única corajosa o suficiente para dizer a verdade impopular: o ato conjugal tem natureza dada, e violá-la traz consequências.
+Entre as grandes instituições do mundo, a Igreja Católica é praticamente a única que ainda sustenta essa posição. Não por ser "atrasada", mas por estar disposta a dizer uma verdade impopular: o ato conjugal tem uma natureza dada, e violá-la traz consequências.
 
 ## Perguntas-chave
 
-1. As previsões de Paulo VI em 1968 se cumpriram. Como você explica isso, se a Igreja "não entende a vida real"?
+1. Várias previsões de Paulo VI em 1968 se confirmaram. Como explicar isso, se a Igreja "não entende a vida real"?
 
 2. Se a contracepção é tão libertadora, por que o divórcio e os nascimentos fora do casamento dispararam nas décadas seguintes à sua difusão?
 
 3. Por que os Métodos Naturais (que respeitam o corpo) são considerados inferiores à pílula (que altera quimicamente o corpo da mulher por anos)?
 
 4. Se cada ato conjugal pode ser livremente esvaziado de sua dimensão procriativa, por que critica-se objetificação sexual? Você não está fazendo isso?`,
-    references: ['humanae-vitae-17', 'cic-2366', 'humanae-vitae-12', 'larimore-stanford-2000', 'ortiz-croxatto-2007'],
+    references: ['humanae-vitae-17', 'cic-2366', 'humanae-vitae-12', 'larimore-stanford-2000', 'ortiz-croxatto-2007', 'trussell-2011', 'evangelium-vitae-13', 'peipert-2012'],
   },
   {
     id: 59,
@@ -312,7 +330,7 @@ Jesus resumiu tudo em dois mandamentos: amar a Deus sobre todas as coisas e amar
 
 ## Os mais contestados hoje
 
-Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses", Êxodo 20,3) condena também o ocultismo, o horóscopo e a superstição (Catecismo §2116), porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
+Vale defender de perto os que o mundo atual mais questiona. O 1º ("não terás outros deuses", Êxodo 20,3) condena também o ocultismo, o horóscopo e a superstição (Catecismo §2111 e 2116-2117), porque pôr a vida nas mãos de "forças" ou do dinheiro escraviza. Só Deus liberta. O 3º (guardar o Dia do Senhor) protege o tempo para Deus e para a família num mundo que transforma tudo em trabalho e consumo. O 4º (honrar pai e mãe) sustenta a família, primeira escola do amor. O 6º e o 9º (castidade) defendem o corpo e o amor verdadeiro contra a lógica do descarte. O 7º (não roubar) cobra justiça e cuidado com o pobre, não só o furto pequeno. Cada "não" guarda um "sim" maior.
 
 ## Caminho de liberdade, não jaula
 
@@ -325,7 +343,7 @@ No fim, o mandamento funciona como a placa que avisa do precipício na estrada d
 2. Os mandamentos são um capricho que Deus poderia ter invertido, ou descrevem o bem da própria pessoa, gravado no coração de todos?
 
 3. Um mandamento que proíbe matar, roubar e mentir tira a sua liberdade, ou protege a vida de todos, inclusive a sua?`,
-    references: ['ex-20-3', 'mt-5-17', 'rm-2-15', 'mt-22-37', 'mt-5-21', 'sl-18-9', 'cic-2116'],
+    references: ['ex-20-3', 'mt-5-17', 'rm-2-15', 'mt-22-37', 'mt-5-21', 'sl-18-9', 'cic-2116', 'cic-2111'],
   },
 ];
 

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 34 - Aparentes Contradições na Ressurreição
@@ -27,6 +27,7 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - [[Marcos 16,1-7]]
 - [[João 20,1-12]]
 - [[Mateus 28,16-17]]
+- [[1 Coríntios 15,3-8]]
 
 ## Artigos relacionados
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

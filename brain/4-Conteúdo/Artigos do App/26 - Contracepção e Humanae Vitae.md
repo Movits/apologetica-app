@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 26 - Contracepção e Humanae Vitae
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-A profecia de Paulo VI em 1968 sobre as consequências sociais da contracepção se cumpriu integralmente.
+Em 1968, Paulo VI previu consequências sociais da contracepção que, em boa parte, se confirmaram.
 
 Categoria: [[Moral]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/moral.js`
@@ -16,7 +16,7 @@ Arquivo: `src/data/articles/moral.js`
 - A Igreja aprova o planejamento responsável
 - Métodos naturais e contracepção artificial
 - As quatro previsões de Paulo VI
-- Os dados confirmam
+- O que os dados mostram
 - Perguntas-chave
 
 ## Referências usadas
@@ -25,6 +25,9 @@ Arquivo: `src/data/articles/moral.js`
 - [[Humanae Vitae §12]]
 - [[Larimore e Stanford (2000), efeitos pós-fertilização da pílu]]
 - [[Ortiz e Croxatto (2007), mecanismo de ação do DIU]]
+- [[Trussell (2011), falha dos métodos contraceptivos]]
+- [[Evangelium Vitae §13]]
+- [[Peipert e colegas (2012), contracepção gratuita e aborto]]
 
 ## Artigos relacionados
 - [[08 - Homossexualidade e Doutrina Católica]]

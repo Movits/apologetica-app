@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Did Jesus Exist
@@ -15,3 +15,4 @@ Funcionalidade: [[Referências]]
 ## Usada nos artigos
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]
 - [[35 - Jesus Existiu Evidências Extra-Bíblicas]]
+- [[36 - Cristianismo Copiou Religiões Pagãs]]

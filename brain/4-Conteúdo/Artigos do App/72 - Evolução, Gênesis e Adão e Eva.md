@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 72 - Evolução, Gênesis e Adão e Eva
@@ -30,6 +30,8 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Humani Generis, 36-37]]
 - [[Mensagem à Pontifícia Academia das Ciências sobre a evolução]]
 - [[Comentário Literal ao Gênesis, I, 19, 39]]
+- [[Science, Theology, and Monogenesis (2011)]]
+- [[Catecismo §159]]
 
 ## Diálogos que levam a este artigo
 - [[A evolução já provou que o Gênesis é mito e que Deus não é necessário]]

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 49 - Milagres Eucarísticos Quando a Hóstia Vira Carne
@@ -15,6 +15,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - Lanciano, o caso mais conhecido
 - Buenos Aires, Sokółka, Tixtla
 - O tipo sanguíneo AB
+- O que dizem os críticos
 - O que isso prova e o que pede fé
 - Perguntas-chave
 

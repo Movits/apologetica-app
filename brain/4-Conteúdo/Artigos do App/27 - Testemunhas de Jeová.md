@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 27 - Testemunhas de Jeová
@@ -29,6 +29,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Atos 13,2]]
 - [[Atos 5,3-4]]
 - [[Tito 2,13]]
+- [[Isaías 43,10]]
+- [[Carta aos Efésios §18]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

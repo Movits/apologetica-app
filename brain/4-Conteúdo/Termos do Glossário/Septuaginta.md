@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Septuaginta
@@ -15,3 +15,4 @@ Funcionalidade: [[Glossário]]
 - [[14 - Maria, Mãe de Deus (Theotokos)]]
 - [[18 - O Cânon Bíblico Por que 73 Livros]]
 - [[38 - Judaísmo]]
+- [[46 - Profecias Messiânicas Cumpridas em Jesus]]

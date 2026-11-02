@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 36 - Cristianismo Copiou Religiões Pagãs
@@ -23,6 +23,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[The Gospel and the Greeks]]
 - [[Cristianismo Puro e Simples]]
 - [[O mito se fez fato]]
+- [[Did Jesus Exist]]
 
 ## Artigos relacionados
 - [[15 - Islamismo]]

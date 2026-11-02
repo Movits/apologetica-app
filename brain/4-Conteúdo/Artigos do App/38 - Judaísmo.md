@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 38 - Judaísmo
@@ -30,6 +30,8 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Nostra Aetate §2-5]]
 - [[Deuteronômio 6,4]]
 - [[Hebreus 10,10-14]]
+- [[Isaías 49,3-6]]
+- [[Oseias 6,6]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

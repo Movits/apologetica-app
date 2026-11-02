@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Contra as Heresias, III, 22, 4

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 06 - Ateísmo e o Problema do Mal
@@ -13,6 +13,7 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Tópicos internos
 - Mal moral e mal natural
+- E o mal natural e o sofrimento dos animais?
 - Deus pode ter razões que não vemos
 - Um Deus que sofre conosco
 - A objeção que se volta contra si
@@ -23,6 +24,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[Cristianismo Puro e Simples]]
 - [[Catecismo §311]]
 - [[Jó 38,1-4]]
+- [[Romanos 8,19-22]]
 
 ## Artigos relacionados
 - [[10 - O Argumento Moral pela Existência de Deus]]

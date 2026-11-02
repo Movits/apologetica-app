@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 37 - Protestantismo
@@ -42,6 +42,7 @@ Arquivo: `src/data/articles/outras-religioes.js`
 - [[Primeira Apologia §66]]
 - [[World Christian Encyclopedia]]
 - [[Unitatis Redintegratio, 3]]
+- [[2 Timóteo 3,16-17]]
 
 ## Artigos relacionados
 - [[03 - A Sagrada Tradição e o Sola Scriptura]]

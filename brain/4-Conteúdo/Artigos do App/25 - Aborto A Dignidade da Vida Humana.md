@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 25 - Aborto A Dignidade da Vida Humana
@@ -26,6 +26,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[Código de Direito Canônico, cân. 1397 §2 e 1329 §2]]
 - [[Misericordia et Misera §12]]
 - [[Männer (2022), quando o coração do embrião começa a bater]]
+- [[Thomson (1971), Uma defesa do aborto]]
 
 ## Artigos relacionados
 - [[08 - Homossexualidade e Doutrina Católica]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-documentos]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Lumen Gentium §60-62
@@ -13,4 +13,4 @@ Tema: Mediação de Maria
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]

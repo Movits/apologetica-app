@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-catecismo]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Catecismo §2350 e §2353

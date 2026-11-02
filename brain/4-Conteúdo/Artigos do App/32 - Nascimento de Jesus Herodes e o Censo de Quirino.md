@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 32 - Nascimento de Jesus Herodes e o Censo de Quirino
@@ -15,12 +15,14 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - A via linguística
 - A via histórica
 - Uma terceira possibilidade
+- A objeção na sua forma mais forte
 - Perguntas-chave
 
 ## Referências usadas
 - [[Lucas 2,1-7]]
 - [[Mateus 2,1]]
 - [[Antiguidades Judaicas, livro 18]]
+- [[Atos 5,37]]
 
 ## Artigos relacionados
 - [[31 - Como Lidar com Supostas Contradições na Bíblia]]

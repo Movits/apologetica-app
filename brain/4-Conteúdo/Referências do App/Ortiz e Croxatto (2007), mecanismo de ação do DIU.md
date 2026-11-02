@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-ciência]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Ortiz e Croxatto (2007), mecanismo de ação do DIU

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 82 - Pio XII e a Igreja na Segunda Guerra
@@ -15,12 +15,14 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - A "lenda negra"
 - O que ele de fato fez
 - Por que não gritou mais alto?
-- O veredito da história
+- O que os arquivos mostram
 - Perguntas-chave
 
 ## Referências usadas
 - [[Abertura dos arquivos de Pio XII (Francisco, 2019)]]
 - [[Nostra Aetate §2-5]]
+- [[Radiomensagem de Natal de 1942]]
+- [[Série Ebrei do Arquivo da Secretaria de Estado]]
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 5: Pio XII foi cúmplice do nazismo?

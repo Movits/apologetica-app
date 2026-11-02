@@ -75,7 +75,7 @@ O astrofísico Fred Hoyle, ateu durante boa parte da vida, depois de calcular as
 
 ## Necessidade, acaso ou design?
 
-Há três explicações possíveis para esse ajuste fino. A necessidade física não funciona, porque as constantes poderiam logicamente ter outros valores. O acaso é absurdo dada a precisão envolvida. Resta o design.
+Há três explicações possíveis para esse ajuste fino. A necessidade física é a aposta de quem espera uma "teoria de tudo" que fixe esses valores, mas nenhuma teoria conhecida faz isso, e, mesmo que um dia exista, a pergunta apenas muda de lugar: por que justamente uma lei que produz um universo habitável? O acaso puro é implausível diante da precisão envolvida, a não ser que se multipliquem os universos, e é disso que trata a objeção seguinte. Resta o design como a explicação mais direta.
 
 ## A objeção do multiverso
 
@@ -119,6 +119,12 @@ Mas todos vivemos como se a moral fosse real. Condenamos o nazismo, defendemos o
 ## O que o argumento não diz
 
 O argumento moral não diz que ateus não conseguem agir moralmente. Eles podem e muitas vezes agem com grande integridade. O argumento é mais sutil. O ateísmo, levado às últimas consequências, não tem como justificar a moral como objetiva. Se ela é objetiva, e parece ser, então deve haver uma fonte que a sustente. Essa fonte é o Deus pessoal, criador da natureza humana e autor da lei moral inscrita no coração de cada pessoa. É a lei natural, que, nas palavras do Catecismo, "permite ao homem discernir, pela razão, o bem e o mal" (Catecismo, 1954).
+
+## E o dilema de Eutífron?
+
+A objeção mais séria remonta a Platão. No diálogo Eutífron, Sócrates pergunta se o piedoso é amado pelos deuses por ser piedoso, ou se é piedoso por ser amado por eles. Aplicada ao Deus único, a pergunta fica assim: algo é bom porque Deus manda, ou Deus manda porque é bom? Se for a primeira opção, a moral parece arbitrária. Se for a segunda, o bem parece existir sem depender de Deus. A resposta clássica, apoiada em Santo Tomás de Aquino, para quem só Deus é bom por essência, recusa as duas pontas: o bem não é uma regra que Deus inventa nem uma lei acima dele, é a própria natureza de Deus. Os mandamentos não são arbitrários porque brotam de quem ele é e da natureza humana que ele criou.
+
+Há também ateus que dizem que os valores morais objetivos simplesmente existem, como fatos brutos, sem precisar de fundamento. Mas aí ficam sem resposta as perguntas mais difíceis: por que um fato impessoal do universo me obrigaria a alguma coisa, e por que uma mente produzida por processos cegos estaria sintonizada justamente com ele?
 
 ## Perguntas-chave
 
@@ -169,7 +175,7 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
 
 1. Se "tudo precisa de causa", como você explica a existência do próprio universo sem cair no mesmo problema?
 
-2. Se Deus pode ser eterno sem causa, por que você não admite que o universo precise de uma causa eterna?
+2. Se você admite que algo existe sem causa, por que esse algo seria o universo, que começou e poderia não existir, e não um ser eterno e necessário?
 
 3. Você sabe o que significa "Deus" no argumento? Não é "alguém como você, mas grande", é o fundamento do ser. A pergunta "quem criou o fundamento do ser?" é incoerente.`,
     references: ['suma-i-q2-a3', 'cic-31-35', 'craig-kalam', 'bgv-teorema'],
@@ -188,7 +194,7 @@ A pergunta vira contra o questionador. Por que existe algo em vez de nada? Sem u
 
 ## O túmulo vazio
 
-O túmulo estava vazio (Mateus 28,1-10). Tanto judeus quanto romanos tinham interesse claro em produzir o corpo de Jesus para suprimir o cristianismo no nascedouro. Nunca conseguiram, porque o corpo não estava lá.
+O túmulo estava vazio, como narram os Evangelhos (Mateus 28,1-10). A pregação da ressurreição começou em Jerusalém, perto do sepulcro, onde seria fácil desmenti-la, e as autoridades tinham todo o interesse em fazê-lo. Mas o que os adversários espalharam não foi "aqui está o corpo": foi que "seus discípulos vieram retirá-lo à noite" (Mateus 28,13), versão que, segundo Mateus, "é ainda hoje espalhada entre os judeus" (Mateus 28,15). Essa acusação já admite que o túmulo estava vazio.
 
 ## As aparições
 
@@ -215,7 +221,7 @@ A questão histórica não é "houve evidências?", mas "qual explicação dá c
 3. O que faz uma pessoa morrer torturada por algo que ela sabe ser mentira?
 
 4. Como a fé na ressurreição surgiu tão cedo? O credo de 1 Coríntios 15,3-7 é datado por muitos estudiosos, inclusive céticos como Gerd Lüdemann, a poucos anos da crucificação, deixando pouco tempo para "evolução mítica".`,
-    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19', 'gn-14-14', 'at-12-1', 'clemente-1cor-5', 'tacito-anais'],
+    references: ['1cor-15-3', 'mt-28-1', 'josefo-antiguidades-20', 'cic-638', 'habermas-resurreicao', 'mt-13-55', 'gl-1-19', 'gn-14-14', 'at-12-1', 'clemente-1cor-5', 'tacito-anais', 'mt-28-11'],
   },
   {
     id: 17,
@@ -251,7 +257,15 @@ A força do argumento está em fechar a saída ambígua. A pessoa que tenta louv
 
 ## E a "quarta opção"?
 
-Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca disse essas coisas, os Evangelhos foram corrompidos. Essa saída é histórica, não filosófica, e cai diante da datação dos manuscritos e do testemunho universal das comunidades cristãs primitivas, abordado em outros artigos.
+Muitos céticos propõem uma quarta saída: Jesus nunca disse essas coisas, e a fé na sua divindade seria uma lenda que cresceu com o tempo. É a objeção mais séria ao trilema, porque não discute a lógica de Lewis, discute os fatos. E ela esbarra em três dados.
+
+Primeiro, o tempo. As cartas de Paulo, escritas entre 20 e 30 anos depois da crucificação, já tratam Jesus como Senhor no sentido divino. Paulo encaixa Jesus dentro da própria profissão de fé judaica num só Deus: "há um só Deus, o Pai, [...] e um só Senhor, Jesus Cristo, por quem todas as coisas existem" (1 Coríntios 8,6). E cita um hino, que muitos estudiosos consideram anterior a ele, sobre Cristo "de condição divina" (Filipenses 2,6). É difícil que uma lenda desse porte surja tão depressa entre judeus monoteístas, com as testemunhas ainda vivas.
+
+Segundo, a fonte mais antiga. Mesmo deixando de lado o Evangelho de João, o de Marcos, que a maioria dos estudiosos considera o primeiro a ser escrito, já traz Jesus perdoando pecados (Marcos 2,5-7) e a resposta dele ao sumo sacerdote (Marcos 14,61-62), que o tribunal chamou de blasfêmia.
+
+Terceiro, o motivo. Ninguém ganhava nada inventando um Messias crucificado, e menos ainda adorando-o como Deus: pregar "Cristo crucificado" era "escândalo para os judeus e loucura para os pagãos" (1 Coríntios 1,23), e para quem pregava significava perseguição.
+
+Por isso a quarta opção não escapa do trilema, só o adia: os textos mais antigos já trazem as afirmações que exigem uma resposta.
 
 ## Perguntas-chave
 
@@ -262,7 +276,7 @@ Há uma quarta opção que céticos modernos tentam introduzir: Jesus nunca diss
 3. Se ele mentiu deliberadamente, por que seus apóstolos, que conviveram com ele, arriscaram a vida, e vários morreram mártires, pregando essa mentira?
 
 4. Por que o testemunho constante das primeiras gerações cristãs foi que Jesus reivindicou divindade, se isso é fabricação tardia?`,
-    references: ['jo-8-58', 'jo-10-30', 'mc-14-61', 'jo-20-28', 'lewis-mere-christianity', 'mc-2-5', 'jo-5-18', 'jo-14-9'],
+    references: ['jo-8-58', 'jo-10-30', 'mc-14-61', 'jo-20-28', 'lewis-mere-christianity', 'lewis-trilema', 'mc-2-5', 'jo-5-18', 'jo-14-9', 'fl-2-6', '1cor-8-6', '1cor-1-23'],
   },
   {
     id: 35,
@@ -298,7 +312,7 @@ Essas fontes não cristãs (o judeu Josefo, os pagãos Tácito, Plínio e Suetô
 
 ## Por que o mitismo não se sustenta
 
-A tese mítica precisa explicar como, em poucos anos após a suposta "criação literária", já existiam dezenas de igrejas espalhadas pelo Mediterrâneo, com fórmulas litúrgicas estabelecidas e escritos circulando, e como, pouco mais de três décadas depois da crucificação, já havia mártires e uma perseguição movida pelo próprio imperador contra os cristãos de Roma, a de Nero, em 64. Nenhuma explicação alternativa funciona historicamente. Por isso a academia séria, mesmo a mais agnóstica, rejeita o mitismo.
+A tese mítica precisa explicar como, em poucos anos após a suposta "criação literária", já existiam dezenas de igrejas espalhadas pelo Mediterrâneo, com fórmulas litúrgicas estabelecidas e escritos circulando, e como, pouco mais de três décadas depois da crucificação, já havia mártires e uma perseguição movida pelo próprio imperador contra os cristãos de Roma, a de Nero, em 64. E há um dado que os míticos têm dificuldade em contornar: por volta do ano 36, Paulo passou quinze dias com Pedro em Jerusalém e esteve também com "Tiago, irmão do Senhor" (Gálatas 1,18-19), isto é, um parente próximo de Jesus. Um personagem inventado não tem parentes que recebem visitas. Por isso praticamente todos os historiadores profissionais, inclusive agnósticos e ateus, rejeitam o mitismo.
 
 ## Perguntas-chave
 
@@ -309,7 +323,7 @@ A tese mítica precisa explicar como, em poucos anos após a suposta "criação 
 3. Se Jesus foi invenção literária, como explicar que, por volta de 49 d.C., disputas sobre Cristo já agitassem os judeus de Roma, como Suetônio parece indicar?
 
 4. Bart Ehrman, agnóstico crítico do cristianismo, defende a existência histórica de Jesus. Em que base você sustenta o contrário?`,
-    references: ['josefo-antiguidades-20', 'josefo-antiguidades-18', 'tacito-anais', 'plinio-jovem', 'suetonio-claudio', 'ehrman-jesus-existiu', 'at-18-2', 'talmude-sanhedrin-43a'],
+    references: ['josefo-antiguidades-20', 'josefo-antiguidades-18', 'tacito-anais', 'plinio-jovem', 'suetonio-claudio', 'ehrman-jesus-existiu', 'at-18-2', 'talmude-sanhedrin-43a', 'gl-1-19'],
   },
   {
     id: 50,
@@ -333,7 +347,9 @@ Em 1978, uma equipe de cientistas, o projeto STURP, examinou o Sudário com inst
 
 ## E a datação por carbono-14?
 
-É preciso honestidade. Em 1988, um teste de carbono-14 datou uma amostra do Sudário entre 1260 e 1390, o que sugeriria origem medieval. Esse resultado, porém, é seriamente contestado. Estudos posteriores, como o do químico Raymond Rogers (2005), apontaram que a amostra foi retirada de um canto do pano que havia sido remendado com fios mais novos, tingidos para disfarçar o conserto, o que contaminaria a datação. Uma análise estatística publicada em 2019 mostrou que a amostra não era homogênea, o que enfraquece o teste segundo os próprios critérios da ciência. A datação, portanto, está longe de ser palavra final.
+É preciso honestidade. Em 1988, três laboratórios (Oxford, Zurique e Arizona) dataram por carbono-14 uma amostra do Sudário entre 1260 e 1390, resultado publicado na revista Nature em 1989. É o dado mais forte a favor de uma origem medieval, mas é contestado. A amostra saiu de um único canto, uma das áreas mais manuseadas do pano. Os laboratórios disseram que o ponto estava longe de remendos e de áreas queimadas, mas o químico Raymond Rogers (2005) sustentou que ali havia fios de algodão e um tingimento ausentes no resto do lençol, sinal de um conserto antigo e quase invisível, feito com fios mais novos tingidos para disfarçar o remendo, o que contaminaria a datação. Já Freer-Waters e Jull (2010), examinando fios da mesma amostra, não acharam corante nem sinal de conserto. Em 2019, uma reanálise dos dados brutos de 1988, publicada na revista Archaeometry, concluiu que as medições não eram homogêneas, o que enfraquece o teste pelos critérios da própria estatística. A datação, portanto, não é palavra final.
+
+Há ainda dois dados que o leitor honesto deve conhecer. O primeiro pesa contra a autenticidade: o Sudário só aparece com segurança na história por volta de 1355, em Lirey, na França, e em 1389 o bispo de Troyes, Pierre d'Arcis, escreveu ao antipapa Clemente VII, em Avignon, que seu antecessor tinha descoberto o artista que o pintara. O artista nunca foi identificado, e o memorando não traz provas. O segundo pesa a favor: em 2022, uma equipe italiana analisou por raios X um fio do Sudário (De Caro e colegas, revista Heritage) e obteve um resultado compatível com o século I, desde que o pano tenha sido guardado em certas condições de temperatura e umidade. É um método novo, ainda pouco testado, aplicado a uma única amostra. A questão científica continua aberta.
 
 ## O que a Igreja diz
 
@@ -347,8 +363,8 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. O
 
 3. A amostra do carbono-14 saiu de um único canto do pano. Faz sentido datar o lençol inteiro por um pedaço que pode ter sido remendado séculos depois?
 
-4. As análises de Baima Bollone apontaram no Sudário sangue do tipo AB, o mesmo tipo relatado no milagre eucarístico de Lanciano e no Sudário de Oviedo. Se isso se confirmar, será só coincidência?`,
-    references: ['sudario-turim', 'milagre-lanciano', 'sudario-oviedo', 'jo-19-33'],
+4. A Igreja não exige crer no Sudário. Se ele for autêntico, o que acrescenta ao testemunho dos apóstolos? E, se não for, o que muda na fé na Ressurreição?`,
+    references: ['sudario-turim', 'sudario-oviedo', 'jo-19-33'],
   },
   {
     id: 55,
@@ -364,7 +380,7 @@ A Igreja Católica não obriga ninguém a crer que o Sudário seja autêntico. O
 
 ## O argumento, em poucas palavras
 
-Veja o conjunto. Em Fátima, em 1917, um sinal foi anunciado com meses de antecedência e presenciado por cinquenta a setenta mil pessoas, incluindo céticos, com cobertura da imprensa laica. Em Guadalupe, em 1531, ficou uma imagem num tecido que deveria ter apodrecido e não apodreceu, sem pinceladas que a expliquem. Em Zeitoun, no Cairo, entre 1968 e 1971, multidões de cristãos e muçulmanos viram, por mais de dois anos, e fotografaram, uma figura luminosa sobre uma igreja, sem que o governo egípcio achasse fraude.
+Veja o conjunto. Em Fátima, em 1917, um sinal foi anunciado com meses de antecedência e presenciado por cinquenta a setenta mil pessoas, incluindo céticos, com cobertura da imprensa laica. Em Guadalupe, em 1531, ficou uma imagem num manto de fibra vegetal que se conserva há quase quinhentos anos, e o estudo por infravermelho do biofísico Philip Callahan (1979) não achou desenho preliminar, preparação do tecido nem verniz na figura original da Virgem (rosto, mãos, túnica e manto), embora tenha identificado acréscimos pintados depois. Em Zeitoun, no Cairo, entre 1968 e 1971, multidões de cristãos e muçulmanos viram, por mais de dois anos, e fotografaram, uma figura luminosa sobre uma igreja, sem que o governo egípcio achasse fraude.
 
 Esses casos têm em comum justamente o que falta às lendas: testemunhas em grande número, de credos diferentes, em datas e lugares precisos, às vezes com sinais anunciados de antemão e com vestígios físicos. Não são "alguém sentiu algo". São eventos públicos e documentados.
 
@@ -480,6 +496,10 @@ A primeira comunidade cristã, judaica e monoteísta, fez o impensável: começo
 
 Levou tempo para a Igreja encontrar as palavras exatas para esse mistério. Contra Ário, que dizia que o Filho era apenas a maior das criaturas, o Concílio de Niceia, em 325, definiu que o Filho é "consubstancial ao Pai", verdadeiro Deus de verdadeiro Deus. Depois, o Concílio de Calcedônia, em 451, precisou que em Cristo há duas naturezas, divina e humana, unidas "sem confusão, sem mudança, sem divisão, sem separação" numa só pessoa (Catecismo §467). Não meio deus e meio homem: Deus inteiro e homem inteiro, ou, nas palavras do Catecismo, "verdadeiro Deus e verdadeiro homem" (Catecismo, 464).
 
+## E os textos em que Jesus parece menor que o Pai?
+
+A objeção mais forte, repetida por muçulmanos e por grupos antitrinitários como as Testemunhas de Jeová, não é só que Jesus nunca disse com estas palavras "eu sou Deus, adorai-me". É que ele mesmo diz "o Pai é maior do que eu" (João 14,28) e que daquele dia ou daquela hora ninguém sabe, "nem mesmo o Filho, mas somente o Pai" (Marcos 13,32). A Igreja não esconde esses textos: lê-os à luz de Calcedônia. Quem fala é uma só pessoa com duas naturezas, e por isso os Evangelhos dizem dele coisas próprias de Deus e coisas próprias de homem. Como homem, Jesus tem fome, se cansa, chora, ora ao Pai e cresce em sabedoria. Os Padres da Igreja leram o "maior do que eu" como dito da sua humanidade, ou do Pai como origem do Filho, nunca como superior a ele em natureza. Sobre o dia do fim, o Catecismo explica que aquilo que Jesus diz ignorar ele declara, noutro lugar, não ter a missão de revelar (Catecismo §474). E isso não é invenção tardia de João: já em Marcos, que a maioria dos estudiosos considera o Evangelho mais antigo, os escribas acusam Jesus de blasfêmia por perdoar pecados, coisa que só Deus faz (Marcos 2,5-7), e no julgamento ele é condenado por responder ao sumo sacerdote que é o Cristo, o Filho de Deus (Marcos 14,61-62).
+
 ## Por que isso muda tudo
 
 Se Jesus é Deus, então suas palavras não são uma opinião religiosa entre outras, mas a própria voz do Criador. O perdão que ele oferece é real, a vida eterna que promete está em seu poder, e a pergunta deixa de ser acadêmica. Conhecer quem é Jesus é decidir diante de quem se está.
@@ -493,7 +513,7 @@ Se Jesus é Deus, então suas palavras não são uma opinião religiosa entre ou
 3. Tomé, um cético, chama Jesus de "meu Senhor e meu Deus". Ou estava errado, ou viu algo que muda a história. Qual das duas?
 
 4. Niceia não inventou a divindade de Cristo. Ela a defendeu contra quem a negava. O que está no Novo Testamento confirma ou contradiz essa definição?`,
-    references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'mc-2-5', 'mt-16-15', 'cic-464', 'concilio-calcedonia', 'cic-467', 'lewis-trilema'],
+    references: ['jo-1-1', 'jo-8-58', 'jo-10-30', 'jo-20-28', 'mc-14-61', 'hb-1-8', 'fl-2-6', 'ex-3-14', 'concilio-niceia', 'mc-2-5', 'mt-16-15', 'cic-464', 'concilio-calcedonia', 'cic-467', 'lewis-trilema', 'jo-14-28', 'mc-13-32', 'cic-474'],
   },
   {
     id: 58,
@@ -513,15 +533,24 @@ A Igreja confessa um só Deus em três Pessoas: o Pai, o Filho e o Espírito San
 
 ## Por que não é contradição
 
-Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o caso. Ele é um numa coisa (natureza) e três em outra (pessoa). Assim como não há contradição em algo ser um triângulo e ter três lados, não há contradição em Deus ser uma essência em três Pessoas. As analogias da criatura sempre falham, porque Deus é único, mas servem para mostrar que o mistério está acima da razão, não contra ela. Mistério não quer dizer absurdo. Quer dizer uma verdade tão rica que a nossa mente não a abarca por inteiro.
+Uma contradição seria dizer que Deus é um e três no mesmo sentido. Não é o caso. Ele é um numa coisa (natureza) e três em outra (pessoa). Assim como não há contradição em algo ser um triângulo e ter três lados, não há contradição em Deus ser uma essência em três Pessoas. Com uma diferença decisiva: os lados são partes do triângulo, e as Pessoas não são partes de Deus. Como diz o Catecismo, as Pessoas divinas não dividem entre si a divindade única, "cada uma delas é Deus por inteiro" (Catecismo §253). As analogias da criatura sempre falham, porque Deus é único, mas servem para mostrar que o mistério está acima da razão, não contra ela. Mistério não quer dizer absurdo. Quer dizer uma verdade tão rica que a nossa mente não a abarca por inteiro.
 
 ## A raiz bíblica
 
-A Trindade não foi inventada por concílios. Foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu (Mateus 3,16-17). Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai, do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1). Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", isto é, outro Defensor, o Espírito (João 14,16), distinto dele e do Pai, mas também Deus. O Antigo Testamento já o insinuava. O Novo o revela em plenitude.
+A Trindade não foi inventada por concílios. Foi descoberta na Revelação. No batismo de Jesus, o Filho está nas águas, o Espírito desce como pomba e o Pai fala do céu (Mateus 3,16-17). Ao enviar os apóstolos, Jesus manda batizar "em nome do Pai, do Filho e do Espírito Santo" (Mateus 28,19), e diz "em nome", no singular, para três. João afirma que "o Verbo era Deus" (João 1,1). Jesus diz "eu e o Pai somos um" (João 10,30) e promete "outro Paráclito", isto é, outro Defensor, o Espírito (João 14,16), distinto dele e do Pai, mas também Deus: mentir ao Espírito Santo é mentir a Deus, diz São Pedro (Atos 5,3-4). O Antigo Testamento já o insinuava. O Novo o revela em plenitude.
 
 ## Como a Igreja definiu
 
 Quando Ário negou a divindade plena do Filho, o Concílio de Niceia, em 325, confessou que o Filho é "consubstancial ao Pai". Depois, diante de quem negava a divindade do Espírito, o Concílio de Constantinopla, em 381, completou o Credo afirmando o Espírito Santo "Senhor que dá a vida", adorado com o Pai e o Filho (Catecismo §245). A doutrina não cresceu por invenção, mas por defesa: a cada erro, a Igreja precisou dizer com mais clareza o que sempre creu.
+
+## As objeções mais fortes
+
+Quatro objeções voltam sempre, sobretudo da parte de muçulmanos e de grupos antitrinitários, como as Testemunhas de Jeová.
+
+- "A palavra Trindade não está na Bíblia." Não está, como também não estão "encarnação" ou "Bíblia". A palavra resume o que os textos dizem, e não nasceu em Niceia: por volta do ano 180, Teófilo de Antioquia já falava da "Trindade" de Deus, do seu Verbo e da sua Sabedoria (A Autólico II, 15).
+- "Deus é um só." É o que a Igreja confessa: "Ouve, ó Israel! O Senhor, nosso Deus, é o único Senhor" (Deuteronômio 6,4), palavras que o próprio Jesus repetiu. A Trindade é monoteísmo, não uma alternativa a ele. E São Paulo, judeu formado nessa oração, escreve nos anos 50 que "há um só Deus, o Pai (...) e um só Senhor, Jesus Cristo" (1 Coríntios 8,6), pondo Jesus dentro da própria profissão de fé no Deus único.
+- "O Alcorão manda não dizer Trindade" (sura 4,171, onde o árabe diz, ao pé da letra, "três"). Mas a trindade que o Alcorão parece ter em vista é outra: ele pergunta se Jesus disse aos homens "Tomai-me e a minha mãe por dois deuses, além de Allah" (sura 5,116). Essa trindade de deuses, com Maria entre eles, os cristãos também rejeitam. A Igreja nunca confessou três deuses, nem Maria como pessoa divina.
+- "Mateus 28,19 seria um acréscimo tardio." Nenhum manuscrito de Mateus traz outra fórmula (a forma curta que às vezes se cita vem de paráfrases de Eusébio, no século IV), e a Didaqué, um manual cristão do fim do século I ou do começo do II, já manda batizar "em nome do Pai, e do Filho, e do Espírito Santo" (Didaqué 7,1).
 
 ## Por que isso importa
 
@@ -536,7 +565,7 @@ A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, 
 3. "Deus é amor" desde a eternidade. Mas amor exige alguém a quem amar. Como um deus solitário e sem Trindade seria amor antes de criar o mundo?
 
 4. Mistério é o mesmo que absurdo? Ou há verdades reais (até na física) que ultrapassam a nossa capacidade de imaginar sem por isso serem ilógicas?`,
-    references: ['mt-28-19', 'jo-1-1', 'jo-10-30', 'jo-14-16', 'concilio-niceia', '1jo-4-8', 'mt-3-16', 'concilio-constantinopla', 'cic-253', 'cic-243'],
+    references: ['mt-28-19', 'jo-1-1', 'jo-10-30', 'jo-14-16', 'concilio-niceia', '1jo-4-8', 'mt-3-16', 'concilio-constantinopla', 'cic-253', 'cic-243', 'at-5-3', 'teofilo-autolico', 'dt-6-4', '1cor-8-6', 'alcorao-4-171', 'alcorao-5-116', 'didaque-7'],
   },
   {
     id: 62,
@@ -552,7 +581,7 @@ A Trindade não é um quebra-cabeça inútil. Ela revela que Deus, em si mesmo, 
 
 ## A resposta honesta do materialismo
 
-Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche, ao anunciar em A Gaia Ciência (1882) que "Deus está morto", reconheceu que não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre, em O Existencialismo é um Humanismo (1946), afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado. Tem, no máximo, um sentido fingido, que a morte apaga.
+Se existe apenas matéria, e o ser humano é um arranjo casual de átomos num planeta perdido, então é preciso ter coragem para tirar as conclusões. Os pensadores ateus mais consequentes as tiraram. Nietzsche, ao anunciar em A Gaia Ciência (1882) que "Deus está morto", reconheceu que não sobra fundamento para valores e sentido, e que isso abriria um abismo. Sartre, em O Existencialismo é um Humanismo (1946), afirmou que, sem Deus, o homem está "condenado a ser livre" num universo sem propósito, tendo de inventar um sentido que, no fundo, não passa de invenção. Honestamente, sem Deus, a vida não tem sentido dado. Um ateu pode responder que isso basta: cada um dá sentido à própria vida com os seus amores e projetos. E esses amores são reais. Mas um sentido que cada um inventa não responde à pergunta de fundo, que não é "o que me ocupa?", e sim "para que existo?". Sem Deus, essa pergunta fica sem resposta, e o que sobra é um sentido provisório, que a morte apaga.
 
 ## O vazio que nada preenche
 
@@ -576,7 +605,7 @@ Se a pergunta pelo sentido aperta, isso não é um defeito a calar com distraç�
 
 2. Nada do mundo sacia por inteiro o coração humano. Isso é um defeito do mundo, ou um sinal de que fomos feitos para algo maior que o mundo?
 
-3. Os ateus mais honestos admitem que, sem Deus, o sentido é inventado e a morte apaga tudo. Você consegue viver, de verdade, com essa conclusão?
+3. Os ateus mais consequentes admitem que, sem Deus, o sentido é inventado e a morte apaga tudo. Você consegue viver, de verdade, com essa conclusão?
 
 4. E se a resposta para a sua pergunta mais profunda não for uma ideia, mas Alguém que está, ele mesmo, à sua procura?`,
     references: ['rm-8-28', 'jo-14-6', 'sartre-existencialismo', 'nietzsche-gaia', 'mt-7-7', 'cic-1721', 'agostinho-confissoes-1', 'lewis-desejo'],
@@ -599,11 +628,11 @@ Para entender a cura, é preciso entender a doença. O pecado não é só "trans
 
 ## Por que Deus não simplesmente "perdoa e pronto"?
 
-É a objeção mais comum: se Deus é todo-poderoso e bom, por que não apaga os pecados com um gesto? A resposta toca o coração do amor verdadeiro. O amor que é a sério não finge que o mal não aconteceu. Ele o encara, o carrega e o cura. Um perdão que ignorasse o pecado seria barato, e trataria o mal como se não importasse. Na cruz, a justiça (o pecado é levado a sério) e a misericórdia (o pecador é salvo) se encontram e se beijam. Deus não passa por cima do mal: ele o atravessa.
+É a objeção mais comum: se Deus é todo-poderoso e bom, por que não apaga os pecados com um gesto? A resposta toca o coração do amor verdadeiro. O amor que é a sério não finge que o mal não aconteceu. Ele o encara, o carrega e o cura. Um perdão que ignorasse o pecado seria barato, e trataria o mal como se não importasse. Na cruz, a justiça (o pecado é levado a sério) e a misericórdia (o pecador é salvo) se encontram e se beijam. Deus não passa por cima do mal: ele o atravessa. Santo Tomás de Aquino nota que Deus poderia ter salvado a humanidade de outro modo, mas que salvá-la pela Paixão de Cristo foi uma misericórdia ainda maior do que perdoar os pecados sem nenhuma reparação (Suma Teológica III, q. 46, a. 1-2).
 
 ## A chave: Deus mesmo assume
 
-Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega a ira num terceiro inocente para se acalmar. Não é isso. O que morre na cruz não é um terceiro qualquer: é o próprio Deus, no Filho feito homem, que toma sobre si livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso. O profeta Isaías, séculos antes, já descrevia o Servo Sofredor: "ele foi castigado por nossos crimes, e esmagado por nossas iniquidades... fomos curados graças às suas chagas" (Isaías 53,5). São Paulo resume: "Cristo morreu por nossos pecados, segundo as Escrituras" (1 Coríntios 15,3).
+Aqui é preciso desfazer uma imagem falsa, a de um Pai vingativo que descarrega a ira num terceiro inocente para se acalmar. Não é isso. O que morre na cruz não é um terceiro qualquer: é o próprio Deus, no Filho feito homem, que toma sobre si livremente a nossa morte. É Deus pagando, em si mesmo, o preço que era nosso. A Igreja fala, sim, de substituição: Jesus realizou "a ação substitutiva do Servo sofredor" e "satisfez ao Pai pelos nossos pecados" (Catecismo §615). Mas o que dá valor a esse sacrifício não é a quantidade de dor, é o amor: é o "amor até ao fim" que lhe confere "o valor de redenção e reparação, de expiação e satisfação", e só a pessoa divina do Filho podia oferecê-lo por todos (Catecismo §616). O profeta Isaías, séculos antes, já descrevia o Servo Sofredor: "ele foi castigado por nossos crimes, e esmagado por nossas iniquidades... fomos curados graças às suas chagas" (Isaías 53,5). No hebraico, a palavra traduzida por "castigado" também pode ser vertida por "traspassado". São Paulo resume: "Cristo morreu por nossos pecados, segundo as Escrituras" (1 Coríntios 15,3).
 
 ## O amor levado ao extremo
 
@@ -626,7 +655,7 @@ A Redenção não é um acontecimento distante do passado, fechado em si. Ela al
 3. Isaías descreveu o Servo "esmagado por nossas iniquidades" séculos antes de Cristo. Coincidência, ou anúncio?
 
 4. Se Deus foi até a cruz para alcançar você, o que isso diz sobre quanto a sua vida vale aos olhos dele?`,
-    references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6', 'jo-15-13'],
+    references: ['is-53', '1cor-15-3', 'jo-3-16', 'fl-2-6', 'jo-15-13', 'cic-615', 'suma-iii-q46'],
   },
   {
     id: 72,
@@ -656,13 +685,15 @@ A confusão de fundo é misturar dois planos diferentes. A ciência responde à 
 
 Aqui a Igreja distingue o essencial do acessório. O que ela afirma como inegociável não é a forma literal do relato (o fruto proibido, a costela, a serpente que fala), mas duas verdades de fundo: que houve uma origem real do pecado, o chamado pecado original, e que a humanidade tem uma unidade de origem (Humani Generis, 37). "Adão e Eva" designam os primeiros pais da humanidade e a sua queda real. Houve, de fato, um início e uma ruptura livre da relação com Deus, e não apenas um mito poético: o relato da queda "utiliza uma linguagem feita de imagens, mas afirma um acontecimento primordial" (Catecismo §390). Como exatamente isso se deu, a fé não detalha. Que se deu, ela afirma.
 
+A objeção mais séria hoje vem da genética. Para a maioria dos geneticistas, a diversidade do DNA humano indica que a população dos nossos ancestrais não se reduziu a um único casal nas últimas centenas de milhares de anos. A resposta honesta não é negar os dados, nem fazê-los dizer o que não dizem. A unidade de origem que a Igreja afirma é uma afirmação teológica: todos os seres humanos descendem de um primeiro casal de verdadeiros homens, dotados de alma espiritual (Humani Generis, 37). Isso não é o mesmo que dizer que todo o nosso DNA veio só deles. O filósofo católico Kenneth Kemp (2011) propõe que Adão e Eva tenham sido os primeiros seres humanos com alma espiritual dentro de uma população biológica maior, e que todos nós descendamos deles por genealogia, ainda que parte dos nossos genes venha também de outros ancestrais. É uma hipótese discutida, não um ensinamento da Igreja, mas mostra que a genética não demonstrou uma contradição. Também não vale o atalho contrário: a "Eva mitocondrial" e o "Adão do cromossomo Y" de que fala a genética não são o casal do Gênesis. São só os ancestrais comuns mais recentes por linha exclusivamente materna ou paterna, e viveram no meio de muitos outros seres humanos.
+
 ## O que o Gênesis ensina de verdade
 
 Quando se lê o Gênesis pelo que ele é, o que ele ensina permanece intacto, e a ciência não o toca: o universo não é eterno nem absurdo, mas criado e bom. O ser humano não é um animal a mais, mas imagem de Deus (Gênesis 1,27), com uma dignidade que nenhum outro ser possui, e o mal do mundo não vem de Deus, mas de uma recusa livre da criatura. Nenhuma dessas afirmações é confirmada ou refutada por um fóssil, porque estão noutro plano.
 
 ## Sem medo da verdade
 
-No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem de Deus. Se a evolução for verdadeira, será uma verdade de Deus, e a fé não tem nada a temer dela. O conflito entre ciência e fé não é entre a ciência honesta e a fé madura. É entre duas formas de fundamentalismo, o que transforma o Gênesis em manual de biologia e o que transforma a biologia em arma contra Deus. A Igreja recusa os dois.
+No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem de Deus. Por isso a pesquisa conduzida "de modo verdadeiramente científico" "jamais estará em oposição à fé", porque "as realidades profanas e as da fé encontram a sua origem num só e mesmo Deus" (Catecismo §159). Se a evolução for verdadeira, será uma verdade de Deus, e a fé não tem nada a temer dela. O conflito entre ciência e fé não é entre a ciência honesta e a fé madura. É entre duas formas de fundamentalismo, o que transforma o Gênesis em manual de biologia e o que transforma a biologia em arma contra Deus. A Igreja recusa os dois.
 
 ## Perguntas-chave
 
@@ -673,7 +704,7 @@ No fundo, a atitude católica nasce de uma convicção simples: toda verdade vem
 3. A Igreja admite como possível a evolução do corpo desde 1950, exigindo que a alma seja criada diretamente por Deus. Isso combina com a fama de "inimiga da ciência"?
 
 4. Negar que houve uma origem real do pecado resolve o problema do mal no mundo, ou apenas o deixa sem explicação?`,
-    references: ['gn-1-27', 'lemaitre-bigbang', 'cic-390', 'humani-generis', 'jp2-evolucao-1996', 'agostinho-genesi-literal'],
+    references: ['gn-1-27', 'lemaitre-bigbang', 'cic-390', 'humani-generis', 'jp2-evolucao-1996', 'agostinho-genesi-literal', 'kemp-monogenese', 'cic-159'],
   },
 ];
 

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # 75 - O Dízimo Obrigação ou Gratidão
@@ -23,3 +23,5 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Marcos 12,43-44]]
 - [[Catecismo §2043]]
 - [[Código de Direito Canônico, cânon 222]]
+- [[Malaquias 3,10]]
+- [[Mateus 23,23]]

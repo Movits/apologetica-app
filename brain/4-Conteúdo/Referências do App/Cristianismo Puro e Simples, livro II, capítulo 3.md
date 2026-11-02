@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-teólogos]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Cristianismo Puro e Simples, livro II, capítulo 3
@@ -13,4 +13,5 @@ Tema: O trilema: Jesus não pode ser só um grande mestre moral
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor]]
 - [[57 - Quem é Jesus Deus e Homem Verdadeiro]]

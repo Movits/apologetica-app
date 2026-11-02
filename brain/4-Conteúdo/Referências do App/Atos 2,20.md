@@ -1,13 +1,13 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-29
+atualizado: 2026-11-02
 gerado: true
 ---
 # Atos 2,20
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
 Fonte: Bíblia | Evangelista Lucas (séc. I d.C.)
-Tema: Pedro aplica a profecia de Joel aos eventos da Páscoa
+Tema: Pedro cita a profecia de Joel no discurso de Pentecostes
 
 > O sol se converterá em trevas e a lua em sangue, antes que venha o grande e glorioso dia do Senhor.
 
