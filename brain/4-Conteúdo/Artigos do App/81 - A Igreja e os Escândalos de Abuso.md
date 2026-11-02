@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 81 - A Igreja e os Escândalos de Abuso
@@ -22,6 +22,9 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - [[Mateus 18,6]]
 - [[Mateus 13,24-30]]
 - [[Vos Estis Lux Mundi, art. 3 e 19]]
+- [[Relatório John Jay (2004)]]
+- [[Relatório da CIASE (França, 2021)]]
+- [[Vos estis lux mundi (2023), art. 2, 3 e 20]]
 
 ## Diálogos que levam a este artigo
 - [[A Igreja está cheia de pedófilos encobertos; como confiar nela]]

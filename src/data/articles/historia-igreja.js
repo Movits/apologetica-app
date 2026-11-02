@@ -26,19 +26,19 @@ A Inquisição Romana, dirigida pela Santa Sé, também recorreu pouco à pena d
 
 ## Métodos mais garantistas que os tribunais civis
 
-Os métodos inquisitoriais, comparados aos tribunais civis da época, eram surpreendentemente garantistas. Existiam regras formais de processo. O acusado tinha um advogado e podia apontar inimigos pessoais para desqualificar testemunhas, embora não soubesse os nomes de quem o acusava. A confissão obtida sob tortura só valia se fosse ratificada depois, fora da sala de tortura. A tortura era usada com limites estritos: não podia mutilar nem derramar sangue, e em geral um médico acompanhava a sessão. Ainda assim, o acusado que se retratava da confissão podia voltar a ser torturado. Comparada à justiça civil europeia da época, que recorria à tortura com mais frequência e menos controle, a Inquisição era, nesse ponto, mais contida.
+Os métodos inquisitoriais, comparados aos tribunais civis da época, eram surpreendentemente garantistas. Existiam regras formais de processo. O acusado tinha um advogado, nomeado pelo próprio tribunal, e podia apontar inimigos pessoais para desqualificar testemunhas, embora não soubesse os nomes de quem o acusava. Mas podia passar anos preso à espera da sentença, e a condenação por heresia trazia o confisco dos bens e a infâmia para a família. A confissão obtida sob tortura só valia se fosse ratificada depois, fora da sala de tortura. A tortura era usada com limites estritos: não podia mutilar nem derramar sangue, e em geral um médico acompanhava a sessão. Ainda assim, o acusado que se retratava da confissão podia voltar a ser torturado. Comparada à justiça civil europeia da época, que recorria à tortura com mais frequência e menos controle, a Inquisição era, nesse ponto, mais contida.
 
 ## A lenda negra espanhola
 
-Por que o exagero? Razões históricas claras. A "lenda negra espanhola" foi construída por panfletistas protestantes do norte europeu (Inglaterra, Holanda) no séc. XVI, em guerra política e religiosa com a Espanha católica. O objetivo era propaganda, não história. O "Livro dos Mártires" de John Foxe (1563), o panfleto de Reginaldo González Montano (1567) e, mais tarde, o relato de William Lithgow (1632) foram fundamentais para difundir a imagem distorcida no mundo de língua inglesa.
+Por que o exagero? Razões históricas claras. A "lenda negra espanhola" foi construída por panfletistas protestantes do norte europeu (Inglaterra, Holanda) no séc. XVI, em guerra política e religiosa com a Espanha católica. Seus escritos eram de combate e misturavam fatos reais com exageros. O "Livro dos Mártires" de John Foxe (1563), o panfleto de Reginaldo González Montano (1567) e, mais tarde, o relato de William Lithgow (1632) foram fundamentais para difundir a imagem distorcida no mundo de língua inglesa.
 
 ## A caça às bruxas foi obra dos tribunais civis
 
-Vale notar que a maior parte do que se atribuiu à Inquisição (queima de bruxas, caça às bruxas em massa) foi feita não pela Inquisição, mas por tribunais civis e locais. A Inquisição Espanhola, na verdade, mudou de rumo com o caso de Logroño: depois do auto de fé de 1610, que ainda mandou acusados de bruxaria à fogueira, o inquisidor Alonso de Salazar Frías examinou centenas de casos e não encontrou prova alguma, e em 1614 a Suprema instruiu os tribunais a tratar essas acusações com extremo cuidado, contra a histeria popular. Onde atuavam as Inquisições Espanhola, Portuguesa e Romana, houve pouquíssimas execuções por bruxaria. As grandes matanças aconteceram em tribunais civis e locais da Europa central e do norte, tanto em terras protestantes (Alemanha luterana, Suíça reformada, Escócia presbiteriana, Massachusetts puritana) quanto em alguns principados católicos alemães, e somaram dezenas de milhares.
+Vale notar que a maior parte do que se atribuiu à Inquisição (queima de bruxas, caça às bruxas em massa) foi feita não pela Inquisição, mas por tribunais civis e locais. A Inquisição Espanhola, na verdade, mudou de rumo com o caso de Logroño: depois do auto de fé de 1610, que ainda mandou acusados de bruxaria à fogueira, o inquisidor Alonso de Salazar Frías examinou centenas de casos e não encontrou prova alguma, e em 1614 a Suprema instruiu os tribunais a tratar essas acusações com extremo cuidado, contra a histeria popular. Onde atuavam as Inquisições Espanhola, Portuguesa e Romana, houve pouquíssimas execuções por bruxaria: segundo o balanço que o historiador Agostino Borromeo apresentou em 2004, com as atas do simpósio sobre a Inquisição promovido pela Santa Sé em 1998, os tribunais eclesiásticos mandaram à fogueira 59 pessoas na Espanha, 36 na Itália e 4 em Portugal. As grandes matanças aconteceram em tribunais civis e locais da Europa central e do norte, tanto em terras protestantes (Alemanha luterana, Suíça reformada, Escócia presbiteriana) quanto em católicas (entre os piores focos estiveram os principados-bispados de Würzburg e Bamberg e os arcebispados de Trier, Mainz e Colônia), e somaram dezenas de milhares. Para os historiadores, a religião das autoridades de cada território teve papel secundário na intensidade da caça.
 
 ## Os erros reais e o pedido de perdão
 
-A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, mesmo limitado, é hoje moralmente rejeitado. A intolerância religiosa de Estado é incompatível com a dignidade humana. A confusão entre poder civil e poder eclesiástico foi desastrosa para a Igreja. São João Paulo II, que já em Tertio Millennio Adveniente (1994) pedira que a Igreja assumisse o peso do pecado dos seus filhos (§33), incluída a condescendência com "métodos de intolerância ou até mesmo de violência no serviço à verdade" (§35), pediu perdão publicamente por eles no Dia do Perdão, em 12 de março de 2000.
+A condenação justa: a Inquisição tinha problemas reais. O uso de tortura, mesmo limitado, é hoje moralmente rejeitado. A intolerância religiosa de Estado é incompatível com a dignidade humana. A confusão entre poder civil e poder eclesiástico foi desastrosa para a Igreja. São João Paulo II, que já em Tertio Millennio Adveniente (1994) pedira que a Igreja assumisse o peso do pecado dos seus filhos (§33), incluída a condescendência com "métodos de intolerância ou até mesmo de violência no serviço à verdade" (§35), pediu perdão publicamente por eles no Dia do Perdão, em 12 de março de 2000. Em 2004, na carta que escreveu para a apresentação das atas do simpósio sobre a Inquisição, o Papa lembrou que o pedido de perdão daquele dia "vale tanto para dramas ligados à Inquisição como para as feridas da memória, que são as suas consequências".
 
 Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. A história real é grave, exige reflexão e arrependimento, mas é qualitativa e quantitativamente muito diferente da imagem popular.
 
@@ -51,7 +51,7 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
 3. A Inquisição, comparada aos tribunais civis contemporâneos, oferecia mais ou menos garantias ao acusado? (Resposta: mais.)
 
 4. Se a Inquisição era "fanatismo religioso", por que rejeitou a caça às bruxas que assolou os tribunais civis da Europa?`,
-    references: ['kamen-inquisicao', 'tertio-millennio'],
+    references: ['kamen-inquisicao', 'tertio-millennio', 'borromeo-inquisicao-2004', 'jp2-inquisicao-2004'],
   },
   {
     id: 29,
@@ -63,7 +63,7 @@ Mas reconhecer os erros reais não é o mesmo que aceitar a caricatura mítica. 
     imageAspect: 1.75,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FTaking%2520of%2520Jerusalem%2520by%2520the%2520Crusaders%252C%252015th%2520July%25201099.jpg&w=2200&output=jpg&q=80',
     summary: 'As Cruzadas não foram guerra de agressão contra o islã. Foram resposta defensiva tardia a quatrocentos anos de conquista muçulmana.',
-    body: `As Cruzadas, como a Inquisição, são tema mal compreendido. A imagem popular é de "cristãos fanáticos invadindo terras pacíficas muçulmanas". A história mostra exatamente o oposto: foram resposta defensiva tardia, e moralmente justa em muitos aspectos, a quatrocentos anos de conquista muçulmana sobre terras cristãs.
+    body: `As Cruzadas, como a Inquisição, são tema mal compreendido. A imagem popular é de "cristãos fanáticos invadindo terras pacíficas muçulmanas". A história mostra um quadro bem diferente: foram resposta defensiva tardia, e moralmente justa em muitos aspectos, a quatrocentos anos de conquista muçulmana sobre terras cristãs.
 
 ## Antes do Islã, eram terras cristãs
 
@@ -79,36 +79,36 @@ Os cristãos sob domínio muçulmano (chamados dhimmis, "protegidos") tinham sta
 
 ## O século XI e o pedido bizantino
 
-No séc. XI a situação piorou ainda mais. Em 1009, o califa fatímida al-Hakim destruiu a Igreja do Santo Sepulcro em Jerusalém (o lugar do túmulo de Cristo) e perseguiu cristãos. Os turcos seljúcidas, recém-convertidos ao islã, derrotaram o Império Bizantino em Manzikert, em 1071, tomaram Jerusalém dos fatímidas no início da década de 1070 e começaram a hostilizar peregrinos cristãos que iam à Terra Santa. Os peregrinos eram roubados, escravizados, mortos.
+No séc. XI a situação piorou ainda mais. Em 1009, o califa fatímida al-Hakim destruiu a Igreja do Santo Sepulcro em Jerusalém (o lugar do túmulo de Cristo) e perseguiu cristãos. Os turcos seljúcidas, recém-convertidos ao islã, derrotaram o Império Bizantino em Manzikert, em 1071, ocuparam quase toda a Ásia Menor nos anos seguintes, tomaram Jerusalém dos fatímidas no início da década de 1070 e começaram a hostilizar peregrinos cristãos que iam à Terra Santa. Os peregrinos eram roubados, escravizados, mortos.
 
-O imperador bizantino Aleixo I Comneno pediu socorro militar ao Papa Urbano II contra o avanço seljúcida. Em resposta, no Concílio de Clermont (27 de novembro de 1095), Urbano II pregou a Primeira Cruzada: campanha militar para defender os cristãos do Oriente e libertar a Terra Santa, especialmente Jerusalém, do domínio muçulmano.
+O imperador bizantino Aleixo I Comneno pediu socorro militar ao Papa Urbano II contra o avanço seljúcida. O pedido chegou por embaixadores enviados ao Concílio de Piacenza, em março de 1095. Em resposta, no Concílio de Clermont (27 de novembro de 1095), Urbano II pregou a Primeira Cruzada: campanha militar para defender os cristãos do Oriente e libertar a Terra Santa, especialmente Jerusalém, do domínio muçulmano. O texto do sermão não se conservou. Conhecemos cinco versões, escritas anos depois por cronistas, alguns deles presentes em Clermont, como Fulcher de Chartres, e elas diferem nos detalhes e na ênfase: a de Fulcher fala só do socorro aos cristãos do Oriente, outras põem no centro Jerusalém e o Santo Sepulcro. Por isso convém desconfiar de frases citadas como se fossem as palavras exatas do Papa. Os dois motivos aparecem juntos na carta que o próprio Urbano II enviou aos fiéis de Flandres em dezembro de 1095: libertar as igrejas do Oriente e Jerusalém, a Cidade Santa de Cristo.
 
 ## Defesa, não agressão
 
 Foi defesa, não agressão. Quatrocentos e sessenta anos depois do início da conquista muçulmana, os cristãos finalmente responderam organizadamente. A Cruzada não foi contra um povo pacífico: foi contra um império que tomou pela espada terras que tinham sido cristãs por seis séculos.
 
-A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. A Igreja não justifica esses excessos. Condena-os.
+A Primeira Cruzada (1096-1099) conseguiu retomar Jerusalém em 1099. As subsequentes (até 1291) tiveram resultados mistos: algumas vitórias, derrotas decisivas (especialmente a perda final de Acre em 1291). Houve atrocidades, sem dúvida: o massacre da população de Jerusalém em 1099 é o mais conhecido. Antes disso, em 1096, bandos que partiam para a Cruzada massacraram comunidades judaicas no vale do Reno (Speyer, Worms, Mainz), e alguns bispos tentaram, nem sempre com sucesso, protegê-las. A Igreja não justifica esses excessos. Condena-os.
 
 Mas é desonesto falar das atrocidades cruzadas sem mencionar as atrocidades muçulmanas no mesmo período. Não havia "lado civilizado": eram duas civilizações em guerra, com práticas militares cruéis típicas da época. Quando o sultão Baibars tomou Antioquia, em 1268, a população cristã da cidade foi massacrada ou escravizada. As escravidões em massa eram prática normal de ambos os lados. O tráfico de escravos africanos pelo Saara e pelo oceano Índico, sob direção muçulmana, durou cerca de treze séculos e, segundo estimativas de historiadores como Olivier Pétré-Grenouilleau (Les Traites négrières, 2004), atingiu cifras comparáveis às do tráfico atlântico.
 
 ## A vergonha da Quarta Cruzada
 
-A Quarta Cruzada (1202-1204) foi um desastre moral: cruzados foram desviados pelos venezianos e atacaram Constantinopla cristã (ortodoxa), saqueando a cidade. O Papa Inocêncio III condenou imediatamente o ato. Em 2001, em Atenas, o Papa João Paulo II pediu perdão público por esse pecado, e em 2004, diante do Patriarca Bartolomeu I, voltou a manifestar "indignação e dor" pelo saque. A história católica honesta reconhece os erros graves.
+A Quarta Cruzada (1202-1204) foi um desastre moral: cruzados foram desviados pelos venezianos e atacaram Constantinopla cristã (ortodoxa), saqueando a cidade. O Papa Inocêncio III tinha proibido os cruzados de atacar cristãos e, ao saber dos detalhes do saque, condenou-o duramente numa carta de 1205 ao seu legado. Em 2001, em Atenas, o Papa João Paulo II pediu perdão público por esse pecado, e em 2004, diante do Patriarca Bartolomeu I, voltou a manifestar "indignação e dor" pelo saque. A história católica honesta reconhece os erros graves.
 
 A motivação espiritual dos cruzados era complexa. Para a maioria, era genuinamente religiosa: o desejo de libertar o lugar do túmulo de Cristo, defender peregrinos, ganhar a indulgência, isto é, a remissão da pena temporal devida pelos pecados já perdoados, porque a cruzada era entendida como ato de penitência. Para alguns, eram motivos seculares (terra, conquista, glória). A indulgência cruzada era oferecida a quem aceitasse os enormes sacrifícios financeiros e físicos da campanha (a Primeira Cruzada empobreceu famílias nobres por gerações).
 
-A historiografia secular moderna, livre de polêmica religiosa, tem reconhecido cada vez mais essa complexidade. Thomas Madden, Jonathan Riley-Smith, Christopher Tyerman: todos historiadores acadêmicos das Cruzadas, todos rejeitam a narrativa popular de "cruzados invasores contra pacíficos muçulmanos".
+A historiografia acadêmica moderna tem reconhecido cada vez mais essa complexidade. Historiadores das Cruzadas com visões diferentes, como Jonathan Riley-Smith e Thomas Madden (ambos católicos) e Christopher Tyerman, rejeitam, cada um a seu modo, a narrativa popular de "cruzados invasores contra pacíficos muçulmanos", embora divirjam sobre o quanto as Cruzadas foram uma guerra defensiva.
 
 ## Perguntas-chave
 
 1. As Cruzadas começaram em 1095. Quem conquistou o Egito, Síria, Norte da África e Espanha entre 632 e 732, e por quê?
 
-2. Por que o imperador bizantino pediu socorro a Roma? (Resposta: o Império Bizantino estava sendo destruído pelos seljúcidas.)
+2. Por que o imperador bizantino pediu socorro a Roma? (Resposta: o Império Bizantino tinha perdido quase toda a Ásia Menor para os seljúcidas, que ameaçavam Constantinopla.)
 
 3. As Cruzadas duraram cerca de 200 anos. A expansão muçulmana militar por sobre terras cristãs durou mais de 1.000. Qual foi mais agressiva?
 
 4. Onde existem ainda hoje cristãos no Oriente Médio? Em que países eles são livres para praticar a fé e construir igrejas?`,
-    references: ['urbano-ii-clermont', 'madden-cruzadas'],
+    references: ['urbano-ii-clermont', 'madden-cruzadas', 'jp2-atenas-2001'],
   },
   {
     id: 30,
@@ -134,19 +134,19 @@ O problema com Galileu não era ele defender o heliocentrismo como hipótese mat
 
 Em 1616, a Congregação do Índice declarou falsa e contrária à Escritura a tese do movimento da Terra e suspendeu o livro de Copérnico até que fosse corrigido, e o cardeal Roberto Belarmino advertiu Galileu a não sustentar nem defender o heliocentrismo. Tratá-lo como hipótese matemática continuava permitido, e o próprio Belarmino escrevera, em 1615, que, se surgisse uma demonstração verdadeira, seria preciso reler com cuidado as passagens da Escritura que pareciam dizer o contrário. Galileu aceitou. Em 1632, publicou "Diálogo sobre os Dois Máximos Sistemas do Mundo", apresentando o heliocentrismo de modo a ridicularizar a posição contrária (pôs um argumento caro ao Papa Urbano VIII na boca de Simplício, personagem com o nome de um antigo comentador de Aristóteles, mas que soava como "simplório"). Urbano, antes amigo e protetor de Galileu, ficou furioso e o caso foi reaberto.
 
-Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença: ele teve que abjurar formalmente o heliocentrismo. A pena: prisão domiciliar pelo resto da vida, na sua confortável villa em Arcetri, perto de Florença, onde continuou pesquisando ciência (publicou "Discursos sobre as Duas Novas Ciências" em 1638, fundamento da mecânica clássica) e recebendo visitas de cientistas internacionais. Não foi torturado: foi apenas interrogado sob a ameaça formal de tortura, de praxe nos processos da época. Não foi morto. Não foi queimado. Tinha 69 anos no julgamento e morreu em 1642 em sua casa.
+Em 1633, Galileu foi julgado pela Inquisição Romana. A sentença o declarou "veementemente suspeito de heresia", obrigou-o a abjurar formalmente o heliocentrismo e proibiu o Diálogo. A pena: prisão, logo trocada por prisão domiciliar pelo resto da vida, na sua confortável villa em Arcetri, perto de Florença, onde continuou pesquisando ciência (publicou "Discursos sobre as Duas Novas Ciências" em 1638, fundamento da mecânica clássica) e recebendo visitas de cientistas internacionais. Não foi torturado: foi apenas interrogado sob a ameaça formal de tortura, de praxe nos processos da época. Não foi morto. Não foi queimado. Tinha 69 anos no julgamento e morreu em 1642 em sua casa.
 
 ## Um erro humano, reconhecido em 1992
 
-A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 1992, depois de uma comissão de estudo que durou anos. Falou de uma "trágica incompreensão recíproca" entre ciência e fé e afirmou que esse "doloroso mal-entendido" já pertence ao passado. Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico. Condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
+A condenação de Galileu foi um erro da autoridade eclesiástica? Sim, claramente. O Papa João Paulo II reconheceu isso formalmente em 31 de outubro de 1992, depois de uma comissão de estudo que trabalhou de 1981 a 1992. Disse que "o erro dos teólogos da época" foi pensar que o conhecimento da estrutura física do mundo era, de algum modo, "imposto pelo sentido literal da Sagrada Escritura". E lembrou que uma "trágica incompreensão recíproca" tinha sido tomada como sinal de uma oposição de fundo entre ciência e fé, um "doloroso mal-entendido" que, segundo ele, já pertence ao passado. Mas é um erro humano de juízo prudencial, não uma "condenação da ciência pela fé". A Igreja não condenou o método científico. Condenou (erradamente) uma teoria científica específica, e por motivos parcialmente científicos da época.
 
 ## Os reformadores também resistiram
 
-Compare a posição da Igreja com a de outros movimentos religiosos da época. Lutero, numa conversa à mesa em 1539, zombou do novo astrônomo que queria "virar de cabeça para baixo toda a astronomia", lembrando que Josué mandou parar o sol, e não a Terra. Melanchthon (o grande sistematizador luterano) rejeitou o heliocentrismo com argumentos bíblicos. Calvino nunca citou Copérnico, mas num sermão de por volta de 1556 chamou de desvairados os que diziam que o sol não se move e que é a Terra que gira. No séc. XVI, a resistência a Copérnico veio de católicos e de protestantes, e os líderes da Reforma se manifestaram contra ele antes de Roma, que só tomaria posição em 1616.
+Compare a posição da Igreja com a de outros movimentos religiosos da época. Lutero, numa conversa à mesa em 1539, zombou do novo astrônomo que queria "virar de cabeça para baixo toda a astronomia", lembrando que Josué mandou parar o sol, e não a Terra. Melanchthon (o grande sistematizador luterano) rejeitou o heliocentrismo com argumentos bíblicos. Calvino nunca citou Copérnico, mas num sermão de por volta de 1556 chamou de desvairados os que diziam que o sol não se move e que é a Terra que gira. No séc. XVI, a resistência a Copérnico veio de católicos e de protestantes, e os líderes da Reforma se manifestaram contra ele antes de Roma, que só tomaria posição em 1616. Por outro lado, também foram luteranos Rético, que convenceu Copérnico a publicar o livro, e Kepler, o maior copernicano da geração de Galileu. A reação à nova astronomia dependeu mais da leitura literal de certas passagens bíblicas do que da confissão de cada um. Só que a única condenação oficial veio de Roma, e é por isso que o caso Galileu pesa sobre a Igreja Católica.
 
 ## Ciência e fé: matriz, não conflito
 
-A história da ciência e da Igreja Católica, longe de ser "conflito", é amplamente cooperativa. A própria existência da ciência moderna deve muito ao cristianismo. A ideia de um universo racional, ordenado por leis matemáticas, criado por uma mente divina, foi pressuposto teológico que permitiu a confiança na investigação científica. As universidades modernas foram fundadas por iniciativa católica medieval (Bolonha 1088, Oxford 1096, Paris 1150, Salamanca 1218, etc).
+A história da ciência e da Igreja Católica, longe de ser "conflito", é amplamente cooperativa. A própria existência da ciência moderna deve muito ao cristianismo. A ideia de um universo racional, ordenado por leis matemáticas, criado por uma mente divina, foi pressuposto teológico que permitiu a confiança na investigação científica. As universidades nasceram na Europa cristã medieval, muitas a partir das escolas das catedrais e com privilégios concedidos pelos papas (Bolonha, por volta de 1088, Oxford, no fim do séc. XI, Paris, por volta de 1150, Salamanca, 1218).
 
 Cientistas católicos foram protagonistas em quase todas as áreas. Gregor Mendel (monge agostiniano) fundou a genética. Georges Lemaître (sacerdote belga) propôs o que viria a se chamar Big Bang. Roger Boscovich (jesuíta) foi precursor da teoria atômica. Santo Alberto Magno, dominicano do séc. XIII, é patrono dos cientistas. Os jesuítas mapearam o céu (35 crateras lunares levam nomes de jesuítas). O Observatório do Vaticano, com raízes na reforma do calendário gregoriano (1582), foi refundado por Leão XIII em 1891 e funciona até hoje.
 
@@ -160,7 +160,7 @@ O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, p
 
 3. Quem propôs o Big Bang? (Um padre católico belga, Georges Lemaître: o universo em expansão em 1927 e o átomo primordial em 1931.)
 
-4. Que instituição fundou as primeiras universidades da Europa? (A Igreja Católica.)
+4. Onde nasceram as primeiras universidades da Europa? (Na cristandade medieval, em geral a partir de escolas da Igreja e com privilégios dos papas.)
 
 5. Se "ciência e fé são incompatíveis", como explicar que a ciência moderna nasceu na civilização cristã, e não nas civilizações orientais ou pagãs?`,
     references: ['jp2-galileu-1992', 'lemaitre-bigbang', 'js-10-12'],
@@ -175,11 +175,11 @@ O mito do "conflito ciência-fé" foi construído principalmente no séc. XIX, p
     imageAspect: 1.41,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FPeople%2520looking%2520miracle%2520sun.jpg&w=2200&output=jpg&q=80',
     summary: 'Dezenas de milhares de pessoas, avisadas com meses de antecedência, viram o sol "dançar" no céu em 13 de outubro de 1917. Até a imprensa secular e cética registrou.',
-    body: `No dia 13 de outubro de 1917, em Fátima, Portugal, cerca de setenta mil pessoas reuniram-se num campo chamado Cova da Iria. Tinham ido porque três crianças pastoras, Lúcia, Francisco e Jacinta, diziam que a Virgem Maria lhes aparecia desde maio e havia prometido, para aquele dia exato, um sinal para que todos cressem. O que a multidão relatou ter visto é um dos eventos religiosos mais bem testemunhados da história moderna.
+    body: `No dia 13 de outubro de 1917, em Fátima, Portugal, entre cinquenta mil e setenta mil pessoas, segundo o Santuário de Fátima, reuniram-se num campo chamado Cova da Iria. Tinham ido porque três crianças pastoras, Lúcia, Francisco e Jacinta, diziam que a Virgem Maria lhes aparecia desde maio e havia prometido, para aquele dia exato, um sinal para que todos cressem. O que a multidão relatou ter visto é um dos eventos religiosos mais bem testemunhados da história moderna.
 
 ## O que aconteceu
 
-Chovia forte naquela manhã, e as pessoas estavam encharcadas. Por volta do meio-dia, as nuvens se abriram e, segundo milhares de testemunhas, o sol apareceu como um disco que se podia fitar sem ferir os olhos, girando sobre si mesmo, lançando feixes de luz colorida sobre a terra, e parecendo precipitar-se em direção à multidão, que gritou de pavor. Ao fim, as roupas das pessoas, antes encharcadas pela chuva, estavam secas.
+Chovia forte naquela manhã, e as pessoas estavam encharcadas. Por volta do meio-dia, as nuvens se abriram e, segundo milhares de testemunhas, o sol apareceu como um disco que se podia fitar sem ferir os olhos, girando sobre si mesmo, lançando feixes de luz colorida sobre a terra, e parecendo precipitar-se em direção à multidão, que gritou de pavor. Ao fim, segundo muitos relatos, as roupas das pessoas, antes encharcadas pela chuva, estavam secas.
 
 ## Por que o caso é forte
 
@@ -187,11 +187,13 @@ Três pontos tornam o episódio difícil de descartar. Primeiro, o sinal foi anu
 
 ## As explicações naturais não fecham
 
-Tentou-se explicar o fenômeno como ilusão de ótica, histeria coletiva ou efeito de olhar para o sol. Mas a histeria não explica como milhares de pessoas, espalhadas por uma grande área, descreveram a mesma coisa, nem por que pessoas a vários quilômetros de distância, que não estavam na multidão, também relataram ver o sol mover-se. E nenhuma ilusão de ótica seca roupas encharcadas. Os observatórios astronômicos, por sua vez, não registraram nenhum movimento real do sol, o que para o crente apenas reforça o caráter de sinal: algo dado a ver àquelas pessoas, naquele lugar, no momento anunciado.
+Tentou-se explicar o fenômeno como ilusão de ótica, histeria coletiva ou efeito de olhar para o sol. Mas a histeria não explica como milhares de pessoas, espalhadas por uma grande área, descreveram, com variações de detalhe, o mesmo fenômeno, nem por que pessoas a vários quilômetros de distância, que não estavam na multidão, também relataram ver o sol mover-se. E nenhuma ilusão de ótica seca roupas encharcadas. Os observatórios astronômicos, por sua vez, não registraram nenhum movimento real do sol, o que para o crente apenas reforça o caráter de sinal: algo dado a ver àquelas pessoas, naquele lugar, no momento anunciado.
+
+A hipótese natural mais séria é a do físico belga Auguste Meessen, da Universidade Católica de Lovaina (2003): fitar o sol, mesmo por pouco tempo, produz na retina imagens residuais que parecem girar, mudar de cor e aproximar-se, o que explicaria relatos parecidos em outros lugares de aparição. A objeção pesa, porque naquele dia a própria Lúcia gritou à multidão que olhasse para o sol. Mas a hipótese explica o que alguém vê depois de encarar o sol num dia qualquer, não por que as nuvens se abriram e a chuva parou justamente na hora prenunciada, nem por que gente que estava longe da Cova da Iria, fora do alcance da voz de Lúcia, também viu o fenômeno, como o menino Joaquim Lourenço, em Alburitel, a uns 18 quilômetros, e o poeta Afonso Lopes Vieira, em São Pedro de Moel, a dezenas de quilômetros.
 
 ## O que a Igreja diz
 
-O bispo de Leiria, D. José Alves Correia da Silva, investigou o caso por anos e, em 13 de outubro de 1930, declarou as aparições de Fátima dignas de fé. Como em toda revelação privada, ninguém é obrigado a crer. Mas o Milagre do Sol permanece como um sinal público e datado, num século que se dizia científico demais para milagres.
+O bispo de Leiria, D. José Alves Correia da Silva, investigou o caso por anos e, em 13 de outubro de 1930, declarou as aparições de Fátima "dignas de crédito". Como em toda revelação privada, ninguém é obrigado a crer. Mas o Milagre do Sol permanece como um sinal público e datado, num século que se dizia científico demais para milagres.
 
 ## Perguntas-chave
 
@@ -201,7 +203,7 @@ O bispo de Leiria, D. José Alves Correia da Silva, investigou o caso por anos e
 
 3. A histeria coletiva explica roupas encharcadas que secam, e relatos de gente a quilômetros de distância que não estava na multidão?
 
-4. O sinal foi prometido com meses de antecedência, para uma data exata. Que fraude consegue marcar a hora de um milagre diante de setenta mil pessoas?`,
+4. O sinal foi prometido com meses de antecedência, para uma data exata. Que fraude consegue marcar a hora de um milagre diante de dezenas de milhares de pessoas?`,
     references: ['fatima-milagre-sol'],
   },
   {
@@ -213,7 +215,7 @@ O bispo de Leiria, D. José Alves Correia da Silva, investigou o caso por anos e
     imageCredit: 'Nossa Senhora de Guadalupe (a tilma de São Juan Diego). Domínio público.',
     imageAspect: 0.64,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FVirgen%2520de%2520guadalupe1.jpg&w=2200&output=jpg&q=80',
-    summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos. Quase quinhentos anos depois, continua intacto e sem explicação.',
+    summary: 'Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. Quase quinhentos anos depois, o tecido grosseiro continua íntegro, e a figura original ainda desafia explicação.',
     body: `Em dezembro de 1531, dez anos após a conquista espanhola do México, um índio pobre e recém-convertido chamado Juan Diego, hoje canonizado, subia o monte Tepeyac, perto da Cidade do México. Ali, segundo o relato, apareceu-lhe uma jovem morena, vestida como uma princesa asteca grávida, que se identificou como a Mãe do verdadeiro Deus e pediu que se construísse ali um templo. Como prova para o bispo incrédulo, ela fez brotar rosas de Castela num morro árido, em pleno inverno, e as colocou na tilma, o manto de fibra de Juan Diego. Quando ele abriu o manto diante do bispo, as rosas caíram e, no tecido, estava impressa a imagem da Virgem, que se vê até hoje.
 
 ## A imagem que não devia existir
@@ -224,11 +226,15 @@ A imagem em si desafia explicação. O estudo com infravermelho feito por Philip
 
 ## Os olhos da Virgem
 
-Talvez o detalhe mais intrigante esteja nos olhos da figura. A partir dos anos 1950, oftalmologistas que ampliaram as córneas da imagem relataram enxergar nelas, refletidas, pequenas figuras humanas, como se os olhos tivessem registrado a cena do momento em que a tilma foi aberta diante do bispo. O engenheiro José Aste Tonsmann, em estudos digitais nos anos 1980, descreveu um grupo de pessoas refletido nos dois olhos, na proporção e na distorção que uma córnea real produziria. O ponto é debatido entre os estudiosos, mas é o tipo de detalhe que um falsário do século XVI jamais conseguiria planejar.
+Talvez o detalhe mais intrigante esteja nos olhos da figura. A partir dos anos 1950, oftalmologistas que ampliaram as córneas da imagem relataram enxergar nelas, refletidas, pequenas figuras humanas, como se os olhos tivessem registrado a cena do momento em que a tilma foi aberta diante do bispo. O engenheiro José Aste Tonsmann, em estudos digitais nos anos 1980, descreveu um grupo de pessoas refletido nos dois olhos, na proporção e na distorção que uma córnea real produziria. É, porém, a parte mais discutível do caso. As figuras aparecem no limite da trama grosseira do tecido, os pesquisadores não concordam sobre quantas são (o desenhista José Carlos Salinas viu um homem barbado em 1951, Aste Tonsmann descreveu cerca de treze) e os céticos falam em pareidolia, a tendência de enxergar rostos em manchas. Por isso, o argumento dos olhos não deve carregar o peso do conjunto.
 
 ## Um sermão em imagem
 
-Para os indígenas, a imagem era um catecismo. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1). O cinto preto indicava gravidez. As estrelas no manto, segundo estudos, correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e se punha diante do sol que eles antes adoravam. Nos anos seguintes, os batismos se multiplicaram: o franciscano Motolinía calculava, por volta de 1537, em mais de nove milhões os indígenas batizados desde a conquista, e a tradição atribui à Virgem de Guadalupe um papel decisivo nesse movimento, num povo que, poucos anos antes, ainda oferecia sacrifícios humanos aos seus deuses.
+Para os indígenas, a imagem era um catecismo. Aqui o argumento é o do sentido da imagem, não o do milagre: Callahan julgou acrescentados depois alguns dos elementos descritos a seguir, como os raios de sol, a lua e as estrelas, embora a data desses acréscimos seja discutida. Cada elemento falava na linguagem deles: a mulher vestida de sol, com a lua sob os pés, é a Mulher do Apocalipse (Apocalipse 12,1). O cinto preto indicava gravidez. Nos anos 1980, o padre Mario Rojas Sánchez e Juan Homero Hernández Illescas defenderam que as estrelas no manto correspondem à posição do céu sobre o México no solstício de inverno de 1531. Ela não era um ídolo asteca nem uma deusa espanhola: era a Mãe de Deus, morena como eles, que pisava a lua e se punha diante do sol que eles antes adoravam. Nos anos seguintes, os batismos se multiplicaram: o franciscano Motolinía calculava, por volta de 1537, em mais de nove milhões os indígenas batizados desde a conquista, e a tradição atribui à Virgem de Guadalupe um papel decisivo nesse movimento, num povo que, poucos anos antes, ainda oferecia sacrifícios humanos aos seus deuses.
+
+## A objeção histórica
+
+A objeção mais séria contra Guadalupe não vem do laboratório, mas dos documentos. Em 8 de setembro de 1556, o provincial franciscano Francisco de Bustamante pregou contra a devoção nascente e disse que a imagem tinha sido pintada por um índio chamado Marcos, que alguns historiadores identificam com o pintor Marcos Cipac de Aquino. Além disso, os escritos conservados do bispo Juan de Zumárraga não mencionam a aparição, e o relato completo, o Nican Mopohua, em náuatle, só foi impresso em 1649, por Luis Laso de la Vega. Os defensores respondem que o inquérito aberto naquele mesmo ano de 1556 pelo arcebispo Alonso de Montúfar mostra uma devoção já viva no Tepeyac, que a tradição atribui o Nican Mopohua ao sábio indígena Antonio Valeriano, que o teria escrito ainda no século XVI, e que a acusação de Bustamante não explica o que Callahan encontrou na figura original. É um debate real, e quem defende Guadalupe precisa conhecê-lo.
 
 ## O que isso significa
 
@@ -236,11 +242,11 @@ Como sempre, é preciso honestidade. A Igreja não obriga ninguém a crer em Gua
 
 ## Perguntas-chave
 
-1. Como um tecido de fibra de agave, que deveria durar poucas décadas, permanece intacto há quase quinhentos anos?
+1. Como um tecido grosseiro de fibra de agave, que costuma durar poucas décadas, permanece íntegro há quase quinhentos anos?
 
 2. Pintores trabalham a partir de um esboço. Por que a figura original de Guadalupe não tem nenhum desenho preliminar, nem pinceladas?
 
-3. Se a imagem é uma fraude do século XVI, como explicar as figuras refletidas nos olhos, detectadas só com ampliação moderna?
+3. As figuras que vários estudiosos dizem ver nos olhos, com a distorção de uma córnea real, resistem à explicação por pareidolia?
 
 4. Que falsificação se tornaria, por quase cinco séculos, o coração da fé de todo um povo?`,
     references: ['guadalupe-tilma', 'ap-12-1'],
@@ -263,7 +269,7 @@ Na noite de 2 de abril de 1968, operários muçulmanos que trabalhavam perto da 
 
 ## Uma multidão de testemunhas
 
-O que torna Zeitoun extraordinário é a escala e a diversidade do público. As aparições foram presenciadas por multidões que, ao longo do período, somaram centenas de milhares e, segundo algumas estimativas, milhões de pessoas. Eram cristãos coptas, católicos e protestantes, mas também muçulmanos e até céticos, que não tinham nenhum motivo religioso para confirmar uma aparição mariana. O Egito é um país de maioria muçulmana, e o Islã, embora honre Maria, não cultiva aparições como os católicos. Ainda assim, muçulmanos relataram exatamente o mesmo que os cristãos.
+O que torna Zeitoun extraordinário é a escala e a diversidade do público. As aparições foram presenciadas por multidões que, ao longo do período, somaram centenas de milhares e, segundo algumas estimativas, milhões de pessoas. Eram cristãos coptas, católicos e protestantes, mas também muçulmanos e até céticos, que não tinham nenhum motivo religioso para confirmar uma aparição mariana. O Egito é um país de maioria muçulmana, e o Islã, embora honre Maria, não cultiva aparições como os católicos. Ainda assim, muçulmanos relataram o mesmo que os cristãos.
 
 ## Fotografada e investigada
 
@@ -271,7 +277,9 @@ Diferente de quase todas as aparições, Zeitoun foi fotografada. Várias imagen
 
 ## Por que o caso é forte
 
-Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: duração longa, de anos e não de um instante. Número enorme de testemunhas. Registro fotográfico. Investigação policial que não achou truque, e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
+Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações de milagre: uma duração de anos, e não de um instante, um número enorme de testemunhas, registro fotográfico, uma investigação policial que não achou truque e a presença de testemunhas de outra religião. A explicação por histeria coletiva, sempre invocada, esbarra nessa combinação. Histeria não dura dois anos, não aparece em fotografias e não convence céticos e muçulmanos ao mesmo tempo.
+
+As objeções mais sérias são outras. Quem estudou o caso com olhar cético em geral não nega que houvesse luzes sobre a igreja, e as fotografias mostram justamente isso: discute o que elas eram. O geofísico americano John Derr e o neuropsicólogo canadense Michael Persinger (1989) atribuíram as luzes a tensões na crosta terrestre, apoiados num aumento da atividade sísmica a cerca de 400 quilômetros dali, sem explicar como tomariam a forma de uma mulher. Robert Bartholomew e Erich Goode (2000) trataram o caso como um delírio coletivo: num Egito que ainda vivia o choque da derrota de 1967, a formação religiosa e a expectativa social teriam levado a multidão a ver a Virgem em luzes de outra origem. E a antropóloga Cynthia Nelson, que foi ao local várias vezes, viu apenas clarões intermitentes. São objeções a considerar, mas nenhuma explica bem por que a luz voltou durante anos ao mesmo lugar, sobre a mesma igreja, nem por que tomou, aos olhos de tantas testemunhas de religiões diferentes, a forma da Virgem.
 
 ## Perguntas-chave
 
@@ -298,15 +306,15 @@ Zeitoun reúne, de uma vez, vários fatores que costumam faltar nas alegações 
 
 ## O achado no rio
 
-Em outubro de 1717, a cidade de Guaratinguetá, no interior de São Paulo, esperava a visita de um conde, e os pescadores foram ao rio Paraíba do Sul providenciar peixe para o banquete. A pesca, porém, estava péssima, e nada vinha às redes. Em certo momento, Domingos Garcia, João Alves e Felipe Pedroso lançaram a rede e recolheram o corpo de uma pequena imagem de terracota, sem a cabeça. Lançaram de novo, e veio a cabeça. Continuaram pescando e, a partir dali, recolheram uma quantidade tão grande de peixes que a canoa quase afundou, depois de horas sem pegar nada. A imagem era a de Nossa Senhora da Conceição, escurecida pelo tempo no fundo do rio.
+Em outubro de 1717, a cidade de Guaratinguetá, no interior de São Paulo, esperava a visita do conde de Assumar, Dom Pedro de Almeida e Portugal, governador da capitania de São Paulo e Minas de Ouro, e os pescadores foram ao rio Paraíba do Sul providenciar peixe para o banquete. A pesca, porém, estava péssima, e nada vinha às redes. Em certo momento, Domingos Garcia, João Alves e Felipe Pedroso lançaram a rede e recolheram o corpo de uma pequena imagem de terracota, sem a cabeça. Lançaram de novo, e veio a cabeça. Continuaram pescando e, a partir dali, recolheram uma quantidade tão grande de peixes que a canoa quase afundou, depois de horas sem pegar nada. A imagem era a de Nossa Senhora da Conceição, escurecida pelo tempo no fundo do rio.
 
 ## A devoção que cresceu
 
-A pequena imagem ficou na casa de Felipe Pedroso e, depois, de seu filho, e em torno dela começaram a se reunir os vizinhos para rezar. Relatos de graças e curas se multiplicaram, e a fama cresceu. Construiu-se uma capela, depois uma igreja, depois o grande Santuário de Aparecida, hoje uma das maiores basílicas marianas do mundo, que recebe milhões de peregrinos por ano. Em 1930, o Papa Pio XI proclamou Nossa Senhora Aparecida padroeira oficial do Brasil.
+A pequena imagem ficou na casa de Felipe Pedroso e, depois, de seu filho, e em torno dela começaram a se reunir os vizinhos para rezar. Relatos de graças e curas se multiplicaram, e a fama cresceu. Construiu-se uma capela, depois uma igreja, depois o grande Santuário de Aparecida, hoje uma das maiores basílicas marianas do mundo, que recebe milhões de peregrinos por ano. Em 1904, com a aprovação do Papa São Pio X, a imagem foi solenemente coroada e, em 1930, o Papa Pio XI proclamou Nossa Senhora Aparecida padroeira oficial do Brasil.
 
 ## Os sinais narrados
 
-A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias, que, a caminho de um castigo, pediu para parar diante da imagem, ao rezar, as correntes que o prendiam teriam se rompido sozinhas. Conta-se também o caso das velas que, apagadas pelo vento durante uma oração, se reacenderam sem mão humana. Como em toda devoção popular, é preciso distinguir o que é fato documentado do que é piedade narrada, mas o conjunto, e sobretudo o testemunho ininterrupto de fiéis ao longo de três séculos, deu a essa imagem um lugar único na fé do povo brasileiro.
+A tradição guarda episódios marcantes. O mais famoso é o do escravo Zacarias, que, a caminho de um castigo, pediu para parar diante da imagem. Ao rezar, as correntes que o prendiam teriam se rompido sozinhas. Conta-se também o caso das velas que, apagadas pelo vento durante uma oração, se reacenderam sem mão humana. Como em toda devoção popular, é preciso distinguir o que é fato documentado do que é piedade narrada, mas o conjunto, e sobretudo o testemunho ininterrupto de fiéis ao longo de três séculos, deu a essa imagem um lugar único na fé do povo brasileiro.
 
 ## O que significa para o Brasil
 
@@ -337,26 +345,32 @@ Aparecida não é apenas uma estátua. É o símbolo de um povo que se reconhece
 
 ## Que "tesouro" é esse
 
-A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e, tirando os ingressos de alguns museus, quase não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça. A Capela Sistina não é uma conta bancária. É um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano.
+A maior parte do chamado patrimônio da Igreja são igrejas, basílicas, obras de arte, bibliotecas e museus. Esses bens não estão à venda e, tirando os ingressos de alguns museus, quase não geram renda: são herança cultural da humanidade, conservados em nome de todos e abertos a todos, muitas vezes de graça. A Capela Sistina não é uma conta bancária. É um bem público que pertence, no fundo, a toda a civilização. Confundir patrimônio artístico com dinheiro em caixa é o primeiro engano. A própria tradição da Igreja sabe onde está o seu tesouro: no século III, quando as autoridades romanas exigiram do diácono São Lourenço os tesouros da Igreja, ele apresentou os pobres e disse "Estes são os tesouros da Igreja", episódio contado por Santo Ambrósio e lembrado por Leão XIV na Dilexi te (2025).
 
 ## Vender tudo acabaria com a pobreza?
 
 Não. Imagine que se vendesse a arte. A quem? Provavelmente a colecionadores bilionários, que a trancariam longe do público. O valor arrecadado, por maior que fosse, seria gasto uma única vez e logo se esgotaria diante da pobreza imensa do mundo, enquanto a humanidade perderia para sempre o acesso a essas obras. A pobreza é um problema estrutural, de justiça e de organização social. Não se resolve com um grande leilão, por mais generoso que pareça.
 
+## Quanto dinheiro o Vaticano tem, de fato
+
+Os números oficiais ajudam a medir a objeção. A Secretaria para a Economia, criada pelo Papa Francisco em 2014, publica as contas consolidadas da Santa Sé. Em 2023, as receitas operacionais foram de 1,15 bilhão de euros e as despesas, de 1,24 bilhão, com déficit, e dois terços das receitas vinham de dois hospitais ligados à Santa Sé. Em 2024, as contas fecharam com um superávit de apenas 1,6 milhão de euros. Para comparar: só a Universidade Harvard teve 6,7 bilhões de dólares de receita operacional em 2025 e tem um fundo patrimonial de quase 57 bilhões. O IOR, o chamado banco do Vaticano, administra 5,9 bilhões de euros, mas esse dinheiro é dos seus clientes, ordens religiosas, dioceses e funcionários, e não do Papa. A Santa Sé é rica em arte e em prédios históricos, mas, em dinheiro, tem um orçamento menor que o de muitas grandes universidades.
+
+Isso não apaga os escândalos. A compra de um prédio em Londres com recursos da Secretaria de Estado deu grande prejuízo e levou, em 2023, à condenação de um cardeal e de outros réus, em primeira instância, pelo tribunal do Vaticano. Foi para enfrentar casos assim que vieram as reformas financeiras e a publicação das contas.
+
 ## O que a Igreja de fato faz
 
-Aqui está o dado que costuma ser esquecido: a Igreja Católica é, de longe, a maior rede não governamental de assistência e educação do planeta. Hospitais, escolas, universidades, orfanatos, abrigos, distribuição de alimentos, presença em lugares onde nem o Estado chega, em obediência ao critério do Juízo final: "tive fome e me destes de comer" (Mateus 25,31-46). Boa parte disso é invisível e silenciosa. Antes de perguntar por que a Igreja não faz mais pelos pobres, vale perguntar: quem, no mundo, faz mais?
+Aqui está o dado que costuma ser esquecido: a Igreja Católica é, de longe, a maior rede não governamental de assistência e educação do planeta. Segundo o Anuário Estatístico da Igreja (dados de 2024, divulgados pela agência Fides em 2026), são 5.397 hospitais, 13.646 ambulatórios, 16.263 casas para idosos, doentes crônicos e pessoas com deficiência, 8.138 orfanatos, cerca de 230 mil escolas, do jardim de infância ao ensino médio, e institutos universitários com mais de 4 milhões de alunos, além da distribuição de alimentos e da presença em lugares onde nem o Estado chega, em obediência ao critério do Juízo final: "tive fome e me destes de comer" (Mateus 25,31-46). Boa parte disso é invisível e silenciosa. Antes de perguntar por que a Igreja não faz mais pelos pobres, vale perguntar: quem, no mundo, faz mais?
 
 ## O ideal e as falhas
 
-Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e ainda há luxo indevido e abusos por parte de clérigos, que a própria Igreja deve corrigir. O Papa Francisco, logo depois de eleito, em 2013, pediu uma "Igreja pobre e para os pobres". Criticar a ostentação de um ou outro é legítimo e necessário. Concluir, disso, que a Igreja deveria desaparecer, ou que ela nada faz pelos pobres, é injusto com os fatos.
+Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e ainda há luxo indevido e abusos por parte de clérigos, que a própria Igreja deve corrigir. O Papa Francisco, logo depois de eleito, em 2013, pediu uma "Igreja pobre e para os pobres", e Leão XIV retomou esse pedido na sua primeira exortação apostólica, Dilexi te (2025). Criticar a ostentação de um ou outro é legítimo e necessário. Concluir, disso, que a Igreja deveria desaparecer, ou que ela nada faz pelos pobres, é injusto com os fatos.
 
 ## Perguntas-chave
 
-1. O patrimônio da Igreja é dinheiro guardado, ou em grande parte arte e templos abertos a todos, que não geram renda?
+1. O patrimônio da Igreja é dinheiro guardado, ou em grande parte arte e templos abertos a todos, que não estão à venda?
 
 2. Vender as obras de arte acabaria mesmo com a pobreza do mundo, ou apenas as tiraria do alcance das pessoas?`,
-    references: ['mt-25-31'],
+    references: ['mt-25-31', 'dilexi-te-35', 'santa-se-contas-2024', 'fides-estatisticas-2026'],
   },
   {
     id: 81,
@@ -374,13 +388,15 @@ Nada disso significa fechar os olhos. O Evangelho pede simplicidade, e houve e a
 
 Houve crimes hediondos cometidos por padres e religiosos contra crianças e jovens. E houve, pior ainda, encobrimento por parte de superiores que deveriam ter protegido as vítimas e preferiram proteger a instituição. Isso é uma traição ao Evangelho, não a sua aplicação. O próprio Jesus reservou as palavras mais terríveis a quem fizesse cair "um destes pequenos que creem em mim": "melhor fora que lhe atassem ao pescoço a mó de um moinho e o lançassem no fundo do mar" (Mateus 18,6). Nada justifica esses crimes, nada os relativiza.
 
+Os números mostram o tamanho da ferida. Nos Estados Unidos, o relatório do John Jay College (2004), encomendado pelos próprios bispos, registrou 4.392 padres acusados entre 1950 e 2002, cerca de 4% dos que atuaram no período, e 10.667 pessoas que denunciaram abusos. Na França, a comissão independente CIASE (2021), criada por iniciativa da própria Igreja, estimou em 216 mil as vítimas menores de padres e religiosos entre 1950 e 2020, e em 330 mil contando os leigos que trabalhavam em instituições católicas. A comissão concluiu que, fora da família e do círculo de amigos, o ambiente da Igreja foi aquele em que a violência sexual contra menores foi mais frequente, mais do que na escola pública, nas colônias de férias ou no esporte, e falou em falha sistêmica: a instituição não soube prevenir esses crimes, nem vê-los, nem tratá-los com a firmeza necessária.
+
 ## O que não é honesto fazer
 
-Reconhecida a gravidade, é preciso apontar também os usos desonestos do tema. Tratar o abuso como se fosse um problema exclusivamente católico é falso. Trata-se, tragicamente, de um drama presente em toda a sociedade, nas escolas, no esporte, em outras religiões e instituições, e sobretudo dentro das próprias famílias, onde acontece a maior parte dos abusos. E usar os crimes de alguns para condenar a fé de milhões, e todo o bem imenso que a Igreja faz, é uma generalização injusta. O crime é dos criminosos, não da fé que eles traíram.
+Reconhecida a gravidade, é preciso apontar também os usos desonestos do tema. Tratar o abuso como se fosse um problema exclusivamente católico é falso. Trata-se, tragicamente, de um drama presente em toda a sociedade, nas escolas, no esporte, em outras religiões e instituições, e sobretudo no círculo da família e dos amigos, onde acontece a maior parte dos abusos. E usar os crimes de alguns para condenar a fé de milhões, e todo o bem imenso que a Igreja faz, é uma generalização injusta. O crime é dos criminosos, não da fé que eles traíram.
 
 ## O que a Igreja tem feito
 
-Longe de ser perfeita, e tendo demorado demais a reagir, a Igreja hoje conta com algumas das normas mais rígidas que existem: tolerância zero, afastamento dos culpados, denúncia obrigatória (motu proprio Vos Estis Lux Mundi, Papa Francisco, 2019), colaboração com a justiça civil, a Pontifícia Comissão para a Proteção dos Menores (2014) e protocolos em todas as dioceses. Muito veio tarde, e ainda há o que melhorar, mas houve uma mudança real e profunda, reconhecida até por especialistas de fora.
+Longe de ser perfeita, e tendo demorado demais a reagir, a Igreja hoje conta com normas rígidas. Desde o motu proprio Vos Estis Lux Mundi (Papa Francisco, 2019, tornado definitivo em 2023), todo clérigo e todo religioso que souber de um abuso, ou do seu encobrimento por um superior, é obrigado a denunciá-lo à autoridade da Igreja, sem prejuízo das leis civis que obrigam a denunciar às autoridades do Estado. A única exceção é o que um padre fica sabendo no foro interno, como na confissão, cujo sigilo é inviolável. Cada diocese deve ter um canal acessível ao público para receber denúncias. Há também o afastamento dos culpados e, desde 2014, a Pontifícia Comissão para a Proteção dos Menores. Muito veio tarde, e ainda há o que melhorar, mas houve uma mudança real: a própria CIASE registrou que, a partir dos anos 2010, cresceram as denúncias à justiça e as punições canônicas, e os agressores deixaram de ser tratados só internamente.
 
 ## E a fé?
 
@@ -391,7 +407,7 @@ No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidad
 1. Os crimes de abuso são uma aplicação do Evangelho, ou justamente uma traição àquilo que Jesus mais defendeu?
 
 2. Se o abuso de menores é um drama de toda a sociedade, é honesto tratá-lo como se fosse um problema só da Igreja?`,
-    references: ['mt-18-6', 'mt-13-24', 'vos-estis-lux-mundi'],
+    references: ['mt-18-6', 'mt-13-24', 'vos-estis-lux-mundi', 'john-jay-2004', 'ciase-2021', 'vos-estis-2023'],
   },
   {
     id: 82,
@@ -407,26 +423,26 @@ No fim, é preciso lembrar onde a fé se apoia. Ela não se sustenta na santidad
 
 ## A "lenda negra"
 
-A imagem de um Pio XII conivente não nasceu de arquivos, mas sobretudo de uma peça de teatro alemã de 1963, "O Vigário", de Rolf Hochhuth, obra de ficção, e foi amplificada no clima ideológico da Guerra Fria. Tornou-se um lugar-comum repetido sem checagem. Mas, quando se vai às fontes, o quadro se inverte.
+A imagem de um Pio XII conivente não nasceu de arquivos, mas sobretudo de uma peça de teatro alemã de 1963, "O Vigário", de Rolf Hochhuth, obra de ficção, e foi amplificada no clima ideológico da Guerra Fria. Tornou-se um lugar-comum repetido sem checagem. Mas, quando se vai às fontes, o quadro fica bem mais complexo e, em vários pontos, se inverte.
 
 ## O que ele de fato fez
 
-Durante a ocupação nazista de Roma (1943-1944), milhares de judeus foram escondidos em conventos, mosteiros, igrejas e até em propriedades da Santa Sé: uma lista achada nos arquivos do Pontifício Instituto Bíblico, divulgada em 2023, registra mais de 4.300 pessoas abrigadas em instituições católicas da cidade, das quais pelo menos 3.200 eram judeus. Vários testemunhos da época atribuem essa acolhida a um pedido do próprio Pio XII, embora o alcance do seu papel direto ainda seja discutido. O historiador judeu Pinchas Lapide, em "Three Popes and the Jews" (1967), estimou que a ação da Igreja sob o seu pontificado tenha contribuído para salvar centenas de milhares de judeus, número que muitos historiadores consideram alto. Não por acaso, líderes judeus da época reconheceram isso publicamente: Golda Meir, futura primeira-ministra de Israel, prestou homenagem na sua morte, e o rabino-chefe de Roma do período, Israel Zolli, que se converteu ao catolicismo em 1945, adotou no batismo, em homenagem ao Papa, o nome Eugenio, o nome de batismo de Pio XII.
+Durante a ocupação nazista de Roma (1943-1944), milhares de judeus foram escondidos em conventos, mosteiros, igrejas e até em propriedades da Santa Sé: uma lista achada nos arquivos do Pontifício Instituto Bíblico, divulgada em 2023, registra mais de 4.300 pessoas abrigadas em instituições católicas da cidade, das quais pelo menos 3.200 eram judeus. Vários testemunhos da época atribuem essa acolhida a um pedido do próprio Pio XII, embora o alcance do seu papel direto ainda seja discutido. O historiador judeu Pinchas Lapide, em "Three Popes and the Jews" (1967), estimou que a ação da Igreja sob o seu pontificado tenha contribuído para salvar centenas de milhares de judeus, número que muitos historiadores consideram exagerado. Não por acaso, líderes judeus da época reconheceram isso publicamente: Golda Meir, então ministra das Relações Exteriores e futura primeira-ministra de Israel, prestou homenagem na sua morte, em 1958, e o rabino-chefe de Roma do período, Israel Zolli, que se converteu ao catolicismo em 1945, adotou no batismo, em homenagem ao Papa, o nome Eugenio, o nome de batismo de Pio XII.
 
 ## Por que não gritou mais alto?
 
-A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A resposta documentada é prudencial: ele temia, com razão, que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda em 1942: depois que os bispos condenaram publicamente as deportações, os nazistas retaliaram prendendo e deportando também os judeus convertidos ao catolicismo, entre eles Santa Teresa Benedita da Cruz (Edith Stein). Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. Pode-se discutir a prudência dessa escolha. É difícil discutir a boa intenção e os resultados.
+A grande pergunta é por que Pio XII não fez uma condenação pública mais explícita. A explicação que o próprio Pio XII deu, num discurso aos cardeais em 2 de junho de 1943, é prudencial: cada palavra pública precisava ser medida no interesse dos próprios perseguidos, para não tornar a situação deles ainda mais grave. Ele temia que um protesto estridente provocasse represálias ainda piores. Foi o que aconteceu na Holanda em 1942: depois que os bispos condenaram publicamente as deportações, os nazistas retaliaram prendendo e deportando também os judeus convertidos ao catolicismo, entre eles Santa Teresa Benedita da Cruz (Edith Stein). Pio XII escolheu a ação discreta e eficaz, que salvava vidas concretas, em vez do gesto heroico que custaria mais sangue. E ele não ficou totalmente calado: na mensagem de Natal de 1942, falou das "centenas de milhares de pessoas que sem culpa nenhuma da sua parte, às vezes só por motivos de nacionalidade ou raça, se vêem destinadas à morte ou a um extermínio progressivo", ainda que sem nomear os nazistas nem os judeus. Pode-se discutir a prudência dessa escolha, e muitos historiadores a discutem. Mas a intenção de proteger vidas está bem documentada.
 
-## O veredito da história
+## O que os arquivos mostram
 
-Em 2020, o Vaticano abriu os arquivos do pontificado de Pio XII à pesquisa. Os primeiros estudos dos documentos, como o de Johan Ickx ("Le Bureau", 2020), documentam a rede de ajuda a judeus montada pela Secretaria de Estado. Outros historiadores, como David Kertzer ("The Pope at War", 2022), mantêm uma leitura mais crítica da prudência do Papa. O debate continua, e a Igreja não tem pressa em julgamentos. Mas a caricatura do "Papa de Hitler" simplesmente não se sustenta diante dos fatos. E a mesma Igreja, no Concílio Vaticano II, deplorou "todos os ódios, perseguições e manifestações de anti-semitismo" contra os judeus (Nostra Aetate, 1965, §4).
+Em 2 de março de 2020, por decisão do Papa Francisco, o Vaticano abriu à pesquisa os arquivos do pontificado de Pio XII. "A Igreja não tem medo da história", disse Francisco ao anunciar a abertura. Os documentos mostram os dois lados do quadro. De um lado, uma rede de ajuda real: a série "Ebrei" (Judeus) da Secretaria de Estado, posta na internet em 2022, reúne mais de 2.700 casos de pedidos de socorro feitos ao Papa por judeus, batizados ou não, quase sempre por famílias inteiras, embora o desfecho da maioria não tenha ficado registrado. De outro, que o Vaticano recebia informações precisas sobre o extermínio: em dezembro de 1942, o jesuíta alemão Lothar König escreveu ao secretário do Papa, Robert Leiber, que cerca de 6 mil pessoas, sobretudo poloneses e judeus, eram mortas por dia no campo de Belzec. Por isso os historiadores continuam divididos. O arquivista vaticano Johan Ickx ("Le Bureau", 2020) documenta a rede de ajuda a judeus montada pela Secretaria de Estado. David Kertzer ("The Pope at War", 2022) conclui que o Papa estava bem informado desde cedo e que o silêncio público foi uma escolha deliberada, pensada sobretudo para proteger a Igreja. A caricatura de um Papa simpatizante do nazismo não se sustenta diante dos fatos, mas a pergunta sobre o seu silêncio público continua legítima, e a Igreja, que abriu os arquivos, não tem medo dela. E a mesma Igreja, no Concílio Vaticano II, deplorou "todos os ódios, perseguições e manifestações de anti-semitismo" contra os judeus (Nostra Aetate, 1965, §4).
 
 ## Perguntas-chave
 
 1. Se líderes judeus da época, como Golda Meir, agradeceram publicamente a Pio XII, de onde veio a fama de "cúmplice"?
 
 2. Diante do caso da Holanda, em que um protesto público levou os nazistas a deportar também os judeus católicos, a ação discreta de Pio XII foi covardia ou cálculo para salvar mais vidas?`,
-    references: ['nostra-aetate'],
+    references: ['francisco-arquivos-pio-xii-2019', 'nostra-aetate', 'pio-xii-natal-1942', 'serie-ebrei-2022'],
   },
 ];
 

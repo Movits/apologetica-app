@@ -74,7 +74,7 @@ export const saints = {
   '06-29': { name: 'Santos Pedro e Paulo', nameEn: 'Sts. Peter and Paul', kind: 'solenidade', summary: 'Pilares da Igreja em Roma. Ambos martirizados na Cidade Eterna sob Nero.', summaryEn: 'Pillars of the Church in Rome. Both martyred in the Eternal City under Nero.' },
 
   // ============ JULHO ============
-  '07-03': { name: 'São Tomé, Apóstolo', nameEn: 'St. Thomas, Apostle', kind: 'festa', summary: 'O que duvidou e depois confessou "Senhor meu e Deus meu". Levou o evangelho à Índia.', summaryEn: 'The one who doubted then confessed "My Lord and my God". Brought the Gospel to India.' },
+  '07-03': { name: 'São Tomé, Apóstolo', nameEn: 'St. Thomas, Apostle', kind: 'festa', summary: 'O que duvidou e depois confessou "Meu Senhor e meu Deus". Levou o evangelho à Índia.', summaryEn: 'The one who doubted then confessed "My Lord and my God". Brought the Gospel to India.' },
   '07-06': { name: 'Santa Maria Goretti', nameEn: 'St. Maria Goretti', kind: 'opcional', summary: 'Jovem mártir da pureza (1902), que perdoou seu agressor.', summaryEn: 'Young martyr of purity (1902), who forgave her attacker.' },
   '07-11': { name: 'São Bento', nameEn: 'St. Benedict', kind: 'memoria', summary: 'Patriarca do monaquismo ocidental, padroeiro da Europa. "Ora et labora".', summaryEn: 'Patriarch of Western monasticism, patron of Europe. "Ora et labora".' },
   '07-15': { name: 'São Boaventura', nameEn: 'St. Bonaventure', kind: 'memoria', summary: 'Franciscano, doutor da Igreja, o "Doutor Seráfico".', summaryEn: 'Franciscan, Doctor of the Church, the "Seraphic Doctor".' },

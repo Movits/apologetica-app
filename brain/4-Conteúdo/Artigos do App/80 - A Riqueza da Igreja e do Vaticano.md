@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 80 - A Riqueza da Igreja e do Vaticano
@@ -14,6 +14,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 ## Tópicos internos
 - Que "tesouro" é esse
 - Vender tudo acabaria com a pobreza?
+- Quanto dinheiro o Vaticano tem, de fato
 - O que a Igreja de fato faz
 - O ideal e as falhas
 - Perguntas-chave
@@ -23,6 +24,9 @@ Arquivo: `src/data/articles/historia-igreja.js`
 
 ## Referências usadas
 - [[Mateus 25,31-46]]
+- [[Dilexi te §35 e §38]]
+- [[Contas consolidadas da Santa Sé (2023 e 2024)]]
+- [[Estatísticas da Igreja Católica 2026 (Agência Fides)]]
 
 ## Diálogos que levam a este artigo
 - [[A Igreja é riquíssima; devia vender tudo e acabar com a pobreza]]

@@ -127,7 +127,7 @@ export const READING_TRACKS = [
       { day: 6, articleId: 19, theme: 'O papa, cabeça visível da Igreja', themeEn: 'The pope, visible head of the Church' },
       { day: 7, articleId: 7, theme: 'A Eucaristia: presença real', themeEn: 'The Eucharist: real presence' },
       { day: 8, articleId: 21, theme: 'Por que confessar a um padre', themeEn: 'Why confess to a priest' },
-      { day: 9, articleId: 4, theme: 'Maria intercessora, não mediadora', themeEn: 'Mary intercessor, not mediator' },
+      { day: 9, articleId: 4, theme: 'Maria intercessora, não rival de Cristo', themeEn: 'Mary intercessor, not a rival to Christ' },
       { day: 10, articleId: 23, theme: 'Purgatório: purificação dos que se salvam', themeEn: 'Purgatory: purification of the saved' },
       { day: 11, articleId: 20, theme: 'Os sete sacramentos', themeEn: 'The seven sacraments' },
       { day: 12, articleId: 37, theme: 'Protestantismo: origem e panorama', themeEn: 'Protestantism: origin and overview' },

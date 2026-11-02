@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Isaías 43,10
@@ -15,4 +15,5 @@ Abre no app em `is 43,10`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
+- [[27 - Testemunhas de Jeová]]
 - [[41 - Mormonismo (SUD)]]

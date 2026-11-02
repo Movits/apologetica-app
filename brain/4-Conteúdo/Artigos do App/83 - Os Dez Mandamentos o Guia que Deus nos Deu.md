@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 83 - Os Dez Mandamentos o Guia que Deus nos Deu
@@ -25,8 +25,9 @@ Arquivo: `src/data/articles/moral.js`
 - [[Romanos 2,15]]
 - [[Mateus 22,37-40]]
 - [[Mateus 5,21-22]]
-- [[Salmo 119 (118),77]]
-- [[Salmo 119 (118),105]]
+- [[Salmo 18,9]]
+- [[Catecismo §2116-2117]]
+- [[Catecismo §2111]]
 
 ## Diálogos que levam a este artigo
 - [[Os dez mandamentos são só do Antigo Testamento; não valem mais]]

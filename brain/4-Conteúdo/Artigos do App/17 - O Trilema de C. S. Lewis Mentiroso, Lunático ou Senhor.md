@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 17 - O Trilema de C. S. Lewis Mentiroso, Lunático ou Senhor
@@ -27,9 +27,13 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - [[Marcos 14,61-62]]
 - [[João 20,28]]
 - [[Cristianismo Puro e Simples]]
+- [[Cristianismo Puro e Simples, livro II, capítulo 3]]
 - [[Marcos 2,5-7]]
 - [[João 5,18]]
 - [[João 14,9]]
+- [[Filipenses 2,6-11]]
+- [[1 Coríntios 8,6]]
+- [[1 Coríntios 1,23]]
 
 ## Artigos relacionados
 - [[05 - A Ressurreição de Jesus Fato Histórico]]

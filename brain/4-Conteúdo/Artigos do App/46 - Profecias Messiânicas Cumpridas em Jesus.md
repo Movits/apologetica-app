@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 46 - Profecias Messiânicas Cumpridas em Jesus
@@ -18,10 +18,13 @@ Arquivo: `src/data/articles/sagrada-escritura.js`
 - A força do conjunto
 - Perguntas-chave
 
+## Termos do glossário
+- [[Septuaginta]]
+
 ## Referências usadas
-- [[Miquéias 5,1-2]]
+- [[Miquéias 5,1]]
 - [[Isaías 7,14]]
-- [[Salmo 22 (21),2.17-19]]
+- [[Salmo 21 (22),2.17-19]]
 - [[Mateus 27,45-46]]
 - [[Isaías 53,3-7]]
 - [[Zacarias 12,10]]

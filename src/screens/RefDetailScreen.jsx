@@ -74,11 +74,12 @@ export default function RefDetailScreen({ route, navigation }) {
   // (Ave Maria) e EN (Douay-Rheims), ex.: Joel 3,4 (PT) = Joel 2,31 (EN).
   const openInBible = () => openBible(navigation, (isEn && item.bibleNavEn) || item.bibleNav);
 
-  // Catecismo abre o site do Vaticano no idioma do app quando a referência
-  // não traz url própria. O resto resolve pelo mesmo caminho da lista.
+  // Catecismo sem url própria abre o site do Vaticano no idioma do app. Com url,
+  // resolve pelo mesmo caminho da lista: no EN, a página portuguesa
+  // (cathechism_po) vira o Catecismo em inglês em vez de abrir em português.
   const isCatechismRef = item.id?.startsWith('cic-');
-  const sourceUrl = isCatechismRef
-    ? (item.url || (isEn ? VATICAN_BASE_EN : VATICAN_BASE_PT))
+  const sourceUrl = isCatechismRef && !item.url
+    ? (isEn ? VATICAN_BASE_EN : VATICAN_BASE_PT)
     : resolveRefUrl(item, item, isEn);
   const openSource = () => {
     if (!sourceUrl) return;

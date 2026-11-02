@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 51 - O Milagre do Sol em Fátima (1917)
@@ -24,7 +24,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 ## Artigos relacionados
 - [[50 - O Sudário de Turim]]
 - [[49 - Milagres Eucarísticos Quando a Hóstia Vira Carne]]
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[30 - Galileu Galilei e o Mito do Conflito Ciência-Fé]]
 
 ## No plano de leitura

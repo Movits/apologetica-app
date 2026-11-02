@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 1 Coríntios 15,3-8
@@ -16,4 +16,6 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[05 - A Ressurreição de Jesus Fato Histórico]]
+- [[15 - Islamismo]]
+- [[34 - Aparentes Contradições na Ressurreição]]
 - [[67 - Por Que Jesus Morreu na Cruz A Redenção]]

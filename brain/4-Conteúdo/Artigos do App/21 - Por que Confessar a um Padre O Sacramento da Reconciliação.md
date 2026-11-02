@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 21 - Por que Confessar a um Padre O Sacramento da Reconciliação
@@ -30,6 +30,9 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Atos 19,18]]
 - [[Didaqué 4,14 e 14,1]]
 - [[Os que caíram, 28]]
+- [[Marcos 2,7]]
+- [[Mateus 9,6-8]]
+- [[2 Coríntios 5,18-20]]
 
 ## Artigos relacionados
 - [[07 - A Eucaristia Presença Real de Cristo]]
@@ -37,7 +40,7 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 
 ## Diálogos que levam a este artigo
 - [[Confesso direto a Deus, não preciso de padre]]
-- [[O purgatório não está na Bíblia — é invenção da Igreja Católica]]
+- [[O purgatório não está na Bíblia. É invenção da Igreja Católica]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 23: Por que confessar a um padre

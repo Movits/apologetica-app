@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { ensureBible, isBibleLoaded, getChapter, getVerse } from '../src/services/bibleApi.js';
+import { BIBLE_BOOKS } from '../src/data/bible.js';
 
 // getVerse (Fase 5): leitura direta de um versículo, no lugar de
 // getChapter(...)?.verses?.find((v) => v.n === n)?.t que Marcações, Notas e o
@@ -28,6 +29,18 @@ test('lê o versículo certo em cada tradução', async () => {
   assert.equal(en, getChapter('jo', 3, 'en').verses.find((v) => v.n === 16).t);
   // Sem idioma é PT.
   assert.equal(getVerse('gn', 1, 1), getChapter('gn', 1).verses[0].t);
+});
+
+// Jó e Jonas tinham outra chave na Douay-Rheims ('jó', 'jn') e o inglês caía
+// no PT sem aviso. Todo livro do cânon precisa existir nas duas traduções.
+test('todo livro do cânon abre em inglês sem cair no PT', () => {
+  const semEn = BIBLE_BOOKS.filter((b) => {
+    const ch = getChapter(b.id, 1, 'en');
+    return !ch || ch.fallback;
+  }).map((b) => b.id);
+  assert.deepEqual(semEn, []);
+  assert.notEqual(getVerse('jo_at', 1, 1, 'en'), getVerse('jo_at', 1, 1, 'pt'));
+  assert.notEqual(getVerse('jn_at', 1, 1, 'en'), getVerse('jn_at', 1, 1, 'pt'));
 });
 
 test('devolve null fora do cânon, do capítulo ou do versículo', () => {

@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 28 - A Inquisição O Que Realmente Aconteceu
@@ -20,9 +20,14 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - Os erros reais e o pedido de perdão
 - Perguntas-chave
 
+## Termos do glossário
+- [[Heresia]]
+
 ## Referências usadas
-- [[The Spanish Inquisition A Historical Revision]]
+- [[The Spanish Inquisition, A Historical Revision]]
 - [[Tertio Millennio Adveniente §33 e §35]]
+- [[Atas do Simpósio sobre a Inquisição (Vaticano, 1998)]]
+- [[Carta de João Paulo II sobre o simpósio da Inquisição]]
 
 ## Artigos relacionados
 - [[29 - As Cruzadas no Contexto Histórico Real]]

@@ -1,6 +1,6 @@
 ---
 tags: [plano, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Trilho - Respondendo objeções protestantes
@@ -19,7 +19,7 @@ Funcionalidade: [[Plano de Leitura]]
 - Dia 6: [[19 - O Papa Cabeça Visível da Igreja]] (O papa, cabeça visível da Igreja)
 - Dia 7: [[07 - A Eucaristia Presença Real de Cristo]] (A Eucaristia: presença real)
 - Dia 8: [[21 - Por que Confessar a um Padre O Sacramento da Reconciliação]] (Por que confessar a um padre)
-- Dia 9: [[04 - Maria Intercessora, Não Mediadora]] (Maria intercessora, não mediadora)
+- Dia 9: [[04 - Maria Intercessora, Não Rival de Cristo]] (Maria intercessora, não rival de Cristo)
 - Dia 10: [[23 - Purgatório Purificação dos Que se Salvam]] (Purgatório: purificação dos que se salvam)
 - Dia 11: [[20 - Os Sete Sacramentos Sinais que Produzem Graça]] (Os sete sacramentos)
 - Dia 12: [[37 - Protestantismo]] (Protestantismo: origem e panorama)

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Atos 5,3-4
@@ -16,3 +16,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[27 - Testemunhas de Jeová]]
+- [[58 - A Santíssima Trindade Um Só Deus em Três Pessoas]]

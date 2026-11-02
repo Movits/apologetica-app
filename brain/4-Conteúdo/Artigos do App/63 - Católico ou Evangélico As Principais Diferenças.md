@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 63 - Católico ou Evangélico As Principais Diferenças
@@ -35,6 +35,8 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Gálatas 5,6]]
 - [[World Christian Encyclopedia]]
 - [[Concílio de Hipona]]
+- [[Concílio de Cartago]]
+- [[1 Timóteo 2,5]]
 
 ## Diálogos que levam a este artigo
 - [[No fim, católico e evangélico dá no mesmo, todos creem em Jesus]]

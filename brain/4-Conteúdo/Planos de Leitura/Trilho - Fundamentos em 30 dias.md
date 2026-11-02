@@ -1,6 +1,6 @@
 ---
 tags: [plano, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Trilho - Fundamentos em 30 dias
@@ -35,7 +35,7 @@ Funcionalidade: [[Plano de Leitura]]
 - Dia 22: [[60 - A Santa Missa O Que É e Por Que Participar]] (A Santa Missa: o que é e por que participar)
 - Dia 23: [[21 - Por que Confessar a um Padre O Sacramento da Reconciliação]] (Por que confessar a um padre)
 - Dia 24: [[24 - Fé e Obras Não Sola Fide]] (Fé E obras (não fé sozinha))
-- Dia 25: [[04 - Maria Intercessora, Não Mediadora]] (Intercessão dos santos: não é idolatria)
+- Dia 25: [[04 - Maria Intercessora, Não Rival de Cristo]] (Intercessão dos santos: não é idolatria)
 - Dia 26: [[14 - Maria, Mãe de Deus (Theotokos)]] (Maria, Mãe de Deus (Theotokos))
 - Dia 27: [[61 - O Que Acontece Depois da Morte Os Novíssimos]] (O que acontece depois da morte? Os Novíssimos)
 - Dia 28: [[59 - O Que é o Pecado Mortal, Venial e os Sete Pecados Capitais]] (O que é o pecado? Mortal e venial)

@@ -1,6 +1,6 @@
 ---
 tags: [termo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Sucessão Apostólica
@@ -11,4 +11,5 @@ Transmissão ininterrupta da missão e do poder sacramental dos Apóstolos até 
 Funcionalidade: [[Glossário]]
 
 ## Aparece nos artigos
+- [[19 - O Papa Cabeça Visível da Igreja]]
 - [[20 - Os Sete Sacramentos Sinais que Produzem Graça]]

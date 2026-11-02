@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 13 - A Virgindade Perpétua de Maria
@@ -29,10 +29,16 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Lucas 2,7]]
 - [[Gálatas 1,19]]
 - [[Catecismo §499-501]]
-- [[De Carne Christi]]
+- [[De Carne Christi, 17]]
+- [[Comentário a Mateus, X, 17]]
+- [[Marcos 15,40]]
+- [[Colossenses 4,10]]
+- [[Hegesipo, em Eusébio, História Eclesiástica II, 23 e IV, 22]]
+- [[Mateus 1,25]]
+- [[2 Samuel 6,23]]
 
 ## Artigos relacionados
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[12 - A Imaculada Conceição de Maria]]
 - [[14 - Maria, Mãe de Deus (Theotokos)]]
 

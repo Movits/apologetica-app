@@ -1,12 +1,12 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 52 - Nossa Senhora de Guadalupe e a Tilma
 > Nota gerada por `node scripts/generate-brain.mjs`. Não editar à mão.
 
-Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. O tecido deveria ter apodrecido em vinte anos. Quase quinhentos anos depois, continua intacto e sem explicação.
+Em 1531, no México, a imagem da Virgem ficou impressa no manto de um índio pobre. Quase quinhentos anos depois, o tecido grosseiro continua íntegro, e a figura original ainda desafia explicação.
 
 Categoria: [[História da Igreja]] | Funcionalidade: [[Artigos]]
 Arquivo: `src/data/articles/historia-igreja.js`
@@ -15,6 +15,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - A imagem que não devia existir
 - Os olhos da Virgem
 - Um sermão em imagem
+- A objeção histórica
 - O que isso significa
 - Perguntas-chave
 
@@ -26,7 +27,7 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - [[55 - Aparições de Maria Evidência para Deus]]
 - [[51 - O Milagre do Sol em Fátima (1917)]]
 - [[50 - O Sudário de Turim]]
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 
 ## No plano de leitura
 - [[Trilho - Aprofundamento]], dia 23: Nossa Senhora de Guadalupe e a tilma

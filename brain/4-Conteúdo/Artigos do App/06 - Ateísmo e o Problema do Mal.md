@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 06 - Ateísmo e o Problema do Mal
@@ -13,6 +13,7 @@ Arquivo: `src/data/articles/moral.js`
 
 ## Tópicos internos
 - Mal moral e mal natural
+- E o mal natural e o sofrimento dos animais?
 - Deus pode ter razões que não vemos
 - Um Deus que sofre conosco
 - A objeção que se volta contra si
@@ -22,6 +23,8 @@ Arquivo: `src/data/articles/moral.js`
 - [[Romanos 8,28]]
 - [[Cristianismo Puro e Simples]]
 - [[Catecismo §311]]
+- [[Jó 38,1-4]]
+- [[Romanos 8,19-22]]
 
 ## Artigos relacionados
 - [[10 - O Argumento Moral pela Existência de Deus]]
@@ -29,8 +32,8 @@ Arquivo: `src/data/articles/moral.js`
 ## Diálogos que levam a este artigo
 - [[Se Deus é bom, por que há sofrimento]]
 - [[Como um Deus bom permite o sofrimento de crianças inocentes]]
-- [[Não existe certo e errado absoluto — é tudo relativo à cultura]]
-- [[Ateus podem ser pessoas morais — não precisam de Deus para ter ética]]
+- [[Não existe certo e errado absoluto. É tudo relativo à cultura]]
+- [[Ateus podem ser pessoas morais. Não precisam de Deus para ter ética]]
 
 ## No plano de leitura
 - [[Trilho - Fundamentos em 30 dias]], dia 6: Se Deus existe, por que há mal?

@@ -1,6 +1,6 @@
 ---
 tags: [memoria]
-atualizado: 2026-07-08
+atualizado: 2026-10-29
 ---
 # Aprendizados
 
@@ -204,3 +204,30 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - Número em relatório e em commit se calcula, não se estima: o primeiro
   rascunho do commit das lições dizia 105 correções de conteúdo; os registros
   davam 112.
+
+## Sobre revisões em paralelo e merge de conteúdo (2026-10-29)
+
+- Duas sessões revisaram os mesmos 83 artigos ao mesmo tempo, sem saber uma da
+  outra, e o PR ficou com 430 blocos de conflito. Antes de uma passada grande
+  de conteúdo, olhar as branches e PRs abertos que mexem em `src/data/`, e
+  buscar o master de novo antes de aplicar.
+- Merge de conteúdo não se resolve bloco a bloco. O que funcionou: o lado já
+  publicado como base, a outra revisão reaplicada por cima com patches de
+  "old aparece exatamente uma vez", e só os que falham vão para adjudicação
+  (o outro lado já resolve? patch novo sobre o texto dele?). Patch cujo old
+  sumiu mas cujo new já está lá conta como já aplicado.
+- Chave duplicada em objeto literal vale a última, em silêncio. Os dois lados
+  acrescentaram o mesmo `fullSourceEn` ou a mesma entrada EN, e só o lint
+  acusou: rodar o lint logo depois de qualquer merge automático de dados.
+- Depois de um merge de conteúdo, as lições (e diálogos, quiz) podem continuar
+  afirmando o que o artigo acabou de corrigir. A passada de coerência achou
+  53 casos só nas lições.
+- O resultado de um Workflow é cortado em 1 MB no arquivo de saída; o
+  journal.jsonl tem o retorno inteiro de cada agente, e o rótulo vem nos
+  eventos `started`.
+- papalencyclicals.net recusa conexão daqui (firewall), então leitor no Brasil
+  também não abre: não usar como fonte. New Advent, Hanover College e o
+  vatican.va cobrem concílios e bulas.
+- A Cormorant não tem letras como ṓ nem os acentos combinantes. Com a Georgia
+  logo atrás na pilha de fontes, o navegador desmonta a letra e o acento fica
+  solto; Times New Roman ou Gentium antes da Georgia resolvem.

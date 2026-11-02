@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 74 - Como Rezar o Rosário
@@ -23,3 +23,4 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[João 2,1-11]]
 - [[Mateus 6,7]]
 - [[Lucas 1,42]]
+- [[Mateus 26,44]]

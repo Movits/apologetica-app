@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { references, referencesWithEn, withEn, referenceById } from '../src/data/references.js';
+import {
+  references, referencesWithEn, withEn, referenceById, translateYear, translateAuthor, resolveRefUrl,
+} from '../src/data/references.js';
 import { referencesEn } from '../src/data/references-en.js';
 import { SOURCE_IDS } from '../src/data/referenceSources.js';
 
@@ -42,12 +44,36 @@ test('withEn mescla a tradução campo a campo e deixa o PT intacto', () => {
 });
 
 test('withEn sem tradução devolve cópia igual, e nulo devolve nulo', () => {
-  const semEn = references.find((r) => !referencesEn[r.id]);
-  assert.ok(semEn, 'a dívida legada ainda tem referência sem EN');
+  // Com a dívida de tradução zerada, nenhuma ref real fica sem EN: o caso
+  // segue coberto por uma ref fictícia.
+  const semEn = references.find((r) => !referencesEn[r.id]) ?? { id: 'teste-sem-en', ref: 'Teste', text: 'só em português' };
   assert.deepEqual(withEn(semEn), semEn);
   assert.notEqual(withEn(semEn), semEn);
   assert.equal(withEn(null), null);
   assert.equal(withEn(undefined), null);
+});
+
+test('translateYear traduz intervalo de séculos e mantém o século único', () => {
+  assert.equal(translateYear('séc. VIII a VI a.C.', true), '8th to 6th century BC');
+  assert.equal(translateYear('séc. I d.C.', true), '1st century AD');
+  assert.equal(translateYear('séc. VI a.C.', true), '6th century BC');
+});
+
+// RefDetail e a lista abrem a fonte por aqui: no EN, o Catecismo em português
+// do Vaticano vira o índice inglês, e um urlEn curado tem prioridade.
+test('resolveRefUrl leva o Catecismo PT para o inglês e respeita urlEn', () => {
+  const cicPt = 'https://www.vatican.va/archive/cathechism_po/index_new/p1s2c1_198-421_po.html';
+  assert.equal(resolveRefUrl({ url: cicPt }, {}, false), cicPt);
+  assert.equal(resolveRefUrl({ url: cicPt }, {}, true), 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM');
+  assert.equal(resolveRefUrl({ url: cicPt }, { urlEn: 'https://example.org/en' }, true), 'https://example.org/en');
+  assert.equal(resolveRefUrl(null, null, true), null);
+});
+
+test('translateAuthor traduz evangelista e apóstolo', () => {
+  assert.equal(translateAuthor('Evangelista Lucas', true), 'Luke the Evangelist');
+  assert.equal(translateAuthor('Evangelista Marcos', true), 'Mark the Evangelist');
+  assert.equal(translateAuthor('Apóstolo Paulo', true), 'Apostle Paul');
+  assert.equal(translateAuthor('Evangelista Lucas', false), 'Evangelista Lucas');
 });
 
 test('translateFullSource: capítulo e versículo em inglês, com espaço e plural', async () => {

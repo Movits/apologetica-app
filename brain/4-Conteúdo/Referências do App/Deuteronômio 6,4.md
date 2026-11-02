@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Deuteronômio 6,4
@@ -16,3 +16,4 @@ Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
 - [[38 - Judaísmo]]
+- [[58 - A Santíssima Trindade Um Só Deus em Três Pessoas]]

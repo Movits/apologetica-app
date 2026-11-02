@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 54 - Nossa Senhora Aparecida
@@ -26,4 +26,4 @@ Arquivo: `src/data/articles/historia-igreja.js`
 - [[55 - Aparições de Maria Evidência para Deus]]
 - [[52 - Nossa Senhora de Guadalupe e a Tilma]]
 - [[51 - O Milagre do Sol em Fátima (1917)]]
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]

@@ -1,6 +1,6 @@
 ---
 tags: [referencia, conteudo-gerado, fonte-bíblia]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Apocalipse 5,8
@@ -15,5 +15,5 @@ Abre no app em `ap 5,8`.
 Funcionalidade: [[Referências]]
 
 ## Usada nos artigos
-- [[04 - Maria Intercessora, Não Mediadora]]
+- [[04 - Maria Intercessora, Não Rival de Cristo]]
 - [[76 - Como a Igreja Reconhece um Santo A Canonização]]

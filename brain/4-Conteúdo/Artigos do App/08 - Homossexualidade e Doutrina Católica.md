@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 08 - Homossexualidade e Doutrina Católica
@@ -14,6 +14,7 @@ Arquivo: `src/data/articles/moral.js`
 ## Tópicos internos
 - A dignidade de toda pessoa
 - Inclinação e ato
+- O que diz o Catecismo, por inteiro
 - O que diz o Novo Testamento
 - "Amor é amor"?
 - Perguntas-chave
@@ -29,6 +30,7 @@ Arquivo: `src/data/articles/moral.js`
 - [[1 Coríntios 6,9-11]]
 - [[Amoris Laetitia §250-251]]
 - [[Catecismo §2348-2349]]
+- [[Fiducia supplicans §31]]
 
 ## Artigos relacionados
 - [[25 - Aborto A Dignidade da Vida Humana]]

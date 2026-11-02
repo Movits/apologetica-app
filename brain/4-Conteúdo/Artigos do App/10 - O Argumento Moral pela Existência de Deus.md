@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 10 - O Argumento Moral pela Existência de Deus
@@ -16,6 +16,7 @@ Arquivo: `src/data/articles/existencia-deus.js`
 - Ateus que entenderam o que está em jogo
 - Vivemos como se a moral fosse real
 - O que o argumento não diz
+- E o dilema de Eutífron?
 - Perguntas-chave
 
 ## Referências usadas

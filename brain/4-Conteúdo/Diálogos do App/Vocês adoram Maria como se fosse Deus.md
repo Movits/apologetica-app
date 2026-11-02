@@ -1,6 +1,6 @@
 ---
 tags: [dialogo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # Vocês adoram Maria como se fosse Deus
@@ -10,4 +10,4 @@ Objeção: "Vocês adoram Maria como se fosse Deus."
 Categoria: Igreja Católica | Passos: 4 | Funcionalidade: [[Diálogos e Objeção do Dia]]
 Id: `d-maria-adoracao`
 
-Artigo completo: [[04 - Maria Intercessora, Não Mediadora]]
+Artigo completo: [[04 - Maria Intercessora, Não Rival de Cristo]]

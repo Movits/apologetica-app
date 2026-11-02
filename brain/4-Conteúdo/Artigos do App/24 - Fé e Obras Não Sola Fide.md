@@ -1,6 +1,6 @@
 ---
 tags: [artigo, conteudo-gerado]
-atualizado: 2026-10-13
+atualizado: 2026-11-02
 gerado: true
 ---
 # 24 - Fé e Obras Não Sola Fide
@@ -14,12 +14,14 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 ## Tópicos internos
 - "Não somente pela fé"
 - A posição católica
+- Onde está a diferença de verdade
 - As obras no juízo final
 - Tudo é graça
 - Perguntas-chave
 
 ## Termos do glossário
 - [[Sola Fide]]
+- [[Sacramento]]
 - [[Graça]]
 
 ## Referências usadas
@@ -29,8 +31,10 @@ Arquivo: `src/data/articles/igreja-catolica.js`
 - [[Romanos 3,28]]
 - [[Gálatas 5,6]]
 - [[Apocalipse 20,12-13]]
-- [[Catecismo §1991-2005]]
+- [[Catecismo §1987-2005]]
 - [[Romanos 2,6-7]]
+- [[Efésios 2,8-10]]
+- [[Concílio de Trento (1545-1563)]]
 
 ## Artigos relacionados
 - [[23 - Purgatório Purificação dos Que se Salvam]]
