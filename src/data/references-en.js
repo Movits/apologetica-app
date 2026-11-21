@@ -2327,4 +2327,112 @@ export const referencesEn = {
     authorEn: 'Historical Archive of the Secretariat of State (Holy See)',
     yearEn: '23 June 2022',
   },
+  // === GNOSTICISM AND RACIAL GNOSIS (articles 84 and 85) ===
+  'gn-1-31': {
+    topicEn: 'All of creation is very good',
+    textEn: 'And God saw all the things that he had made, and they were very good. And the evening and morning were the sixth day.',
+  },
+  'jo-1-14': {
+    topicEn: 'The Incarnation: the Word was made flesh',
+    textEn: 'And the Word was made flesh and dwelt among us (and we saw his glory, the glory as it were of the only begotten of the Father), full of grace and truth.',
+  },
+  '1jo-1-1': {
+    topicEn: 'Witnesses who touched the Word of life',
+    textEn: 'That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon and our hands have handled, of the word of life. For the life was manifested: and we have seen and do bear witness and declare unto you the life eternal, which was with the Father and hath appeared to us. That which we have seen and have heard, we declare unto you: that you also may have fellowship with us and our fellowship may be with the Father and with his Son Jesus Christ.',
+  },
+  'jo-18-20': {
+    topicEn: 'Jesus taught openly, nothing in secret',
+    textEn: 'Jesus answered him: I have spoken openly to the world. I have always taught in the synagogue and in the temple, whither all the Jews resort: and in secret I have spoken nothing.',
+  },
+  '1tm-4-1': {
+    topicEn: 'Every creature of God is good',
+    textEn: 'Now the Spirit manifestly saith that in the last times some shall depart from the faith, giving heed to spirits of error and doctrines of devils, Speaking lies in hypocrisy and having their conscience seared, Forbidding to marry, to abstain from meats, which God hath created to be received with thanksgiving by the faithful and by them that have known the truth. For every creature of God is good, and nothing to be rejected that is received with thanksgiving: For it is sanctified by the word of God and prayer.',
+  },
+  'cl-2-8': {
+    topicEn: 'Against vain philosophy: in Christ the Godhead dwells bodily',
+    textEn: 'Beware lest any man cheat you by philosophy and vain deceit: according to the tradition of men according to the elements of the world and not according to Christ. For in him dwelleth all the fulness of the Godhead corporeally.',
+  },
+  'at-17-26': {
+    topicEn: 'One human race, born of one man',
+    fullSourceEn: 'Acts of the Apostles, chapter 17, verses 24 to 26 (Saint Paul\'s speech on the Areopagus of Athens)',
+    textEn: 'God, who made the world and all things therein, he being Lord of heaven and earth, dwelleth not in temples made with hands. Neither is he served with men\'s hands, as though he needed any thing: seeing it is he who giveth to all life and breath and all things: And hath made of one, all mankind, to dwell upon the whole face of the earth, determining appointed times and the limits of their habitation.',
+  },
+  'gl-3-26': {
+    topicEn: 'All one in Christ: neither Jew nor Greek',
+    textEn: 'For you are all the children of God, by faith in Christ Jesus. For as many of you as have been baptized in Christ have put on Christ. There is neither Jew nor Greek: there is neither bond nor free: there is neither male nor female. For you are all one in Christ Jesus.',
+  },
+  'ap-7-9': {
+    topicEn: 'The saved come from every nation, tribe, people and tongue',
+    textEn: 'After this, I saw a great multitude, which no man could number, of all nations and tribes and peoples and tongues, standing before the throne and in sight of the Lamb, clothed with white robes, and palms in their hands.',
+  },
+  '1jo-4-20': {
+    topicEn: 'Whoever hates his brother does not love God',
+    textEn: 'If any man say: I love God, and hateth his brother; he is a liar. For he that loveth not his brother whom he seeth, how can he love God whom he seeth not?',
+  },
+  'cic-285': {
+    refEn: 'Catechism §285',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraph 285',
+    topicEn: 'Mistaken answers about the origin of the world, among them gnosis',
+    textEn: 'Since the beginning the Christian faith has been challenged by responses to the question of origins that differ from its own. (...) Still others affirm the existence of two eternal principles, Good and Evil, Light and Darkness, locked, in permanent conflict (Dualism, Manichaeism). According to some of these conceptions, the world (at least the physical world) is evil, the product of a fall, and is thus to be rejected or left behind (Gnosticism).',
+  },
+  'cic-1934': {
+    refEn: 'Catechism §1934-1935',
+    fullSourceEn: 'Catechism of the Catholic Church, paragraphs 1934 and 1935',
+    topicEn: 'Equal dignity of all people, against discrimination by race',
+    textEn: 'Created in the image of the one God and equally endowed with rational souls, all men have the same nature and the same origin. Redeemed by the sacrifice of Christ, all are called to participate in the same divine beatitude: all therefore enjoy an equal dignity. (...) "Every form of social or cultural discrimination in fundamental personal rights on the grounds of sex, race, color, social conditions, language, or religion must be curbed and eradicated as incompatible with God\'s design."',
+  },
+  'mit-brennender-sorge': {
+    refEn: 'Mit brennender Sorge §8 (Pius XI, 1937)',
+    fullSourceEn: 'Encyclical letter Mit brennender Sorge, on the Church and the German Reich, paragraph 8',
+    authorEn: 'Pope Pius XI',
+    yearEn: 'March 14, 1937',
+    topicEn: 'Condemnation of the idolatry of race',
+    textEn: '"Whoever exalts race, or the people, or the State, or a particular form of State, or the depositories of power, or any other fundamental value of the human community (...), whoever raises these notions above their standard value and divinizes them to an idolatrous level, distorts and perverts an order of the world planned and created by God; he is far from the true faith in God and from the concept of life which that faith upholds." The encyclical was written in German and read from the pulpits of Germany.',
+  },
+  'irineu-contra-heresias-prefacio': {
+    refEn: 'Against Heresies, Book I, preface',
+    fullSourceEn: 'Against Heresies (Adversus Haereses), Book I, preface, number 2',
+    authorEn: 'Saint Irenaeus of Lyon (disciple of Saint Polycarp, who was a disciple of Saint John)',
+    topicEn: 'Error dresses up as truth to deceive',
+    textEn: '"Error, indeed, is never set forth in its naked deformity, lest, being thus exposed, it should at once be detected. But it is craftily decked out in an attractive dress, so as, by its outward form, to make it appear to the inexperienced (ridiculous as the expression may seem) more true than the truth itself."',
+  },
+  'irineu-contra-heresias-1-6': {
+    refEn: 'Against Heresies, Book I, chapter 6',
+    fullSourceEn: 'Against Heresies (Adversus Haereses), Book I, chapter 6, numbers 1 and 2',
+    authorEn: 'Saint Irenaeus of Lyon',
+    topicEn: 'The three classes of men of the Valentinians',
+    textEn: 'Irenaeus describes the doctrine of the followers of Valentinus: there are three kinds of substance. All that is material "must of necessity perish", because it is incapable of receiving incorruption. What is psychic (animal) stands in the middle and goes to whichever side it inclines. What is spiritual was sent to be formed here and, according to them, will be saved in any case, not by conduct, but because it is spiritual by nature. The spiritual ones would be the Gnostics themselves.',
+  },
+  'apocrifo-joao': {
+    refEn: 'Apocryphon of John (Nag Hammadi)',
+    fullSourceEn: 'Apocryphon of John (Secret Book of John), Gnostic text in Coptic, Nag Hammadi codices II, III and IV and Berlin Papyrus 8502',
+    authorEn: 'Unknown Gnostic author (Sethian tradition)',
+    yearEn: 'composed in the 2nd century AD, copies from the 4th century',
+    topicEn: 'The Gnostic myth of Sophia and the Demiurge Yaldabaoth',
+    textEn: 'The text tells that Sophia, one of the divine beings of the Pleroma, wanted to generate without the consent of the Spirit and without her consort. From her came a misshapen being, Yaldabaoth, whom she hid in a cloud of light. Yaldabaoth, ignorant of his origin, created the archons and the lower world and declared: "I am a jealous God and there is no other God beside me", a phrase the text uses to mock the God of Israel. The codices were found in 1945, near Nag Hammadi, in Egypt.',
+  },
+  'goodrick-clarke-black-sun': {
+    fullSourceEn: 'Nicholas Goodrick-Clarke, Black Sun: Aryan Cults, Esoteric Nazism, and the Politics of Identity, New York, New York University Press, 2002',
+    authorEn: 'Nicholas Goodrick-Clarke (historian of esotericism, University of Exeter)',
+    topicEn: 'History of esoteric Nazism and of Miguel Serrano\'s "esoteric Hitlerism"',
+    textEn: 'Academic study of Aryan cults and postwar esoteric Nazism. It devotes a chapter to Miguel Serrano, a Chilean diplomat who, in books such as El Cordón Dorado (1978) and Adolf Hitler, el Último Avatâra (1984), presented the Gnostic Demiurge as Jehovah, maker of the material world, the Aryans as descendants of divine beings from Hyperborea, and Hitler as an avatar. The author is also known for The Occult Roots of Nazism (1985), on the Ariosophy of Guido von List and Jörg Lanz von Liebenfels.',
+  },
+  'lewontin-1972': {
+    refEn: 'Lewontin (1972), the apportionment of human diversity',
+    authorEn: 'Richard C. Lewontin (geneticist, University of Chicago and later Harvard)',
+    topicEn: 'Most human genetic variation lies within populations',
+    textEn: 'Analyzing 17 genetic markers in populations from all over the world, Lewontin concluded that about 85% of human genetic variation lies within each population, and only a small part, around 6%, separates the groups we usually call races.',
+  },
+  'rosenberg-2002': {
+    refEn: 'Rosenberg and colleagues (2002), genetic structure of human populations',
+    authorEn: 'Noah A. Rosenberg, Jonathan K. Pritchard, James L. Weber and others (geneticists)',
+    topicEn: 'Genetic variation within and between human populations',
+    textEn: 'Using 377 genetic markers in 1,056 people from 52 populations, the study showed that differences within populations account for 93% to 95% of genetic variation, and differences between the major regional groups for only 3% to 5%.',
+  },
+  'flynn-1987': {
+    refEn: 'Flynn (1987), massive IQ gains in 14 nations',
+    authorEn: 'James R. Flynn (political scientist and intelligence researcher, University of Otago)',
+    topicEn: 'The Flynn effect: IQ averages rise too fast to be genetic',
+    textEn: 'Gathering data from 14 countries, Flynn showed that average IQ test scores rose sharply within a few decades, in some cases by 5 to 25 points in a generation. Changes that fast cannot be genetic, which indicates that the tests capture much environmental influence (schooling, nutrition, health) rather than a fixed innate capacity.',
+  },
 };

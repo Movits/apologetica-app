@@ -25,7 +25,7 @@ test('cada artigo tem lição e cada lição tem artigo', () => {
   const orphan = lessonIds.filter((id) => !ARTICLE_IDS.includes(id));
   assert.deepEqual(missing, [], 'artigos sem lição');
   assert.deepEqual(orphan, [], 'lições sem artigo');
-  assert.equal(ARTICLE_IDS.length, 83);
+  assert.equal(ARTICLE_IDS.length, 85);
 });
 
 test('previsão: pergunta, três opções, correta válida, nota, tudo em PT e EN', () => {
