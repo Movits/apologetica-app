@@ -78,6 +78,10 @@ export const RELATED_ARTICLES = {
   // PENDÊNCIA: os artigos 56 a 83 ainda não têm relações definidas, então o
   // bloco "Ver também" aparece vazio neles (um terço do corpus).
   76: [4, 49, 55],       // Canonização → Maria intercessora, Milagres Eucarísticos, Aparições como evidência
+
+  // Gnosticismo
+  84: [85, 43, 6, 65],   // Gnosticismo → Gnose racial, Nova Era, Problema do Mal, Ocultismo
+  85: [84, 82, 10, 6],   // Gnose racial → Gnosticismo, Pio XII, Argumento Moral, Problema do Mal
 };
 
 export function getRelatedArticles(articleId, allArticles) {

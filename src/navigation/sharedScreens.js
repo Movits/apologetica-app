@@ -12,6 +12,8 @@ import RefDetailScreen from '../screens/RefDetailScreen';
 import QuizScreen from '../screens/QuizScreen';
 import DialogueScreen from '../screens/DialogueScreen';
 import DebateStrategiesScreen from '../screens/DebateStrategiesScreen';
+import QuestionPathsScreen from '../screens/QuestionPathsScreen';
+import QuestionPathScreen from '../screens/QuestionPathScreen';
 import BibleMapScreen from '../screens/BibleMapScreen';
 import LegalScreen from '../screens/LegalScreen';
 import JourneyScreen from '../screens/JourneyScreen';
@@ -61,6 +63,9 @@ export function sharedScreens(Nav, t) {
       <Nav.Screen name="Quiz" component={QuizScreen} options={{ title: t('header.quiz') }} />
       <Nav.Screen name="Dialogue" component={DialogueScreen} options={{ title: t('header.dialogue') }} />
       <Nav.Screen name="DebateStrategies" component={DebateStrategiesScreen} options={{ title: t('header.debate') }} />
+      <Nav.Screen name="QuestionPaths" component={QuestionPathsScreen} options={{ title: t('header.questionPaths') }} />
+      {/* O título vira o nome do roteiro (setOptions na tela); este é o de espera. */}
+      <Nav.Screen name="QuestionPath" component={QuestionPathScreen} options={{ title: t('header.questionPath') }} />
       <Nav.Screen name="BibleMap" component={BibleMapScreen} options={{ title: t('header.bibleMap') }} />
       <Nav.Screen name="Journey" component={JourneyScreen} options={{ title: t('header.journey') }} />
       <Nav.Screen name="Review" component={ReviewScreen} options={{ title: t('header.review') }} />

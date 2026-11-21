@@ -23,9 +23,9 @@ npx expo export -p web         # gera dist/ (o que o deploy publica)
 com um hook de resolução (`tests/resolve-hook.mjs`) que aceita os imports sem
 extensão do Metro. Só módulos **puros** são testáveis (nada de `react-native`,
 `expo-*`, `.jsx` ou `require` de imagem): `src/theme/tokens.js`,
-`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory}.js`,
+`src/navigation/links.js`, `src/utils/{daily,verseRef,i18nData,tts,artImage,journey,review,reviewItems,quizHistory,questionPaths}.js`,
 `src/theme/palette.js` e os dados de `src/data/references.js`, `src/data/artworks/`,
-`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js`, `src/data/journeyMarks.js`,
+`src/data/lessons/` (integridade das lições da Jornada), `src/data/quiz.js`, `src/data/questionPaths.js` (roteiros de Perguntas que expõem), `src/data/journeyMarks.js`,
 `src/data/dailyVerses.js` (texto literal das Bíblias do app) e as duas Bíblias
 (`tests/bibleAveMaria.test.mjs` confere a forma dos 1.334 capítulos contra
 `tests/fixtures/avemaria-forma.json`; `tests/bibles.test.mjs`, livros e capítulos).
@@ -193,6 +193,7 @@ mantenha esses dois em sincronia.
 - `readingPlan.js` — plano de leitura em dois trilhos (Fundamentos + Aprofundamento).
 - `jesusJourney.js` — mapa da jornada de Jesus (21 paradas, usado pelo BibleMapScreen).
 - `debateStrategies.js` — táticas de debate e falácias.
+- `questionPaths.js` — roteiros de Perguntas que expõem (crença testada, perguntas marcáveis com o que cada uma expõe, conclusão e artigo de apoio). Telas `QuestionPaths` e `QuestionPath` em `sharedScreens.js`.
 - `lessons/` — lições da Jornada por categoria (ver "Jornada").
 - `journeyMarks.js` — marcas vetoriais das conquistas e níveis da Jornada (elementos SVG por id).
 

@@ -231,3 +231,5 @@ uma descoberta valer pra sempre. Nunca apagar itens, só marcar como obsoletos.
 - A Cormorant não tem letras como ṓ nem os acentos combinantes. Com a Georgia
   logo atrás na pilha de fontes, o navegador desmonta a letra e o acento fica
   solto; Times New Roman ou Gentium antes da Georgia resolvem.
+
+- A API e o upload.wikimedia.org devolvem 429 em rajadas no container da nuvem (até pelo wsrv.nl). Esperar alguns minutos e buscar com User-Agent próprio e backoff (15s, 30s...) resolve. (2026-11-21)
