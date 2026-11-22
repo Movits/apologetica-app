@@ -682,7 +682,7 @@ Vale guardar esse ponto. Para a gnose, a salvação não depende da graça nem d
 
 ## Como sabemos disso
 
-Durante séculos, quase tudo o que se sabia vinha dos Padres da Igreja que refutaram a gnose. Em 1945, camponeses encontraram em Nag Hammadi, no Egito, uma coleção de livros gnósticos em copta, copiados no século IV, entre eles o Apócrifo de João e o Evangelho de Tomé. Os textos confirmaram, no essencial, o que Irineu tinha descrito. Também confirmaram a data: são escritos do século II em diante, bem depois dos Evangelhos, das cartas de Paulo e dos outros livros do Novo Testamento, todos do século I.
+Durante séculos, quase tudo o que se sabia vinha dos Padres da Igreja que refutaram a gnose. Em 1945, camponeses encontraram em Nag Hammadi, no Egito, uma coleção de livros gnósticos em copta, copiados no século IV, entre eles o Apócrifo de João e o Evangelho de Tomé. Os textos confirmaram, no essencial, o que Irineu tinha descrito. Quanto à data, a maioria dos estudiosos coloca esses escritos do século II em diante. O mais discutido é o Evangelho de Tomé, e mesmo ele costuma ser datado do século II. Os Evangelhos, as cartas de Paulo e os outros livros do Novo Testamento são do século I.
 
 ## O que a fé cristã responde
 
@@ -761,7 +761,7 @@ Ou seja: quem fala assim não está inventando conexões do nada. Está repetind
 
 ## E a ciência? Raça e QI
 
-A genética não sustenta a ideia de raças humanas separadas como espécies diferentes. Somos uma espécie jovem e com pouca variação genética. Em 1972, Richard Lewontin mostrou que a maior parte dessa variação, cerca de 85%, está dentro de qualquer população, e só uma pequena parte separa os grandes grupos continentais. Rosenberg e colegas, em 2002, com centenas de marcadores, chegaram a algo entre 93% e 95% dentro das populações. Duas pessoas do mesmo "grupo" podem ser mais diferentes entre si do que de alguém de outro continente.
+A genética não sustenta a ideia de raças humanas separadas como espécies diferentes. Somos uma espécie jovem e com pouca variação genética. Em 1972, Richard Lewontin mostrou que a maior parte dessa variação, cerca de 85%, está dentro de qualquer população, e só uma pequena parte separa os grandes grupos continentais. Rosenberg e colegas, em 2002, com centenas de marcadores, chegaram a algo entre 93% e 95% dentro das populações. É verdade que a origem geográfica deixa marcas: com muitos marcadores, dá para estimar de que região vieram os antepassados de alguém, e o próprio estudo de Rosenberg encontrou agrupamentos regionais. Mas essa variação é gradual, sem fronteiras nítidas, e não coincide com as categorias de "raça" usadas no dia a dia. Sobretudo, origem geográfica não diz nada sobre quem tem mais valor ou mais "espírito".
 
 Sobre o QI, três observações. Primeiro, o teste mede desempenho num momento, e esse desempenho depende muito de nutrição, saúde e escola: o pesquisador James Flynn mostrou que as médias de países inteiros subiram muito no século XX (Flynn, 1987), rápido demais para ser genética. Segundo, uma média de grupo não diz nada sobre a pessoa concreta à sua frente. Terceiro, e mais importante: a dignidade humana não vem do QI. Se viesse, uma criança com síndrome de Down ou um idoso com Alzheimer valeriam menos. Essa foi exatamente a lógica do programa nazista Aktion T4, que matou dezenas de milhares de pessoas com deficiência a partir de 1939. Para a fé, o valor de uma pessoa está em ser imagem de Deus, não no seu desempenho.
 

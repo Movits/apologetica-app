@@ -24,7 +24,7 @@ Keep this point in mind. For gnosis, salvation does not depend on grace or conve
 
 ## How we know this
 
-For centuries, almost everything known came from the Church Fathers who refuted gnosis. In 1945, peasants found at Nag Hammadi, in Egypt, a collection of Gnostic books in Coptic, copied in the 4th century, among them the Apocryphon of John and the Gospel of Thomas. The texts confirmed, in essence, what Irenaeus had described. They also confirmed the dating: they were written from the 2nd century on, well after the Gospels, the letters of Paul and the other books of the New Testament, all from the 1st century.
+For centuries, almost everything known came from the Church Fathers who refuted gnosis. In 1945, peasants found at Nag Hammadi, in Egypt, a collection of Gnostic books in Coptic, copied in the 4th century, among them the Apocryphon of John and the Gospel of Thomas. The texts confirmed, in essence, what Irenaeus had described. As for dating, most scholars place these writings from the 2nd century on. The most debated is the Gospel of Thomas, and even it is usually dated to the 2nd century. The Gospels, the letters of Paul and the other books of the New Testament are from the 1st century.
 
 ## What the Christian faith answers
 
@@ -95,7 +95,7 @@ In other words: whoever talks like this is not inventing connections out of noth
 
 ## And science? Race and IQ
 
-Genetics does not support the idea of human races separated like different species. We are a young species with little genetic variation. In 1972, Richard Lewontin showed that most of that variation, about 85%, lies within any population, and only a small part separates the large continental groups. Rosenberg and colleagues, in 2002, using hundreds of markers, found between 93% and 95% within populations. Two people from the same "group" can be more different from each other than from someone from another continent.
+Genetics does not support the idea of human races separated like different species. We are a young species with little genetic variation. In 1972, Richard Lewontin showed that most of that variation, about 85%, lies within any population, and only a small part separates the large continental groups. Rosenberg and colleagues, in 2002, using hundreds of markers, found between 93% and 95% within populations. It is true that geographic origin leaves a mark: with many markers one can estimate which region someone's ancestors came from, and Rosenberg's own study found regional clusters. But this variation is gradual, without sharp borders, and does not match the everyday categories of "race". Above all, geographic origin says nothing about who has more worth or more "spirit".
 
 On IQ, three observations. First, the test measures performance at one moment, and that performance depends heavily on nutrition, health and schooling: the researcher James Flynn showed that the averages of entire countries rose sharply in the 20th century (Flynn, 1987), too fast to be genetic. Second, a group average says nothing about the concrete person in front of you. Third, and most important: human dignity does not come from IQ. If it did, a child with Down syndrome or an elderly person with Alzheimer's would be worth less. That was exactly the logic of the Nazi Aktion T4 program, which killed tens of thousands of people with disabilities from 1939 on. For the faith, a person's worth lies in being the image of God, not in his performance.
 

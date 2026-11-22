@@ -1341,8 +1341,8 @@ const lessons = {
           'That they had been written by the apostles themselves',
         ],
         correct: 2,
-        why: 'Os códices em copta, como o Apócrifo de João, confirmaram no essencial o que Irineu descrevera. E são escritos do século II em diante, bem depois do Novo Testamento, todo do século I.',
-        whyEn: 'The Coptic codices, such as the Apocryphon of John, essentially confirmed what Irenaeus had described. And they were written from the 2nd century on, well after the New Testament, all from the 1st century.',
+        why: 'Os códices em copta, como o Apócrifo de João, confirmaram no essencial o que Irineu descrevera. E a maioria dos estudiosos os data do século II em diante, depois do Novo Testamento, que é do século I.',
+        whyEn: 'The Coptic codices, such as the Apocryphon of John, essentially confirmed what Irenaeus had described. And most scholars date them from the 2nd century on, after the New Testament, which is from the 1st century.',
       },
       {
         question: 'Por que o artigo diz que o mito gnóstico não resolve o problema do mal?',

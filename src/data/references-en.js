@@ -2427,7 +2427,7 @@ export const referencesEn = {
     refEn: 'Rosenberg and colleagues (2002), genetic structure of human populations',
     authorEn: 'Noah A. Rosenberg, Jonathan K. Pritchard, James L. Weber and others (geneticists)',
     topicEn: 'Genetic variation within and between human populations',
-    textEn: 'Using 377 genetic markers in 1,056 people from 52 populations, the study showed that differences within populations account for 93% to 95% of genetic variation, and differences between the major regional groups for only 3% to 5%.',
+    textEn: 'Using 377 genetic markers in 1,056 people from 52 populations, the study showed that differences within populations account for 93% to 95% of genetic variation, and differences between the major regional groups for only 3% to 5%. The same study showed that, with many markers together, people cluster by broad regions of origin, which identifies geographic ancestry, not worth.',
   },
   'flynn-1987': {
     refEn: 'Flynn (1987), massive IQ gains in 14 nations',

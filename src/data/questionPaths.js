@@ -236,6 +236,8 @@ export const QUESTION_PATHS = [
         qEn: 'If most human genetic variation lies within each group, not between them, how could race be the fundamental division of humanity?',
         aim: 'Lewontin (1972) e Rosenberg (2002): de 85% a 95% da variação está dentro das populações.',
         aimEn: 'Lewontin (1972) and Rosenberg (2002): 85% to 95% of variation lies within populations.',
+        follow: 'Se ele disser que o DNA mostra a origem de alguém, concorde: mostra a região dos antepassados. Mas isso é geografia, não valor nem espírito.',
+        followEn: 'If he says DNA shows someone\'s origin, agree: it shows where the ancestors came from. But that is geography, not worth or spirit.',
       },
       {
         q: 'A média de QI de um grupo diz alguma coisa sobre a pessoa concreta que você conhece? Ela é a média?',
@@ -468,8 +470,8 @@ export const QUESTION_PATHS = [
         aimEn: 'In the 7th century, the Quran treats the Gospel Christians had as reliable.',
       },
       {
-        q: 'Temos manuscritos completos do Novo Testamento, como o Códice Sinaítico, do século IV, mais de duzentos anos antes de Maomé. Eles dizem o mesmo que a Bíblia de hoje. Quando teria acontecido a corrupção?',
-        qEn: 'We have complete New Testament manuscripts, like Codex Sinaiticus from the 4th century, more than two hundred years before Muhammad. They say the same as today\'s Bible. When would the corruption have happened?',
+        q: 'Temos manuscritos completos do Novo Testamento, como o Códice Sinaítico, do século IV, mais de duzentos anos antes de Maomé. No essencial, dizem o mesmo que a Bíblia de hoje. Quando teria acontecido a corrupção?',
+        qEn: 'We have complete New Testament manuscripts, like Codex Sinaiticus from the 4th century, more than two hundred years before Muhammad. In substance, they say the same as today\'s Bible. When would the corruption have happened?',
         aim: 'Se foi antes de Maomé, o Alcorão confirmaria um texto falso. Se foi depois, os manuscritos antigos mostrariam a diferença, e não mostram.',
         aimEn: 'If it was before Muhammad, the Quran would be confirming a false text. If after, the ancient manuscripts would show the difference, and they do not.',
       },
@@ -519,8 +521,8 @@ export const QUESTION_PATHS = [
         aimEn: 'Sets the yardstick before measuring Jesus, so no one changes the criterion halfway.',
       },
       {
-        q: 'As biografias mais antigas que temos de Alexandre foram escritas uns 400 anos depois dele. As cartas de Paulo, uns 20 anos depois de Jesus. Por que Alexandre passa e Jesus não?',
-        qEn: 'The oldest biographies we have of Alexander were written some 400 years after him. Paul\'s letters, some 20 years after Jesus. Why does Alexander pass and Jesus not?',
+        q: 'As biografias mais antigas que temos de Alexandre foram escritas quase 300 anos depois dele. As cartas de Paulo, uns 20 anos depois de Jesus. Por que Alexandre passa e Jesus não?',
+        qEn: 'The oldest biographies we have of Alexander were written almost 300 years after him. Paul\'s letters, some 20 years after Jesus. Why does Alexander pass and Jesus not?',
         aim: 'Mostra o duplo padrão: Jesus tem fontes muito mais próximas que a maioria dos personagens antigos.',
         aimEn: 'Shows the double standard: Jesus has sources far closer than most ancient figures.',
       },

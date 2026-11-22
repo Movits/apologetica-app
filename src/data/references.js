@@ -5134,7 +5134,7 @@ export const references = [
     author: 'Noah A. Rosenberg, Jonathan K. Pritchard, James L. Weber e outros (geneticistas)',
     year: '2002',
     topic: 'Variação genética dentro e entre populações humanas',
-    text: 'Com 377 marcadores genéticos em 1.056 pessoas de 52 populações, o estudo mostrou que as diferenças dentro das populações respondem por 93% a 95% da variação genética, e as diferenças entre os grandes grupos regionais, por apenas 3% a 5%.',
+    text: 'Com 377 marcadores genéticos em 1.056 pessoas de 52 populações, o estudo mostrou que as diferenças dentro das populações respondem por 93% a 95% da variação genética, e as diferenças entre os grandes grupos regionais, por apenas 3% a 5%. O mesmo estudo mostrou que, com muitos marcadores juntos, as pessoas se agrupam por grandes regiões de origem, o que identifica ancestralidade geográfica, não valor.',
     url: 'https://doi.org/10.1126/science.1078311',
     citation: { kind: 'journal-article', container: 'Science', volume: '298', issue: '5602', pages: '2381-2385', doi: '10.1126/science.1078311', peerReviewed: true },
   },
