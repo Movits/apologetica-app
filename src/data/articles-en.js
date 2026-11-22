@@ -6,66 +6,70 @@ export const ARTICLES_EN = {
   84: {
     titleEn: 'Gnosticism: the Demiurge, Sophia and the Christian Answer',
     summaryEn: 'A lesser, defective god who made the world, a Sophia who fell, divine sparks trapped in matter. What gnosis teaches, why the Church rejected it from the 2nd century, and why it has come back strongly online.',
-    bodyEn: `Videos about the "false god who created this world", about Sophia, about archons who keep us trapped in a matrix, reach millions. To newcomers it feels like a daring discovery. In fact it is one of the oldest ideas Christianity ever faced, and the answer the Church gave in the 2nd century still stands.
+    bodyEn: `Videos about the "false god who created this world", about Sophia, about archons who keep us trapped in a matrix, reach millions. To newcomers it feels like a daring discovery. In fact it is one of the oldest ideas Christianity ever faced, and the questions that took it apart in the 2nd century still have no answer.
 
 ## What gnosis teaches
 
 Gnosis means knowledge. The Gnostics of the 2nd and 3rd centuries, such as Valentinus, Basilides and the so-called Sethians, did not form a single church, but they told similar versions of one myth.
 
-At the top is a perfect God, distant and unknown, surrounded by a fullness of divine beings, the Pleroma. The last of these beings, Sophia (Wisdom), wanted to generate on her own, without the Father's consent and without her partner. From that fault came a deformed and ignorant being, the Demiurge, whom the Apocryphon of John calls Yaldabaoth. He believes himself the only god and builds the material world, with its archons (rulers), as a prison.
+At the top is a perfect God, distant and unknown, surrounded by a fullness of divine beings, the Pleroma. The last of these beings, Sophia (Wisdom), wanted to generate on her own, without the consent of the Spirit and without her partner. From that fault came a deformed and ignorant being, the Demiurge, whom the Apocryphon of John calls Yaldabaoth. He believes himself the only god and builds the material world, with its archons (rulers), as a prison.
 
-Some sparks of divine light were trapped in the bodies of certain people. Salvation would be to awaken that spark through secret knowledge and escape matter. Many Gnostics identified the Demiurge with the God of the Old Testament, and Christ with a messenger of the Pleroma who only seemed to have a body and only seemed to die on the cross.
+Some sparks of divine light were trapped in the bodies of certain people. Salvation would be to awaken that spark through secret knowledge and escape matter. Many Gnostics identified the Demiurge with the God of the Old Testament, and Christ with a messenger of the Pleroma who only seemed to have a body.
 
-## Three kinds of people
-
-Saint Irenaeus of Lyon, who wrote "Against Heresies" around the year 180, describes how the followers of Valentinus divided humanity into three classes: the spiritual (pneumatics), saved by nature, the psychics, who could lean either way, and the material (hylics), destined to perish along with matter. The spiritual ones were, of course, the Gnostics themselves.
-
-Keep this point in mind. For gnosis, salvation does not depend on grace or conversion, but on what you are by birth. That splits humanity into an enlightened elite and a worthless mass, and opens the door to much worse things, as the article "Racial Gnosis" shows.
+Saint Irenaeus of Lyon, who wrote "Against Heresies" around the year 180, describes how the followers of Valentinus divided humanity into three classes: the spiritual, saved by nature, the psychics, who could lean either way, and the material, destined to perish with matter. The spiritual ones were, of course, the Gnostics themselves. For gnosis, salvation does not depend on grace or conversion, but on what you are by birth, and that is the point that opens the door to much worse things, as the article "Racial Gnosis" shows.
 
 ## How we know this
 
-For centuries, almost everything known came from the Church Fathers who refuted gnosis. In 1945, peasants found at Nag Hammadi, in Egypt, a collection of Gnostic books in Coptic, copied in the 4th century, among them the Apocryphon of John and the Gospel of Thomas. The texts confirmed, in essence, what Irenaeus had described. As for dating, most scholars place these writings from the 2nd century on. The most debated is the Gospel of Thomas, and even it is usually dated to the 2nd century. The Gospels, the letters of Paul and the other books of the New Testament are from the 1st century.
+For centuries, almost everything known came from the Church Fathers who refuted gnosis. In 1945, peasants found at Nag Hammadi, in Egypt, a collection of Gnostic books in Coptic, copied in the 4th century, among them the Apocryphon of John and the Gospel of Thomas. The texts confirmed, in essence, what Irenaeus had described. As for dating, most scholars place these writings from the 2nd century on. The most debated is the Gospel of Thomas, and even it is usually dated to the 2nd century.
 
-## What the Christian faith answers
+## The myth from the inside: the questions it does not answer
 
-**Creation is good.** At the end of the sixth day, "God saw all the things that he had made, and they were very good" (Genesis 1:31). The Creed begins right there: "I believe in God, the Father almighty, Creator of heaven and earth". There are not two gods, a good hidden one and an evil creator. The Catechism, in paragraph 285, names gnosis among the mistaken answers about the origin of the world, the one that sees matter as evil and as something to flee.
+Whoever believes in gnosis thinks the Bible is the Demiurge's work, so quoting verses does not settle the conversation. Irenaeus knew this. Before any quotation, he laid out the Gnostic systems from the inside and showed where they contradict themselves. His questions still work.
 
-**The Word was made flesh.** "And the Word was made flesh and dwelt among us" (John 1:14). Saint John insists that he touched Jesus with his own hands (1 John 1:1) and gives the criterion: "Every spirit which confesseth that Jesus Christ is come in the flesh is of God" (1 John 4:2-3). A Christ who only seems to have a body died for no one and raised no one.
+**How does a fault happen inside perfection?** If the true God and the Pleroma are perfect, how did Sophia's error arise there? Either perfection can fail, and then it was not perfection, or the fall was allowed, and then the true God is answerable for the Demiurge and for this world. The myth promised to explain the origin of evil, but only pushed it one floor up.
 
-**There is no secret doctrine.** Jesus said before the high priest: "I have spoken openly to the world (...) and in secret I have spoken nothing" (John 18:20). Irenaeus made the historical argument: if the apostles had a reserved teaching, they would have handed it to the men to whom they entrusted the churches, and those churches, with known lists of bishops, teach the same public faith.
+**Is the Pleroma really full?** The Demiurge and the world lie outside the Pleroma. Then the Pleroma has a border, something it does not contain. Irenaeus put it this way: if there is anything beyond God, "He is not then the Pleroma of all, nor does He contain all" (Against Heresies II.1.2). A God who needs an outside is not infinite.
 
-**Despising matter is a sign of error.** Saint Paul already warned against those "forbidding to marry, to abstain from meats, which God hath created", and answers: "every creature of God is good" (1 Timothy 4:1-4). And he warns against "philosophy and vain deceit", because in Christ "dwelleth all the fulness of the Godhead corporeally" (Colossians 2:8-9).
+**Why trust one's own reason?** If the Demiurge made matter, he also made the brain of whoever is thinking. Every argument for gnosis runs on equipment built by an ignorant god. And if the answer is that the spark knows directly, the question remains: how do you tell that knowledge from a strong feeling?
 
-## The myth does not solve evil, it only moves it
+**Why does the true revelation need the false one?** The Apocryphon of John is largely Genesis retold, and it puts lines from Exodus and Isaiah in Yaldabaoth's mouth ("I am a jealous God and there is no other God beside me"). Without the Bible, the Gnostic myth does not even exist. It depends on the book it claims to unmask.
 
-Gnosis attracts because it seems to explain suffering: the world is bad because whoever made it is bad. But the explanation falls apart with one more question. If the Pleroma is perfect, how did Sophia's fault happen inside it? Evil was not explained, it was only moved one floor up.
+**Which gnosis?** The Gnostic schools contradicted one another. Irenaeus remarked that "every one of them generates something new, day by day" (Against Heresies I.18.1). A revelation that changes with each teacher looks more like invention.
 
-There is another problem. If the material world is the work of an ignorant god, why trust the reason, logic and conscience of the Gnostic, which work in a brain made of that same material? Whoever calls matter a prison uses, to think so, everything the prison gave him.
+## Even a pagan philosopher saw it
 
-The Christian answer is simpler and more serious. God is good, the world is good, and evil is a wound, the lack of a good that should be there, not a substance with its own creator. The wound came in through the misuse of freedom, and God does not tell anyone to flee the world: he himself enters the world to heal it. The Christian promise is not leaving the body, it is the resurrection of the body, and creation itself "shall be delivered from the servitude of corruption" (Romans 8:19-21).
+One need not be a Christian to see the problems. Plotinus, the great Neoplatonist philosopher of the 3rd century, who never became a Christian, wrote a whole treatise against the Gnostics (Enneads II.9). For him, there is no Kosmos nobler than this one, which is an image of the intelligible world. He criticized those who seek perfection thinking only they can reach it. And he asked a sharp question: if Providence cares only for the Gnostics, why are they still in this world? And if it cares for them here, then it acts here, and the world is not abandoned.
+
+## What the Christian faith proposes
+
+For those who already accept Christian revelation, the answer is direct. "God saw all the things that he had made, and they were very good" (Genesis 1:31), and the Creed begins by confessing one God, "Creator of heaven and earth". The Catechism, in paragraph 285, names gnosis among the mistaken answers about the origin of the world.
+
+The center is the Incarnation: "the Word was made flesh and dwelt among us" (John 1:14). Saint John insists that he touched Jesus with his own hands (1 John 1:1-3) and gives the criterion: "every spirit which confesseth that Jesus Christ is come in the flesh is of God" (1 John 4:2-3). Jesus did not teach a secret for initiates: "I have spoken openly to the world (...) and in secret I have spoken nothing" (John 18:20). Saint Paul warns against those forbidding marriage and foods, because "every creature of God is good" (1 Timothy 4:1-5), and against "philosophy and vain deceit", because in Christ "dwelleth all the fulness of the Godhead corporeally" (Colossians 2:8-9).
+
+Evil, in this view, is not a substance with its own creator, but a wound, the lack of a good that should be there, and it came in through the misuse of freedom. God does not tell anyone to flee the world: he himself enters it to heal it. The promise is not leaving the body, it is the resurrection of the body, and creation itself "shall be delivered from the servitude of corruption" (Romans 8:19-21).
 
 ## Why gnosis came back
 
-It never fully disappeared. The Cathars of the Middle Ages held a similar view, and today it reappears in esotericism, in films like The Matrix and in channels that promise an "awakening". The appeal is the same as always. Gnosis offers a secret, an easy explanation for pain and, above all, the feeling of belonging to a superior minority that sees what others cannot. Irenaeus already said that error never shows itself naked, lest it be recognized, but dresses attractively, to seem more true than the truth itself.
+It never fully disappeared. The Cathars of the Middle Ages held a similar view, and today it reappears in esotericism, in films like The Matrix and in channels that promise an "awakening". The appeal is the same as always: a secret, an easy explanation for pain and the feeling of belonging to a minority that sees what others cannot. Irenaeus already said that error never shows itself naked, lest it be recognized, but dresses attractively, to seem more true than the truth itself.
 
 ## Talking with a Gnostic friend
 
-Do not start by mocking. Ask what drew him in, what pain or injustice he wanted to explain. Then ask questions about the myth itself: where the fault in the Pleroma comes from, why trust a reason made by the Demiurge, who decides who has the spark. The question path "The imperfect god" (Tools, Questions that expose) lays these questions out in order. And show, with your life, that the created world, with food, marriage, beauty and ordinary people, is a gift and not a cell.
+Do not start by mocking or by quoting the Bible. Ask what drew him in, what pain or injustice he wanted to explain. Then ask the questions of the myth itself, one at a time, and at the end the most honest one of all: what would change your mind? The question path "The imperfect god" (Practice, Questions that Expose) lays out this sequence. And show, with your life, that the created world, with food, marriage, beauty and ordinary people, is a gift and not a cell.
 
 ## Key questions
 
 1. If the supreme God is perfect, how did the fault that produced the Demiurge arise inside his fullness?
 
-2. If matter is the work of an ignorant god, why trust the reason of someone who thinks with a material brain?
+2. If something exists outside the Pleroma, is it still the fullness of all?
 
-3. Who decides who has the divine spark and who is mere matter? What is the proof?
+3. If matter is the work of an ignorant god, why trust the reason of someone who thinks with a material brain?
 
-4. Jesus said he taught nothing in secret. Where, then, is the secret knowledge that gnosis promises?`,
+4. If the Bible belongs to the Demiurge, why does the Gnostic myth need to retell Genesis in order to exist?`,
   },
   85: {
     titleEn: 'Racial Gnosis: When Heresy Turns into Racism',
     summaryEn: 'Online, a "gnosis" circulates that calls other peoples "chaos", children of the demiurge or men without spirit. Where this idea comes from, why it is not ancient gnosis, and why faith and science take it apart.',
-    bodyEn: `It happens often: someone gets interested in gnosis, starts talking about the demiurge and Sophia, and soon afterwards starts talking about inferior races, racial war, IQ and peoples who are supposedly "chaos". Is it a forced connection, or part of the package? The honest answer has two parts. The ancient Gnostic texts say nothing about skin color. But there is a modern current that deliberately joined gnosis and racism, and the logic of ancient gnosis makes that graft very easy.
+    bodyEn: `It happens often: someone gets interested in gnosis, starts talking about the demiurge and Sophia, and soon afterwards starts talking about inferior races, racial war, IQ and peoples who are supposedly "chaos". Is it a forced connection, or part of the package? The honest answer has two parts. The ancient Gnostic texts say nothing about skin color. But there is a modern current that deliberately joined gnosis and racism, and the logic of ancient gnosis makes that graft easy.
 
 ## What ancient gnosis said, and what it did not
 
@@ -75,47 +79,63 @@ The danger lies in the structure. If some are born with the divine spark and oth
 
 ## Modern racial gnosis
 
-That swap was made, by people with names. In early 20th-century Austria, so-called Ariosophy, of Guido von List and Jörg Lanz von Liebenfels, mixed occultism with the idea of a divine Aryan race and inferior races. The historian Nicholas Goodrick-Clarke showed how this milieu fed the occultism surrounding Nazism.
+That swap was made, by people with names. In early 20th-century Austria, so-called Ariosophy, of Guido von List and Jörg Lanz von Liebenfels, mixed occultism with the idea of a divine Aryan race. The historian Nicholas Goodrick-Clarke showed how this milieu fed the occultism surrounding Nazism.
 
-After the war, the Chilean diplomat Miguel Serrano (1917 to 2009) created what he called "esoteric Hitlerism". In it, the Demiurge is Jehovah, the God of the Bible, maker of the material world and of the inferior peoples, the Aryans descend from divine beings from a polar homeland, Hyperborea, and Hitler is treated as an avatar. In the same milieu, the Argentine Luis Felipe Moyano (1946 to 1996), who signed as Nimrod de Rosario, wrote the "Fundamentals of Hyperborean Wisdom", which set the virya, the man who supposedly has an eternal spirit, against the pasú, the animal-man, supposedly created by the Demiurge. These texts circulate in translation online, together with the vocabulary of "chaos", "Kali Yuga" and racial war.
+After the war, the Chilean diplomat Miguel Serrano (1917 to 2009) created what he called "esoteric Hitlerism". In it, the Demiurge is Jehovah, the God of the Bible, maker of the material world, the Aryans descend from divine beings from a polar homeland, Hyperborea, and Hitler is treated as an avatar. In the same milieu, the Argentine Luis Felipe Moyano (1946 to 1996), who signed as Nimrod de Rosario, wrote the "Fundamentals of Hyperborean Wisdom", which set the virya, the man who supposedly has an eternal spirit, against the pasú, the animal-man, supposedly created by the Demiurge. These texts circulate in translation online, together with the vocabulary of "chaos", "Kali Yuga" and racial war.
 
-In other words: whoever talks like this is not inventing connections out of nothing. He is repeating a neo-Nazi ideology that presents itself as gnosis. Knowing this helps the conversation, because it shows the problem is not a detail, it is the core.
+Whoever talks like this is not inventing connections out of nothing. He is repeating a 20th-century neo-Nazi ideology that presents itself as ancient wisdom.
 
-## What the Christian faith answers
+## Two foundations that cancel each other out
 
-**One human race.** Before the philosophers of Athens, who thought themselves superior to the "barbarians", Saint Paul said: God "hath made of one, all mankind" (Acts 17:26). And all, man and woman, were created in the image of God (Genesis 1:27). There is no human being without a soul or without a spirit.
+Racial gnosis usually uses two foundations at once. One is spiritual: the spark, the eternal spirit, the virya. The other is biological: genes, IQ, "race science". The two do not fit together. If what defines someone's worth is the spirit, genes and IQ are irrelevant, because the spark is not in the DNA. If what defines it is biology, the spark does not matter. Whoever defends this doctrine has to choose.
 
-**The saved come from every people.** "There is neither Jew nor Greek (...) For you are all one in Christ Jesus" (Galatians 3:28). The vision of heaven in Revelation is a multitude "of all nations and tribes and peoples and tongues" (Revelation 7:9). A heaven of one race only is not the Christian heaven.
+And there is an earlier question: how does anyone check who is virya and who is pasú, or that the Aryans came from Hyperborea? No test is possible. Whoever demands scientific proof from others should demand it from their own authors.
 
-**The Church condemned this by name.** In 1937, Pius XI wrote the encyclical Mit brennender Sorge, in German, read from the pulpits of Germany against Nazism: whoever exalts race or the people and divinizes them "to an idolatrous level, distorts and perverts an order of the world planned and created by God". The Catechism teaches that all people have the same nature, the same origin and "equal dignity", and that every discrimination based on race or color must be eliminated as contrary to God's plan (paragraphs 1934 and 1935).
+## What the IQ data actually show
 
-**Jesus was a Jew.** For racial gnosis to work, it has to turn the God of Israel into an evil demiurge and deny that Christ was born a Jew, of the line of David. A system that needs to erase the identity of Christ himself is not a deeper reading of Christianity. It is its opposite.
+No serious person denies that, in the US, there is an average score gap between Black and white Americans. The question is the cause. In 1996, the American Psychological Association task force concluded that it does not stem from obvious test biases and said about its cause: "There is not much direct evidence on this point, but what little there is fails to support the genetic hypothesis." In 2012, a review signed by researchers such as Richard Nisbett, James Flynn and Eric Turkheimer stated that this conclusion "stands today".
 
-**The fruits.** "By their fruits you shall know them" (Matthew 7:16). The fruit of this doctrine is contempt and the desire for war. And Saint John is blunt: "If any man say: I love God, and hateth his brother; he is a liar" (1 John 4:20).
+A few data points help explain why:
 
-## And science? Race and IQ
+- **The gap shrank.** Between 1972 and 2002, Black Americans gained about 5.5 points on white Americans, according to Dickens and Flynn (2006). Genes do not change in thirty years.
+- **Everyone's IQ rose.** Flynn showed that the averages of entire countries rose sharply within a few decades, in some cases by 5 to 25 points in a generation (Flynn, 1987). Changes that fast come from the environment: schooling, nutrition, health.
+- **More European ancestry did not mean higher IQ.** In an adoption study (Moore, 1986), half-European children had virtually the same IQ as children of exclusively African origin. In postwar Germany, the children of Black and white American soldiers had equivalent IQs (Eyferth, 1961).
 
-Genetics does not support the idea of human races separated like different species. We are a young species with little genetic variation. In 1972, Richard Lewontin showed that most of that variation, about 85%, lies within any population, and only a small part separates the large continental groups. Rosenberg and colleagues, in 2002, using hundreds of markers, found between 93% and 95% within populations. It is true that geographic origin leaves a mark: with many markers one can estimate which region someone's ancestors came from, and Rosenberg's own study found regional clusters. But this variation is gradual, without sharp borders, and does not match the everyday categories of "race". Above all, geographic origin says nothing about who has more worth or more "spirit".
+The "IQ by country" maps that circulate online are another problem. Almost all of them come from Richard Lynn, and his data does not hold up. He calculated the IQ of Angola, a country of 35 million, from 19 people, and that of Sierra Leone from 119 people tested in 1966. Half of the countries of sub-Saharan Africa and Latin America got their score from fewer than 1,000 people. He rejected an African sample averaging 91 for lacking age data, but kept five with the same problem averaging 63 to 72. A systematic review with clear criteria found about 82 for sub-Saharan Africa, not below 70 (Wicherts and colleagues, 2010). Scientific journals have already retracted papers that used this data, such as Proceedings of the Royal Society B in 2024.
 
-On IQ, three observations. First, the test measures performance at one moment, and that performance depends heavily on nutrition, health and schooling: the researcher James Flynn showed that the averages of entire countries rose sharply in the 20th century (Flynn, 1987), too fast to be genetic. Second, a group average says nothing about the concrete person in front of you. Third, and most important: human dignity does not come from IQ. If it did, a child with Down syndrome or an elderly person with Alzheimer's would be worth less. That was exactly the logic of the Nazi Aktion T4 program, which killed tens of thousands of people with disabilities from 1939 on. For the faith, a person's worth lies in being the image of God, not in his performance.
+To be fair: some researchers, such as Rushton and Jensen, argue for a partly genetic cause, and opinion surveys among experts show disagreement. But opinion is not evidence, and to this day no one has presented direct genetic evidence.
+
+## Genetics and "race"
+
+Genetics shows that we are a young and very mixed species. Lewontin (1972) and Rosenberg and colleagues (2002) found that most human genetic variation, 85% to 95%, lies within each population. Geographic origin leaves marks, and with many markers one can estimate which region someone's ancestors came from, but this variation is gradual and does not match the everyday categories of "race". The American Society of Human Genetics summed it up in 2018: genetics exposes the concept of racial purity as "scientifically meaningless".
+
+## The question that matters more than any study
+
+Even if a group average were true and unchangeable, it would say nothing about the concrete person in front of you. And human dignity does not come from IQ. If it did, a child with Down syndrome or an elderly person with Alzheimer's would be worth less. That was exactly the logic of the Nazi Aktion T4 program, which killed tens of thousands of people with disabilities from 1939 on. When worth depends on performance, no one is safe.
+
+## What the faith teaches
+
+For the Christian, the answer comes from the root. Saint Paul told the philosophers of Athens, who thought themselves superior to the "barbarians": God "hath made of one, all mankind" (Acts 17:26). All were created in the image of God (Genesis 1:27), and the saved come "of all nations and tribes and peoples and tongues" (Revelation 7:9). In Christ "there is neither Jew nor Greek" (Galatians 3:28).
+
+The Church condemned this by name. In 1937, Pius XI wrote the encyclical Mit brennender Sorge, read from the pulpits of Germany: whoever exalts race or the people and divinizes them "to an idolatrous level, distorts and perverts an order of the world planned and created by God". The Catechism teaches that all people enjoy "an equal dignity" and that every discrimination based on race or color must be eradicated (paragraphs 1934 and 1935). And racial gnosis has to turn the God of Israel into a demiurge and hide that Jesus was born a Jew, which shows it is not a deeper reading of Christianity, but its opposite. "By their fruits you shall know them" (Matthew 7:16), and "if any man say: I love God, and hateth his brother; he is a liar" (1 John 4:20).
 
 ## What lies underneath
 
-Racial gnosis offers two very seductive things: the feeling of belonging to an elite and someone to blame for one's frustrations. It is the oldest temptation, the serpent's: "you shall be as Gods" (Genesis 3:5). That is why arguing only about data rarely suffices. Behind it there is usually wounded pride, loneliness, resentment and an online group that gives identity in exchange for hatred.
+Racial gnosis offers two seductive things: the feeling of belonging to an elite and someone to blame for one's frustrations. It is the oldest temptation, the serpent's: "you shall be as Gods" (Genesis 3:5). That is why arguing only about data rarely suffices. Behind it there is usually wounded pride, loneliness and an online group that gives identity in exchange for hatred.
 
 ## How to help a friend
 
-Separate the person from the ideology: you reject the doctrine without giving up on the friend. Do not humiliate him, because humiliation pushes a person back to the group. Ask questions that expose the contradictions, like those in the question path "Racial gnosis" (Tools, Questions that expose). Remind him of the concrete people this idea degrades. Pray for him. And if the conversation turns to plans of violence, take it seriously and seek help, including from the authorities.
+Separate the person from the ideology and do not humiliate, because humiliation pushes back to the group. Start with the coherence questions (spirit or biology? how is it tested?), then the data, and end on the personal: has this idea brought you more peace or more anger? The question path "Racial gnosis" (Practice, Questions that Expose) lays out this sequence. Pray for him. And if the conversation turns to plans of violence, take it seriously and seek help, including from the authorities.
 
 ## Key questions
 
-1. If God "hath made of one, all mankind", where would men without spirit come from?
+1. What defines who is worth more: spirit or biology? And if it is one, what is left of the other?
 
-2. Can a system that must turn the God of Israel into a demiurge and hide that Jesus was a Jew still call itself Christian?
+2. If the IQ gap shrank that much in thirty years, how can it be genetic?
 
-3. If someone's worth depended on IQ, what would a child with a disability be worth?
+3. Would you trust a survey of a whole country made with 19 people?
 
-4. What are the fruits of this doctrine in the lives of those who follow it: more love or more hatred?`,
+4. If someone's worth depended on IQ, what would a child with a disability be worth?`,
   },
   83: {
     titleEn: 'The Ten Commandments: the Guide God Gave Us',

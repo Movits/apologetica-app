@@ -664,62 +664,66 @@ Para o católico que descobriu, talvez tarde, essa incompatibilidade, o convite 
     imageAspect: 0.72,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FThe%2520Ancient%2520of%2520Days%2520by%2520William%2520Blake.jpg&w=2200&output=jpg&q=80',
     summary: 'Um deus menor e defeituoso que fez o mundo, uma Sophia que caiu, centelhas divinas presas na matéria. O que a gnose ensina, por que a Igreja a recusou desde o século II e por que ela voltou com força nas redes.',
-    body: `Vídeos sobre o "deus falso que criou este mundo", sobre Sophia, sobre arcontes que nos prendem numa matriz, circulam aos milhões. Para quem chega agora, parece uma descoberta ousada. Na verdade é uma das ideias mais antigas que o cristianismo enfrentou, e a resposta que a Igreja deu no século II continua de pé.
+    body: `Vídeos sobre o "deus falso que criou este mundo", sobre Sophia, sobre arcontes que nos prendem numa matriz, circulam aos milhões. Para quem chega agora, parece uma descoberta ousada. Na verdade é uma das ideias mais antigas que o cristianismo enfrentou, e as perguntas que a desmontaram no século II continuam sem resposta.
 
 ## O que a gnose ensina
 
 Gnose quer dizer conhecimento. Os gnósticos dos séculos II e III, como Valentino, Basílides e os chamados setianos, não formavam uma igreja só, mas contavam versões parecidas de um mesmo mito.
 
-No alto está um Deus perfeito, distante e desconhecido, cercado por uma plenitude de seres divinos, o Pleroma. O último desses seres, Sophia (Sabedoria), quis gerar sozinha, sem o consentimento do Pai e sem o seu par. Dessa falha nasceu um ser deformado e ignorante, o Demiurgo, a quem o Apócrifo de João chama Ialdabaoth. Ele se julga o único deus e fabrica o mundo material, com seus arcontes (governantes), como uma prisão.
+No alto está um Deus perfeito, distante e desconhecido, cercado por uma plenitude de seres divinos, o Pleroma. O último desses seres, Sophia (Sabedoria), quis gerar sozinha, sem o consentimento do Espírito e sem o seu par. Dessa falha nasceu um ser deformado e ignorante, o Demiurgo, a quem o Apócrifo de João chama Ialdabaoth. Ele se julga o único deus e fabrica o mundo material, com seus arcontes (governantes), como uma prisão.
 
-Algumas centelhas da luz divina ficaram presas nos corpos de certos homens. A salvação seria acordar essa centelha por meio de um conhecimento secreto e escapar da matéria. Muitos gnósticos identificavam o Demiurgo com o Deus do Antigo Testamento, e Cristo com um mensageiro do Pleroma que só parecia ter corpo e só parecia morrer na cruz.
+Algumas centelhas da luz divina ficaram presas nos corpos de certos homens. A salvação seria acordar essa centelha por meio de um conhecimento secreto e escapar da matéria. Muitos gnósticos identificavam o Demiurgo com o Deus do Antigo Testamento, e Cristo com um mensageiro do Pleroma que só parecia ter corpo.
 
-## Três tipos de gente
-
-Santo Irineu de Lião, que escreveu "Contra as Heresias" por volta do ano 180, descreve como os seguidores de Valentino dividiam a humanidade em três classes: os espirituais (pneumáticos), salvos por natureza, os psíquicos, que podiam pender para um lado ou para o outro, e os materiais (hílicos), que estavam destinados a perecer junto com a matéria. Os espirituais eram, claro, os próprios gnósticos.
-
-Vale guardar esse ponto. Para a gnose, a salvação não depende da graça nem da conversão, mas daquilo que você é por nascimento. Isso divide a humanidade em uma elite iluminada e uma massa sem valor, e abre a porta para coisas muito piores, como mostra o artigo "Gnose Racial".
+Santo Irineu de Lião, que escreveu "Contra as Heresias" por volta do ano 180, descreve como os seguidores de Valentino dividiam a humanidade em três classes: os espirituais, salvos por natureza, os psíquicos, que podiam pender para um lado ou para o outro, e os materiais, destinados a perecer com a matéria. Os espirituais eram, claro, os próprios gnósticos. Para a gnose, a salvação não depende da graça nem da conversão, mas do que você é por nascimento, e é esse ponto que abre a porta para coisas muito piores, como mostra o artigo "Gnose Racial".
 
 ## Como sabemos disso
 
-Durante séculos, quase tudo o que se sabia vinha dos Padres da Igreja que refutaram a gnose. Em 1945, camponeses encontraram em Nag Hammadi, no Egito, uma coleção de livros gnósticos em copta, copiados no século IV, entre eles o Apócrifo de João e o Evangelho de Tomé. Os textos confirmaram, no essencial, o que Irineu tinha descrito. Quanto à data, a maioria dos estudiosos coloca esses escritos do século II em diante. O mais discutido é o Evangelho de Tomé, e mesmo ele costuma ser datado do século II. Os Evangelhos, as cartas de Paulo e os outros livros do Novo Testamento são do século I.
+Durante séculos, quase tudo o que se sabia vinha dos Padres da Igreja que refutaram a gnose. Em 1945, camponeses encontraram em Nag Hammadi, no Egito, uma coleção de livros gnósticos em copta, copiados no século IV, entre eles o Apócrifo de João e o Evangelho de Tomé. Os textos confirmaram, no essencial, o que Irineu tinha descrito. Quanto à data, a maioria dos estudiosos coloca esses escritos do século II em diante. O mais discutido é o Evangelho de Tomé, e mesmo ele costuma ser datado do século II.
 
-## O que a fé cristã responde
+## O mito por dentro: as perguntas que ele não responde
 
-**A criação é boa.** No fim do sexto dia, "Deus contemplou toda a sua obra, e viu que tudo era muito bom" (Gênesis 1,31). O Credo começa justamente por aí: "Creio em Deus Pai todo-poderoso, criador do céu e da terra". Não há dois deuses, um bom e escondido e outro mau e criador. O Catecismo, no parágrafo 285, cita a gnose pelo nome entre as respostas erradas sobre a origem do mundo, a que vê a matéria como má e algo de que é preciso fugir.
+Quem acredita na gnose acha que a Bíblia é obra do Demiurgo, então citar versículos não resolve a conversa. Irineu sabia disso. Antes de qualquer citação, ele expôs os sistemas gnósticos por dentro e mostrou onde eles se contradizem. As perguntas dele continuam boas.
 
-**O Verbo se fez carne.** "E o Verbo se fez carne e habitou entre nós" (João 1,14). São João insiste que tocou Jesus com as próprias mãos (1 João 1,1) e dá o critério: "todo espírito que proclama que Jesus Cristo se encarnou é de Deus" (1 João 4,2-3). Um Cristo que só parece ter corpo não morreu por ninguém e não ressuscitou ninguém.
+**Como uma falha acontece dentro da perfeição?** Se o Deus verdadeiro e o Pleroma são perfeitos, como surgiu ali o erro de Sophia? Ou a perfeição pode falhar, e então não era perfeição, ou a queda foi permitida, e então o Deus verdadeiro responde pelo Demiurgo e por este mundo. O mito prometia explicar a origem do mal, mas só a empurrou um andar acima.
 
-**Não há doutrina secreta.** Jesus disse diante do sumo sacerdote: "Falei publicamente ao mundo (...) e nada falei às ocultas" (João 18,20). Irineu fez o argumento histórico: se os apóstolos tivessem um ensino reservado, teriam entregado esse ensino aos homens a quem confiaram as igrejas, e essas igrejas, com listas de bispos conhecidas, ensinam a mesma fé pública.
+**O Pleroma é mesmo pleno?** O Demiurgo e o mundo ficam fora do Pleroma. Então o Pleroma tem uma fronteira, algo que ele não contém. Irineu formulou isso assim: se há algo além de Deus, "ele já não é o Pleroma de tudo, nem contém tudo" (Contra as Heresias II,1,2). Um Deus que precisa de um lado de fora não é infinito.
 
-**Desprezar a matéria é sinal de erro.** São Paulo já avisava contra quem "proíbe o casamento, assim como o uso de alimentos que Deus criou", e responde: "tudo o que Deus criou é bom" (1 Timóteo 4,1-4). E pede cuidado com "filosofias e vãos sofismas", porque em Cristo "habita corporalmente toda a plenitude da divindade" (Colossenses 2,8-9).
+**Por que confiar na própria razão?** Se o Demiurgo fez a matéria, fez também o cérebro de quem pensa. Todo argumento a favor da gnose roda num equipamento fabricado por um deus ignorante. E se a resposta for que a centelha sabe direto, fica a pergunta: como distinguir esse saber de um sentimento forte?
 
-## O mito não resolve o mal, só o empurra
+**Por que a revelação verdadeira precisa da falsa?** O Apócrifo de João é, em boa parte, o Gênesis recontado, e põe na boca de Ialdabaoth frases do Êxodo e de Isaías ("Eu sou um Deus ciumento, e não há outro Deus além de mim"). Sem a Bíblia, o mito gnóstico nem existe. Ele depende do livro que diz desmascarar.
 
-A gnose atrai porque parece explicar o sofrimento: o mundo é ruim porque quem o fez é ruim. Mas a explicação desmonta quando se faz uma pergunta a mais. Se o Pleroma é perfeito, como dentro dele aconteceu a falha de Sophia? O mal não foi explicado, só foi colocado um andar acima.
+**Qual gnose?** As escolas gnósticas se contradiziam entre si. Irineu ironizava que "cada um deles gera algo novo, dia após dia" (Contra as Heresias I,18,1). Uma revelação que muda conforme o mestre se parece mais com invenção.
 
-Há outro problema. Se o mundo material é obra de um deus ignorante, por que confiar na razão, na lógica e na consciência do gnóstico, que funcionam num cérebro feito desse mesmo material? Quem chama a matéria de prisão usa, para pensar isso, tudo o que a prisão lhe deu.
+## Até um filósofo pagão percebeu
 
-A resposta cristã é mais simples e mais séria. Deus é bom, o mundo é bom, o mal é uma ferida, a falta de um bem que deveria estar ali, e não uma substância com criador próprio. A ferida entrou pelo mau uso da liberdade, e Deus não manda ninguém fugir do mundo: ele mesmo entra no mundo para curá-lo. A promessa cristã não é sair do corpo, é a ressurreição do corpo, e a própria criação "será libertada do cativeiro da corrupção" (Romanos 8,19-21).
+Não é preciso ser cristão para ver os problemas. Plotino, o grande filósofo neoplatônico do século III, que nunca foi cristão, escreveu um tratado inteiro contra os gnósticos (Enéadas II,9). Para ele, não existe cosmo mais nobre que este, que é uma imagem do mundo inteligível. Criticava quem busca a perfeição achando que só ele pode alcançá-la. E fazia uma pergunta afiada: se a providência cuida só dos gnósticos, por que eles ainda estão neste mundo? E se cuida deles aqui, então ela age aqui, e o mundo não está abandonado.
+
+## O que a fé cristã propõe
+
+Para quem já aceita a revelação cristã, a resposta é direta. "Deus contemplou toda a sua obra, e viu que tudo era muito bom" (Gênesis 1,31), e o Credo começa confessando um só Deus, "criador do céu e da terra". O Catecismo, no parágrafo 285, cita a gnose pelo nome entre as respostas erradas sobre a origem do mundo.
+
+O centro é a Encarnação: "o Verbo se fez carne e habitou entre nós" (João 1,14). São João insiste que tocou Jesus com as próprias mãos (1 João 1,1-3) e dá o critério: "todo espírito que proclama que Jesus Cristo se encarnou é de Deus" (1 João 4,2-3). Jesus não ensinou um segredo para iniciados: "Falei publicamente ao mundo (...) e nada falei às ocultas" (João 18,20). São Paulo avisa contra quem proíbe o casamento e os alimentos, porque "tudo o que Deus criou é bom" (1 Timóteo 4,1-5), e contra "filosofias e vãos sofismas", porque em Cristo "habita corporalmente toda a plenitude da divindade" (Colossenses 2,8-9).
+
+O mal, nessa visão, não é uma substância com criador próprio, mas uma ferida, a falta de um bem que deveria estar ali, e entrou pelo mau uso da liberdade. Deus não manda ninguém fugir do mundo: ele mesmo entra nele para curá-lo. A promessa não é sair do corpo, é a ressurreição do corpo, e a própria criação "será libertada do cativeiro da corrupção" (Romanos 8,19-21).
 
 ## Por que a gnose voltou
 
-Ela nunca sumiu de todo. Os cátaros da Idade Média tinham uma visão parecida, e hoje ela reaparece no esoterismo, em filmes como Matrix e em canais que prometem "despertar". O apelo é o mesmo de sempre. A gnose oferece um segredo, uma explicação fácil para a dor e, acima de tudo, a sensação de pertencer a uma minoria superior, que enxerga o que os outros não enxergam. Irineu já dizia que o erro nunca se apresenta nu, para não ser reconhecido, mas se veste de modo atraente, para parecer mais verdadeiro que a própria verdade.
+Ela nunca sumiu de todo. Os cátaros da Idade Média tinham uma visão parecida, e hoje ela reaparece no esoterismo, em filmes como Matrix e em canais que prometem "despertar". O apelo é o mesmo de sempre: um segredo, uma explicação fácil para a dor e a sensação de pertencer a uma minoria que enxerga o que os outros não enxergam. Irineu já dizia que o erro nunca se mostra nu, para não ser reconhecido, mas se veste de modo atraente, para parecer mais verdadeiro que a própria verdade.
 
 ## Conversando com um amigo gnóstico
 
-Não comece zombando. Pergunte o que o atraiu, que dor ou que injustiça ele queria explicar. Depois faça perguntas sobre o próprio mito: de onde vem a falha no Pleroma, por que confiar numa razão feita pelo Demiurgo, quem decide quem tem a centelha. O roteiro "O deus imperfeito" (Ferramentas, Perguntas que expõem) traz essas perguntas em ordem. E mostre, com a vida, que o mundo criado, com a comida, o casamento, a beleza e as pessoas comuns, é um dom e não uma cela.
+Não comece zombando nem citando a Bíblia. Pergunte o que o atraiu, que dor ou injustiça ele queria explicar. Depois faça as perguntas do próprio mito, uma por vez, e no fim a mais honesta de todas: o que mudaria a sua opinião? O roteiro "O deus imperfeito" (Praticar, Perguntas que Expõem) traz essa sequência. E mostre, com a vida, que o mundo criado, com a comida, o casamento, a beleza e as pessoas comuns, é um dom e não uma cela.
 
 ## Perguntas-chave
 
 1. Se o Deus supremo é perfeito, como dentro da sua plenitude surgiu a falha que gerou o Demiurgo?
 
-2. Se a matéria é obra de um deus ignorante, por que confiar na razão de quem pensa com um cérebro material?
+2. Se existe algo fora do Pleroma, ele ainda é a plenitude de tudo?
 
-3. Quem decide quem tem a centelha divina e quem é só matéria? Qual a prova?
+3. Se a matéria é obra de um deus ignorante, por que confiar na razão de quem pensa com um cérebro material?
 
-4. Jesus disse que nada ensinou às ocultas. Onde fica, então, o conhecimento secreto que a gnose promete?`,
-    references: ['gn-1-31', 'cic-285', 'jo-1-14', '1jo-1-1', '1jo-4-2', 'jo-18-20', '1tm-4-1', 'cl-2-8', 'rm-8-19', 'irineu-contra-heresias-prefacio', 'irineu-contra-heresias-1-6', 'apocrifo-joao'],
+4. Se a Bíblia é do Demiurgo, por que o mito gnóstico precisa recontar o Gênesis para existir?`,
+    references: ['gn-1-31', 'cic-285', 'jo-1-14', '1jo-1-1', '1jo-4-2', 'jo-18-20', '1tm-4-1', 'cl-2-8', 'rm-8-19', 'irineu-contra-heresias-prefacio', 'irineu-contra-heresias-1-6', 'irineu-contra-heresias-2-1', 'irineu-contra-heresias-1-18', 'plotino-eneadas-2-9', 'apocrifo-joao'],
   },
   {
     id: 85,
@@ -731,7 +735,7 @@ Não comece zombando. Pergunte o que o atraiu, que dor ou que injustiça ele que
     imageAspect: 1.3,
     imageHd: 'https://wsrv.nl/?url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FV%2526A%2520-%2520Raphael%252C%2520St%2520Paul%2520Preaching%2520in%2520Athens%2520(1515).jpg&w=2200&output=jpg&q=80',
     summary: 'Nas redes circula uma "gnose" que chama outros povos de "caos", de filhos do demiurgo ou de homens sem espírito. De onde vem essa ideia, por que ela não é a gnose antiga e por que a fé e a ciência a desmontam.',
-    body: `Acontece com frequência: alguém se interessa pela gnose, passa a falar do demiurgo e de Sophia, e pouco tempo depois começa a falar de raças inferiores, de guerra racial, de QI e de povos que seriam "caos". É uma ligação forçada ou faz parte da coisa? A resposta honesta tem duas partes. Os textos gnósticos antigos não falam de cor de pele. Mas existe uma corrente moderna que juntou de propósito a gnose e o racismo, e a lógica da gnose antiga facilita muito esse enxerto.
+    body: `Acontece com frequência: alguém se interessa pela gnose, passa a falar do demiurgo e de Sophia, e pouco tempo depois começa a falar de raças inferiores, de guerra racial, de QI e de povos que seriam "caos". É uma ligação forçada ou faz parte da coisa? A resposta honesta tem duas partes. Os textos gnósticos antigos não falam de cor de pele. Mas existe uma corrente moderna que juntou de propósito a gnose e o racismo, e a lógica da gnose antiga facilita esse enxerto.
 
 ## O que a gnose antiga dizia, e o que não dizia
 
@@ -741,48 +745,64 @@ O perigo está na estrutura. Se uns nascem com a centelha divina e outros são s
 
 ## A gnose racial moderna
 
-Essa troca foi feita, com nome e sobrenome. No começo do século XX, na Áustria, a chamada ariosofia, de Guido von List e Jörg Lanz von Liebenfels, misturou ocultismo com a ideia de uma raça ariana divina e de raças inferiores. O historiador Nicholas Goodrick-Clarke mostrou como esse ambiente alimentou o ocultismo em torno do nazismo.
+Essa troca foi feita, com nome e sobrenome. No começo do século XX, na Áustria, a chamada ariosofia, de Guido von List e Jörg Lanz von Liebenfels, misturou ocultismo com a ideia de uma raça ariana divina. O historiador Nicholas Goodrick-Clarke mostrou como esse ambiente alimentou o ocultismo em torno do nazismo.
 
-Depois da guerra, o diplomata chileno Miguel Serrano (1917 a 2009) criou o que chamou de "hitlerismo esotérico". Nele, o Demiurgo é Jeová, o Deus da Bíblia, criador do mundo material e dos povos inferiores, os arianos descendem de seres divinos vindos de uma pátria polar, a Hiperbórea, e Hitler é tratado como um avatar. No mesmo ambiente, o argentino Luis Felipe Moyano (1946 a 1996), que assinava Nimrod de Rosario, escreveu os "Fundamentos da Sabedoria Hiperbórea", que opõem o virya, o homem que teria um espírito eterno, ao pasú, o homem-animal, que seria criação do Demiurgo. Esses textos circulam traduzidos em grupos de língua portuguesa, junto com o vocabulário de "caos", "Kali Yuga" e guerra racial.
+Depois da guerra, o diplomata chileno Miguel Serrano (1917 a 2009) criou o que chamou de "hitlerismo esotérico". Nele, o Demiurgo é Jeová, o Deus da Bíblia, criador do mundo material, os arianos descendem de seres divinos vindos de uma pátria polar, a Hiperbórea, e Hitler é tratado como um avatar. No mesmo ambiente, o argentino Luis Felipe Moyano (1946 a 1996), que assinava Nimrod de Rosario, escreveu os "Fundamentos da Sabedoria Hiperbórea", que opõem o virya, o homem que teria um espírito eterno, ao pasú, o homem-animal, que seria criação do Demiurgo. Esses textos circulam traduzidos em grupos de língua portuguesa, junto com o vocabulário de "caos", "Kali Yuga" e guerra racial.
 
-Ou seja: quem fala assim não está inventando conexões do nada. Está repetindo uma ideologia neonazista que se apresenta como gnose. Saber disso ajuda a conversar, porque mostra que o problema não é um detalhe, é o núcleo.
+Quem fala assim não está inventando conexões do nada. Está repetindo uma ideologia neonazista do século XX que se apresenta como sabedoria antiga.
 
-## O que a fé cristã responde
+## Duas bases que se anulam
 
-**Um só gênero humano.** Diante dos filósofos de Atenas, que se achavam superiores aos "bárbaros", São Paulo disse: "Ele fez nascer de um só homem todo o gênero humano" (Atos 17,26). E todos, homem e mulher, foram criados à imagem de Deus (Gênesis 1,27). Não existe ser humano sem alma ou sem espírito.
+A gnose racial costuma usar dois fundamentos ao mesmo tempo. Um é espiritual: a centelha, o espírito eterno, o virya. O outro é biológico: genes, QI, "ciência racial". Os dois não combinam. Se o que define o valor de alguém é o espírito, os genes e o QI são irrelevantes, porque a centelha não está no DNA. Se o que define é a biologia, a centelha não importa. Quem defende essa doutrina precisa escolher.
 
-**Os salvos vêm de todos os povos.** "Já não há judeu nem grego (...), pois todos vós sois um em Cristo Jesus" (Gálatas 3,28). A visão do céu no Apocalipse é uma multidão "de toda nação, tribo, povo e língua" (Apocalipse 7,9). Um céu só de uma raça não é o céu cristão.
+E há uma pergunta anterior: como alguém verifica quem é virya e quem é pasú, ou que os arianos vieram da Hiperbórea? Não existe teste possível. Quem exige provas científicas dos outros deveria exigir dos próprios autores.
 
-**A Igreja condenou isso pelo nome.** Em 1937, Pio XI escreveu a encíclica Mit brennender Sorge, em alemão, lida nos púlpitos da Alemanha contra o nazismo: quem exalta a raça ou o povo e os diviniza num culto idolátrico "perverte e falsifica a ordem do mundo criada por Deus". O Catecismo ensina que todos os homens têm a mesma natureza, a mesma origem e "igual dignidade", e que toda discriminação por raça ou cor deve ser eliminada como contrária ao plano de Deus (parágrafos 1934 e 1935).
+## O que os dados de QI mostram de fato
 
-**Jesus era judeu.** Para a gnose racial funcionar, ela precisa transformar o Deus de Israel em demiurgo mau e negar que Cristo nasceu judeu, da linhagem de Davi. Um sistema que precisa apagar a identidade do próprio Cristo não é uma leitura mais profunda do cristianismo. É o contrário dele.
+Ninguém sério nega que, nos EUA, existe uma diferença média de pontuação entre negros e brancos. A pergunta é a causa. Em 1996, a força-tarefa da Associação Americana de Psicologia concluiu que ela não vem de vieses óbvios dos testes e que, sobre a causa, "o pouco que existe de evidência direta não apoia uma hipótese genética". Em 2012, uma revisão assinada por pesquisadores como Richard Nisbett, James Flynn e Eric Turkheimer afirmou que essa conclusão "continua válida hoje".
 
-**Os frutos.** "Pelos seus frutos os conhecereis" (Mateus 7,16). O fruto dessa doutrina é desprezo e desejo de guerra. E São João é direto: "Se alguém disser: 'Amo a Deus', mas odeia seu irmão, é mentiroso" (1 João 4,20).
+Alguns dados ajudam a entender por quê:
 
-## E a ciência? Raça e QI
+- **A diferença diminuiu.** Entre 1972 e 2002, os negros americanos ganharam cerca de 5,5 pontos em relação aos brancos, segundo Dickens e Flynn (2006). Genes não mudam em trinta anos.
+- **O QI de todos subiu.** Flynn mostrou que as médias de países inteiros subiram muito em poucas décadas, em alguns casos de 5 a 25 pontos numa geração (Flynn, 1987). Mudanças tão rápidas vêm do ambiente: escola, nutrição, saúde.
+- **Mais ancestralidade europeia não deu mais QI.** Num estudo de adoção (Moore, 1986), crianças meio europeias tiveram praticamente o mesmo QI que as de origem só africana. Na Alemanha do pós-guerra, filhos de soldados americanos negros e brancos tiveram QI equivalente (Eyferth, 1961).
 
-A genética não sustenta a ideia de raças humanas separadas como espécies diferentes. Somos uma espécie jovem e com pouca variação genética. Em 1972, Richard Lewontin mostrou que a maior parte dessa variação, cerca de 85%, está dentro de qualquer população, e só uma pequena parte separa os grandes grupos continentais. Rosenberg e colegas, em 2002, com centenas de marcadores, chegaram a algo entre 93% e 95% dentro das populações. É verdade que a origem geográfica deixa marcas: com muitos marcadores, dá para estimar de que região vieram os antepassados de alguém, e o próprio estudo de Rosenberg encontrou agrupamentos regionais. Mas essa variação é gradual, sem fronteiras nítidas, e não coincide com as categorias de "raça" usadas no dia a dia. Sobretudo, origem geográfica não diz nada sobre quem tem mais valor ou mais "espírito".
+Os mapas de "QI por país" que circulam nas redes são outro problema. Quase todos vêm de Richard Lynn, e os dados dele não se sustentam. Ele calculou o QI de Angola, país de 35 milhões de habitantes, com 19 pessoas, e o de Serra Leoa com 119 pessoas testadas em 1966. Metade dos países da África Subsaariana e da América Latina teve a nota calculada com menos de 1.000 pessoas. Ele rejeitou uma amostra africana com média 91 por falta de dados de idade, mas manteve cinco com o mesmo problema e médias de 63 a 72. Uma revisão sistemática com critérios claros encontrou cerca de 82 para a África Subsaariana, não menos de 70 (Wicherts e colegas, 2010). Revistas científicas já retrataram artigos que usaram esses dados, como a Proceedings of the Royal Society B em 2024.
 
-Sobre o QI, três observações. Primeiro, o teste mede desempenho num momento, e esse desempenho depende muito de nutrição, saúde e escola: o pesquisador James Flynn mostrou que as médias de países inteiros subiram muito no século XX (Flynn, 1987), rápido demais para ser genética. Segundo, uma média de grupo não diz nada sobre a pessoa concreta à sua frente. Terceiro, e mais importante: a dignidade humana não vem do QI. Se viesse, uma criança com síndrome de Down ou um idoso com Alzheimer valeriam menos. Essa foi exatamente a lógica do programa nazista Aktion T4, que matou dezenas de milhares de pessoas com deficiência a partir de 1939. Para a fé, o valor de uma pessoa está em ser imagem de Deus, não no seu desempenho.
+Para ser honesto: há pesquisadores, como Rushton e Jensen, que defendem uma causa em parte genética, e pesquisas de opinião entre especialistas mostram divergência. Mas opinião não é evidência, e até hoje ninguém apresentou evidência genética direta.
+
+## Genética e "raça"
+
+A genética mostra que somos uma espécie jovem e muito misturada. Lewontin (1972) e Rosenberg e colegas (2002) encontraram que a maior parte da variação genética humana, de 85% a 95%, está dentro de cada população. A origem geográfica deixa marcas, e com muitos marcadores dá para estimar de que região vieram os antepassados de alguém, mas essa variação é gradual e não coincide com as categorias de "raça" do dia a dia. A Sociedade Americana de Genética Humana resumiu em 2018: a genética expõe o conceito de pureza racial como "cientificamente sem sentido".
+
+## A pergunta que vale mais que qualquer estudo
+
+Mesmo que uma média de grupo fosse verdadeira e imutável, ela não diria nada sobre a pessoa concreta à sua frente. E a dignidade humana não vem do QI. Se viesse, uma criança com síndrome de Down ou um idoso com Alzheimer valeriam menos. Essa foi exatamente a lógica do programa nazista Aktion T4, que matou dezenas de milhares de pessoas com deficiência a partir de 1939. Quando o valor depende do desempenho, ninguém está seguro.
+
+## O que a fé ensina
+
+Para o cristão, a resposta vem da raiz. São Paulo disse aos filósofos de Atenas, que se achavam superiores aos "bárbaros": Deus "fez nascer de um só homem todo o gênero humano" (Atos 17,26). Todos foram criados à imagem de Deus (Gênesis 1,27), e os salvos vêm "de toda nação, tribo, povo e língua" (Apocalipse 7,9). Em Cristo "já não há judeu nem grego" (Gálatas 3,28).
+
+A Igreja condenou isso pelo nome. Em 1937, Pio XI escreveu a encíclica Mit brennender Sorge, lida nos púlpitos da Alemanha: quem exalta a raça ou o povo e os diviniza num culto idolátrico "perverte e falsifica a ordem do mundo criada por Deus". O Catecismo ensina que todos os homens têm "igual dignidade" e que toda discriminação por raça ou cor deve ser eliminada (parágrafos 1934 e 1935). E a gnose racial precisa transformar o Deus de Israel em demiurgo e esconder que Jesus nasceu judeu, o que mostra que ela não é uma leitura mais profunda do cristianismo, mas o contrário dele. "Pelos seus frutos os conhecereis" (Mateus 7,16), e "se alguém disser: 'Amo a Deus', mas odeia seu irmão, é mentiroso" (1 João 4,20).
 
 ## O que está por baixo
 
-A gnose racial oferece duas coisas muito sedutoras: a sensação de pertencer a uma elite e um culpado para as frustrações. É a tentação mais antiga, a da serpente: "sereis como deuses" (Gênesis 3,5). Por isso discutir só dados raramente basta. Por trás costuma haver orgulho ferido, solidão, ressentimento e um grupo online que dá identidade em troca de ódio.
+A gnose racial oferece duas coisas sedutoras: a sensação de pertencer a uma elite e um culpado para as frustrações. É a tentação mais antiga, a da serpente: "sereis como deuses" (Gênesis 3,5). Por isso discutir só dados raramente basta. Por trás costuma haver orgulho ferido, solidão e um grupo online que dá identidade em troca de ódio.
 
 ## Como ajudar um amigo
 
-Separe a pessoa da ideologia: você rejeita a doutrina sem desistir do amigo. Não humilhe, porque humilhação empurra a pessoa de volta para o grupo. Faça perguntas que mostrem as contradições, como as do roteiro "A gnose racial" (Ferramentas, Perguntas que expõem). Lembre a ele pessoas concretas que essa ideia rebaixa. Reze por ele. E se a conversa passar a ter planos de violência, leve a sério e procure ajuda, inclusive das autoridades.
+Separe a pessoa da ideologia e não humilhe, porque humilhação empurra de volta para o grupo. Comece pelas perguntas de coerência (espírito ou biologia? como se testa?), depois os dados, e termine no pessoal: essa ideia te trouxe mais paz ou mais raiva? O roteiro "A gnose racial" (Praticar, Perguntas que Expõem) traz essa sequência. Reze por ele. E se a conversa passar a ter planos de violência, leve a sério e procure ajuda, inclusive das autoridades.
 
 ## Perguntas-chave
 
-1. Se Deus "fez nascer de um só homem todo o gênero humano", de onde viriam homens sem espírito?
+1. O que define quem vale mais: o espírito ou a biologia? E se for um, o que sobra do outro?
 
-2. Um sistema que precisa transformar o Deus de Israel em demiurgo e esconder que Jesus era judeu ainda pode se chamar cristão?
+2. Se a diferença de QI caiu tanto em trinta anos, como pode ser genética?
 
-3. Se o valor de alguém dependesse do QI, quanto valeria uma criança com deficiência?
+3. Você confiaria numa pesquisa de um país inteiro feita com 19 pessoas?
 
-4. Quais são os frutos dessa doutrina na vida de quem a segue: mais amor ou mais ódio?`,
-    references: ['at-17-26', 'gn-1-27', 'gl-3-26', 'ap-7-9', 'mit-brennender-sorge', 'cic-1934', 'mt-7-16', '1jo-4-20', 'gn-3-5', 'irineu-contra-heresias-1-6', 'goodrick-clarke-black-sun', 'lewontin-1972', 'rosenberg-2002', 'flynn-1987'],
+4. Se o valor de alguém dependesse do QI, quanto valeria uma criança com deficiência?`,
+    references: ['at-17-26', 'gn-1-27', 'gl-3-26', 'ap-7-9', 'mit-brennender-sorge', 'cic-1934', 'mt-7-16', '1jo-4-20', 'gn-3-5', 'irineu-contra-heresias-1-6', 'goodrick-clarke-black-sun', 'neisser-1996', 'nisbett-2012', 'dickens-flynn-2006', 'flynn-1987', 'statnews-lynn-2024', 'wicherts-2010', 'retraction-watch-lynn-2024', 'lewontin-1972', 'rosenberg-2002', 'ashg-2018'],
   },
 ];
 
