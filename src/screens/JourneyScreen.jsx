@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import { ScrollView, Text, View, useWindowDimensions } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import useLayout from '../hooks/useLayout';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
@@ -31,7 +32,7 @@ const BADGE_COLUMNS = 3;
 export default function JourneyScreen({ navigation }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
-  const { width, height } = useWindowDimensions();
+  const { width, height } = useLayout();
   // Recalculado a cada foco (useFocusEffect abaixo): voltar da Revisão ou de
   // um dia para o outro com a tela aberta atualiza a contagem.
   const [today, setToday] = useState(() => todayKey());

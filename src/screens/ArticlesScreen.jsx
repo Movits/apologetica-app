@@ -144,7 +144,6 @@ export default function ArticlesScreen({ route }) {
                   <Chip
                     key={f.id}
                     label={f.label}
-                    icon={f.icon}
                     selected={filter === f.id}
                     onPress={() => setFilter(f.id)}
                     haptic

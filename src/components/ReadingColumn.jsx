@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
+import { LAYOUT } from '../utils/layout';
 
 // Coluna central das telas em janela larga (desktop na web, iPad). No celular
 // a coluna ocupa 100% e nada muda: as larguras abaixo só entram em ação
@@ -29,6 +30,9 @@ import { useTheme } from '../context/ThemeContext';
 // serifa de leitura), formulários de entrada a 440.
 export const COLUMN_MAX = 720;
 export const FORM_MAX = 440;
+// Telas de navegação (Início, Praticar, Artigos, livros da Bíblia) no
+// desktop: mais largas, com o conteúdo em colunas (ui/Columns.jsx).
+export const PAGE_MAX = LAYOUT.pageMax;
 
 // A coluna: 100% no celular, limitada em janela larga.
 export const columnStyle = { width: '100%', maxWidth: COLUMN_MAX };

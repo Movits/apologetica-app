@@ -385,6 +385,8 @@ export const STRINGS = {
     'legal.emailA11y': 'Escrever para {{email}}',
     'common.close': 'Fechar',
     'common.clear': 'Limpar',
+    'common.scrollLeft': 'Ver opções anteriores',
+    'common.scrollRight': 'Ver mais opções',
     // Onda 9B (Artigos, categoria e Conteúdo do dia)
     'articles.filter.all': 'Todos',
     'articles.searchPlaceholder': 'Buscar artigos',
@@ -1000,6 +1002,8 @@ export const STRINGS = {
     'legal.emailA11y': 'Email {{email}}',
     'common.close': 'Close',
     'common.clear': 'Clear',
+    'common.scrollLeft': 'Show previous options',
+    'common.scrollRight': 'Show more options',
     // Wave 9B (Articles, category and Today)
     'articles.filter.all': 'All',
     'articles.searchPlaceholder': 'Search articles',

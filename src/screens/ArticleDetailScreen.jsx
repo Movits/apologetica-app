@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useState, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, Image, PixelRatio, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image, PixelRatio, StyleSheet, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSharedValue } from 'react-native-reanimated';
 import { useFocusEffect } from '@react-navigation/native';
@@ -88,7 +88,12 @@ export default function ArticleDetailScreen({ route, navigation }) {
   const artwork = article ? artworkSummary(article.id) : null;
   const heroHdUri = artImage && heroW > 0 ? commonsUrl(artImage, heroW * PixelRatio.get()) : null;
   const boxAspect = Math.max(article?.imageAspect || 1.6, 1.3);
-  const heroH = heroW > 0 ? Math.round(heroW / boxAspect) : 0;
+  // No desktop a coluna larga deixava a imagem com a primeira tela inteira e o
+  // título abaixo da dobra: a altura para em 45% da janela (a imagem fica
+  // inteira, em `contain`, sobre o fundo do card). No celular a proporção
+  // manda e o teto quase nunca entra.
+  const { height: windowH } = useWindowDimensions();
+  const heroH = heroW > 0 ? Math.round(Math.min(heroW / boxAspect, windowH * 0.45)) : 0;
 
   // Conteúdo no idioma escolhido, com fallback para PT se a tradução não existir.
   const displayTitle = pick(article, 'title', isEn);

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, Pressable, ScrollView, StyleSheet, Platform, AppState, useWindowDimensions } from 'react-native';
+import { View, Text, Pressable, ScrollView, StyleSheet, Platform, AppState } from 'react-native';
+import useLayout from '../hooks/useLayout';
 import Animated, {
   Easing,
   useAnimatedScrollHandler,
@@ -34,7 +35,8 @@ import { useBibleReady } from '../hooks/useBibleReady';
 import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
 import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
-import { SearchField, Group, Row, SectionTitle, PressScale, EmptyState, ContinueRow } from '../components/ui';
+import { SearchField, Group, Row, SectionTitle, PressScale, EmptyState, ContinueRow, Columns } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import {
   markChapterRead, getReadChapters, getBibleStats,
   READ_THRESHOLD,
@@ -246,7 +248,7 @@ export default function BibleScreen({ route, navigation }) {
   const { colors, tokens, text, darkMode } = useTheme();
   const { space, icon } = tokens;
   const insets = useSafeAreaInsets();
-  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const { width: windowWidth, height: windowHeight } = useLayout();
   const { user } = useAuth();
   const { lang, t, isEn } = useLanguage();
   const bn = useCallback((b) => bookName(b, isEn), [isEn]);
@@ -1101,6 +1103,7 @@ export default function BibleScreen({ route, navigation }) {
       <LargeTitleScreen
         title={t('tab.bible')}
         subtitle={t('bible.canonSubtitle')}
+        maxWidth={PAGE_MAX}
         renderList={(list) => (
           <Animated.ScrollView
             ref={booksScrollRef}
@@ -1141,16 +1144,19 @@ export default function BibleScreen({ route, navigation }) {
                 )}
               </Group>
             ) : null}
-            {testaments.map((tst) => (
-              <View key={tst.key}>
-                <SectionTitle title={tst.title} />
-                <Group>
-                  {tst.books.map((b) => (
-                    <BookRow key={b.id} book={b} title={bn(b)} subtitle={bookMeta(b)} onPress={openBook} />
-                  ))}
-                </Group>
-              </View>
-            ))}
+            {/* Desktop: Antigo e Novo Testamento lado a lado. */}
+            <Columns>
+              {testaments.map((tst) => (
+                <View key={tst.key}>
+                  <SectionTitle title={tst.title} />
+                  <Group>
+                    {tst.books.map((b) => (
+                      <BookRow key={b.id} book={b} title={bn(b)} subtitle={bookMeta(b)} onPress={openBook} />
+                    ))}
+                  </Group>
+                </View>
+              ))}
+            </Columns>
             {testaments.length === 0 ? (
               <EmptyState icon="search-outline" title={t('bible.noBook')} />
             ) : null}

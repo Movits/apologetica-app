@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
+import { COLUMN_MAX, centeredColumn } from '../components/ReadingColumn';
 import { confirmAction, notify } from '../utils/dialog';
 import {
   addNotebookPage, updateNotebookPage, removeNotebookPage, getNotebookPage,
@@ -159,7 +160,7 @@ export default function NotebookPageScreen({ route, navigation }) {
     >
       <ScrollView
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ padding: space.md, paddingBottom: space.xxl, gap: space.md }}
+        contentContainerStyle={{ padding: space.md, paddingBottom: space.xxl, gap: space.md, ...centeredColumn(COLUMN_MAX, space.md) }}
       >
         {mode === 'edit' ? (
           <>

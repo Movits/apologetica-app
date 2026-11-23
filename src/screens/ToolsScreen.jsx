@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -5,7 +6,8 @@ import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useRequireAccount } from '../components/GuestGate';
-import { Group, LargeTitleScreen, Row, SectionTitle, enterStagger } from '../components/ui';
+import { Columns, useColumns, Group, LargeTitleScreen, Row, SectionTitle, enterStagger } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 
 // Hub "Praticar": agrupa as telas secundárias que antes lotavam a Home, em
 // listas agrupadas (SectionTitle + Group com Rows), sob o large title próprio.
@@ -51,6 +53,7 @@ export default function ToolsScreen() {
   const { t } = useLanguage();
   const requireAccount = useRequireAccount();
   const { icon } = tokens;
+  const wide = useColumns(2);
 
   const SPIRITUALITY = buildSpirituality(t);
   const TRAINING = buildTraining(t);
@@ -100,23 +103,27 @@ export default function ToolsScreen() {
   };
 
   return (
-    <LargeTitleScreen title={t('tab.tools')}>
-      <Animated.View entering={enterStagger(0, tokens)}>
-        {/* O large title já dá o respiro de baixo, então a primeira seção não
-            repete a margem de cima. */}
-        <SectionTitle title={t('home.section.spirituality')} style={{ marginTop: 0 }} />
-        <Group>{SPIRITUALITY.map(renderRow)}</Group>
-      </Animated.View>
+    <LargeTitleScreen title={t('tab.tools')} maxWidth={PAGE_MAX}>
+      {/* Desktop: Espiritualidade à esquerda, Treino e Estudo à direita. */}
+      <Columns>
+        <Animated.View entering={enterStagger(0, tokens)}>
+          {/* O large title já dá o respiro de baixo, então a primeira seção
+              não repete a margem de cima. */}
+          <SectionTitle title={t('home.section.spirituality')} style={{ marginTop: 0 }} />
+          <Group>{SPIRITUALITY.map(renderRow)}</Group>
+        </Animated.View>
+        <View>
+          <Animated.View entering={enterStagger(1, tokens)}>
+            <SectionTitle title={t('home.section.training')} style={wide ? { marginTop: 0 } : undefined} />
+            <Group>{TRAINING.map(renderRow)}</Group>
+          </Animated.View>
 
-      <Animated.View entering={enterStagger(1, tokens)}>
-        <SectionTitle title={t('home.section.training')} />
-        <Group>{TRAINING.map(renderRow)}</Group>
-      </Animated.View>
-
-      <Animated.View entering={enterStagger(2, tokens)}>
-        <SectionTitle title={t('home.section.study')} />
-        <Group>{STUDY.map(renderStudyRow)}</Group>
-      </Animated.View>
+          <Animated.View entering={enterStagger(2, tokens)}>
+            <SectionTitle title={t('home.section.study')} />
+            <Group>{STUDY.map(renderStudyRow)}</Group>
+          </Animated.View>
+        </View>
+      </Columns>
     </LargeTitleScreen>
   );
 }
