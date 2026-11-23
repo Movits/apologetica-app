@@ -4,6 +4,7 @@ import {
   canonIndex,
   isAhead,
   nextChapterRef,
+  prevChapterRef,
   sanitizeBookmark,
   START_REF,
 } from '../src/utils/bibleBookmarkCore.js';
@@ -51,4 +52,11 @@ test('sanitizeBookmark descarta lixo do armazenamento', () => {
   const comVerso = sanitizeBookmark({ bookId: first.id, chapter: 2, verse: 4 });
   assert.equal(comVerso.verse, 4);
   assert.equal(comVerso.ratio, 0);
+});
+
+test('prevChapterRef volta dentro do livro e atravessa para o fim do livro anterior', () => {
+  assert.deepEqual(prevChapterRef({ bookId: second.id, chapter: 3 }), { bookId: second.id, chapter: 2 });
+  assert.deepEqual(prevChapterRef({ bookId: second.id, chapter: 1 }), { bookId: first.id, chapter: first.totalChapters });
+  assert.equal(prevChapterRef({ bookId: first.id, chapter: 1 }), null);
+  assert.equal(prevChapterRef({ bookId: 'nao-existe', chapter: 2 }), null);
 });
