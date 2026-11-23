@@ -44,7 +44,7 @@ async function run(browser, { lang, width, tag, date }) {
   await sleep(1200);
   if (await skip.first().isVisible().catch(() => false)) await click(skip);
   await sleep(1500);
-  const T = lang === 'en' ? { bible: 'Bible', tools: 'Practice', today: 'Today', read: 'Read in the Bible' } : { bible: 'Bíblia', tools: 'Praticar', today: 'Dia de Hoje', read: 'Ler na Bíblia' };
+  const T = lang === 'en' ? { bible: 'Bible', home: 'Home', read: 'Read in the Bible' } : { bible: 'Bíblia', home: 'Início', read: 'Ler na Bíblia' };
   const openChapter = async (book, ch) => {
     await click(page.getByRole('tab', { name: T.bible }));
     await sleep(1500);
@@ -77,9 +77,12 @@ async function run(browser, { lang, width, tag, date }) {
       await shot('busca-en-abre', ['Blessed are they that mourn: for they shall be comforted']);
     }
     if (date) {
-      await click(page.getByRole('tab', { name: T.tools }));
-      await sleep(1200);
-      await click(page.getByText(T.today, { exact: true }));
+      // O versículo do dia fica na Início (o antigo Dia de Hoje entrou nela).
+      // Dois toques: a aba pode estar numa tela empilhada (a Busca, no inglês);
+      // o segundo volta ao topo dela.
+      await click(page.getByRole('tab', { name: T.home }));
+      await sleep(900);
+      await click(page.getByRole('tab', { name: T.home }));
       await sleep(1800);
       await shot('versiculo-do-dia', [lang === 'en' ? 'Psalm 23 (22):1' : 'Salmo 23 (22),1', lang === 'en' ? 'The Lord ruleth me' : 'O Senhor é meu pastor']);
       await click(page.getByText(T.read, { exact: true }));

@@ -477,8 +477,8 @@ const SCREENS = [
     name: 'hoje',
     desktop: true,
     async run(page, s) {
-      await tabRoot(page, 'Praticar');
-      await clickText(page, 'Dia de Hoje');
+      // O conteúdo do dia (versículo, liturgia, notícias) vive na Início.
+      await tabRoot(page, 'Início');
       await settle(page, 2500);
       await s('hoje');
       await scrollMain(page, 'mid');
@@ -490,8 +490,7 @@ const SCREENS = [
   {
     name: 'liturgia',
     async run(page, s) {
-      await tabRoot(page, 'Praticar');
-      await clickText(page, 'Dia de Hoje');
+      await tabRoot(page, 'Início');
       await settle(page, 2000);
       // A linha da liturgia tem aria-label "Liturgia de hoje, <título>, <meta>".
       const row = page.getByRole('button', { name: /^Liturgia de hoje,/ });
@@ -605,21 +604,23 @@ const SCREENS = [
   {
     name: 'favoritos',
     async run(page, s) {
+      // Favoritos, marcações, notas e caderno vivem em Meu Estudo (segmentos).
       await tabRoot(page, 'Praticar');
-      await clickText(page, 'Meus Favoritos');
+      await clickText(page, 'Favoritos, marcações, notas e caderno');
+      await settle(page, 900);
       await s('favoritos');
     },
   },
   {
     name: 'gate',
     async run(page, s) {
-      for (const [label, file] of [['Minhas Marcações', 'marcacoes'], ['Minhas Notas', 'notas'], ['Caderno', 'caderno']]) {
-        await tabRoot(page, 'Praticar');
+      await tabRoot(page, 'Praticar');
+      await clickText(page, 'Favoritos, marcações, notas e caderno');
+      await settle(page, 900);
+      for (const [label, file] of [['Marcações', 'marcacoes'], ['Notas', 'notas'], ['Caderno', 'caderno']]) {
         await clickText(page, label);
         await settle(page, 900);
         await s(`${file}-visitante`);
-        await page.keyboard.press('Escape').catch(() => {});
-        await settle(page, 400);
       }
     },
   },

@@ -1,4 +1,4 @@
-import TodayScreen from '../screens/TodayScreen';
+import StudyScreen from '../screens/StudyScreen';
 import NotebookScreen from '../screens/NotebookScreen';
 import NotebookPageScreen from '../screens/NotebookPageScreen';
 import GlossaryScreen from '../screens/GlossaryScreen';
@@ -47,7 +47,7 @@ import { categoryLabel } from '../utils/i18nData';
 export function sharedScreens(Nav, t) {
   return (
     <Nav.Group>
-      <Nav.Screen name="Today" component={TodayScreen} options={{ title: t('header.today') }} />
+      <Nav.Screen name="Study" component={StudyScreen} options={{ title: t('home.section.study') }} />
       <Nav.Screen name="Notebook" component={NotebookScreen} options={{ title: t('header.notebook') }} />
       <Nav.Screen name="NotebookPage" component={NotebookPageScreen} options={{ title: t('header.notebook') }} />
       <Nav.Screen name="Glossary" component={GlossaryScreen} options={{ title: t('header.glossary') }} />

@@ -76,8 +76,9 @@ num desses módulos, **atualize as duas variantes**:
 ### Navegação
 O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
 
-- **HomeStack** (`HomeStackScreen`): HomeMain → References, Tools, Today, Notebook, NotebookPage, CategoryArticles, Journey, Favorites, Glossary, ReadingPlan, Rosary, ExamConscience, Highlights, Notes, Search, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, DebateStrategies, BibleMap, Legal.
-- **ToolsStack** (`ToolsStackScreen`): ToolsMain → mesmas telas secundárias (Today, Notebook, Quiz, Dialogue, DebateStrategies, BibleMap etc.).
+- **HomeStack** (`HomeStackScreen`): HomeMain → References, Search e as telas de `sharedScreens.js` (Study, Notebook, NotebookPage, CategoryArticles, Journey, Review, Glossary, Rosary, ExamConscience, Highlights, Notes, Liturgy, ArticleFromSearch, RefDetail, Quiz, Dialogue, DebateStrategies, QuestionPaths, BibleMap...).
+- **ToolsStack** (`ToolsStackScreen`): ToolsMain (aba "Praticar") → Favorites, ReadingPlan e as mesmas telas compartilhadas.
+- **Cada destino aparece uma vez** (simplificação de 23/11/2026): o conteúdo do dia (versículo, santo, liturgia, objeção, notícias) vive na Início (a tela "Dia de Hoje" saiu); Minha Jornada pelo cartão da Início; favoritos, marcações, notas e caderno numa tela só, `Study` (Meu Estudo, segmentos que embutem as telas antigas, cujas rotas continuam registradas); "Perguntas que expõem" pelo Modo Diálogo; a Revisão aparece na Início quando há perguntas vencidas. Não reponha atalhos duplicados.
 - **SettingsStack** (`SettingsStackScreen`): SettingsMain → Legal, Glossary, ReadingPlan, Rosary, ExamConscience, Favorites, ArticleFromSearch, RefDetail.
 - **ArticlesStack** (`ArticlesStackScreen`): ArticlesList → ArticleDetail → RefDetail.
 - **MainStack** (raiz): MainTabs + NoteEditor (modal full-screen sem tab bar).
@@ -100,6 +101,15 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
   (`useFonts` em `App.js`, chave `CormorantGaramond-SemiBold`). UI na sans do sistema,
   leitura na serifa do sistema. Dourado nunca como texto sobre fundo claro
   (`accentText` é a versão AA).
+- **Largura e desktop**: faixas em `src/utils/layout.js` (puro, `tests/layout.test.mjs`) e o hook
+  `useLayout()`: barra de abas no celular, cápsula de 768 px, **barra lateral fixa a partir de
+  1024 px** (`TabBar.jsx` `SideBar`, as telas começam depois dela pelo `sceneContainerStyle`).
+  Para centrar coluna ou calcular grade use `useLayout().width` (área das telas), nunca
+  `useWindowDimensions`, senão o conteúdo desloca quando a lateral aparece. Leitura em
+  `COLUMN_MAX` (720); telas de navegação (Início, Praticar, Artigos, livros da Bíblia) em
+  `PAGE_MAX` (1120) com `ui/Columns` (lado a lado no desktop, empilhado no celular). A aba
+  Artigos no desktop tem temas à esquerda e grade de `ArticleCard`. O `ChipRow scroll` anda
+  com roda e arrasto do mouse e mostra setas na web; o `Chip` é discreto (sem ícone).
 - `src/components/ui/` são os blocos de tela (uso em `docs/design/componentes.md`):
   `LargeTitleScreen` (large title que encolhe, barra translúcida, compensa a tab
   bar), `Group`/`Row`/`ListSeparator`/`GroupList` (listas agrupadas), `SectionTitle`,
