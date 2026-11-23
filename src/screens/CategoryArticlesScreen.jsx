@@ -6,6 +6,7 @@ import { sortByRank } from '../data/articleCategories';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getReadSet } from '../utils/readingProgress';
+import { keepIfSame } from '../utils/sets';
 import { openArticle } from '../navigation/links';
 import { EmptyState, ProgressBar } from '../components/ui';
 import { useJourney } from '../hooks/useJourney';
@@ -35,7 +36,7 @@ export default function CategoryArticlesScreen({ route }) {
   useFocusEffect(
     useCallback(() => {
       let alive = true;
-      getReadSet().then((set) => { if (alive) setReadSet(set); });
+      getReadSet().then((set) => { if (alive) setReadSet(keepIfSame(set)); });
       return () => { alive = false; };
     }, [])
   );

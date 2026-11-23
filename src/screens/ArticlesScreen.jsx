@@ -7,6 +7,7 @@ import { ARTICLE_CATEGORIES, POPULAR_IDS, countByCategory, sortByRank } from '..
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getReadSet } from '../utils/readingProgress';
+import { keepIfSame } from '../utils/sets';
 import { useJourney } from '../hooks/useJourney';
 import { isLessonComplete, lessonOf } from '../utils/journey';
 import { categoryLabel, pick } from '../utils/i18nData';
@@ -25,13 +26,16 @@ const FILTER_POPULAR = 'popular';
 // Busca sem acento nem caixa ("Igreja" acha "igreja", "Maria" acha "María").
 const fold = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-// Título e resumo já normalizados, por idioma e por id, calculados uma vez no
-// módulo: a busca compara `includes` neles em vez de normalizar os 83
-// artigos a cada tecla.
+// Título e resumo já normalizados, por idioma e por id, calculados uma vez
+// por idioma na primeira busca: a busca compara `includes` neles em vez de
+// normalizar os artigos a cada tecla. Não no carregamento do módulo, porque
+// os campos em inglês só chegam quando o idioma vira inglês (data/english.js).
 const foldArticle = (a, isEn) => `${fold(pick(a, 'title', isEn))}\n${fold(pick(a, 'summary', isEn))}`;
-const FOLDED = {
-  pt: new Map(articles.map((a) => [a.id, foldArticle(a, false)])),
-  en: new Map(articles.map((a) => [a.id, foldArticle(a, true)])),
+const FOLDED = {};
+const foldedFor = (isEn) => {
+  const key = isEn ? 'en' : 'pt';
+  if (!FOLDED[key]) FOLDED[key] = new Map(articles.map((a) => [a.id, foldArticle(a, isEn)]));
+  return FOLDED[key];
 };
 
 const keyExtractor = (a) => String(a.id);
@@ -41,6 +45,12 @@ const keyExtractor = (a) => String(a.id);
 const RAIL_W = 220;
 const CARD_MIN = 260;
 const MAX_COLS = 3;
+
+// Quanto a lista monta além da tela. O padrão da FlatList (21 telas) montava
+// os 85 artigos de uma vez e, na web, baixava todas as capas ao abrir a aba.
+// Cinco telas (duas acima, duas abaixo) bastam para a rolagem não mostrar
+// buraco.
+const LIST_WINDOW = { initialNumToRender: 12, maxToRenderPerBatch: 12, windowSize: 5 };
 
 // Lista base de cada filtro: tudo por relevância, os "mais buscados" na ordem
 // curada, ou uma categoria por relevância.
@@ -84,7 +94,7 @@ export default function ArticlesScreen({ route }) {
   useFocusEffect(
     useCallback(() => {
       let alive = true;
-      getReadSet().then((set) => { if (alive) setReadSet(set); });
+      getReadSet().then((set) => { if (alive) setReadSet(keepIfSame(set)); });
       return () => { alive = false; };
     }, [])
   );
@@ -104,7 +114,7 @@ export default function ArticlesScreen({ route }) {
     const base = articlesFor(filter);
     const q = fold(query.trim());
     if (!q) return base;
-    const folded = FOLDED[isEn ? 'en' : 'pt'];
+    const folded = foldedFor(isEn);
     return base.filter((a) => folded.get(a.id).includes(q));
   }, [filter, query, isEn]);
 
@@ -199,6 +209,7 @@ export default function ArticlesScreen({ route }) {
                 ItemSeparatorComponent={GridGap}
                 keyExtractor={keyExtractor}
                 keyboardShouldPersistTaps="handled"
+                {...LIST_WINDOW}
                 ListHeaderComponent={
                   <View style={{ marginBottom: space.lg }}>
                     {header}
@@ -226,6 +237,7 @@ export default function ArticlesScreen({ route }) {
           data={data}
           keyExtractor={keyExtractor}
           keyboardShouldPersistTaps="handled"
+                {...LIST_WINDOW}
           keyboardDismissMode="on-drag"
           ListHeaderComponent={
             <View>

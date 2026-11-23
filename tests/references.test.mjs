@@ -1,9 +1,23 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  references, referencesWithEn, withEn, referenceById, translateYear, translateAuthor, resolveRefUrl,
+  references, referencesWithEn, withEn, referenceById, translateYear, translateAuthor, resolveRefUrl, setReferencesEn,
 } from '../src/data/references.js';
 import { referencesEn } from '../src/data/references-en.js';
+
+// Antes da tabela EN chegar (src/data/english.js), a mescla é só o PT.
+test('sem a tabela EN, withEn devolve a referência em PT', () => {
+  setReferencesEn({});
+  try {
+    const base = referenceById('mt-16-18');
+    assert.deepEqual(withEn(base), base);
+  } finally {
+    setReferencesEn(referencesEn);
+  }
+});
+
+// O resto do arquivo testa com a tabela entregue, como no app em inglês.
+setReferencesEn(referencesEn);
 import { SOURCE_IDS } from '../src/data/referenceSources.js';
 
 test('ids das referências são únicos', () => {
@@ -27,8 +41,8 @@ test('toda referência usa um source da lista fechada', () => {
 // que cinco telas refaziam. O catálogo mesclado tem o mesmo tamanho e a mesma
 // ordem, e cada item ganha só os campos *En da sua tradução.
 test('referencesWithEn tem o mesmo tamanho e os mesmos ids, na mesma ordem', () => {
-  assert.equal(referencesWithEn.length, references.length);
-  assert.deepEqual(referencesWithEn.map((r) => r.id), references.map((r) => r.id));
+  assert.equal(referencesWithEn().length, references.length);
+  assert.deepEqual(referencesWithEn().map((r) => r.id), references.map((r) => r.id));
 });
 
 test('withEn mescla a tradução campo a campo e deixa o PT intacto', () => {
@@ -40,7 +54,7 @@ test('withEn mescla a tradução campo a campo e deixa o PT intacto', () => {
   assert.equal(merged.topicEn, referencesEn['mt-16-18'].topicEn);
   // Não altera o objeto original nem o do catálogo.
   assert.equal(base.textEn, undefined);
-  assert.deepEqual(referencesWithEn.find((r) => r.id === 'mt-16-18'), merged);
+  assert.deepEqual(referencesWithEn().find((r) => r.id === 'mt-16-18'), merged);
 });
 
 test('withEn sem tradução devolve cópia igual, e nulo devolve nulo', () => {

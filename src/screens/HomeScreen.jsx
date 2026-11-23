@@ -97,7 +97,13 @@ export default function HomeScreen() {
         getLastRead().then((data) => {
           if (!alive) return;
           const article = data?.articleId ? articles.find((a) => a.id === data.articleId) : null;
-          setLast(article ? { article, progress: data.progress } : null);
+          // Mesmo artigo e mesmo progresso: mantém o estado (sem re-render a
+          // cada visita à aba).
+          setLast((prev) => {
+            if (!article) return null;
+            if (prev && prev.article.id === article.id && prev.progress === data.progress) return prev;
+            return { article, progress: data.progress };
+          });
         });
         getLiveStreak().then((n) => { if (alive) setStreak(n); });
       };

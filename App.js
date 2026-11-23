@@ -206,7 +206,10 @@ function MainTabs() {
       tabBar={(props) => <TabBar {...props} />}
       backBehavior="history"
       sceneContainerStyle={sidebarWidth ? { paddingLeft: sidebarWidth } : undefined}
-      screenOptions={({ route }) => ({ headerShown: false, title: t(TAB_LABEL_KEYS[route.name]) })}
+      // freezeOnBlur: as abas escondidas param de re-renderizar enquanto outra
+      // está na tela (react-freeze). Sem isso, cada troca de aba refazia a
+      // árvore das cinco, e era isso que deixava a troca lenta no site.
+      screenOptions={({ route }) => ({ headerShown: false, freezeOnBlur: true, title: t(TAB_LABEL_KEYS[route.name]) })}
     >
       <Tab.Screen name="Início" component={HomeStackScreen} />
       <Tab.Screen name="Artigos" component={ArticlesStackScreen} />

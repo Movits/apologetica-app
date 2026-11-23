@@ -48,6 +48,7 @@ node scripts/generate-brain.mjs          # regera o grafo de conteúdo do vault 
 node scripts/generate-art-images.mjs     # regera src/data/artImages.js (imagem da Commons de cada artigo)
 node scripts/generate-artworks-index.mjs # regera index.js e all.js das aulas de arte (depois de criar ou mudar uma lição)
 node scripts/import-museum-artworks.mjs  # importa do ../museu-virtual as obras que também ilustram artigos
+node scripts/generate-article-thumbs.mjs # regera assets/articles/thumbs e src/data/articleThumbs.js (imagem nova de artigo)
 ```
 
 ## Architecture
@@ -185,7 +186,8 @@ mantenha esses dois em sincronia.
 
 ### Dados (estáticos em `src/data/`)
 - `articles/` — artigos divididos por categoria (existencia-deus, igreja-catolica, sagrada-escritura, moral, outras-religioes, historia-igreja). `articles/index.js` mescla tudo e aplica traduções EN. Cada artigo: `{ id (numérico, único no app inteiro), title, category, image (require local), imageAlt, imageCredit, imageAspect, imageHd (URL), summary, body (Markdown), references: [ids] }`.
-- `articles-en.js` — traduções em inglês dos artigos (`{ [id]: { titleEn, summaryEn, bodyEn } }`).
+- `articles-en.js` — traduções em inglês dos artigos (`{ [id]: { titleEn, summaryEn, bodyEn } }`). **Carregado sob demanda** com `references-en.js` por `src/data/english.js` (`ensureEnglish()`): o `LanguageContext` só vira o idioma para inglês depois dele. Nunca importe esses dois arquivos estaticamente (voltariam ao script principal da web) e não monte índice com campos `*En` no carregamento do módulo: monte na primeira vez que a tela precisar (ver `foldedFor` em ArticlesScreen). As referências mescladas são `referencesWithEn()` (função).
+- Imagens de artigo: listas e cartões usam a miniatura (`articleThumb(article)` de `src/data/articleThumbs.js`, 480 px, gerada); só o topo do artigo e o visualizador usam a imagem inteira. Artigo novo com imagem: rode `node scripts/generate-article-thumbs.mjs` (`tests/articleThumbs.test.mjs` cobra).
 - `articleRelations.js` — relações entre artigos para "Artigos relacionados".
 - `references.js` — versículos/Catecismo/documentos, com `id` em kebab-case (`'mt-16-18'`, `'cic-309'`). Refs bíblicas têm `bibleNav: { bookId, chapter, verse, verseEnd? }`; as não-bíblicas têm `url` para a fonte oficial. `originalLanguage` (opcional) traz palavra no original, transliteração, Strong's e significado. `citation` (opcional) traz os dados bibliográficos de um paper de forma estruturada e neutra de idioma (`{ kind, container, volume, pages, doi, arxiv, ... }`), e `media` (opcional) a ficha de uma foto ou vídeo histórico (`{ type, publishedIn, archive, license, viewUrl }`). O app não exibe a imagem: mídia é referência textual com link para o acervo.
 - `references-en.js` — traduções EN das referências (`{ [id]: { textEn, topicEn, ... } }`).
