@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useFocusEffect, useNavigation, useScrollToTop } from '@react-navigation/native';
 import { articles } from '../data/articles';
@@ -176,7 +176,7 @@ export default function ArticlesScreen({ route }) {
           const { paddingTop, paddingBottom } = StyleSheet.flatten(contentContainerStyle);
           return (
             <View style={[styles.wide, { paddingHorizontal: space.md, gap: space.xl, maxWidth: PAGE_MAX + space.md * 2 }]}>
-              <View role="tablist" aria-orientation="vertical" style={{ width: RAIL_W, paddingTop: paddingTop + space.xxs, gap: space.xxs }}>
+              <ScrollView role="tablist" aria-orientation="vertical" style={{ width: RAIL_W, flexGrow: 0 }} contentContainerStyle={{ paddingTop: paddingTop + space.xxs, paddingBottom, gap: space.xxs }}>
                 {filters.map((f) => (
                   <TopicItem
                     key={f.id}
@@ -186,7 +186,7 @@ export default function ArticlesScreen({ route }) {
                     onPress={() => setFilter(f.id)}
                   />
                 ))}
-              </View>
+              </ScrollView>
               <Animated.FlatList
                 key={`grid-${cols}`}
                 ref={listRef}

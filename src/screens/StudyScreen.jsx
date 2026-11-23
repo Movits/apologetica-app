@@ -37,7 +37,7 @@ export default function StudyScreen({ navigation, route }) {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, ...centeredColumn(COLUMN_MAX, space.md) }}>
-        <ChipRow role="tablist">
+        <ChipRow>
           {TABS.map((x) => (
             <Chip key={x.id} label={t(x.label)} selected={tab === x.id} onPress={() => setTab(x.id)} haptic />
           ))}
