@@ -14,3 +14,9 @@
 ## Pendências
 - `src/data/artImages.js` não foi regenerado para 84 e 85 (o script depende da API da Wikimedia, que estava limitando o container).
 - Relações dos artigos 56 a 83 continuam pendentes.
+
+## 2026-11-22 · Reescrita a pedido do Roberto
+- Crítica dele: os roteiros citavam a Bíblia para quem não aceita a Bíblia. Regra nova: argumentar a partir do que o outro aceita (lógica, os textos dele, dados verificados) e prever as saídas ("é verdade pra mim").
+- Reescritos os roteiros da moral, do relativismo (com a autorrefutação da "verdade subjetiva" que o Roberto usou com um amigo), da gnose e da gnose racial. Naturalismo e reencarnação ganharam ajustes.
+- Artigos 84 e 85 reescritos: Irineu II,1 (Pleroma com lado de fora), I,18 (cada mestre inventa algo novo), Plotino, Enéadas II,9, e a contradição espírito contra biologia. QI com dados conferidos na fonte: Neisser 1996, Dickens e Flynn 2006, Nisbett 2012 (Moore 1986, Eyferth), Wicherts 2010, STAT e Retraction Watch sobre Lynn, Sociedade Americana de Genética Humana 2018.
+- Corrigido: a frase "duas pessoas do mesmo grupo podem diferir mais que de outro continente" (falsa com muitos marcadores).
