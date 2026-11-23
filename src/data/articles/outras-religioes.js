@@ -710,9 +710,9 @@ O mal, nessa visão, não é uma substância com criador próprio, mas uma ferid
 
 Ela nunca sumiu de todo. Os cátaros da Idade Média tinham uma visão parecida, e hoje ela reaparece no esoterismo, em filmes como Matrix e em canais que prometem "despertar". O apelo é o mesmo de sempre: um segredo, uma explicação fácil para a dor e a sensação de pertencer a uma minoria que enxerga o que os outros não enxergam. Irineu já dizia que o erro nunca se mostra nu, para não ser reconhecido, mas se veste de modo atraente, para parecer mais verdadeiro que a própria verdade.
 
-## Conversando com um amigo gnóstico
+## Conversando com quem acredita na gnose
 
-Não comece zombando nem citando a Bíblia. Pergunte o que o atraiu, que dor ou injustiça ele queria explicar. Depois faça as perguntas do próprio mito, uma por vez, e no fim a mais honesta de todas: o que mudaria a sua opinião? O roteiro "O deus imperfeito" (Praticar, Perguntas que Expõem) traz essa sequência. E mostre, com a vida, que o mundo criado, com a comida, o casamento, a beleza e as pessoas comuns, é um dom e não uma cela.
+Não comece zombando nem citando a Bíblia. Pergunte o que atraiu a pessoa, que dor ou injustiça ela queria explicar. Depois faça as perguntas do próprio mito, uma por vez, e no fim a mais honesta de todas: o que mudaria a sua opinião? O roteiro "O deus imperfeito" (Praticar, Perguntas que Expõem) traz essa sequência. E mostre, com a vida, que o mundo criado, com a comida, o casamento, a beleza e as pessoas comuns, é um dom e não uma cela.
 
 ## Perguntas-chave
 
@@ -771,17 +771,17 @@ Os mapas de "QI por país" que circulam nas redes são outro problema. Quase tod
 
 Para ser honesto: há pesquisadores, como Rushton e Jensen, que defendem uma causa em parte genética, e pesquisas de opinião entre especialistas mostram divergência. Mas opinião não é evidência, e até hoje ninguém apresentou evidência genética direta.
 
-## Como reconhecer um vídeo de "realismo racial"
+## Os argumentos que mais circulam
 
-Vídeos de "realismo racial" com centenas de milhares de visualizações costumam repetir o mesmo material. Vale saber reconhecê-lo:
+Quem defende a superioridade de uma raça costuma recorrer ao mesmo repertório, em livros, sites, vídeos e imagens compartilhadas. Vale conhecê-lo:
 
 - **Os dados de Lynn de novo.** Mapas de "QI por país" e gráficos de "QI nacional" vêm quase sempre da base de dados que acabamos de ver.
 - **A teoria r/K de Rushton.** A ideia de que africanos seriam "r" (muitos filhos e pouco cuidado) e europeus e asiáticos seriam "K" vem do psicólogo J. Philippe Rushton. A ecologia já tinha trocado esse modelo pela teoria de história de vida, e desde 2020 revistas científicas retrataram vários artigos dele, entre eles um sobre r/K, por falhas científicas e éticas.
 - **"Genes da inteligência".** Os genes ASPM e Microcefalina já foram apresentados como prova de diferença racial. O próprio Rushton testou e não encontrou relação nenhuma com a inteligência (Rushton, Vernon e Bons, 2007). Uma checagem maior mostrou que quase todos os "genes do QI" anunciados naquela época eram falsos positivos (Chabris e colegas, 2012).
-- **Imagens fora de contexto.** Um exemplo real: uma figura famosa de conexões cerebrais, de um estudo que comparou homens e mulheres (Ingalhalikar e colegas, 2014), aparece em vídeos como prova de "cérebros diferentes por raça". O estudo nem registrou a raça dos participantes.
-- **Quem está por trás.** Alguns desses vídeos agradecem abertamente a autores nacionalistas brancos e terminam atribuindo a "negação da raça" a uma conspiração judaica. Isso já mostra que não se trata de ciência, mas de militância.
+- **Imagens fora de contexto.** Gráficos de um estudo costumam ser usados para provar outra coisa. Um exemplo: uma figura famosa de conexões cerebrais, de um estudo que comparou homens e mulheres (Ingalhalikar e colegas, 2014), circula como prova de "cérebros diferentes por raça". O estudo nem registrou a raça dos participantes.
+- **Quem está por trás.** Boa parte desse material vem de autores e grupos nacionalistas brancos, e muitas vezes termina atribuindo a "negação da raça" a uma conspiração judaica. Isso já mostra que não se trata de ciência, mas de militância.
 
-Uma pergunta simples resolve muita coisa: o vídeo mostra a fonte de cada gráfico? Se mostra, abra a fonte e veja se ela diz o que o vídeo diz.
+Diante de qualquer gráfico ou estudo, uma pergunta resolve muita coisa: qual é a fonte? Se ela aparece, abra e veja se diz o que estão dizendo que ela diz.
 
 ## Genética e "raça"
 
@@ -805,9 +805,9 @@ A Igreja condenou isso pelo nome. Em 1930, na encíclica Casti Connubii, Pio XI 
 
 A gnose racial oferece duas coisas sedutoras: a sensação de pertencer a uma elite e um culpado para as frustrações. É a tentação mais antiga, a da serpente: "sereis como deuses" (Gênesis 3,5). Por isso discutir só dados raramente basta. Por trás costuma haver orgulho ferido, solidão e um grupo online que dá identidade em troca de ódio.
 
-## Como ajudar um amigo
+## Como conversar com quem pensa assim
 
-Separe a pessoa da ideologia e não humilhe, porque humilhação empurra de volta para o grupo. Comece pelas perguntas de coerência (espírito ou biologia? como se testa?), depois os dados, e termine no pessoal: essa ideia te trouxe mais paz ou mais raiva? O roteiro "A gnose racial" (Praticar, Perguntas que Expõem) traz essa sequência. Reze por ele. E se a conversa passar a ter planos de violência, leve a sério e procure ajuda, inclusive das autoridades.
+Separe a pessoa da ideologia e não humilhe, porque humilhação empurra de volta para o grupo. Comece pelas perguntas de coerência (espírito ou biologia? como se testa?), depois os dados, e termine no pessoal: essa ideia te trouxe mais paz ou mais raiva? O roteiro "A gnose racial" (Praticar, Perguntas que Expõem) traz essa sequência. Reze pela pessoa. E se a conversa passar a ter planos de violência, leve a sério e procure ajuda, inclusive das autoridades.
 
 ## Perguntas-chave
 

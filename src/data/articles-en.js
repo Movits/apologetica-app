@@ -52,9 +52,9 @@ Evil, in this view, is not a substance with its own creator, but a wound, the la
 
 It never fully disappeared. The Cathars of the Middle Ages held a similar view, and today it reappears in esotericism, in films like The Matrix and in channels that promise an "awakening". The appeal is the same as always: a secret, an easy explanation for pain and the feeling of belonging to a minority that sees what others cannot. Irenaeus already said that error never shows itself naked, lest it be recognized, but dresses attractively, to seem more true than the truth itself.
 
-## Talking with a Gnostic friend
+## Talking with someone who believes in gnosis
 
-Do not start by mocking or by quoting the Bible. Ask what drew him in, what pain or injustice he wanted to explain. Then ask the questions of the myth itself, one at a time, and at the end the most honest one of all: what would change your mind? The question path "The imperfect god" (Practice, Questions that Expose) lays out this sequence. And show, with your life, that the created world, with food, marriage, beauty and ordinary people, is a gift and not a cell.
+Do not start by mocking or by quoting the Bible. Ask what drew the person in, what pain or injustice they wanted to explain. Then ask the questions of the myth itself, one at a time, and at the end the most honest one of all: what would change your mind? The question path "The imperfect god" (Practice, Questions that Expose) lays out this sequence. And show, with your life, that the created world, with food, marriage, beauty and ordinary people, is a gift and not a cell.
 
 ## Key questions
 
@@ -105,17 +105,17 @@ The "IQ by country" maps that circulate online are another problem. Almost all o
 
 To be fair: some researchers, such as Rushton and Jensen, argue for a partly genetic cause, and opinion surveys among experts show disagreement. But opinion is not evidence, and to this day no one has presented direct genetic evidence.
 
-## How to recognize a "race realism" video
+## The arguments that circulate most
 
-"Race realism" videos with hundreds of thousands of views tend to repeat the same material. It helps to recognize it:
+Those who claim one race is superior tend to draw on the same repertoire, in books, websites, videos and shared images. It helps to know it:
 
 - **Lynn's data again.** Maps of "IQ by country" and charts of "national IQ" almost always come from the dataset we just looked at.
 - **Rushton's r/K theory.** The idea that Africans are "r" (many children, little care) and Europeans and Asians are "K" comes from the psychologist J. Philippe Rushton. Ecology had already replaced that model with life-history theory, and since 2020 scientific journals have retracted several of his papers, one of them on r/K, for scientific and ethical flaws.
 - **"Intelligence genes".** The ASPM and Microcephalin genes were once presented as proof of racial difference. Rushton himself tested them and found no link at all to intelligence (Rushton, Vernon and Bons, 2007). A larger check showed that almost all the "IQ genes" announced at that time were false positives (Chabris and colleagues, 2012).
-- **Images out of context.** A real example: a famous figure of brain connections, from a study comparing men and women (Ingalhalikar and colleagues, 2014), shows up in videos as proof of "different brains by race". The study did not even record the participants' race.
-- **Who is behind it.** Some of these videos openly thank white nationalist authors and end by blaming "race denial" on a Jewish conspiracy. That alone shows this is not science but activism.
+- **Images out of context.** Charts from one study are often used to prove something else. One example: a famous figure of brain connections, from a study comparing men and women (Ingalhalikar and colleagues, 2014), circulates as proof of "different brains by race". The study did not even record the participants' race.
+- **Who is behind it.** Much of this material comes from white nationalist authors and groups, and it often ends by blaming "race denial" on a Jewish conspiracy. That alone shows this is not science but activism.
 
-One simple question settles a lot: does the video show the source of each chart? If it does, open the source and see whether it says what the video says.
+Faced with any chart or study, one question settles a lot: what is the source? If it is given, open it and see whether it says what people claim it says.
 
 ## Genetics and "race"
 
@@ -139,9 +139,9 @@ The Church condemned this by name. In 1930, in the encyclical Casti Connubii, Pi
 
 Racial gnosis offers two seductive things: the feeling of belonging to an elite and someone to blame for one's frustrations. It is the oldest temptation, the serpent's: "you shall be as Gods" (Genesis 3:5). That is why arguing only about data rarely suffices. Behind it there is usually wounded pride, loneliness and an online group that gives identity in exchange for hatred.
 
-## How to help a friend
+## How to talk with someone who thinks this way
 
-Separate the person from the ideology and do not humiliate, because humiliation pushes back to the group. Start with the coherence questions (spirit or biology? how is it tested?), then the data, and end on the personal: has this idea brought you more peace or more anger? The question path "Racial gnosis" (Practice, Questions that Expose) lays out this sequence. Pray for him. And if the conversation turns to plans of violence, take it seriously and seek help, including from the authorities.
+Separate the person from the ideology and do not humiliate, because humiliation pushes back to the group. Start with the coherence questions (spirit or biology? how is it tested?), then the data, and end on the personal: has this idea brought you more peace or more anger? The question path "Racial gnosis" (Practice, Questions that Expose) lays out this sequence. Pray for them. And if the conversation turns to plans of violence, take it seriously and seek help, including from the authorities.
 
 ## Key questions
 

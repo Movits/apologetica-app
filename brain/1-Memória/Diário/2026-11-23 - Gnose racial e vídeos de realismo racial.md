@@ -1,7 +1,7 @@
 # 2026-11-23 - Gnose racial e vídeos de realismo racial
 
 ## O que foi feito
-- O Artur mandou o infográfico "The Truth About Race" e o vídeo "Race Realism" (exquofonte) como resposta ao texto sobre gnose e QI. As 242 imagens do vídeo foram analisadas uma por uma, e as fontes que aparecem na tela foram conferidas nas publicações originais.
+- Análise do infográfico "The Truth About Race" e do vídeo "Race Realism" (exquofonte), material típico de "realismo racial". As 242 imagens do vídeo foram analisadas uma por uma, e as fontes que aparecem na tela foram conferidas nas publicações originais.
 - Artigo 85 (Gnose Racial), em PT e EN, sobre a base do PR #9:
   - seção nova "Como reconhecer um vídeo de realismo racial";
   - limiar de subespécie (Templeton 1998);
@@ -14,6 +14,9 @@
 - **Os "15 vezes mais viés dos jurados negros"** saem da Tabela 1 de Mitchell et al. 2005: d = 0,428 contra 0,028, em 10 contra 36 estudos com júri simulado. Na mesma tabela, o viés cai de 0,404 nos anos 1970 para 0,058 nos anos 2000. O apêndice do artigo foi corrigido em 2017.
 - **Testosterona:** Rohrmann 2007 (NHANES III) diz no título que ela não difere entre homens negros e brancos.
 - **Wu e Zhang 2011** não dizem que os genes neurológicos são os mais diferenciados. Os autores destacam genes de osso e de cabelo.
+
+## Decisão
+- O conteúdo do app é universal: nada de "seu amigo" nem de "um vídeo" específico. As seções de conversa falam de "quem pensa assim", e a seção sobre o repertório racista vale para livros, sites, vídeos e imagens.
 
 ## Pendências
 - O PR #9 está atrás do master (os PRs #10 a #13 da Bíblia). Pode precisar de merge do master antes de entrar.
