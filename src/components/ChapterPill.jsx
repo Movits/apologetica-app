@@ -19,7 +19,8 @@ import { PressScale } from './ui';
 // direto porque a tela da Bíblia é filha direta do Tab.
 const TARGET = 44;
 
-export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, prevLabel, nextLabel, visible }) {
+// `onLabelPress` torna o "3 de 21" um botão (abre a folha de capítulos).
+export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, prevLabel, nextLabel, onLabelPress, labelA11y, visible }) {
   const { colors, tokens, text } = useTheme();
   const tabBarHeight = useBottomTabBarHeight();
   const { space, radius, icon, shadow } = tokens;
@@ -54,9 +55,21 @@ export default function ChapterPill({ label, hasPrev, hasNext, onPrev, onNext, p
       >
         <ChromeBackdrop edge="all" tone="elevated" radius={radius.full} />
         {button('chevron-back', prevLabel, hasPrev, onPrev)}
-        <Text style={[text('subhead'), styles.label, { color: colors.text, paddingHorizontal: space.xs }]}>
-          {label}
-        </Text>
+        {onLabelPress ? (
+          <PressScale
+            role="button"
+            aria-label={`${labelA11y || label}, ${label}`}
+            onPress={onLabelPress}
+            style={[styles.labelButton, { paddingHorizontal: space.sm, gap: space.xxs }]}
+          >
+            <Text style={[text('subhead'), styles.label, { color: colors.text }]}>{label}</Text>
+            <Ionicons name="chevron-down" size={icon.sm} color={colors.textSubtle} />
+          </PressScale>
+        ) : (
+          <Text style={[text('subhead'), styles.label, { color: colors.text, paddingHorizontal: space.xs }]}>
+            {label}
+          </Text>
+        )}
         {button('chevron-forward', nextLabel, hasNext, onNext)}
       </Animated.View>
     </View>
@@ -85,4 +98,5 @@ const styles = StyleSheet.create({
   },
   disabled: { opacity: 0.4 },
   label: { fontWeight: '600', textAlign: 'center' },
+  labelButton: { height: TARGET, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
 });

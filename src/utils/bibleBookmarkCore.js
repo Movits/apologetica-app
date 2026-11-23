@@ -44,6 +44,15 @@ export function nextChapterRef({ bookId, chapter } = {}) {
   return prox ? { bookId: prox.id, chapter: 1 } : null;
 }
 
+// Capítulo anterior na ordem do cânon, atravessando para o último capítulo
+// do livro anterior. Null em Gênesis 1 ou para referência inválida.
+export function prevChapterRef({ bookId, chapter } = {}) {
+  if (!capValido(bookId, chapter)) return null;
+  if (chapter > 1) return { bookId, chapter: chapter - 1 };
+  const ant = BIBLE_BOOKS[INDICE_LIVRO[bookId] - 1];
+  return ant ? { bookId: ant.id, chapter: ant.totalChapters } : null;
+}
+
 // `a` está depois de `b`? Capítulo vem antes da rolagem. O marcador só anda
 // para a frente sozinho: voltar um capítulo para relembrar não puxa o ponto
 // para trás. Sem `b` (ainda não há marcador), qualquer ponto válido serve.

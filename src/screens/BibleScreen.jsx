@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import { View, Text, Pressable, StyleSheet, Platform, AppState, useWindowDimensions } from 'react-native';
+import { View, Text, Pressable, ScrollView, StyleSheet, Platform, AppState, useWindowDimensions } from 'react-native';
 import Animated, {
   Easing,
   useAnimatedScrollHandler,
@@ -36,14 +36,15 @@ import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
 import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
 import { columnInnerWidth } from '../components/ReadingColumn';
-import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState, ContinueRow } from '../components/ui';
+import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState, ContinueRow, Button } from '../components/ui';
 import {
   saveBiblePosition, getBiblePosition,
   markChapterRead, getReadChapters, getBibleStats,
   READ_THRESHOLD,
 } from '../utils/bibleProgress';
 import { getBibleBookmark, setBibleBookmark, advanceBibleBookmark } from '../utils/bibleBookmark';
-import { nextChapterRef, START_REF } from '../utils/bibleBookmarkCore';
+import { nextChapterRef, prevChapterRef, START_REF } from '../utils/bibleBookmarkCore';
+import Sheet from '../components/ui/Sheet';
 
 // Por quanto tempo, depois de abrir um capitulo, ainda tentamos restaurar o
 // scroll salvo. Cobre o crescimento progressivo da FlatList sem atrapalhar
@@ -83,6 +84,10 @@ const VERSE_SCROLL_THROTTLE_MS = 32;
 // Variação mínima da fração lida para chegar à barra: abaixo disso o scroll
 // não escreve nada.
 const RATIO_STEP = 0.005;
+
+// Largura máxima da folha "Escolher capítulo" em tela larga (a mesma coluna
+// de leitura de 720 do LargeTitleScreen).
+const SHEET_GRID_MAX = 720;
 
 const keyByVerse = (v) => String(v.n);
 
@@ -126,15 +131,17 @@ const VerseRow = memo(function VerseRow({ verse, bg, numColor, textColor, strong
 // pressionada, como as linhas de lista. memo com props primitivas e o objeto
 // de estilos estável, para a grade não redesenhar tudo quando a tela muda por
 // outro motivo.
-const ChapterCell = memo(function ChapterCell({ n, isRead, size, label, onPress, s }) {
+const ChapterCell = memo(function ChapterCell({ n, isRead, current, size, label, onPress, s }) {
   return (
     <Pressable
       role="button"
       aria-label={label}
+      aria-current={current ? 'true' : undefined}
       onPress={() => onPress(n)}
       style={({ pressed }) => [
         s.cell,
         { width: size, height: size, backgroundColor: pressed ? s.pressedBg : isRead ? s.readBg : s.bg },
+        current ? s.current : null,
       ]}
     >
       <Text style={[s.num, { color: isRead ? s.readColor : s.color }]}>{n}</Text>
@@ -148,6 +155,14 @@ const ChapterCell = memo(function ChapterCell({ n, isRead, size, label, onPress,
 const BookRow = memo(function BookRow({ book, title, subtitle, onPress }) {
   return <Row title={title} subtitle={subtitle} trailing="chevron" onPress={() => onPress(book)} />;
 });
+
+// Grade de quadrados de pelo menos 44, quantos couberem na largura útil,
+// esticados para fechar a linha sem sobra à direita. Serve à tela de
+// capítulos e à folha "Escolher capítulo".
+function gridCellSize(inner, gap) {
+  const cols = Math.max(1, Math.floor((inner + gap) / (TARGET + gap)));
+  return Math.floor((inner - gap * (cols - 1)) / cols);
+}
 
 // Lista de versículos: Animated.FlatList que recebe o onScroll do
 // LargeTitleScreen (título inline e backdrop) composto com o nosso, que
@@ -194,9 +209,12 @@ function VerseList({
     const dy = y - lastY.value;
     lastY.value = y;
     const ours = Date.now() < autoUntil.value;
+    // Perto do fim do capítulo a pílula volta sozinha: é a hora em que se quer
+    // passar para o próximo, e antes era preciso rolar para cima para achá-la.
+    const nearEnd = y + e.layoutMeasurement.height >= e.contentSize.height - PILL_HIDE_AFTER;
     let target = pillTarget.value;
-    if (!ours && dy > SCROLL_DEADZONE && y > PILL_HIDE_AFTER) target = 0;
-    else if (dy < -SCROLL_DEADZONE || y <= PILL_HIDE_AFTER) target = 1;
+    if (nearEnd || dy < -SCROLL_DEADZONE || y <= PILL_HIDE_AFTER) target = 1;
+    else if (!ours && dy > SCROLL_DEADZONE && y > PILL_HIDE_AFTER) target = 0;
     if (target !== pillTarget.value) {
       pillTarget.value = target;
       pillVisible.value = withTiming(target, { duration: motion.aba, easing });
@@ -233,7 +251,7 @@ export default function BibleScreen({ route, navigation }) {
   const { colors, tokens, text, darkMode } = useTheme();
   const { space, icon } = tokens;
   const insets = useSafeAreaInsets();
-  const { width: windowWidth } = useWindowDimensions();
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const { user } = useAuth();
   const { lang, t, isEn } = useLanguage();
   const bn = useCallback((b) => bookName(b, isEn), [isEn]);
@@ -254,6 +272,11 @@ export default function BibleScreen({ route, navigation }) {
   const [fromDeepLink, setFromDeepLink] = useState(false);
   const [filterText, setFilterText] = useState('');
   const [actionVerse, setActionVerse] = useState(null);
+  // Folha "Escolher capítulo" (toque no "3 de 21" da pílula).
+  const [pickerOpen, setPickerOpen] = useState(false);
+  // Anterior/próximo do capítulo aberto, para o teclado (definidos no render
+  // da tela de versículos).
+  const chapterNav = useRef(null);
   const [chapterHighlights, setChapterHighlights] = useState([]);
   const [chapterNotes, setChapterNotes] = useState([]);
   const [speaking, setSpeaking] = useState(false);
@@ -735,6 +758,22 @@ export default function BibleScreen({ route, navigation }) {
     return () => clearTimeout(timer);
   }, [chapterData, highlightVerse, autoUntil]);
 
+  // Teclado no computador (web): setas esquerda e direita trocam de capítulo.
+  // Ignora quando há folha aberta, tecla modificadora ou foco num campo.
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof window === 'undefined' || view !== 'verses') return undefined;
+    const onKey = (e) => {
+      if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      if (actionVerse || pickerOpen) return;
+      const tag = e.target && e.target.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); chapterNav.current?.goNext(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); chapterNav.current?.goPrev(); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [view, actionVerse, pickerOpen]);
+
   // ===== Ações do versículo (folha) =====
   // Estável: é o onPress de todas as VerseRow (memo).
   const openActions = useCallback((verse) => setActionVerse(verse), []);
@@ -935,7 +974,11 @@ export default function BibleScreen({ route, navigation }) {
     pressedBg: colors.separator,
     color: colors.text,
     readColor: colors.accentText,
-  }), [styles.cell, text, colors.card, colors.separator, colors.text, colors.accentText]);
+    current: styles.cellCurrent,
+  }), [styles.cell, styles.cellCurrent, text, colors.card, colors.separator, colors.text, colors.accentText]);
+  // Na folha o fundo já é o `elevated` (branco no claro): a célula usa o fundo
+  // da tela para continuar se destacando.
+  const pickerCellStyles = useMemo(() => ({ ...cellStyles, bg: colors.bg }), [cellStyles, colors.bg]);
 
   // Estilos da linha de versículo, idem (VerseRow é memo). O número fica
   // centrado na primeira linha do texto.
@@ -1101,9 +1144,7 @@ export default function BibleScreen({ route, navigation }) {
     // (a da coluna do LargeTitleScreen, que em janela larga para em 720),
     // esticados para fechar a linha sem sobra à direita.
     const gap = space.xs;
-    const inner = columnInnerWidth(windowWidth, undefined, space.md);
-    const cols = Math.max(1, Math.floor((inner + gap) / (TARGET + gap)));
-    const cell = Math.floor((inner - gap * (cols - 1)) / cols);
+    const cell = gridCellSize(columnInnerWidth(windowWidth, undefined, space.md), gap);
 
     return (
       <LargeTitleScreen
@@ -1144,22 +1185,78 @@ export default function BibleScreen({ route, navigation }) {
 
   // ===== VERSÍCULOS =====
   if (view === 'verses' && book && chapter) {
-    const hasPrev = chapter > 1;
-    // Na leitura contínua, o fim de um livro emenda no começo do seguinte.
-    const proximoNaLeitura = emLeitura ? nextChapterRef({ bookId: book.id, chapter }) : null;
-    const hasNext = chapter < book.totalChapters || Boolean(proximoNaLeitura);
+    // Anterior e próximo seguem a ordem do cânon: o fim de um livro emenda no
+    // começo do seguinte (e o começo volta ao fim do anterior), em qualquer
+    // modo. O marcador só anda na leitura contínua, como antes.
+    const prevRef = prevChapterRef({ bookId: book.id, chapter });
+    const nextRef = nextChapterRef({ bookId: book.id, chapter });
+    const hasPrev = Boolean(prevRef);
+    const hasNext = Boolean(nextRef);
+    const refLabel = (r) => `${bn(BIBLE_BOOKS.find((x) => x.id === r.bookId))} ${r.chapter}`;
     // Três situações diferentes, que antes cairiam todas no mesmo texto:
     //   aguardando  -> a tradução ainda está sendo baixada (ou falhou)
     //   isEmpty     -> a tradução está aqui, mas este capítulo não foi adicionado
     const aguardando = !bibliaPronta.pronta;
     const isEmpty = !aguardando && !chapterData?.verses?.length;
-    const goPrev = () => { if (hasPrev) goTo({ view: 'verses', book, chapter: chapter - 1, leitura: emLeitura }); };
-    const goNext = () => {
-      if (!hasNext) return;
-      if (chapter < book.totalChapters) { goTo({ view: 'verses', book, chapter: chapter + 1, leitura: emLeitura }); return; }
-      const nb = BIBLE_BOOKS.find((x) => x.id === proximoNaLeitura.bookId);
-      if (nb) goTo({ view: 'verses', book: nb, chapter: proximoNaLeitura.chapter, leitura: true });
+    const goRef = (r) => {
+      const nb = r && BIBLE_BOOKS.find((x) => x.id === r.bookId);
+      if (nb) goTo({ view: 'verses', book: nb, chapter: r.chapter, leitura: emLeitura });
     };
+    const goPrev = () => goRef(prevRef);
+    const goNext = () => goRef(nextRef);
+    chapterNav.current = { goPrev, goNext };
+
+    // Fim do capítulo: o próximo em destaque e o anterior discreto, onde o
+    // olho já está quando o texto acaba.
+    const chapterFooter = (
+      <View style={styles.chapterEnd}>
+        {nextRef ? <Button label={t('bible.nextTo', { ref: refLabel(nextRef) })} onPress={goNext} /> : null}
+        {prevRef ? <Button variant="plain" label={t('bible.prevTo', { ref: refLabel(prevRef) })} onPress={goPrev} /> : null}
+        {footer}
+      </View>
+    );
+
+    // Folha "Escolher capítulo": a mesma grade da tela de capítulos, sem sair
+    // da leitura. Escolher um capítulo aqui é consulta (não mexe no marcador).
+    const gap = space.xs;
+    const pickerCell = gridCellSize(Math.min(windowWidth, SHEET_GRID_MAX) - space.md * 2, gap);
+    const pickChapter = (c) => {
+      setPickerOpen(false);
+      if (c !== chapter) goTo({ view: 'verses', book, chapter: c });
+    };
+    const pickOtherBook = () => {
+      afterSheet.current = () => goTo({ view: 'books' });
+      setPickerOpen(false);
+    };
+    const picker = (
+      <Sheet
+        visible={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onDismissed={onSheetDismissed}
+        title={bn(book)}
+        style={styles.pickerSheet}
+      >
+        <ScrollView style={{ maxHeight: windowHeight * 0.5 }}>
+          <View style={[styles.grid, { gap }]}>
+            {Array.from({ length: book.totalChapters }, (_, i) => i + 1).map((c) => (
+              <ChapterCell
+                key={c}
+                n={c}
+                isRead={readChapters.has(c)}
+                current={c === chapter}
+                size={pickerCell}
+                label={readChapters.has(c) ? `${t('bible.chapter')} ${c}, ${t('bible.chapterDone')}` : `${t('bible.chapter')} ${c}`}
+                onPress={pickChapter}
+                s={pickerCellStyles}
+              />
+            ))}
+          </View>
+        </ScrollView>
+        <Group style={styles.pickerOther}>
+          <Row title={t('bible.otherBook')} trailing="chevron" onPress={pickOtherBook} />
+        </Group>
+      </Sheet>
+    );
 
     const title = `${bn(book)} ${chapter}`;
     const subtitle = `${emLeitura ? `${t('bible.myReading')} · ` : ''}${pick(book, 'group', isEn)}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
@@ -1218,8 +1315,10 @@ export default function BibleScreen({ route, navigation }) {
         hasNext={hasNext}
         onPrev={goPrev}
         onNext={goNext}
-        prevLabel={t('bible.prevChapter')}
-        nextLabel={t('bible.nextChapter')}
+        prevLabel={hasPrev ? `${t('bible.prevChapter')}: ${refLabel(prevRef)}` : t('bible.prevChapter')}
+        nextLabel={hasNext ? `${t('bible.nextChapter')}: ${refLabel(nextRef)}` : t('bible.nextChapter')}
+        onLabelPress={() => setPickerOpen(true)}
+        labelA11y={t('bible.pickChapter')}
         visible={aguardando || isEmpty ? undefined : pillVisible}
       />
     );
@@ -1241,6 +1340,7 @@ export default function BibleScreen({ route, navigation }) {
             )}
           </LargeTitleScreen>
           {pill}
+          {picker}
         </View>
       );
     }
@@ -1260,7 +1360,7 @@ export default function BibleScreen({ route, navigation }) {
               listRef={verseListRef}
               data={chapterData.verses}
               renderItem={renderVerse}
-              footer={footer}
+              footer={chapterFooter}
               onScrollJS={onVerseScroll}
               onScrollBeginDrag={marcarLeitura}
               onTouchMove={marcarLeitura}
@@ -1279,6 +1379,7 @@ export default function BibleScreen({ route, navigation }) {
         </View>
 
         {pill}
+        {picker}
 
         <VerseActionsSheet
           verse={actionVerse}
@@ -1311,6 +1412,11 @@ const makeStyles = (c, { space, radius }) =>
     bookProgressText: { color: c.textSubtle, marginTop: space.xs },
     grid: { flexDirection: 'row', flexWrap: 'wrap' },
     cell: { borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
+    cellCurrent: { borderWidth: space.xxs, borderColor: c.tint },
+    // Fim do capítulo: acima da pílula e da tab bar, que flutuam sobre a lista.
+    chapterEnd: { marginTop: space.xl, gap: space.xs, paddingBottom: TARGET + space.lg },
+    pickerSheet: { alignSelf: 'center', width: '100%', maxWidth: SHEET_GRID_MAX },
+    pickerOther: { marginTop: space.md },
     iconButton: { width: TARGET, height: TARGET, alignItems: 'center', justifyContent: 'center' },
     headerButtons: { flexDirection: 'row', alignItems: 'center' },
     // A marcação sangra `space.xs` para cada lado do texto, que continua
@@ -1326,6 +1432,6 @@ const makeStyles = (c, { space, radius }) =>
     verseNum: { fontWeight: '600', minWidth: space.lg },
     verseText: { flex: 1 },
     verseTextStrong: { fontWeight: '600' },
-    footer: { color: c.textSubtle, textAlign: 'center', marginTop: space.xl },
+    footer: { color: c.textSubtle, textAlign: 'center', marginTop: space.md },
     progress: { position: 'absolute', left: 0, right: 0, pointerEvents: 'none' },
   });
