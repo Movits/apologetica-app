@@ -3,6 +3,7 @@ import { AppState, ScrollView, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { markProgressDirty } from '../utils/syncSignal';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { getQuizOfDay, getRandomQuestions, getRandomTrueFalse } from '../data/quiz';
@@ -256,11 +257,13 @@ function MultipleChoiceGame({ mode, navigation }) {
         // a primeira fica e nada mais conta.
         if (hist === before) return;
         await AsyncStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
+        markProgressDirty(HISTORY_KEY);
         if (ok) {
           const had = hist[yesterday];
           const newStreak = had && had.correct ? streak + 1 : 1;
           setStreak(newStreak);
           await AsyncStorage.setItem(STREAK_KEY, String(newStreak));
+          markProgressDirty(STREAK_KEY);
         }
       } catch {}
       // A pergunta do dia também rende XP na Jornada (só a primeira resposta

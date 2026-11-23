@@ -11,7 +11,7 @@ const userCol = (sub) => {
 };
 
 // Apaga TODOS os dados do usuário no Firestore (usado na exclusão de conta).
-// As três únicas subcoleções são highlights, notes e notebook.
+// Subcoleções: highlights, notes, notebook e progress.
 async function wipeCollection(sub) {
   const snap = await getDocs(userCol(sub));
   await Promise.all(snap.docs.map((d) => deleteDoc(d.ref)));
@@ -21,6 +21,9 @@ export async function deleteAllUserData() {
   await wipeCollection('highlights');
   await wipeCollection('notes');
   await wipeCollection('notebook');
+  // Progresso sincronizado (Jornada, lidos, favoritos, Bíblia): ver
+  // src/services/progressSync.js.
+  await wipeCollection('progress');
 }
 
 // ============ HIGHLIGHTS ============

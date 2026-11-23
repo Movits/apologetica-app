@@ -9,6 +9,7 @@ import { DIALOGUES } from '../data/dialogues';
 import { articles } from '../data/articles';
 import { consumeStartIntent } from '../utils/onboarding';
 import { getLiturgicalSeason } from '../utils/liturgicalSeason';
+import { subscribeProgressSync } from '../services/progressSync';
 import { getLastRead } from '../utils/lastRead';
 import { getLiveStreak } from '../utils/readingProgress';
 import { useJourney } from '../hooks/useJourney';
@@ -81,16 +82,22 @@ export default function HomeScreen() {
   // Último artigo aberto (AsyncStorage), relido a cada foco da aba. O registro
   // de lastRead.js hoje só tem articleId e data; `progress` (0 a 1) é opcional
   // e, quando a tela do artigo passar a gravá-lo, a barra da linha aparece.
+  // Também relido quando a sincronização com a conta traz algo de outro
+  // aparelho com a Início já aberta.
   useFocusEffect(
     useCallback(() => {
       let alive = true;
-      getLastRead().then((data) => {
-        if (!alive) return;
-        const article = data?.articleId ? articles.find((a) => a.id === data.articleId) : null;
-        setLast(article ? { article, progress: data.progress } : null);
-      });
-      getLiveStreak().then((n) => { if (alive) setStreak(n); });
-      return () => { alive = false; };
+      const load = () => {
+        getLastRead().then((data) => {
+          if (!alive) return;
+          const article = data?.articleId ? articles.find((a) => a.id === data.articleId) : null;
+          setLast(article ? { article, progress: data.progress } : null);
+        });
+        getLiveStreak().then((n) => { if (alive) setStreak(n); });
+      };
+      load();
+      const unsub = subscribeProgressSync(load);
+      return () => { alive = false; unsub(); };
     }, [])
   );
 

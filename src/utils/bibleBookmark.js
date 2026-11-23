@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { sanitizeBookmark, isAhead } from './bibleBookmarkCore';
+import { markProgressDirty } from './syncSignal';
 
 // Marcador da leitura contínua (Bíblia do início ao fim), local em
 // AsyncStorage como o resto do progresso, para valer também no modo
@@ -22,6 +23,7 @@ export async function setBibleBookmark({ bookId, chapter, ratio = 0, verse = nul
   const limpo = sanitizeBookmark({ bookId, chapter, ratio, verse, lang, at: Date.now() });
   if (!limpo) return null;
   try { await AsyncStorage.setItem(KEY, JSON.stringify(limpo)); } catch {}
+  markProgressDirty(KEY);
   return limpo;
 }
 
@@ -35,4 +37,5 @@ export async function advanceBibleBookmark(point) {
 
 export async function clearBibleBookmark() {
   try { await AsyncStorage.removeItem(KEY); } catch {}
+  markProgressDirty(KEY, { overwrite: true });
 }

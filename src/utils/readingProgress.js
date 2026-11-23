@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { liveStreak } from './journey';
+import { markProgressDirty } from './syncSignal';
 
 const KEY_READ = 'reading:read';
 const KEY_PLAN = 'reading:plan';
@@ -43,6 +44,7 @@ export async function bumpStreak() {
   const count = s.lastDate === localDateStr(y) ? (s.count || 0) + 1 : 1;
   const next = { count, lastDate: today };
   await AsyncStorage.setItem(KEY_STREAK, JSON.stringify(next)).catch(() => {});
+  markProgressDirty(KEY_STREAK);
   return next;
 }
 
@@ -58,8 +60,10 @@ export async function getReadSet() {
 
 export async function markAsRead(articleId) {
   const set = await getReadSet();
+  if (set.has(articleId)) return set;
   set.add(articleId);
   await AsyncStorage.setItem(KEY_READ, JSON.stringify([...set]));
+  markProgressDirty(KEY_READ);
   return set;
 }
 
@@ -91,10 +95,12 @@ export async function markPlanDay(trackId, day) {
   }
   state.lastDay = Math.max(state.lastDay, day);
   await AsyncStorage.setItem(planKey(trackId), JSON.stringify(state));
+  markProgressDirty(planKey(trackId));
   await bumpStreak().catch(() => {});
   return state;
 }
 
 export async function resetPlanProgress(trackId = 'fundamentos') {
   await AsyncStorage.removeItem(planKey(trackId)).catch(() => {});
+  markProgressDirty(planKey(trackId), { overwrite: true });
 }
