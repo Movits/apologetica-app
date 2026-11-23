@@ -40,10 +40,10 @@ import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptySt
 import {
   saveBiblePosition, getBiblePosition,
   markChapterRead, getReadChapters, getBibleStats,
-  READ_THRESHOLD, TOTAL_CHAPTERS,
+  READ_THRESHOLD,
 } from '../utils/bibleProgress';
 import { getBibleBookmark, setBibleBookmark, advanceBibleBookmark } from '../utils/bibleBookmark';
-import { canonIndex, nextChapterRef, START_REF } from '../utils/bibleBookmarkCore';
+import { nextChapterRef, START_REF } from '../utils/bibleBookmarkCore';
 
 // Por quanto tempo, depois de abrir um capitulo, ainda tentamos restaurar o
 // scroll salvo. Cobre o crescimento progressivo da FlatList sem atrapalhar
@@ -86,14 +86,15 @@ const RATIO_STEP = 0.005;
 
 const keyByVerse = (v) => String(v.n);
 
-// Grava o que o scroll deixou pendente: sempre o "continue lendo" e, se a
-// leitura contínua estava ligada quando o scroll aconteceu, também o
-// marcador (que só anda para a frente, ver advanceBibleBookmark).
+// Grava o que o scroll deixou pendente. São dois pontos que não se misturam:
+// na leitura contínua anda só o marcador (que só vai para a frente, ver
+// advanceBibleBookmark); fora dela (busca, referência, terço, grade) anda só
+// o "último aberto".
 function gravarPendente(p) {
   if (!p) return;
   const { leitura, ...pos } = p;
-  saveBiblePosition(pos);
   if (leitura) advanceBibleBookmark(pos);
+  else saveBiblePosition(pos);
 }
 const noop = () => {};
 
@@ -511,6 +512,12 @@ export default function BibleScreen({ route, navigation }) {
     // ele (só se estiver adiante: voltar um capítulo não puxa o marcador).
     if (emLeituraRef.current && bookId && chapter) {
       advanceBibleBookmark({ bookId, chapter, ratio: 0, lang }).then((b) => { if (b) setBookmark(b); });
+    } else if (bookId && chapter) {
+      // Fora da leitura, abrir já conta como "último aberto", mesmo sem rolar
+      // (quem abre uma referência e volta quer achá-la ali). Mantém a fração
+      // salva se é o mesmo capítulo.
+      const mesmo = savedPosition && savedPosition.bookId === bookId && savedPosition.chapter === chapter;
+      saveBiblePosition({ bookId, chapter, ratio: mesmo ? savedPosition.ratio : 0, lang });
     }
     const hint = restoreHint.current;
     restoreHint.current = null;
@@ -624,9 +631,6 @@ export default function BibleScreen({ route, navigation }) {
       progressSv.value = next;
       if (cruzou) setProgresso({ chave: `${bookId}:${chapter}`, ratio: next });
     }
-    // Consulta não move o "continue lendo": uma busca que cai em Apocalipse 22
-    // não pode apagar o ponto de quem estava lendo Gênesis 15. Ao arrastar, o
-    // usuário promove aquilo a leitura e a gravação passa a valer.
     // Scroll que nao veio de nos, e fora da janela do nosso proprio scroll, e
     // do usuario. Cobre roda do mouse, onde nao ha evento de toque.
     const auto = autoScroll.current;
@@ -635,8 +639,10 @@ export default function BibleScreen({ route, navigation }) {
       && (auto.target == null || Math.abs(contentOffset.y - auto.target) < 8);
     if (!nossoScroll && contentOffset.y > 0) userScrolled.current = true;
 
-    if (!fromDeepLink || userScrolled.current) queueSave(bookId, chapter, clamped, lang);
-  }, [queueSave, bookId, chapter, fromDeepLink, lang, progressSv]);
+    // Vai para o marcador (leitura contínua) ou para o "último aberto"
+    // (qualquer outra ida), nunca para os dois: ver gravarPendente.
+    queueSave(bookId, chapter, clamped, lang);
+  }, [queueSave, bookId, chapter, lang, progressSv]);
 
   const onVerseLayout = useCallback((e) => {
     verseLayoutH.current = e.nativeEvent.layout.height;
@@ -1009,7 +1015,13 @@ export default function BibleScreen({ route, navigation }) {
     const bookmarkLabel = bookmarkBook
       ? formatVerseRef({ bookName: bn(bookmarkBook), chapter: bookmark.chapter, verse: bookmark.verse ?? undefined }, isEn)
       : '';
-    const bookmarkN = bookmarkBook ? canonIndex(bookmark) + 1 : 0;
+    // A porcentagem do capítulo e os capítulos lidos ficam na "Minha leitura";
+    // o "último aberto" é só um atalho.
+    const bookmarkPct = Math.round((bookmark?.ratio || 0) * 100);
+    const bookmarkSub = [t('bible.chapterPct', { pct: bookmarkPct })];
+    if (stats?.chaptersRead > 0) {
+      bookmarkSub.push(`${t('bible.ofTotal', { n: stats.chaptersRead, total: stats.total })} ${t('bible.chaptersRead')}`);
+    }
 
     return (
       <LargeTitleScreen
@@ -1038,9 +1050,9 @@ export default function BibleScreen({ route, navigation }) {
                   <ContinueRow
                     icon="bookmark-outline"
                     title={t('bible.myReadingIn', { ref: bookmarkLabel })}
-                    subtitle={t('bible.myReadingProgress', { n: bookmarkN, total: TOTAL_CHAPTERS })}
-                    progress={(bookmarkN - 1 + (bookmark.ratio || 0)) / TOTAL_CHAPTERS}
-                    progressLabel={t('bible.myReadingProgress', { n: bookmarkN, total: TOTAL_CHAPTERS })}
+                    subtitle={bookmarkSub.join(' · ')}
+                    progress={bookmark.ratio || 0}
+                    progressLabel={t('bible.chapterPct', { pct: bookmarkPct })}
                     onPress={resumeBookmark}
                     accessibilityLabel={t('bible.goToMyReading', { ref: bookmarkLabel })}
                   />
@@ -1058,9 +1070,6 @@ export default function BibleScreen({ route, navigation }) {
             {continueBook ? (
               <ContinueBibleCard
                 label={`${bn(continueBook)} ${savedPosition.chapter}`}
-                title={bookmarkBook ? t('bible.lastOpenedIn', { ref: `${bn(continueBook)} ${savedPosition.chapter}` }) : undefined}
-                chapterRatio={savedPosition.ratio}
-                stats={stats}
                 onPress={resumeReading}
                 style={styles.continueCard}
               />

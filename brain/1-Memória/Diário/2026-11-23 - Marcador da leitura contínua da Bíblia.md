@@ -12,3 +12,5 @@
 **Verificado:** lint, `npm test` (201 testes) e um roteiro Playwright no build web (Gn 1 → Gn 2, consulta de Ap 22 sem mexer no marcador, recarregar a página, marcar Gn 50,1 e avançar para Êx 1).
 
 **Pendente:** o marcador é local (AsyncStorage), como o resto do progresso: não sincroniza entre aparelhos.
+
+**Ajuste do mesmo dia (pedido do dono, com print):** a porcentagem do capítulo e os capítulos lidos foram para o cartão "Minha leitura". O "Último aberto" virou só um atalho, sem números, e só muda fora da leitura contínua (busca, referência, terço, grade), já ao abrir. Ler pela "Minha leitura" não mexe mais nele.
