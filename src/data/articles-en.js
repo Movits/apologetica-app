@@ -105,9 +105,25 @@ The "IQ by country" maps that circulate online are another problem. Almost all o
 
 To be fair: some researchers, such as Rushton and Jensen, argue for a partly genetic cause, and opinion surveys among experts show disagreement. But opinion is not evidence, and to this day no one has presented direct genetic evidence.
 
+## How to recognize a "race realism" video
+
+"Race realism" videos with hundreds of thousands of views tend to repeat the same material. It helps to recognize it:
+
+- **Lynn's data again.** Maps of "IQ by country" and charts of "national IQ" almost always come from the dataset we just looked at.
+- **Rushton's r/K theory.** The idea that Africans are "r" (many children, little care) and Europeans and Asians are "K" comes from the psychologist J. Philippe Rushton. Ecology had already replaced that model with life-history theory, and since 2020 scientific journals have retracted several of his papers, one of them on r/K, for scientific and ethical flaws.
+- **"Intelligence genes".** The ASPM and Microcephalin genes were once presented as proof of racial difference. Rushton himself tested them and found no link at all to intelligence (Rushton, Vernon and Bons, 2007). A larger check showed that almost all the "IQ genes" announced at that time were false positives (Chabris and colleagues, 2012).
+- **Images out of context.** A real example: a famous figure of brain connections, from a study comparing men and women (Ingalhalikar and colleagues, 2014), shows up in videos as proof of "different brains by race". The study did not even record the participants' race.
+- **Who is behind it.** Some of these videos openly thank white nationalist authors and end by blaming "race denial" on a Jewish conspiracy. That alone shows this is not science but activism.
+
+One simple question settles a lot: does the video show the source of each chart? If it does, open the source and see whether it says what the video says.
+
 ## Genetics and "race"
 
 Genetics shows that we are a young and very mixed species. Lewontin (1972) and Rosenberg and colleagues (2002) found that most human genetic variation, 85% to 95%, lies within each population. Geographic origin leaves marks, and with many markers one can estimate which region someone's ancestors came from, but this variation is gradual and does not match the everyday categories of "race". The American Society of Human Genetics summed it up in 2018: genetics exposes the concept of racial purity as "scientifically meaningless".
+
+In numbers: genetic differentiation between the major human groups is around 15%, below the threshold of about 25% that biologists commonly use to recognize subspecies in other animals (Templeton, 1998). Biologically, we are one species with no subspecies.
+
+It is also said that even babies "perceive race". The studies show something else. Newborns do not prefer faces of any group, and the preference for the familiar group only appears around three months of age (Kelly and colleagues, 2005). Ethiopian babies raised in Israel, seeing African and European faces every day, developed no preference at all (Bar-Haim and colleagues, 2006). It is visual habit, not racial instinct.
 
 ## The question that matters more than any study
 
@@ -117,7 +133,7 @@ Even if a group average were true and unchangeable, it would say nothing about t
 
 For the Christian, the answer comes from the root. Saint Paul told the philosophers of Athens, who thought themselves superior to the "barbarians": God "hath made of one, all mankind" (Acts 17:26). All were created in the image of God (Genesis 1:27), and the saved come "of all nations and tribes and peoples and tongues" (Revelation 7:9). In Christ "there is neither Jew nor Greek" (Galatians 3:28).
 
-The Church condemned this by name. In 1937, Pius XI wrote the encyclical Mit brennender Sorge, read from the pulpits of Germany: whoever exalts race or the people and divinizes them "to an idolatrous level, distorts and perverts an order of the world planned and created by God". The Catechism teaches that all people enjoy "an equal dignity" and that every discrimination based on race or color must be eradicated (paragraphs 1934 and 1935). And racial gnosis has to turn the God of Israel into a demiurge and hide that Jesus was born a Jew, which shows it is not a deeper reading of Christianity, but its opposite. "By their fruits you shall know them" (Matthew 7:16), and "if any man say: I love God, and hateth his brother; he is a liar" (1 John 4:20).
+The Church condemned this by name. In 1930, in the encyclical Casti Connubii, Pius XI condemned eugenics, which forcibly sterilized those the State judged to have "bad heredity": "public magistrates have no direct power over the bodies of their subjects" (paragraphs 68 to 70). In 1937, he wrote the encyclical Mit brennender Sorge, read from the pulpits of Germany: whoever exalts race or the people and divinizes them "to an idolatrous level, distorts and perverts an order of the world planned and created by God". The Catechism teaches that all people enjoy "an equal dignity" and that every discrimination based on race or color must be eradicated (paragraphs 1934 and 1935). And racial gnosis has to turn the God of Israel into a demiurge and hide that Jesus was born a Jew, which shows it is not a deeper reading of Christianity, but its opposite. "By their fruits you shall know them" (Matthew 7:16), and "if any man say: I love God, and hateth his brother; he is a liar" (1 John 4:20).
 
 ## What lies underneath
 

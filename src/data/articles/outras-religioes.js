@@ -771,9 +771,25 @@ Os mapas de "QI por país" que circulam nas redes são outro problema. Quase tod
 
 Para ser honesto: há pesquisadores, como Rushton e Jensen, que defendem uma causa em parte genética, e pesquisas de opinião entre especialistas mostram divergência. Mas opinião não é evidência, e até hoje ninguém apresentou evidência genética direta.
 
+## Como reconhecer um vídeo de "realismo racial"
+
+Vídeos de "realismo racial" com centenas de milhares de visualizações costumam repetir o mesmo material. Vale saber reconhecê-lo:
+
+- **Os dados de Lynn de novo.** Mapas de "QI por país" e gráficos de "QI nacional" vêm quase sempre da base de dados que acabamos de ver.
+- **A teoria r/K de Rushton.** A ideia de que africanos seriam "r" (muitos filhos e pouco cuidado) e europeus e asiáticos seriam "K" vem do psicólogo J. Philippe Rushton. A ecologia já tinha trocado esse modelo pela teoria de história de vida, e desde 2020 revistas científicas retrataram vários artigos dele, entre eles um sobre r/K, por falhas científicas e éticas.
+- **"Genes da inteligência".** Os genes ASPM e Microcefalina já foram apresentados como prova de diferença racial. O próprio Rushton testou e não encontrou relação nenhuma com a inteligência (Rushton, Vernon e Bons, 2007). Uma checagem maior mostrou que quase todos os "genes do QI" anunciados naquela época eram falsos positivos (Chabris e colegas, 2012).
+- **Imagens fora de contexto.** Um exemplo real: uma figura famosa de conexões cerebrais, de um estudo que comparou homens e mulheres (Ingalhalikar e colegas, 2014), aparece em vídeos como prova de "cérebros diferentes por raça". O estudo nem registrou a raça dos participantes.
+- **Quem está por trás.** Alguns desses vídeos agradecem abertamente a autores nacionalistas brancos e terminam atribuindo a "negação da raça" a uma conspiração judaica. Isso já mostra que não se trata de ciência, mas de militância.
+
+Uma pergunta simples resolve muita coisa: o vídeo mostra a fonte de cada gráfico? Se mostra, abra a fonte e veja se ela diz o que o vídeo diz.
+
 ## Genética e "raça"
 
 A genética mostra que somos uma espécie jovem e muito misturada. Lewontin (1972) e Rosenberg e colegas (2002) encontraram que a maior parte da variação genética humana, de 85% a 95%, está dentro de cada população. A origem geográfica deixa marcas, e com muitos marcadores dá para estimar de que região vieram os antepassados de alguém, mas essa variação é gradual e não coincide com as categorias de "raça" do dia a dia. A Sociedade Americana de Genética Humana resumiu em 2018: a genética expõe o conceito de pureza racial como "cientificamente sem sentido".
+
+Em números: a diferenciação genética entre os grandes grupos humanos fica em torno de 15%, abaixo do limiar de cerca de 25% que biólogos costumam usar para reconhecer subespécies em outros animais (Templeton, 1998). Biologicamente, somos uma só espécie, sem subespécies.
+
+Também se diz que até bebês "percebem raça". Os estudos mostram outra coisa. Recém-nascidos não preferem rostos de nenhum grupo, e a preferência pelo grupo conhecido só aparece por volta dos três meses (Kelly e colegas, 2005). Bebês etíopes criados em Israel, vendo rostos africanos e europeus no dia a dia, não desenvolveram preferência nenhuma (Bar-Haim e colegas, 2006). É costume visual, não instinto racial.
 
 ## A pergunta que vale mais que qualquer estudo
 
@@ -783,7 +799,7 @@ Mesmo que uma média de grupo fosse verdadeira e imutável, ela não diria nada 
 
 Para o cristão, a resposta vem da raiz. São Paulo disse aos filósofos de Atenas, que se achavam superiores aos "bárbaros": Deus "fez nascer de um só homem todo o gênero humano" (Atos 17,26). Todos foram criados à imagem de Deus (Gênesis 1,27), e os salvos vêm "de toda nação, tribo, povo e língua" (Apocalipse 7,9). Em Cristo "já não há judeu nem grego" (Gálatas 3,28).
 
-A Igreja condenou isso pelo nome. Em 1937, Pio XI escreveu a encíclica Mit brennender Sorge, lida nos púlpitos da Alemanha: quem exalta a raça ou o povo e os diviniza num culto idolátrico "perverte e falsifica a ordem do mundo criada por Deus". O Catecismo ensina que todos os homens têm "igual dignidade" e que toda discriminação por raça ou cor deve ser eliminada (parágrafos 1934 e 1935). E a gnose racial precisa transformar o Deus de Israel em demiurgo e esconder que Jesus nasceu judeu, o que mostra que ela não é uma leitura mais profunda do cristianismo, mas o contrário dele. "Pelos seus frutos os conhecereis" (Mateus 7,16), e "se alguém disser: 'Amo a Deus', mas odeia seu irmão, é mentiroso" (1 João 4,20).
+A Igreja condenou isso pelo nome. Em 1930, na encíclica Casti Connubii, Pio XI condenou a eugenia, que esterilizava à força quem o Estado julgava ter "herança ruim": "os magistrados públicos não têm poder direto sobre o corpo de seus súditos" (parágrafos 68 a 70). Em 1937, escreveu a encíclica Mit brennender Sorge, lida nos púlpitos da Alemanha: quem exalta a raça ou o povo e os diviniza num culto idolátrico "perverte e falsifica a ordem do mundo criada por Deus". O Catecismo ensina que todos os homens têm "igual dignidade" e que toda discriminação por raça ou cor deve ser eliminada (parágrafos 1934 e 1935). E a gnose racial precisa transformar o Deus de Israel em demiurgo e esconder que Jesus nasceu judeu, o que mostra que ela não é uma leitura mais profunda do cristianismo, mas o contrário dele. "Pelos seus frutos os conhecereis" (Mateus 7,16), e "se alguém disser: 'Amo a Deus', mas odeia seu irmão, é mentiroso" (1 João 4,20).
 
 ## O que está por baixo
 
@@ -802,7 +818,7 @@ Separe a pessoa da ideologia e não humilhe, porque humilhação empurra de volt
 3. Você confiaria numa pesquisa de um país inteiro feita com 19 pessoas?
 
 4. Se o valor de alguém dependesse do QI, quanto valeria uma criança com deficiência?`,
-    references: ['at-17-26', 'gn-1-27', 'gl-3-26', 'ap-7-9', 'mit-brennender-sorge', 'cic-1934', 'mt-7-16', '1jo-4-20', 'gn-3-5', 'irineu-contra-heresias-1-6', 'goodrick-clarke-black-sun', 'neisser-1996', 'nisbett-2012', 'dickens-flynn-2006', 'flynn-1987', 'statnews-lynn-2024', 'wicherts-2010', 'retraction-watch-lynn-2024', 'lewontin-1972', 'rosenberg-2002', 'ashg-2018'],
+    references: ['at-17-26', 'gn-1-27', 'gl-3-26', 'ap-7-9', 'mit-brennender-sorge', 'cic-1934', 'mt-7-16', '1jo-4-20', 'gn-3-5', 'irineu-contra-heresias-1-6', 'goodrick-clarke-black-sun', 'neisser-1996', 'nisbett-2012', 'dickens-flynn-2006', 'flynn-1987', 'moore-1986', 'statnews-lynn-2024', 'wicherts-2010', 'retraction-watch-lynn-2024', 'retraction-watch-rushton-2021', 'rushton-vernon-bons-2007', 'chabris-2012', 'ingalhalikar-2014', 'lewontin-1972', 'rosenberg-2002', 'ashg-2018', 'templeton-1998', 'kelly-2005', 'bar-haim-2006', 'casti-connubii-68'],
   },
 ];
 
