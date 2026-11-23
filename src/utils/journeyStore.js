@@ -4,6 +4,8 @@ import { articles } from '../data/articles';
 import { READING_TRACKS } from '../data/readingPlan';
 import { bumpStreak, getLiveStreak, getPlanProgress, markAsRead } from './readingProgress';
 import { addDays, todayKey } from './daily';
+import { mergeJourney } from './progressMerge';
+import { markProgressDirty } from './syncSignal';
 
 // Persistência e distribuição do estado da Jornada (src/utils/journey.js é
 // o motor puro). Fica no aparelho, em AsyncStorage, como favoritos e
@@ -144,6 +146,7 @@ export function dispatchJourney(event) {
     if (changed) {
       await AsyncStorage.setItem(KEY, JSON.stringify(result.state)).catch(() => {});
       emit(result.state);
+      markProgressDirty(KEY);
     }
     return result;
   };
@@ -157,5 +160,24 @@ export async function resetJourney() {
   cache = createState();
   await AsyncStorage.removeItem(KEY).catch(() => {});
   emit(cache);
+  markProgressDirty(KEY, { overwrite: true });
   return cache;
+}
+
+// Estado vindo da conta (src/services/progressSync.js). Entra pela mesma fila
+// dos eventos, então nunca atropela um dispatch em andamento. Junta com o
+// local (nada se perde), ou substitui quando outro aparelho zerou a jornada.
+export function adoptJourney(next, { replace = false } = {}) {
+  const run = async () => {
+    const prev = await load();
+    const state = replace ? normalizeState(next) : mergeJourney(prev, next);
+    if (JSON.stringify(state) === JSON.stringify(prev)) return prev;
+    cache = state;
+    await AsyncStorage.setItem(KEY, JSON.stringify(state)).catch(() => {});
+    emit(state);
+    return state;
+  };
+  const p = queue.then(run, run);
+  queue = p.catch(() => {});
+  return p;
 }

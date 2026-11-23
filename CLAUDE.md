@@ -208,12 +208,12 @@ mantenha esses dois em sincronia.
 
 ### Firebase e dados do usuário
 - `src/services/firebase.js` — projeto `appologetica7`. As chaves do client são públicas por design; a segurança está em `firestore.rules` (raiz do repo). A persistência do auth muda por plataforma: IndexedDB/localStorage na web (com `popupRedirectResolver`, senão `signInWithPopup` quebra), AsyncStorage no nativo.
-- `src/services/userData.js` — tudo fica sob `users/{uid}/…`, em três coleções:
+- `src/services/userData.js` — tudo fica sob `users/{uid}/…`, em três coleções (mais `progress`, do progressSync, ver abaixo):
   - `highlights` — `{ bookId, chapter, verse, color, createdAt }` (um doc por versículo).
   - `notes` — `{ bookId, chapter, verseStart, verseEnd, text, createdAt, updatedAt }`.
   - `notebook` — `{ title, text, ... }` (páginas do caderno).
   - As funções `watch*` retornam `onSnapshot` em tempo real e devolvem o `unsubscribe`; sempre chame no cleanup do `useEffect`.
-- Favoritos, progresso de leitura e a Jornada NÃO estão no Firestore: são locais, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`, `bibleProgress.js`, `journeyStore.js`). É de propósito: progresso muda a cada scroll, precisa valer no modo visitante e não vale uma escrita de rede.
+- Favoritos, progresso de leitura, a Jornada e o progresso da Bíblia são gravados primeiro no aparelho, em AsyncStorage (`src/utils/favorites.js`, `readingProgress.js`, `lastRead.js`, `bibleProgress.js`, `bibleBookmark.js`, `journeyStore.js`, `quiz:*` na `QuizScreen`): valem no modo visitante e o scroll não vira escrita de rede. **Com conta, `src/services/progressSync.js` sincroniza** (desde 23/11/2026) em `users/{uid}/progress/{chave}` (valor em JSON + `epoch` do último "zerar"): ao entrar, ao voltar para o app (no máximo 1x/min) e 2,5 s depois de cada mudança. Quem grava progresso chama `markProgressDirty(chave)` de `src/utils/syncSignal.js` (`{ overwrite: true }` ao zerar ou desmarcar, senão a junção devolve o que foi tirado). As regras de junção são puras em `src/utils/progressMerge.js` (testes em `tests/progressMerge.test.mjs`): união de conjuntos, o mais recente para pontos únicos, XP recalculado do estado + o extra de revisão. **Chave nova de progresso entra no `ITEMS` do progressSync com a sua regra de junção.** Favoritos têm o registro `favorites:log` para a remoção não voltar.
   - `readingProgress.js` e `lastRead.js` são de **artigos** (marcados como lidos, plano de leitura, último artigo aberto); `bibleProgress.js` é da **Bíblia** (capítulos lidos por livro e o ponto onde parou). São arquivos diferentes com nomes parecidos.
 - Modo visitante é suportado em todo o app: código que toca Firestore precisa tolerar `auth.currentUser === null` (as `watch*` já devolvem lista vazia).
 - Ao mudar a forma dos dados, revise `firestore.rules` junto.

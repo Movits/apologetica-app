@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { markProgressDirty } from './syncSignal';
 
 // Último artigo aberto, local (AsyncStorage): alimenta o "Continuar lendo" da
 // Início. Guarda { articleId, at, progress? }, com `progress` de 0 a 1 sendo
@@ -20,6 +21,7 @@ export async function setLastRead(articleId, progress) {
     const data = { articleId, at: Date.now() };
     if (value !== undefined) data.progress = value;
     await AsyncStorage.setItem(KEY, JSON.stringify(data));
+    markProgressDirty(KEY);
   } catch {}
 }
 

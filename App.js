@@ -48,6 +48,7 @@ import { checkForWebUpdate } from './src/utils/webUpdate';
 // abertura; Ajustes oferece "Instalar neste computador". No nativo é no-op.
 import './src/utils/pwaInstall';
 import { hasSeenOnboarding } from './src/utils/onboarding';
+import { startProgressSync } from './src/services/progressSync';
 
 // Inicializa o Sentry (no-op na web e no Expo Go, ver src/sentry.js / sentry.web.js).
 initSentry();
@@ -254,6 +255,10 @@ function RootNavigation() {
   const [fontsLoaded, fontsError] = useFonts({
     'CormorantGaramond-SemiBold': require('./assets/fonts/CormorantGaramond-SemiBold.ttf'),
   });
+
+  // Progresso do aparelho (Jornada, lidos, favoritos, Bíblia) com a conta:
+  // junta celular e computador quando a pessoa está logada.
+  useEffect(() => { startProgressSync(); }, []);
 
   useEffect(() => {
     let alive = true;

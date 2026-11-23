@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { BIBLE_BOOKS } from '../data/bible';
+import { markProgressDirty } from './syncSignal';
 
 // Progresso de leitura da Bíblia, local (AsyncStorage) e independente de conta,
 // para funcionar também no modo visitante. Duas coisas separadas:
@@ -51,6 +52,7 @@ export async function saveBiblePosition({ bookId, chapter, ratio = 0, lang = nul
       KEY_POSITION,
       JSON.stringify({ bookId, chapter, ratio, lang, at: Date.now() })
     );
+    markProgressDirty(KEY_POSITION);
   } catch {}
 }
 
@@ -69,6 +71,7 @@ export async function getBiblePosition() {
 
 export async function clearBiblePosition() {
   try { await AsyncStorage.removeItem(KEY_POSITION); } catch {}
+  markProgressDirty(KEY_POSITION, { overwrite: true });
 }
 
 // ===== Capítulos lidos =====
@@ -97,6 +100,7 @@ export async function markChapterRead(bookId, chapter) {
   const next = [...list, chapter].sort((a, b) => a - b);
   map[bookId] = next;
   try { await AsyncStorage.setItem(KEY_READ, JSON.stringify(map)); } catch {}
+  markProgressDirty(KEY_READ);
   return new Set(next);
 }
 
@@ -107,6 +111,8 @@ export async function unmarkChapterRead(bookId, chapter) {
   const next = list.filter((c) => c !== chapter);
   map[bookId] = next;
   try { await AsyncStorage.setItem(KEY_READ, JSON.stringify(map)); } catch {}
+  // Desmarcar é tirar: na junção com a conta (união) o capítulo voltaria.
+  markProgressDirty(KEY_READ, { overwrite: true });
   return new Set(next);
 }
 
@@ -128,4 +134,6 @@ export async function resetBibleProgress() {
   try {
     await AsyncStorage.multiRemove([KEY_POSITION, KEY_READ]);
   } catch {}
+  markProgressDirty(KEY_POSITION, { overwrite: true });
+  markProgressDirty(KEY_READ, { overwrite: true });
 }
