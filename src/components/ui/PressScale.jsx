@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Pressable } from 'react-native';
+import { Platform, Pressable } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useTheme } from '../../context/ThemeContext';
 import { haptics } from '../../utils/haptics';
@@ -17,6 +17,8 @@ export default function PressScale({
   onPress,
   onPressIn,
   onPressOut,
+  onHoverIn,
+  onHoverOut,
   children,
   ...rest
 }) {
@@ -26,6 +28,9 @@ export default function PressScale({
   // animado do reanimated só entende objetos e arrays de estilo.
   const styleIsFn = typeof style === 'function';
   const [pressed, setPressed] = useState(false);
+  // Mouse por cima (só web): vai ao `style` em função como `hovered`, para a
+  // Row e quem mais quiser acender o fundo.
+  const [hovered, setHovered] = useState(false);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   // Os tokens são constantes, então a mola e os handlers mantêm a referência
   // entre renders (o Pressable não religa os eventos a cada render do pai).
@@ -44,6 +49,16 @@ export default function PressScale({
     onPressOut?.(e);
   }, [scale, spring, styleIsFn, onPressOut]);
 
+  const handleHoverIn = useCallback((e) => {
+    if (styleIsFn) setHovered(true);
+    onHoverIn?.(e);
+  }, [styleIsFn, onHoverIn]);
+
+  const handleHoverOut = useCallback((e) => {
+    if (styleIsFn) setHovered(false);
+    onHoverOut?.(e);
+  }, [styleIsFn, onHoverOut]);
+
   const handlePress = useCallback((e) => {
     if (haptic === 'selection') haptics.selection();
     else if (haptic === 'impact') haptics.impact('light');
@@ -56,7 +71,13 @@ export default function PressScale({
       onPress={onPress ? handlePress : undefined}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={[styleIsFn ? style({ pressed }) : style, animatedStyle]}
+      onHoverIn={handleHoverIn}
+      onHoverOut={handleHoverOut}
+      style={[
+        onPress && Platform.OS === 'web' ? { cursor: 'pointer' } : null,
+        styleIsFn ? style({ pressed, hovered }) : style,
+        animatedStyle,
+      ]}
       {...rest}
     >
       {children}

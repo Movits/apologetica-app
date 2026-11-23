@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { View, Text, ScrollView, useWindowDimensions } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
+import useLayout from '../hooks/useLayout';
 import Svg, { Ellipse, Circle, Line, G } from 'react-native-svg';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
@@ -305,7 +306,7 @@ export default function RosaryScreen() {
 // espessuras) é desenho e fica em números; as cores vêm da paleta.
 function RosaryVisual({ sequence, stepIndex }) {
   const { colors, tokens } = useTheme();
-  const { width: screenW } = useWindowDimensions();
+  const { width: screenW } = useLayout();
   // Largura: a tela menos o recuo do conteúdo e o do card, limitada a 360.
   const W = Math.min(screenW - tokens.space.md * 4, 360);
   // Versão compacta: H em ~1.52 × W para caber tela + botões.

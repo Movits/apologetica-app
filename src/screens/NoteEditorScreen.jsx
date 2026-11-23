@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
+import { COLUMN_MAX, centeredColumn } from '../components/ReadingColumn';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { confirmAction, notify } from '../utils/dialog';
 import { addNote, updateNote, removeNote, getNote } from '../services/userData';
@@ -158,7 +159,7 @@ export default function NoteEditorScreen({ route, navigation }) {
 
       <ScrollView
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ padding: space.md, paddingBottom: insets.bottom + space.xxl, gap: space.md }}
+        contentContainerStyle={{ padding: space.md, paddingBottom: insets.bottom + space.xxl, gap: space.md, ...centeredColumn(COLUMN_MAX, space.md) }}
       >
         <Group>
           <Row

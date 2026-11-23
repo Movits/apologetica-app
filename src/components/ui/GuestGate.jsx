@@ -3,6 +3,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useAuth } from '../../context/AuthContext';
 import GateNotice from './GateNotice';
+import { FORM_MAX, centeredColumn } from '../ReadingColumn';
 
 // GateNotice com os defaults do modo visitante: a mensagem
 // `settings.guest.message`, "Criar conta" em primary e "Entrar" em plain, os
@@ -37,7 +38,8 @@ export default function GuestGate({
   if (inline) return notice;
   return (
     <View style={[{ flex: 1, backgroundColor: colors.bg, padding: tokens.space.md }, style]}>
-      {notice}
+      {/* No desktop o aviso fica na largura de formulário, não de ponta a ponta. */}
+      <View style={centeredColumn(FORM_MAX)}>{notice}</View>
     </View>
   );
 }

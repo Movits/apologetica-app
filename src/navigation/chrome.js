@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Dimensions, Platform, useWindowDimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
@@ -9,6 +9,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { BackButton } from '../components/HeaderButton';
 import { COLUMN_MAX } from '../components/ReadingColumn';
 import ChromeBackdrop from './ChromeBackdrop';
+import useLayout from '../hooks/useLayout';
+import { contentWidthFor } from '../utils/layout';
 
 // Opções de header dos stacks internos (Início, Artigos, Ferramentas, Ajustes)
 // num lugar só, no lugar das seis cópias de screenOptions que App.js tinha. O
@@ -92,8 +94,9 @@ function headerOptions(colors, backLabel) {
 // Recuo lateral dos botões do header na web para eles caírem na borda da
 // coluna central (a mesma do LargeTitleScreen: COLUMN_MAX mais o recuo
 // `space.md` de cada lado) quando a janela é larga. No celular é zero.
-function headerGutter(windowWidth) {
-  return Math.max(0, (windowWidth - (COLUMN_MAX + space.md * 2)) / 2);
+// `width` é a área das telas (a janela menos a barra lateral no desktop).
+function headerGutter(width) {
+  return Math.max(0, (width - (COLUMN_MAX + space.md * 2)) / 2);
 }
 
 // Variante translúcida, opt-in por tela nas `options` do Screen (ou em
@@ -129,7 +132,7 @@ export function leftTitleHeaderOptions() {
           headerRightContainerStyle: {
             flexGrow: 0,
             flexBasis: 'auto',
-            paddingRight: headerGutter(Dimensions.get('window').width),
+            paddingRight: headerGutter(contentWidthFor(Dimensions.get('window').width)),
           },
         }
       : {}),
@@ -212,7 +215,7 @@ export function stackScreenOptionsForPlatform(colors, extra, backLabel, gutter) 
 export function useTabStackScreenOptions() {
   const { colors } = useTheme();
   const { t } = useLanguage();
-  const { width } = useWindowDimensions();
+  const { width } = useLayout();
   const paddingBottom = useBottomTabBarHeight();
   const backLabel = t('common.back');
   const gutter = Platform.OS === 'web' ? headerGutter(width) : 0;

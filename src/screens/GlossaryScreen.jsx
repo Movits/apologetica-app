@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback, memo } from 'react';
-import { View, Text, FlatList, useWindowDimensions } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
+import useLayout from '../hooks/useLayout';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -28,7 +29,7 @@ export default function GlossaryScreen({ route }) {
   const listRef = useRef(null);
   // A lista é o card (contentContainer com fundo), então a coluna de janela
   // larga vem da margem lateral: 16 no celular, o que sobrar de 720 no desktop.
-  const { width } = useWindowDimensions();
+  const { width } = useLayout();
   const side = Math.max(space.md, (width - COLUMN_MAX) / 2);
 
   // Quando aberto via link de um artigo, expande E rola até o termo.

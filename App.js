@@ -48,6 +48,7 @@ import { checkForWebUpdate } from './src/utils/webUpdate';
 // abertura; Ajustes oferece "Instalar neste computador". No nativo é no-op.
 import './src/utils/pwaInstall';
 import { hasSeenOnboarding } from './src/utils/onboarding';
+import useLayout from './src/hooks/useLayout';
 import { startProgressSync } from './src/services/progressSync';
 
 // Inicializa o Sentry (no-op na web e no Expo Go, ver src/sentry.js / sentry.web.js).
@@ -190,6 +191,9 @@ const splashStyles = StyleSheet.create({
 
 function MainTabs() {
   const { t } = useLanguage();
+  // No desktop a TabBar vira barra lateral fixa (src/navigation/TabBar.jsx):
+  // as telas começam depois dela.
+  const { sidebarWidth } = useLayout();
 
   // Os nomes de rota são PT fixo (API de navegação); o rótulo visível e os
   // ícones vêm de src/navigation/tabs.js, traduzidos e desenhados pela TabBar
@@ -201,6 +205,7 @@ function MainTabs() {
     <Tab.Navigator
       tabBar={(props) => <TabBar {...props} />}
       backBehavior="history"
+      sceneContainerStyle={sidebarWidth ? { paddingLeft: sidebarWidth } : undefined}
       screenOptions={({ route }) => ({ headerShown: false, title: t(TAB_LABEL_KEYS[route.name]) })}
     >
       <Tab.Screen name="Início" component={HomeStackScreen} />

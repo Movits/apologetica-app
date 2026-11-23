@@ -12,6 +12,7 @@ export { default as SearchField } from './SearchField';
 export { default as Field } from './Field';
 export { default as Chip } from './Chip';
 export { default as ChipRow } from './ChipRow';
+export { default as Columns, useColumns } from './Columns';
 export { default as ProgressBar } from './ProgressBar';
 export { default as EmptyState } from './EmptyState';
 export { default as GateNotice } from './GateNotice';

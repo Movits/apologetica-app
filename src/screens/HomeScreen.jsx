@@ -1,10 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useNavigation, useFocusEffect, useScrollToTop } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { ARTICLE_CATEGORIES, ARTICLE_COUNT_BY_CATEGORY } from '../data/articleCategories';
 import { DIALOGUES } from '../data/dialogues';
 import { articles } from '../data/articles';
 import { consumeStartIntent } from '../utils/onboarding';
@@ -14,10 +13,17 @@ import { getLastRead } from '../utils/lastRead';
 import { getLiveStreak } from '../utils/readingProgress';
 import { useJourney } from '../hooks/useJourney';
 import JourneyCard from '../components/JourneyCard';
-import { dailyIndex, todayLabel } from '../utils/daily';
-import { categoryLabel, pick } from '../utils/i18nData';
-import { openArticle as openArticleScreen } from '../navigation/links';
-import { Button, ContinueRow, Group, LargeTitleScreen, Row, SearchField, SectionTitle, enterStagger } from '../components/ui';
+import { dailyIndex, todayKey, todayLabel } from '../utils/daily';
+import { dueItems } from '../utils/reviewItems';
+import { getSaintToday } from '../data/saints';
+import { pick } from '../utils/i18nData';
+import { openArticle as openArticleScreen, openBible } from '../navigation/links';
+import { Button, Columns, ContinueRow, Group, LargeTitleScreen, Row, SearchField, enterStagger } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
+import VerseOfDayCard from '../components/VerseOfDayCard';
+import SaintTodayCard from '../components/SaintTodayCard';
+import LiturgyCard from '../components/LiturgyCard';
+import NewsCard from '../components/NewsCard';
 
 // Miniatura da estação litúrgica por chave de getLiturgicalSeason(). O mapa é
 // estático porque o Metro só empacota o que está escrito literalmente num
@@ -112,13 +118,17 @@ export default function HomeScreen() {
 
   const openArticle = (articleId) => openArticleScreen(navigation, articleId);
   const openSearch = () => navigation.navigate('Search');
-  const openCategory = (category) => navigation.navigate('CategoryArticles', { category });
 
   // Objeção do dia: rotação determinística (a mesma para todos no dia), com o
   // ano na semente para variar entre anos, igual ao versículo do dia.
   const now = new Date();
   const dailyObjection = DIALOGUES[dailyIndex(DIALOGUES.length, now)];
   const season = getLiturgicalSeason(now);
+  // Santo do dia resolvido aqui (e não dentro do card) porque o Group conta os
+  // filhos: um card que devolvesse null deixaria uma hairline órfã no topo.
+  const saint = useMemo(() => getSaintToday(new Date()), []);
+  // Revisão espaçada: só aparece na Início quando há perguntas vencidas hoje.
+  const reviewDue = journey ? dueItems(journey.review, todayKey()).length : 0;
   const openObjection = () => navigation.navigate('Dialogue', { dialogueId: dailyObjection.id });
 
   // Entrada discreta dos blocos, em cascata (enterStagger). Só na montagem.
@@ -127,111 +137,111 @@ export default function HomeScreen() {
     ? `${t('home.continueReading')} (${Math.round(last.progress * 100)}%)`
     : t('home.continueReading');
 
+  // A Início reúne o que antes ficava espalhado em Início e Dia de Hoje. No
+  // desktop vira duas colunas: à esquerda o que é seu (busca, Jornada, revisão,
+  // objeção, continuar lendo); à direita o dia (versículo, liturgia, fontes e
+  // notícias). No celular as colunas empilham nessa mesma ordem.
   return (
     <LargeTitleScreen
       title={t('tab.home')}
       subtitle={todayLabel(isEn, now)}
+      maxWidth={PAGE_MAX}
       // A ref vai ao Animated.ScrollView do componente, para o useScrollToTop.
       scrollProps={{ ref: scrollRef, keyboardShouldPersistTaps: 'handled' }}
     >
-      <Animated.View entering={enterStagger(0, tokens)} style={block}>
-        <SearchField asButton placeholder={t('home.search')} onPress={openSearch} />
-      </Animated.View>
+      <Columns>
+        <View>
+          <Animated.View entering={enterStagger(0, tokens)} style={block}>
+            <SearchField asButton placeholder={t('home.search')} onPress={openSearch} />
+          </Animated.View>
 
-      {/* Jornada: nível, lições concluídas e sequência, num cartão que abre
-          Minha Jornada. Só aparece depois de o estado carregar. */}
-      {journey ? (
-        <Animated.View entering={enterStagger(1, tokens)} style={block}>
-          <JourneyCard journey={journey} streak={streak} onPress={() => navigation.navigate('Journey')} />
-        </Animated.View>
-      ) : null}
-
-      {/* Objeção do dia: o único bloco que fala alto na tela. Uma pergunta
-          difícil e o roteiro de resposta em passos (tela Diálogo). */}
-      <Animated.View
-        entering={enterStagger(2, tokens)}
-        style={[
-          { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm },
-          block,
-        ]}
-      >
-        <Text style={[text('footnote'), { color: colors.textSubtle }]}>{t('home.objection.title')}</Text>
-        {/* No escuro a objeção fica na cor do texto (o dourado do tint é
-            para ações), como no mock aprovado. */}
-        <Text style={[text('title'), { color: darkMode ? colors.text : colors.tint }]}>
-          {pick(dailyObjection, 'objection', isEn)}
-        </Text>
-        <Text style={[text('footnote'), { color: colors.textSubtle, marginBottom: space.xs }]}>
-          {t('home.objection.steps', { n: dailyObjection.steps.length })}
-        </Text>
-        <Button variant="primary" label={t('home.objection.cta')} onPress={openObjection} haptic="impact" />
-      </Animated.View>
-
-      {/* Estação litúrgica (calculada localmente, offline) e o último
-          artigo aberto, quando há. */}
-      <Animated.View entering={enterStagger(3, tokens)}>
-        <Group style={block}>
-          <SeasonRow season={season} isEn={isEn} />
-          {last ? (
-            <ContinueRow
-              title={pick(last.article, 'title', isEn)}
-              subtitle={continueSubtitle}
-              progress={last.progress}
-              progressLabel={t('home.continueReading')}
-              onPress={() => openArticle(last.article.id)}
-            />
+          {/* Jornada: nível, lições concluídas e sequência, num cartão que
+              abre Minha Jornada. Só aparece depois de o estado carregar. Com
+              perguntas vencidas, a Revisão aparece logo embaixo. */}
+          {journey ? (
+            <Animated.View entering={enterStagger(1, tokens)} style={block}>
+              <JourneyCard journey={journey} streak={streak} onPress={() => navigation.navigate('Journey')} />
+              {reviewDue > 0 ? (
+                <Group style={{ marginTop: space.sm }}>
+                  <Row
+                    icon="repeat-outline"
+                    iconColor={colors.accentText}
+                    title={t(reviewDue === 1 ? 'journey.review.due.one' : 'journey.review.due', { n: reviewDue })}
+                    trailing={String(reviewDue)}
+                    chevron
+                    onPress={() => navigation.navigate('Review')}
+                  />
+                </Group>
+              ) : null}
+            </Animated.View>
           ) : null}
-        </Group>
-      </Animated.View>
 
-      {/* Centro da Início: os temas dos artigos de apologética. */}
-      <Animated.View entering={enterStagger(4, tokens)}>
-        <SectionTitle title={t('home.section.topics')} />
-      </Animated.View>
-      <Animated.View entering={enterStagger(5, tokens)}>
-        <Group style={block}>
-          {ARTICLE_CATEGORIES.map((cat) => {
-            const count = ARTICLE_COUNT_BY_CATEGORY.get(cat.id) || 0;
-            const label = categoryLabel(cat.id, t);
-            const countLabel = count === 1 ? t('articles.count.one') : t('articles.count', { n: count });
-            return (
+          {/* Objeção do dia: o único bloco que fala alto na tela. Uma pergunta
+              difícil e o roteiro de resposta em passos (tela Diálogo). */}
+          <Animated.View
+            entering={enterStagger(2, tokens)}
+            style={[
+              { backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, gap: space.sm },
+              block,
+            ]}
+          >
+            <Text style={[text('footnote'), { color: colors.textSubtle }]}>{t('home.objection.title')}</Text>
+            {/* No escuro a objeção fica na cor do texto (o dourado do tint é
+                para ações), como no mock aprovado. */}
+            <Text style={[text('title'), { color: darkMode ? colors.text : colors.tint }]}>
+              {pick(dailyObjection, 'objection', isEn)}
+            </Text>
+            <Text style={[text('footnote'), { color: colors.textSubtle, marginBottom: space.xs }]}>
+              {t('home.objection.steps', { n: dailyObjection.steps.length })}
+            </Text>
+            <Button variant="primary" label={t('home.objection.cta')} onPress={openObjection} haptic="impact" />
+          </Animated.View>
+
+          {/* O último artigo aberto, quando há. */}
+          {last ? (
+            <Animated.View entering={enterStagger(3, tokens)}>
+              <Group style={block}>
+                <ContinueRow
+                  title={pick(last.article, 'title', isEn)}
+                  subtitle={continueSubtitle}
+                  progress={last.progress}
+                  progressLabel={t('home.continueReading')}
+                  onPress={() => openArticle(last.article.id)}
+                />
+              </Group>
+            </Animated.View>
+          ) : null}
+        </View>
+
+        <View>
+          {/* O dia: versículo, estação, santo e leituras da missa. */}
+          <Animated.View entering={enterStagger(4, tokens)}>
+            <VerseOfDayCard onOpen={(nav) => openBible(navigation, nav)} style={block} />
+          </Animated.View>
+          <Animated.View entering={enterStagger(5, tokens)}>
+            <Group header={t('home.todayLiturgy')} style={block}>
+              <SeasonRow season={season} isEn={isEn} />
+              {saint ? <SaintTodayCard saint={saint} /> : null}
+              <LiturgyCard onOpen={() => navigation.navigate('Liturgy')} />
+            </Group>
+          </Animated.View>
+
+          {/* Fontes: versículos, Catecismo e documentos citados nos artigos. */}
+          <Animated.View entering={enterStagger(6, tokens)}>
+            <Group style={block}>
               <Row
-                key={cat.id}
-                icon={cat.icon}
-                title={label}
-                trailing={count}
-                chevron
-                accessibilityLabel={`${label}, ${countLabel}`}
-                onPress={() => openCategory(cat.id)}
+                icon="library-outline"
+                title={t('tab.references')}
+                subtitle={t('home.card.referencesSub')}
+                trailing="chevron"
+                onPress={() => navigation.navigate('References')}
               />
-            );
-          })}
-        </Group>
-      </Animated.View>
+            </Group>
+          </Animated.View>
 
-      {/* Fontes: referências (versículos, Catecismo, documentos) e a
-          Bíblia completa. */}
-      <Animated.View entering={enterStagger(6, tokens)}>
-        <SectionTitle title={t('home.section.sources')} />
-      </Animated.View>
-      <Animated.View entering={enterStagger(7, tokens)}>
-        <Group style={block}>
-          <Row
-            icon="library-outline"
-            title={t('tab.references')}
-            subtitle={t('home.card.referencesSub')}
-            trailing="chevron"
-            onPress={() => navigation.navigate('References')}
-          />
-          <Row
-            icon="book-outline"
-            title={t('tab.bible')}
-            subtitle={t('home.card.bibleSub')}
-            trailing="chevron"
-            onPress={() => navigation.navigate('Bíblia')}
-          />
-        </Group>
-      </Animated.View>
+          <NewsCard style={block} />
+        </View>
+      </Columns>
     </LargeTitleScreen>
   );
 }

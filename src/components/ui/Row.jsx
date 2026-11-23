@@ -153,7 +153,7 @@ export default function Row({
       haptic={haptic}
       aria-label={accessibilityLabel}
       aria-disabled={disabled || undefined}
-      style={({ pressed }) => [base, pressed ? { backgroundColor: colors.separator } : null, dim, style]}
+      style={({ pressed, hovered }) => [base, pressed ? { backgroundColor: colors.separator } : hovered ? { backgroundColor: colors.badgeBg } : null, dim, style]}
       {...rest}
     >
       {content}

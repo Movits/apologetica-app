@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { View, Text, ScrollView, BackHandler, Platform } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DIALOGUES, getDialogueById } from '../data/dialogues';
@@ -161,6 +161,7 @@ export default function DialogueScreen({ navigation, route }) {
 
 // Lista de objeções agrupadas por categoria, as mais comuns primeiro.
 function DialogueList({ onChoose }) {
+  const navigation = useNavigation();
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space } = tokens;
@@ -187,6 +188,18 @@ function DialogueList({ onChoose }) {
       <Text style={[text('subhead'), { color: colors.textSubtle }]}>
         {t('dialogue.intro')}
       </Text>
+
+      {/* O outro lado do diálogo: perguntas para a pessoa examinar a própria
+          crença. Antes era uma linha à parte em Praticar. */}
+      <Group style={{ marginTop: space.md }}>
+        <Row
+          icon="list-outline"
+          title={t('home.card.questionPaths')}
+          subtitle={t('home.card.questionPathsSub')}
+          trailing="chevron"
+          onPress={() => navigation.navigate('QuestionPaths')}
+        />
+      </Group>
 
       {sections.map((cat) => (
         <View key={cat}>

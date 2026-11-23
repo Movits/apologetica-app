@@ -39,10 +39,13 @@ const TITLE_TO_ID = new Map();
 for (const f of fs.readdirSync(path.join(ROOT, 'src/data/articles'))) {
   if (f === 'index.js') continue;
   const src = fs.readFileSync(path.join(ROOT, 'src/data/articles', f), 'utf8');
-  for (const m of src.matchAll(/\n {4}id: (\d+),\n {4}title: (['"`])((?:\\.|(?!\2).)*)\2,/g)) {
+  // \r?\n: no Windows o checkout pode vir com CRLF (core.autocrlf).
+  for (const m of src.matchAll(/\r?\n {4}id: (\d+),\r?\n {4}title: (['"`])((?:\\.|(?!\2).)*)\2,/g)) {
     TITLE_TO_ID.set(m[3].replace(/\\'/g, "'"), Number(m[1]));
   }
 }
+// Uma lição por artigo (tests/lessons.test.mjs), então o total de lições é o de artigos.
+const LESSONS_TOTAL = TITLE_TO_ID.size;
 
 // Posição na tela da opção de índice original `original` (ordem embaralhada).
 const shownAt = (count, seed, original) => shuffledOrder(count, seed).indexOf(original);
@@ -152,7 +155,7 @@ async function run(browser, theme, width) {
 
   try {
     await openHome();
-    await shot('01-inicio', ['Objeção do dia', '0 de 83 lições']);
+    await shot('01-inicio', ['Objeção do dia', `0 de ${LESSONS_TOTAL} lições`]);
 
     // Minha Jornada vazia, com a Revisão ainda sem nada e a escada de níveis.
     await clickVisible(page.getByRole('button', { name: /^Minha Jornada/ }));
@@ -279,7 +282,7 @@ async function run(browser, theme, width) {
     await sleep(900);
     await clickVisible(page.getByRole('tab', { name: 'Início' }));
     await sleep(1200);
-    await shot('20-inicio-progresso', ['Objeção do dia', '1 de 83 lições']);
+    await shot('20-inicio-progresso', ['Objeção do dia', `1 de ${LESSONS_TOTAL} lições`]);
 
     // Dia seguinte: o relógio do navegador passa a correr a partir de amanhã
     // e o app recarrega com o mesmo armazenamento. As três erradas (teste,

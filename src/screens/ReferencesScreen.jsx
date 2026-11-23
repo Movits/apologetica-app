@@ -258,7 +258,6 @@ export default function ReferencesScreen({ route }) {
             <Chip
               key={c.id}
               label={c.label}
-              icon={c.icon}
               selected={source === c.id}
               onPress={() => setSource(c.id)}
               haptic
