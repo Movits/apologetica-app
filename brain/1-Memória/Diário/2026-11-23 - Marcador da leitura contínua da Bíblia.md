@@ -1,0 +1,14 @@
+# 2026-11-23 · Marcador da leitura contínua da Bíblia
+
+**Pedido do dono:** ler a Bíblia do início ao fim pelo app sem perder o ponto quando abre uma passagem por referência, pelo terço, numa conversa ou pela grade.
+
+**O que foi feito**
+- Marcador próprio (`bible:bookmark`), separado do "continue lendo" (`bible:position`). Regras puras em `src/utils/bibleBookmarkCore.js` (com teste), armazenamento em `src/utils/bibleBookmark.js`.
+- O marcador só anda na **leitura contínua**: entrar pelo cartão "Minha leitura" (ou "Ler a Bíblia do início ao fim", que começa em Gênesis 1) liga o modo, e rolar e passar de capítulo leva o marcador junto. No fim de um livro, o próximo capítulo emenda no livro seguinte.
+- Só anda para a frente sozinho: voltar um capítulo para relembrar não puxa o ponto. Para mover para trás ou para outro lugar, "Marcar minha leitura aqui" na folha do versículo.
+- Qualquer outra ida (grade, busca, referência, terço, liturgia, último aberto) desliga o modo. Nessas telas, o ícone de marcador no topo leva de volta à leitura.
+- Lista de livros: cartão "Minha leitura: X" com o progresso no cânon (capítulo N de 1334) e, quando é outro capítulo, "Último aberto: Y".
+
+**Verificado:** lint, `npm test` (201 testes) e um roteiro Playwright no build web (Gn 1 → Gn 2, consulta de Ap 22 sem mexer no marcador, recarregar a página, marcar Gn 50,1 e avançar para Êx 1).
+
+**Pendente:** o marcador é local (AsyncStorage), como o resto do progresso: não sincroniza entre aparelhos.

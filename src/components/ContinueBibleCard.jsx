@@ -6,7 +6,9 @@ import { Group, ContinueRow } from './ui';
 // progresso em texto e a ProgressBar do capítulo por baixo). Só aparece quando
 // existe uma posição salva (ver src/utils/bibleProgress.js) e nunca sequestra
 // a navegação: a retomada é sempre um toque.
-export default function ContinueBibleCard({ label, chapterRatio = 0, stats, onPress, style }) {
+// `title` troca o "Continuar em X" (a lista de livros usa "Último aberto: X"
+// quando também mostra o cartão do marcador da leitura contínua).
+export default function ContinueBibleCard({ label, title, chapterRatio = 0, stats, onPress, style }) {
   const { t } = useLanguage();
   const ratio = Math.max(0, Math.min(1, Number(chapterRatio) || 0));
   const pct = Math.round(ratio * 100);
@@ -20,7 +22,7 @@ export default function ContinueBibleCard({ label, chapterRatio = 0, stats, onPr
     <Group style={style}>
       <ContinueRow
         icon="book-outline"
-        title={t('bible.continueIn', { ref: label })}
+        title={title || t('bible.continueIn', { ref: label })}
         subtitle={parts.join(' · ')}
         progress={ratio}
         progressLabel={t('bible.chapterPct', { pct })}
