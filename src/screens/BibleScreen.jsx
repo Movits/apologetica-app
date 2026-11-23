@@ -36,12 +36,14 @@ import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
 import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
 import { columnInnerWidth } from '../components/ReadingColumn';
-import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState } from '../components/ui';
+import { SearchField, Group, Row, SectionTitle, PressScale, ProgressBar, EmptyState, ContinueRow } from '../components/ui';
 import {
   saveBiblePosition, getBiblePosition,
   markChapterRead, getReadChapters, getBibleStats,
-  READ_THRESHOLD,
+  READ_THRESHOLD, TOTAL_CHAPTERS,
 } from '../utils/bibleProgress';
+import { getBibleBookmark, setBibleBookmark, advanceBibleBookmark } from '../utils/bibleBookmark';
+import { canonIndex, nextChapterRef, START_REF } from '../utils/bibleBookmarkCore';
 
 // Por quanto tempo, depois de abrir um capitulo, ainda tentamos restaurar o
 // scroll salvo. Cobre o crescimento progressivo da FlatList sem atrapalhar
@@ -83,6 +85,16 @@ const VERSE_SCROLL_THROTTLE_MS = 32;
 const RATIO_STEP = 0.005;
 
 const keyByVerse = (v) => String(v.n);
+
+// Grava o que o scroll deixou pendente: sempre o "continue lendo" e, se a
+// leitura contínua estava ligada quando o scroll aconteceu, também o
+// marcador (que só anda para a frente, ver advanceBibleBookmark).
+function gravarPendente(p) {
+  if (!p) return;
+  const { leitura, ...pos } = p;
+  saveBiblePosition(pos);
+  if (leitura) advanceBibleBookmark(pos);
+}
 const noop = () => {};
 
 // Uma linha de versículo: número, texto e o ícone de nota. memo com props
@@ -272,6 +284,20 @@ export default function BibleScreen({ route, navigation }) {
   const [passouTempoMinimo, setPassouTempoMinimo] = useState(false);
   // Último ponto salvo, usado pelo card "Continue lendo" na lista de livros.
   const [savedPosition, setSavedPosition] = useState(null);
+  // Marcador da leitura contínua (ver src/utils/bibleBookmark.js). É outro
+  // ponto, separado do "continue lendo": só anda quando `emLeitura` é true,
+  // isto é, quando a pessoa entrou pelo cartão "Minha leitura" (ou marcou um
+  // versículo) e segue pelo próximo capítulo. Qualquer outra ida (grade,
+  // busca, referência, terço) desliga `emLeitura` e deixa o marcador quieto.
+  const [bookmark, setBookmark] = useState(null);
+  const [emLeitura, setEmLeitura] = useState(false);
+  // Espelho de emLeitura para os callbacks de scroll e o efeito de troca de
+  // capítulo, que rodam antes do estado novo chegar ao render.
+  const emLeituraRef = useRef(false);
+  // Ponto a restaurar no próximo capítulo aberto, quando quem abre é o cartão
+  // do marcador (o efeito de troca de capítulo, sem isto, só conhece o
+  // "continue lendo").
+  const restoreHint = useRef(null);
   // Capítulos já lidos DO LIVRO ABERTO (Set), para marcar a grade de capítulos.
   const [readChapters, setReadChapters] = useState(new Set());
   const [stats, setStats] = useState(null);
@@ -304,7 +330,9 @@ export default function BibleScreen({ route, navigation }) {
   // salvo quando o chamador os passa (o deep link de uma referência). A barra
   // de progresso zera junto, antes do efeito de troca de capítulo, para a
   // fração do capítulo anterior não aparecer num quadro do novo.
-  const goTo = useCallback(({ view: v, book: b = null, chapter: c = null, highlight = null, highlightEnd = null, deepLink = false }) => {
+  const goTo = useCallback(({ view: v, book: b = null, chapter: c = null, highlight = null, highlightEnd = null, deepLink = false, leitura = false }) => {
+    emLeituraRef.current = leitura;
+    setEmLeitura(leitura);
     setView(v);
     setBook(b);
     setChapter(c);
@@ -368,11 +396,11 @@ export default function BibleScreen({ route, navigation }) {
   // Debounced: o scroll dispara dezenas de eventos e cada um viraria uma escrita.
   const queueSave = useCallback((bId, ch, ratio, lng) => {
     if (!bId || !ch) return;
-    pendingSave.current = { bookId: bId, chapter: ch, ratio, lang: lng };
+    pendingSave.current = { bookId: bId, chapter: ch, ratio, lang: lng, leitura: emLeituraRef.current };
     if (saveTimer.current) clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => {
       saveTimer.current = null;
-      if (pendingSave.current) saveBiblePosition(pendingSave.current);
+      gravarPendente(pendingSave.current);
     }, 500);
   }, []);
 
@@ -381,7 +409,7 @@ export default function BibleScreen({ route, navigation }) {
   const flushSave = useCallback(() => {
     if (saveTimer.current) { clearTimeout(saveTimer.current); saveTimer.current = null; }
     if (pendingSave.current) {
-      saveBiblePosition(pendingSave.current);
+      gravarPendente(pendingSave.current);
       pendingSave.current = null;
     }
   }, []);
@@ -452,6 +480,14 @@ export default function BibleScreen({ route, navigation }) {
     return () => { alive = false; };
   }, [view]);
 
+  // O marcador é relido a cada troca de tela e de capítulo: o cartão da lista
+  // de livros e o botão do topo dos versículos mostram onde ele está.
+  useEffect(() => {
+    let alive = true;
+    getBibleBookmark().then((b) => { if (alive) setBookmark(b); });
+    return () => { alive = false; };
+  }, [view, bookId, chapter]);
+
   // Capítulos já lidos do livro aberto, para pintar a grade de capítulos.
   useEffect(() => {
     if (!bookId) { setReadChapters(new Set()); return; }
@@ -471,7 +507,14 @@ export default function BibleScreen({ route, navigation }) {
     markedKey.current = null;
     userScrolled.current = false;
     autoScroll.current = { target: -1, until: 0 };
-    const pos = savedPosition;
+    // Na leitura contínua, chegar a um capítulo novo já leva o marcador para
+    // ele (só se estiver adiante: voltar um capítulo não puxa o marcador).
+    if (emLeituraRef.current && bookId && chapter) {
+      advanceBibleBookmark({ bookId, chapter, ratio: 0, lang }).then((b) => { if (b) setBookmark(b); });
+    }
+    const hint = restoreHint.current;
+    restoreHint.current = null;
+    const pos = hint || savedPosition;
     const shouldRestore = pos && pos.bookId === bookId && pos.chapter === chapter
       && pos.ratio > 0.01 && !highlightVerse
       // O ratio e fracao do texto renderizado: restaurar 45% do portugues no
@@ -613,6 +656,19 @@ export default function BibleScreen({ route, navigation }) {
     if (!b) return;
     goTo({ view: 'verses', book: b, chapter: pos.chapter });
   }, [savedPosition, goTo]);
+
+  // Abre o capítulo do marcador e liga a leitura contínua. Sem marcador, começa
+  // em Gênesis 1 e cria o marcador ali.
+  const resumeBookmark = useCallback(async () => {
+    let bm = bookmark || await getBibleBookmark();
+    if (!bm) bm = await setBibleBookmark({ ...START_REF, lang });
+    if (!bm) return;
+    const b = BIBLE_BOOKS.find((x) => x.id === bm.bookId);
+    if (!b) return;
+    setBookmark(bm);
+    restoreHint.current = bm;
+    goTo({ view: 'verses', book: b, chapter: bm.chapter, leitura: true });
+  }, [bookmark, goTo, lang]);
 
   // Subscreve às marcações e notas deste capítulo. Visitante (user null) fica
   // com as listas vazias, sem tocar no Firestore.
@@ -789,6 +845,20 @@ export default function BibleScreen({ route, navigation }) {
     shareVerse({ text: v.t, ref: verseRef(v), isEn });
   };
 
+  // "Marcar minha leitura aqui": move o marcador para este versículo (mesmo que
+  // seja para trás, porque foi pedido) e liga a leitura contínua a partir dele.
+  const onBookmarkHere = async () => {
+    const v = actionVerse;
+    if (!v || !book) return;
+    setActionVerse(null);
+    const bm = await setBibleBookmark({ bookId: book.id, chapter, verse: v.n, ratio: ratioNaBarra.current, lang });
+    if (!bm) return;
+    setBookmark(bm);
+    emLeituraRef.current = true;
+    setEmLeitura(true);
+    notify(t('bible.bookmarkSaved'), t('bible.bookmarkSavedMsg', { ref: verseRef(v) }));
+  };
+
   // ===== Narração do capítulo =====
   // speakLong fatia o texto no limite do TTS do Android e encadeia os pedaços;
   // stopSpeaking invalida a fila, então um onDone atrasado não fala por cima.
@@ -930,7 +1000,16 @@ export default function BibleScreen({ route, navigation }) {
       .map((tst) => ({ ...tst, books: filtered.filter((b) => b.testament === tst.key) }))
       .filter((tst) => tst.books.length > 0);
 
-    const continueBook = savedPosition && !q ? BIBLE_BOOKS.find((x) => x.id === savedPosition.bookId) : null;
+    const bookmarkBook = bookmark && !q ? BIBLE_BOOKS.find((x) => x.id === bookmark.bookId) : null;
+    // O "último aberto" só aparece quando é outro capítulo: no mesmo do
+    // marcador seriam dois cartões dizendo a mesma coisa.
+    const mesmoDoMarcador = bookmark && savedPosition
+      && bookmark.bookId === savedPosition.bookId && bookmark.chapter === savedPosition.chapter;
+    const continueBook = savedPosition && !q && !mesmoDoMarcador ? BIBLE_BOOKS.find((x) => x.id === savedPosition.bookId) : null;
+    const bookmarkLabel = bookmarkBook
+      ? formatVerseRef({ bookName: bn(bookmarkBook), chapter: bookmark.chapter, verse: bookmark.verse ?? undefined }, isEn)
+      : '';
+    const bookmarkN = bookmarkBook ? canonIndex(bookmark) + 1 : 0;
 
     return (
       <LargeTitleScreen
@@ -953,9 +1032,33 @@ export default function BibleScreen({ route, navigation }) {
               clearLabel={t('common.clear')}
               style={styles.search}
             />
+            {!q ? (
+              <Group style={styles.continueCard}>
+                {bookmarkBook ? (
+                  <ContinueRow
+                    icon="bookmark-outline"
+                    title={t('bible.myReadingIn', { ref: bookmarkLabel })}
+                    subtitle={t('bible.myReadingProgress', { n: bookmarkN, total: TOTAL_CHAPTERS })}
+                    progress={(bookmarkN - 1 + (bookmark.ratio || 0)) / TOTAL_CHAPTERS}
+                    progressLabel={t('bible.myReadingProgress', { n: bookmarkN, total: TOTAL_CHAPTERS })}
+                    onPress={resumeBookmark}
+                    accessibilityLabel={t('bible.goToMyReading', { ref: bookmarkLabel })}
+                  />
+                ) : (
+                  <Row
+                    icon="bookmark-outline"
+                    title={t('bible.startReading')}
+                    subtitle={t('bible.startReadingSub')}
+                    trailing="chevron"
+                    onPress={resumeBookmark}
+                  />
+                )}
+              </Group>
+            ) : null}
             {continueBook ? (
               <ContinueBibleCard
                 label={`${bn(continueBook)} ${savedPosition.chapter}`}
+                title={bookmarkBook ? t('bible.lastOpenedIn', { ref: `${bn(continueBook)} ${savedPosition.chapter}` }) : undefined}
                 chapterRatio={savedPosition.ratio}
                 stats={stats}
                 onPress={resumeReading}
@@ -1033,23 +1136,53 @@ export default function BibleScreen({ route, navigation }) {
   // ===== VERSÍCULOS =====
   if (view === 'verses' && book && chapter) {
     const hasPrev = chapter > 1;
-    const hasNext = chapter < book.totalChapters;
+    // Na leitura contínua, o fim de um livro emenda no começo do seguinte.
+    const proximoNaLeitura = emLeitura ? nextChapterRef({ bookId: book.id, chapter }) : null;
+    const hasNext = chapter < book.totalChapters || Boolean(proximoNaLeitura);
     // Três situações diferentes, que antes cairiam todas no mesmo texto:
     //   aguardando  -> a tradução ainda está sendo baixada (ou falhou)
     //   isEmpty     -> a tradução está aqui, mas este capítulo não foi adicionado
     const aguardando = !bibliaPronta.pronta;
     const isEmpty = !aguardando && !chapterData?.verses?.length;
-    const goPrev = () => { if (hasPrev) goTo({ view: 'verses', book, chapter: chapter - 1 }); };
-    const goNext = () => { if (hasNext) goTo({ view: 'verses', book, chapter: chapter + 1 }); };
+    const goPrev = () => { if (hasPrev) goTo({ view: 'verses', book, chapter: chapter - 1, leitura: emLeitura }); };
+    const goNext = () => {
+      if (!hasNext) return;
+      if (chapter < book.totalChapters) { goTo({ view: 'verses', book, chapter: chapter + 1, leitura: emLeitura }); return; }
+      const nb = BIBLE_BOOKS.find((x) => x.id === proximoNaLeitura.bookId);
+      if (nb) goTo({ view: 'verses', book: nb, chapter: proximoNaLeitura.chapter, leitura: true });
+    };
 
     const title = `${bn(book)} ${chapter}`;
-    const subtitle = `${pick(book, 'group', isEn)}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
+    const subtitle = `${emLeitura ? `${t('bible.myReading')} · ` : ''}${pick(book, 'group', isEn)}, ${t('bible.chapterOf', { n: chapter, total: book.totalChapters })}`;
+    // Botão do marcador no topo. Na leitura contínua fica cheio e explica o que
+    // está acontecendo. Fora dela (chegou por referência, busca, grade), leva
+    // de volta ao ponto da leitura, que continua intacto.
+    const bookmarkBookHere = bookmark ? BIBLE_BOOKS.find((x) => x.id === bookmark.bookId) : null;
+    const bookmarkRef = bookmarkBookHere
+      ? formatVerseRef({ bookName: bn(bookmarkBookHere), chapter: bookmark.chapter, verse: bookmark.verse ?? undefined }, isEn)
+      : '';
+    const bookmarkButton = emLeitura || bookmarkBookHere ? (
+      <PressScale
+        role="button"
+        aria-label={emLeitura ? t('bible.myReading') : t('bible.goToMyReading', { ref: bookmarkRef })}
+        onPress={emLeitura ? () => notify(t('bible.myReading'), t('bible.inMyReading')) : resumeBookmark}
+        style={styles.iconButton}
+      >
+        <Ionicons
+          name={emLeitura ? 'bookmark' : 'bookmark-outline'}
+          size={icon.lg}
+          color={emLeitura ? colors.accent : colors.tint}
+        />
+      </PressScale>
+    ) : null;
     const back = {
       label: fromDeepLink ? t('common.back') : bn(book),
       a11yLabel: t('common.back'),
       onPress: goBackLevel,
     };
     const right = (
+      <View style={styles.headerButtons}>
+      {bookmarkButton}
       <PressScale
         role="button"
         aria-label={speaking ? t('bible.stopListening') : t('bible.listen')}
@@ -1063,6 +1196,7 @@ export default function BibleScreen({ route, navigation }) {
           color={speaking ? colors.accent : colors.tint}
         />
       </PressScale>
+      </View>
     );
 
     // Sem lista (carregando ou capítulo em preparação) a pílula fica fixa à
@@ -1148,6 +1282,7 @@ export default function BibleScreen({ route, navigation }) {
           onOpenNote={onOpenNote}
           onCopy={onCopy}
           onShare={onShare}
+          onBookmark={onBookmarkHere}
           onClose={closeActions}
           onDismissed={onSheetDismissed}
         />
@@ -1168,6 +1303,7 @@ const makeStyles = (c, { space, radius }) =>
     grid: { flexDirection: 'row', flexWrap: 'wrap' },
     cell: { borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
     iconButton: { width: TARGET, height: TARGET, alignItems: 'center', justifyContent: 'center' },
+    headerButtons: { flexDirection: 'row', alignItems: 'center' },
     // A marcação sangra `space.xs` para cada lado do texto, que continua
     // alinhado ao recuo do conteúdo.
     verseRow: {
