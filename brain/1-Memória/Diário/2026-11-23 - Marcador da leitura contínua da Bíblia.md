@@ -14,3 +14,6 @@
 **Pendente:** o marcador é local (AsyncStorage), como o resto do progresso: não sincroniza entre aparelhos.
 
 **Ajuste do mesmo dia (pedido do dono, com print):** a porcentagem do capítulo e os capítulos lidos foram para o cartão "Minha leitura". O "Último aberto" virou só um atalho, sem números, e só muda fora da leitura contínua (busca, referência, terço, grade), já ao abrir. Ler pela "Minha leitura" não mexe mais nele.
+
+**Troca de capítulo (mesmo dia, pedido do dono: "não consigo ir facilmente de um capítulo pro outro").** Dois agentes (uso real no navegador e revisão do código) acharam a causa: no fim do capítulo não havia nada para seguir, e a pílula estava escondida justamente ali. Feito: botões "Próximo: X" e "Anterior: X" no fim de cada capítulo, pílula que volta sozinha perto do fim, "3 de 21" abre a folha de capítulos (atual destacado, lidos marcados, "Outro livro"), anterior/próximo atravessam livros em qualquer modo (`prevChapterRef`), setas ← → no computador e rótulo da pílula com largura fixa.
+Ficou para depois: deslizar para o lado no celular (conflita com o gesto de voltar e a seleção de texto), tocar no texto para mostrar os controles (o toque já abre a folha do versículo), capítulo na URL da web e o acento do "Gênesis" na fonte Cormorant.

@@ -98,5 +98,6 @@ const styles = StyleSheet.create({
   },
   disabled: { opacity: 0.4 },
   label: { fontWeight: '600', textAlign: 'center' },
-  labelButton: { height: TARGET, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
+  // Largura mínima fixa: "1 de 50" e "50 de 50" não empurram a seta › de lugar.
+  labelButton: { height: TARGET, minWidth: TARGET * 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
 });
