@@ -17,3 +17,11 @@
 
 **Troca de capítulo (mesmo dia, pedido do dono: "não consigo ir facilmente de um capítulo pro outro").** Dois agentes (uso real no navegador e revisão do código) acharam a causa: no fim do capítulo não havia nada para seguir, e a pílula estava escondida justamente ali. Feito: botões "Próximo: X" e "Anterior: X" no fim de cada capítulo, pílula que volta sozinha perto do fim, "3 de 21" abre a folha de capítulos (atual destacado, lidos marcados, "Outro livro"), anterior/próximo atravessam livros em qualquer modo (`prevChapterRef`), setas ← → no computador e rótulo da pílula com largura fixa.
 Ficou para depois: deslizar para o lado no celular (conflita com o gesto de voltar e a seleção de texto), tocar no texto para mostrar os controles (o toque já abre a folha do versículo), capítulo na URL da web e o acento do "Gênesis" na fonte Cormorant.
+
+**Redesenho (mesmo dia, depois de uma rodada de perguntas com o dono, que aceitou todas as recomendações).** Achou repetido e confuso (dois cartões, duas grades, setas que somem, voltar caindo na grade do Gênesis). Ficou assim:
+- Página da Bíblia: um cartão só, "Continuar: X" (porcentagem do capítulo e capítulos lidos), e a lista de livros. "Último aberto" saiu.
+- Um seletor só: tocar num livro abre a folha com os capítulos dele; na leitura, o "3 de 21" abre a mesma folha no livro atual, com "Trocar livro". A tela-grade de capítulos deixou de existir.
+- Voltar: de leitura pela aba vai à página da Bíblia; de referência, terço ou artigo volta para lá.
+- Pílula de setas fixa, sempre visível; os botões do fim do capítulo saíram.
+- Sem "modo": tudo aberto dentro da aba conta como leitura e move o "Continuar" (o último ponto, não só para a frente); o que vem de fora é consulta. Saíram o ícone de marcador no topo e o "Marcar minha leitura aqui". `bible:position` não é mais gravado.
+- Ajustes: "Recomeçar a leitura da Bíblia" (zera lidos e Continuar, também nos outros aparelhos). A página da Bíblia relê os dados a cada volta à aba.

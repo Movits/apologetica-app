@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Switch, Pressable, Linking, Modal, FlatList, Platform } from 'react-native';
 import { confirmAction, notify } from '../utils/dialog';
+import { resetBibleProgress } from '../utils/bibleProgress';
+import { clearBibleBookmark } from '../utils/bibleBookmark';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useScrollToTop } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -223,6 +225,23 @@ export default function SettingsScreen() {
     }
   };
 
+  // Zera os capítulos lidos e o "Continuar" da Bíblia. Com conta, o zerado
+  // vale também nos outros aparelhos (progressSync, overwrite).
+  const askRestartBible = () => {
+    confirmAction({
+      title: t('settings.bible.restartConfirm'),
+      message: t('settings.bible.restartMsg'),
+      confirmText: t('settings.bible.restartOk'),
+      cancelText: t('common.cancel'),
+      destructive: true,
+      onConfirm: async () => {
+        await resetBibleProgress();
+        await clearBibleBookmark();
+        notify(t('settings.bible.restartDone'), t('settings.bible.restartDoneMsg'));
+      },
+    });
+  };
+
   const handleLogout = () => {
     confirmAction({
       title: isEn ? 'Sign out?' : 'Sair da conta?',
@@ -394,6 +413,11 @@ export default function SettingsScreen() {
         ) : null}
 
         {/* Leitura em voz alta: voz, velocidade e prévia. */}
+        <SectionTitle title={t('settings.section.bible')} />
+        <Group>
+          <Row icon="refresh-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.bible.restart')} subtitle={t('settings.bible.restartSub')} onPress={askRestartBible} />
+        </Group>
+
         <SectionTitle title={t('settings.section.tts')} />
         <Group>
           <Row

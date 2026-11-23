@@ -37,7 +37,6 @@ export default function VerseActionsSheet({
   onOpenNote,
   onCopy,
   onShare,
-  onBookmark,
   onClose,
   onDismissed,
 }) {
@@ -84,7 +83,6 @@ export default function VerseActionsSheet({
         {shown.hasNote ? <Row title={t('bible.openNote')} onPress={onOpenNote} /> : null}
         <Row title={t('bible.copy')} onPress={onCopy} />
         <Row title={t('common.share')} onPress={onShare} />
-        {onBookmark ? <Row title={t('bible.markReadingHere')} onPress={onBookmark} /> : null}
         {shown.currentColor ? <Row title={t('bible.removeHighlight')} onPress={onRemoveHighlight} /> : null}
       </Group>
 
