@@ -6,11 +6,16 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { glossary, glossaryByTerm } from '../data/glossary';
 import { pick } from '../utils/i18nData';
-import { EmptyState, ListSeparator, Row, SearchField } from '../components/ui';
-import { COLUMN_MAX, centeredColumn } from '../components/ReadingColumn';
+import { EmptyState, Group, ListSeparator, Row, SearchField, useColumnCount } from '../components/ui';
+import { COLUMN_MAX, PAGE_MAX, centeredColumn, columnInnerWidth } from '../components/ReadingColumn';
 
 // Posição do termo na tela ao rolar até ele (fração da altura visível).
 const SCROLL_VIEW_POSITION = 0.12;
+
+// Desktop: termos em até três colunas, cada um num card próprio, com pelo
+// menos esta largura (proporção da página).
+const GLOSSARY_COLS = 3;
+const CELL_MIN = 340;
 
 // Termo e definição (PT e EN) em minúsculas, na ordem de `glossary`, calculados
 // uma vez no módulo: a busca só compara `includes` neles a cada tecla.
@@ -31,6 +36,12 @@ export default function GlossaryScreen({ route }) {
   // larga vem da margem lateral: 16 no celular, o que sobrar de 720 no desktop.
   const { width } = useLayout();
   const side = Math.max(space.md, (width - COLUMN_MAX) / 2);
+  // Desktop: a lista vira uma grade (numColumns) na largura da página. Uma
+  // coluna só (celular, janela estreita) mantém a lista-card de sempre.
+  const cols = useColumnCount(GLOSSARY_COLS, CELL_MIN);
+  const grid = cols > 1;
+  // Largura fixa por card: a última linha, incompleta, não estica os seus.
+  const cellW = (columnInnerWidth(width, PAGE_MAX, space.md) - space.md * (cols - 1)) / cols;
 
   // Quando aberto via link de um artigo, expande E rola até o termo.
   useEffect(() => {
@@ -43,10 +54,11 @@ export default function GlossaryScreen({ route }) {
     const index = glossary.findIndex((g) => g.id === entry.id);
     if (index < 0) return;
     const id = setTimeout(() => {
-      listRef.current?.scrollToIndex({ index, viewPosition: SCROLL_VIEW_POSITION, animated: false });
+      // Na grade, a lista rola por linha de `cols` termos.
+      listRef.current?.scrollToIndex({ index: Math.floor(index / cols), viewPosition: SCROLL_VIEW_POSITION, animated: false });
     }, 150);
     return () => clearTimeout(id);
-  }, [route?.params?.highlightTerm]);
+  }, [route?.params?.highlightTerm, cols]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -61,7 +73,7 @@ export default function GlossaryScreen({ route }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, paddingBottom: space.xs }, centeredColumn(undefined, space.md)]}>
+      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, paddingBottom: space.xs }, centeredColumn(grid ? PAGE_MAX : undefined, space.md)]}>
         <SearchField
           value={query}
           onChangeText={setQuery}
@@ -72,24 +84,47 @@ export default function GlossaryScreen({ route }) {
       </View>
 
       <FlatList
+        // numColumns não muda numa lista montada: a chave remonta ao mudar.
+        key={`cols-${cols}`}
         ref={listRef}
         data={filtered}
         keyExtractor={(g) => g.id}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={[
-          { marginHorizontal: side, marginTop: space.xs, marginBottom: space.md },
-          empty ? null : { backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' },
-        ]}
-        ItemSeparatorComponent={ListSeparator}
+        numColumns={cols}
+        columnWrapperStyle={grid ? { gap: space.md, alignItems: 'flex-start' } : undefined}
+        contentContainerStyle={
+          grid
+            ? [{ paddingHorizontal: space.md, paddingTop: space.xs, paddingBottom: space.md }, centeredColumn(PAGE_MAX, space.md)]
+            : [
+              { marginHorizontal: side, marginTop: space.xs, marginBottom: space.md },
+              empty ? null : { backgroundColor: colors.card, borderRadius: radius.md, overflow: 'hidden' },
+            ]
+        }
+        ItemSeparatorComponent={grid ? GridGap : ListSeparator}
         onScrollToIndexFailed={(info) => {
           listRef.current?.scrollToOffset({ offset: info.averageItemLength * info.index, animated: false });
           setTimeout(() => listRef.current?.scrollToIndex({ index: info.index, viewPosition: SCROLL_VIEW_POSITION, animated: false }), 80);
         }}
         ListEmptyComponent={<EmptyState icon="search-outline" title={t('glossary.empty')} message={t('glossary.emptyHint')} />}
-        renderItem={({ item }) => <TermRow item={item} open={expanded === item.id} onToggle={toggle} />}
+        renderItem={({ item }) => (
+          grid ? (
+            // Card próprio por termo, ocupando a sua fração da linha.
+            <Group style={{ width: cellW }}>
+              <TermRow item={item} open={expanded === item.id} onToggle={toggle} />
+            </Group>
+          ) : (
+            <TermRow item={item} open={expanded === item.id} onToggle={toggle} />
+          )
+        )}
       />
     </View>
   );
+}
+
+// Vão vertical entre as linhas da grade do desktop.
+function GridGap() {
+  const { tokens } = useTheme();
+  return <View style={{ height: tokens.space.md }} />;
 }
 
 // Linha de termo: Row com o termo em headline, a definição em subhead (duas

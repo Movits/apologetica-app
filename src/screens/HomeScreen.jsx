@@ -144,9 +144,10 @@ export default function HomeScreen() {
     : t('home.continueReading');
 
   // A Início reúne o que antes ficava espalhado em Início e Dia de Hoje. No
-  // desktop vira duas colunas: à esquerda o que é seu (busca, Jornada, revisão,
-  // objeção, continuar lendo); à direita o dia (versículo, liturgia, fontes e
-  // notícias). No celular as colunas empilham nessa mesma ordem.
+  // desktop vira três colunas: o que é seu (busca, Jornada, revisão, objeção,
+  // continuar lendo), o dia (versículo, liturgia, fontes) e as notícias. Em
+  // janela média cabem duas (Columns reparte: o seu e as notícias à esquerda,
+  // o dia à direita) e no celular tudo empilha nessa mesma ordem.
   return (
     <LargeTitleScreen
       title={t('tab.home')}
@@ -220,7 +221,7 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          {/* O dia: versículo, estação, santo e leituras da missa. */}
+          {/* O dia: versículo, estação, santo, leituras da missa e fontes. */}
           <Animated.View entering={enterStagger(4, tokens)}>
             <VerseOfDayCard onOpen={(nav) => openBible(navigation, nav)} style={block} />
           </Animated.View>
@@ -244,9 +245,9 @@ export default function HomeScreen() {
               />
             </Group>
           </Animated.View>
-
-          <NewsCard style={block} />
         </View>
+
+        <NewsCard style={block} />
       </Columns>
     </LargeTitleScreen>
   );

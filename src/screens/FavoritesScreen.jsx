@@ -6,7 +6,9 @@ import { getFavorites, toggleFavorite } from '../utils/favorites';
 import { categoryLabel, pick } from '../utils/i18nData';
 import { haptics } from '../utils/haptics';
 import { openArticle } from '../navigation/links';
-import { EmptyState, Row } from '../components/ui';
+import { View } from 'react-native';
+import { EmptyState, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import RowIconButton from '../components/RowIconButton';
 import UserDataList from '../components/UserDataList';
 import ItemActionsSheet from '../components/ItemActionsSheet';
@@ -22,6 +24,11 @@ const fromIds = (ids) => ids.map((id) => articles.find((a) => a.id === id)).filt
 // 44 remove. O toque longo abre a folha de ações (abrir, remover), como nas
 // outras listas do usuário, em vez de remover na hora.
 export default function FavoritesScreen({ navigation }) {
+  // Desktop: a lista vira uma grade de `cols` colunas dentro do card, na
+  // largura da página (cada célula com a sua fração, para a última linha não
+  // esticar). No celular cabe uma coluna e nada muda.
+  const cols = useColumnCount(3);
+  const gridCell = (render) => (info) => <View style={{ width: `${100 / cols}%` }}>{render(info)}</View>;
   const { t, isEn } = useLanguage();
   // null enquanto carrega, para não piscar o estado vazio antes da leitura.
   const [items, setItems] = useState(null);
@@ -52,6 +59,9 @@ export default function FavoritesScreen({ navigation }) {
   return (
     <>
       <UserDataList
+        key={cols}
+        numColumns={cols}
+        maxWidth={PAGE_MAX}
         items={items}
         empty={(
           <EmptyState
@@ -62,7 +72,7 @@ export default function FavoritesScreen({ navigation }) {
           />
         )}
         keyExtractor={(a) => String(a.id)}
-        renderItem={({ item }) => (
+        renderItem={gridCell(({ item }) => (
           <Row
             titleRole="headline"
             title={pick(item, 'title', isEn)}
@@ -74,7 +84,7 @@ export default function FavoritesScreen({ navigation }) {
             onPress={() => openArticle(navigation, item.id)}
             onLongPress={() => setActive(item)}
           />
-        )}
+        ))}
       />
       <ItemActionsSheet
         item={active}

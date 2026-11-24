@@ -12,6 +12,8 @@
 //   SIZES      390,1280 (padrão os dois; 1280 só roda as telas marcadas `desktop`)
 //   LANDING    1 para capturar também docs/index.html (padrão 1; 0 desliga)
 //   HEADED     1 para ver o navegador
+//   HEIGHT     altura da janela (padrão 844 no celular, 800 no desktop)
+//   ALL        1 para rodar todas as telas também no desktop
 //
 // Não há rota por URL na web: tudo é navegado por clique, como um usuário.
 // Cada tela começa de um estado conhecido (aba tocada duas vezes, o que volta
@@ -356,7 +358,10 @@ const SCREENS = [
   {
     name: 'categoria',
     async run(page, s) {
+      // Os temas saíram da Início (PR 15): a lista por tema abre pela Jornada.
       await tabRoot(page, 'Início');
+      await page.getByText(/ de \d+ lições/).first().click({ timeout: 8000 });
+      await settle(page);
       await clickText(page, 'Igreja Católica');
       await s('categoria-igreja');
       await scrollMain(page, 'end');
@@ -412,7 +417,8 @@ const SCREENS = [
     name: 'artigo',
     desktop: true,
     async run(page, s) {
-      await tabRoot(page, 'Início');
+      // Pela aba Artigos, no tema (chip no celular, lista à esquerda no desktop).
+      await tabRoot(page, 'Artigos');
       await clickText(page, 'Igreja Católica');
       await clickText(page, 'A Eucaristia: Presença Real de Cristo');
       await settle(page, 1200);
@@ -434,7 +440,8 @@ const SCREENS = [
   {
     name: 'artigo-ref',
     async run(page, s) {
-      await tabRoot(page, 'Início');
+      // Pela aba Artigos, no tema (chip no celular, lista à esquerda no desktop).
+      await tabRoot(page, 'Artigos');
       await clickText(page, 'Igreja Católica');
       await clickText(page, 'A Eucaristia: Presença Real de Cristo');
       await settle(page, 1000);
@@ -717,12 +724,12 @@ async function captureLanding(browser) {
 // ---------------------------------------------------------------- main
 
 async function runContext(browser, theme, width) {
-  const height = width < 768 ? 844 : 800;
+  const height = Number(process.env.HEIGHT) || (width < 768 ? 844 : 800);
   console.log(`\n== ${theme} ${width}x${height}`);
   const { ctx, page } = await boot(browser, { theme, width, height });
   const c = { theme, width };
   const s = (name) => shot(page, c, name);
-  const list = SCREENS.filter((sc) => (width < 768 || sc.desktop) && (!ONLY || ONLY.includes(sc.name) || sc.first));
+  const list = SCREENS.filter((sc) => (width < 768 || sc.desktop || process.env.ALL === '1') && (!ONLY || ONLY.includes(sc.name) || sc.first));
   for (const sc of list) {
     const t0 = Date.now();
     try {

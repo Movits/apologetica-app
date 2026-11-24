@@ -7,7 +7,7 @@ import { space, type } from '../theme/tokens';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { BackButton } from '../components/HeaderButton';
-import { COLUMN_MAX } from '../components/ReadingColumn';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import ChromeBackdrop from './ChromeBackdrop';
 import useLayout from '../hooks/useLayout';
 import { contentWidthFor } from '../utils/layout';
@@ -92,11 +92,12 @@ function headerOptions(colors, backLabel) {
 }
 
 // Recuo lateral dos botões do header na web para eles caírem na borda da
-// coluna central (a mesma do LargeTitleScreen: COLUMN_MAX mais o recuo
-// `space.md` de cada lado) quando a janela é larga. No celular é zero.
-// `width` é a área das telas (a janela menos a barra lateral no desktop).
+// página (PAGE_MAX mais o recuo `space.md` de cada lado) quando a janela é
+// larga: as telas de lista ocupam a página toda e as de leitura centram a
+// coluna de 720 dentro dela, com o voltar no canto da página. No celular é
+// zero. `width` é a área das telas (a janela menos a barra lateral no desktop).
 function headerGutter(width) {
-  return Math.max(0, (width - (COLUMN_MAX + space.md * 2)) / 2);
+  return Math.max(0, (width - (PAGE_MAX + space.md * 2)) / 2);
 }
 
 // Variante translúcida, opt-in por tela nas `options` do Screen (ou em

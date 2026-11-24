@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Chip, ChipRow } from '../components/ui';
-import { COLUMN_MAX, centeredColumn } from '../components/ReadingColumn';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 import FavoritesScreen from './FavoritesScreen';
 import HighlightsScreen from './HighlightsScreen';
 import NotesScreen from './NotesScreen';
@@ -36,7 +36,7 @@ export default function StudyScreen({ navigation, route }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, ...centeredColumn(COLUMN_MAX, space.md) }}>
+      <View style={{ paddingHorizontal: space.md, paddingTop: space.sm, ...centeredColumn(PAGE_MAX, space.md) }}>
         <ChipRow>
           {TABS.map((x) => (
             <Chip key={x.id} label={t(x.label)} selected={tab === x.id} onPress={() => setTab(x.id)} haptic />

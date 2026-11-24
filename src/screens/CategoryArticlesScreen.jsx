@@ -12,7 +12,15 @@ import { EmptyState, ProgressBar } from '../components/ui';
 import { useJourney } from '../hooks/useJourney';
 import { categoryProgress, isLessonComplete, lessonOf } from '../utils/journey';
 import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
-import { centeredColumn } from '../components/ReadingColumn';
+import ArticleCard from '../components/ArticleCard';
+import { PAGE_MAX, centeredColumn, columnInnerWidth } from '../components/ReadingColumn';
+import useLayout from '../hooks/useLayout';
+import { gridColumns } from '../utils/layout';
+
+// Desktop: grade de cartões como a da aba Artigos (largura mínima de um
+// cartão e o teto de colunas, proporções da página).
+const CARD_MIN = 260;
+const MAX_COLS = 5;
 
 // Tela dedicada a uma categoria de artigos. Recebe route.params.category
 // (nome PT, igual ao campo article.category). O título vem do header do stack
@@ -26,6 +34,7 @@ export default function CategoryArticlesScreen({ route }) {
   const { colors, tokens, text } = useTheme();
   const { t } = useLanguage();
   const { space } = tokens;
+  const { isWide, width } = useLayout();
   const [readSet, setReadSet] = useState(() => new Set());
   const journey = useJourney();
 
@@ -47,13 +56,24 @@ export default function CategoryArticlesScreen({ route }) {
   const prog = journey ? categoryProgress(journey, list.map((a) => a.id)) : null;
   const progLabel = prog ? t('journey.categoryProgress', { n: prog.completed, total: prog.total }) : null;
 
+  // Grade do desktop: colunas pela largura útil da página; no celular, a
+  // lista de sempre (ArticleListItem).
+  const gap = space.md;
+  const gridW = columnInnerWidth(width, PAGE_MAX, space.md);
+  const cols = isWide ? gridColumns(gridW, CARD_MIN, gap, MAX_COLS) : 1;
+  const cardW = Math.floor((gridW - gap * (cols - 1)) / cols);
+  const grid = cols > 1;
+
   return (
     <FlatList
+      key={grid ? `grid-${cols}` : 'list'}
+      numColumns={cols}
+      columnWrapperStyle={grid ? { gap } : undefined}
       data={list}
       keyExtractor={(a) => String(a.id)}
-      contentContainerStyle={{ paddingHorizontal: space.md, paddingBottom: space.xl, ...centeredColumn(undefined, space.md) }}
+      contentContainerStyle={{ paddingHorizontal: space.md, paddingBottom: space.xl, ...centeredColumn(PAGE_MAX, space.md) }}
       ListHeaderComponent={
-        <View style={{ paddingTop: space.sm, paddingBottom: space.xs, gap: space.xxs }}>
+        <View style={{ paddingTop: space.sm, paddingBottom: grid ? space.md : space.xs, gap: space.xxs }}>
           <Text style={[text('subhead'), { color: colors.textSubtle }]}>{description}</Text>
           <Text style={[text('footnote'), { color: colors.textSubtle }]}>{countLabel}</Text>
           {prog && prog.completed > 0 ? (
@@ -64,9 +84,18 @@ export default function CategoryArticlesScreen({ route }) {
           ) : null}
         </View>
       }
-      ItemSeparatorComponent={ArticleListSeparator}
+      ItemSeparatorComponent={grid ? GridGap : ArticleListSeparator}
       ListEmptyComponent={<EmptyState icon="newspaper-outline" title={t('articles.empty')} />}
-      renderItem={({ item }) => (
+      renderItem={({ item }) => (grid ? (
+        <ArticleCard
+          article={item}
+          read={readSet.has(item.id)}
+          completed={isLessonComplete(lessonOf(journey, item.id))}
+          showCategory={false}
+          width={cardW}
+          onPress={(id) => openArticle(navigation, id)}
+        />
+      ) : (
         <ArticleListItem
           article={item}
           read={readSet.has(item.id)}
@@ -74,7 +103,13 @@ export default function CategoryArticlesScreen({ route }) {
           showCategory={false}
           onPress={() => openArticle(navigation, item.id)}
         />
-      )}
+      ))}
     />
   );
+}
+
+// Vão vertical entre as linhas da grade.
+function GridGap() {
+  const { tokens } = useTheme();
+  return <View style={{ height: tokens.space.md }} />;
 }

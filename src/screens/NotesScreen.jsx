@@ -8,7 +8,9 @@ import { useAuth } from '../context/AuthContext';
 import { shareNote } from '../utils/share';
 import { verseLabel } from '../utils/refLabel';
 import { openBible } from '../navigation/links';
-import { EmptyState, Row } from '../components/ui';
+import { View } from 'react-native';
+import { EmptyState, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import RowIconButton from '../components/RowIconButton';
 import UserDataList from '../components/UserDataList';
 import ItemActionsSheet from '../components/ItemActionsSheet';
@@ -18,6 +20,11 @@ import ItemActionsSheet from '../components/ItemActionsSheet';
 // nota. Toque abre o editor; o botão de mais ações (ou o toque longo) abre a
 // folha com editar, ler na Bíblia, compartilhar e excluir.
 export default function NotesScreen({ navigation }) {
+  // Desktop: a lista vira uma grade de `cols` colunas dentro do card, na
+  // largura da página (cada célula com a sua fração, para a última linha não
+  // esticar). No celular cabe uma coluna e nada muda.
+  const cols = useColumnCount(3);
+  const gridCell = (render) => (info) => <View style={{ width: `${100 / cols}%` }}>{render(info)}</View>;
   const { t, isEn, lang } = useLanguage();
   const { user } = useAuth();
   const [items, setItems] = useState(null);
@@ -79,11 +86,14 @@ export default function NotesScreen({ navigation }) {
   return (
     <>
       <UserDataList
+        key={cols}
+        numColumns={cols}
+        maxWidth={PAGE_MAX}
         user={user}
         items={items}
         empty={<EmptyState icon="document-text-outline" title={t('empty.notes')} message={t('notes.emptyHint')} />}
         keyExtractor={(n) => n.id}
-        renderItem={({ item }) => (
+        renderItem={gridCell(({ item }) => (
           <Row
             titleRole="headline"
             title={verseLabel(item, isEn)}
@@ -94,7 +104,7 @@ export default function NotesScreen({ navigation }) {
             onPress={() => edit(item)}
             onLongPress={() => showActions(item)}
           />
-        )}
+        ))}
       />
       <ItemActionsSheet
         item={active}

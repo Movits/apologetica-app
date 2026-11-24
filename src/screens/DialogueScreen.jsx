@@ -11,8 +11,8 @@ import { captureAndShareImage } from '../utils/shareAsImage';
 import { shareDialogue } from '../utils/share';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Columns, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // O card de compartilhar (1080x1080) fica montado fora da tela, só para o
 // view-shot capturar. É um deslocamento, não uma medida de layout.
@@ -183,7 +183,7 @@ function DialogueList({ onChoose }) {
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.bg }}
-      contentContainerStyle={[{ padding: space.md }, centeredColumn(undefined, space.md)]}
+      contentContainerStyle={[{ padding: space.md }, centeredColumn(PAGE_MAX, space.md)]}
     >
       <Text style={[text('subhead'), { color: colors.textSubtle }]}>
         {t('dialogue.intro')}
@@ -201,6 +201,9 @@ function DialogueList({ onChoose }) {
         />
       </Group>
 
+      {/* Desktop: as categorias em colunas (Columns), para a lista não virar
+          uma faixa estreita no meio da tela. No celular empilham. */}
+      <Columns max={3}>
       {sections.map((cat) => (
         <View key={cat}>
           <SectionTitle title={cat} />
@@ -217,6 +220,7 @@ function DialogueList({ onChoose }) {
           </Group>
         </View>
       ))}
+      </Columns>
     </ScrollView>
   );
 }

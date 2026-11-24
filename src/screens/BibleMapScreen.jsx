@@ -10,16 +10,17 @@ import { buildMapHtml } from './bibleMap/mapHtml';
 import { verseEndFromRef } from '../utils/verseRange';
 import { openBible } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Group, PressScale, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { Button, Group, PressScale, ProgressBar, Row, SectionTitle, useColumnCount } from '../components/ui';
 import ImageZoomModal from '../components/ImageZoomModal';
-import { columnStyle, columnContentStyle } from '../components/ReadingColumn';
+import { PAGE_MAX, centeredColumn, columnStyle, columnContentStyle } from '../components/ReadingColumn';
 
 // Tela "Nos Passos de Jesus": mapa real (Leaflet + mapa físico da Esri) com as 21
 // paradas. O renderizador é por plataforma (MapView.native = WebView,
 // MapView.web = iframe) e a rota cresce a cada passo. Abaixo do mapa fica a
 // parada atual (foto, descrição e "Ler no app") e a lista de todas as paradas.
 // Tocar num pino ou numa linha da lista seleciona aquela parada. No desktop
-// tudo fica numa coluna central de leitura, como o Artigo.
+// o mapa ocupa a altura da janela à esquerda e a parada atual e a lista rolam
+// num painel à direita (no celular, uma coluna como sempre).
 
 // Altura do mapa: geometria do desenho, não espaço de layout.
 const MAP_HEIGHT = 480;
@@ -95,6 +96,8 @@ export default function BibleMapScreen({ navigation }) {
   // Posição do mapa dentro do conteúdo: tocar numa parada da lista sobe até
   // ele, para a pessoa ver o mapa ir até a parada escolhida.
   const mapYRef = useRef(0);
+  // Desktop: mapa e painel lado a lado (ver o comentário do topo).
+  const wide = useColumnCount(2) >= 2;
 
   const total = JESUS_JOURNEY.length;
   const current = JESUS_JOURNEY[step];
@@ -103,7 +106,9 @@ export default function BibleMapScreen({ navigation }) {
   const goNext = () => { if (step < total - 1) setStep(step + 1); };
   const selectFromList = (idx) => {
     setStep(idx);
-    scrollRef.current?.scrollTo({ y: mapYRef.current, animated: !reduceMotion });
+    // No desktop o mapa está sempre à vista: o painel volta ao topo, onde
+    // fica a parada escolhida.
+    scrollRef.current?.scrollTo({ y: wide ? 0 : mapYRef.current, animated: !reduceMotion });
   };
 
   const openInBible = (place) => {
@@ -122,6 +127,113 @@ export default function BibleMapScreen({ navigation }) {
   const currentRef = pick(current, 'ref', isEn);
   const photoCredit = pick(current, 'photoCredit', isEn);
 
+  const hint = (
+    <Text style={[text('subhead'), { color: colors.textSubtle }]}>
+      {isEn
+        ? 'Pinch to zoom and drag to pan. The route grows along land paths as you advance. Tap a pin to select a stop.'
+        : 'Pinça para zoom e arraste para navegar. A rota cresce por caminhos terrestres a cada passo. Toque num pino para escolher a parada.'}
+    </Text>
+  );
+
+  const map = (
+    <MapView
+      html={mapHtml}
+      step={step}
+      onSelectPlace={setStep}
+      title={isEn ? "Map of Jesus' journey" : 'Mapa da jornada de Jesus'}
+      style={{ flex: 1, backgroundColor: colors.bg }}
+    />
+  );
+
+  // Parada atual.
+  const stopCard = (
+    <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, gap: space.sm, marginTop: space.md }}>
+      <Text style={[text('footnote'), { color: colors.textSubtle }]}>{stepLabel}</Text>
+      <ProgressBar value={(step + 1) / total} accessibilityLabel={stepLabel} />
+      <PlacePhoto
+        key={current.id}
+        source={current.photo}
+        credit={photoCredit}
+        alt={`${currentTitle}, ${currentName}`}
+        caption={photoCredit ? `${currentName} · ${photoCredit}` : currentName}
+      />
+      <View style={{ gap: space.xxs }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
+          <Ionicons name="location" size={icon.sm} color={colors.accentText} />
+          <Text style={[text('caption1'), { color: colors.accentText, flex: 1 }]}>{currentName}</Text>
+        </View>
+        <Text role="heading" style={[text('section'), { color: colors.text }]}>{currentTitle}</Text>
+        <Text style={[text('body'), { color: colors.text }]}>{pick(current, 'desc', isEn)}</Text>
+        <Text style={[text('footnote'), { color: colors.textSubtle }]}>{currentRef}</Text>
+      </View>
+      <Button icon="book-outline" label={t('ref.readInApp')} onPress={() => openInBible(current)} />
+      <View style={{ flexDirection: 'row', gap: space.xs }}>
+        <Button
+          variant="secondary"
+          full={false}
+          icon="chevron-back"
+          label={isEn ? 'Previous' : 'Anterior'}
+          onPress={goPrev}
+          disabled={step === 0}
+          style={{ flex: 1 }}
+        />
+        {/* row-reverse põe o chevron depois do rótulo, espelhando o Anterior. */}
+        <Button
+          variant="secondary"
+          full={false}
+          icon="chevron-forward"
+          label={isEn ? 'Next' : 'Próxima'}
+          onPress={goNext}
+          disabled={step === total - 1}
+          style={{ flex: 1, flexDirection: 'row-reverse' }}
+        />
+      </View>
+    </View>
+  );
+
+  const stopList = (
+    <>
+      <SectionTitle title={isEn ? 'All stops' : 'Todas as paradas'} />
+      <Group>
+        {JESUS_JOURNEY.map((p, idx) => {
+          const isCurrent = idx === step;
+          const name = pick(p, 'name', isEn);
+          const title = pick(p, 'title', isEn);
+          return (
+            <Row
+              key={p.id}
+              trailing={isCurrent ? <Ionicons name="location" size={icon.sm} color={colors.tint} /> : 'chevron'}
+              accessibilityLabel={`${idx + 1}. ${name}, ${title}`}
+              onPress={() => selectFromList(idx)}
+              {...(isCurrent ? currentRowProps : null)}
+            >
+              <Text style={[text('caption1'), { color: colors.accentText }]}>{idx + 1} · {name}</Text>
+              <Text style={[text('headline'), { color: colors.text }]} numberOfLines={1}>{title}</Text>
+              <Text style={[text('footnote'), { color: colors.textSubtle }]}>{pick(p, 'ref', isEn)}</Text>
+            </Row>
+          );
+        })}
+      </Group>
+    </>
+  );
+
+  if (wide) {
+    // O mapa recebe a roda do mouse (zoom do Leaflet); o painel da direita rola
+    // com a própria barra. A dica de uso fica no topo do painel.
+    return (
+      <View style={[styles.wide, { padding: space.md, gap: space.xl }, centeredColumn(PAGE_MAX, space.md)]}>
+        <View style={{ flex: 3, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.card }}>
+          {map}
+        </View>
+        <ScrollView ref={scrollRef} style={{ flex: 2 }} contentContainerStyle={{ paddingBottom: space.xl }}>
+          {hint}
+          {stopCard}
+          {stopList}
+        </ScrollView>
+      </View>
+    );
+  }
+
   return (
     <ScrollView
       ref={scrollRef}
@@ -129,11 +241,7 @@ export default function BibleMapScreen({ navigation }) {
       scrollEnabled={!mapInteracting}
     >
       <View style={columnStyle}>
-        <Text style={[text('subhead'), { color: colors.textSubtle }]}>
-          {isEn
-            ? 'Pinch to zoom and drag to pan. The route grows along land paths as you advance. Tap a pin to select a stop.'
-            : 'Pinça para zoom e arraste para navegar. A rota cresce por caminhos terrestres a cada passo. Toque num pino para escolher a parada.'}
-        </Text>
+        {hint}
 
         <View
           style={{ height: MAP_HEIGHT, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.card, marginTop: space.md }}
@@ -142,86 +250,19 @@ export default function BibleMapScreen({ navigation }) {
           onTouchEnd={() => setMapInteracting(false)}
           onTouchCancel={() => setMapInteracting(false)}
         >
-          <MapView
-            html={mapHtml}
-            step={step}
-            onSelectPlace={setStep}
-            title={isEn ? "Map of Jesus' journey" : 'Mapa da jornada de Jesus'}
-            style={{ flex: 1, backgroundColor: colors.bg }}
-          />
+          {map}
         </View>
 
-        {/* Parada atual */}
-        <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.md, gap: space.sm, marginTop: space.md }}>
-          <Text style={[text('footnote'), { color: colors.textSubtle }]}>{stepLabel}</Text>
-          <ProgressBar value={(step + 1) / total} accessibilityLabel={stepLabel} />
-          <PlacePhoto
-            key={current.id}
-            source={current.photo}
-            credit={photoCredit}
-            alt={`${currentTitle}, ${currentName}`}
-            caption={photoCredit ? `${currentName} · ${photoCredit}` : currentName}
-          />
-          <View style={{ gap: space.xxs }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.xxs }}>
-              <Ionicons name="location" size={icon.sm} color={colors.accentText} />
-              <Text style={[text('caption1'), { color: colors.accentText, flex: 1 }]}>{currentName}</Text>
-            </View>
-            <Text role="heading" style={[text('section'), { color: colors.text }]}>{currentTitle}</Text>
-            <Text style={[text('body'), { color: colors.text }]}>{pick(current, 'desc', isEn)}</Text>
-            <Text style={[text('footnote'), { color: colors.textSubtle }]}>{currentRef}</Text>
-          </View>
-          <Button icon="book-outline" label={t('ref.readInApp')} onPress={() => openInBible(current)} />
-          <View style={{ flexDirection: 'row', gap: space.xs }}>
-            <Button
-              variant="secondary"
-              full={false}
-              icon="chevron-back"
-              label={isEn ? 'Previous' : 'Anterior'}
-              onPress={goPrev}
-              disabled={step === 0}
-              style={{ flex: 1 }}
-            />
-            {/* row-reverse põe o chevron depois do rótulo, espelhando o Anterior. */}
-            <Button
-              variant="secondary"
-              full={false}
-              icon="chevron-forward"
-              label={isEn ? 'Next' : 'Próxima'}
-              onPress={goNext}
-              disabled={step === total - 1}
-              style={{ flex: 1, flexDirection: 'row-reverse' }}
-            />
-          </View>
-        </View>
+        {stopCard}
 
-        <SectionTitle title={isEn ? 'All stops' : 'Todas as paradas'} />
-        <Group>
-          {JESUS_JOURNEY.map((p, idx) => {
-            const isCurrent = idx === step;
-            const name = pick(p, 'name', isEn);
-            const title = pick(p, 'title', isEn);
-            return (
-              <Row
-                key={p.id}
-                trailing={isCurrent ? <Ionicons name="location" size={icon.sm} color={colors.tint} /> : 'chevron'}
-                accessibilityLabel={`${idx + 1}. ${name}, ${title}`}
-                onPress={() => selectFromList(idx)}
-                {...(isCurrent ? currentRowProps : null)}
-              >
-                <Text style={[text('caption1'), { color: colors.accentText }]}>{idx + 1} · {name}</Text>
-                <Text style={[text('headline'), { color: colors.text }]} numberOfLines={1}>{title}</Text>
-                <Text style={[text('footnote'), { color: colors.textSubtle }]}>{pick(p, 'ref', isEn)}</Text>
-              </Row>
-            );
-          })}
-        </Group>
+        {stopList}
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  wide: { flex: 1, flexDirection: 'row' },
   fill: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' },
   badge: { position: 'absolute', pointerEvents: 'none' },
 });

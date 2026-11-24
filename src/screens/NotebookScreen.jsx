@@ -1,10 +1,11 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { watchNotebook } from '../services/userData';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import { EmptyState, Row } from '../components/ui';
+import { EmptyState, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import { stripRefs } from '../components/NotebookText';
 import UserDataList from '../components/UserDataList';
 import HeaderButton from '../components/HeaderButton';
@@ -21,6 +22,11 @@ function editedAt(page, isEn) {
 // para criar conta; com conta, a lista agrupada mostra título, prévia e data
 // de cada página, e o "+" do header cria uma página nova.
 export default function NotebookScreen({ navigation }) {
+  // Desktop: a lista vira uma grade de `cols` colunas dentro do card, na
+  // largura da página (cada célula com a sua fração, para a última linha não
+  // esticar). No celular cabe uma coluna e nada muda.
+  const cols = useColumnCount(3);
+  const gridCell = (render) => (info) => <View style={{ width: `${100 / cols}%` }}>{render(info)}</View>;
   const { colors, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { user } = useAuth();
@@ -44,6 +50,9 @@ export default function NotebookScreen({ navigation }) {
 
   return (
     <UserDataList
+      key={cols}
+      numColumns={cols}
+      maxWidth={PAGE_MAX}
       user={user}
       items={items}
       empty={(
@@ -55,7 +64,7 @@ export default function NotebookScreen({ navigation }) {
         />
       )}
       keyExtractor={(p) => p.id}
-      renderItem={({ item }) => {
+      renderItem={gridCell(({ item }) => {
         const date = editedAt(item, isEn);
         return (
           <Row
@@ -71,7 +80,7 @@ export default function NotebookScreen({ navigation }) {
             ) : null}
           </Row>
         );
-      }}
+      })}
     />
   );
 }
