@@ -9,8 +9,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { pick } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { openBible } from '../navigation/links';
-import { Button, Chip, ChipRow, EmptyState, ListSeparator, PressScale, SearchField } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Chip, ChipRow, EmptyState, ListSeparator, PressScale, SearchField, useColumnCount } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Catálogo de referências (Onda 9c): busca por texto, filtro por fonte em
 // chips e lista agrupada por fonte. Cada linha mostra a citação e abre o
@@ -19,6 +19,14 @@ import { centeredColumn } from '../components/ReadingColumn';
 
 // Chave de filtro "todas as fontes".
 const ALL = 'all';
+
+// Desktop: referências em até três colunas, cada card com pelo menos esta
+// largura (proporção da página). Cada seção vira linhas de `cols` cards.
+const REF_COLS = 3;
+const CELL_MIN = 340;
+
+// Parte `list` em linhas de `n` itens.
+const chunk = (list, n) => Array.from({ length: Math.ceil(list.length / n) }, (_, i) => list.slice(i * n, i * n + n));
 
 // Tempo em que o destaque da chegada por deep link fica cheio antes de sumir.
 const HIGHLIGHT_HOLD_MS = 1500;
@@ -66,8 +74,10 @@ function HighlightBackdrop() {
 // Uma referência da lista. Memoizada: o SectionList re-renderiza ao digitar
 // e a lista tem 200 itens. `first`/`last` dão os cantos do card do grupo,
 // já que o card é virtualizado (cada linha desenha o próprio pedaço).
+// `cell`: card inteiro dentro de uma linha da grade do desktop (cantos
+// arredondados, sem a margem lateral, ocupando a sua fração da linha).
 const RefItem = memo(function RefItem({
-  item, isEn, t, highlighted, first, last, onOpen, onOpenInBible, onOpenUrl,
+  item, isEn, t, highlighted, first, last, cell, onOpen, onOpenInBible, onOpenUrl,
 }) {
   const { colors, tokens, text } = useTheme();
   const { space, radius } = tokens;
@@ -77,7 +87,13 @@ const RefItem = memo(function RefItem({
 
   return (
     <View
-      style={{
+      style={cell ? {
+        flex: 1,
+        minWidth: 0,
+        backgroundColor: colors.card,
+        borderRadius: radius.md,
+        overflow: 'hidden',
+      } : {
         marginHorizontal: space.md,
         backgroundColor: colors.card,
         borderTopLeftRadius: first ? radius.md : 0,
@@ -138,6 +154,10 @@ export default function ReferencesScreen({ route }) {
   const [source, setSource] = useState(ALL);
   const [highlightedId, setHighlightedId] = useState(null);
   const listRef = useRef(null);
+  // Desktop: grade na largura da página; numa coluna só (celular, janela
+  // estreita) fica a lista agrupada de sempre.
+  const cols = useColumnCount(REF_COLS, CELL_MIN);
+  const grid = cols > 1;
 
   // Seções por fonte, na ordem de REFERENCE_SOURCES, já filtradas pelo chip e
   // pela busca (seções vazias somem).
@@ -149,6 +169,13 @@ export default function ReferencesScreen({ route }) {
       .map((s) => ({ meta: s, data: referencesWithEn().filter((r) => r.source === s.id && (!q || hay.get(r.id).includes(q))) }))
       .filter((s) => s.data.length > 0);
   }, [query, source, isEn]);
+
+  // O que a SectionList recebe: na grade, cada item é uma linha de `cols`
+  // referências (`count` guarda o total da seção para o cabeçalho).
+  const listSections = useMemo(
+    () => (grid ? sections.map((s) => ({ meta: s.meta, count: s.data.length, data: chunk(s.data, cols) })) : sections),
+    [sections, grid, cols]
+  );
 
   // Chegada por deep link (highlightId): limpa filtro e busca para o item
   // existir na lista e o destaca. O scroll fica no efeito seguinte, porque os
@@ -182,14 +209,16 @@ export default function ReferencesScreen({ route }) {
       return ii >= 0;
     });
     if (sectionIndex < 0) return undefined;
+    // Na grade, o item da lista é a linha onde a referência está.
+    const rowIndex = grid ? Math.floor(itemIndex / cols) : itemIndex;
     const scrollTry = (animated) => {
       try {
-        listRef.current?.scrollToLocation({ sectionIndex, itemIndex, viewPosition: 0.15, animated });
+        listRef.current?.scrollToLocation({ sectionIndex, itemIndex: rowIndex, viewPosition: 0.15, animated });
       } catch {}
     };
     const timers = [50, 300, 600].map((ms, i) => setTimeout(() => scrollTry(i > 0), ms));
     return () => timers.forEach(clearTimeout);
-  }, [highlightId, sections, query, source]);
+  }, [highlightId, sections, query, source, grid, cols]);
 
   const handleOpen = useCallback((id) => navigation.navigate('RefDetail', { highlightId: id }), [navigation]);
   const handleOpenInBible = useCallback((nav) => openBible(navigation, nav), [navigation]);
@@ -215,10 +244,34 @@ export default function ReferencesScreen({ route }) {
     [isEn, t, highlightedId, handleOpen, handleOpenInBible, handleOpenUrl]
   );
 
+  // Linha da grade do desktop: `cols` cards lado a lado, com a mesma altura;
+  // a última linha completa com espaços vazios para os cards não esticarem.
+  const renderRow = useCallback(
+    ({ item: row }) => (
+      <View style={{ flexDirection: 'row', gap: space.md, marginHorizontal: space.md }}>
+        {row.map((item) => (
+          <RefItem
+            key={item.id}
+            cell
+            item={item}
+            isEn={isEn}
+            t={t}
+            highlighted={highlightedId === item.id}
+            onOpen={handleOpen}
+            onOpenInBible={handleOpenInBible}
+            onOpenUrl={handleOpenUrl}
+          />
+        ))}
+        {Array.from({ length: cols - row.length }, (_, i) => <View key={`vazio-${i}`} style={{ flex: 1 }} />)}
+      </View>
+    ),
+    [isEn, t, highlightedId, handleOpen, handleOpenInBible, handleOpenUrl, cols, space.md]
+  );
+
   // Cabeçalho do grupo, como o `header` do Group: fonte e contagem em footnote.
   const renderSectionHeader = useCallback(
     ({ section }) => {
-      const n = section.data.length;
+      const n = section.count ?? section.data.length;
       const count = n === 1 ? t('ref.countOne') : t('ref.count', { n });
       return (
         <Text style={[text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md, marginTop: space.lg, marginBottom: space.xs }]}>
@@ -239,11 +292,13 @@ export default function ReferencesScreen({ route }) {
     ),
     [space.md, colors.card]
   );
+  // Na grade, entre as linhas fica só um vão.
+  const RowGap = useCallback(() => <View style={{ height: space.md }} />, [space.md]);
 
   const chips = [{ id: ALL, label: t('ref.all') }, ...REFERENCE_SOURCES.map((s) => ({ id: s.id, label: translateSource(s.id, isEn), icon: s.icon }))];
   // Janela larga: busca, chips e lista numa coluna central (cada bloco já
   // traz o recuo `space.md` dos lados, então a caixa só limita e centra).
-  const column = centeredColumn(undefined, space.md);
+  const column = centeredColumn(grid ? PAGE_MAX : undefined, space.md);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -270,11 +325,11 @@ export default function ReferencesScreen({ route }) {
       </View>
       <SectionList
         ref={listRef}
-        sections={sections}
-        keyExtractor={(r) => r.id}
-        renderItem={renderItem}
+        sections={listSections}
+        keyExtractor={(r) => (Array.isArray(r) ? r.map((x) => x.id).join('|') : r.id)}
+        renderItem={grid ? renderRow : renderItem}
         renderSectionHeader={renderSectionHeader}
-        ItemSeparatorComponent={Separator}
+        ItemSeparatorComponent={grid ? RowGap : Separator}
         stickySectionHeadersEnabled={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"

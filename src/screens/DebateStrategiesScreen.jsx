@@ -5,11 +5,17 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { DEBATE_STRATEGIES } from '../data/debateStrategies';
 import { pick } from '../utils/i18nData';
-import { Chip, ChipRow, EmptyState, Group, Row, SearchField } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Chip, ChipRow, EmptyState, Group, Row, SearchField, useColumnCount } from '../components/ui';
+import { PAGE_MAX, centeredColumn, columnInnerWidth } from '../components/ReadingColumn';
+import useLayout from '../hooks/useLayout';
 
 // Nome e definição (PT e EN) em minúsculas, na ordem de DEBATE_STRATEGIES,
 // calculados uma vez no módulo: a busca só compara `includes` neles a cada tecla.
+// Desktop: táticas e falácias em até três colunas, cada card com pelo menos
+// esta largura (proporção da página).
+const DEBATE_COLS = 3;
+const CELL_MIN = 340;
+
 const HAYSTACKS = DEBATE_STRATEGIES.map((s) => [s.name, s.definition, s.nameEn, s.definitionEn].filter(Boolean).join('\n').toLowerCase());
 
 // Ferramenta de treino para debates: táticas que ajudam e falácias a
@@ -22,6 +28,14 @@ export default function DebateStrategiesScreen() {
   const [expanded, setExpanded] = useState(null);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('all'); // all | tatica | falacia
+  // Desktop: grade (numColumns) na largura da página; numa coluna só
+  // (celular, janela estreita) fica a lista de sempre.
+  const { width } = useLayout();
+  const cols = useColumnCount(DEBATE_COLS, CELL_MIN);
+  const grid = cols > 1;
+  const page = centeredColumn(grid ? PAGE_MAX : undefined, space.md);
+  // Largura fixa por card: a última linha, incompleta, não estica os seus.
+  const cellW = (columnInnerWidth(width, PAGE_MAX, space.md) - space.md * (cols - 1)) / cols;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -42,7 +56,7 @@ export default function DebateStrategiesScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, gap: space.xs }, centeredColumn(undefined, space.md)]}>
+      <View style={[{ paddingHorizontal: space.md, paddingTop: space.sm, gap: space.xs }, page]}>
         <SearchField
           value={query}
           onChangeText={setQuery}
@@ -58,12 +72,26 @@ export default function DebateStrategiesScreen() {
       </View>
 
       <FlatList
+        // numColumns não muda numa lista montada: a chave remonta ao mudar.
+        key={`cols-${cols}`}
         data={filtered}
         keyExtractor={(s) => s.id}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={[{ padding: space.md, gap: space.sm }, centeredColumn(undefined, space.md)]}
+        numColumns={cols}
+        // Na grade, o card aberto cresce sozinho: os vizinhos da linha não
+        // esticam junto.
+        columnWrapperStyle={grid ? { gap: space.md, alignItems: 'flex-start' } : undefined}
+        contentContainerStyle={[{ padding: space.md, gap: grid ? space.md : space.sm }, page]}
         ListEmptyComponent={<EmptyState icon="search-outline" title={t('debate.empty')} message={t('debate.emptyHint')} />}
-        renderItem={({ item }) => <StrategyCard item={item} open={expanded === item.id} onToggle={toggle} />}
+        renderItem={({ item }) => (
+          grid ? (
+            <View style={{ width: cellW }}>
+              <StrategyCard item={item} open={expanded === item.id} onToggle={toggle} />
+            </View>
+          ) : (
+            <StrategyCard item={item} open={expanded === item.id} onToggle={toggle} />
+          )
+        )}
       />
     </View>
   );

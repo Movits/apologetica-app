@@ -17,9 +17,9 @@ import { getLiveStreak } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
 import { categoryLabel, pick } from '../utils/i18nData';
 import { confirmAction } from '../utils/dialog';
-import { Button, ContinueRow, Group, PressScale, ProgressBar, Row, SectionTitle, Sheet } from '../components/ui';
+import { Button, Columns, ContinueRow, Group, PressScale, ProgressBar, Row, SectionTitle, Sheet, useColumnCount } from '../components/ui';
 import { BadgeEmblem, XpRing } from '../components/lesson';
-import { centeredColumn, columnInnerWidth, COLUMN_MAX } from '../components/ReadingColumn';
+import { centeredColumn, columnInnerWidth, COLUMN_MAX, PAGE_MAX } from '../components/ReadingColumn';
 
 // Minha Jornada: o selo do nível com o anel até o próximo e o que o nome do
 // nível quer dizer (a escada inteira numa folha), os números (lições, testes
@@ -41,6 +41,10 @@ export default function JourneyScreen({ navigation }) {
   const [streak, setStreak] = useState(0);
   const [badge, setBadge] = useState(null);
   const [levelsOpen, setLevelsOpen] = useState(false);
+  // Desktop: duas colunas na largura da página (à esquerda o nível, os números,
+  // a revisão e a próxima lição; à direita os temas e as conquistas). No
+  // celular e no tablet, a coluna de leitura de sempre.
+  const wide = useColumnCount(2) > 1;
 
   useFocusEffect(
     useCallback(() => {
@@ -89,15 +93,19 @@ export default function JourneyScreen({ navigation }) {
       : [nextIn == null ? null : nextIn <= 1 ? t('journey.review.nextTomorrow') : t('journey.review.nextIn', { n: nextIn }), mastered].filter(Boolean).join(' · ');
 
   const levelName = pick(stats.level, 'name', isEn);
-  const inner = columnInnerWidth(width, COLUMN_MAX, space.md);
+  const inner = wide
+    ? (columnInnerWidth(width, PAGE_MAX, space.md) - space.xl) / 2
+    : columnInnerWidth(width, COLUMN_MAX, space.md);
   const badgeSide = Math.floor((inner - space.xs * (BADGE_COLUMNS - 1)) / BADGE_COLUMNS);
   const streakLabel = t(streak === 1 ? 'journey.days.one' : 'journey.days', { n: streak });
 
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.bg }}
-      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}
+      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(wide ? PAGE_MAX : undefined, space.md)]}
     >
+      <Columns>
+      <View>
       {/* Selo do nível. */}
       <View style={{ backgroundColor: colors.card, borderRadius: radius.lg, padding: space.lg, alignItems: 'center', gap: space.xs }}>
         <XpRing size={seal.xl} value={stats.progress} accessibilityLabel={levelName}>
@@ -153,7 +161,9 @@ export default function JourneyScreen({ navigation }) {
         )}
       </Group>
 
-      <SectionTitle title={t('journey.section.topics')} />
+      </View>
+      <View>
+      <SectionTitle title={t('journey.section.topics')} style={wide ? { marginTop: 0 } : undefined} />
       <Group>
         {ARTICLE_CATEGORIES.map((cat) => {
           const prog = categoryProgress(journey, ARTICLES_BY_CATEGORY[cat.id] || []);
@@ -206,6 +216,8 @@ export default function JourneyScreen({ navigation }) {
           );
         })}
       </View>
+      </View>
+      </Columns>
 
       {stats.xp > 0 ? (
         <Button variant="plain" label={t('journey.reset')} onPress={onReset} textStyle={{ color: colors.danger }} style={{ marginTop: space.lg }} />

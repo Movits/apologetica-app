@@ -10,8 +10,8 @@ import { articles } from '../data/articles';
 import { getPlanProgress, resetPlanProgress, getStreak } from '../utils/readingProgress';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Chip, ChipRow, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Chip, ChipRow, Group, ProgressBar, Row, SectionTitle, useColumnCount } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Plano de leitura: trilhos (Fundamentos, Aprofundamento e a trilha temática)
 // como chips, resumo com barra de progresso e streak num Group, e os dias em
@@ -21,6 +21,9 @@ export default function ReadingPlanScreen({ navigation }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
   const { space, icon } = tokens;
+  // Desktop: os dias em colunas lado a lado (blocos seguidos, lidos de cima
+  // para baixo em cada coluna). No celular, uma lista só.
+  const cols = useColumnCount(3);
   const [trackId, setTrackId] = useState('fundamentos');
   const [progress, setProgress] = useState({ completed: [], lastDay: 0 });
   const [streak, setStreak] = useState(0);
@@ -86,7 +89,7 @@ export default function ReadingPlanScreen({ navigation }) {
   );
 
   return (
-    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(PAGE_MAX, space.md)]}>
       {/* Trilhos num trilho horizontal de borda a borda (o padrão dos filtros):
           quebrando linha, "Objeções protestantes" ficava sozinho embaixo. */}
       <ChipRow scroll style={{ marginHorizontal: -space.md }}>
@@ -135,8 +138,10 @@ export default function ReadingPlanScreen({ navigation }) {
       ) : null}
 
       <SectionTitle title={isEn ? 'Days' : 'Dias'} />
-      <Group>
-        {days.map((item) => {
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: space.xl }}>
+      {chunk(days, cols).map((part, col) => (
+      <Group key={col} style={{ flex: 1, minWidth: 0 }}>
+        {part.map((item) => {
           const done = progress.completed.includes(item.day);
           const article = articleById.get(item.articleId);
           const title = article ? pick(article, 'title', isEn) : pick(item, 'theme', isEn);
@@ -159,6 +164,17 @@ export default function ReadingPlanScreen({ navigation }) {
           );
         })}
       </Group>
+      ))}
+      </View>
     </ScrollView>
   );
+}
+
+// Divide `list` em `k` blocos seguidos de tamanhos parecidos (o primeiro
+// bloco leva os primeiros itens), para os dias lerem de cima para baixo.
+function chunk(list, k) {
+  const size = Math.ceil(list.length / k) || 1;
+  const out = [];
+  for (let i = 0; i < list.length; i += size) out.push(list.slice(i, i + size));
+  return out;
 }

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Platform } from 'react-native';
 import useLayout from '../hooks/useLayout';
 import Svg, { Ellipse, Circle, Line, G } from 'react-native-svg';
 import { useNavigation } from '@react-navigation/native';
@@ -9,8 +9,8 @@ import { verseEndFromRef } from '../utils/verseRange';
 import { openBible } from '../navigation/links';
 import { pick } from '../utils/i18nData';
 import { haptics } from '../utils/haptics';
-import { Button, Chip, ChipRow, Group, Row } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Chip, ChipRow, Group, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Santo Rosário: mistérios do dia (chips), as cinco dezenas em linhas com
 // deep link para a Bíblia, o passo atual com a oração escrita, os botões de
@@ -173,6 +173,11 @@ export default function RosaryScreen() {
   const [stepIndex, setStepIndex] = useState(0);
   const sequence = useMemo(() => buildSequence(isEn), [isEn]);
   const mystery = MYSTERIES[tipo];
+  // Desktop: dois painéis, à esquerda os mistérios, o passo atual e os botões,
+  // à direita o terço desenhado grande e preso no topo enquanto a página rola.
+  // No celular, uma coluna como sempre (o terço abaixo dos botões).
+  const wide = useColumnCount(2) >= 2;
+  const { height } = useLayout();
 
   const openInBible = (m) => {
     if (!m?.nav) return;
@@ -202,99 +207,136 @@ export default function RosaryScreen() {
     return full.replace(/^Mistérios |Mysteries$/g, '').trim() || full;
   };
 
-  return (
-    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
-      <Text style={[text('subhead'), { color: colors.textSubtle }]}>
-        {isEn
-          ? 'Meditation on the mysteries of Christ\'s and Mary\'s lives. Use "Next bead" to advance. Your phone vibrates lightly at each step so you can pray with eyes closed.'
-          : 'Meditação dos mistérios da vida de Cristo e de Maria. Use "Próxima conta" para avançar. O celular vibra levemente a cada passo para você rezar de olhos fechados.'}
-      </Text>
+  // Painel do terço. No desktop o desenho cresce até caber na altura da janela
+  // (menos o cabeçalho e os recuos) e fica preso no topo ao rolar (sticky,
+  // só na web; no iPad ele rola junto).
+  const visual = (
+    <View
+      style={[
+        { backgroundColor: colors.card, borderRadius: radius.md, padding: space.sm, alignItems: 'center' },
+        wide ? (Platform.OS === 'web' ? { position: 'sticky', top: space.md } : null) : { marginTop: space.md },
+      ]}
+    >
+      <RosaryVisual sequence={sequence} stepIndex={stepIndex} maxHeight={wide ? height - space.xxl * 4 : undefined} />
+    </View>
+  );
 
-      {/* Trilho de borda a borda, como os filtros das outras telas: quebrando
-          linha, "Gloriosos" ficava sozinho embaixo. O ChipRow mantém o
-          mistério do dia à vista mesmo quando é o último. */}
-      <ChipRow scroll style={{ marginHorizontal: -space.md, marginTop: space.md }}>
-        {Object.entries(MYSTERIES).map(([key, val]) => (
-          <Chip key={key} label={chipLabel(val)} selected={tipo === key} onPress={() => setTipo(key)} haptic />
-        ))}
-      </ChipRow>
+  const main = (
+    <>
+          <Text style={[text('subhead'), { color: colors.textSubtle }]}>
+            {isEn
+              ? 'Meditation on the mysteries of Christ\'s and Mary\'s lives. Use "Next bead" to advance. Your phone vibrates lightly at each step so you can pray with eyes closed.'
+              : 'Meditação dos mistérios da vida de Cristo e de Maria. Use "Próxima conta" para avançar. O celular vibra levemente a cada passo para você rezar de olhos fechados.'}
+          </Text>
 
-      <Group
-        header={`${pick(mystery, 'label', isEn)} · ${pick(mystery, 'days', isEn)}`}
-        style={{ marginTop: space.md }}
-      >
-        {mystery.items.map((m, i) => {
-          const active = currentDec === i + 1;
-          const name = pick(m, 'name', isEn);
-          return (
-            <Row
-              key={i}
-              trailing="chevron"
-              accessibilityLabel={`${i + 1}. ${name}, ${pick(m, 'ref', isEn)}`}
-              onPress={() => openInBible(m)}
-            >
-              <Text style={[text('headline'), { color: active ? colors.tint : colors.text }]}>
-                {i + 1}. {name}
-              </Text>
-              <Text style={[text('footnote'), { color: colors.accentText }]}>{pick(m, 'ref', isEn)}</Text>
-              <Text style={[text('footnote'), { color: colors.textSubtle }]}>
-                {isEn ? 'Fruit: ' : 'Fruto: '}{pick(m, 'fruit', isEn)}
-              </Text>
-            </Row>
-          );
-        })}
-      </Group>
+          {/* Trilho de borda a borda, como os filtros das outras telas: quebrando
+              linha, "Gloriosos" ficava sozinho embaixo. O ChipRow mantém o
+              mistério do dia à vista mesmo quando é o último. */}
+          <ChipRow scroll style={{ marginHorizontal: -space.md, marginTop: space.md }}>
+            {Object.entries(MYSTERIES).map(([key, val]) => (
+              <Chip key={key} label={chipLabel(val)} selected={tipo === key} onPress={() => setTipo(key)} haptic />
+            ))}
+          </ChipRow>
 
-      {/* Passo atual: contador, nome do passo e a oração por escrito. */}
-      <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.md, gap: space.xs, marginTop: space.md }}>
-        <Text style={[text('footnote'), { color: colors.textSubtle }]}>
-          {t('common.stepOf', { n: stepIndex + 1, total: sequence.length })}
-        </Text>
-        <Text role="heading" style={[text('headline'), { color: colors.text }]}>{currentStep?.label}</Text>
-        {(currentStep?.prayers || []).map((key) => (
-          <Text key={key} style={[text('reading'), { color: colors.text }]}>{pick(PRAYERS[key], 'text', isEn)}</Text>
-        ))}
-        {currentMystery ? (
+          <Group
+            header={`${pick(mystery, 'label', isEn)} · ${pick(mystery, 'days', isEn)}`}
+            style={{ marginTop: space.md }}
+          >
+            {mystery.items.map((m, i) => {
+              const active = currentDec === i + 1;
+              const name = pick(m, 'name', isEn);
+              return (
+                <Row
+                  key={i}
+                  trailing="chevron"
+                  accessibilityLabel={`${i + 1}. ${name}, ${pick(m, 'ref', isEn)}`}
+                  onPress={() => openInBible(m)}
+                >
+                  <Text style={[text('headline'), { color: active ? colors.tint : colors.text }]}>
+                    {i + 1}. {name}
+                  </Text>
+                  <Text style={[text('footnote'), { color: colors.accentText }]}>{pick(m, 'ref', isEn)}</Text>
+                  <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+                    {isEn ? 'Fruit: ' : 'Fruto: '}{pick(m, 'fruit', isEn)}
+                  </Text>
+                </Row>
+              );
+            })}
+          </Group>
+
+          {/* Passo atual: contador, nome do passo e a oração por escrito. */}
+          <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.md, gap: space.xs, marginTop: space.md }}>
+            <Text style={[text('footnote'), { color: colors.textSubtle }]}>
+              {t('common.stepOf', { n: stepIndex + 1, total: sequence.length })}
+            </Text>
+            <Text role="heading" style={[text('headline'), { color: colors.text }]}>{currentStep?.label}</Text>
+            {(currentStep?.prayers || []).map((key) => (
+              <Text key={key} style={[text('reading'), { color: colors.text }]}>{pick(PRAYERS[key], 'text', isEn)}</Text>
+            ))}
+            {currentMystery ? (
+              <Button
+                variant="plain"
+                full={false}
+                icon="book-outline"
+                label={`${pick(currentMystery, 'name', isEn)} (${pick(currentMystery, 'ref', isEn)})`}
+                onPress={() => openInBible(currentMystery)}
+                style={{ alignSelf: 'flex-start' }}
+              />
+            ) : null}
+          </View>
+
+          <View style={{ gap: space.xs, marginTop: space.md }}>
+            <Button icon="chevron-forward" label={isEn ? 'Next bead' : 'Próxima conta'} onPress={advanceStep} disabled={isLast} />
+            <Button variant="secondary" icon="refresh" label={isEn ? 'Restart' : 'Reiniciar'} onPress={resetSteps} />
+          </View>
+
+    </>
+  );
+
+  const prayersBlock = (
+    <>
           <Button
             variant="plain"
-            full={false}
-            icon="book-outline"
-            label={`${pick(currentMystery, 'name', isEn)} (${pick(currentMystery, 'ref', isEn)})`}
-            onPress={() => openInBible(currentMystery)}
-            style={{ alignSelf: 'flex-start' }}
+            icon={showPrayers ? 'chevron-up' : 'book-outline'}
+            label={showPrayers
+              ? (isEn ? 'Hide prayers' : 'Ocultar orações')
+              : (isEn ? 'Show Rosary prayers' : 'Mostrar orações do Rosário')}
+            onPress={() => setShowPrayers(!showPrayers)}
+            style={{ marginTop: space.md }}
           />
-        ) : null}
-      </View>
 
-      <View style={{ gap: space.xs, marginTop: space.md }}>
-        <Button icon="chevron-forward" label={isEn ? 'Next bead' : 'Próxima conta'} onPress={advanceStep} disabled={isLast} />
-        <Button variant="secondary" icon="refresh" label={isEn ? 'Restart' : 'Reiniciar'} onPress={resetSteps} />
-      </View>
+          {showPrayers ? (
+            <Group>
+              {PRAYER_ORDER.map((key) => (
+                <View key={key} style={{ padding: space.md, gap: space.xs }}>
+                  <Text role="heading" style={[text('headline'), { color: colors.text }]}>{pick(PRAYERS[key], 'title', isEn)}</Text>
+                  <Text style={[text('reading'), { color: colors.text }]}>{pick(PRAYERS[key], 'text', isEn)}</Text>
+                </View>
+              ))}
+            </Group>
+          ) : null}
+    </>
+  );
 
-      <View style={{ backgroundColor: colors.card, borderRadius: radius.md, padding: space.sm, marginTop: space.md, alignItems: 'center' }}>
-        <RosaryVisual sequence={sequence} stepIndex={stepIndex} />
-      </View>
+  if (wide) {
+    return (
+      <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(PAGE_MAX, space.md)]}>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: space.xl }}>
+          <View style={{ flex: 1, minWidth: 0 }}>
+            {main}
+            {prayersBlock}
+          </View>
+          <View style={{ flex: 1, minWidth: 0 }}>{visual}</View>
+        </View>
+      </ScrollView>
+    );
+  }
 
-      <Button
-        variant="plain"
-        icon={showPrayers ? 'chevron-up' : 'book-outline'}
-        label={showPrayers
-          ? (isEn ? 'Hide prayers' : 'Ocultar orações')
-          : (isEn ? 'Show Rosary prayers' : 'Mostrar orações do Rosário')}
-        onPress={() => setShowPrayers(!showPrayers)}
-        style={{ marginTop: space.md }}
-      />
-
-      {showPrayers ? (
-        <Group>
-          {PRAYER_ORDER.map((key) => (
-            <View key={key} style={{ padding: space.md, gap: space.xs }}>
-              <Text role="heading" style={[text('headline'), { color: colors.text }]}>{pick(PRAYERS[key], 'title', isEn)}</Text>
-              <Text style={[text('reading'), { color: colors.text }]}>{pick(PRAYERS[key], 'text', isEn)}</Text>
-            </View>
-          ))}
-        </Group>
-      ) : null}
+  return (
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
+      {main}
+      {visual}
+      {prayersBlock}
     </ScrollView>
   );
 }
@@ -304,11 +346,15 @@ export default function RosaryScreen() {
 // Rabo abaixo do medalhão: Pater (alto), 3 Aves, Pater (baixo), Cruz.
 // Contas não são clicáveis, só exibição. Toda a geometria (raios, proporções,
 // espessuras) é desenho e fica em números; as cores vêm da paleta.
-function RosaryVisual({ sequence, stepIndex }) {
+function RosaryVisual({ sequence, stepIndex, maxHeight }) {
   const { colors, tokens } = useTheme();
   const { width: screenW } = useLayout();
-  // Largura: a tela menos o recuo do conteúdo e o do card, limitada a 360.
-  const W = Math.min(screenW - tokens.space.md * 4, 360);
+  // Largura: a tela menos o recuo do conteúdo e o do card, limitada a 360. No
+  // desktop (`maxHeight`) o limite é a altura disponível: o desenho tem
+  // ~1.52 × W de altura e o painel tem metade da página de largura.
+  const W = maxHeight
+    ? Math.round(Math.min(maxHeight / 1.52, (screenW - tokens.space.md * 4) / 2 - tokens.space.xl - tokens.space.md))
+    : Math.min(screenW - tokens.space.md * 4, 360);
   // Versão compacta: H em ~1.52 × W para caber tela + botões.
   const H = Math.round(W * 1.52);
   const cx = W / 2;

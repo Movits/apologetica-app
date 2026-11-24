@@ -7,13 +7,14 @@
 // - 'sidebar': desktop, barra lateral fixa à esquerda, o conteúdo começa
 //   depois dela (sidebarWidth).
 // pageMax é a largura útil das telas de navegação (Início, Artigos, Praticar,
-// livros da Bíblia, Ajustes) no desktop; a leitura continua em COLUMN_MAX
-// (ReadingColumn.jsx), que é a medida boa de linha.
+// livros da Bíblia, Ajustes, listas) no desktop: quase a tela toda, com o
+// conteúdo em colunas (ui/Columns) para não sobrar buraco. A leitura continua
+// em COLUMN_MAX (ReadingColumn.jsx), que é a medida boa de linha.
 export const LAYOUT = {
   capsuleAt: 768,
   sidebarAt: 1024,
   sidebarWidth: 248,
-  pageMax: 1120,
+  pageMax: 1600,
 };
 
 export function navModeFor(windowWidth) {
@@ -38,4 +39,13 @@ export function sideMargin(width, max, min) {
 export function gridColumns(innerWidth, minCell, gap, maxCols) {
   const fit = Math.floor((innerWidth + gap) / (minCell + gap));
   return Math.max(1, Math.min(maxCols, fit));
+}
+
+// Reparte `items` em `k` colunas, em rodízio (o 1º na coluna 1, o 2º na 2...),
+// para as colunas terem alturas parecidas e a leitura seguir da esquerda para
+// a direita. Colunas vazias não entram.
+export function spreadColumns(items, k) {
+  const cols = Array.from({ length: Math.max(1, Math.min(k, items.length)) }, () => []);
+  items.forEach((item, i) => cols[i % cols.length].push(item));
+  return items.length ? cols : [];
 }

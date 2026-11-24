@@ -14,8 +14,8 @@ import { liturgyTitle } from '../utils/liturgyTitle';
 import { openBible } from '../navigation/links';
 import { shareText } from '../utils/share';
 import { todayKey } from '../utils/daily';
-import { Button, EmptyState, Group, Row } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Columns, EmptyState, Group, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Liturgia do dia: cabeçalho com a cor litúrgica, leituras em grupos (título
 // em headline, referência em footnote, texto em serifa de leitura) e
@@ -137,6 +137,10 @@ export default function LiturgyScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(null);
   const [enReadings, setEnReadings] = useState(null);
+  // Desktop: as leituras numa coluna e as orações e antífonas na outra, para a
+  // página ocupar a largura em vez de uma coluna estreita no meio. No celular
+  // cabe uma só e a ordem da missa fica como sempre.
+  const wide = useColumnCount(2) >= 2;
 
   const load = useCallback(async () => {
     try {
@@ -236,9 +240,45 @@ export default function LiturgyScreen() {
     ].filter((r) => r.ref)
     : [];
 
+  const entranceAndCollect = (
+    <>
+      {liturgy.antifonas?.entrada ? (
+        <ReadingGroup title={t('liturgy.entrance')} reading={{ texto: liturgy.antifonas.entrada }} />
+      ) : null}
+      {liturgy.oracoes?.coleta ? (
+        <ReadingGroup title={t('liturgy.collect')} reading={{ texto: liturgy.oracoes.coleta }} />
+      ) : null}
+    </>
+  );
+
+  // Cada ReadingGroup some sozinho sem leitura (hasReading): a segunda
+  // leitura só existe em domingos e solenidades.
+  const readings = (
+    <>
+      <ReadingGroup title={firstLabel} reading={primeira} onShare={() => shareReading(firstLabel, primeira)} />
+      <ReadingGroup title={psalmLabel} reading={salmo} onShare={() => shareReading(psalmLabel, salmo)} isPsalm />
+      <ReadingGroup title={secondLabel} reading={segunda} onShare={() => shareReading(secondLabel, segunda)} />
+      <ReadingGroup title={gospelLabel} reading={evangelho} onShare={() => shareReading(gospelLabel, evangelho)} />
+    </>
+  );
+
+  const offeringsAndCommunion = (
+    <>
+      {liturgy.oracoes?.oferendas ? (
+        <ReadingGroup title={t('liturgy.offerings')} reading={{ texto: liturgy.oracoes.oferendas }} />
+      ) : null}
+      {liturgy.antifonas?.comunhao ? (
+        <ReadingGroup title={t('liturgy.communionAntiphon')} reading={{ texto: liturgy.antifonas.comunhao }} />
+      ) : null}
+      {liturgy.oracoes?.comunhao ? (
+        <ReadingGroup title={t('liturgy.afterCommunion')} reading={{ texto: liturgy.oracoes.comunhao }} />
+      ) : null}
+    </>
+  );
+
   return (
     <ScrollView
-      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}
+      contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(wide ? PAGE_MAX : undefined, space.md)]}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.tint} />}
     >
       {/* Cabeçalho do dia: data, título e cor litúrgica. */}
@@ -288,29 +328,18 @@ export default function LiturgyScreen() {
         </Group>
       ) : null}
 
-      {liturgy.antifonas?.entrada ? (
-        <ReadingGroup title={t('liturgy.entrance')} reading={{ texto: liturgy.antifonas.entrada }} />
-      ) : null}
-      {liturgy.oracoes?.coleta ? (
-        <ReadingGroup title={t('liturgy.collect')} reading={{ texto: liturgy.oracoes.coleta }} />
-      ) : null}
-
-      {/* Cada ReadingGroup some sozinho sem leitura (hasReading): a segunda
-          leitura só existe em domingos e solenidades. */}
-      <ReadingGroup title={firstLabel} reading={primeira} onShare={() => shareReading(firstLabel, primeira)} />
-      <ReadingGroup title={psalmLabel} reading={salmo} onShare={() => shareReading(psalmLabel, salmo)} isPsalm />
-      <ReadingGroup title={secondLabel} reading={segunda} onShare={() => shareReading(secondLabel, segunda)} />
-      <ReadingGroup title={gospelLabel} reading={evangelho} onShare={() => shareReading(gospelLabel, evangelho)} />
-
-      {liturgy.oracoes?.oferendas ? (
-        <ReadingGroup title={t('liturgy.offerings')} reading={{ texto: liturgy.oracoes.oferendas }} />
-      ) : null}
-      {liturgy.antifonas?.comunhao ? (
-        <ReadingGroup title={t('liturgy.communionAntiphon')} reading={{ texto: liturgy.antifonas.comunhao }} />
-      ) : null}
-      {liturgy.oracoes?.comunhao ? (
-        <ReadingGroup title={t('liturgy.afterCommunion')} reading={{ texto: liturgy.oracoes.comunhao }} />
-      ) : null}
+      {wide ? (
+        <Columns>
+          <View>{readings}</View>
+          <View>{entranceAndCollect}{offeringsAndCommunion}</View>
+        </Columns>
+      ) : (
+        <>
+          {entranceAndCollect}
+          {readings}
+          {offeringsAndCommunion}
+        </>
+      )}
 
       <Text style={[text('footnote'), { color: colors.textSubtle, textAlign: 'center', marginTop: space.lg }]}>
         {t('liturgy.footer')}: {formatTime(liturgy.fetchedAt, isEn)}.

@@ -19,8 +19,8 @@ import {
   removeSearchHistory,
   clearSearchHistory,
 } from '../utils/searchHistory';
-import { Chip, ChipRow, EmptyState, Group, Row, SearchField, SectionTitle } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Chip, ChipRow, Columns, EmptyState, Group, Row, SearchField, SectionTitle } from '../components/ui';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Busca (Onda 9c): campo com foco automático, filtros em chips, histórico e
 // resultados em grupos por tipo. O motor é o mesmo de antes: Fuse.js para
@@ -300,8 +300,10 @@ export default function SearchScreen({ navigation }) {
   };
 
   // Janela larga: campo, chips e resultados numa coluna central (a caixa
-  // não tem recuo próprio: cada bloco já traz o `space.md` dos lados).
-  const column = centeredColumn(undefined, space.md);
+  // não tem recuo próprio: cada bloco já traz o `space.md` dos lados). No
+  // desktop a caixa é a da página (PAGE_MAX) e as seções de resultado ficam
+  // lado a lado (Columns); no celular empilham como antes.
+  const column = centeredColumn(PAGE_MAX, space.md);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -366,7 +368,7 @@ export default function SearchScreen({ navigation }) {
           />
         ) : null}
 
-        {searching ? activeFilter.sections.map(renderSection) : null}
+        {searching ? <Columns max={3}>{activeFilter.sections.map(renderSection)}</Columns> : null}
       </ScrollView>
     </View>
   );

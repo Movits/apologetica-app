@@ -6,6 +6,7 @@ import {
   contentWidthFor,
   sideMargin,
   gridColumns,
+  spreadColumns,
 } from '../src/utils/layout.js';
 
 test('navModeFor: barra no celular, cápsula no tablet, lateral no desktop', () => {
@@ -39,4 +40,13 @@ test('gridColumns: quantas colunas de pelo menos minCell cabem, com teto', () =>
 test('LAYOUT: a lateral só entra quando sobra espaço para a coluna de leitura', () => {
   assert.ok(LAYOUT.sidebarAt - LAYOUT.sidebarWidth >= 720);
   assert.ok(LAYOUT.pageMax > 720);
+});
+
+test('spreadColumns: reparte em k colunas, em rodízio, sem perder a ordem', () => {
+  assert.deepEqual(spreadColumns(['a', 'b', 'c'], 3), [['a'], ['b'], ['c']]);
+  assert.deepEqual(spreadColumns(['a', 'b', 'c'], 2), [['a', 'c'], ['b']]);
+  assert.deepEqual(spreadColumns(['a', 'b', 'c', 'd', 'e'], 2), [['a', 'c', 'e'], ['b', 'd']]);
+  assert.deepEqual(spreadColumns(['a', 'b'], 1), [['a', 'b']]);
+  assert.deepEqual(spreadColumns(['a'], 3), [['a']]);
+  assert.deepEqual(spreadColumns([], 2), []);
 });

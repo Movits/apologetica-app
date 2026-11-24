@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useFocusEffect, useNavigation, useScrollToTop } from '@react-navigation/native';
 import { articles } from '../data/articles';
@@ -14,9 +14,9 @@ import { categoryLabel, pick } from '../utils/i18nData';
 import { Chip, ChipRow, EmptyState, LargeTitleScreen, SearchField } from '../components/ui';
 import ArticleListItem, { ArticleListSeparator } from '../components/ArticleListItem';
 import ArticleCard from '../components/ArticleCard';
-import { PAGE_MAX } from '../components/ReadingColumn';
+import { PAGE_MAX, columnInnerWidth } from '../components/ReadingColumn';
 import useLayout from '../hooks/useLayout';
-import { gridColumns } from '../utils/layout';
+import { gridColumns, sideMargin } from '../utils/layout';
 
 // Filtros fixos da linha de chips, antes das categorias. Os ids das categorias
 // são os nomes em PT (campo article.category), como em articleCategories.js.
@@ -44,7 +44,7 @@ const keyExtractor = (a) => String(a.id);
 // cartão da grade (proporções da página).
 const RAIL_W = 220;
 const CARD_MIN = 260;
-const MAX_COLS = 3;
+const MAX_COLS = 4;
 
 // Quanto a lista monta além da tela. O padrão da FlatList (21 telas) montava
 // os 85 artigos de uma vez e, na web, baixava todas as capas ao abrir a aba.
@@ -73,6 +73,7 @@ export default function ArticlesScreen({ route }) {
   const { space } = tokens;
   const { isWide, width } = useLayout();
   const listRef = useRef(null);
+  const railRef = useRef(null);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState(FILTER_ALL);
   const [readSet, setReadSet] = useState(() => new Set());
@@ -138,11 +139,31 @@ export default function ArticlesScreen({ route }) {
   );
 
   // Grade do desktop: colunas pela largura que sobra ao lado dos temas (menos
-  // um recuo para a barra de rolagem da grade não cobrir a última coluna).
+  // um recuo para a barra de rolagem não cobrir a última coluna).
   const gap = space.md;
-  const gridW = Math.min(width, PAGE_MAX) - space.md * 3 - RAIL_W - space.xl;
+  const side = sideMargin(width, PAGE_MAX, space.md);
+  const gridW = columnInnerWidth(width, PAGE_MAX, space.md) - RAIL_W - space.xl - space.md;
   const cols = gridColumns(gridW, CARD_MIN, gap, MAX_COLS);
   const cardW = Math.floor((gridW - gap * (cols - 1)) / cols);
+  // Desktop (web): a roda do mouse sobre os temas rola a grade, como no resto
+  // da página. Só quando os temas cabem inteiros; em janela baixa eles rolam
+  // sozinhos.
+  useEffect(() => {
+    if (!isWide || Platform.OS !== 'web') return undefined;
+    const rail = railRef.current?.getScrollableNode?.();
+    if (!rail) return undefined;
+    const onWheel = (e) => {
+      if (rail.scrollHeight > rail.clientHeight + 1) return;
+      const list = listRef.current?.getScrollableNode?.();
+      if (!list) return;
+      e.preventDefault();
+      // deltaMode 1 = linhas (Firefox): uma linha vale um passo da grade.
+      list.scrollTop += e.deltaMode === 1 ? e.deltaY * space.md : e.deltaY;
+    };
+    rail.addEventListener('wheel', onWheel, { passive: false });
+    return () => rail.removeEventListener('wheel', onWheel);
+  }, [isWide, space.md]);
+
   const renderCard = useCallback(
     ({ item }) => (
       <ArticleCard
@@ -175,8 +196,10 @@ export default function ArticlesScreen({ route }) {
   );
 
   if (isWide) {
-    // Temas fixos à esquerda (todos à vista, sem trilho para rolar) e a grade
-    // de cartões à direita, com o título e a busca no topo dela.
+    // A grade rola na largura toda da área (a roda do mouse funciona em
+    // qualquer ponto e a barra de rolagem fica na borda da janela), com o
+    // título e a busca no topo dela. Os temas ficam fixos à esquerda, por
+    // cima da margem que a grade deixa para eles.
     return (
       <LargeTitleScreen
         title={t('header.articles')}
@@ -185,24 +208,18 @@ export default function ArticlesScreen({ route }) {
         renderList={({ header, contentContainerStyle, ...listProps }) => {
           const { paddingTop, paddingBottom } = StyleSheet.flatten(contentContainerStyle);
           return (
-            <View style={[styles.wide, { paddingHorizontal: space.md, gap: space.xl, maxWidth: PAGE_MAX + space.md * 2 }]}>
-              <ScrollView role="tablist" aria-orientation="vertical" style={{ width: RAIL_W, flexGrow: 0 }} contentContainerStyle={{ paddingTop: paddingTop + space.xxs, paddingBottom, gap: space.xxs }}>
-                {filters.map((f) => (
-                  <TopicItem
-                    key={f.id}
-                    label={f.label}
-                    count={f.count}
-                    selected={filter === f.id}
-                    onPress={() => setFilter(f.id)}
-                  />
-                ))}
-              </ScrollView>
+            <View style={styles.wide}>
               <Animated.FlatList
                 key={`grid-${cols}`}
                 ref={listRef}
                 {...listProps}
                 style={styles.grid}
-                contentContainerStyle={{ paddingTop, paddingBottom }}
+                contentContainerStyle={{
+                  paddingTop,
+                  paddingBottom,
+                  paddingLeft: side + RAIL_W + space.xl,
+                  paddingRight: side,
+                }}
                 data={data}
                 numColumns={cols}
                 columnWrapperStyle={cols > 1 ? { gap } : undefined}
@@ -219,6 +236,23 @@ export default function ArticlesScreen({ route }) {
                 ListEmptyComponent={empty}
                 renderItem={renderCard}
               />
+              <ScrollView
+                ref={railRef}
+                role="tablist"
+                aria-orientation="vertical"
+                style={[styles.rail, { left: side, width: RAIL_W }]}
+                contentContainerStyle={{ paddingTop: paddingTop + space.xxs, paddingBottom, gap: space.xxs }}
+              >
+                {filters.map((f) => (
+                  <TopicItem
+                    key={f.id}
+                    label={f.label}
+                    count={f.count}
+                    selected={filter === f.id}
+                    onPress={() => setFilter(f.id)}
+                  />
+                ))}
+              </ScrollView>
             </View>
           );
         }}
@@ -237,7 +271,7 @@ export default function ArticlesScreen({ route }) {
           data={data}
           keyExtractor={keyExtractor}
           keyboardShouldPersistTaps="handled"
-                {...LIST_WINDOW}
+          {...LIST_WINDOW}
           keyboardDismissMode="on-drag"
           ListHeaderComponent={
             <View>
@@ -306,7 +340,8 @@ function TopicItem({ label, count, selected, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  wide: { flex: 1, flexDirection: 'row', width: '100%', alignSelf: 'center' },
+  wide: { flex: 1 },
   grid: { flex: 1 },
+  rail: { position: 'absolute', top: 0, bottom: 0, flexGrow: 0 },
   topic: { minHeight: 44, flexDirection: 'row', alignItems: 'center', cursor: 'pointer' },
 });

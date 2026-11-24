@@ -27,7 +27,12 @@ import {
 } from '../utils/ttsVoice';
 import { useModalNavBar } from '../hooks/useModalNavBar';
 import { useLanguage } from '../context/LanguageContext';
-import { Button, Chip, ChipRow, EmptyState, Field, GuestGate, Group, LargeTitleScreen, Row, SectionTitle } from '../components/ui';
+import { Button, Chip, ChipRow, Columns, EmptyState, Field, GuestGate, Group, LargeTitleScreen, Row, SectionTitle, useColumnCount } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
+
+// Desktop: os blocos de Ajustes (conta, aparência, leitura, notificações,
+// sobre) em até três colunas; no celular empilham na mesma ordem.
+const SETTINGS_COLS = 3;
 
 const DONATE_URL = 'https://movits.github.io/apologetica-app/donate.html';
 
@@ -309,14 +314,25 @@ export default function SettingsScreen() {
   const caption = [text('footnote'), { color: colors.textSubtle, marginHorizontal: space.md, marginTop: space.xs }];
   // Os chips ficam abaixo do título da linha, com um respiro.
   const chipRow = { marginTop: space.xxs };
+  // Blocos que abrem uma coluna não repetem a margem de cima do título de
+  // seção (o large title já dá o respiro). Os índices seguem a ordem dos
+  // blocos abaixo; notificações só no nativo e diagnóstico só em dev.
+  const cols = useColumnCount(SETTINGS_COLS);
+  const showNotif = Platform.OS !== 'web';
+  const diagIndex = 3 + (showNotif ? 1 : 0);
+  const aboutIndex = diagIndex + (__DEV__ ? 1 : 0);
+  const opensColumn = (i) => (i < cols ? { marginTop: 0 } : undefined);
 
   return (
     <>
       <LargeTitleScreen
         title={t('tab.settings')}
+        maxWidth={PAGE_MAX}
         // A ref vai ao Animated.ScrollView do componente, para o useScrollToTop.
         scrollProps={{ ref: scrollRef, keyboardShouldPersistTaps: 'handled' }}
       >
+        <Columns max={SETTINGS_COLS}>
+        <View>
         {/* Conta: perfil de quem está logado, ou o convite do visitante. */}
         <SectionTitle title={t('settings.section.account')} style={{ marginTop: 0 }} />
         {user ? (
@@ -356,9 +372,11 @@ export default function SettingsScreen() {
         ) : guest ? (
           <GuestGate inline />
         ) : null}
+        </View>
 
+        <View>
         {/* Aparência: tema (sistema, claro, escuro), tamanho da letra e idioma. */}
-        <SectionTitle title={t('settings.section.appearance')} />
+        <SectionTitle title={t('settings.section.appearance')} style={opensColumn(1)} />
         <Group>
           <Row icon="moon-outline" title={t('settings.theme.label')}>
             <ChipRow style={chipRow}>
@@ -411,9 +429,11 @@ export default function SettingsScreen() {
             />
           </Group>
         ) : null}
+        </View>
 
+        <View>
         {/* Leitura em voz alta: voz, velocidade e prévia. */}
-        <SectionTitle title={t('settings.section.bible')} />
+        <SectionTitle title={t('settings.section.bible')} style={opensColumn(2)} />
         <Group>
           <Row icon="refresh-outline" iconColor={colors.danger} titleColor={colors.danger} title={t('settings.bible.restart')} subtitle={t('settings.bible.restartSub')} onPress={askRestartBible} />
         </Group>
@@ -449,11 +469,12 @@ export default function SettingsScreen() {
           style={{ marginTop: space.sm }}
         />
         {ttsTip ? <Text style={caption}>{ttsTip}</Text> : null}
+        </View>
 
         {/* Notificações: só no nativo. */}
-        {Platform.OS !== 'web' && (
-          <>
-            <SectionTitle title={t('settings.section.notifications')} />
+        {showNotif && (
+          <View>
+            <SectionTitle title={t('settings.section.notifications')} style={opensColumn(3)} />
             <Group>
               <Row
                 icon="sunny-outline"
@@ -483,22 +504,23 @@ export default function SettingsScreen() {
               />
               <Row icon="notifications-outline" title={t('settings.notif.test')} onPress={sendTest} />
             </Group>
-          </>
+          </View>
         )}
 
         {/* Diagnóstico: só em desenvolvimento (o envio de teste do Sentry não
             interessa a quem usa, e na web o Sentry é no-op). */}
         {__DEV__ ? (
-          <>
-            <SectionTitle title={t('settings.section.diagnostic')} />
+          <View>
+            <SectionTitle title={t('settings.section.diagnostic')} style={opensColumn(diagIndex)} />
             <Group>
               <Row icon="bug-outline" title={t('settings.sentry.test')} subtitle={t('settings.sentry.testSub')} onPress={sendSentryTest} />
             </Group>
-          </>
+          </View>
         ) : null}
 
+        <View>
         {/* Apoie o projeto */}
-        <SectionTitle title={t('settings.section.donate')} />
+        <SectionTitle title={t('settings.section.donate')} style={opensColumn(aboutIndex)} />
         <Group>
           <Row
             icon="heart-outline"
@@ -559,6 +581,8 @@ export default function SettingsScreen() {
             style={{ marginTop: space.lg }}
           />
         ) : null}
+        </View>
+        </Columns>
 
         <Text style={[text('footnote'), { color: colors.textTertiary, textAlign: 'center', marginTop: space.xl }]}>
           APPologética · {isEn ? 'Version' : 'Versão'} {appVersion}

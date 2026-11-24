@@ -6,8 +6,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { examConscience } from '../data/examConscience';
 import { openArticle } from '../navigation/links';
 import { pick } from '../utils/i18nData';
-import { Button, Group, Row, SectionTitle } from '../components/ui';
-import { centeredColumn } from '../components/ReadingColumn';
+import { Button, Columns, Group, Row, SectionTitle } from '../components/ui';
+import { COLUMN_MAX, PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 // Exame de consciência: os dez mandamentos como seções, cada pergunta numa
 // linha marcável. As marcações vivem só no estado desta tela (nada é gravado,
@@ -39,6 +39,10 @@ function CheckRow({ label, checked, onToggle }) {
   );
 }
 
+// Largura mínima de cada coluna de mandamentos no desktop (as perguntas são
+// frases longas): abaixo disso, uma coluna só.
+const COLUMN_MIN = 480;
+
 export default function ExamConscienceScreen({ navigation }) {
   const { colors, tokens, text } = useTheme();
   const { t, isEn } = useLanguage();
@@ -56,7 +60,10 @@ export default function ExamConscienceScreen({ navigation }) {
   };
 
   return (
-    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(undefined, space.md)]}>
+    <ScrollView contentContainerStyle={[{ padding: space.md, paddingBottom: space.xl }, centeredColumn(PAGE_MAX, space.md)]}>
+      {/* A introdução fica na medida de leitura; no desktop os mandamentos
+          vêm abaixo em duas colunas (Columns). */}
+      <View style={{ maxWidth: COLUMN_MAX }}>
       <Text style={[text('body'), { color: colors.text }]}>
         {isEn
           ? 'Preparation for the Sacrament of Reconciliation. Use these questions to examine your life before God.'
@@ -72,8 +79,9 @@ export default function ExamConscienceScreen({ navigation }) {
           ? 'Marks stay on this screen only and are cleared when you leave. Nothing is saved.'
           : 'As marcações ficam só nesta tela e somem ao sair. Nada é gravado.'}
       </Text>
+      </View>
 
-      <Group style={{ marginTop: space.md }}>
+      <Group style={{ marginTop: space.md, maxWidth: COLUMN_MAX }}>
         <Row
           icon="book-outline"
           title={isEn ? 'Understand and defend the Commandments' : 'Entenda e defenda os Mandamentos'}
@@ -99,6 +107,7 @@ export default function ExamConscienceScreen({ navigation }) {
         </View>
       ) : null}
 
+      <Columns max={2} minColumn={COLUMN_MIN}>
       {examConscience.map((section) => {
         const questions = pick(section, 'questoes', isEn) || [];
         return (
@@ -120,6 +129,7 @@ export default function ExamConscienceScreen({ navigation }) {
           </Fragment>
         );
       })}
+      </Columns>
     </ScrollView>
   );
 }

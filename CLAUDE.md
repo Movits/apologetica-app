@@ -108,7 +108,7 @@ O app usa quatro stacks internos dentro dos tabs (tab bar permanece visível):
   Para centrar coluna ou calcular grade use `useLayout().width` (área das telas), nunca
   `useWindowDimensions`, senão o conteúdo desloca quando a lateral aparece. Leitura em
   `COLUMN_MAX` (720); telas de navegação (Início, Praticar, Artigos, livros da Bíblia) em
-  `PAGE_MAX` (1120) com `ui/Columns` (lado a lado no desktop, empilhado no celular). A aba
+  `PAGE_MAX` (1600, quase a tela toda) com `ui/Columns` (blocos repartidos em quantas colunas couberem, `useColumnCount`; empilhado no celular). Toda tela de lista preenche a página no desktop (grade, colunas ou dois painéis); só as de leitura (artigo, capítulo, uma referência, pergunta aberta) ficam em 720. Não deixe buraco: tela nova de lista nasce com colunas. A aba
   Artigos no desktop tem temas à esquerda e grade de `ArticleCard`. O `ChipRow scroll` anda
   com roda e arrasto do mouse e mostra setas na web; o `Chip` é discreto (sem ícone).
 - `src/components/ui/` são os blocos de tela (uso em `docs/design/componentes.md`):

@@ -11,7 +11,8 @@ import { useAuth } from '../context/AuthContext';
 import { shareVerse } from '../utils/share';
 import { verseLabel } from '../utils/refLabel';
 import { openBible } from '../navigation/links';
-import { EmptyState, Row } from '../components/ui';
+import { EmptyState, Row, useColumnCount } from '../components/ui';
+import { PAGE_MAX } from '../components/ReadingColumn';
 import RowIconButton from '../components/RowIconButton';
 import UserDataList from '../components/UserDataList';
 import ItemActionsSheet from '../components/ItemActionsSheet';
@@ -22,6 +23,11 @@ import ItemActionsSheet from '../components/ItemActionsSheet';
 // botão de mais ações (ou o toque longo) abre a folha com ler, compartilhar
 // e remover. A cor da marcação é dado do documento, não do tema.
 export default function HighlightsScreen({ navigation }) {
+  // Desktop: a lista vira uma grade de `cols` colunas dentro do card, na
+  // largura da página (cada célula com a sua fração, para a última linha não
+  // esticar). No celular cabe uma coluna e nada muda.
+  const cols = useColumnCount(3);
+  const gridCell = (render) => (info) => <View style={{ width: `${100 / cols}%` }}>{render(info)}</View>;
   const { colors, tokens, text } = useTheme();
   const { t, isEn, lang } = useLanguage();
   const { user } = useAuth();
@@ -86,11 +92,14 @@ export default function HighlightsScreen({ navigation }) {
   return (
     <>
       <UserDataList
+        key={cols}
+        numColumns={cols}
+        maxWidth={PAGE_MAX}
         user={user}
         items={items}
         empty={<EmptyState icon="color-fill-outline" title={t('empty.highlights')} message={t('highlights.emptyHint')} />}
         keyExtractor={(h) => h.id}
-        renderItem={({ item }) => {
+        renderItem={gridCell(({ item }) => {
           const verse = verseText(item);
           return (
             <Row
@@ -107,7 +116,7 @@ export default function HighlightsScreen({ navigation }) {
               ) : null}
             </Row>
           );
-        }}
+        })}
       />
       <ItemActionsSheet
         item={active}

@@ -35,8 +35,8 @@ import { useBibleReady } from '../hooks/useBibleReady';
 import VerseActionsSheet from '../components/VerseActionsSheet';
 import ChapterPill from '../components/ChapterPill';
 import LargeTitleScreen, { BAR_HEIGHT } from '../components/ui/LargeTitleScreen';
-import { SearchField, Group, Row, SectionTitle, PressScale, EmptyState, ContinueRow, Columns } from '../components/ui';
-import { PAGE_MAX } from '../components/ReadingColumn';
+import { SearchField, Group, Row, SectionTitle, PressScale, EmptyState, ContinueRow, Columns, useColumnCount } from '../components/ui';
+import { PAGE_MAX, columnInnerWidth } from '../components/ReadingColumn';
 import {
   markChapterRead, getReadChapters, getBibleStats,
   READ_THRESHOLD,
@@ -153,6 +153,33 @@ const BookRow = memo(function BookRow({ book, title, subtitle, onPress }) {
   return <Row title={title} subtitle={subtitle} trailing="chevron" onPress={() => onPress(book)} />;
 });
 
+// Desktop largo: os livros viram uma grade de cartões (BOOK_COLS por linha,
+// cada um com pelo menos BOOK_MIN, proporções da página), e os dois
+// Testamentos cabem quase numa tela só, sem duas listas compridas.
+const BOOK_COLS = 6;
+const BOOK_MIN = 200;
+const BookTile = memo(function BookTile({ book, title, subtitle, width, onPress }) {
+  const { colors, tokens, text } = useTheme();
+  const { space, radius } = tokens;
+  return (
+    <PressScale
+      onPress={() => onPress(book)}
+      aria-label={`${title}, ${subtitle}`}
+      style={({ hovered }) => ({
+        width,
+        minHeight: 44,
+        paddingHorizontal: space.md,
+        paddingVertical: space.sm,
+        borderRadius: radius.md,
+        backgroundColor: hovered ? colors.badgeBg : colors.card,
+      })}
+    >
+      <Text numberOfLines={1} style={[text('body'), { color: colors.text }]}>{title}</Text>
+      <Text numberOfLines={1} style={[text('footnote'), { color: colors.textSubtle }]}>{subtitle}</Text>
+    </PressScale>
+  );
+});
+
 // Grade de quadrados de pelo menos 44, quantos couberem na largura útil,
 // esticados para fechar a linha sem sobra à direita. Serve à tela de
 // capítulos e à folha "Escolher capítulo".
@@ -249,6 +276,12 @@ export default function BibleScreen({ route, navigation }) {
   const { space, icon } = tokens;
   const insets = useSafeAreaInsets();
   const { width: windowWidth, height: windowHeight } = useLayout();
+  // Grade de livros no desktop largo (3 colunas ou mais); abaixo disso, as
+  // listas dos Testamentos (lado a lado quando cabem duas).
+  const bookCols = useColumnCount(BOOK_COLS, BOOK_MIN);
+  const bookTileW = Math.floor(
+    (columnInnerWidth(windowWidth, PAGE_MAX, space.md) - space.sm * (bookCols - 1)) / bookCols,
+  );
   const { user } = useAuth();
   const { lang, t, isEn } = useLanguage();
   const bn = useCallback((b) => bookName(b, isEn), [isEn]);
@@ -1144,7 +1177,18 @@ export default function BibleScreen({ route, navigation }) {
                 )}
               </Group>
             ) : null}
-            {/* Desktop: Antigo e Novo Testamento lado a lado. */}
+            {/* Desktop largo: cada Testamento numa grade de cartões. */}
+            {bookCols >= 3 ? testaments.map((tst) => (
+              <View key={tst.key}>
+                <SectionTitle title={tst.title} />
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.sm }}>
+                  {tst.books.map((b) => (
+                    <BookTile key={b.id} book={b} title={bn(b)} subtitle={bookMeta(b)} width={bookTileW} onPress={openBook} />
+                  ))}
+                </View>
+              </View>
+            )) : (
+            /* Janela média: Antigo e Novo Testamento lado a lado. */
             <Columns>
               {testaments.map((tst) => (
                 <View key={tst.key}>
@@ -1157,6 +1201,7 @@ export default function BibleScreen({ route, navigation }) {
                 </View>
               ))}
             </Columns>
+            )}
             {testaments.length === 0 ? (
               <EmptyState icon="search-outline" title={t('bible.noBook')} />
             ) : null}

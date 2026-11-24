@@ -13,10 +13,10 @@ import { addDays, todayKey } from '../utils/daily';
 import { alreadyAnswered, recordDailyAnswer } from '../utils/quizHistory';
 import { shuffledOrder } from '../utils/review';
 import { haptics } from '../utils/haptics';
-import { Button, Group, ProgressBar, Row, SectionTitle } from '../components/ui';
+import { Button, Columns, Group, useColumns, ProgressBar, Row, SectionTitle } from '../components/ui';
 import { OptionButton } from '../components/lesson';
 import { dispatchJourney } from '../utils/journeyStore';
-import { centeredColumn } from '../components/ReadingColumn';
+import { PAGE_MAX, centeredColumn } from '../components/ReadingColumn';
 
 const STREAK_KEY = 'quiz:streak';
 // { AAAA-MM-DD: { id, correct } }, chave em hora local (todayKey). As chaves
@@ -53,24 +53,33 @@ function QuizMenu({ navigation }) {
     { key: 'truefalse', icon: 'checkmark-circle-outline', label: t('quiz.mode.trueFalse'), sub: t('quiz.mode.trueFalseSub') },
   ];
 
+  const wide = useColumns(MODES.length);
+  const renderMode = (m) => (
+    <Row
+      key={m.key}
+      icon={m.icon}
+      title={m.label}
+      subtitle={m.sub}
+      trailing="chevron"
+      onPress={() => navigation.push('Quiz', { mode: m.key })}
+    />
+  );
+
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md, ...centeredColumn(undefined, space.md) }}>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ paddingVertical: space.md, ...centeredColumn(PAGE_MAX, space.md) }}>
       <SectionTitle title={t('quiz.chooseGame')} style={{ marginTop: 0, marginHorizontal: space.md }} />
       <Text style={[text('subhead'), { color: colors.textSubtle, marginHorizontal: space.md, marginBottom: space.sm }]}>
         {t('quiz.chooseGameSub')}
       </Text>
-      <Group style={{ marginHorizontal: space.md }}>
-        {MODES.map((m) => (
-          <Row
-            key={m.key}
-            icon={m.icon}
-            title={m.label}
-            subtitle={m.sub}
-            trailing="chevron"
-            onPress={() => navigation.push('Quiz', { mode: m.key })}
-          />
-        ))}
-      </Group>
+      {/* Desktop: os três jogos lado a lado, um cartão cada (Columns). No
+          celular cabe uma coluna e os cartões viram a lista de sempre. */}
+      {wide ? (
+        <Columns style={{ marginHorizontal: space.md }}>
+          {MODES.map((m) => <Group key={m.key}>{renderMode(m)}</Group>)}
+        </Columns>
+      ) : (
+        <Group style={{ marginHorizontal: space.md }}>{MODES.map(renderMode)}</Group>
+      )}
     </ScrollView>
   );
 }
