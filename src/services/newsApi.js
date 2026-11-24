@@ -25,7 +25,7 @@ const FEEDS = {
 
 const TTL_MS = 3 * 60 * 60 * 1000; // revalida a cada 3 horas
 const MAX_ITEMS = 6;
-const cacheKey = (lang) => `news:cache:v4:${lang}`; // v4: proxy allorigins /get (CORS)
+const cacheKey = (lang) => `news:cache:v5:${lang}`; // v5: sem raspagem de página na web, miniatura de 168 px
 
 async function fetchFeed(feed) {
   // Sem &count: o endpoint gratuito (sem api key) rejeita esse parâmetro (HTTP 422).
@@ -55,39 +55,20 @@ async function fetchFeed(feed) {
 }
 
 // Feeds da ACI/CNA não trazem imagem no RSS, mas as páginas dos artigos têm
-// og:image. Na web não dá para buscar o HTML por CORS, então usamos serviços de
-// terceiros (que precisam devolver o cabeçalho CORS). Os proxies gratuitos caem
-// muito, então tentamos vários resolvedores em ordem, até um trazer a imagem:
-//   1) microlink: API de metadados, devolve a imagem direto em JSON (CORS *).
-//   2) jina reader: devolve o HTML da página (CORS por origem).
-//   3) allorigins /get: JSON {contents} com o HTML.
-//   4) codetabs: HTML cru (reserva).
-// Cada resolvedor devolve a URL da imagem (ou null).
-const IMG_RESOLVERS = [
-  async (u) => {
-    const j = await fetchJson(`https://api.microlink.io/?url=${encodeURIComponent(u)}`);
-    return j && j.status === 'success' ? (j.data && j.data.image && j.data.image.url) || null : null;
-  },
-  async (u) => {
-    const html = await fetchText(`https://r.jina.ai/${u}`, { 'X-Return-Format': 'html' });
-    return html ? extractImage(html) : null;
-  },
-  async (u) => {
-    const j = await fetchJson(`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`);
-    return j && typeof j.contents === 'string' ? extractImage(j.contents) : null;
-  },
-  async (u) => {
-    const html = await fetchText(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`);
-    return html ? extractImage(html) : null;
-  },
-];
-
+// og:image. No nativo buscamos a página direto (sem CORS). Na web isso exigia
+// raspar a página por serviços de terceiros (microlink, jina, allorigins,
+// codetabs): até 4 pedidos por notícia, com espera de 12 s cada, recusas
+// frequentes (HTTP 429) e o link de cada notícia enviado a esses serviços. Com
+// as notícias na Início, isso pesava em toda abertura do app. Na web, então, a
+// notícia sem imagem no feed aparece sem foto (o NewsCard já trata).
 // Serve as imagens por um CDN/proxy (wsrv.nl): contorna CORS/hotlink de qualquer
-// host, converte para jpg e redimensiona — exibição uniforme e mais rápida.
+// host, converte para jpg e redimensiona. A miniatura do NewsCard tem 56 px
+// (tokens.thumb.sm): 168 px cobre telas 3x (antes vinha com 1000 px).
 const WSRV = 'https://wsrv.nl/?url=';
+const NEWS_THUMB_PX = 168;
 function proxyImg(url) {
   if (!url || url.startsWith('https://wsrv.nl/')) return url || null;
-  return `${WSRV}${encodeURIComponent(url)}&w=1000&output=jpg&q=80`;
+  return `${WSRV}${encodeURIComponent(url)}&w=${NEWS_THUMB_PX}&h=${NEWS_THUMB_PX}&fit=cover&output=jpg&q=75`;
 }
 
 function decodeEntities(s) {
@@ -118,28 +99,12 @@ async function fetchText(url, headers) {
   }
 }
 
-async function fetchJson(url) {
-  const t = await fetchText(url);
-  if (!t) return null;
-  try { return JSON.parse(t); } catch { return null; }
-}
-
 async function resolveImage(articleUrl) {
   if (!articleUrl) return null;
-  // No nativo, busca direto (sem CORS). Na web, tenta os resolvedores em ordem.
-  if (Platform.OS !== 'web') {
-    const html = await fetchText(articleUrl);
-    return html ? extractImage(html) : null;
-  }
-  for (const resolve of IMG_RESOLVERS) {
-    try {
-      const img = await resolve(articleUrl);
-      if (img) return img;
-    } catch {
-      // tenta o próximo
-    }
-  }
-  return null;
+  // Só no nativo (ver o comentário acima de extractImage).
+  if (Platform.OS === 'web') return null;
+  const html = await fetchText(articleUrl);
+  return html ? extractImage(html) : null;
 }
 
 export async function getNews(lang = 'pt', { force = false } = {}) {

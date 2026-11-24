@@ -5,6 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { categoryLabel, pick } from '../utils/i18nData';
 import PressScale from './ui/PressScale';
+import { articleThumb } from '../data/articleThumbs';
 
 // Item de lista de artigos (Onda 9), no espírito do Apple Books: capa quadrada
 // à esquerda, título em headline, resumo em subhead secundário (2 linhas) e a
@@ -56,7 +57,7 @@ const ArticleListItem = memo(function ArticleListItem({ article, read = false, c
     >
       {/* Decorativa: o título vem escrito ao lado. */}
       <Image
-        source={article.image}
+        source={articleThumb(article)}
         aria-hidden
         accessible={false}
         resizeMode="cover"

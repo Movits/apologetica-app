@@ -36,9 +36,12 @@ const haystack = (item, isEn) => norm([
   pick(item, 'fullSource', isEn),
   pick(item, 'author', isEn),
 ].join('\n'));
-const HAYSTACK = {
-  pt: new Map(referencesWithEn.map((r) => [r.id, haystack(r, false)])),
-  en: new Map(referencesWithEn.map((r) => [r.id, haystack(r, true)])),
+// Por idioma, na primeira busca (o inglês chega sob demanda, data/english.js).
+const HAYSTACK = {};
+const haystackFor = (isEn) => {
+  const key = isEn ? 'en' : 'pt';
+  if (!HAYSTACK[key]) HAYSTACK[key] = new Map(referencesWithEn().map((r) => [r.id, haystack(r, isEn)]));
+  return HAYSTACK[key];
 };
 
 // Destaque da chegada por deep link: fundo deepLinkHl cheio por um instante e
@@ -140,10 +143,10 @@ export default function ReferencesScreen({ route }) {
   // pela busca (seções vazias somem).
   const sections = useMemo(() => {
     const q = norm(query.trim());
-    const hay = HAYSTACK[isEn ? 'en' : 'pt'];
+    const hay = haystackFor(isEn);
     return REFERENCE_SOURCES
       .filter((s) => source === ALL || s.id === source)
-      .map((s) => ({ meta: s, data: referencesWithEn.filter((r) => r.source === s.id && (!q || hay.get(r.id).includes(q))) }))
+      .map((s) => ({ meta: s, data: referencesWithEn().filter((r) => r.source === s.id && (!q || hay.get(r.id).includes(q))) }))
       .filter((s) => s.data.length > 0);
   }, [query, source, isEn]);
 

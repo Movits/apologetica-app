@@ -5,6 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { categoryLabel, pick } from '../utils/i18nData';
 import PressScale from './ui/PressScale';
+import { articleThumb } from '../data/articleThumbs';
 
 // Cartão de artigo da grade do desktop (aba Artigos em janela larga): imagem
 // em 16:9 no topo, categoria, título e resumo. Mesmas props e mesmo texto
@@ -40,7 +41,7 @@ const ArticleCard = memo(function ArticleCard({ article, read = false, completed
     >
       {/* Decorativa: o título vem escrito embaixo. */}
       <Image
-        source={article.image}
+        source={articleThumb(article)}
         aria-hidden
         accessible={false}
         resizeMode="cover"

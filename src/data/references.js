@@ -16,7 +16,6 @@
 // Com extensão de propósito: scripts/check-refs.mjs e generate-brain.mjs
 // importam este arquivo no Node puro, sem o hook que resolve os sufixos do
 // Metro (o Metro aceita a extensão explícita).
-import { referencesEn } from './references-en.js';
 
 export const references = [
   // ============ BÍBLIA ============
@@ -5610,9 +5609,23 @@ export const resolveRefUrl = (item, en, isEn) => {
   return base;
 };
 
+// A tabela EN (references-en.js) chega sob demanda: src/data/english.js a
+// carrega quando o idioma vira inglês e a entrega aqui. Antes disso a mescla
+// devolve a referência em PT (o `pick` já cai no PT sem tradução).
+let referencesEn = {};
+let mergedCache = null;
+export function setReferencesEn(table) {
+  referencesEn = table || {};
+  mergedCache = null;
+}
+
 // Referência mesclada com a tradução EN campo a campo (refEn, textEn,
 // topicEn...), para o `pick` cair no PT quando a tradução falta. Cinco telas
-// refaziam esta mescla; `referencesWithEn` é o catálogo inteiro já mesclado,
-// calculado uma vez. `ref` nulo devolve null (referenceById que não achou).
+// refaziam esta mescla; `referencesWithEn()` é o catálogo inteiro já
+// mesclado, calculado uma vez por tabela. `ref` nulo devolve null
+// (referenceById que não achou).
 export const withEn = (ref) => (ref ? { ...ref, ...(referencesEn[ref.id] || {}) } : null);
-export const referencesWithEn = references.map(withEn);
+export function referencesWithEn() {
+  if (!mergedCache) mergedCache = references.map(withEn);
+  return mergedCache;
+}

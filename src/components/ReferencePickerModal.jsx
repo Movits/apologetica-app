@@ -6,21 +6,13 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useModalNavBar } from '../hooks/useModalNavBar';
 import { articles } from '../data/articles';
-import { references } from '../data/references';
-import { referencesEn } from '../data/references-en';
+import { referencesWithEn } from '../data/references';
 import { BIBLE_BOOKS, bookName, bookShort } from '../data/bible';
 import { getChapter, ensureBible } from '../services/bibleApi';
 import { pick } from '../utils/i18nData';
 import { refLabel } from '../utils/refLabel';
 import { formatVerseRef } from '../utils/verseRef';
 import { Button, Chip, EmptyState, Field, Group, ListSeparator, Row, SearchField } from './ui';
-
-// Referências já mescladas com a tradução EN (refEn, topicEn...), lidas com
-// `pick` e `refLabel` para caírem no PT quando a tradução falta.
-const refsWithEn = references.map((r) => {
-  const en = referencesEn[r.id];
-  return en ? { ...r, ...en } : r;
-});
 
 const TABS = ['verse', 'ref', 'article'];
 
@@ -66,7 +58,11 @@ export default function ReferencePickerModal({ visible, onClose, onPick, onPickV
     return articles.filter((a) => !q || norm(pick(a, 'title', isEn)).includes(q));
   }, [articleQuery, isEn]);
 
+  // Referências mescladas com a tradução EN (refEn, topicEn...), lidas com
+  // `pick` e `refLabel` para caírem no PT quando a tradução falta. A mescla
+  // vem de references.js, que recebe o inglês sob demanda (data/english.js).
   const filteredRefs = useMemo(() => {
+    const refsWithEn = referencesWithEn();
     const q = norm(refQuery);
     if (!q) return refsWithEn;
     return refsWithEn.filter((r) => {
